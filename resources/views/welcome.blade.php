@@ -9,6 +9,19 @@
 </head>
 
 <body>
+    @foreach (config('app.available_locales') as $locale)
+        <a href="{{ route(Route::currentRouteName(), $locale) }}">
+            @if (app()->getLocale() == $locale)
+                <b>
+                    {{ strtoupper($locale) }}
+                </b>
+            @else
+                {{ strtoupper($locale) }}
+            @endif
+
+        </a>
+    @endforeach
+
     <h1>
         {{ __('pages/home.greeting') }}
     </h1>

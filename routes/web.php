@@ -27,10 +27,10 @@ Route::group(
 
         Route::get('/', function () {
             return view('welcome');
-        });
+        })->name('welcome');
 
         Route::get('/sample', function () {
             return view('sample');
-        });
+        })->name('sample');
     }
 );
