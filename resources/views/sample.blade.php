@@ -10,9 +10,11 @@
 
 <body>
     <h1>
+        Sample guys
+    </h1>
+    <h1>
         {{ __('pages/home.greeting') }}
     </h1>
-    <a href="{{ url(app()->getLocale(), 'sample') }}">Link</a>
 </body>
 
 </html>

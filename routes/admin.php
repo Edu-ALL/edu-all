@@ -13,24 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect(app()->getLocale());
+Route::get('/', function ($locale) {
+    // return $locale;
+    return view('welcome');
 });
-
-Route::group(
-    [
-        'prefix' => '{locale}',
-        'where' => ['locale' => '[a-zA-Z]{2}'],
-        'middleware' => 'setlocale'
-    ],
-    function () {
-
-        Route::get('/', function () {
-            return view('welcome');
-        });
-
-        Route::get('/sample', function () {
-            return view('sample');
-        });
-    }
-);
