@@ -1,3 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .li-nav {
+        @apply border-t-[1px] border-top-navbar text-left pl-4 lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex;
+    }
+
+    .li-link-nav {
+        @apply block my-1.5 text-xl text-left lg:text-center lg:text-base lg:font-bold;
+    }
+
+    .child-nav {
+        @apply border-t-2 border-dark text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex lg:border-b-2 lg:border-dark  lg:bg-body lg:text-background lg:relative lg:z-30 hover:lg:text-white/70;
+    }
+
+    .child-child-ul {
+        @apply bg-light text-dark lg:invisible lg:absolute lg:left-full lg:w-full lg:top-0 lg:opacity-0 transition-all duration-300 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-dark/60 lg:text-background;
+    }
+
+    .child-child-li {
+        @apply border-t-2 border-dark text-left pl-4 lg:pl-0 lg:border-0 lg:border-b-2 lg:text-center lg:items-center lg:flex hover:lg:text-white/70;
+    }
+
+    .child-child-li-link {
+        @apply px-4 py-2 block text-left lg:text-left lg:text-base lg:font-bold w-full;
+    }
+
+    .child-child-link {
+        @apply px-4 block py-2 text-sm text-left lg:text-left lg:text-base lg:font-bold;
+    }
+
+    .programs:hover .programs-child {
+        @apply lg:visible lg:opacity-100;
+    }
+
+    /* Container */
+    .main-container {
+        @apply container mx-auto px-4 lg:px-10;
+    }
+}
