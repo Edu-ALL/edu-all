@@ -125,6 +125,12 @@ class Banner extends Controller
             $banners = Banners::where('group', $group)->get();
             $banner_en = $banners[0];
             if ($request->hasFile('banner_image_en')) {
+                if ($old_image_path_en = $banner_en->banner_img) {
+                    $file_path = public_path('uploaded_files/banner/'.$old_image_path_en);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
                 $file_en = $request->file('banner_image_en');
                 $file_format_en = $request->file('banner_image_en')->getClientOriginalExtension();
                 $destinationPath_en = public_path().'/uploaded_files/banner';
@@ -143,6 +149,12 @@ class Banner extends Controller
 
             $banner_id = $banners[1];
             if ($request->hasFile('banner_image_id')) {
+                if ($old_image_path_id = $banner_id->banner_img) {
+                    $file_path = public_path('uploaded_files/banner/'.$old_image_path_id);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
                 $file_id = $request->file('banner_image_id');
                 $file_format_id = $request->file('banner_image_id')->getClientOriginalExtension();
                 $destinationPath_id = public_path().'/uploaded_files/banner';
