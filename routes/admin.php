@@ -39,7 +39,7 @@ Route::middleware('is_admin')->group(function(){
     Route::post('banner', [Banner::class, 'store'])->name('create-banner');
     Route::get('/banner/{group}/edit', [Banner::class, 'edit']);
     Route::post('/banner/{group}', [Banner::class, 'update'])->name('update-banner');
-    Route::post('/banner/deactivate', [Banner::class, 'deactivate'])->name('deactivate-banner');
+    Route::post('/banner/deactivate/{group}', [Banner::class, 'deactivate']);
 
     // Blog
     Route::get('/blog', [Blog::class, 'index']);

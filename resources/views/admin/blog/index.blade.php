@@ -17,11 +17,11 @@
 @include('layout.admin.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Blog</h1>
+        <h1>Blogs</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                <li class="breadcrumb-item active">Blog</li>
+                <li class="breadcrumb-item active">Blogs</li>
             </ol>
         </nav>
     </div>
@@ -33,7 +33,7 @@
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">List Blogs <span>| {{ now()->year }}</span></h5>
-                                <a type="button" class="btn btn-primary" href="/admin/banner/create">
+                                <a type="button" class="btn btn-primary" href="/admin/blog">
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i> Create new
                                 </a>
                             </div>

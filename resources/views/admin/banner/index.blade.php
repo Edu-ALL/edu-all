@@ -65,9 +65,9 @@
                                             <td>
                                                 <button 
                                                 class="btn {{ $banner->banner_status == 'active' ? 'btn-success' : 'btn-danger' }}"
-                                                type="button" 
+                                                type="button"
                                                 id="banner_status"
-                                                value="{{ $banner->group }}"
+                                                value="{{ $banner->banner_status }}"
                                                 data-bs-toggle="modal" 
                                                 data-bs-target="#status"
                                                 style="text-transform: capitalize;"
@@ -76,12 +76,9 @@
                                                     {{ $banner->banner_status }}
                                                 </button>
                                             </td>
-                                            <td class="d-flex flex-column gap-1" style="min-width: 100px">
-                                                <a type="button" class="btn btn-primary" href="">
-                                                    <i class="fa-solid fa-eye me-md-1 me-0"></i> View
-                                                </a>
-                                                <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->group }}/edit">
-                                                    <i class="fa-solid fa-pen-to-square me-md-1 me-0"></i> Update
+                                            <td>
+                                                <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->group }}/edit" >
+                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -103,19 +100,17 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3">
-                        
-                    </h6>
+                    <h6 class="modal-title ms-3" id="title-info"></h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p>Are you sure, you want to Deactivate this banner?</p>
+                <p id="desc-info"></p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                 <form action="" method="POST" id="form_status">
                     @csrf
-                    <button type="submit" style="font-size: 13px; background: var(--danger)">Deactivate</button>
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger)"></button>
                 </form>
             </div>
         </div>
@@ -125,6 +120,21 @@
 
 @section('js')
     <script>
-        
+        function formStatus(group){
+            $('#form_status').attr('action', '{{ url('/admin/banner/deactivate/') }}' + '/' + group);
+            var status = document.getElementById("banner_status").value;
+            var title = document.getElementById("title-info");
+            var desc = document.getElementById("desc-info");
+            var btnStatus = document.getElementById("btn-status");
+            if (status == 'active') {
+                title.innerHTML = "Deactivate";
+                desc.innerHTML = "Are you sure, you want to Deactivate this banner?";
+                btnStatus.innerHTML = "Deactivate";
+            } else {
+                title.innerHTML = "Activate";
+                desc.innerHTML = "Are you sure, you want to Activate this banner?";
+                btnStatus.innerHTML = "Activate";
+            }
+        }
     </script>
 @endsection

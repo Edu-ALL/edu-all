@@ -1,7 +1,12 @@
 @extends('layout.admin.app')
 @section('css')
 <style>
-    
+    .alert-warning {
+        font-size: 14px;
+    }
+    .fs-12 {
+        font-size: 12px;
+    }
 </style>
 @endsection
 @section('content')
@@ -45,6 +50,12 @@
                                     <div class="tab-pane fade show active" id="bordered-english" role="tabpanel" aria-labelledby="english-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form English</h5>
+                                            @if($errors->any())
+                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                    <strong>Failed Update!</strong> You have to check some fields in English and Indonesian.
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+                                            @endif
                                             <div class="row g-3">
                                                 <div class="col d-flex flex-column gap-2">
                                                     <div class="col-12">
@@ -89,31 +100,55 @@
                                     <div class="tab-pane fade" id="bordered-indo" role="tabpanel" aria-labelledby="indo-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form Indonesia</h5>
+                                            @if($errors->any())
+                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                    <strong>Failed Update!</strong> You have to check some fields in English and Indonesian.
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+                                            @endif
                                             <div class="row g-3">
                                                 <div class="col d-flex flex-column gap-2">
                                                     <div class="col-12">
                                                         <label for="" class="form-label">Banner Image</label>
                                                         <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id" value="{{ $banner[0]->banner_img }}">
+                                                        @error('banner_image_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="" class="form-label">Banner Alt</label>
                                                         <input type="text" class="form-control" id="" name="banner_alt_id" value="{{ $banner[1]->banner_alt }}">
+                                                        @error('banner_alt_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="" class="form-label">Banner Title</label>
                                                         <input type="text" class="form-control" id="" name="banner_title_id" value="{{ $banner[1]->banner_title }}">
+                                                        @error('banner_title_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="" class="form-label">Banner Description</label>
                                                         <textarea class="textarea" name="banner_description_id" id=""> {{ $banner[1]->banner_description }}</textarea>
+                                                        @error('banner_description_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="" class="form-label">Banner Button</label>
                                                         <input type="text" class="form-control" id="" name="banner_button_id" value="{{ $banner[1]->banner_button }}">
+                                                        @error('banner_button_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="" class="form-label">Banner Link</label>
                                                         <input type="text" class="form-control" id="" name="banner_link_id" value="{{ $banner[1]->banner_link }}">
+                                                        @error('banner_link_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
@@ -128,7 +163,7 @@
                                                 
                                                 <div class="text-center">
                                                     <button type="submit" class="btn btn-primary" id="submit">
-                                                        <i class="fa-solid fa-check me-1"></i> Update
+                                                        <i class="fa-solid fa-pen-to-square me-1"></i> Update
                                                     </button>
                                                 </div>
                                             </div>
@@ -183,6 +218,5 @@
             submit.disabled = false;
         }
     };
-
 </script>
 @endsection

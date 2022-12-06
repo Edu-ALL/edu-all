@@ -180,11 +180,9 @@ class Banner extends Controller
         return redirect('/admin/banner/'.$group.'/edit');
     }
 
-    public function deactivate(Request $request){
+    public function deactivate($group){
         DB::beginTransaction();
         try {
-            $group = $request->status;
-            dd($group);
             $banners = Banners::where('group', $group)->get();
             $banners[0]->banner_status = 'inactive';
             $banners[1]->banner_status = 'inactive';
