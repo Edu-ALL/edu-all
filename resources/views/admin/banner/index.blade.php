@@ -62,20 +62,31 @@
                                                 <img src="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
                                             </td>
                                             <td>{{ $banner->lang == 'en' ? 'English' : 'Indonesia'}}</td>
-                                            <td>
-                                                <button 
-                                                class="btn {{ $banner->banner_status == 'active' ? 'btn-success' : 'btn-danger' }}"
-                                                type="button"
-                                                id="banner_status"
-                                                value="{{ $banner->banner_status }}"
-                                                data-bs-toggle="modal" 
-                                                data-bs-target="#status"
-                                                style="text-transform: capitalize;"
-                                                onclick="formStatus({{ $banner->group }})"
-                                                >
-                                                    {{ $banner->banner_status }}
-                                                </button>
-                                            </td>
+                                            @if ($banner->banner_status == 'active')
+                                                <td>
+                                                    <button 
+                                                    class="btn btn-success"
+                                                    type="button"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#deactivate"
+                                                    style="text-transform: capitalize;"
+                                                    onclick="formDeactivate({{ $banner->group }})">
+                                                        {{ $banner->banner_status }}
+                                                    </button>
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <button 
+                                                    class="btn btn-danger"
+                                                    type="button"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#activate"
+                                                    style="text-transform: capitalize;"
+                                                    onclick="formActivate({{ $banner->group }})">
+                                                        {{ $banner->banner_status }}
+                                                    </button>
+                                                </td>
+                                            @endif
                                             <td>
                                                 <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->group }}/edit" >
                                                     <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"></i>
@@ -93,24 +104,47 @@
     </section>
 </main>
 
-{{-- Modal Activate Deactive --}}
-<div class="modal fade" id="status" tabindex="-1" aria-hidden="true">
+{{-- Modal Deactive --}}
+<div class="modal fade" id="deactivate" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0">
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info"></h6>
+                    <h6 class="modal-title ms-3" id="title-info">Deactivate</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info"></p>
+                <p id="desc-info">Are you sure, you want to Deactivate this banner?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                <form action="" method="POST" id="form_status">
+                <form action="" method="POST" id="form_deactivate">
                     @csrf
-                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger)"></button>
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger);">Deactivate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- Modal Activate --}}
+<div class="modal fade" id="activate" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header">
+                <div class="col d-flex gap-2 align-items-center">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h6 class="modal-title ms-3" id="title-info">Activate</h6>
+                </div>
+            </div>
+            <div class="modal-body text-center mt-3 mb-1">
+                <p id="desc-info">Are you sure, you want to Activate this banner?</p>
+            </div>
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
+                <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <form action="" method="POST" id="form_activate">
+                    @csrf
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--success);">Activate</button>
                 </form>
             </div>
         </div>
@@ -120,21 +154,11 @@
 
 @section('js')
     <script>
-        function formStatus(group){
-            $('#form_status').attr('action', '{{ url('/admin/banner/deactivate/') }}' + '/' + group);
-            var status = document.getElementById("banner_status").value;
-            var title = document.getElementById("title-info");
-            var desc = document.getElementById("desc-info");
-            var btnStatus = document.getElementById("btn-status");
-            if (status == 'active') {
-                title.innerHTML = "Deactivate";
-                desc.innerHTML = "Are you sure, you want to Deactivate this banner?";
-                btnStatus.innerHTML = "Deactivate";
-            } else {
-                title.innerHTML = "Activate";
-                desc.innerHTML = "Are you sure, you want to Activate this banner?";
-                btnStatus.innerHTML = "Activate";
-            }
-        }
+        function formDeactivate(group){
+            $('#form_deactivate').attr('action', '{{ url('/admin/banner/deactivate/') }}' + '/' + group);
+        };
+        function formActivate(group){
+            $('#form_activate').attr('action', '{{ url('/admin/banner/activate/') }}' + '/' + group);
+        };
     </script>
 @endsection

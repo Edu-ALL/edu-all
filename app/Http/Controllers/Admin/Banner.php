@@ -186,10 +186,25 @@ class Banner extends Controller
             $banners = Banners::where('group', $group)->get();
             $banners[0]->banner_status = 'inactive';
             $banners[1]->banner_status = 'inactive';
-            // dd($banners[0]->banner_status);
             $banners[0]->save();
             $banners[1]->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
 
+        return redirect('/admin/banner');
+    }
+
+    public function activate($group){
+        DB::beginTransaction();
+        try {
+            $banners = Banners::where('group', $group)->get();
+            $banners[0]->banner_status = 'active';
+            $banners[1]->banner_status = 'active';
+            $banners[0]->save();
+            $banners[1]->save();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

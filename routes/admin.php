@@ -40,6 +40,7 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/banner/{group}/edit', [Banner::class, 'edit']);
     Route::post('/banner/{group}', [Banner::class, 'update'])->name('update-banner');
     Route::post('/banner/deactivate/{group}', [Banner::class, 'deactivate']);
+    Route::post('/banner/activate/{group}', [Banner::class, 'activate']);
 
     // Blog
     Route::get('/blog', [Blog::class, 'index']);
