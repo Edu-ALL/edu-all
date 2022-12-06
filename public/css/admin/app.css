@@ -474,6 +474,10 @@ table tr td p {
   font-size: 12px !important;
   font-weight: 600;
 }
+.btn span {
+  font-size: 12px !important;
+  font-weight: 600;
+}
 .btn:focus {
   box-shadow: none !important;
 }

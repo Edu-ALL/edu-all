@@ -63,33 +63,40 @@
                                             </td>
                                             <td>{{ $banner->lang == 'en' ? 'English' : 'Indonesia'}}</td>
                                             @if ($banner->banner_status == 'active')
-                                                <td>
+                                                <td class="text-center">
                                                     <button 
                                                     class="btn btn-success"
                                                     type="button"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#deactivate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $banner->group }})">
-                                                        {{ $banner->banner_status }}
+                                                    onclick="formDeactivate({{ $banner->group }})"
+                                                    >
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this banner">
+                                                            {{ $banner->banner_status }}
+                                                        </span>
                                                     </button>
                                                 </td>
                                             @else
-                                                <td>
+                                                <td class="text-center">
                                                     <button 
                                                     class="btn btn-danger"
                                                     type="button"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#activate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $banner->group }})">
-                                                        {{ $banner->banner_status }}
+                                                    onclick="formActivate({{ $banner->group }})"
+                                                    data-bs-toggle="tooltip" data-bs-title="Activate this banner"
+                                                    >
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this banner">
+                                                            {{ $banner->banner_status }}
+                                                        </span>
                                                     </button>
                                                 </td>
                                             @endif
-                                            <td>
-                                                <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->group }}/edit" >
-                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"></i>
+                                            <td class="text-center">
+                                                <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->group }}/edit">
+                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this banner"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -160,5 +167,8 @@
         function formActivate(group){
             $('#form_activate').attr('action', '{{ url('/admin/banner/activate/') }}' + '/' + group);
         };
+        // Tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 @endsection
