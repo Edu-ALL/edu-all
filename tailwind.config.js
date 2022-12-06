@@ -27,6 +27,7 @@ module.exports = {
                 navbar: "#7895C7",
                 secondary: "#7895C7",
                 primary: "#081034",
+                primary: "#233469",
                 "top-navbar": "#666666",
                 body: "#7A7A7A",
                 yellow: "#F99B24",
