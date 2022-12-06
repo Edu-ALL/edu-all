@@ -1,12 +1,7 @@
 @extends('layout.admin.app')
 @section('css')
 <style>
-    .paginate_button a,
-    .paginate_button a:hover, 
-    .paginate_button a:focus,
-    .form-select:focus {
-        box-shadow: none !important;
-    }
+    
 </style>
 @endsection
 @section('content')
@@ -34,7 +29,7 @@
                                     <i class="fa-solid fa-users"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>145</h6>
+                                    <h6>{{ $mentor->count() }}</h6>
                                     {{-- <span class="text-muted small pt-2 ps-1">Banners</span> --}}
                                 </div>
                             </div>
@@ -50,8 +45,7 @@
                                     <i class="fa-solid fa-calendar-days"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>264</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Blogs</span> --}}
+                                    <h6>{{ $upcoming_event->count() }}</h6>
                                 </div>
                             </div>
                         </a>
@@ -68,8 +62,7 @@
                                     <i class="fa-solid fa-images"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>145</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Banners</span> --}}
+                                    <h6>{{ $banner->count() }}</h6>
                                 </div>
                             </div>
                         </a>
@@ -84,8 +77,7 @@
                                     <i class="fa-solid fa-newspaper"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>264</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Blogs</span> --}}
+                                    <h6>{{ $blog->count() }}</h6>
                                 </div>
                             </div>
                         </a>
@@ -100,7 +92,7 @@
                                     <i class="fa-solid fa-book"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>264</h6>
+                                    <h6>{{ $guidebook->count() }}</h6>
                                 </div>
                             </div>
                         </a>
@@ -117,8 +109,7 @@
                                     <i class="fa-solid fa-book-atlas"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>145</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Banners</span> --}}
+                                    <h6>{{ $success_stories->count() }}</h6>
                                 </div>
                             </div>
                         </a>
@@ -133,8 +124,7 @@
                                     <i class="fa-solid fa-comments"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>264</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Blogs</span> --}}
+                                    <h6>{{ $testimonial->count() }}</h6>
                                 </div>
                             </div>
                         </a>

@@ -62,10 +62,19 @@
                                                 <img src="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
                                             </td>
                                             <td>{{ $banner->lang == 'en' ? 'English' : 'Indonesia'}}</td>
-                                            <td style="text-transform: capitalize;">
-                                                <a type="button" class="btn btn-primary" href="">
-                                                    {{ $banner->banner_status}}
-                                                </a>
+                                            <td>
+                                                <button 
+                                                class="btn {{ $banner->banner_status == 'active' ? 'btn-success' : 'btn-danger' }}"
+                                                type="button" 
+                                                id="banner_status"
+                                                value="{{ $banner->group }}"
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#status"
+                                                style="text-transform: capitalize;"
+                                                onclick="formStatus({{ $banner->group }})"
+                                                >
+                                                    {{ $banner->banner_status }}
+                                                </button>
                                             </td>
                                             <td class="d-flex flex-column gap-1" style="min-width: 100px">
                                                 <a type="button" class="btn btn-primary" href="">
@@ -86,4 +95,38 @@
         </div>
     </section>
 </main>
+
+{{-- Modal Activate Deactive --}}
+<div class="modal fade" id="status" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header">
+                <div class="col d-flex gap-2 align-items-center">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h6 class="modal-title ms-3">
+                        
+                    </h6>
+                </div>
+            </div>
+            <div class="modal-body text-center mt-3 mb-1">
+                <p>Are you sure, you want to Deactivate this banner?</p>
+            </div>
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
+                <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <form action="" method="POST" id="form_status">
+                    @csrf
+                    <button type="submit" style="font-size: 13px; background: var(--danger)">Deactivate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('js')
+    <script>
+        // function formStatus(id){
+        //     document.getElementById('form_status').action =  '{{ route( $banner->banner_status == 'active' ? 'deactivate-banner' : 'activate-banner', ['group' => id]) }}';
+        // }   
+    </script>
 @endsection

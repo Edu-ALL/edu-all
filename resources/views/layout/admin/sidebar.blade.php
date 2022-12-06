@@ -14,13 +14,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed {{ request()->is('admin/blog*') ? 'active' : '' }}" href="/admin/blog">
                 <i class="fa-solid fa-newspaper"></i>
                 <span>Blogs</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed {{ request()->is('admin/mentor*') ? 'active' : '' }}" href="/admin/mentor">
                 <i class="fa-solid fa-users"></i>
                 <span>Mentor</span>
             </a>
@@ -50,12 +50,12 @@
             </a>
         </li>
         <li class="nav-heading">System</li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link collapsed" href="">
                 <i class="fa-solid fa-circle-user"></i>
                 <span>Profile</span>
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link collapsed" type="button" data-bs-toggle="modal" data-bs-target="#logout">
                 <i class="fa-solid fa-right-from-bracket"></i>

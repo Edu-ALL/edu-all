@@ -96,7 +96,6 @@ class Banner extends Controller
 
     public function edit($group){
         $banner = Banners::where('group', $group)->get();
-        // dd($banner[0]->group);
         return view('admin.banner.update', ['banner' => $banner]);
     }
 
@@ -167,5 +166,25 @@ class Banner extends Controller
         }
 
         return redirect('/admin/banner/'.$group.'/edit');
+    }
+
+    public function deactivate(Request $request){
+        DB::beginTransaction();
+        try {
+            $group = $request->status;
+            dd($group);
+            $banners = Banners::where('group', $group)->get();
+            $banners[0]->banner_status = 'inactive';
+            $banners[1]->banner_status = 'inactive';
+            dd($banners[0]->group);
+            // $banners->save();
+
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/banner');
     }
 }

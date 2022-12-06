@@ -58,7 +58,7 @@
                                     @endif --}}
                                 </div>
                                 <div class="col-12 my-4">
-                                    <button class="btn btn-primary w-100" type="submit">Login</button>
+                                    <button class="btn btn-primary w-100" type="submit" style="font-size: 14px !important">Login</button>
                                 </div>
                             </form>
                         </div>

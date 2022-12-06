@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Admin\Authentication;
 use App\Http\Controllers\Admin\Banner;
+use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Admin\Dashboard;
+use App\Http\Controllers\Admin\Mentor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,13 @@ Route::middleware('is_admin')->group(function(){
     Route::post('banner', [Banner::class, 'store'])->name('create-banner');
     Route::get('/banner/{group}/edit', [Banner::class, 'edit']);
     Route::post('/banner/{group}', [Banner::class, 'update'])->name('update-banner');
+    Route::post('/banner/deactivate', [Banner::class, 'deactivate'])->name('deactivate-banner');
+
+    // Blog
+    Route::get('/blog', [Blog::class, 'index']);
+
+    // Mentor
+    Route::get('/mentor', [Mentor::class, 'index']);
 });
 
 

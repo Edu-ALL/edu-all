@@ -9,7 +9,9 @@
   --blue: #2785DD;
   /* --blue: #5B84F0; */
   --red: #F5564C;
-  --green: #44DE37;
+  --green: #10C000;
+  --danger: #dc3545;
+  --success: #198754;
   --linear-blue: linear-gradient(90deg, rgba(61, 187, 227, 0.45) 0%, #2785DD 100%);
 }
 body {
@@ -327,6 +329,11 @@ h6 {
 }
 .modal-body p, .modal-footer button {
   font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+.modal-footer button {
+  font-size: 16px;
   font-weight: 600;
   margin: 0;
 }
@@ -340,8 +347,8 @@ h6 {
 }
 .modal-footer button:nth-child(1),
 .modal-footer button:hover:nth-child(1) {
-  background-color: #f6f9ff;
-  color: var(--blue);
+  background-color: #E5E5E5;
+  color: #161616;
   padding: 10px 25px;
   border: 1px;
   border-radius: 10px;
