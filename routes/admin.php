@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 /*--------------------------------------------------------------
 # Login Logout Admin
 --------------------------------------------------------------*/
-
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -31,7 +30,7 @@ Route::get('logout', [Authentication::class, 'logout'])->name('logout');
 /*--------------------------------------------------------------
 # Admin
 --------------------------------------------------------------*/
-Route::middleware('is_admin')->group(function () {
+Route::middleware('is_admin')->group(function(){
     Route::get('/dashboard', [Dashboard::class, 'index']);
 
     // Banner
