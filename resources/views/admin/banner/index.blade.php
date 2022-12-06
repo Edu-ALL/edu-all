@@ -125,8 +125,6 @@
 
 @section('js')
     <script>
-        // function formStatus(id){
-        //     document.getElementById('form_status').action =  '{{ route( $banner->banner_status == 'active' ? 'deactivate-banner' : 'activate-banner', ['group' => id]) }}';
-        // }   
+         
     </script>
 @endsection
