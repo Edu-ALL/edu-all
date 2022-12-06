@@ -42,7 +42,7 @@
         @apply container mx-auto px-4 lg:px-10;
     }
 
-    <<<<<<< HEAD .absolute-center {
+    .absolute-center {
         @apply absolute top-0 left-[50%] -translate-x-[50%];
     }
 }
