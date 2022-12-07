@@ -14,25 +14,18 @@
             </a>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
             <a class="nav-link collapsed {{ request()->is('admin/blogs*') ? 'active' : '' }}" href="/admin/blogs">
-=======
-            <a class="nav-link collapsed {{ request()->is('admin/blog*') ? 'active' : '' }}" href="/admin/blog">
->>>>>>> 06cb5d00b733ef504f71149751d93b9a3115a20f
                 <i class="fa-solid fa-newspaper"></i>
                 <span>Blogs</span>
             </a>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
             <a class="nav-link collapsed {{ request()->is('admin/blog-category*') ? 'active' : '' }}" href="/admin/blog-category">
                 <i class="fa-solid fa-gears"></i>
                 <span>Blog Category</span>
             </a>
         </li>
         <li class="nav-item">
-=======
->>>>>>> 06cb5d00b733ef504f71149751d93b9a3115a20f
             <a class="nav-link collapsed {{ request()->is('admin/mentor*') ? 'active' : '' }}" href="/admin/mentor">
                 <i class="fa-solid fa-users"></i>
                 <span>Mentor</span>
