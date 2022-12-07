@@ -14,9 +14,15 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed {{ request()->is('admin/blog*') ? 'active' : '' }}" href="/admin/blog">
+            <a class="nav-link collapsed {{ request()->is('admin/blogs*') ? 'active' : '' }}" href="/admin/blogs">
                 <i class="fa-solid fa-newspaper"></i>
                 <span>Blogs</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed {{ request()->is('admin/blog-category*') ? 'active' : '' }}" href="/admin/blog-category">
+                <i class="fa-solid fa-gears"></i>
+                <span>Blog Category</span>
             </a>
         </li>
         <li class="nav-item">
