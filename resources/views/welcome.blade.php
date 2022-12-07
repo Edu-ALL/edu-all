@@ -1,1 +1,1 @@
-@extends('layout.user.main')
+@extends('layout.user.home.main')

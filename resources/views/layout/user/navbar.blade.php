@@ -1,11 +1,13 @@
-<header class="fixed w-full top-0 left-0 z-40 bg-white">
+<header class="fixed w-full top-0 left-0 z-40 bg-white shadow-sm">
     <div class="main-container">
         <div class="py-4 lg:gap-2 w-full">
-            <nav class="text-center flex justify-between 2xl:justify-between items-center lg:justify-center flex-wrap lg:relative lg:gap-x-6">
-                <div class="pb-2 2xl:pb-0 flex items-center justify-center lg:text-left lg:min-w-fit">
+            <nav
+                class="text-center flex justify-between 2xl:justify-between items-center lg:justify-center flex-wrap lg:relative lg:gap-x-6">
+                <a href="{{ url(app()->getLocale()) }}"
+                    class="pb-2 2xl:pb-0 flex items-center justify-center lg:text-left lg:min-w-fit">
                     <img src="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New" class="w-48 xl:w-56">
-                </div>
-                <button id='open-nav' type="button" class="text-3xl lg:hidden">
+                </a>
+                <button id='open-nav' type="button" class="text-3xl lg:hidden ml-4">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div id="nav-content"
@@ -17,16 +19,17 @@
                     <ul
                         class="w-full border-l-[1px] border-top-navbar font-secondary justify-between lg:flex 2xl:gap-x-6 lg:gap-3 h-screen overflow-auto pb-40 lg:h-fit lg:overflow-auto lg:border-0 lg:pb-0 ">
                         <li class="li-nav">
-                            <a href="#" class="li-link-nav">{{ __('pages/navbar.navbar_home') }}</a>
+                            <a href="{{ url(app()->getLocale()) }}"
+                                class="li-link-nav">{{ __('pages/navbar.navbar_home') }}</a>
                         </li>
                         <li
                             class="border-t-[1px] border-top-navbar text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex programs">
-                            <div class="flex justify-between items-center">
-                                <a href="#"
-                                    class="block my-1.5 pl-4 text-xl text-left w-full lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.navbar_programs') }}
+                            <div class="flex justify-between items-center ">
+                                <a href="{{ url(app()->getLocale(), 'programs') }}"
+                                    class="block my-1.5 pl-4 text-xl text-left w-full  lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.navbar_programs') }}
                                 </a>
                                 <button id='open-nav-child' type="button"
-                                    class="flex justify-end bg-body lg:bg-transparent">
+                                    class="flex justify-end bg-body lg:bg-transparent transition-all duration-300">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down text-2xl text-white py-3 px-4 lg:text-primary lg:p-0 lg:pl-1 transition-all duration-300"></i>
                                 </button>

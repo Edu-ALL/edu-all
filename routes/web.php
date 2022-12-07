@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserHomePageController;
+use App\Http\Controllers\UserProgramPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,16 +23,19 @@ Route::group(
     [
         'prefix' => '{locale}',
         'where' => ['locale' => '[a-zA-Z]{2}'],
-        'middleware' => 'setlocale'
+        'middleware' => 'setlocale',
     ],
     function () {
+        Route::controller(UserHomePageController::class)->group(function () {
+            Route::get('/', 'home')->name('home');
+        });
 
-        Route::get('/', function () {
-            return view('welcome');
-        })->name('welcome');
+        Route::controller(UserProgramPageController::class)->group(function () {
+            Route::get('/programs', 'index')->name('programs');
+        });
 
         Route::get('/sample', function () {
             return view('sample');
         })->name('sample');
-    }
+    },
 );

@@ -14,7 +14,7 @@
     }
 
     .child-nav {
-        @apply border-t-2 border-dark text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex lg:border-b-2 lg:border-dark  lg:bg-body lg:text-background lg:relative lg:z-30 hover:lg:text-white/70;
+        @apply border-t-2 border-dark text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex lg:border-b-2 lg:border-dark lg:bg-body lg:text-background lg:relative lg:z-30 hover:lg:text-white/70;
     }
 
     .child-child-ul {
@@ -40,5 +40,39 @@
     /* Container */
     .main-container {
         @apply container mx-auto px-4 lg:px-10;
+    }
+
+    .absolute-center {
+        @apply absolute top-0 left-[50%] -translate-x-[50%];
+    }
+}
+
+/* Utilities */
+
+@layer utilities {
+    .heading-1 {
+        @apply font-semibold font-primary uppercase text-3xl lg:text-5xl text-primary;
+    }
+
+    .my-btn {
+        @apply bg-yellow text-light rounded-[3px] py-1.5 px-5 font-medium font-primary capitalize;
+    }
+
+    .program-card {
+        transform-style: preserve-3d;
+        @apply transition-all duration-700 relative h-[400px];
+    }
+
+    .rotate-program-card {
+        transform: rotateY(0.5turn);
+    }
+
+    .program-face-card {
+        backface-visibility: hidden;
+        @apply absolute top-0 left-0 transition-all duration-700 w-full h-full overflow-hidden rounded-xl;
+    }
+
+    .face_back {
+        transform: rotateY(0.5turn);
     }
 }
