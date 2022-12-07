@@ -154,38 +154,6 @@
                 </div>
                 {{-- <div class="col"></div> --}}
             </div>
-
-            {{-- <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">List Blogs <span>| {{ now()->year }}</span></h5>
-                            <table class="table datatable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Position</th>
-                                    <th scope="col">Age</th>
-                                    <th scope="col">Start Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @for ($i = 1; $i < 20; $i++)
-                                    <tr>
-                                        <th scope="row">{{ $i }}</th>
-                                        <td>Brandon Jacob</td>
-                                        <td>Designer</td>
-                                        <td>28</td>
-                                        <td>2016-05-25</td>
-                                    </tr>
-                                @endfor
-                            </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </section>
 </main>

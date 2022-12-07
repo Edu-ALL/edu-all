@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Authentication;
 use App\Http\Controllers\Admin\Banner;
 use App\Http\Controllers\Admin\Blog;
+use App\Http\Controllers\Admin\BlogCategory;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Mentor;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +44,11 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/banner/activate/{group}', [Banner::class, 'activate']);
 
     // Blog
-    Route::get('/blog', [Blog::class, 'index']);
+    Route::get('/blogs', [Blog::class, 'index']);
+
+    // Blog Category
+    Route::get('/blog-category', [BlogCategory::class, 'index']);
+    Route::get('/blog-category/create', [BlogCategory::class, 'create']);
 
     // Mentor
     Route::get('/mentor', [Mentor::class, 'index']);
