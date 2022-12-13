@@ -42,10 +42,35 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Category Name</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                    @foreach ($blog_category as $category)
+                                        <tr>
+                                            <th scope="row">{{ $i++ }}</th>
+                                            <td class="w-75">{{ $category->category_name }}</td>
+                                            <td class="text-center">
+                                                <div class="d-flex flex-row gap-1">
+                                                    <a type="button" class="btn btn-warning" href="/admin/blog-category/{{ $category->id }}/edit">
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
+                                                    </a>
+                                                    <button 
+                                                    type="button"
+                                                    class="btn btn-danger"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#delete"
+                                                    onclick="formDelete({{ $category->id }})"
+                                                    >
+                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog category"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -55,4 +80,39 @@
         </div>
     </section>
 </main>
+
+{{-- Modal Delete --}}
+<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header">
+                <div class="col d-flex gap-2 align-items-center">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h6 class="modal-title ms-3" id="title-info">Delete</h6>
+                </div>
+            </div>
+            <div class="modal-body text-center mt-3 mb-1">
+                <p id="desc-info">Are you sure, you want to Delete this blog category?</p>
+            </div>
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
+                <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <form action="" method="POST" id="form_delete">
+                    @csrf
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger);">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('js')
+    <script>
+        function formDelete(id){
+            $('#form_delete').attr('action', '{{ url('/admin/blog-category/delete/') }}' + '/' + id);
+        };
+        // Tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 @endsection

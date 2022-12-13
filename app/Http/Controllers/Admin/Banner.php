@@ -88,7 +88,7 @@ class Banner extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            return Redirect::back()->withErrors(['msg' => 'Something went wrong when processing the data.']);
+            return Redirect::back()->withErrors($e->getMessage());
         }
 
         return redirect('/admin/banner');
@@ -174,7 +174,7 @@ class Banner extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            return Redirect::back()->withErrors(['msg' => 'Something went wrong when processing the data.']);
+            return Redirect::back()->withErrors($e->getMessage());
         }
 
         return redirect('/admin/banner/'.$group.'/edit');
@@ -205,6 +205,33 @@ class Banner extends Controller
             $banners[1]->banner_status = 'active';
             $banners[0]->save();
             $banners[1]->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/banner');
+    }
+
+    public function delete($group){
+        DB::beginTransaction();
+        try {
+            $banners = Banners::where('group', $group)->get();
+            if ($old_image_path_en = $banners[0]->banner_img) {
+                $file_path_en = public_path('uploaded_files/banner/'.$old_image_path_en);
+                if (File::exists($file_path_en)) {
+                    File::delete($file_path_en);
+                }
+            }
+            if ($old_image_path_id = $banners[1]->banner_img) {
+                $file_path_id = public_path('uploaded_files/banner/'.$old_image_path_id);
+                if (File::exists($file_path_id)) {
+                    File::delete($file_path_id);
+                }
+            }
+            $banners[0]->delete();
+            $banners[1]->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

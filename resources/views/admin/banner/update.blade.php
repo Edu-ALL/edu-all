@@ -56,41 +56,52 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>
                                             @endif
-                                            <div class="row g-3">
-                                                <div class="col d-flex flex-column gap-2">
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Image</label>
-                                                        <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en" value="{{ $banner[0]->banner_img }}">
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Alt</label>
-                                                        <input type="text" class="form-control" id="alt_en" name="banner_alt_en" value="{{ $banner[0]->banner_alt }}">
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Title</label>
-                                                        <input type="text" class="form-control" id="title_en" name="banner_title_en" value="{{ $banner[0]->banner_title }}">
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Description</label>
-                                                        <textarea class="textarea" name="banner_description_en" id="description_en">{{ $banner[0]->banner_description }}</textarea>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Button</label>
-                                                        <input type="text" class="form-control" id="button_en" name="banner_button_en" value="{{ $banner[0]->banner_button }}">
-                                                    </div>
-                                                    <div class="col-12 mb-3">
-                                                        <label for="" class="form-label">Banner Link</label>
-                                                        <input type="text" class="form-control" id="link_en" name="banner_link_en" value="{{ $banner[0]->banner_link }}">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-4">
-                                                    <div class="col-12">
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                                    <div class="col-md-2 col">
                                                         <label for="" class="form-label">Banner Image Preview</label>
-                                                        <div class="col border rounded" style="min-height: 34px">
+                                                        <div class="col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
                                                             <img class="img-preview img-fluid" id="img_preview_en" src="{{ asset('uploaded_files/banner/'.$banner[0]->banner_img) }}">
                                                         </div>
                                                     </div>
+                                                    <div class="col d-flex flex-column gap-2">
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Banner Image <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en" value="{{ $banner[0]->banner_img }}">
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Banner Alt <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control" id="alt_en" name="banner_alt_en" value="{{ $banner[0]->banner_alt }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Title <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="title_en" name="banner_title_en" value="{{ $banner[0]->banner_title }}">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="banner_description_en" id="description_en">{{ $banner[0]->banner_description }}</textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Button <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="button_en" name="banner_button_en" value="{{ $banner[0]->banner_button }}">
+                                                </div>
+                                                <div class="col-12 mb-3">
+                                                    <label for="" class="form-label">
+                                                        Banner Link <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="link_en" name="banner_link_en" value="{{ $banner[0]->banner_link }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -106,66 +117,77 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>
                                             @endif
-                                            <div class="row g-3">
-                                                <div class="col d-flex flex-column gap-2">
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Image</label>
-                                                        <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id" value="{{ $banner[0]->banner_img }}">
-                                                        @error('banner_image_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Alt</label>
-                                                        <input type="text" class="form-control" id="" name="banner_alt_id" value="{{ $banner[1]->banner_alt }}">
-                                                        @error('banner_alt_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Title</label>
-                                                        <input type="text" class="form-control" id="" name="banner_title_id" value="{{ $banner[1]->banner_title }}">
-                                                        @error('banner_title_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Description</label>
-                                                        <textarea class="textarea" name="banner_description_id" id=""> {{ $banner[1]->banner_description }}</textarea>
-                                                        @error('banner_description_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Button</label>
-                                                        <input type="text" class="form-control" id="" name="banner_button_id" value="{{ $banner[1]->banner_button }}">
-                                                        @error('banner_button_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label for="" class="form-label">Banner Link</label>
-                                                        <input type="text" class="form-control" id="" name="banner_link_id" value="{{ $banner[1]->banner_link }}">
-                                                        @error('banner_link_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-4">
-                                                    <div class="col-12">
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                                    <div class="col-md-2 col">
                                                         <label for="" class="form-label">Banner Image Preview</label>
-                                                        <div class="col border rounded" style="min-height: 34px">
+                                                        <div class="col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
                                                             <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/banner/'.$banner[1]->banner_img) }}">
                                                         </div>
                                                     </div>
+                                                    <div class="col d-flex flex-column gap-2">
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Banner Image <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id" value="{{ $banner[1]->banner_img }}">
+                                                            @error('banner_image_id')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Banner Alt <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control" id="alt_id" name="banner_alt_id" value="{{ $banner[1]->banner_alt }}">
+                                                            @error('banner_alt_id')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                
-                                                <div class="text-center">
-                                                    <button type="submit" class="btn btn-primary" id="submit">
-                                                        <i class="fa-solid fa-pen-to-square me-1"></i> Update
-                                                    </button>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Title <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="" name="banner_title_id" value="{{ $banner[1]->banner_title }}">
+                                                    @error('banner_title_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
                                                 </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="banner_description_id" id=""> {{ $banner[1]->banner_description }}</textarea>
+                                                    @error('banner_description_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Button <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="" name="banner_button_id" value="{{ $banner[1]->banner_button }}">
+                                                    @error('banner_button_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Banner Link <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="" name="banner_link_id" value="{{ $banner[1]->banner_link }}">
+                                                    @error('banner_link_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="text-center mt-3">
+                                                <button type="submit" class="btn btn-primary" id="submit">
+                                                    <i class="fa-solid fa-pen-to-square me-1"></i> Update
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
