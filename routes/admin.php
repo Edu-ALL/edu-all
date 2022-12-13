@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Admin\BlogCategory;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Mentor;
+use App\Http\Controllers\Admin\Testimonial;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,11 +38,12 @@ Route::middleware('is_admin')->group(function(){
     // Banner
     Route::get('/banner', [Banner::class, 'index']);
     Route::get('/banner/create', [Banner::class, 'create']);
-    Route::post('banner', [Banner::class, 'store'])->name('create-banner');
+    Route::post('/banner', [Banner::class, 'store'])->name('create-banner');
     Route::get('/banner/{group}/edit', [Banner::class, 'edit']);
     Route::post('/banner/{group}', [Banner::class, 'update'])->name('update-banner');
     Route::post('/banner/deactivate/{group}', [Banner::class, 'deactivate']);
     Route::post('/banner/activate/{group}', [Banner::class, 'activate']);
+    Route::post('/banner/delete/{group}', [Banner::class, 'delete']);
 
     // Blog
     Route::get('/blogs', [Blog::class, 'index']);
@@ -49,6 +51,20 @@ Route::middleware('is_admin')->group(function(){
     // Blog Category
     Route::get('/blog-category', [BlogCategory::class, 'index']);
     Route::get('/blog-category/create', [BlogCategory::class, 'create']);
+    Route::post('/blog-category', [BlogCategory::class, 'store'])->name('create-blog-category');
+    Route::get('/blog-category/{id}/edit', [BlogCategory::class, 'edit']);
+    Route::post('/blog-category/{id}', [BlogCategory::class, 'update'])->name('update-blog-category');
+    Route::post('/blog-category/delete/{id}', [BlogCategory::class, 'delete']);
+
+    // Testimonial
+    Route::get('/testimonial', [Testimonial::class, 'index']);
+    Route::get('/testimonial/create', [Testimonial::class, 'create']);
+    Route::post('/testimonial', [Testimonial::class, 'store'])->name('create-testimonial');
+    Route::get('/testimonial/{group}/edit', [Testimonial::class, 'edit']);
+    Route::post('/testimonial/{group}', [Testimonial::class, 'update'])->name('update-testimonial');
+    Route::post('/testimonial/deactivate/{group}', [Testimonial::class, 'deactivate']);
+    Route::post('/testimonial/activate/{group}', [Testimonial::class, 'activate']);
+    Route::post('/testimonial/delete/{group}', [Testimonial::class, 'delete']);
 
     // Mentor
     Route::get('/mentor', [Mentor::class, 'index']);

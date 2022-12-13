@@ -19,7 +19,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
                 <li class="breadcrumb-item"><a href="/admin/blog-category">Blog Category</a></li>
-                <li class="breadcrumb-item active">Create</li>
+                <li class="breadcrumb-item active">Update</li>
             </ol>
         </nav>
     </div>
@@ -30,13 +30,13 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
-                                <h5 class="card-title">Create New Blog Category <span>| {{ now()->year }}</span></h5>
+                                <h5 class="card-title">Update Blog Category <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/blog-category">
                                     <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
-                            <form action="{{ route('create-blog-category') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('update-blog-category', ['id' => $blog_category->id]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col py-3 mt-1">
                                     {{-- <h5 class="card-title">Form Indonesia</h5> --}}
@@ -53,7 +53,7 @@
                                                     Blog Category Name
                                                     <span style="color: var(--red)">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" id="category_name" name="category_name">
+                                                <input type="text" class="form-control" id="category_name" name="category_name" value="{{ $blog_category->category_name }}">
                                                 @error('category_name')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -79,6 +79,6 @@
 
 @section('js')
 <script>
-
+    
 </script>
 @endsection
