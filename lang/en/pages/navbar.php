@@ -1,22 +1,36 @@
 <?php
 
 return [
-    'navbar_home' => 'Home',
-    'navbar_programs' => 'Programs',
-    'navbar_programs_admission' => 'Admission Mentoring',
-    'navbar_programs_admission_undergraduate' => 'Undergraduate Program',
-    'navbar_programs_admission_graduate' => 'Graduate Program',
-    'navbar_programs_admission_university' => 'University Transfer',
-    'navbar_programs_passion' => 'Passion Project Mentoring',
-    'navbar_programs_academic' => 'Academic & Test Preparation',
-    'navbar_programs_academic_tutoring' => 'Academic Tutoring',
-    'navbar_programs_academic_ib' => 'IB Extended Essay Coaching Program',
-    'navbar_programs_academic_sat' => 'SAT / ACT Preparation',
-    'navbar_about_us' => 'About Us',
-    'navbar_success_stories' => 'Success Stories',
-    'navbar_upcoming_events' => 'Upcoming Events',
-    'navbar_partnership' => "Partnership & Careers",
-    'navbar_blog' => "Blog",
-    'navbar_contact_us' => "Contact Us",
-    "navbar_guidebooks" => "Free Guidebooks",
+    'home' => 'Home',
+
+    // programs
+    'programs' => 'Programs',
+    'programs_admission' => 'Admission Mentoring',
+    'programs_admission_undergraduate' => 'Undergraduate Program',
+    'programs_admission_graduate' => 'Graduate Program',
+    'programs_admission_university' => 'University Transfer',
+    'programs_passion' => 'Passion Project Mentoring',
+    'programs_academic' => 'Academic & Test Preparation',
+    'programs_academic_tutoring' => 'Academic Tutoring',
+    'programs_academic_ib' => 'IB Extended Essay Coaching Program',
+    'programs_academic_sat' => 'SAT / ACT Preparation',
+
+    // about us
+    'about_us' => 'About Us',
+    'partnership' => "Partnership & Careers",
+
+    // blog
+    'blog' => "All-info Blog",
+
+    // resources
+    'resources' => "Resources",
+    'success_stories' => 'Success Stories',
+    'upcoming_events' => 'Upcoming Events',
+    "guidebooks" => "Free Guidebooks",
+    'testimonial' => "Testimonial",
+    'student_acceptances' => "Student Acceptances",
+
+
+    // contact us
+    'contact_us' => "Contact Us",
 ];

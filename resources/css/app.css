@@ -14,23 +14,23 @@
     }
 
     .child-nav {
-        @apply border-t-2 border-dark text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex lg:border-b-2 lg:border-dark lg:bg-body lg:text-background lg:relative lg:z-30 hover:lg:text-white/70;
+        @apply border-t-[1px] border-dark text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex lg:border-b-[1px] lg:border-dark lg:bg-subnavbar-dark lg:text-subnavbar-text lg:relative lg:z-30 hover:lg:text-subnavbar-white;
     }
 
     .child-child-ul {
-        @apply bg-light text-dark lg:invisible lg:absolute lg:left-full lg:w-full lg:top-0 lg:opacity-0 transition-all duration-300 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-dark/60 lg:text-background;
+        @apply bg-light text-dark lg:invisible lg:absolute lg:left-full lg:w-full lg:top-0 lg:opacity-0 transition-all duration-300 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-subnavbar-dark lg:text-subnavbar-text;
     }
 
     .child-child-li {
-        @apply border-t-2 border-dark text-left pl-4 lg:pl-0 lg:border-0 lg:border-b-2 lg:text-center lg:items-center lg:flex hover:lg:text-white/70;
+        @apply border-t-[1px] border-dark text-left pl-4 lg:pl-0 lg:border-0 lg:border-b-[1px] lg:text-center lg:items-center lg:flex hover:lg:text-subnavbar-white;
     }
 
     .child-child-li-link {
-        @apply px-4 py-2 block text-left lg:text-left lg:text-base lg:font-bold w-full;
+        @apply px-4 py-2 block text-left lg:text-left lg:text-base lg:font-semibold w-full;
     }
 
     .child-child-link {
-        @apply px-4 block py-2 text-sm text-left lg:text-left lg:text-base lg:font-bold;
+        @apply px-4 block py-2 text-sm text-left lg:text-left lg:text-base lg:font-semibold;
     }
 
     .programs:hover .programs-child {
@@ -39,11 +39,11 @@
 
     /* Container */
     .main-container {
-        @apply container mx-auto px-4 lg:px-10;
+        @apply px-4 lg:px-20 xl:px-40;
     }
 
     .absolute-center {
-        @apply absolute top-0 left-[50%] -translate-x-[50%];
+        @apply absolute left-[50%] -translate-x-[50%];
     }
 }
 

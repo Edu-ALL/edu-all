@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
+    <link href="{{ asset('favicon.png') }}" rel="icon">
+
     @vite('resources/css/app.css')
 
     {{-- Font Awesome --}}
@@ -19,18 +21,13 @@
 
 </head>
 
-<body>
-    {{-- Include Navbar from layout.user.navber --}}
+<body id="body">
     @include('layout.user.navbar')
 
-    <div class="mt-28 lg:mt-36 xl:mt-36 2xl:mt-24">
+    <div class="mt-16">
         @yield('content')
-        {{-- <h1>
-            <a href="{{ url(app()->getLocale(), 'sample') }}" class="text-blue-500 text-5xl"> Link</a>
-        </h1> --}}
     </div>
 
-    {{-- Include Footer from layout.user.footer --}}
     @include('layout.user.footer')
 </body>
 

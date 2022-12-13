@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\UserHomePageController;
-use App\Http\Controllers\UserProgramPageController;
+use App\Http\Controllers\User\HomePageController;
+use App\Http\Controllers\User\ProgramPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,11 +26,11 @@ Route::group(
         'middleware' => 'setlocale',
     ],
     function () {
-        Route::controller(UserHomePageController::class)->group(function () {
+        Route::controller(HomePageController::class)->group(function () {
             Route::get('/', 'home')->name('home');
         });
 
-        Route::controller(UserProgramPageController::class)->group(function () {
+        Route::controller(ProgramPageController::class)->group(function () {
             Route::get('/programs', 'index')->name('programs');
         });
 
