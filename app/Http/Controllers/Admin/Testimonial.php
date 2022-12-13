@@ -91,7 +91,8 @@ class Testimonial extends Controller
     }
 
     public function edit($group){
-        
+        $testimonial = Testimonials::where('group', $group)->get();
+        return view('admin.testimonial.update', ['testimonial' => $testimonial]);
     }
 
     public function update($group, Request $request){
