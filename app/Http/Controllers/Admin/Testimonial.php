@@ -78,7 +78,7 @@ class Testimonial extends Controller
             }
             $testi_id->testi_alt = $request->testi_alt_id;
             $testi_id->testi_status = 'active';
-            $testi_id->lang = 'en';
+            $testi_id->lang = 'id';
             $testi_id->save();
 
             DB::commit();

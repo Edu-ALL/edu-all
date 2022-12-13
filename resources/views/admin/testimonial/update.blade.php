@@ -118,7 +118,7 @@
                                                     <label for="" class="form-label">
                                                         Name <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="name_id" name="testi_name_id" value="{{ $testimonial[0]->testi_name }}">
+                                                    <input type="text" class="form-control" id="name_id" name="testi_name_id" value="{{ $testimonial[1]->testi_name }}">
                                                     @error('testi_name_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -128,7 +128,7 @@
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <textarea class="textarea" name="testi_desc_id" id="desc_id">
-                                                        {{ $testimonial[0]->testi_desc }}
+                                                        {{ $testimonial[1]->testi_desc }}
                                                     </textarea>
                                                     @error('testi_desc_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
@@ -138,7 +138,7 @@
                                                     <label for="" class="form-label">
                                                         Program <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="program_id" name="testi_program_id" value="{{ $testimonial[0]->testi_program }}">
+                                                    <input type="text" class="form-control" id="program_id" name="testi_program_id" value="{{ $testimonial[1]->testi_program }}">
                                                     @error('testi_program_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -147,7 +147,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Thumbnail Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/testimonial/'.$testimonial[0]->testi_thumbnail) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/testimonial/'.$testimonial[1]->testi_thumbnail) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -155,7 +155,7 @@
                                                             <label for="" class="form-label">
                                                                 Thumbnail <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="testi_thumbnail_id" value="{{ $testimonial[0]->testi_thumbnail}}">
+                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="testi_thumbnail_id" value="{{ $testimonial[1]->testi_thumbnail}}">
                                                             @error('testi_thumbnail_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -164,7 +164,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="testi_alt_id" value="{{ $testimonial[0]->testi_alt }}">
+                                                            <input type="text" class="form-control" id="alt_id" name="testi_alt_id" value="{{ $testimonial[1]->testi_alt }}">
                                                             @error('testi_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror

@@ -88,6 +88,9 @@
                                                                 Thumbnail <span style="color: var(--red)">*</span>
                                                             </label>
                                                             <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="testi_thumbnail_en">
+                                                            @error('testi_thumbnail_en')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
