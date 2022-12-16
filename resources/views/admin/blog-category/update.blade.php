@@ -36,35 +36,52 @@
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
-                            <form action="{{ route('update-blog-category', ['id' => $blog_category->id]) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('update-blog-category', ['group' => $blog_category[0]->group]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="col py-3 mt-1">
-                                    {{-- <h5 class="card-title">Form Indonesia</h5> --}}
+                                <div class="col py-3">
                                     @if($errors->any())
                                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                            <strong>Failed Create Blog Category!</strong> You have to check this field.
+                                            <strong>Failed Update Blog Category!</strong> You have to check this field.
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     @endif
-                                    <div class="row g-3">
-                                        <div class="col d-flex flex-column gap-2">
-                                            <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Blog Category Name
-                                                    <span style="color: var(--red)">*</span>
-                                                </label>
-                                                <input type="text" class="form-control" id="category_name" name="category_name" value="{{ $blog_category->category_name }}">
-                                                @error('category_name')
-                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                @enderror
+                                    <div class="row flex-md-row flex-column">
+                                        <div class="col">
+                                            <h5 class="card-title py-2">Form English</h5>
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Blog Category Name
+                                                        <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="category_name_en" name="category_name_en" value="{{ $blog_category[0]->category_name }}">
+                                                    @error('category_name_en')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
                                             </div>
                                         </div>
-                                        
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-primary" id="submit">
-                                                <i class="fa-solid fa-check me-1"></i> Submit
-                                            </button>
+                                        <div class="col">
+                                            <h5 class="card-title py-2 mt-md-0 mt-2">Form Indonesia</h5>
+                                            <div class="col d-flex flex-column gap-2">
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Blog Category Name
+                                                        <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="category_name_id" name="category_name_id" value="{{ $blog_category[1]->category_name }}">
+                                                    @error('category_name_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
                                         </div>
+                                    </div>
+                                    
+                                    <div class="text-center mt-3">
+                                        <button type="submit" class="btn btn-primary" id="submit">
+                                            <i class="fa-solid fa-pen-to-square me-1"></i> Update
+                                        </button>
                                     </div>
                                 </div>
                             </form>

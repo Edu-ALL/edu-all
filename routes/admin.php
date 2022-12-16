@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Banner;
 use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Admin\BlogCategory;
 use App\Http\Controllers\Admin\Dashboard;
+use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\Testimonial;
 use Illuminate\Support\Facades\Route;
@@ -52,9 +53,9 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/blog-category', [BlogCategory::class, 'index']);
     Route::get('/blog-category/create', [BlogCategory::class, 'create']);
     Route::post('/blog-category', [BlogCategory::class, 'store'])->name('create-blog-category');
-    Route::get('/blog-category/{id}/edit', [BlogCategory::class, 'edit']);
-    Route::post('/blog-category/{id}', [BlogCategory::class, 'update'])->name('update-blog-category');
-    Route::post('/blog-category/delete/{id}', [BlogCategory::class, 'delete']);
+    Route::get('/blog-category/{group}/edit', [BlogCategory::class, 'edit']);
+    Route::post('/blog-category/{group}', [BlogCategory::class, 'update'])->name('update-blog-category');
+    Route::post('/blog-category/delete/{group}', [BlogCategory::class, 'delete']);
 
     // Testimonial
     Route::get('/testimonial', [Testimonial::class, 'index']);
@@ -65,6 +66,16 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/testimonial/deactivate/{group}', [Testimonial::class, 'deactivate']);
     Route::post('/testimonial/activate/{group}', [Testimonial::class, 'activate']);
     Route::post('/testimonial/delete/{group}', [Testimonial::class, 'delete']);
+
+    // Guidebook
+    Route::get('/guidebook', [Guidebook::class, 'index']);
+    Route::get('/guidebook/create', [Guidebook::class, 'create']);
+    Route::post('/guidebook', [Guidebook::class, 'store'])->name('create-guidebook');
+    Route::get('/guidebook/{group}/edit', [Guidebook::class, 'edit']);
+    Route::post('/guidebook/{group}', [Guidebook::class, 'update'])->name('update-guidebook');
+    Route::post('/guidebook/deactivate/{group}', [Guidebook::class, 'deactivate']);
+    Route::post('/guidebook/activate/{group}', [Guidebook::class, 'activate']);
+    Route::post('/guidebook/delete/{group}', [Guidebook::class, 'delete']);
 
     // Mentor
     Route::get('/mentor', [Mentor::class, 'index']);

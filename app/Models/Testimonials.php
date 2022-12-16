@@ -18,6 +18,7 @@ class Testimonials extends Model
         'testi_name',
         'testi_desc',
         'testi_program',
+        'testi_category',
         'testi_thumbnail',
         'testi_alt',
         'testi_status',

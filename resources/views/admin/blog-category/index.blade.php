@@ -42,6 +42,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Category Name</th>
+                                        <th scope="col">Language</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -53,9 +54,10 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td class="w-75">{{ $category->category_name }}</td>
+                                            <td class="w-75">{{ $category->lang == 'en' ? 'English' : 'Indonesia'}}</td>
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/blog-category/{{ $category->id }}/edit">
+                                                    <a type="button" class="btn btn-warning" href="/admin/blog-category/{{ $category->group }}/edit">
                                                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
                                                     </a>
                                                     <button 
@@ -63,7 +65,7 @@
                                                     class="btn btn-danger"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#delete"
-                                                    onclick="formDelete({{ $category->id }})"
+                                                    onclick="formDelete({{ $category->group }})"
                                                     >
                                                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog category"></i>
                                                     </button>
@@ -108,8 +110,8 @@
 
 @section('js')
     <script>
-        function formDelete(id){
-            $('#form_delete').attr('action', '{{ url('/admin/blog-category/delete/') }}' + '/' + id);
+        function formDelete(group){
+            $('#form_delete').attr('action', '{{ url('/admin/blog-category/delete/') }}' + '/' + group);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

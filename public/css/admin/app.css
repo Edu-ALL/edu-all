@@ -511,3 +511,24 @@ table tr td p {
 .form-label, .form-control {
   font-size: 14px;
 }
+
+/*--------------------------------------------------------------
+# Select2
+--------------------------------------------------------------*/
+.select2 {
+  width: 100% !important;
+}
+.select2-selection {
+  height: min-content !important;
+  border-color: #ced4da !important;
+}
+.select2-selection__arrow {
+  height: 100% !important;
+}
+.select2-selection__rendered {
+  font-size: 14px;
+  padding: 3px 12px !important;
+}
+.select2-results {
+  font-size: 14px;
+}

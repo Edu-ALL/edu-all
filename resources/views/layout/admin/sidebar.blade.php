@@ -32,7 +32,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed {{ request()->is('admin/guidebook*') ? 'active' : '' }}" href="/admin/guidebook">
                 <i class="fa-solid fa-book"></i>
                 <span>Guidebook</span>
             </a>

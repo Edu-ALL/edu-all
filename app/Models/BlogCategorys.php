@@ -14,7 +14,9 @@ class BlogCategorys extends Model
 
     protected $fillable = [
         'id',
+        'group',
         'category_name',
+        'lang',
         'created_at',
         'updated_at'
     ];

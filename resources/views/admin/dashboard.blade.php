@@ -20,7 +20,7 @@
     <section class="section dashboard">
         <div class="col d-flex flex-column gap-3">
             <div class="row">
-                <div class="col-xxl-4 col-md-6 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="">
                             <h5 class="card-title">Mentors <span>| {{ now()->year }}</span></h5>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-md-6 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="">
                             <h5 class="card-title">Upcoming Events <span>| {{ now()->year }}</span></h5>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xxl-4 col-md-4 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="/admin/banner">
                             <h5 class="card-title">Banner <span>| {{ now()->year }}</span></h5>
@@ -68,7 +68,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-md-4 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="">
                             <h5 class="card-title">Blogs <span>| {{ now()->year }}</span></h5>
@@ -83,7 +83,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-md-4 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="">
                             <h5 class="card-title">Guidebook <span>| {{ now()->year }}</span></h5>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xxl-4 col-md-6 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="">
                             <h5 class="card-title">Success Stories <span>| {{ now()->year }}</span></h5>
@@ -115,7 +115,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-md-6 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="">
                             <h5 class="card-title">Testimonial <span>| {{ now()->year }}</span></h5>
