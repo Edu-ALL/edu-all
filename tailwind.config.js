@@ -17,12 +17,22 @@ module.exports = {
                     "url('../../public/assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg')",
                 "program-image-3":
                     "url('../../public/assets/img/programs/aaron-burden-y02jEX_B0O0-unsplash.jpg')",
+
+                // passion project
                 "passion-project-bg-entre":
                     "url('../../public/assets/img/passion_project_mentoring/background-entre.webp')",
                 "passion-project-bg-entre-2":
                     "url('../../public/assets/img/passion_project_mentoring/background-entre.webp')",
                 "passion-project-bg-entre-2":
                     "url('../../public/assets/img/passion_project_mentoring/Rectangle-6.webp')",
+                "passion-project-bg-entre-3":
+                    "url('../../public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp')",
+                "passion-project-bg-scien-1":
+                    "url('../../public/assets/img/passion_project_mentoring/background-science.webp')",
+                "passion-project-bg-scien-2":
+                    "url('../../public/assets/img/passion_project_mentoring/Rectangle-32.webp')",
+                "passion-project-bg-scien-3":
+                    "url('../../public/assets/img/passion_project_mentoring/timetable-research-crop-300x177.webp')",
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
@@ -46,6 +56,7 @@ module.exports = {
                 "subnavbar-dark": "#333333",
                 "subnavbar-text": "#aaaaaa",
                 "subnavbar-white": "#ffffff",
+                "blue-light": "#1eb5f6",
             },
         },
     },

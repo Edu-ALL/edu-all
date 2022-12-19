@@ -12,7 +12,7 @@ $entrepreneurship_learn_list = [
     ['title' => '4. Market Research & Sizing', 'desc' => 'Find out and estimate the potential of the market in proper research steps'],
     ['title' => '5. Business & Revenue Model Development', 'desc' => 'Create the framework to generate financial income for the business’ sustainability'],
     ['title' => "6. Competitor's Analysis", 'desc' => 'Identify competitors in the same industry and their different marketing strategies to develop competitive advantage for your business'],
-    ['title' => '7. Plan and implement the three key functional areas of a business', 'desc' => 'Create a memorable product demo and pitch for investors, show the problems you are solving, and earn funding to scale up the business'],
+    ['title' => '7. Marketing, Finance, and Operations', 'desc' => 'Plan and implement the three key functional areas of a business'],
     ['title' => '8. Product Demo, Pitching, and Fundraising', 'desc' => 'Create a memorable product demo and pitch for investors, show the problems you are solving, and earn funding to scale up the business'],
 ];
 
@@ -62,7 +62,8 @@ return [
     'scientific_body' => 'As an aspiring scientist and researcher, you are given the opportunity to evolve from just a science student into a real scientist, to deep dive into performing a real scientific research project, and to potentially solve the next million-dollar question in STEM through 1-on-1 coaching.',
     'scientific_decs' => 'You will be going on a journey to explore a scientific interest, develop research questions, formulate hypotheses, and write research proposals. You will also be guided to develop your own Design of Experiment, perform real experimental and/or simulation work, analyze experimental data, and actually write a research paper.',
     'scientific_desc_bold' => 'At the end of this program, you will have a better understanding of not only the scientific research world, but also their demonstrate advanced work in their scientific field of interest, thus, becoming a future leader in the scientific community.',
-    'scientific_do' => 'BUILD A BUSINESS FROM STRATCH',
+    'scientific_do_title' => "WHAT YOU WILL DO :",
+    // 'scientific_do' => 'BUILD A BUSINESS FROM STRATCH',
     'scientific_do' => 'COMPLETE A PUBLISHABLE SCIENTIFIC RESEARCH PAPER',
     'scientific_do_list' => $scientific_do_list,
     'scientific_learn_title' => "WHAT YOU WILL LEARN :",
