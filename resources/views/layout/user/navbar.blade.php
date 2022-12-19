@@ -42,7 +42,8 @@
                             <ul id="content-nav-child"
                                 class="bg-body text-light font-semibold text-lg transition-all duration-300 hidden lg:block lg:absolute lg:top-full lg:invisible lg:opacity-0 programs-child">
                                 <li class="child-nav group">
-                                    <a href="#" class="child-child-li-link">
+                                    <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring"
+                                        class="child-child-li-link">
                                         <i class="fa-solid fa-graduation-cap mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_admission') }}</a>
                                     <ul class="child-child-ul">
@@ -62,7 +63,8 @@
                                     </ul>
                                 </li>
                                 <li class="child-nav group">
-                                    <a href="#" class="child-child-li-link"><i
+                                    <a href="{{ url(app()->getLocale()) }}/programs/passion-project-mentoring"
+                                        class="child-child-li-link"><i
                                             class="fa-solid fa-desktop mr-2 text-base"></i>{{ __('pages/navbar.programs_passion') }}</a>
 
                                 </li>

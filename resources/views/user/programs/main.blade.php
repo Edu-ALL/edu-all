@@ -1,10 +1,29 @@
 @extends('layout.user.main')
 
 @section('content')
-    <section class="main-container">
+    <section class="pb-16 -z-10 ">
+        <div class="relative flex w-full left-0 overflow-hidden">
+            <div class="absolute main-container pt-16 lg:pt-28 ">
+                <h1 class="heading-1">{{ __('pages/programs/prgrams.title') }}</h1>
+            </div>
+
+            <img src="{{ asset('assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg') }}" alt=""
+                class="w-full h-[30vh] lg:h-[500px] object-cover object-center">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+                class="absolute bottom-0 object-cover -mb-2 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20">
+                <path fill="#fff" fill-opacity="1"
+                    d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="main-container py-16 z-10">
         <div class="font-primary">
             <div class="flex flex-col gap-20 items-stretch">
-                <h1 class="heading-1 py-40">{{ __('pages/programs/prgrams.title') }}</h1>
+                {{-- ------------------------------------ Banner Section ------------------------------------ --}}
+
                 <div class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-16">
                     @if (app()->getLocale() == 'en')
                         <img src="/assets/img/programs/payung.png" alt="payung png" class="">
