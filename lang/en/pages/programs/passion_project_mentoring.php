@@ -6,14 +6,35 @@ $entrepreneurship_do_list = [
 ];
 
 $entrepreneurship_learn_list = [
-    ['title' => '1. Entrepreneurship Fundamentals', 'desc' => 'Learn about the basic skills and knowledge necessary to address the different aspects of running a business'],
-    ['title' => '2. Problem Identification & Ideation', 'desc' => 'Find emerging or potential problems in society and generate as many ideas as possible'],
-    ['title' => '3. Finding Product-Market-Fit & Prototyping', 'desc' => 'Determine which product could satisfy the market and test them out'],
-    ['title' => '4. Market Research & Sizing', 'desc' => 'Find out and estimate the potential of the market in proper research steps'],
-    ['title' => '5. Business & Revenue Model Development', 'desc' => 'Create the framework to generate financial income for the business’ sustainability'],
-    ['title' => "6. Competitor's Analysis", 'desc' => 'Identify competitors in the same industry and their different marketing strategies to develop competitive advantage for your business'],
+    [
+        'title' => '1. Entrepreneurship Fundamentals',
+        'desc' => 'Learn about the basic skills and knowledge necessary to address the different aspects of running a business'
+    ],
+    [
+        'title' => '2. Problem Identification & Ideation',
+        'desc' => 'Find emerging or potential problems in society and generate as many ideas as possible'
+    ],
+    [
+        'title' => '3. Finding Product-Market-Fit & Prototyping',
+        'desc' => 'Determine which product could satisfy the market and test them out'
+    ],
+    [
+        'title' => '4. Market Research & Sizing',
+        'desc' => 'Find out and estimate the potential of the market in proper research steps'
+    ],
+    [
+        'title' => '5. Business & Revenue Model Development',
+        'desc' => 'Create the framework to generate financial income for the business’ sustainability'
+    ],
+    [
+        'title' => "6. Competitor's Analysis",
+        'desc' => 'Identify competitors in the same industry and their different marketing strategies to develop competitive advantage for your business'
+    ],
     ['title' => '7. Marketing, Finance, and Operations', 'desc' => 'Plan and implement the three key functional areas of a business'],
-    ['title' => '8. Product Demo, Pitching, and Fundraising', 'desc' => 'Create a memorable product demo and pitch for investors, show the problems you are solving, and earn funding to scale up the business'],
+    [
+        'title' => '8. Product Demo, Pitching, and Fundraising',
+        'desc' => 'Create a memorable product demo and pitch for investors, show the problems you are solving, and earn funding to scale up the business'
+    ],
 ];
 
 
@@ -24,13 +45,57 @@ $scientific_do_list = [
 ];
 
 $scientific_learn_list = [
-    ['title' => '1. Scientific Research Fundamentals', 'desc' => 'Learn about the basic principles and skills necessary to extract and interpret information to generate research ideas.'],
-    ['title' => '2. Independent Research & Literature Review', 'desc' => 'Select publications in a tactical, time-saving way and extract relevant information that just suits your objectives'],
-    ['title' => '3. Research Questions and Hypothesis Formulation', 'desc' => 'Synthesize novel research questions and objectives, supported by a validated statement ready to be tested.'],
-    ['title' => '4. Research Proposal Development', 'desc' => 'Compose a detailed, coherent plan and research outline before undertaking the research'],
-    ['title' => '5. Design of Experiment Development', 'desc' => 'Formulate a robust experiment plan that would help you study the relationship between independent and dependent variables.'],
-    ['title' => "6. Operations of Research Tools and Softwares", 'desc' => 'Power up your research by utilizing tools used by researchers, from statistical to referencing software.'],
-    ['title' => '7. Scientific Research Paper Writing and Presentation', 'desc' => 'Effectively prepare and deliver papers and presentations about the results of the research.'],
+    [
+        'title' => '1. Scientific Research Fundamentals',
+        'desc' => 'Learn about the basic principles and skills necessary to extract and interpret information to generate research ideas.'
+    ],
+    [
+        'title' => '2. Independent Research & Literature Review',
+        'desc' => 'Select publications in a tactical, time-saving way and extract relevant information that just suits your objectives'
+    ],
+    [
+        'title' => '3. Research Questions and Hypothesis Formulation',
+        'desc' => 'Synthesize novel research questions and objectives, supported by a validated statement ready to be tested.'
+    ],
+    [
+        'title' => '4. Research Proposal Development',
+        'desc' => 'Compose a detailed, coherent plan and research outline before undertaking the research'
+    ],
+    [
+        'title' => '5. Design of Experiment Development',
+        'desc' => 'Formulate a robust experiment plan that would help you study the relationship between independent and dependent variables.'
+    ],
+    [
+        'title' => "6. Operations of Research Tools and Softwares",
+        'desc' => 'Power up your research by utilizing tools used by researchers, from statistical to referencing software.'
+    ],
+    [
+        'title' => '7. Scientific Research Paper Writing and Presentation',
+        'desc' => 'Effectively prepare and deliver papers and presentations about the results of the research.'
+    ],
+];
+
+$testimonies = [
+    [
+        'name' => 'Dave',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini menunjukkan kepadaku bahwa mengambil sains dapat membawa aku menjadi peneliti seperti yang ada di SCELSE atau A Star.'
+    ],
+    [
+        'name' => 'Kezia Lauren',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini membantuku dalam mengeksplorasi bidang karir yang mungkin aku minati. Sekarang, aku tahu bagaimana rasanya menjadi seorang ilmuwan atau orang yang bekerja di laboratorium.'
+    ],
+    [
+        'name' => 'Dave',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini menunjukkan kepadaku bahwa mengambil sains dapat membawa aku menjadi peneliti seperti yang ada di SCELSE atau A Star.'
+    ],
+    [
+        'name' => 'Dave',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini menunjukkan kepadaku bahwa mengambil sains dapat membawa aku menjadi peneliti seperti yang ada di SCELSE atau A Star.'
+    ],
 ];
 
 return [
@@ -81,6 +146,8 @@ return [
 
     // testimony section
     "testimony" => "WHAT OUR STUDENTS SAY",
+    "testimonies" => $testimonies,
+
 
     // bottom section
     "sign_up_text" => "250+ students have found their passion and got into their dream universities.",

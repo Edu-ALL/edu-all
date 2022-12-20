@@ -338,6 +338,74 @@
         </div>
     </section>
 
+    {{-- ================================== Other Program Section  ================================== --}}
+    <section class="pt-10 pb-16">
+        <div class="flex flex-col items-center main-container">
+            <h2
+                class="font-title font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
+                {{ __('pages/programs/passion_project_mentoring.other_programs') }}</h2>
+            <div class="grid grid-cols-1 items-center gap-y-4 px-14 mt-6 md:grid-cols-4 md:gap-x-12 md:px-0">
+                <img src="{{ asset('assets/img/passion_project_mentoring/LOGO-CEP.webp') }}" alt="LogoCEP">
+                <img src="{{ asset('assets/img/passion_project_mentoring/LOGO-Dr-share.webp') }}" alt="LogoCEP">
+                <img src="{{ asset('assets/img/passion_project_mentoring/LOGO-Career-bootcamp.webp') }}" alt="LogoCEP">
+                <img src="{{ asset('assets/img/passion_project_mentoring/Logo-GIP.webp') }}" alt="LogoCEP">
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================== Testimony Section  ================================== --}}
+    <section class="pt-10 pb-16">
+        <div class="flex flex-col items-center main-container">
+            <h2
+                class="font-title font-black text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
+                {{ __('pages/programs/passion_project_mentoring.testimony') }}</h2>
+            <div class="relative w-full mt-8">
+                <div class="splide" aria-labelledby="carousel-heading">
+                    <ul class="splide__pagination"></ul>
+
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach (__('pages/programs/passion_project_mentoring.testimonies') as $testimony)
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container">
+                                        <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
+                                            <h3 class="font-body font-bold text-2xl text-yellow">
+                                                {{ $testimony['name'] }}
+                                            </h3>
+                                            <span
+                                                class="font-body font-medium text-sm text-[#969aa6]">{{ $testimony['program'] }}</span>
+                                            <p class="mt-4 font-body font-bold text-white font-xl">
+                                                {{ $testimony['body'] }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- ================================== Bottom Section ================================== --}}
+    <section class="py-16">
+        <div class="main-container flex flex-col items-center">
+            <h2 class=" font-title font-black text-primary text-center text-4xl mb-4">
+                {{ __('pages/programs/passion_project_mentoring.sign_up_text') }}
+                <span
+                    class="block text-yellow">{{ __('pages/programs/passion_project_mentoring.sign_up_text_sub') }}</span>
+            </h2>
+            <a href="#"
+                class="inline-block px-5 py-2 mt-6 font-primary font-bold text-lg text-white capitalize bg-yellow rounded-xl">{{ __('pages/programs/passion_project_mentoring.sign_up_btn') }}</a>
+        </div>
+
+    </section>
+
+
+
+
     <script>
         const learn = document.querySelectorAll('#entre-learn-title');
         const learn_desc = document.querySelectorAll('#entre-learn-desc');
@@ -357,5 +425,32 @@
                 entre_pos = it;
             })
         });
+
+        // testimony
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+
+
+        new Splide('.splide', {
+            type: 'loop',
+            perPage: isSmallDevice ? 1 : 3,
+            perMove: 1,
+            focus: 0,
+            arrows: false,
+            autoplay: true,
+            lazyload: true,
+            interval: 5000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[110%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '10px';
+                item.button.style.height = '10px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endsection
