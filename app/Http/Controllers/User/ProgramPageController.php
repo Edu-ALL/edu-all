@@ -307,4 +307,9 @@ class ProgramPageController extends Controller
     {
         return view('user.passion_project_mentoring.main');
     }
+
+    public function academic_test_preparation()
+    {
+        return view('user.academic_test_preparation.main');
+    }
 }

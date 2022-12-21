@@ -34,6 +34,7 @@ Route::group(
             Route::get('/programs', 'index')->name('programs');
             Route::get('/programs/admissions-mentoring', 'admissions_mentoring')->name('admissions_mentoring');
             Route::get('/programs/passion-project-mentoring', 'passion_project_mentoring')->name('passion_project_mentoring');
+            Route::get('/programs/academic-test-preparation', 'academic_test_preparation')->name('academic_test_preparation');
         });
 
         Route::get('/sample', function () {

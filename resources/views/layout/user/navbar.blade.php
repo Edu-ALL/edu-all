@@ -69,8 +69,8 @@
 
                                 </li>
                                 <li class="child-nav group border-b-0">
-                                    <a href="#" class="child-child-li-link"><i
-                                            class="fa-solid fa-pencil mr-2 text-base"></i>
+                                    <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation"
+                                        class="child-child-li-link"><i class="fa-solid fa-pencil mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_academic') }}</a>
                                     <ul class="child-child-ul">
                                         <li class="child-child-li">

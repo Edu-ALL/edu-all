@@ -33,6 +33,30 @@ $scientific_learn_list = [
     ['title' => '7. Scientific Research Paper Writing and Presentation', 'desc' => 'Mempersiapkan dan menyampaikan makalah dan presentasi tentang hasil penelitian secara efektif'],
 ];
 
+
+$testimonies = [
+    [
+        'name' => 'Dave',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini menunjukkan kepadaku bahwa mengambil sains dapat membawa aku menjadi peneliti seperti yang ada di SCELSE atau A Star.'
+    ],
+    [
+        'name' => 'Kezia Lauren',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini membantuku dalam mengeksplorasi bidang karir yang mungkin aku minati. Sekarang, aku tahu bagaimana rasanya menjadi seorang ilmuwan atau orang yang bekerja di laboratorium.'
+    ],
+    [
+        'name' => 'Dave',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini menunjukkan kepadaku bahwa mengambil sains dapat membawa aku menjadi peneliti seperti yang ada di SCELSE atau A Star.'
+    ],
+    [
+        'name' => 'Dave',
+        'program' => "(Science Research Program 2019)",
+        'body' => 'Program ini menunjukkan kepadaku bahwa mengambil sains dapat membawa aku menjadi peneliti seperti yang ada di SCELSE atau A Star.'
+    ],
+];
+
 return [
     // banner section
     "title" => "EXPERIENTIAL LEARNING",
@@ -76,6 +100,7 @@ return [
 
     // testimony section
     "testimony" => "APA KATA MEREKA",
+    "testimonies" => $testimonies,
 
     // bottom section
     "sign_up_text" => "250+ murid kami telah menemukan passion dan memasuki universitas impian mereka.",
