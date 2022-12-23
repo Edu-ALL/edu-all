@@ -48,15 +48,16 @@
                                         {{ __('pages/navbar.programs_admission') }}</a>
                                     <ul class="child-child-ul">
                                         <li class="child-child-li">
-                                            <a href="#" class="child-child-link">
+                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring#undergraduate"
+                                                class="child-child-link">
                                                 {{ __('pages/navbar.programs_admission_undergraduate') }}</a>
                                         </li>
                                         <li class="child-child-li">
-                                            <a href="#"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring#graduate"
                                                 class="child-child-link">{{ __('pages/navbar.programs_admission_graduate') }}</a>
                                         </li>
                                         <li class="child-child-li lg:border-b-0">
-                                            <a href="#"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring#univ-transfer"
                                                 class="child-child-link">{{ __('pages/navbar.programs_admission_university') }}</a>
                                         </li>
 
@@ -74,7 +75,7 @@
                                         {{ __('pages/navbar.programs_academic') }}</a>
                                     <ul class="child-child-ul">
                                         <li class="child-child-li">
-                                            <a href="#"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-tutoring"
                                                 class="child-child-link">{{ __('pages/navbar.programs_academic_tutoring') }}</a>
                                         </li>
                                         <li class="child-child-li">

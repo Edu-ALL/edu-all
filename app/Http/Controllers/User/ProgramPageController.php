@@ -312,4 +312,9 @@ class ProgramPageController extends Controller
     {
         return view('user.academic_test_preparation.main');
     }
+
+    public function academic_tutoring()
+    {
+        return view('user.academic_tutoring.main');
+    }
 }

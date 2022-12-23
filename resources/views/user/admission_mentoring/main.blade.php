@@ -75,7 +75,7 @@
     </section>
 
     {{-- ================================== Undergraduate Program Section ================================== --}}
-    <section class="py-16">
+    <section id="undergraduate" class="py-16">
         {{-- Undergraduate Program Title --}}
         <div class="main-container">
             <h2 class="font-title font-extrabold text-primary text-center text-4xl mb-4">
@@ -122,7 +122,7 @@
     </section>
 
     {{-- ================================== Graduate Program Section ================================== --}}
-    <section class="py-16">
+    <section id="graduate" class="py-16">
         {{-- Graduate Program Title --}}
         <div class="main-container">
             <h2 class="font-title font-extrabold text-primary text-center text-4xl mb-4">
@@ -167,7 +167,7 @@
     </section>
 
     {{-- ================================== Univtransfer Program Section ================================== --}}
-    <section class="py-16">
+    <section id="univ-transfer" class="py-16">
         {{-- univtransfer Program Title --}}
         <div class="main-container">
             <h2 class="font-title font-extrabold text-primary text-center text-4xl mb-4">

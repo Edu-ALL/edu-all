@@ -24,7 +24,7 @@
 <body id="body">
     @include('layout.user.navbar')
 
-    <div class="mt-16">
+    <div class="mt-16 scroll-smooth">
         @yield('content')
     </div>
 

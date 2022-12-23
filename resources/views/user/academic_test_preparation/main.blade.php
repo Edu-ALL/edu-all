@@ -142,7 +142,6 @@
             </h2>
             <div class="splide" aria-labelledby="carousel-heading">
                 <ul class="splide__pagination"></ul>
-
                 <div class="splide__track">
                     <ul class="splide__list">
                         @foreach (__('pages/programs/academic_test_preparation.testimonies') as $testimony)
