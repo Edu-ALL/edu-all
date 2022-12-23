@@ -48,7 +48,7 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/banner/delete/{group}', [Banner::class, 'delete']);
 
     // Blog
-    // Route::get('/blogs', [Blog::class, 'index']);
+    Route::get('/blogs', [Blog::class, 'index']);
 
     // Blog Category
     Route::get('/blog-category', [BlogCategory::class, 'index']);
@@ -89,7 +89,7 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/upcoming-event/delete/{group}', [UpcomingEvent::class, 'delete']);
 
     // Mentor
-    // Route::get('/mentor', [Mentor::class, 'index']);
+    Route::get('/mentor', [Mentor::class, 'index']);
 });
 
 
