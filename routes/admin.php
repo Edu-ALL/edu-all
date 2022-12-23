@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\Testimonial;
+use App\Http\Controllers\Admin\UpcomingEvent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,6 +77,16 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/guidebook/deactivate/{group}', [Guidebook::class, 'deactivate']);
     Route::post('/guidebook/activate/{group}', [Guidebook::class, 'activate']);
     Route::post('/guidebook/delete/{group}', [Guidebook::class, 'delete']);
+
+    // Upcoming Event
+    Route::get('/upcoming-event', [UpcomingEvent::class, 'index']);
+    Route::get('/upcoming-event/create', [UpcomingEvent::class, 'create']);
+    Route::post('/upcoming-event', [UpcomingEvent::class, 'store'])->name('create-upcoming-event');
+    Route::get('/upcoming-event/{group}/edit', [UpcomingEvent::class, 'edit']);
+    Route::post('/upcoming-event/{group}', [UpcomingEvent::class, 'update'])->name('update-upcoming-event');
+    Route::post('/upcoming-event/deactivate/{group}', [UpcomingEvent::class, 'deactivate']);
+    Route::post('/upcoming-event/activate/{group}', [UpcomingEvent::class, 'activate']);
+    Route::post('/upcoming-event/delete/{group}', [UpcomingEvent::class, 'delete']);
 
     // Mentor
     Route::get('/mentor', [Mentor::class, 'index']);

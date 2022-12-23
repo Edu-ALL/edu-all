@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 03:23 AM
+-- Generation Time: Dec 23, 2022 at 10:15 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -77,7 +77,9 @@ CREATE TABLE `tb_blog` (
 
 CREATE TABLE `tb_blog_category` (
   `id` int(11) NOT NULL,
+  `group` bigint(20) NOT NULL,
   `category_name` varchar(255) NOT NULL,
+  `lang` char(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -113,8 +115,8 @@ CREATE TABLE `tb_mentor` (
   `mentor_firstname` varchar(255) NOT NULL,
   `mentor_lastname` varchar(255) NOT NULL,
   `mentor_graduation` varchar(255) NOT NULL,
-  `currently_working` text NOT NULL,
-  `expertise` text NOT NULL,
+  `currently_working` text DEFAULT NULL,
+  `expertise` text DEFAULT NULL,
   `description` text NOT NULL,
   `short_desc` text NOT NULL,
   `mentor_picture` text NOT NULL,
@@ -151,9 +153,9 @@ CREATE TABLE `tb_success_stories` (
   `group` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `badge_1` varchar(255) NOT NULL,
-  `badge_2` varchar(255) NOT NULL,
-  `badge_3` varchar(255) NOT NULL,
-  `badge_4` varchar(255) NOT NULL,
+  `badge_2` varchar(255) DEFAULT NULL,
+  `badge_3` varchar(255) DEFAULT NULL,
+  `badge_4` varchar(255) DEFAULT NULL,
   `description` text NOT NULL,
   `status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
   `thumbnail` text NOT NULL,
@@ -178,6 +180,7 @@ CREATE TABLE `tb_testimonial` (
   `testi_name` varchar(255) NOT NULL,
   `testi_desc` text NOT NULL,
   `testi_program` varchar(255) NOT NULL,
+  `testi_category` varchar(255) NOT NULL,
   `testi_thumbnail` text NOT NULL,
   `testi_alt` varchar(255) NOT NULL,
   `testi_status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
@@ -201,7 +204,7 @@ CREATE TABLE `tb_upcoming_event` (
   `event_title` varchar(255) NOT NULL,
   `event_subtitle` varchar(255) NOT NULL,
   `event_detail` text NOT NULL,
-  `event_rsvp_link` text NOT NULL,
+  `event_rsvp_link` text DEFAULT NULL,
   `event_status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
   `lang` char(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',

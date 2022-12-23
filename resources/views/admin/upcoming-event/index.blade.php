@@ -17,11 +17,11 @@
 @include('layout.admin.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Guidebook</h1>
+        <h1>Upcoming Event</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                <li class="breadcrumb-item active">Guidebook</li>
+                <li class="breadcrumb-item active">Upcoming Event</li>
             </ol>
         </nav>
     </div>
@@ -32,8 +32,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
-                                <h5 class="card-title">List Guidebooks <span>| {{ now()->year }}</span></h5>
-                                <a type="button" class="btn btn-primary" href="/admin/guidebook/create">
+                                <h5 class="card-title">List Upcoming Events <span>| {{ now()->year }}</span></h5>
+                                <a type="button" class="btn btn-primary" href="/admin/upcoming-event/create">
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i> Create new
                                 </a>
                             </div>
@@ -41,8 +41,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">Category</th>
-                                        <th scope="col">Link</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Subtitle</th>
+                                        <th scope="col">Date</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
@@ -53,16 +54,17 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($guidebooks as $guidebook)
+                                    @foreach ($upcoming_events as $upcoming_event)
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $guidebook->guidebook_category}}</td>
-                                            <td>{{ $guidebook->guidebook_link}}</td>
+                                            <td>{{ $upcoming_event->event_title}}</td>
+                                            <td>{{ $upcoming_event->event_subtitle}}</td>
+                                            <td>{{ $upcoming_event->event_date }}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/guidebook/'.$guidebook->guidebook_image) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
                                             </td>
-                                            <td>{{ $guidebook->lang == 'en' ? 'English' : 'Indonesia'}}</td>
-                                            @if ($guidebook->guidebook_status == 'active')
+                                            <td>{{ $upcoming_event->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            @if ($upcoming_event->event_status == 'active')
                                                 <td class="text-center">
                                                     <button 
                                                     class="btn btn-success"
@@ -70,10 +72,10 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#deactivate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $guidebook->group }})"
+                                                    onclick="formDeactivate({{ $upcoming_event->group }})"
                                                     >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this guidebook">
-                                                            {{ $guidebook->guidebook_status }}
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this upcoming event">
+                                                            {{ $upcoming_event->event_status }}
                                                         </span>
                                                     </button>
                                                 </td>
@@ -85,27 +87,27 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#activate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $guidebook->group }})"
+                                                    onclick="formActivate({{ $upcoming_event->group }})"
                                                     >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this guidebook">
-                                                            {{ $guidebook->guidebook_status }}
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this upcoming event">
+                                                            {{ $upcoming_event->event_status }}
                                                         </span>
                                                     </button>
                                                 </td>
                                             @endif
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/guidebook/{{ $guidebook->group }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this guidebook"></i>
+                                                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/{{ $upcoming_event->group }}/edit">
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this upcoming event"></i>
                                                     </a>
                                                     <button 
                                                     type="button"
                                                     class="btn btn-danger"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#delete"
-                                                    onclick="formDelete({{ $guidebook->group }})"
+                                                    onclick="formDelete({{ $upcoming_event->group }})"
                                                     >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this guidebook"></i>
+                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this upcoming event"></i>
                                                     </button>
                                                 </div>
                                             </td>
@@ -132,7 +134,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Deactivate this guidebook?</p>
+                <p id="desc-info">Are you sure, you want to Deactivate this upcoming event?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -155,7 +157,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Activate this guidebook?</p>
+                <p id="desc-info">Are you sure, you want to Activate this upcoming event?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -178,7 +180,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Delete this guidebook?</p>
+                <p id="desc-info">Are you sure, you want to Delete this upcoming event?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -195,13 +197,13 @@
 @section('js')
     <script>
         function formDeactivate(group){
-            $('#form_deactivate').attr('action', '{{ url('/admin/guidebook/deactivate/') }}' + '/' + group);
+            $('#form_deactivate').attr('action', '{{ url('/admin/upcoming-event/deactivate/') }}' + '/' + group);
         };
         function formActivate(group){
-            $('#form_activate').attr('action', '{{ url('/admin/guidebook/activate/') }}' + '/' + group);
+            $('#form_activate').attr('action', '{{ url('/admin/upcoming-event/activate/') }}' + '/' + group);
         };
         function formDelete(group){
-            $('#form_delete').attr('action', '{{ url('/admin/guidebook/delete/') }}' + '/' + group);
+            $('#form_delete').attr('action', '{{ url('/admin/upcoming-event/delete/') }}' + '/' + group);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

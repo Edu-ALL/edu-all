@@ -38,9 +38,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed {{ request()->is('admin/upcoming-event*') ? 'active' : '' }}" href="/admin/upcoming-event">
                 <i class="fa-solid fa-calendar-days"></i>
-                <span>Upcoming Events</span>
+                <span>Upcoming Event</span>
             </a>
         </li>
         <li class="nav-item">
