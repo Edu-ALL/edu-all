@@ -75,15 +75,15 @@
                                         {{ __('pages/navbar.programs_academic') }}</a>
                                     <ul class="child-child-ul">
                                         <li class="child-child-li">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-tutoring"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/academic-tutoring"
                                                 class="child-child-link">{{ __('pages/navbar.programs_academic_tutoring') }}</a>
                                         </li>
                                         <li class="child-child-li">
-                                            <a href="#"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/ib-ee-coaching-program"
                                                 class="child-child-link">{{ __('pages/navbar.programs_academic_ib') }}</a>
                                         </li>
                                         <li class="child-child-li lg:border-b-0">
-                                            <a href="#"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/sat-program"
                                                 class="child-child-link">{{ __('pages/navbar.programs_academic_sat') }}</a>
                                         </li>
                                     </ul>
@@ -113,7 +113,7 @@
                         </li>
 
                         <li class="li-nav">
-                            <a href="#" class="li-link-nav">{{ __('pages/navbar.blog') }}</a>
+                            <a href="#" class="li-link-nav lg:pl-4">{{ __('pages/navbar.blog') }}</a>
                         </li>
 
                         <li

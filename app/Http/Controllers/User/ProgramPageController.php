@@ -317,4 +317,14 @@ class ProgramPageController extends Controller
     {
         return view('user.academic_tutoring.main');
     }
+
+    public function ib_ee_coaching_program()
+    {
+        return view('user.ib_ee_coaching_program.main');
+    }
+
+    public function sat_program()
+    {
+        return view('user.sat_program.main');
+    }
 }

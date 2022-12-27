@@ -4,7 +4,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full md:flex md:flex-col md:justify-between">
+            <div class="absolute-center main-container w-full h-full md:flex md:flex-col md:justify-between">
                 <div class="flex flex-col items-start pt-10 mb-14 md:pl-28 lg:pt-24">
                     <h1 class="font-title font-black text-4xl text-white uppercase md:text-[42px] md:text-left">
                         {{ __('pages/programs/academic_tutoring.title') }}
