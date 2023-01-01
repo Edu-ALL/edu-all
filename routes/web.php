@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,13 @@ Route::group(
             Route::get('/programs/academic-test-preparation/academic-tutoring', 'academic_tutoring')->name('academic_tutoring');
             Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', 'ib_ee_coaching_program')->name('ib_ee_coaching_program');
             Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
+        });
+
+        Route::controller(AboutPageController::class)->group(function () {
+            Route::get('/about', 'about')->name('about');
+            Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
+            Route::get('/about/partnership-careers', 'partnership_careers')->name('partnership_careers');
+            Route::get('/contact-us', 'contact_us')->name('contact_us');
         });
 
         Route::get('/sample', function () {

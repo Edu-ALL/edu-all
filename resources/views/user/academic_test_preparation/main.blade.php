@@ -4,7 +4,8 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full bg-gradient-to-tr from-primary md:bg-gradient-to-r md:from-primary">
+            <div
+                class="absolute-center main-container h-full bg-gradient-to-tr from-primary md:bg-gradient-to-r md:from-primary">
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
                     <h1 class="heading-2 text-center md:w-1/2 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.title') }}

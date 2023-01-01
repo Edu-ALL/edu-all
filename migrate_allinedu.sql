@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 03:23 AM
+-- Generation Time: Dec 21, 2022 at 07:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -42,6 +42,16 @@ CREATE TABLE `tb_banner` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tb_banner`
+--
+
+INSERT INTO `tb_banner` (`id`, `group`, `banner_img`, `banner_alt`, `banner_title`, `banner_description`, `banner_button`, `banner_link`, `banner_status`, `lang`, `created_at`, `updated_at`) VALUES
+(5, 20221209021204, 'Banner-en-20221209021204.png', 'alt en', 'title en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>', 'button en', 'link en', 'active', 'en', '2022-12-08 19:12:04', '2022-12-12 04:33:31'),
+(6, 20221209021204, 'Banner-id-20221209021204.png', 'alt id', 'title id', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>', 'button id', 'link id', 'active', 'id', '2022-12-08 19:12:04', '2022-12-12 04:33:31'),
+(7, 20221212130737, 'Banner-en-20221212130737.webp', 'alt en', 'title en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>', 'button en', 'link en', 'active', 'en', '2022-12-12 06:07:38', '2022-12-12 06:07:38'),
+(8, 20221212130737, 'Banner-id-20221212130737.webp', 'alt id', 'title id', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>', 'button id', 'link id', 'active', 'id', '2022-12-12 06:07:38', '2022-12-12 06:07:38');
+
 -- --------------------------------------------------------
 
 --
@@ -77,10 +87,20 @@ CREATE TABLE `tb_blog` (
 
 CREATE TABLE `tb_blog_category` (
   `id` int(11) NOT NULL,
+  `group` bigint(20) NOT NULL,
   `category_name` varchar(255) NOT NULL,
+  `lang` char(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_blog_category`
+--
+
+INSERT INTO `tb_blog_category` (`id`, `group`, `category_name`, `lang`, `created_at`, `updated_at`) VALUES
+(1, 20221215030358, 'Sport/Esport', 'en', '2022-12-14 20:03:58', '2022-12-14 20:14:13'),
+(2, 20221215030358, 'Olahraga', 'id', '2022-12-14 20:03:58', '2022-12-14 20:14:13');
 
 -- --------------------------------------------------------
 
@@ -100,6 +120,14 @@ CREATE TABLE `tb_guidebook` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_guidebook`
+--
+
+INSERT INTO `tb_guidebook` (`id`, `group`, `guidebook_category`, `guidebook_image`, `guidebook_alt`, `guidebook_link`, `guidebook_status`, `lang`, `created_at`, `updated_at`) VALUES
+(5, 20221221060328, 'category en', 'Guidebook-en-20221221060328.png', 'alt en', 'link en', 'active', 'en', '2022-12-20 23:03:28', '2022-12-20 23:03:28'),
+(6, 20221221060328, 'category id', 'Guidebook-id-20221221060328.png', 'alt id', 'link id', 'active', 'id', '2022-12-20 23:03:28', '2022-12-20 23:03:28');
 
 -- --------------------------------------------------------
 
@@ -178,6 +206,7 @@ CREATE TABLE `tb_testimonial` (
   `testi_name` varchar(255) NOT NULL,
   `testi_desc` text NOT NULL,
   `testi_program` varchar(255) NOT NULL,
+  `testi_category` varchar(255) NOT NULL,
   `testi_thumbnail` text NOT NULL,
   `testi_alt` varchar(255) NOT NULL,
   `testi_status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
@@ -185,6 +214,14 @@ CREATE TABLE `tb_testimonial` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_testimonial`
+--
+
+INSERT INTO `tb_testimonial` (`id`, `group`, `testi_name`, `testi_desc`, `testi_program`, `testi_category`, `testi_thumbnail`, `testi_alt`, `testi_status`, `lang`, `created_at`, `updated_at`) VALUES
+(1, 20221215043252, 'Fulan', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>', 'Program en', 'Experiental Learning', 'Thumbnail-testi-en-20221215043252.png', 'alt en', 'active', 'en', '2022-12-14 21:32:52', '2022-12-14 21:33:37'),
+(2, 20221215043252, 'Fulan', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>', 'Program id', 'Experiental Learning', 'Thumbnail-testi-id-20221215043252.png', 'alt id', 'active', 'id', '2022-12-14 21:32:52', '2022-12-14 21:33:37');
 
 -- --------------------------------------------------------
 
@@ -303,7 +340,7 @@ ALTER TABLE `tb_users`
 -- AUTO_INCREMENT for table `tb_banner`
 --
 ALTER TABLE `tb_banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_blog`
@@ -315,13 +352,13 @@ ALTER TABLE `tb_blog`
 -- AUTO_INCREMENT for table `tb_blog_category`
 --
 ALTER TABLE `tb_blog_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_guidebook`
 --
 ALTER TABLE `tb_guidebook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_mentor`
@@ -345,7 +382,7 @@ ALTER TABLE `tb_success_stories`
 -- AUTO_INCREMENT for table `tb_testimonial`
 --
 ALTER TABLE `tb_testimonial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_upcoming_event`

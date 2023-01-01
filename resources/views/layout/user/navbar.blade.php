@@ -94,7 +94,7 @@
                         <li
                             class="border-t-[1px] border-top-navbar text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex programs">
                             <div class="flex justify-between items-center ">
-                                <a href="{{ url(app()->getLocale(), 'programs') }}"
+                                <a href="{{ url(app()->getLocale(), 'about') }}"
                                     class="block my-1.5 pl-4 text-xl text-left w-full  lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.about_us') }}
                                 </a>
                                 <button id='open-nav-child' type="button"
@@ -105,8 +105,12 @@
                             </div>
                             <ul id="content-nav-child"
                                 class="bg-body text-light font-semibold text-lg transition-all duration-300 hidden lg:block lg:absolute lg:top-full lg:invisible lg:opacity-0 programs-child">
+                                <li class="child-nav group">
+                                    <a href="{{ url(app()->getLocale()) }}/about/our-contribution"
+                                        class="child-child-li-link">{{ __('pages/navbar.our_contribution') }}</a>
+                                </li>
                                 <li class="child-nav group border-b-0">
-                                    <a href="#"
+                                    <a href="{{ url(app()->getLocale()) }}/about/partnership-careers"
                                         class="child-child-li-link">{{ __('pages/navbar.partnership') }}</a>
                                 </li>
                             </ul>
@@ -157,7 +161,7 @@
                 <div
                     class="font-secondary min-w-fit flex font-medium justify-between items-center text-base mt-1 sm:mt-0 gap-4 lg:text-base">
                     <div class="block lg:items-center lg:justify-center">
-                        <a href="#"
+                        <a href="{{ url(app()->getLocale()) }}/contact-us"
                             class="text-sm text-[#819CCB] text-center font-bold sm:text-base">{{ __('pages/navbar.contact_us') }}<i
                                 class="fa-solid fa-caret-down ml-1"></i></a>
                     </div>
