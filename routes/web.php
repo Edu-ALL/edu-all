@@ -3,6 +3,7 @@
 use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
+use App\Http\Controllers\User\ResourcesPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +47,13 @@ Route::group(
             Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
             Route::get('/about/partnership-careers', 'partnership_careers')->name('partnership_careers');
             Route::get('/contact-us', 'contact_us')->name('contact_us');
+        });
+
+        Route::controller(ResourcesPageController::class)->group(function () {
+            Route::get('/resources/success-stories', "success_stories")->name('success_stories');
+            Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
+            Route::get('/resources/guidebook', "guidebook")->name('guidebook');
+            Route::get('/resources/testimonial', "testimonial")->name('testimonial');
         });
 
         Route::get('/sample', function () {

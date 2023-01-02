@@ -73,7 +73,9 @@ return [
 
     // academic tutoring section
     "aca_title" => "Academic Tutoring",
-    "aca_desc" => "With core concept learning system and real-life application for exploration, our academic tutoring program will equip students with a strong foundation not only in academics, but also in problem solving and critical thinking.",
+    "aca_desc" => "With <b> core concept learning system</b> and <b>real-life application</b> for exploration, our academic
+    tutoring program will equip students with a strong foundation not only in academics, but also in
+    <b>problem solving and critical thinking.</b>",
     "aca_icon_title" => $aca_icon_title,
     "aca_points_title" => "Special Formula:",
     "aca_points" => $aca_points,

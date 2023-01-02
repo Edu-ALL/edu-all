@@ -123,7 +123,7 @@
                         <li
                             class="border-y-[1px] border-top-navbar text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex programs">
                             <div class="flex justify-between items-center ">
-                                <a href="#"
+                                <a href=""
                                     class=" block my-1.5 pl-4 text-xl text-left w-full  lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.resources') }}
                                 </a>
                                 <button id='open-nav-child' type="button"
@@ -135,19 +135,19 @@
                             <ul id="content-nav-child"
                                 class="bg-body text-light font-semibold text-lg transition-all duration-300 hidden lg:block lg:absolute lg:top-full lg:invisible lg:opacity-0 programs-child">
                                 <li class="child-nav group">
-                                    <a href="#"
+                                    <a href="{{ url(app()->getLocale()) }}/resources/success-stories"
                                         class="child-child-li-link">{{ __('pages/navbar.success_stories') }}</a>
                                 </li>
                                 <li class="child-nav group">
-                                    <a href="#"
+                                    <a href="{{ url(app()->getLocale()) }}/resources/upcoming-events"
                                         class="child-child-li-link">{{ __('pages/navbar.upcoming_events') }}</a>
                                 </li>
                                 <li class="child-nav group">
-                                    <a href="#"
+                                    <a href="{{ url(app()->getLocale()) }}/resources/guidebook"
                                         class="child-child-li-link">{{ __('pages/navbar.guidebooks') }}</a>
                                 </li>
                                 <li class="child-nav group">
-                                    <a href="#"
+                                    <a href="{{ url(app()->getLocale()) }}/resources/testimonial"
                                         class="child-child-li-link">{{ __('pages/navbar.testimonial') }}</a>
                                 </li>
                                 <li class="child-nav group border-b-0">
