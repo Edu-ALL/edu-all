@@ -17,6 +17,7 @@ return [
 
     // about us
     'about_us' => 'About Us',
+    'our_contribution' => 'Our Contribution',
     'partnership' => "Partnership & Careers",
 
     // blog

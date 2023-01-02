@@ -17,6 +17,7 @@ return [
 
     // about us
     'about_us' => 'Tentang Kami',
+    'our_contribution' => 'Our Contribution',
     'partnership' => "Kemitraan dan Karir",
 
     // blog

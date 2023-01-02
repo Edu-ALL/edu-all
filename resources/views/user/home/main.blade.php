@@ -1,18 +1,18 @@
 @extends('layout.user.main')
 
 @section('content')
-    {{-- ------------------------------------ Banner Section ------------------------------------ --}}
-    <div class="relative w-full left-0">
+    {{-- ========================================== Banner Section ========================================== --}}
+    <div class="relative w-full left-0 overflow-hidden">
         <section class="splide" aria-labelledby="carousel-heading">
             <div class="splide__track ">
                 <ul class="splide__list ">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
-                            <img class="object-center object-cover w-full h-full"
+                            <img class="object-bottom object-cover w-full h-full"
                                 src="{{ asset('assets/img/home/' . $banner->banner_img) }}" alt="{{ $banner->banner_alt }}">
                             <div
                                 class="absolute-center top-0 -ml-1 bg-gradient-to-r w-full h-full from-primary/90 flex items-center md:items-start md:pt-32">
-                                <div class="px-8 lg:px-40 2xl:px-72 font-primary">
+                                <div class="px-8 lg:px-40 2xl:px-44 font-primary">
                                     <h2
                                         class="text-3xl font-medium text-white  mb-6 sm:text-4xl  lg:text-5xl lg:w-[70%] xl:w-[55%]">
                                         {{ $banner->banner_title }}</h2>
@@ -31,14 +31,20 @@
 
             </div>
         </section>
-        <img src="{{ asset('assets/img/home/wave.svg') }}" alt=""
-            class="absolute bottom-0 object-cover -mb-2 h-[100px] object-center sm:object-right md:h-[150px] lg:h-[300px]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+            class="absolute bottom-0 object-cover -mb-2 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20 -rotate-2">
+            <path fill="#fff" fill-opacity="1"
+                d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+        {{-- <img src="{{ asset('assets/img/home/wave.svg') }}" alt=""
+            class="absolute bottom-0 object-cover -mb-2 h-[100px] object-center sm:object-right md:h-[150px] lg:h-[300px]"> --}}
     </div>
 
-    {{-- ------------------------------------ Benefits Section ---------------------------------- --}}
+    {{-- ========================================== Benefits Section ======================================= --}}
     <section class="relative mx-6 my-10 md:h-44">
         <div
-            class="max-w-5xl w-full bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[250px]">
+            class="max-w-5xl w-full bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[350px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
                     <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="h-48">
@@ -65,7 +71,7 @@
         </div>
     </section>
 
-    {{-- ------------------------------------ About Us Section ---------------------------------- --}}
+    {{-- ========================================== About Us Section ======================================= --}}
     <section class="max-w-4xl w-full px-6 mx-auto my-20">
         <div class="flex flex-col items-center">
             <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-secondary">Tentang Kami</h2>
@@ -111,7 +117,7 @@
         </div>
     </section>
 
-    {{-- ------------------------------------ Program Section ---------------------------------- --}}
+    {{-- ========================================== Program Section ======================================= --}}
     <section class="py-10">
         <div class="max-w-3xl w-full mx-auto px-6 mb-10 flex flex-col items-center">
             <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-secondary">Our Program</h2>
@@ -226,16 +232,13 @@
 
     </section>
 
-
-
-
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 
         document.addEventListener('DOMContentLoaded', function() {
             var splide = new Splide('.splide', {
                 direction: 'ttb',
-                height: isSmallDevice ? '75vh' : '100vh',
+                height: isSmallDevice ? '75vh' : '120vh',
                 wheel: false,
                 isNavigation: false,
                 arrows: false,
