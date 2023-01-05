@@ -5,7 +5,7 @@
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full">
-                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
+                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16">
                     <h1 class="heading-2 text-center md:text-left">
                         {{ __('pages/success_stories/success_stories.title') }}
                     </h1>
@@ -16,7 +16,6 @@
 
             <img src="{{ asset('assets/img/success-story/header-wof.webp') }}" alt="success story header"
                 class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
-
         </div>
     </section>
 

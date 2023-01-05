@@ -151,7 +151,7 @@
                                         class="child-child-li-link">{{ __('pages/navbar.testimonial') }}</a>
                                 </li>
                                 <li class="child-nav group border-b-0">
-                                    <a href="#"
+                                    <a href="{{ url(app()->getLocale()) }}/resources/student-acceptances"
                                         class="child-child-li-link">{{ __('pages/navbar.student_acceptances') }}</a>
                                 </li>
                             </ul>

@@ -54,6 +54,7 @@ Route::group(
             Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
             Route::get('/resources/guidebook', "guidebook")->name('guidebook');
             Route::get('/resources/testimonial', "testimonial")->name('testimonial');
+            Route::get('/resources/student-acceptances', "student_acceptances")->name('student_acceptances');
         });
 
         Route::get('/sample', function () {

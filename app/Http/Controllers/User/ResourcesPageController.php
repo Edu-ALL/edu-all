@@ -196,4 +196,9 @@ class ResourcesPageController extends Controller
     {
         return view('user.testimonial.main');
     }
+
+    public function student_acceptances()
+    {
+        return view('user.student_acceptances.main');
+    }
 }
