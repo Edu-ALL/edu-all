@@ -17,11 +17,11 @@
 @include('layout.admin.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Guidebook</h1>
+        <h1>Success Stories</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                <li class="breadcrumb-item active">Guidebook</li>
+                <li class="breadcrumb-item active">Success Stories</li>
             </ol>
         </nav>
     </div>
@@ -32,8 +32,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
-                                <h5 class="card-title">List Guidebooks <span>| {{ now()->year }}</span></h5>
-                                <a type="button" class="btn btn-primary" href="/admin/guidebook/create">
+                                <h5 class="card-title">List Success Stories <span>| {{ now()->year }}</span></h5>
+                                <a type="button" class="btn btn-primary" href="/admin/success-stories/create">
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i> Create new
                                 </a>
                             </div>
@@ -41,9 +41,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">Category</th>
-                                        <th scope="col">Link</th>
-                                        <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Thumbnail</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
@@ -53,16 +53,16 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($guidebooks as $guidebook)
+                                    @foreach ($success_stories as $success_storie)
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $guidebook->guidebook_category }}</td>
-                                            <td><a href={{ $guidebook->guidebook_link }} target='_blank'>{{ $guidebook->guidebook_link }}</a></td>
+                                            <td>{{ $success_storie->name}}</td>
+                                            <td>{!! $success_storie->description !!}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/guidebook/'.$guidebook->guidebook_image) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/success-stories/'.$success_storie->thumbnail) }}" alt="" width="80">
                                             </td>
-                                            <td>{{ $guidebook->lang == 'en' ? 'English' : 'Indonesia'}}</td>
-                                            @if ($guidebook->guidebook_status == 'active')
+                                            <td>{{ $success_storie->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            @if ($success_storie->status == 'active')
                                                 <td class="text-center">
                                                     <button 
                                                     class="btn btn-success"
@@ -70,10 +70,10 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#deactivate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $guidebook->group }})"
+                                                    onclick="formDeactivate({{ $success_storie->group }})"
                                                     >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this guidebook">
-                                                            {{ $guidebook->guidebook_status }}
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this success stories">
+                                                            {{ $success_storie->status }}
                                                         </span>
                                                     </button>
                                                 </td>
@@ -85,27 +85,27 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#activate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $guidebook->group }})"
+                                                    onclick="formActivate({{ $success_storie->group }})"
                                                     >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this guidebook">
-                                                            {{ $guidebook->guidebook_status }}
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this success stories">
+                                                            {{ $success_storie->status }}
                                                         </span>
                                                     </button>
                                                 </td>
                                             @endif
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/guidebook/{{ $guidebook->group }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this guidebook"></i>
+                                                    <a type="button" class="btn btn-warning" href="/admin/success-stories/{{ $success_storie->group }}/edit">
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this success stories"></i>
                                                     </a>
                                                     <button 
                                                     type="button"
                                                     class="btn btn-danger"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#delete"
-                                                    onclick="formDelete({{ $guidebook->group }})"
+                                                    onclick="formDelete({{ $success_storie->group }})"
                                                     >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this guidebook"></i>
+                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this success stories"></i>
                                                     </button>
                                                 </div>
                                             </td>
@@ -132,7 +132,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Deactivate this guidebook?</p>
+                <p id="desc-info">Are you sure, you want to Deactivate this success stories?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Activate this guidebook?</p>
+                <p id="desc-info">Are you sure, you want to Activate this success stories?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -178,7 +178,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Delete this guidebook?</p>
+                <p id="desc-info">Are you sure, you want to Delete this success stories?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -195,13 +195,13 @@
 @section('js')
     <script>
         function formDeactivate(group){
-            $('#form_deactivate').attr('action', '{{ url('/admin/guidebook/deactivate/') }}' + '/' + group);
+            $('#form_deactivate').attr('action', '{{ url('/admin/success-stories/deactivate/') }}' + '/' + group);
         };
         function formActivate(group){
-            $('#form_activate').attr('action', '{{ url('/admin/guidebook/activate/') }}' + '/' + group);
+            $('#form_activate').attr('action', '{{ url('/admin/success-stories/activate/') }}' + '/' + group);
         };
         function formDelete(group){
-            $('#form_delete').attr('action', '{{ url('/admin/guidebook/delete/') }}' + '/' + group);
+            $('#form_delete').attr('action', '{{ url('/admin/success-stories/delete/') }}' + '/' + group);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

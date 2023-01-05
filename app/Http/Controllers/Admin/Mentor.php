@@ -17,4 +17,8 @@ class Mentor extends Controller
         $mentors = Mentors::get();
         return view('admin.mentor.index', ['mentors' => $mentors]);
     }
+
+    public function create(){
+        return view('admin.mentor.create');
+    }
 }

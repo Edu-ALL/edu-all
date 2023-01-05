@@ -44,7 +44,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed {{ request()->is('admin/success-stories*') ? 'active' : '' }}" href="/admin/success-stories">
                 <i class="fa-solid fa-book-atlas"></i>
                 <span>Success Stories</span>
             </a>

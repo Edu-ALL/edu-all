@@ -27,16 +27,35 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
 
+        {{-- SweetAlert --}}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
         {{-- @vite('public/css/bootstrap.min.css') --}}
         @vite('public/css/admin/app.css')
         @yield('css')
+        <style>
+            .swal-footer {
+                text-align: center;
+            }
+            .swal-button {
+                background-color: var(--blue);
+            }
+        </style>
     </head>
     <body>
         {{-- Input Content --}}
         @yield('content')
-
+        @if (Session::has('success'))
+            <script>
+                swal({
+                    title: "Congratulations!",
+                    text: "{{ Session::get('success') }}",
+                    icon: "success",
+                });
+            </script>
+        @endif
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/admin/main.js') }}"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

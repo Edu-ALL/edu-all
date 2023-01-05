@@ -29,13 +29,13 @@ class Banner extends Controller
             'banner_title_en' => 'required|max:255',
             'banner_description_en' => 'required',
             'banner_button_en' => 'required',
-            'banner_link_en' => 'required',
+            'banner_link_en' => 'required|url',
             'banner_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt_id' => 'required',
             'banner_title_id' => 'required|max:255',
             'banner_description_id' => 'required',
             'banner_button_id' => 'required',
-            'banner_link_id' => 'required'
+            'banner_link_id' => 'required|url'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -91,7 +91,7 @@ class Banner extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/banner');
+        return redirect('/admin/banner')->withSuccess('The Banner Was Successfully Created');
     }
 
     public function edit($group){
@@ -106,13 +106,13 @@ class Banner extends Controller
             'banner_title_en' => 'required|max:255',
             'banner_description_en' => 'required',
             'banner_button_en' => 'required',
-            'banner_link_en' => 'required',
+            'banner_link_en' => 'required|url',
             'banner_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt_id' => 'required',
             'banner_title_id' => 'required|max:255',
             'banner_description_id' => 'required',
             'banner_button_id' => 'required',
-            'banner_link_id' => 'required'
+            'banner_link_id' => 'required|url'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -168,7 +168,7 @@ class Banner extends Controller
             $banner_id->banner_description = $request->banner_description_id;
             $banner_id->banner_button = $request->banner_button_id;
             $banner_id->banner_link = $request->banner_link_id;
-            $banner_en->updated_at = date('Y-m-d H:i:s');
+            $banner_id->updated_at = date('Y-m-d H:i:s');
             $banner_id->save();
 
             DB::commit();
@@ -177,7 +177,7 @@ class Banner extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/banner/'.$group.'/edit');
+        return redirect('/admin/banner/'.$group.'/edit')->withSuccess('The Banner Was Successfully Updated');
     }
 
     public function deactivate($group){
@@ -238,6 +238,6 @@ class Banner extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/banner');
+        return redirect('/admin/banner')->withSuccess('The Banner Was Successfully Deleted');
     }
 }

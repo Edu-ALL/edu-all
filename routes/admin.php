@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BlogCategory;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
+use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\UpcomingEvent;
 use Illuminate\Support\Facades\Route;
@@ -88,8 +89,25 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/upcoming-event/activate/{group}', [UpcomingEvent::class, 'activate']);
     Route::post('/upcoming-event/delete/{group}', [UpcomingEvent::class, 'delete']);
 
+    // Success Stories
+    Route::get('/success-stories', [SuccessStory::class, 'index']);
+    Route::get('/success-stories/create', [SuccessStory::class, 'create']);
+    Route::post('/success-stories', [SuccessStory::class, 'store'])->name('create-success-stories');
+    Route::get('/success-stories/{group}/edit', [SuccessStory::class, 'edit']);
+    Route::post('/success-stories/{group}', [SuccessStory::class, 'update'])->name('update-success-stories');
+    Route::post('/success-stories/deactivate/{group}', [SuccessStory::class, 'deactivate']);
+    Route::post('/success-stories/activate/{group}', [SuccessStory::class, 'activate']);
+    Route::post('/success-stories/delete/{group}', [SuccessStory::class, 'delete']);
+
     // Mentor
     Route::get('/mentor', [Mentor::class, 'index']);
+    Route::get('/mentor/create', [Mentor::class, 'create']);
+    Route::post('/mentor', [Mentor::class, 'store'])->name('create-mentor');
+    Route::get('/mentor/{group}/edit', [Mentor::class, 'edit']);
+    Route::post('/mentor/{group}', [Mentor::class, 'update'])->name('update-mentor');
+    Route::post('/mentor/deactivate/{group}', [Mentor::class, 'deactivate']);
+    Route::post('/mentor/activate/{group}', [Mentor::class, 'activate']);
+    Route::post('/mentor/delete/{group}', [Mentor::class, 'delete']);
 });
 
 

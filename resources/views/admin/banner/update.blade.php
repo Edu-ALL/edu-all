@@ -70,6 +70,9 @@
                                                                 Banner Image <span style="color: var(--red)">*</span>
                                                             </label>
                                                             <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en" value="{{ $banner[0]->banner_img }}">
+                                                            @error('banner_image_en')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
@@ -102,6 +105,9 @@
                                                         Banner Link <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="link_en" name="banner_link_en" value="{{ $banner[0]->banner_link }}">
+                                                    @error('banner_link_en')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>

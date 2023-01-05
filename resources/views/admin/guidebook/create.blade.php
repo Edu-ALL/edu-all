@@ -93,6 +93,9 @@
                                                         Link <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="link_en" name="guidebook_link_en">
+                                                    @error('guidebook_link_en')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>

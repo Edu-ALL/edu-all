@@ -27,11 +27,11 @@ class Guidebook extends Controller
             'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_en' => 'required',
             'guidebook_category_en' => 'required',
-            'guidebook_link_en' => 'required',
+            'guidebook_link_en' => 'required|url',
             'guidebook_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_id' => 'required',
             'guidebook_category_id' => 'required',
-            'guidebook_link_id' => 'required',
+            'guidebook_link_id' => 'required|url',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -83,7 +83,7 @@ class Guidebook extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/guidebook');
+        return redirect('/admin/guidebook')->withSuccess('The Guidebook Was Successfully Created');
     }
 
     public function edit($group){
@@ -96,11 +96,11 @@ class Guidebook extends Controller
             'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_en' => 'required',
             'guidebook_category_en' => 'required',
-            'guidebook_link_en' => 'required',
+            'guidebook_link_en' => 'required|url',
             'guidebook_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_id' => 'required',
             'guidebook_category_id' => 'required',
-            'guidebook_link_id' => 'required',
+            'guidebook_link_id' => 'required|url',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -161,7 +161,7 @@ class Guidebook extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/guidebook/'.$group.'/edit');
+        return redirect('/admin/guidebook/'.$group.'/edit')->withSuccess('The Guidebook Was Successfully Updated');
     }
 
     public function delete($group){
@@ -188,7 +188,7 @@ class Guidebook extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/guidebook');
+        return redirect('/admin/guidebook')->withSuccess('The Guidebook Was Successfully Deleted');
     }
 
     public function deactivate($group){

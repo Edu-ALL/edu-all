@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="">
+                        <a class="card-body" href="/admin/mentor">
                             <h5 class="card-title">Mentors <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -102,7 +102,7 @@
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="">
+                        <a class="card-body" href="/admin/success-stories">
                             <h5 class="card-title">Success Stories <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
