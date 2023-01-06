@@ -96,7 +96,6 @@ class Mentor extends Controller
             $mentor_id->mentor_status = 'active';
             $mentor_id->lang = 'id';
             $mentor_id->save();
-
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
