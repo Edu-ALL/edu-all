@@ -91,7 +91,7 @@ class Testimonial extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/testimonial');
+        return redirect('/admin/testimonial')->withSuccess('Testimonial Was Successfully Created');
     }
 
     public function edit($group){
@@ -177,7 +177,7 @@ class Testimonial extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/testimonial/'.$group.'/edit');
+        return redirect('/admin/testimonial/'.$group.'/edit')->withSuccess('Testimonial Was Successfully Updated');
     }
 
     public function delete($group){
@@ -204,7 +204,7 @@ class Testimonial extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/testimonial');
+        return redirect('/admin/testimonial')->withSuccess('Testimonial Was Successfully Deleted');
     }
 
     public function deactivate($group){

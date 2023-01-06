@@ -43,8 +43,8 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Graduation</th>
-                                        <th scope="col">Work</th>
-                                        <th scope="col">Expertise</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Picture</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
@@ -57,14 +57,14 @@
                                     @foreach ($mentors as $mentor)
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $mentor->name}}</td>
-                                            <td>{{ $mentor->name}}</td>
+                                            <td>{{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}</td>
+                                            <td>{!! $mentor->mentor_graduation !!}</td>
                                             <td>{!! $mentor->description !!}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/success-stories/'.$mentor->thumbnail) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/mentor/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>
                                             <td>{{ $mentor->lang == 'en' ? 'English' : 'Indonesia'}}</td>
-                                            @if ($mentor->status == 'active')
+                                            @if ($mentor->mentor_status == 'active')
                                                 <td class="text-center">
                                                     <button 
                                                     class="btn btn-success"
@@ -75,7 +75,7 @@
                                                     onclick="formDeactivate({{ $mentor->group }})"
                                                     >
                                                         <span data-bs-toggle="tooltip" data-bs-title="Deactivate this mentor">
-                                                            {{ $mentor->status }}
+                                                            {{ $mentor->mentor_status }}
                                                         </span>
                                                     </button>
                                                 </td>
@@ -90,7 +90,7 @@
                                                     onclick="formActivate({{ $mentor->group }})"
                                                     >
                                                         <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this mentor">
-                                                            {{ $mentor->status }}
+                                                            {{ $mentor->mentor_status }}
                                                         </span>
                                                     </button>
                                                 </td>

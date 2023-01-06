@@ -146,8 +146,8 @@
                                                         <label for="" class="form-label">
                                                             First Name <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="firstname_en" name="mentor_firstname_en">
-                                                        @error('mentor_firstname_en')
+                                                        <input type="text" class="form-control" id="firstname_id" name="mentor_firstname_id">
+                                                        @error('mentor_firstname_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
                                                     </div>
@@ -155,8 +155,8 @@
                                                         <label for="" class="form-label">
                                                             Last name <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="lastname_en" name="mentor_lastname_en">
-                                                        @error('mentor_lastname_en')
+                                                        <input type="text" class="form-control" id="lastname_id" name="mentor_lastname_id">
+                                                        @error('mentor_lastname_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
                                                     </div>
@@ -165,8 +165,8 @@
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_graduation_en" id="graduation_en"></textarea>
-                                                    @error('mentor_graduation_en')
+                                                    <textarea class="textarea" name="mentor_graduation_id" id="graduation_id"></textarea>
+                                                    @error('mentor_graduation_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -174,8 +174,8 @@
                                                     <label for="" class="form-label">
                                                         Currently Working
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_currently_working_en" id="currently_working_en"></textarea>
-                                                    @error('mentor_currently_working_en')
+                                                    <textarea class="textarea" name="mentor_currently_working_id" id="currently_working_id"></textarea>
+                                                    @error('mentor_currently_working_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -183,8 +183,8 @@
                                                     <label for="" class="form-label">
                                                         Expertise
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_expertise_en" id="expertise_en"></textarea>
-                                                    @error('mentor_expertise_en')
+                                                    <textarea class="textarea" name="mentor_expertise_id" id="expertise_id"></textarea>
+                                                    @error('mentor_expertise_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -192,8 +192,8 @@
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_description_en" id="description_en"></textarea>
-                                                    @error('mentor_description_en')
+                                                    <textarea class="textarea" name="mentor_description_id" id="description_id"></textarea>
+                                                    @error('mentor_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -201,8 +201,8 @@
                                                     <label for="" class="form-label">
                                                         Short Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_short_description_en" id="short_description_en"></textarea>
-                                                    @error('mentor_short_description_en')
+                                                    <textarea class="textarea" name="mentor_short_description_id" id="short_description_id"></textarea>
+                                                    @error('mentor_short_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -210,7 +210,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en">
+                                                            <img class="img-preview img-fluid" id="img_preview_id">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -218,8 +218,8 @@
                                                             <label for="" class="form-label">
                                                                 Image <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="mentor_image_en">
-                                                            @error('mentor_image_en')
+                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="mentor_image_id">
+                                                            @error('mentor_image_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -227,8 +227,8 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en">
-                                                            @error('mentor_alt_en')
+                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id">
+                                                            @error('mentor_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
                                                         </div>

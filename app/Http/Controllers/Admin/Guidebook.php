@@ -83,7 +83,7 @@ class Guidebook extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/guidebook')->withSuccess('The Guidebook Was Successfully Created');
+        return redirect('/admin/guidebook')->withSuccess('Guidebook Was Successfully Created');
     }
 
     public function edit($group){
@@ -161,7 +161,7 @@ class Guidebook extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/guidebook/'.$group.'/edit')->withSuccess('The Guidebook Was Successfully Updated');
+        return redirect('/admin/guidebook/'.$group.'/edit')->withSuccess('Guidebook Was Successfully Updated');
     }
 
     public function delete($group){
@@ -188,7 +188,7 @@ class Guidebook extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/guidebook')->withSuccess('The Guidebook Was Successfully Deleted');
+        return redirect('/admin/guidebook')->withSuccess('Guidebook Was Successfully Deleted');
     }
 
     public function deactivate($group){

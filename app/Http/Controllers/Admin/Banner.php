@@ -91,7 +91,7 @@ class Banner extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/banner')->withSuccess('The Banner Was Successfully Created');
+        return redirect('/admin/banner')->withSuccess('Banner Was Successfully Created');
     }
 
     public function edit($group){
@@ -177,7 +177,7 @@ class Banner extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/banner/'.$group.'/edit')->withSuccess('The Banner Was Successfully Updated');
+        return redirect('/admin/banner/'.$group.'/edit')->withSuccess('Banner Was Successfully Updated');
     }
 
     public function deactivate($group){
@@ -238,6 +238,6 @@ class Banner extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/banner')->withSuccess('The Banner Was Successfully Deleted');
+        return redirect('/admin/banner')->withSuccess('Banner Was Successfully Deleted');
     }
 }

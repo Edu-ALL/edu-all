@@ -96,7 +96,7 @@ class UpcomingEvent extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/upcoming-event');
+        return redirect('/admin/upcoming-event')->withSuccess('Upcoming Event Was Successfully Created');
     }
 
     public function edit($group){
@@ -186,7 +186,7 @@ class UpcomingEvent extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/upcoming-event/'.$group.'/edit');
+        return redirect('/admin/upcoming-event/'.$group.'/edit')->withSuccess('Upcoming Event Was Successfully Updated');
     }
 
     public function delete($group){
@@ -213,7 +213,7 @@ class UpcomingEvent extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/upcoming-event');
+        return redirect('/admin/upcoming-event')->withSuccess('Upcoming Event Was Successfully Deleted');
     }
 
     public function deactivate($group){
