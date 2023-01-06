@@ -4,8 +4,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div
-                class="absolute-center main-container h-full bg-gradient-to-tr from-primary md:bg-gradient-to-r md:from-primary">
+            <div class="absolute main-container h-full">
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
                     <h1 class="heading-2 text-center md:w-1/2 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.title') }}
@@ -33,13 +32,7 @@
             <h2 class="font-primary font-semibold text-4xl text-primary capitalize">
                 {{ __('pages/programs/academic_test_preparation.aca_title') }}</h2>
             <p class="my-4 font-primary text-xl text-primary text-center md:w-1/2">
-                @if (app()->getLocale() == 'en')
-                    With <b> core concept learning system</b> and <b>real-life application</b> for exploration, our academic
-                    tutoring program will equip students with a strong foundation not only in academics, but also in
-                    <b>problem solving and critical thinking.</b>
-                @else
-                    {{ __('pages/programs/academic_test_preparation.aca_desc') }}</h2>
-                @endif
+                {!! __('pages/programs/academic_test_preparation.aca_desc') !!}</h2>
             </p>
             <img src="{{ asset('assets/img/academic_test_preparation/academic-tutoring-flyer-logo-1024x234.webp') }}"
                 alt="" class="w-full max-w-2xl my-4">

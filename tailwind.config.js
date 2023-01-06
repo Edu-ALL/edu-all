@@ -33,6 +33,10 @@ module.exports = {
                     "url('../../public/assets/img/passion_project_mentoring/Rectangle-32.webp')",
                 "passion-project-bg-scien-3":
                     "url('../../public/assets/img/passion_project_mentoring/timetable-research-crop-300x177.webp')",
+
+                // header upcomming event
+                "upcomming-header":
+                    "url('../../public/assets/img/upcoming_events/header-upcoming.webp')",
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
