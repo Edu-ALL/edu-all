@@ -14,11 +14,11 @@
 @include('layout.admin.sidebar')
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Success Stories</h1>
+        <h1>Mentor</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                <li class="breadcrumb-item"><a href="/admin/success-stories">Success Stories</a></li>
+                <li class="breadcrumb-item"><a href="/admin/mentor">Mentor</a></li>
                 <li class="breadcrumb-item active">Update</li>
             </ol>
         </nav>
@@ -30,8 +30,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
-                                <h5 class="card-title">Update Success Stories <span>| {{ now()->year }}</span></h5>
-                                <a type="button" class="btn btn-primary" href="/admin/success-stories">
+                                <h5 class="card-title">Update Mentor <span>| {{ now()->year }}</span></h5>
+                                <a type="button" class="btn btn-primary" href="/admin/mentor">
                                     <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
@@ -43,7 +43,7 @@
                                     <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
                                 </li>
                             </ul>
-                            <form action="{{ route('update-success-stories', ['group' => $success_stories[0]->group]) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('update-mentor', ['group' => $mentor[0]->group]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="tab-content" id="borderedTabContent">
                                     {{-- Tab English --}}
@@ -52,67 +52,25 @@
                                             <h5 class="card-title">Form English</h5>
                                             @if($errors->any())
                                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Update Success Stories!</strong> You have to check some fields in English and Indonesian.
+                                                    <strong>Failed Update Mentor!</strong> You have to check some fields in English and Indonesian.
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>
                                             @endif
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Name <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="name_en" name="story_name_en" value="{{ $success_stories[0]->name }}">
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 1 <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge1_en" name="story_badge1_en" value="{{ $success_stories[0]->badge_1 }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 2
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge2_en" name="story_badge2_en" value="{{ $success_stories[0]->badge_2 }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 3
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge3_en" name="story_badge3_en" value="{{ $success_stories[0]->badge_3 }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 4
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge4_en" name="story_badge4_en" value="{{ $success_stories[0]->badge_4 }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Description <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <textarea class="textarea" name="story_description_en" id="description_en">
-                                                        {{ $success_stories[0]->description }}
-                                                    </textarea>
-                                                </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Thumbnail Preview</label>
+                                                        <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en" src="{{ asset('uploaded_files/success-stories/'.$success_stories[0]->thumbnail) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_en" src="{{ asset('uploaded_files/mentor/'.$mentor[0]->mentor_picture) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Image <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="story_thumbnail_en">
-                                                            @error('story_thumbnail_en')
+                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="mentor_image_en">
+                                                            @error('mentor_image_en')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -120,43 +78,69 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="story_alt_en" value="{{ $success_stories[0]->thumbnail_alt }}">
+                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en" value="{{ $mentor[0]->mentor_alt }}">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Achievement Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="achievement_preview_en" src="{{ asset('uploaded_files/success-stories/'.$success_stories[0]->achievement_image) }}">
-                                                        </div>
+                                                    <div class="col">
+                                                        <label for="" class="form-label">
+                                                            First Name <span style="color: var(--red)">*</span>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="firstname_en" name="mentor_firstname_en" value="{{ $mentor[0]->mentor_firstname }}">
                                                     </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Achievement Image <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="achievement_img_en" onchange="previewAchievement_en()" name="story_achievement_img_en">
-                                                            @error('story_achievement_img_en')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Achievement Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="achievement_alt_en" name="story_achievement_alt_en" value="{{ $success_stories[0]->achievement_alt }}">
-                                                        </div>
+                                                    <div class="col">
+                                                        <label for="" class="form-label">
+                                                            Last name <span style="color: var(--red)">*</span>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="lastname_en" name="mentor_lastname_en" value="{{ $mentor[0]->mentor_lastname }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Link Video <span style="color: var(--red)">*</span>
+                                                        Graduation <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="video_link_en" name="story_video_link_en" value="{{ $success_stories[0]->video_link }}">
-                                                    @error('story_video_link_en')
+                                                    <textarea class="textarea" name="mentor_graduation_en" id="graduation_en">
+                                                        {{ $mentor[0]->mentor_graduation}}
+                                                    </textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Currently Working
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_currently_working_en" id="currently_working_en">
+                                                        {{ $mentor[0]->currently_working }}
+                                                    </textarea>
+                                                    @error('mentor_currently_working_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Expertise
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_expertise_en" id="expertise_en">
+                                                        {{ $mentor[0]->expertise }}
+                                                    </textarea>
+                                                    @error('mentor_expertise_en')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_description_en" id="description_en">
+                                                        {{ $mentor[0]->description }}
+                                                    </textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Short Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_short_description_en" id="short_description_en">
+                                                        {{ $mentor[0]->short_desc }}
+                                                    </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -168,85 +152,25 @@
                                             <h5 class="card-title">Form Indonesia</h5>
                                             @if($errors->any())
                                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Success Stories!</strong> You have to check some fields in English and Indonesian.
+                                                    <strong>Failed Create Mentor!</strong> You have to check some fields in English and Indonesian.
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>
                                             @endif
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Name <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="name_id" name="story_name_id" value="{{ $success_stories[1]->name }}">
-                                                    @error('story_name_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 1 <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge1_id" name="story_badge1_id" value="{{ $success_stories[1]->badge_1 }}">
-                                                        @error('story_badge1_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 2
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge2_id" name="story_badge2_id" value="{{ $success_stories[1]->badge_2 }}">
-                                                        @error('story_badge2_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 3
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge3_id" name="story_badge3_id" value="{{ $success_stories[1]->badge_3 }}">
-                                                        @error('story_badge3_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 4
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge4_id" name="story_badge4_id" value="{{ $success_stories[1]->badge_4 }}">
-                                                        @error('story_badge4_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Description <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <textarea class="textarea" name="story_description_id" id="description_id">
-                                                        {{ $success_stories[1]->description }}
-                                                    </textarea>
-                                                    @error('story_description_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Thumbnail Preview</label>
+                                                        <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/success-stories/'.$success_stories[1]->thumbnail) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/mentor/'.$mentor[1]->mentor_picture) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Image <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="story_thumbnail_id">
-                                                            @error('story_thumbnail_id')
+                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="mentor_image_id">
+                                                            @error('mentor_image_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -254,47 +178,85 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="story_alt_id" value="{{ $success_stories[1]->thumbnail_alt }}">
-                                                            @error('story_alt_id')
+                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id" value="{{ $mentor[1]->mentor_alt }}">
+                                                            @error('mentor_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Achievement Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="achievement_preview_id" src="{{ asset('uploaded_files/success-stories/'.$success_stories[1]->achievement_image) }}">
-                                                        </div>
+                                                    <div class="col">
+                                                        <label for="" class="form-label">
+                                                            First Name <span style="color: var(--red)">*</span>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="firstname_id" name="mentor_firstname_id" value="{{ $mentor[1]->mentor_firstname }}">
+                                                        @error('mentor_firstname_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Achievement Image <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="achievement_img_id" onchange="previewAchievement_id()" name="story_achievement_img_id">
-                                                            @error('story_achievement_img_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Achievement Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="achievement_alt_id" name="story_achievement_alt_id" value="{{ $success_stories[1]->achievement_alt }}">
-                                                            @error('story_achievement_alt_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
+                                                    <div class="col">
+                                                        <label for="" class="form-label">
+                                                            Last name <span style="color: var(--red)">*</span>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="lastname_id" name="mentor_lastname_id" value="{{ $mentor[1]->mentor_lastname }}">
+                                                        @error('mentor_lastname_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Link Video <span style="color: var(--red)">*</span>
+                                                        Graduation <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="video_link_id" name="story_video_link_id" value="{{ $success_stories[1]->video_link }}">
-                                                    @error('story_video_link_id')
+                                                    <textarea class="textarea" name="mentor_graduation_id" id="graduation_id">
+                                                        {{ $mentor[1]->mentor_graduation}}
+                                                    </textarea>
+                                                    @error('mentor_graduation_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Currently Working
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_currently_working_id" id="currently_working_id">
+                                                        {{ $mentor[1]->currently_working }}
+                                                    </textarea>
+                                                    @error('mentor_currently_working_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Expertise
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_expertise_id" id="expertise_id">
+                                                        {{ $mentor[1]->expertise }}
+                                                    </textarea>
+                                                    @error('mentor_expertise_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_description_id" id="description_id">
+                                                        {{ $mentor[1]->description }}
+                                                    </textarea>
+                                                    @error('mentor_description_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Short Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="mentor_short_description_id" id="short_description_id">
+                                                        {{ $mentor[1]->short_desc }}
+                                                    </textarea>
+                                                    @error('mentor_short_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -321,7 +283,7 @@
 @section('js')
 <script>
     function previewImage_en(){
-        const image = document.querySelector('#thumbnail_en')
+        const image = document.querySelector('#image_en')
         const imgPreview = document.querySelector('#img_preview_en')
         imgPreview.style.display = 'block'
         const oFReader = new FileReader()
@@ -330,18 +292,8 @@
             imgPreview.src = oFREvent.target.result
         }
     };
-    function previewAchievement_en(){
-        const image = document.querySelector('#achievement_img_en')
-        const imgPreview = document.querySelector('#achievement_preview_en')
-        imgPreview.style.display = 'block'
-        const oFReader = new FileReader()
-        oFReader.readAsDataURL(image.files[0])
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result
-        }
-    };
     function previewImage_id(){
-        const image = document.querySelector('#thumbnail_id')
+        const image = document.querySelector('#image_id')
         const imgPreview = document.querySelector('#img_preview_id')
         imgPreview.style.display = 'block'
         const oFReader = new FileReader()
@@ -350,27 +302,16 @@
             imgPreview.src = oFREvent.target.result
         }
     };
-    function previewAchievement_id(){
-        const image = document.querySelector('#achievement_img_id')
-        const imgPreview = document.querySelector('#achievement_preview_id')
-        imgPreview.style.display = 'block'
-        const oFReader = new FileReader()
-        oFReader.readAsDataURL(image.files[0])
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result
-        }
-    };
     function checkInput(){
-        const name_en = document.getElementById('name_en').value;
-        const badge1_en = document.getElementById('badge1_en').value;
+        const firstname_en = document.getElementById('firstname_en').value;
+        const lastname_en = document.getElementById('lastname_en').value;
+        const graduation_en = tinymce.get('graduation_en').getContent();
         const description_en = tinymce.get('description_en').getContent();
-        const thumbnail_en = document.getElementById('thumbnail_en').value;
+        const short_description_en = tinymce.get('short_description_en').getContent();
+        const image_en = document.getElementById('image_en').value;
         const alt_en = document.getElementById('alt_en').value;
-        const achievement_img_en = document.getElementById('achievement_img_en').value;
-        const achievement_alt_en = document.getElementById('achievement_alt_en').value;
-        const video_link_en = document.getElementById('video_link_en').value;
         const submit = document.getElementById('submit');
-        if (name_en == "" || badge1_en == "" || description_en == "" || thumbnail_en == "" || alt_en == "" || achievement_img_en == "" || achievement_alt_en == "" || video_link_en == "") {
+        if (firstname_en == "" || lastname_en == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image_en == "" || alt_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

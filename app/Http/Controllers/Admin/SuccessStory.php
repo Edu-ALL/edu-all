@@ -128,7 +128,7 @@ class SuccessStory extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/success-stories');
+        return redirect('/admin/success-stories')->withSuccess('Success Stories Was Successfully Created');
     }
 
     public function edit($group){
@@ -263,7 +263,7 @@ class SuccessStory extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/success-stories/'.$group.'/edit');
+        return redirect('/admin/success-stories/'.$group.'/edit')->withSuccess('Success Stories Was Successfully Updated');
     }
 
     public function delete($group){
@@ -302,7 +302,7 @@ class SuccessStory extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/success-stories');
+        return redirect('/admin/success-stories')->withSuccess('Success Stories Was Successfully Deleted');
     }
 
     public function deactivate($group){

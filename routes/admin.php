@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BlogCategory;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
+use App\Http\Controllers\Admin\MentorVideo;
 use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\UpcomingEvent;
@@ -50,6 +51,13 @@ Route::middleware('is_admin')->group(function(){
 
     // Blog
     Route::get('/blogs', [Blog::class, 'index']);
+    Route::get('/blogs/create', [Blog::class, 'create']);
+    Route::post('/blogs', [Blog::class, 'store'])->name('create-blogs');
+    Route::get('/blogs/{id}/edit', [Blog::class, 'edit']);
+    Route::post('/blogs/{id}', [Blog::class, 'update'])->name('update-blogs');
+    Route::post('/blogs/deactivate/{id}', [Blog::class, 'deactivate']);
+    Route::post('/blogs/activate/{id}', [Blog::class, 'activate']);
+    Route::post('/blogs/delete/{id}', [Blog::class, 'delete']);
 
     // Blog Category
     Route::get('/blog-category', [BlogCategory::class, 'index']);
@@ -103,11 +111,15 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/mentor', [Mentor::class, 'index']);
     Route::get('/mentor/create', [Mentor::class, 'create']);
     Route::post('/mentor', [Mentor::class, 'store'])->name('create-mentor');
+    Route::get('/mentor/{group}/view', [Mentor::class, 'view']);
     Route::get('/mentor/{group}/edit', [Mentor::class, 'edit']);
     Route::post('/mentor/{group}', [Mentor::class, 'update'])->name('update-mentor');
     Route::post('/mentor/deactivate/{group}', [Mentor::class, 'deactivate']);
     Route::post('/mentor/activate/{group}', [Mentor::class, 'activate']);
     Route::post('/mentor/delete/{group}', [Mentor::class, 'delete']);
+    Route::post('/mentor/video/{group}', [MentorVideo::class, 'store']);
+    Route::post('/mentor/video/{group}/{id}', [MentorVideo::class, 'update']);
+    Route::post('/mentor/video/delete/{group}/{id}', [MentorVideo::class, 'delete']);
 });
 
 

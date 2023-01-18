@@ -20,4 +20,8 @@ class BlogCategorys extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function blog(){
+        return $this->belongsTo(Blogs::class, 'id', 'cat_id');
+    }
 }

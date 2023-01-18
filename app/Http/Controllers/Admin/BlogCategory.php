@@ -53,7 +53,7 @@ class BlogCategory extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blog-category');
+        return redirect('/admin/blog-category')->withSuccess('Blog Category Was Successfully Created');
     }
 
     public function edit($group){
@@ -92,7 +92,7 @@ class BlogCategory extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blog-category/'.$group.'/edit');
+        return redirect('/admin/blog-category/'.$group.'/edit')->withSuccess('Blog Category Was Successfully Updated');
     }
 
     public function delete($group){
@@ -107,6 +107,6 @@ class BlogCategory extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blog-category');
+        return redirect('/admin/blog-category')->withSuccess('Blog Category Was Successfully Deleted');
     }
 }

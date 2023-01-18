@@ -532,3 +532,16 @@ table tr td p {
 .select2-results {
   font-size: 14px;
 }
+
+.field-detail * {
+  font-size: 14px !important;
+  font-family: "Poppins", sans-serif;
+}
+.field-detail .desc-textarea * {
+  margin: 0 !important;
+}
+@media (max-width: 768px) {
+  .field-detail * {
+  font-size: 13px !important;
+}
+}

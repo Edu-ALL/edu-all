@@ -130,7 +130,7 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info">Deactivate</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Deactivate</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
@@ -153,7 +153,7 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info">Activate</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Activate</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
@@ -176,7 +176,7 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info">Delete</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Delete</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">

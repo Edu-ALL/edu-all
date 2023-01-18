@@ -58,6 +58,31 @@
                                             @endif
                                             <div class="col d-flex flex-column gap-2">
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                                    <div class="col-md-2 col">
+                                                        <label for="" class="form-label">Image Preview</label>
+                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
+                                                            <img class="img-preview img-fluid" id="img_preview_en">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col d-flex flex-column gap-2">
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Image <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="mentor_image_en">
+                                                            @error('mentor_image_en')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Alt <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             First Name <span style="color: var(--red)">*</span>
@@ -101,31 +126,6 @@
                                                     </label>
                                                     <textarea class="textarea" name="mentor_short_description_en" id="short_description_en"></textarea>
                                                 </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Image Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="mentor_image_en">
-                                                            @error('mentor_image_en')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en">
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -141,6 +141,34 @@
                                                 </div>
                                             @endif
                                             <div class="col d-flex flex-column gap-2">
+                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                                    <div class="col-md-2 col">
+                                                        <label for="" class="form-label">Image Preview</label>
+                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
+                                                            <img class="img-preview img-fluid" id="img_preview_id">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col d-flex flex-column gap-2">
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Image <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="mentor_image_id">
+                                                            @error('mentor_image_id')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <label for="" class="form-label">
+                                                                Alt <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id">
+                                                            @error('mentor_alt_id')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col">
                                                         <label for="" class="form-label">
@@ -205,34 +233,6 @@
                                                     @error('mentor_short_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Image Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="mentor_image_id">
-                                                            @error('mentor_image_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id">
-                                                            @error('mentor_alt_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
 

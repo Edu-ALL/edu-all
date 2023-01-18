@@ -32,4 +32,8 @@ class Blogs extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function blog_category(){
+        return $this->hasMany(BlogCategorys::class, 'cat_id', 'id');
+    }
 }

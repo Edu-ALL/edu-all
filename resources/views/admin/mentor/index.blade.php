@@ -97,8 +97,8 @@
                                             @endif
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/success-stories/{{ $mentor->group }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this mentor"></i>
+                                                    <a type="button" class="btn btn-warning" href="/admin/mentor/{{ $mentor->group }}/view">
+                                                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this mentor"></i>
                                                     </a>
                                                     <button 
                                                     type="button"
@@ -130,7 +130,7 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info">Deactivate</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Deactivate</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
@@ -153,7 +153,7 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info">Activate</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Activate</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
@@ -176,7 +176,7 @@
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-3" id="title-info">Delete</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Delete</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">

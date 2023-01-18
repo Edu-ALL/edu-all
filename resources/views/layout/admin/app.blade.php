@@ -55,6 +55,15 @@
                 });
             </script>
         @endif
+        @if (Session::has('errors'))
+            <script>
+                swal({
+                    title: "Something Wrong!",
+                    text: "{{ Session::get('errors')->first() }}",
+                    icon: "error",
+                });
+            </script>
+        @endif
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/admin/main.js') }}"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
