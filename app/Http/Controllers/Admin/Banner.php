@@ -101,13 +101,13 @@ class Banner extends Controller
 
     public function update($group, Request $request){
         $rules = [
-            'banner_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'banner_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt_en' => 'required',
             'banner_title_en' => 'required|max:255',
             'banner_description_en' => 'required',
             'banner_button_en' => 'required',
             'banner_link_en' => 'required|url',
-            'banner_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'banner_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt_id' => 'required',
             'banner_title_id' => 'required|max:255',
             'banner_description_id' => 'required',

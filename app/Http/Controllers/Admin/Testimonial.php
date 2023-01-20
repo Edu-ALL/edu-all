@@ -105,13 +105,13 @@ class Testimonial extends Controller
             'testi_desc_en' => 'required',
             'testi_program_en' => 'required',
             'testi_category_en' => 'required',
-            'testi_thumbnail_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'testi_thumbnail_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'testi_alt_en' => 'required',
             'testi_name_id' => 'required',
             'testi_desc_id' => 'required',
             'testi_program_id' => 'required',
             'testi_category_id' => 'required',
-            'testi_thumbnail_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'testi_thumbnail_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'testi_alt_id' => 'required',
         ];
 

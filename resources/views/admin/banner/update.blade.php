@@ -67,9 +67,9 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Banner Image <span style="color: var(--red)">*</span>
+                                                                Banner Image
                                                             </label>
-                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en" value="{{ $banner[0]->banner_img }}">
+                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en">
                                                             @error('banner_image_en')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -134,9 +134,9 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Banner Image <span style="color: var(--red)">*</span>
+                                                                Banner Image
                                                             </label>
-                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id" value="{{ $banner[1]->banner_img }}">
+                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id">
                                                             @error('banner_image_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -238,9 +238,7 @@
         const button_en = document.getElementById('button_en').value;
         const link_en = document.getElementById('link_en').value;
         const submit = document.getElementById('submit');
-        console.log(description_en);
-
-        if (image_en == "" || alt_en == "" || title_en == "" || description_en == "" || button_en == "" || link_en == "") {
+        if (alt_en == "" || title_en == "" || description_en == "" || button_en == "" || link_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

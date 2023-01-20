@@ -67,7 +67,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
+                                                                Image
                                                             </label>
                                                             <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="mentor_image_en">
                                                             @error('mentor_image_en')
@@ -167,7 +167,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
+                                                                Image
                                                             </label>
                                                             <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="mentor_image_id">
                                                             @error('mentor_image_id')
@@ -311,7 +311,7 @@
         const image_en = document.getElementById('image_en').value;
         const alt_en = document.getElementById('alt_en').value;
         const submit = document.getElementById('submit');
-        if (firstname_en == "" || lastname_en == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image_en == "" || alt_en == "") {
+        if (firstname_en == "" || lastname_en == "" || graduation_en == "" || description_en == "" || short_description_en == "" || alt_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

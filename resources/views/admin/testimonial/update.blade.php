@@ -101,9 +101,12 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Thumbnail
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="testi_thumbnail_en" value="{{ $testimonial[0]->testi_thumbnail }}">
+                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="testi_thumbnail_en">
+                                                            @error('testi_thumbnail_en')
+                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
@@ -184,9 +187,9 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Thumbnail
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="testi_thumbnail_id" value="{{ $testimonial[1]->testi_thumbnail}}">
+                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="testi_thumbnail_id">
                                                             @error('testi_thumbnail_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -252,7 +255,7 @@
         const thumbnail_en = document.getElementById('thumbnail_en').value;
         const alt_en = document.getElementById('alt_en').value;
         const submit = document.getElementById('submit');
-        if (name_en == "" || desc_en == "" || program_en == "" || category_en == "" || thumbnail_en == "" || alt_en == "") {
+        if (name_en == "" || desc_en == "" || program_en == "" || category_en == "" || alt_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

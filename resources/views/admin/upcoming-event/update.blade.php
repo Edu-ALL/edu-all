@@ -67,9 +67,9 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Thumbnail
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="event_thumbnail_en" value="{{ $upcoming_event[0]->event_thumbnail }}">
+                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="event_thumbnail_en">
                                                             @error('event_thumbnail_en')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -142,9 +142,9 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Thumbnail
                                                             </label>
-                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="event_thumbnail_id" value="{{ $upcoming_event[1]->event_thumbnail }}">
+                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="event_thumbnail_id">
                                                             @error('event_thumbnail_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -256,7 +256,7 @@
         const date_en = document.getElementById('date_en').value;
         const detail_en = tinymce.get('detail_en').getContent();
         const submit = document.getElementById('submit');
-        if (thumbnail_en == "" || alt_en == "" || title_en == "" || date_en == "" || detail_en == "") {
+        if (alt_en == "" || title_en == "" || date_en == "" || detail_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

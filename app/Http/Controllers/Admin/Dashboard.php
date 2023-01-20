@@ -22,6 +22,7 @@ class Dashboard extends Controller
         $upcoming_event = UpcomingEvents::get();
         $success_stories = SuccessStories::get();
         $testimonial = Testimonials::get();
+        $top_blogs = Blogs::where('blog_status', 'active')->orderby('click_count', 'desc')->take(5)->get();
         return view('admin.dashboard', [
             'banner' => $banner,
             'blog' => $blog,
@@ -30,6 +31,7 @@ class Dashboard extends Controller
             'upcoming_event' => $upcoming_event,
             'success_stories' => $success_stories,
             'testimonial' => $testimonial,
+            'top_blogs' => $top_blogs,
         ]);
     }
 }

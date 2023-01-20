@@ -67,7 +67,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
+                                                                Image
                                                             </label>
                                                             <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="guidebook_image_en">
                                                             @error('guidebook_image_en')
@@ -122,7 +122,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
+                                                                Image
                                                             </label>
                                                             <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="guidebook_image_id">
                                                             @error('guidebook_image_id')
@@ -206,7 +206,7 @@
         const category_en = document.getElementById('category_en').value;
         const link_en = document.getElementById('link_en').value;
         const submit = document.getElementById('submit');
-        if (image_en == "" || alt_en == "" || category_en == "" || link_en == "") {
+        if (alt_en == "" || category_en == "" || link_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

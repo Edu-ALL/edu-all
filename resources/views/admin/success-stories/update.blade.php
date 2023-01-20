@@ -109,7 +109,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Thumbnail
                                                             </label>
                                                             <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="story_thumbnail_en">
                                                             @error('story_thumbnail_en')
@@ -134,7 +134,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Image <span style="color: var(--red)">*</span>
+                                                                Achievement Image
                                                             </label>
                                                             <input type="file" class="form-control" id="achievement_img_en" onchange="previewAchievement_en()" name="story_achievement_img_en">
                                                             @error('story_achievement_img_en')
@@ -243,7 +243,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
+                                                                Thumbnail
                                                             </label>
                                                             <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="story_thumbnail_id">
                                                             @error('story_thumbnail_id')
@@ -271,7 +271,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Image <span style="color: var(--red)">*</span>
+                                                                Achievement Image
                                                             </label>
                                                             <input type="file" class="form-control" id="achievement_img_id" onchange="previewAchievement_id()" name="story_achievement_img_id">
                                                             @error('story_achievement_img_id')
@@ -370,7 +370,7 @@
         const achievement_alt_en = document.getElementById('achievement_alt_en').value;
         const video_link_en = document.getElementById('video_link_en').value;
         const submit = document.getElementById('submit');
-        if (name_en == "" || badge1_en == "" || description_en == "" || thumbnail_en == "" || alt_en == "" || achievement_img_en == "" || achievement_alt_en == "" || video_link_en == "") {
+        if (name_en == "" || badge1_en == "" || description_en == "" || alt_en == "" || achievement_alt_en == "" || video_link_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

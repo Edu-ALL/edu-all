@@ -93,11 +93,11 @@ class Guidebook extends Controller
 
     public function update($group, Request $request){
         $rules = [
-            'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_en' => 'required',
             'guidebook_category_en' => 'required',
             'guidebook_link_en' => 'required|url',
-            'guidebook_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'guidebook_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_id' => 'required',
             'guidebook_category_id' => 'required',
             'guidebook_link_id' => 'required|url',

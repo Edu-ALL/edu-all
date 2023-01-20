@@ -18,7 +18,7 @@
         </nav>
     </div>
     <section class="section dashboard">
-        <div class="col d-flex flex-column gap-3">
+        <div class="col d-flex flex-column gap-md-3 gap-0 px-md-0 px-2">
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
@@ -133,21 +133,27 @@
             </div>
 
             <div class="row">
-                <div class="col">
+                <div class="col px-md-2 px-0">
                     <div class="card">
                         <div class="card-body pb-0">
                             <h5 class="card-title">Top 5 Blogs <span>| Blogs</span></h5>
-                            <div class="news pb-3">
-                                <div class="post-item clearfix">
+                            <div class="news d-flex flex-column gap-3 pb-md-4 pb-3">
+                                @foreach ($top_blogs as $top_blog)
+                                    <div class="row align-items-center justify-content-center gap-md-2 gap-0">
+                                        <div class="col-md-2 col-4 text-center" style="max-width: 120px">
+                                            <img src="{{ asset('uploaded_files/blogs/'.$top_blog->blog_thumbnail) }}" alt="" width="100">
+                                        </div>
+                                        <div class="col">
+                                            <h4><a href="#">{{ $top_blog->blog_title }}</a></h4>
+                                            {!! $top_blog->slug !!}
+                                        </div>
+                                    </div>
+                                @endforeach
+                                {{-- <div class="post-item clearfix">
                                     <img src="{{ asset('assets/img/footer/image_1.png') }}" alt="">
                                     <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
                                     <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                                </div>
-                                <div class="post-item clearfix">
-                                    <img src="{{ asset('assets/img/footer/image_1.png') }}" alt="">
-                                    <h4><a href="#">Quidem autem et impedit</a></h4>
-                                    <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

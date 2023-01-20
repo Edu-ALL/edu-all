@@ -134,7 +134,7 @@ class Mentor extends Controller
             'mentor_expertise_en' => 'nullable',
             'mentor_description_en' => 'required',
             'mentor_short_description_en' => 'required',
-            'mentor_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'mentor_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt_en' => 'required',
             'mentor_firstname_id' => 'required',
             'mentor_lastname_id' => 'required',
@@ -143,7 +143,7 @@ class Mentor extends Controller
             'mentor_expertise_id' => 'nullable',
             'mentor_description_id' => 'required',
             'mentor_short_description_id' => 'required',
-            'mentor_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            // 'mentor_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt_id' => 'required',
         ];
 
