@@ -43,6 +43,7 @@ module.exports = {
                 title: "Maven Pro, sans-serif",
                 secondary: "Source Sans Pro, sans-serif",
                 body: "Roboto, sans-serif",
+                inter: "Roboto, sans-serif",
             },
             colors: {
                 navbar: "#7895C7",

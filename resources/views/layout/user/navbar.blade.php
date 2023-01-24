@@ -117,7 +117,8 @@
                         </li>
 
                         <li class="li-nav">
-                            <a href="#" class="li-link-nav lg:pl-4">{{ __('pages/navbar.blog') }}</a>
+                            <a href="{{ url(app()->getLocale()) }}/blogs"
+                                class="li-link-nav lg:pl-4">{{ __('pages/navbar.blog') }}</a>
                         </li>
 
                         <li
