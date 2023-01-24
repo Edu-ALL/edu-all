@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -127,5 +128,29 @@
 
     .student__acceptance__btn--active:hover {
         @apply bg-white border-[#2c70f7];
+    }
+
+    /* Scrollbar Blog Category */
+    .horizontal_list::-webkit-scrollbar {
+        height: 4px;
+        background-color: #f5f5f5;
+    }
+
+    .horizontal_list::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+
+    .horizontal_list::-webkit-scrollbar-thumb:active {
+        background-color: #888;
+    }
+
+    /* Pagination Blog */
+    .Pagination:last-child {
+        background-color: #ff0000;
+    }
+
+    .pagination .page-item .page-link:hover {
+        background-color: #ffa500;
+        color: #ffffff;
     }
 }

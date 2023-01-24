@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\AboutPageController;
+use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\ResourcesPageController;
@@ -55,6 +56,10 @@ Route::group(
             Route::get('/resources/guidebook', "guidebook")->name('guidebook');
             Route::get('/resources/testimonial', "testimonial")->name('testimonial');
             Route::get('/resources/student-acceptances', "student_acceptances")->name('student_acceptances');
+        });
+
+        Route::controller(BlogPageController::class)->group(function () {
+            Route::get('/blogs', "blogs")->name('blogs');
         });
 
         Route::get('/sample', function () {
