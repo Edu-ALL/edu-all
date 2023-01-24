@@ -20,18 +20,17 @@ class Authentication extends Controller
 
         $messages = [
             "email.exists" => "This email has not been registered",
-            "password.required" => "Your password is wrong."
         ];
 
         $validator = Validator::make($credentials, $rules, $messages);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator->messages());
+            return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         if (!Auth::guard('web-admin')->attempt($credentials)) {
-            return Redirect::back()->withErrors($validator->messages());
-            // return Redirect::back()->with("error-password", "Your password is wrong.");
-            // return Redirect::back()->withErrors("Your password is wrong.");
+            return Redirect::back()->withInput()->withErrors([
+                'password' => 'Your password is wrong',
+            ]);
         }
 
         return redirect('/admin/dashboard')->withSuccess('Signed in successfully');

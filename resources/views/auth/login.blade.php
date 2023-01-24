@@ -42,20 +42,17 @@
                                 @csrf
                                 <div class="col-12">
                                     <label for="yourEmail" class="form-label h6">Email</label>
-                                    <input type="email" name="email" class="form-control" id="yourEmail">
+                                    <input type="email" name="email" class="form-control" id="yourEmail" required value="{{ old('email') }}">
                                     @error('email')
                                         <small class="alert text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="col-12">
                                     <label for="yourPassword" class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" id="yourPassword">
+                                    <input type="password" name="password" class="form-control" id="yourPassword" required>
                                     @error('password')
                                         <small class="alert text-danger">{{ $message }}</small>
                                     @enderror
-                                    {{-- @if (session()->has('error-password'))
-                                        <small class="alert text-danger">{{session()->get('error-password')}}</small>
-                                    @endif --}}
                                 </div>
                                 <div class="col-12 my-4">
                                     <button class="btn btn-primary w-100" type="submit" style="font-size: 14px !important">Login</button>
