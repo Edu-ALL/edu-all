@@ -58,12 +58,13 @@ Route::group(
             Route::get('/resources/student-acceptances', "student_acceptances")->name('student_acceptances');
         });
 
-        Route::controller(BlogPageController::class)->group(function () {
-            Route::get('/blogs', "blogs")->name('blogs');
-        });
-
         Route::get('/sample', function () {
             return view('sample');
         })->name('sample');
     },
 );
+
+Route::controller(BlogPageController::class)->group(function () {
+    Route::get('{locale}/blog', "index")->name('blogs');
+    Route::get('blog/{blog:id}', "show")->name('detail_blog');
+});

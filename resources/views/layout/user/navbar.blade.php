@@ -117,7 +117,7 @@
                         </li>
 
                         <li class="li-nav">
-                            <a href="{{ url(app()->getLocale()) }}/blogs"
+                            <a href="{{ url(app()->getLocale()) }}/blog"
                                 class="li-link-nav lg:pl-4">{{ __('pages/navbar.blog') }}</a>
                         </li>
 
@@ -173,10 +173,17 @@
                         <div
                             class="flex flex-col font-bold items-start bg-white border-2 absolute top-full right-0 translate-x-[1px] translate-y-8 invisible transition-all duration-100 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                             @foreach (config('app.available_locales') as $locale)
-                                <a href="{{ route(Route::currentRouteName(), $locale) }}"
-                                    class=" w-full px-4 py-2 text-left @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
-                                    {{ strtoupper($locale) }}
-                                </a>
+                                @if (str_contains(request()->path(), 'blog'))
+                                    <a href="{{ route('blogs', $locale) }}"
+                                        class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
+                                        {{ strtoupper($locale) }}
+                                    </a>
+                                @else
+                                    <a href="{{ route(Route::currentRouteName(), $locale) }}"
+                                        class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
+                                        {{ strtoupper($locale) }}
+                                    </a>
+                                @endif
                             @endforeach
                         </div>
                     </div>
