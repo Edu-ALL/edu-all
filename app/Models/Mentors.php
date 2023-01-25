@@ -30,7 +30,8 @@ class Mentors extends Model
         'updated_at'
     ];
 
-    public function mentor_video(){
+    public function mentor_video()
+    {
         return $this->hasMany(MentorVideo::class, 'group', 'mentor_id');
     }
 }

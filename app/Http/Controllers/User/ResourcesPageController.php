@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Mentors;
+use App\Models\MentorVideos;
 use Illuminate\Http\Request;
 
 class ResourcesPageController extends Controller
@@ -216,8 +217,11 @@ class ResourcesPageController extends Controller
     public function detail_mentor($locale, $group)
     {
         $mentor = Mentors::where('group', $group)->where('lang', $locale)->first();
+        $mentor_videos = MentorVideos::where('mentor_id', $mentor->group)->get();
+
         return view('user.detail_mentor.main', [
-            'mentor' => $mentor
+            'mentor' => $mentor,
+            'mentor_videos' => $mentor_videos
         ]);
     }
 }
