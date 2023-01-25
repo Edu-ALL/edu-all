@@ -40,7 +40,7 @@ class BlogPageController extends Controller
         $doc =  new DOMDocument();
         $doc->loadHTML($blog->blog_description);
         $title_list = $doc->getElementsByTagName('h2');
-        // $tag_content = $tag->nodeValue;
+
         $blog_section = [];
         foreach ($title_list as $index => $title) {
             $title->setAttribute("id", "blog_title_" . $index);
@@ -48,7 +48,7 @@ class BlogPageController extends Controller
         }
 
         $blog->blog_description = $doc->saveHTML();
-        // dd($blog->blog_description);
+
         return view('user.detail_blog.main', [
             'blog' => $blog,
             "top_blogs" => $top_blogs,

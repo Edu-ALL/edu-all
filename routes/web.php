@@ -56,6 +56,12 @@ Route::group(
             Route::get('/resources/guidebook', "guidebook")->name('guidebook');
             Route::get('/resources/testimonial', "testimonial")->name('testimonial');
             Route::get('/resources/student-acceptances', "student_acceptances")->name('student_acceptances');
+            Route::get('/resources/mentor', "mentor")->name('mentor');
+            Route::get('/resources/mentor/{group}', "detail_mentor")->name('detail_mentor');
+        });
+
+        Route::controller(BlogPageController::class)->group(function () {
+            Route::get('blog', "index")->name('blogs');
         });
 
         Route::get('/sample', function () {
@@ -64,7 +70,5 @@ Route::group(
     },
 );
 
-Route::controller(BlogPageController::class)->group(function () {
-    Route::get('{locale}/blog', "index")->name('blogs');
-    Route::get('blog/{blog:id}', "show")->name('detail_blog');
-});
+
+Route::get('blog/{blog:id}', [BlogPageController::class, "show"])->name('detail_blog');

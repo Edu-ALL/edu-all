@@ -178,6 +178,15 @@
                                         class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
                                         {{ strtoupper($locale) }}
                                     </a>
+                                @elseif (str_contains(request()->path(), 'mentor/'))
+                                    @php
+                                        $url_path = explode('/', request()->path());
+                                        $id_mentor = end($url_path);
+                                    @endphp
+                                    <a href="{{ route(Route::currentRouteName(), ['locale' => $locale, 'group' => $id_mentor]) }}"
+                                        class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
+                                        {{ strtoupper($locale) }}
+                                    </a>
                                 @else
                                     <a href="{{ route(Route::currentRouteName(), $locale) }}"
                                         class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
