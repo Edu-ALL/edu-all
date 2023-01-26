@@ -19,8 +19,17 @@ module.exports = {
                     "url('../../public/assets/img/programs/aaron-burden-y02jEX_B0O0-unsplash.jpg')",
 
                 // Admission mentoring
-                "undergraduate-program":
+                // Undergraduate
+                "undergraduate-header":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/Adm mentoring undergraduate resize.webp')",
+                "undergraduate-do":
+                    "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
+                "undergraduate-list-1":"url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate1.webp')",
+                "undergraduate-list-2":"url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate2.webp')",
+                "undergraduate-list-3":"url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate3.webp')",
+                "undergraduate-list-4":"url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate4.webp')",
+                "undergraduate-list-5":"url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate5.webp')",
+
 
                 // passion project
                 "passion-project-bg-entre":
