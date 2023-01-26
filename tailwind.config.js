@@ -18,6 +18,10 @@ module.exports = {
                 "program-image-3":
                     "url('../../public/assets/img/programs/aaron-burden-y02jEX_B0O0-unsplash.jpg')",
 
+                // Admission mentoring
+                "undergraduate-program":
+                    "url('../../public/assets/img/admission mentoring/Undergraduate/Adm mentoring undergraduate resize.webp')",
+
                 // passion project
                 "passion-project-bg-entre":
                     "url('../../public/assets/img/passion_project_mentoring/background-entre.webp')",
@@ -56,7 +60,6 @@ module.exports = {
                 primary: "#233469",
                 "top-navbar": "#666666",
                 body: "#7A7A7A",
-                // yellow: "#F99B24",
                 yellow: "#f78614",
                 dark: "#1d1d1d",
                 light: "#ffffff",

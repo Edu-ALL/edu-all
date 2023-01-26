@@ -48,16 +48,16 @@
                                         {{ __('pages/navbar.programs_admission') }}</a>
                                     <ul class="child-child-ul">
                                         <li class="child-child-li">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring#undergraduate"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/undergraduate-program"
                                                 class="child-child-link">
                                                 {{ __('pages/navbar.programs_admission_undergraduate') }}</a>
                                         </li>
                                         <li class="child-child-li">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring#graduate"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/graduate-program"
                                                 class="child-child-link">{{ __('pages/navbar.programs_admission_graduate') }}</a>
                                         </li>
                                         <li class="child-child-li lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring#univ-transfer"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/university-transfer-program"
                                                 class="child-child-link">{{ __('pages/navbar.programs_admission_university') }}</a>
                                         </li>
 
