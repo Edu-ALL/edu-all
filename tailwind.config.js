@@ -37,6 +37,10 @@ module.exports = {
                 // header upcomming event
                 "upcomming-header":
                     "url('../../public/assets/img/upcoming_events/header-upcoming.webp')",
+
+                // header mentor
+                "mentor-header":
+                    "url('../../public/assets/img/mentor/header.png')",
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
