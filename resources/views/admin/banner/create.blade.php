@@ -69,7 +69,7 @@
                                                             <label for="" class="form-label">
                                                                 Banner Image <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en">
+                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="banner_image_en" required>
                                                             @error('banner_image_en')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -78,7 +78,7 @@
                                                             <label for="" class="form-label">
                                                                 Banner Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="banner_alt_en">
+                                                            <input type="text" class="form-control" id="alt_en" name="banner_alt_en" required value="{{ old('banner_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -86,25 +86,27 @@
                                                     <label for="" class="form-label">
                                                         Banner Title <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="title_en" name="banner_title_en">
+                                                    <input type="text" class="form-control" id="title_en" name="banner_title_en" required value="{{ old('banner_title_en') }}">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Banner Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="banner_description_en" id="description_en"></textarea>
+                                                    <textarea class="textarea" name="banner_description_en" id="description_en" required>
+                                                        {{ old('banner_description_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Banner Button <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="button_en" name="banner_button_en">
+                                                    <input type="text" class="form-control" id="button_en" name="banner_button_en" required value="{{ old('banner_button_en') }}">
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <label for="" class="form-label">
                                                         Banner Link <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="link_en" name="banner_link_en">
+                                                    <input type="text" class="form-control" id="link_en" name="banner_link_en" required value="{{ old('banner_link_en') }}">
                                                     @error('banner_link_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -136,7 +138,7 @@
                                                             <label for="" class="form-label">
                                                                 Banner Image <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id">
+                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="banner_image_id" required>
                                                             @error('banner_image_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -145,7 +147,7 @@
                                                             <label for="" class="form-label">
                                                                 Banner Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="banner_alt_id">
+                                                            <input type="text" class="form-control" id="alt_id" name="banner_alt_id" required value="{{ old('banner_alt_id') }}">
                                                             @error('banner_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -157,7 +159,7 @@
                                                     <label for="" class="form-label">
                                                         Banner Title <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="" name="banner_title_id">
+                                                    <input type="text" class="form-control" id="" name="banner_title_id"  required value="{{ old('banner_title_id') }}">
                                                     @error('banner_title_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -166,7 +168,9 @@
                                                     <label for="" class="form-label">
                                                         Banner Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="banner_description_id" id=""></textarea>
+                                                    <textarea class="textarea" name="banner_description_id" id="" required>
+                                                        {{ old('banner_description_id') }}
+                                                    </textarea>
                                                     @error('banner_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -175,7 +179,7 @@
                                                     <label for="" class="form-label">
                                                         Banner Button <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="" name="banner_button_id">
+                                                    <input type="text" class="form-control" id="" name="banner_button_id" required value="{{ old('banner_button_id') }}">
                                                     @error('banner_button_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -184,7 +188,7 @@
                                                     <label for="" class="form-label">
                                                         Banner Link <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="" name="banner_link_id">
+                                                    <input type="text" class="form-control" id="" name="banner_link_id" required value="{{ old('banner_link_id') }}">
                                                     @error('banner_link_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror

@@ -78,7 +78,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="guidebook_alt_en">
+                                                            <input type="text" class="form-control" id="alt_en" name="guidebook_alt_en" value="{{ old('guidebook_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -86,13 +86,13 @@
                                                     <label for="" class="form-label">
                                                         Category <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="category_en" name="guidebook_category_en">
+                                                    <input type="text" class="form-control" id="category_en" name="guidebook_category_en" value="{{ old('guidebook_category_en') }}">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Link <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="link_en" name="guidebook_link_en">
+                                                    <input type="text" class="form-control" id="link_en" name="guidebook_link_en" value="{{ old('guidebook_link_en') }}">
                                                     @error('guidebook_link_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -133,7 +133,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="guidebook_alt_id">
+                                                            <input type="text" class="form-control" id="alt_id" name="guidebook_alt_id" value="{{ old('guidebook_alt_id') }}">
                                                             @error('guidebook_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -144,7 +144,7 @@
                                                     <label for="" class="form-label">
                                                         Category <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="category_id" name="guidebook_category_id">
+                                                    <input type="text" class="form-control" id="category_id" name="guidebook_category_id" value="{{ old('guidebook_category_id') }}">
                                                     @error('guidebook_category_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -153,7 +153,7 @@
                                                     <label for="" class="form-label">
                                                         Link <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="link_id" name="guidebook_link_id">
+                                                    <input type="text" class="form-control" id="link_id" name="guidebook_link_id" value="{{ old('guidebook_link_id') }}">
                                                     @error('guidebook_link_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror

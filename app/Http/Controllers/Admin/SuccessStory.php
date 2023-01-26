@@ -50,7 +50,7 @@ class SuccessStory extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator->messages());
+            return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -124,7 +124,6 @@ class SuccessStory extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -259,7 +258,6 @@ class SuccessStory extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

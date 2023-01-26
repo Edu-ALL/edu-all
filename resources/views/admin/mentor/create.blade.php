@@ -78,7 +78,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en">
+                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en" value="{{ old('mentor_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -87,44 +87,54 @@
                                                         <label for="" class="form-label">
                                                             First Name <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="firstname_en" name="mentor_firstname_en">
+                                                        <input type="text" class="form-control" id="firstname_en" name="mentor_firstname_en" value="{{ old('mentor_firstname_en') }}">
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Last name <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="lastname_en" name="mentor_lastname_en">
+                                                        <input type="text" class="form-control" id="lastname_en" name="mentor_lastname_en" value="{{ old('mentor_lastname_en') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_graduation_en" id="graduation_en"></textarea>
+                                                    <textarea class="textarea" name="mentor_graduation_en" id="graduation_en">
+                                                        {{ old('mentor_graduation_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Currently Working
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_currently_working_en" id="currently_working_en"></textarea>
+                                                    <textarea class="textarea" name="mentor_currently_working_en" id="currently_working_en">
+                                                        {{ old('mentor_currently_working_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Expertise
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_expertise_en" id="expertise_en"></textarea>
+                                                    <textarea class="textarea" name="mentor_expertise_en" id="expertise_en">
+                                                        {{ old('mentor_expertise_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_description_en" id="description_en"></textarea>
+                                                    <textarea class="textarea" name="mentor_description_en" id="description_en">
+                                                        {{ old('mentor_description_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Short Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_short_description_en" id="short_description_en"></textarea>
+                                                    <textarea class="textarea" name="mentor_short_description_en" id="short_description_en">
+                                                        {{ old('mentor_short_description_en') }}
+                                                    </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +172,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id">
+                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id" value="{{ old('mentor_alt_id') }}">
                                                             @error('mentor_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -174,7 +184,7 @@
                                                         <label for="" class="form-label">
                                                             First Name <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="firstname_id" name="mentor_firstname_id">
+                                                        <input type="text" class="form-control" id="firstname_id" name="mentor_firstname_id" required value="{{ old('mentor_firstname_id') }}">
                                                         @error('mentor_firstname_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
@@ -183,7 +193,7 @@
                                                         <label for="" class="form-label">
                                                             Last name <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="lastname_id" name="mentor_lastname_id">
+                                                        <input type="text" class="form-control" id="lastname_id" name="mentor_lastname_id" required value="{{ old('mentor_lastname_id') }}">
                                                         @error('mentor_lastname_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
@@ -193,7 +203,9 @@
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_graduation_id" id="graduation_id"></textarea>
+                                                    <textarea class="textarea" name="mentor_graduation_id" id="graduation_id">
+                                                        {{ old('mentor_graduation_id') }}
+                                                    </textarea>
                                                     @error('mentor_graduation_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -202,7 +214,9 @@
                                                     <label for="" class="form-label">
                                                         Currently Working
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_currently_working_id" id="currently_working_id"></textarea>
+                                                    <textarea class="textarea" name="mentor_currently_working_id" id="currently_working_id">
+                                                        {{ old('mentor_currently_working_id') }}
+                                                    </textarea>
                                                     @error('mentor_currently_working_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -211,7 +225,9 @@
                                                     <label for="" class="form-label">
                                                         Expertise
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_expertise_id" id="expertise_id"></textarea>
+                                                    <textarea class="textarea" name="mentor_expertise_id" id="expertise_id">
+                                                        {{ old('mentor_expertise_id') }}
+                                                    </textarea>
                                                     @error('mentor_expertise_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -220,7 +236,9 @@
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_description_id" id="description_id"></textarea>
+                                                    <textarea class="textarea" name="mentor_description_id" id="description_id">
+                                                        {{ old('mentor_description_id') }}
+                                                    </textarea>
                                                     @error('mentor_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -229,7 +247,9 @@
                                                     <label for="" class="form-label">
                                                         Short Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="mentor_short_description_id" id="short_description_id"></textarea>
+                                                    <textarea class="textarea" name="mentor_short_description_id" id="short_description_id">
+                                                        {{ old('mentor_short_description_id') }}
+                                                    </textarea>
                                                     @error('mentor_short_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror

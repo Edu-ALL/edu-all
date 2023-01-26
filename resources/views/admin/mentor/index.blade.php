@@ -59,7 +59,7 @@
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}</td>
                                             <td>{!! $mentor->mentor_graduation !!}</td>
-                                            <td>{!! $mentor->description !!}</td>
+                                            <td>{!! Str::limit($mentor->description, 150, '...') !!}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/mentor/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>

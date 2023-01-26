@@ -61,20 +61,22 @@
                                                     <label for="" class="form-label">
                                                         Name <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="name_en" name="testi_name_en">
+                                                    <input type="text" class="form-control" id="name_en" name="testi_name_en" value="{{ old('testi_name_en') }}">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="testi_desc_en" id="desc_en"></textarea>
+                                                    <textarea class="textarea" name="testi_desc_en" id="desc_en">
+                                                        {{ old('testi_desc_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Program <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="program_en" name="testi_program_en">
+                                                        <input type="text" class="form-control" id="program_en" name="testi_program_en" value="{{ old('testi_program_en') }}">
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
@@ -83,9 +85,9 @@
                                                         <div class="col">
                                                             <select class="select2" name="testi_category_en" id="category_en">
                                                                 <option value=""></option>
-                                                                <option value="Admission Mentoring">Admission Mentoring</option>
-                                                                <option value="Experiental Learning">Experiental Learning</option>
-                                                                <option value="Academic Preparation">Academic Preparation</option>
+                                                                <option value="Admission Mentoring" {{ old('testi_category_en') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                                <option value="Experiental Learning" {{ old('testi_category_en') == 'Experiental Learning' ? 'selected' : '' }}>Experiental Learning</option>
+                                                                <option value="Academic Preparation" {{ old('testi_category_en') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -111,7 +113,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="testi_alt_en">
+                                                            <input type="text" class="form-control" id="alt_en" name="testi_alt_en" value="{{ old('testi_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -134,7 +136,7 @@
                                                     <label for="" class="form-label">
                                                         Name <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="name_id" name="testi_name_id">
+                                                    <input type="text" class="form-control" id="name_id" name="testi_name_id" value="{{ old('testi_name_id') }}">
                                                     @error('testi_name_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -143,7 +145,9 @@
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="testi_desc_id" id="desc_id"></textarea>
+                                                    <textarea class="textarea" name="testi_desc_id" id="desc_id">
+                                                        {{ old('testi_desc_id') }}
+                                                    </textarea>
                                                     @error('testi_desc_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -153,7 +157,7 @@
                                                         <label for="" class="form-label">
                                                             Program <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="program_id" name="testi_program_id">
+                                                        <input type="text" class="form-control" id="program_id" name="testi_program_id" value="{{ old('testi_program_id') }}">
                                                         @error('testi_program_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
@@ -165,9 +169,9 @@
                                                         <div class="col">
                                                             <select class="select2" name="testi_category_id" id="category_id">
                                                                 <option value=""></option>
-                                                                <option value="Admission Mentoring">Admission Mentoring</option>
-                                                                <option value="Experiental Learning">Experiental Learning</option>
-                                                                <option value="Academic Preparation">Academic Preparation</option>
+                                                                <option value="Admission Mentoring" {{ old('testi_category_id') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                                <option value="Experiental Learning" {{ old('testi_category_id') == 'Experiental Learning' ? 'selected' : '' }}>Experiental Learning</option>
+                                                                <option value="Academic Preparation" {{ old('testi_category_id') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>
                                                         @error('testi_category_id')
@@ -196,7 +200,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="testi_alt_id">
+                                                            <input type="text" class="form-control" id="alt_id" name="testi_alt_id" value="{{ old('testi_alt_id') }}">
                                                             @error('testi_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror

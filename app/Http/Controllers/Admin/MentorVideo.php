@@ -21,7 +21,7 @@ class MentorVideo extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator->messages());
+            return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -31,11 +31,9 @@ class MentorVideo extends Controller
             $mentor_video->video_embed = $request->video_embed;
             $mentor_video->description = $request->description_video;
             $mentor_video->save();
-
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -60,11 +58,9 @@ class MentorVideo extends Controller
             $mentor_video->description = $request->description_video;
             $mentor_video->updated_at = date('Y-m-d H:i:s');
             $mentor_video->save();
-
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

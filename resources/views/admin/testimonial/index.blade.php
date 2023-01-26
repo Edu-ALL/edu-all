@@ -59,7 +59,7 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $testimonial->testi_name }}</td>
-                                            <td>{!! $testimonial->testi_desc !!}</td>
+                                            <td>{!! Str::limit($testimonial->testi_desc, 150, '...') !!}</td>
                                             <td>{{ $testimonial->testi_program}}</td>
                                             <td>{{ $testimonial->testi_category}}</td>
                                             <td>

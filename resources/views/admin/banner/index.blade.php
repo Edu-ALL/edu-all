@@ -57,7 +57,7 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $banner->banner_title }}</td>
-                                            <td>{!! $banner->banner_description !!}</td>
+                                            <td>{!! Str::limit($banner->banner_description, 150, '...') !!}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
                                             </td>

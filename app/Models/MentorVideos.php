@@ -22,6 +22,6 @@ class MentorVideos extends Model
     ];
 
     public function mentor(){
-        return $this->belongsTo(Mentor::class, 'mentor_id', 'group');
+        return $this->belongsTo(Mentors::class, 'group', 'mentor_id');
     }
 }

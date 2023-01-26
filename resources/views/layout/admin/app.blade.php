@@ -58,7 +58,7 @@
         @if (Session::has('errors'))
             <script>
                 swal({
-                    title: "Something Wrong!",
+                    title: "Something Went Wrong!",
                     text: "{{ Session::get('errors')->first() }}",
                     icon: "error",
                 });

@@ -78,7 +78,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="event_alt_en">
+                                                            <input type="text" class="form-control" id="alt_en" name="event_alt_en" value="{{ old('event_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -86,31 +86,33 @@
                                                     <label for="" class="form-label">
                                                         Title <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="title_en" name="event_title_en">
+                                                    <input type="text" class="form-control" id="title_en" name="event_title_en" value="{{ old('event_title_en') }}">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Short Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="subtitle_en" name="event_subtitle_en">
+                                                    <input type="text" class="form-control" id="subtitle_en" name="event_subtitle_en" value="{{ old('event_subtitle_en') }}">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Date <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="date_en" name="event_date_en">
+                                                    <input type="text" class="form-control" id="date_en" name="event_date_en" value="{{ old('event_date_en') }}">
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Detail <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="event_detail_en" id="detail_en"></textarea>
+                                                    <textarea class="textarea" name="event_detail_en" id="detail_en">
+                                                        {{ old('event_detail_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         RSVP Link
                                                     </label>
-                                                    <input type="text" class="form-control" id="rsvp_en" name="event_rsvp_en">
+                                                    <input type="text" class="form-control" id="rsvp_en" name="event_rsvp_en" value="{{ old('event_rsvp_en') }}">
                                                     @error('event_rsvp_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -151,7 +153,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="event_alt_id">
+                                                            <input type="text" class="form-control" id="alt_id" name="event_alt_id" value="{{ old('event_alt_id') }}">
                                                             @error('event_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -162,7 +164,7 @@
                                                     <label for="" class="form-label">
                                                         Title <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="title_id" name="event_title_id">
+                                                    <input type="text" class="form-control" id="title_id" name="event_title_id" value="{{ old('event_title_id') }}">
                                                     @error('event_title_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -171,7 +173,7 @@
                                                     <label for="" class="form-label">
                                                         Short Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="subtitle_id" name="event_subtitle_id">
+                                                    <input type="text" class="form-control" id="subtitle_id" name="event_subtitle_id" value="{{ old('event_subtitle_id') }}">
                                                     @error('event_subtitle_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -180,7 +182,7 @@
                                                     <label for="" class="form-label">
                                                         Date <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="date_id" name="event_date_id">
+                                                    <input type="text" class="form-control" id="date_id" name="event_date_id" value="{{ old('event_date_id') }}">
                                                     @error('event_date_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -189,7 +191,9 @@
                                                     <label for="" class="form-label">
                                                         Detail <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="event_detail_id" id="detail_id"></textarea>
+                                                    <textarea class="textarea" name="event_detail_id" id="detail_id">
+                                                        {{ old('event_detail_id') }}
+                                                    </textarea>
                                                     @error('event_detail_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -198,7 +202,7 @@
                                                     <label for="" class="form-label">
                                                         RSVP Link
                                                     </label>
-                                                    <input type="text" class="form-control" id="rsvp_id" name="event_rsvp_id">
+                                                    <input type="text" class="form-control" id="rsvp_id" name="event_rsvp_id" value="{{ old('event_rsvp_id') }}">
                                                     @error('event_rsvp_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror

@@ -36,7 +36,7 @@ class Guidebook extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator->messages());
+            return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();

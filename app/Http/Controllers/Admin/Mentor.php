@@ -47,7 +47,7 @@ class Mentor extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator->messages());
+            return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -101,7 +101,6 @@ class Mentor extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -112,11 +111,9 @@ class Mentor extends Controller
         if (!Mentors::where('group', $group)->first('id')) {
             return redirect('/admin/mentor')->withErrors('Mentor Cannot Be Found');
         }
-        $mentor = Mentors::where('group', $group)->get();
-        $mentor_video = MentorVideos::where('mentor_id', $group)->get();
+        $mentor = Mentors::with('mentor_video')->where('group', $group)->get();
         return view('admin.mentor.view', [
             'mentor' => $mentor,
-            'mentor_videos' => $mentor_video,
         ]);
     }
 
@@ -212,7 +209,6 @@ class Mentor extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -237,6 +233,11 @@ class Mentor extends Controller
             }
             $mentor[0]->delete();
             $mentor[1]->delete();
+
+            // $mentor_video = MentorVideos::where('mentor_id', $group)->get();
+            // $mentor_video->delete();
+            // dd($mentor_video);
+
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

@@ -43,7 +43,7 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Category</th>
-                                        <th scope="col">Description</th>
+                                        <th scope="col">Slug</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
@@ -58,8 +58,9 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $blog->blog_title }}</td>
-                                            <td>{{ $blogcategory->where('id', $blog->cat_id)->first()->category_name }}</td>
-                                            <td>{!! $blog->blog_description !!}</td>
+                                            <td>{{ $blogcategory->find($blog->cat_id) != null ? $blogcategory->find($blog->cat_id)->category_name : '-' }}</td>
+                                            {{-- <td>{{ $blogcategory->where('id', $blog->cat_id)->first()->category_name }}</td> --}}
+                                            <td>{{ $blog->slug }}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/blogs/'.$blog->blog_thumbnail) }}" alt="" width="80">
                                             </td>

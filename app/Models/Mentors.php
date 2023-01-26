@@ -31,6 +31,9 @@ class Mentors extends Model
     ];
 
     public function mentor_video(){
-        return $this->hasMany(MentorVideo::class, 'group', 'mentor_id');
+        return $this->hasMany(MentorVideos::class, 'mentor_id', 'group');
+    }
+    public function blog(){
+        return $this->hasMany(Blogs::class, 'mt_id', 'id');
     }
 }

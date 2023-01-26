@@ -53,7 +53,7 @@ class Blog extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator->messages());
+            return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -72,7 +72,7 @@ class Blog extends Controller
             $blogs->cat_id = $request->category;
             $blogs->mt_id = $request->mentor;
             $blogs->blog_title = $request->blog_title;
-            $blogs->slug = $request->blog_slug;
+            $blogs->slug = str_replace(' ', '-', $request->blog_slug);
             $blogs->blog_description = $request->blog_description;
             $blogs->seo_title = $request->seo_title;
             $blogs->seo_keyword = $request->seo_keyword;
@@ -84,7 +84,6 @@ class Blog extends Controller
             $blogs->duration_read = 0;
 
             $blogs->save();
-            // dd($blogs);
 
             DB::commit();
         } catch (Exception $e) {
@@ -151,7 +150,7 @@ class Blog extends Controller
             $blogs->cat_id = $request->category;
             $blogs->mt_id = $request->mentor;
             $blogs->blog_title = $request->blog_title;
-            $blogs->slug = $request->blog_slug;
+            $blogs->slug = str_replace(' ', '-', $request->blog_slug);
             $blogs->blog_description = $request->blog_description;
             $blogs->seo_title = $request->seo_title;
             $blogs->seo_keyword = $request->seo_keyword;
@@ -159,7 +158,6 @@ class Blog extends Controller
             $blogs->lang = $request->lang;
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
-            // dd($blogs);
 
             DB::commit();
         } catch (Exception $e) {
@@ -174,11 +172,16 @@ class Blog extends Controller
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
+            if ($old_image_path = $blog->blog_thumbnail) {
+                $file_path = public_path('uploaded_files/blogs/'.$old_image_path);
+                if (File::exists($file_path)) {
+                    File::delete($file_path);
+                }
+            }
             $blog->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

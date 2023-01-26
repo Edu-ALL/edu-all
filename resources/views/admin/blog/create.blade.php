@@ -67,7 +67,7 @@
                                                     <label for="" class="form-label">
                                                         Alt <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="alt_en" name="blog_alt">
+                                                    <input type="text" class="form-control" id="alt_en" name="blog_alt" value="{{ old('blog_alt') }}">
                                                     @error('blog_alt')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -82,8 +82,8 @@
                                                 <div class="col">
                                                     <select class="select2" name="lang" id="lang">
                                                         <option value=""></option>
-                                                        <option value="en">English</option>
-                                                        <option value="id">Indonesia</option>
+                                                        <option value="en" {{ old('lang') == 'en' ? 'selected' : '' }}>English</option>
+                                                        <option value="id" {{ old('lang') == 'id' ? 'selected' : '' }}>Indonesia</option>
                                                     </select>
                                                 </div>
                                                 @error('lang')
@@ -99,14 +99,14 @@
                                                         <option value=""></option>
                                                         <optgroup label="Language : English">
                                                             @foreach ($category_en as $category)
-                                                            <option value="{{ $category->id }}">
+                                                            <option value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>
                                                                 {{ $category->category_name }}
                                                             </option>
                                                             @endforeach
                                                         </optgroup>
                                                         <optgroup label="Language : Indonesia">
                                                             @foreach ($category_id as $category)
-                                                            <option value="{{ $category->id }}">
+                                                            <option value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>
                                                                 {{ $category->category_name }}
                                                             </option>
                                                             @endforeach
@@ -126,14 +126,14 @@
                                                         <option value=""></option>
                                                         <optgroup label="Language : English">
                                                             @foreach ($mentor_en as $mentor)
-                                                                <option value="{{ $mentor->id }}">
+                                                                <option value="{{ $mentor->id }}" {{ old('mentor') == $mentor->id ? 'selected' : '' }}>
                                                                     {{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}
                                                                 </option>
                                                             @endforeach
                                                         </optgroup>
                                                         <optgroup label="Language : Indonesia">
                                                             @foreach ($mentor_id as $mentor)
-                                                                <option value="{{ $mentor->id }}">
+                                                                <option value="{{ $mentor->id }}" {{ old('mentor') == $mentor->id ? 'selected' : '' }}>
                                                                     {{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}
                                                                 </option>
                                                             @endforeach
@@ -149,7 +149,7 @@
                                             <label for="" class="form-label">
                                                 Title <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="blog_title" name="blog_title">
+                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ old('blog_title') }}">
                                             @error('blog_title')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -158,7 +158,7 @@
                                             <label for="" class="form-label">
                                                 Slug <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="blog_slug" id="blog_slug"></textarea>
+                                            <input type="text" class="form-control" id="blog_slug" name="blog_slug" value="{{ old('blog_slug') }}">
                                             @error('blog_slug')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -167,7 +167,9 @@
                                             <label for="" class="form-label">
                                                 Description <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="blog_description" id="blog_description"></textarea>
+                                            <textarea class="textarea" name="blog_description" id="blog_description">
+                                                {{ old('blog_description') }}
+                                            </textarea>
                                             @error('blog_description')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -176,7 +178,7 @@
                                             <label for="" class="form-label">
                                                 SEO Title <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="seo_title" id="seo_title"></textarea>
+                                            <input type="text" class="form-control" id="seo_title" name="seo_title" value="{{ old('seo_title') }}">
                                             @error('seo_title')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -185,7 +187,7 @@
                                             <label for="" class="form-label">
                                                 SEO Keyword <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="seo_keyword" id="seo_keyword"></textarea>
+                                            <input type="text" class="form-control" id="seo_keyword" name="seo_keyword" placeholder="Add keywords separated by commas (,)" value="{{ old('seo_keyword') }}">
                                             @error('seo_keyword')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -194,7 +196,7 @@
                                             <label for="" class="form-label">
                                                 SEO Description <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="seo_desc" id="seo_desc"></textarea>
+                                            <input type="text" class="form-control" id="seo_desc" name="seo_desc" value="{{ old('seo_desc') }}">
                                             @error('seo_desc')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror

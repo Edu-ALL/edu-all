@@ -22,6 +22,6 @@ class BlogCategorys extends Model
     ];
 
     public function blog(){
-        return $this->belongsTo(Blogs::class, 'id', 'cat_id');
+        return $this->belongsTo(Blogs::class, 'cat_id', 'id');
     }
 }

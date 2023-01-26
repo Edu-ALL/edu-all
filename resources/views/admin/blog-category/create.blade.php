@@ -54,7 +54,7 @@
                                                         Blog Category Name
                                                         <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="category_name_en" name="category_name_en">
+                                                    <input type="text" class="form-control" id="category_name_en" name="category_name_en" value="{{ old('category_name_en') }}">
                                                     @error('category_name_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -69,7 +69,7 @@
                                                         Blog Category Name
                                                         <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="category_name_id" name="category_name_id">
+                                                    <input type="text" class="form-control" id="category_name_id" name="category_name_id" value="{{ old('category_name_id') }}">
                                                     @error('category_name_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror

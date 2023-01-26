@@ -270,7 +270,7 @@
                                                 @php
                                                     $i = 1;
                                                 @endphp
-                                                @foreach ($mentor_videos as $mentor_video)
+                                                @foreach ($mentor[0]->mentor_video as $mentor_video)
                                                     <tr>
                                                         <th scope="row">{{ $i++ }}</th>
                                                         <td>
@@ -338,14 +338,16 @@
                                     <span class="input-group-text">
                                         <i class="fa-solid fa-link" style="font-size: 14px"></i>
                                     </span>
-                                    <input type="text" class="form-control" name="video_embed" id="video_embed">
+                                    <input type="text" class="form-control" name="video_embed" id="video_embed" value="{{ old('video_embed') }}">
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="" class="form-label">
                                     Description <span style="color: var(--red)">*</span>
                                 </label>
-                                <textarea class="textarea" name="description_video" id="description_video"></textarea>
+                                <textarea class="textarea" name="description_video" id="description_video">
+                                    {{ old('description_video') }}
+                                </textarea>
                             </div>
                     </div>
                 </form>

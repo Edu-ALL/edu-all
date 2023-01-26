@@ -61,20 +61,20 @@
                                                     <label for="" class="form-label">
                                                         Name <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="name_en" name="story_name_en">
+                                                    <input type="text" class="form-control" id="name_en" name="story_name_en" value="{{ old('story_name_en') }}">
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 1 <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge1_en" name="story_badge1_en">
+                                                        <input type="text" class="form-control" id="badge1_en" name="story_badge1_en" value="{{ old('story_badge1_en') }}">
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 2
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge2_en" name="story_badge2_en">
+                                                        <input type="text" class="form-control" id="badge2_en" name="story_badge2_en" value="{{ old('story_badge2_en') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
@@ -82,20 +82,22 @@
                                                         <label for="" class="form-label">
                                                             Badge 3
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge3_en" name="story_badge3_en">
+                                                        <input type="text" class="form-control" id="badge3_en" name="story_badge3_en" value="{{ old('story_badge3_en') }}">
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 4
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge4_en" name="story_badge4_en">
+                                                        <input type="text" class="form-control" id="badge4_en" name="story_badge4_en" value="{{ old('story_badge4_en') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="story_description_en" id="description_en"></textarea>
+                                                    <textarea class="textarea" name="story_description_en" id="description_en">
+                                                        {{ old('story_description_en') }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col-md-2 col">
@@ -118,7 +120,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="story_alt_en">
+                                                            <input type="text" class="form-control" id="alt_en" name="story_alt_en" value="{{ old('story_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -143,7 +145,7 @@
                                                             <label for="" class="form-label">
                                                                 Achievement Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="achievement_alt_en" name="story_achievement_alt_en">
+                                                            <input type="text" class="form-control" id="achievement_alt_en" name="story_achievement_alt_en" value="{{ old('story_achievement_alt_en') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -151,7 +153,7 @@
                                                     <label for="" class="form-label">
                                                         Link Video <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="video_link_en" name="story_video_link_en">
+                                                    <input type="text" class="form-control" id="video_link_en" name="story_video_link_en" value="{{ old('story_video_link_en') }}">
                                                     @error('story_video_link_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -175,7 +177,7 @@
                                                     <label for="" class="form-label">
                                                         Name <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="name_id" name="story_name_id">
+                                                    <input type="text" class="form-control" id="name_id" name="story_name_id" value="{{ old('story_name_id') }}">
                                                     @error('story_name_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -185,7 +187,7 @@
                                                         <label for="" class="form-label">
                                                             Badge 1 <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge1_id" name="story_badge1_id">
+                                                        <input type="text" class="form-control" id="badge1_id" name="story_badge1_id" value="{{ old('story_badge1_id') }}">
                                                         @error('story_badge1_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
@@ -194,7 +196,7 @@
                                                         <label for="" class="form-label">
                                                             Badge 2
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge2_id" name="story_badge2_id">
+                                                        <input type="text" class="form-control" id="badge2_id" name="story_badge2_id" value="{{ old('story_badge2_id') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
@@ -202,20 +204,22 @@
                                                         <label for="" class="form-label">
                                                             Badge 3
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge3_id" name="story_badge3_id">
+                                                        <input type="text" class="form-control" id="badge3_id" name="story_badge3_id" value="{{ old('story_badge3_id') }}">
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 4
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge4_id" name="story_badge4_id">
+                                                        <input type="text" class="form-control" id="badge4_id" name="story_badge4_id" value="{{ old('story_badge4_id') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <textarea class="textarea" name="story_description_id" id="description_id"></textarea>
+                                                    <textarea class="textarea" name="story_description_id" id="description_id">
+                                                        {{ old('story_description_id') }}
+                                                    </textarea>
                                                     @error('story_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -241,7 +245,7 @@
                                                             <label for="" class="form-label">
                                                                 Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="story_alt_id">
+                                                            <input type="text" class="form-control" id="alt_id" name="story_alt_id" value="{{ old('story_alt_id') }}">
                                                             @error('story_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -269,7 +273,7 @@
                                                             <label for="" class="form-label">
                                                                 Achievement Alt <span style="color: var(--red)">*</span>
                                                             </label>
-                                                            <input type="text" class="form-control" id="achievement_alt_id" name="story_achievement_alt_id">
+                                                            <input type="text" class="form-control" id="achievement_alt_id" name="story_achievement_alt_id" value="{{ old('story_achievement_alt_id') }}">
                                                             @error('story_achievement_alt_id')
                                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                             @enderror
@@ -280,7 +284,7 @@
                                                     <label for="" class="form-label">
                                                         Link Video <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="video_link_id" name="story_video_link_id">
+                                                    <input type="text" class="form-control" id="video_link_id" name="story_video_link_id" value="{{ old('story_video_link_id') }}">
                                                     @error('story_video_link_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror

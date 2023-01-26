@@ -158,9 +158,7 @@
                                             <label for="" class="form-label">
                                                 Slug <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="blog_slug" id="blog_slug">
-                                                {{ $blog->slug }}
-                                            </textarea>
+                                            <input type="text" class="form-control" id="blog_slug" name="blog_slug" value="{{ $blog->slug }}">
                                             @error('blog_slug')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -180,9 +178,7 @@
                                             <label for="" class="form-label">
                                                 SEO Title <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="seo_title" id="seo_title">
-                                                {{ $blog->seo_title }}
-                                            </textarea>
+                                            <input type="text" class="form-control" id="seo_title" name="seo_title" value="{{ $blog->seo_title }}">
                                             @error('seo_title')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -191,9 +187,7 @@
                                             <label for="" class="form-label">
                                                 SEO Keyword <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="seo_keyword" id="seo_keyword">
-                                                {{ $blog->seo_keyword }}
-                                            </textarea>
+                                            <input type="text" class="form-control" id="seo_keyword" name="seo_keyword" value="{{ $blog->seo_keyword }}" placeholder="Add keywords separated by commas (,)">
                                             @error('seo_keyword')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -202,9 +196,7 @@
                                             <label for="" class="form-label">
                                                 SEO Description <span style="color: var(--red)">*</span>
                                             </label>
-                                            <textarea class="textarea" name="seo_desc" id="seo_desc">
-                                                {{ $blog->seo_desc }}
-                                            </textarea>
+                                            <input type="text" class="form-control" id="seo_desc" name="seo_desc" value="{{ $blog->seo_desc }}">
                                             @error('seo_desc')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror

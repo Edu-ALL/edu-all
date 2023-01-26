@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $mentor->count() }}</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Banners</span> --}}
+                                    {{-- <span class="text-muted small pt-2 ps-1">Mentors</span> --}}
                                 </div>
                             </div>
                         </a>
@@ -136,16 +136,17 @@
                 <div class="col px-md-2 px-0">
                     <div class="card">
                         <div class="card-body pb-0">
-                            <h5 class="card-title">Top 5 Blogs <span>| Blogs</span></h5>
-                            <div class="news d-flex flex-column gap-3 pb-md-4 pb-3">
+                            <h5 class="card-title m-0">Top 5 Blogs <span>| Blogs</span></h5>
+                            <ul class="nav nav-tabs nav-tabs-bordered"></ul>
+                            <div class="news d-flex flex-column gap-2 pb-md-4 pb-3 mt-3">
                                 @foreach ($top_blogs as $top_blog)
-                                    <div class="row align-items-center justify-content-center gap-md-2 gap-0">
+                                    <div class="row align-items-center justify-content-center gap-md-2 gap-0 py-1">
                                         <div class="col-md-2 col-4 text-center" style="max-width: 120px">
                                             <img src="{{ asset('uploaded_files/blogs/'.$top_blog->blog_thumbnail) }}" alt="" width="100">
                                         </div>
                                         <div class="col">
                                             <h4><a href="#">{{ $top_blog->blog_title }}</a></h4>
-                                            {!! $top_blog->slug !!}
+                                            {!! Str::limit($top_blog->blog_description, 150, '...') !!}
                                         </div>
                                     </div>
                                 @endforeach
