@@ -262,7 +262,7 @@
                                                 <tr>
                                                     <th scope="col">No</th>
                                                     <th scope="col">Video Embed</th>
-                                                    <th scope="col">Description</th>
+                                                    {{-- <th scope="col">Description</th> --}}
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
@@ -276,7 +276,7 @@
                                                         <td>
                                                             <a href="{{ $mentor_video->video_embed }}" target="_blank">{{ $mentor_video->video_embed }}</a>
                                                         </td>
-                                                        <td>{!! $mentor_video->description !!}</td>
+                                                        {{-- <td>{!! $mentor_video->description !!}</td> --}}
                                                         <td class="text-center">
                                                             <div class="d-flex flex-row gap-1">
                                                                 <button 
@@ -341,14 +341,14 @@
                                     <input type="text" class="form-control" name="video_embed" id="video_embed" value="{{ old('video_embed') }}">
                                 </div>
                             </div>
-                            <div class="col">
+                            {{-- <div class="col">
                                 <label for="" class="form-label">
                                     Description <span style="color: var(--red)">*</span>
                                 </label>
                                 <textarea class="textarea" name="description_video" id="description_video">
                                     {{ old('description_video') }}
                                 </textarea>
-                            </div>
+                            </div> --}}
                     </div>
                 </form>
             </div>

@@ -94,6 +94,15 @@
     height: '300'
   });
 
+  // tinymce.init({
+  //   selector: '.textarea',  // change this value according to your HTML
+  //   width: 'auto',
+  //   height: '300',
+  //   plugins: 'link',
+  //   menubar: 'insert',
+  //   toolbar: 'link'
+  // });
+
   // Select2
   $(document).ready(function() {
     $('.select2').select2({
