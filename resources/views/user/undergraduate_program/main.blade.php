@@ -25,7 +25,9 @@
                 </p>
             </div>
             <div class="absolute -bottom-[50%] left-[50%] max-w-4xl bg-white -translate-x-[50%] translate-y-[50%]">
-                <div class="w-60 h-20"></div>
+                <div class="w-60 h-20">
+                    Check
+                </div>
             </div>
         </div>
     </section>
