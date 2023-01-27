@@ -98,10 +98,16 @@ class BlogCategory extends Controller
     public function delete($group){
         DB::beginTransaction();
         try {
-            $blog_category = BlogCategorys::where('group', $group)->get();
-            $blog_category[0]->delete();
-            $blog_category[1]->delete();
+            $blog_category = BlogCategorys::with('blog')->where('group', $group)->get();
+            for ($i=0; $i < $blog_category->count(); $i++) {
+                if ($blog_category[$i]->blog->count() == 0) {
+                    $blog_category[$i]->delete();
+                } else {
+                    return Redirect::back()->withErrors('Delete Blog Category Failed, because it is still used on other Blogs');
+                }
+            }
             DB::commit();
+
         } catch (Exception $e) {
             DB::rollBack();
             return Redirect::back()->withErrors($e->getMessage());

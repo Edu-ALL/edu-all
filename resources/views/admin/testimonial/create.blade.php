@@ -86,7 +86,7 @@
                                                             <select class="select2" name="testi_category_en" id="category_en">
                                                                 <option value=""></option>
                                                                 <option value="Admission Mentoring" {{ old('testi_category_en') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
-                                                                <option value="Experiental Learning" {{ old('testi_category_en') == 'Experiental Learning' ? 'selected' : '' }}>Experiental Learning</option>
+                                                                <option value="Experiential Learning" {{ old('testi_category_en') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                                 <option value="Academic Preparation" {{ old('testi_category_en') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>
@@ -170,7 +170,7 @@
                                                             <select class="select2" name="testi_category_id" id="category_id">
                                                                 <option value=""></option>
                                                                 <option value="Admission Mentoring" {{ old('testi_category_id') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
-                                                                <option value="Experiental Learning" {{ old('testi_category_id') == 'Experiental Learning' ? 'selected' : '' }}>Experiental Learning</option>
+                                                                <option value="Experiential Learning" {{ old('testi_category_id') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                                 <option value="Academic Preparation" {{ old('testi_category_id') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>

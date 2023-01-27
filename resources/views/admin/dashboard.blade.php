@@ -146,20 +146,15 @@
                                         </div>
                                         <div class="col">
                                             <h4><a href="#">{{ $top_blog->blog_title }}</a></h4>
-                                            {!! Str::limit($top_blog->blog_description, 150, '...') !!}
+                                            <p>{!! Str::limit(strip_tags($top_blog->blog_description), 150, '...') !!}</p>
+                                            {{-- {!! Str::limit($top_blog->blog_description, 150, '...') !!} --}}
                                         </div>
                                     </div>
                                 @endforeach
-                                {{-- <div class="post-item clearfix">
-                                    <img src="{{ asset('assets/img/footer/image_1.png') }}" alt="">
-                                    <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                                    <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col"></div> --}}
             </div>
         </div>
     </section>

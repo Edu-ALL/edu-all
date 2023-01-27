@@ -234,9 +234,10 @@ class Mentor extends Controller
             $mentor[0]->delete();
             $mentor[1]->delete();
 
-            // $mentor_video = MentorVideos::where('mentor_id', $group)->get();
-            // $mentor_video->delete();
-            // dd($mentor_video);
+            $mentor_videos = MentorVideos::where('mentor_id', $group)->get();
+            for ($i=0; $i < $mentor_videos->count(); $i++) { 
+                $mentor_videos[$i]->delete();
+            }
 
             DB::commit();
         } catch (Exception $e) {

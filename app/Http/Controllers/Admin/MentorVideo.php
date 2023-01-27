@@ -16,7 +16,7 @@ class MentorVideo extends Controller
     public function store(Request $request, $group){
         $rules = [
             'video_embed' => 'required|url',
-            'description_video' => 'required',
+            // 'description_video' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -29,7 +29,13 @@ class MentorVideo extends Controller
             $mentor_video = new MentorVideos();
             $mentor_video->mentor_id = $group;
             $mentor_video->video_embed = $request->video_embed;
-            $mentor_video->description = $request->description_video;
+            if (str_contains($request->video_embed, 'https://youtu.be/')) {
+                $mentor_video->youtube_id = substr($request->video_embed, strrpos($request->video_embed, '/' ) + 1);
+            } else {
+                return Redirect::back()->withErrors('Video URL must be from Youtube');
+            }
+            $mentor_video->description = '';
+            // $mentor_video->description = $request->description_video;
             $mentor_video->save();
             DB::commit();
         } catch (Exception $e) {
@@ -43,7 +49,7 @@ class MentorVideo extends Controller
     public function update(Request $request, $group, $id){
         $rules = [
             'video_embed' => 'required|url',
-            'description_video' => 'required',
+            // 'description_video' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -55,7 +61,13 @@ class MentorVideo extends Controller
         try {
             $mentor_video = MentorVideos::find($id);
             $mentor_video->video_embed = $request->video_embed;
-            $mentor_video->description = $request->description_video;
+            if (str_contains($request->video_embed, 'https://youtu.be/')) {
+                $mentor_video->youtube_id = substr($request->video_embed, strrpos($request->video_embed, '/' ) + 1);
+            } else {
+                return Redirect::back()->withErrors('Video URL must be from Youtube');
+            }
+            $mentor_video->description = '';
+            // $mentor_video->description = $request->description_video;
             $mentor_video->updated_at = date('Y-m-d H:i:s');
             $mentor_video->save();
             DB::commit();

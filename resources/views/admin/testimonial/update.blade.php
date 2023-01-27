@@ -85,7 +85,7 @@
                                                         <div class="col">
                                                             <select class="select2" name="testi_category_en" id="category_en">
                                                                 <option value="Admission Mentoring" {{ $testimonial[0]->testi_category == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
-                                                                <option value="Experiental Learning" {{ $testimonial[0]->testi_category == 'Experiental Learning' ? 'selected' : '' }}>Experiental Learning</option>
+                                                                <option value="Experiential Learning" {{ $testimonial[0]->testi_category == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                                 <option value="Academic Preparation" {{ $testimonial[0]->testi_category == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>
@@ -168,7 +168,7 @@
                                                         <div class="col">
                                                             <select class="select2" name="testi_category_id" id="category_id">
                                                                 <option value="Admission Mentoring" {{ $testimonial[1]->testi_category == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
-                                                                <option value="Experiental Learning" {{ $testimonial[1]->testi_category == 'Experiental Learning' ? 'selected' : '' }}>Experiental Learning</option>
+                                                                <option value="Experiential Learning" {{ $testimonial[1]->testi_category == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                                 <option value="Academic Preparation" {{ $testimonial[1]->testi_category == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>

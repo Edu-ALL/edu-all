@@ -90,15 +90,17 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Short Description <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="subtitle_en" name="event_subtitle_en" value="{{ $upcoming_event[0]->event_subtitle }}">
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
                                                         Date <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="date_en" name="event_date_en" value="{{ $upcoming_event[0]->event_date }}">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Short Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="event_subtitle_en" id="subtitle_en">
+                                                        {{ $upcoming_event[0]->event_subtitle }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
@@ -171,19 +173,21 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Short Description <span style="color: var(--red)">*</span>
+                                                        Date <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="subtitle_id" name="event_subtitle_id" value="{{ $upcoming_event[1]->event_subtitle }}">
-                                                    @error('event_subtitle_id')
+                                                    <input type="text" class="form-control" id="date_id" name="event_date_id" value="{{ $upcoming_event[1]->event_date }}">
+                                                    @error('event_date_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Date <span style="color: var(--red)">*</span>
+                                                        Short Description <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="date_id" name="event_date_id" value="{{ $upcoming_event[1]->event_date }}">
-                                                    @error('event_date_id')
+                                                    <textarea class="textarea" name="event_subtitle_id" id="subtitle_id">
+                                                        {{ $upcoming_event[1]->event_subtitle }}
+                                                    </textarea>
+                                                    @error('event_subtitle_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -254,9 +258,10 @@
         const alt_en = document.getElementById('alt_en').value;
         const title_en = document.getElementById('title_en').value;
         const date_en = document.getElementById('date_en').value;
+        const subtitle_en = tinymce.get('subtitle_en').getContent();
         const detail_en = tinymce.get('detail_en').getContent();
         const submit = document.getElementById('submit');
-        if (alt_en == "" || title_en == "" || date_en == "" || detail_en == "") {
+        if (alt_en == "" || title_en == "" || date_en == "" || subtitle_en == "" || detail_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

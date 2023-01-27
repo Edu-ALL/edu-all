@@ -14,10 +14,10 @@
     }
     .pic-profile {
         border: 2px solid #ebeef4;
-        border-radius: 50%;
+        border-radius: 5px;
     }
     .pic-profile img {
-        border-radius: 50%;
+        border-radius: 5px;
     }
 </style>
 @endsection
@@ -65,17 +65,15 @@
                                                 <i class="fa-solid fa-pen-to-square me-md-1 me-0"></i><span class="d-md-inline d-none"> Edit Profile Mentor</span>
                                             </a>
                                         </div>
-                                        <div class="col justify-content-center mx-md-3 mx-1">
-                                            <div class="col d-flex align-items-center justify-content-center py-2 px-5">
-                                                <div class="col-md-3 col-8 m-0">
-                                                    <div class="pic-profile p-2">
-                                                        <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[0]->mentor_picture) }}" alt="">
-                                                    </div>
+                                        <div class="col d-flex flex-md-row flex-column justify-content-center gap-md-3">
+                                            <div class="col-md-3 d-flex align-items-center justify-content-center pt-md-0 pt-3 px-md-5 px-5">
+                                                <div class="pic-profile p-1">
+                                                    <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[0]->mentor_picture) }}" alt="">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column justify-content-center gap-2 py-md-3 py-4 px-0">
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Full Name</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -85,8 +83,8 @@
                                                         <p class="m-0">{{ $mentor[0]->mentor_firstname.' '.$mentor[0]->mentor_lastname }}</p>
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Graduation</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -96,8 +94,8 @@
                                                         {!! $mentor[0]->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Currently Working</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -107,8 +105,8 @@
                                                         {!! $mentor[0]->currently_working == null ? '-' : $mentor[0]->currently_working !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Expertise</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -118,8 +116,8 @@
                                                         {!! $mentor[0]->expertise == null ? '-' : $mentor[0]->expertise !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Short Desc</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -129,8 +127,8 @@
                                                         {!! $mentor[0]->short_desc !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Description</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -262,6 +260,7 @@
                                                 <tr>
                                                     <th scope="col">No</th>
                                                     <th scope="col">Video Embed</th>
+                                                    <th scope="col">Youtube ID</th>
                                                     {{-- <th scope="col">Description</th> --}}
                                                     <th scope="col">Action</th>
                                                 </tr>
@@ -275,6 +274,9 @@
                                                         <th scope="row">{{ $i++ }}</th>
                                                         <td>
                                                             <a href="{{ $mentor_video->video_embed }}" target="_blank">{{ $mentor_video->video_embed }}</a>
+                                                        </td>
+                                                        <td>
+                                                            {{ $mentor_video->youtube_id }}
                                                         </td>
                                                         {{-- <td>{!! $mentor_video->description !!}</td> --}}
                                                         <td class="text-center">
@@ -340,6 +342,7 @@
                                     </span>
                                     <input type="text" class="form-control" name="video_embed" id="video_embed" value="{{ old('video_embed') }}">
                                 </div>
+                                <small class="alert ps-0 fs-12">Only supports <strong class="text-danger">Youtube</strong> videos. e.g. <b><i>https://youtu.be/eRb6lymJOIM</i></b></small>
                             </div>
                             {{-- <div class="col">
                                 <label for="" class="form-label">
@@ -352,7 +355,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2">
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 py-3">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                 <button type="submit" id="btn-status" form="form_video" style="font-size: 13px; background: var(--blue);">Submit</button>
             </div>
@@ -389,13 +392,13 @@
     function formCreate(group){
         $("#title-info").text("Add new Video");
         $('#video_embed').attr('value', '');
-        tinymce.get("description_video").setContent('');
+        // tinymce.get("description_video").setContent('');
         $('#form_video').attr('action', '{{ url('/admin/mentor/video/') }}' + '/' + group);
     };
     function formUpdate(group, id, video_embed, desc){
         $("#title-info").text("Update Mentor Video");
         $('#video_embed').attr('value', video_embed);
-        tinymce.get("description_video").setContent(desc);
+        // tinymce.get("description_video").setContent(desc);
         $('#form_video').attr('action', '{{ url('/admin/mentor/video/') }}' + '/' + group + '/' + id);
     };
     function formDelete(group, id){
