@@ -4,39 +4,39 @@ return [
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "UNDERGRADUATE",
-    "body" => "We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities.",
+    "body" => "Kami menawarkan layanan bimbingan pendaftaran universitas 1-on-1 yang akan berfungsi sebagai panduan akademis bagi siswa untuk diterima di universitas impian mereka dan menemukan universitas yang paling cocok.",
 
     "benefits" => [
-        '1-on-1 Mentoring', 'Personalized Strategy Plan', ' Well-Rounded Support', 'Proven Track Record'
+        'Pendampingan 1-on-1', 'Strategi yang Dipersonalisasi', 'Bimbingan Menyeluruh', 'Rekam Jejak yang Telah Terbukti'
     ],
 
     // what will you do
-    'do_title' => "WHAT YOU WILL GET",
+    'do_title' => "APA YANG AKAN KAMU DAPATKAN",
     'do_list' => [
         [
-            'title' => 'Personalized Admission Assessment',
-            'body' => 'We evaluate students’ backgrounds in academic, personal, and extracurricular areas.',
+            'title' => 'Penilaian Pendaftaran Universitas yang Disesuaikan',
+            'body' => 'Kami mengevaluasi latar belakang siswa di bidang akademik, personal dan ekstrakurikuler.',
         ],
         [
-            'title' => 'Profile Development & Academic Planning',
-            'body' => 'Design and plan your courses, extracurricular choices, internship placement, personal project mentoring, subject tutoring, and productive holiday planning in order to develop an academic edge.',
+            'title' => 'Pengembangan Profil & Perencanaan Akademik',
+            'body' => 'Rancang dan rencanakan kursusmu, pilihan ekstrakurikuler, penempatan magang, bimbingan proyek pribadi, les mata pelajaran, dan perencanaan liburan yang produktif untuk mengembangkan keunggulan akademis.',
         ],
         [
-            'title' => 'Academic Advising Support',
-            'body' => 'Strategize and guide students on the academic aspect, based on the international or national high school curriculum.',
+            'title' => 'Dukungan Penasihat Akademik',
+            'body' => 'Menyusun strategi dan membimbing siswa pada aspek akademik, berdasarkan kurikulum sekolah menengah internasional atau nasional.',
         ],
         [
-            'title' => 'Best-Fit University Research & Selection',
-            'body' => 'We recommend a list of schools that fit each student best, taking into account their interests, personalities, and dreams and shortlisting them.',
+            'title' => 'Penelitian & Seleksi Universitas yang Paling Sesuai',
+            'body' => 'Kami merekomendasikan daftar sekolah yang paling cocok untuk setiap siswa, dengan mempertimbangkan minat, kepribadian, dan impian mereka.Setelah itu, kita bersama-sama akan membuat daftar universitas terbaik dan paling cocok untuk para siswa.',
         ],
         [
-            'title' => 'All-Around University Application',
-            'body' => 'We assist our students with essays, activity resume, letter of recommendation, standardized testing strategy, and other information needed for each application.',
+            'title' => 'Aplikasi Universitas Menyeluruh',
+            'body' => 'Kami membantu siswa kami dengan esai, resume aktivitas, surat rekomendasi, strategi SAT dan informasi lain yang diperlukan untuk setiap aplikasi.',
         ],
     ],
 
     // 4 Pilar
-    'pilar_title' => 'YOUR UNIVERSITY TRANSFER PROCESS THROUGH 4 PILLARS',
+    'pilar_title' => 'PROSES TRANSFER UNIVERSITAS ANDA MELALUI 4 PILAR',
     'pilar_list' => [
         [
             'title' => 'Academics',
@@ -69,25 +69,25 @@ return [
     'destination_list' => [
         [
             'title' => 'US',
-            'body' => 'US universities-targeted admission mentoring covers all-around university application in balance throughout the mentoring process, from academic performance to career exploration to build your profile.',
+            'body' => 'Mentoring untuk siswa yang menargetkan universitas di US mencakup semua aplikasi universitas secara seimbang dan beriringan selama proses pendampingan, mulai dari kinerja akademik hingga eksplorasi karier untuk membangun profil Anda.',
             'link' => 'https://drive.google.com/file/d/1Hs4mktkl5M40gSjfY73SPZQ1kD7RyOPV/view?usp=sharing',
             'img' => 'US UNI.webp',
         ],
         [
             'title' => 'NON-US',
-            'body' => 'Students aiming for non-US universities will be guided through two phases: profile building and university application while also emphasizing academic performance and achievements.',
+            'body' => 'Siswa yang ingin masuk ke universitas non-US akan dipandu melalui dua fase: pembangunan profil dan pendaftaran universitas sambil juga menekankan kinerja dan prestasi akademik.',
             'link' => 'https://drive.google.com/file/d/1mEOo9pEvtcgPjqfKVbLQGKmLtkasdp52/view?usp=sharing',
             'img' => 'NON US UNI.webp',
         ],
     ],
-    'destination_btn' => 'Book Your FREE Initial Consultation',
+    'destination_btn' => 'Daftar Initial Consultation GRATIS Anda',
 
     // why us
-    'why_us_title' => "WHY US?",
-    'why_us_desc' => 'Our expert mentors are here to provide 360-degree guidance to land you a seat at leading Undergraduate programs at top universities across the globe.',
+    'why_us_title' => "KENAPA PILIH KAMI?",
+    'why_us_desc' => 'Mentor ahli kami hadir untuk memberikan panduan 360 derajat agar kamu dapat masuk ke program Undergraduate terkemuka di universitas terbaik di seluruh dunia.',
 
     // testimony section
-    "testimony_title" => "WHAT OUR STUDENTS SAY",
+    "testimony_title" => "APA YANG MEREKA KATAKAN",
     "testimony_list" => [
         [
             'name' => 'Rachinta Marpaung',
@@ -112,7 +112,7 @@ return [
     ],
 
     // bottom section
-    "bottom_title" => "Every year, 150+ of our mentees have gotten into their dream universities.",
-    "bottom_subtitle" => "It’s time for your turn.",
-    "bottom_btn" => "Create your FREE Initial Consultation appointment",
+    "bottom_title" => "Setiap tahun, 150+ mentee kami berhasil masuk ke universitas impian mereka.",
+    "bottom_subtitle" => "Saatnya giliran Anda.",
+    "bottom_btn" => "Buat Janji Initial Consultation GRATIS Anda",
 ];

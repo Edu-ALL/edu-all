@@ -310,12 +310,12 @@ class ProgramPageController extends Controller
 
     public function graduate_program()
     {
-        return view('user.undergraduate_program.main');
+        return view('user.graduate_program.main');
     }
 
     public function university_transfer_program()
     {
-        return view('user.undergraduate_program.main');
+        return view('user.univ_transfer_program.main');
     }
 
     public function passion_project_mentoring()

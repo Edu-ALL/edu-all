@@ -3,35 +3,39 @@
 return [
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
-    "title" => "UNDERGRADUATE",
-    "body" => "We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities.",
+    "title" => "UNIVERSITY TRANSFER",
+    "body" => "We offer personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream Graduate school and prestigious scholarships.",
 
     "benefits" => [
         '1-on-1 Mentoring', 'Personalized Strategy Plan', ' Well-Rounded Support', 'Proven Track Record'
     ],
 
     // what will you do
-    'do_title' => "WHAT YOU WILL GET",
+    'do_title' => "WHAT YOU WILL DO",
     'do_list' => [
         [
-            'title' => 'Personalized Admission Assessment',
-            'body' => 'We evaluate students’ backgrounds in academic, personal, and extracurricular areas.',
+            'title' => 'In-Depth University Targeting Strategy & Research',
+            'body' => 'Understand the core concept of your intended major and strategize on the target university.',
         ],
         [
-            'title' => 'Profile Development & Academic Planning',
-            'body' => 'Design and plan your courses, extracurricular choices, internship placement, personal project mentoring, subject tutoring, and productive holiday planning in order to develop an academic edge.',
+            'title' => 'Course Designing',
+            'body' => 'Check on initial courses to take, transferable courses, and courses to take in the next few quarters/semesters based on their desired major.',
         ],
         [
-            'title' => 'Academic Advising Support',
-            'body' => 'Strategize and guide students on the academic aspect, based on the international or national high school curriculum.',
+            'title' => 'CV Touch-Up & Profile Building',
+            'body' => 'Find and curate the best-fit activities with hands-on guidance throughout the process with our mentors, whether it is the undergraduate research or internship opportunities, and improve your CV.',
         ],
         [
-            'title' => 'Best-Fit University Research & Selection',
-            'body' => 'We recommend a list of schools that fit each student best, taking into account their interests, personalities, and dreams and shortlisting them.',
+            'title' => 'Well-Rounded University Application',
+            'body' => 'We help students with essays, activity resumes, letter of recommendation, standardized testing strategy and other information needed for each application.',
         ],
         [
-            'title' => 'All-Around University Application',
-            'body' => 'We assist our students with essays, activity resume, letter of recommendation, standardized testing strategy, and other information needed for each application.',
+            'title' => 'Supplementary Documents Guidance',
+            'body' => 'Get support for your transfer admission additional requirements such as interviews, standardized tests, or language proficiency tests.',
+        ],
+        [
+            'title' => 'Successful Transfer Students Consulting',
+            'body' => 'Insights and tips from students who successfully transferred from a community college or university to their target universities and activities they did prior to transfer.  ',
         ],
     ],
 
@@ -63,28 +67,12 @@ return [
             'color' => 'yellow'
         ],
     ],
-
-    // destination section
-    'destination_title' => 'PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION',
-    'destination_list' => [
-        [
-            'title' => 'US',
-            'body' => 'US universities-targeted admission mentoring covers all-around university application in balance throughout the mentoring process, from academic performance to career exploration to build your profile.',
-            'link' => 'https://drive.google.com/file/d/1Hs4mktkl5M40gSjfY73SPZQ1kD7RyOPV/view?usp=sharing',
-            'img' => 'US UNI.webp',
-        ],
-        [
-            'title' => 'NON-US',
-            'body' => 'Students aiming for non-US universities will be guided through two phases: profile building and university application while also emphasizing academic performance and achievements.',
-            'link' => 'https://drive.google.com/file/d/1mEOo9pEvtcgPjqfKVbLQGKmLtkasdp52/view?usp=sharing',
-            'img' => 'NON US UNI.webp',
-        ],
-    ],
-    'destination_btn' => 'Book Your FREE Initial Consultation',
+    'pilar_desc' => 'University Transfer Admission Mentoring offers a different kind of approach than the usual university admission program. Here, students will be able to not just select specific courses for their transfer purpose, but also network and enhance their resume through various activities based on their passion and interests while fulfilling the transfer application process.',
+    'pilar_btn' => 'View full learning scope here',
 
     // why us
     'why_us_title' => "WHY US?",
-    'why_us_desc' => 'Our expert mentors are here to provide 360-degree guidance to land you a seat at leading Undergraduate programs at top universities across the globe.',
+    'why_us_desc' => 'Our expert mentors are here to support current university students who intend to transfer from community college to a university or from one university to another university through our special and proven mentoring strategy.',
 
     // testimony section
     "testimony_title" => "WHAT OUR STUDENTS SAY",

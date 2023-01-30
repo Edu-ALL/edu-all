@@ -3,35 +3,39 @@
 return [
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
-    "title" => "UNDERGRADUATE",
-    "body" => "We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities.",
+    "title" => "GRADUATE",
+    "body" => "We offer personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream Graduate school and prestigious scholarships.",
 
     "benefits" => [
         '1-on-1 Mentoring', 'Personalized Strategy Plan', ' Well-Rounded Support', 'Proven Track Record'
     ],
 
     // what will you do
-    'do_title' => "WHAT YOU WILL GET",
+    'do_title' => "WHAT YOU WILL DO",
     'do_list' => [
         [
-            'title' => 'Personalized Admission Assessment',
-            'body' => 'We evaluate students’ backgrounds in academic, personal, and extracurricular areas.',
+            'title' => 'In-Depth Research & Shortlisting',
+            'body' => 'Understand the core concept of your intended major, consult, and shortlist your best-fit university with help from mentors and grad students.',
         ],
         [
-            'title' => 'Profile Development & Academic Planning',
-            'body' => 'Design and plan your courses, extracurricular choices, internship placement, personal project mentoring, subject tutoring, and productive holiday planning in order to develop an academic edge.',
+            'title' => 'Essay Drilling',
+            'body' => 'From ideation to writing execution, tell your story in a unique and compelling way.',
         ],
         [
-            'title' => 'Academic Advising Support',
-            'body' => 'Strategize and guide students on the academic aspect, based on the international or national high school curriculum.',
+            'title' => 'First-hand Coaching',
+            'body' => 'Improve your CV and have interview simulations with mentors and grad school students who have been there before.',
         ],
         [
-            'title' => 'Best-Fit University Research & Selection',
-            'body' => 'We recommend a list of schools that fit each student best, taking into account their interests, personalities, and dreams and shortlisting them.',
+            'title' => 'Strategic GRE Prep',
+            'body' => 'Ace your test with personalized strategy and study resources curated by our mentors.',
         ],
         [
-            'title' => 'All-Around University Application',
-            'body' => 'We assist our students with essays, activity resume, letter of recommendation, standardized testing strategy, and other information needed for each application.',
+            'title' => 'Alumni & Current Student Consulting',
+            'body' => 'Get your burning questions answered, ranging from university application to life as a graduate student from people that have experienced it before.',
+        ],
+        [
+            'title' => 'Targeted Scholarship Assistance',
+            'body' => 'Work on different scholarship strategies and get support for each scholarship essay.',
         ],
     ],
 
@@ -63,24 +67,8 @@ return [
             'color' => 'yellow'
         ],
     ],
-
-    // destination section
-    'destination_title' => 'PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION',
-    'destination_list' => [
-        [
-            'title' => 'US',
-            'body' => 'US universities-targeted admission mentoring covers all-around university application in balance throughout the mentoring process, from academic performance to career exploration to build your profile.',
-            'link' => 'https://drive.google.com/file/d/1Hs4mktkl5M40gSjfY73SPZQ1kD7RyOPV/view?usp=sharing',
-            'img' => 'US UNI.webp',
-        ],
-        [
-            'title' => 'NON-US',
-            'body' => 'Students aiming for non-US universities will be guided through two phases: profile building and university application while also emphasizing academic performance and achievements.',
-            'link' => 'https://drive.google.com/file/d/1mEOo9pEvtcgPjqfKVbLQGKmLtkasdp52/view?usp=sharing',
-            'img' => 'NON US UNI.webp',
-        ],
-    ],
-    'destination_btn' => 'Book Your FREE Initial Consultation',
+    'pilar_desc' => 'Our Graduate Admission Mentoring Program focuses on students’ educational & professional profile enhancement while also helping develop the gameplan for their top graduate schools strategies.',
+    'pilar_btn' => 'View full learning scope here',
 
     // why us
     'why_us_title' => "WHY US?",
