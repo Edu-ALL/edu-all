@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $mentor->count() }}</h6>
-                                    {{-- <span class="text-muted small pt-2 ps-1">Mentors</span> --}}
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
@@ -38,19 +38,21 @@
                 </div>
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/upcoming-event">
-                            <h5 class="card-title">Upcoming Events <span>| {{ now()->year }}</span></h5>
+                        <a class="card-body" href="">
+                            <h5 class="card-title">Blogs <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <i class="fa-solid fa-newspaper"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>{{ $upcoming_event->count() }}</h6>
+                                    <h6>{{ $blog->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English or Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
+                
             </div>
             <div class="row">
                 <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
@@ -63,6 +65,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $banner->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
@@ -70,14 +73,15 @@
                 </div>
                 <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="">
-                            <h5 class="card-title">Blogs <span>| {{ now()->year }}</span></h5>
+                        <a class="card-body" href="/admin/upcoming-event">
+                            <h5 class="card-title">Upcoming Events <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-newspaper"></i>
+                                    <i class="fa-solid fa-calendar-days"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>{{ $blog->count() }}</h6>
+                                    <h6>{{ $upcoming_event->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
@@ -93,6 +97,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $guidebook->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
@@ -110,6 +115,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $success_stories->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
@@ -125,6 +131,7 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $testimonial->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
                         </a>
@@ -146,7 +153,7 @@
                                         </div>
                                         <div class="col">
                                             <h4><a href="#">{{ $top_blog->blog_title }}</a></h4>
-                                            <p>{!! Str::limit(strip_tags($top_blog->blog_description), 150, '...') !!}</p>
+                                            <p>{!! Str::limit(strip_tags($top_blog->blog_description), 200, '...') !!}</p>
                                             {{-- {!! Str::limit($top_blog->blog_description, 150, '...') !!} --}}
                                         </div>
                                     </div>

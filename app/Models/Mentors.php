@@ -17,6 +17,8 @@ class Mentors extends Model
         'group',
         'mentor_firstname',
         'mentor_lastname',
+        'mentor_slug',
+        'mentor_category',
         'mentor_graduation',
         'currently_working',
         'expertise',

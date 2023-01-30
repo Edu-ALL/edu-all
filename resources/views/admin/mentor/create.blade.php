@@ -12,7 +12,7 @@
 @section('content')
 @include('layout.admin.header')
 @include('layout.admin.sidebar')
-<main id="main" class="main">
+<main id="main" class="main" style="overflow: hidden !important">
     <div class="pagetitle">
         <h1>Mentor</h1>
         <nav>
@@ -35,67 +35,89 @@
                                     <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
-                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
-                                </li>
-                            </ul>
+                            <ul class="nav nav-tabs nav-tabs-bordered"></ul>
                             <form action="{{ route('create-mentor') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <h5 class="card-title">Form General</h5>
+                                @if($errors->any())
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Failed Create Mentor!</strong> You have to check some fields in English and Indonesian.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                    <div class="col-md-2 col">
+                                        <label for="" class="form-label">Image Preview</label>
+                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
+                                            <img class="img-preview img-fluid" id="img_preview">
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex flex-column gap-2">
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Image <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="file" class="form-control" id="image" onchange="previewImage()" name="mentor_image">
+                                            @error('mentor_image')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Alt <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="alt" name="mentor_alt" value="{{ old('mentor_alt') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-md-row flex-column pt-2 gap-md-3 gap-2">
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            First Name <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="firstname" name="mentor_firstname" value="{{ old('mentor_firstname') }}" onchange="createSlug()">
+                                    </div>
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Last name <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="lastname" name="mentor_lastname" value="{{ old('mentor_lastname') }}" onchange="createSlug()">
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-md-row flex-column pt-2 pb-3 gap-md-3 gap-2">
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Slug <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="slug" name="mentor_slug" value="{{ old('mentor_slug') }}">
+                                    </div>
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Category <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <div class="col">
+                                            <select class="select2" name="mentor_category" id="category">
+                                                <option value=""></option>
+                                                <option value="ALL-In Mentor" {{ old('mentor_category') == 'ALL-In Mentor' ? 'selected' : '' }}>ALL-In Mentor</option>
+                                                <option value="Profile Building Mentor" {{ old('mentor_category') == 'Profile Building Mentor' ? 'selected' : '' }}>Profile Building Mentor</option>\
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
+                                    </li>
+                                </ul>
                                 <div class="tab-content" id="borderedTabContent">
                                     {{-- Tab English --}}
                                     <div class="tab-pane fade show active" id="bordered-english" role="tabpanel" aria-labelledby="english-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form English</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Mentor!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Image Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="image_en" onchange="previewImage_en()" name="mentor_image_en">
-                                                            @error('mentor_image_en')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="mentor_alt_en" value="{{ old('mentor_alt_en') }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            First Name <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="firstname_en" name="mentor_firstname_en" value="{{ old('mentor_firstname_en') }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Last name <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="lastname_en" name="mentor_lastname_en" value="{{ old('mentor_lastname_en') }}">
-                                                    </div>
-                                                </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>
@@ -144,61 +166,7 @@
                                     <div class="tab-pane fade" id="bordered-indo" role="tabpanel" aria-labelledby="indo-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form Indonesia</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Mentor!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Image Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Image <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="image_id" onchange="previewImage_id()" name="mentor_image_id">
-                                                            @error('mentor_image_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="mentor_alt_id" value="{{ old('mentor_alt_id') }}">
-                                                            @error('mentor_alt_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            First Name <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="firstname_id" name="mentor_firstname_id" required value="{{ old('mentor_firstname_id') }}">
-                                                        @error('mentor_firstname_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Last name <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="lastname_id" name="mentor_lastname_id" required value="{{ old('mentor_lastname_id') }}">
-                                                        @error('mentor_lastname_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>
@@ -276,9 +244,9 @@
 
 @section('js')
 <script>
-    function previewImage_en(){
-        const image = document.querySelector('#image_en')
-        const imgPreview = document.querySelector('#img_preview_en')
+    function previewImage(){
+        const image = document.querySelector('#image')
+        const imgPreview = document.querySelector('#img_preview')
         imgPreview.style.display = 'block'
         const oFReader = new FileReader()
         oFReader.readAsDataURL(image.files[0])
@@ -286,26 +254,26 @@
             imgPreview.src = oFREvent.target.result
         }
     };
-    function previewImage_id(){
-        const image = document.querySelector('#image_id')
-        const imgPreview = document.querySelector('#img_preview_id')
-        imgPreview.style.display = 'block'
-        const oFReader = new FileReader()
-        oFReader.readAsDataURL(image.files[0])
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result
-        }
+
+    function createSlug(){
+        const firstname = document.getElementById('firstname').value.replace(' ', '-').toLowerCase();
+        const lastname = document.getElementById('lastname').value.replace(' ', '-').toLowerCase();
+        const slug = document.getElementById('slug');
+        slug.value = firstname + '-' + lastname;
     };
+
     function checkInput(){
-        const firstname_en = document.getElementById('firstname_en').value;
-        const lastname_en = document.getElementById('lastname_en').value;
+        const firstname = document.getElementById('firstname').value;
+        const lastname = document.getElementById('lastname').value;
+        const slug = document.getElementById('slug').value;
+        const category = document.getElementById('category').value;
         const graduation_en = tinymce.get('graduation_en').getContent();
         const description_en = tinymce.get('description_en').getContent();
         const short_description_en = tinymce.get('short_description_en').getContent();
-        const image_en = document.getElementById('image_en').value;
-        const alt_en = document.getElementById('alt_en').value;
+        const image = document.getElementById('image').value;
+        const alt = document.getElementById('alt').value;
         const submit = document.getElementById('submit');
-        if (firstname_en == "" || lastname_en == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image_en == "" || alt_en == "") {
+        if (firstname == "" || lastname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image == "" || alt == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

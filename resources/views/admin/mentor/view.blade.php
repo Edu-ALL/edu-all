@@ -66,9 +66,9 @@
                                             </a>
                                         </div>
                                         <div class="col d-flex flex-md-row flex-column justify-content-center gap-md-3">
-                                            <div class="col-md-3 d-flex align-items-center justify-content-center pt-md-0 pt-3 px-md-5 px-5">
+                                            <div class="col-md-3 d-flex align-items-start justify-content-center pt-md-3 pt-3 px-md-3 px-5">
                                                 <div class="pic-profile p-1">
-                                                    <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[0]->mentor_picture) }}" alt="">
+                                                    <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[0]->mentor_picture) }}" alt="{{ $mentor[0]->mentor_alt }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column justify-content-center gap-2 py-md-3 py-4 px-0">
@@ -81,6 +81,28 @@
                                                     </div>
                                                     <div class="col p-0">
                                                         <p class="m-0">{{ $mentor[0]->mentor_firstname.' '.$mentor[0]->mentor_lastname }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Slug</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0">
+                                                        <p class="m-0">{{ $mentor[0]->mentor_slug }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Category</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0">
+                                                        <p class="m-0">{{ $mentor[0]->mentor_category }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="field-detail d-flex flex-row align-items-start">
@@ -152,17 +174,15 @@
                                                 <i class="fa-solid fa-pen-to-square me-md-1 me-0"></i><span class="d-md-inline d-none"> Edit Profile Mentor</span>
                                             </a>
                                         </div>
-                                        <div class="col justify-content-center mx-md-3 mx-1">
-                                            <div class="col d-flex align-items-center justify-content-center py-2 px-5">
-                                                <div class="col-md-3 col-8 m-0">
-                                                    <div class="pic-profile p-2">
-                                                        <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[1]->mentor_picture) }}" alt="">
-                                                    </div>
+                                        <div class="col d-flex flex-md-row flex-column justify-content-center gap-md-3">
+                                            <div class="col-md-3 d-flex align-items-start justify-content-center pt-md-3 pt-3 px-md-3 px-5">
+                                                <div class="pic-profile p-1">
+                                                    <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[1]->mentor_picture) }}" alt="{{ $mentor[1]->mentor_alt }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column justify-content-center gap-2 py-md-3 py-4 px-0">
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Full Name</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -172,8 +192,30 @@
                                                         <p class="m-0">{{ $mentor[1]->mentor_firstname.' '.$mentor[1]->mentor_lastname }}</p>
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Slug</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0">
+                                                        <p class="m-0">{{ $mentor[1]->mentor_slug }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Category</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0">
+                                                        <p class="m-0">{{ $mentor[1]->mentor_category }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Graduation</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -183,8 +225,8 @@
                                                         {!! $mentor[1]->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Currently Working</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -194,8 +236,8 @@
                                                         {!! $mentor[1]->currently_working == null ? '-' : $mentor[1]->currently_working !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Expertise</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -205,8 +247,8 @@
                                                         {!! $mentor[1]->expertise == null ? '-' : $mentor[1]->expertise !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Short Desc</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
@@ -216,8 +258,8 @@
                                                         {!! $mentor[1]->short_desc !!}
                                                     </div>
                                                 </div>
-                                                <div class="field-detail d-flex flex-row align-items-md-start align-items-center">
-                                                    <div class="col-md-2 col-4 p-0">
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
                                                         <h6 class="m-0 card-title p-0">Description</h6>
                                                     </div>
                                                     <div class="col-1 text-center p-0" style="max-width: 22px">
