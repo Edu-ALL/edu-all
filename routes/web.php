@@ -31,6 +31,7 @@ Route::group(
     function () {
         Route::controller(HomePageController::class)->group(function () {
             Route::get('/', 'home')->name('home');
+            Route::get('/sign-me', 'sign_me')->name('sign_me');
         });
 
         Route::controller(ProgramPageController::class)->group(function () {

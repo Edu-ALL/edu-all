@@ -11,6 +11,11 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
+                // Home
+                "sign-me":
+                    "url('../../public/assets/img/sign-me/header-consultation-page-1.webp')",
+
+                // Program
                 "program-image-1":
                     "url('../../public/assets/img/programs/medium-shot-woman-teaching-lesson.jpg')",
                 "program-image-2":

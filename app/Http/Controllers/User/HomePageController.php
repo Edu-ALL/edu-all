@@ -72,4 +72,9 @@ class HomePageController extends Controller
             'banners' => $banners,
         ]);
     }
+
+    public function sign_me()
+    {
+        return view('user.sign_me.main');
+    }
 }
