@@ -57,8 +57,8 @@
                                     @foreach ($upcoming_events as $upcoming_event)
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $upcoming_event->event_title}}</td>
-                                            <td>{{ $upcoming_event->event_subtitle}}</td>
+                                            <td>{{ $upcoming_event->event_title }}</td>
+                                            <td>{!! $upcoming_event->event_subtitle !!}</td>
                                             <td>{{ $upcoming_event->event_date }}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">

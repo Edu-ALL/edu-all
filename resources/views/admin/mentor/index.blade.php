@@ -63,7 +63,9 @@
                                             <td>
                                                 <img src="{{ asset('uploaded_files/mentor/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>
-                                            <td>{{ $mentor->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            <td class="text-center">
+                                                <img src="{{ $mentor->lang == 'en' ? asset('assets/img/language/flag-EN.png') : asset('assets/img/language/flag-ID.png') }}" alt="" width="30" data-bs-toggle="tooltip" data-bs-title="{{ $mentor->lang == 'en' ? 'English' : 'Indonesia' }}">
+                                            </td>
                                             @if ($mentor->mentor_status == 'active')
                                                 <td class="text-center">
                                                     <button 

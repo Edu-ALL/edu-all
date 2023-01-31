@@ -16,6 +16,7 @@ class MentorVideos extends Model
         'id',
         'mentor_id',
         'video_embed',
+        'youtube_id',
         'description',
         'created_at',
         'updated_at'

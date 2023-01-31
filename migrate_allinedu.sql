@@ -3,9 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2023 at 09:48 AM
+-- Generation Time: Jan 30, 2023 at 11:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -73,7 +74,9 @@ CREATE TABLE `tb_blog` (
 --
 
 INSERT INTO `tb_blog` (`id`, `slug`, `cat_id`, `mt_id`, `blog_title`, `blog_description`, `blog_thumbnail`, `blog_thumbnail_alt`, `blog_status`, `seo_title`, `seo_keyword`, `seo_desc`, `lang`, `click_count`, `duration_read`, `is_highlight`, `created_at`, `updated_at`) VALUES
-(8, 'blog-all-in-eduspace', 9, 3, 'Lorem ipsum', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<p>&nbsp;</p>\r\n<h4>An Overview of The University of Toronto</h4>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<p>&nbsp;</p>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>The University of Toronto acceptance rate is estimated to be 43%, making it a moderately competitive school.</p>\r\n<p>Toronto is one of the most diverse cities in the world, and the University of Toronto is a reflection of this with its student body of more than 97,066 students enrolled in their programs. While 21,484 are graduate students, 75,582 are enrolled in undergraduate programs. Currently, the University of Toronto has more than 20,000 international students coming from 170 countries and regions.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>For your university application to the University of Toronto, you will need to submit it through the Ontario Universities Application Center (OUAC) system. Moreover, the OUAC is a centralized application system for all undergraduate and graduate programs at each Ontario university.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>The undergraduate application fee for the University of Toronto is $180. Here are several documents that you&rsquo;ll need to submit for your application:</p>\r\n<p>&nbsp;</p>\r\n<p>High school transcripts</p>\r\n<p>English language proficiency test results</p>\r\n<p>Standardized test results</p>\r\n<p>Self-reported grades form</p>\r\n<p>Personal statements or essays</p>\r\n<p>&nbsp;</p>\r\n<p>Minimum English Score Required</p>\r\n<p>As English is the language of instruction and examination at the University of Toronto, you will be required to submit proof of English proficiency. Furthermore, here are several English proficiency tests that are accepted, along with the minimum scores required:</p>', 'Thumbnail-blogs-20230126125613.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 0, 'true', '2023-01-26 05:56:13', '2023-01-26 08:22:43');
+(8, 'blog-all-in-eduspace', 9, 3, 'Lorem ipsum', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<p>&nbsp;</p>\r\n<h4>An Overview of The University of Toronto</h4>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<p>&nbsp;</p>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>The University of Toronto acceptance rate is estimated to be 43%, making it a moderately competitive school.</p>\r\n<p>Toronto is one of the most diverse cities in the world, and the University of Toronto is a reflection of this with its student body of more than 97,066 students enrolled in their programs. While 21,484 are graduate students, 75,582 are enrolled in undergraduate programs. Currently, the University of Toronto has more than 20,000 international students coming from 170 countries and regions.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>For your university application to the University of Toronto, you will need to submit it through the Ontario Universities Application Center (OUAC) system. Moreover, the OUAC is a centralized application system for all undergraduate and graduate programs at each Ontario university.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>The undergraduate application fee for the University of Toronto is $180. Here are several documents that you&rsquo;ll need to submit for your application:</p>\r\n<p>&nbsp;</p>\r\n<p>High school transcripts</p>\r\n<p>English language proficiency test results</p>\r\n<p>Standardized test results</p>\r\n<p>Self-reported grades form</p>\r\n<p>Personal statements or essays</p>\r\n<p>&nbsp;</p>\r\n<p>Minimum English Score Required</p>\r\n<p>As English is the language of instruction and examination at the University of Toronto, you will be required to submit proof of English proficiency. Furthermore, here are several English proficiency tests that are accepted, along with the minimum scores required:</p>', 'Thumbnail-blogs-20230126125613.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 0, 'true', '2023-01-26 05:56:13', '2023-01-26 08:22:43'),
+(9, 'blog-all-in-eduspace-2', 10, 4, 'Lorem ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Thumbnail-blogs-20230126164232.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'id', 0, 0, 'true', '2023-01-26 09:42:32', '2023-01-26 09:42:32'),
+(10, 'blog-all-in-eduspace-3', 9, 3, 'Lorem ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Thumbnail-blogs-20230126164256.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 0, 'true', '2023-01-26 09:42:56', '2023-01-26 09:42:56');
 
 -- --------------------------------------------------------
 
@@ -128,6 +131,8 @@ CREATE TABLE `tb_mentor` (
   `group` bigint(20) NOT NULL,
   `mentor_firstname` varchar(255) NOT NULL,
   `mentor_lastname` varchar(255) NOT NULL,
+  `mentor_slug` varchar(255) NOT NULL,
+  `mentor_category` varchar(255) NOT NULL,
   `mentor_graduation` text NOT NULL,
   `currently_working` text DEFAULT NULL,
   `expertise` text DEFAULT NULL,
@@ -145,13 +150,15 @@ CREATE TABLE `tb_mentor` (
 -- Dumping data for table `tb_mentor`
 --
 
-INSERT INTO `tb_mentor` (`id`, `group`, `mentor_firstname`, `mentor_lastname`, `mentor_graduation`, `currently_working`, `expertise`, `description`, `short_desc`, `mentor_picture`, `mentor_alt`, `mentor_status`, `lang`, `created_at`, `updated_at`) VALUES
-(3, 20230110103442, 'Fulan', 'Fulanah', '<p>Jakarta</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>', 'Mentor-picture-en-20230110103442.jpg', 'alt en', 'active', 'en', '2023-01-10 03:34:42', '2023-01-12 09:56:36'),
-(4, 20230110103442, 'Fulan', 'Fulanah', '<p>Jakarta</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>', 'Mentor-picture-id-20230110103442.jpg', 'alt id', 'active', 'id', '2023-01-10 03:34:42', '2023-01-12 09:56:36'),
-(9, 20230126132222, 'First', 'Last', '<p>Jakarta</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-en-20230126132222.png', 'alt en', 'active', 'en', '2023-01-26 06:22:22', '2023-01-26 06:22:22'),
-(10, 20230126132222, 'First', 'Last', '<p>Jakarta</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-id-20230126132222.png', 'alt id', 'active', 'id', '2023-01-26 06:22:23', '2023-01-26 06:22:23'),
-(11, 20230126135647, 'Fulan', 'Fulanah', '<p>Bandung</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-en-20230126135647.png', 'alt en', 'active', 'en', '2023-01-26 06:56:47', '2023-01-26 06:56:47'),
-(12, 20230126135647, 'Fulan', 'Fulanah', '<p>Bandung</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-id-20230126135647.png', 'alt id', 'active', 'id', '2023-01-26 06:56:47', '2023-01-26 06:56:47');
+INSERT INTO `tb_mentor` (`id`, `group`, `mentor_firstname`, `mentor_lastname`, `mentor_slug`, `mentor_category`, `mentor_graduation`, `currently_working`, `expertise`, `description`, `short_desc`, `mentor_picture`, `mentor_alt`, `mentor_status`, `lang`, `created_at`, `updated_at`) VALUES
+(19, 20230127155532, 'Chiara', 'Situmorang', 'chiara-situmorang', 'Profile Building Mentor', '<p>BA, University of Melbourne</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-20230127155532.webp', 'image alt', 'active', 'en', '2023-01-27 08:55:32', '2023-01-30 09:56:49'),
+(20, 20230127155532, 'Chiara', 'Situmorang', 'chiara-situmorang', 'Profile Building Mentor', '<p>BA, University of Melbourne</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-20230127155532.webp', 'image alt', 'active', 'id', '2023-01-27 08:55:32', '2023-01-30 09:56:49'),
+(21, 20230130095714, 'Paul', 'Edison', 'paul-edison', 'ALL-In Mentor', '<p>BA, UC Berkeley</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-20230130095714.webp', 'image alt', 'active', 'en', '2023-01-30 02:57:14', '2023-01-30 02:57:14'),
+(22, 20230130095714, 'Paul', 'Edison', 'paul-edison', 'ALL-In Mentor', '<p>BA, UC Berkeley</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-20230130095714.webp', 'image alt', 'active', 'id', '2023-01-30 02:57:14', '2023-01-30 02:57:14'),
+(23, 20230130102019, 'Devi', 'Kasih', 'devi-kasih', 'ALL-In Mentor', '<p>University of Pennsylvania</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Short Description EN</p>', 'Mentor-picture-20230130102019.webp', 'image alt', 'active', 'en', '2023-01-30 03:20:19', '2023-01-30 03:22:39'),
+(24, 20230130102019, 'Devi', 'Kasih', 'devi-kasih', 'ALL-In Mentor', '<p>University of Pennsylvania</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Short Description ID</p>', 'Mentor-picture-20230130102019.webp', 'image alt', 'active', 'id', '2023-01-30 03:20:19', '2023-01-30 03:22:39'),
+(25, 20230130160311, 'Nicholas', 'Soepriatna', 'nicholas-soepriatna', 'ALL-In Mentor', '<p>Purdue University</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-20230130160311.webp', 'image alt', 'active', 'en', '2023-01-30 09:03:11', '2023-01-30 09:03:11'),
+(26, 20230130160311, 'Nicholas', 'Soepriatna', 'nicholas-soepriatna', 'ALL-In Mentor', '<p>Purdue University</p>', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'Mentor-picture-20230130160311.webp', 'image alt', 'active', 'id', '2023-01-30 09:03:11', '2023-01-30 09:03:11');
 
 -- --------------------------------------------------------
 
@@ -163,6 +170,7 @@ CREATE TABLE `tb_mentor_video` (
   `id` int(11) NOT NULL,
   `mentor_id` bigint(20) NOT NULL,
   `video_embed` text NOT NULL,
+  `youtube_id` text NOT NULL,
   `description` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -172,9 +180,9 @@ CREATE TABLE `tb_mentor_video` (
 -- Dumping data for table `tb_mentor_video`
 --
 
-INSERT INTO `tb_mentor_video` (`id`, `mentor_id`, `video_embed`, `description`, `created_at`, `updated_at`) VALUES
-(5, 20230110103442, 'https://www.youtube.com/', '<p>Lorem Ipsum</p>', '2023-01-26 06:09:35', '2023-01-26 06:09:35'),
-(6, 20230110103442, 'https://www.google.com/', '<p>Lorem</p>', '2023-01-26 06:09:46', '2023-01-26 06:09:46');
+INSERT INTO `tb_mentor_video` (`id`, `mentor_id`, `video_embed`, `youtube_id`, `description`, `created_at`, `updated_at`) VALUES
+(14, 20230127155532, 'https://youtu.be/eRb6lymJOIM', 'eRb6lymJOIM', '', '2023-01-27 08:56:02', '2023-01-27 08:56:02'),
+(15, 20230130102019, 'https://youtu.be/eRb6lymJOIM', 'eRb6lymJOIM', '', '2023-01-30 03:35:20', '2023-01-30 03:35:20');
 
 -- --------------------------------------------------------
 
@@ -244,6 +252,14 @@ CREATE TABLE `tb_upcoming_event` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_upcoming_event`
+--
+
+INSERT INTO `tb_upcoming_event` (`id`, `group`, `event_date`, `event_thumbnail`, `event_alt`, `event_title`, `event_subtitle`, `event_detail`, `event_rsvp_link`, `event_status`, `lang`, `created_at`, `updated_at`) VALUES
+(7, 20230126162533, '23 December 2022', 'Upcoming-Event-en-20230126162533.png', 'alt en', 'title en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'https://www.google.com/', 'active', 'en', '2023-01-26 09:25:33', '2023-01-26 09:31:46'),
+(8, 20230126162533, '23 desember 2022', 'Upcoming-Event-id-20230126162533.png', 'alt id', 'title id', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'https://www.google.com/', 'active', 'id', '2023-01-26 09:25:33', '2023-01-26 09:31:46');
 
 -- --------------------------------------------------------
 
@@ -346,13 +362,13 @@ ALTER TABLE `tb_banner`
 -- AUTO_INCREMENT for table `tb_blog`
 --
 ALTER TABLE `tb_blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tb_blog_category`
 --
 ALTER TABLE `tb_blog_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tb_guidebook`
@@ -364,13 +380,13 @@ ALTER TABLE `tb_guidebook`
 -- AUTO_INCREMENT for table `tb_mentor`
 --
 ALTER TABLE `tb_mentor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tb_mentor_video`
 --
 ALTER TABLE `tb_mentor_video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_success_stories`
@@ -388,7 +404,7 @@ ALTER TABLE `tb_testimonial`
 -- AUTO_INCREMENT for table `tb_upcoming_event`
 --
 ALTER TABLE `tb_upcoming_event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_users`

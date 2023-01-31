@@ -151,7 +151,7 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Link Video <span style="color: var(--red)">*</span>
+                                                        Link <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="video_link_en" name="story_video_link_en" value="{{ old('story_video_link_en') }}">
                                                     @error('story_video_link_en')
@@ -282,7 +282,7 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Link Video <span style="color: var(--red)">*</span>
+                                                        Link <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="video_link_id" name="story_video_link_id" value="{{ old('story_video_link_id') }}">
                                                     @error('story_video_link_id')

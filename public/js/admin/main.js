@@ -88,26 +88,33 @@
   });
 
   // TinyMCE
-  tinymce.init({
-    selector: '.textarea',
-    width: 'auto',
-    height: '300'
-  });
-
   // tinymce.init({
-  //   selector: '.textarea',  // change this value according to your HTML
+  //   selector: '.textarea',
   //   width: 'auto',
-  //   height: '300',
-  //   plugins: 'link',
-  //   menubar: 'insert',
-  //   toolbar: 'link'
+  //   height: '300'
   // });
+
+  tinymce.init({
+    selector: 'textarea',
+    width: 'auto',
+    height: '300',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+  });
 
   // Select2
   $(document).ready(function() {
     $('.select2').select2({
       placeholder: 'Select an option'
     });
+  });
+
+  // Disable Enter Form
+  $("form").keypress(function(e) {
+    //Enter key
+    if (e.which == 13) {
+        return false;
+    }
   });
 
 })();
