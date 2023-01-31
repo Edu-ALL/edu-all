@@ -303,6 +303,21 @@ class ProgramPageController extends Controller
         ]);
     }
 
+    public function undergraduate_program()
+    {
+        return view('user.undergraduate_program.main');
+    }
+
+    public function graduate_program()
+    {
+        return view('user.graduate_program.main');
+    }
+
+    public function university_transfer_program()
+    {
+        return view('user.univ_transfer_program.main');
+    }
+
     public function passion_project_mentoring()
     {
         return view('user.passion_project_mentoring.main');
