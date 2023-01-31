@@ -222,4 +222,11 @@
     .mentor_card:hover .back {
         transform: rotateY(-360deg);
     }
+
+    .splide__pagination {
+        display: flex !important;
+        flex-direction: column !important;
+        bottom: 70% !important;
+        left:97% !important;
+    }
 }
