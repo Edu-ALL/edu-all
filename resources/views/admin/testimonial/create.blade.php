@@ -35,34 +35,101 @@
                                     <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
-                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
-                                </li>
-                            </ul>
+                            <ul class="nav nav-tabs nav-tabs-bordered"></ul>
                             <form action="{{ route('create-testimonial') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <h5 class="card-title">Form General</h5>
+                                @if($errors->any())
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Failed Create Mentor!</strong> You have to check some fields in English and Indonesian.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <div class="col d-flex flex-column gap-2">
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Name <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="name" name="testi_name" value="{{ old('testi_name') }}">
+                                    </div>
+                                    <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                        <div class="col">
+                                            <label for="" class="form-label">
+                                                Category <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <div class="col">
+                                                <select class="select2" name="testi_category" id="category">
+                                                    <option value=""></option>
+                                                    <option value="Admission Mentoring" {{ old('testi_category') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                    <option value="Experiential Learning" {{ old('testi_category') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
+                                                    <option value="Academic Preparation" {{ old('testi_category') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label for="" class="form-label">
+                                                Sub Category <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <div class="col">
+                                                <select class="select2" name="testi_subcategory" id="subcategory">
+                                                    <option value=""></option>
+                                                    <option value="Undergraduate Program" {{ old('testi_subcategory') == 'Undergraduate Program' ? 'selected' : '' }}>Undergraduate Program</option>
+                                                    <option value="Graduate Program" {{ old('testi_subcategory') == 'Graduate Program' ? 'selected' : '' }}>Graduate Program</option>
+                                                    <option value="University Transfer Program" {{ old('testi_subcategory') == 'University Transfer Program' ? 'selected' : '' }}>University Transfer Program</option>
+                                                    <option value="Academic Tutoring" {{ old('testi_subcategory') == 'Academic Tutoring' ? 'selected' : '' }}>Academic Tutoring</option>
+                                                    <option value="SAT / ACT Preparation" {{ old('testi_subcategory') == 'SAT / ACT Preparation' ? 'selected' : '' }}>SAT / ACT Preparation</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Subtitle
+                                        </label>
+                                        <textarea class="textarea" name="testi_subtitle" id="subtitle">
+                                            {{ old('testi_subtitle') }}
+                                        </textarea>
+                                    </div>
+                                    <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                        <div class="col-md-2 col">
+                                            <label for="" class="form-label">Thumbnail Preview</label>
+                                            <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
+                                                <img class="img-preview img-fluid" id="img_preview">
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex flex-column gap-2">
+                                            <div class="col-12">
+                                                <label for="" class="form-label">
+                                                    Thumbnail <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="testi_thumbnail">
+                                                @error('testi_thumbnail')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="" class="form-label">
+                                                    Alt <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="alt" name="testi_alt" value="{{ old('testi_alt') }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs nav-tabs-bordered pt-3" id="borderedTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
+                                    </li>
+                                </ul>
                                 <div class="tab-content" id="borderedTabContent">
                                     {{-- Tab English --}}
                                     <div class="tab-pane fade show active" id="bordered-english" role="tabpanel" aria-labelledby="english-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form English</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Testimonial!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Name <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="name_en" name="testi_name_en" value="{{ old('testi_name_en') }}">
-                                                </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
@@ -70,52 +137,6 @@
                                                     <textarea class="textarea" name="testi_desc_en" id="desc_en">
                                                         {{ old('testi_desc_en') }}
                                                     </textarea>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Program <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="program_en" name="testi_program_en" value="{{ old('testi_program_en') }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Category <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <div class="col">
-                                                            <select class="select2" name="testi_category_en" id="category_en">
-                                                                <option value=""></option>
-                                                                <option value="Admission Mentoring" {{ old('testi_category_en') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
-                                                                <option value="Experiential Learning" {{ old('testi_category_en') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
-                                                                <option value="Academic Preparation" {{ old('testi_category_en') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Thumbnail Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="testi_thumbnail_en">
-                                                            @error('testi_thumbnail_en')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="testi_alt_en" value="{{ old('testi_alt_en') }}">
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,22 +146,7 @@
                                     <div class="tab-pane fade" id="bordered-indo" role="tabpanel" aria-labelledby="indo-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form Indonesia</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Testimonial!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Name <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="name_id" name="testi_name_id" value="{{ old('testi_name_id') }}">
-                                                    @error('testi_name_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Description <span style="color: var(--red)">*</span>
@@ -148,64 +154,9 @@
                                                     <textarea class="textarea" name="testi_desc_id" id="desc_id">
                                                         {{ old('testi_desc_id') }}
                                                     </textarea>
-                                                    @error('testi_desc_id')
+                                                    @error('testi_desc')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Program <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <input type="text" class="form-control" id="program_id" name="testi_program_id" value="{{ old('testi_program_id') }}">
-                                                        @error('testi_program_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Category <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <div class="col">
-                                                            <select class="select2" name="testi_category_id" id="category_id">
-                                                                <option value=""></option>
-                                                                <option value="Admission Mentoring" {{ old('testi_category_id') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
-                                                                <option value="Experiential Learning" {{ old('testi_category_id') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
-                                                                <option value="Academic Preparation" {{ old('testi_category_id') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
-                                                            </select>
-                                                        </div>
-                                                        @error('testi_category_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Thumbnail Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="testi_thumbnail_id">
-                                                            @error('testi_thumbnail_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="testi_alt_id" value="{{ old('testi_alt_id') }}">
-                                                            @error('testi_alt_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
 
@@ -229,19 +180,9 @@
 
 @section('js')
 <script>
-    function previewImage_en(){
-        const image = document.querySelector('#thumbnail_en')
-        const imgPreview = document.querySelector('#img_preview_en')
-        imgPreview.style.display = 'block'
-        const oFReader = new FileReader()
-        oFReader.readAsDataURL(image.files[0])
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result
-        }
-    };
-    function previewImage_id(){
-        const image = document.querySelector('#thumbnail_id')
-        const imgPreview = document.querySelector('#img_preview_id')
+    function previewImage(){
+        const image = document.querySelector('#thumbnail')
+        const imgPreview = document.querySelector('#img_preview')
         imgPreview.style.display = 'block'
         const oFReader = new FileReader()
         oFReader.readAsDataURL(image.files[0])
@@ -250,14 +191,14 @@
         }
     };
     function checkInput(){
-        const name_en = document.getElementById('name_en').value;
+        const name = document.getElementById('name').value;
+        const category = document.getElementById('category').value;
+        const subcategory = document.getElementById('subcategory').value;
+        const thumbnail = document.getElementById('thumbnail').value;
+        const alt = document.getElementById('alt').value;
         const desc_en = tinymce.get('desc_en').getContent();
-        const program_en = document.getElementById('program_en').value;
-        const category_en = document.getElementById('category_en').value;
-        const thumbnail_en = document.getElementById('thumbnail_en').value;
-        const alt_en = document.getElementById('alt_en').value;
         const submit = document.getElementById('submit');
-        if (name_en == "" || desc_en == "" || program_en == "" || category_en == "" || thumbnail_en == "" || alt_en == "") {
+        if (name == "" || category == "" || subcategory == "" || thumbnail == "" || alt == "" || desc_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

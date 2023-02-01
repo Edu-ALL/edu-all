@@ -43,11 +43,11 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/banner', [Banner::class, 'index']);
     Route::get('/banner/create', [Banner::class, 'create']);
     Route::post('/banner', [Banner::class, 'store'])->name('create-banner');
-    Route::get('/banner/{group}/edit', [Banner::class, 'edit']);
-    Route::post('/banner/{group}', [Banner::class, 'update'])->name('update-banner');
-    Route::post('/banner/deactivate/{group}', [Banner::class, 'deactivate']);
-    Route::post('/banner/activate/{group}', [Banner::class, 'activate']);
-    Route::post('/banner/delete/{group}', [Banner::class, 'delete']);
+    Route::get('/banner/{id}/edit', [Banner::class, 'edit']);
+    Route::post('/banner/{id}', [Banner::class, 'update'])->name('update-banner');
+    Route::post('/banner/deactivate/{id}', [Banner::class, 'deactivate']);
+    Route::post('/banner/activate/{id}', [Banner::class, 'activate']);
+    Route::post('/banner/delete/{id}', [Banner::class, 'delete']);
 
     // Blog
     Route::get('/blogs', [Blog::class, 'index']);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2023 at 11:10 AM
+-- Generation Time: Feb 01, 2023 at 05:35 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -37,10 +37,20 @@ CREATE TABLE `tb_banner` (
   `banner_button` text NOT NULL,
   `banner_link` text NOT NULL,
   `banner_status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
+  `region` char(2) NOT NULL,
   `lang` char(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_banner`
+--
+
+INSERT INTO `tb_banner` (`id`, `group`, `banner_img`, `banner_alt`, `banner_title`, `banner_description`, `banner_button`, `banner_link`, `banner_status`, `region`, `lang`, `created_at`, `updated_at`) VALUES
+(10, 20230131164642, 'Banner-20230131164642.webp', 'banner alt', 'Banner Title', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Banner button', 'https://www.google.com/', 'active', 'sg', 'en', '2023-01-31 09:46:42', '2023-02-01 03:17:13'),
+(11, 20230131172100, 'Banner-20230131172100.png', 'banner alt', 'Banner Title', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Banner button', 'https://www.google.com/', 'active', 'id', 'id', '2023-01-31 10:21:00', '2023-01-31 10:21:00'),
+(12, 20230201100929, 'Banner-20230201100929.jpg', 'banner alt', 'Banner Title', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Banner button', 'https://www.google.com/', 'active', 'id', 'en', '2023-02-01 03:09:29', '2023-02-01 03:09:29');
 
 -- --------------------------------------------------------
 
@@ -74,8 +84,8 @@ CREATE TABLE `tb_blog` (
 --
 
 INSERT INTO `tb_blog` (`id`, `slug`, `cat_id`, `mt_id`, `blog_title`, `blog_description`, `blog_thumbnail`, `blog_thumbnail_alt`, `blog_status`, `seo_title`, `seo_keyword`, `seo_desc`, `lang`, `click_count`, `duration_read`, `is_highlight`, `created_at`, `updated_at`) VALUES
-(8, 'blog-all-in-eduspace', 9, 3, 'Lorem ipsum', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<p>&nbsp;</p>\r\n<h4>An Overview of The University of Toronto</h4>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<p>&nbsp;</p>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>The University of Toronto acceptance rate is estimated to be 43%, making it a moderately competitive school.</p>\r\n<p>Toronto is one of the most diverse cities in the world, and the University of Toronto is a reflection of this with its student body of more than 97,066 students enrolled in their programs. While 21,484 are graduate students, 75,582 are enrolled in undergraduate programs. Currently, the University of Toronto has more than 20,000 international students coming from 170 countries and regions.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>For your university application to the University of Toronto, you will need to submit it through the Ontario Universities Application Center (OUAC) system. Moreover, the OUAC is a centralized application system for all undergraduate and graduate programs at each Ontario university.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>The undergraduate application fee for the University of Toronto is $180. Here are several documents that you&rsquo;ll need to submit for your application:</p>\r\n<p>&nbsp;</p>\r\n<p>High school transcripts</p>\r\n<p>English language proficiency test results</p>\r\n<p>Standardized test results</p>\r\n<p>Self-reported grades form</p>\r\n<p>Personal statements or essays</p>\r\n<p>&nbsp;</p>\r\n<p>Minimum English Score Required</p>\r\n<p>As English is the language of instruction and examination at the University of Toronto, you will be required to submit proof of English proficiency. Furthermore, here are several English proficiency tests that are accepted, along with the minimum scores required:</p>', 'Thumbnail-blogs-20230126125613.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 0, 'true', '2023-01-26 05:56:13', '2023-01-26 08:22:43'),
-(9, 'blog-all-in-eduspace-2', 10, 4, 'Lorem ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Thumbnail-blogs-20230126164232.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'id', 0, 0, 'true', '2023-01-26 09:42:32', '2023-01-26 09:42:32'),
+(8, 'blog-all-in-eduspace', 9, NULL, 'Lorem ipsum', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<p>&nbsp;</p>\r\n<h4>An Overview of The University of Toronto</h4>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<p>&nbsp;</p>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>The University of Toronto acceptance rate is estimated to be 43%, making it a moderately competitive school.</p>\r\n<p>Toronto is one of the most diverse cities in the world, and the University of Toronto is a reflection of this with its student body of more than 97,066 students enrolled in their programs. While 21,484 are graduate students, 75,582 are enrolled in undergraduate programs. Currently, the University of Toronto has more than 20,000 international students coming from 170 countries and regions.</p>\r\n<h4>University of Toronto Acceptance Rate</h4>\r\n<p>For your university application to the University of Toronto, you will need to submit it through the Ontario Universities Application Center (OUAC) system. Moreover, the OUAC is a centralized application system for all undergraduate and graduate programs at each Ontario university.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>The undergraduate application fee for the University of Toronto is $180. Here are several documents that you&rsquo;ll need to submit for your application:</p>\r\n<p>&nbsp;</p>\r\n<p>High school transcripts</p>\r\n<p>English language proficiency test results</p>\r\n<p>Standardized test results</p>\r\n<p>Self-reported grades form</p>\r\n<p>Personal statements or essays</p>\r\n<p>&nbsp;</p>\r\n<p>Minimum English Score Required</p>\r\n<p>As English is the language of instruction and examination at the University of Toronto, you will be required to submit proof of English proficiency. Furthermore, here are several English proficiency tests that are accepted, along with the minimum scores required:</p>', 'Thumbnail-blogs-20230130214848.jpg', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 0, 'true', '2023-01-26 05:56:13', '2023-01-30 14:48:48'),
+(9, 'blog-all-in-eduspace-2', 10, NULL, 'Lorem ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Thumbnail-blogs-20230130214904.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'id', 0, 0, 'true', '2023-01-26 09:42:32', '2023-01-30 14:49:04'),
 (10, 'blog-all-in-eduspace-3', 9, 3, 'Lorem ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'Thumbnail-blogs-20230126164256.png', 'alt', 'active', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 0, 'true', '2023-01-26 09:42:56', '2023-01-26 09:42:56');
 
 -- --------------------------------------------------------
@@ -88,6 +98,7 @@ CREATE TABLE `tb_blog_category` (
   `id` int(11) NOT NULL,
   `group` bigint(20) NOT NULL,
   `category_name` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `lang` char(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -97,9 +108,42 @@ CREATE TABLE `tb_blog_category` (
 -- Dumping data for table `tb_blog_category`
 --
 
-INSERT INTO `tb_blog_category` (`id`, `group`, `category_name`, `lang`, `created_at`, `updated_at`) VALUES
-(9, 20230126125526, 'Education', 'en', '2023-01-26 05:55:26', '2023-01-26 05:55:26'),
-(10, 20230126125526, 'Pendidikan', 'id', '2023-01-26 05:55:26', '2023-01-26 05:55:26');
+INSERT INTO `tb_blog_category` (`id`, `group`, `category_name`, `slug`, `lang`, `created_at`, `updated_at`) VALUES
+(9, 20230126125526, 'Education', 'education', 'en', '2023-01-26 05:55:26', '2023-01-30 14:06:21'),
+(10, 20230126125526, 'Pendidikan', 'pendidikan', 'id', '2023-01-26 05:55:26', '2023-01-30 14:06:22'),
+(16, 20230130210309, 'University', 'university', 'en', '2023-01-30 14:03:09', '2023-01-30 14:03:09'),
+(17, 20230130210309, 'Universitas', 'universitas', 'id', '2023-01-30 14:03:09', '2023-01-30 14:03:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_blog_read`
+--
+
+CREATE TABLE `tb_blog_read` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(255) NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_blog_widget`
+--
+
+CREATE TABLE `tb_blog_widget` (
+  `id` int(11) NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `link` text NOT NULL,
+  `position` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,6 +163,26 @@ CREATE TABLE `tb_guidebook` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_lang`
+--
+
+CREATE TABLE `tb_lang` (
+  `id` int(11) NOT NULL,
+  `language_id` char(2) NOT NULL,
+  `language` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_lang`
+--
+
+INSERT INTO `tb_lang` (`id`, `language_id`, `language`) VALUES
+(1, 'en', 'English'),
+(2, 'id', 'Indonesia');
 
 -- --------------------------------------------------------
 
@@ -187,6 +251,26 @@ INSERT INTO `tb_mentor_video` (`id`, `mentor_id`, `video_embed`, `youtube_id`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_region`
+--
+
+CREATE TABLE `tb_region` (
+  `id` int(11) NOT NULL,
+  `region_id` char(2) NOT NULL,
+  `region` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_region`
+--
+
+INSERT INTO `tb_region` (`id`, `region_id`, `region`) VALUES
+(1, 'id', 'Indonesia'),
+(2, 'sg', 'Singapore');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_success_stories`
 --
 
@@ -221,14 +305,32 @@ CREATE TABLE `tb_testimonial` (
   `group` bigint(20) NOT NULL,
   `testi_name` varchar(255) NOT NULL,
   `testi_desc` text NOT NULL,
-  `testi_program` varchar(255) NOT NULL,
+  `testi_subtitle` varchar(255) DEFAULT NULL,
   `testi_category` varchar(255) NOT NULL,
+  `testi_subcategory` varchar(255) NOT NULL,
   `testi_thumbnail` text NOT NULL,
   `testi_alt` varchar(255) NOT NULL,
   `testi_status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
   `lang` char(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_tutor`
+--
+
+CREATE TABLE `tb_tutor` (
+  `id` int(11) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
+  `experience` varchar(255) NOT NULL,
+  `subject` text NOT NULL,
+  `thumbnail` text NOT NULL,
+  `alt` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -306,9 +408,27 @@ ALTER TABLE `tb_blog_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_blog_read`
+--
+ALTER TABLE `tb_blog_read`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_blog_widget`
+--
+ALTER TABLE `tb_blog_widget`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_guidebook`
 --
 ALTER TABLE `tb_guidebook`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_lang`
+--
+ALTER TABLE `tb_lang`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -324,6 +444,12 @@ ALTER TABLE `tb_mentor_video`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_region`
+--
+ALTER TABLE `tb_region`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_success_stories`
 --
 ALTER TABLE `tb_success_stories`
@@ -333,6 +459,12 @@ ALTER TABLE `tb_success_stories`
 -- Indexes for table `tb_testimonial`
 --
 ALTER TABLE `tb_testimonial`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_tutor`
+--
+ALTER TABLE `tb_tutor`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -356,7 +488,7 @@ ALTER TABLE `tb_users`
 -- AUTO_INCREMENT for table `tb_banner`
 --
 ALTER TABLE `tb_banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_blog`
@@ -368,13 +500,31 @@ ALTER TABLE `tb_blog`
 -- AUTO_INCREMENT for table `tb_blog_category`
 --
 ALTER TABLE `tb_blog_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `tb_blog_read`
+--
+ALTER TABLE `tb_blog_read`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_blog_widget`
+--
+ALTER TABLE `tb_blog_widget`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_guidebook`
 --
 ALTER TABLE `tb_guidebook`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tb_lang`
+--
+ALTER TABLE `tb_lang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_mentor`
@@ -389,6 +539,12 @@ ALTER TABLE `tb_mentor_video`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `tb_region`
+--
+ALTER TABLE `tb_region`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tb_success_stories`
 --
 ALTER TABLE `tb_success_stories`
@@ -399,6 +555,12 @@ ALTER TABLE `tb_success_stories`
 --
 ALTER TABLE `tb_testimonial`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tb_tutor`
+--
+ALTER TABLE `tb_tutor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_upcoming_event`

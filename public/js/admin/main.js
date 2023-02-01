@@ -117,4 +117,9 @@
     }
   });
 
+  // Lazy Load
+  $(function() {
+    $("img").Lazy();
+  });
+
 })();

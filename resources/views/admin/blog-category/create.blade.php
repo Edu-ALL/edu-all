@@ -54,8 +54,18 @@
                                                         Blog Category Name
                                                         <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="category_name_en" name="category_name_en" value="{{ old('category_name_en') }}">
+                                                    <input type="text" class="form-control" id="category_name_en" name="category_name_en" value="{{ old('category_name_en') }}" onchange="createSlug_en()">
                                                     @error('category_name_en')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Slug
+                                                        <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="slug_en" name="slug_en" value="{{ old('slug_en') }}">
+                                                    @error('slug_en')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -69,8 +79,18 @@
                                                         Blog Category Name
                                                         <span style="color: var(--red)">*</span>
                                                     </label>
-                                                    <input type="text" class="form-control" id="category_name_id" name="category_name_id" value="{{ old('category_name_id') }}">
+                                                    <input type="text" class="form-control" id="category_name_id" name="category_name_id" value="{{ old('category_name_id') }}"onchange="createSlug_id()">
                                                     @error('category_name_id')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Slug
+                                                        <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="slug_id" name="slug_id" value="{{ old('slug_id') }}">
+                                                    @error('slug_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -96,5 +116,15 @@
 
 @section('js')
 <script>
+    function createSlug_en(){
+        const category_name = document.getElementById('category_name_en').value.replace(' ', '-').replace('/', '-').toLowerCase();
+        const slug = document.getElementById('slug_en');
+        slug.value = category_name;
+    };
+    function createSlug_id(){
+        const category_name = document.getElementById('category_name_id').value.replace(' ', '-').replace('/', '-').toLowerCase();
+        const slug = document.getElementById('slug_id');
+        slug.value = category_name;
+    };
 </script>
 @endsection

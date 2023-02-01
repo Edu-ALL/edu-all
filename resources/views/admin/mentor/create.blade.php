@@ -84,7 +84,7 @@
                                         <input type="text" class="form-control" id="lastname" name="mentor_lastname" value="{{ old('mentor_lastname') }}" onchange="createSlug()">
                                     </div>
                                 </div>
-                                <div class="col d-flex flex-md-row flex-column pt-2 pb-3 gap-md-3 gap-2">
+                                <div class="col d-flex flex-md-row flex-column pt-2 gap-md-3 gap-2">
                                     <div class="col">
                                         <label for="" class="form-label">
                                             Slug <span style="color: var(--red)">*</span>
@@ -104,7 +104,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                <ul class="nav nav-tabs nav-tabs-bordered pt-3" id="borderedTab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
                                     </li>
