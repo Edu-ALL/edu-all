@@ -3,8 +3,8 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <div class="relative w-full left-0 overflow-hidden">
-        <section class="splide" aria-labelledby="carousel-heading">
-            <div class="splide__track ">
+        <section class="splide" aria-labelledby="carousel-heading"  id="home_banner">
+            <div class="splide__track">
                 <ul class="splide__list ">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
@@ -251,4 +251,12 @@
             splide.mount();
         });
     </script>
+    <style>
+        #home_banner .splide__pagination {
+            display: flex;
+            flex-direction: column;
+            left:95% !important;
+            bottom: 80vh;
+        }
+    </style>
 @endsection

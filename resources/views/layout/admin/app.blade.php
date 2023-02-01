@@ -30,6 +30,9 @@
         {{-- SweetAlert --}}
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+        {{-- Axios  --}}
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
         {{-- @vite('public/css/bootstrap.min.css') --}}

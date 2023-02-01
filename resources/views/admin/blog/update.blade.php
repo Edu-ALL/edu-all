@@ -97,20 +97,6 @@
                                                 <div class="col">
                                                     <select class="select2" name="category" id="category">
                                                         <option value=""></option>
-                                                        <optgroup label="Language : English">
-                                                            @foreach ($category_en as $category)
-                                                            <option value="{{ $category->id }}" {{ $blog->cat_id == $category->id ? 'selected' : '' }}>
-                                                                {{ $category->category_name }}
-                                                            </option>
-                                                            @endforeach
-                                                        </optgroup>
-                                                        <optgroup label="Language : Indonesia">
-                                                            @foreach ($category_id as $category)
-                                                            <option value="{{ $category->id }}" {{ $blog->cat_id == $category->id ? 'selected' : '' }}>
-                                                                {{ $category->category_name }}
-                                                            </option>
-                                                            @endforeach
-                                                        </optgroup>
                                                     </select>
                                                 </div>
                                                 @error('category')
@@ -124,20 +110,6 @@
                                                 <div class="col">
                                                     <select class="select2" name="mentor" id="mentor">
                                                         <option value=""></option>
-                                                        <optgroup label="Language : English">
-                                                            @foreach ($mentor_en as $mentor)
-                                                                <option value="{{ $mentor->id }}" {{ $blog->mt_id == $mentor->id ? 'selected' : '' }}>
-                                                                    {{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}
-                                                                </option>
-                                                            @endforeach
-                                                        </optgroup>
-                                                        <optgroup label="Language : Indonesia">
-                                                            @foreach ($mentor_id as $mentor)
-                                                                <option value="{{ $mentor->id }}" {{ $blog->mt_id == $mentor->id ? 'selected' : '' }}>
-                                                                    {{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}
-                                                                </option>
-                                                            @endforeach
-                                                        </optgroup>
                                                     </select>
                                                 </div>
                                                 @error('mentor')
@@ -232,48 +204,49 @@
         }
     };
 
-    // Onload
-    // window.onload = SelectLang;
-    
-    // function SelectLang(){
-    //     var lang = document.getElementById('lang').value;
-    //     var category = document.getElementById('category');
-    //     var mentor = document.getElementById('mentor');
-    //     var listCategory;
-    //     var listMentor;
-    //     if (lang == 'en') {
-    //         listCategory = `<optgroup label="Language : English">
-    //                             @foreach ($category_en as $category)
-    //                             <option value="{{ $category->id }}" {{ $blog->cat_id == $category->id ? 'selected' : '' }}>
-    //                                 {{ $category->category_name }}
-    //                             </option>
-    //                             @endforeach
-    //                         </optgroup>`;
-    //         listMentor =   `<optgroup label="Language : English">
-    //                             @foreach ($mentor_en as $mentor)
-    //                                 <option value="{{ $mentor->id }}" {{ $blog->mt_id == $mentor->id ? 'selected' : '' }}>
-    //                                     {{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}
-    //                                 </option>
-    //                             @endforeach
-    //                         </optgroup>`;
-    //     } else {
-    //         listCategory = `<optgroup label="Language : Indonesia">
-    //                             @foreach ($category_id as $category)
-    //                             <option value="{{ $category->id }}" {{ $blog->cat_id == $category->id ? 'selected' : '' }}>
-    //                                 {{ $category->category_name }}
-    //                             </option>
-    //                             @endforeach
-    //                         </optgroup>`;
-    //         listMentor =   `<optgroup label="Language : Indonesia">
-    //                             @foreach ($mentor_id as $mentor)
-    //                                 <option value="{{ $mentor->id }}" {{ $blog->mt_id == $mentor->id ? 'selected' : '' }}>
-    //                                     {{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}
-    //                                 </option>
-    //                             @endforeach
-    //                         </optgroup>`;
-    //     }
-    //     category.innerHTML += listCategory;
-    //     mentor.innerHTML += listMentor;
-    // };
+    async function selectLang(){
+        let lang = $('#lang').val()
+        let url_category = "{{url('api/category')}}/"+lang
+        let url_mentor = "{{url('api/mentor')}}/"+lang
+        
+        // Select Blog Category 
+        try {
+            const response = await axios.get(url_category);
+            let data = response.data
+            $('#category').html('<option value=""></option>')
+            data.forEach(element => {
+                $('#category').append(
+                    '<option value="'+element.id+'">' +
+                        element.category_name + 
+                    '</option>'
+                )
+                // console.log(element);
+            });
+            $('#category').val('{{$blog->cat_id}}').trigger('change')
+        } catch (error) {
+            console.error(error);
+        }
+
+        // Select Mentor 
+        try {
+            const response = await axios.get(url_mentor);
+            let data = response.data
+            $('#mentor').html('<option value=""></option>')
+            data.forEach(element => {
+                $('#mentor').append(
+                    '<option value="'+element.id+'">' +
+                        element.mentor_firstname + ' ' + element.mentor_lastname +
+                    '</option>'
+                )
+                // console.log(element);
+            });
+            $('#mentor').val('{{$blog->mt_id}}').trigger('change')
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    selectLang()
+
 </script>
 @endsection

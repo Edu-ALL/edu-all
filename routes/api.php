@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\BlogCategorys;
+use App\Models\Mentors;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/category/{lang}', function ($lang) {
+    return BlogCategorys::where('lang', $lang)->get();
+})->name('select-category');
+
+Route::get('/mentor/{lang}', function ($lang) {
+    return Mentors::where('lang', $lang)->get();
+})->name('select-mentor');
