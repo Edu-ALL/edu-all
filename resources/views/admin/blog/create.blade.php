@@ -237,7 +237,7 @@
                         element.mentor_firstname + ' ' + element.mentor_lastname +
                     '</option>'
                 )
-                console.log(element);
+                // console.log(element);
             });
         } catch (error) {
             console.error(error);

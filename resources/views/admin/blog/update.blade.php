@@ -80,7 +80,7 @@
                                                     Language <span style="color: var(--red)">*</span>
                                                 </label>
                                                 <div class="col">
-                                                    <select class="select2" name="lang" id="lang">
+                                                    <select class="select2" name="lang" id="lang" onchange="selectLang()">
                                                         <option value=""></option>
                                                         <option value="en" {{ $blog->lang == 'en' ? 'selected' : '' }}>English</option>
                                                         <option value="id" {{ $blog->lang == 'id' ? 'selected' : '' }}>Indonesia</option>
