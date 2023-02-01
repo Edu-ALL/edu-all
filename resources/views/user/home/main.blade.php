@@ -3,8 +3,8 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <div class="relative w-full left-0 overflow-hidden">
-        <section class="splide" aria-labelledby="carousel-heading">
-            <div class="splide__track ">
+        <section class="splide" aria-labelledby="carousel-heading"  id="home_banner">
+            <div class="splide__track">
                 <ul class="splide__list ">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
@@ -42,12 +42,12 @@
     </div>
 
     {{-- ========================================== Benefits Section ======================================= --}}
-    <section class="relative mx-6 my-10 md:h-44">
+    <section class="relative mx-6 md:h-0">
         <div
-            class="max-w-5xl w-full bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[350px]">
+            class="max-w-3xl w-full bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[350px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="h-48">
+                    <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-secondary ">Aspire</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">Mengeksplor minat dan passion siswa melalui
                         bimbingan
@@ -55,14 +55,14 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img src="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 1" class="h-48">
+                    <img src="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 1" class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-secondary ">Aspire</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">Memandu siswa untuk memperbaiki prestasi
                         akademis dan memperkaya portfolio mereka dengan pembelajaran terapan</p>
                 </div>
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img src="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1" class="h-48">
+                    <img src="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1" class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-secondary ">Aspire</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">Menempatkan siswa ke universitas impian dan
                         tercocok untuk mempertajam potensi mereka sebagai calon pemimpin</p>
@@ -237,19 +237,26 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             var splide = new Splide('.splide', {
-                direction: 'ttb',
-                height: isSmallDevice ? '75vh' : '120vh',
+                height: isSmallDevice ? '70vh' : '105vh',
                 wheel: false,
                 isNavigation: false,
                 arrows: false,
-                type: 'loop',
+                type: 'fade',
                 autoplay: true,
                 lazyload: true,
                 interval: 5000,
-                pauseOnHover: true,
+                pauseOnHover: true
             });
 
             splide.mount();
         });
     </script>
+    <style>
+        #home_banner .splide__pagination {
+            display: flex;
+            flex-direction: column;
+            left:95% !important;
+            bottom: 80vh;
+        }
+    </style>
 @endsection

@@ -31,11 +31,15 @@ Route::group(
     function () {
         Route::controller(HomePageController::class)->group(function () {
             Route::get('/', 'home')->name('home');
+            Route::get('/sign-me', 'sign_me')->name('sign_me');
         });
 
         Route::controller(ProgramPageController::class)->group(function () {
             Route::get('/programs', 'index')->name('programs');
             Route::get('/programs/admissions-mentoring', 'admissions_mentoring')->name('admissions_mentoring');
+            Route::get('/programs/admissions-mentoring/undergraduate-program', 'undergraduate_program')->name('undergraduate_program');
+            Route::get('/programs/admissions-mentoring/graduate-program', 'graduate_program')->name('graduate_program');
+            Route::get('/programs/admissions-mentoring/university-transfer-program', 'university_transfer_program')->name('university_transfer_program');
             Route::get('/programs/passion-project-mentoring', 'passion_project_mentoring')->name('passion_project_mentoring');
             Route::get('/programs/academic-test-preparation', 'academic_test_preparation')->name('academic_test_preparation');
             Route::get('/programs/academic-test-preparation/academic-tutoring', 'academic_tutoring')->name('academic_tutoring');

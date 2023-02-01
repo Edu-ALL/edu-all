@@ -46,38 +46,33 @@
                                     </div>
                                 @endif
                                 <div class="col d-flex flex-column gap-2">
-                                    <div class="col-12">
-                                        <label for="" class="form-label">
-                                            Name <span style="color: var(--red)">*</span>
-                                        </label>
-                                        <input type="text" class="form-control" id="name" name="testi_name" value="{{ old('testi_name') }}">
-                                    </div>
                                     <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">
+                                                Name <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="name" name="testi_name" value="{{ old('testi_name') }}">
+                                        </div>
                                         <div class="col">
                                             <label for="" class="form-label">
                                                 Category <span style="color: var(--red)">*</span>
                                             </label>
                                             <div class="col">
-                                                <select class="select2" name="testi_category" id="category">
+                                                <select class="select2" name="testi_category" id="category" onchange="selectCategory()">
                                                     <option value=""></option>
-                                                    <option value="Admission Mentoring" {{ old('testi_category') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                    <option value="Admissions Mentoring" {{ old('testi_category') == 'Admissions Mentoring' ? 'selected' : '' }}>Admissions Mentoring</option>
                                                     <option value="Experiential Learning" {{ old('testi_category') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                     <option value="Academic Preparation" {{ old('testi_category') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col d-none" id="sub_category_col">
                                             <label for="" class="form-label">
                                                 Sub Category <span style="color: var(--red)">*</span>
                                             </label>
                                             <div class="col">
                                                 <select class="select2" name="testi_subcategory" id="subcategory">
                                                     <option value=""></option>
-                                                    <option value="Undergraduate Program" {{ old('testi_subcategory') == 'Undergraduate Program' ? 'selected' : '' }}>Undergraduate Program</option>
-                                                    <option value="Graduate Program" {{ old('testi_subcategory') == 'Graduate Program' ? 'selected' : '' }}>Graduate Program</option>
-                                                    <option value="University Transfer Program" {{ old('testi_subcategory') == 'University Transfer Program' ? 'selected' : '' }}>University Transfer Program</option>
-                                                    <option value="Academic Tutoring" {{ old('testi_subcategory') == 'Academic Tutoring' ? 'selected' : '' }}>Academic Tutoring</option>
-                                                    <option value="SAT / ACT Preparation" {{ old('testi_subcategory') == 'SAT / ACT Preparation' ? 'selected' : '' }}>SAT / ACT Preparation</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -180,6 +175,9 @@
 
 @section('js')
 <script>
+    let sub_admission = ['Undergraduate', 'Graduated', 'University Transfer'];
+    let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation']
+
     function previewImage(){
         const image = document.querySelector('#thumbnail')
         const imgPreview = document.querySelector('#img_preview')
@@ -190,6 +188,7 @@
             imgPreview.src = oFREvent.target.result
         }
     };
+
     function checkInput(){
         const name = document.getElementById('name').value;
         const category = document.getElementById('category').value;
@@ -205,5 +204,35 @@
         }
     };
 
+    function selectCategory() {
+        let category = $('#category').val()
+        $('#subcategory').html('<option value=""></option>')
+        if(category=='Admissions Mentoring') {
+            $('#sub_category_col').removeClass('d-none')
+            sub_admission.forEach(element => {
+                $('#subcategory').append(
+                    '<option value="'+element+'">'+element+'</option>'
+                )
+            });
+            
+            // for update 
+            // $('#subcategory').val('').trigger('change')
+        } else if (category=='Academic Preparation'){
+            $('#sub_category_col').removeClass('d-none')
+            sub_academic.forEach(element => {
+                $('#subcategory').append(
+                    '<option value="'+element+'">'+element+'</option>'
+                )
+            });
+
+            // for update 
+            // $('#subcategory').val('').trigger('change')
+        } else {
+            $('#sub_category_col').removeClass('d-none').addClass('d-none')
+        }
+    }
+
+    // for update 
+    // selectCategory() 
 </script>
 @endsection

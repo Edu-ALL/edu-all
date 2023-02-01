@@ -63,7 +63,7 @@
     </section>
 
     {{-- ================================== Question & Answer ================================== --}}
-    <div class="section py-10">
+    <section class="py-10">
         <div class="flex flex-col items-center main-container">
             <img src="{{ asset('assets/img/about/Icon_2.png') }}" alt="Allin Logo">
             <h2 class="mt-4 font-primary font-bold text-3xl text-yellow text-center">Question & Answer</h2>
@@ -86,9 +86,9 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-    {{-- ================================== Question & Answer ================================== --}}
+    {{-- ================================== Mentors ================================== --}}
     <section class="py-10 bg-[#1d1d1d]">
         <div class="flex flex-col items-center">
             <div class=" main-container">
@@ -137,7 +137,6 @@
             </h2>
             <a href="#" class="my-btn">{{ __('pages/about_us/about.bottom_btn') }}</a>
         </div>
-
     </section>
 
     <script>

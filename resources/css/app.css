@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Asap:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
@@ -220,6 +220,46 @@
         transform: rotateY(-180deg);
     }
     .mentor_card:hover .back {
+        transform: rotateY(-360deg);
+    }
+
+    #home_banner .splide__pagination {
+        display: flex;
+        flex-direction: column;
+        left:95% !important;
+        bottom: 80vh;
+    }
+    
+    .pilar_card {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+    .pilar_card .front,
+    .pilar_card .back {
+        transition: transform 0.6s;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .pilar_card .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .pilar_card .back {
+        transform: rotateY(-180deg);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .pilar_card:hover .front {
+        transform: rotateY(-180deg);
+    }
+    .pilar_card:hover .back {
         transform: rotateY(-360deg);
     }
 }
