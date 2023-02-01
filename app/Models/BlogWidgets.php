@@ -5,24 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogCategorys extends Model
+class BlogWidgets extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_blog_category";
+    protected $table = "tb_blog_widget";
     protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'group',
-        'category_name',
-        'slug',
-        'lang',
+        'blog_id',
+        'title',
+        'description',
+        'link',
         'created_at',
         'updated_at'
     ];
 
     public function blog(){
-        return $this->hasMany(Blogs::class, 'cat_id', 'id');
+        return $this->belongsTo(Blogs::class, 'blog_id', 'id');
     }
 }

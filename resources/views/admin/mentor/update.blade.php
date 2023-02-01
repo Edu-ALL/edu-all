@@ -12,7 +12,7 @@
 @section('content')
 @include('layout.admin.header')
 @include('layout.admin.sidebar')
-<main id="main" class="main">
+<main id="main" class="main" style="overflow: hidden !important">
     <div class="pagetitle">
         <h1>Mentor</h1>
         <nav>

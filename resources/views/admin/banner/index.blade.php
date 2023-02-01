@@ -44,6 +44,7 @@
                                         <th scope="col">Title</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Image</th>
+                                        <th scope="col">Region</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
@@ -61,7 +62,18 @@
                                             <td>
                                                 <img src="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
                                             </td>
-                                            <td>{{ $banner->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            <td class="text-center">
+                                                <img src="{{ asset('assets/img/flag/flag-'.$banner->region.'.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $banner->regions->region }}
+                                                </p>
+                                            </td>
+                                            <td class="text-center">
+                                                <img src="{{ asset('assets/img/flag/flag-'.$banner->lang.'.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $banner->languages->language }}
+                                                </p>
+                                            </td>
                                             @if ($banner->banner_status == 'active')
                                                 <td class="text-center">
                                                     <button 
@@ -70,7 +82,7 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#deactivate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $banner->group }})"
+                                                    onclick="formDeactivate({{ $banner->id }})"
                                                     >
                                                         <span data-bs-toggle="tooltip" data-bs-title="Deactivate this banner">
                                                             {{ $banner->banner_status }}
@@ -85,7 +97,7 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#activate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $banner->group }})"
+                                                    onclick="formActivate({{ $banner->id }})"
                                                     >
                                                         <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this banner">
                                                             {{ $banner->banner_status }}
@@ -95,7 +107,7 @@
                                             @endif
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->group }}/edit">
+                                                    <a type="button" class="btn btn-warning" href="/admin/banner/{{ $banner->id }}/edit">
                                                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this banner"></i>
                                                     </a>
                                                     <button 
@@ -103,7 +115,7 @@
                                                     class="btn btn-danger"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#delete"
-                                                    onclick="formDelete({{ $banner->group }})"
+                                                    onclick="formDelete({{ $banner->id }})"
                                                     >
                                                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this banner"></i>
                                                     </button>
@@ -194,14 +206,14 @@
 
 @section('js')
     <script>
-        function formDeactivate(group){
-            $('#form_deactivate').attr('action', '{{ url('/admin/banner/deactivate/') }}' + '/' + group);
+        function formDeactivate(id){
+            $('#form_deactivate').attr('action', '{{ url('/admin/banner/deactivate/') }}' + '/' + id);
         };
-        function formActivate(group){
-            $('#form_activate').attr('action', '{{ url('/admin/banner/activate/') }}' + '/' + group);
+        function formActivate(id){
+            $('#form_activate').attr('action', '{{ url('/admin/banner/activate/') }}' + '/' + id);
         };
-        function formDelete(group){
-            $('#form_delete').attr('action', '{{ url('/admin/banner/delete/') }}' + '/' + group);
+        function formDelete(id){
+            $('#form_delete').attr('action', '{{ url('/admin/banner/delete/') }}' + '/' + id);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
