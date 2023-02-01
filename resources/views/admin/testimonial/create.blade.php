@@ -85,7 +85,7 @@
                                                         <div class="col">
                                                             <select class="select2" name="testi_category_en" id="category_en">
                                                                 <option value=""></option>
-                                                                <option value="Admission Mentoring" {{ old('testi_category_en') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                                <option value="Admissions Mentoring" {{ old('testi_category_en') == 'Admissions Mentoring' ? 'selected' : '' }}>Admissions Mentoring</option>
                                                                 <option value="Experiential Learning" {{ old('testi_category_en') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                                 <option value="Academic Preparation" {{ old('testi_category_en') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
@@ -167,14 +167,27 @@
                                                             Category <span style="color: var(--red)">*</span>
                                                         </label>
                                                         <div class="col">
-                                                            <select class="select2" name="testi_category_id" id="category_id">
+                                                            <select class="select2" name="testi_category_id" id="category_id" onchange="selectCategory()">
                                                                 <option value=""></option>
-                                                                <option value="Admission Mentoring" {{ old('testi_category_id') == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                                <option value="Admissions Mentoring" {{ old('testi_category_id') == 'Admissions Mentoring' ? 'selected' : '' }}>Admissions Mentoring</option>
                                                                 <option value="Experiential Learning" {{ old('testi_category_id') == 'Experiential Learning' ? 'selected' : '' }}>Experiential Learning</option>
                                                                 <option value="Academic Preparation" {{ old('testi_category_id') == 'Academic Preparation' ? 'selected' : '' }}>Academic Preparation</option>
                                                             </select>
                                                         </div>
                                                         @error('testi_category_id')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="col d-none" id="sub_category_col">
+                                                        <label for="" class="form-label">
+                                                            Sub Category <span style="color: var(--red)">*</span>
+                                                        </label>
+                                                        <div class="col">
+                                                            <select class="select2" name="testi_sub_category_id" id="sub_category_id">
+                                                                <option value=""></option>
+                                                            </select>
+                                                        </div>
+                                                        @error('testi_sub_category_id')
                                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
                                                     </div>
@@ -229,6 +242,10 @@
 
 @section('js')
 <script>
+    let sub_admission = ['Undergraduate', 'Graduated', 'University Transfer'];
+    let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation']
+
+
     function previewImage_en(){
         const image = document.querySelector('#thumbnail_en')
         const imgPreview = document.querySelector('#img_preview_en')
@@ -264,5 +281,26 @@
         }
     };
 
+    function selectCategory() {
+        let category = $('#category_id').val()
+        $('#sub_category_id').html('<option value=""></option>')
+        if(category=='Admissions Mentoring') {
+            $('#sub_category_col').removeClass('d-none')
+            sub_admission.forEach(element => {
+                $('#sub_category_id').append(
+                    '<option value="'+element+'">'+element+'</option>'
+                )
+            });
+        } else if (category=='Academic Preparation'){
+            $('#sub_category_col').removeClass('d-none')
+            sub_academic.forEach(element => {
+                $('#sub_category_id').append(
+                    '<option value="'+element+'">'+element+'</option>'
+                )
+            });
+        } else {
+            $('#sub_category_col').removeClass('d-none').addClass('d-none')
+        }
+    }
 </script>
 @endsection
