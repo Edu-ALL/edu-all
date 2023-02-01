@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="row">
+            <div class="row">
                 <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="/admin/mentor">
@@ -102,7 +102,7 @@
                         </a>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
