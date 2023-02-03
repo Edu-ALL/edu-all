@@ -2,9 +2,15 @@
 
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
+<<<<<<< HEAD:resources/views/user/home/id.blade.php
     <section class="relative w-full left-0 overflow-hidden">
         <div class="splide">
             <div class="splide__track ">
+=======
+    <div class="relative w-full left-0 overflow-hidden">
+        <section class="splide" aria-labelledby="carousel-heading"  id="home_banner">
+            <div class="splide__track">
+>>>>>>> 15d81f77bc3ddf96d9daf6bb335b44509b905eb3:resources/views/user/home/main.blade.php
                 <ul class="splide__list ">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
@@ -254,4 +260,12 @@
             splide.mount();
         });
     </script>
+    <style>
+        #home_banner .splide__pagination {
+            display: flex;
+            flex-direction: column;
+            left:95% !important;
+            bottom: 80vh;
+        }
+    </style>
 @endsection

@@ -22,15 +22,15 @@
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/mentor">
-                            <h5 class="card-title">Mentors <span>| {{ now()->year }}</span></h5>
+                        <a class="card-body" href="/admin/banner">
+                            <h5 class="card-title">Banner <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-users"></i>
+                                    <i class="fa-solid fa-images"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>{{ $mentor->count() }}</h6>
-                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
+                                    <h6>{{ $banner->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Totals in Different Regions and Languages</i></span>
                                 </div>
                             </div>
                         </a>
@@ -52,19 +52,18 @@
                         </a>
                     </div>
                 </div>
-                
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/banner">
-                            <h5 class="card-title">Banner <span>| {{ now()->year }}</span></h5>
+                        <a class="card-body" href="/admin/mentor">
+                            <h5 class="card-title">Mentors <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-images"></i>
+                                    <i class="fa-solid fa-users"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>{{ $banner->count() }}</h6>
+                                    <h6>{{ $mentor->count() }}</h6>
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
@@ -73,14 +72,14 @@
                 </div>
                 <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/upcoming-event">
-                            <h5 class="card-title">Upcoming Events <span>| {{ now()->year }}</span></h5>
+                        <a class="card-body" href="/admin/testimonial">
+                            <h5 class="card-title">Testimonial <span>| {{ now()->year }}</span></h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <i class="fa-solid fa-comments"></i>
                                 </div>
                                 <div class="ps-4">
-                                    <h6>{{ $upcoming_event->count() }}</h6>
+                                    <h6>{{ $testimonial->count() }}</h6>
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
@@ -103,8 +102,24 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
+                    <div class="card info-card">
+                        <a class="card-body" href="/admin/upcoming-event">
+                            <h5 class="card-title">Upcoming Events <span>| {{ now()->year }}</span></h5>
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </div>
+                                <div class="ps-4">
+                                    <h6>{{ $upcoming_event->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
                         <a class="card-body" href="/admin/success-stories">
@@ -115,22 +130,6 @@
                                 </div>
                                 <div class="ps-4">
                                     <h6>{{ $success_stories->count() }}</h6>
-                                    <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
-                    <div class="card info-card">
-                        <a class="card-body" href="/admin/testimonial">
-                            <h5 class="card-title">Testimonial <span>| {{ now()->year }}</span></h5>
-                            <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-comments"></i>
-                                </div>
-                                <div class="ps-4">
-                                    <h6>{{ $testimonial->count() }}</h6>
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>

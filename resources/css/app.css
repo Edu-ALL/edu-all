@@ -211,11 +211,19 @@
         transform: rotateY(-360deg);
     }
 
+<<<<<<< HEAD
     .splide__pagination {
         display: flex !important;
         flex-direction: column !important;
         bottom: 70% !important;
         left: 97% !important;
+=======
+    #home_banner .splide__pagination {
+        display: flex;
+        flex-direction: column;
+        left:95% !important;
+        bottom: 80vh;
+>>>>>>> 15d81f77bc3ddf96d9daf6bb335b44509b905eb3
     }
 
     .pilar_card {

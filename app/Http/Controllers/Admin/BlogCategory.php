@@ -25,7 +25,9 @@ class BlogCategory extends Controller
     public function store(Request $request){
         $rules = [
             'category_name_en' => 'required',
+            'slug_en' => 'required',
             'category_name_id' => 'required',
+            'slug_id' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -38,12 +40,14 @@ class BlogCategory extends Controller
             $blog_category_en = new BlogCategorys;
             $blog_category_en->group = date('YmdHis');
             $blog_category_en->category_name = $request->category_name_en;
+            $blog_category_en->slug = $request->slug_en;
             $blog_category_en->lang = 'en';
             $blog_category_en->save();
-
+            
             $blog_category_id = new BlogCategorys;
             $blog_category_id->group = $blog_category_en->group;
             $blog_category_id->category_name = $request->category_name_id;
+            $blog_category_id->slug = $request->slug_id;
             $blog_category_id->lang = 'id';
             $blog_category_id->save();
 
@@ -64,7 +68,9 @@ class BlogCategory extends Controller
     public function update(Request $request, $group){
         $rules = [
             'category_name_en' => 'required',
+            'slug_en' => 'required',
             'category_name_id' => 'required',
+            'slug_id' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -78,11 +84,13 @@ class BlogCategory extends Controller
 
             $blog_category_en = $blog_category[0];
             $blog_category_en->category_name = $request->category_name_en;
+            $blog_category_en->slug = $request->slug_en;
             $blog_category_en->updated_at = date('Y-m-d H:i:s');
             $blog_category_en->save();
 
             $blog_category_id = $blog_category[1];
             $blog_category_id->category_name = $request->category_name_id;
+            $blog_category_id->slug = $request->slug_id;
             $blog_category_id->updated_at = date('Y-m-d H:i:s');
             $blog_category_id->save();
 

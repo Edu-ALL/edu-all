@@ -54,7 +54,12 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td class="w-75">{{ $category->category_name }}</td>
-                                            <td class="w-75">{{ $category->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            <td class="text-center">
+                                                <img src="{{ $category->lang == 'en' ? asset('assets/img/flag/flag-en.png') : asset('assets/img/flag/flag-id.png') }}" alt="" width="30">
+                                                <p class="pt-1 label-lang" style="font-size: 13px !important">
+                                                    {{ $category->lang == 'en' ? 'English' : 'Indonesia' }}
+                                                </p>
+                                            </td>
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
                                                     <a type="button" class="btn btn-warning" href="/admin/blog-category/{{ $category->group }}/edit">

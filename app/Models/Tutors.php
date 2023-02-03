@@ -5,24 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogCategorys extends Model
+class Tutors extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_blog_category";
+    protected $table = "tb_tutor";
     protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'group',
-        'category_name',
-        'slug',
-        'lang',
+        'full_name',
+        'experience',
+        'subject',
+        'thumbnail',
+        'alt',
         'created_at',
         'updated_at'
     ];
-
-    public function blog(){
-        return $this->hasMany(Blogs::class, 'cat_id', 'id');
-    }
 }

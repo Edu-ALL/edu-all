@@ -64,7 +64,10 @@
                                                 <img src="{{ asset('uploaded_files/mentor/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ $mentor->lang == 'en' ? asset('assets/img/language/flag-EN.png') : asset('assets/img/language/flag-ID.png') }}" alt="" width="30" data-bs-toggle="tooltip" data-bs-title="{{ $mentor->lang == 'en' ? 'English' : 'Indonesia' }}">
+                                                <img src="{{ $mentor->lang == 'en' ? asset('assets/img/flag/flag-en.png') : asset('assets/img/flag/flag-id.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $mentor->lang == 'en' ? 'English' : 'Indonesia' }}
+                                                </p>
                                             </td>
                                             @if ($mentor->mentor_status == 'active')
                                                 <td class="text-center">

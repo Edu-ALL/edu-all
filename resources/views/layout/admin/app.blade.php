@@ -30,6 +30,9 @@
         {{-- SweetAlert --}}
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+        {{-- Axios  --}}
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
         {{-- @vite('public/css/bootstrap.min.css') --}}
@@ -71,6 +74,11 @@
         <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        <!-- Lazy Load cdnjs -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
         @yield('js')
     </body>
 </html>
