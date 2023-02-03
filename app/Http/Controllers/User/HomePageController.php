@@ -68,7 +68,7 @@ class HomePageController extends Controller
 
         $banners = $banners_dummy->where('lang', app()->getLocale());
 
-        return view('user.home.id', [
+        return view('user.home.region.id', [
             'banners' => $banners,
         ]);
 

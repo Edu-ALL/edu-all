@@ -10,7 +10,7 @@ class AboutPageController extends Controller
 {
     public function about($locale)
     {
-        return view('user.about.id');
+        return view('user.about.region.id');
 
 
         // for singapore region
