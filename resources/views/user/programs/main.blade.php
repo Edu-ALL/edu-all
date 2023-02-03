@@ -4,7 +4,8 @@
     <section class="pb-16 -z-10 ">
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container pt-16 lg:pt-28 ">
-                <h1 class="heading-1">{{ __('pages/programs/prgrams.title') }}</h1>
+                <h1 class="font-semibold font-primary uppercase text-3xl lg:text-5xl text-white">
+                    {{ __('pages/programs/prgrams.title') }}</h1>
             </div>
 
             <img src="{{ asset('assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg') }}" alt=""
@@ -26,11 +27,11 @@
 
                 <div class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-16">
                     @if (app()->getLocale() == 'en')
-                        <img src="/assets/img/programs/payung.png" alt="payung png" class="">
+                        <img src="/assets/img/programs/payung.png" alt="4 pillars">
                     @else
-                        <img src="/assets/img/programs/payung-id.png" alt="payung png" class="">
+                        <img src="/assets/img/programs/payung-id.png" alt="4 pillars">
                     @endif
-                    <p class="text-center font-primary text-base lg:text-xl font-normal text-text mt-32">
+                    <p class="text-center font-primary text-base lg:text-xl font-normal text-[#546999] mt-32">
                         {{ __('pages/programs/prgrams.body') }}</p>
                 </div>
                 <div class="sm:px-6">
@@ -39,7 +40,7 @@
                             <div class="program-card hover:rotate-program-card">
                                 <div class="program-face-card bg-program-image-1 bg-cover bg-center">
                                     <div
-                                        class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-light flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
+                                        class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
                                         <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
                                             {{ __('pages/programs/prgrams.program_1') }}
                                         </h4>
@@ -60,21 +61,22 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-secondary  text-light">
+                                    class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
                                     <div class="flex flex-col justify-center items-center h-full">
                                         <p
                                             class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
                                             Personalized 1-on-1 mentoring service that will serve as a holistic academic and
                                             non-academic walk-through to help you get into your dream universities.
                                         </p>
-                                        <a href="#" class="my-btn text-sm">View More</a>
+                                        <a href="{{ route('admissions_mentoring', ['locale' => app()->getLocale()]) }}"
+                                            class="my-btn text-sm">View More</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="program-card hover:rotate-program-card">
                                 <div class="program-face-card bg-program-image-2 bg-cover bg-center">
                                     <div
-                                        class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-light flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
+                                        class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
                                         <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
                                             {{ __('pages/programs/prgrams.program_2') }}
                                         </h4>
@@ -95,21 +97,22 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-secondary  text-light">
+                                    class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
                                     <div class="flex flex-col justify-center items-center h-full">
                                         <p
                                             class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
                                             Personalized 1-on-1 mentoring service that will serve as a holistic academic and
                                             non-academic walk-through to help you get into your dream universities.
                                         </p>
-                                        <a href="#" class="my-btn text-sm">View More</a>
+                                        <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale()]) }}"
+                                            class="my-btn text-sm">View More</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="program-card hover:rotate-program-card">
                                 <div class="program-face-card bg-program-image-3 bg-cover bg-center">
                                     <div
-                                        class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-light flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
+                                        class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
                                         <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
                                             {{ __('pages/programs/prgrams.program_3') }}
                                         </h4>
@@ -126,14 +129,15 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-secondary  text-light">
+                                    class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
                                     <div class="flex flex-col justify-center items-center h-full">
                                         <p
                                             class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
                                             Personalized 1-on-1 mentoring service that will serve as a holistic academic and
                                             non-academic walk-through to help you get into your dream universities.
                                         </p>
-                                        <a href="#" class="my-btn text-sm">View More</a>
+                                        <a href="{{ route('academic_test_preparation', ['locale' => app()->getLocale()]) }}"
+                                            class="my-btn text-sm">View More</a>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +148,8 @@
                 <div class="flex flex-col items-center pb-10">
                     <h5 class="text-yellow text-lg xl:text-2xl mb-4 font-bold">
                         {{ __('pages/programs/prgrams.sign_up_text') }}</h5>
-                    <a href="#" class="my-btn">{{ __('pages/programs/prgrams.sign_up_btn') }}</a>
+                    <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+                        class="my-btn">{{ __('pages/programs/prgrams.sign_up_btn') }}</a>
                 </div>
             </div>
         </div>

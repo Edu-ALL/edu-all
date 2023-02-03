@@ -6,7 +6,8 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full">
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
-                    <h1 class="heading-2 text-center md:w-1/2 md:text-left">
+                    <h1
+                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.title') }}
                     </h1>
                     <p class="mt-5 font-primary font-normal text-xl text-white text-center md:text-left">
@@ -17,12 +18,6 @@
             <img src="{{ asset('assets/img/academic_test_preparation/header-academic.webp') }}" alt=""
                 class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
-                class="absolute bottom-0 object-cover -mb-2 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20">
-                <path fill="#fff" fill-opacity="1"
-                    d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
-                </path>
-            </svg>
         </div>
     </section>
 
@@ -46,14 +41,15 @@
                         @foreach (__('pages/programs/academic_test_preparation.aca_points') as $item)
                             <li class="flex
                         items-start gap-x-2">
-                                <i class="fa-solid fa-check mt-1 font-black text-blue-light"></i>
+                                <i class="fa-solid fa-check mt-1 font-black text-[#1eb5f6]"></i>
                                 <h6 class="font-body font-normal text-lg text-[#7A7A7A]">{{ $item }}</h6>
                             </li>
                         @endforeach
                     </ul>
                 </div>
             </div>
-            <a href="#" class="inline-block p-4 mt-10 font-primary font-bold text-xl text-white bg-yellow rounded-lg">
+            <a href="{{ route('academic_tutoring', ['locale' => app()->getLocale()]) }}"
+                class="inline-block p-4 mt-10 font-primary font-bold text-xl text-white bg-yellow rounded-lg">
                 {{ __('pages/programs/academic_test_preparation.aca_btn') }}
             </a>
         </div>
@@ -85,7 +81,8 @@
                     <img src="{{ asset('assets/img/academic_test_preparation/Topic 6.webp') }}" alt="Topic 6">
                 </div>
             </div>
-            <a href="#" class="inline-block p-4 mt-16 font-primary font-bold text-xl text-white bg-yellow rounded-lg">
+            <a href="{{ route('ib_ee_coaching_program', ['locale' => app()->getLocale()]) }}"
+                class="inline-block p-4 mt-16 font-primary font-bold text-xl text-white bg-yellow rounded-lg">
                 {{ __('pages/programs/academic_test_preparation.eecoach_btn') }}
             </a>
         </div>
@@ -121,7 +118,8 @@
                 </div>
 
             </div>
-            <a href="#" class="inline-block p-4 mt-16 font-primary font-bold text-xl text-white bg-yellow rounded-lg">
+            <a href="{{ route('sat_program', ['locale' => app()->getLocale()]) }}"
+                class="inline-block p-4 mt-16 font-primary font-bold text-xl text-white bg-yellow rounded-lg">
                 {{ __('pages/programs/academic_test_preparation.sat_btn') }}
             </a>
         </div>
@@ -165,7 +163,8 @@
             <h2 class=" font-title font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/programs/academic_test_preparation.bottom') }}
             </h2>
-            <a href="#" class="my-btn">{{ __('pages/programs/academic_test_preparation.bottom_btn') }}</a>
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+                class="my-btn">{{ __('pages/programs/academic_test_preparation.bottom_btn') }}</a>
         </div>
 
     </section>

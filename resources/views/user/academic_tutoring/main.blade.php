@@ -11,7 +11,7 @@
                     </h1>
                     <p class="mt-6 font-body font-normal text-xl text-white md:text-left md:w-1/2">
                         {{ __('pages/programs/academic_tutoring.desc') }}</p>
-                    <a href="#"
+                    <a href="https://landing.mailerlite.com/webforms/landing/g0f0w8"
                         class="inline-block px-5 py-2 mt-10 font-primary font-bold text-lg text-white bg-yellow rounded-lg">
                         {{ __('pages/programs/academic_tutoring.top_btn') }}
                     </a>
@@ -22,7 +22,7 @@
             </div>
 
             <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/header-acad-tutor-page.webp') }}"
-                alt="" class="w-full h-[90vh] object-cover object-center">
+                class="w-full h-[90vh] object-cover object-center">
         </div>
     </section>
 
@@ -221,7 +221,7 @@
                 </div>
             </div>
             <div class="main-container mt-8 text-center">
-                <a href="#"
+                <a href="https://landing.mailerlite.com/webforms/landing/g0f0w8"
                     class="inline-block px-5 py-2 mt-10 font-primary font-bold text-xl text-white text-center bg-yellow rounded-lg">
                     {{ __('pages/programs/academic_tutoring.private_btn') }}
                 </a>
@@ -344,7 +344,7 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/academic_tutoring.bottom_subtitle') }}</span>
             </h2>
-            <a href="#"
+            <a href="https://landing.mailerlite.com/webforms/landing/g0f0w8"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/academic_tutoring.bottom_btn') }}</a>
         </div>
 

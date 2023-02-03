@@ -11,7 +11,7 @@
                     </h1>
                     <p class="mt-6 font-body font-normal text-xl text-white md:text-left md:w-1/2">
                         {{ __('pages/programs/sat_program.desc') }}</p>
-                    <a href="#"
+                    <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
                         class="inline-block px-5 py-2 mt-10 font-primary font-bold text-lg text-white bg-yellow rounded-lg">
                         {{ __('pages/programs/sat_program.top_btn') }}
                     </a>
@@ -125,7 +125,7 @@
                 </ul>
             </div>
             <div class="text-center px-6 md:col-span-2">
-                <a href="#"
+                <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
                     class="inline-flex px-5 py-2 mt-4 font-primary font-bold text-base text-white text-center bg-yellow rounded-2xl  md:text-xl">{{ __('pages/programs/sat_program.class_btn') }}</a>
             </div>
         </div>
@@ -133,14 +133,15 @@
 
     {{-- ================================== Why Us Section  ================================== --}}
     <section class="py-10">
-        <div class="flex flex-col">
+        <div class="flex flex-col w-full">
             <div
                 class="mx-6 mb-12 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-2/3 md:rounded-r-full lg:pl-20 xl:pl-40 ">
                 <h2 class="font-title font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
                     {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
             </div>
-            <div class="flex items-center main-container gap-x-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}" alt="frame 7">
+            <div class="flex justify-center items-center w-full main-container gap-x-8">
+                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}" alt="frame 7"
+                    class="w-full max-w-4xl">
             </div>
         </div>
     </section>
@@ -201,7 +202,7 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/sat_program.bottom_subtitle') }}</span>
             </h2>
-            <a href="#"
+            <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/sat_program.bottom_btn') }}</a>
         </div>
 

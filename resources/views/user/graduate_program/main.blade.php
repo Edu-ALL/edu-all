@@ -104,7 +104,8 @@
                             class="px-6 py-2 font-secondary font-semibold text-white text-center rounded-md bg-[#F90C0C]">{{ __('pages/programs/graduate_program.pilar_btn') }}
                         </span>
                     </a>
-                    <a href="#" target="_block" class="mt-8 rounded-xl overflow-hidden">
+                    <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" target="_block"
+                        class="mt-8 rounded-xl overflow-hidden">
                         <img src="{{ asset('assets/img/admission mentoring/Graduate/Graduate IC.webp') }}"
                             alt="graduate ic" class="mt-12 w-full max-w-2xl mx-auto object-contain">
                     </a>
@@ -187,7 +188,7 @@
                     {{ __('pages/programs/graduate_program.bottom_subtitle') }}
                 </span>
             </h2>
-            <a href="#"
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
                 class="px-5 py-2 mt-4 font-primary font-medium text-base text-white text-center bg-yellow rounded-md">{{ __('pages/programs/graduate_program.bottom_btn') }}
             </a>
         </div>

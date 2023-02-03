@@ -7,32 +7,20 @@
 @tailwind utilities;
 
 @layer components {
-    .li-nav {
-        @apply border-t-[1px] border-top-navbar text-left pl-4 lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex;
+    .child_nav {
+        @apply text-left border-t border-[#1d1d1d] lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
     }
 
-    .li-link-nav {
-        @apply block my-1.5 text-xl text-left lg:text-center lg:text-base lg:font-bold;
+    .child_child_nav {
+        @apply pl-4 text-left border-t border-[#1d1d1d] lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0 lg:border-b hover:lg:text-white;
     }
 
-    .child-nav {
-        @apply border-t-[1px] border-dark text-left lg:pl-0 lg:border-0 lg:text-center lg:items-center lg:flex lg:border-b-[1px] lg:border-dark lg:bg-subnavbar-dark lg:text-subnavbar-text lg:relative lg:z-30 hover:lg:text-subnavbar-white;
+    .child_child_nav_link {
+        @apply block w-full px-4 py-2 text-left  lg:font-semibold lg:text-base lg:text-left;
     }
 
-    .child-child-ul {
-        @apply bg-light text-dark lg:invisible lg:absolute lg:left-full lg:w-full lg:top-0 lg:opacity-0 transition-all duration-300 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-subnavbar-dark lg:text-subnavbar-text;
-    }
-
-    .child-child-li {
-        @apply border-t-[1px] border-dark text-left pl-4 lg:pl-0 lg:border-0 lg:border-b-[1px] lg:text-center lg:items-center lg:flex hover:lg:text-subnavbar-white;
-    }
-
-    .child-child-li-link {
-        @apply px-4 py-2 block text-left lg:text-left lg:text-base lg:font-semibold w-full;
-    }
-
-    .child-child-link {
-        @apply px-4 block py-2 text-sm text-left lg:text-left lg:text-base lg:font-semibold;
+    .child_child_link {
+        @apply block px-4 py-2 text-sm text-left lg:font-semibold lg:text-base lg:text-left;
     }
 
     .programs:hover .programs-child {
@@ -61,7 +49,7 @@
     }
 
     .my-btn {
-        @apply bg-yellow text-light rounded-[3px] py-1.5 px-5 font-medium font-primary capitalize;
+        @apply bg-yellow text-white rounded-[3px] py-1.5 px-5 font-medium font-primary capitalize;
     }
 
     .program-card {
@@ -227,9 +215,9 @@
         display: flex !important;
         flex-direction: column !important;
         bottom: 70% !important;
-        left:97% !important;
+        left: 97% !important;
     }
-    
+
     .pilar_card {
         transform-style: preserve-3d;
         perspective: 1000px;

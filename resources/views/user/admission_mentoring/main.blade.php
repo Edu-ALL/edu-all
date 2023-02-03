@@ -6,7 +6,8 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full bg-gradient-to-tr from-primary md:bg-gradient-to-r md:from-yellow">
                 <div class="flex flex-col items-center pt-10 md:items-start md:w-2/3 md:pl-28 lg:w-1/2 lg:pt-16 ">
-                    <h1 class="heading-2 text-center md:w-1/2 md:text-left">
+                    <h1
+                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
                         {{ __('pages/programs/admission_mentoring.title') }}
                     </h1>
                     <p class="mt-2 font-primary font-normal text-xl text-white text-center md:text-left">
@@ -250,7 +251,8 @@
                 {{ __('pages/programs/admission_mentoring.sign_up_text') }}
                 <span class="block text-yellow">{{ __('pages/programs/admission_mentoring.sign_up_text_sub') }}</span>
             </h2>
-            <a href="#" class="my-btn">{{ __('pages/programs/admission_mentoring.sign_up_btn') }}</a>
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+                class="my-btn">{{ __('pages/programs/admission_mentoring.sign_up_btn') }}</a>
         </div>
 
     </section>
