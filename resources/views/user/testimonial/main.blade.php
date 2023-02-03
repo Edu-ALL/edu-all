@@ -258,7 +258,7 @@
             <h2 class="font-body font-extrabold text-primary text-center text-3xl mb-4 md:w-1/2">
                 SIGN UP FOR A FREE INITIAL CONSULTATION
             </h2>
-            <a href="#" class="my-btn">More</a>
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="my-btn">More</a>
         </div>
 
     </section>

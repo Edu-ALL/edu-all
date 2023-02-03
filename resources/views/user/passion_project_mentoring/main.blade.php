@@ -15,7 +15,7 @@
                             alt="passion project title" class="w-72 object-contain md:w-96">
                         <p class="my-5 font-body font-normal text-lg text-white md:text-xl md:leading-6">
                             {{ __('pages/programs/passion_project_mentoring.body') }}</p>
-                        <a href="#"
+                        <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
                             class="inline-block px-5 py-2 font-primary font-medium text-base text-white capitalize bg-yellow rounded-lg">{{ __('pages/programs/passion_project_mentoring.banner-btn') }}</a>
                     </div>
 
@@ -177,7 +177,7 @@
                     class="font-title font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_bottom') }}</h2>
                 <div>
-                    <a href="#"
+                    <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
                         class="inline-block px-5 py-2 mt-6 font-primary font-medium text-base text-white capitalize bg-yellow rounded-md">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_bottom_btn') }}
                     </a>
@@ -217,7 +217,7 @@
                     <p class="mb-5 font-body text-base text-primary md:text-xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_decs') }}
                     </p>
-                    <p class="font-body font-extrabold text-xl text-blue-light md:text-2xl">
+                    <p class="font-body font-extrabold text-xl text-[#1eb5f6] md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_desc_bold') }}
                     </p>
                 </div>
@@ -227,12 +227,12 @@
                 <div class="flex flex-col">
                     <h2 class="font-title font-black text-lg text-primary uppercase md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_do_title') }}</h2>
-                    <h3 class="font-title font-black text-2xl text-blue-light uppercase md:text-4xl">
+                    <h3 class="font-title font-black text-2xl text-[#1eb5f6] uppercase md:text-4xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_do') }}</h3>
                 </div>
                 <div class="flex flex-col gap-y-4">
                     @foreach (__('pages/programs/passion_project_mentoring.scientific_do_list') as $item)
-                        <div class="p-4 rounded-xl bg-blue-light">
+                        <div class="p-4 rounded-xl bg-[#1eb5f6]">
                             <p class="font-title font-bold  text-xl text-white leading-5">{{ $loop->iteration }}.
                                 {{ $item }}
                             </p>
@@ -245,7 +245,7 @@
                 <div class="flex flex-col">
                     <h2 class="font-title font-black text-lg text-primary uppercase md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_learn_title') }}</h2>
-                    <h3 class="font-title font-black text-2xl text-blue-light uppercase md:text-4xl">
+                    <h3 class="font-title font-black text-2xl text-[#1eb5f6] uppercase md:text-4xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_learn') }}</h3>
                 </div>
                 <div class="flex flex-col  col-span-2">
@@ -255,7 +255,7 @@
                                 @if ($loop->iteration <= 4)
                                     <div class="group">
                                         <div id="entre-learn-title"
-                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-blue-light cursor-pointer">
+                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
                                             <h4 class="font-title font-bold text-xl text-white leading-5">
                                                 {{ $item['title'] }}
                                             </h4>
@@ -273,7 +273,7 @@
                                 @if ($loop->iteration > 4)
                                     <div class="group">
                                         <div id="entre-learn-title"
-                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-blue-light cursor-pointer">
+                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
                                             <h4 class="font-title font-bold text-xl text-white leading-5">
                                                 {{ $item['title'] }}
                                             </h4>
@@ -329,7 +329,7 @@
                     class="font-title font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_bottom') }}</h2>
                 <div>
-                    <a href="#"
+                    <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
                         class="inline-block px-5 py-2 mt-6 font-primary font-medium text-base text-white capitalize bg-yellow rounded-md">
                         {{ __('pages/programs/passion_project_mentoring.scientific_bottom_btn') }}
                     </a>
@@ -397,7 +397,7 @@
                 <span
                     class="block text-yellow">{{ __('pages/programs/passion_project_mentoring.sign_up_text_sub') }}</span>
             </h2>
-            <a href="#"
+            <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
                 class="inline-block px-5 py-2 mt-6 font-primary font-bold text-lg text-white capitalize bg-yellow rounded-xl">{{ __('pages/programs/passion_project_mentoring.sign_up_btn') }}</a>
         </div>
 

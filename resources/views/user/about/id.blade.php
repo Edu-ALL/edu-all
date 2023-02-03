@@ -6,7 +6,8 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full bg-gradient-to-tr">
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
-                    <h1 class="heading-2 text-center md:w-1/2 md:text-left">
+                    <h1
+                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
                         {{ __('pages/about_us/about.title') }}
                     </h1>
                 </div>
@@ -135,7 +136,8 @@
             <h2 class="font-title font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/about.bottom_title') }}
             </h2>
-            <a href="#" class="my-btn">{{ __('pages/about_us/about.bottom_btn') }}</a>
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+                class="my-btn">{{ __('pages/about_us/about.bottom_btn') }}</a>
         </div>
     </section>
 

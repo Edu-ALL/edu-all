@@ -3,13 +3,22 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Mentors;
 use Illuminate\Http\Request;
 
 class AboutPageController extends Controller
 {
-    public function about()
+    public function about($locale)
     {
-        return view('user.about.main');
+        return view('user.about.id');
+
+
+        // for singapore region
+        // $all_mentor = Mentors::all()->where('lang', $locale);
+
+        // return view('user.about.sg', [
+        //     'all_mentor' => $all_mentor
+        // ]);
     }
 
     public function our_contribution()

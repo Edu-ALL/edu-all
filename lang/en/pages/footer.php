@@ -4,9 +4,26 @@ return [
     'address' => 'Address',
     'consultation' => 'Consultation',
     'company' => 'Company',
-    'newsletter' => "Partnership & Careers",
-    'about_us' => 'About Us',
-    'partnership' => "Partnership & Careers",
-    'contact_us' => "Contact Us",
-    'privacy_policy' => "Privacy Policy",
+    'page_list' => [
+        [
+            'title' => "Newsletters",
+            'link' => "/"
+        ],
+        [
+            'title' => 'About Us',
+            'link' => "/"
+        ],
+        [
+            'title' => "Partnership & Careers",
+            'link' => "/"
+        ],
+        [
+            'title' => "Contact Us",
+            'link' => "/"
+        ],
+        [
+            'title' => "Privacy Policy",
+            'link' => "/"
+        ],
+    ],
 ];

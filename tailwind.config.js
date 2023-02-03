@@ -12,6 +12,8 @@ module.exports = {
         extend: {
             backgroundImage: {
                 // Home
+                "sg-header":
+                    "url('../../public/assets/img/home/sg/header.png')",
                 "sign-me":
                     "url('../../public/assets/img/sign-me/header-consultation-page-1.webp')",
 
@@ -108,21 +110,21 @@ module.exports = {
                 inter: "Roboto, sans-serif",
             },
             colors: {
-                navbar: "#7895C7",
-                secondary: "#7895C7",
-                primary: "#081034",
                 primary: "#233469",
-                "top-navbar": "#666666",
-                body: "#7A7A7A",
                 yellow: "#f78614",
-                dark: "#1d1d1d",
-                light: "#ffffff",
-                background: "#f6f6f6",
-                text: "#546999",
-                "subnavbar-dark": "#333333",
-                "subnavbar-text": "#aaaaaa",
-                "subnavbar-white": "#ffffff",
-                "blue-light": "#1eb5f6",
+                // navbar: "#7895C7",
+                // secondary: "#7895C7",
+                // primary: "#081034",
+                // "top-navbar": "#666666",
+                // body: "#7A7A7A",
+                // dark: "#1d1d1d",
+                // light: "#ffffff",
+                // background: "#f6f6f6",
+                // text: "#546999",
+                // "subnavbar-dark": "#333333",
+                // "subnavbar-text": "#aaaaaa",
+                // "subnavbar-white": "#ffffff",
+                // "blue-light": "#1eb5f6",
             },
         },
     },
