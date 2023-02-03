@@ -160,26 +160,26 @@
                 <div class="splide" role="group">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach (__('pages/programs/sat_program.testimonies') as $item)
+                            @foreach ($testimonies as $item)
                                 <li class="splide__slide">
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-2 mb-4 rounded-3xl bg-primary overflow-hidden md:mx-4">
                                             <div class="flex flex-col p-6">
                                                 <h5 class="font-body font-bold text-2xl text-yellow">
-                                                    {{ $item['name'] }}</h5>
+                                                    {{ $item->testi_name }}</h5>
                                                 <h6 class="mt-3 font-body font-black text-3xl text-white">
-                                                    {{ $item['point'] }}
+                                                    {{ $item->testi_subtitle }}
                                                 </h6>
-                                                <div class="flex ">
+                                                {{-- <div class="flex ">
                                                     <h6 class="font-body font-black text-2xl text-yellow">
                                                         {{ $item['start_point'] }}</h6><span
                                                         class="font-body font-black text-2xl text-yellow">-></span>
                                                     <h6 class="font-body font-black text-2xl text-yellow">
                                                         {{ $item['start_point'] }}</h6>
-                                                </div>
-                                                <span class="mt-5 font-primary font-bold text-6xl text-yellow">"</span>
+                                                </div> --}}
+                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 my-4">
                                                 <p class="font-body font-semibold text-xl text-white">
-                                                    {{ $item['body'] }}</p>
+                                                    {{ $item->testi_desc }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -16,25 +16,39 @@ class BlogPageController extends Controller
     {
         // filter by category
         if (request('category')) {
-            $blogs = Blogs::latest()->where('cat_id', request('category'));
+            $blogs = Blogs::latest()->where('lang', $locale)->where('cat_id', request('category'));
         } else {
-            $blogs = Blogs::latest();
+            $blogs = Blogs::latest()->where('lang', $locale);
         }
 
+        // take all blogs
         $blogs = $blogs->paginate(6)->withQueryString();
-        $top_blogs = Blogs::latest()->where('lang', $locale)->take(5)->get();
+
+        // take blogs
+        $top_blogs = Blogs::latest()->where('lang', $locale)->where('is_highlight', 'true')->take(5)->get();
+
+        // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
+        $is_top_update = false;
+        if (count($top_blogs) == 0) {
+            $is_top_update = true;
+            $top_blogs = Blogs::latest()->where('lang', $locale)->take(2)->get();
+        }
+
+
         $blog_categories = BlogCategorys::all()->where('lang', $locale);
 
         return view('user.blog.main', [
             'top_blogs' => $top_blogs,
             'blogs' => $blogs,
             'blog_categories' => $blog_categories,
+            'is_top_update' => $is_top_update,
+            'is_blog_page' => true,
         ]);
     }
 
     public function show(Blogs $blog)
     {
-        $top_blogs = Blogs::latest()->where('id', '!=', $blog->id)->take(3)->get();
+        $recomendation_blogs = Blogs::latest()->where('id', '!=', $blog->id)->where('cat_id', $blog->cat_id)->take(3)->get();
 
         // Blog Section
         $doc =  new DOMDocument();
@@ -51,8 +65,9 @@ class BlogPageController extends Controller
 
         return view('user.detail_blog.main', [
             'blog' => $blog,
-            "top_blogs" => $top_blogs,
-            "blog_section_list" => $blog_section
+            "recomendation_blogs" => $recomendation_blogs,
+            "blog_section_list" => $blog_section,
+            'is_detail_blog_page' => true,
         ]);
     }
 }

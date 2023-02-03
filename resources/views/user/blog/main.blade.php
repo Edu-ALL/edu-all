@@ -8,7 +8,12 @@
                 <div class="mb-6">
                     <span
                         class="px-4 py-2 font-inter font-bold text-sm text-white text-center rounded-md bg-primary lg:text-base">
-                        Top Choice
+                        @if ($is_top_update)
+                            Top Update
+                        @else
+                            Top Choice
+                        @endif
+
                     </span>
                 </div>
                 <div class="splide w-full" role="group" aria-label="Splide Basic HTML Example">

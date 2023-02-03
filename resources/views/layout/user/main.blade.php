@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
+
+    {{-- Blog SEO --}}
+    @if (isset($is_blog_page))
+        @foreach ($blogs as $blog)
+            <meta name="title" content="{{ $blog->seo_title }}">
+            <meta name="description" content="{{ $blog->seo_desc }}">
+            <meta name="keyword" content="{{ $blog->seo_keyword }}">
+        @endforeach
+    @elseif (isset($is_detail_blog_page))
+        <meta name="title" content="{{ $blog->seo_title }}">
+        <meta name="description" content="{{ $blog->seo_desc }}">
+        <meta name="keyword" content="{{ $blog->seo_keyword }}">
+    @endif
+
     <link href="{{ asset('favicon.png') }}" rel="icon">
 
     @vite('resources/css/app.css')

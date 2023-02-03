@@ -61,11 +61,12 @@
 
     <section class="py-16">
         <div class="main-container flex flex-col">
-            <h3 class="mb-12 font-secondary font-extrabold text-4xl text-primary text-center ">You may also like this
+            <h3 class="mb-12 font-secondary font-extrabold text-4xl text-primary text-center ">
+                You may also like this
                 article
             </h3>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-                @foreach ($top_blogs as $blog)
+                @foreach ($recomendation_blogs as $blog)
                     <a href="{{ route('detail_blog', ['blog' => $blog->id]) }}" class="block p-3 hover:bg-[#D9D9D9]"
                         class="w-1/3">
                         <div class="flex flex-col gap-2">

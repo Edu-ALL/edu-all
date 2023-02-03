@@ -311,18 +311,18 @@
                 <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach (__('pages/programs/academic_tutoring.testi_list') as $item)
+                            @foreach ($testimonies as $item)
                                 <li class="splide__slide">
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-4 mb-4 rounded-3xl bg-primary overflow-hidden">
                                             <div class="flex flex-col p-6">
-                                                <span class="font-primary font-bold text-4xl text-yellow">"</span>
+                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 mb-2">
                                                 <p class="mt-1 font-body font-semibold text-lg text-white">
-                                                    "{{ $item['body'] }}"</p>
+                                                    "{{ $item->testi_desc }}"</p>
                                                 <h5 class="mt-6 font-body font-bold text-2xl text-yellow">
-                                                    {{ $item['name'] }}</h5>
+                                                    {{ $item->testi_name }}</h5>
                                                 <span
-                                                    class="font-body font-normal text-xl text-white">{{ $item['grade'] }}</span>
+                                                    class="font-body font-normal text-xl text-white">{{ $item->testi_subtitle }}</span>
                                             </div>
                                         </div>
                                     </div>

@@ -154,19 +154,19 @@
                     </div>
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach (__('pages/programs/graduate_program.testimony_list') as $item)
+                            @foreach ($testimonies as $item)
                                 <li class="splide__slide">
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-2 mb-4 rounded-3xl bg-primary overflow-hidden md:mx-4">
                                             <div class="flex flex-col p-6">
                                                 <h5 class="font-body font-bold text-2xl text-yellow">
-                                                    {{ $item['name'] }}
+                                                    {{ $item->testi_name }}
                                                 </h5>
                                                 <h6 class="mb-3 font-body font-black text-lg text-[#B9B9B9]">
-                                                    ({{ $item['univ'] }})
+                                                    {{ $item->testi_subtitle }}
                                                 </h6>
                                                 <p class="font-body font-semibold text-lg text-white">
-                                                    {{ $item['body'] }}</p>
+                                                    {{ $item->testi_desc }}</p>
                                             </div>
                                         </div>
                                     </div>
