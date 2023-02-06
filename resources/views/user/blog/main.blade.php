@@ -1,5 +1,13 @@
 @extends('layout.user.main')
 
+@section('head')
+    @foreach ($blogs as $blog)
+        <meta name="title" content="{{ $blog->seo_title }}">
+        <meta name="description" content="{{ $blog->seo_desc }}">
+        <meta name="keyword" content="{{ $blog->seo_keyword }}">
+    @endforeach
+@endsection
+
 @section('content')
     <section class="py-10 lg:py-20">
         <div class="flex flex-col main-container">

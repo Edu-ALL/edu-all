@@ -1,5 +1,11 @@
 @extends('layout.user.main')
 
+@section('head')
+    <meta name="title" content="{{ $blog->seo_title }}">
+    <meta name="description" content="{{ $blog->seo_desc }}">
+    <meta name="keyword" content="{{ $blog->seo_keyword }}">
+@endsection
+
 @section('content')
     <section class="pt-16">
         <div class="main-container">

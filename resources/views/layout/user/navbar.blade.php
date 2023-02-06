@@ -184,16 +184,74 @@
                             class="font-bold text-sm text-[#819CCB] text-center sm:text-base">{{ __('pages/navbar.contact_us') }}<i
                                 class="fa-solid fa-caret-down ml-1"></i></a>
                     </div>
-                    <div class="relative flex items-center cursor-pointer group">
-                        <div class="flex items-center  font-body font-bold text-sm text-[#819CCB] sm:text-base">
-                            {{ strtoupper(app()->getLocale()) }} <i class="fa-solid fa-caret-down ml-1"></i>
+                    <div class="relative flex items-center group">
+                        <div
+                            class="flex items-center  font-body font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
+                            {{ substr(strtoupper(app()->getLocale()), 0, 2) }} <i
+                                class="fa-solid fa-caret-down ml-1"></i>
                         </div>
                         <div
-                            class="absolute top-full right-0 invisible flex flex-col  items-start font-bold bg-white border-2 translate-x-[1px] translate-y-8 transition-all duration-100 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                            @foreach (config('app.available_locales') as $locale)
+                            class="text-primary absolute top-full right-0 invisible translate-x-[1px] translate-y-8 transition-all duration-100 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                            <div
+                                class="mt-4 flex flex-col py-4  items-start font-bold bg-white border-2 border-primary ">
+                                <div class="flex items-center gap-3 px-4">
+                                    <a href="{{ route(Route::currentRouteName(), 'id-en') }}"
+                                        class="flex items-center hover:underline">
+                                        <div>
+                                            <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
+                                                id="flag-icons-id" viewBox="0 0 640 480">
+                                                <path fill="#e70011" d="M0 0h640v240H0Z" />
+                                                <path fill="#fff" d="M0 240h640v240H0Z" />
+                                            </svg>
+                                        </div>
+                                        <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                        <span class="w-5 h-0.5 ml-3 bg-primary"></span>
+                                    </a>
+                                    <div class="flex items-center gap-2">
+                                        <a href="{{ route(Route::currentRouteName(), 'id-en') }}"
+                                            class="font-medium hover:underline hover:text-[#819CCB]">English</a>
+                                        <span>/</span>
+                                        <a href="{{ route(Route::currentRouteName(), 'id') }}"
+                                            class="font-medium hover:underline hover:text-[#819CCB]">Bahasa</a>
+                                    </div>
+                                </div>
+
+                                <span class="block w-full h-0.5 my-4 bg-primary"></span>
+
+                                <div class="flex items-center gap-3 px-4 ">
+                                    <a href="{{ route(Route::currentRouteName(), 'sg') }}"
+                                        class="flex items-center hover:underline">
+                                        <div>
+                                            <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
+                                                id="flag-icons-sg" viewBox="0 0 640 480">
+                                                <defs>
+                                                    <clipPath id="a">
+                                                        <path fill-opacity=".7" d="M0 0h640v480H0z" />
+                                                    </clipPath>
+                                                </defs>
+                                                <g fill-rule="evenodd" clip-path="url(#a)">
+                                                    <path fill="#fff" d="M-20 0h720v480H-20z" />
+                                                    <path fill="#df0000" d="M-20 0h720v240H-20z" />
+                                                    <path fill="#fff"
+                                                        d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
+                                                    <path fill="#fff"
+                                                        d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                        <span class="w-5 h-0.5 ml-3 bg-primary"></span>
+                                    </a>
+                                    <div class="flex items-center gap-2">
+                                        <a href="{{ route(Route::currentRouteName(), 'sg') }}"
+                                            class="font-medium hover:underline hover:text-[#819CCB]">English</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- @foreach (config('app.available_locales') as $locale)
                                 @if (str_contains(request()->path(), 'blog'))
                                     <a href="{{ route('blogs', $locale) }}"
-                                        class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
+                                        class="whitespace-nowrap w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif border-t-2">
                                         {{ strtoupper($locale) }}
                                     </a>
                                 @elseif (str_contains(request()->path(), 'mentor/'))
@@ -202,16 +260,16 @@
                                         $id_mentor = end($url_path);
                                     @endphp
                                     <a href="{{ route(Route::currentRouteName(), ['locale' => $locale, 'group' => $id_mentor]) }}"
-                                        class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
+                                        class="whitespace-nowrap w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif border-t-2">
                                         {{ strtoupper($locale) }}
                                     </a>
                                 @else
                                     <a href="{{ route(Route::currentRouteName(), $locale) }}"
-                                        class=" w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif @if ($locale == 'id') border-t-2 @else @endif">
+                                        class="whitespace-nowrap w-full px-4 py-2 text-left text-primary @if (app()->getLocale() == $locale) text-[#819CCB] @endif border-t-2">
                                         {{ strtoupper($locale) }}
                                     </a>
                                 @endif
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>
