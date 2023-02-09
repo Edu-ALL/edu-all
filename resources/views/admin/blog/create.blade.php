@@ -41,7 +41,7 @@
                                 <div class="col py-3">
                                     @if($errors->any())
                                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                            <strong>Failed Create Blogs!</strong> You have to check this field.
+                                            <strong>Failed Create Blogs!</strong> You have to check some fields.
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     @endif
@@ -74,54 +74,59 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                            <div class="col">
-                                                <label for="" class="form-label">
-                                                    Language <span style="color: var(--red)">*</span>
-                                                </label>
+                                        <div class="col-12">
+                                            <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                 <div class="col">
-                                                    <select class="select2" name="lang" id="lang" onchange="selectLang()">
-                                                        <option value=""></option>
-                                                        <option value="en" {{ old('lang') == 'en' ? 'selected' : '' }}>English</option>
-                                                        <option value="id" {{ old('lang') == 'id' ? 'selected' : '' }}>Indonesia</option>
-                                                    </select>
+                                                    <label for="" class="form-label">
+                                                        Language <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <div class="col">
+                                                        <select class="select2" name="lang" id="lang" onchange="selectLang()">
+                                                            <option value=""></option>
+                                                            <option value="en">English</option>
+                                                            <option value="id">Indonesia</option>
+                                                        </select>
+                                                    </div>
+                                                    @error('lang')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
                                                 </div>
-                                                @error('lang')
-                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="col">
-                                                <label for="" class="form-label">
-                                                    Category <span style="color: var(--red)">*</span>
-                                                </label>
                                                 <div class="col">
-                                                    <select class="select2" name="category" id="category">
-                                                        <option value=""></option>
-                                                    </select>
+                                                    <label for="" class="form-label">
+                                                        Category <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <div class="col">
+                                                        <select class="select2" name="category" id="category">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                    @error('category')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
                                                 </div>
-                                                @error('category')
-                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="col">
-                                                <label for="" class="form-label">
-                                                    Mentor
-                                                </label>
                                                 <div class="col">
-                                                    <select class="select2" name="mentor" id="mentor">
-                                                        <option value=""></option>
-                                                    </select>
+                                                    <label for="" class="form-label">
+                                                        Mentor
+                                                    </label>
+                                                    <div class="col">
+                                                        <select class="select2" name="mentor" id="mentor">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                    @error('mentor')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
                                                 </div>
-                                                @error('mentor')
-                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                @enderror
                                             </div>
+                                            @if($errors->any())
+                                                <small class="alert text-danger ps-0 fs-12">Please re-select some of these fields</small>
+                                            @endif
                                         </div>
                                         <div class="col-12">
                                             <label for="" class="form-label">
                                                 Title <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ old('blog_title') }}">
+                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ old('blog_title') }}" onchange="createSlug()">
                                             @error('blog_title')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -173,9 +178,42 @@
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
                                         </div>
+                                        <div class="col d-flex flex-md-row flex-column gap-md-4 gap-2">
+                                            <div class="col">
+                                                <label for="" class="form-label">
+                                                    Duration Read <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="duration_read" name="duration_read" value="{{ old('duration_read') }}">
+                                                @error('duration_read')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="form-label">
+                                                    Blog Status <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <div class="col d-flex flex-row py-1 gap-md-4 gap-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="blog_status" id="blog_status_draft" value="draft" {{ old('blog_status') == 'draft' ? 'checked' : '' }}>
+                                                        <label class="form-label card-title p-0 m-0" for="blog_status_draft">
+                                                            Draft
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="blog_status" id="blog_status_publish" value="publish" {{ old('blog_status') == 'publish' ? 'checked' : '' }}>
+                                                        <label class="form-label card-title p-0 m-0" for="blog_status_publish">
+                                                            Publish
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                @error('blog_status')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
                                     </div>
                                     
-                                    <div class="text-center mt-3">
+                                    <div class="text-center mt-4">
                                         <button type="submit" class="btn btn-primary" id="submit">
                                             <i class="fa-solid fa-check me-1"></i> Submit
                                         </button>
@@ -204,10 +242,16 @@
         }
     };
 
+    function createSlug(){
+        const blog_title = document.getElementById('blog_title').value.toLowerCase().split(' ').join('-');
+        const blog_slug = document.getElementById('blog_slug');
+        blog_slug.value = blog_title;
+    };
+
     async function selectLang(){
         let lang = $('#lang').val()
-        let url_category = "{{url('api/category')}}/"+lang
         let url_mentor = "{{url('api/mentor')}}/"+lang
+        let url_category = "{{url('api/category')}}/"+lang
         
         // Select Blog Category 
         try {

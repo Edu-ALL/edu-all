@@ -10,7 +10,9 @@ use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\MentorVideo;
 use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
+use App\Http\Controllers\Admin\Tutor;
 use App\Http\Controllers\Admin\UpcomingEvent;
+use App\Models\Tutors;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,10 +55,12 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/blogs', [Blog::class, 'index']);
     Route::get('/blogs/create', [Blog::class, 'create']);
     Route::post('/blogs', [Blog::class, 'store'])->name('create-blogs');
+    Route::get('/blogs/{id}/view', [Blog::class, 'view']);
     Route::get('/blogs/{id}/edit', [Blog::class, 'edit']);
     Route::post('/blogs/{id}', [Blog::class, 'update'])->name('update-blogs');
-    Route::post('/blogs/deactivate/{id}', [Blog::class, 'deactivate']);
-    Route::post('/blogs/activate/{id}', [Blog::class, 'activate']);
+    Route::post('/blogs/highlight/{id}', [Blog::class, 'set_highlight'])->name('highlight-blogs');
+    Route::post('/blogs/draft/{id}', [Blog::class, 'status_draft']);
+    Route::post('/blogs/publish/{id}', [Blog::class, 'status_publish']);
     Route::post('/blogs/delete/{id}', [Blog::class, 'delete']);
 
     // Blog Category
@@ -120,6 +124,16 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/mentor/video/{group}', [MentorVideo::class, 'store']);
     Route::post('/mentor/video/{group}/{id}', [MentorVideo::class, 'update']);
     Route::post('/mentor/video/delete/{group}/{id}', [MentorVideo::class, 'delete']);
+
+    // Tutor
+    Route::get('/tutor', [Tutor::class, 'index']);
+    Route::get('/tutor/create', [Tutor::class, 'create']);
+    Route::post('/tutor', [Tutor::class, 'store'])->name('create-tutor');
+    Route::get('/tutor/{id}/edit', [Tutor::class, 'edit']);
+    Route::post('/tutor/{id}', [Tutor::class, 'update'])->name('update-tutor');
+    Route::post('/tutor/deactivate/{id}', [Tutor::class, 'deactivate']);
+    Route::post('/tutor/activate/{id}', [Tutor::class, 'activate']);
+    Route::post('/tutor/delete/{id}', [Tutor::class, 'delete']);
 });
 
 

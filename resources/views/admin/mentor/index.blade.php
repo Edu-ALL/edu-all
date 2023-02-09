@@ -34,7 +34,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">List Mentors <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/mentor/create">
-                                    <i class="fa-solid fa-plus me-md-1 me-0"></i> Create new
+                                    <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
                             <table class="table datatable display" style="width:100%">
@@ -64,9 +64,9 @@
                                                 <img src="{{ asset('uploaded_files/mentor/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ $mentor->lang == 'en' ? asset('assets/img/flag/flag-en.png') : asset('assets/img/flag/flag-id.png') }}" alt="" width="30">
+                                                <img src="{{ asset('assets/img/flag/flag-'.$mentor->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $mentor->lang == 'en' ? 'English' : 'Indonesia' }}
+                                                    {{ $mentor->languages->language }}
                                                 </p>
                                             </td>
                                             @if ($mentor->mentor_status == 'active')

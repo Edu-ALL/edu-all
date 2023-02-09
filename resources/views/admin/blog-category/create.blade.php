@@ -117,12 +117,12 @@
 @section('js')
 <script>
     function createSlug_en(){
-        const category_name = document.getElementById('category_name_en').value.replace(' ', '-').replace('/', '-').toLowerCase();
+        const category_name = document.getElementById('category_name_en').value.toLowerCase().split(' ').join('-').split('/').join('-');
         const slug = document.getElementById('slug_en');
         slug.value = category_name;
     };
     function createSlug_id(){
-        const category_name = document.getElementById('category_name_id').value.replace(' ', '-').replace('/', '-').toLowerCase();
+        const category_name = document.getElementById('category_name_id').value.toLowerCase().split(' ').join('-').split('/').join('-');
         const slug = document.getElementById('slug_id');
         slug.value = category_name;
     };

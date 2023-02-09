@@ -32,7 +32,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">Update Banner <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/banner">
-                                    <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
+                                    <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
@@ -181,12 +181,6 @@
             imgPreview.src = oFREvent.target.result
         }
     };
-    const region = document.getElementById('region').value;
-    const lang = document.getElementById('lang').value;
-    const submit = document.getElementById('submit');
-    if (region != '' && lang != '') {
-        submit.disabled = false;
-    }
     function checkInput(){
         const region = document.getElementById('region').value;
         const lang = document.getElementById('lang').value;
@@ -195,5 +189,6 @@
             submit.disabled = false;
         }
     };
+    checkInput();
 </script>
 @endsection

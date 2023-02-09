@@ -22,8 +22,12 @@
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/banner">
-                            <h5 class="card-title">Banner <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/banner">
+                                    Banner <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-images"></i>
@@ -33,13 +37,17 @@
                                     <span class="text-muted small pt-2"><i>Totals in Different Regions and Languages</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="">
-                            <h5 class="card-title">Blogs <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/blogs">
+                                    Blogs <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-newspaper"></i>
@@ -49,15 +57,19 @@
                                     <span class="text-muted small pt-2"><i>Total in English or Indonesian</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/mentor">
-                            <h5 class="card-title">Mentors <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/mentor">
+                                    Mentors <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-users"></i>
@@ -67,13 +79,39 @@
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/testimonial">
-                            <h5 class="card-title">Testimonial <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/tutor">
+                                    Tutors <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div class="ps-4">
+                                    <h6>{{ $tutors->count() }}</h6>
+                                    <span class="text-muted small pt-2"><i>Total in English</i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
+                    <div class="card info-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/testimonial">
+                                    Testimonial <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-comments"></i>
@@ -83,13 +121,17 @@
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 px-md-2 px-0 mb-md-0 mb-2">
+                <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/guidebook">
-                            <h5 class="card-title">Guidebook <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/guidebook">
+                                    Guidebook <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-book"></i>
@@ -99,15 +141,19 @@
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/upcoming-event">
-                            <h5 class="card-title">Upcoming Events <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/upcoming-event">
+                                    Upcoming Events <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-calendar-days"></i>
@@ -117,13 +163,17 @@
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 px-md-2 px-0 mb-md-0 mb-2">
                     <div class="card info-card">
-                        <a class="card-body" href="/admin/success-stories">
-                            <h5 class="card-title">Success Stories <span>| {{ now()->year }}</span></h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="card-title link-card" href="/admin/success-stories">
+                                    Success Stories <span>| {{ now()->year }}</span>
+                                </a>
+                            </h5>
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-book-atlas"></i>
@@ -133,7 +183,7 @@
                                     <span class="text-muted small pt-2"><i>Total in English and Indonesian</i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,16 +194,15 @@
                         <div class="card-body pb-0">
                             <h5 class="card-title m-0">Top 5 Blogs <span>| Blogs</span></h5>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
-                            <div class="news d-flex flex-column gap-2 pb-md-4 pb-3 mt-3">
+                            <div class="news d-flex flex-column gap-3 pb-md-4 pb-3 mt-3">
                                 @foreach ($top_blogs as $top_blog)
-                                    <div class="row align-items-center justify-content-center gap-md-2 gap-0 py-1">
-                                        <div class="col-md-2 col-4 text-center" style="max-width: 120px">
-                                            <img src="{{ asset('uploaded_files/blogs/'.$top_blog->blog_thumbnail) }}" alt="" width="100">
+                                    <div class="row flex-md-row flex-column align-items-center justify-content-center gap-md-1 gap-3 py-1">
+                                        <div class="col-md-2 col text-center">
+                                            <img class="img-fluid" src="{{ asset('uploaded_files/blogs/'.$top_blog->blog_thumbnail) }}" alt="" style="border-radius: 10px">
                                         </div>
                                         <div class="col">
                                             <h4><a href="#">{{ $top_blog->blog_title }}</a></h4>
-                                            <p>{!! Str::limit(strip_tags($top_blog->blog_description), 200, '...') !!}</p>
-                                            {{-- {!! Str::limit($top_blog->blog_description, 150, '...') !!} --}}
+                                            <p>{!! Str::limit(strip_tags($top_blog->blog_description), 350, '...') !!}</p>
                                         </div>
                                     </div>
                                 @endforeach

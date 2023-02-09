@@ -34,9 +34,15 @@ class Blogs extends Model
     ];
 
     public function blog_category(){
-        return $this->hasMany(BlogCategorys::class, 'id', 'cat_id');
+        return $this->belongsTo(BlogCategorys::class, 'cat_id', 'id');
     }
     public function mentor(){
-        return $this->hasMany(Mentors::class, 'id', 'mt_id');
+        return $this->belongsTo(Mentors::class, 'mt_id', 'id');
+    }
+    public function languages(){
+        return $this->belongsTo(Languages::class, 'lang', 'language_id');
+    }
+    public function blog_read(){
+        return $this->hasMany(BlogReads::class, 'blog_id', 'id');
     }
 }

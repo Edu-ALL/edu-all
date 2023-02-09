@@ -27,4 +27,8 @@ class Testimonials extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function languages(){
+        return $this->belongsTo(Languages::class, 'lang', 'language_id');
+    }
 }

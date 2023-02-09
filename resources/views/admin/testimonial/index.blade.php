@@ -34,7 +34,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">List Testimonials <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/testimonial/create">
-                                    <i class="fa-solid fa-plus me-md-1 me-0"></i> Create new
+                                    <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
                             <table class="table datatable display" style="width:100%">
@@ -43,7 +43,7 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Description</th>
-                                        <th scope="col">Program</th>
+                                        <th scope="col">Subtitle</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Language</th>
@@ -60,12 +60,17 @@
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $testimonial->testi_name }}</td>
                                             <td>{!! Str::limit($testimonial->testi_desc, 150, '...') !!}</td>
-                                            <td>{{ $testimonial->testi_program}}</td>
-                                            <td>{{ $testimonial->testi_category}}</td>
+                                            <td>{!! $testimonial->testi_subtitle != null ? Str::limit($testimonial->testi_subtitle, 100, '...') : '-' !!}</td>
+                                            <td>{{ $testimonial->testi_category }}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
                                             </td>
-                                            <td>{{ $testimonial->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            <td class="text-center">
+                                                <img src="{{ asset('assets/img/flag/flag-'.$testimonial->lang.'.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $testimonial->languages->language }}
+                                                </p>
+                                            </td>
                                             @if ($testimonial->testi_status == 'active')
                                                 <td class="text-center">
                                                     <button 

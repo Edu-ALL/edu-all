@@ -41,7 +41,7 @@
                                 <div class="col py-3">
                                     @if($errors->any())
                                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                            <strong>Failed Create Blogs!</strong> You have to check this field.
+                                            <strong>Failed Update Blogs!</strong> You have to check this fields.
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     @endif
@@ -121,7 +121,7 @@
                                             <label for="" class="form-label">
                                                 Title <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ $blog->blog_title }}">
+                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ $blog->blog_title }}" onchange="createSlug()">
                                             @error('blog_title')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -173,6 +173,39 @@
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
                                         </div>
+                                        <div class="col d-flex flex-md-row flex-column gap-md-4 gap-2">
+                                            <div class="col">
+                                                <label for="" class="form-label">
+                                                    Duration Read <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="duration_read" name="duration_read" value="{{ $blog->duration_read }}">
+                                                @error('duration_read')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="form-label">
+                                                    Blog Status <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <div class="col d-flex flex-row py-1 gap-md-4 gap-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="blog_status" id="blog_status_draft" value="draft" {{ $blog->blog_status == 'draft' ? 'checked' : '' }}>
+                                                        <label class="form-label card-title p-0 m-0" for="blog_status_draft">
+                                                            Draft
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="blog_status" id="blog_status_publish" value="publish" {{ $blog->blog_status == 'publish' ? 'checked' : '' }}>
+                                                        <label class="form-label card-title p-0 m-0" for="blog_status_publish">
+                                                            Publish
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                @error('blog_status')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
                                     </div>
                                     
                                     <div class="text-center mt-3">
@@ -202,6 +235,12 @@
         oFReader.onload = function(oFREvent){
             imgPreview.src = oFREvent.target.result
         }
+    };
+
+    function createSlug(){
+        const blog_title = document.getElementById('blog_title').value.toLowerCase().split(' ').join('-');
+        const blog_slug = document.getElementById('blog_slug');
+        blog_slug.value = blog_title;
     };
 
     async function selectLang(){

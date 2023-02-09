@@ -9,6 +9,7 @@ use App\Models\Guidebooks;
 use App\Models\Mentors;
 use App\Models\SuccessStories;
 use App\Models\Testimonials;
+use App\Models\Tutors;
 use App\Models\UpcomingEvents;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class Dashboard extends Controller
         $upcoming_event = UpcomingEvents::get();
         $success_stories = SuccessStories::get();
         $testimonial = Testimonials::get();
-        $top_blogs = Blogs::where('blog_status', 'active')->orderby('click_count', 'desc')->take(5)->get();
+        $tutors = Tutors::get();
+        $top_blogs = Blogs::where('blog_status', 'publish')->orderby('click_count', 'desc')->take(5)->get();
         return view('admin.dashboard', [
             'banner' => $banner,
             'blog' => $blog,
@@ -31,6 +33,7 @@ class Dashboard extends Controller
             'upcoming_event' => $upcoming_event,
             'success_stories' => $success_stories,
             'testimonial' => $testimonial,
+            'tutors' => $tutors,
             'top_blogs' => $top_blogs,
         ]);
     }
