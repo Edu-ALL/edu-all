@@ -5,37 +5,38 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
+use App\Models\BlogReads;
 use App\Models\Blogs;
 use DOMDocument;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class BlogPageController extends Controller
 {
     public function index($locale)
     {
+        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+
         // filter by category
         if (request('category')) {
-            $blogs = Blogs::latest()->where('lang', $locale)->where('cat_id', request('category'));
+            $blogs = Blogs::latest()->where('lang', $lang)->where('cat_id', request('category'));
         } else {
-            $blogs = Blogs::latest()->where('lang', $locale);
+            $blogs = Blogs::latest()->where('lang', $lang);
         }
 
         // take all blogs
         $blogs = $blogs->paginate(6)->withQueryString();
 
         // take blogs
-        $top_blogs = Blogs::latest()->where('lang', $locale)->where('is_highlight', 'true')->take(5)->get();
+        $top_blogs = Blogs::latest()->where('lang', $lang)->where('is_highlight', 'true')->take(5)->get();
 
         // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
         $is_top_update = false;
         if (count($top_blogs) == 0) {
             $is_top_update = true;
-            $top_blogs = Blogs::latest()->where('lang', $locale)->take(2)->get();
+            $top_blogs = Blogs::latest()->where('lang', $lang)->take(2)->get();
         }
 
-
-        $blog_categories = BlogCategorys::all()->where('lang', $locale);
+        // filter sesuai bahasa (lang)
+        $blog_categories = BlogCategorys::all()->where('lang', $lang);
 
         return view('user.blog.main', [
             'top_blogs' => $top_blogs,
@@ -48,6 +49,23 @@ class BlogPageController extends Controller
 
     public function show(Blogs $blog)
     {
+        // read ip address
+        $ip_address = request()->ip();
+        // if ip address already registered then skip else register new ip address
+        $ip_isregistered = BlogReads::where('blog_id', $blog->id)->where('ip_address',  $ip_address)->exists();
+        if (!$ip_isregistered) {
+            BlogReads::create([
+                'blog_id' => $blog->id,
+                'ip_address' => $ip_address,
+            ]);
+
+            // update blog click count
+            $blog->update([
+                'click_count' => $blog->click_count + 1,
+            ]);
+        }
+
+        // dd($blog);
         $recomendation_blogs = Blogs::latest()->where('id', '!=', $blog->id)->where('cat_id', $blog->cat_id)->take(3)->get();
 
         // Blog Section

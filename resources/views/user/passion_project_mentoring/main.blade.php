@@ -403,10 +403,9 @@
         </div>
 
     </section>
+@endsection
 
-
-
-
+@section('script')
     <script>
         const learn = document.querySelectorAll('#entre-learn-title');
         const learn_desc = document.querySelectorAll('#entre-learn-desc');

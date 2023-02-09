@@ -193,7 +193,9 @@
             </a>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 764px)").matches

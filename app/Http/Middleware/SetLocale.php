@@ -16,7 +16,10 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next)
     {
-        // dd($request->segment(1));
+        if (!in_array($request->segment(1), config('app.available_locales'))) {
+            abort(404);
+        }
+
         app()->setLocale($request->segment(1));
         return $next($request);
     }

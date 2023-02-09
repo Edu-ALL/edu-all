@@ -118,7 +118,7 @@ class ResourcesPageController extends Controller
             ]
         );
 
-        $success_stories = $dummy_data->where('status', 'active')->where('lang', app()->getLocale());
+        $success_stories = $dummy_data->where('status', 'active')->where('lang', substr(app()->getLocale(), 0, 2));
 
         return view('user.success_stories.main', [
             'success_stories' => $success_stories
@@ -182,7 +182,7 @@ class ResourcesPageController extends Controller
             ],
         ]);
 
-        $events = $dummy_data->where('event_status', 'active')->where('lang', app()->getLocale());
+        $events = $dummy_data->where('event_status', 'active')->where('lang', substr(app()->getLocale(), 0, 2));
 
         return view('user.upcoming_events.main', [
             'events' => $events
@@ -591,40 +591,14 @@ class ResourcesPageController extends Controller
 
         ]);
 
-        $admission_mentoring = $dummy_data->where('testi_category', 'admission mentoring')->where('lang', app()->getLocale())->where('testi_status', 'active');
-        $experiential_learning = $dummy_data->where('testi_category', 'passion project mentoring')->where('lang', app()->getLocale())->where('testi_status', 'active');
-        $academic_preparation = $dummy_data->where('testi_category', 'academic test preparation')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $admission_mentoring = $dummy_data->where('testi_category', 'admission mentoring')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
+        $experiential_learning = $dummy_data->where('testi_category', 'passion project mentoring')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
+        $academic_preparation = $dummy_data->where('testi_category', 'academic test preparation')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
 
         return view('user.testimonial.main', [
             'admission_mentoring' => $admission_mentoring,
             'experiential_learning' => $experiential_learning,
             'academic_preparation' => $academic_preparation,
-        ]);
-    }
-
-    public function student_acceptances()
-    {
-        return view('user.student_acceptances.main');
-    }
-
-    public function mentor($locale)
-    {
-        $all_mentor = Mentors::all()->where('lang', $locale);
-
-        return view('user.mentor.main', [
-            'locale' => $locale,
-            'all_mentor' => $all_mentor
-        ]);
-    }
-
-    public function detail_mentor($locale, $group)
-    {
-        $mentor = Mentors::where('group', $group)->where('lang', $locale)->first();
-        $mentor_videos = MentorVideos::where('mentor_id', $mentor->group)->get();
-
-        return view('user.detail_mentor.main', [
-            'mentor' => $mentor,
-            'mentor_videos' => $mentor_videos
         ]);
     }
 }

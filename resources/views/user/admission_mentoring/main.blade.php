@@ -93,7 +93,6 @@
 
         {{-- Undergraduate Program Cards --}}
         <div class="relative">
-
             <div class="splide mt-8 main-container" aria-label="Basic Structure Example">
                 <div class="md:position: md:relative">
                     <div class="splide__arrows"></div>
@@ -261,8 +260,9 @@
         </div>
 
     </section>
+@endsection
 
-
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

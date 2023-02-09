@@ -409,7 +409,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
 
         return view('user.admission_mentoring.main', [
 
@@ -813,7 +813,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('testi_subcategory', '=', 'undergraduate')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('testi_subcategory', '=', 'undergraduate')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
 
         return view(
             'user.undergraduate_program.main',
@@ -1219,7 +1219,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('testi_subcategory',  'graduate')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('testi_subcategory',  'graduate')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
 
         return view('user.graduate_program.main', [
             'testimonies' => $testimonies
@@ -1622,7 +1622,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('testi_subcategory',  'univ transfer')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'admission mentoring')->where('testi_subcategory',  'univ transfer')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
         return view('user.univ_transfer_program.main', [
             'testimonies' => $testimonies
         ]);
@@ -2024,7 +2024,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'passion project mentoring')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'passion project mentoring')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
         return view('user.passion_project_mentoring.main', [
             'testimonies' => $testimonies
         ]);
@@ -2426,7 +2426,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'academic test preparation')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'academic test preparation')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
         return view('user.academic_test_preparation.main', [
             'testimonies' => $testimonies
         ]);
@@ -2828,7 +2828,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'academic test preparation')->where('testi_subcategory', 'academic tutoring')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'academic test preparation')->where('testi_subcategory', 'academic tutoring')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
 
         return view('user.academic_tutoring.main',  [
             'testimonies' => $testimonies
@@ -3236,7 +3236,7 @@ class ProgramPageController extends Controller
 
         ]);
 
-        $testimonies = $dummy_data->where('testi_category', 'academic test preparation')->where('testi_subcategory', 'sat program')->where('lang', app()->getLocale())->where('testi_status', 'active');
+        $testimonies = $dummy_data->where('testi_category', 'academic test preparation')->where('testi_subcategory', 'sat program')->where('lang', substr(app()->getLocale(), 0, 2))->where('testi_status', 'active');
 
         return view('user.sat_program.main', [
             'testimonies' => $testimonies

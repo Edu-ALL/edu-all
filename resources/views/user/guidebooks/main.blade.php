@@ -171,7 +171,9 @@
             <span class="mt-6 font-body font-semibold text-xl text-yellow text-center">and many more...</span>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

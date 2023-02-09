@@ -82,7 +82,9 @@
                 </span></a>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         const event_detail_wrapper = document.querySelectorAll('.event__detail--wrapper');
         const event_detail_btn = document.querySelectorAll('.event__detail--btn');

@@ -90,33 +90,63 @@
     </section>
 
     {{-- ================================== Mentors ================================== --}}
-    <section class="py-10 bg-[#1d1d1d]">
+    <section class="py-10 bg-primary">
         <div class="flex flex-col items-center">
             <div class=" main-container">
-                <div class="flex flex-col  max-w-2xl">
-                    <h2 class="mt-10 font-primary font-bold text-3xl text-yellow text-center">
+                <div class="flex flex-col max-w-2xl">
+                    <h2 class="mt-10 font-primary font-bold text-3xl text-white text-center">
                         {{ __('pages/about_us/about.mentor_title') }}</h2>
                     <p class="mt-8 font-primary text-lg text-white text-center leading-7">
                         {{ __('pages/about_us/about.mentor_desc') }}</p>
                 </div>
             </div>
-            <div class="w-full max-w-5xl py-10">
-
-                <div class="splide" aria-labelledby="carousel-heading">
-                    <ul class="splide__pagination"></ul>
-                    <div class="splide__track md:m-16">
+            <div class="w-full max-w-7xl px-10 py-10">
+                <div class="splide" role="group">
+                    <div class="splide__arrows text-white">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
+                            <i class="fa-solid fa-chevron-left text-4xl"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
+                            <i class="fa-solid fa-chevron-right text-4xl"></i>
+                        </button>
+                    </div>
+                    <div class="splide__track py-10">
                         <ul class="splide__list">
-                            @foreach (__('pages/about_us/about.mentor_list') as $item)
+                            @foreach ($all_mentor as $mentor)
                                 <li class="splide__slide">
-                                    <div class="splide__slide__container h-full mx-6">
-                                        <div class="flex flex-col items-center">
-                                            <img src="{{ asset('assets/img/about/mentor-profile/' . strtolower($item['name']) . '.png') }}"
-                                                alt="{{ $item['name'] }} profile" class="px-16 w-full sm:px-0">
-                                            <h4 class="mt-4 font-body font-bold text-xl text-yellow text-center">
-                                                {{ $item['name'] }}</h4>
-                                            <p class="mt-4 font-body font-medium text-base text-white text-center">
-                                                {{ $item['education'] }}
-                                            </p>
+                                    <div class="splide__slide__container px-4 w-full h-full">
+                                        <div class="mentor_card flex flex-col group">
+                                            <div
+                                                class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
+                                                <div
+                                                    class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                    <h3
+                                                        class="h-2/3 font-inter font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
+                                                        {{ $mentor->mentor_firstname }} <br>
+                                                        {{ $mentor->mentor_lastname }}
+                                                    </h3>
+                                                    <div
+                                                        class="mentor_graduation h-1/3 font-inter text-[10px] text-white leading-4 lg:leading-3">
+                                                        {!! $mentor->mentor_graduation !!}
+                                                    </div>
+                                                </div>
+                                                <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                                                    alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
+                                            </div>
+                                            <div
+                                                class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
+                                                <div class="flex flex-col items-center justify-center">
+                                                    <div
+                                                        class="mb-6 w-full h-full font-secondary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                        {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
+
+                                                    </div>
+                                                    <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
+                                                        class="px-4 py-2 flex-inline font-inter font-medium text-xs text-white text-center rounded-lg bg-yellow">
+                                                        Get to know {{ $mentor->mentor_firstname }}
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -125,13 +155,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
 
     {{-- ================================== Bottom Section ================================== --}}
-    <section class="-mt-2 py-16 bg-[#1d1d1d]">
+    <section class="-mt-2 py-16 ">
         <div class="main-container flex flex-col items-center">
             <h2 class="font-title font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/about.bottom_title') }}
@@ -140,7 +169,9 @@
                 class="my-btn">{{ __('pages/about_us/about.bottom_btn') }}</a>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         const questions = document.querySelectorAll('#question');
         const answers = document.querySelectorAll('#answer');
@@ -173,21 +204,19 @@
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : 4,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 5,
             perMove: 1,
-            focus: 0,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
+            // arrows: isMediumDevice ? false : true,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {

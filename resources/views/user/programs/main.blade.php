@@ -9,7 +9,7 @@
             </div>
 
             <img src="{{ asset('assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg') }}" alt=""
-                class="w-full h-[30vh] lg:h-[500px] object-cover object-center">
+                class="lazy w-full h-[30vh] lg:h-[500px] object-cover object-center">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
                 class="absolute bottom-0 object-cover -mb-2 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20">
