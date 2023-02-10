@@ -127,7 +127,7 @@
                                                 <p class="m-0">:</p>
                                             </div>
                                             <div class="col p-0 desc-textarea">
-                                                {!! $blog->blog_description !!}
+                                                {!! Str::limit($blog->blog_description, 800, '...') !!}
                                             </div>
                                         </div>
                                         <div class="field-detail d-flex flex-row align-items-start">

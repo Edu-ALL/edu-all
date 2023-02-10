@@ -178,7 +178,13 @@
                                                 <label for="" class="form-label">
                                                     Duration Read <span style="color: var(--red)">*</span>
                                                 </label>
-                                                <input type="text" class="form-control" id="duration_read" name="duration_read" value="{{ $blog->duration_read }}">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="duration_read" name="duration_read" value="{{ $blog->duration_read }}">
+                                                    <span class="input-group-text" style="font-size: 80%">
+                                                        Minute
+                                                    </span>
+                                                </div>
+                                                {{-- <input type="text" class="form-control" id="duration_read" name="duration_read" value="{{ $blog->duration_read }}"> --}}
                                                 @error('duration_read')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -208,7 +214,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="text-center mt-3">
+                                    <div class="text-center mt-4">
                                         <button type="submit" class="btn btn-primary" id="submit">
                                             <i class="fa-solid fa-pen-to-square me-1"></i> Update
                                         </button>
