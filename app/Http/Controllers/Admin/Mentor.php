@@ -119,7 +119,7 @@ class Mentor extends Controller
 
     public function update($group, Request $request){
         $rules = [
-            // 'mentor_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'mentor_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt' => 'required',
             'mentor_firstname' => 'required',
             'mentor_lastname' => 'required',

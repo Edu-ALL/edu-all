@@ -139,6 +139,9 @@ h6 {
 .card-body {
   padding: 0 20px 20px 20px;
 }
+.card-body a.link-card:hover {
+  color: #012970;
+}
 
 /* Breadcrumbs */
 .breadcrumb {
@@ -308,9 +311,8 @@ h6 {
 /*--------------------------------------------------------------
 # Modal
 --------------------------------------------------------------*/
-/* Logout */
 .modal-dialog {
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 .modal-header {
   background-color: var(--blue);
@@ -534,6 +536,10 @@ table tr td p {
 }
 @media (max-width: 768px) {
   .field-detail * {
-  font-size: 13px !important;
+    font-size: 13px !important;
+  }
 }
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: unset;
 }

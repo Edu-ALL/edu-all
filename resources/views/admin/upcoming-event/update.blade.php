@@ -32,7 +32,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">Update Upcoming Event <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/upcoming-event">
-                                    <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
+                                    <i class="fa-solid fa-arrow-left me-md-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">

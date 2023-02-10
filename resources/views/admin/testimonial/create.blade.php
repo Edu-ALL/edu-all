@@ -32,7 +32,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">Create New Testimonial <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/testimonial">
-                                    <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
+                                    <i class="fa-solid fa-arrow-left me-md-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
@@ -47,7 +47,7 @@
                                 @endif
                                 <div class="col d-flex flex-column gap-2">
                                     <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                             <label for="" class="form-label">
                                                 Name <span style="color: var(--red)">*</span>
                                             </label>
@@ -68,7 +68,8 @@
                                         </div>
                                         <div class="col d-none" id="sub_category_col">
                                             <label for="" class="form-label">
-                                                Sub Category <span style="color: var(--red)">*</span>
+                                                Sub Category 
+                                                {{-- <span style="color: var(--red)">*</span> --}}
                                             </label>
                                             <div class="col">
                                                 <select class="select2" name="testi_subcategory" id="subcategory">
@@ -175,9 +176,6 @@
 
 @section('js')
 <script>
-    let sub_admission = ['Undergraduate', 'Graduated', 'University Transfer'];
-    let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation']
-
     function previewImage(){
         const image = document.querySelector('#thumbnail')
         const imgPreview = document.querySelector('#img_preview')
@@ -188,7 +186,6 @@
             imgPreview.src = oFREvent.target.result
         }
     };
-
     function checkInput(){
         const name = document.getElementById('name').value;
         const category = document.getElementById('category').value;
@@ -197,12 +194,15 @@
         const alt = document.getElementById('alt').value;
         const desc_en = tinymce.get('desc_en').getContent();
         const submit = document.getElementById('submit');
-        if (name == "" || category == "" || subcategory == "" || thumbnail == "" || alt == "" || desc_en == "") {
+        if (name == "" || category == "" || thumbnail == "" || alt == "" || desc_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;
         }
     };
+
+    let sub_admission = ['Undergraduate Program', 'Graduate Program', 'University Transfer Program'];
+    let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation'];
 
     function selectCategory() {
         let category = $('#category').val()

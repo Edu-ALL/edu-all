@@ -32,30 +32,49 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">Create New Guidebook <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/guidebook">
-                                    <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
+                                    <i class="fa-solid fa-arrow-left me-md-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
-                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
-                                </li>
-                            </ul>
+                            <ul class="nav nav-tabs nav-tabs-bordered"></ul>
                             <form action="{{ route('create-guidebook') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <h5 class="card-title">Form General</h5>
+                                @if($errors->any())
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Failed Create Guidebook!</strong> You have to check some fields in English and Indonesian.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <div class="col-12">
+                                    <label for="" class="form-label">
+                                        Category <span style="color: var(--red)">*</span>
+                                    </label>
+                                    <div class="col">
+                                        <select class="select2" name="guidebook_category" id="category">
+                                            <option value=""></option>
+                                            <option value="Getting Started" {{ old('guidebook_category') == 'Getting Started' ? 'selected' : '' }}>Getting Started</option>
+                                            <option value="Build Your Profile" {{ old('guidebook_category') == 'Build Your Profile' ? 'selected' : '' }}>Build Your Profile</option>
+                                            <option value="Apply to Your Dream University" {{ old('guidebook_category') == 'Apply to Your Dream University' ? 'selected' : '' }}>Apply to Your Dream University</option>
+                                            <option value="Grab The Scholarship" {{ old('guidebook_category') == 'Grab The Scholarship' ? 'selected' : '' }}>Grab The Scholarship</option>
+                                        </select>
+                                    </div>
+                                    @error('guidebook_category')
+                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <ul class="nav nav-tabs nav-tabs-bordered pt-3" id="borderedTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
+                                    </li>
+                                </ul>
                                 <div class="tab-content" id="borderedTabContent">
                                     {{-- Tab English --}}
                                     <div class="tab-pane fade show active" id="bordered-english" role="tabpanel" aria-labelledby="english-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form English</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Guidebook!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
                                             <div class="col d-flex flex-column gap-2">
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col-md-2 col">
@@ -84,12 +103,6 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
-                                                        Category <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="category_en" name="guidebook_category_en" value="{{ old('guidebook_category_en') }}">
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
                                                         Link <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="text" class="form-control" id="link_en" name="guidebook_link_en" value="{{ old('guidebook_link_en') }}">
@@ -105,12 +118,6 @@
                                     <div class="tab-pane fade" id="bordered-indo" role="tabpanel" aria-labelledby="indo-tab">
                                         <div class="col py-2">
                                             <h5 class="card-title">Form Indonesia</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Guidebook!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
                                             <div class="col d-flex flex-column gap-2">
                                                 <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                                     <div class="col-md-2 col">
@@ -139,15 +146,6 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Category <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="category_id" name="guidebook_category_id" value="{{ old('guidebook_category_id') }}">
-                                                    @error('guidebook_category_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
@@ -201,12 +199,12 @@
         }
     };
     function checkInput(){
+        const category = document.getElementById('category').value;
         const image_en = document.getElementById('image_en').value;
         const alt_en = document.getElementById('alt_en').value;
-        const category_en = document.getElementById('category_en').value;
         const link_en = document.getElementById('link_en').value;
         const submit = document.getElementById('submit');
-        if (image_en == "" || alt_en == "" || category_en == "" || link_en == "") {
+        if (image_en == "" || alt_en == "" || category == "" || link_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

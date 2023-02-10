@@ -32,7 +32,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">Update Blog Category <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/blog-category">
-                                    <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
+                                    <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
@@ -117,12 +117,12 @@
 @section('js')
 <script>
     function createSlug_en(){
-        const category_name = document.getElementById('category_name_en').value.replace(' ', '-').replace('/', '-').toLowerCase();
+        const category_name = document.getElementById('category_name_en').value.toLowerCase().split(' ').join('-').split('/').join('-');
         const slug = document.getElementById('slug_en');
         slug.value = category_name;
     };
     function createSlug_id(){
-        const category_name = document.getElementById('category_name_id').value.replace(' ', '-').replace('/', '-').toLowerCase();
+        const category_name = document.getElementById('category_name_id').value.toLowerCase().split(' ').join('-').split('/').join('-');
         const slug = document.getElementById('slug_id');
         slug.value = category_name;
     };

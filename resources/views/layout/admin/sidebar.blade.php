@@ -32,6 +32,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link collapsed {{ request()->is('admin/tutor*') ? 'active' : '' }}" href="/admin/tutor">
+                <i class="fa-solid fa-users"></i>
+                <span>Tutors</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed {{ request()->is('admin/guidebook*') ? 'active' : '' }}" href="/admin/guidebook">
                 <i class="fa-solid fa-book"></i>
                 <span>Guidebook</span>

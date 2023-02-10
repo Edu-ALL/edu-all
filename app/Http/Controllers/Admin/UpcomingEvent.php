@@ -105,14 +105,14 @@ class UpcomingEvent extends Controller
 
     public function update($group, Request $request){
         $rules = [
-            // 'event_thumbnail_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'event_thumbnail_en' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'event_alt_en' => 'required',
             'event_title_en' => 'required',
             'event_subtitle_en' => 'required',
             'event_date_en' => 'required',
             'event_detail_en' => 'required',
             'event_rsvp_en' => 'nullable|url',
-            // 'event_thumbnail_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'event_thumbnail_id' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'event_alt_id' => 'required',
             'event_title_id' => 'required',
             'event_subtitle_id' => 'required',

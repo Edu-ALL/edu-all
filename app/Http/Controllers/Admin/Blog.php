@@ -41,6 +41,7 @@ class Blog extends Controller
         $rules = [
             'blog_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'blog_alt' => 'required',
+            'lang' => 'required',
             'category' => 'required',
             'mentor' => 'nullable',
             'blog_title' => 'required',
@@ -49,6 +50,8 @@ class Blog extends Controller
             'seo_title' => 'required',
             'seo_keyword' => 'required',
             'seo_desc' => 'required',
+            'duration_read' => 'required',
+            'blog_status' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -72,19 +75,23 @@ class Blog extends Controller
             $blogs->cat_id = $request->category;
             $blogs->mt_id = $request->mentor;
             $blogs->blog_title = $request->blog_title;
-            $blogs->slug = str_replace(' ', '-', $request->blog_slug);
-            $blogs->blog_description = $request->blog_description;
+            $blogs->slug = $request->blog_slug;
+            $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
+            // $blogs->blog_description = $request->blog_description;
             $blogs->seo_title = $request->seo_title;
             $blogs->seo_keyword = $request->seo_keyword;
             $blogs->seo_desc = $request->seo_desc;
-            $blogs->blog_status = 'active';
+            $blogs->blog_status = $request->blog_status;
             $blogs->lang = $request->lang;
-            
             $blogs->click_count = 0;
-            $blogs->duration_read = 0;
-
+            $blogs->duration_read = $request->duration_read;
+            $blogs->is_highlight = 'false';
+            if ($request->blog_status == 'publish'){
+                $blogs->publish_date = date('Y-m-d H:i:s');
+            } else {
+                $blogs->publish_date = null;
+            }
             $blogs->save();
-
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
@@ -92,6 +99,13 @@ class Blog extends Controller
         }
 
         return redirect('/admin/blogs')->withSuccess('Blogs Was Successfully Created');
+    }
+
+    public function view($id){
+        $blog = Blogs::find($id);
+        return view('admin.blog.view', [
+            'blog' => $blog,
+        ]);
     }
 
     public function edit($id){
@@ -111,8 +125,9 @@ class Blog extends Controller
 
     public function update($id, Request $request){
         $rules = [
-            // 'blog_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'blog_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'blog_alt' => 'required',
+            'lang' => 'required',
             'category' => 'required',
             'mentor' => 'nullable',
             'blog_title' => 'required',
@@ -121,6 +136,8 @@ class Blog extends Controller
             'seo_title' => 'required',
             'seo_keyword' => 'required',
             'seo_desc' => 'required',
+            'duration_read' => 'required',
+            'blog_status' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -150,22 +167,31 @@ class Blog extends Controller
             $blogs->cat_id = $request->category;
             $blogs->mt_id = $request->mentor;
             $blogs->blog_title = $request->blog_title;
-            $blogs->slug = str_replace(' ', '-', $request->blog_slug);
-            $blogs->blog_description = $request->blog_description;
+            $blogs->slug = $request->blog_slug;
+            $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
+            // $blogs->blog_description = $request->blog_description;
             $blogs->seo_title = $request->seo_title;
             $blogs->seo_keyword = $request->seo_keyword;
             $blogs->seo_desc = $request->seo_desc;
+            $blogs->blog_status = $request->blog_status;
             $blogs->lang = $request->lang;
+            $blogs->click_count = 0;
+            $blogs->duration_read = $request->duration_read;
+            $blogs->is_highlight = 'false';
+            if ($request->blog_status == 'publish' && $blogs->publish_date == null){
+                $blogs->publish_date = date('Y-m-d H:i:s');
+            } else if ($request->blog_status == 'draft') {
+                $blogs->publish_date = null;
+            }
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
-
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blogs/'.$id.'/edit')->withSuccess('Blogs Was Successfully Updated');
+        return redirect('/admin/blogs/'.$id.'/view')->withSuccess('Blogs Was Successfully Updated');
     }
 
     public function delete($id){
@@ -188,11 +214,12 @@ class Blog extends Controller
         return redirect('/admin/blogs')->withSuccess('Blogs Was Successfully Deleted');
     }
 
-    public function deactivate($id){
+    public function status_draft($id){
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
-            $blog->blog_status = 'inactive';
+            $blog->blog_status = 'draft';
+            $blog->publish_date = null;
             $blog->save();
             DB::commit();
         } catch (Exception $e) {
@@ -203,11 +230,31 @@ class Blog extends Controller
         return redirect('/admin/blogs');
     }
 
-    public function activate($id){
+    public function status_publish($id){
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
-            $blog->blog_status = 'active';
+            $blog->blog_status = 'publish';
+            $blog->publish_date = date('Y-m-d H:i:s');
+            $blog->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/blogs');
+    }
+
+    public function set_highlight($id){
+        DB::beginTransaction();
+        try {
+            $blog = Blogs::find($id);
+            if ($blog->is_highlight == 'false'){
+                $blog->is_highlight = 'true';
+            } else {
+                $blog->is_highlight = 'false';
+            }
             $blog->save();
             DB::commit();
         } catch (Exception $e) {

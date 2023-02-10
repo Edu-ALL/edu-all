@@ -385,6 +385,9 @@
                                     <input type="text" class="form-control" name="video_embed" id="video_embed" value="{{ old('video_embed') }}">
                                 </div>
                                 <small class="alert ps-0 fs-12">Only supports <strong class="text-danger">Youtube</strong> videos. e.g. <b><i>https://youtu.be/eRb6lymJOIM</i></b></small>
+                                @error('video_embed')
+                                    <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
+                                @enderror
                             </div>
                             {{-- <div class="col">
                                 <label for="" class="form-label">

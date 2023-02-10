@@ -32,7 +32,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">Update Mentor <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/mentor">
-                                    <i class="fa-solid fa-arrow-left me-1"></i><span class="d-md-inline d-none"> Back to List</span>
+                                    <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
@@ -256,8 +256,8 @@
     };
 
     function createSlug(){
-        const firstname = document.getElementById('firstname').value.replace(' ', '-').toLowerCase();
-        const lastname = document.getElementById('lastname').value.replace(' ', '-').toLowerCase();
+        const firstname = document.getElementById('firstname').value.toLowerCase().split(' ').join('-');
+        const lastname = document.getElementById('lastname').value.toLowerCase().split(' ').join('-');
         const slug = document.getElementById('slug');
         slug.value = firstname + '-' + lastname;
     };
