@@ -365,17 +365,18 @@
 
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach (__('pages/programs/passion_project_mentoring.testimonies') as $testimony)
+                            @foreach ($testimonies as $testimony)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
                                             <h3 class="font-body font-bold text-2xl text-yellow">
-                                                {{ $testimony['name'] }}
+                                                {{ $testimony->testi_name }}
                                             </h3>
-                                            <span
-                                                class="font-body font-medium text-sm text-[#969aa6]">{{ $testimony['program'] }}</span>
+                                            <span class="font-body font-medium text-sm text-[#969aa6]">
+                                                {{ $testimony->testi_subtitle }}
+                                            </span>
                                             <p class="mt-4 font-body font-bold text-white font-xl">
-                                                {{ $testimony['body'] }}
+                                                {{ $testimony->testi_desc }}
                                             </p>
                                         </div>
                                     </div>
@@ -402,10 +403,9 @@
         </div>
 
     </section>
+@endsection
 
-
-
-
+@section('script')
     <script>
         const learn = document.querySelectorAll('#entre-learn-title');
         const learn_desc = document.querySelectorAll('#entre-learn-desc');

@@ -136,16 +136,19 @@
                 <ul class="splide__pagination"></ul>
                 <div class="splide__track">
                     <ul class="splide__list">
-                        @foreach (__('pages/programs/academic_test_preparation.testimonies') as $testimony)
+                        @foreach ($testimonies as $testimony)
                             <li class="splide__slide">
-                                <div class="splide__slide__container h-full ">
-                                    <div class="flex flex-col h-full mx-2 px-4 py-6 border-[1px] rounded-lg bg-[#fcf4f6]">
-                                        <h4 class="font-primary font-bold text-2xl text-[#0367BF]">
-                                            {{ $testimony['name'] }}</h4>
-                                        <span class="my-4 font-primary font-normal text-base text-[#0367BF] italic">
-                                            {{ $testimony['program'] }}</span>
-                                        <p class="font-primary font-normal text-base text-[#0367BF] italic">
-                                            "{{ $testimony['body'] }}"</p>
+                                <div class="splide__slide__container">
+                                    <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
+                                        <h3 class="font-body font-bold text-2xl text-yellow">
+                                            {{ $testimony->testi_name }}
+                                        </h3>
+                                        <span class="font-body font-medium text-sm text-[#969aa6]">
+                                            {{ $testimony->testi_subtitle }}
+                                        </span>
+                                        <p class="mt-4 font-body font-bold text-white font-xl">
+                                            {{ $testimony->testi_desc }}
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -168,8 +171,9 @@
         </div>
 
     </section>
+@endsection
 
-
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

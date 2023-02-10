@@ -93,21 +93,20 @@
 
         {{-- Undergraduate Program Cards --}}
         <div class="relative">
-
             <div class="splide mt-8 main-container" aria-label="Basic Structure Example">
                 <div class="md:position: md:relative">
                     <div class="splide__arrows"></div>
                     <div class="splide__track mx-10 md:mx-20">
                         <ul class="splide__list flex">
-                            @foreach ($undergraduate_cards as $undergraduate_card)
+                            @foreach (__('pages/programs/admission_mentoring.undergraduate_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img src="{{ asset($undergraduate_card->image) }}" alt="undergraduate 1">
+                                            <img src="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
-                                                    {{ $undergraduate_card->title }}</h4>
-                                                <p>{{ $undergraduate_card->desc }}</p>
+                                                    {{ $item['title'] }}</h4>
+                                                <p>{{ $item['desc'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -144,15 +143,15 @@
                     <div class="splide__arrows"></div>
                     <div class="splide__track mx-10 md:mx-20">
                         <ul class="splide__list flex">
-                            @foreach ($graduate_cards as $graduate_card)
+                            @foreach (__('pages/programs/admission_mentoring.graduate_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img src="{{ asset($graduate_card->image) }}" alt="graduate 1">
+                                            <img src="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
-                                                    {{ $graduate_card->title }}</h4>
-                                                <p>{{ $graduate_card->desc }}</p>
+                                                    {{ $item['title'] }}</h4>
+                                                <p>{{ $item['desc'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -190,15 +189,15 @@
                     <div class="splide__arrows"></div>
                     <div class="splide__track mx-10 md:mx-20">
                         <ul class="splide__list flex">
-                            @foreach ($univtransfer_cards as $univtransfer_card)
+                            @foreach (__('pages/programs/admission_mentoring.univtransfer_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img src="{{ asset($univtransfer_card->image) }}" alt="univtransfer 1">
+                                            <img src="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
-                                                    {{ $univtransfer_card->title }}</h4>
-                                                <p>{{ $univtransfer_card->desc }}</p>
+                                                    {{ $item['title'] }}</h4>
+                                                <p>{{ $item['desc'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -227,12 +226,17 @@
                     <ul class="splide__list">
                         @foreach ($testimonies as $testimony)
                             <li class="splide__slide">
-                                <div class="splide__slide__container h-full ">
-                                    <div class="flex flex-col h-full mx-2 px-4 py-6 border-[1px] rounded-lg bg-[#fcf4f6]">
-                                        <h4 class="font-primary font-bold text-2xl text-[#0367BF] mb-4">
-                                            {{ $testimony['name'] }}</h4>
-                                        <p class="font-primary font-normal text-base text-[#0367BF] italic">
-                                            {{ $testimony['body'] }}</p>
+                                <div class="splide__slide__container">
+                                    <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
+                                        <h3 class="font-body font-bold text-2xl text-yellow">
+                                            {{ $testimony->testi_name }}
+                                        </h3>
+                                        <span class="font-body font-medium text-sm text-[#969aa6]">
+                                            {{ $testimony->testi_subtitle }}
+                                        </span>
+                                        <p class="mt-4 font-body font-bold text-white font-xl">
+                                            {{ $testimony->testi_desc }}
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -256,8 +260,9 @@
         </div>
 
     </section>
+@endsection
 
-
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

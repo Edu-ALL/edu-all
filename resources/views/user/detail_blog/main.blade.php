@@ -1,5 +1,11 @@
 @extends('layout.user.main')
 
+@section('head')
+    <meta name="title" content="{{ $blog->seo_title }}">
+    <meta name="description" content="{{ $blog->seo_desc }}">
+    <meta name="keyword" content="{{ $blog->seo_keyword }}">
+@endsection
+
 @section('content')
     <section class="pt-16">
         <div class="main-container">
@@ -9,12 +15,15 @@
                 </h1>
                 <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('assets/img/blog/detail/author_photo.png') }}" alt="author" class="w-8">
+                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor[0]->mentor_picture) }}"
+                            alt="{{ $blog->mentor[0]->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
                         {{-- change author name with mentor name --}}
-                        <span class="font-inter text-base text-primary">author name</span>
+                        <span class="font-inter text-base text-primary">
+                            {{ $blog->mentor[0]->mentor_firstname }} {{ $blog->mentor[0]->mentor_lastname }}
+                        </span>
                     </div>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
-                    <span class="font-inter text-base text-primary">4 Min Read</span>
+                    <span class="font-inter text-base text-primary">{{ $blog->duration_read }} Min Read</span>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
                     <span
                         class="font-inter text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
@@ -61,12 +70,13 @@
 
     <section class="py-16">
         <div class="main-container flex flex-col">
-            <h3 class="mb-12 font-secondary font-extrabold text-4xl text-primary text-center ">You may also like this
+            <h3 class="mb-12 font-secondary font-extrabold text-4xl text-primary text-center ">
+                You may also like this
                 article
             </h3>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-                @foreach ($top_blogs as $blog)
-                    <a href="{{ route('detail_blog', ['blog' => $blog->id]) }}" class="block p-3 hover:bg-[#D9D9D9]"
+                @foreach ($recomendation_blogs as $blog)
+                    <a href="{{ route('detail_blog', ['blog' => $blog->slug]) }}" class="block p-3 hover:bg-[#D9D9D9]"
                         class="w-1/3">
                         <div class="flex flex-col gap-2">
                             <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
@@ -94,7 +104,9 @@
         </div>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         // ambil seluruh tag blog section
         const blog_section_list = document.querySelectorAll('a[href^="#"]');

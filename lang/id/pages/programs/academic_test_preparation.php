@@ -92,7 +92,7 @@ return [
     'sat_btn' => "Learn More",
 
     // Testimonies section
-    'testimony_title' => "WHAT OUR STUDENTS SAY",
+    'testimony_title' => "APA YANG MEREKA KATAKAN",
     'testimonies' => $testimonies,
 
     // bottom section

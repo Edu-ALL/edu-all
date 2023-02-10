@@ -4,21 +4,21 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Mentors;
+use App\Models\MentorVideos;
 use Illuminate\Http\Request;
 
 class AboutPageController extends Controller
 {
     public function about($locale)
     {
-        return view('user.about.id');
+        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang);
 
+        $region = substr(app()->getLocale(), 0, 2);
 
-        // for singapore region
-        // $all_mentor = Mentors::all()->where('lang', $locale);
-
-        // return view('user.about.sg', [
-        //     'all_mentor' => $all_mentor
-        // ]);
+        return view('user.about.region.' . $region, [
+            'all_mentor' => $all_mentor,
+        ]);
     }
 
     public function our_contribution()
@@ -34,5 +34,29 @@ class AboutPageController extends Controller
     public function contact_us()
     {
         return view('user.contact_us.main');
+    }
+
+
+    public function mentor($locale)
+    {
+        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $allin_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang);
+        $building_mentor = Mentors::all()->where('mentor_category', 'Profile Building Mentor')->where('lang', $lang);
+
+        return view('user.mentor.main', [
+            'locale' => $locale,
+            'allin_mentor' => $allin_mentor,
+            'building_mentor' => $building_mentor,
+        ]);
+    }
+
+    public function detail_mentor($locale, $slug)
+    {
+        $mentor = Mentors::with('mentor_video')->where('mentor_slug', $slug)->where('lang', substr($locale, 0, 2))->first();
+
+        return view('user.detail_mentor.main', [
+            'mentor' => $mentor,
+            'mentor_slug' => $slug
+        ]);
     }
 }
