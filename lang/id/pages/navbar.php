@@ -16,6 +16,7 @@ return [
     'programs_academic_sat' => 'Persiapan SAT / ACT',
 
     // about us
+    'mentor' => 'Mentor Kami',
     'about_us' => 'Tentang Kami',
     'our_contribution' => 'Our Contribution',
     'partnership' => "Kemitraan dan Karir",

@@ -210,11 +210,14 @@
     .mentor_card:hover .back {
         transform: rotateY(-360deg);
     }
+    .mentor_graduation p {
+        @apply truncate;
+    }
 
     #home_banner .splide__pagination {
         display: flex;
         flex-direction: column;
-        left:95% !important;
+        left: 95% !important;
         bottom: 80vh;
     }
 

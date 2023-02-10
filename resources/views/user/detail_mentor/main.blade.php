@@ -5,7 +5,16 @@
     <section class="py-24 bg-cover bg-center">
         <div class="main-container">
             <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-5">
-                <div class="w-full rounded-lg shadow-lg overflow-hidden md:col-span-2 xl:row-span-2">
+                <div
+                    class="relative max-w-sm w-full mx-auto rounded-lg shadow-lg overflow-hidden md:mx-0 md:col-span-2 xl:row-span-2">
+                    <div class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20">
+                        <h3 class="h-2/3 font-inter font-bold text-3xl text-white leading-7">
+                            {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
+                        </h3>
+                        <div class="h-1/3 font-inter text-sm text-white leading-4">
+                            {!! $mentor->mentor_graduation !!}
+                        </div>
+                    </div>
                     <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}" alt="{{ $mentor->mentor_alt }}"
                         class="w-full bg-cover bg-center">
                 </div>
@@ -29,7 +38,7 @@
             <h2 class="mb-8 font-secondary font-extrabold text-4xl text-primary text-left">
                 Recent Videos?
             </h2>
-            @if (count($mentor_videos) > 1)
+            @if (count($mentor->mentor_video) > 1)
                 <div class="splide" role="group">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
@@ -41,15 +50,11 @@
                     </div>
                     <div class="splide__track py-8">
                         <ul class="splide__list">
-                            @foreach ($mentor_videos as $video)
+                            @foreach ($mentor->mentor_video as $video)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container w-full h-full px-4">
-                                        @php
-                                            preg_match('/watch\?v=([^&]+)/', $video->video_embed, $matches);
-                                            $video_id = $matches[1];
-                                        @endphp
                                         <iframe width="100%" height="315"
-                                            src="https://www.youtube.com/embed/{{ $video_id }}" frameborder="0"
+                                            src="https://www.youtube.com/embed/{{ $video->youtube_id }}" frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     </div>
@@ -59,14 +64,11 @@
 
                     </div>
                 </div>
-            @elseif(count($mentor_videos) == 1)
+            @elseif(count($mentor->mentor_video) == 1)
                 <div class="w-full h-full">
-                    @php
-                        preg_match('/watch\?v=([^&]+)/', $mentor_videos[0]->video_embed, $matches);
-                        $video_id = $matches[1];
-                    @endphp
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ $video_id }}"
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    <iframe width="100%" height="315"
+                        src="https://www.youtube.com/embed/{{ $mentor->mentor_video[0]->youtube_id }}" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
             @else
@@ -97,12 +99,14 @@
         </div>
     </section>
 
+@endsection
+
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
 
         var splide = new Splide('.splide', {
-            type: 'loop',
             perPage: isMediumDevice ? 1 : 2,
             perMove: 1,
             arrows: isMediumDevice ? false : true,

@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::group(
     [
         'prefix' => '{locale}',
-        'where' => ['locale' => '[a-zA-Z]{2}'],
+        'where' => ['locale' => '[a-zA-Z-]{2,5}'],
         'middleware' => 'setlocale',
     ],
     function () {
@@ -52,6 +52,8 @@ Route::group(
             Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
             Route::get('/about/partnership-careers', 'partnership_careers')->name('partnership_careers');
             Route::get('/contact-us', 'contact_us')->name('contact_us');
+            Route::get('/about/mentor', "mentor")->name('mentor');
+            Route::get('/about/mentor/{slug}', "detail_mentor")->name('detail_mentor');
         });
 
         Route::controller(ResourcesPageController::class)->group(function () {
@@ -59,9 +61,6 @@ Route::group(
             Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
             Route::get('/resources/guidebook', "guidebook")->name('guidebook');
             Route::get('/resources/testimonial', "testimonial")->name('testimonial');
-            Route::get('/resources/student-acceptances', "student_acceptances")->name('student_acceptances');
-            Route::get('/resources/mentor', "mentor")->name('mentor');
-            Route::get('/resources/mentor/{group}', "detail_mentor")->name('detail_mentor');
         });
 
         Route::controller(BlogPageController::class)->group(function () {
@@ -75,4 +74,4 @@ Route::group(
 );
 
 
-Route::get('blog/{blog:id}', [BlogPageController::class, "show"])->name('detail_blog');
+Route::get('blog/{blog:slug}', [BlogPageController::class, "show"])->name('detail_blog');
