@@ -40,4 +40,7 @@ class Mentors extends Model
     {
         return $this->hasMany(Blogs::class, 'mt_id', 'id');
     }
+    public function languages(){
+        return $this->belongsTo(Languages::class, 'lang', 'language_id');
+    }
 }

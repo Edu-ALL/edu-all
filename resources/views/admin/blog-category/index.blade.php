@@ -34,7 +34,7 @@
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">List Blog Category <span>| {{ now()->year }}</span></h5>
                                 <a type="button" class="btn btn-primary" href="/admin/blog-category/create">
-                                    <i class="fa-solid fa-plus me-md-1 me-0"></i> Create new
+                                    <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
                             <table class="table datatable display" style="width:100%">
@@ -42,6 +42,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Category Name</th>
+                                        <th scope="col">Slug</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -54,10 +55,11 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td class="w-75">{{ $category->category_name }}</td>
+                                            <td class="w-75">{{ $category->slug }}</td>
                                             <td class="text-center">
-                                                <img src="{{ $category->lang == 'en' ? asset('assets/img/flag/flag-en.png') : asset('assets/img/flag/flag-id.png') }}" alt="" width="30">
-                                                <p class="pt-1 label-lang" style="font-size: 13px !important">
-                                                    {{ $category->lang == 'en' ? 'English' : 'Indonesia' }}
+                                                <img src="{{ asset('assets/img/flag/flag-'.$category->lang.'.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $category->languages->language }}
                                                 </p>
                                             </td>
                                             <td class="text-center">

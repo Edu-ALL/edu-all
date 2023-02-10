@@ -24,18 +24,14 @@ class Testimonial extends Controller
 
     public function store(Request $request){
         $rules = [
-            'testi_name_en' => 'required',
+            'testi_name' => 'required',
+            'testi_category' => 'required',
+            'testi_subcategory' => 'nullable',
+            'testi_subtitle' => 'nullable',
+            'testi_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'testi_alt' => 'required',
             'testi_desc_en' => 'required',
-            'testi_program_en' => 'required',
-            'testi_category_en' => 'required',
-            'testi_thumbnail_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'testi_alt_en' => 'required',
-            'testi_name_id' => 'required',
             'testi_desc_id' => 'required',
-            'testi_program_id' => 'required',
-            'testi_category_id' => 'required',
-            'testi_thumbnail_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'testi_alt_id' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -47,44 +43,39 @@ class Testimonial extends Controller
         try {
             $testi_en = new Testimonials;
             $testi_en->group = date('YmdHis');
-            $testi_en->testi_name = $request->testi_name_en;
+            $testi_en->testi_name = $request->testi_name;
+            $testi_en->testi_category = $request->testi_category;
+            $testi_en->testi_subcategory = $request->testi_subcategory;
+            $testi_en->testi_subtitle = $request->testi_subtitle;
+            $testi_en->testi_alt = $request->testi_alt;
             $testi_en->testi_desc = $request->testi_desc_en;
-            $testi_en->testi_program = $request->testi_program_en;
-            $testi_en->testi_category = $request->testi_category_en;
-            if ($request->hasFile('testi_thumbnail_en')) {
-                $file_en = $request->file('testi_thumbnail_en');
-                $file_format_en = $request->file('testi_thumbnail_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/testimonial';
-                $time = $testi_en->group;
-                $fileName_en = 'Thumbnail-testi-en-'.$time.'.'.$file_format_en;
-                $file_en->move($destinationPath_en, $fileName_en);
-                $testi_en->testi_thumbnail = $fileName_en;
-            }
-            $testi_en->testi_alt = $request->testi_alt_en;
             $testi_en->testi_status = 'active';
             $testi_en->lang = 'en';
-            $testi_en->save();
 
             $testi_id = new Testimonials;
             $testi_id->group = $testi_en->group;
-            $testi_id->testi_name = $request->testi_name_id;
+            $testi_id->testi_name = $request->testi_name;
+            $testi_id->testi_category = $request->testi_category;
+            $testi_id->testi_subcategory = $request->testi_subcategory;
+            $testi_id->testi_subtitle = $request->testi_subtitle;
+            $testi_id->testi_alt = $request->testi_alt;
             $testi_id->testi_desc = $request->testi_desc_id;
-            $testi_id->testi_program = $request->testi_program_id;
-            $testi_id->testi_category = $request->testi_category_id;
-            if ($request->hasFile('testi_thumbnail_id')) {
-                $file_id = $request->file('testi_thumbnail_id');
-                $file_format_id = $request->file('testi_thumbnail_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/testimonial';
-                $time = $testi_id->group;
-                $fileName_id = 'Thumbnail-testi-id-'.$time.'.'.$file_format_id;
-                $file_id->move($destinationPath_id, $fileName_id);
-                $testi_id->testi_thumbnail = $fileName_id;
-            }
-            $testi_id->testi_alt = $request->testi_alt_id;
             $testi_id->testi_status = 'active';
             $testi_id->lang = 'id';
-            $testi_id->save();
 
+            if ($request->hasFile('testi_thumbnail')) {
+                $file = $request->file('testi_thumbnail');
+                $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/testimonial';
+                $time = $testi_en->group;
+                $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $testi_en->testi_thumbnail = $fileName;
+                $testi_id->testi_thumbnail = $fileName;
+            }
+
+            $testi_en->save();
+            $testi_id->save();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
@@ -101,18 +92,14 @@ class Testimonial extends Controller
 
     public function update($group, Request $request){
         $rules = [
-            'testi_name_en' => 'required',
+            'testi_name' => 'required',
+            'testi_category' => 'required',
+            'testi_subcategory' => 'nullable',
+            'testi_subtitle' => 'nullable',
+            'testi_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'testi_alt' => 'required',
             'testi_desc_en' => 'required',
-            'testi_program_en' => 'required',
-            'testi_category_en' => 'required',
-            // 'testi_thumbnail_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'testi_alt_en' => 'required',
-            'testi_name_id' => 'required',
             'testi_desc_id' => 'required',
-            'testi_program_id' => 'required',
-            'testi_category_id' => 'required',
-            // 'testi_thumbnail_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'testi_alt_id' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -124,53 +111,43 @@ class Testimonial extends Controller
         try {
             $testi = Testimonials::where('group', $group)->get();
             $testi_en = $testi[0];
-            $testi_en->testi_name = $request->testi_name_en;
+            $testi_en->testi_name = $request->testi_name;
+            $testi_en->testi_category = $request->testi_category;
+            $testi_en->testi_subcategory = $request->testi_subcategory;
+            $testi_en->testi_subtitle = $request->testi_subtitle;
+            $testi_en->testi_alt = $request->testi_alt;
             $testi_en->testi_desc = $request->testi_desc_en;
-            $testi_en->testi_program = $request->testi_program_en;
-            $testi_en->testi_category = $request->testi_category_en;
-            if ($request->hasFile('testi_thumbnail_en')) {
-                if ($old_image_path_en = $testi_en->testi_thumbnail) {
-                    $file_path = public_path('uploaded_files/testimonial/'.$old_image_path_en);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
-                    }
-                }
-                $file_en = $request->file('testi_thumbnail_en');
-                $file_format_en = $request->file('testi_thumbnail_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/testimonial';
-                $time = $testi_en->group;
-                $fileName_en = 'Thumbnail-testi-en-'.$time.'.'.$file_format_en;
-                $file_en->move($destinationPath_en, $fileName_en);
-                $testi_en->testi_thumbnail = $fileName_en;
-            }
-            $testi_en->testi_alt = $request->testi_alt_en;
             $testi_en->updated_at = date('Y-m-d H:i:s');
-            $testi_en->save();
 
             $testi_id = $testi[1];
-            $testi_id->testi_name = $request->testi_name_id;
+            $testi_id->testi_name = $request->testi_name;
+            $testi_id->testi_category = $request->testi_category;
+            $testi_id->testi_subcategory = $request->testi_subcategory;
+            $testi_id->testi_subtitle = $request->testi_subtitle;
+            $testi_id->testi_alt = $request->testi_alt;
             $testi_id->testi_desc = $request->testi_desc_id;
-            $testi_id->testi_program = $request->testi_program_id;
-            $testi_id->testi_category = $request->testi_category_id;
-            if ($request->hasFile('testi_thumbnail_id')) {
-                if ($old_image_path_id = $testi_id->testi_thumbnail) {
-                    $file_path = public_path('uploaded_files/testimonial/'.$old_image_path_id);
+            $testi_id->updated_at = date('Y-m-d H:i:s');
+
+            if ($request->hasFile('testi_thumbnail')) {
+                if ($testi_en->testi_thumbnail == $testi_id->testi_thumbnail) {
+                    $old_image_path = $testi_en->testi_thumbnail;
+                    $file_path = public_path('uploaded_files/testimonial/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
-                $file_id = $request->file('testi_thumbnail_id');
-                $file_format_id = $request->file('testi_thumbnail_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/testimonial';
-                $time = $testi_id->group;
-                $fileName_id = 'Thumbnail-testi-id-'.$time.'.'.$file_format_id;
-                $file_id->move($destinationPath_id, $fileName_id);
-                $testi_id->testi_thumbnail = $fileName_id;
+                $file = $request->file('testi_thumbnail');
+                $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/testimonial';
+                $time = $testi_en->group;
+                $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $testi_en->testi_thumbnail = $fileName;
+                $testi_id->testi_thumbnail = $fileName;
             }
-            $testi_id->testi_alt = $request->testi_alt_id;
-            $testi_id->updated_at = date('Y-m-d H:i:s');
-            $testi_id->save();
 
+            $testi_en->save();
+            $testi_id->save();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

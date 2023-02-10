@@ -86,7 +86,7 @@ class Banner extends Controller
 
     public function update($id, Request $request){
         $rules = [
-            // 'banner_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'banner_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt' => 'required',
             'banner_title' => 'required|max:255',
             'banner_description' => 'required',

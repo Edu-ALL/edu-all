@@ -25,4 +25,7 @@ class BlogCategorys extends Model
     public function blog(){
         return $this->hasMany(Blogs::class, 'cat_id', 'id');
     }
+    public function languages(){
+        return $this->belongsTo(Languages::class, 'lang', 'language_id');
+    }
 }

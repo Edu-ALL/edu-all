@@ -256,8 +256,8 @@
     };
 
     function createSlug(){
-        const firstname = document.getElementById('firstname').value.replace(' ', '-').toLowerCase();
-        const lastname = document.getElementById('lastname').value.replace(' ', '-').toLowerCase();
+        const firstname = document.getElementById('firstname').value.toLowerCase().split(' ').join('-');
+        const lastname = document.getElementById('lastname').value.toLowerCase().split(' ').join('-');
         const slug = document.getElementById('slug');
         slug.value = firstname + '-' + lastname;
     };

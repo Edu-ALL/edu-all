@@ -24,13 +24,12 @@ class Guidebook extends Controller
 
     public function store(Request $request){
         $rules = [
+            'guidebook_category' => 'required',
             'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_en' => 'required',
-            'guidebook_category_en' => 'required',
             'guidebook_link_en' => 'required|url',
             'guidebook_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_id' => 'required',
-            'guidebook_category_id' => 'required',
             'guidebook_link_id' => 'required|url',
         ];
 
@@ -43,6 +42,7 @@ class Guidebook extends Controller
         try {
             $guidebook_en = new Guidebooks();
             $guidebook_en->group = date('YmdHis');
+            $guidebook_en->guidebook_category = $request->guidebook_category;
             if ($request->hasFile('guidebook_image_en')) {
                 $file_en = $request->file('guidebook_image_en');
                 $file_format_en = $request->file('guidebook_image_en')->getClientOriginalExtension();
@@ -53,7 +53,6 @@ class Guidebook extends Controller
                 $guidebook_en->guidebook_image = $fileName_en;
             }
             $guidebook_en->guidebook_alt = $request->guidebook_alt_en;
-            $guidebook_en->guidebook_category = $request->guidebook_category_en;
             $guidebook_en->guidebook_link = $request->guidebook_link_en;
             $guidebook_en->guidebook_status = 'active';
             $guidebook_en->lang = 'en';
@@ -61,6 +60,7 @@ class Guidebook extends Controller
 
             $guidebook_id = new Guidebooks();
             $guidebook_id->group = $guidebook_en->group;
+            $guidebook_id->guidebook_category = $request->guidebook_category;
             if ($request->hasFile('guidebook_image_id')) {
                 $file_id = $request->file('guidebook_image_id');
                 $file_format_id = $request->file('guidebook_image_id')->getClientOriginalExtension();
@@ -71,7 +71,6 @@ class Guidebook extends Controller
                 $guidebook_id->guidebook_image = $fileName_id;
             }
             $guidebook_id->guidebook_alt = $request->guidebook_alt_id;
-            $guidebook_id->guidebook_category = $request->guidebook_category_id;
             $guidebook_id->guidebook_link = $request->guidebook_link_id;
             $guidebook_id->guidebook_status = 'active';
             $guidebook_id->lang = 'id';
@@ -93,13 +92,12 @@ class Guidebook extends Controller
 
     public function update($group, Request $request){
         $rules = [
-            // 'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'guidebook_category' => 'required',
+            'guidebook_image_en' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_en' => 'required',
-            'guidebook_category_en' => 'required',
             'guidebook_link_en' => 'required|url',
-            // 'guidebook_image_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'guidebook_image_id' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'guidebook_alt_id' => 'required',
-            'guidebook_category_id' => 'required',
             'guidebook_link_id' => 'required|url',
         ];
 
@@ -112,6 +110,7 @@ class Guidebook extends Controller
         try {
             $guidebook = Guidebooks::where('group', $group)->get();
             $guidebook_en = $guidebook[0];
+            $guidebook_en->guidebook_category = $request->guidebook_category;
             if ($request->hasFile('guidebook_image_en')) {
                 if ($old_image_path_en = $guidebook_en->guidebook_image) {
                     $file_path = public_path('uploaded_files/guidebook/'.$old_image_path_en);
@@ -128,12 +127,12 @@ class Guidebook extends Controller
                 $guidebook_en->guidebook_image = $fileName_en;
             }
             $guidebook_en->guidebook_alt = $request->guidebook_alt_en;
-            $guidebook_en->guidebook_category = $request->guidebook_category_en;
             $guidebook_en->guidebook_link = $request->guidebook_link_en;
             $guidebook_en->updated_at = date('Y-m-d H:i:s');
             $guidebook_en->save();
 
             $guidebook_id = $guidebook[1];
+            $guidebook_id->guidebook_category = $request->guidebook_category;
             if ($request->hasFile('guidebook_image_id')) {
                 if ($old_image_path_id = $guidebook_id->guidebook_image) {
                     $file_path = public_path('uploaded_files/guidebook/'.$old_image_path_id);
@@ -150,7 +149,6 @@ class Guidebook extends Controller
                 $guidebook_id->guidebook_image = $fileName_id;
             }
             $guidebook_id->guidebook_alt = $request->guidebook_alt_id;
-            $guidebook_id->guidebook_category = $request->guidebook_category_id;
             $guidebook_id->guidebook_link = $request->guidebook_link_id;
             $guidebook_id->updated_at = date('Y-m-d H:i:s');
             $guidebook_id->save();
