@@ -63,7 +63,11 @@
                                             <td>{!! $testimonial->testi_subtitle != null ? Str::limit($testimonial->testi_subtitle, 100, '...') : '-' !!}</td>
                                             <td>{{ $testimonial->testi_category }}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+                                                @if ($testimonial->testi_thumbnail)
+                                                    <img src="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+                                                @else
+                                                    -
+                                                @endif
                                             </td>
                                             <td class="text-center">
                                                 <img src="{{ asset('assets/img/flag/flag-'.$testimonial->lang.'.png') }}" alt="" width="30">

@@ -184,7 +184,6 @@
                                                         Minute
                                                     </span>
                                                 </div>
-                                                {{-- <input type="text" class="form-control" id="duration_read" name="duration_read" value="{{ $blog->duration_read }}"> --}}
                                                 @error('duration_read')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror

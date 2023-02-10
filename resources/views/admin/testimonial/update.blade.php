@@ -90,7 +90,7 @@
                                         <div class="col-md-2 col">
                                             <label for="" class="form-label">Thumbnail Preview</label>
                                             <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/testimonial/'.$testimonial[0]->testi_thumbnail) }}">
+                                                <img class="img-preview img-fluid" id="img_preview" src="{{ $testimonial[0]->testi_thumbnail != null ? asset('uploaded_files/testimonial/'.$testimonial[0]->testi_thumbnail) : '' }}">
                                             </div>
                                         </div>
                                         <div class="col d-flex flex-column gap-2">
@@ -105,7 +105,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <label for="" class="form-label">
-                                                    Alt <span style="color: var(--red)">*</span>
+                                                    Alt
                                                 </label>
                                                 <input type="text" class="form-control" id="alt" name="testi_alt" value="{{ $testimonial[0]->testi_alt }}">
                                             </div>
@@ -189,12 +189,9 @@
     function checkInput(){
         const name = document.getElementById('name').value;
         const category = document.getElementById('category').value;
-        const subcategory = document.getElementById('subcategory').value;
-        const thumbnail = document.getElementById('thumbnail').value;
-        const alt = document.getElementById('alt').value;
         const desc_en = tinymce.get('desc_en').getContent();
         const submit = document.getElementById('submit');
-        if (name == "" || category == "" || alt == "" || desc_en == "") {
+        if (name == "" || category == "" || desc_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

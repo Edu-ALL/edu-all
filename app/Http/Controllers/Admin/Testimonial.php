@@ -28,8 +28,8 @@ class Testimonial extends Controller
             'testi_category' => 'required',
             'testi_subcategory' => 'nullable',
             'testi_subtitle' => 'nullable',
-            'testi_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'testi_alt' => 'required',
+            'testi_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'testi_alt' => 'nullable',
             'testi_desc_en' => 'required',
             'testi_desc_id' => 'required',
         ];
@@ -97,7 +97,7 @@ class Testimonial extends Controller
             'testi_subcategory' => 'nullable',
             'testi_subtitle' => 'nullable',
             'testi_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'testi_alt' => 'required',
+            'testi_alt' => 'nullable',
             'testi_desc_en' => 'required',
             'testi_desc_id' => 'required',
         ];

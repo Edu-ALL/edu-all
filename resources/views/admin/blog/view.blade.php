@@ -19,6 +19,11 @@
     .pic-profile img {
         border-radius: 5px;
     }
+    .select-position *,
+    .select-position:active * {
+        font-size: 14px !important;
+        box-shadow: none !important;
+    }
 </style>
 @endsection
 @section('content')
@@ -60,9 +65,6 @@
                             </div>
                             <div class="col pb-4">
                                 <div class="col d-flex flex-column gap-4">
-                                    <div>
-                                        Count Paragraph : {{ substr_count($blog->blog_description, '</p>') }}
-                                    </div>
                                     <div class="pic-profile">
                                         <img class="img-fluid" src="{{ asset('uploaded_files/blogs/'.$blog->blog_thumbnail) }}" alt="">
                                     </div>
@@ -126,8 +128,8 @@
                                             <div class="col-1 text-center p-0" style="max-width: 22px">
                                                 <p class="m-0">:</p>
                                             </div>
-                                            <div class="col p-0 desc-textarea">
-                                                {!! Str::limit($blog->blog_description, 800, '...') !!}
+                                            <div class="col p-0 desc-textarea" style="max-height: 300px; overflow: auto">
+                                                {!! $blog->blog_description !!}
                                             </div>
                                         </div>
                                         <div class="field-detail d-flex flex-row align-items-start">
@@ -178,7 +180,7 @@
                                             </div>
                                             <div class="col p-0">
                                                 <p class="m-0">
-                                                    {{ $blog->duration_read }}
+                                                    {{ $blog->duration_read }} Minute
                                                 </p>
                                             </div>
                                         </div>
@@ -216,7 +218,7 @@
                                                 data-bs-toggle="modal" 
                                                 data-bs-target="#widget"
                                                 style="text-transform: capitalize;"
-                                                {{-- onclick="formCreate({{ $blog->id }})" --}}
+                                                onclick="formCreate({{ $blog->id }})"
                                                 >
                                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">Add new widget</span>
                                             </button>
@@ -227,13 +229,49 @@
                                                     <th scope="col">No</th>
                                                     <th scope="col">Title</th>
                                                     <th scope="col">Description</th>
-                                                    <th scope="col">Link</th>
                                                     <th scope="col">Position</th>
+                                                    <th scope="col">Link</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                
+                                                @php
+                                                    $i = 1;
+                                                @endphp
+                                                @foreach ($blog->blog_widget as $widget)
+                                                    <tr>
+                                                        <th scope="row">{{ $i++ }}</th>
+                                                        <td>{{ $widget->title }}</td>
+                                                        <td>{!! $widget->description !!}</td>
+                                                        <td>{{ $widget->position }}</td>
+                                                        <td>
+                                                            <a href="{{ $widget->link }}" target="_blank">{{ $widget->link }}</a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="d-flex flex-row gap-1">
+                                                                <button 
+                                                                class="btn btn-warning"
+                                                                type="button"
+                                                                data-bs-toggle="modal" 
+                                                                data-bs-target="#video"
+                                                                style="text-transform: capitalize;"
+                                                                {{-- onclick="formUpdate({{ $mentor_video->mentor_id }}, {{ $mentor_video->id }}, '{{ $mentor_video->video_embed }}', '{!! $mentor_video->description !!}')" --}}
+                                                                >
+                                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this mentor video"></i>
+                                                                </button>
+                                                                <button 
+                                                                type="button"
+                                                                class="btn btn-danger"
+                                                                data-bs-toggle="modal" 
+                                                                data-bs-target="#delete"
+                                                                onclick="formDelete({{ $widget->blog_id }}, {{ $widget->id }})"
+                                                                >
+                                                                    <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this mentor video"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -282,10 +320,122 @@
     </section>
 </main>
 
+{{-- Modal Blog Widget --}}
+<div class="modal fade" id="widget" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"> 
+        <div class="modal-content border-0">
+            <div class="modal-header">
+                <div class="col d-flex gap-2 align-items-center">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h6 class="modal-title ms-2" id="title-info"></h6>
+                </div>
+            </div>
+            <div class="modal-body py-0" style="overflow-x: hidden">
+                <form action="" method="POST" id="form_widget">
+                    @csrf
+                    <h5 class="card-title">Form Blog Widget</h5>
+                    <div class="col d-flex flex-column gap-md-2 gap-2">
+                        <div class="col">
+                            <label for="" class="form-label">
+                                Title <span style="color: var(--red)">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                            @error('title')
+                                <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label">
+                                Description <span style="color: var(--red)">*</span>
+                            </label>
+                            <textarea class="textarea" name="description" id="description">
+                                {{ old('description') }}
+                            </textarea>
+                            @error('description')
+                                <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-label">
+                                Position <span style="color: var(--red)">*</span>
+                            </label>
+                            <div class="col select-position">
+                                <select class="form-select gap-4" name="position" id="position">
+                                    <option value="" selected>Select Position</option>
+                                    @for ($i = 1; $i < (int)substr_count($blog->blog_description, '</p>') + 1; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                            <small class="alert d-block p-1 m-0 fs-12">Note: Select Widget position after the Paragraph</small>
+                            @error('position')
+                                <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="col mb-3">
+                            <label for="" class="form-label">
+                                Link <span style="color: var(--red)">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-link" style="font-size: 14px"></i>
+                                </span>
+                                <input type="text" class="form-control" name="link" id="link" value="{{ old('link') }}">
+                            </div>
+                            @error('link')
+                                <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 py-3">
+                <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <button type="submit" id="btn-submit-widget" form="form_widget" style="font-size: 13px; background: var(--blue);">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- Modal Delete --}}
+<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header">
+                <div class="col d-flex gap-2 align-items-center">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h6 class="modal-title ms-2" id="title-info">Delete</h6>
+                </div>
+            </div>
+            <div class="modal-body text-center mt-3 mb-1">
+                <p id="desc-info">Are you sure, you want to Delete this blog widget?</p>
+            </div>
+            <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
+                <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <form action="" method="POST" id="form_delete">
+                    @csrf
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger);">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('js')
 <script>
-    
+    function formCreate(id){
+        $("#title-info").text("Add new Blog Widget");
+        $('#title').attr('value', '');
+        tinymce.get("description").setContent('');
+        $('#link').attr('value', '');
+        $('#position').attr('value', '');
+        $('#form_widget').attr('action', '{{ url('/admin/blogs/widget/') }}' + '/' + id);
+    };
+    function formDelete(blog_id, id){
+        $('#form_delete').attr('action', '{{ url('/admin/blogs/widget/delete/') }}' + '/' + blog_id + '/' + id);
+    };
+    // Tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
 @endsection

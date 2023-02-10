@@ -96,7 +96,7 @@
                                         <div class="col d-flex flex-column gap-2">
                                             <div class="col-12">
                                                 <label for="" class="form-label">
-                                                    Thumbnail <span style="color: var(--red)">*</span>
+                                                    Thumbnail
                                                 </label>
                                                 <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="testi_thumbnail">
                                                 @error('testi_thumbnail')
@@ -105,7 +105,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <label for="" class="form-label">
-                                                    Alt <span style="color: var(--red)">*</span>
+                                                    Alt
                                                 </label>
                                                 <input type="text" class="form-control" id="alt" name="testi_alt" value="{{ old('testi_alt') }}">
                                             </div>
@@ -189,12 +189,9 @@
     function checkInput(){
         const name = document.getElementById('name').value;
         const category = document.getElementById('category').value;
-        const subcategory = document.getElementById('subcategory').value;
-        const thumbnail = document.getElementById('thumbnail').value;
-        const alt = document.getElementById('alt').value;
         const desc_en = tinymce.get('desc_en').getContent();
         const submit = document.getElementById('submit');
-        if (name == "" || category == "" || thumbnail == "" || alt == "" || desc_en == "") {
+        if (name == "" || category == "" || desc_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Authentication;
 use App\Http\Controllers\Admin\Banner;
 use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Admin\BlogCategory;
+use App\Http\Controllers\Admin\BlogWidget;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
@@ -62,6 +63,9 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/blogs/draft/{id}', [Blog::class, 'status_draft']);
     Route::post('/blogs/publish/{id}', [Blog::class, 'status_publish']);
     Route::post('/blogs/delete/{id}', [Blog::class, 'delete']);
+    Route::post('/blogs/widget/{id}', [BlogWidget::class, 'store']);
+    // Route::post('/blogs/video/{group}/{id}', [BlogWidget::class, 'update']);
+    Route::post('/blogs/widget/delete/{blog_id}/{id}', [BlogWidget::class, 'delete']);
 
     // Blog Category
     Route::get('/blog-category', [BlogCategory::class, 'index']);

@@ -42,6 +42,9 @@ class Blogs extends Model
     public function languages(){
         return $this->belongsTo(Languages::class, 'lang', 'language_id');
     }
+    public function blog_widget(){
+        return $this->hasMany(BlogWidgets::class, 'blog_id', 'id');
+    }
     public function blog_read(){
         return $this->hasMany(BlogReads::class, 'blog_id', 'id');
     }

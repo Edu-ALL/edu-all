@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
+use App\Models\BlogReads;
 use App\Models\Blogs;
 use App\Models\Mentors;
 use Exception;
