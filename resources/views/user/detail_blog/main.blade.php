@@ -15,11 +15,11 @@
                 </h1>
                 <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor[0]->mentor_picture) }}"
-                            alt="{{ $blog->mentor[0]->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
+                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
+                            alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
                         {{-- change author name with mentor name --}}
                         <span class="font-inter text-base text-primary">
-                            {{ $blog->mentor[0]->mentor_firstname }} {{ $blog->mentor[0]->mentor_lastname }}
+                            {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
                         </span>
                     </div>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>

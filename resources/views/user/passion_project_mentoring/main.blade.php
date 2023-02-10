@@ -372,12 +372,12 @@
                                             <h3 class="font-body font-bold text-2xl text-yellow">
                                                 {{ $testimony->testi_name }}
                                             </h3>
-                                            <span class="font-body font-medium text-sm text-[#969aa6]">
-                                                {{ $testimony->testi_subtitle }}
-                                            </span>
-                                            <p class="mt-4 font-body font-bold text-white font-xl">
-                                                {{ $testimony->testi_desc }}
-                                            </p>
+                                            <div class="font-body font-medium text-sm text-[#969aa6]">
+                                                {!! $testimony->testi_subtitle !!}
+                                            </div>
+                                            <div class="mt-4 font-body font-bold text-white font-xl">
+                                                {!! $testimony->testi_desc !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </li>

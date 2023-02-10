@@ -167,19 +167,13 @@
                                             <div class="flex flex-col p-6">
                                                 <h5 class="font-body font-bold text-2xl text-yellow">
                                                     {{ $item->testi_name }}</h5>
-                                                <h6 class="mt-3 font-body font-black text-3xl text-white">
-                                                    {{ $item->testi_subtitle }}
-                                                </h6>
-                                                {{-- <div class="flex ">
-                                                    <h6 class="font-body font-black text-2xl text-yellow">
-                                                        {{ $item['start_point'] }}</h6><span
-                                                        class="font-body font-black text-2xl text-yellow">-></span>
-                                                    <h6 class="font-body font-black text-2xl text-yellow">
-                                                        {{ $item['start_point'] }}</h6>
-                                                </div> --}}
+                                                <div class="mt-3 font-body font-black text-lg text-white">
+                                                    {!! $item->testi_subtitle !!}
+                                                </div>
                                                 <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 my-4">
-                                                <p class="font-body font-semibold text-xl text-white">
-                                                    {{ $item->testi_desc }}</p>
+                                                <div class="font-body font-semibold text-base text-white">
+                                                    {!! $item->testi_desc !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

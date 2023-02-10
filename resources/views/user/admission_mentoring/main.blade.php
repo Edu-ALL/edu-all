@@ -221,7 +221,6 @@
 
             <div class="splide" aria-labelledby="carousel-heading">
                 <ul class="splide__pagination"></ul>
-
                 <div class="splide__track">
                     <ul class="splide__list">
                         @foreach ($testimonies as $testimony)
@@ -231,12 +230,12 @@
                                         <h3 class="font-body font-bold text-2xl text-yellow">
                                             {{ $testimony->testi_name }}
                                         </h3>
-                                        <span class="font-body font-medium text-sm text-[#969aa6]">
-                                            {{ $testimony->testi_subtitle }}
-                                        </span>
-                                        <p class="mt-4 font-body font-bold text-white font-xl">
-                                            {{ $testimony->testi_desc }}
-                                        </p>
+                                        <div class="font-body font-medium text-sm text-[#969aa6]">
+                                            {!! $testimony->testi_subtitle !!}
+                                        </div>
+                                        <div class="mt-4 font-body font-bold text-white text-sm">
+                                            {!! $testimony->testi_desc !!}
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -265,6 +264,7 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
 
         var splides = document.getElementsByClassName('splide');
 

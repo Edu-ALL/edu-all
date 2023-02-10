@@ -15,25 +15,33 @@ class BlogPageController extends Controller
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
 
+        // ambil semua blog dengan sesuai bahasa dan blog yang berstatus publish
+        $blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish');
+
         // filter by category
         if (request('category')) {
-            $blogs = Blogs::latest()->where('lang', $lang)->where('cat_id', request('category'));
-        } else {
-            $blogs = Blogs::latest()->where('lang', $lang);
+            $blogs = $blogs->where('cat_id', request('category'));
         }
 
-        // take all blogs
-        $blogs = $blogs->paginate(6)->withQueryString();
-
         // take blogs
-        $top_blogs = Blogs::latest()->where('lang', $lang)->where('is_highlight', 'true')->take(5)->get();
+        $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
 
         // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
         $is_top_update = false;
         if (count($top_blogs) == 0) {
             $is_top_update = true;
-            $top_blogs = Blogs::latest()->where('lang', $lang)->take(2)->get();
+            $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->take(2)->get();
+
+            // update blogs hilangkan yang sudah dijadikan top update
+            $blogs = $blogs->where('id', "!=", $top_blogs[0])->where('id', "!=", $top_blogs[1]);
+        } else {
+            // update blogs hilangkan yang sudah dijadikan highlight
+            $blogs = $blogs->where('is_highlight', '!=', 'true');
         }
+
+
+        // take all blogs
+        $blogs = $blogs->paginate(6)->withQueryString();
 
         // filter sesuai bahasa (lang)
         $blog_categories = BlogCategorys::all()->where('lang', $lang);
@@ -43,7 +51,6 @@ class BlogPageController extends Controller
             'blogs' => $blogs,
             'blog_categories' => $blog_categories,
             'is_top_update' => $is_top_update,
-            'is_blog_page' => true,
         ]);
     }
 
@@ -85,7 +92,6 @@ class BlogPageController extends Controller
             'blog' => $blog,
             "recomendation_blogs" => $recomendation_blogs,
             "blog_section_list" => $blog_section,
-            'is_detail_blog_page' => true,
         ]);
     }
 }
