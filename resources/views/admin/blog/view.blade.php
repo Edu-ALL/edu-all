@@ -115,7 +115,7 @@
                                             </div>
                                             <div class="col p-0">
                                                 <p class="m-0">
-                                                    {{ $blog->mt_id == null ? '-' : $blog->mentor->mentor_firstname }}
+                                                    {{ $blog->mt_id == null ? '-' : $blog->mentor->mentor_firstname.' '.$blog->mentor->mentor_lastname }}
                                                 </p>
                                             </div>
                                         </div>
