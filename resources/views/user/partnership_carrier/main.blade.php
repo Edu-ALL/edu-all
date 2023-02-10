@@ -6,7 +6,8 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full bg-gradient-to-tr">
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
-                    <h1 class="heading-2 text-center md:w-1/2 md:text-left">
+                    <h1
+                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
                         {{ __('pages/about_us/partnership_careers.title') }}
                     </h1>
                 </div>
@@ -116,8 +117,9 @@
             </div>
         </div>
     </section>
+@endsection
 
-
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

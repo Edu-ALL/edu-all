@@ -6,7 +6,8 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full bg-gradient-to-tr from-primary md:bg-gradient-to-r md:from-yellow">
                 <div class="flex flex-col items-center pt-10 md:items-start md:w-2/3 md:pl-28 lg:w-1/2 lg:pt-16 ">
-                    <h1 class="heading-2 text-center md:w-1/2 md:text-left">
+                    <h1
+                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
                         {{ __('pages/programs/admission_mentoring.title') }}
                     </h1>
                     <p class="mt-2 font-primary font-normal text-xl text-white text-center md:text-left">
@@ -92,21 +93,20 @@
 
         {{-- Undergraduate Program Cards --}}
         <div class="relative">
-
             <div class="splide mt-8 main-container" aria-label="Basic Structure Example">
                 <div class="md:position: md:relative">
                     <div class="splide__arrows"></div>
                     <div class="splide__track mx-10 md:mx-20">
                         <ul class="splide__list flex">
-                            @foreach ($undergraduate_cards as $undergraduate_card)
+                            @foreach (__('pages/programs/admission_mentoring.undergraduate_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img src="{{ asset($undergraduate_card->image) }}" alt="undergraduate 1">
+                                            <img src="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
-                                                    {{ $undergraduate_card->title }}</h4>
-                                                <p>{{ $undergraduate_card->desc }}</p>
+                                                    {{ $item['title'] }}</h4>
+                                                <p>{{ $item['desc'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -143,15 +143,15 @@
                     <div class="splide__arrows"></div>
                     <div class="splide__track mx-10 md:mx-20">
                         <ul class="splide__list flex">
-                            @foreach ($graduate_cards as $graduate_card)
+                            @foreach (__('pages/programs/admission_mentoring.graduate_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img src="{{ asset($graduate_card->image) }}" alt="graduate 1">
+                                            <img src="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
-                                                    {{ $graduate_card->title }}</h4>
-                                                <p>{{ $graduate_card->desc }}</p>
+                                                    {{ $item['title'] }}</h4>
+                                                <p>{{ $item['desc'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -189,15 +189,15 @@
                     <div class="splide__arrows"></div>
                     <div class="splide__track mx-10 md:mx-20">
                         <ul class="splide__list flex">
-                            @foreach ($univtransfer_cards as $univtransfer_card)
+                            @foreach (__('pages/programs/admission_mentoring.univtransfer_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img src="{{ asset($univtransfer_card->image) }}" alt="univtransfer 1">
+                                            <img src="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
-                                                    {{ $univtransfer_card->title }}</h4>
-                                                <p>{{ $univtransfer_card->desc }}</p>
+                                                    {{ $item['title'] }}</h4>
+                                                <p>{{ $item['desc'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -226,12 +226,17 @@
                     <ul class="splide__list">
                         @foreach ($testimonies as $testimony)
                             <li class="splide__slide">
-                                <div class="splide__slide__container h-full ">
-                                    <div class="flex flex-col h-full mx-2 px-4 py-6 border-[1px] rounded-lg bg-[#fcf4f6]">
-                                        <h4 class="font-primary font-bold text-2xl text-[#0367BF] mb-4">
-                                            {{ $testimony['name'] }}</h4>
-                                        <p class="font-primary font-normal text-base text-[#0367BF] italic">
-                                            {{ $testimony['body'] }}</p>
+                                <div class="splide__slide__container">
+                                    <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
+                                        <h3 class="font-body font-bold text-2xl text-yellow">
+                                            {{ $testimony->testi_name }}
+                                        </h3>
+                                        <span class="font-body font-medium text-sm text-[#969aa6]">
+                                            {{ $testimony->testi_subtitle }}
+                                        </span>
+                                        <p class="mt-4 font-body font-bold text-white font-xl">
+                                            {{ $testimony->testi_desc }}
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -250,12 +255,14 @@
                 {{ __('pages/programs/admission_mentoring.sign_up_text') }}
                 <span class="block text-yellow">{{ __('pages/programs/admission_mentoring.sign_up_text_sub') }}</span>
             </h2>
-            <a href="#" class="my-btn">{{ __('pages/programs/admission_mentoring.sign_up_btn') }}</a>
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+                class="my-btn">{{ __('pages/programs/admission_mentoring.sign_up_btn') }}</a>
         </div>
 
     </section>
+@endsection
 
-
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

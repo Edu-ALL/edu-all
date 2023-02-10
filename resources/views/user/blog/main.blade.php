@@ -1,5 +1,13 @@
 @extends('layout.user.main')
 
+@section('head')
+    @foreach ($blogs as $blog)
+        <meta name="title" content="{{ $blog->seo_title }}">
+        <meta name="description" content="{{ $blog->seo_desc }}">
+        <meta name="keyword" content="{{ $blog->seo_keyword }}">
+    @endforeach
+@endsection
+
 @section('content')
     <section class="py-10 lg:py-20">
         <div class="flex flex-col main-container">
@@ -8,7 +16,12 @@
                 <div class="mb-6">
                     <span
                         class="px-4 py-2 font-inter font-bold text-sm text-white text-center rounded-md bg-primary lg:text-base">
-                        Top Choice
+                        @if ($is_top_update)
+                            Top Update
+                        @else
+                            Top Choice
+                        @endif
+
                     </span>
                 </div>
                 <div class="splide w-full" role="group" aria-label="Splide Basic HTML Example">
@@ -44,7 +57,7 @@
                                                         {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 300)) }}...
                                                     </p>
                                                 </div>
-                                                <a href="{{ route('detail_blog', ['blog' => $blog->id]) }}"
+                                                <a href="{{ route('detail_blog', ['blog' => $blog->slug]) }}"
                                                     class="block my-5">
                                                     <span
                                                         class="px-4 py-2 font-secondary font-medium text-base text-white rounded-md bg-yellow">
@@ -101,7 +114,7 @@
             </div>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($blogs as $blog)
-                    <a href="{{ route('detail_blog', ['blog' => $blog->id]) }}" class="block p-3 hover:bg-[#D9D9D9]">
+                    <a href="{{ route('detail_blog', ['blog' => $blog]) }}" class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2">
                             <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
                                 alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
@@ -130,7 +143,9 @@
             </div>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 1024px)").matches
 

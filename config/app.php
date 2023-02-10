@@ -82,10 +82,11 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id-en',
     'available_locales' => [
-        'en',
-        'id'
+        'id-en',
+        'sg',
+        'id',
     ],
 
     /*
@@ -99,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'id-en',
 
     /*
     |--------------------------------------------------------------------------

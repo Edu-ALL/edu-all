@@ -4,9 +4,26 @@ return [
     'address' => 'Alamat',
     'consultation' => 'Konsultasi',
     'company' => 'Perusahaan',
-    'newsletter' => "Newsletter",
-    'about_us' => 'Tentang Kami',
-    'partnership' => "Kemitraan dan Karir",
-    'contact_us' => "Kontak Kami",
-    'privacy_policy' => "Privacy Policy",
+    'page_list' => [
+        [
+            'title' => "Newsletters",
+            'link' => "/"
+        ],
+        [
+            'title' => 'About Us',
+            'link' => "/"
+        ],
+        [
+            'title' => "Partnership & Careers",
+            'link' => "/"
+        ],
+        [
+            'title' => "Contact Us",
+            'link' => "/"
+        ],
+        [
+            'title' => "Privacy Policy",
+            'link' => "/"
+        ],
+    ],
 ];

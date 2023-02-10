@@ -1109,7 +1109,9 @@
             </div>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         const questions = document.querySelectorAll('#question');
         const answers = document.querySelectorAll('#answer');

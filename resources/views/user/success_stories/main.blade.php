@@ -6,7 +6,8 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container h-full">
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16">
-                    <h1 class="heading-2 text-center md:text-left">
+                    <h1
+                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:text-left">
                         {{ __('pages/success_stories/success_stories.title') }}
                     </h1>
                     <p class="mt-5 font-primary font-normal text-xl text-white text-center md:w-2/3 md:text-left">
@@ -117,10 +118,18 @@
                 <h4 class="mt-10 mb-8 font-body font-extrabold text-3xl text-yellow text-center leading-9">
                     {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
                 <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">
-                    <a href="{{ url(app()->getLocale()) }}/programs"><span
-                            class="px-20 py-4 font-body font-semibold text-xl text-white text-center rounded-full bg-yellow border-[3px] border-yellow md:mb-0 ">{{ __('pages/success_stories/success_stories.program_btn') }}</span></a>
-                    <a href="{{ url(app()->getLocale()) }}/programs"> <span
-                            class="px-20 py-4 font-body font-semibold text-xl text-yellow text-center rounded-full border-[3px] border-yellow ">{{ __('pages/success_stories/success_stories.register_btn') }}</span></a>
+                    <a href="{{ route('programs', ['locale' => app()->getLocale()]) }}">
+                        <span
+                            class="px-20 py-4 font-body font-semibold text-xl text-white text-center rounded-full bg-yellow border-[3px] border-yellow md:mb-0 ">
+                            {{ __('pages/success_stories/success_stories.program_btn') }}
+                        </span>
+                    </a>
+                    <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}">
+                        <span
+                            class="px-20 py-4 font-body font-semibold text-xl text-yellow text-center rounded-full border-[3px] border-yellow ">
+                            {{ __('pages/success_stories/success_stories.register_btn') }}
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>

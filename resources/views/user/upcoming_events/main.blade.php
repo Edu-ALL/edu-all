@@ -50,7 +50,7 @@
                             </h4>
                         </div>
                         <img src="{{ asset('assets/img/upcoming_events/' . $event->event_thumbnail) }}"
-                            alt="{{ $event->event_alt }}" class="w-full md:w-1/6">
+                            alt="{{ $event->event_alt }}" class="w-full object-contain md:w-1/6">
                         <div class="flex flex-col justify-between gap-3 w-full py-4 md:w-4/6">
                             <h2 class="font-primary font-semibold text-3xl text-white text-center md:text-left">
                                 {{ $event->event_title }}</h2>
@@ -77,12 +77,14 @@
     <section class="pt-10 pb-28">
         <div class="flex flex-col items-center main-container">
             <h1 class="mb-4 font-primary font-semibold text-2xl text-yellow text-center">For more info and registration</h1>
-            <a href="#" class=""><span
+            <a href="{{ route('contact_us', ['locale' => app()->getLocale()]) }}"><span
                     class="px-6 py-2 font-primary font-semibold text-base text-white bg-yellow rounded-[4px]">Contact Us
                 </span></a>
         </div>
     </section>
+@endsection
 
+@section('script')
     <script>
         const event_detail_wrapper = document.querySelectorAll('.event__detail--wrapper');
         const event_detail_btn = document.querySelectorAll('.event__detail--btn');

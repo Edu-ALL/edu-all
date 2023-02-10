@@ -11,7 +11,7 @@
                     </h1>
                     <p class="mt-6 font-body font-normal text-xl text-white md:text-left md:w-1/2">
                         {{ __('pages/programs/academic_tutoring.desc') }}</p>
-                    <a href="#"
+                    <a href="https://landing.mailerlite.com/webforms/landing/g0f0w8"
                         class="inline-block px-5 py-2 mt-10 font-primary font-bold text-lg text-white bg-yellow rounded-lg">
                         {{ __('pages/programs/academic_tutoring.top_btn') }}
                     </a>
@@ -22,7 +22,7 @@
             </div>
 
             <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/header-acad-tutor-page.webp') }}"
-                alt="" class="w-full h-[90vh] object-cover object-center">
+                class="w-full h-[90vh] object-cover object-center">
         </div>
     </section>
 
@@ -221,7 +221,7 @@
                 </div>
             </div>
             <div class="main-container mt-8 text-center">
-                <a href="#"
+                <a href="https://landing.mailerlite.com/webforms/landing/g0f0w8"
                     class="inline-block px-5 py-2 mt-10 font-primary font-bold text-xl text-white text-center bg-yellow rounded-lg">
                     {{ __('pages/programs/academic_tutoring.private_btn') }}
                 </a>
@@ -311,18 +311,18 @@
                 <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach (__('pages/programs/academic_tutoring.testi_list') as $item)
+                            @foreach ($testimonies as $item)
                                 <li class="splide__slide">
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-4 mb-4 rounded-3xl bg-primary overflow-hidden">
                                             <div class="flex flex-col p-6">
-                                                <span class="font-primary font-bold text-4xl text-yellow">"</span>
+                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 mb-2">
                                                 <p class="mt-1 font-body font-semibold text-lg text-white">
-                                                    "{{ $item['body'] }}"</p>
+                                                    "{{ $item->testi_desc }}"</p>
                                                 <h5 class="mt-6 font-body font-bold text-2xl text-yellow">
-                                                    {{ $item['name'] }}</h5>
+                                                    {{ $item->testi_name }}</h5>
                                                 <span
-                                                    class="font-body font-normal text-xl text-white">{{ $item['grade'] }}</span>
+                                                    class="font-body font-normal text-xl text-white">{{ $item->testi_subtitle }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -344,13 +344,14 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/academic_tutoring.bottom_subtitle') }}</span>
             </h2>
-            <a href="#"
+            <a href="https://landing.mailerlite.com/webforms/landing/g0f0w8"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/academic_tutoring.bottom_btn') }}</a>
         </div>
 
     </section>
+@endsection
 
-
+@section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

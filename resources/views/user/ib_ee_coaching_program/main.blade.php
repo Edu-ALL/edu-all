@@ -75,13 +75,13 @@
                     <div class="mx-6 py-4 rounded-xl sm:px-6 md:mx-0 md:w-full lg:pl-20 xl:pl-40">
                         <p class="font-body font-normal text-xl text-primary md:text-2xl">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_desc') }}</p>
-                        <a href="#"
+                        <a href="https://all-inedu.com/wp-content/uploads/2022/12/Coaching-Curriculum-Overview.pdf"
                             class="inline-block mt-8 py-2 px-6 font-body font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
                     </div>
                 </div>
             </div>
             <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
-                alt="" class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
+                class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
         </div>
     </section>
 
@@ -93,7 +93,7 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/ib_ee_coaching_program.bottom_subtitle') }}</span>
             </h2>
-            <a href="#"
+            <a href="https://landing.mailerlite.com/webforms/landing/w0z5g5"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/ib_ee_coaching_program.bottom_btn') }}</a>
         </div>
 

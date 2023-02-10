@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Mentors;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
-    public function home()
+    public function home($locale)
     {
         // buat dummy data, sesuai dari table
         $banners_dummy = collect([
@@ -66,10 +67,16 @@ class HomePageController extends Controller
             ],
         ]);
 
-        $banners = $banners_dummy->where('lang', app()->getLocale());
+        $banners = $banners_dummy->where('lang', substr(app()->getLocale(), 0, 2));
 
-        return view('welcome', [
+        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang);
+
+        $region = substr(app()->getLocale(), 0, 2);
+
+        return view('user.home.region.' . $region, [
             'banners' => $banners,
+            'all_mentor' => $all_mentor,
         ]);
     }
 
