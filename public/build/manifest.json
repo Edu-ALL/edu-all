@@ -1,0 +1,108 @@
+{
+  "public/assets/img/upcoming_events/header-upcoming.webp": {
+    "file": "assets/header-upcoming.b3357946.webp",
+    "src": "public/assets/img/upcoming_events/header-upcoming.webp"
+  },
+  "public/assets/img/admission mentoring/Undergraduate/Adm mentoring undergraduate resize.webp": {
+    "file": "assets/Adm mentoring undergraduate resize.9c24c449.webp",
+    "src": "public/assets/img/admission mentoring/Undergraduate/Adm mentoring undergraduate resize.webp"
+  },
+  "public/assets/img/admission mentoring/Graduate/Adm mentoring graduate resize.webp": {
+    "file": "assets/Adm mentoring graduate resize.d249d4c0.webp",
+    "src": "public/assets/img/admission mentoring/Graduate/Adm mentoring graduate resize.webp"
+  },
+  "public/assets/img/admission mentoring/Graduate/Graduate photos.webp": {
+    "file": "assets/Graduate photos.74ef855e.webp",
+    "src": "public/assets/img/admission mentoring/Graduate/Graduate photos.webp"
+  },
+  "public/assets/img/sign-me/header-consultation-page-1.webp": {
+    "file": "assets/header-consultation-page-1.5fbb727d.webp",
+    "src": "public/assets/img/sign-me/header-consultation-page-1.webp"
+  },
+  "public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp": {
+    "file": "assets/preview-timetable-entrepreneurshiip.f2d7d980.webp",
+    "src": "public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp"
+  },
+  "public/assets/img/passion_project_mentoring/Rectangle-6.webp": {
+    "file": "assets/Rectangle-6.7c2fbfe6.webp",
+    "src": "public/assets/img/passion_project_mentoring/Rectangle-6.webp"
+  },
+  "public/assets/img/admission mentoring/Master transfer/Adm mentoring master resize.webp": {
+    "file": "assets/Adm mentoring master resize.9b8147d4.webp",
+    "src": "public/assets/img/admission mentoring/Master transfer/Adm mentoring master resize.webp"
+  },
+  "public/assets/img/passion_project_mentoring/timetable-research-crop-300x177.webp": {
+    "file": "assets/timetable-research-crop-300x177.fefb396b.webp",
+    "src": "public/assets/img/passion_project_mentoring/timetable-research-crop-300x177.webp"
+  },
+  "public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp": {
+    "file": "assets/undergraduate photos.16bec174.webp",
+    "src": "public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp"
+  },
+  "public/assets/img/admission mentoring/Master transfer/master transfer photos.webp": {
+    "file": "assets/master transfer photos.208d2051.webp",
+    "src": "public/assets/img/admission mentoring/Master transfer/master transfer photos.webp"
+  },
+  "public/assets/img/passion_project_mentoring/Rectangle-32.webp": {
+    "file": "assets/Rectangle-32.03431854.webp",
+    "src": "public/assets/img/passion_project_mentoring/Rectangle-32.webp"
+  },
+  "public/assets/img/programs/aaron-burden-y02jEX_B0O0-unsplash.jpg": {
+    "file": "assets/aaron-burden-y02jEX_B0O0-unsplash.7faefac3.jpg",
+    "src": "public/assets/img/programs/aaron-burden-y02jEX_B0O0-unsplash.jpg"
+  },
+  "public/assets/img/home/sg/header.png": {
+    "file": "assets/header.ce350fdb.png",
+    "src": "public/assets/img/home/sg/header.png"
+  },
+  "public/assets/img/passion_project_mentoring/background-science.webp": {
+    "file": "assets/background-science.698ea23b.webp",
+    "src": "public/assets/img/passion_project_mentoring/background-science.webp"
+  },
+  "public/assets/img/passion_project_mentoring/background-entre.webp": {
+    "file": "assets/background-entre.42f8a34c.webp",
+    "src": "public/assets/img/passion_project_mentoring/background-entre.webp"
+  },
+  "public/assets/img/mentor/header.png": {
+    "file": "assets/header.6e8f8ecb.png",
+    "src": "public/assets/img/mentor/header.png"
+  },
+  "public/assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg": {
+    "file": "assets/junior-ferreira-7esRPTt38nI-unsplash.1757a882.jpg",
+    "src": "public/assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg"
+  },
+  "public/assets/img/programs/medium-shot-woman-teaching-lesson.jpg": {
+    "file": "assets/medium-shot-woman-teaching-lesson.67315830.jpg",
+    "src": "public/assets/img/programs/medium-shot-woman-teaching-lesson.jpg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.214fd51f.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "public/js/bootstrap.bundle.min.js": {
+    "file": "assets/bootstrap.bundle.min.fdf782e9.js",
+    "src": "public/js/bootstrap.bundle.min.js",
+    "isEntry": true
+  },
+  "public/js/admin/main.js": {
+    "file": "assets/main.edae67b3.js",
+    "src": "public/js/admin/main.js",
+    "isEntry": true
+  },
+  "public/css/admin/app.css": {
+    "file": "assets/app.679bb100.css",
+    "src": "public/css/admin/app.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.acca729c.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "public/css/bootstrap.min.css": {
+    "file": "assets/bootstrap.min.044b6338.css",
+    "src": "public/css/bootstrap.min.css",
+    "isEntry": true
+  }
+}
