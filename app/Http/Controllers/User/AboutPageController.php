@@ -52,7 +52,8 @@ class AboutPageController extends Controller
 
     public function detail_mentor($locale, $slug)
     {
-        $mentor = Mentors::with('mentor_video')->where('mentor_slug', $slug)->where('lang', substr($locale, 0, 2))->first();
+        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $mentor = Mentors::with('mentor_video')->where('mentor_slug', $slug)->where('lang', $lang)->first();
 
         return view('user.detail_mentor.main', [
             'mentor' => $mentor,

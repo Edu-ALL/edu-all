@@ -37,7 +37,7 @@
                                             class="fa-solid fa-xmark"></i></div>
                                 </div>
                                 <div class="px-6 py-4 font-primary text-base text-[#7e7e7e] leading-7 bg-white">
-                                    {{ $event->event_detail }}
+                                    {!! $event->event_detail !!}
                                 </div>
                             </div>
                         </div>
@@ -49,13 +49,13 @@
                             <h4 class="font-primary font-semibold text-2xl text-white text-center">{{ $event->event_date }}
                             </h4>
                         </div>
-                        <img src="{{ asset('assets/img/upcoming_events/' . $event->event_thumbnail) }}"
+                        <img src="{{ asset('uploaded_files/upcoming-event/' . $event->event_thumbnail) }}"
                             alt="{{ $event->event_alt }}" class="w-full object-contain md:w-1/6">
                         <div class="flex flex-col justify-between gap-3 w-full py-4 md:w-4/6">
                             <h2 class="font-primary font-semibold text-3xl text-white text-center md:text-left">
                                 {{ $event->event_title }}</h2>
-                            <p class="font-primary font-light text-lg text-white text-center md:text-left">
-                                {{ $event->event_subtitle }}</p>
+                            <div class="font-primary font-light text-lg text-white text-center md:text-left">
+                                {!! $event->event_subtitle !!}</div>
                             <div class="flex flex-col gap-x-4 gap-y-6 mt-2 mb-2 items-center md:flex-row">
                                 <div class="event__detail--btn cursor-pointer"><span
                                         class="px-6 py-3 font-primary font-medium text-base text-white bg-[#4abf5a] rounded-[4px]">Click

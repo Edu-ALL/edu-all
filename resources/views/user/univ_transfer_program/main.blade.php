@@ -161,11 +161,12 @@
                                                 <h5 class="font-body font-bold text-2xl text-yellow">
                                                     {{ $item->testi_name }}
                                                 </h5>
-                                                <h6 class="mb-3 font-body font-black text-lg text-[#B9B9B9]">
-                                                    {{ $item->testi_subtitle }}
-                                                </h6>
-                                                <p class="font-body font-semibold text-lg text-white">
-                                                    {{ $item->testi_desc }}</p>
+                                                <div class="mb-3 font-body font-black text-sm text-[#B9B9B9]">
+                                                    {!! $item->testi_subtitle !!}
+                                                </div>
+                                                <div class="font-body font-semibold text-sm text-white">
+                                                    {!! $item->testi_desc !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -197,7 +198,7 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 764px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
 
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {

@@ -28,7 +28,7 @@
                     @if ($loop->index % 2 == 0)
                         <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
                             <div class="w-full md:w-1/3">
-                                <img src="{{ asset('assets/img/success-story/' . $item->thumbnail) }}"
+                                <img src="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                             <div class="flex flex-col w-full md:w-2/3">
@@ -61,8 +61,8 @@
                                             class="inline-flex my-6 px-6 py-2 font-body font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More </span>
                                 @endif
-                                <img src="{{ asset('assets/img/success-story/' . $item->achievment_image) }}"
-                                    alt="{{ $item->achievment_alt }}">
+                                <img src="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
+                                    alt="{{ $item->achievement_alt }}">
                             </div>
                         </div>
                     @else
@@ -96,11 +96,11 @@
                                             class="inline-flex my-6 px-6 py-2 font-body font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More</span></a>
                                 @endif
-                                <img src="{{ asset('assets/img/success-story/' . $item->achievment_image) }}"
+                                <img src="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievment_alt }}">
                             </div>
                             <div class="w-full order-1  md:order-2 md:w-1/3">
-                                <img src="{{ asset('assets/img/success-story/' . $item->thumbnail) }}"
+                                <img src="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                         </div>

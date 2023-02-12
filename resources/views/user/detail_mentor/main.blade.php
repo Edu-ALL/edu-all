@@ -91,7 +91,7 @@
                     your
                     dream university and future career path through the first consultation with our top-notch mentors and
                     your profile assessment based on ALL-in’s Four Pillars of University Application.</p>
-                <a href="#">
+                <a href="{{ route('sign_me', app()->getLocale()) }}">
                     <span class="px-10 py-2 font-inter font-medium text-base text-white rounded-md bg-yellow">Start Your
                         Consultation</span>
                 </a>

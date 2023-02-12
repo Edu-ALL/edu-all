@@ -32,14 +32,21 @@
                                                 <div class="splide__slide__container h-full py-6">
                                                     <div
                                                         class="flex flex-col justify-between h-full mx-2.5 p-4 rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
-                                                        <p
-                                                            class="font-body font-semibold text-sm text-primary text-justify leading-[18px]">
-                                                            {{ $item->testi_desc }}
-                                                        </p>
+                                                        <div
+                                                            class="font-body font-semibold text-xs text-primary text-justify leading-[18px]">
+                                                            {!! $item->testi_desc !!}
+                                                        </div>
                                                         <div class="flex justify-between mt-6">
-                                                            <h5 class="font-body font-bold text-sm text-yellow">
-                                                                {{ $item->testi_name }}
-                                                            </h5>
+                                                            <div class="flex flex-col">
+                                                                <h5
+                                                                    class="font-body font-bold text-xs text-yellow leading-4">
+                                                                    {{ $item->testi_name }}
+                                                                </h5>
+                                                                <span
+                                                                    class="font-body font-bold text-xs text-primary leading-4">
+                                                                    {!! $item->testi_subtitle !!}
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -73,25 +80,25 @@
                                                 <div class="splide__slide__container py-6 h-full">
                                                     <div
                                                         class="flex flex-col justify-between mx-2.5 p-4 h-full rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
-                                                        <p
-                                                            class="font-body font-semibold text-sm text-primary text-justify leading-[18px]">
-                                                            {{ $item->testi_desc }}
-                                                        </p>
+                                                        <div
+                                                            class="font-body font-semibold text-xs text-primary text-justify leading-[18px]">
+                                                            {!! $item->testi_desc !!}
+                                                        </div>
                                                         <div class="flex justify-between items-center mt-12">
                                                             <div class="flex flex-col">
                                                                 <h5
-                                                                    class="font-body font-bold text-sm text-yellow leading-4">
+                                                                    class="font-body font-bold text-xs text-yellow leading-4">
                                                                     {{ $item->testi_name }}
                                                                 </h5>
                                                                 <span
-                                                                    class="font-body font-bold text-sm text-primary leading-4">
-                                                                    {{ $item->testi_subcategory }}
+                                                                    class="font-body font-bold text-xs text-primary leading-4">
+                                                                    {!! $item->testi_subtitle !!}
                                                                 </span>
                                                             </div>
-                                                            <div class="w-20 h-20 rounded-full  bg-red-300">
-                                                                <img src="{{ $item->testi_thumbnail }}"
+                                                            <div class="w-24 h-24 rounded-full">
+                                                                <img src="{{ asset('uploaded_files/testimonial/' . $item->testi_thumbnail) }}"
                                                                     alt="{{ $item->testi_thumbnail }}"
-                                                                    class="w-full h-full object-cover object-center">
+                                                                    class="w-full h-full object-contain object-center">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -121,25 +128,25 @@
                                 <div class="splide__arrows"></div>
                                 <div class="splide__track md:mx-14">
                                     <ul class="splide__list">
-                                        @foreach ($academic_preparation as $item)
+                                        @foreach ($admission_mentoring as $item)
                                             <li class="splide__slide">
-                                                <div class="splide__slide__container py-6">
+                                                <div class="splide__slide__container h-full py-6">
                                                     <div
-                                                        class="flex flex-col mx-2.5 p-4 rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
-                                                        <p
-                                                            class="font-body font-semibold text-sm text-primary text-justify leading-[18px]">
-                                                            {{ $item->testi_desc }}
-                                                        </p>
-                                                        <div class="flex justify-between mt-12">
+                                                        class="flex flex-col justify-between h-full mx-2.5 p-4 rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+                                                        <div
+                                                            class="font-body font-semibold text-xs text-primary text-justify leading-[18px]">
+                                                            {!! $item->testi_desc !!}
+                                                        </div>
+                                                        <div class="flex justify-between mt-6">
                                                             <div class="flex flex-col">
                                                                 <h5
-                                                                    class="font-body font-bold text-sm text-yellow leading-4">
+                                                                    class="font-body font-bold text-xs text-yellow leading-4">
                                                                     {{ $item->testi_name }}
                                                                 </h5>
-                                                                <span
-                                                                    class="font-body font-bold text-sm text-primary leading-4">
-                                                                    {{ $item->testi_subtitle }}
-                                                                </span>
+                                                                <div
+                                                                    class="font-body font-bold text-xs text-primary leading-4">
+                                                                    {!! $item->testi_subtitle !!}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -172,14 +179,14 @@
 
 @section('script')
     <script>
-        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
 
         var splides = document.querySelectorAll('.splide');
 
         for (var i = 0; i < splides.length; i++) {
             new Splide(splides[i], {
                 type: 'loop',
-                perPage: isSmallDevice ? 1 : 2,
+                perPage: isLargeDevice ? 1 : 2,
                 focus: 0,
                 pagination: false,
                 autoplay: true,

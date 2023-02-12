@@ -34,7 +34,7 @@
             </div>
         </section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
-            class="absolute bottom-0 object-cover -mb-4 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20 -rotate-2">
+            class="absolute -bottom-[100px] object-cover -mb-4 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20 -rotate-2">
             <path fill="#fff" fill-opacity="1"
                 d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
             </path>
@@ -318,7 +318,7 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
+                            <div class="splide__slide__container h-full w-full">
                                 <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
                                     <div class="flex flex-col">
                                         <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
@@ -336,7 +336,7 @@
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
+                            <div class="splide__slide__container h-full w-full">
                                 <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
                                     <div class="flex flex-col">
                                         <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
@@ -357,7 +357,7 @@
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
+                            <div class="splide__slide__container h-full w-full">
                                 <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
                                     <div class="flex flex-col">
                                         <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
@@ -375,7 +375,7 @@
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
+                            <div class="splide__slide__container h-full w-full">
                                 <div class="flex flex-col justify-between h-full px-4 py-8 mx-2 rounded-2xl bg-primary">
                                     <div class="flex flex-col">
                                         <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
@@ -396,7 +396,7 @@
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
+                            <div class="splide__slide__container h-full w-full">
                                 <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
                                     <div class="flex flex-col">
                                         <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
@@ -408,7 +408,8 @@
                                     <div class="mt-12 flex flex-col">
                                         <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
                                         <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
+                                            Program
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -472,7 +473,7 @@
         new Splide(splides[1], {
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 5,
             perMove: 1,
-            // arrows: isMediumDevice ? false : true,
+            arrows: isMediumDevice ? false : true,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
@@ -493,6 +494,7 @@
                     3 : 4,
                 rewind: true,
                 pagination: false,
+                arrows: false
             });
 
             splide.mount();

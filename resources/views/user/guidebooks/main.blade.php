@@ -19,7 +19,7 @@
     </section>
 
     {{-- ================================== GETTING STARTED Section  ================================== --}}
-    <section class="py-10 shadow-[inset_-4px_-142px_42px_-124px_rgba(0,0,0,0.5)]">
+    <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <p class="font-primary text-xl text-[#6F6C90] text-justify">Learn how you can ace your university
@@ -32,49 +32,44 @@
                     Before starting your university application journey, let’s start by selecting the right subjects at
                     school!
                 </p>
-                <div class="flex gap-x-6 gap-y-4 mt-8">
-                    <a
-                        href="https://alevel-guide.all-inedu.com/?_gl=1*1m5schz*_ga*MTgwMDI4MjA2OC4xNjY5NjM4NDI0*_ga_RN9CC3WCZ3*MTY3Mjg4NzIxMi41Ny4xLjE2NzI4ODc0MTMuMC4wLjA.&_ga=2.256408776.2134416254.1672559417-1800282068.1669638424"><img
-                            src="{{ asset('assets/img/guidebooks/BOOK-MOCKUP-8.webp') }}" alt="guidebooks a level subjects"
-                            class="w-full max-w-[18rem] min-w-0"></a>
-                    <a
-                        href="https://ib-guide.all-inedu.com/?_gl=1*1m5schz*_ga*MTgwMDI4MjA2OC4xNjY5NjM4NDI0*_ga_RN9CC3WCZ3*MTY3Mjg4NzIxMi41Ny4xLjE2NzI4ODc0MTMuMC4wLjA.&_ga=2.256408776.2134416254.1672559417-1800282068.1669638424"><img
-                            src="{{ asset('assets/img/guidebooks/BOOK-MOCKUP-9.webp') }}" alt="guidebooks a level subjects"
-                            class="w-full max-w-[18rem] min-w-0"></a>
+                <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
+                    @foreach ($getting_started as $guidebook)
+                        <a href="{{ $guidebook->guidebook_link }}">
+                            <img src="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 
     {{-- ================================== BUILD YOUR PROFILE  Section  ================================== --}}
-    <section class="py-4">
+    <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h4 class="font-body font-semibold text-xl text-primary text-center md:text-left">BUILD YOUR PROFILE</h4>
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">BUILD YOUR PROFILE</h2>
                 <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">What makes each student unique is the profile
                     they present in front of the University admission committee. Come build your strong profile!
                 </p>
-                <div class="flex gap-x-6 gap-y-4 mt-8">
-                    <a
-                        href="https://personalbrand-guide.all-inedu.com/?_gl=1*gt8za5*_ga*MTgwMDI4MjA2OC4xNjY5NjM4NDI0*_ga_RN9CC3WCZ3*MTY3Mjg4NzIxMi41Ny4xLjE2NzI4ODg3MDkuMC4wLjA.&_ga=2.55015912.2134416254.1672559417-1800282068.1669638424"><img
-                            src="{{ asset('assets/img/guidebooks/A-Guide-To-Polish-Your-Personak-Brand-Cover-Book.webp') }}"
-                            alt="guidebooks a guide to polish your personal brand cover"
-                            class="w-full max-w-[18rem] min-w-0"></a>
-                    <a
-                        href="https://resume-guide.all-inedu.com/?_gl=1*gt8za5*_ga*MTgwMDI4MjA2OC4xNjY5NjM4NDI0*_ga_RN9CC3WCZ3*MTY3Mjg4NzIxMi41Ny4xLjE2NzI4ODg3MDkuMC4wLjA.&_ga=2.55015912.2134416254.1672559417-1800282068.1669638424"><img
-                            src="{{ asset('assets/img/guidebooks/WRITING-TOP.webp') }}" alt="guidebooks writing top cover"
-                            class="w-full max-w-[18rem] min-w-0"></a>
+                <div class="flex flex-col gap-x-6 gap-y-4 mt-8 md:flex-row">
+                    @foreach ($build_your_profile as $guidebook)
+                        <a href="{{ $guidebook->guidebook_link }}">
+                            <img src="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 
     {{-- ================================== APPLY TO YOUR DREAM UNIVERSITY Section  ================================== --}}
-    <section class="py-4">
+    <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h4 class="font-body font-semibold text-xl text-primary text-center md:text-left">APPLY TO YOUR DREAM
-                    UNIVERSITY</h4>
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">APPLY TO YOUR DREAM
+                    UNIVERSITY</h2>
                 <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">Essays, Letters, and Interviews.. We got you
                     covered.
                 </p>
@@ -82,15 +77,12 @@
                     <ul class="splide__pagination"></ul>
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @php
-                                $card_list = [['Guidebook-master-eng-cover.webp', 'https://master-guide.all-inedu.com'], ['Essentials-In-Writing-Cover-Book.webp', 'https://personalstatement-guide.all-inedu.com'], ['The-Ultimate-Guide-Cover-Book.webp', 'https://essay-guide.all-inedu.com'], ['The-Comprehensive-Guide-To-Ace-Cover-Book.webp', 'https://interview-guide.all-inedu.com'], ['BOOK-MOCKUP-7.webp', 'https://recommendation-guide.all-inedu.com/']];
-                            @endphp
-                            @foreach ($card_list as $card)
+                            @foreach ($apply_to_your_dream_university as $guidebook)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
-                                        <a href="{{ $card[1] }}">
-                                            <img src="{{ asset('assets/img/guidebooks/' . $card[0]) }}"
-                                                alt="guidebooks cover" class="w-full">
+                                        <a href="{{ $guidebook->guidebook_link }}">
+                                            <img src="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
                                         </a>
                                     </div>
                                 </li>
@@ -106,15 +98,18 @@
     <section class="py-4">
         <div class="main-container">
             <div class="flex flex-col">
-                <h4 class="font-body font-semibold text-xl text-primary text-center md:text-left">GRAB THE SCHOLARSHIP</h4>
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">GRAB THE SCHOLARSHIP
+                </h2>
                 <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">Essays, Letters, and Interviews.. We got you
                     covered.
                 </p>
-                <div class="flex gap-x-6 gap-y-4 mt-8">
-                    <a
-                        href="https://scholarship-guide.all-inedu.com/?_gl=1*1gh9lkm*_ga*MTgwMDI4MjA2OC4xNjY5NjM4NDI0*_ga_RN9CC3WCZ3*MTY3Mjg4NzIxMi41Ny4xLjE2NzI4ODg3MDkuMC4wLjA.&_ga=2.88085080.2134416254.1672559417-1800282068.1669638424"><img
-                            src="{{ asset('assets/img/guidebooks/University-Preparation-Cover-Book.webp') }}"
-                            alt="guidebooks cover" class="w-full max-w-[18rem] min-w-0"></a>
+                <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
+                    @foreach ($grab_the_scholarship as $guidebook)
+                        <a href="{{ $guidebook->guidebook_link }}">
+                            <img src="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -176,12 +171,14 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isVeryLargeDevice = window.matchMedia("(min-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
             type: 'loop',
-            perPage: isSmallDevice ? 2 : 3,
+            perPage: isVeryLargeDevice ? 4 : isSmallDevice ? 1 : isMediumDevice ? 2 : 3,
             focus: 0,
             arrows: false,
             autoplay: true,

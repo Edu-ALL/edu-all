@@ -267,25 +267,22 @@
                 <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach (__('pages/programs/academic_tutoring.tutors_list') as $item)
+                            @foreach ($tutors as $tutor)
                                 <li class="splide__slide">
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-4 mb-4 rounded-[3rem] bg-primary overflow-hidden">
-                                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/tutor/' . $item['image']) }}"
-                                                alt="flexcibility learning" class="p-4 md:p-0">
+                                            <img src="{{ asset('uploaded_files/tutor/' . $tutor->thumbnail) }}"
+                                                alt="{{ $tutor->alt }}" class="p-4 md:p-0">
                                             <div class="flex flex-col p-6">
                                                 <h5 class="mb-4 font-body font-bold text-2xl text-[#e3b422]">
-                                                    {{ $item['name'] }}</h5>
+                                                    {{ $tutor->full_name }}
+                                                </h5>
                                                 <p class="mt-2 font-body font-semibold text-lg text-white">
-                                                    {{ $item['experience'] }}</p>
-                                                <ul
-                                                    class="@if (count($item['role']) > 1) list-disc @endif list-inside mt-4">
-                                                    @foreach ($item['role'] as $role)
-                                                        <li class="font-body font-semibold text-lg text-[#e3b422]">
-                                                            {{ $role }}
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
+                                                    {{ $tutor->experience }}
+                                                </p>
+                                                <div class="font-body font-semibold text-lg text-[#e3b422]">
+                                                    {!! $tutor->subject !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -317,12 +314,15 @@
                                         <div class="flex flex-col mx-4 mb-4 rounded-3xl bg-primary overflow-hidden">
                                             <div class="flex flex-col p-6">
                                                 <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 mb-2">
-                                                <p class="mt-1 font-body font-semibold text-lg text-white">
-                                                    "{{ $item->testi_desc }}"</p>
-                                                <h5 class="mt-6 font-body font-bold text-2xl text-yellow">
-                                                    {{ $item->testi_name }}</h5>
-                                                <span
-                                                    class="font-body font-normal text-xl text-white">{{ $item->testi_subtitle }}</span>
+                                                <div class="mt-1 font-body font-semibold text-base text-white">
+                                                    {!! $item->testi_desc !!}
+                                                </div>
+                                                <h5 class="mt-6 font-body font-bold text-lg text-yellow">
+                                                    {{ $item->testi_name }}
+                                                </h5>
+                                                <div class="font-body font-semibold text-lg text-white">
+                                                    {!! $item->testi_subtitle !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
