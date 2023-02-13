@@ -96,6 +96,6 @@ return [
     'testimonies' => $testimonies,
 
     // bottom section
-    'bottom' => 'Sign up for a FREE Initial Consultation!',
-    'bottom_btn' => "Register Now"
+    'bottom' => 'Daftar sekarang untuk mendapatkan konsultasi awal GRATIS!',
+    'bottom_btn' => "Daftar Sekarang"
 ];

@@ -102,5 +102,5 @@ return [
     // bottom section
     "bottom_title" => "Setiap tahun, 150+ mentee kami berhasil masuk ke universitas impian mereka.",
     "bottom_subtitle" => "Saatnya giliran Anda.",
-    "bottom_btn" => "Create your FREE Initial Consultation appointment",
+    "bottom_btn" => "Buat Janji Initial Consultation GRATIS Anda",
 ];

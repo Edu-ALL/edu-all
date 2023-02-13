@@ -23,7 +23,8 @@
                         </span>
                     </div>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
-                    <span class="font-inter text-base text-primary">{{ $blog->duration_read }} Min Read</span>
+                    <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
+                        {{ __('pages/blog.min_read') }}</span>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
                     <span
                         class="font-inter text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
@@ -60,10 +61,12 @@
     <section class="py-16 bg-primary">
         <div class="main-container flex flex-col items-center">
             <h2 class="mb-6 font-secondary font-extrabold text-3xl text-white text-center md:text-5xl">
-                SIGN UP FOR A FREE INITIAL CONSULTATION
+                {{ __('pages/blog.sign_up') }}
             </h2>
-            <a href="#">
-                <span class="px-8 py-1.5 font-secondary text-base text-white text-center rounded-md bg-yellow">More</span>
+            <a href="{{ route('sign_me', app()->getLocale()) }}">
+                <span class="px-8 py-1.5 font-secondary text-base text-white text-center rounded-md bg-yellow">
+                    {{ __('pages/blog.sign_up_btn') }}
+                </span>
             </a>
         </div>
     </section>
@@ -71,13 +74,12 @@
     <section class="py-16">
         <div class="main-container flex flex-col">
             <h3 class="mb-12 font-secondary font-extrabold text-4xl text-primary text-center ">
-                You may also like this
-                article
+                {{ __('pages/blog.more_blog') }}
             </h3>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($recomendation_blogs as $blog)
-                    <a href="{{ route('detail_blog', ['blog' => $blog->slug]) }}" class="block p-3 hover:bg-[#D9D9D9]"
-                        class="w-1/3">
+                    <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog->slug]) }}"
+                        class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
                             <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
                                 alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">

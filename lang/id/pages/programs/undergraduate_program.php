@@ -65,7 +65,7 @@ return [
     ],
 
     // destination section
-    'destination_title' => 'PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION',
+    'destination_title' => 'MENTORING PRIBADI BERDASARKAN TUJUAN STUDI IMPIAN ANDA',
     'destination_list' => [
         [
             'title' => 'US',

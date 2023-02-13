@@ -31,52 +31,18 @@ module.exports = {
                     "url('../../public/assets/img/admission mentoring/Undergraduate/Adm mentoring undergraduate resize.webp')",
                 "undergraduate-do":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
-                "undergraduate-list-1":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate1.webp')",
-                "undergraduate-list-2":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate2.webp')",
-                "undergraduate-list-3":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate3.webp')",
-                "undergraduate-list-4":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate4.webp')",
-                "undergraduate-list-5":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/Undergraduate5.webp')",
 
                 // Transfer
                 "transfer-header":
                     "url('../../public/assets/img/admission mentoring/Master transfer/Adm mentoring master resize.webp')",
                 "transfer-do":
                     "url('../../public/assets/img/admission mentoring/Master transfer/master transfer photos.webp')",
-                "transfer-list-1":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer 1.webp')",
-                "transfer-list-2":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer 2.webp')",
-                "transfer-list-3":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer 3.webp')",
-                "transfer-list-4":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer 4.webp')",
-                "transfer-list-5":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer 5.webp')",
-                "transfer-list-6":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer 6.webp')",
 
                 // Graduate
                 "graduate-header":
                     "url('../../public/assets/img/admission mentoring/Graduate/Adm mentoring graduate resize.webp')",
                 "graduate-do":
                     "url('../../public/assets/img/admission mentoring/Graduate/Graduate photos.webp')",
-                "graduate-list-1":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate1.webp')",
-                "graduate-list-2":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate2.webp')",
-                "graduate-list-3":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate3.webp')",
-                "graduate-list-4":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate4.webp')",
-                "graduate-list-5":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate5.webp')",
-                "graduate-list-6":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate6.webp')",
 
                 // passion project
                 "passion-project-bg-entre":

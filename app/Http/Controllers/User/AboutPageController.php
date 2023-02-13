@@ -40,8 +40,8 @@ class AboutPageController extends Controller
     public function mentor($locale)
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
-        $allin_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang);
-        $building_mentor = Mentors::all()->where('mentor_category', 'Profile Building Mentor')->where('lang', $lang);
+        $allin_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active');
+        $building_mentor = Mentors::all()->where('mentor_category', 'Profile Building Mentor')->where('lang', $lang)->where('mentor_status', 'active');
 
         return view('user.mentor.main', [
             'locale' => $locale,

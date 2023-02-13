@@ -4,7 +4,8 @@
     {{-- ================================== Top Section  ================================== --}}
     <section class="py-16">
         <div class="main-container">
-            <h2 class="font-body font-bold text-4xl text-[#6696E2] text-center">What Our Students Say</h2>
+            <h2 class="font-body font-bold text-4xl text-[#6696E2] text-center">{{ __('pages/resources/testimonial.title') }}
+            </h2>
         </div>
     </section>
 
@@ -96,9 +97,11 @@
                                                                 </span>
                                                             </div>
                                                             <div class="w-24 h-24 rounded-full">
-                                                                <img src="{{ asset('uploaded_files/testimonial/' . $item->testi_thumbnail) }}"
-                                                                    alt="{{ $item->testi_thumbnail }}"
-                                                                    class="w-full h-full object-contain object-center">
+                                                                @if ($item->testi_thumbnail)
+                                                                    <img src="{{ asset('uploaded_files/testimonial/' . $item->testi_thumbnail) }}"
+                                                                        alt="{{ $item->testi_thumbnail }}"
+                                                                        class="w-full h-full object-contain object-center">
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -169,9 +172,11 @@
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
             <h2 class="font-body font-extrabold text-primary text-center text-3xl mb-4 md:w-1/2">
-                SIGN UP FOR A FREE INITIAL CONSULTATION
+                {{ __('pages/resources/testimonial.bottom_title') }}
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="my-btn">More</a>
+            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="my-btn">
+                {{ __('pages/resources/testimonial.bottom_btn') }}
+            </a>
         </div>
 
     </section>

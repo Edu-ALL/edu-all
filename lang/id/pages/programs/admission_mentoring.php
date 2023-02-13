@@ -133,7 +133,7 @@ return [
     "univtransfer_list" => $univtransfer,
 
     // testimony section
-    "testimony" => "WHAT OUR STUDENTS SAY",
+    "testimony" => "APA YANG MEREKA KATAKAN",
 
     // bottom section
     "sign_up_text" => "DAFTAR SEKARANG",

@@ -1,4 +1,4 @@
-<header class="fixed w-full top-0 left-0 z-20 bg-white shadow-sm">
+<header class="fixed w-full top-0 left-0 z-50 bg-white shadow-sm">
     <div class="main-container">
         <div class="py-4 lg:gap-2 w-full">
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
@@ -150,9 +150,10 @@
                         <li
                             class="programs flex-[0_0_auto] text-left border-y border-[#666666] lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <div class="flex justify-between items-center">
-                                <a href="#"
-                                    class="block my-1.5 pl-4  w-full text-xl text-left lg:font-bold lg:text-base lg:text-center">{{ __('pages/navbar.resources') }}
-                                </a>
+                                <div
+                                    class="block my-1.5 pl-4  w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
+                                    {{ __('pages/navbar.resources') }}
+                                </div>
                                 <button id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-[#303030] lg:bg-transparent">
                                     <i id='open-nav-child-btn'
@@ -220,7 +221,62 @@
                             <div
                                 class="mt-4 flex flex-col py-4  items-start font-bold bg-white border-2 border-primary ">
 
-                                @if (Route::currentRouteName())
+                                @if (Route::currentRouteName() == 'detail_blog')
+                                    <div class="flex items-center gap-3 px-4">
+                                        <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
+                                            class="flex items-center hover:underline">
+                                            <div>
+                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
+                                                    id="flag-icons-id" viewBox="0 0 640 480">
+                                                    <path fill="#e70011" d="M0 0h640v240H0Z" />
+                                                    <path fill="#fff" d="M0 240h640v240H0Z" />
+                                                </svg>
+                                            </div>
+                                            <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                            <span class="w-5 h-0.5 ml-3 bg-primary"></span>
+
+                                        </a>
+                                        <div class="flex items-center gap-2">
+                                            <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
+                                                class="font-medium hover:underline hover:text-[#819CCB]">English</a>
+                                            <span>/</span>
+                                            <a href="{{ route('blogs', ['locale' => 'id']) }}"
+                                                class="font-medium hover:underline hover:text-[#819CCB]">Bahasa</a>
+                                        </div>
+                                    </div>
+
+                                    <span class="block w-full h-0.5 my-4 bg-primary"></span>
+
+                                    <div class="flex items-center gap-3 px-4 ">
+                                        <a href="{{ route('blogs', ['locale' => 'sg']) }}"
+                                            class="flex items-center hover:underline">
+                                            <div>
+                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
+                                                    id="flag-icons-sg" viewBox="0 0 640 480">
+                                                    <defs>
+                                                        <clipPath id="a">
+                                                            <path fill-opacity=".7" d="M0 0h640v480H0z" />
+                                                        </clipPath>
+                                                    </defs>
+                                                    <g fill-rule="evenodd" clip-path="url(#a)">
+                                                        <path fill="#fff" d="M-20 0h720v480H-20z" />
+                                                        <path fill="#df0000" d="M-20 0h720v240H-20z" />
+                                                        <path fill="#fff"
+                                                            d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
+                                                        <path fill="#fff"
+                                                            d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                            <span class="w-5 h-0.5 ml-3 bg-primary"></span>
+                                        </a>
+                                        <div class="flex items-center gap-2">
+                                            <a href="{{ route('blogs', ['locale' => 'sg']) }}"
+                                                class="font-medium hover:underline hover:text-[#819CCB]">English</a>
+                                        </div>
+                                    </div>
+                                @elseif (Route::currentRouteName())
                                     <div class="flex items-center gap-3 px-4">
                                         <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
                                             class="flex items-center hover:underline">

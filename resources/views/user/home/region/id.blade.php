@@ -9,17 +9,18 @@
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
                             <img class="object-bottom object-cover w-full h-[550px] md:h-[778px]"
-                                src="{{ asset('assets/img/home/' . $banner->banner_img) }}" alt="{{ $banner->banner_alt }}">
+                                src="{{ asset('uploaded_files/banner/' . $banner->banner_img) }}"
+                                alt="{{ $banner->banner_alt }}">
                             <div
                                 class="absolute-center top-0 -ml-1 bg-gradient-to-r w-full h-full from-primary/90 flex items-center md:items-start md:pt-32">
                                 <div class="px-8 lg:px-40 2xl:px-44 font-primary">
                                     <h2
                                         class="font-primary text-3xl font-medium text-white  mb-6 sm:text-4xl  lg:text-5xl lg:w-[70%] xl:w-[55%]">
                                         {{ $banner->banner_title }}</h2>
-                                    <p
-                                        class="text-sm font-normal text-white w-[90%] sm:text-lg lg:text-xl lg:w-[70%] xl:w-[55%]">
+                                    <div
+                                        class="text-sm font-normal text-white w-[90%] sm:text-lg lg:text-lg lg:w-[70%] xl:w-[55%]">
                                         {!! $banner->banner_description !!}
-                                    </p>
+                                    </div>
                                     <a href="{{ $banner->banner_link }}">
                                         <span
                                             class="inline-block mt-10 bg-[#7895C7] py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize">
@@ -51,7 +52,7 @@
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.0.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        {{ __('pages/home.benefit_list.1.body') }}
+                        {{ __('pages/home.benefit_list.0.body') }}
                     </p>
                 </div>
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
@@ -114,107 +115,38 @@
         </div>
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="program-card hover:rotate-program-card">
-                    <div class="program-face-card bg-program-image-1 bg-cover bg-center">
+                @foreach (__('pages/programs/programs.program_list') as $item)
+                    <div class="program_card hover:rotate-program_card">
+                        <div class="front bg-program-image-{{ $loop->iteration }} bg-cover bg-center">
+                            <div
+                                class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
+                                <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
+                                    {{ $item['title'] }}
+                                </h4>
+                                <ul class="flex flex-col">
+                                    @foreach ($item['points'] as $point)
+                                        <li class="inline-flex items-start gap-1.5">
+                                            <i class="fa-solid text-sm fa-circle-check mt-1 text-yellow"></i>
+                                            <p class="text-sm">{{ $point }}</p>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                         <div
-                            class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[250px]">
-                            <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
-                                {{ __('pages/programs/prgrams.program_1') }}
-                            </h4>
-                            <ul class="flex flex-col">
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm  fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">Undergraduate Admission Mentoring</p>
-                                </li>
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">Graduate Admission Mentoring</p>
-                                </li>
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">University Transfer admission mentoring</p>
-                                </li>
-                            </ul>
+                            class="back face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
+                            <div class="flex flex-col justify-center items-center h-full">
+                                <p class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
+                                    {{ $item['body'] }}
+                                </p>
+                                <a href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
+                                    class="my-btn text-sm">View More</a>
+                            </div>
                         </div>
                     </div>
-                    <div
-                        class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
-                        <div class="flex flex-col justify-center items-center h-full">
-                            <p class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
-                                Personalized 1-on-1 mentoring service that will serve as a holistic academic and
-                                non-academic walk-through to help you get into your dream universities.
-                            </p>
-                            <a href="#" class="my-btn text-sm">View More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="program-card hover:rotate-program-card">
-                    <div class="program-face-card bg-program-image-2 bg-cover bg-center">
-                        <div
-                            class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[250px]">
-                            <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
-                                {{ __('pages/programs/prgrams.program_2') }}
-                            </h4>
-                            <ul class="flex flex-col">
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm  fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">Undergraduate Admission Mentoring</p>
-                                </li>
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">Graduate Admission Mentoring</p>
-                                </li>
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">University Transfer admission mentoring</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
-                        <div class="flex flex-col justify-center items-center h-full">
-                            <p class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
-                                Personalized 1-on-1 mentoring service that will serve as a holistic academic and
-                                non-academic walk-through to help you get into your dream universities.
-                            </p>
-                            <a href="#" class="my-btn text-sm">View More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="program-card hover:rotate-program-card">
-                    <div class="program-face-card bg-program-image-3 bg-cover bg-center">
-                        <div
-                            class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[250px]">
-                            <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
-                                {{ __('pages/programs/prgrams.program_3') }}
-                            </h4>
-                            <ul class="flex flex-col">
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm  fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">Undergraduate Admission Mentoring</p>
-                                </li>
-                                <li class="inline-flex items-start gap-1.5">
-                                    <i class="fa-solid text-sm fa-circle-check text-yellow"></i>
-                                    <p class="text-sm">Graduate Admission Mentoring</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="program-face-card face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
-                        <div class="flex flex-col justify-center items-center h-full">
-                            <p class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
-                                Personalized 1-on-1 mentoring service that will serve as a holistic academic and
-                                non-academic walk-through to help you get into your dream universities.
-                            </p>
-                            <a href="#" class="my-btn text-sm">View More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-
     </section>
 
     {{-- ================================== Mentors ================================== --}}
@@ -233,12 +165,10 @@
                 <div class="w-full px-10 pt-10">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
-                            <button class="splide__arrow splide__arrow--prev"
-                                style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next"
-                                style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
@@ -297,7 +227,6 @@
         </div>
     </section>
 
-
     {{-- ========================================== What They Say Section ======================================= --}}
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
@@ -306,115 +235,43 @@
                     {{ __('pages/home.testi') }}
                 </h2>
             </div>
-            <div class="splide px-2" aria-label="Slide Container Example">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                        <img src="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                        <img src="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
-                    </button>
-                </div>
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full w-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            This program helped me in exploring career fields that I might interested in.
-                                            Now, I know the feeling of being a scientist or a person who works in a lab.
-                                        </p>
+            <div class="w-full py-5">
+                <div class="splide" aria-label="Slide Container Example">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
+                            <img src="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
+                            <img src="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
+                        </button>
+                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full">
+                                    <div class="splide__slide__container h-full">
+                                        <div
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            <div class="flex flex-col">
+                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
+                                                <div class="font-secondary text-base text-white text-justify">
+                                                    {!! $testi->testi_desc !!}
+                                                </div>
+                                            </div>
+                                            <div class="mt-12 flex flex-col">
+                                                <div class="font-secondary font-semibold text-2xl text-yellow">
+                                                    {{ $testi->testi_name }}
+                                                </div>
+                                                <div class="font-secondary text-sm text-white">
+                                                    {!! $testi->testi_subtitle !!}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full w-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            I am very much enjoying the program! My favorite part is that I can not just
-                                            learn but also practice to become a front and back developer, and this bootcamp
-                                            helps me to know which part of computer science that I would like to take for my
-                                            major. I can create a simple website now so it can obviously get me to a better
-                                            college because it shows that I already master a certain topic
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full w-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            This program helped me in exploring career fields that I might interested in.
-                                            Now, I know the feeling of being a scientist or a person who works in a lab.
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full w-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-2 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            I am very much enjoying the program! My favorite part is that I can not just
-                                            learn but also practice to become a front and back developer, and this bootcamp
-                                            helps me to know which part of computer science that I would like to take for my
-                                            major. I can create a simple website now so it can obviously get me to a better
-                                            college because it shows that I already master a certain topic
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full w-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            This program helped me in exploring career fields that I might interested in.
-                                            Now, I know the feeling of being a scientist or a person who works in a lab.
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
             <a href="{{ route('testimonial', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
@@ -425,7 +282,6 @@
             </a>
         </div>
     </section>
-
 
     {{-- ================================== Bottom Section ================================== --}}
     <section class="-mt-2 py-16 ">
@@ -456,7 +312,6 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             var splide = new Splide(splides[0], {
-                // height: isSmallDevice ? '70vh' : '90vh',
                 wheel: false,
                 isNavigation: false,
                 arrows: false,
@@ -465,9 +320,7 @@
                 lazyload: true,
                 interval: 5000,
                 pauseOnHover: true
-            });
-
-            splide.mount();
+            }).mount();
         });
 
         new Splide(splides[1], {
@@ -488,17 +341,24 @@
             });
         }).mount();
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var splide = new Splide(splides[2], {
-                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                    3 : 4,
-                rewind: true,
-                pagination: false,
-                arrows: false
-            });
+        new Splide(splides[2], {
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
+            rewind: true,
+            arrows: false
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[103%]');
 
-            splide.mount();
-        });
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '10px';
+                item.button.style.height = '10px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 
     <style>

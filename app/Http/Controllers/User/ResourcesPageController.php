@@ -37,8 +37,7 @@ class ResourcesPageController extends Controller
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
 
-        $guidebook = Guidebooks::all()->where('lang', $lang)->where('testi_status', 'active');
-
+        $guidebook = Guidebooks::all()->where('lang', $lang)->where('guidebook_status', 'active');
         $getting_started = $guidebook->where('guidebook_category', 'Getting Started');
         $build_your_profile = $guidebook->where('guidebook_category', 'Build Your Profile');
         $apply_to_your_dream_university = $guidebook->where('guidebook_category', 'Apply to Your Dream University');
@@ -58,11 +57,11 @@ class ResourcesPageController extends Controller
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
 
-        $testimonial = Testimonials::all();
+        $testimonial = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active');
 
-        $admission_mentoring = $testimonial->where('testi_category', 'Admissions Mentoring')->where('lang', $lang)->where('testi_status', 'active');
-        $experiential_learning = $testimonial->where('testi_category', 'Experiential Learning')->where('lang', $lang)->where('testi_status', 'active');
-        $academic_preparation = $testimonial->where('testi_category', 'Academic Preparation')->where('lang', $lang)->where('testi_status', 'active');
+        $admission_mentoring = $testimonial->where('testi_category', 'Admissions Mentoring');
+        $experiential_learning = $testimonial->where('testi_category', 'Experiential Learning');
+        $academic_preparation = $testimonial->where('testi_category', 'Academic Preparation');
 
         return view('user.testimonial.main', [
             'admission_mentoring' => $admission_mentoring,

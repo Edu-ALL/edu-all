@@ -11,15 +11,17 @@
 @section('content')
     <section class="py-10 lg:py-20">
         <div class="flex flex-col main-container">
-            <h1 class="mb-8 font-inter font-extrabold text-3xl text-primary text-center md:text-5xl">ALL-IN BLOG</h1>
+            <h1 class="mb-8 font-inter font-extrabold text-3xl text-primary text-center md:text-5xl">
+                {{ __('pages/blog.top_title') }}
+            </h1>
             <div class="flex flex-col items-center lg:items-start">
                 <div class="mb-6">
                     <span
                         class="px-4 py-2 font-inter font-bold text-sm text-white text-center rounded-md bg-primary lg:text-base">
                         @if ($is_top_update)
-                            Top Update
+                            {{ __('pages/blog.top_update') }}
                         @else
-                            Top Choice
+                            {{ __('pages/blog.top_choice') }}
                         @endif
 
                     </span>
@@ -57,11 +59,11 @@
                                                         {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 300)) }}...
                                                     </p>
                                                 </div>
-                                                <a href="{{ route('detail_blog', ['blog' => $blog->slug]) }}"
+                                                <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog->slug]) }}"
                                                     class="block my-5">
                                                     <span
                                                         class="px-4 py-2 font-secondary font-medium text-base text-white rounded-md bg-yellow">
-                                                        Read More
+                                                        {{ __('pages/blog.top_button') }}
                                                     </span>
                                                 </a>
                                             </div>
@@ -84,26 +86,26 @@
                         @if (request('category'))
                             <a href="{{ url(app()->getLocale()) }}/blog"
                                 class="px-5 py-1.5 font-inter font-bold text-sm text-primary border-[1px] border-primary rounded-md ">
-                                All
+                                {{ __('pages/blog.category_all') }}
                             </a>
                         @else
                             <a href="{{ url(app()->getLocale()) }}/blog"
                                 class="px-5 py-1.5 font-inter font-bold text-sm text-white border-[1px] border-primary rounded-md bg-primary">
-                                All
+                                {{ __('pages/blog.category_all') }}
                             </a>
                         @endif
                     </li>
                     @foreach ($blog_categories as $blog_category)
-                        @if (request('category') == $blog_category->id)
+                        @if (request('category') == $blog_category->slug)
                             <li class="flex-[0_0_auto]">
-                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->id]) }}"
+                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug]) }}"
                                     class="px-5 py-1.5 font-inter font-bold text-sm text-white border-[1px] border-primary rounded-md bg-primary">
                                     {{ $blog_category->category_name }}
                                 </a>
                             </li>
                         @else
                             <li class="flex-[0_0_auto]">
-                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->id]) }}"
+                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug]) }}"
                                     class="px-5 py-1.5 font-inter font-bold text-sm text-primary border-[1px] border-primary rounded-md ">
                                     {{ $blog_category->category_name }}
                                 </a>
@@ -114,7 +116,8 @@
             </div>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($blogs as $blog)
-                    <a href="{{ route('detail_blog', ['blog' => $blog]) }}" class="block p-3 hover:bg-[#D9D9D9]">
+                    <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog]) }}"
+                        class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2">
                             <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
                                 alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">

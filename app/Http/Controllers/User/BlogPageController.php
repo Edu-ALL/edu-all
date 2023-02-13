@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
 use App\Models\BlogReads;
@@ -20,11 +19,14 @@ class BlogPageController extends Controller
 
         // filter by category
         if (request('category')) {
-            $blogs = $blogs->where('cat_id', request('category'));
+            $category = BlogCategorys::where('slug', request('category'))->first();
+            if ($category) $blogs = $blogs->where('cat_id', $category->id);
+            else return redirect()->route('blogs', app()->getLocale());
         }
 
         // take blogs
         $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
+        // dd($blogs->get(), $top_blogs);
 
         // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
         $is_top_update = false;
@@ -33,7 +35,9 @@ class BlogPageController extends Controller
             $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->take(2)->get();
 
             // update blogs hilangkan yang sudah dijadikan top update
-            $blogs = $blogs->where('id', "!=", $top_blogs[0])->where('id', "!=", $top_blogs[1]);
+            if (count($top_blogs) > 1) {
+                $blogs = $blogs->where('id', "!=", $top_blogs[0]->id)->where('id', "!=", $top_blogs[1]->id);
+            }
         } else {
             // update blogs hilangkan yang sudah dijadikan highlight
             $blogs = $blogs->where('is_highlight', '!=', 'true');
@@ -46,6 +50,7 @@ class BlogPageController extends Controller
         // filter sesuai bahasa (lang)
         $blog_categories = BlogCategorys::all()->where('lang', $lang);
 
+
         return view('user.blog.main', [
             'top_blogs' => $top_blogs,
             'blogs' => $blogs,
@@ -54,7 +59,7 @@ class BlogPageController extends Controller
         ]);
     }
 
-    public function show(Blogs $blog)
+    public function show($locale, Blogs $blog)
     {
         // read ip address
         $ip_address = request()->ip();

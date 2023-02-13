@@ -6,12 +6,16 @@
         <div class="pt-20 bg-primary/90">
             <div class="main-container">
                 <div class="flex flex-col items-center">
-                    <h1 class="mb-4 font-primary font-semibold text-4xl text-white text-center">Upcoming Events</h1>
-                    <p class="font-primary font-light text-lg text-white text-center leading-6 md:text-xl">Download Our 2022
-                        Student-Friendly Calendar</p>
+                    <h1 class="mb-4 font-primary font-semibold text-4xl text-white text-center">
+                        {{ __('pages/resources/upcoming_events.title') }}
+                    </h1>
+                    <p class="font-primary font-light text-lg text-white text-center leading-6 md:text-xl">
+                        {{ __('pages/resources/upcoming_events.body') }}
+                    </p>
                     <a href="#" class="my-6"><span
                             class="px-6 py-2 font-primary font-semibold text-base text-white bg-yellow rounded-[4px]"><i
-                                class="fa-solid fa-file-pdf mr-2"></i> Download</span></a>
+                                class="fa-solid fa-file-pdf mr-2"></i> {{ __('pages/resources/upcoming_events.btn') }}
+                        </span></a>
                 </div>
 
             </div>
@@ -76,9 +80,12 @@
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="pt-10 pb-28">
         <div class="flex flex-col items-center main-container">
-            <h1 class="mb-4 font-primary font-semibold text-2xl text-yellow text-center">For more info and registration</h1>
+            <h1 class="mb-4 font-primary font-semibold text-2xl text-yellow text-center">
+                {{ __('pages/resources/upcoming_events.bottom_title') }}
+            </h1>
             <a href="{{ route('contact_us', ['locale' => app()->getLocale()]) }}"><span
-                    class="px-6 py-2 font-primary font-semibold text-base text-white bg-yellow rounded-[4px]">Contact Us
+                    class="px-6 py-2 font-primary font-semibold text-base text-white bg-yellow rounded-[4px]">
+                    {{ __('pages/resources/upcoming_events.bottom_btn') }}
                 </span></a>
         </div>
     </section>

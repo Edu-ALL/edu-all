@@ -268,20 +268,23 @@
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($tutors as $tutor)
-                                <li class="splide__slide">
-                                    <div class="splide__container">
-                                        <div class="flex flex-col mx-4 mb-4 rounded-[3rem] bg-primary overflow-hidden">
+                                <li class="splide__slide h-ful">
+                                    <div class="splide__container h-full">
+                                        <div
+                                            class="flex flex-col h-full mx-4 mb-4 rounded-[3rem] bg-primary overflow-hidden">
                                             <img src="{{ asset('uploaded_files/tutor/' . $tutor->thumbnail) }}"
                                                 alt="{{ $tutor->alt }}" class="p-4 md:p-0">
-                                            <div class="flex flex-col p-6">
-                                                <h5 class="mb-4 font-body font-bold text-2xl text-[#e3b422]">
+                                            <div class="flex flex-col justify-between p-6">
+                                                <h5 class="mb-4 font-body font-bold text-2xl text-yellow">
                                                     {{ $tutor->full_name }}
                                                 </h5>
-                                                <p class="mt-2 font-body font-semibold text-lg text-white">
-                                                    {{ $tutor->experience }}
-                                                </p>
-                                                <div class="font-body font-semibold text-lg text-[#e3b422]">
-                                                    {!! $tutor->subject !!}
+                                                <div class="flex flex-col">
+                                                    <p class="mt-2 font-body font-semibold text-base text-white">
+                                                        {{ $tutor->experience }}
+                                                    </p>
+                                                    <div class="font-body font-medium text-base text-yellow">
+                                                        {!! $tutor->subject !!}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -358,7 +361,7 @@
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
-            type: 'loop',
+            // type: 'loop',
             perPage: isSmallDevice ? 1 : 3,
             perMove: 1,
             arrows: false,

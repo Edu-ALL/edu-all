@@ -8,7 +8,7 @@
                 <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16">
                     <h1
                         class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:text-left md:w-1/2">
-                        COMPLETE GUIDES FOR EVERY STEP OF YOUR UNIVERSITY APPLICATION PROCESS
+                        {{ __('pages/resources/guidebook.title') }}
                     </h1>
                 </div>
             </div>
@@ -22,15 +22,17 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <p class="font-primary text-xl text-[#6F6C90] text-justify">Learn how you can ace your university
-                    application
-                    by improving your academic performance, writing skills, personal brand, and career exploration in every
-                    action!
+                <p class="font-primary text-xl text-[#6F6C90] text-justify">
+                    {{ __('pages/resources/guidebook.body') }}
+
                 </p>
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">GETTING STARTED</h2>
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                    {{ __('pages/resources/guidebook.getting_started') }}
+
+                </h2>
                 <p class="mt-2 font-body text-lg text-[#6F6C90] text-justify">
-                    Before starting your university application journey, let’s start by selecting the right subjects at
-                    school!
+                    {{ __('pages/resources/guidebook.getting_started_body') }}
+
                 </p>
                 <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
                     @foreach ($getting_started as $guidebook)
@@ -48,9 +50,12 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">BUILD YOUR PROFILE</h2>
-                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">What makes each student unique is the profile
-                    they present in front of the University admission committee. Come build your strong profile!
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                    {{ __('pages/resources/guidebook.build_your_profile') }}
+
+                </h2>
+                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">
+                    {{ __('pages/resources/guidebook.build_your_profile_body') }}
                 </p>
                 <div class="flex flex-col gap-x-6 gap-y-4 mt-8 md:flex-row">
                     @foreach ($build_your_profile as $guidebook)
@@ -68,10 +73,11 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">APPLY TO YOUR DREAM
-                    UNIVERSITY</h2>
-                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">Essays, Letters, and Interviews.. We got you
-                    covered.
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                    {{ __('pages/resources/guidebook.apply_to_your_dream_univ') }}
+                </h2>
+                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">
+                    {{ __('pages/resources/guidebook.apply_to_your_dream_univ_body') }}
                 </p>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
                     <ul class="splide__pagination"></ul>
@@ -98,10 +104,11 @@
     <section class="py-4">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">GRAB THE SCHOLARSHIP
+                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                    {{ __('pages/resources/guidebook.grap_scholarship') }}
                 </h2>
-                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">Essays, Letters, and Interviews.. We got you
-                    covered.
+                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">
+                    {{ __('pages/resources/guidebook.grap_scholarship_body') }}
                 </p>
                 <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
                     @foreach ($grab_the_scholarship as $guidebook)
@@ -142,8 +149,9 @@
                 </ul>
             </div>
             <div class="mt-4 main-container">
-                <span class="font-body font-semibold text-xl text-primary text-center md:text-left">Our mentees are
-                    currently at</span>
+                <span class="font-body font-semibold text-xl text-primary text-center md:text-left">
+                    {{ __('pages/resources/guidebook.bottom_title') }}
+                </span>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
                     <ul class="splide__pagination"></ul>
                     <div class="splide__track">
@@ -163,7 +171,9 @@
                     </div>
                 </div>
             </div>
-            <span class="mt-6 font-body font-semibold text-xl text-yellow text-center">and many more...</span>
+            <span class="mt-6 font-body font-semibold text-xl text-yellow text-center">
+                {{ __('pages/resources/guidebook.bottom_bottom') }}
+            </span>
         </div>
     </section>
 @endsection

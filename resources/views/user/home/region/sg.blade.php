@@ -158,7 +158,7 @@
     <section class="py-16 bg-primary">
         <div class="max-w-3xl w-full mx-auto flex flex-col items-center gap-8">
             <div class="flex flex-col">
-                <h2 class="mb-6 font-primary font-bold text-2xl text-center text-white">Our Program</h2>
+                <h2 class="mb-6 font-primary font-bold text-2xl text-center text-white">Success Stories</h2>
                 <p class="font-primary font-medium text-base text-center text-white">
                     Our mentees have thrived in their own field that they are passionate about, confirmed their best-fit
                     major and paved the way to top universities around the world.

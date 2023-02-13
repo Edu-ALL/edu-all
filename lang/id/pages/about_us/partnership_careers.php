@@ -2,19 +2,19 @@
 
 return [
     // Top Section
-    'title' => 'Partnership & Careers',
+    'title' => 'Kemitraan dan Karir',
 
     // Body Section
-    'desc' => 'We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills.',
+    'desc' => 'Kami percaya kolaborasi memberikan hasil terbaik. Kami bercita-cita untuk menjadi landasan dalam pendidikan siswa dengan memperkaya siswa dengan kepemimpinan, komunikasi, pemikiran kritis, dan keterampilan analitis.',
 
     // Collaborative Partners
     'colab_title' => 'Collaborative Partners',
-    'colab_bottom' => "Let's collaborate!",
-    'colab_btn' => 'Reigster Now',
+    'colab_bottom' => "Mari Berkolaborasi",
+    'colab_btn' => 'Daftar Sekarang!',
 
     // Careers
-    'careers_title' => 'Careers',
-    'careers_desc' => 'Our team is the greatest asset. We always on the lookout for someone like you:',
+    'careers_title' => 'Karir',
+    'careers_desc' => 'Tim kami adalah aset terbesar. Kami selalu mencari orang seperti Anda:',
     'careers_list' => [
         'Passionate about the education industry and wish you had access to awesome personalized mentoring service like this when you were in school',
         'Graduate of top university (preferably studied abroad) and have developed a great balance of IQ, EQ and SQ',

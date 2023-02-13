@@ -52,70 +52,41 @@
         @apply bg-yellow text-white rounded-[3px] py-1.5 px-5 font-medium font-primary capitalize;
     }
 
-    .program-card {
-        transform-style: preserve-3d;
+    /* Program Card */
+    .program_card {
+        /* transform-style: preserve-3d;*/
         @apply transition-all duration-700 relative h-[400px];
-    }
-
-    .rotate-program-card {
-        transform: rotateY(0.5turn);
-    }
-
-    .program-face-card {
-        backface-visibility: hidden;
-        @apply absolute top-0 left-0 transition-all duration-700 w-full h-full overflow-hidden rounded-xl;
-    }
-
-    .face_back {
-        transform: rotateY(0.5turn);
-    }
-
-    .student__acceptance__card {
         transform-style: preserve-3d;
         perspective: 1000px;
     }
 
-    .student__acceptance__card .front,
-    .student__acceptance__card .back {
+    .program_card .front,
+    .program_card .back {
+        @apply rounded-xl overflow-hidden;
         transition: transform 0.6s;
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
     }
 
-    .student__acceptance__card .front {
+    .program_card .back {
         position: absolute;
         top: 0;
         left: 0;
     }
 
-    .student__acceptance__card .back {
-        transform: rotateX(-180deg);
+    .program_card .back {
+        transform: rotateY(-180deg);
         position: absolute;
         top: 0;
         left: 0;
     }
-    .student__acceptance__card:hover .front {
-        transform: rotateX(-180deg);
-    }
-    .student__acceptance__card:hover .back {
-        transform: rotateX(-360deg);
-    }
 
-    .student__acceptance__btn {
-        @apply px-4 py-1.5 font-body text-sm text-white rounded-sm bg-[#2c70f7] border-[1px] border-[#2c70f7] cursor-pointer;
+    .program_card:hover .front {
+        transform: rotateY(-180deg);
     }
-
-    .student__acceptance__btn--active {
-        @apply text-yellow bg-white;
-    }
-
-    .student__acceptance__btn:hover {
-        @apply bg-yellow border-yellow;
-    }
-
-    .student__acceptance__btn--active:hover {
-        @apply bg-white border-[#2c70f7];
+    .program_card:hover .back {
+        transform: rotateY(-360deg);
     }
 
     /* Scrollbar Blog Category */

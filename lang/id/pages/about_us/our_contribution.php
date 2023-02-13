@@ -2,9 +2,9 @@
 
 return [
     // Top Section
-    'title' => 'Our Contribution',
-    'body' => 'As an independent university consultant, we always give our best to help students strive into the path they aspire to in the future by having a clear career goal by choosing the right major, and getting into top universities.',
-    'body_bold' => 'We are proud of the contribution we give to the community, especially in the education sector.',
+    'title' => 'Kontribusi Kami',
+    'body' => 'Sebagai konsultan universitas independen, kami selalu memberikan yang terbaik untuk membantu siswa berjuang ke jalur yang mereka cita-citakan di masa depan dengan memiliki tujuan karir yang jelas dengan memilih jurusan yang tepat, dan masuk ke universitas ternama.',
+    'body_bold' => 'Kami bangga dengan kontribusi yang kami berikan kepada masyarakat, khususnya di bidang pendidikan.',
 
     // contribution list
     'contribution_list' => [

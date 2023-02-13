@@ -67,37 +67,15 @@ return [
             'color' => 'yellow'
         ],
     ],
-    'pilar_desc' => 'Our Graduate Admission Mentoring Program focuses on students’ educational & professional profile enhancement while also helping develop the gameplan for their top graduate schools strategies.',
-    'pilar_btn' => 'View full learning scope here',
+    'pilar_desc' => 'Program Graduate Admission Mentoring kami berfokus pada peningkatan profil pendidikan & profesional sekaligus membantu mengembangkan strategi pendaftaran program Master terbaik untuk mereka.',
+    'pilar_btn' => 'Lihat silabus pembelajaran lengkap di sini',
 
     // why us
     'why_us_title' => "KENAPA PILIH KAMI?",
     'why_us_desc' => 'Mentor ahli kami hadir untuk memberi Anda panduan dan network di universitas peringkat teratas di AS, Kanada, Inggris, Eropa, Australia, atau Asia.',
 
     // testimony section
-    "testimony_title" => "WHAT OUR STUDENTS SAY",
-    "testimony_list" => [
-        [
-            'name' => 'Rachinta Marpaung',
-            'univ' => 'Columbia University',
-            'body' => 'ALL-IN has helped me tremendously throughout my uni application endeavors. From brainstorming essay ideas to editing the essays, to helping find internships, ALL-in has made the process so easy while ensuring my uni application is of top-notch quality. Also, the mentors are really hip and cool, so they’re really approachable! ',
-        ],
-        [
-            'name' => 'Helena Helga',
-            'univ' => 'Penn State University',
-            'body' => 'When the time came to start applying to universities, my mentor was helpful in every step of the way. Whenever I felt confused or didn’t know what to do, I could always turn to my mentor.',
-        ],
-        [
-            'name' => 'Nathasya Tiaraputri',
-            'univ' => 'Hong Kong University of Science and Technology',
-            'body' => 'ALL-in Eduspace definitely opened my eyes. I was a G11, still trying to figure out the exact major I want to take, and after I met my mentor for the first time and started talking, I realized that there were so many steps in an application for uni! I thought it was just submitting my reports, my A-level grades later and an “essay”, like I didn’t even know the difference between a personal statement and an essay or a CV. So I definitely feel more at ease throughout G12 knowing that I’m on the right track, and I didn’t have to panic as much because any question I have immediately went to my mentor!',
-        ],
-        [
-            'name' => 'Ramzi Putera Faisal',
-            'univ' => 'Tokyo International University',
-            'body' => 'My earliest struggle is about what needs to be done regarding my uni prep. I don’t even know how to start one. But after getting thorough guidance from my mentor, I now know what I need to do and how to do it. Thanks ALL-in!',
-        ],
-    ],
+    "testimony_title" => "APA YANG MEREKA KATAKAN",
 
     // bottom section
     "bottom_title" => "Setiap tahun, 150+ mentee kami berhasil masuk ke universitas impian mereka.",

@@ -51,11 +51,13 @@
                         <div
                             class="flex justify-between items-stretch gap-4 w-full min-h-full rounded-lg bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden lg:rounded-full lg:min-h-max">
                             <div
-                                class="flex items-center w-1/5 min-h-full px-2 bg-graduate-list-{{ $loop->iteration }} bg-cover bg-center  lg:w-1/3 lg:px-6  lg:rounded-full">
+                                class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
                                 <span
-                                    class="font-secondary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80">
+                                    class="font-secondary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
                                 </span>
+                                <img src="{{ asset('assets/img/admission mentoring/Graduate/Graduate' . $loop->iteration . '.webp') }}"
+                                    alt="Allin" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
                             </div>
                             <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
                                 <h4 class="font-inter font-semibold text-xl text-yellow">{{ $item['title'] }}</h4>

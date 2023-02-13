@@ -3,7 +3,7 @@
 return [
     'title' => 'SAT/ACT PREP',
     'desc' => 'Raih skor tinggi untuk masuk ke universitas top dunia! Persiapkan tes kamu dengan expert SAT/ACT dengan strategi yang telah terbukti selama bertahun-tahun.',
-    'top_btn' => 'Register Here',
+    'top_btn' => 'Daftar Disini',
 
     // SUBJECTS COVERED
     'subjects_title' => 'SUBJECTS COVERED',
@@ -126,7 +126,7 @@ return [
     ],
 
     // bottom section
-    'bottom_title' => '175+ students have gotten into their dream universities with outstanding test scores.',
-    'bottom_subtitle' => 'It’s time for your turn.',
-    'bottom_btn' => 'Take Your FREE SAT Diagnostic Test'
+    'bottom_title' => '175+ siswa telah masuk ke universitas impian mereka dengan nilai ujian yang luar biasa.',
+    'bottom_subtitle' => 'Saatnya giliran Anda.',
+    'bottom_btn' => 'Ikuti Tes Diagnostik SAT GRATIS Anda'
 ];

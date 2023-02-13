@@ -20,7 +20,7 @@
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">
                     <h1 class="font-secondary font-bold text-4xl text-primary text-center md:text-6xl xl:text-start">
-                        Get to know {{ $mentor->mentor_firstname }}
+                        {{ __('pages/about_us/mentor.get_to_know') }} {{ $mentor->mentor_firstname }}
                     </h1>
                 </div>
                 <div class="w-full flex flex-col md:col-span-3 xl:row-span-1 xl:self-start">
@@ -36,7 +36,7 @@
     <section class="py-10">
         <div class="main-container flex flex-col">
             <h2 class="mb-8 font-secondary font-extrabold text-4xl text-primary text-left">
-                Recent Videos?
+                {{ __('pages/about_us/mentor.recent_videos') }}
             </h2>
             @if (count($mentor->mentor_video) > 1)
                 <div class="splide" role="group">
@@ -73,7 +73,7 @@
                 </div>
             @else
                 <h2 class="mb-8 font-secondary font-extrabold text-base text-primary text-center">
-                    Video Not Found!
+                    {{ __('pages/about_us/mentor.video_not_found') }}
                 </h2>
             @endif
         </div>
@@ -84,16 +84,15 @@
         <div class="main-container">
             <div class="flex flex-col items-center">
                 <h2 class="mb-4 font-secondary font-extrabold text-4xl text-primary text-center">
-                    Schedule your Consultation with Devi!
+                    {{ __('pages/about_us/mentor.bottom_detail_title') }} {{ $mentor->mentor_firstname }}!
                 </h2>
-                <p class="max-w-2xl mb-8 font-secondary font-medium text-base text-primary text-center">Let’s find out how
-                    to get into
-                    your
-                    dream university and future career path through the first consultation with our top-notch mentors and
-                    your profile assessment based on ALL-in’s Four Pillars of University Application.</p>
+                <p class="max-w-2xl mb-8 font-secondary font-medium text-base text-primary text-center">
+                    {{ __('pages/about_us/mentor.bottom_detail_body') }}
+                </p>
                 <a href="{{ route('sign_me', app()->getLocale()) }}">
-                    <span class="px-10 py-2 font-inter font-medium text-base text-white rounded-md bg-yellow">Start Your
-                        Consultation</span>
+                    <span class="px-10 py-2 font-inter font-medium text-base text-white rounded-md bg-yellow">
+                        {{ __('pages/about_us/mentor.bottom_detail_btn') }}
+                    </span>
                 </a>
             </div>
         </div>

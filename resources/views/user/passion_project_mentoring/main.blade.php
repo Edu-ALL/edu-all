@@ -20,17 +20,17 @@
                     </div>
 
                     <div class="flex justify-center max-h-fit pt-10 md:w-2/3 lg:w-1/2 lg:pt-20">
-                        <img src="{{ asset('assets/img/passion_project_mentoring/stream.webp') }}" alt=""
+                        <img src="{{ asset('assets/img/passion_project_mentoring/stream.webp') }}"
                             class="w-4/6 max-w-lg md:w-full">
                     </div>
                 </div>
                 <div class="mt-10">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}" alt="">
+                    <img src="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}">
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/passion_project_mentoring/Header-2.webp') }}" alt=""
-                class="w-full h-[900px]  object-cover object-center sm:h-[1000px] md:h-[80vh] lg:h-[92vh]">
+            <img src="{{ asset('assets/img/passion_project_mentoring/Header-2.webp') }}"
+                class="w-full h-[900px] object-cover object-center sm:h-[1000px] md:h-[750px] lg:h-[850px]">
         </div>
     </section>
 
@@ -48,18 +48,17 @@
                 </div>
                 <div class="flex items-start main-container mt-4">
                     <div class="flex items-center w-28 h-28 z-10">
-                        <img src="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}" alt="">
+                        <img src="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}">
                     </div>
                     <div class="flex items-center w-28 h-28 -ml-6">
-                        <img src="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}" alt="">
+                        <img src="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}">
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-entre-2 md:bg-cover md:bg-center">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}" alt=""
-                        class="md:hidden">
+                    <img src="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-body text-base text-primary md:text-xl">
@@ -143,11 +142,11 @@
                 <h2 class="font-title font-black text-3xl text-primary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
                         class="object-cover flex-1">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-2.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-2.webp') }}"
                         class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-3.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-3.webp') }}"
                         class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
                 </div>
             </div>
@@ -158,7 +157,7 @@
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-entre-3 md:bg-cover md:bg-top">
                         <img src="{{ asset('assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp') }}"
-                            alt="" class="md:hidden">
+                            class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-body font-medium text-base text-primary tracking-wider md:text-xl">
@@ -200,18 +199,17 @@
                 </div>
                 <div class="flex items-start main-container mt-4">
                     <div class="flex items-center w-28 h-28 z-10">
-                        <img src="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}" alt="">
+                        <img src="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}">
                     </div>
                     <div class="flex items-center w-28 h-28 -ml-6">
-                        <img src="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}" alt="">
+                        <img src="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}">
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-scien-2 md:bg-cover md:bg-center">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}" alt=""
-                        class="md:hidden">
+                    <img src="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-body text-base text-primary md:text-xl">
@@ -295,11 +293,11 @@
                 <h2 class="font-title font-black text-3xl text-primary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
                         class="object-cover flex-1">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-5.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-5.webp') }}"
                         class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
-                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-6.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/passion_project_mentoring/skill-6.webp') }}"
                         class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
                 </div>
             </div>
@@ -310,7 +308,7 @@
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-scien-3 md:bg-cover md:bg-top">
                         <img src="{{ asset('assets/img/passion_project_mentoring/timetable-research-crop-300x177.webp') }}"
-                            alt="" class="md:hidden">
+                            class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-body font-medium text-base text-primary tracking-wider md:text-xl">

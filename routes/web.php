@@ -65,6 +65,7 @@ Route::group(
 
         Route::controller(BlogPageController::class)->group(function () {
             Route::get('blog', "index")->name('blogs');
+            Route::get('/blog/{blog:slug}', 'show')->name('detail_blog');
         });
 
         Route::get('/sample', function () {
@@ -72,6 +73,3 @@ Route::group(
         })->name('sample');
     },
 );
-
-
-Route::get('blog/{blog:slug}', [BlogPageController::class, "show"])->name('detail_blog');

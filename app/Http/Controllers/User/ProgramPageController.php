@@ -84,7 +84,7 @@ class ProgramPageController extends Controller
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "Academic Tutoring");
 
-        $tutors = Tutors::all();
+        $tutors = Tutors::all()->where('status', 'active');
 
         return view('user.academic_tutoring.main',  [
             'testimonies' => $testimonies,
