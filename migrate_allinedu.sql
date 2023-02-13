@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 09:15 AM
+-- Generation Time: Feb 13, 2023 at 08:54 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -87,7 +87,7 @@ CREATE TABLE `tb_blog` (
 INSERT INTO `tb_blog` (`id`, `slug`, `cat_id`, `mt_id`, `blog_title`, `blog_description`, `blog_thumbnail`, `blog_thumbnail_alt`, `blog_status`, `seo_title`, `seo_keyword`, `seo_desc`, `lang`, `click_count`, `duration_read`, `is_highlight`, `publish_date`, `created_at`, `updated_at`) VALUES
 (3, 'blog-all-in-eduspace', 9, NULL, 'Blog ALL-in Eduspace', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<br>\r\n<h2>An Overview of The University of Toronto</h2>\r\n<br>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<br>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>', 'Thumbnail-blogs-20230208094114.jpg', 'alt', 'publish', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 45, 'false', '2023-02-10 02:29:51', '2023-02-08 02:41:14', '2023-02-10 02:54:02'),
 (5, 'blog-all-in-eduspace-2', 10, 22, 'Blog ALL-in Eduspace 2', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<br>\r\n<h2>An Overview of The University of Toronto</h2>\r\n<br>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<br>\r\n<ol>\r\n<li>sdasdas</li>\r\n<li>dasdasd</li>\r\n<li>sdas</li>\r\n</ol>\r\n<br>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>\r\n<br>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>\r\n<br>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>', 'Thumbnail-blogs-20230208095724.png', 'alt', 'publish', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'id', 0, 145, 'false', '2023-02-09 03:08:21', '2023-02-08 02:57:24', '2023-02-10 03:58:04'),
-(6, 'blog-all-in-eduspace-3', 16, 21, 'Blog ALL-in Eduspace 3', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<br>\r\n<h2>An Overview of The University of Toronto</h2>\r\n<br>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<br>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>', 'Thumbnail-blogs-20230209102920.webp', 'alt', 'publish', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 30, 'false', '2023-02-09 03:30:38', '2023-02-09 03:29:21', '2023-02-10 02:54:38');
+(6, 'blog-all-in-eduspace-3', 16, 21, 'Blog ALL-in Eduspace 3', '<h3>If you&rsquo;re looking for a top-notch Canadian university, look no further than the University of Toronto. Moreover, famously known as &lsquo;U of T&rsquo;, the University of Toronto has produced over half a million alumni and is affiliated with 12 Nobel laureates. If you&rsquo;re planning to study there, let&rsquo;s have a look at the University of Toronto acceptance rate!</h3>\r\n<br>\r\n<h2>An Overview of The University of Toronto</h2>\r\n<br>\r\n<p>Founded in 1827, the University of Toronto is a public institution that has three campuses located in and around Toronto. Furthermore, the university is made up of several academic divisions in a wide range of disciplines, including applied science and engineering, public health, social science, and management.</p>\r\n<br>\r\n<p>Across the campuses, the university has more than 44 libraries that house 19 million-plus physical volumes. Moreover, known for its strong focus on research, the University of Toronto receives the most annual scientific research funding and endowment among other Canadian universities. Insulin, which was discovered in the first half of the 1920s, is one of the major innovations that originated at the University of Toronto.</p>', 'Thumbnail-blogs-20230209102920.webp', 'alt', 'draft', 'Lorem ipsum dolor sit amet', 'lorem,ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'en', 0, 30, 'false', NULL, '2023-02-09 03:29:21', '2023-02-13 00:18:01');
 
 -- --------------------------------------------------------
 
@@ -164,6 +164,14 @@ CREATE TABLE `tb_blog_widget` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_blog_widget`
+--
+
+INSERT INTO `tb_blog_widget` (`id`, `blog_id`, `title`, `description`, `link`, `position`, `created_at`, `updated_at`) VALUES
+(2, 5, 'Title Blog ALL-In Eduspace', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'https://www.youtube.com/', 2, '2023-02-13 00:16:24', '2023-02-13 00:41:51'),
+(3, 5, 'Title Blog ALL-In Eduspace 2', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'https://www.google.com/', 4, '2023-02-13 00:43:01', '2023-02-13 00:43:01');
 
 -- --------------------------------------------------------
 
@@ -421,19 +429,14 @@ CREATE TABLE `tb_upcoming_event` (
   `event_subtitle` varchar(255) NOT NULL,
   `event_detail` text NOT NULL,
   `event_rsvp_link` text DEFAULT NULL,
-  `event_status` enum('active','inactive') NOT NULL COMMENT '1:active,\r\n2:inactive',
+  `event_status` enum('draft','publish') NOT NULL COMMENT '1:draft,\r\n2:publish',
+  `region` char(2) NOT NULL,
   `lang` char(2) NOT NULL,
+  `publish_date` datetime NOT NULL,
+  `take_off_date` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tb_upcoming_event`
---
-
-INSERT INTO `tb_upcoming_event` (`id`, `group`, `event_date`, `event_thumbnail`, `event_alt`, `event_title`, `event_subtitle`, `event_detail`, `event_rsvp_link`, `event_status`, `lang`, `created_at`, `updated_at`) VALUES
-(7, 20230126162533, '23 December 2022', 'Upcoming-Event-en-20230126162533.png', 'alt en', 'title en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'https://www.google.com/', 'active', 'en', '2023-01-26 09:25:33', '2023-01-26 09:31:46'),
-(8, 20230126162533, '23 desember 2022', 'Upcoming-Event-id-20230126162533.png', 'alt id', 'title id', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', 'https://www.google.com/', 'active', 'id', '2023-01-26 09:25:33', '2023-01-26 09:31:46');
 
 -- --------------------------------------------------------
 
@@ -590,7 +593,7 @@ ALTER TABLE `tb_blog_read`
 -- AUTO_INCREMENT for table `tb_blog_widget`
 --
 ALTER TABLE `tb_blog_widget`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_contact`
@@ -650,7 +653,7 @@ ALTER TABLE `tb_tutor`
 -- AUTO_INCREMENT for table `tb_upcoming_event`
 --
 ALTER TABLE `tb_upcoming_event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_users`

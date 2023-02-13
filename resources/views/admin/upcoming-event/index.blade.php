@@ -64,7 +64,7 @@
                                                 <img src="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
                                             </td>
                                             <td>{{ $upcoming_event->lang == 'en' ? 'English' : 'Indonesia'}}</td>
-                                            @if ($upcoming_event->event_status == 'active')
+                                            @if ($upcoming_event->event_status == 'publish')
                                                 <td class="text-center">
                                                     <button 
                                                     class="btn btn-success"
@@ -72,7 +72,7 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#deactivate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $upcoming_event->group }})"
+                                                    {{-- onclick="formDeactivate({{ $upcoming_event->group }})" --}}
                                                     >
                                                         <span data-bs-toggle="tooltip" data-bs-title="Deactivate this upcoming event">
                                                             {{ $upcoming_event->event_status }}
@@ -87,7 +87,7 @@
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#activate"
                                                     style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $upcoming_event->group }})"
+                                                    {{-- onclick="formActivate({{ $upcoming_event->group }})" --}}
                                                     >
                                                         <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this upcoming event">
                                                             {{ $upcoming_event->event_status }}

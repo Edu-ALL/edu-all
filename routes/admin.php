@@ -64,7 +64,7 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/blogs/publish/{id}', [Blog::class, 'status_publish']);
     Route::post('/blogs/delete/{id}', [Blog::class, 'delete']);
     Route::post('/blogs/widget/{id}', [BlogWidget::class, 'store']);
-    // Route::post('/blogs/video/{group}/{id}', [BlogWidget::class, 'update']);
+    Route::post('/blogs/widget/{blog_id}/{id}', [BlogWidget::class, 'update']);
     Route::post('/blogs/widget/delete/{blog_id}/{id}', [BlogWidget::class, 'delete']);
 
     // Blog Category

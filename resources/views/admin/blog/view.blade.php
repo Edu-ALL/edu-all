@@ -242,7 +242,7 @@
                                                     <tr>
                                                         <th scope="row">{{ $i++ }}</th>
                                                         <td>{{ $widget->title }}</td>
-                                                        <td>{!! $widget->description !!}</td>
+                                                        <td>{!! Str::limit($widget->description, 150, '...') !!}</td>
                                                         <td>{{ $widget->position }}</td>
                                                         <td>
                                                             <a href="{{ $widget->link }}" target="_blank">{{ $widget->link }}</a>
@@ -253,11 +253,11 @@
                                                                 class="btn btn-warning"
                                                                 type="button"
                                                                 data-bs-toggle="modal" 
-                                                                data-bs-target="#video"
+                                                                data-bs-target="#widget"
                                                                 style="text-transform: capitalize;"
-                                                                {{-- onclick="formUpdate({{ $mentor_video->mentor_id }}, {{ $mentor_video->id }}, '{{ $mentor_video->video_embed }}', '{!! $mentor_video->description !!}')" --}}
+                                                                onclick="formUpdate({{ $widget->blog_id }}, {{ $widget->id }}, '{{ $widget->title }}', '{!! $widget->description !!}', '{{ $widget->link }}', '{{ $widget->position }}')"
                                                                 >
-                                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this mentor video"></i>
+                                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog widget"></i>
                                                                 </button>
                                                                 <button 
                                                                 type="button"
@@ -266,7 +266,7 @@
                                                                 data-bs-target="#delete"
                                                                 onclick="formDelete({{ $widget->blog_id }}, {{ $widget->id }})"
                                                                 >
-                                                                    <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this mentor video"></i>
+                                                                    <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog widget"></i>
                                                                 </button>
                                                             </div>
                                                         </td>
@@ -428,8 +428,16 @@
         $('#title').attr('value', '');
         tinymce.get("description").setContent('');
         $('#link').attr('value', '');
-        $('#position').attr('value', '');
+        $('#position').val('').change();
         $('#form_widget').attr('action', '{{ url('/admin/blogs/widget/') }}' + '/' + id);
+    };
+    function formUpdate(blog_id, id, title, desc, link, position){
+        $("#title-info").text("Update Blog Widget");
+        $('#title').attr('value', title);
+        tinymce.get("description").setContent(desc);
+        $('#link').attr('value', link);
+        $('#position').val(position).change();
+        $('#form_widget').attr('action', '{{ url('/admin/blogs/widget/') }}' + '/' + blog_id + '/' + id);
     };
     function formDelete(blog_id, id){
         $('#form_delete').attr('action', '{{ url('/admin/blogs/widget/delete/') }}' + '/' + blog_id + '/' + id);
