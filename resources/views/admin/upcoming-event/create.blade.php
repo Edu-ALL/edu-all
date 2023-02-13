@@ -12,7 +12,7 @@
 @section('content')
 @include('layout.admin.header')
 @include('layout.admin.sidebar')
-<main id="main" class="main">
+<main id="main" class="main" style="overflow: hidden">
     <div class="pagetitle">
         <h1>Upcoming Event</h1>
         <nav>
@@ -35,188 +35,145 @@
                                     <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
-                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="english-tab" data-bs-toggle="tab" data-bs-target="#bordered-english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="indo-tab" data-bs-toggle="tab" data-bs-target="#bordered-indo" type="button" role="tab" aria-controls="indo" aria-selected="false" onclick="checkInput()">Indonesia</button>
-                                </li>
-                            </ul>
+                            <ul class="nav nav-tabs nav-tabs-bordered"></ul>
                             <form action="{{ route('create-upcoming-event') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="tab-content" id="borderedTabContent">
-                                    {{-- Tab English --}}
-                                    <div class="tab-pane fade show active" id="bordered-english" role="tabpanel" aria-labelledby="english-tab">
-                                        <div class="col py-2">
-                                            <h5 class="card-title">Form English</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Upcoming Event!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
-                                            <div class="col d-flex flex-column gap-2">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Thumbnail Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="thumbnail_en" onchange="previewImage_en()" name="event_thumbnail_en">
-                                                            @error('event_thumbnail_en')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_en" name="event_alt_en" value="{{ old('event_alt_en') }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Title <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="title_en" name="event_title_en" value="{{ old('event_title_en') }}">
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Date <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="date_en" name="event_date_en" value="{{ old('event_date_en') }}">
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Short Description <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <textarea class="textarea" name="event_subtitle_en" id="subtitle_en">
-                                                        {{ old('event_subtitle_en') }}
-                                                    </textarea>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Detail <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <textarea class="textarea" name="event_detail_en" id="detail_en">
-                                                        {{ old('event_detail_en') }}
-                                                    </textarea>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        RSVP Link
-                                                    </label>
-                                                    <input type="text" class="form-control" id="rsvp_en" name="event_rsvp_en" value="{{ old('event_rsvp_en') }}">
-                                                    @error('event_rsvp_en')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
+                                <h5 class="card-title">Choose Region and Language</h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Region <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <div class="col">
+                                            <select class="select2" name="region" id="region" onchange="checkInput()">
+                                                <option value=""></option>
+                                                @foreach ($regions as $regions)
+                                                    <option value="{{ $regions->region_id }}" {{ old('region') == $regions->region_id ? 'selected' : '' }}>
+                                                        {{ $regions->region }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('region')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Language <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <div class="col">
+                                            <select class="select2" name="lang" id="lang" onchange="checkInput()">
+                                                <option value=""></option>
+                                                @foreach ($languages as $languages)
+                                                    <option value="{{ $languages->language_id }}" {{ old('lang') == $languages->language_id ? 'selected' : '' }}>
+                                                        {{ $languages->language }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('lang')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs nav-tabs-bordered pt-4"></ul>
+                                <h5 class="card-title">Form Upcoming Event</h5>
+                                @if($errors->any())
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Failed Create Upcoming Event!</strong> You have to check some fields in English and Indonesian.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <div class="col d-flex flex-column gap-2">
+                                    <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                        <div class="col-md-2 col">
+                                            <label for="" class="form-label">Thumbnail Preview</label>
+                                            <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
+                                                <img class="img-preview img-fluid" id="img_preview">
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex flex-column gap-2">
+                                            <div class="col-12">
+                                                <label for="" class="form-label">
+                                                    Thumbnail <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="event_thumbnail">
+                                                @error('event_thumbnail')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="" class="form-label">
+                                                    Alt <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="alt" name="event_alt" value="{{ old('event_alt') }}">
                                             </div>
                                         </div>
                                     </div>
-
-                                    {{-- Tab Indonesia --}}
-                                    <div class="tab-pane fade" id="bordered-indo" role="tabpanel" aria-labelledby="indo-tab">
-                                        <div class="col py-2">
-                                            <h5 class="card-title">Form Indonesia</h5>
-                                            @if($errors->any())
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <strong>Failed Create Upcoming Event!</strong> You have to check some fields in English and Indonesian.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                            @endif
-                                            <div class="col d-flex flex-column gap-2">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col-md-2 col">
-                                                        <label for="" class="form-label">Thumbnail Preview</label>
-                                                        <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col d-flex flex-column gap-2">
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Thumbnail <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="file" class="form-control" id="thumbnail_id" onchange="previewImage_id()" name="event_thumbnail_id">
-                                                            @error('event_thumbnail_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="" class="form-label">
-                                                                Alt <span style="color: var(--red)">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="alt_id" name="event_alt_id" value="{{ old('event_alt_id') }}">
-                                                            @error('event_alt_id')
-                                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Title <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="title_id" name="event_title_id" value="{{ old('event_title_id') }}">
-                                                    @error('event_title_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Date <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <input type="text" class="form-control" id="date_id" name="event_date_id" value="{{ old('event_date_id') }}">
-                                                    @error('event_date_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Short Description <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <textarea class="textarea" name="event_subtitle_id" id="subtitle_id">
-                                                        {{ old('event_subtitle_id') }}
-                                                    </textarea>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        Detail <span style="color: var(--red)">*</span>
-                                                    </label>
-                                                    <textarea class="textarea" name="event_detail_id" id="detail_id">
-                                                        {{ old('event_detail_id') }}
-                                                    </textarea>
-                                                    @error('event_detail_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                                <div class="col-12">
-                                                    <label for="" class="form-label">
-                                                        RSVP Link
-                                                    </label>
-                                                    <input type="text" class="form-control" id="rsvp_id" name="event_rsvp_id" value="{{ old('event_rsvp_id') }}">
-                                                    @error('event_rsvp_id')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                            </div>
-
-                                            <div class="text-center mt-3">
-                                                <button type="submit" class="btn btn-primary" id="submit">
-                                                    <i class="fa-solid fa-check me-1"></i> Submit
-                                                </button>
-                                            </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Title <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="title" name="event_title" value="{{ old('event_title') }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Date <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="date" name="event_date" value="{{ old('event_date') }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Short Description <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <textarea class="textarea" name="event_short_description" id="short_description">
+                                            {{ old('event_short_description') }}
+                                        </textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Detail <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <textarea class="textarea" name="event_detail" id="detail">
+                                            {{ old('event_detail') }}
+                                        </textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            RSVP Link
+                                        </label>
+                                        <input type="text" class="form-control" id="rsvp" name="event_rsvp" value="{{ old('event_rsvp') }}">
+                                        @error('event_rsvp')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="" class="form-label">
+                                                Publish Date <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="date" class="form-control" id="publish_date" name="publish_date" value="{{ old('publish_date') }}">
+                                            @error('publish_date')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col">
+                                            <label for="" class="form-label">
+                                                Take Off Date <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="date" class="form-control" id="take_off_date" name="take_off_date" value="{{ old('take_off_date') }}">
+                                            @error('take_off_date')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary" id="submit" disabled>
+                                        <i class="fa-solid fa-check me-1"></i> Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -230,19 +187,9 @@
 
 @section('js')
 <script>
-    function previewImage_en(){
-        const image = document.querySelector('#thumbnail_en')
-        const imgPreview = document.querySelector('#img_preview_en')
-        imgPreview.style.display = 'block'
-        const oFReader = new FileReader()
-        oFReader.readAsDataURL(image.files[0])
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result
-        }
-    };
-    function previewImage_id(){
-        const image = document.querySelector('#thumbnail_id')
-        const imgPreview = document.querySelector('#img_preview_id')
+    function previewImage(){
+        const image = document.querySelector('#thumbnail')
+        const imgPreview = document.querySelector('#img_preview')
         imgPreview.style.display = 'block'
         const oFReader = new FileReader()
         oFReader.readAsDataURL(image.files[0])
@@ -251,19 +198,13 @@
         }
     };
     function checkInput(){
-        const thumbnail_en = document.getElementById('thumbnail_en').value;
-        const alt_en = document.getElementById('alt_en').value;
-        const title_en = document.getElementById('title_en').value;
-        const date_en = document.getElementById('date_en').value;
-        const subtitle_en = tinymce.get('subtitle_en').getContent();
-        const detail_en = tinymce.get('detail_en').getContent();
+        const region = document.getElementById('region').value;
+        const lang = document.getElementById('lang').value;
         const submit = document.getElementById('submit');
-        if (thumbnail_en == "" || alt_en == "" || title_en == "" || subtitle_en == "" || date_en == "" || detail_en == "") {
-            submit.disabled = true;
-        } else {
+        if (region != '' && lang != '') {
             submit.disabled = false;
         }
     };
-
+    checkInput();
 </script>
 @endsection

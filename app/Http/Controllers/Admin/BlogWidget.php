@@ -48,8 +48,34 @@ class BlogWidget extends Controller
         
     }
 
-    public function update(Request $request, $group){
-        
+    public function update(Request $request, $blog_id, $id){
+        $rules = [
+            'title' => 'required',
+            'description' => 'required',
+            'position' => 'required',
+            'link' => 'required|url',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator->messages());
+        }
+
+        DB::beginTransaction();
+        try {
+            $blog_widget = BlogWidgets::find($id);
+            $blog_widget->title = $request->title;
+            $blog_widget->description = $request->description;
+            $blog_widget->position = $request->position;
+            $blog_widget->link = $request->link;
+            $blog_widget->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/blogs/'.$blog_id.'/view')->withSuccess('Blog Widget Was Successfully Updated');
     }
 
     public function delete($blog_id, $id){
