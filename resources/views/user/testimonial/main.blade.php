@@ -131,7 +131,7 @@
                                 <div class="splide__arrows"></div>
                                 <div class="splide__track md:mx-14">
                                     <ul class="splide__list">
-                                        @foreach ($admission_mentoring as $item)
+                                        @foreach ($academic_preparation as $item)
                                             <li class="splide__slide">
                                                 <div class="splide__slide__container h-full py-6">
                                                     <div
