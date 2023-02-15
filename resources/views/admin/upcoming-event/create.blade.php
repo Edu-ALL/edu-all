@@ -81,7 +81,7 @@
                                 <h5 class="card-title">Form Upcoming Event</h5>
                                 @if($errors->any())
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                        <strong>Failed Create Upcoming Event!</strong> You have to check some fields in English and Indonesian.
+                                        <strong>Failed Create Upcoming Event!</strong> You have to check some fields.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 @endif

@@ -104,9 +104,12 @@
                                                 @enderror
                                             </div>
                                             <div class="col">
-                                                <label for="" class="form-label">
-                                                    Mentor
-                                                </label>
+                                                <div class="col d-flex flex-row justify-content-between">
+                                                    <label for="" class="form-label">
+                                                        Mentor
+                                                    </label>
+                                                    <small class="alert text-danger p-0 m-0 fs-12 text-decoration-underline" onclick="clearMentor()" style="cursor: pointer">Clear Selection</small>
+                                                </div>
                                                 <div class="col">
                                                     <select class="select2" name="mentor" id="mentor">
                                                         <option value=""></option>
@@ -247,6 +250,10 @@
         const blog_slug = document.getElementById('blog_slug');
         blog_slug.value = blog_title;
     };
+
+    function clearMentor(){
+        $('#mentor').val(null).trigger('change');
+    }
 
     async function selectLang(){
         let lang = $('#lang').val()

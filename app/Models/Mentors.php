@@ -32,12 +32,10 @@ class Mentors extends Model
         'updated_at'
     ];
 
-    public function mentor_video()
-    {
+    public function mentor_video(){
         return $this->hasMany(MentorVideos::class, 'mentor_id', 'group');
     }
-    public function blog()
-    {
+    public function blog(){
         return $this->hasMany(Blogs::class, 'mt_id', 'id');
     }
     public function languages(){

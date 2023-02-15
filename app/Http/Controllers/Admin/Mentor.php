@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Validator;
 class Mentor extends Controller
 {
     public function index(){
-        $mentors = Mentors::get();
+        $mentors = Mentors::orderBy('updated_at', 'desc')->get();
         return view('admin.mentor.index', ['mentors' => $mentors]);
     }
 
@@ -106,9 +106,11 @@ class Mentor extends Controller
         if (!Mentors::where('group', $group)->first('id')) {
             return redirect('/admin/mentor')->withErrors('Mentor Cannot Be Found');
         }
-        $mentor = Mentors::with('mentor_video')->where('group', $group)->get();
+        $mentor = Mentors::where('group', $group)->get();
+        $mentor_video = MentorVideos::where('mentor_id', $group)->orderBy('updated_at', 'desc')->get();
         return view('admin.mentor.view', [
             'mentor' => $mentor,
+            'mentor_video' => $mentor_video,
         ]);
     }
 
@@ -204,27 +206,28 @@ class Mentor extends Controller
         DB::beginTransaction();
         try {
             $mentor = Mentors::where('group', $group)->get();
-            if ($mentor[0]->mentor_picture == $mentor[1]->mentor_picture) {
-                $old_image_path = $mentor[0]->mentor_picture;
-                $file_path = public_path('uploaded_files/mentor/'.$old_image_path);
-                if (File::exists($file_path)) {
-                    File::delete($file_path);
+            if ($mentor[0]->blog->count() > 0 || $mentor[1]->blog->count() > 0) {
+                return Redirect::back()->withErrors('This Mentor is Still Used');
+            } else {
+                if ($mentor[0]->mentor_picture == $mentor[1]->mentor_picture) {
+                    $old_image_path = $mentor[0]->mentor_picture;
+                    $file_path = public_path('uploaded_files/mentor/'.$old_image_path);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
                 }
+                $mentor_videos = MentorVideos::where('mentor_id', $group)->get();
+                foreach ($mentor_videos as $video) { 
+                    $video->delete();
+                }
+                $mentor[0]->delete();
+                $mentor[1]->delete();
+                DB::commit();
             }
-            $mentor[0]->delete();
-            $mentor[1]->delete();
-
-            $mentor_videos = MentorVideos::where('mentor_id', $group)->get();
-            for ($i=0; $i < $mentor_videos->count(); $i++) { 
-                $mentor_videos[$i]->delete();
-            }
-
-            DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
             return Redirect::back()->withErrors($e->getMessage());
         }
-
         return redirect('/admin/mentor')->withSuccess('Mentor Was Successfully Deleted');
     }
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class Guidebook extends Controller
 {
     public function index(){
-        $guidebooks = Guidebooks::get();
+        $guidebooks = Guidebooks::orderBy('updated_at', 'desc')->get();
         return view('admin.guidebook.index', ['guidebooks' => $guidebooks]);
     }
 

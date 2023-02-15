@@ -311,7 +311,7 @@
                                                 @php
                                                     $i = 1;
                                                 @endphp
-                                                @foreach ($mentor[0]->mentor_video as $mentor_video)
+                                                @foreach ($mentor_video as $mentor_video)
                                                     <tr>
                                                         <th scope="row">{{ $i++ }}</th>
                                                         <td>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class Tutor extends Controller
 {
     public function index(){
-        $tutors = Tutors::get();
+        $tutors = Tutors::orderBy('updated_at', 'desc')->get();
         return view('admin.tutor.index', ['tutors' => $tutors]);
     }
 
