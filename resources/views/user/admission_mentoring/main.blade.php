@@ -33,8 +33,8 @@
             class="max-w-5xl min-w-max bg-white shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[180px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-4 md:px-10 md:py-4 md:gap-y-14 md:gap-x-10 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1"
-                        class="h-36 md:h-24">
+                    <img src="{{ asset('assets/img/admission mentoring/benefit-1.png') }}" alt="ilustration 1"
+                        class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-body text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_1') }}
@@ -43,8 +43,8 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-black"></div>
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 1"
-                        class="h-36 md:h-24">
+                    <img src="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration 1"
+                        class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-body text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_2') }}
@@ -53,8 +53,8 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-black"></div>
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
-                        class="h-36 md:h-24">
+                    <img src="{{ asset('assets/img/admission mentoring/benefit-3.png') }}" alt="ilustration 1"
+                        class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-body text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_3') }}
@@ -63,8 +63,8 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-black"></div>
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1"
-                        class="h-36 md:h-24">
+                    <img src="{{ asset('assets/img/admission mentoring/benefit-4.png') }}" alt="ilustration 1"
+                        class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-body text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_4') }}
