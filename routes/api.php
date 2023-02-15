@@ -27,3 +27,11 @@ Route::get('/category/{lang}', function ($lang) {
 Route::get('/mentor/{lang}', function ($lang) {
     return Mentors::where('lang', $lang)->get();
 })->name('select-mentor');
+
+Route::get('/language/{lang}', function ($lang) {
+    $data = [
+        'category' => BlogCategorys::where('lang', $lang)->get(),
+        'mentor' => Mentors::where('lang', $lang)->get()
+    ];
+    return $data;
+})->name('select-language');

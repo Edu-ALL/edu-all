@@ -190,7 +190,7 @@
 
         for (var i = 0; i < splides.length; i++) {
             new Splide(splides[i], {
-                type: 'loop',
+                type: 'slide',
                 perPage: isLargeDevice ? 1 : 2,
                 focus: 0,
                 pagination: false,
