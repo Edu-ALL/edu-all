@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class Testimonial extends Controller
 {
     public function index(){
-        $testimonials = Testimonials::get();
+        $testimonials = Testimonials::orderBy('updated_at', 'desc')->get();
         return view('admin.testimonial.index', ['testimonials' => $testimonials]);
     }
 

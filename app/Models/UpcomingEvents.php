@@ -27,4 +27,11 @@ class UpcomingEvents extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function regions(){
+        return $this->belongsTo(Regions::class, 'region', 'region_id');
+    }
+    public function languages(){
+        return $this->belongsTo(Languages::class, 'lang', 'language_id');
+    }
 }

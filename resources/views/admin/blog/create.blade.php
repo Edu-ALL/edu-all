@@ -69,17 +69,25 @@
                                                                 class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
                                                     </div>
-                                                    <div class="col-12">
+                                                    @error('category')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col">
+                                                    <div class="col d-flex flex-row justify-content-between">
                                                         <label for="" class="form-label">
-                                                            Alt <span style="color: var(--red)">*</span>
+                                                            Mentor
                                                         </label>
-                                                        <input type="text" class="form-control" id="alt_en"
-                                                            name="blog_alt" value="{{ old('blog_alt') }}">
-                                                        @error('blog_alt')
-                                                            <small
-                                                                class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
+                                                        <small class="alert text-danger p-0 m-0 fs-12 text-decoration-underline" onclick="clearMentor()" style="cursor: pointer">Clear Selection</small>
                                                     </div>
+                                                    <div class="col">
+                                                        <select class="select2" name="mentor" id="mentor">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                    @error('mentor')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror   
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -283,20 +291,23 @@
             blog_slug.value = blog_title;
         };
 
-        async function selectLang() {
-            let lang = $('#lang').val()
-            let url_lang = "{{ url('api/language') }}/" + lang
+    function clearMentor(){
+        $('#mentor').val(null).trigger('change');
+    }
 
-            // Select Blog Category
-            try {
-                const response = await axios.get(url_lang);
-                let category = response.data.category
-                let mentor = response.data.mentor
-
-                $('#category').html('<option value=""></option>')
-                category.forEach(element => {
-                    $('#category').append(
-                        '<option value="' + element.id + '">' +
+    async function selectLang(){
+        let lang = $('#lang').val()
+        let url_mentor = "{{url('api/mentor')}}/"+lang
+        let url_category = "{{url('api/category')}}/"+lang
+        
+        // Select Blog Category 
+        try {
+            const response = await axios.get(url_category);
+            let data = response.data
+            $('#category').html('<option value=""></option>')
+            data.forEach(element => {
+                $('#category').append(
+                    '<option value="'+element.id+'">' +
                         element.category_name +
                         '</option>'
                     )

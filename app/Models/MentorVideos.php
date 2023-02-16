@@ -22,8 +22,7 @@ class MentorVideos extends Model
         'updated_at'
     ];
 
-    public function mentor()
-    {
+    public function mentor(){
         return $this->belongsTo(Mentors::class, 'group', 'mentor_id');
     }
 }

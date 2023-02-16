@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class BlogCategory extends Controller
 {
     public function index(){
-        $blog_category = BlogCategorys::get();
+        $blog_category = BlogCategorys::orderBy('category_name', 'asc')->get();
         return view('admin.blog-category.index', ['blog_category' => $blog_category]);
     }
 

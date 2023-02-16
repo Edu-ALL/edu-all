@@ -152,11 +152,46 @@
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
                                             </div>
-                                            <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Description <span style="color: var(--red)">*</span>
-                                                </label>
-                                                <textarea class="textarea" name="blog_description" id="blog_description">
+                                            <div class="col">
+                                                <div class="col d-flex flex-row justify-content-between">
+                                                    <label for="" class="form-label">
+                                                        Mentor
+                                                    </label>
+                                                    <small class="alert text-danger p-0 m-0 fs-12 text-decoration-underline" onclick="clearMentor()" style="cursor: pointer">Clear Selection</small>
+                                                </div>
+                                                <div class="col">
+                                                    <select class="select2" name="mentor" id="mentor">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                                @error('mentor')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Title <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ $blog->blog_title }}" onchange="createSlug()">
+                                            @error('blog_title')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Slug <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="blog_slug" name="blog_slug" value="{{ $blog->slug }}">
+                                            @error('blog_slug')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Description <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <textarea class="textarea" name="blog_description" id="blog_description">
                                                 {{ $blog->blog_description }}
                                             </textarea>
                                                 @error('blog_description')
@@ -279,9 +314,32 @@
             blog_slug.value = blog_title;
         };
 
-        async function selectLang() {
-            let lang = $('#lang').val()
-            let url_lang = "{{ url('api/language') }}/" + lang
+    function clearMentor(){
+        $('#mentor').val(null).trigger('change');
+    }
+
+    async function selectLang(){
+        let lang = $('#lang').val()
+        let url_category = "{{url('api/category')}}/"+lang
+        let url_mentor = "{{url('api/mentor')}}/"+lang
+        
+        // Select Blog Category 
+        try {
+            const response = await axios.get(url_category);
+            let data = response.data
+            $('#category').html('<option value=""></option>')
+            data.forEach(element => {
+                $('#category').append(
+                    '<option value="'+element.id+'">' +
+                        element.category_name + 
+                    '</option>'
+                )
+                // console.log(element);
+            });
+            $('#category').val('{{$blog->cat_id}}').trigger('change')
+        } catch (error) {
+            console.error(error);
+        }
 
             // Select Blog Category
             try {

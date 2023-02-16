@@ -99,11 +99,11 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/upcoming-event', [UpcomingEvent::class, 'index']);
     Route::get('/upcoming-event/create', [UpcomingEvent::class, 'create']);
     Route::post('/upcoming-event', [UpcomingEvent::class, 'store'])->name('create-upcoming-event');
-    Route::get('/upcoming-event/{group}/edit', [UpcomingEvent::class, 'edit']);
-    Route::post('/upcoming-event/{group}', [UpcomingEvent::class, 'update'])->name('update-upcoming-event');
-    Route::post('/upcoming-event/deactivate/{group}', [UpcomingEvent::class, 'deactivate']);
-    Route::post('/upcoming-event/activate/{group}', [UpcomingEvent::class, 'activate']);
-    Route::post('/upcoming-event/delete/{group}', [UpcomingEvent::class, 'delete']);
+    Route::get('/upcoming-event/{id}/edit', [UpcomingEvent::class, 'edit']);
+    Route::post('/upcoming-event/{id}', [UpcomingEvent::class, 'update'])->name('update-upcoming-event');
+    Route::post('/upcoming-event/draft/{id}', [UpcomingEvent::class, 'status_draft']);
+    Route::post('/upcoming-event/publish/{id}', [UpcomingEvent::class, 'status_publish']);
+    Route::post('/upcoming-event/delete/{id}', [UpcomingEvent::class, 'delete']);
 
     // Success Stories
     Route::get('/success-stories', [SuccessStory::class, 'index']);

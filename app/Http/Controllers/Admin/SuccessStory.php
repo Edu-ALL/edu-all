@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 class SuccessStory extends Controller
 {
     public function index(){
-        $success_stories = SuccessStories::get();
+        $success_stories = SuccessStories::orderBy('updated_at', 'desc')->get();
         return view('admin.success-stories.index', ['success_stories' => $success_stories]);
     }
 

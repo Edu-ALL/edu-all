@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
 use App\Models\BlogReads;
 use App\Models\Blogs;
+use App\Models\BlogWidgets;
 use App\Models\Mentors;
 use Exception;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Validator;
 class Blog extends Controller
 {
     public function index(){
-        $blogs = Blogs::get();
+        $blogs = Blogs::orderBy('updated_at', 'desc')->get();
         $blogcategory = BlogCategorys::get();
         return view('admin.blog.index', [
             'blogs' => $blogs,
@@ -204,6 +205,14 @@ class Blog extends Controller
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }
+            }
+            $blog_widget = BlogWidgets::where('blog_id', $blog->id)->get();
+            foreach ($blog_widget as $widget) {
+                $widget->delete();
+            }
+            $blog_read = BlogReads::where('blog_id', $blog->id)->get();
+            foreach ($blog_read as $read) {
+                $read->delete();
             }
             $blog->delete();
             DB::commit();

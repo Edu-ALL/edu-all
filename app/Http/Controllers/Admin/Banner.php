@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Validator;
 class Banner extends Controller
 {
     public function index(){
-        $banners = Banners::with('regions', 'languages')->get();
+        $banners = Banners::with('regions', 'languages')->orderBy('updated_at', 'desc')->get();
         return view('admin.banner.index', ['banners' => $banners]);
     }
 

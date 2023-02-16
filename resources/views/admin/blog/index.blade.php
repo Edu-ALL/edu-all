@@ -43,7 +43,7 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Category</th>
-                                        <th scope="col">Slug</th>
+                                        <th scope="col">Mentor</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Highlight</th>
@@ -60,7 +60,7 @@
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $blog->blog_title }}</td>
                                             <td>{{ $blog->cat_id != null ? $blog->blog_category->category_name : '-' }}</td>
-                                            <td>{{ $blog->slug }}</td>
+                                            <td>{{ $blog->mt_id != null ? $blog->mentor->mentor_firstname.' '.$blog->mentor->mentor_lastname : '-' }}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/blogs/'.$blog->blog_thumbnail) }}" alt="" width="80">
                                             </td>

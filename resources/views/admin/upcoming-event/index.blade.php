@@ -42,9 +42,9 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Title</th>
-                                        <th scope="col">Subtitle</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Image</th>
+                                        <th scope="col">Region</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
@@ -58,23 +58,33 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $upcoming_event->event_title }}</td>
-                                            <td>{!! $upcoming_event->event_subtitle !!}</td>
                                             <td>{{ $upcoming_event->event_date }}</td>
                                             <td>
                                                 <img src="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
                                             </td>
-                                            <td>{{ $upcoming_event->lang == 'en' ? 'English' : 'Indonesia'}}</td>
+                                            <td class="text-center">
+                                                <img src="{{ asset('assets/img/flag/flag-'.$upcoming_event->region.'.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $upcoming_event->regions->region }}
+                                                </p>
+                                            </td>
+                                            <td class="text-center">
+                                                <img src="{{ asset('assets/img/flag/flag-'.$upcoming_event->lang.'.png') }}" alt="" width="30">
+                                                <p class="pt-1" style="font-size: 13px !important">
+                                                    {{ $upcoming_event->languages->language }}
+                                                </p>
+                                            </td>
                                             @if ($upcoming_event->event_status == 'publish')
                                                 <td class="text-center">
                                                     <button 
                                                     class="btn btn-success"
                                                     type="button"
                                                     data-bs-toggle="modal" 
-                                                    data-bs-target="#deactivate"
+                                                    data-bs-target="#draft"
                                                     style="text-transform: capitalize;"
-                                                    {{-- onclick="formDeactivate({{ $upcoming_event->group }})" --}}
+                                                    onclick="formDraft({{ $upcoming_event->id }})"
                                                     >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this upcoming event">
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Set to Draft">
                                                             {{ $upcoming_event->event_status }}
                                                         </span>
                                                     </button>
@@ -85,11 +95,11 @@
                                                     class="btn btn-danger"
                                                     type="button"
                                                     data-bs-toggle="modal" 
-                                                    data-bs-target="#activate"
+                                                    data-bs-target="#publish"
                                                     style="text-transform: capitalize;"
-                                                    {{-- onclick="formActivate({{ $upcoming_event->group }})" --}}
+                                                    onclick="formPublish({{ $upcoming_event->id }})"
                                                     >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this upcoming event">
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
                                                             {{ $upcoming_event->event_status }}
                                                         </span>
                                                     </button>
@@ -97,7 +107,7 @@
                                             @endif
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/{{ $upcoming_event->group }}/edit">
+                                                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/{{ $upcoming_event->id }}/edit">
                                                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this upcoming event"></i>
                                                     </a>
                                                     <button 
@@ -105,7 +115,7 @@
                                                     class="btn btn-danger"
                                                     data-bs-toggle="modal" 
                                                     data-bs-target="#delete"
-                                                    onclick="formDelete({{ $upcoming_event->group }})"
+                                                    onclick="formDelete({{ $upcoming_event->id }})"
                                                     >
                                                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this upcoming event"></i>
                                                     </button>
@@ -124,46 +134,46 @@
 </main>
 
 {{-- Modal Deactive --}}
-<div class="modal fade" id="deactivate" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="draft" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0">
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-2" id="title-info">Deactivate</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Set to Draft</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Deactivate this upcoming event?</p>
+                <p id="desc-info">Are you sure, you want to change the status of this Upcoming Event to Draft?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                <form action="" method="POST" id="form_deactivate">
+                <form action="" method="POST" id="form_draft">
                     @csrf
-                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger);">Deactivate</button>
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--danger);">Set</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 {{-- Modal Activate --}}
-<div class="modal fade" id="activate" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="publish" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0">
             <div class="modal-header">
                 <div class="col d-flex gap-2 align-items-center">
                     <i class="fa-solid fa-circle-info"></i>
-                    <h6 class="modal-title ms-2" id="title-info">Activate</h6>
+                    <h6 class="modal-title ms-2" id="title-info">Set to Publish</h6>
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Activate this upcoming event?</p>
+                <p id="desc-info">Are you sure, you want to change the status of this Upcoming Event to Publish?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                <form action="" method="POST" id="form_activate">
+                <form action="" method="POST" id="form_publish">
                     @csrf
-                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--success);">Activate</button>
+                    <button type="submit" id="btn-status" style="font-size: 13px; background: var(--success);">Set</button>
                 </form>
             </div>
         </div>
@@ -196,14 +206,14 @@
 
 @section('js')
     <script>
-        function formDeactivate(group){
-            $('#form_deactivate').attr('action', '{{ url('/admin/upcoming-event/deactivate/') }}' + '/' + group);
+        function formDraft(id){
+            $('#form_draft').attr('action', '{{ url('/admin/upcoming-event/draft/') }}' + '/' + id);
         };
-        function formActivate(group){
-            $('#form_activate').attr('action', '{{ url('/admin/upcoming-event/activate/') }}' + '/' + group);
+        function formPublish(id){
+            $('#form_publish').attr('action', '{{ url('/admin/upcoming-event/publish/') }}' + '/' + id);
         };
-        function formDelete(group){
-            $('#form_delete').attr('action', '{{ url('/admin/upcoming-event/delete/') }}' + '/' + group);
+        function formDelete(id){
+            $('#form_delete').attr('action', '{{ url('/admin/upcoming-event/delete/') }}' + '/' + id);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
