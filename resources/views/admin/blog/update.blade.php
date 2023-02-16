@@ -191,6 +191,7 @@
                                             <label for="" class="form-label">
                                                 Description <span style="color: var(--red)">*</span>
                                             </label>
+                                            <small class="alert d-block p-0 m-0 mb-2 fs-12">Note: Please Use <strong>'Heading 2'</strong> for a <strong>Section</strong></small>
                                             <textarea class="textarea" name="blog_description" id="blog_description">
                                                 {{ $blog->blog_description }}
                                             </textarea>

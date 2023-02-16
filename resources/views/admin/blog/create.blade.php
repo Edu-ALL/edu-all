@@ -90,85 +90,33 @@
                                                     @enderror   
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Language <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <div class="col">
-                                                            <select class="select2" name="lang" id="lang"
-                                                                onchange="selectLang()">
-                                                                <option value=""></option>
-                                                                <option value="en">English</option>
-                                                                <option value="id">Indonesia</option>
-                                                            </select>
-                                                        </div>
-                                                        @error('lang')
-                                                            <small
-                                                                class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Category <span style="color: var(--red)">*</span>
-                                                        </label>
-                                                        <div class="col">
-                                                            <select class="select2" name="category" id="category">
-                                                                <option value=""></option>
-                                                            </select>
-                                                        </div>
-                                                        @error('category')
-                                                            <small
-                                                                class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Mentor
-                                                        </label>
-                                                        <div class="col">
-                                                            <select class="select2" name="mentor" id="mentor">
-                                                                <option value=""></option>
-                                                            </select>
-                                                        </div>
-                                                        @error('mentor')
-                                                            <small
-                                                                class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                @if ($errors->any())
-                                                    <small class="alert text-danger ps-0 fs-12">Please re-select some of
-                                                        these fields</small>
-                                                @endif
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Title <span style="color: var(--red)">*</span>
-                                                </label>
-                                                <input type="text" class="form-control" id="blog_title"
-                                                    name="blog_title" value="{{ old('blog_title') }}"
-                                                    onchange="createSlug()">
-                                                @error('blog_title')
-                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Slug <span style="color: var(--red)">*</span>
-                                                </label>
-                                                <input type="text" class="form-control" id="blog_slug"
-                                                    name="blog_slug" value="{{ old('blog_slug') }}">
-                                                @error('blog_slug')
-                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Description <span style="color: var(--red)">*</span>
-                                                </label>
-                                                <textarea class="textarea" name="blog_description" id="blog_description">
+                                            @if($errors->any())
+                                                <small class="alert text-danger ps-0 fs-12">Please re-select some of these fields</small>
+                                            @endif
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Title <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="blog_title" name="blog_title" value="{{ old('blog_title') }}" onchange="createSlug()">
+                                            @error('blog_title')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Slug <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="blog_slug" name="blog_slug" value="{{ old('blog_slug') }}">
+                                            @error('blog_slug')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
+                                                Description <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <textarea class="textarea" name="blog_description" id="blog_description">
                                                 {{ old('blog_description') }}
                                             </textarea>
                                                 @error('blog_description')
