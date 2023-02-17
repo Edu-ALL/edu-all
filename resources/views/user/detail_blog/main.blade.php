@@ -4,6 +4,16 @@
     <meta name="title" content="{{ $blog->seo_title }}">
     <meta name="description" content="{{ $blog->seo_desc }}">
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
+    <style>
+        .blog_style p,
+        .blog_style ul {
+            margin-bottom: 20px;
+        }
+
+        .blog_style h2 {
+            margin-bottom: 5px;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -14,6 +24,7 @@
                     {{ $blog->blog_title }}
                 </h1>
                 <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
+                    @if($blog->mentor)
                     <div class="flex items-center gap-4">
                         <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
                             alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
@@ -23,9 +34,12 @@
                         </span>
                     </div>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
+                    @endif
+                    @if(!empty($blog->duration_read))
                     <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
                         {{ __('pages/blog.min_read') }}</span>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
+                    @endif
                     <span
                         class="font-inter text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
                 </div>
