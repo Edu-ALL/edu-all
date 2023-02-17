@@ -14,15 +14,15 @@
     <section class="py-16">
         <div class="flex flex-col items-center main-container">
             <div class="flex flex-col max-w-4xl mt-10 gap-y-4">
-                <p class="font-secondary text-xl text-primary text-center">ALL-in Eduspace is an independent
+                <p class="font-primary text-xl text-primary text-center">ALL-in Eduspace is an independent
                     university consultant specializing in developing hands-on exploration programs and university
                     preparation advising for students age 13-18.
                 </p>
-                <p class="font-secondary text-xl text-primary text-center">
+                <p class="font-primary text-xl text-primary text-center">
                     We provide real-life experiences and professional skills needed, networking opportunities with
                     professionals in various fields, project mentoring, and up to university application preparation.
                 </p>
-                <p class="font-secondary text-xl text-primary text-center">
+                <p class="font-primary text-xl text-primary text-center">
                     We help students explore their dream career paths, equipping them with the industry skills that they
                     need to thrive whilst also fostering an awareness of the impact they could have on the community.
                 </p>
@@ -70,7 +70,7 @@
     {{-- ================================== Team ================================== --}}
     <section class="pt-10 pb-10">
         <div class="main-container flex flex-col">
-            <h2 class="mb-2 font-secondary font-black text-4xl text-primary text-center">
+            <h2 class="mb-2 font-primary font-black text-4xl text-primary text-center">
                 Our Team
             </h2>
             <div class="w-full max-w-7xl px-10 py-10">
@@ -94,12 +94,12 @@
                                                 <div
                                                     class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
                                                     <h3
-                                                        class="h-2/3 font-inter font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-5">
+                                                        class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-5">
                                                         {{ $mentor->mentor_firstname }} <br>
                                                         {{ $mentor->mentor_lastname }}
                                                     </h3>
                                                     <div
-                                                        class="mentor_graduation h-1/3 font-inter text-[10px] text-white leading-4 lg:leading-3">
+                                                        class="mentor_graduation h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
@@ -110,12 +110,12 @@
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                 <div class="flex flex-col items-center justify-center">
                                                     <div
-                                                        class="mb-6 w-full h-full font-secondary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                        class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
                                                         {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                     </div>
                                                     <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
-                                                        class="px-4 py-2 flex-inline font-inter font-medium text-xs text-white text-center rounded-lg bg-yellow">
+                                                        class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
                                                         Get to know {{ $mentor->mentor_firstname }}
                                                     </a>
                                                 </div>

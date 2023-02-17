@@ -83,7 +83,7 @@
 
         </div>
         <div class="main-container flex flex-col items-center">
-            <h2 class="font-title font-semibold text-yellow text-center text-3xl mb-4">
+            <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/partnership_careers.colab_bottom') }}
             </h2>
             <a href="#" class="my-btn">{{ __('pages/about_us/partnership_careers.colab_btn') }}</a>

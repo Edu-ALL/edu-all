@@ -26,11 +26,11 @@
                     {{ __('pages/resources/guidebook.body') }}
 
                 </p>
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
                     {{ __('pages/resources/guidebook.getting_started') }}
 
                 </h2>
-                <p class="mt-2 font-body text-lg text-[#6F6C90] text-justify">
+                <p class="mt-2 font-primary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.getting_started_body') }}
 
                 </p>
@@ -50,11 +50,11 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
                     {{ __('pages/resources/guidebook.build_your_profile') }}
 
                 </h2>
-                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">
+                <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.build_your_profile_body') }}
                 </p>
                 <div class="flex flex-col gap-x-6 gap-y-4 mt-8 md:flex-row">
@@ -73,10 +73,10 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
                     {{ __('pages/resources/guidebook.apply_to_your_dream_univ') }}
                 </h2>
-                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">
+                <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.apply_to_your_dream_univ_body') }}
                 </p>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
@@ -104,10 +104,10 @@
     <section class="py-4">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-body font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
                     {{ __('pages/resources/guidebook.grap_scholarship') }}
                 </h2>
-                <p class="mt-4 font-body text-lg text-[#6F6C90] text-justify">
+                <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.grap_scholarship_body') }}
                 </p>
                 <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
@@ -128,28 +128,31 @@
             <div class="py-3 main-container bg-primary">
                 <ul class="grid grid-cols-1 gap-4 md:grid-cols-3">
                     <li class="flex items-center gap-3"> <span
-                            class="w-1/5 font-body font-black text-3xl text-yellow text-right">100%</span>
-                        <span class=" w-4/5 font-body font-semibold text-base text-white leading-4">Mentee Acceptance Rate
+                            class="w-1/5 font-primary font-black text-3xl text-yellow text-right">100%</span>
+                        <span class=" w-4/5 font-primary font-semibold text-base text-white leading-4">Mentee Acceptance
+                            Rate
                             to Top
                             Universities in
                             US, UK, Europe, and Asia</span>
                     </li>
                     <li class="flex justify-center items-center gap-3"> <span
-                            class="w-1/5 font-body font-black text-3xl text-yellow text-right">50+</span>
-                        <span class="w-4/5 font-body font-semibold text-base text-white leading-4">Top Universities Around
+                            class="w-1/5 font-primary font-black text-3xl text-yellow text-right">50+</span>
+                        <span class="w-4/5 font-primary font-semibold text-base text-white leading-4">Top Universities
+                            Around
                             the
                             World</span>
                     </li>
                     <li class="flex items-center gap-3"> <span
-                            class=" w-1/5 font-body font-black text-3xl text-yellow text-right">114</span>
-                        <span class=" w-4/5 font-body font-semibold text-base text-white leading-4">Mentee Acceptance Rate
+                            class=" w-1/5 font-primary font-black text-3xl text-yellow text-right">114</span>
+                        <span class=" w-4/5 font-primary font-semibold text-base text-white leading-4">Mentee Acceptance
+                            Rate
                             to Top
                             Career Exploration Programs Company Partners</span>
                     </li>
                 </ul>
             </div>
             <div class="mt-4 main-container">
-                <span class="font-body font-semibold text-xl text-primary text-center md:text-left">
+                <span class="font-primary font-semibold text-xl text-primary text-center md:text-left">
                     {{ __('pages/resources/guidebook.bottom_title') }}
                 </span>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
@@ -171,7 +174,7 @@
                     </div>
                 </div>
             </div>
-            <span class="mt-6 font-body font-semibold text-xl text-yellow text-center">
+            <span class="mt-6 font-primary font-semibold text-xl text-yellow text-center">
                 {{ __('pages/resources/guidebook.bottom_bottom') }}
             </span>
         </div>

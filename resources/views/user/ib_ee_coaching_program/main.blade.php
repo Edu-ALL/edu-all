@@ -7,10 +7,10 @@
             <div class="absolute-center main-container w-full h-full md:flex md:flex-col">
                 <div class="flex flex-col items-start pt-10 mb-14 md:pl-28 lg:w-2/3 lg:pt-24">
                     <h1
-                        class="font-title font-black text-3xl text-white uppercase md:text-[4rem] md:text-left md:leading-[60px]">
+                        class="font-primary font-black text-3xl text-white uppercase md:text-[4rem] md:text-left md:leading-[60px]">
                         {{ __('pages/programs/ib_ee_coaching_program.title') }}
                     </h1>
-                    <p class="mt-6 font-body font-normal text-xl text-yellow">
+                    <p class="mt-6 font-primary font-normal text-xl text-yellow">
                         {{ __('pages/programs/ib_ee_coaching_program.desc') }}</p>
                 </div>
 
@@ -36,7 +36,7 @@
         <div class="flex flex-col">
             <div
                 class="mx-6 mb-12 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-2/3 md:rounded-r-full lg:pl-20 xl:pl-40 ">
-                <h2 class="font-title font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                <h2 class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
                     {{ __('pages/programs/ib_ee_coaching_program.learn') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
@@ -50,7 +50,7 @@
                                 alt="what will you do {{ $loop->iteration }}"
                                 class="w-1/2 pt-4 px-4 sm:px-0 sm:pt-0 sm:w-1/5">
                             <div class="flex flex-col w-4/5 mt-2 sm:mt-0">
-                                <h4 class="font-body font-bold text-2xl text-center text-yellow md:text-left">
+                                <h4 class="font-primary font-bold text-2xl text-center text-yellow md:text-left">
                                     {{ $item }}</h4>
                             </div>
                         </div>
@@ -68,15 +68,15 @@
                     <div
                         class="mx-6 mb-6 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-full md:rounded-r-full lg:pl-20 xl:pl-40 ">
                         <h2
-                            class="font-title font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                            class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_title') }}</h2>
 
                     </div>
                     <div class="mx-6 py-4 rounded-xl sm:px-6 md:mx-0 md:w-full lg:pl-20 xl:pl-40">
-                        <p class="font-body font-normal text-xl text-primary md:text-2xl">
+                        <p class="font-primary font-normal text-xl text-primary md:text-2xl">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_desc') }}</p>
                         <a href="https://all-inedu.com/wp-content/uploads/2022/12/Coaching-Curriculum-Overview.pdf"
-                            class="inline-block mt-8 py-2 px-6 font-body font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
+                            class="inline-block mt-8 py-2 px-6 font-primary font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="py-10">
         <div class="main-container flex flex-col items-center">
-            <h2 class=" font-title font-black text-primary text-center text-4xl mb-4">
+            <h2 class=" font-primary font-black text-primary text-center text-4xl mb-4">
                 {{ __('pages/programs/ib_ee_coaching_program.bottom_title') }}
                 <span class="block text-yellow">
                     {{ __('pages/programs/ib_ee_coaching_program.bottom_subtitle') }}</span>

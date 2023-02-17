@@ -4,12 +4,12 @@
     <section class="py-20 bg-sign-me bg-cover bg-center">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
             <div class="flex flex-col">
-                <h2 class="font-title font-semibold text-3xl text-white">
+                <h2 class="font-primary font-semibold text-3xl text-white">
                     #TakeOnYourFuture
                     <br>
                     with ALL-in Eduspace
                 </h2>
-                <p class="mt-6 w-full font-body text-lg text-white md:max-w-3xl ">
+                <p class="mt-6 w-full font-primary text-lg text-white md:max-w-3xl ">
                     <span class="block"> DARE TO DREAM!</span>
                     Let’s find out how to get into your dream university and future career path through the first
                     consultation with our top-notch mentors.
@@ -23,10 +23,10 @@
             <div class="grid grid-cols-1 gap-x-12 md:grid-cols-5">
                 <div class="flex flex-col w-full md:col-span-2">
                     <div class="mb-6 flex flex-col gap-x-10">
-                        <h4 class="font-body font-bold text-2xl text-primary">
+                        <h4 class="font-primary font-bold text-2xl text-primary">
                             What you will earn in the consultation:
                         </h4>
-                        <ul class="mt-4 font-body text-lg text-black">
+                        <ul class="mt-4 font-primary text-lg text-black">
                             <li class="flex">
                                 <i class="fa-solid fa-check text-blue-500 mt-1 mr-2"></i>
                                 <span>
@@ -57,7 +57,7 @@
                         </ul>
                     </div>
                     <div class="flex flex-col gap-x-10">
-                        <h4 class="mb-6 font-body font-bold text-2xl text-primary">
+                        <h4 class="mb-6 font-primary font-bold text-2xl text-primary">
                             Your current profile will be assessed based on Four Pillars of University Application
                         </h4>
                         <img src="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
@@ -1084,7 +1084,7 @@
 
     <section class="py-10">
         <div class="flex flex-col main-container">
-            <h4 class="font-body font-bold text-2xl text-primary">
+            <h4 class="font-primary font-bold text-2xl text-primary">
                 FAQ
             </h4>
             <div class="mt-4 w-full">

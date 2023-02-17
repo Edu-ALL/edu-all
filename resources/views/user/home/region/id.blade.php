@@ -120,7 +120,7 @@
                         <div class="front bg-program-image-{{ $loop->iteration }} bg-cover bg-center">
                             <div
                                 class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
-                                <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
+                                <h4 class="font-semibold text-3xl font-primary mb-4 leading-7">
                                     {{ $item['title'] }}
                                 </h4>
                                 <ul class="flex flex-col">
@@ -136,7 +136,7 @@
                         <div
                             class="back face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
                             <div class="flex flex-col justify-center items-center h-full">
-                                <p class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
+                                <p class="font-semibold text-base lg:text-lg font-primary mb-4 leading-7 text-center">
                                     {{ $item['body'] }}
                                 </p>
                                 <a href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
@@ -183,12 +183,12 @@
                                                     <div
                                                         class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
                                                         <h3
-                                                            class="h-2/3 font-inter font-bold text-2xl text-white leading-7 lg:leading-5">
+                                                            class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                             {{ $mentor->mentor_firstname }} <br>
                                                             {{ $mentor->mentor_lastname }}
                                                         </h3>
                                                         <div
-                                                            class="mentor_graduation h-1/3 font-inter text-xs text-white leading-4 lg:leading-3">
+                                                            class="mentor_graduation h-1/3 font-primary text-xs text-white leading-4 lg:leading-3">
                                                             {!! $mentor->mentor_graduation !!}
                                                         </div>
                                                     </div>
@@ -199,12 +199,12 @@
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                     <div class="flex flex-col items-center justify-center">
                                                         <div
-                                                            class="mb-6 w-full h-full font-secondary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                            class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
                                                             {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                         </div>
                                                         <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
-                                                            class="px-4 py-2 flex-inline font-inter font-medium text-xs text-white text-center rounded-lg bg-yellow">
+                                                            class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
                                                             Get to know {{ $mentor->mentor_firstname }}
                                                         </a>
                                                     </div>
@@ -254,15 +254,15 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                                <div class="font-secondary text-base text-white text-justify">
+                                                <div class="font-primary text-base text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
                                             </div>
                                             <div class="mt-12 flex flex-col">
-                                                <div class="font-secondary font-semibold text-2xl text-yellow">
+                                                <div class="font-primary font-semibold text-2xl text-yellow">
                                                     {{ $testi->testi_name }}
                                                 </div>
-                                                <div class="font-secondary text-sm text-white">
+                                                <div class="font-primary text-sm text-white">
                                                     {!! $testi->testi_subtitle !!}
                                                 </div>
                                             </div>
@@ -286,7 +286,7 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="-mt-2 py-16 ">
         <div class="main-container flex flex-col items-center">
-            <h2 class="font-title font-semibold text-yellow text-center text-3xl mb-4">
+            <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/home.bottom') }}
             </h2>
             <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="flex justify-center w-full">
