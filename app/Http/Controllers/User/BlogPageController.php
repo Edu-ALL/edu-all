@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Admin\BlogWidget;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
 use App\Models\BlogReads;
 use App\Models\Blogs;
+use App\Models\BlogWidgets;
 use DOMDocument;
 
 class BlogPageController extends Controller
@@ -78,14 +80,16 @@ class BlogPageController extends Controller
         // dd($blog);
         $recomendation_blogs = Blogs::latest()->where('id', '!=', $blog->id)->where('cat_id', $blog->cat_id)->take(3)->get();
 
+        $blog_widgets =  BlogWidgets::all()->where('blog_id', $blog->id);
+
         // return $blog->blog_description;
         // Blog Section
         $doc =  new DOMDocument();
         $doc->loadHTML($blog->blog_description, LIBXML_NOERROR);
         $title_list = $doc->getElementsByTagName('h2');
         $figure = $doc->getElementsByTagName('figure')->item(0);
-        $parent = $figure->parentNode;
-        $parent->removeChild($figure);
+        $parent = $figure?->parentNode;
+        $parent?->removeChild($figure);
 
 
         $blog_section = [];
@@ -100,6 +104,7 @@ class BlogPageController extends Controller
             'blog' => $blog,
             "recomendation_blogs" => $recomendation_blogs,
             "blog_section_list" => $blog_section,
+            "blog_widgets" =>  $blog_widgets,
         ]);
     }
 }

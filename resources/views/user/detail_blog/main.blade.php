@@ -24,24 +24,25 @@
                     {{ $blog->blog_title }}
                 </h1>
                 <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
-                    @if($blog->mentor)
-                    <div class="flex items-center gap-4">
-                        @if ($blog->mentor)
-                            <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
-                                alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
-                            {{-- change author name with mentor name --}}
-                            <span class="font-primary text-base text-primary">
-                                {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
-                            </span>
-                            <div class="hidden w-px h-4 bg-primary md:block"></div>
-                        @endif
-                    </div>
-                    <div class="hidden w-px h-4 bg-primary md:block"></div>
+                    @if ($blog->mentor)
+                        <div class="flex items-center gap-4">
+                            @if ($blog->mentor)
+                                <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
+                                    alt="{{ $blog->mentor->mentor_alt }}"
+                                    class="w-8 h-8 rounded-full object-cover object-top">
+                                {{-- change author name with mentor name --}}
+                                <span class="font-primary text-base text-primary">
+                                    {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
+                                </span>
+                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                            @endif
+                        </div>
+                        <div class="hidden w-px h-4 bg-primary md:block"></div>
                     @endif
-                    @if(!empty($blog->duration_read))
-                    <span class="font-primary text-base text-primary">{{ $blog->duration_read }}
-                        {{ __('pages/blog.min_read') }}</span>
-                    <div class="hidden w-px h-4 bg-primary md:block"></div>
+                    @if (!empty($blog->duration_read))
+                        <span class="font-primary text-base text-primary">{{ $blog->duration_read }}
+                            {{ __('pages/blog.min_read') }}</span>
+                        <div class="hidden w-px h-4 bg-primary md:block"></div>
                     @endif
                     <span
                         class="font-primary text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
@@ -73,6 +74,7 @@
             <div class="blog_style w-full flex flex-col md:w-4/5">
                 {!! $blog->blog_description !!}
             </div>
+
         </div>
     </section>
 
@@ -148,5 +150,33 @@
                 });
             })
         });
+
+        function blog_widget() {
+            let paragraph = $('.blog_style p')
+            let data = {!! $blog_widgets !!}
+            console.log(data);
+            for (let index = 1; index <= paragraph.length; index++) {
+                data.forEach(element => {
+                    if (index == element.position) {
+                        paragraph.eq(element.position-1).append(
+                            '<div class="px-5 py-5 border rounded-lg shadow-lg bg-zinc-100 mt-3">' +
+                                '<h3 class="text-primary tracking-wide">'+ element.title +'</h3>' +
+                                '<hr class="py-1">' +
+                                '<div class="widget-desc">' + 
+                                    element.description +
+                                '</div>' +
+                                '<div class="flex justify-end">' +
+                                    '<a href="'+element.link+'" class="bg-primary hover:bg-yellow hover:no-underline px-4 py-2 rounded-lg text-white text-sm" target="_blank">' +
+                                    'Read More <i class="fas fa-arrow-right ml-2"></i>' +
+                                    '</a>' +
+                                '</div>' +
+                            '</div>'
+                        )
+                    }
+                });
+            }
+        }
+
+        blog_widget()
     </script>
 @endsection

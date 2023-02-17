@@ -225,4 +225,8 @@
     .pilar_card:hover .back {
         transform: rotateY(-360deg);
     }
+
+    .widget-desc p {
+        margin-bottom: 5px;
+    }
 }
