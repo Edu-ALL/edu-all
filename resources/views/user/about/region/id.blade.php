@@ -121,12 +121,12 @@
                                                 <div
                                                     class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
                                                     <h3
-                                                        class="h-2/3 font-inter font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
+                                                        class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
                                                         {{ $mentor->mentor_firstname }} <br>
                                                         {{ $mentor->mentor_lastname }}
                                                     </h3>
                                                     <div
-                                                        class="mentor_graduation h-1/3 font-inter text-[10px] text-white leading-4 lg:leading-3">
+                                                        class="mentor_graduation h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
@@ -137,12 +137,12 @@
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                 <div class="flex flex-col items-center justify-center">
                                                     <div
-                                                        class="mb-6 w-full h-full font-secondary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                        class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
                                                         {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                     </div>
                                                     <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
-                                                        class="px-4 py-2 flex-inline font-inter font-medium text-xs text-white text-center rounded-lg bg-yellow">
+                                                        class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
                                                         Get to know {{ $mentor->mentor_firstname }}
                                                     </a>
                                                 </div>
@@ -162,7 +162,7 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="-mt-2 py-16 ">
         <div class="main-container flex flex-col items-center">
-            <h2 class="font-title font-semibold text-yellow text-center text-3xl mb-4">
+            <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/about.bottom_title') }}
             </h2>
             <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"

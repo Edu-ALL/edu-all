@@ -42,7 +42,7 @@
                                     <div class="front bg-program-image-{{ $loop->iteration }} bg-cover bg-center">
                                         <div
                                             class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
-                                            <h4 class="font-semibold text-3xl font-secondary mb-4 leading-7">
+                                            <h4 class="font-semibold text-3xl font-primary mb-4 leading-7">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <ul class="flex flex-col">
@@ -59,7 +59,7 @@
                                         class="back face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
                                         <div class="flex flex-col justify-center items-center h-full">
                                             <p
-                                                class="font-semibold text-base lg:text-lg font-secondary mb-4 leading-7 text-center">
+                                                class="font-semibold text-base lg:text-lg font-primary mb-4 leading-7 text-center">
                                                 {{ $item['body'] }}
                                             </p>
                                             <a href="{{ route('admissions_mentoring', ['locale' => app()->getLocale()]) }}"

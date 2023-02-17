@@ -26,7 +26,6 @@ class BlogPageController extends Controller
 
         // take blogs
         $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
-        // dd($blogs->get(), $top_blogs);
 
         // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
         $is_top_update = false;
@@ -43,13 +42,11 @@ class BlogPageController extends Controller
             $blogs = $blogs->where('is_highlight', '!=', 'true');
         }
 
-
         // take all blogs
         $blogs = $blogs->paginate(6)->withQueryString();
 
         // filter sesuai bahasa (lang)
         $blog_categories = BlogCategorys::all()->where('lang', $lang);
-
 
         return view('user.blog.main', [
             'top_blogs' => $top_blogs,
@@ -63,6 +60,7 @@ class BlogPageController extends Controller
     {
         // read ip address
         $ip_address = request()->ip();
+
         // if ip address already registered then skip else register new ip address
         $ip_isregistered = BlogReads::where('blog_id', $blog->id)->where('ip_address',  $ip_address)->exists();
         if (!$ip_isregistered) {
@@ -84,7 +82,6 @@ class BlogPageController extends Controller
         $doc =  new DOMDocument();
         $doc->loadHTML($blog->blog_description);
         $title_list = $doc->getElementsByTagName('h2');
-
         $blog_section = [];
         foreach ($title_list as $index => $title) {
             $title->setAttribute("id", "blog_title_" . $index);

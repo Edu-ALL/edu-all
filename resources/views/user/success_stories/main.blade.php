@@ -32,33 +32,33 @@
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                             <div class="flex flex-col w-full md:w-2/3">
-                                <h2 class="font-body font-semibold text-4xl text-primary text-center md:text-left">
+                                <h2 class="font-primary font-semibold text-4xl text-primary text-center md:text-left">
                                     {{ $item->name }}</h2>
                                 <div class="flex flex-col flex-wrap gap-3 mt-8 mb-2 md:flex-row">
                                     <span
-                                        class="px-6 font-body font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#fddfaf] to-[#e8b757]">{{ $item->badge_1 }}</span>
+                                        class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#fddfaf] to-[#e8b757]">{{ $item->badge_1 }}</span>
                                     @if ($item->badge_2 != null)
                                         <span
-                                            class="px-6 font-body font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#e58d52] to-[#e4b252]">{{ $item->badge_2 }}</span>
+                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#e58d52] to-[#e4b252]">{{ $item->badge_2 }}</span>
                                     @endif
 
                                     @if ($item->badge_3 != null)
                                         <span
-                                            class="px-6 font-body font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#fddfaf] to-[#e8b757]">{{ $item->badge_3 }}</span>
+                                            class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#fddfaf] to-[#e8b757]">{{ $item->badge_3 }}</span>
                                     @endif
 
                                     @if ($item->badge_4 != null)
                                         <span
-                                            class="px-6 font-body font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#e58d52] to-[#e4b252]">{{ $item->badge_4 }}</span>
+                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#e58d52] to-[#e4b252]">{{ $item->badge_4 }}</span>
                                     @endif
                                 </div>
 
-                                <p class="mb-4 font-body font-medium text-base text-primary leading-[26px]">
+                                <p class="mb-4 font-primary font-medium text-base text-primary leading-[26px]">
                                     {!! $item->description !!}
                                 </p>
                                 @if ($item->video_link != null)
                                     <a href="{{ $item->video_link }}"><span
-                                            class="inline-flex my-6 px-6 py-2 font-body font-medium text-base text-white rounded-xl bg-primary">Learn
+                                            class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More </span>
                                 @endif
                                 <img src="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
@@ -68,32 +68,32 @@
                     @else
                         <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
                             <div class="flex flex-col w-full order-2 md:order-1 md:w-2/3">
-                                <h2 class="font-body font-semibold text-4xl text-primary text-center md:text-left">
+                                <h2 class="font-primary font-semibold text-4xl text-primary text-center md:text-left">
                                     {{ $item->name }}</h2>
                                 <div class="flex flex-col flex-wrap gap-3 mt-8 mb-2 md:flex-row">
                                     <span
-                                        class="px-6 font-body font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_1 }}</span>
+                                        class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_1 }}</span>
                                     @if ($item->badge_2 != null)
                                         <span
-                                            class="px-6 font-body font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_2 }}</span>
+                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_2 }}</span>
                                     @endif
 
                                     @if ($item->badge_3 != null)
                                         <span
-                                            class="px-6 font-body font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_3 }}</span>
+                                            class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_3 }}</span>
                                     @endif
 
                                     @if ($item->badge_4 != null)
                                         <span
-                                            class="px-6 font-body font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_4 }}</span>
+                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_4 }}</span>
                                     @endif
                                 </div>
-                                <p class="mb-4 font-body font-medium text-base text-primary leading-[26px]">
+                                <p class="mb-4 font-primary font-medium text-base text-primary leading-[26px]">
                                     {!! $item->description !!}
                                 </p>
                                 @if ($item->video_link != null)
                                     <a href="{{ $item->video_link }}"><span
-                                            class="inline-flex my-6 px-6 py-2 font-body font-medium text-base text-white rounded-xl bg-primary">Learn
+                                            class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More</span></a>
                                 @endif
                                 <img src="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
@@ -115,18 +115,18 @@
         <div class="main-container">
             <div class="flex flex-col gap-4 max-w-5xl mx-auto">
                 <img src="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}" alt="Allin Alumnis">
-                <h4 class="mt-10 mb-8 font-body font-extrabold text-3xl text-yellow text-center leading-9">
+                <h4 class="mt-10 mb-8 font-primary font-extrabold text-3xl text-yellow text-center leading-9">
                     {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
                 <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">
                     <a href="{{ route('programs', ['locale' => app()->getLocale()]) }}">
                         <span
-                            class="px-20 py-4 font-body font-semibold text-xl text-white text-center rounded-full bg-yellow border-[3px] border-yellow md:mb-0 ">
+                            class="px-20 py-4 font-primary font-semibold text-xl text-white text-center rounded-full bg-yellow border-[3px] border-yellow md:mb-0 ">
                             {{ __('pages/success_stories/success_stories.program_btn') }}
                         </span>
                     </a>
                     <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}">
                         <span
-                            class="px-20 py-4 font-body font-semibold text-xl text-yellow text-center rounded-full border-[3px] border-yellow ">
+                            class="px-20 py-4 font-primary font-semibold text-xl text-yellow text-center rounded-full border-[3px] border-yellow ">
                             {{ __('pages/success_stories/success_stories.register_btn') }}
                         </span>
                     </a>

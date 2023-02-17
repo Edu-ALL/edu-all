@@ -8,10 +8,10 @@
                 <div
                     class="relative max-w-sm w-full mx-auto rounded-lg shadow-lg overflow-hidden md:mx-0 md:col-span-2 xl:row-span-2">
                     <div class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20">
-                        <h3 class="h-2/3 font-inter font-bold text-3xl text-white leading-7">
+                        <h3 class="h-2/3 font-primary font-bold text-3xl text-white leading-7">
                             {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                         </h3>
-                        <div class="h-1/3 font-inter text-sm text-white leading-4">
+                        <div class="h-1/3 font-primary text-sm text-white leading-4">
                             {!! $mentor->mentor_graduation !!}
                         </div>
                     </div>
@@ -19,12 +19,12 @@
                         class="w-full bg-cover bg-center">
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">
-                    <h1 class="font-secondary font-bold text-4xl text-primary text-center md:text-6xl xl:text-start">
+                    <h1 class="font-primary font-bold text-4xl text-primary text-center md:text-6xl xl:text-start">
                         {{ __('pages/about_us/mentor.get_to_know') }} {{ $mentor->mentor_firstname }}
                     </h1>
                 </div>
                 <div class="w-full flex flex-col md:col-span-3 xl:row-span-1 xl:self-start">
-                    <div class="mb-6 w-full font-inter font-medium text-base text-primary text-justify">
+                    <div class="mb-6 w-full font-primary font-medium text-base text-primary text-justify">
                         {!! $mentor->description !!}
                     </div>
                 </div>
@@ -35,7 +35,7 @@
     {{-- Recent Video Section --}}
     <section class="py-10">
         <div class="main-container flex flex-col">
-            <h2 class="mb-8 font-secondary font-extrabold text-4xl text-primary text-left">
+            <h2 class="mb-8 font-primary font-extrabold text-4xl text-primary text-left">
                 {{ __('pages/about_us/mentor.recent_videos') }}
             </h2>
             @if (count($mentor->mentor_video) > 1)
@@ -72,7 +72,7 @@
                         allowfullscreen></iframe>
                 </div>
             @else
-                <h2 class="mb-8 font-secondary font-extrabold text-base text-primary text-center">
+                <h2 class="mb-8 font-primary font-extrabold text-base text-primary text-center">
                     {{ __('pages/about_us/mentor.video_not_found') }}
                 </h2>
             @endif
@@ -83,14 +83,14 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col items-center">
-                <h2 class="mb-4 font-secondary font-extrabold text-4xl text-primary text-center">
+                <h2 class="mb-4 font-primary font-extrabold text-4xl text-primary text-center">
                     {{ __('pages/about_us/mentor.bottom_detail_title') }} {{ $mentor->mentor_firstname }}!
                 </h2>
-                <p class="max-w-2xl mb-8 font-secondary font-medium text-base text-primary text-center">
+                <p class="max-w-2xl mb-8 font-primary font-medium text-base text-primary text-center">
                     {{ __('pages/about_us/mentor.bottom_detail_body') }}
                 </p>
                 <a href="{{ route('sign_me', app()->getLocale()) }}">
-                    <span class="px-10 py-2 font-inter font-medium text-base text-white rounded-md bg-yellow">
+                    <span class="px-10 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">
                         {{ __('pages/about_us/mentor.bottom_detail_btn') }}
                     </span>
                 </a>

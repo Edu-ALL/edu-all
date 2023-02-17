@@ -12,7 +12,8 @@
                     <p class="font-primary font-light text-lg text-white text-center leading-6 md:text-xl">
                         {{ __('pages/resources/upcoming_events.body') }}
                     </p>
-                    <a href="#" class="my-6"><span
+                    <a href="{{ asset('assets/files/upcoming-event/ALL IN CALENDAR 2023 WEB.pdf') }}" target="_blank"
+                        class="my-6"><span
                             class="px-6 py-2 font-primary font-semibold text-base text-white bg-yellow rounded-[4px]"><i
                                 class="fa-solid fa-file-pdf mr-2"></i> {{ __('pages/resources/upcoming_events.btn') }}
                         </span></a>

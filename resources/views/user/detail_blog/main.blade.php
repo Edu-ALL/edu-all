@@ -10,24 +10,26 @@
     <section class="pt-16">
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
-                <h1 class="font-inter font-extrabold text-3xl text-primary text-center md:text-5xl">
+                <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
                     {{ $blog->blog_title }}
                 </h1>
                 <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
-                            alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
-                        {{-- change author name with mentor name --}}
-                        <span class="font-inter text-base text-primary">
-                            {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
-                        </span>
+                        @if ($blog->mentor)
+                            <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
+                                alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
+                            {{-- change author name with mentor name --}}
+                            <span class="font-primary text-base text-primary">
+                                {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
+                            </span>
+                            <div class="hidden w-px h-4 bg-primary md:block"></div>
+                        @endif
                     </div>
-                    <div class="hidden w-px h-4 bg-primary md:block"></div>
-                    <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
+                    <span class="font-primary text-base text-primary">{{ $blog->duration_read }}
                         {{ __('pages/blog.min_read') }}</span>
                     <div class="hidden w-px h-4 bg-primary md:block"></div>
                     <span
-                        class="font-inter text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
+                        class="font-primary text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
                 </div>
                 <div class="mt-6 w-full">
                     <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
@@ -45,7 +47,8 @@
                         @foreach ($blog_section_list as $index => $blog_section)
                             <li class="w-full px-4 py-2 border-b">
                                 <a href="#blog_title_{{ $index }}">
-                                    <span class="font-inter text-sm text-[#9E9E9E] xl:text-base">{{ $blog_section }}</span>
+                                    <span
+                                        class="font-primary text-sm text-[#9E9E9E] xl:text-base">{{ $blog_section }}</span>
                                 </a>
                             </li>
                         @endforeach
@@ -60,11 +63,11 @@
 
     <section class="py-16 bg-primary">
         <div class="main-container flex flex-col items-center">
-            <h2 class="mb-6 font-secondary font-extrabold text-3xl text-white text-center md:text-5xl">
+            <h2 class="mb-6 font-primary font-extrabold text-3xl text-white text-center md:text-5xl">
                 {{ __('pages/blog.sign_up') }}
             </h2>
             <a href="{{ route('sign_me', app()->getLocale()) }}">
-                <span class="px-8 py-1.5 font-secondary text-base text-white text-center rounded-md bg-yellow">
+                <span class="px-8 py-1.5 font-primary text-base text-white text-center rounded-md bg-yellow">
                     {{ __('pages/blog.sign_up_btn') }}
                 </span>
             </a>
@@ -73,7 +76,7 @@
 
     <section class="py-16">
         <div class="main-container flex flex-col">
-            <h3 class="mb-12 font-secondary font-extrabold text-4xl text-primary text-center ">
+            <h3 class="mb-12 font-primary font-extrabold text-4xl text-primary text-center ">
                 {{ __('pages/blog.more_blog') }}
             </h3>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -84,19 +87,19 @@
                             <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
                                 alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
                             <div class="flex justify-between">
-                                <span class="font-inter text-xs text-[#7C7C7C]">
+                                <span class="font-primary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
                                 </span>
-                                <span class="font-inter text-xs text-[#7C7C7C]">
+                                <span class="font-primary text-xs text-[#7C7C7C]">
                                     {{ $blog->click_count }}
                                     <i class="fa-solid fa-eye ml-1"></i>
                                 </span>
                             </div>
                             <h2
-                                class="font-inter font-extrabold text-lg text-primary lg:text-xl lg:tracking-normal lg:leading-6">
+                                class="font-primary font-extrabold text-lg text-primary lg:text-xl lg:tracking-normal lg:leading-6">
                                 {{ $blog->blog_title }}
                             </h2>
-                            <p class="font-inter font-medium text-sm text-primary">
+                            <p class="font-primary font-medium text-sm text-primary">
                                 {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 200)) }}...
                             </p>
                         </div>

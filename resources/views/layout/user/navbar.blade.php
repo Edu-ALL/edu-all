@@ -5,7 +5,7 @@
                 <a href="{{ url(app()->getLocale()) }}"
                     class="flex justify-center items-center lg:min-w-fit lg:text-left">
                     <img src="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New"
-                        class=" object-center w-48 xl:w-56">
+                        class=" object-center w-[180px]">
                 </a>
 
                 <button id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
@@ -21,7 +21,7 @@
                     </button>
 
                     <ul
-                        class="justify-center w-full h-screen pb-40 font-secondary border-l border-[#666666] overflow-auto lg:flex lg:h-fit lg:pb-0 lg:border-0 lg:overflow-hidden xl:gap-3 xl:mx-10 2xl:gap-x-6">
+                        class="justify-center w-full h-screen pb-40 font-primary border-l border-[#666666] overflow-auto lg:flex lg:h-fit lg:pb-0 lg:border-0 lg:overflow-hidden xl:gap-3 xl:mx-10 2xl:gap-x-6">
                         <li
                             class="flex-[0_0_auto] pl-4 text-left border-t border-[#666666] lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <a href="{{ url(app()->getLocale()) }}"
@@ -183,10 +183,10 @@
                     </ul>
                 </div>
                 <div
-                    class="flex justify-between items-center min-w-fit mt-1 gap-4 font-secondary font-medium text-base sm:mt-0 lg:text-base">
+                    class="flex justify-between items-center min-w-fit mt-1 gap-4 font-primary font-medium text-base sm:mt-0 lg:text-base">
                     <div class="relative flex items-center group">
                         <div
-                            class="flex items-center font-body font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
+                            class="flex items-center font-primary font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
                             {{ __('pages/navbar.contact_us') }} <i class="fa-solid fa-caret-down ml-1"></i>
                         </div>
                         <div
@@ -212,7 +212,7 @@
                     </div>
                     <div class="relative flex items-center group">
                         <div
-                            class="flex items-center font-body font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
+                            class="flex items-center font-primary font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
                             {{ substr(strtoupper(app()->getLocale()), 0, 2) }} <i
                                 class="fa-solid fa-caret-down ml-1"></i>
                         </div>

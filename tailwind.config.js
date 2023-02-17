@@ -70,10 +70,10 @@ module.exports = {
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
-                title: "Maven Pro, sans-serif",
-                secondary: "Source Sans Pro, sans-serif",
-                body: "Roboto, sans-serif",
-                inter: "Roboto, sans-serif",
+                // title: "Maven Pro, sans-serif",
+                // secondary: "Source Sans Pro, sans-serif",
+                // body: "Roboto, sans-serif",
+                // inter: "Roboto, sans-serif",
             },
             colors: {
                 primary: "#233469",
