@@ -37,15 +37,15 @@
                                 <div class="hidden w-px h-4 bg-primary md:block"></div>
                             @endif
                         </div>
-                        <<<<<<< HEAD <span class="font-primary text-base text-primary">{{ $blog->duration_read }}
-                            =======
-                            <div class="hidden w-px h-4 bg-primary md:block"></div>
+                        <div class="hidden w-px h-4 bg-primary md:block"></div>
                     @endif
                     @if (!empty($blog->duration_read))
                         <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
-                            >>>>>>> 4698936ccc8d66003d8b41dd0dd872c2dc0b455e
-                            {{ __('pages/blog.min_read') }}</span>
-                        <div class="hidden w-px h-4 bg-primary md:block"></div>
+                            =========
+                            <span class="font-primary text-base text-primary">{{ $blog->duration_read }}
+                                >>>>>>>>> Temporary merge branch 2
+                                {{ __('pages/blog.min_read') }}</span>
+                            <div class="hidden w-px h-4 bg-primary md:block"></div>
                     @endif
                     <span
                         class="font-primary text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
@@ -77,6 +77,7 @@
             <div class="blog_style w-full flex flex-col md:w-4/5">
                 {!! $blog->blog_description !!}
             </div>
+
         </div>
     </section>
 
@@ -152,5 +153,34 @@
                 });
             })
         });
+
+        function blog_widget() {
+            let paragraph = $('.blog_style p')
+            let data = {!! $blog_widgets !!}
+            console.log(data);
+            for (let index = 1; index <= paragraph.length; index++) {
+                data.forEach(element => {
+                    if (index == element.position) {
+                        paragraph.eq(element.position - 1).append(
+                            '<div class="px-5 py-5 border rounded-lg shadow-lg bg-zinc-100 mt-3">' +
+                            '<h3 class="text-primary tracking-wide">' + element.title + '</h3>' +
+                            '<hr class="py-1">' +
+                            '<div class="widget-desc">' +
+                            element.description +
+                            '</div>' +
+                            '<div class="flex justify-end">' +
+                            '<a href="' + element.link +
+                            '" class="bg-primary hover:bg-yellow hover:no-underline px-4 py-2 rounded-lg text-white text-sm" target="_blank">' +
+                            'Read More <i class="fas fa-arrow-right ml-2"></i>' +
+                            '</a>' +
+                            '</div>' +
+                            '</div>'
+                        )
+                    }
+                });
+            }
+        }
+
+        blog_widget()
     </script>
 @endsection

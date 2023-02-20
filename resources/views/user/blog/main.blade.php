@@ -137,10 +137,12 @@
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
                                 </span>
                                 <div class="flex items-center gap-2">
+                                    @if($blog->duration_read)
                                     <span class="font-primary text-sm text-[#7C7C7C]">
                                         {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
                                     </span>
                                     <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
+                                    @endif
                                     <span class="font-primary text-xs text-[#7C7C7C] text-right">
                                         {{ $blog->click_count }}
                                         <i class="fa-solid fa-eye ml-1"></i>
