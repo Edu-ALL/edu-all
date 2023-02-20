@@ -32,6 +32,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js">
     </script>
+    <script src="{{ url('js/instafeed.js') }}"></script>
 
 
 </head>
@@ -52,6 +53,8 @@
     $(function() {
         $('img').lazy();
     });
-</script>
 
+    // IG TOKEN 
+    sessionStorage.setItem('ig_token','{{env("IG_TOKEN")}}')
+</script>
 </html>
