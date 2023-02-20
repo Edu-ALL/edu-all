@@ -15,8 +15,8 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/academic_test_preparation/header-academic.webp') }}" alt=""
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
+            <img src="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}" alt="Academic Test Preparation"
+                class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
         </div>
     </section>

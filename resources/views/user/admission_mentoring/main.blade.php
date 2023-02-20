@@ -4,7 +4,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full bg-gradient-to-tr from-primary md:bg-gradient-to-r md:from-yellow">
+            <div class="absolute main-container h-full">
                 <div class="flex flex-col items-center pt-10 md:items-start md:w-2/3 md:pl-28 lg:w-1/2 lg:pt-16 ">
                     <h1
                         class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
@@ -15,15 +15,9 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/admission mentoring/Header_Image_3-min.webp') }}" alt=""
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
+            <img src="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}" alt="Admission Mentoring Banner"
+                class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
-                class="absolute bottom-0 object-cover -mb-2 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20">
-                <path fill="#fff" fill-opacity="1"
-                    d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
-                </path>
-            </svg>
         </div>
     </section>
 

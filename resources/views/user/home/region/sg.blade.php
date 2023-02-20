@@ -164,7 +164,7 @@
                     major and paved the way to top universities around the world.
                 </p>
             </div>
-            <div class="mt-6 p-8 rounded-xl bg-white md:grid-cols-3">
+            <div class="mt-6 p-8 mx-6 rounded-xl bg-white md:mx-0 md:grid-cols-3">
                 <a href="#">
                     <img src="{{ asset('assets/img/home/sg/university logo.png') }}" alt="Career Bootcamp Logo"
                         class="rounded-xl">
@@ -264,7 +264,7 @@
 
         new Splide(splides[0], {
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                3 : 4,
+                4 : 3,
             rewind: true,
             arrows: false
         }).on('pagination:mounted', function(data) {

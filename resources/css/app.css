@@ -9,11 +9,11 @@
 
 @layer components {
     .child_nav {
-        @apply text-left border-t border-[#1d1d1d] lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
+        @apply text-left border-t border-white lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
     }
 
     .child_child_nav {
-        @apply pl-4 text-left border-t border-[#1d1d1d] lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0 lg:border-b hover:lg:text-white;
+        @apply pl-4 text-left border-t border-primary bg-primary/10 lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0 lg:border-b hover:lg:text-white lg:border-[#1d1d1d] lg:bg-[#333333];
     }
 
     .child_child_nav_link {

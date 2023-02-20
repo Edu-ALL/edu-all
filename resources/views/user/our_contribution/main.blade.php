@@ -13,8 +13,8 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/about/our-contribution/CSR-HEADER-1.webp') }}" alt="header image"
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[500px]">
+            <img src="{{ asset('assets/img/banner/Contribution banner.webp') }}" alt="Our Contribution Banner"
+                class="w-full h-[400px] object-cover object-center md:h-[450px]">
         </div>
     </section>
 

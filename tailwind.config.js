@@ -19,11 +19,11 @@ module.exports = {
 
                 // Program
                 "program-image-1":
-                    "url('../../public/assets/img/programs/medium-shot-woman-teaching-lesson.jpg')",
+                    "url('../../public/assets/img/programs/Admission Mentoring.webp')",
                 "program-image-2":
-                    "url('../../public/assets/img/programs/junior-ferreira-7esRPTt38nI-unsplash.jpg')",
+                    "url('../../public/assets/img/programs/Passion Project-Mentoring Program.webp')",
                 "program-image-3":
-                    "url('../../public/assets/img/programs/aaron-burden-y02jEX_B0O0-unsplash.jpg')",
+                    "url('../../public/assets/img/programs/Academic &-Test Preparation.webp')",
 
                 // Admission mentoring
                 // Undergraduate
@@ -62,7 +62,7 @@ module.exports = {
 
                 // header upcomming event
                 "upcomming-header":
-                    "url('../../public/assets/img/upcoming_events/header-upcoming.webp')",
+                    "url('../../public/assets/img/banner/Upcoming event banner.webp')",
 
                 // header mentor
                 "mentor-header":

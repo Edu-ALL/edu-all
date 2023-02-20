@@ -2,8 +2,8 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="bg-upcomming-header bg-center bg-fixed">
-        <div class="pt-20 bg-primary/90">
+    <section class="bg-upcomming-header bg-bottom bg-cover bg-fixed">
+        <div class="py-20 bg-primary/70">
             <div class="main-container">
                 <div class="flex flex-col items-center">
                     <h1 class="mb-4 font-primary font-semibold text-4xl text-white text-center">
@@ -18,12 +18,8 @@
                                 class="fa-solid fa-file-pdf mr-2"></i> {{ __('pages/resources/upcoming_events.btn') }}
                         </span></a>
                 </div>
-
             </div>
-            <img src="{{ asset('assets/img/upcoming_events/wave.svg') }}"
-                class="rotate-180 scale-x-[200%] w-full h-14 md:scale-x-[100%] ">
         </div>
-
     </section>
 
     {{-- ================================== Events Section  ================================== --}}
