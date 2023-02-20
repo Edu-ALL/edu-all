@@ -78,10 +78,15 @@ class BlogPageController extends Controller
         // dd($blog);
         $recomendation_blogs = Blogs::latest()->where('id', '!=', $blog->id)->where('cat_id', $blog->cat_id)->take(3)->get();
 
+        // return $blog->blog_description;
         // Blog Section
         $doc =  new DOMDocument();
-        $doc->loadHTML($blog->blog_description);
+        $doc->loadHTML($blog->blog_description, LIBXML_NOERROR);
         $title_list = $doc->getElementsByTagName('h2');
+        $figure = $doc->getElementsByTagName('figure')->item(0);
+        $parent = $figure->parentNode;
+        $parent->removeChild($figure);
+
         $blog_section = [];
         foreach ($title_list as $index => $title) {
             $title->setAttribute("id", "blog_title_" . $index);
