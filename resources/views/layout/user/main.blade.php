@@ -28,10 +28,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     {{-- Lazy Image Jquery --}}
-    <!-- cdnjs -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js">
-    </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+    
+    {{-- Instafeed  --}}
     <script src="{{ url('js/instafeed.js') }}"></script>
 
 
@@ -50,9 +49,9 @@
 @yield('script')
 
 <script>
-    $(function() {
-        $('img').lazy();
-    });
+    $("img").lazyload({
+	    effect : "fadeIn"
+	});
 
     // IG TOKEN 
     sessionStorage.setItem('ig_token','{{env("IG_TOKEN")}}')

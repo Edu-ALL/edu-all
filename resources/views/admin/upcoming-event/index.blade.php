@@ -60,16 +60,16 @@
                                             <td>{{ $upcoming_event->event_title }}</td>
                                             <td>{{ $upcoming_event->event_date }}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
+                                                <img data-original="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$upcoming_event->region.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$upcoming_event->region.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $upcoming_event->regions->region }}
                                                 </p>
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$upcoming_event->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$upcoming_event->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $upcoming_event->languages->language }}
                                                 </p>

@@ -5,7 +5,7 @@
     <section class="py-20 bg-sg-header bg-cover bg-center">
         <div class="main-container">
             <div class="py-28 flex flex-col items-center md:py-52">
-                <img src="{{ asset('assets/logo/allin-big.png') }}" class="w-full max-w-sm">
+                <img data-original="{{ asset('assets/logo/allin-big.png') }}" class="w-full max-w-sm">
             </div>
         </div>
     </section>
@@ -103,7 +103,7 @@
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                                                <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
                                                     alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                                             </div>
                                             <div

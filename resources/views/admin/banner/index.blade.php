@@ -60,16 +60,16 @@
                                             <td>{{ $banner->banner_title }}</td>
                                             <td>{!! Str::limit($banner->banner_description, 150, '...') !!}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
+                                                <img data-original="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$banner->region.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$banner->region.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $banner->regions->region }}
                                                 </p>
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$banner->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$banner->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $banner->languages->language }}
                                                 </p>

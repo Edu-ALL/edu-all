@@ -18,7 +18,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
-                            <img src="{{ asset('assets/logo/quote-big.svg') }}">
+                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}">
                         </div>
                         <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Admission <br> Mentoring</h2>
@@ -66,7 +66,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
-                            <img src="{{ asset('assets/logo/quote-big.svg') }}">
+                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}">
                         </div>
                         <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Experiential <br> Learning</h2>
@@ -99,7 +99,7 @@
                                                             </div>
                                                             <div class="w-24 h-24 rounded-full">
                                                                 @if ($item->testi_thumbnail)
-                                                                    <img src="{{ asset('uploaded_files/testimonial/' . $item->testi_thumbnail) }}"
+                                                                    <img data-original="{{ asset('uploaded_files/testimonial/' . $item->testi_thumbnail) }}"
                                                                         alt="{{ $item->testi_thumbnail }}"
                                                                         class="w-full h-full object-contain object-center">
                                                                 @endif
@@ -121,7 +121,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
-                            <img src="{{ asset('assets/logo/quote-big.svg') }}">
+                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}">
                         </div>
                         <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Academic <br> Preparation</h2>

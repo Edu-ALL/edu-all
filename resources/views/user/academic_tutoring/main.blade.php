@@ -17,11 +17,11 @@
                     </a>
                 </div>
 
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-points.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-points.webp') }}"
                     alt="academic tutoring points" class="w-full md:max-w-2xl mx-auto text-center md:mb-10">
             </div>
 
-            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/header-acad-tutor-page.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/header-acad-tutor-page.webp') }}"
                 class="w-full h-[90vh] object-cover object-center">
         </div>
     </section>
@@ -29,7 +29,7 @@
     {{-- ================================== Bennefit Section  ================================== --}}
     <section class="py-10">
         <div class="flex flex-col gap-y-6 main-container">
-            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-on-demand.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-on-demand.webp') }}"
                 alt="acad on demand">
             <div class="grid grid-cols-1 gap-8 md:items-start md:justify-center md:grid-cols-3 ">
                 <div class="flex flex-col items-center">
@@ -84,13 +84,13 @@
             <div class="flex flex-col items-center mt-12">
                 <h2 class="mb-6 font-primary font-black text-5xl text-black text-center">
                     {{ __('pages/programs/academic_tutoring.ibdiploma') }}</h2>
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/IB-DIPLOMA-ASSET.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/IB-DIPLOMA-ASSET.webp') }}"
                     alt="IB Diploma asset" class="w-full max-w-3xl max-h-48 object-contain">
             </div>
             <div class="flex flex-col items-center mt-12">
                 <h2 class="mb-6 font-primary font-black text-5xl text-black text-center">
                     {{ __('pages/programs/academic_tutoring.cambridge') }}</h2>
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/CAMBRIDGE-A-LVLASSET.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/CAMBRIDGE-A-LVLASSET.webp') }}"
                     alt="Cambridge a lvl asset" class="w-full max-w-3xl max-h-48 object-contain">
             </div>
         </div>
@@ -105,12 +105,12 @@
                     {{ __('pages/programs/academic_tutoring.do_title') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-what-you-will-do-asset.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-what-you-will-do-asset.webp') }}"
                     alt="acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
                 <div class="flex flex-col gap-y-6">
                     <div
                         class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:rounded-full">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-1.webp') }}"
+                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-1.webp') }}"
                             alt="what will you do 1" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
                         <div class="flex flex-col w-2/3">
                             <h4 class="font-primary font-bold text-2xl text-yellow">
@@ -121,7 +121,7 @@
                     </div>
                     <div
                         class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:rounded-full">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-2.webp') }}"
+                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-2.webp') }}"
                             alt="what will you do 2" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
                         <div class="flex flex-col w-2/3 py-1.5">
                             <h4 class="font-primary font-bold text-2xl text-yellow">
@@ -132,7 +132,7 @@
                     </div>
                     <div
                         class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:pr-6 md:rounded-full">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-3.webp') }}"
+                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-3.webp') }}"
                             alt="what will you do 3" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
                         <div class="flex flex-col w-2/3 py-1.5">
                             <h4 class="font-primary font-bold text-2xl text-yellow">
@@ -143,7 +143,7 @@
                     </div>
                     <div
                         class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:rounded-full">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-4.webp') }}"
+                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-4.webp') }}"
                             alt="what will you do 4" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
                         <div class="flex flex-col w-2/3 py-1.5">
                             <h4 class="font-primary font-bold text-2xl text-yellow pr-6">
@@ -241,7 +241,7 @@
                 <ul class="grid grid-cols-1 gap-8 md:grid-cols-4">
                     @foreach (__('pages/programs/academic_tutoring.why_us_list') as $item)
                         <li class="flex flex-col mb-4 rounded-[2.75rem] bg-[#f6d7af] overflow-hidden">
-                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/' . $item['image']) }}"
+                            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/' . $item['image']) }}"
                                 alt="flexcibility learning" class="p-4 md:p-0">
                             <div class="flex flex-col p-6">
                                 <h5 class="mb-4 font-primary font-bold text-2xl text-primary">{{ $item['title'] }}</h5>
@@ -272,7 +272,7 @@
                                     <div class="splide__container h-full">
                                         <div
                                             class="flex flex-col h-full mx-4 mb-4 rounded-[3rem] bg-primary overflow-hidden">
-                                            <img src="{{ asset('uploaded_files/tutor/' . $tutor->thumbnail) }}"
+                                            <img data-original="{{ asset('uploaded_files/tutor/' . $tutor->thumbnail) }}"
                                                 alt="{{ $tutor->alt }}" class="p-4 md:p-0">
                                             <div class="flex flex-col justify-between p-6">
                                                 <h5 class="mb-4 font-primary font-bold text-2xl text-yellow">
@@ -316,7 +316,7 @@
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-4 mb-4 rounded-3xl bg-primary overflow-hidden">
                                             <div class="flex flex-col p-6">
-                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 mb-2">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}" class="w-6 mb-2">
                                                 <div class="mt-1 font-primary font-semibold text-base text-white">
                                                     {!! $item->testi_desc !!}
                                                 </div>

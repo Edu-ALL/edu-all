@@ -17,12 +17,12 @@
                     </a>
                 </div>
 
-                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
                     alt="academic tutoring points"
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>
 
-            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/header-SAT-page.webp') }}" alt=""
+            <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/header-SAT-page.webp') }}" alt=""
                 class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
         </div>
     </section>
@@ -30,7 +30,7 @@
     {{-- ================================== Subject Covered Section  ================================== --}}
     <section class="py-10">
         <div class="flex flex-col items-center main-container md:flex-row lg:gap-x-20">
-            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-girl-asset.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-girl-asset.webp') }}"
                 alt="SAT girl assets" class="w-full px-6 md:w-1/2">
             <div class="mt-6 flex flex-col w-full md:w-1/2">
                 <h2 class="mb-8 font-primary font-black text-[26px] text-primary tracking-tighter uppercase md:text-6xl">
@@ -58,13 +58,13 @@
                     {{ __('pages/programs/sat_program.do_title') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/what-will-you-do-asset.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/what-will-you-do-asset.webp') }}"
                     alt="acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
                 <div class="flex flex-col gap-y-6">
                     @foreach (__('pages/programs/sat_program.do_list') as $item)
                         <div
                             class="flex flex-col items-center w-full gap-x-4 py-3 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:py-0 md:rounded-full">
-                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-' . $loop->iteration . '.webp') }}"
+                            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-' . $loop->iteration . '.webp') }}"
                                 alt="what will you do 4" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
                             <div class="flex flex-col w-full px-6 py-1.5 md:w-2/3 md:px-0">
                                 <h4 class="font-primary font-bold text-2xl text-yellow md:pr-6">
@@ -141,7 +141,7 @@
                     {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
             </div>
             <div class="flex justify-center items-center w-full main-container gap-x-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}" alt="frame 7"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}" alt="frame 7"
                     class="w-full max-w-4xl">
             </div>
         </div>
@@ -171,7 +171,7 @@
                                                 <div class="mt-3 font-primary font-black text-lg text-white">
                                                     {!! $item->testi_subtitle !!}
                                                 </div>
-                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 my-4">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}" class="w-6 my-4">
                                                 <div class="font-primary font-semibold text-base text-white">
                                                     {!! $item->testi_desc !!}
                                                 </div>

@@ -14,11 +14,11 @@
                         {{ __('pages/programs/ib_ee_coaching_program.desc') }}</p>
                 </div>
 
-                <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-point-1024x231.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-point-1024x231.webp') }}"
                     alt="academic tutoring points" class="hidden w-full mx-auto text-center md:block md:max-w-4xl  md:mb-10">
             </div>
 
-            <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/header-SAT-page.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/header-SAT-page.webp') }}"
                 alt="header ib ee coaching program" class="w-full h-[50vh] object-cover object-center md:h-[80vh] ">
         </div>
     </section>
@@ -26,7 +26,7 @@
     {{-- ================================== Bennefit Section  ================================== --}}
     <section class="py-10">
         <div class="flex flex-col gap-y-6 main-container">
-            <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-people-assets-1024x348.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-people-assets-1024x348.webp') }}"
                 alt="acad on demand">
         </div>
     </section>
@@ -40,13 +40,13 @@
                     {{ __('pages/programs/ib_ee_coaching_program.learn') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-07.webp') }}"
+                <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-07.webp') }}"
                     alt="acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
                 <div class="flex flex-col gap-y-6">
                     @foreach (__('pages/programs/ib_ee_coaching_program.learn_list') as $item)
                         <div
                             class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] sm:flex-row sm:rounded-full">
-                            <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-' . $loop->iteration . '.webp') }}"
+                            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-' . $loop->iteration . '.webp') }}"
                                 alt="what will you do {{ $loop->iteration }}"
                                 class="w-1/2 pt-4 px-4 sm:px-0 sm:pt-0 sm:w-1/5">
                             <div class="flex flex-col w-4/5 mt-2 sm:mt-0">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <img src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
                 class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
         </div>
     </section>

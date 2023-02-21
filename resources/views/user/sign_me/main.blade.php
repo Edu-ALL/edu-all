@@ -60,7 +60,7 @@
                         <h4 class="mb-6 font-primary font-bold text-2xl text-primary">
                             Your current profile will be assessed based on Four Pillars of University Application
                         </h4>
-                        <img src="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
+                        <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
                     </div>
                 </div>
                 <div class="md:col-span-3">
@@ -1070,7 +1070,7 @@
                                 }
                             }
                         </script>
-                        <img src="https://track.mailerlite.com/webforms/o/5784670/t7r7w8?v1670913789" width="1"
+                        <img data-original="https://track.mailerlite.com/webforms/o/5784670/t7r7w8?v1670913789" width="1"
                             height="1"
                             style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block"
                             alt="." border="0">

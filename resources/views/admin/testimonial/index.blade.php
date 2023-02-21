@@ -64,13 +64,13 @@
                                             <td>{{ $testimonial->testi_category }}</td>
                                             <td>
                                                 @if ($testimonial->testi_thumbnail)
-                                                    <img src="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+                                                    <img data-original="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
                                                 @else
                                                     -
                                                 @endif
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$testimonial->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$testimonial->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $testimonial->languages->language }}
                                                 </p>

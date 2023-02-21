@@ -26,7 +26,7 @@
             <div
                 class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
                 <div class="w-full shadow-md rounded-3xl">
-                    <img src="{{ asset('assets/img/admission mentoring/benefit.webp') }}" alt="admission mentoring benefit"
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}" alt="admission mentoring benefit"
                         class="w-full">
                 </div>
             </div>
@@ -56,7 +56,7 @@
                                     class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
                                 </span>
-                                <img src="{{ asset('assets/img/admission mentoring/Graduate/Graduate' . $loop->iteration . '.webp') }}"
+                                <img data-original="{{ asset('assets/img/admission mentoring/Graduate/Graduate' . $loop->iteration . '.webp') }}"
                                     alt="Allin" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
                             </div>
                             <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
@@ -83,7 +83,7 @@
                     @foreach (__('pages/programs/graduate_program.pilar_list') as $item)
                         <div class="pilar_card h-72 md:h-60">
                             <div class="front flex items-center justify-center w-full overflow-hidden">
-                                <img src="{{ asset('assets/img/admission mentoring/' . $item['img']) }}" alt="4 pilar"
+                                <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}" alt="4 pilar"
                                     class="w-full bg-cover bg-center">
                             </div>
                             <div
@@ -108,7 +108,7 @@
                     </a>
                     <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" target="_block"
                         class="mt-8 rounded-xl overflow-hidden">
-                        <img src="{{ asset('assets/img/admission mentoring/Graduate/Graduate IC.webp') }}"
+                        <img data-original="{{ asset('assets/img/admission mentoring/Graduate/Graduate IC.webp') }}"
                             alt="graduate ic" class="mt-12 w-full max-w-2xl mx-auto object-contain">
                     </a>
                 </div>
@@ -129,7 +129,7 @@
                 <p class="max-w-2xl my-8 mx-auto font-primary font-medium text-primary text-center">
                     {{ __('pages/programs/graduate_program.why_us_desc') }}
                 </p>
-                <img src="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring).webp') }}"
+                <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring).webp') }}"
                     alt="why us mentoring curr" class="w-full max-w-4xl mx-auto">
             </div>
         </div>
