@@ -6,7 +6,7 @@
         <div class="relative main-container">
             <div class="flex flex-col items-center gap-y-4 ">
                 <div class="w-full md:px-12 md:max-w-3xl md:mx-auto">
-                    <h4 class="mb-2 font-secondary font-semibold text-2xl text-white text-center md:text-4xl">
+                    <h4 class="mb-2 font-primary font-semibold text-2xl text-white text-center md:text-4xl">
                         {{ __('pages/programs/univ_transfer_program.subtitle') }}
                     </h4>
                     <span class="flex items-center">
@@ -16,10 +16,11 @@
                     </span>
                 </div>
                 <h1
-                    class="font-secondary font-black text-4xl text-yellow text-center tracking-tighter md:text-6xl lg:text-7xl xl:text-8xl">
+                    class="font-primary font-black text-4xl text-yellow text-center tracking-normal md:text-6xl lg:text-7xl xl:text-8xl">
                     {{ __('pages/programs/univ_transfer_program.title') }}
                 </h1>
-                <p class="mt-8 font-inter text-base text-white text-center md:max-w-3xl md:mx-auto md:text-xl md:leading-5">
+                <p
+                    class="mt-8 font-primary text-base text-white text-center md:max-w-3xl md:mx-auto md:text-xl md:leading-5">
                     {{ __('pages/programs/univ_transfer_program.body') }}</p>
             </div>
             <div
@@ -38,7 +39,7 @@
             <div class="main-container z-10">
                 <div class="flex justify-center">
                     <h2
-                        class="w-full px-4 py-3 font-secondary font-extrabold text-3xl text-primary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl lg:w-2/5">
+                        class="w-full px-4 py-3 font-primary font-extrabold text-3xl text-primary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl lg:w-2/5">
                         {{ __('pages/programs/univ_transfer_program.do_title') }}
                     </h2>
                 </div>
@@ -52,15 +53,15 @@
                             <div
                                 class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
                                 <span
-                                    class="font-secondary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
+                                    class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
                                 </span>
                                 <img src="{{ asset('assets/img/admission mentoring/Master transfer/Transfer ' . $loop->iteration . '.webp') }}"
                                     alt="Allin" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
                             </div>
                             <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
-                                <h4 class="font-inter font-semibold text-xl text-yellow">{{ $item['title'] }}</h4>
-                                <p class="font-inter text-base text-white leading-4">
+                                <h4 class="font-primary font-semibold text-xl text-yellow">{{ $item['title'] }}</h4>
+                                <p class="font-primary text-base text-white leading-4">
                                     {{ $item['body'] }}
                                 </p>
                             </div>
@@ -75,7 +76,7 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col items-center">
-                <h2 class="max-w-4xl mx-auto font-secondary font-bold text-4xl text-primary text-center leading-8">
+                <h2 class="max-w-4xl mx-auto font-primary font-bold text-4xl text-primary text-center leading-8">
                     {{ __('pages/programs/univ_transfer_program.pilar_title') }}
                 </h2>
                 <div class="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
@@ -87,22 +88,22 @@
                             </div>
                             <div
                                 class="back flex flex-col justify-center items-center w-full h-full px-4 bg-{{ $item['color'] }}">
-                                <h4 class="mb-4 font-secondary font-bold text-3xl text-white text-center leading-6">
+                                <h4 class="mb-4 font-primary font-bold text-3xl text-white text-center leading-6">
                                     {{ $item['title'] }}</h4>
-                                <p class="font-secondary text-base text-white text-center leading-4">{{ $item['body'] }}
+                                <p class="font-primary text-base text-white text-center leading-4">{{ $item['body'] }}
                                 </p>
                             </div>
                         </div>
                     @endforeach
                 </div>
                 <div class="flex flex-col items-center mt-16">
-                    <p class="w-full max-w-3xl mx-auto font-secondary font-semibold text-primary text-center">
+                    <p class="w-full max-w-3xl mx-auto font-primary font-semibold text-primary text-center">
                         {{ __('pages/programs/univ_transfer_program.pilar_desc') }}
                     </p>
                     <a href="https://drive.google.com/file/d/1kenqeMGb2C6rjRILuMFgbHODZxtze-yL/view?usp=sharing"
                         target="_blank" class="mt-8">
                         <span
-                            class="px-6 py-2 font-secondary font-semibold text-white text-center rounded-md bg-[#F90C0C]">{{ __('pages/programs/univ_transfer_program.pilar_btn') }}
+                            class="px-6 py-2 font-primary font-semibold text-white text-center rounded-md bg-[#F90C0C]">{{ __('pages/programs/univ_transfer_program.pilar_btn') }}
                         </span>
                     </a>
                     <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" target="_block"
@@ -121,11 +122,11 @@
             <div class="flex flex-col">
                 <div class="flex justify-center">
                     <h2
-                        class="w-full px-4 py-3 font-secondary font-extrabold text-3xl text-primary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl lg:w-2/5">
+                        class="w-full px-4 py-3 font-primary font-extrabold text-3xl text-primary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl lg:w-2/5">
                         {{ __('pages/programs/univ_transfer_program.why_us_title') }}
                     </h2>
                 </div>
-                <p class="max-w-2xl my-8 mx-auto font-secondary font-medium text-primary text-center">
+                <p class="max-w-2xl my-8 mx-auto font-primary font-medium text-primary text-center">
                     {{ __('pages/programs/univ_transfer_program.why_us_desc') }}
                 </p>
                 <img src="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring).webp') }}"
@@ -140,7 +141,7 @@
             <div class="flex flex-col">
                 <div class="flex justify-center">
                     <h2
-                        class="w-full px-4 py-3 font-secondary font-extrabold text-3xl text-primary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl xl:w-3/6">
+                        class="w-full px-4 py-3 font-primary font-extrabold text-3xl text-primary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl xl:w-3/6">
                         {{ __('pages/programs/univ_transfer_program.testimony_title') }}
                     </h2>
                 </div>
@@ -160,13 +161,13 @@
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-2 mb-4 rounded-3xl bg-primary overflow-hidden md:mx-4">
                                             <div class="flex flex-col p-6">
-                                                <h5 class="font-body font-bold text-2xl text-yellow">
+                                                <h5 class="font-primary font-bold text-2xl text-yellow">
                                                     {{ $item->testi_name }}
                                                 </h5>
-                                                <div class="mb-3 font-body font-black text-sm text-[#B9B9B9]">
+                                                <div class="mb-3 font-primary font-black text-sm text-[#B9B9B9]">
                                                     {!! $item->testi_subtitle !!}
                                                 </div>
-                                                <div class="font-body font-semibold text-sm text-white">
+                                                <div class="font-primary font-semibold text-sm text-white">
                                                     {!! $item->testi_desc !!}
                                                 </div>
                                             </div>
@@ -184,7 +185,7 @@
     {{-- ==================================== Bottom Section ========================================= --}}
     <section class="py-10">
         <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-title font-black text-primary text-center text-4xl">
+            <h2 class="w-full max-w-3xl mb-6 font-primary font-black text-primary text-center text-4xl">
                 {{ __('pages/programs/univ_transfer_program.bottom_title') }}
                 <span class="mt-3 block text-3xl text-yellow">
                     {{ __('pages/programs/univ_transfer_program.bottom_subtitle') }}

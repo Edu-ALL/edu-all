@@ -6,10 +6,10 @@
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute-center main-container w-full h-full md:flex md:flex-col md:justify-between">
                 <div class="flex flex-col items-start pt-10 mb-14 md:pl-28 lg:pt-24">
-                    <h1 class="font-title font-black text-4xl text-white uppercase md:text-[42px] md:text-left">
+                    <h1 class="font-primary font-black text-4xl text-white uppercase md:text-[42px] md:text-left">
                         {{ __('pages/programs/sat_program.title') }}
                     </h1>
-                    <p class="mt-6 font-body font-normal text-xl text-white md:text-left md:w-1/2">
+                    <p class="mt-6 font-primary font-normal text-xl text-white md:text-left md:w-1/2">
                         {{ __('pages/programs/sat_program.desc') }}</p>
                     <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
                         class="inline-block px-5 py-2 mt-10 font-primary font-bold text-lg text-white bg-yellow rounded-lg">
@@ -33,16 +33,17 @@
             <img src="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-girl-asset.webp') }}"
                 alt="SAT girl assets" class="w-full px-6 md:w-1/2">
             <div class="mt-6 flex flex-col w-full md:w-1/2">
-                <h2 class="mb-8 font-title font-black text-[26px] text-primary tracking-tighter uppercase md:text-6xl">
+                <h2 class="mb-8 font-primary font-black text-[26px] text-primary tracking-tighter uppercase md:text-6xl">
                     {{ __('pages/programs/sat_program.subjects_title') }}</h2>
                 <ul class="flex flex-col gap-y-2">
                     @foreach (__('pages/programs/sat_program.subjects_list') as $item)
                         <li class="px-4 py-3 rounded-2xl bg-yellow">
-                            <h5 class="font-body font-bold text-xl text-white md:px-3 md:text-2xl">{{ $item }}</h5>
+                            <h5 class="font-primary font-bold text-xl text-white md:px-3 md:text-2xl">{{ $item }}
+                            </h5>
                         </li>
                     @endforeach
                 </ul>
-                <span class="mt-1 font-body text-base text-black text-right">*ACT Prep Class</span>
+                <span class="mt-1 font-primary text-base text-black text-right">*ACT Prep Class</span>
             </div>
         </div>
     </section>
@@ -53,7 +54,7 @@
         <div class="flex flex-col">
             <div
                 class="mx-6 mb-12 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-2/3 md:rounded-r-full lg:pl-20 xl:pl-40 ">
-                <h2 class="font-title font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                <h2 class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
                     {{ __('pages/programs/sat_program.do_title') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
@@ -66,13 +67,13 @@
                             <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-' . $loop->iteration . '.webp') }}"
                                 alt="what will you do 4" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
                             <div class="flex flex-col w-full px-6 py-1.5 md:w-2/3 md:px-0">
-                                <h4 class="font-body font-bold text-2xl text-yellow md:pr-6">
+                                <h4 class="font-primary font-bold text-2xl text-yellow md:pr-6">
                                     {{ $item['title'] }}</h4>
                                 <ul class="list-outside md:pr-6">
                                     @foreach ($item['body'] as $body)
                                         <li class="inline-flex text-white">
                                             <i class="fa-regular fa-circle-right mt-0.5 mr-2"></i>
-                                            <p class="font-body font-normal text-[17px] text-white leading-5 md:pr-4">
+                                            <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
                                                 {{ $body }}</p>
                                         </li>
                                     @endforeach
@@ -89,36 +90,36 @@
     <section class="py-10">
         <div class="grid grid-cols-1 gap-x-20 main-container md:grid-cols-2">
             <div class="flex flex-col md:gap-y-2">
-                <h2 class="font-title font-black text-3xl text-primary tracking-tighter uppercase md:text-5xl">
+                <h2 class="font-primary font-black text-3xl text-primary tracking-tighter uppercase md:text-5xl">
                     {{ __('pages/programs/sat_program.private_title') }}</h2>
                 <span
-                    class="font-body font-semibold text-lg text-yellow md:text-2xl">{{ __('pages/programs/sat_program.private_sub') }}</span>
-                <p class="font-body font-semibold text-lg text-primary leading-5 md:text-2xl">
+                    class="font-primary font-semibold text-lg text-yellow md:text-2xl">{{ __('pages/programs/sat_program.private_sub') }}</span>
+                <p class="font-primary font-semibold text-lg text-primary leading-5 md:text-2xl">
                     {{ __('pages/programs/sat_program.private_desc') }}</p>
                 <ul class="flex flex-col gap-y-3 my-4">
                     @foreach (__('pages/programs/sat_program.private_list') as $item)
                         <li class="px-5 py-4 rounded-2xl bg-primary">
-                            <h4 class="font-body font-bold text-lg text-yellow uppercase">{{ $item['title'] }}</h4>
-                            <p class="font-body text-base text-white leading-5">{{ $item['body'] }}</p>
+                            <h4 class="font-primary font-bold text-lg text-yellow uppercase">{{ $item['title'] }}</h4>
+                            <p class="font-primary text-base text-white leading-5">{{ $item['body'] }}</p>
                         </li>
                     @endforeach
                 </ul>
             </div>
             <div class="flex flex-col md:gap-y-2">
-                <h2 class="font-title font-black text-3xl text-primary tracking-tighter uppercase md:text-5xl">
+                <h2 class="font-primary font-black text-3xl text-primary tracking-tighter uppercase md:text-5xl">
                     {{ __('pages/programs/sat_program.semi_title') }}</h2>
                 <span
-                    class="font-body font-semibold text-lg text-yellow md:text-2xl">{{ __('pages/programs/sat_program.semi_sub') }}</span>
-                <p class="font-body font-semibold text-lg text-primary leading-5 md:text-2xl">
+                    class="font-primary font-semibold text-lg text-yellow md:text-2xl">{{ __('pages/programs/sat_program.semi_sub') }}</span>
+                <p class="font-primary font-semibold text-lg text-primary leading-5 md:text-2xl">
                     {{ __('pages/programs/sat_program.semi_desc') }}</p>
                 <ul class="flex flex-col gap-y-3 my-4">
                     @foreach (__('pages/programs/sat_program.semi_list') as $item)
                         <li class="px-5 py-4 rounded-2xl bg-primary">
-                            <h4 class="font-body font-bold text-lg text-yellow uppercase">{{ $item['title'] }}</h4>
-                            <p class="font-body text-base text-white leading-5">{{ $item['body'] }}</p>
+                            <h4 class="font-primary font-bold text-lg text-yellow uppercase">{{ $item['title'] }}</h4>
+                            <p class="font-primary text-base text-white leading-5">{{ $item['body'] }}</p>
                             @if ($item['btn'] != null)
                                 <a href="#"
-                                    class="inline-block mt-3 px-3 py-1.5 font-body font-medium text-base text-white rounded-2xl bg-yellow md:rounded-xl">{{ $item['btn'] }}</a>
+                                    class="inline-block mt-3 px-3 py-1.5 font-primary font-medium text-base text-white rounded-2xl bg-yellow md:rounded-xl">{{ $item['btn'] }}</a>
                             @endif
                         </li>
                     @endforeach
@@ -136,7 +137,7 @@
         <div class="flex flex-col w-full">
             <div
                 class="mx-6 mb-12 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-2/3 md:rounded-r-full lg:pl-20 xl:pl-40 ">
-                <h2 class="font-title font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                <h2 class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
                     {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
             </div>
             <div class="flex justify-center items-center w-full main-container gap-x-8">
@@ -152,7 +153,7 @@
         <div class="flex flex-col">
             <div
                 class="mx-6 py-4 mb-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-2/3 md:rounded-r-full lg:pl-20 xl:pl-40 ">
-                <h2 class="font-title font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                <h2 class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
                     {{ __('pages/programs/academic_tutoring.testi_title') }}</h2>
             </div>
 
@@ -165,13 +166,13 @@
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-2 mb-4 rounded-3xl bg-primary overflow-hidden md:mx-4">
                                             <div class="flex flex-col p-6">
-                                                <h5 class="font-body font-bold text-2xl text-yellow">
+                                                <h5 class="font-primary font-bold text-2xl text-yellow">
                                                     {{ $item->testi_name }}</h5>
-                                                <div class="mt-3 font-body font-black text-lg text-white">
+                                                <div class="mt-3 font-primary font-black text-lg text-white">
                                                     {!! $item->testi_subtitle !!}
                                                 </div>
                                                 <img src="{{ asset('assets/logo/quote.png') }}" class="w-6 my-4">
-                                                <div class="font-body font-semibold text-base text-white">
+                                                <div class="font-primary font-semibold text-base text-white">
                                                     {!! $item->testi_desc !!}
                                                 </div>
                                             </div>
@@ -191,7 +192,7 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="py-10">
         <div class="main-container flex flex-col items-center">
-            <h2 class=" font-title font-black text-primary text-center text-4xl mb-4">
+            <h2 class=" font-primary font-black text-primary text-center text-4xl mb-4">
                 {{ __('pages/programs/sat_program.bottom_title') }}
                 <span class="block text-yellow">
                     {{ __('pages/programs/sat_program.bottom_subtitle') }}</span>

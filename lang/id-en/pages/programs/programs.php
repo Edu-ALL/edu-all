@@ -19,7 +19,7 @@ return [
             'body' => 'Explore your true potential in business or research, uncover your true self, and be the person behind successful ventures and revolutionary inventions.',
             'points' => [
                 'Entrepreneurship Mentoring Program',
-                'Scientifyc Research Mentoring Program',
+                'Scientific Research Mentoring Program',
             ],
             'route' => 'passion_project_mentoring',
         ],

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Admin\BlogWidget;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
 use App\Models\BlogReads;
 use App\Models\Blogs;
+use App\Models\BlogWidgets;
 use DOMDocument;
 
 class BlogPageController extends Controller
@@ -26,7 +28,6 @@ class BlogPageController extends Controller
 
         // take blogs
         $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
-        // dd($blogs->get(), $top_blogs);
 
         // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
         $is_top_update = false;
@@ -43,13 +44,11 @@ class BlogPageController extends Controller
             $blogs = $blogs->where('is_highlight', '!=', 'true');
         }
 
-
         // take all blogs
         $blogs = $blogs->paginate(6)->withQueryString();
 
         // filter sesuai bahasa (lang)
         $blog_categories = BlogCategorys::all()->where('lang', $lang);
-
 
         return view('user.blog.main', [
             'top_blogs' => $top_blogs,
@@ -63,6 +62,7 @@ class BlogPageController extends Controller
     {
         // read ip address
         $ip_address = request()->ip();
+
         // if ip address already registered then skip else register new ip address
         $ip_isregistered = BlogReads::where('blog_id', $blog->id)->where('ip_address',  $ip_address)->exists();
         if (!$ip_isregistered) {
@@ -80,10 +80,17 @@ class BlogPageController extends Controller
         // dd($blog);
         $recomendation_blogs = Blogs::latest()->where('id', '!=', $blog->id)->where('cat_id', $blog->cat_id)->take(3)->get();
 
+        $blog_widgets =  BlogWidgets::all()->where('blog_id', $blog->id);
+
+        // return $blog->blog_description;
         // Blog Section
         $doc =  new DOMDocument();
-        $doc->loadHTML($blog->blog_description);
+        $doc->loadHTML($blog->blog_description, LIBXML_NOERROR);
         $title_list = $doc->getElementsByTagName('h2');
+        $figure = $doc->getElementsByTagName('figure')->item(0);
+        $parent = $figure?->parentNode;
+        $parent?->removeChild($figure);
+
 
         $blog_section = [];
         foreach ($title_list as $index => $title) {
@@ -97,6 +104,7 @@ class BlogPageController extends Controller
             'blog' => $blog,
             "recomendation_blogs" => $recomendation_blogs,
             "blog_section_list" => $blog_section,
+            "blog_widgets" =>  $blog_widgets,
         ]);
     }
 }

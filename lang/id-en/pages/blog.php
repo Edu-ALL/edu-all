@@ -8,7 +8,7 @@ return [
     'category_all' => 'All',
 
     // Detail
-    'min_read' => 'Minute Min Read',
+    'min_read' => 'Min Read',
     'sign_up' => 'SIGN UP FOR A FREE INITIAL CONSULTATION',
     'sign_up_btn' => "More",
 

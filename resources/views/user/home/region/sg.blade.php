@@ -5,8 +5,8 @@
     <section class="py-20 bg-sg-header bg-cover bg-center">
         <div class="main-container">
             <div class="py-28 flex flex-col md:py-52">
-                <h1 class="font-secondary font-bold text-7xl text-primary text-center md:text-8xl">ALL-in Eduspace</h1>
-                <h4 class="font-secondary font-bold text-3xl text-primary text-center">
+                <h1 class="font-primary font-bold text-7xl text-primary text-center md:text-8xl">ALL-in Eduspace</h1>
+                <h4 class="font-primary font-bold text-3xl text-primary text-center">
                     Let's #TakeOnYourFuture! Remember, #itsALLINtheprep!
                 </h4>
             </div>
@@ -69,7 +69,7 @@
                 Find out more
             </a>
 
-            <div class="grid grid-cols-2 justify-center gap-8 md:grid-cols-3">
+            <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="icon 1" class="mb-4">
@@ -164,7 +164,7 @@
                     major and paved the way to top universities around the world.
                 </p>
             </div>
-            <div class="mt-6 p-8 rounded-xl bg-white md:grid-cols-3">
+            <div class="mt-6 p-8 mx-6 rounded-xl bg-white md:mx-0 md:grid-cols-3">
                 <a href="#">
                     <img src="{{ asset('assets/img/home/sg/university logo.png') }}" alt="Career Bootcamp Logo"
                         class="rounded-xl">
@@ -178,128 +178,57 @@
     </section>
 
     {{-- ========================================== What They Say Section ======================================= --}}
-    <section class="py-10">
+    <section class="py-16">
         <div class="main-container flex flex-col items-center">
-            <div class="max-w-3xl w-full mx-auto px-6 mb-10 flex flex-col items-center">
-                <h2 class="mb-6 font-primary font-bold text-2xl text-center text-primary">What They Say</h2>
-                <p class="w-full max-w-3xl mb-6 font-primary font-medium text-base text-center text-primary">
-                    Our mentees have thrived in their own field that they are passionate about, confirmed their best-fit
-                    major and paved the way to top universities around the world.
-                </p>
+            <div class="flex flex-col max-w-2xl mb-8">
+                <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
+                    {{ __('pages/home.testi') }}
+                </h2>
             </div>
-            <div class="splide" aria-label="Slide Container Example">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                        <img src="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                        <img src="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
-                    </button>
-                </div>
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            This program helped me in exploring career fields that I might interested in.
-                                            Now, I know the feeling of being a scientist or a person who works in a lab.
-                                        </p>
+            <div class="w-full py-5">
+                <div class="splide" aria-label="Slide Container Example">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
+                            <img src="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
+                            <img src="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
+                        </button>
+                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full">
+                                    <div class="splide__slide__container h-full">
+                                        <div
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            <div class="flex flex-col">
+                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
+                                                <div class="font-primary text-base text-white text-justify">
+                                                    {!! $testi->testi_desc !!}
+                                                </div>
+                                            </div>
+                                            <div class="mt-12 flex flex-col">
+                                                <div class="font-primary font-semibold text-2xl text-yellow">
+                                                    {{ $testi->testi_name }}
+                                                </div>
+                                                <div class="font-primary text-sm text-white">
+                                                    {!! $testi->testi_subtitle !!}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            I am very much enjoying the program! My favorite part is that I can not just
-                                            learn but also practice to become a front and back developer, and this bootcamp
-                                            helps me to know which part of computer science that I would like to take for my
-                                            major. I can create a simple website now so it can obviously get me to a better
-                                            college because it shows that I already master a certain topic
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            This program helped me in exploring career fields that I might interested in.
-                                            Now, I know the feeling of being a scientist or a person who works in a lab.
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-2 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            I am very much enjoying the program! My favorite part is that I can not just
-                                            learn but also practice to become a front and back developer, and this bootcamp
-                                            helps me to know which part of computer science that I would like to take for my
-                                            major. I can create a simple website now so it can obviously get me to a better
-                                            college because it shows that I already master a certain topic
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="splide__slide__container h-full">
-                                <div class="flex flex-col justify-between h-full px-4 py-8 mx-4 rounded-2xl bg-primary">
-                                    <div class="flex flex-col">
-                                        <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                        <p class="font-secondary text-base text-white text-justify">
-                                            This program helped me in exploring career fields that I might interested in.
-                                            Now, I know the feeling of being a scientist or a person who works in a lab.
-                                        </p>
-                                    </div>
-                                    <div class="mt-12 flex flex-col">
-                                        <h2 class="font-secondary font-semibold text-2xl text-yellow">Kezia Lauren</h2>
-                                        <span class="font-secondary text-sm text-white">Science Research Immersion
-                                            Program</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <a href="#"
-                class="inline-block mt-8 px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-primary rounded-[4px] md:px-16">
-                More
+            <a href="{{ route('testimonial', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
+                <span
+                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
+                    {{ __('pages/home.testi_btn') }}
+                </span>
             </a>
         </div>
     </section>
@@ -308,11 +237,11 @@
     <section class="py-10">
         <div class="main-container max-w-5xl w-full mx-auto">
             <div class="flex flex-col items-center">
-                <h2 class="font-secondary font-extrabold text-4xl text-primary text-center">
+                <h2 class="font-primary font-extrabold text-4xl text-primary text-center">
                     250+ students have found their
                     passion and got into their dream universities.
                 </h2>
-                <h4 class="mt-8 font-secondary font-bold text-2xl text-yellow text-center">
+                <h4 class="mt-8 font-primary font-bold text-2xl text-yellow text-center">
                     Now let's talk with mentors who will help you achieve yours.
                 </h4>
                 <a href="#"
@@ -327,16 +256,29 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+
         var splides = document.getElementsByClassName('splide');
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var splide = new Splide(splides[0], {
-                perPage: isSmallDevice ? 1 : 4,
-                rewind: true,
-                pagination: false,
-            });
+        new Splide(splides[0], {
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                4 : 3,
+            rewind: true,
+            arrows: false
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[103%]');
 
-            splide.mount();
-        });
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '10px';
+                item.button.style.height = '10px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endsection

@@ -4,7 +4,8 @@
     {{-- ================================== Top Section  ================================== --}}
     <section class="py-16">
         <div class="main-container">
-            <h2 class="font-body font-bold text-4xl text-[#6696E2] text-center">{{ __('pages/resources/testimonial.title') }}
+            <h2 class="font-primary font-bold text-4xl text-[#6696E2] text-center">
+                {{ __('pages/resources/testimonial.title') }}
             </h2>
         </div>
     </section>
@@ -19,7 +20,7 @@
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}">
                         </div>
-                        <h2 class="mt-16 font-body font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                        <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Admission <br> Mentoring</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -34,17 +35,17 @@
                                                     <div
                                                         class="flex flex-col justify-between h-full mx-2.5 p-4 rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
                                                         <div
-                                                            class="font-body font-semibold text-xs text-primary text-justify leading-[18px]">
+                                                            class="font-primary font-semibold text-xs text-primary text-justify leading-[18px]">
                                                             {!! $item->testi_desc !!}
                                                         </div>
                                                         <div class="flex justify-between mt-6">
                                                             <div class="flex flex-col">
                                                                 <h5
-                                                                    class="font-body font-bold text-xs text-yellow leading-4">
+                                                                    class="font-primary font-bold text-xs text-yellow leading-4">
                                                                     {{ $item->testi_name }}
                                                                 </h5>
                                                                 <span
-                                                                    class="font-body font-bold text-xs text-primary leading-4">
+                                                                    class="font-primary font-bold text-xs text-primary leading-4">
                                                                     {!! $item->testi_subtitle !!}
                                                                 </span>
                                                             </div>
@@ -67,7 +68,7 @@
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}">
                         </div>
-                        <h2 class="mt-16 font-body font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                        <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Experiential <br> Learning</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -82,17 +83,17 @@
                                                     <div
                                                         class="flex flex-col justify-between mx-2.5 p-4 h-full rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
                                                         <div
-                                                            class="font-body font-semibold text-xs text-primary text-justify leading-[18px]">
+                                                            class="font-primary font-semibold text-xs text-primary text-justify leading-[18px]">
                                                             {!! $item->testi_desc !!}
                                                         </div>
                                                         <div class="flex justify-between items-center mt-12">
                                                             <div class="flex flex-col">
                                                                 <h5
-                                                                    class="font-body font-bold text-xs text-yellow leading-4">
+                                                                    class="font-primary font-bold text-xs text-yellow leading-4">
                                                                     {{ $item->testi_name }}
                                                                 </h5>
                                                                 <span
-                                                                    class="font-body font-bold text-xs text-primary leading-4">
+                                                                    class="font-primary font-bold text-xs text-primary leading-4">
                                                                     {!! $item->testi_subtitle !!}
                                                                 </span>
                                                             </div>
@@ -122,7 +123,7 @@
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}">
                         </div>
-                        <h2 class="mt-16 font-body font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                        <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Academic <br> Preparation</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -137,17 +138,17 @@
                                                     <div
                                                         class="flex flex-col justify-between h-full mx-2.5 p-4 rounded-3xl shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
                                                         <div
-                                                            class="font-body font-semibold text-xs text-primary text-justify leading-[18px]">
+                                                            class="font-primary font-semibold text-xs text-primary text-justify leading-[18px]">
                                                             {!! $item->testi_desc !!}
                                                         </div>
                                                         <div class="flex justify-between mt-6">
                                                             <div class="flex flex-col">
                                                                 <h5
-                                                                    class="font-body font-bold text-xs text-yellow leading-4">
+                                                                    class="font-primary font-bold text-xs text-yellow leading-4">
                                                                     {{ $item->testi_name }}
                                                                 </h5>
                                                                 <div
-                                                                    class="font-body font-bold text-xs text-primary leading-4">
+                                                                    class="font-primary font-bold text-xs text-primary leading-4">
                                                                     {!! $item->testi_subtitle !!}
                                                                 </div>
                                                             </div>
@@ -171,7 +172,7 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
-            <h2 class="font-body font-extrabold text-primary text-center text-3xl mb-4 md:w-1/2">
+            <h2 class="font-primary font-extrabold text-primary text-center text-3xl mb-4 md:w-1/2">
                 {{ __('pages/resources/testimonial.bottom_title') }}
             </h2>
             <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="my-btn">

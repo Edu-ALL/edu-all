@@ -15,8 +15,8 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/academic_test_preparation/header-academic.webp') }}" alt=""
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
+            <img src="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}" alt="Academic Test Preparation"
+                class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
         </div>
     </section>
@@ -35,14 +35,14 @@
                 <img src="{{ asset('assets/img/academic_test_preparation/ACAD-TUTOR-photo.webp') }}" alt="acad tutor"
                     class="rounded-2xl md:w-1/2  md:mr-4">
                 <div class="flex flex-col mt-4 md:w-1/2 md:pl-4">
-                    <h4 class="my-6 font-body font-semibold text-lg text-[#7A7A7A] text-center md:mt-0 md:text-left">
+                    <h4 class="my-6 font-primary font-semibold text-lg text-[#7A7A7A] text-center md:mt-0 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.aca_points_title') }}</h4>
                     <ul class="flex flex-col">
                         @foreach (__('pages/programs/academic_test_preparation.aca_points') as $item)
                             <li class="flex
                         items-start gap-x-2">
                                 <i class="fa-solid fa-check mt-1 font-black text-[#1eb5f6]"></i>
-                                <h6 class="font-body font-normal text-lg text-[#7A7A7A]">{{ $item }}</h6>
+                                <h6 class="font-primary font-normal text-lg text-[#7A7A7A]">{{ $item }}</h6>
                             </li>
                         @endforeach
                     </ul>
@@ -60,16 +60,16 @@
         <div class="flex flex-col items-center main-container">
             <h2 class="font-primary font-semibold text-4xl text-primary text-center capitalize">
                 {{ __('pages/programs/academic_test_preparation.eecoach_title') }}</h2>
-            <p class="my-4 font-body text-xl text-primary text-center md:w-1/2">
+            <p class="my-4 font-primary text-xl text-primary text-center md:w-1/2">
                 {{ __('pages/programs/academic_test_preparation.eecoach_desc') }}</h2>
             </p>
-            <h5 class="font-body font-bold text-xl text-primary text-center md:max-w-2xl "> |
+            <h5 class="font-primary font-bold text-xl text-primary text-center md:max-w-2xl "> |
                 @foreach (__('pages/programs/academic_test_preparation.eecoach_benefits') as $item)
                     {{ $item }} |
                 @endforeach
             </h5>
             <div class="flex flex-col items-center mt-8 mx-5">
-                <h4 class="mb-10 font-body text-xl text-primary capitalize">
+                <h4 class="mb-10 font-primary text-xl text-primary capitalize">
                     {{ __('pages/programs/academic_test_preparation.eecoach_learn_title') }}
                 </h4>
                 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:max-w-4xl  md:gap-8">
@@ -94,12 +94,12 @@
             <img src="{{ asset('assets/img/academic_test_preparation/Icon_1.png') }}" alt="SAT Preparation Icon">
             <h2 class="mt-4 font-primary font-semibold text-4xl text-primary text-center capitalize">
                 {{ __('pages/programs/academic_test_preparation.sat_title') }}</h2>
-            <p class="my-4 font-body text-xl text-primary text-center md:w-1/2">
+            <p class="my-4 font-primary text-xl text-primary text-center md:w-1/2">
                 {{ __('pages/programs/academic_test_preparation.sat_desc') }}</h2>
             </p>
             <div class="flex flex-col mx-4 mt-8 md:flex-row md:max-w-4xl md:gap-x-8 md:items-center">
                 <div class="flex flex-col mt-4 md:w-1/2 md:pl-4">
-                    <p class="my-6 font-body text-lg text-[#7A7A7A] text-center md:mt-0 md:text-left">
+                    <p class="my-6 font-primary text-lg text-[#7A7A7A] text-center md:mt-0 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.sat_body') }}</p>
                 </div>
                 <div class=" md:w-1/2  md:mr-4">
@@ -129,7 +129,7 @@
     {{-- ================================== Testimonial Section ================================== --}}
     <section class="pt-16 pb-20">
         <div class="main-container">
-            <h2 class="font-title font-extrabold text-primary text-center text-4xl mb-4">
+            <h2 class="font-primary font-extrabold text-primary text-center text-4xl mb-4">
                 {{ __('pages/programs/academic_test_preparation.testimony_title') }}
             </h2>
             <div class="splide" aria-labelledby="carousel-heading">
@@ -140,13 +140,13 @@
                             <li class="splide__slide">
                                 <div class="splide__slide__container">
                                     <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
-                                        <h3 class="font-body font-bold text-2xl text-yellow">
+                                        <h3 class="font-primary font-bold text-2xl text-yellow">
                                             {{ $testimony->testi_name }}
                                         </h3>
-                                        <div class="font-body font-medium text-sm text-[#969aa6]">
+                                        <div class="font-primary font-medium text-sm text-[#969aa6]">
                                             {!! $testimony->testi_subtitle !!}
                                         </div>
-                                        <div class="mt-4 font-body font-bold text-white font-xl">
+                                        <div class="mt-4 font-primary font-bold text-white font-xl">
                                             {!! $testimony->testi_desc !!}
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
-            <h2 class=" font-title font-semibold text-yellow text-center text-3xl mb-4">
+            <h2 class=" font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/programs/academic_test_preparation.bottom') }}
             </h2>
             <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"

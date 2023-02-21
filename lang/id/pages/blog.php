@@ -8,7 +8,7 @@ return [
     'category_all' => 'Semua',
 
     // Detail
-    'min_read' => 'Menit Minimal Baca',
+    'min_read' => 'Min Baca',
     'sign_up' => 'DAFTAR UNTUK KONSULTASI AWAL GRATIS',
     'sign_up_btn' => "Selengkapnya",
 
