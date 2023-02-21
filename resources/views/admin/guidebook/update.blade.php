@@ -35,6 +35,7 @@
                                     <i class="fa-solid fa-arrow-left me-md-1"></i><span class="d-md-inline d-none"> Back to List</span>
                                 </a>
                             </div>
+                            <ul class="nav nav-tabs nav-tabs-bordered"></ul>
                             <form action="{{ route('update-guidebook', ['group' => $guidebook[0]->group]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <h5 class="card-title">Form General</h5>
@@ -79,7 +80,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en" src="{{ asset('uploaded_files/guidebook/'.$guidebook[0]->guidebook_image) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_en" src="{{ asset('uploaded_files/'.'guidebook/'.$guidebook[0]->created_at->format('Y').'/'.$guidebook[0]->created_at->format('m').'/'.$guidebook[0]->guidebook_image) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -122,7 +123,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/guidebook/'.$guidebook[1]->guidebook_image) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/'.'guidebook/'.$guidebook[1]->created_at->format('Y').'/'.$guidebook[1]->created_at->format('m').'/'.$guidebook[1]->guidebook_image) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">

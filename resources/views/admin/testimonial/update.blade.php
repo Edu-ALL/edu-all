@@ -90,15 +90,19 @@
                                         <div class="col-md-2 col">
                                             <label for="" class="form-label">Thumbnail Preview</label>
                                             <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                <img class="img-preview img-fluid" id="img_preview" src="{{ $testimonial[0]->testi_thumbnail != null ? asset('uploaded_files/testimonial/'.$testimonial[0]->testi_thumbnail) : '' }}">
+                                                <img class="img-preview img-fluid" id="img_preview" src="{{ $testimonial[0]->testi_thumbnail != null ? asset('uploaded_files/'.'testimonial/'.$testimonial[0]->created_at->format('Y').'/'.$testimonial[0]->created_at->format('m').'/'.$testimonial[0]->testi_thumbnail) : '' }}">
                                             </div>
                                         </div>
                                         <div class="col d-flex flex-column gap-2">
                                             <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Thumbnail
-                                                </label>
-                                                <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="testi_thumbnail">
+                                                <div class="col d-flex flex-row justify-content-between">
+                                                    <label for="" class="form-label">
+                                                        Thumbnail
+                                                    </label>
+                                                    <small class="alert text-danger p-0 m-0 fs-12 text-decoration-underline" onclick="clearThumbnail()" style="cursor: pointer">Clear Input</small>
+                                                    <input class="d-none" type="text" id="checkThumbnail" name="checkThumbnail">
+                                                </div>
+                                                <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="testi_thumbnail" value="{{ $testimonial[0]->testi_thumbnail }}">
                                                 @error('testi_thumbnail')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -197,6 +201,13 @@
             submit.disabled = false;
         }
     };
+
+    function clearThumbnail(){
+        $('#thumbnail').val(null);
+        $('#alt').val(null);
+        $('#img_preview').attr('src', '');
+        $('#checkThumbnail').val('true');
+    }
 
     let sub_admission = ['Undergraduate Program', 'Graduate Program', 'University Transfer Program'];
     let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation'];

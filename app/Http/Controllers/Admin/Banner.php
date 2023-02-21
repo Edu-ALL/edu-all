@@ -51,7 +51,7 @@ class Banner extends Controller
             if ($request->hasFile('banner_image')) {
                 $file = $request->file('banner_image');
                 $file_format = $request->file('banner_image')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/banner';
+                $destinationPath = public_path().'/uploaded_files/'.'banner/'.date('Y').'/'.date('m').'/';
                 $time = $banner->group;
                 $fileName = 'Banner-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -106,14 +106,14 @@ class Banner extends Controller
             $banner = Banners::find($id);
             if ($request->hasFile('banner_image')) {
                 if ($old_image_path = $banner->banner_img) {
-                    $file_path = public_path('uploaded_files/banner/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('banner_image');
                 $file_format = $request->file('banner_image')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/banner';
+                $destinationPath = public_path().'/uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/';
                 $time = $banner->group;
                 $fileName = 'Banner-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -172,7 +172,7 @@ class Banner extends Controller
         try {
             $banner = Banners::find($id);
             if ($old_image_path = $banner->banner_img) {
-                $file_path = public_path('uploaded_files/banner/'.$old_image_path);
+                $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }

@@ -62,7 +62,7 @@
                                             <td>{{ $blog->cat_id != null ? $blog->blog_category->category_name : '-' }}</td>
                                             <td>{{ $blog->mt_id != null ? $blog->mentor->mentor_firstname.' '.$blog->mentor->mentor_lastname : '-' }}</td>
                                             <td>
-                                                <img data-original="{{ asset('uploaded_files/blogs/'.$blog->blog_thumbnail) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$blog->blog_thumbnail) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
                                                 <img data-original="{{ asset('assets/img/flag/flag-'.$blog->lang.'.png') }}" alt="" width="30">

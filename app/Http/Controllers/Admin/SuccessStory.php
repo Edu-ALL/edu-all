@@ -64,7 +64,7 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_achievement_img_en')) {
                 $file_en = $request->file('story_achievement_img_en');
                 $file_format_en = $request->file('story_achievement_img_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/success-stories';
+                $destinationPath_en = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
                 $time = $success_stories_en->group;
                 $fileName_en = 'Success-Stories-achievement-en-'.$time.'.'.$file_format_en;
                 $file_en->move($destinationPath_en, $fileName_en);
@@ -87,7 +87,7 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_achievement_img_id')) {
                 $file_id = $request->file('story_achievement_img_id');
                 $file_format_id = $request->file('story_achievement_img_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/success-stories';
+                $destinationPath_id = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
                 $time = $success_stories_id->group;
                 $fileName_id = 'Success-Stories-achievement-id-'.$time.'.'.$file_format_id;
                 $file_id->move($destinationPath_id, $fileName_id);
@@ -100,7 +100,7 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_thumbnail')) {
                 $file = $request->file('story_thumbnail');
                 $file_format = $request->file('story_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/success-stories';
+                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
                 $time = $success_stories_en->group;
                 $fileName = 'Success-Stories-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -165,14 +165,14 @@ class SuccessStory extends Controller
             $success_stories_en->description = $request->story_description_en;
             if ($request->hasFile('story_achievement_img_en')) {
                 if ($old_image_path_en = $success_stories_en->achievement_image) {
-                    $file_path = public_path('uploaded_files/success-stories/'.$old_image_path_en);
+                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/'.$old_image_path_en);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file_en = $request->file('story_achievement_img_en');
                 $file_format_en = $request->file('story_achievement_img_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/success-stories';
+                $destinationPath_en = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/';
                 $time = $success_stories_en->group;
                 $fileName_en = 'Success-Stories-achievement-en-'.$time.'.'.$file_format_en;
                 $file_en->move($destinationPath_en, $fileName_en);
@@ -192,14 +192,14 @@ class SuccessStory extends Controller
             $success_stories_id->description = $request->story_description_id;
             if ($request->hasFile('story_achievement_img_id')) {
                 if ($old_image_path_id = $success_stories_id->achievement_image) {
-                    $file_path = public_path('uploaded_files/success-stories/'.$old_image_path_id);
+                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_id->created_at->format('Y').'/'.$success_stories_id->created_at->format('m').'/'.$old_image_path_id);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file_id = $request->file('story_achievement_img_id');
                 $file_format_id = $request->file('story_achievement_img_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/success-stories';
+                $destinationPath_id = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_id->created_at->format('Y').'/'.$success_stories_id->created_at->format('m').'/';
                 $time = $success_stories_id->group;
                 $fileName_id = 'Success-Stories-achievement-id-'.$time.'.'.$file_format_id;
                 $file_id->move($destinationPath_id, $fileName_id);
@@ -211,14 +211,14 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_thumbnail')) {
                 if ($success_stories_en->thumbnail == $success_stories_id->thumbnail) {
                     $old_image_path = $success_stories_en->thumbnail;
-                    $file_path = public_path('uploaded_files/success-stories/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('story_thumbnail');
                 $file_format = $request->file('story_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/success-stories';
+                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/';
                 $time = $success_stories_en->group;
                 $fileName = 'Success-Stories-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -243,19 +243,19 @@ class SuccessStory extends Controller
             $success_stories = SuccessStories::where('group', $group)->get();
             if ($success_stories[0]->thumbnail == $success_stories[1]->thumbnail) {
                 $old_image_path = $success_stories[0]->thumbnail;
-                $file_path = public_path('uploaded_files/success-stories/'.$old_image_path);
+                $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }
             }
             if ($old_image_path_en = $success_stories[0]->achievement_image) {
-                $file_path_en = public_path('uploaded_files/success-stories/'.$old_image_path_en);
+                $file_path_en = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path_en);
                 if (File::exists($file_path_en)) {
                     File::delete($file_path_en);
                 }
             }
             if ($old_image_path_id = $success_stories[1]->achievement_image) {
-                $file_path_id = public_path('uploaded_files/success-stories/'.$old_image_path_id);
+                $file_path_id = public_path('uploaded_files/'.'success-stories/'.$success_stories[1]->created_at->format('Y').'/'.$success_stories[1]->created_at->format('m').'/'.$old_image_path_id);
                 if (File::exists($file_path_id)) {
                     File::delete($file_path_id);
                 }

@@ -68,7 +68,7 @@
                                         <div class="col d-flex flex-md-row flex-column justify-content-center gap-md-3">
                                             <div class="col-md-3 d-flex align-items-start justify-content-center pt-md-3 pt-3 px-md-3 px-5">
                                                 <div class="pic-profile p-1">
-                                                    <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[0]->mentor_picture) }}" alt="{{ $mentor[0]->mentor_alt }}">
+                                                    <img class="img-fluid" src="{{ asset('uploaded_files/'.'mentor/'.$mentor[0]->created_at->format('Y').'/'.$mentor[0]->created_at->format('m').'/'.$mentor[0]->mentor_picture) }}" alt="{{ $mentor[0]->mentor_alt }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column justify-content-center gap-2 py-md-3 py-4 px-0">
@@ -177,7 +177,7 @@
                                         <div class="col d-flex flex-md-row flex-column justify-content-center gap-md-3">
                                             <div class="col-md-3 d-flex align-items-start justify-content-center pt-md-3 pt-3 px-md-3 px-5">
                                                 <div class="pic-profile p-1">
-                                                    <img class="img-fluid" src="{{ asset('uploaded_files/mentor/'.$mentor[1]->mentor_picture) }}" alt="{{ $mentor[1]->mentor_alt }}">
+                                                    <img class="img-fluid" src="{{ asset('uploaded_files/'.'mentor/'.$mentor[0]->created_at->format('Y').'/'.$mentor[0]->created_at->format('m').'/'.$mentor[1]->mentor_picture) }}" alt="{{ $mentor[1]->mentor_alt }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column justify-content-center gap-2 py-md-3 py-4 px-0">

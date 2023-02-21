@@ -59,7 +59,7 @@
                                             <td>{{ $success_storie->name}}</td>
                                             <td>{!! Str::limit($success_storie->description, 150, '...') !!}</td>
                                             <td>
-                                                <img data-original="{{ asset('uploaded_files/success-stories/'.$success_storie->thumbnail) }}" alt="" width="80">
+                                                <img data-original="{{ asset('uploaded_files/'.'success-stories/'.$success_storie->created_at->format('Y').'/'.$success_storie->created_at->format('m').'/'.$success_storie->thumbnail) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
                                                 <img data-original="{{ asset('assets/img/flag/flag-'.$success_storie->lang.'.png') }}" alt="" width="30">
