@@ -6,12 +6,20 @@
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
     <style>
         .blog_style p,
-        .blog_style ul {
+        .blog_style ul,
+        .blog_style table  {
             margin-bottom: 20px;
         }
 
-        .blog_style h2 {
+        .blog_style h2{
             margin-bottom: 5px;
+        }
+
+        .blog_style table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px 10px;
         }
     </style>
 @endsection
