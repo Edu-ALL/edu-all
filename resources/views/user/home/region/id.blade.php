@@ -9,7 +9,7 @@
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
                             <img class="object-bottom object-cover w-full h-[550px] md:h-[778px]"
-                                src="{{ asset('uploaded_files/banner/' . $banner->banner_img) }}"
+                                src="{{ asset('uploaded_files/banner/'. $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
                                 class="absolute-center top-0 -ml-1 bg-gradient-to-r w-full h-full from-primary/90 flex items-center md:items-start md:pt-32">

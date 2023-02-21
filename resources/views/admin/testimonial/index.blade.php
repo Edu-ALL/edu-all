@@ -67,7 +67,7 @@
 <<<<<<< HEAD
                                                     <img data-original="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
 =======
-                                                    <img src="{{ asset('uploaded_files/'.'testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+                                                    <img data-original="{{ asset('uploaded_files/'.'testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
 >>>>>>> 8db6265a09df1fb6263bd9dfad3f7e21f2d2415b
                                                 @else
                                                     -

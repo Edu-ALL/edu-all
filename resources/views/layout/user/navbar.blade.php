@@ -4,7 +4,7 @@
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
                 <a href="{{ url(app()->getLocale()) }}"
                     class="flex justify-center items-center lg:min-w-fit lg:text-left">
-                    <img data-original="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New"
+                    <img src="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New"
                         class=" object-center w-[180px]">
                 </a>
 
