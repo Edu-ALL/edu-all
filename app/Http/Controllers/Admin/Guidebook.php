@@ -46,7 +46,7 @@ class Guidebook extends Controller
             if ($request->hasFile('guidebook_image_en')) {
                 $file_en = $request->file('guidebook_image_en');
                 $file_format_en = $request->file('guidebook_image_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/guidebook';
+                $destinationPath_en = public_path().'/uploaded_files/'.'guidebook/'.date('Y').'/'.date('m').'/';
                 $time = $guidebook_en->group;
                 $fileName_en = 'Guidebook-en-'.$time.'.'.$file_format_en;
                 $file_en->move($destinationPath_en, $fileName_en);
@@ -64,7 +64,7 @@ class Guidebook extends Controller
             if ($request->hasFile('guidebook_image_id')) {
                 $file_id = $request->file('guidebook_image_id');
                 $file_format_id = $request->file('guidebook_image_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/guidebook';
+                $destinationPath_id = public_path().'/uploaded_files/'.'guidebook/'.date('Y').'/'.date('m').'/';
                 $time = $guidebook_id->group;
                 $fileName_id = 'Guidebook-id-'.$time.'.'.$file_format_id;
                 $file_id->move($destinationPath_id, $fileName_id);
@@ -113,14 +113,14 @@ class Guidebook extends Controller
             $guidebook_en->guidebook_category = $request->guidebook_category;
             if ($request->hasFile('guidebook_image_en')) {
                 if ($old_image_path_en = $guidebook_en->guidebook_image) {
-                    $file_path = public_path('uploaded_files/guidebook/'.$old_image_path_en);
+                    $file_path = public_path('uploaded_files/'.'guidebook/'.$guidebook_en->created_at->format('Y').'/'.$guidebook_en->created_at->format('m').'/'.$old_image_path_en);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file_en = $request->file('guidebook_image_en');
                 $file_format_en = $request->file('guidebook_image_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/guidebook';
+                $destinationPath_en = public_path().'/uploaded_files/'.'guidebook/'.$guidebook_en->created_at->format('Y').'/'.$guidebook_en->created_at->format('m').'/';
                 $time = $guidebook_en->group;
                 $fileName_en = 'Guidebook-en-'.$time.'.'.$file_format_en;
                 $file_en->move($destinationPath_en, $fileName_en);
@@ -135,14 +135,14 @@ class Guidebook extends Controller
             $guidebook_id->guidebook_category = $request->guidebook_category;
             if ($request->hasFile('guidebook_image_id')) {
                 if ($old_image_path_id = $guidebook_id->guidebook_image) {
-                    $file_path = public_path('uploaded_files/guidebook/'.$old_image_path_id);
+                    $file_path = public_path('uploaded_files/'.'guidebook/'.$guidebook_id->created_at->format('Y').'/'.$guidebook_id->created_at->format('m').'/'.$old_image_path_id);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file_id = $request->file('guidebook_image_id');
                 $file_format_id = $request->file('guidebook_image_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/guidebook';
+                $destinationPath_id = public_path().'/uploaded_files/'.'guidebook/'.$guidebook_id->created_at->format('Y').'/'.$guidebook_id->created_at->format('m').'/';
                 $time = $guidebook_id->group;
                 $fileName_id = 'Guidebook-id-'.$time.'.'.$file_format_id;
                 $file_id->move($destinationPath_id, $fileName_id);
@@ -167,13 +167,13 @@ class Guidebook extends Controller
         try {
             $guidebook = Guidebooks::where('group', $group)->get();
             if ($old_image_path_en = $guidebook[0]->guidebook_image) {
-                $file_path_en = public_path('uploaded_files/guidebook/'.$old_image_path_en);
+                $file_path_en = public_path('uploaded_files/'.'guidebook/'.$guidebook[0]->created_at->format('Y').'/'.$guidebook[0]->created_at->format('m').'/'.$old_image_path_en);
                 if (File::exists($file_path_en)) {
                     File::delete($file_path_en);
                 }
             }
             if ($old_image_path_id = $guidebook[1]->guidebook_image) {
-                $file_path_id = public_path('uploaded_files/guidebook/'.$old_image_path_id);
+                $file_path_id = public_path('uploaded_files/'.'guidebook/'.$guidebook[1]->created_at->format('Y').'/'.$guidebook[1]->created_at->format('m').'/'.$old_image_path_id);
                 if (File::exists($file_path_id)) {
                     File::delete($file_path_id);
                 }

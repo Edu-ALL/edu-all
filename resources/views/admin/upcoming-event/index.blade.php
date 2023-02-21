@@ -60,7 +60,7 @@
                                             <td>{{ $upcoming_event->event_title }}</td>
                                             <td>{{ $upcoming_event->event_date }}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/upcoming-event/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
                                                 <img src="{{ asset('assets/img/flag/flag-'.$upcoming_event->region.'.png') }}" alt="" width="30">

@@ -83,7 +83,7 @@ class Mentor extends Controller
             if ($request->hasFile('mentor_image')) {
                 $file = $request->file('mentor_image');
                 $file_format = $request->file('mentor_image')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/mentor';
+                $destinationPath = public_path().'/uploaded_files/'.'mentor/'.date('Y').'/'.date('m').'/';
                 $time = $mentor_en->group;
                 $fileName = 'Mentor-picture-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -176,14 +176,14 @@ class Mentor extends Controller
             if ($request->hasFile('mentor_image')) {
                 if ($mentor_en->mentor_picture == $mentor_id->mentor_picture) {
                     $old_image_path = $mentor_en->mentor_picture;
-                    $file_path = public_path('uploaded_files/mentor/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'mentor/'.$mentor_en->created_at->format('Y').'/'.$mentor_en->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('mentor_image');
                 $file_format = $request->file('mentor_image')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/mentor';
+                $destinationPath = public_path().'/uploaded_files/'.'mentor/'.$mentor_en->created_at->format('Y').'/'.$mentor_en->created_at->format('m').'/';
                 $time = $mentor_en->group;
                 $fileName = 'Mentor-picture-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -211,7 +211,7 @@ class Mentor extends Controller
             } else {
                 if ($mentor[0]->mentor_picture == $mentor[1]->mentor_picture) {
                     $old_image_path = $mentor[0]->mentor_picture;
-                    $file_path = public_path('uploaded_files/mentor/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'mentor/'.$mentor[0]->created_at->format('Y').'/'.$mentor[0]->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }

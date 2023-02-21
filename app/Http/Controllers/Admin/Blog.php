@@ -67,9 +67,9 @@ class Blog extends Controller
             if ($request->hasFile('blog_thumbnail')) {
                 $file = $request->file('blog_thumbnail');
                 $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/blogs';
+                $destinationPath = public_path().'/uploaded_files/'.'blogs/'.date('Y').'/'.date('m').'/';
                 $time = date('YmdHis');
-                $fileName = 'Thumbnail-blogs-'.$time.'.'.$file_format;
+                $fileName = 'Blogs-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
                 $blogs->blog_thumbnail = $fileName;
             }
@@ -78,8 +78,8 @@ class Blog extends Controller
             $blogs->mt_id = $request->mentor;
             $blogs->blog_title = $request->blog_title;
             $blogs->slug = $request->blog_slug;
-            $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
-            // $blogs->blog_description = $request->blog_description;
+            // $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
+            $blogs->blog_description = $request->blog_description;
             $blogs->seo_title = $request->seo_title;
             $blogs->seo_keyword = $request->seo_keyword;
             $blogs->seo_desc = $request->seo_desc;
@@ -100,7 +100,7 @@ class Blog extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blogs')->withSuccess('Blogs Was Successfully Created');
+        return redirect('/admin/blogs/'.$blogs->id.'/view')->withSuccess('Blogs Was Successfully Created');
     }
 
     public function view($id){
@@ -152,16 +152,16 @@ class Blog extends Controller
             $blogs = Blogs::find($id);
             if ($request->hasFile('blog_thumbnail')) {
                 if ($old_image_path_en = $blogs->blog_thumbnail) {
-                    $file_path = public_path('uploaded_files/blogs/'.$old_image_path_en);
+                    $file_path = public_path('uploaded_files/'.'blogs/'.$blogs->created_at->format('Y').'/'.$blogs->created_at->format('m').'/'.$old_image_path_en);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('blog_thumbnail');
                 $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/blogs';
+                $destinationPath = public_path().'/uploaded_files/'.'blogs/'.$blogs->created_at->format('Y').'/'.$blogs->created_at->format('m').'/';
                 $time = date('YmdHis');
-                $fileName = 'Thumbnail-blogs-'.$time.'.'.$file_format;
+                $fileName = 'Blogs-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
                 $blogs->blog_thumbnail = $fileName;
             }
@@ -170,8 +170,8 @@ class Blog extends Controller
             $blogs->mt_id = $request->mentor;
             $blogs->blog_title = $request->blog_title;
             $blogs->slug = $request->blog_slug;
-            $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
-            // $blogs->blog_description = $request->blog_description;
+            // $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
+            $blogs->blog_description = $request->blog_description;
             $blogs->seo_title = $request->seo_title;
             $blogs->seo_keyword = $request->seo_keyword;
             $blogs->seo_desc = $request->seo_desc;
@@ -201,7 +201,7 @@ class Blog extends Controller
         try {
             $blog = Blogs::find($id);
             if ($old_image_path = $blog->blog_thumbnail) {
-                $file_path = public_path('uploaded_files/blogs/'.$old_image_path);
+                $file_path = public_path('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }

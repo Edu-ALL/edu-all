@@ -59,7 +59,7 @@
                                             <td>{{ $guidebook->guidebook_category }}</td>
                                             <td><a href={{ $guidebook->guidebook_link }} target='_blank'>{{ $guidebook->guidebook_link }}</a></td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/guidebook/'.$guidebook->guidebook_image) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/'.'guidebook/'.$guidebook->created_at->format('Y').'/'.$guidebook->created_at->format('m').'/'.$guidebook->guidebook_image) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
                                                 <img src="{{ asset('assets/img/flag/flag-'.$guidebook->lang.'.png') }}" alt="" width="30">

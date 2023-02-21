@@ -56,7 +56,7 @@
                                                     <div class="col d-flex align-items-center justify-content-center border rounded"
                                                         style="min-height: 110px">
                                                         <img class="img-preview img-fluid" id="img_preview"
-                                                            src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}">
+                                                            src="{{ asset('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'. $blog->blog_thumbnail) }}">
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-column gap-2">

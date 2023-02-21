@@ -50,7 +50,7 @@
                                         <div class="col-md-2 col">
                                             <label for="" class="form-label">Thumbnail Preview</label>
                                             <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/success-stories/'.$success_stories[0]->thumbnail) }}">
+                                                <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[0]->thumbnail) }}">
                                             </div>
                                         </div>
                                         <div class="col d-flex flex-column gap-2">
@@ -143,7 +143,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Achievement Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="achievement_preview_en" src="{{ asset('uploaded_files/success-stories/'.$success_stories[0]->achievement_image) }}">
+                                                            <img class="img-preview img-fluid" id="achievement_preview_en" src="{{ asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[0]->achievement_image) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -219,7 +219,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Achievement Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="achievement_preview_id" src="{{ asset('uploaded_files/success-stories/'.$success_stories[1]->achievement_image) }}">
+                                                            <img class="img-preview img-fluid" id="achievement_preview_id" src="{{ asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[1]->achievement_image) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">

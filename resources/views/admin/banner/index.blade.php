@@ -60,7 +60,7 @@
                                             <td>{{ $banner->banner_title }}</td>
                                             <td>{!! Str::limit($banner->banner_description, 150, '...') !!}</td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/banner/'.$banner->banner_img) }}" alt="" width="80">
+                                                <img src="{{ asset('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$banner->banner_img) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
                                                 <img src="{{ asset('assets/img/flag/flag-'.$banner->region.'.png') }}" alt="" width="30">

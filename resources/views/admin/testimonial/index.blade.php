@@ -64,7 +64,7 @@
                                             <td>{{ $testimonial->testi_category }}</td>
                                             <td>
                                                 @if ($testimonial->testi_thumbnail)
-                                                    <img src="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+                                                    <img src="{{ asset('uploaded_files/'.'testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
                                                 @else
                                                     -
                                                 @endif

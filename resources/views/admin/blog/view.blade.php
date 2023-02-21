@@ -19,6 +19,11 @@
     .pic-profile img {
         border-radius: 5px;
     }
+    .img-blog {
+        min-width: 100% !important;
+        max-height: 400px !important;
+        object-fit: cover;
+    }
     .select-position *,
     .select-position:active * {
         font-size: 14px !important;
@@ -66,7 +71,7 @@
                             <div class="col pb-4">
                                 <div class="col d-flex flex-column gap-4">
                                     <div class="pic-profile">
-                                        <img class="img-fluid" src="{{ asset('uploaded_files/blogs/'.$blog->blog_thumbnail) }}" alt="">
+                                        <img class="img-blog" src="{{ asset('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$blog->blog_thumbnail) }}" alt="">
                                     </div>
                                     <div class="col d-flex flex-column justify-content-center gap-2 px-1">
                                         <div class="field-detail d-flex flex-row align-items-start">

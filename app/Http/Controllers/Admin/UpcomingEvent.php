@@ -90,7 +90,7 @@ class UpcomingEvent extends Controller
             if ($request->hasFile('event_thumbnail')) {
                 $file = $request->file('event_thumbnail');
                 $file_format = $request->file('event_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/upcoming-event';
+                $destinationPath = public_path().'/uploaded_files/'.'upcoming-event/'.date('Y').'/'.date('m').'/';
                 $time = $upcoming_event->group;
                 $fileName = 'Upcoming-Event-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -151,14 +151,14 @@ class UpcomingEvent extends Controller
             $upcoming_event = UpcomingEvents::find($id);
             if ($request->hasFile('event_thumbnail')) {
                 if ($old_image_path = $upcoming_event->event_thumbnail) {
-                    $file_path = public_path('uploaded_files/upcoming-event/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('event_thumbnail');
                 $file_format = $request->file('event_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/upcoming-event';
+                $destinationPath = public_path().'/uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/';
                 $time = $upcoming_event->group;
                 $fileName = 'Upcoming-Event-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -190,7 +190,7 @@ class UpcomingEvent extends Controller
         try {
             $upcoming_event = UpcomingEvents::find($id);
             if ($old_image_path = $upcoming_event->event_thumbnail) {
-                $file_path = public_path('uploaded_files/upcoming-event/'.$old_image_path);
+                $file_path = public_path('uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }

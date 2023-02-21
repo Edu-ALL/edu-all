@@ -42,7 +42,7 @@ class Tutor extends Controller
             if ($request->hasFile('thumbnail')) {
                 $file = $request->file('thumbnail');
                 $file_format = $request->file('thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/tutor';
+                $destinationPath = public_path().'/uploaded_files/'.'tutor/'.date('Y').'/'.date('m').'/';
                 $time = date('YmdHis');
                 $fileName = 'Tutors-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -86,14 +86,14 @@ class Tutor extends Controller
             $tutors = Tutors::find($id);
             if ($request->hasFile('thumbnail')) {
                 if ($old_image_path = $tutors->thumbnail) {
-                    $file_path = public_path('uploaded_files/tutor/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'tutor/'.$tutors->created_at->format('Y').'/'.$tutors->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('thumbnail');
                 $file_format = $request->file('thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/tutor';
+                $destinationPath = public_path().'/uploaded_files/'.'tutor/'.$tutors->created_at->format('Y').'/'.$tutors->created_at->format('m').'/';
                 $time = date('YmdHis');
                 $fileName = 'Tutors-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -118,7 +118,7 @@ class Tutor extends Controller
         try {
             $tutors = Tutors::find($id);
             if ($old_image_path = $tutors->thumbnail) {
-                $file_path = public_path('uploaded_files/tutor/'.$old_image_path);
+                $file_path = public_path('uploaded_files/'.'tutor/'.$tutors->created_at->format('Y').'/'.$tutors->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }

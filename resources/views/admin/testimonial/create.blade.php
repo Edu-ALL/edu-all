@@ -95,18 +95,23 @@
                                         </div>
                                         <div class="col d-flex flex-column gap-2">
                                             <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Thumbnail
-                                                </label>
+                                                <div class="col d-flex flex-row justify-content-between">
+                                                    <label for="" class="form-label">
+                                                        Thumbnail
+                                                    </label>
+                                                    <small class="alert text-danger p-0 m-0 fs-12 text-decoration-underline" onclick="clearThumbnail()" style="cursor: pointer">Clear Input</small>
+                                                </div>
                                                 <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="testi_thumbnail">
                                                 @error('testi_thumbnail')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
                                             </div>
                                             <div class="col-12">
-                                                <label for="" class="form-label">
-                                                    Alt
-                                                </label>
+                                                <div class="col d-flex flex-row justify-content-between">
+                                                    <label for="" class="form-label">
+                                                        Alt
+                                                    </label>
+                                                </div>
                                                 <input type="text" class="form-control" id="alt" name="testi_alt" value="{{ old('testi_alt') }}">
                                             </div>
                                         </div>
@@ -197,6 +202,12 @@
             submit.disabled = false;
         }
     };
+
+    function clearThumbnail(){
+        $('#thumbnail').val(null);
+        $('#alt').val(null);
+        $('#img_preview').attr('src', '');
+    }
 
     let sub_admission = ['Undergraduate Program', 'Graduate Program', 'University Transfer Program'];
     let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation'];

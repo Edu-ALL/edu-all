@@ -50,7 +50,7 @@
                                         <div class="col-md-2 col">
                                             <label for="" class="form-label">Thumbnail Preview</label>
                                             <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/tutor/'.$tutors->thumbnail) }}">
+                                                <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/'.'tutor/'.$tutors->created_at->format('Y').'/'.$tutors->created_at->format('m').'/'.$tutors->thumbnail) }}">
                                             </div>
                                         </div>
                                         <div class="col d-flex flex-column gap-2">

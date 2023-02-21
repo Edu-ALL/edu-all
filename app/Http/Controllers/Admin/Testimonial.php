@@ -66,7 +66,7 @@ class Testimonial extends Controller
             if ($request->hasFile('testi_thumbnail')) {
                 $file = $request->file('testi_thumbnail');
                 $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/testimonial';
+                $destinationPath = public_path().'/uploaded_files/'.'testimonial/'.date('Y').'/'.date('m').'/';
                 $time = $testi_en->group;
                 $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
@@ -129,22 +129,31 @@ class Testimonial extends Controller
             $testi_id->updated_at = date('Y-m-d H:i:s');
 
             if ($request->hasFile('testi_thumbnail')) {
+                $file = $request->file('testi_thumbnail');
+                $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'testimonial/'.$testi_en->created_at->format('Y').'/'.$testi_en->created_at->format('m').'/';
+                $time = $testi_en->group;
+                $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+            } elseif ($request->hasFile('testi_thumbnail') && $request->checkThumbnail == 'true') {
+                $file = $request->file('testi_thumbnail');
+                $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'testimonial/'.$testi_en->created_at->format('Y').'/'.$testi_en->created_at->format('m').'/';
+                $time = $testi_en->group;
+                $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+            } elseif ($request->checkThumbnail == 'true') {
                 if ($testi_en->testi_thumbnail == $testi_id->testi_thumbnail) {
                     $old_image_path = $testi_en->testi_thumbnail;
-                    $file_path = public_path('uploaded_files/testimonial/'.$old_image_path);
+                    $file_path = public_path('uploaded_files/'.'testimonial/'.$testi_en->created_at->format('Y').'/'.$testi_en->created_at->format('m').'/'.$old_image_path);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
-                $file = $request->file('testi_thumbnail');
-                $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/testimonial';
-                $time = $testi_en->group;
-                $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
-                $testi_en->testi_thumbnail = $fileName;
-                $testi_id->testi_thumbnail = $fileName;
+                $fileName = null;
             }
+            $testi_en->testi_thumbnail = $fileName;
+            $testi_id->testi_thumbnail = $fileName;
 
             $testi_en->save();
             $testi_id->save();
@@ -162,13 +171,13 @@ class Testimonial extends Controller
         try {
             $testi = Testimonials::where('group', $group)->get();
             if ($old_image_path_en = $testi[0]->testi_thumbnail) {
-                $file_path_en = public_path('uploaded_files/testimonial/'.$old_image_path_en);
+                $file_path_en = public_path('uploaded_files/'.'testimonial/'.$testi[0]->created_at->format('Y').'/'.$testi[0]->created_at->format('m').'/'.$old_image_path_en);
                 if (File::exists($file_path_en)) {
                     File::delete($file_path_en);
                 }
             }
             if ($old_image_path_id = $testi[1]->testi_thumbnail) {
-                $file_path_id = public_path('uploaded_files/testimonial/'.$old_image_path_id);
+                $file_path_id = public_path('uploaded_files/'.'testimonial/'.$testi[1]->created_at->format('Y').'/'.$testi[1]->created_at->format('m').'/'.$old_image_path_id);
                 if (File::exists($file_path_id)) {
                     File::delete($file_path_id);
                 }
