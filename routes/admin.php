@@ -104,6 +104,8 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/upcoming-event/draft/{id}', [UpcomingEvent::class, 'status_draft']);
     Route::post('/upcoming-event/publish/{id}', [UpcomingEvent::class, 'status_publish']);
     Route::post('/upcoming-event/delete/{id}', [UpcomingEvent::class, 'delete']);
+    Route::post('/upcoming-event/checkPublish', [UpcomingEvent::class, 'checkPublish']);
+    Route::post('/upcoming-event/checkTakeOff', [UpcomingEvent::class, 'checkTakeOff']);
 
     // Success Stories
     Route::get('/success-stories', [SuccessStory::class, 'index']);
