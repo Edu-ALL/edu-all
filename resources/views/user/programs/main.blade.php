@@ -8,7 +8,7 @@
                     {{ __('pages/programs/programs.title') }}</h1>
             </div>
 
-            <img src="{{ asset('assets/img/banner/Program banner.webp') }}" alt="Program Banner"
+            <img data-original="{{ asset('assets/img/banner/Program banner.webp') }}" alt="Program Banner"
                 class="lazy w-full h-[400px] object-cover object-center">
 
         </div>
@@ -20,9 +20,9 @@
                 {{-- ------------------------------------ Banner Section ------------------------------------ --}}
                 <div class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-16">
                     @if (app()->getLocale() == 'en')
-                        <img src="/assets/img/programs/payung.png" alt="4 pillars">
+                        <img data-original="/assets/img/programs/payung.png" alt="4 pillars">
                     @else
-                        <img src="/assets/img/programs/payung-id.png" alt="4 pillars">
+                        <img data-original="/assets/img/programs/payung-id.png" alt="4 pillars">
                     @endif
                     <p class="text-center font-primary text-base lg:text-xl font-normal text-[#546999] mt-32">
                         {{ __('pages/programs/programs.body') }}</p>

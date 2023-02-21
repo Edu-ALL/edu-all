@@ -33,7 +33,7 @@
                                     {!! $mentor->mentor_graduation !!}
                                 </div>
                             </div>
-                            <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
                                 alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                         </div>
                         <div
@@ -89,7 +89,7 @@
                                                     {!! $mentor->mentor_graduation !!}
                                                 </div>
                                             </div>
-                                            <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
                                                 alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                                         </div>
                                         <div

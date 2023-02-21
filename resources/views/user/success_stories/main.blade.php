@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/success-story/header-wof.webp') }}" alt="success story header"
+            <img data-original="{{ asset('assets/img/success-story/header-wof.webp') }}" alt="success story header"
                 class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
         </div>
     </section>
@@ -28,7 +28,7 @@
                     @if ($loop->index % 2 == 0)
                         <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
                             <div class="w-full md:w-1/3">
-                                <img src="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                             <div class="flex flex-col w-full md:w-2/3">
@@ -61,7 +61,7 @@
                                             class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More </span>
                                 @endif
-                                <img src="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievement_alt }}">
                             </div>
                         </div>
@@ -96,11 +96,11 @@
                                             class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More</span></a>
                                 @endif
-                                <img src="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievment_alt }}">
                             </div>
                             <div class="w-full order-1  md:order-2 md:w-1/3">
-                                <img src="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                         </div>
@@ -114,7 +114,7 @@
     <section class="pt-10 pb-20">
         <div class="main-container">
             <div class="flex flex-col gap-4 max-w-5xl mx-auto">
-                <img src="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}" alt="Allin Alumnis">
+                <img data-original="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}" alt="Allin Alumnis">
                 <h4 class="mt-10 mb-8 font-primary font-extrabold text-3xl text-yellow text-center leading-9">
                     {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
                 <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">

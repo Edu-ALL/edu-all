@@ -12,7 +12,7 @@
                 <h4 class="font-bold text-base text-white mb-8">
                     {{ __('pages/footer.consultation') }}
                 </h4>
-                <p class="font-normal text-base text-white mb-2">Walk-in Consultation available on Mon-Fri, 09.00-17.00
+                <p class="font-normal text-base text-white mb-4">Walk-in Consultation available on Mon-Fri, 09.00-17.00
                     WIB With appointment only.</p>
                 <p class="font-normal text-base text-white">Book your appointment now
                     <br /> +62 818-0808-1363
@@ -20,16 +20,15 @@
                 </p>
             </div>
             <div class="flex flex-col sm:col-span-2">
-                <h4 class="flex items-center font-bold text-base text-white mb-8">
+                <h4 class="flex items-center font-bold text-base text-white mb-4">
                     <a href="https://www.instagram.com" target="_blank"
                         class="p-3 rounded-full border border-white block mr-3 bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                        <img src="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo" class="w-7 h-7">
+                        <img data-original="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo" class="w-4 h-4">
                     </a>
                     <span>all-ineduspace</span>
                 </h4>
                 <div class="flex flex-col justify-evenly items-start gap-4 sm:flex-row">
-                    <img src="/assets/img/footer/image_1.png" alt="image 1 footer" class="w-full object-cover sm:w-1/2">
-                    <img src="/assets/img/footer/image_1.png" alt="image 1 footer" class="w-full object-cover sm:w-1/2">
+                    @include('layout.user.instagram')
                 </div>
             </div>
             <div class="flex flex-col sm:col-span-2 lg:col-span-4 xl:col-span-2">
@@ -51,25 +50,25 @@
         </div>
         <div
             class="mt-14 border-t-2 border-light pt-10 gap-8 flex flex-wrap justify-center md:justify-between items-center">
-            <img src="/assets/img/footer/ALL-in Eduspace Logo White.png" alt="image 1 footer">
+            <img data-original="/assets/img/footer/ALL-in Eduspace Logo White.png" alt="image 1 footer">
             <div class="flex gap-4 items-center justify-between">
                 <a href="https://www.instagram.com/allineduspace" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/email.png') }}" alt="instagram logo" class="w-7 h-7 object-contain">
+                    <img data-original="{{ asset('assets/logo/email.png') }}" alt="instagram logo" class="w-5 h-5 object-contain">
                 </a>
                 <a href="https://www.instagram.com/allineduspace" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/facebook.png') }}" alt="facebook logo"
-                        class="w-7 h-7 object-contain">
+                    <img data-original="{{ asset('assets/logo/facebook.png') }}" alt="facebook logo"
+                        class="w-5 h-5 object-contain">
                 </a>
                 <a href="https://www.instagram.com/allineduspace" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/linkedin.png') }}" alt="linkedin logo"
-                        class="w-7 h-7 object-contain">
+                    <img data-original="{{ asset('assets/logo/linkedin.png') }}" alt="linkedin logo"
+                        class="w-5 h-5 object-contain">
                 </a>
                 <a href="https://www.instagram.com/allineduspace" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/youtube.png') }}" alt="youtube logo" class="w-7 h-7 object-contain">
+                    <img data-original="{{ asset('assets/logo/youtube.png') }}" alt="youtube logo" class="w-5 h-5 object-contain">
                 </a>
             </div>
             <p class="text-sm text-white">Copyright c 2021. ALL-in Eduspace.All rights reserved</p>

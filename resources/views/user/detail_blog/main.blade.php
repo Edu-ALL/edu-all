@@ -6,12 +6,20 @@
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
     <style>
         .blog_style p,
-        .blog_style ul {
+        .blog_style ul,
+        .blog_style table  {
             margin-bottom: 20px;
         }
 
-        .blog_style h2 {
+        .blog_style h2{
             margin-bottom: 5px;
+        }
+
+        .blog_style table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px 10px;
         }
     </style>
 @endsection
@@ -26,7 +34,7 @@
                 <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
                     @if ($blog->mentor)
                         <div class="flex items-center gap-4">
-                            <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
+                            <img data-original="{{ asset('uploaded_files/mentor/' . $blog->mentor->mentor_picture) }}"
                                 alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
                             {{-- change author name with mentor name --}}
                             <span class="font-primary text-base text-primary">
@@ -44,7 +52,7 @@
                         class="font-primary text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
                 </div>
                 <div class="mt-6 w-full">
-                    <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
+                    <img data-original="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
                         alt="{{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96">
                 </div>
             </div>
@@ -97,7 +105,7 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
-                            <img src="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
+                            <img data-original="{{ asset('uploaded_files/blogs/' . $blog->blog_thumbnail) }}"
                                 alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
                             <div class="flex justify-between">
                                 <span class="font-primary text-xs text-[#7C7C7C]">

@@ -65,7 +65,7 @@
                                                 <img src="{{ asset('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$blog->blog_thumbnail) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$blog->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$blog->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $blog->languages->language }}
                                                 </p>

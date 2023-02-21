@@ -59,10 +59,10 @@
                                             <td>{{ $guidebook->guidebook_category }}</td>
                                             <td><a href={{ $guidebook->guidebook_link }} target='_blank'>{{ $guidebook->guidebook_link }}</a></td>
                                             <td>
-                                                <img src="{{ asset('uploaded_files/'.'guidebook/'.$guidebook->created_at->format('Y').'/'.$guidebook->created_at->format('m').'/'.$guidebook->guidebook_image) }}" alt="" width="80">
+                                                <img data-original="{{ asset('uploaded_files/'.'guidebook/'.$guidebook->created_at->format('Y').'/'.$guidebook->created_at->format('m').'/'.$guidebook->guidebook_image) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$guidebook->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$guidebook->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $guidebook->languages->language }}
                                                 </p>

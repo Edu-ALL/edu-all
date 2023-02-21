@@ -64,13 +64,17 @@
                                             <td>{{ $testimonial->testi_category }}</td>
                                             <td>
                                                 @if ($testimonial->testi_thumbnail)
+<<<<<<< HEAD
+                                                    <img data-original="{{ asset('uploaded_files/testimonial/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+=======
                                                     <img src="{{ asset('uploaded_files/'.'testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+>>>>>>> 8db6265a09df1fb6263bd9dfad3f7e21f2d2415b
                                                 @else
                                                     -
                                                 @endif
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$testimonial->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$testimonial->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $testimonial->languages->language }}
                                                 </p>

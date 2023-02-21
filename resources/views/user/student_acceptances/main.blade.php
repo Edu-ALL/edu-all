@@ -27,7 +27,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -46,7 +46,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -65,7 +65,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -84,7 +84,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -103,7 +103,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -122,7 +122,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -141,7 +141,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -160,7 +160,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -179,7 +179,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -198,7 +198,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -222,7 +222,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -241,7 +241,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -260,7 +260,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -279,7 +279,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -298,7 +298,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -317,7 +317,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -336,7 +336,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -360,7 +360,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -379,7 +379,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -398,7 +398,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -417,7 +417,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -436,7 +436,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -455,7 +455,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">
@@ -474,7 +474,7 @@
                     <div
                         class="student__acceptance__card flex justify-center items-center h-48 border-t-[1px] border-dotted border-black">
                         <div class="front flex justify-center items-center px-6">
-                            <img src="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
+                            <img data-original="{{ asset('assets/img/student-acceptance/pennlogo.webp') }}" alt="pennlogo">
                         </div>
                         <div
                             class="back flex flex-col justify-between items-center px-4 bg-gradient-to-b from-[#6f85e9] to-[#b9bfe3]">

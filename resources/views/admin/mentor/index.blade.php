@@ -64,7 +64,7 @@
                                                 <img src="{{ asset('uploaded_files/'.'mentor/'.$mentor->created_at->format('Y').'/'.$mentor->created_at->format('m').'/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$mentor->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$mentor->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $mentor->languages->language }}
                                                 </p>

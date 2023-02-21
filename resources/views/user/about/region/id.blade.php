@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/about/home-header.webp') }}" alt="header image"
+            <img data-original="{{ asset('assets/img/about/home-header.webp') }}" alt="header image"
                 class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
@@ -28,7 +28,7 @@
     {{-- ================================== Descrtiption & List Section  ================================== --}}
     <section class="pb-10">
         <div class="flex flex-col items-center main-container">
-            <img src="{{ asset('assets/img/about/logo-1.png') }}" alt="Allin Logo" class="w-full max-w-xs">
+            <img data-original="{{ asset('assets/img/about/logo-1.png') }}" alt="Allin Logo" class="w-full max-w-xs">
             <div class="flex flex-col max-w-4xl mt-10 gap-y-4">
                 <p class="font-primary font-light text-2xl text-primary text-center">{{ __('pages/about_us/about.desc.0') }}
                 </p>
@@ -66,7 +66,7 @@
     {{-- ================================== Question & Answer ================================== --}}
     <section class="py-10">
         <div class="flex flex-col items-center main-container">
-            <img src="{{ asset('assets/img/about/Icon_2.png') }}" alt="Allin Logo">
+            <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="Allin Logo">
             <h2 class="mt-4 font-primary font-bold text-3xl text-yellow text-center">Question & Answer</h2>
 
             <div class="max-w-4xl mt-8 w-full">
@@ -130,7 +130,7 @@
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                                                <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
                                                     alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                                             </div>
                                             <div

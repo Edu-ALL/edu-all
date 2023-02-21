@@ -57,7 +57,7 @@
                                             <td class="w-75">{{ $category->category_name }}</td>
                                             <td class="w-75">{{ $category->slug }}</td>
                                             <td class="text-center">
-                                                <img src="{{ asset('assets/img/flag/flag-'.$category->lang.'.png') }}" alt="" width="30">
+                                                <img data-original="{{ asset('assets/img/flag/flag-'.$category->lang.'.png') }}" alt="" width="30">
                                                 <p class="pt-1" style="font-size: 13px !important">
                                                     {{ $category->languages->language }}
                                                 </p>

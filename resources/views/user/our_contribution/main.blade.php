@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/banner/Contribution banner.webp') }}" alt="Our Contribution Banner"
+            <img data-original="{{ asset('assets/img/banner/Contribution banner.webp') }}" alt="Our Contribution Banner"
                 class="w-full h-[400px] object-cover object-center md:h-[450px]">
         </div>
     </section>
@@ -31,7 +31,7 @@
                     our best to make everyone’s dream become true through education. ALL-in has created and engaged in
                     several programs to provide accessible higher education for both local and overseas study.</p>
             </div>
-            <img src="{{ asset('assets/img/about/our-contribution/CSR-ASET-1.webp') }}" alt="csr aset"
+            <img data-original="{{ asset('assets/img/about/our-contribution/CSR-ASET-1.webp') }}" alt="csr aset"
                 class="object-contain md:pl-6 md:w-1/3 md:max-w-xs">
         </div>
     </section>
@@ -48,7 +48,7 @@
                                 class="inline-block w-full px-4 font-primary font-semibold text-base text-primary text-center rounded-full bg-gradient-to-r from-[#fee0b0] to-[#e8b757] md:text-sm">{{ $item['date'] }}</span>
                         </div>
                         <div class="flex flex-col items-start gap-4 md:flex-row">
-                            <img src="{{ asset('assets/img/about/our-contribution/contribution-list-' . $loop->iteration . '.webp') }}"
+                            <img data-original="{{ asset('assets/img/about/our-contribution/contribution-list-' . $loop->iteration . '.webp') }}"
                                 alt="contribution aset" class="object-contain md:w-1/3 ">
                             <div class="flex flex-col gap-y-6 mb-6 md:w-2/3 md:mb-0">
                                 @foreach ($item['body'] as $body)

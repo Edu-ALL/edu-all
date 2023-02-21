@@ -48,7 +48,7 @@
             class="max-w-3xl w-full -mt-2 bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[250px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="w-[120px]">
+                    <img data-original="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.0.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img src="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2" class="w-[120px]">
+                    <img data-original="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2" class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.1.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img src="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
+                    <img data-original="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
                         class="w-[120px] md:mb-2">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.2.title') }}</h4>
@@ -95,7 +95,7 @@
             <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
-                        <img src="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}" alt="icon 1"
+                        <img data-original="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}" alt="icon 1"
                             class="mb-4">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
@@ -192,7 +192,7 @@
                                                             {!! $mentor->mentor_graduation !!}
                                                         </div>
                                                     </div>
-                                                    <img src="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                                                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
                                                         alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                                                 </div>
                                                 <div
@@ -239,10 +239,10 @@
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                            <img src="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
+                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                            <img src="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
+                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
                         </button>
                     </div>
                     <div class="splide__track">
@@ -253,7 +253,7 @@
                                         <div
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
-                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
                                                 <div class="font-primary text-base text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
