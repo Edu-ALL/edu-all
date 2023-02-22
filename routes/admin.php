@@ -140,6 +140,8 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/tutor/deactivate/{id}', [Tutor::class, 'deactivate']);
     Route::post('/tutor/activate/{id}', [Tutor::class, 'activate']);
     Route::post('/tutor/delete/{id}', [Tutor::class, 'delete']);
+
+    // Project Showcase
 });
 
 
