@@ -19,10 +19,10 @@
             <div class="flex flex-col gap-20 items-stretch">
                 {{-- ------------------------------------ Banner Section ------------------------------------ --}}
                 <div class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-16">
-                    @if (app()->getLocale() == 'en')
-                        <img data-original="/assets/img/programs/payung.png" alt="4 pillars">
+                    @if (app()->getLocale() == 'id')
+                        <img src="{{ asset('assets/img/programs/payung-id.png') }}" alt="4 pillars">
                     @else
-                        <img data-original="/assets/img/programs/payung-id.png" alt="4 pillars">
+                        <img src="{{ asset('assets/img/programs/payung.png') }}" alt="4 pillars">
                     @endif
                     <p class="text-center font-primary text-base lg:text-xl font-normal text-[#546999] mt-32">
                         {{ __('pages/programs/programs.body') }}</p>

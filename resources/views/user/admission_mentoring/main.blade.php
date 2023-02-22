@@ -15,8 +15,8 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}" alt="Admission Mentoring Banner"
-                class="w-full h-[400px] object-cover object-center md:h-[450px]">
+            <img data-original="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}"
+                alt="Admission Mentoring Banner" class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
         </div>
     </section>
@@ -96,7 +96,8 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
+                                            <img
+                                                data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
                                                     {{ $item['title'] }}</h4>
@@ -141,7 +142,8 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
+                                            <img
+                                                data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
                                                     {{ $item['title'] }}</h4>
@@ -187,7 +189,8 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
+                                            <img
+                                                data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
                                                     {{ $item['title'] }}</h4>
@@ -209,7 +212,7 @@
     {{-- ================================== Testimonial Section ================================== --}}
     <section class="pt-16 pb-20">
         <div class="main-container">
-            <h2 class="font-primary font-extrabold text-primary text-center text-4xl mb-4">
+            <h2 class="font-primary font-bold text-primary text-center text-4xl mb-4">
                 {{ __('pages/programs/admission_mentoring.testimony') }}
             </h2>
 
@@ -221,13 +224,13 @@
                             <li class="splide__slide">
                                 <div class="splide__slide__container">
                                     <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
-                                        <h3 class="font-primary font-bold text-2xl text-yellow">
+                                        <h3 class="font-primary font-bold text-sm text-yellow">
                                             {{ $testimony->testi_name }}
                                         </h3>
-                                        <div class="font-primary font-medium text-sm text-[#969aa6]">
+                                        <div class="font-primary font-extrabold text-xs text-[#969aa6]">
                                             {!! $testimony->testi_subtitle !!}
                                         </div>
-                                        <div class="mt-4 font-primary font-bold text-white text-sm">
+                                        <div class="mt-2.5 font-primary font-semibold text-xs text-white leading-4">
                                             {!! $testimony->testi_desc !!}
                                         </div>
                                     </div>
@@ -290,8 +293,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

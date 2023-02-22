@@ -15,8 +15,8 @@
                             {!! $mentor->mentor_graduation !!}
                         </div>
                     </div>
-                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}" alt="{{ $mentor->mentor_alt }}"
-                        class="w-full bg-cover bg-center">
+                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                        alt="{{ $mentor->mentor_alt }}" class="w-full bg-cover bg-center">
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">
                     <h1 class="font-primary font-bold text-4xl text-primary text-center md:text-6xl xl:text-start">
@@ -119,8 +119,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

@@ -40,7 +40,7 @@ return [
     'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',
     'stories_subbody' => 'They have been accepted to some of the top universities.',
 
-    'testi' => "What Our Students Say",
+    'testi' => "WHAT OUR STUDNETS SAY",
     'testi_btn' => 'More',
 
     'bottom' => "Sign up for a FREE Initial Consultation!",

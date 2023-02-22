@@ -15,8 +15,8 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}" alt="Academic Test Preparation"
-                class="w-full h-[400px] object-cover object-center md:h-[450px]">
+            <img data-original="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}"
+                alt="Academic Test Preparation" class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
         </div>
     </section>
@@ -32,8 +32,8 @@
             <img data-original="{{ asset('assets/img/academic_test_preparation/academic-tutoring-flyer-logo-1024x234.webp') }}"
                 alt="" class="w-full max-w-2xl my-4">
             <div class="flex flex-col mx-4 mt-8 md:flex-row md:max-w-4xl md:gap-x-8 md:items-center">
-                <img data-original="{{ asset('assets/img/academic_test_preparation/ACAD-TUTOR-photo.webp') }}" alt="acad tutor"
-                    class="rounded-2xl md:w-1/2  md:mr-4">
+                <img data-original="{{ asset('assets/img/academic_test_preparation/ACAD-TUTOR-photo.webp') }}"
+                    alt="acad tutor" class="rounded-2xl md:w-1/2  md:mr-4">
                 <div class="flex flex-col mt-4 md:w-1/2 md:pl-4">
                     <h4 class="my-6 font-primary font-semibold text-lg text-[#7A7A7A] text-center md:mt-0 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.aca_points_title') }}</h4>
@@ -210,8 +210,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });
