@@ -135,6 +135,8 @@ class Testimonial extends Controller
                 $time = $testi_en->group;
                 $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
+                $testi_en->testi_thumbnail = $fileName;
+                $testi_id->testi_thumbnail = $fileName;
             } elseif ($request->hasFile('testi_thumbnail') && $request->checkThumbnail == 'true') {
                 $file = $request->file('testi_thumbnail');
                 $file_format = $request->file('testi_thumbnail')->getClientOriginalExtension();
@@ -142,6 +144,8 @@ class Testimonial extends Controller
                 $time = $testi_en->group;
                 $fileName = 'Testimonial-thumbnail-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
+                $testi_en->testi_thumbnail = $fileName;
+                $testi_id->testi_thumbnail = $fileName;
             } elseif ($request->checkThumbnail == 'true') {
                 if ($testi_en->testi_thumbnail == $testi_id->testi_thumbnail) {
                     $old_image_path = $testi_en->testi_thumbnail;
@@ -150,10 +154,9 @@ class Testimonial extends Controller
                         File::delete($file_path);
                     }
                 }
-                $fileName = null;
+                $testi_en->testi_thumbnail = null;
+                $testi_id->testi_thumbnail = null;
             }
-            $testi_en->testi_thumbnail = $fileName;
-            $testi_id->testi_thumbnail = $fileName;
 
             $testi_en->save();
             $testi_id->save();

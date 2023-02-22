@@ -201,11 +201,11 @@
                                 </div>
                                 <div class="ps-md-3 ps-4 py-1 d-flex flex-column gap-1">
                                     <h5 class="card-title p-0 m-0">
-                                        <a class="card-title link-card" href="">
+                                        <a class="card-title link-card" href="/admin/project-showcase">
                                             Project Showcase <span>| {{ now()->year }}</span>
                                         </a>
                                     </h5>
-                                    <h6 class="ps-1">{{ $guidebook->count() }}</h6>
+                                    <h6 class="ps-1">0</h6>
                                 </div>
                             </div>
                             <small class="text-muted small"><i>Total in English and Indonesian</i></small>
