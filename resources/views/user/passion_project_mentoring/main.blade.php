@@ -371,15 +371,15 @@
                         <ul class="splide__list">
                             @foreach ($testimonies as $testimony)
                                 <li class="splide__slide">
-                                    <div class="splide__slide__container">
-                                        <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
-                                            <h3 class="font-primary font-bold text-2xl text-yellow">
+                                    <div class="splide__slide__container h-full">
+                                        <div class="flex flex-col rounded-xl bg-primary p-4 mx-2 h-full">
+                                            <h3 class="font-primary font-bold text-sm text-yellow">
                                                 {{ $testimony->testi_name }}
                                             </h3>
-                                            <div class="font-primary font-medium text-sm text-[#969aa6]">
+                                            <div class="font-primary font-extrabold text-xs text-[#969aa6]">
                                                 {!! $testimony->testi_subtitle !!}
                                             </div>
-                                            <div class="mt-4 font-primary font-bold text-white font-xl">
+                                            <div class="mt-2.5 font-primary font-semibold text-xs text-white leading-4">
                                                 {!! $testimony->testi_desc !!}
                                             </div>
                                         </div>
@@ -435,7 +435,7 @@
 
 
         new Splide('.splide', {
-            type: 'loop',
+            type: 'slide',
             perPage: isSmallDevice ? 1 : 3,
             perMove: 1,
             focus: 0,

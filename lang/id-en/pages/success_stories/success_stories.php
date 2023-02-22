@@ -5,7 +5,6 @@ return [
     'desc' => 'We are so proud of our hardworking
     mentees for their achievements.
     <br/>
-    <br/>
     See the success stories of how our mentees
     manage their projects or land their seat
     in top universities!',

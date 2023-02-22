@@ -272,7 +272,7 @@
                                     <div class="splide__container h-full">
                                         <div
                                             class="flex flex-col h-full mx-4 mb-4 rounded-[3rem] bg-primary overflow-hidden">
-                                            <img data-original="{{ asset('uploaded_files/tutor/' . $tutor->thumbnail) }}"
+                                            <img data-original="{{ asset('uploaded_files/tutor/' . $tutor->created_at->format('Y') . '/' . $tutor->created_at->format('m') . '/' . $tutor->thumbnail) }}"
                                                 alt="{{ $tutor->alt }}" class="p-4 md:p-0">
                                             <div class="flex flex-col justify-between p-6">
                                                 <h5 class="mb-4 font-primary font-bold text-2xl text-yellow">
@@ -316,7 +316,8 @@
                                     <div class="splide__container">
                                         <div class="flex flex-col mx-4 mb-4 rounded-3xl bg-primary overflow-hidden">
                                             <div class="flex flex-col p-6">
-                                                <img data-original="{{ asset('assets/logo/quote.png') }}" class="w-6 mb-2">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}"
+                                                    class="w-6 mb-2">
                                                 <div class="mt-1 font-primary font-semibold text-base text-white">
                                                     {!! $item->testi_desc !!}
                                                 </div>

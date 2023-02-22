@@ -4,19 +4,19 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full">
-                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16">
+            <div class="absolute main-container w-full h-full lg:bg-primary/50">
+                <div class="flex flex-col justify-center items-center h-full lg:max-w-3xl lg:mx-auto">
                     <h1
                         class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:text-left">
                         {{ __('pages/success_stories/success_stories.title') }}
                     </h1>
-                    <p class="mt-5 font-primary font-normal text-xl text-white text-center md:w-2/3 md:text-left">
+                    <p class="mt-5 font-primary font-normal text-xl text-white text-center">
                         {!! __('pages/success_stories/success_stories.desc') !!}</p>
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/success-story/header-wof.webp') }}" alt="success story header"
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
+            <img data-original="{{ asset('assets/img/banner/Success Stories Banner.webp') }}" alt="success story banner"
+                class="w-full h-[400px] object-cover object-center">
         </div>
     </section>
 
@@ -28,7 +28,7 @@
                     @if ($loop->index % 2 == 0)
                         <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
                             <div class="w-full md:w-1/3">
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                             <div class="flex flex-col w-full md:w-2/3">
@@ -58,10 +58,10 @@
                                 </p>
                                 @if ($item->video_link != null)
                                     <a href="{{ $item->video_link }}"><span
-                                            class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
-                                            More </span>
+                                            class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-yellow">Learn
+                                            More </span> </a>
                                 @endif
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievement_alt }}">
                             </div>
                         </div>
@@ -69,7 +69,8 @@
                         <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
                             <div class="flex flex-col w-full order-2 md:order-1 md:w-2/3">
                                 <h2 class="font-primary font-semibold text-4xl text-primary text-center md:text-left">
-                                    {{ $item->name }}</h2>
+                                    {{ $item->name }}
+                                </h2>
                                 <div class="flex flex-col flex-wrap gap-3 mt-8 mb-2 md:flex-row">
                                     <span
                                         class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_1 }}</span>
@@ -96,11 +97,11 @@
                                             class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
                                             More</span></a>
                                 @endif
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->achievement_image) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievment_alt }}">
                             </div>
                             <div class="w-full order-1  md:order-2 md:w-1/3">
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->thumbnail) }}"
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}">
                             </div>
                         </div>
@@ -114,7 +115,8 @@
     <section class="pt-10 pb-20">
         <div class="main-container">
             <div class="flex flex-col gap-4 max-w-5xl mx-auto">
-                <img data-original="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}" alt="Allin Alumnis">
+                <img data-original="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}"
+                    alt="Allin Alumnis">
                 <h4 class="mt-10 mb-8 font-primary font-extrabold text-3xl text-yellow text-center leading-9">
                     {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
                 <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">

@@ -4,17 +4,16 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full">
-                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16">
-                    <h1
-                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:text-left md:w-1/2">
+            <div class="absolute main-container w-full h-full lg:bg-primary/50">
+                <div class="flex flex-col justify-center items-center h-full lg:max-w-2xl lg:mx-auto">
+                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
                         {{ __('pages/resources/guidebook.title') }}
                     </h1>
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/guidebooks/GUIDEBOOK-HEADER.webp') }}" alt="Guidebooks header"
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
+            <img data-original="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="Guidebooks Banner"
+                class="w-full h-[400px] object-cover object-center">
         </div>
     </section>
 
@@ -37,7 +36,7 @@
                 <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
                     @foreach ($getting_started as $guidebook)
                         <a href="{{ $guidebook->guidebook_link }}">
-                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                 alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
                         </a>
                     @endforeach
@@ -60,7 +59,7 @@
                 <div class="flex flex-col gap-x-6 gap-y-4 mt-8 md:flex-row">
                     @foreach ($build_your_profile as $guidebook)
                         <a href="{{ $guidebook->guidebook_link }}">
-                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                 alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
                         </a>
                     @endforeach
@@ -87,7 +86,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
                                         </a>
                                     </div>
@@ -113,7 +112,7 @@
                 <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
                     @foreach ($grab_the_scholarship as $guidebook)
                         <a href="{{ $guidebook->guidebook_link }}">
-                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->guidebook_image) }}"
+                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                 alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
                         </a>
                     @endforeach
