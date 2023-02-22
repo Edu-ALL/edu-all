@@ -4,17 +4,16 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-5 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full bg-gradient-to-tr">
-                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
-                    <h1
-                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
+            <div class="absolute main-container w-full h-full bg-primary/50">
+                <div class="flex flex-col justify-center items-center h-full">
+                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
                         {{ __('pages/about_us/partnership_careers.title') }}
                     </h1>
                 </div>
             </div>
 
             <img data-original="{{ asset('assets/img/banner/Partnership banner.webp') }}" alt="Partnership Banner"
-                class="w-full h-[400px] object-cover object-center md:h-[450px]">
+                class="w-full h-[350px] object-cover object-center">
         </div>
     </section>
 

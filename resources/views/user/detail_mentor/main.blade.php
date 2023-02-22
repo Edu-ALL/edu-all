@@ -15,7 +15,7 @@
                             {!! $mentor->mentor_graduation !!}
                         </div>
                     </div>
-                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                         alt="{{ $mentor->mentor_alt }}" class="w-full bg-cover bg-center">
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">

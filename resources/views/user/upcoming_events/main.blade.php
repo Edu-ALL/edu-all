@@ -50,7 +50,7 @@
                             <h4 class="font-primary font-semibold text-2xl text-white text-center">{{ $event->event_date }}
                             </h4>
                         </div>
-                        <img data-original="{{ asset('uploaded_files/upcoming-event/' . $event->event_thumbnail) }}"
+                        <img data-original="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                             alt="{{ $event->event_alt }}" class="w-full object-contain md:w-1/6">
                         <div class="flex flex-col justify-between gap-3 w-full py-4 md:w-4/6">
                             <h2 class="font-primary font-semibold text-3xl text-white text-center md:text-left">

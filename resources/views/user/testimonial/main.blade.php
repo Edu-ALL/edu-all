@@ -99,7 +99,7 @@
                                                             </div>
                                                             <div class="w-24 h-24 rounded-full">
                                                                 @if ($item->testi_thumbnail)
-                                                                    <img data-original="{{ asset('uploaded_files/testimonial/' . $item->testi_thumbnail) }}"
+                                                                    <img data-original="{{ asset('uploaded_files/testimonial/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->testi_thumbnail) }}"
                                                                         alt="{{ $item->testi_thumbnail }}"
                                                                         class="w-full h-full object-contain object-center">
                                                                 @endif

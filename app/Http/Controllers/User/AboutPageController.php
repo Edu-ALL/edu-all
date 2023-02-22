@@ -12,7 +12,7 @@ class AboutPageController extends Controller
     public function about($locale)
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
-        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang);
+        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active');
 
         $region = substr(app()->getLocale(), 0, 2);
 
