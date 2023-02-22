@@ -697,24 +697,32 @@
 <script>
     window.addEventListener("scroll", function() {
         var navbar = document.querySelector("header");
-        navbar.classList.toggle("shadow-md", window.scrollY > 0);
+        if(window.scrollY > 0) {
+            navbar.classList.remove("shadow-sm");
+            navbar.classList.add("shadow-lg");
+        } else { 
+            navbar.classList.remove("shadow-lg");
+            navbar.classList.add("shadow-sm");
+        }
     });
-
+    
     const openBtn = document.querySelector("#open-nav"),
-        closeBtn = document.querySelector("#close-nav"),
-        navContent = document.querySelector("#nav-content");
+         closeBtn = document.querySelector("#close-nav"),
+         navContent = document.querySelector("#nav-content");
 
     openBtn.addEventListener('click', () => {
-        navContent.classList.toggle('translate-x-0');
+        navContent.classList.remove('translate-x-full');
+        navContent.classList.add('translate-x-0');
     })
 
     closeBtn.addEventListener('click', () => {
-        navContent.classList.toggle('translate-x-0');
+        navContent.classList.remove('translate-x-0');
+        navContent.classList.add('translate-x-full');
     })
 
     const openChildBtns = document.querySelectorAll("#open-nav-child"),
-        navChildContents = document.querySelectorAll("#content-nav-child"),
-        childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
+         navChildContents = document.querySelectorAll("#content-nav-child"),
+         childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
 
     var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 
