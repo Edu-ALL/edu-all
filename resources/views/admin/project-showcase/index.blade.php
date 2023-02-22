@@ -42,8 +42,9 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Experience</th>
-                                        <th scope="col">Image</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Project Name</th>
+                                        <th scope="col">Gallery</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -52,63 +53,7 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($tutors as $tutor)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $tutor->full_name }}</td>
-                                            <td>{{ $tutor->experience }}</td>
-                                            <td>
-                                                <img src="{{ asset('uploaded_files/'.'tutor/'.$tutor->created_at->format('Y').'/'.$tutor->created_at->format('m').'/'.$tutor->thumbnail) }}" alt="" width="80">
-                                            </td>
-                                            @if ($tutor->status == 'active')
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-success"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#deactivate"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $tutor->id }})"
-                                                    >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this tutor">
-                                                            {{ $tutor->status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @else
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-danger"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#activate"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $tutor->id }})"
-                                                    >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this tutor">
-                                                            {{ $tutor->status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @endif
-                                            <td class="text-center">
-                                                <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/tutor/{{ $tutor->id }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this tutor"></i>
-                                                    </a>
-                                                    <button 
-                                                    type="button"
-                                                    class="btn btn-danger"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#delete"
-                                                    onclick="formDelete({{ $tutor->id }})"
-                                                    >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this tutor"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    
                                 </tbody>
                             </table>
                         </div>

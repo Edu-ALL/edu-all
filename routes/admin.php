@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\MentorVideo;
+use App\Http\Controllers\Admin\ProjectShowcase;
 use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
@@ -142,6 +143,14 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/tutor/delete/{id}', [Tutor::class, 'delete']);
 
     // Project Showcase
+    Route::get('/project-showcase', [ProjectShowcase::class, 'index']);
+    Route::get('/project-showcase/create', [ProjectShowcase::class, 'create']);
+    Route::post('/project-showcase', [ProjectShowcase::class, 'store'])->name('create-project-showcase');
+    Route::get('/project-showcase/{id}/edit', [ProjectShowcase::class, 'edit']);
+    Route::post('/project-showcase/{id}', [ProjectShowcase::class, 'update'])->name('update-project-showcase');
+    Route::post('/project-showcase/deactivate/{id}', [ProjectShowcase::class, 'deactivate']);
+    Route::post('/project-showcase/activate/{id}', [ProjectShowcase::class, 'activate']);
+    Route::post('/project-showcase/delete/{id}', [ProjectShowcase::class, 'delete']);
 });
 
 
