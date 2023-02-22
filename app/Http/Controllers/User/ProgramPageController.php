@@ -19,7 +19,7 @@ class ProgramPageController extends Controller
     public function admissions_mentoring($locale)
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
-        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'Undergraduate Program');
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring');
 
         return view('user.admission_mentoring.main', [
             'testimonies' => $testimonies,

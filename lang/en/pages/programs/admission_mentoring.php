@@ -148,7 +148,7 @@ return [
     "univtransfer_list" => $univtransfer,
 
     // testimony section
-    "testimony" => "WHAT OUR STUDENTS SAY",
+    "testimony" => "WHAT OUR STUDNETS SAY",
 
     // bottom section
     "sign_up_text" => "SIGN UP FOR",

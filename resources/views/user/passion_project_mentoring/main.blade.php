@@ -58,7 +58,8 @@
 
             <div class="grid grid-cols-1 main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-entre-2 md:bg-cover md:bg-center">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}" class="md:hidden">
+                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
+                        class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-primary text-base text-primary md:text-xl">
@@ -209,7 +210,8 @@
 
             <div class="grid grid-cols-1 main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-scien-2 md:bg-cover md:bg-center">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}" class="md:hidden">
+                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
+                        class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-primary text-base text-primary md:text-xl">
@@ -346,8 +348,10 @@
                 {{ __('pages/programs/passion_project_mentoring.other_programs') }}</h2>
             <div class="grid grid-cols-1 items-center gap-y-4 px-14 mt-6 md:grid-cols-4 md:gap-x-12 md:px-0">
                 <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-CEP.webp') }}" alt="LogoCEP">
-                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-Dr-share.webp') }}" alt="LogoCEP">
-                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-Career-bootcamp.webp') }}" alt="LogoCEP">
+                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-Dr-share.webp') }}"
+                    alt="LogoCEP">
+                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-Career-bootcamp.webp') }}"
+                    alt="LogoCEP">
                 <img data-original="{{ asset('assets/img/passion_project_mentoring/Logo-GIP.webp') }}" alt="LogoCEP">
             </div>
         </div>
@@ -446,8 +450,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

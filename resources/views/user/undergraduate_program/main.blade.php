@@ -26,8 +26,8 @@
             <div
                 class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
                 <div class="w-full shadow-md rounded-3xl">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}" alt="admission mentoring benefit"
-                        class="w-full">
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
+                        alt="admission mentoring benefit" class="w-full">
                 </div>
             </div>
         </div>
@@ -83,8 +83,8 @@
                     @foreach (__('pages/programs/undergraduate_program.pilar_list') as $item)
                         <div class="pilar_card h-72 md:h-60">
                             <div class="front flex items-center justify-center w-full overflow-hidden">
-                                <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}" alt="4 pilar"
-                                    class="w-full bg-cover bg-center">
+                                <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}"
+                                    alt="4 pilar" class="w-full bg-cover bg-center">
                             </div>
                             <div
                                 class="back flex flex-col justify-center items-center w-full h-full px-4 bg-{{ $item['color'] }}">

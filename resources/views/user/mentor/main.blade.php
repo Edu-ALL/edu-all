@@ -160,8 +160,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

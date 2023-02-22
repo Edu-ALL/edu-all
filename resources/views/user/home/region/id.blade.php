@@ -48,7 +48,8 @@
             class="max-w-3xl w-full -mt-2 bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[250px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="w-[120px]">
+                    <img data-original="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1"
+                        class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.0.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -57,7 +58,8 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img data-original="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2" class="w-[120px]">
+                    <img data-original="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2"
+                        class="w-[120px]">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.1.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -95,8 +97,8 @@
             <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
-                        <img data-original="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}" alt="icon 1"
-                            class="mb-4">
+                        <img data-original="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}"
+                            alt="icon 1" class="mb-4">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
                 @endforeach
@@ -253,13 +255,14 @@
                                         <div
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
-                                                <img data-original="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                                <div class="font-primary text-base text-white text-justify">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}"
+                                                    class="w-7 mb-3">
+                                                <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
                                             </div>
-                                            <div class="mt-12 flex flex-col">
-                                                <div class="font-primary font-semibold text-2xl text-yellow">
+                                            <div class="mt-4 flex flex-col">
+                                                <div class="font-primary font-semibold text-base text-yellow">
                                                     {{ $testi->testi_name }}
                                                 </div>
                                                 <div class="font-primary text-sm text-white">
@@ -334,8 +337,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });
@@ -353,8 +356,8 @@
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '10px';
-                item.button.style.height = '10px';
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

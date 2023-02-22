@@ -75,7 +75,7 @@ return [
     'why_us_desc' => 'Our expert mentors are here to support current university students who intend to transfer from community college to a university or from one university to another university through our special and proven mentoring strategy.',
 
     // testimony section
-    "testimony_title" => "WHAT OUR STUDENTS SAY",
+    "testimony_title" => "WHAT OUR STUDNETS SAY",
     "testimony_list" => [
         [
             'name' => 'Rachinta Marpaung',
