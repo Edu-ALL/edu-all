@@ -165,7 +165,7 @@
                                             Upcoming Events <span>| {{ now()->year }}</span>
                                         </a>
                                     </h5>
-                                    <h6 class="ps-1">{{ $tutors->count() }}</h6>
+                                    <h6 class="ps-1">{{ $upcoming_event->count() }}</h6>
                                 </div>
                             </div>
                             <small class="text-muted small"><i>Total in English and Indonesian</i></small>
@@ -185,7 +185,7 @@
                                             Success Stories <span>| {{ now()->year }}</span>
                                         </a>
                                     </h5>
-                                    <h6 class="ps-1">{{ $testimonial->count() }}</h6>
+                                    <h6 class="ps-1">{{ $success_stories->count() }}</h6>
                                 </div>
                             </div>
                             <small class="text-muted small"><i>Total in English and Indonesian</i></small>
@@ -201,7 +201,7 @@
                                 </div>
                                 <div class="ps-md-3 ps-4 py-1 d-flex flex-column gap-1">
                                     <h5 class="card-title p-0 m-0">
-                                        <a class="card-title link-card" href="/admin/guidebook">
+                                        <a class="card-title link-card" href="">
                                             Project Showcase <span>| {{ now()->year }}</span>
                                         </a>
                                     </h5>

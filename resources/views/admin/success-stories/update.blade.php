@@ -80,7 +80,7 @@
                                         </div>
                                         <div class="col">
                                             <label for="" class="form-label">
-                                                Link <span style="color: var(--red)">*</span>
+                                                Link
                                             </label>
                                             <input type="text" class="form-control" id="video_link" name="story_video_link" value="{{ $success_stories[0]->video_link }}">
                                             @error('story_video_link')
@@ -305,7 +305,7 @@
         const achievement_img_en = document.getElementById('achievement_img_en').value;
         const achievement_alt_en = document.getElementById('achievement_alt_en').value;
         const submit = document.getElementById('submit');
-        if (alt == "" || name == "" || video_link == "" || badge1_en == "" || description_en == "" || achievement_alt_en == "") {
+        if (alt == "" || name == "" || badge1_en == "" || description_en == "" || achievement_alt_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;
