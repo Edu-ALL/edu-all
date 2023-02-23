@@ -5,59 +5,74 @@
     <meta name="title" content="{{ $blog->seo_title }}">
     <meta name="description" content="{{ $blog->seo_desc }}">
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
-    <style>
-        .blog_style p,
-        .blog_style ul,
-        .blog_style table {
-            margin-bottom: 20px;
-        }
-
-        .blog_style h2 {
-            margin-bottom: 5px;
-        }
-
-        .blog_style table,
-        th,
-        td {
-            border: 1px solid black;
-            padding: 5px 10px;
-        }
-        .blog_style ul {
-            padding-left: 20px !important;
-            list-style-position: inherit !important;
-        }
-        .blog_style ul li {
-            padding-left: 5px !important;
-        }
-    </style>
 @endsection
 
 @section('content')
+    <div class="fixed top-[-100px] left-0 w-full z-[999] shadow-lg bg-white main-container flex items-center justify-between transition-all duration-500 min-h-[75px]"
+        id="blog_navbar">
+        <h1 class="font-primary font-extrabold text-sm text-primary md:text-2xl">
+            {{ $blog->blog_title }}
+        </h1>
+        <div class="flex items-center gap-1">
+            <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+                onclick="share_sosmed('open')">
+                <i class="fa fa-send lg:mr-2 mr-0" aria-hidden="true"></i> <span class="lg:inline hidden">Share</span> 
+            </div>
+            <div class="share share_icon hidden">
+                <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
+                    data-ss-content="false"></div>
+            </div>
+            <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+                onclick="share_sosmed('close')">
+                <i class="fa fa-x" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
     <section class="pt-16">
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
                 <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
                     {{ $blog->blog_title }}
                 </h1>
-                <div class="flex flex-col justify-center items-center gap-4 md:flex-row">
-                    @if ($blog->mentor)
-                        <div class="flex items-center gap-4">
-                            <img data-original="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                alt="{{ $blog->mentor->mentor_alt }}" class="w-8 h-8 rounded-full object-cover object-top">
-                            {{-- change author name with mentor name --}}
-                            <span class="font-primary text-base text-primary">
-                                {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
-                            </span>
+                <div class="flex flex-col justify-between items-center gap-4 md:flex-row">
+                    <div class="">
+                        @if ($blog->mentor)
+                            <div class="flex items-center gap-4">
+                                <img data-original="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                    alt="{{ $blog->mentor->mentor_alt }}"
+                                    class="w-8 h-8 rounded-full object-cover object-top">
+                                {{-- change author name with mentor name --}}
+                                <span class="font-primary text-base text-primary">
+                                    {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
+                                </span>
+                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                            </div>
+                        @endif
+                        @if (!empty($blog->duration_read))
+                            <i class="fa fa-book mr-1" aria-hidden="true"></i>
+                            <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
+                                {{ __('pages/blog.min_read') }}</span>
                             <div class="hidden w-px h-4 bg-primary md:block"></div>
+                        @endif
+                        <span class="font-primary text-base text-primary">
+                            <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
+                            {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+                            onclick="share_sosmed('open')">
+                            <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
                         </div>
-                    @endif
-                    @if (!empty($blog->duration_read))
-                        <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
-                            {{ __('pages/blog.min_read') }}</span>
-                        <div class="hidden w-px h-4 bg-primary md:block"></div>
-                    @endif
-                    <span
-                        class="font-primary text-base text-primary">{{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}</span>
+                        <div class="share share_icon hidden">
+                            <div class="ss-box ss-circle ss-shadow"
+                                data-ss-social="twitter, facebook, linkedin, share, whatsapp" data-ss-content="false"></div>
+                        </div>
+                        <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+                            onclick="share_sosmed('close')">
+                            <i class="fa fa-x" aria-hidden="true"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="mt-6 w-full">
                     <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
@@ -142,6 +157,29 @@
 
 @section('script')
     <script>
+        window.addEventListener("scroll", function() {
+            var navbar = document.querySelector("#blog_navbar");
+            if (window.scrollY > 200) {
+                navbar.classList.remove("top-[-100px]");
+                navbar.classList.add("top-0");
+            } else {
+                navbar.classList.remove("top-0");
+                navbar.classList.add("top-[-100px]");
+            }
+        });
+
+        // Sosmed Share 
+        function share_sosmed(method) {
+            $('.share').removeClass('hidden').addClass('hidden')
+            if (method == "open") {
+                $('.share_icon').removeClass('hidden')
+                $('.share_close').removeClass('hidden')
+            } else {
+                $('.share').removeClass('hidden').addClass('hidden')
+                $('.share_button').removeClass('hidden')
+            }
+        }
+
         // ambil seluruh tag blog section
         const blog_section_list = document.querySelectorAll('a[href^="#"]');
 
