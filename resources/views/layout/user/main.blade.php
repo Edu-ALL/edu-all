@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
-
+    <meta name="title" content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
+    <meta name="description" content="{{ __('pages/home.meta_description') }}">
 
 
     {{-- Blog SEO --}}

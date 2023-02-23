@@ -15,7 +15,7 @@ return [
             'body' => 'Menempatkan siswa ke universitas impian dan tercocok untuk mempertajam potensi mereka sebagai calon pemimpin'
         ],
     ],
-
+    'meta_description' => 'Satu-satunya Konsultan Pendidikan Jakarta yang menyediakan layanan pendampingan admisi unik. Kami membantu Anda masuk ke universitas terbaik yang Anda inginkan.',
     'about' => 'Tentang Kami',
     'about_body' => "Kami membimbing siswa yang ingin melanjutkan pendidikan tinggi di luar negeri dan menempatkan mereka di universitas-universitas yang paling cocok. Kami menyediakan bimbingan mentoring yang sesuai dengan kebutuhan anda, dimanapun anda berada.",
     'about_btn' => "Info lebih lanjut",
