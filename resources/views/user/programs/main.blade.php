@@ -32,7 +32,7 @@
                         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             @foreach (__('pages/programs/programs.program_list') as $item)
                                 <div class="program_card hover:rotate-program_card">
-                                    <div class="front bg-program-image-{{ $loop->iteration }} bg-cover bg-center">
+                                    <div class="relative front bg-cover bg-center">
                                         <div
                                             class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
                                             <h4 class="font-semibold text-3xl font-primary mb-4 leading-7">
@@ -47,6 +47,8 @@
                                                 @endforeach
                                             </ul>
                                         </div>
+                                        <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
+                                            class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
                                     </div>
                                     <div
                                         class="back face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
