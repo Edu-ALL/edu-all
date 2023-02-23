@@ -373,5 +373,16 @@
             left: 95% !important;
             bottom: 80vh;
         }
+
+        #home_banner .splide__pagination .splide__pagination__page {
+            background: #233873 !important;
+            border: 2px solid #d2d2d2 !important;
+            height: 10px !important;
+            width: 10px !important;
+        }
+
+        #home_banner .splide__pagination .splide__pagination__page.is-active {
+            background: #F78614 !important;
+        }
     </style>
 @endsection
