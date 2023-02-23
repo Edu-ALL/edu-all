@@ -49,7 +49,7 @@
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
                     <img data-original="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1"
-                        class="w-[120px]">
+                        class="w-[120px] h-auto">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.0.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -59,7 +59,7 @@
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
                     <img data-original="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2"
-                        class="w-[120px]">
+                        class="w-[120px] h-auto">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.1.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -69,7 +69,7 @@
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
                     <img data-original="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
-                        class="w-[120px] md:mb-2">
+                        class="w-[120px] h-auto md:mb-2">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.2.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -98,7 +98,7 @@
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
                         <img data-original="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}"
-                            alt="icon 1" class="mb-4">
+                            alt="icon 1" class="mb-4 w-auto h-auto">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
                 @endforeach
@@ -134,7 +134,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
+                            <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}" alt="{{$item['title']}}"
                                 class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
                         </div>
                         <div
@@ -197,7 +197,7 @@
                                                         </div>
                                                     </div>
                                                     <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
+                                                        alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
@@ -243,10 +243,10 @@
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
+                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4 h-auto">
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
+                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4 h-auto">
                         </button>
                     </div>
                     <div class="splide__track">
@@ -258,7 +258,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3">
+                                                    class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
