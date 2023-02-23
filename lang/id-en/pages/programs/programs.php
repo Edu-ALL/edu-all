@@ -13,6 +13,7 @@ return [
                 'University Transfer Admission Mentoring',
             ],
             'route' => 'admissions_mentoring',
+            'img' => 'Admission Mentoring.webp',
         ],
         [
             'title' => 'Passion Project Mentoring Program',
@@ -22,6 +23,7 @@ return [
                 'Scientific Research Mentoring Program',
             ],
             'route' => 'passion_project_mentoring',
+            'img' => 'Passion Project-Mentoring Program.webp',
         ],
         [
             'title' => 'Academic & Test Preparation',
@@ -31,7 +33,8 @@ return [
                 'IB Extended Essay Coaching',
                 'SAT Prep Class',
             ],
-            'route' => 'academic_test_preparation'
+            'route' => 'academic_test_preparation',
+            'img' => 'Academic &-Test Preparation.webp',
         ],
     ],
     "sign_up_text" => "Sign up for a FREE Initial Consultation!",
