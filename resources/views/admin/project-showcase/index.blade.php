@@ -33,7 +33,7 @@
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">List Project Showcase <span>| {{ now()->year }}</span></h5>
-                                <a type="button" class="btn btn-primary" href="/admin/tutor/create">
+                                <a type="button" class="btn btn-primary" href="/admin/project-showcase/create">
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Deactivate this tutor?</p>
+                <p id="desc-info">Are you sure, you want to Deactivate this project showcase?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Activate this tutor?</p>
+                <p id="desc-info">Are you sure, you want to Activate this project showcase?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Delete this tutor?</p>
+                <p id="desc-info">Are you sure, you want to Delete this project showcase?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -138,13 +138,13 @@
 @section('js')
     <script>
         function formDeactivate(id){
-            $('#form_deactivate').attr('action', '{{ url('/admin/tutor/deactivate/') }}' + '/' + id);
+            $('#form_deactivate').attr('action', '{{ url('/admin/project-showcase/deactivate/') }}' + '/' + id);
         };
         function formActivate(id){
-            $('#form_activate').attr('action', '{{ url('/admin/tutor/activate/') }}' + '/' + id);
+            $('#form_activate').attr('action', '{{ url('/admin/project-showcase/activate/') }}' + '/' + id);
         };
         function formDelete(id){
-            $('#form_delete').attr('action', '{{ url('/admin/tutor/delete/') }}' + '/' + id);
+            $('#form_delete').attr('action', '{{ url('/admin/project-showcase/delete/') }}' + '/' + id);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

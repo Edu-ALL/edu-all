@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class Authentication extends Controller
 {
+    public function index(){
+        return view('auth.login');
+    }
+    
     public function loginAdmin(Request $request){
         $credentials = $request->only('email', 'password');
 
