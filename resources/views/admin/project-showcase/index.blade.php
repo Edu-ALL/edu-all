@@ -63,7 +63,6 @@
                                                 @foreach (json_decode($project->gallery) as $image)
                                                     <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$image) }}" alt="" width="80">
                                                 @endforeach
-                                                {{-- <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$project->gallery) }}" alt="" width="80"> --}}
                                             </td>
                                             @if ($project->status == 'active')
                                                 <td class="text-center">
