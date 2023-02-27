@@ -33,7 +33,7 @@
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center justify-content-between">
                                 <h5 class="card-title">List Project Showcase <span>| {{ now()->year }}</span></h5>
-                                <a type="button" class="btn btn-primary" href="/admin/tutor/create">
+                                <a type="button" class="btn btn-primary" href="/admin/project-showcase/create">
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
@@ -53,7 +53,66 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    
+                                    @foreach ($project_showcase as $project)
+                                        <tr>
+                                            <th scope="row">{{ $i++ }}</th>
+                                            <td>{{ $project->name }}</td>
+                                            <td>{{ $project->category }}</td>
+                                            <td>{{ $project->project_name }}</td>
+                                            <td>
+                                                @foreach (json_decode($project->gallery) as $image)
+                                                    <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$image) }}" alt="" width="80">
+                                                @endforeach
+                                            </td>
+                                            @if ($project->status == 'active')
+                                                <td class="text-center">
+                                                    <button 
+                                                    class="btn btn-success"
+                                                    type="button"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#deactivate"
+                                                    style="text-transform: capitalize;"
+                                                    onclick="formDeactivate({{ $project->id }})"
+                                                    >
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this tutor">
+                                                            {{ $project->status }}
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                            @else
+                                                <td class="text-center">
+                                                    <button 
+                                                    class="btn btn-danger"
+                                                    type="button"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#activate"
+                                                    style="text-transform: capitalize;"
+                                                    onclick="formActivate({{ $project->id }})"
+                                                    >
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this tutor">
+                                                            {{ $project->status }}
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                            @endif
+                                            <td class="text-center">
+                                                <div class="d-flex flex-row gap-1">
+                                                    <a type="button" class="btn btn-warning" href="/admin/project-showcase/{{ $project->id }}/edit">
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this tutor"></i>
+                                                    </a>
+                                                    <button 
+                                                    type="button"
+                                                    class="btn btn-danger"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#delete"
+                                                    onclick="formDelete({{ $project->id }})"
+                                                    >
+                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this tutor"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -75,7 +134,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Deactivate this tutor?</p>
+                <p id="desc-info">Are you sure, you want to Deactivate this project showcase?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -98,7 +157,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Activate this tutor?</p>
+                <p id="desc-info">Are you sure, you want to Activate this project showcase?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -121,7 +180,7 @@
                 </div>
             </div>
             <div class="modal-body text-center mt-3 mb-1">
-                <p id="desc-info">Are you sure, you want to Delete this tutor?</p>
+                <p id="desc-info">Are you sure, you want to Delete this project showcase?</p>
             </div>
             <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                 <button type="submit" style="font-size: 13px" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
@@ -138,13 +197,13 @@
 @section('js')
     <script>
         function formDeactivate(id){
-            $('#form_deactivate').attr('action', '{{ url('/admin/tutor/deactivate/') }}' + '/' + id);
+            $('#form_deactivate').attr('action', '{{ url('/admin/project-showcase/deactivate/') }}' + '/' + id);
         };
         function formActivate(id){
-            $('#form_activate').attr('action', '{{ url('/admin/tutor/activate/') }}' + '/' + id);
+            $('#form_activate').attr('action', '{{ url('/admin/project-showcase/activate/') }}' + '/' + id);
         };
         function formDelete(id){
-            $('#form_delete').attr('action', '{{ url('/admin/tutor/delete/') }}' + '/' + id);
+            $('#form_delete').attr('action', '{{ url('/admin/project-showcase/delete/') }}' + '/' + id);
         };
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

@@ -14,7 +14,6 @@ use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
 use App\Http\Controllers\Admin\UpcomingEvent;
-use App\Models\Tutors;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,9 +30,7 @@ use Illuminate\Support\Facades\Route;
 /*--------------------------------------------------------------
 # Login Logout Admin
 --------------------------------------------------------------*/
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/login', [Authentication::class, 'index'])->middleware('guest:web-admin');
 Route::post('/login', [Authentication::class, 'loginAdmin'])->name('admin-login');
 Route::get('logout', [Authentication::class, 'logout'])->name('logout');
 

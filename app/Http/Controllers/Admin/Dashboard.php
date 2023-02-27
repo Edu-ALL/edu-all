@@ -7,6 +7,7 @@ use App\Models\Banners;
 use App\Models\Blogs;
 use App\Models\Guidebooks;
 use App\Models\Mentors;
+use App\Models\ProjectShowcases;
 use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\Tutors;
@@ -24,6 +25,7 @@ class Dashboard extends Controller
         $success_stories = SuccessStories::get();
         $testimonial = Testimonials::get();
         $tutors = Tutors::get();
+        $project_showcase = ProjectShowcases::get();
         $top_blogs = Blogs::where('blog_status', 'publish')->orderby('click_count', 'desc')->take(5)->get();
         return view('admin.dashboard', [
             'banner' => $banner,
@@ -34,6 +36,7 @@ class Dashboard extends Controller
             'success_stories' => $success_stories,
             'testimonial' => $testimonial,
             'tutors' => $tutors,
+            'project_showcase' => $project_showcase,
             'top_blogs' => $top_blogs,
         ]);
     }

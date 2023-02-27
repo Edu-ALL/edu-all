@@ -118,8 +118,8 @@
   });
 
   // Lazy Load
-  $(function() {
-    $("img").Lazy();
-  });
+  // $(function() {
+  //   $("img").Lazy();
+  // });
 
 })();

@@ -205,10 +205,10 @@
                                             Project Showcase <span>| {{ now()->year }}</span>
                                         </a>
                                     </h5>
-                                    <h6 class="ps-1">0</h6>
+                                    <h6 class="ps-1">{{ $project_showcase->count() }}</h6>
                                 </div>
                             </div>
-                            <small class="text-muted small"><i>Total in English and Indonesian</i></small>
+                            <small class="text-muted small"><i>Total in English</i></small>
                         </div>
                     </div>
                 </div>

@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="" class="form-label">
-                                            Last name <span style="color: var(--red)">*</span>
+                                            Last name
                                         </label>
                                         <input type="text" class="form-control" id="lastname" name="mentor_lastname" value="{{ $mentor[0]->mentor_lastname }}" onchange="createSlug()">
                                     </div>
@@ -259,7 +259,11 @@
         const firstname = document.getElementById('firstname').value.toLowerCase().split(' ').join('-');
         const lastname = document.getElementById('lastname').value.toLowerCase().split(' ').join('-');
         const slug = document.getElementById('slug');
-        slug.value = firstname + '-' + lastname;
+        if (document.getElementById('lastname').value != ''){
+            slug.value = firstname + '-' + lastname;
+        } else {
+            slug.value = firstname;
+        }
     };
 
     function checkInput(){
@@ -273,7 +277,7 @@
         const image = document.getElementById('image').value;
         const alt = document.getElementById('alt').value;
         const submit = document.getElementById('submit');
-        if (firstname == "" || lastname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || alt == "") {
+        if (firstname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || alt == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;
