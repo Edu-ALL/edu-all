@@ -14,7 +14,7 @@
         <h1 class="font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-start text-center">
             {{ $blog->blog_title }}
         </h1>
-        <div class="flex lg:justify-end justify-center items-center gap-1 lg:relative absolute bottom-[8px] left-0 lg:w-[20%] w-[100%] h-100">
+        <div class="flex lg:justify-end justify-center items-center gap-1 lg:relative absolute bottom-[7px] left-0 lg:w-[20%] w-[100%] h-100">
             <div class="share share_button bg-primary text-white lg:py-2 py-1  px-4 rounded-2xl lg:text-[12px] text-[9px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
                 <i class="fa fa-send lg:mr-2 mr-0" aria-hidden="true"></i> Share
