@@ -193,6 +193,30 @@
         bottom: 80vh;
     }
 
+    .blog_style p,
+    .blog_style ul,
+    .blog_style table {
+        margin-bottom: 20px;
+    }
+
+    .blog_style h2 {
+        margin-bottom: 5px;
+    }
+
+    .blog_style table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 5px 10px;
+    }
+    .blog_style ul {
+        padding-left: 20px !important;
+        list-style-position: inherit !important;
+    }
+    .blog_style ul li {
+        padding-left: 5px !important;
+    }
+
     .pilar_card {
         transform-style: preserve-3d;
         perspective: 1000px;

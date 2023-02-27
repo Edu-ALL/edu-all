@@ -4,13 +4,12 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full">
-                <div class="flex flex-col items-center pt-10 md:items-start md:w-2/3 md:pl-28 lg:w-1/2 lg:pt-16 ">
-                    <h1
-                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
+            <div class="absolute main-container w-full h-full bg-primary/50">
+                <div class="flex flex-col justify-center items-center h-full md:pb-20 lg:max-w-3xl lg:mx-auto">
+                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
                         {{ __('pages/programs/admission_mentoring.title') }}
                     </h1>
-                    <p class="mt-2 font-primary font-normal text-xl text-white text-center md:text-left">
+                    <p class="mt-2 font-primary font-normal text-xl text-white text-center">
                         {{ __('pages/programs/admission_mentoring.body') }}</p>
                 </div>
             </div>
@@ -222,8 +221,8 @@
                     <ul class="splide__list">
                         @foreach ($testimonies as $testimony)
                             <li class="splide__slide">
-                                <div class="splide__slide__container">
-                                    <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
+                                <div class="splide__slide__container h-full">
+                                    <div class="flex flex-col rounded-xl bg-primary p-4 mx-2 h-full">
                                         <h3 class="font-primary font-bold text-sm text-yellow">
                                             {{ $testimony->testi_name }}
                                         </h3>
@@ -267,7 +266,7 @@
 
         for (var i = 0; i < splides.length - 1; i++) {
             new Splide(splides[i], {
-                type: 'loop',
+                type: 'slide',
                 perPage: isSmallDevice ? 1 : 3,
                 perMove: 1,
                 pagination: false,

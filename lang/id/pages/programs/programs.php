@@ -12,7 +12,8 @@ return [
                 'Graduate Admission Mentoring',
                 'University Transfer Admission Mentoring',
             ],
-            'route' => 'admissions_mentoring'
+            'route' => 'admissions_mentoring',
+            'img' => 'Admission Mentoring.webp',
         ],
         [
             'title' => 'Eksplorasi Karir',
@@ -21,7 +22,8 @@ return [
                 'Entrepreneurship Mentoring Program',
                 'Scientific Research Mentoring Program',
             ],
-            'route' => 'passion_project_mentoring'
+            'route' => 'passion_project_mentoring',
+            'img' => 'Passion Project-Mentoring Program.webp',
         ],
         [
             'title' => 'Persiapan Ujian dan Akademis',
@@ -31,7 +33,8 @@ return [
                 'IB Extended Essay Coaching',
                 'SAT Prep Class',
             ],
-            'route' => 'academic_test_preparation'
+            'route' => 'academic_test_preparation',
+            'img' => 'Academic &-Test Preparation.webp',
         ],
     ],
     "sign_up_text" => "Daftar sekarang untuk mendapatkan konsultasi awal gratis!",

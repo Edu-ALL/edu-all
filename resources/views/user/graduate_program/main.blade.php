@@ -26,8 +26,8 @@
             <div
                 class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
                 <div class="w-full shadow-md rounded-3xl">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}" alt="admission mentoring benefit"
-                        class="w-full">
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
+                        alt="admission mentoring benefit" class="w-full">
                 </div>
             </div>
         </div>
@@ -83,8 +83,8 @@
                     @foreach (__('pages/programs/graduate_program.pilar_list') as $item)
                         <div class="pilar_card h-72 md:h-60">
                             <div class="front flex items-center justify-center w-full overflow-hidden">
-                                <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}" alt="4 pilar"
-                                    class="w-full bg-cover bg-center">
+                                <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}"
+                                    alt="4 pilar" class="w-full bg-cover bg-center">
                             </div>
                             <div
                                 class="back flex flex-col justify-center items-center w-full h-full px-4 bg-{{ $item['color'] }}">
@@ -129,8 +129,13 @@
                 <p class="max-w-2xl my-8 mx-auto font-primary font-medium text-primary text-center">
                     {{ __('pages/programs/graduate_program.why_us_desc') }}
                 </p>
-                <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring).webp') }}"
-                    alt="why us mentoring curr" class="w-full max-w-4xl mx-auto">
+                @if (app()->getLocale() == 'id')
+                    <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring) id.webp') }}"
+                        alt="why us mentoring curr" class="w-full max-w-4xl mx-auto">
+                @else
+                    <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring).webp') }}"
+                        alt="why us mentoring curr" class="w-full max-w-4xl mx-auto">
+                @endif
             </div>
         </div>
     </section>
@@ -156,20 +161,18 @@
                     </div>
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach ($testimonies as $item)
+                            @foreach ($testimonies as $testimony)
                                 <li class="splide__slide">
-                                    <div class="splide__container">
-                                        <div class="flex flex-col mx-2 mb-4 rounded-3xl bg-primary overflow-hidden md:mx-4">
-                                            <div class="flex flex-col p-6">
-                                                <h5 class="font-primary font-bold text-2xl text-yellow">
-                                                    {{ $item->testi_name }}
-                                                </h5>
-                                                <div class="mb-3 font-primary font-black text-sm text-[#B9B9B9]">
-                                                    {!! $item->testi_subtitle !!}
-                                                </div>
-                                                <div class="font-primary font-semibold text-sm text-white">
-                                                    {!! $item->testi_desc !!}
-                                                </div>
+                                    <div class="splide__slide__container h-full">
+                                        <div class="flex flex-col rounded-xl bg-primary p-4 mx-2 h-full">
+                                            <h3 class="font-primary font-bold text-sm text-yellow">
+                                                {{ $testimony->testi_name }}
+                                            </h3>
+                                            <div class="font-primary font-extrabold text-xs text-[#969aa6]">
+                                                {!! $testimony->testi_subtitle !!}
+                                            </div>
+                                            <div class="mt-2.5 font-primary font-semibold text-xs text-white leading-4">
+                                                {!! $testimony->testi_desc !!}
                                             </div>
                                         </div>
                                     </div>

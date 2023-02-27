@@ -8,14 +8,14 @@
                         class=" object-center w-[180px]">
                 </a>
 
-                <button id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
+                <button title="menus"  id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
                     <i class="fa-solid fa-bars"></i>
                 </button>
 
                 <div id="nav-content"
                     class="absolute top-0 right-0 w-full text-primary bg-white transition-all duration-200 z-50 translate-x-full lg:sticky lg:flex lg:justify-between lg:items-center lg:w-full lg:min-h-fit lg:text-primary lg:bg-transparent lg:translate-x-0">
 
-                    <button id='close-nav' type="button"
+                    <button title="close menu"  id='close-nav' type="button"
                         class="flex justify-end w-full border-b-2 border-primary lg:hidden">
                         <i class="fa-solid fa-xmark py-3 px-4 text-2xl text-primary border-l-2 border-primary"></i>
                     </button>
@@ -34,7 +34,7 @@
                                 <a href="{{ url(app()->getLocale(), 'programs') }}"
                                     class="block w-full my-1.5 pl-4 font-semibold text-xl text-left lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.programs') }}
                                 </a>
-                                <button id='open-nav-child' type="button"
+                                <button title="submenu"  id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent ">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary"></i>
@@ -114,7 +114,7 @@
                                     class="inline w-full my-1.5 pl-4 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.about_us') }}
                                 </a>
-                                <button id='open-nav-child' type="button"
+                                <button title="submenu"  id='open-nav-child' type="button"
                                     class="flex justify-end bg-primary transition-all duration-300 lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down text-base py-3 px-4 text-white  transition-all duration-300  lg:p-0 lg:pl-1 lg:text-primary"></i>
@@ -154,7 +154,7 @@
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.resources') }}
                                 </div>
-                                <button id='open-nav-child' type="button"
+                                <button title="submenu"  id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
@@ -188,7 +188,7 @@
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.contact_us') }}
                                 </div>
-                                <button id='open-nav-child' type="button"
+                                <button title="submenu"  id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
@@ -259,7 +259,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <button id='open-nav-child' type="button"
+                                        <button title="submenu"  id='open-nav-child' type="button"
                                             class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                             <i id='open-nav-child-btn'
                                                 class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
@@ -697,24 +697,32 @@
 <script>
     window.addEventListener("scroll", function() {
         var navbar = document.querySelector("header");
-        navbar.classList.toggle("shadow-md", window.scrollY > 0);
+        if(window.scrollY > 0) {
+            navbar.classList.remove("shadow-sm");
+            navbar.classList.add("shadow-lg");
+        } else { 
+            navbar.classList.remove("shadow-lg");
+            navbar.classList.add("shadow-sm");
+        }
     });
-
+    
     const openBtn = document.querySelector("#open-nav"),
-        closeBtn = document.querySelector("#close-nav"),
-        navContent = document.querySelector("#nav-content");
+         closeBtn = document.querySelector("#close-nav"),
+         navContent = document.querySelector("#nav-content");
 
     openBtn.addEventListener('click', () => {
-        navContent.classList.toggle('translate-x-0');
+        navContent.classList.remove('translate-x-full');
+        navContent.classList.add('translate-x-0');
     })
 
     closeBtn.addEventListener('click', () => {
-        navContent.classList.toggle('translate-x-0');
+        navContent.classList.remove('translate-x-0');
+        navContent.classList.add('translate-x-full');
     })
 
     const openChildBtns = document.querySelectorAll("#open-nav-child"),
-        navChildContents = document.querySelectorAll("#content-nav-child"),
-        childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
+         navChildContents = document.querySelectorAll("#content-nav-child"),
+         childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
 
     var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

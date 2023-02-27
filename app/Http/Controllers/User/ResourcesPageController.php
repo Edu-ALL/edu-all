@@ -26,7 +26,7 @@ class ResourcesPageController extends Controller
     public function upcoming_events($locale)
     {
         $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
-        $events = UpcomingEvents::latest()->where('event_status', 'active')->where('lang', $lang)->get();
+        $events = UpcomingEvents::latest()->where('event_status', 'publish')->where('lang', $lang)->get();
 
         return view('user.upcoming_events.main', [
             'events' => $events

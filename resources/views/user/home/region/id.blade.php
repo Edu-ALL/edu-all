@@ -9,7 +9,7 @@
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
                             <img class="object-bottom object-cover w-full h-[550px] md:h-[778px]"
-                                src="{{ asset('uploaded_files/banner/'. $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
+                                src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
                                 class="absolute-center top-0 -ml-1 bg-gradient-to-r w-full h-full from-primary/90 flex items-center md:items-start md:pt-32">
@@ -49,7 +49,7 @@
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
                     <img data-original="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1"
-                        class="w-[120px]">
+                        class="w-[120px] h-auto">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.0.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -59,7 +59,7 @@
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
                     <img data-original="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2"
-                        class="w-[120px]">
+                        class="w-[120px] h-auto">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.1.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -69,7 +69,7 @@
                 <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
                 <div class="flex flex-1 flex-col items-center gap-6 ">
                     <img data-original="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
-                        class="w-[120px] md:mb-2">
+                        class="w-[120px] h-auto md:mb-2">
                     <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
                         {{ __('pages/home.benefit_list.2.title') }}</h4>
                     <p class="font-primary text-sm text-center text-[#7A7A7A]">
@@ -98,7 +98,7 @@
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
                         <img data-original="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}"
-                            alt="icon 1" class="mb-4">
+                            alt="icon 1" class="mb-4 w-auto h-auto">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
                 @endforeach
@@ -119,7 +119,7 @@
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach (__('pages/programs/programs.program_list') as $item)
                     <div class="program_card hover:rotate-program_card">
-                        <div class="front bg-program-image-{{ $loop->iteration }} bg-cover bg-center">
+                        <div class="relative front bg-cover bg-center">
                             <div
                                 class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
                                 <h4 class="font-semibold text-3xl font-primary mb-4 leading-7">
@@ -134,6 +134,9 @@
                                     @endforeach
                                 </ul>
                             </div>
+                            <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
+                                alt="{{ $item['title'] }}"
+                                class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
                         </div>
                         <div
                             class="back face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
@@ -163,7 +166,7 @@
                         {{ __('pages/home.mentor_body') }}</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center mt-12 bg-primary">
+            <div class="flex flex-col items-center w-full mt-12 bg-primary">
                 <div class="w-full px-10 pt-10">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
@@ -178,7 +181,8 @@
                             <ul class="splide__list">
                                 @foreach ($all_mentor as $mentor)
                                     <li class="splide__slide">
-                                        <div class="splide__slide__container px-4 w-full h-full">
+                                        <div
+                                            class="splide__slide__container px-4 w-full h-full min-h-[350px] flex items-center">
                                             <div class="mentor_card flex flex-col group">
                                                 <div
                                                     class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
@@ -194,8 +198,9 @@
                                                             {!! $mentor->mentor_graduation !!}
                                                         </div>
                                                     </div>
-                                                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
+                                                    <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                        alt="{{ $mentor->mentor_alt }}"
+                                                        class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
@@ -219,11 +224,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('mentor', app()->getLocale()) }}" class="flex justify-center w-full pb-8">
-                    <span
-                        class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                        {{ __('pages/home.mentor_btn') }}
-                    </span>
+                <a href="{{ route('mentor', app()->getLocale()) }}"
+                    class="block max-w-[200px] w-full mb-8 px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
+                    {{ __('pages/home.mentor_btn') }}
                 </a>
             </div>
         </div>
@@ -241,10 +244,10 @@
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
+                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4 h-auto">
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
+                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4 h-auto">
                         </button>
                     </div>
                     <div class="splide__track">
@@ -256,7 +259,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3">
+                                                    class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
@@ -277,11 +280,9 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('testimonial', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
-                <span
-                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
-                    {{ __('pages/home.testi_btn') }}
-                </span>
+            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                class="block max-w-[200px] w-full mt-8 px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
+                {{ __('pages/home.testi_btn') }}
             </a>
         </div>
     </section>
@@ -292,13 +293,10 @@
             <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="flex justify-center w-full">
-                <span
-                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                    {{ __('pages/home.bottom_btn') }}
-                </span></a>
-
-
+            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
+                {{ __('pages/home.bottom_btn') }}
+            </a>
         </div>
     </section>
 @endsection
@@ -366,10 +364,26 @@
 
     <style>
         #home_banner .splide__pagination {
-            display: flex;
-            flex-direction: column;
-            left: 95% !important;
-            bottom: 80vh;
+            display: block !important;
+            flex-direction: column !important;
+            right: 0 !important;
+            top: 25%;
+            /* bottom: 0; */
+        }
+
+        #home_banner .splide__pagination li {
+            display: block !important;
+        }
+
+        #home_banner .splide__pagination .splide__pagination__page {
+            background: #233873 !important;
+            border: 2px solid #d2d2d2 !important;
+            height: 12px !important;
+            width: 12px !important;
+        }
+
+        #home_banner .splide__pagination .splide__pagination__page.is-active {
+            background: #F78614 !important;
         }
     </style>
 @endsection

@@ -2,17 +2,17 @@
 
 @section('content')
     {{-- Header Section --}}
-    <section class="py-24 bg-mentor-header bg-cover bg-center xl:py-40">
+    <section class="py-20 bg-mentor-header bg-cover bg-center xl:py-40">
         <div class="main-container lg:max-w-7xl lg:mx-auto">
             <div class="flex flex-col">
                 <h1 class="mb-4 font-primary font-bold text-4xl text-white md:mb-8 md:text-6xl">
                     {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                <div class="mb-6 w-full font-primary text-base text-white text-justify md:w-2/3 lg:w-1/2 md:mb-12">
+                <div class="mb-6 w-full font-primary font-medium text-lg text-white text-justify lg:max-w-xl md:mb-12">
                     {!! __('pages/about_us/mentor.benner_body') !!}
                 </div>
                 <a href="#">
                     <span
-                        class="px-10 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
+                        class="px-10 py-2 font-primary font-semibold text-base text-white rounded-md bg-yellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
                 </a>
             </div>
         </div>
@@ -33,7 +33,7 @@
                                     {!! $mentor->mentor_graduation !!}
                                 </div>
                             </div>
-                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                 alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                         </div>
                         <div
@@ -89,7 +89,7 @@
                                                     {!! $mentor->mentor_graduation !!}
                                                 </div>
                                             </div>
-                                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
+                                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                 alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
                                         </div>
                                         <div

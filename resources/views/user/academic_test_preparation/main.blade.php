@@ -4,19 +4,18 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full">
-                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
-                    <h1
-                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
+            <div class="absolute main-container w-full h-full lg:bg-primary/50">
+                <div class="flex flex-col justify-center items-center h-full lg:max-w-3xl lg:mx-auto">
+                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
                         {{ __('pages/programs/academic_test_preparation.title') }}
                     </h1>
-                    <p class="mt-5 font-primary font-normal text-xl text-white text-center md:text-left">
+                    <p class="mt-5 font-primary font-normal text-xl text-white text-center">
                         {{ __('pages/programs/academic_test_preparation.body') }}</p>
                 </div>
             </div>
 
             <img data-original="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}"
-                alt="Academic Test Preparation" class="w-full h-[400px] object-cover object-center md:h-[450px]">
+                alt="Academic Test Preparation Banner" class="w-full h-[400px] object-cover object-center">
 
         </div>
     </section>
@@ -138,15 +137,15 @@
                     <ul class="splide__list">
                         @foreach ($testimonies as $testimony)
                             <li class="splide__slide">
-                                <div class="splide__slide__container">
-                                    <div class="flex flex-col  rounded-2xl bg-primary p-4 mx-2">
-                                        <h3 class="font-primary font-bold text-2xl text-yellow">
+                                <div class="splide__slide__container h-full">
+                                    <div class="flex flex-col rounded-xl bg-primary p-4 mx-2 h-full">
+                                        <h3 class="font-primary font-bold text-sm text-yellow">
                                             {{ $testimony->testi_name }}
                                         </h3>
-                                        <div class="font-primary font-medium text-sm text-[#969aa6]">
+                                        <div class="font-primary font-extrabold text-xs text-[#969aa6]">
                                             {!! $testimony->testi_subtitle !!}
                                         </div>
-                                        <div class="mt-4 font-primary font-bold text-white font-xl">
+                                        <div class="mt-2.5 font-primary font-semibold text-xs text-white leading-4">
                                             {!! $testimony->testi_desc !!}
                                         </div>
                                     </div>
@@ -195,7 +194,7 @@
         }).mount();
 
         new Splide(splides[1], {
-            type: 'loop',
+            type: 'slide',
             perPage: isSmallDevice ? 1 : 3,
             perMove: 1,
             focus: 0,
