@@ -8,26 +8,28 @@
 @endsection
 
 @section('content')
-    <div class="fixed top-[-100px] left-0 w-full z-[999] shadow-lg bg-white main-container flex items-center justify-between transition-all duration-500 min-h-[75px]"
+    {{-- Header in Mobile  --}}
+    <div class="fixed top-[-100px] left-0 w-full z-[999] shadow-lg bg-white main-container lg:flex lg:items-center lg:justify-between transition-all duration-500 min-h-[75px]"
         id="blog_navbar">
-        <h1 class="font-primary font-extrabold text-sm text-primary md:text-2xl">
+        <h1 class="font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-start text-center">
             {{ $blog->blog_title }}
         </h1>
-        <div class="flex items-center gap-1">
-            <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+        <div class="flex lg:justify-end justify-center items-center gap-1 lg:relative absolute bottom-1 left-0 lg:w-[20%] w-[100%] h-100">
+            <div class="share share_button bg-primary text-white lg:py-2 py-1  px-4 rounded-2xl lg:text-[12px] text-[9px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
-                <i class="fa fa-send lg:mr-2 mr-0" aria-hidden="true"></i> <span class="lg:inline hidden">Share</span> 
+                <i class="fa fa-send lg:mr-2 mr-0" aria-hidden="true"></i> Share
             </div>
             <div class="share share_icon hidden">
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
                     data-ss-content="false"></div>
             </div>
-            <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+            <div class="share share_close bg-red-600 text-white lg:py-2 py-[7px] lg:px-3 px-[10px] mt-[3px] rounded-full lg:text-[10px] text-[6px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
                 onclick="share_sosmed('close')">
                 <i class="fa fa-x" aria-hidden="true"></i>
             </div>
         </div>
     </div>
+
     <section class="pt-16">
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
@@ -230,4 +232,27 @@
 
         blog_widget()
     </script>
+    <style>
+        .ss-circle .ss-btn {
+            min-width: 20px !important;
+        }
+
+        .ss-btn {
+            margin: 0 3px !important;
+            font-size: 14px !important;
+            padding: 5px 10px !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .ss-circle .ss-btn {
+            min-width: 15px !important;
+            }
+
+            .ss-btn {
+                margin: 0 3px !important;
+                font-size: 9px !important;
+                padding: 5px 8px !important;
+            }
+        }
+    </style>
 @endsection
