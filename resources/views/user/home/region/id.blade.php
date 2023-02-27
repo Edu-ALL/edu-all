@@ -134,7 +134,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}" alt="{{$item['title']}}"
+                            <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
+                                alt="{{ $item['title'] }}"
                                 class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
                         </div>
                         <div
@@ -165,7 +166,7 @@
                         {{ __('pages/home.mentor_body') }}</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center mt-12 bg-primary">
+            <div class="flex flex-col items-center w-full mt-12 bg-primary">
                 <div class="w-full px-10 pt-10">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
@@ -180,7 +181,8 @@
                             <ul class="splide__list">
                                 @foreach ($all_mentor as $mentor)
                                     <li class="splide__slide">
-                                        <div class="splide__slide__container px-4 w-full h-full">
+                                        <div
+                                            class="splide__slide__container px-4 w-full h-full min-h-[350px] flex items-center">
                                             <div class="mentor_card flex flex-col group">
                                                 <div
                                                     class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
@@ -197,7 +199,8 @@
                                                         </div>
                                                     </div>
                                                     <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center h-auto">
+                                                        alt="{{ $mentor->mentor_alt }}"
+                                                        class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
@@ -221,11 +224,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('mentor', app()->getLocale()) }}" class="flex justify-center w-full pb-8">
-                    <span
-                        class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                        {{ __('pages/home.mentor_btn') }}
-                    </span>
+                <a href="{{ route('mentor', app()->getLocale()) }}"
+                    class="block max-w-[200px] w-full mb-8 px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
+                    {{ __('pages/home.mentor_btn') }}
                 </a>
             </div>
         </div>
@@ -279,11 +280,9 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('testimonial', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
-                <span
-                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
-                    {{ __('pages/home.testi_btn') }}
-                </span>
+            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                class="block max-w-[200px] w-full mt-8 px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
+                {{ __('pages/home.testi_btn') }}
             </a>
         </div>
     </section>
@@ -294,13 +293,10 @@
             <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="flex justify-center w-full">
-                <span
-                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                    {{ __('pages/home.bottom_btn') }}
-                </span></a>
-
-
+            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
+                {{ __('pages/home.bottom_btn') }}
+            </a>
         </div>
     </section>
 @endsection
