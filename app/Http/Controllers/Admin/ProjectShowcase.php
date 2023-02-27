@@ -27,7 +27,8 @@ class ProjectShowcase extends Controller
             'full_name' => 'required',
             'category' => 'required',
             'project_name' => 'required',
-            // 'gallery' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'gallery' => 'required',
+            'gallery.*' => 'image|mimes:jpeg,jpg,png,bmp,webp|max:2048',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -38,21 +39,25 @@ class ProjectShowcase extends Controller
         DB::beginTransaction();
         try {
             $project_showcase = new ProjectShowcases();
-            $project_showcase->full_name = $request->full_name;
+            $project_showcase->name = $request->full_name;
             $project_showcase->category = $request->category;
             $project_showcase->project_name = $request->project_name;
             $project_showcase->status = 'active';
-
-            // dd($request->file('gallery'));
-            // $image = [];
-            // foreach ($request->file('gallery') as $imagefile) {
-            //     array_push($image, $imagefile);
-            // }
-            // dd($image);
-
-            // $project_showcase->save();
-            // DB::commit();
-            dd($project_showcase);
+            $images = [];
+            if ($request->hasFile('gallery')) {
+                $i = 1;
+                foreach ($request->file('gallery') as $imagefile) {
+                    $file_format = $imagefile->getClientOriginalExtension();
+                    $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
+                    $time = date('YmdHis');
+                    $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
+                    $imagefile->move($destinationPath, $fileName);
+                    array_push($images, $fileName);
+                }
+            }
+            $project_showcase->gallery = json_encode($images);
+            $project_showcase->save();
+            DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
             return Redirect::back()->withErrors($e->getMessage());
@@ -61,7 +66,8 @@ class ProjectShowcase extends Controller
     }
 
     public function edit($id){
-        
+        $project_showcase = ProjectShowcases::find($id);
+        return view('admin.project-showcase.update', ['project_showcase' => $project_showcase]);
     }
 
     public function update(Request $request, $id){

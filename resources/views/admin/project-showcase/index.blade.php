@@ -53,7 +53,67 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    
+                                    @foreach ($project_showcase as $project)
+                                        <tr>
+                                            <th scope="row">{{ $i++ }}</th>
+                                            <td>{{ $project->name }}</td>
+                                            <td>{{ $project->category }}</td>
+                                            <td>{{ $project->project_name }}</td>
+                                            <td>
+                                                @foreach (json_decode($project->gallery) as $image)
+                                                    <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$image) }}" alt="" width="80">
+                                                @endforeach
+                                                {{-- <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$project->gallery) }}" alt="" width="80"> --}}
+                                            </td>
+                                            @if ($project->status == 'active')
+                                                <td class="text-center">
+                                                    <button 
+                                                    class="btn btn-success"
+                                                    type="button"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#deactivate"
+                                                    style="text-transform: capitalize;"
+                                                    onclick="formDeactivate({{ $project->id }})"
+                                                    >
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this tutor">
+                                                            {{ $project->status }}
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                            @else
+                                                <td class="text-center">
+                                                    <button 
+                                                    class="btn btn-danger"
+                                                    type="button"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#activate"
+                                                    style="text-transform: capitalize;"
+                                                    onclick="formActivate({{ $project->id }})"
+                                                    >
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this tutor">
+                                                            {{ $project->status }}
+                                                        </span>
+                                                    </button>
+                                                </td>
+                                            @endif
+                                            <td class="text-center">
+                                                <div class="d-flex flex-row gap-1">
+                                                    <a type="button" class="btn btn-warning" href="/admin/project-showcase/{{ $project->id }}/edit">
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this tutor"></i>
+                                                    </a>
+                                                    <button 
+                                                    type="button"
+                                                    class="btn btn-danger"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#delete"
+                                                    onclick="formDelete({{ $project->id }})"
+                                                    >
+                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this tutor"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

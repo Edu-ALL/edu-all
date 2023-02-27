@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="" class="form-label">
-                                            Last name <span style="color: var(--red)">*</span>
+                                            Last name
                                         </label>
                                         <input type="text" class="form-control" id="lastname" name="mentor_lastname" value="{{ old('mentor_lastname') }}" onchange="createSlug()">
                                     </div>
@@ -256,10 +256,14 @@
     };
 
     function createSlug(){
-        const firstname = document.getElementById('firstname').value.toLowerCase().split(' ').join('-');
-        const lastname = document.getElementById('lastname').value.toLowerCase().split(' ').join('-');
-        const slug = document.getElementById('slug');
-        slug.value = firstname + '-' + lastname;
+        let firstname = document.getElementById('firstname').value.toLowerCase().split(' ').join('-');
+        let lastname = document.getElementById('lastname').value.toLowerCase().split(' ').join('-');
+        let slug = document.getElementById('slug');
+        if (document.getElementById('lastname').value != ''){
+            slug.value = firstname + '-' + lastname;
+        } else {
+            slug.value = firstname;
+        }
     };
 
     function checkInput(){
@@ -273,7 +277,7 @@
         const image = document.getElementById('image').value;
         const alt = document.getElementById('alt').value;
         const submit = document.getElementById('submit');
-        if (firstname == "" || lastname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image == "" || alt == "") {
+        if (firstname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image == "" || alt == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

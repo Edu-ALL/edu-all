@@ -7,10 +7,6 @@
     .fs-12 {
         font-size: 12px;
     }
-    #output .image i {
-        cursor: pointer;
-        font-size: 22px;
-    }
 </style>
 @endsection
 @section('content')
@@ -128,7 +124,7 @@
     function displayImages() {
         let images = ""
         imagesArray.forEach((image, index) => {
-            images += `<div class="image col-2 d-flex flex-column align-items-center gap-1">
+            images += `<div class="image col-2">
                         <img class="img-fluid" src="${URL.createObjectURL(image)}">
                     </div>`
         })
