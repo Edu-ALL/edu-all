@@ -57,7 +57,7 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $success_storie->name}}</td>
-                                            <td>{!! Str::limit($success_storie->description, 150, '...') !!}</td>
+                                            <td>{!! Str::limit($success_storie->description, 120, '...') !!}</td>
                                             <td>
                                                 <img data-original="{{ asset('uploaded_files/'.'success-stories/'.$success_storie->created_at->format('Y').'/'.$success_storie->created_at->format('m').'/'.$success_storie->thumbnail) }}" alt="" width="80">
                                             </td>

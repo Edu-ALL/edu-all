@@ -39,4 +39,4 @@ Route::get('/language/{lang}', function ($lang) {
 
 Route::get('/project-showcase/{category}', function ($category) {
     return ProjectShowcases::where('category', $category)->get();
-});
+})->name('select-project-showcase');

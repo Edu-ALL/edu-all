@@ -74,7 +74,7 @@
                                                     style="text-transform: capitalize;"
                                                     onclick="formDeactivate({{ $project->id }})"
                                                     >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this tutor">
+                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this project showcase">
                                                             {{ $project->status }}
                                                         </span>
                                                     </button>
@@ -89,7 +89,7 @@
                                                     style="text-transform: capitalize;"
                                                     onclick="formActivate({{ $project->id }})"
                                                     >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this tutor">
+                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this project showcase">
                                                             {{ $project->status }}
                                                         </span>
                                                     </button>
@@ -98,7 +98,7 @@
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
                                                     <a type="button" class="btn btn-warning" href="/admin/project-showcase/{{ $project->id }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this tutor"></i>
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this project showcase"></i>
                                                     </a>
                                                     <button 
                                                     type="button"
@@ -107,7 +107,7 @@
                                                     data-bs-target="#delete"
                                                     onclick="formDelete({{ $project->id }})"
                                                     >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this tutor"></i>
+                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this project showcase"></i>
                                                     </button>
                                                 </div>
                                             </td>

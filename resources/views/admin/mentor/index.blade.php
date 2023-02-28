@@ -42,6 +42,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
+                                        <th scope="col">Category</th>
                                         <th scope="col">Graduation</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Picture</th>
@@ -58,8 +59,9 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}</td>
-                                            <td>{!! $mentor->mentor_graduation !!}</td>
-                                            <td>{!! Str::limit($mentor->description, 150, '...') !!}</td>
+                                            <td>{{ $mentor->mentor_category }}</td>
+                                            <td>{!! Str::limit($mentor->mentor_graduation, 60, '...') !!}</td>
+                                            <td>{!! Str::limit($mentor->description, 120, '...') !!}</td>
                                             <td>
                                                 <img data-original="{{ asset('uploaded_files/'.'mentor/'.$mentor->created_at->format('Y').'/'.$mentor->created_at->format('m').'/'.$mentor->mentor_picture) }}" alt="" width="80">
                                             </td>
