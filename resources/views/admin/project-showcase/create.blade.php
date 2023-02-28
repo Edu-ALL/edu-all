@@ -60,7 +60,16 @@
                                             <label for="" class="form-label">
                                                 Category <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="category" name="category" value="{{ old('category') }}">
+                                            <div class="col">
+                                                <select class="select2" name="category" id="category">
+                                                    <option value=""></option>
+                                                    <option value="Business" {{ old('category') == 'Business' ? 'selected' : '' }}>Business</option>
+                                                    <option value="Science & Tech" {{ old('category') == 'Science & Tech' ? 'selected' : '' }}>Science & Tech</option>
+                                                    <option value="Art" {{ old('category') == 'Art' ? 'selected' : '' }}>Art</option>
+                                                    <option value="Social" {{ old('category') == 'Social' ? 'selected' : '' }}>Social</option>
+                                                    <option value="Health" {{ old('category') == 'Health' ? 'selected' : '' }}>Health</option>
+                                                </select>
+                                            </div>
                                             @error('category')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror

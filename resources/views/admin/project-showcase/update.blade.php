@@ -50,7 +50,7 @@
                                         <label for="" class="form-label">
                                             Full Name <span style="color: var(--red)">*</span>
                                         </label>
-                                        <input type="text" class="form-control" id="full_name" name="full_name" value="{{ old('full_name') }}">
+                                        <input type="text" class="form-control" id="full_name" name="full_name" value="{{ $project_showcase->name }}">
                                         @error('full_name')
                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                         @enderror
@@ -60,7 +60,16 @@
                                             <label for="" class="form-label">
                                                 Category <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="category" name="category" value="{{ old('category') }}">
+                                            <div class="col">
+                                                <select class="select2" name="category" id="category">
+                                                    <option value=""></option>
+                                                    <option value="Business" {{ $project_showcase->category == 'Business' ? 'selected' : '' }}>Business</option>
+                                                    <option value="Science & Tech" {{ $project_showcase->category == 'Science & Tech' ? 'selected' : '' }}>Science & Tech</option>
+                                                    <option value="Art" {{ $project_showcase->category == 'Art' ? 'selected' : '' }}>Art</option>
+                                                    <option value="Social" {{ $project_showcase->category == 'Social' ? 'selected' : '' }}>Social</option>
+                                                    <option value="Health" {{ $project_showcase->category == 'Health' ? 'selected' : '' }}>Health</option>
+                                                </select>
+                                            </div>
                                             @error('category')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -69,7 +78,7 @@
                                             <label for="" class="form-label">
                                                 Project Name <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="project_name" name="project_name" value="{{ old('project_name') }}">
+                                            <input type="text" class="form-control" id="project_name" name="project_name" value="{{ $project_showcase->project_name }}">
                                             @error('project_name')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror

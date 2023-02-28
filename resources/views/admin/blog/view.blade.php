@@ -247,7 +247,7 @@
                                                     <tr>
                                                         <th scope="row">{{ $i++ }}</th>
                                                         <td>{{ $widget->title }}</td>
-                                                        <td>{!! Str::limit($widget->description, 150, '...') !!}</td>
+                                                        <td>{!! Str::limit($widget->description, 120, '...') !!}</td>
                                                         <td>{{ $widget->position }}</td>
                                                         <td>
                                                             <a href="{{ $widget->link }}" target="_blank">{{ $widget->link }}</a>

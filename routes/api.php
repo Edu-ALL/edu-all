@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\BlogCategorys;
 use App\Models\Mentors;
+use App\Models\ProjectShowcases;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,7 @@ Route::get('/language/{lang}', function ($lang) {
     ];
     return $data;
 })->name('select-language');
+
+Route::get('/project-showcase/{category}', function ($category) {
+    return ProjectShowcases::where('category', $category)->get();
+})->name('select-project-showcase');
