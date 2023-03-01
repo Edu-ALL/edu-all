@@ -23,7 +23,7 @@ class UpcomingEvent extends Controller
     }
 
     public function checkPublish(){
-        $upcoming_events = UpcomingEvents::get();
+        $upcoming_events = UpcomingEvents::where('event_status', 'draft')->get();
         foreach ($upcoming_events as $event) {
             if ($event->publish_date == date('Y-m-d')) {
                 DB::beginTransaction();
@@ -40,7 +40,7 @@ class UpcomingEvent extends Controller
     }
 
     public function checkTakeOff(){
-        $upcoming_events = UpcomingEvents::get();
+        $upcoming_events = UpcomingEvents::where('event_status', 'draft')->get();
         foreach ($upcoming_events as $event) {
             if ($event->take_off_date == date('Y-m-d')) {
                 DB::beginTransaction();

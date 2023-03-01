@@ -60,7 +60,7 @@
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}</td>
                                             <td>{{ $mentor->mentor_category }}</td>
-                                            <td>{!! Str::limit($mentor->mentor_graduation, 60, '...') !!}</td>
+                                            <td>{!! Str::limit($mentor->mentor_graduation, 120, '...') !!}</td>
                                             <td>{!! Str::limit($mentor->description, 120, '...') !!}</td>
                                             <td>
                                                 <img data-original="{{ asset('uploaded_files/'.'mentor/'.$mentor->created_at->format('Y').'/'.$mentor->created_at->format('m').'/'.$mentor->mentor_picture) }}" alt="" width="80">
