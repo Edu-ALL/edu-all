@@ -8,10 +8,12 @@
     <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
 
-    <meta property=og:url content="{{url('/')}}">
-    <meta property=og:image content="{{asset('uploaded_files/blogs/2021/03/Header_Image_3-min.png')}}">
-    <meta property=og:title content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
-    <meta property=og:description content="{{ __('pages/home.meta_description') }}">
+    @if (!request()->is(app()->getLocale() . '/blog/*'))
+        <meta property=og:url content="{{ url('/') }}">
+        <meta property=og:image content="{{ asset('uploaded_files/blogs/2021/03/Header_Image_3-min.png') }}">
+        <meta property=og:title content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
+        <meta property=og:description content="{{ __('pages/home.meta_description') }}">
+    @endif
 
     <link rel="alternate" hreflang="id-en" href="{{ url('/id-en') }}" />
     <link rel="alternate" hreflang="id" href="{{ url('/id') }}" />
@@ -23,7 +25,7 @@
 
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css">
     {{-- Splide JS - CSS --}}
     <link rel="stylesheet" href="/css/splide.min.css">
@@ -46,11 +48,19 @@
     <!-- Google Analytics snippet added by Site Kit -->
     <script src='https://www.googletagmanager.com/gtag/js?id=UA-133747692-1'></script>
     <script>
-        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-        gtag('set', 'linker', {"domains":["all-inedu.com"]} );
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('set', 'linker', {
+            "domains": ["all-inedu.com"]
+        });
         gtag("js", new Date());
         gtag("set", "developer_id.dZTNiMT", true);
-        gtag("config", "UA-133747692-1", {"anonymize_ip":true});
+        gtag("config", "UA-133747692-1", {
+            "anonymize_ip": true
+        });
         gtag("config", "G-RN9CC3WCZ3");
     </script>
 
@@ -91,7 +101,6 @@
 
 <body id="body">
     @include('layout.user.navbar')
-
     <div class="mt-16">
         @yield('content')
     </div>
