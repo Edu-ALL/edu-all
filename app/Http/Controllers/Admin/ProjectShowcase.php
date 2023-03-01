@@ -43,7 +43,7 @@ class ProjectShowcase extends Controller
             $project_showcase->category = $request->category;
             $project_showcase->project_name = $request->project_name;
             $project_showcase->status = 'active';
-            $images = [];
+            // $images = [];
             if ($request->hasFile('gallery')) {
                 $i = 1;
                 foreach ($request->file('gallery') as $imagefile) {
@@ -52,10 +52,11 @@ class ProjectShowcase extends Controller
                     $time = date('YmdHis');
                     $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
                     $imagefile->move($destinationPath, $fileName);
-                    array_push($images, $fileName);
+                    // array_push($images, $fileName);
+                    $images[] = $fileName;
                 }
+                $project_showcase->gallery = json_encode($images);
             }
-            $project_showcase->gallery = json_encode($images);
             $project_showcase->save();
             DB::commit();
         } catch (Exception $e) {
@@ -91,7 +92,6 @@ class ProjectShowcase extends Controller
             $project_showcase->category = $request->category;
             $project_showcase->project_name = $request->project_name;
             $project_showcase->status = 'active';
-            $images = [];
             if ($request->hasFile('gallery')) {
                 foreach (json_decode($project_showcase->gallery) as $image) {
                     if ($old_image_path = $image) {
@@ -108,10 +108,10 @@ class ProjectShowcase extends Controller
                     $time = date('YmdHis');
                     $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
                     $imagefile->move($destinationPath, $fileName);
-                    array_push($images, $fileName);
+                    $images[] = $fileName;
                 }
+                $project_showcase->gallery = json_encode($images);
             }
-            $project_showcase->gallery = json_encode($images);
             $project_showcase->save();
             DB::commit();
         } catch (Exception $e) {
