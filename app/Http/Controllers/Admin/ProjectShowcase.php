@@ -71,18 +71,105 @@ class ProjectShowcase extends Controller
     }
 
     public function update(Request $request, $id){
-        
+        $rules = [
+            'full_name' => 'required',
+            'category' => 'required',
+            'project_name' => 'required',
+            'gallery' => 'nullable',
+            'gallery.*' => 'image|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator->messages());
+        }
+
+        DB::beginTransaction();
+        try {
+            $project_showcase = ProjectShowcases::find($id);
+            $project_showcase->name = $request->full_name;
+            $project_showcase->category = $request->category;
+            $project_showcase->project_name = $request->project_name;
+            $project_showcase->status = 'active';
+            $images = [];
+            if ($request->hasFile('gallery')) {
+                foreach (json_decode($project_showcase->gallery) as $image) {
+                    if ($old_image_path = $image) {
+                        $file_path = public_path('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$old_image_path);
+                        if (File::exists($file_path)) {
+                            File::delete($file_path);
+                        }
+                    }
+                }
+                $i = 1;
+                foreach ($request->file('gallery') as $imagefile) {
+                    $file_format = $imagefile->getClientOriginalExtension();
+                    $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
+                    $time = date('YmdHis');
+                    $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
+                    $imagefile->move($destinationPath, $fileName);
+                    array_push($images, $fileName);
+                }
+            }
+            $project_showcase->gallery = json_encode($images);
+            $project_showcase->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+        return redirect('/admin/project-showcase/'.$id.'/edit')->withSuccess('Project Showcase Was Successfully Updated');
     }
 
     public function delete($id){
-        
+        DB::beginTransaction();
+        try {
+            $project_showcase = ProjectShowcases::find($id);
+            foreach (json_decode($project_showcase->gallery) as $image) {
+                if ($old_image_path = $image) {
+                    $file_path = public_path('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$old_image_path);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
+            }
+            $project_showcase->delete();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/project-showcase')->withSuccess('Project Showcase Was Successfully Deleted');
     }
 
     public function deactivate($id){
-        
+        DB::beginTransaction();
+        try {
+            $project_showcase = ProjectShowcases::find($id);
+            $project_showcase->status = 'inactive';
+            $project_showcase->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/project-showcase');
     }
 
     public function activate($id){
-        
+        DB::beginTransaction();
+        try {
+            $project_showcase = ProjectShowcases::find($id);
+            $project_showcase->status = 'active';
+            $project_showcase->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/project-showcase');
     }
 }

@@ -29,6 +29,7 @@ class Blogs extends Model
         'click_count',
         'duration_read',
         'is_highlight',
+        'publish_date',
         'created_at',
         'updated_at'
     ];

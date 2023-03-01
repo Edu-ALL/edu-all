@@ -221,6 +221,21 @@
                                                     @enderror
                                                 </div>
                                                 <div class="col">
+                                                    <div class="col d-flex flex-row justify-content-between">
+                                                        <label for="" class="form-label">
+                                                            Publish Date
+                                                        </label>
+                                                        <small
+                                                            class="alert text-danger p-0 m-0 fs-12 text-decoration-underline"
+                                                            onclick="clearDate()" style="cursor: pointer">Clear
+                                                            Date</small>
+                                                    </div>
+                                                    <input type="date" class="form-control" id="publish_date" name="publish_date" value="{{ $blog->publish_date }}">
+                                                    @error('publish_date')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                                <div class="col">
                                                     <label for="" class="form-label">
                                                         Blog Status <span style="color: var(--red)">*</span>
                                                     </label>
@@ -290,6 +305,10 @@
 
         function clearMentor() {
             $('#mentor').val(null).trigger('change');
+        }
+
+        function clearDate() {
+            $('#publish_date').val(null).trigger('change');
         }
 
         async function selectLang() {

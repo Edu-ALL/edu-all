@@ -20,10 +20,28 @@ class Blog extends Controller
     public function index(){
         $blogs = Blogs::orderBy('updated_at', 'desc')->get();
         $blogcategory = BlogCategorys::get();
+        // $this->checkPublish();
         return view('admin.blog.index', [
             'blogs' => $blogs,
             'blogcategory' => $blogcategory
         ]);
+    }
+
+    public function checkPublish(){
+        $blogs = Blogs::where('blog_status', 'draft')->get();
+        foreach ($blogs as $blog) {
+            if ($blog->publish_date == date('Y-m-d')) {
+                DB::beginTransaction();
+                try {
+                    $blog->blog_status = 'publish';
+                    $blog->save();
+                    DB::commit();
+                } catch (Exception $e) {
+                    DB::rollBack();
+                    return Redirect::back()->withErrors($e->getMessage());
+                }
+            }
+        }
     }
 
     public function create(){
@@ -53,6 +71,7 @@ class Blog extends Controller
             'seo_keyword' => 'required',
             'seo_desc' => 'required',
             'duration_read' => 'required',
+            'publish_date' => 'nullable',
             'blog_status' => 'required',
         ];
 
@@ -90,7 +109,9 @@ class Blog extends Controller
             $blogs->is_highlight = 'false';
             if ($request->blog_status == 'publish'){
                 $blogs->publish_date = date('Y-m-d H:i:s');
-            } else {
+            } else if ($request->blog_status == 'draft' && $request->publish_date != null) {
+                $blogs->publish_date = $request->publish_date;
+            } else if ($request->blog_status == 'draft' && $request->publish_date == null) {
                 $blogs->publish_date = null;
             }
             $blogs->save();
@@ -139,6 +160,7 @@ class Blog extends Controller
             'seo_keyword' => 'required',
             'seo_desc' => 'required',
             'duration_read' => 'required',
+            'publish_date' => 'nullable',
             'blog_status' => 'required',
         ];
 
@@ -180,9 +202,11 @@ class Blog extends Controller
             $blogs->click_count = 0;
             $blogs->duration_read = $request->duration_read;
             $blogs->is_highlight = 'false';
-            if ($request->blog_status == 'publish' && $blogs->publish_date == null){
+            if ($request->blog_status == 'publish'){
                 $blogs->publish_date = date('Y-m-d H:i:s');
-            } else if ($request->blog_status == 'draft') {
+            } else if ($request->blog_status == 'draft' && $request->publish_date != null) {
+                $blogs->publish_date = $request->publish_date;
+            } else if ($request->blog_status == 'draft' && $request->publish_date == null) {
                 $blogs->publish_date = null;
             }
             $blogs->updated_at = date('Y-m-d H:i:s');

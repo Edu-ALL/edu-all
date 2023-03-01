@@ -10,6 +10,16 @@
     .dataTables_info, .dataTables_paginate {
         margin-top: 12px !important;
     }
+    .badge {
+        font-size: 12px !important;
+        letter-spacing: 1px;
+        top: 5px;
+        left: 90px;
+    }
+    .first-img {
+        left: -8px;
+        top: 6px;
+    }
 </style>
 @endsection
 @section('content')
@@ -59,10 +69,22 @@
                                             <td>{{ $project->name }}</td>
                                             <td>{{ $project->category }}</td>
                                             <td>{{ $project->project_name }}</td>
-                                            <td>
-                                                @foreach (json_decode($project->gallery) as $image)
-                                                    <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$image) }}" alt="" width="80">
-                                                @endforeach
+                                            <td style="overflow: auto">
+                                                <div class="container-fluid position-relative p-0 my-2">
+                                                    @if (count(json_decode($project->gallery)) > 1)
+                                                        <div class="cointainer-fluid p-0">
+                                                            <img class="position-absolute first-img" data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.json_decode($project->gallery)[0]) }}" alt="" width="100">
+                                                            <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.json_decode($project->gallery)[1]) }}" alt="" width="100">
+                                                        </div>
+                                                        <span class="position-absolute translate-middle badge border border-light rounded-pill bg-primary">
+                                                            {{ count(json_decode($project->gallery))-1 }}+
+                                                        </span>
+                                                    @elseif (count(json_decode($project->gallery)) <= 1)
+                                                        <div class="cointainer-fluid p-0">
+                                                            <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.json_decode($project->gallery)[0]) }}" alt="" width="100">
+                                                        </div>
+                                                    @endif
+                                                </div>
                                             </td>
                                             @if ($project->status == 'active')
                                                 <td class="text-center">

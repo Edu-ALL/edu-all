@@ -191,6 +191,19 @@
                                         </div>
                                         <div class="field-detail d-flex flex-row align-items-start">
                                             <div class="col-md-2 col-3 p-0">
+                                                <h6 class="m-0 card-title p-0">Publish Date</h6>
+                                            </div>
+                                            <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                <p class="m-0">:</p>
+                                            </div>
+                                            <div class="col p-0">
+                                                <p class="m-0">
+                                                    {{ $blog->publish_date != null ? date('l, j F Y', strtotime($blog->publish_date)) : '-' }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="field-detail d-flex flex-row align-items-start">
+                                            <div class="col-md-2 col-3 p-0">
                                                 <h6 class="m-0 card-title p-0">Status</h6>
                                             </div>
                                             <div class="col-1 text-center p-0" style="max-width: 22px">
