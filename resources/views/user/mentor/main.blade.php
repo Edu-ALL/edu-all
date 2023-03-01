@@ -25,11 +25,13 @@
                 @foreach ($allin_mentor as $mentor)
                     <div class="mentor_card flex flex-col rounded-xl">
                         <div class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
-                            <div class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20">
+                            <div
+                                class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20">
                                 <h3 class="h-2/3 font-primary font-bold text-3xl text-white leading-7">
                                     {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                                 </h3>
-                                <div class="h-1/3 font-primary text-sm text-white leading-4">
+                                <div
+                                    class="mentor_graduation flex flex-col h-1/3 font-primary text-sm text-white leading-4 overflow-hidden">
                                     {!! $mentor->mentor_graduation !!}
                                 </div>
                             </div>
@@ -66,10 +68,10 @@
             <div class="splide" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                        <i class="fa-solid fa-chevron-left text-4xl"></i>
+                        <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                     </button>
                     <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                        <i class="fa-solid fa-chevron-right text-4xl"></i>
+                        <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                     </button>
                 </div>
                 <div class="splide__track  py-20">
@@ -81,11 +83,12 @@
                                         <div
                                             class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                             <div
-                                                class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20">
+                                                class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20">
                                                 <h3 class="h-2/3 font-primary font-bold text-3xl text-white leading-7">
                                                     {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                                                 </h3>
-                                                <div class="h-1/3 font-primary text-sm text-white leading-4">
+                                                <div
+                                                    class="mentor_graduation flex flex-col h-1/3 font-primary text-sm text-white leading-4 overflow-hidden">
                                                     {!! $mentor->mentor_graduation !!}
                                                 </div>
                                             </div>

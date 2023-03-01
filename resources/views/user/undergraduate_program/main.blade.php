@@ -162,27 +162,34 @@
                 </div>
                 <div class="mt-16 splide" role="group">
                     <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                            <i class="fa-solid fa-chevron-left text-2xl"></i>
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                         </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                            <i class="fa-solid fa-chevron-right text-2xl"></i>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                         </button>
                     </div>
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach ($testimonies as $testimony)
-                                <li class="splide__slide">
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full">
                                     <div class="splide__slide__container h-full">
-                                        <div class="flex flex-col rounded-xl bg-primary p-4 mx-2 h-full">
-                                            <h3 class="font-primary font-bold text-sm text-yellow">
-                                                {{ $testimony->testi_name }}
-                                            </h3>
-                                            <div class="font-primary font-extrabold text-xs text-[#969aa6]">
-                                                {!! $testimony->testi_subtitle !!}
+                                        <div
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            <div class="flex flex-col">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}"
+                                                    class="w-7 mb-3 h-auto">
+                                                <div class="font-primary text-sm text-white text-justify">
+                                                    {!! $testi->testi_desc !!}
+                                                </div>
                                             </div>
-                                            <div class="mt-2.5 font-primary font-semibold text-xs text-white leading-4">
-                                                {!! $testimony->testi_desc !!}
+                                            <div class="mt-4 flex flex-col">
+                                                <div class="font-primary font-semibold text-base text-yellow">
+                                                    {{ $testi->testi_name }}
+                                                </div>
+                                                <div class="font-primary text-sm text-white">
+                                                    {!! $testi->testi_subtitle !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

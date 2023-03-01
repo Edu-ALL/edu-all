@@ -36,6 +36,14 @@
                 {{ __('pages/about_us/partnership_careers.colab_title') }}</h2>
             <div class="max-w-4xl mx-auto  pb-20">
                 <div class="splide px-16" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                        </button>
+                    </div>
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
