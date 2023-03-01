@@ -1,7 +1,12 @@
 @extends('layout.user.main')
 
 @section('head')
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property=og:url content="{{ url(app()->getLocale() . '/blog/' . $blog->slug) }}">
+    <meta property=og:image
+        content="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
+    <meta property=og:title content="{{ $blog->blog_title }}">
+
+
     <meta name="title" content="{{ $blog->seo_title }}">
     <meta name="description" content="{{ $blog->seo_desc }}">
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
@@ -14,7 +19,8 @@
         <h1 class="font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-start text-center">
             {{ $blog->blog_title }}
         </h1>
-        <div class="flex lg:justify-end justify-center items-center gap-1 lg:relative absolute bottom-[6px] left-0 lg:w-[20%] w-[100%] h-100">
+        <div
+            class="flex lg:justify-end justify-center items-center gap-1 lg:relative absolute bottom-[6px] left-0 lg:w-[20%] w-[100%] h-100">
             <div class="share share_button bg-primary text-white lg:py-2 py-1 px-4 rounded-2xl lg:text-[12px] text-[9px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
                 <i class="fa fa-send lg:mr-2 mr-0" aria-hidden="true"></i> Share
@@ -245,7 +251,7 @@
 
         @media only screen and (max-width: 600px) {
             .ss-circle .ss-btn {
-            min-width: 15px !important;
+                min-width: 15px !important;
             }
 
             .ss-btn {
