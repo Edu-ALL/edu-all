@@ -12,6 +12,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -35,8 +36,10 @@ class Blog extends Controller
                 try {
                     $blog->blog_status = 'publish';
                     $blog->save();
+                    Log::info('check publish is running');
                     DB::commit();
                 } catch (Exception $e) {
+                    Log::error('check publish not running');
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }

@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -30,8 +31,10 @@ class UpcomingEvent extends Controller
                 try {
                     $event->event_status = 'publish';
                     $event->save();
+                    Log::info('check publish is running');
                     DB::commit();
                 } catch (Exception $e) {
+                    Log::info('check publish not running');
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }
@@ -47,8 +50,10 @@ class UpcomingEvent extends Controller
                 try {
                     $event->event_status = 'draft';
                     $event->save();
+                    Log::info('check publish is running');
                     DB::commit();
                 } catch (Exception $e) {
+                    Log::error('check publish not running');
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }
