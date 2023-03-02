@@ -31,6 +31,7 @@ return [
     "guidebooks" => "Free Guidebooks",
     'testimonial' => "Testimonial",
     'student_acceptances' => "Student Acceptances",
+    'showcase' => "Mentee Project Showcase",
 
 
     // contact us

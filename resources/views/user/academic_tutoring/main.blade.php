@@ -311,21 +311,24 @@
                 <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach ($testimonies as $item)
-                                <li class="splide__slide">
-                                    <div class="splide__container">
-                                        <div class="flex flex-col mx-4 mb-4 rounded-3xl bg-primary overflow-hidden">
-                                            <div class="flex flex-col p-6">
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full">
+                                    <div class="splide__slide__container h-full">
+                                        <div
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-6 mb-2">
-                                                <div class="mt-1 font-primary font-semibold text-base text-white">
-                                                    {!! $item->testi_desc !!}
+                                                    class="w-7 mb-3 h-auto">
+                                                <div class="font-primary text-sm text-white text-justify">
+                                                    {!! $testi->testi_desc !!}
                                                 </div>
-                                                <h5 class="mt-6 font-primary font-bold text-lg text-yellow">
-                                                    {{ $item->testi_name }}
-                                                </h5>
-                                                <div class="font-primary font-semibold text-lg text-white">
-                                                    {!! $item->testi_subtitle !!}
+                                            </div>
+                                            <div class="mt-4 flex flex-col">
+                                                <div class="font-primary font-semibold text-base text-yellow">
+                                                    {{ $testi->testi_name }}
+                                                </div>
+                                                <div class="font-primary text-sm text-white">
+                                                    {!! $testi->testi_subtitle !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -362,7 +365,6 @@
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
-            // type: 'loop',
             perPage: isSmallDevice ? 1 : 3,
             perMove: 1,
             arrows: false,

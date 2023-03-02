@@ -18,7 +18,7 @@
     </section>
 
     {{-- ================================== GETTING STARTED Section  ================================== --}}
-    <section class="py-10">
+    <section class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <p class="font-primary text-xl text-[#6F6C90] text-justify">
@@ -33,20 +33,30 @@
                     {{ __('pages/resources/guidebook.getting_started_body') }}
 
                 </p>
-                <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
-                    @foreach ($getting_started as $guidebook)
-                        <a href="{{ $guidebook->guidebook_link }}">
-                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
-                        </a>
-                    @endforeach
+                <div class="splide my-8" aria-labelledby="carousel-heading">
+                    <ul class="splide__pagination"></ul>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach ($getting_started as $guidebook)
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container">
+                                        <a href="{{ $guidebook->guidebook_link }}">
+                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                        </a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     {{-- ================================== BUILD YOUR PROFILE  Section  ================================== --}}
-    <section class="py-10">
+    <section class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
@@ -56,20 +66,30 @@
                 <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.build_your_profile_body') }}
                 </p>
-                <div class="flex flex-col gap-x-6 gap-y-4 mt-8 md:flex-row">
-                    @foreach ($build_your_profile as $guidebook)
-                        <a href="{{ $guidebook->guidebook_link }}">
-                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
-                        </a>
-                    @endforeach
+                <div class="splide my-8" aria-labelledby="carousel-heading">
+                    <ul class="splide__pagination"></ul>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach ($build_your_profile as $guidebook)
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container">
+                                        <a href="{{ $guidebook->guidebook_link }}">
+                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                        </a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     {{-- ================================== APPLY TO YOUR DREAM UNIVERSITY Section  ================================== --}}
-    <section class="py-10">
+    <section class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
@@ -87,7 +107,8 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
+                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
                                 </li>
@@ -109,13 +130,23 @@
                 <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.grap_scholarship_body') }}
                 </p>
-                <div class="flex flex-col items-center gap-x-6 gap-y-4 mt-8 md:flex-row">
-                    @foreach ($grab_the_scholarship as $guidebook)
-                        <a href="{{ $guidebook->guidebook_link }}">
-                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                alt="{{ $guidebook->guidebook_alt }}" class="w-full max-w-[18rem] min-w-0">
-                        </a>
-                    @endforeach
+                <div class="splide my-8" aria-labelledby="carousel-heading">
+                    <ul class="splide__pagination"></ul>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach ($grab_the_scholarship as $guidebook)
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container">
+                                        <a href="{{ $guidebook->guidebook_link }}">
+                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                        </a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,30 +219,32 @@
 
         var splides = document.getElementsByClassName('splide');
 
-        new Splide(splides[0], {
-            type: 'loop',
-            perPage: isVeryLargeDevice ? 4 : isSmallDevice ? 1 : isMediumDevice ? 2 : 3,
-            focus: 0,
-            arrows: false,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[100%]');
+        for (var i = 0; i < splides.length - 1; i++) {
+            new Splide(splides[i], {
+                type: 'slide',
+                perPage: isVeryLargeDevice ? 4 : isSmallDevice ? 1 : isMediumDevice ? 2 : 3,
+                focus: 0,
+                arrows: false,
+                autoplay: true,
+                lazyload: true,
+                interval: 5000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[100%]');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        }
 
-        new Splide(splides[1], {
-            type: 'loop',
+
+        new Splide(splides[4], {
             perPage: isSmallDevice ? 3 : 5,
             focus: 0,
             arrows: false,

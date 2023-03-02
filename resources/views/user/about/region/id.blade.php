@@ -119,14 +119,14 @@
                                             <div
                                                 class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                 <div
-                                                    class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                    class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20 lg:pl-3">
                                                     <h3
                                                         class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
                                                         {{ $mentor->mentor_firstname }} <br>
                                                         {{ $mentor->mentor_lastname }}
                                                     </h3>
                                                     <div
-                                                        class="mentor_graduation h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
+                                                        class="mentor_graduation flex flex-col h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>

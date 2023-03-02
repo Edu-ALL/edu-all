@@ -4,16 +4,19 @@ return [
     'benefit_list' => [
         [
             'title' => 'Aspire',
-            'body' => 'Mengeksplor minat dan passion siswa melalui bimbingan terpersonalisasi'
+            'body' => 'Mengeksplor minat dan passion siswa melalui bimbingan terpersonalisasi',
+            'image' => 'home_Illustration_1.png',
         ],
         [
             'title' => 'Learn',
-            'body' => 'Memandu siswa untuk memperbaiki prestasi akademis dan memperkaya portfolio mereka dengan pembelajaran terapan'
+            'body' => 'Memandu siswa untuk memperbaiki prestasi akademis dan memperkaya portfolio mereka dengan pembelajaran terapan',
+            'image' => 'home_Illustration_2.png'
         ],
         [
             'title' => 'Lead',
-            'body' => 'Menempatkan siswa ke universitas impian dan tercocok untuk mempertajam potensi mereka sebagai calon pemimpin'
-        ],
+            'body' => 'Menempatkan siswa ke universitas impian dan tercocok untuk mempertajam potensi mereka sebagai calon pemimpin',
+            'image' => 'home_Illustration_3.webp',
+        ]
     ],
     'meta_description' => 'Satu-satunya Konsultan Pendidikan Jakarta yang menyediakan layanan pendampingan admisi unik. Kami membantu Anda masuk ke universitas terbaik yang Anda inginkan.',
     'about' => 'Tentang Kami',

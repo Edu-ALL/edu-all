@@ -183,7 +183,7 @@
         transform: rotateY(-360deg);
     }
     .mentor_graduation p {
-        @apply truncate;
+        @apply inline truncate;
     }
 
     #home_banner .splide__pagination {
@@ -248,6 +248,10 @@
     }
     .pilar_card:hover .back {
         transform: rotateY(-360deg);
+    }
+
+    .success_stories_desc a {
+        @apply underline decoration-primary hover:text-primary/70;
     }
 
     .widget-desc p {
