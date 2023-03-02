@@ -43,29 +43,34 @@
                     {{ $blog->blog_title }}
                 </h1>
                 <div class="flex flex-col justify-between items-center gap-4 md:flex-row">
-                    <div class="">
+                    <div class="flex items-center justify-around gap-2" >
                         @if ($blog->mentor)
-                            <div class="flex items-center gap-4">
-                                <img data-original="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                    alt="{{ $blog->mentor->mentor_alt }}"
-                                    class="w-8 h-8 rounded-full object-cover object-top">
+                            <div class="flex items-center gap-1">
+                                <div class="w-6 h-6 text-center pt-1 text-white rounded-full object-cover object-top bg-gray-400">
+                                    <i class="fa fa-user"></i>
+                                </div>
                                 {{-- change author name with mentor name --}}
-                                <span class="font-primary text-base text-primary">
+                                <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
                                     {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
                                 </span>
                                 <div class="hidden w-px h-4 bg-primary md:block"></div>
                             </div>
                         @endif
                         @if (!empty($blog->duration_read))
+                        <div class="flex items-center gap-2">
                             <i class="fa fa-book mr-1" aria-hidden="true"></i>
-                            <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
+                            <span class="font-inter text-base text-primary md:text-[15px] text-[11px] leading-3">
+                                {{ $blog->duration_read }}
                                 {{ __('pages/blog.min_read') }}</span>
                             <div class="hidden w-px h-4 bg-primary md:block"></div>
+                        </div>
                         @endif
-                        <span class="font-primary text-base text-primary">
+                        <div class="flex items-center gap-1">
                             <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
-                            {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
-                        </span>
+                            <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
+                                {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                            </span>
+                        </div>
                     </div>
                     <div class="flex items-center gap-1">
                         <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
