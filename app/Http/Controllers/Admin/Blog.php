@@ -30,7 +30,7 @@ class Blog extends Controller
     public function checkPublish(){
         $blogs = Blogs::where('blog_status', 'draft')->get();
         foreach ($blogs as $blog) {
-            if ($blog->publish_date == date('Y-m-d')) {
+            if (date('Y-m-d', strtotime($blog->publish_date)) == date('Y-m-d')) {
                 DB::beginTransaction();
                 try {
                     $blog->blog_status = 'publish';
