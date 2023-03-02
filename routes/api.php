@@ -38,5 +38,6 @@ Route::get('/language/{lang}', function ($lang) {
 })->name('select-language');
 
 Route::get('/project-showcase/{category}', function ($category) {
-    return ProjectShowcases::where('category', $category)->get();
+    $projects = ProjectShowcases::where('category', $category)->get();
+    return response()->json($projects, 200);
 })->name('select-project-showcase');
