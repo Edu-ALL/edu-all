@@ -27,6 +27,9 @@ class ProjectShowcase extends Controller
             'full_name' => 'required',
             'category' => 'required',
             'project_name' => 'required',
+            'description' => 'required',
+            'thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'alt' => 'required',
             'gallery' => 'required',
             'gallery.*' => 'image|mimes:jpeg,jpg,png,bmp,webp|max:2048',
         ];
@@ -42,21 +45,32 @@ class ProjectShowcase extends Controller
             $project_showcase->name = $request->full_name;
             $project_showcase->category = $request->category;
             $project_showcase->project_name = $request->project_name;
-            $project_showcase->status = 'active';
-            // $images = [];
+            $project_showcase->description = $request->description;
+            $project_showcase->alt = $request->alt;
+            if ($request->hasFile('thumbnail')) {
+                $file = $request->file('thumbnail');
+                $file_format = $request->file('thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
+                $time = date('YmdHis');
+                $fileName = 'Project-thumbnail-'.$request->project_name.'-'.$time.'.'.$file_format;
+                $fileName = str_replace(' ', '-', $fileName);
+                $file->move($destinationPath, $fileName);
+                $project_showcase->thumbnail = $fileName;
+            }
             if ($request->hasFile('gallery')) {
                 $i = 1;
                 foreach ($request->file('gallery') as $imagefile) {
                     $file_format = $imagefile->getClientOriginalExtension();
                     $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
                     $time = date('YmdHis');
-                    $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
+                    $fileName = 'Project-image-'.$request->project_name.'-'.$time.'-'.$i++.'.'.$file_format;
+                    $fileName = str_replace(' ', '-', $fileName);
                     $imagefile->move($destinationPath, $fileName);
-                    // array_push($images, $fileName);
                     $images[] = $fileName;
                 }
                 $project_showcase->gallery = json_encode($images);
             }
+            $project_showcase->status = 'active';
             $project_showcase->save();
             DB::commit();
         } catch (Exception $e) {
@@ -76,6 +90,9 @@ class ProjectShowcase extends Controller
             'full_name' => 'required',
             'category' => 'required',
             'project_name' => 'required',
+            'description' => 'required',
+            'thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'alt' => 'required',
             'gallery' => 'nullable',
             'gallery.*' => 'image|mimes:jpeg,jpg,png,bmp,webp|max:2048',
         ];
@@ -91,7 +108,24 @@ class ProjectShowcase extends Controller
             $project_showcase->name = $request->full_name;
             $project_showcase->category = $request->category;
             $project_showcase->project_name = $request->project_name;
-            $project_showcase->status = 'active';
+            $project_showcase->description = $request->description;
+            $project_showcase->alt = $request->alt;
+            if ($request->hasFile('thumbnail')) {
+                if ($old_image_path = $project_showcase->thumbnail) {
+                    $file_path = public_path('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$old_image_path);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
+                $file = $request->file('thumbnail');
+                $file_format = $request->file('thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/';
+                $time = date('YmdHis');
+                $fileName = 'Project-thumbnail-'.$request->project_name.'-'.$time.'.'.$file_format;
+                $fileName = str_replace(' ', '-', $fileName);
+                $file->move($destinationPath, $fileName);
+                $project_showcase->thumbnail = $fileName;
+            }
             if ($request->hasFile('gallery')) {
                 foreach (json_decode($project_showcase->gallery) as $image) {
                     if ($old_image_path = $image) {
@@ -106,12 +140,14 @@ class ProjectShowcase extends Controller
                     $file_format = $imagefile->getClientOriginalExtension();
                     $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
                     $time = date('YmdHis');
-                    $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
+                    $fileName = 'Project-image-'.$request->project_name.'-'.$time.'-'.$i++.'.'.$file_format;
+                    $fileName = str_replace(' ', '-', $fileName);
                     $imagefile->move($destinationPath, $fileName);
                     $images[] = $fileName;
                 }
                 $project_showcase->gallery = json_encode($images);
             }
+            $project_showcase->updated_at = date('Y-m-d H:i:s');
             $project_showcase->save();
             DB::commit();
         } catch (Exception $e) {
@@ -125,6 +161,12 @@ class ProjectShowcase extends Controller
         DB::beginTransaction();
         try {
             $project_showcase = ProjectShowcases::find($id);
+            if ($old_image_path = $project_showcase->thumbnail) {
+                $file_path = public_path('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$old_image_path);
+                if (File::exists($file_path)) {
+                    File::delete($file_path);
+                }
+            }
             foreach (json_decode($project_showcase->gallery) as $image) {
                 if ($old_image_path = $image) {
                     $file_path = public_path('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$old_image_path);
