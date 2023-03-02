@@ -54,6 +54,7 @@
                                         <th scope="col">Name</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Project Name</th>
+                                        <th scope="col">Thumbnail</th>
                                         <th scope="col">Gallery</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
@@ -69,6 +70,9 @@
                                             <td>{{ $project->name }}</td>
                                             <td>{{ $project->category }}</td>
                                             <td>{{ $project->project_name }}</td>
+                                            <td>
+                                                <img data-original="{{ asset('uploaded_files/'.'project-showcase/'.$project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$project->thumbnail) }}" alt="" width="100">
+                                            </td>
                                             <td style="overflow: auto">
                                                 <div class="container-fluid position-relative p-0 my-2">
                                                     @if (count(json_decode($project->gallery)) > 1)

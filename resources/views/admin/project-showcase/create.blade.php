@@ -86,6 +86,45 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">
+                                            Description <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <textarea class="textarea" name="description" id="description">
+                                            {{ old('description') }}
+                                        </textarea>
+                                        @error('description')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                        <div class="col-md-2 col">
+                                            <label for="" class="form-label">Thumbnail Preview</label>
+                                            <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
+                                                <img class="img-preview img-fluid" id="img_preview">
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex flex-column gap-2">
+                                            <div class="col-12">
+                                                <label for="" class="form-label">
+                                                    Thumbnail <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="file" class="form-control" id="thumbnail" onchange="previewImage()" name="thumbnail">
+                                                @error('thumbnail')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="" class="form-label">
+                                                    Alt <span style="color: var(--red)">*</span>
+                                                </label>
+                                                <input type="text" class="form-control" id="alt" name="alt" value="{{ old('alt') }}">
+                                                @error('alt')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
                                             Gallery <span style="color: var(--red)">*</span>
                                         </label>
                                         <input type="file" class="form-control" id="gallery" name="gallery[]" multiple>
@@ -119,6 +158,17 @@
 
 @section('js')
 <script>
+    function previewImage(){
+        const image = document.querySelector('#thumbnail')
+        const imgPreview = document.querySelector('#img_preview')
+        imgPreview.style.display = 'block'
+        const oFReader = new FileReader()
+        oFReader.readAsDataURL(image.files[0])
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result
+        }
+    };
+
     const output = document.querySelector("#output")
     const input = document.querySelector("#gallery")
     let imagesArray = []
