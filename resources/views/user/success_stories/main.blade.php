@@ -118,8 +118,6 @@
     <section class="pt-10 pb-20">
         <div class="main-container">
             <div class="flex flex-col gap-4 max-w-5xl mx-auto">
-                <img data-original="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}"
-                    alt="Allin Alumnis">
                 <h4 class="mt-10 mb-8 font-primary font-extrabold text-3xl text-yellow text-center leading-9">
                     {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
                 <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">
