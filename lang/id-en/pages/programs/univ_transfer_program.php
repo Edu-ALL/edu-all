@@ -4,7 +4,7 @@ return [
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "UNIVERSITY TRANSFER",
-    "body" => "We offer personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream Graduate school and prestigious scholarships.",
+    "body" => "We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for community college or university students to get accepted at their dream university.",
 
     "benefits" => [
         '1-on-1 Mentoring', 'Personalized Strategy Plan', ' Well-Rounded Support', 'Proven Track Record'

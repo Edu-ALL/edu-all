@@ -78,7 +78,7 @@
                     class=" block text-yellow">{{ __('pages/programs/admission_mentoring.undergraduate_subtitle') }}</span>
             </h2>
 
-            <p class="font-primary text-xl text-center">
+            <p class="max-w-3xl mx-auto font-primary text-xl text-center">
                 {{ __('pages/programs/admission_mentoring.undergraduate_desc') }}
             </p>
 
@@ -131,7 +131,7 @@
                 <span class=" block text-yellow">{{ __('pages/programs/admission_mentoring.graduate_subtitle') }}</span>
             </h2>
 
-            <p class="font-primary text-xl text-center">
+            <p class="max-w-3xl mx-auto font-primary text-xl text-center">
                 {{ __('pages/programs/admission_mentoring.graduate_desc') }}
             </p>
 
@@ -185,7 +185,7 @@
                     class=" block text-yellow">{{ __('pages/programs/admission_mentoring.univtransfer_subtitle') }}</span>
             </h2>
 
-            <p class="font-primary text-xl text-center">
+            <p class="max-w-3xl mx-auto font-primary text-xl text-center">
                 {{ __('pages/programs/admission_mentoring.univtransfer_desc') }}
             </p>
 
