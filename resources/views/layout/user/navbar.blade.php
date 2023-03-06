@@ -1,4 +1,4 @@
-<header class="fixed w-full -top-1 left-0 z-50 bg-white shadow-sm lg:top-0">
+<header class="fixed w-full -top-1 left-0 z-50 bg-white shadow-sm transition-all lg:top-0">
     <div class="main-container">
         <div class="py-4 lg:gap-2 w-full">
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
