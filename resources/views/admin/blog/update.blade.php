@@ -166,8 +166,8 @@
                                                 <small class="alert d-block p-0 m-0 mb-2 fs-12">Note: Please Use
                                                     <strong>'Heading 2'</strong> for a <strong>Section</strong></small>
                                                 <textarea class="textarea" name="blog_description" id="blog_description">
-                                                {{ $blog->blog_description }}
-                                            </textarea>
+                                                    {{ $blog->blog_description }}
+                                                </textarea>
                                                 @error('blog_description')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -285,74 +285,79 @@
 @endsection
 
 @section('js')
-    <script>
-        function previewImage() {
-            const image = document.querySelector('#thumbnail')
-            const imgPreview = document.querySelector('#img_preview')
-            imgPreview.style.display = 'block'
-            const oFReader = new FileReader()
-            oFReader.readAsDataURL(image.files[0])
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result
-            }
-        };
+<script>
+    function previewImage() {
+        const image = document.querySelector('#thumbnail')
+        const imgPreview = document.querySelector('#img_preview')
+        imgPreview.style.display = 'block'
+        const oFReader = new FileReader()
+        oFReader.readAsDataURL(image.files[0])
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result
+        }
+    };
 
-        function createSlug() {
-            const blog_title = document.getElementById('blog_title').value.toLowerCase().split(' ').join('-');
-            const blog_slug = document.getElementById('blog_slug');
-            blog_slug.value = blog_title;
-        };
+    function createSlug() {
+        const blog_title = document.getElementById('blog_title').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
+        const blog_slug = document.getElementById('blog_slug');
+        blog_slug.value = blog_title;
+    };
 
-        function clearMentor() {
-            $('#mentor').val(null).trigger('change');
+    function clearMentor() {
+        $('#mentor').val(null).trigger('change');
+    }
+
+    function clearDate() {
+        $('#publish_date').val(null).trigger('change');
+    }
+
+    function getDuration(inst){
+        var wordcount = inst.plugins.wordcount.body.getWordCount();
+        $('#duration_read').val(wordcount/200);
+    }
+
+    async function selectLang() {
+        let lang = $('#lang').val()
+        let url_category = "{{ url('api/category') }}/" + lang
+        let url_mentor = "{{ url('api/mentor') }}/" + lang
+
+        // Select Blog Category 
+        try {
+            const response = await axios.get(url_category);
+            let data = response.data
+            $('#category').html('<option value=""></option>')
+            data.forEach(element => {
+                $('#category').append(
+                    '<option value="' + element.id + '">' +
+                    element.category_name +
+                    '</option>'
+                )
+                // console.log(element);
+            });
+            $('#category').val('{{ $blog->cat_id }}').trigger('change')
+        } catch (error) {
+            console.error(error);
         }
 
-        function clearDate() {
-            $('#publish_date').val(null).trigger('change');
+        // Select Mentor 
+        try {
+            const response = await axios.get(url_mentor);
+            let data = response.data
+            $('#mentor').html('<option value=""></option>')
+            data.forEach(element => {
+                $('#mentor').append(
+                    '<option value="' + element.id + '">' +
+                    element.mentor_firstname + ' ' + element.mentor_lastname +
+                    '</option>'
+                )
+                // console.log(element);
+            });
+            $('#mentor').val('{{ $blog->mt_id }}').trigger('change')
+        } catch (error) {
+            console.error(error);
         }
+    }
 
-        async function selectLang() {
-            let lang = $('#lang').val()
-            let url_category = "{{ url('api/category') }}/" + lang
-            let url_mentor = "{{ url('api/mentor') }}/" + lang
-
-            // Select Blog Category 
-            try {
-                const response = await axios.get(url_category);
-                let data = response.data
-                $('#category').html('<option value=""></option>')
-                data.forEach(element => {
-                    $('#category').append(
-                        '<option value="' + element.id + '">' +
-                        element.category_name +
-                        '</option>'
-                    )
-                    // console.log(element);
-                });
-                $('#category').val('{{ $blog->cat_id }}').trigger('change')
-            } catch (error) {
-                console.error(error);
-            }
-
-            // Select Mentor 
-            try {
-                const response = await axios.get(url_mentor);
-                let data = response.data
-                $('#mentor').html('<option value=""></option>')
-                data.forEach(element => {
-                    $('#mentor').append(
-                        '<option value="' + element.id + '">' +
-                        element.mentor_firstname + ' ' + element.mentor_lastname +
-                        '</option>'
-                    )
-                    // console.log(element);
-                });
-                $('#mentor').val('{{ $blog->mt_id }}').trigger('change')
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        selectLang()
-    </script>
+    selectLang()
+</script>
 @endsection

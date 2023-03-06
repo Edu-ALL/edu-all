@@ -116,8 +116,11 @@
                                             @endif
                                             <td class="text-center">
                                                 <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/blogs/{{ $blog->id }}/view">
+                                                    <a type="button" class="btn btn-primary" href="/admin/blogs/{{ $blog->id }}/view">
                                                         <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this blog"></i>
+                                                    </a>
+                                                    <a type="button" class="btn btn-warning" href="/admin/blogs/{{ $blog->id }}/edit">
+                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog"></i>
                                                     </a>
                                                     <button 
                                                     type="button"

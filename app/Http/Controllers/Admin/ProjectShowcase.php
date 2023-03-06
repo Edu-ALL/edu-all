@@ -52,7 +52,7 @@ class ProjectShowcase extends Controller
                 $file_format = $request->file('thumbnail')->getClientOriginalExtension();
                 $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
                 $time = date('YmdHis');
-                $fileName = 'Project-thumbnail-'.$request->project_name.'-'.$time.'.'.$file_format;
+                $fileName = 'Project-thumbnail-'.$time.'.'.$file_format;
                 $fileName = str_replace(' ', '-', $fileName);
                 $file->move($destinationPath, $fileName);
                 $project_showcase->thumbnail = $fileName;
@@ -63,7 +63,7 @@ class ProjectShowcase extends Controller
                     $file_format = $imagefile->getClientOriginalExtension();
                     $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
                     $time = date('YmdHis');
-                    $fileName = 'Project-image-'.$request->project_name.'-'.$time.'-'.$i++.'.'.$file_format;
+                    $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
                     $fileName = str_replace(' ', '-', $fileName);
                     $imagefile->move($destinationPath, $fileName);
                     $images[] = $fileName;
@@ -121,7 +121,7 @@ class ProjectShowcase extends Controller
                 $file_format = $request->file('thumbnail')->getClientOriginalExtension();
                 $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/';
                 $time = date('YmdHis');
-                $fileName = 'Project-thumbnail-'.$request->project_name.'-'.$time.'.'.$file_format;
+                $fileName = 'Project-thumbnail-'.$time.'.'.$file_format;
                 $fileName = str_replace(' ', '-', $fileName);
                 $file->move($destinationPath, $fileName);
                 $project_showcase->thumbnail = $fileName;
@@ -140,7 +140,7 @@ class ProjectShowcase extends Controller
                     $file_format = $imagefile->getClientOriginalExtension();
                     $destinationPath = public_path().'/uploaded_files/'.'project-showcase/'.date('Y').'/'.date('m').'/';
                     $time = date('YmdHis');
-                    $fileName = 'Project-image-'.$request->project_name.'-'.$time.'-'.$i++.'.'.$file_format;
+                    $fileName = 'Project-image-'.$time.'-'.$i++.'.'.$file_format;
                     $fileName = str_replace(' ', '-', $fileName);
                     $imagefile->move($destinationPath, $fileName);
                     $images[] = $fileName;

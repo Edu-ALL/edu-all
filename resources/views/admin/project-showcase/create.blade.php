@@ -12,7 +12,7 @@
 @section('content')
 @include('layout.admin.header')
 @include('layout.admin.sidebar')
-<main id="main" class="main">
+<main id="main" class="main" style="overflow: hidden !important">
     <div class="pagetitle">
         <h1>Project Showcase</h1>
         <nav>
@@ -46,17 +46,17 @@
                                     </div>
                                 @endif
                                 <div class="col d-flex flex-column gap-2">
-                                    <div class="col-12">
-                                        <label for="" class="form-label">
-                                            Full Name <span style="color: var(--red)">*</span>
-                                        </label>
-                                        <input type="text" class="form-control" id="full_name" name="full_name" value="{{ old('full_name') }}">
-                                        @error('full_name')
-                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                        @enderror
-                                    </div>
                                     <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
                                         <div class="col">
+                                            <label for="" class="form-label">
+                                                Full Name <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="full_name" name="full_name" value="{{ old('full_name') }}">
+                                            @error('full_name')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-5 col">
                                             <label for="" class="form-label">
                                                 Category <span style="color: var(--red)">*</span>
                                             </label>
@@ -74,15 +74,17 @@
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
                                         </div>
-                                        <div class="col">
-                                            <label for="" class="form-label">
-                                                Project Name <span style="color: var(--red)">*</span>
-                                            </label>
-                                            <input type="text" class="form-control" id="project_name" name="project_name" value="{{ old('project_name') }}">
-                                            @error('project_name')
-                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                            @enderror
-                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Project Name <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <textarea class="textarea" name="project_name" id="project_name">
+                                            {{ old('project_name') }}
+                                        </textarea>
+                                        @error('project_name')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">

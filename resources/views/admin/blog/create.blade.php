@@ -36,7 +36,7 @@
                                 </a>
                             </div>
                             <ul class="nav nav-tabs nav-tabs-bordered"></ul>
-                            <form action="{{ route('create-blogs') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('create-blogs') }}" method="POST" enctype="multipart/form-data" id="form-create">
                                 @csrf
                                 <div class="col py-3">
                                     @if($errors->any())
@@ -202,10 +202,7 @@
                                                     <label for="" class="form-label">
                                                         Publish Date
                                                     </label>
-                                                    <small
-                                                        class="alert text-danger p-0 m-0 fs-12 text-decoration-underline"
-                                                        onclick="clearDate()" style="cursor: pointer">Clear
-                                                        Date</small>
+                                                    <small class="alert text-danger p-0 m-0 fs-12 text-decoration-underline" onclick="clearDate()" style="cursor: pointer">Clear Date</small>
                                                 </div>
                                                 <input type="date" class="form-control" id="publish_date" name="publish_date" value="{{ old('publish_date') }}">
                                                 @error('publish_date')
@@ -267,7 +264,7 @@
     };
 
     function createSlug(){
-        const blog_title = document.getElementById('blog_title').value.toLowerCase().split(' ').join('-');
+        const blog_title = document.getElementById('blog_title').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
         const blog_slug = document.getElementById('blog_slug');
         blog_slug.value = blog_title;
     };
@@ -276,8 +273,14 @@
         $('#mentor').val(null).trigger('change');
     }
 
-    function clearDate() {
+    function clearDate(){
         $('#publish_date').val(null).trigger('change');
+    }
+
+    function getDuration(inst){
+        // console.log(inst.plugins.wordcount.body.getWordCount());
+        var wordcount = inst.plugins.wordcount.body.getWordCount();
+        $('#duration_read').val(wordcount/200);
     }
 
     async function selectLang(){
