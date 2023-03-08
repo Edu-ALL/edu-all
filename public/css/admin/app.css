@@ -206,6 +206,21 @@ h6 {
   color: #012970;
 }
 
+/* Clear Cache */
+.clear-cache {
+  color: #899bbd !important;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif !important;
+}
+.clear-cache:hover {
+  color: var(--blue) !important;
+}
+@media (max-width: 768px) {
+  .clear-cache {
+    font-size: 14px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/

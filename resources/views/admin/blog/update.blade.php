@@ -209,7 +209,7 @@
                                                         Duration Read <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="duration_read"
+                                                        <input type="number" class="form-control" id="duration_read"
                                                             name="duration_read" value="{{ $blog->duration_read }}">
                                                         <span class="input-group-text" style="font-size: 80%">
                                                             Minute
@@ -313,7 +313,7 @@
 
     function getDuration(inst){
         var wordcount = inst.plugins.wordcount.body.getWordCount();
-        $('#duration_read').val(wordcount/200);
+        $('#duration_read').val(Math.round(wordcount/200));
     }
 
     async function selectLang() {

@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
 use App\Http\Controllers\Admin\UpcomingEvent;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -149,6 +151,16 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/project-showcase/deactivate/{id}', [ProjectShowcase::class, 'deactivate']);
     Route::post('/project-showcase/activate/{id}', [ProjectShowcase::class, 'activate']);
     Route::post('/project-showcase/delete/{id}', [ProjectShowcase::class, 'delete']);
+
+    // Clear Cache
+    Route::get('/clear-cache', function() {
+        Artisan::call('route:cache');    # route cache
+        Artisan::call('config:cache');   # config cache
+        Artisan::call('cache:clear');    # application cache
+        Artisan::call('view:clear');     # view cache
+        Artisan::call('optimize:clear'); # cache using reoptimized class
+        return redirect()->back()->withSuccess('Successfully Clear Cache');
+    });
 });
 
 
