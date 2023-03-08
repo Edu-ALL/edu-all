@@ -8,7 +8,7 @@
                 <ul class="splide__list">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
-                            <img class="object-bottom object-cover w-full h-[550px] md:h-[778px]"
+                            <img class="object-bottom object-cover w-full h-[550px] md:h-[768px]"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
@@ -34,54 +34,31 @@
                 </ul>
             </div>
         </section>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
-            class="absolute -bottom-[100px] object-cover -mb-4 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20 -rotate-2">
-            <path fill="#fff" fill-opacity="1"
-                d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
-            </path>
-        </svg>
     </div>
 
     {{-- ========================================== Benefits Section ======================================= --}}
-    <section class="relative mx-6 -mt-2 pt-8 md:h-0">
-        <div
-            class="max-w-3xl w-full -mt-2 bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[250px]">
-            <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
-                <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1"
-                        class="w-[120px] h-auto">
-                    <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
-                        {{ __('pages/home.benefit_list.0.title') }}</h4>
-                    <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        {{ __('pages/home.benefit_list.0.body') }}
-                    </p>
-                </div>
-                <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
-                <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img data-original="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 2"
-                        class="w-[120px] h-auto">
-                    <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
-                        {{ __('pages/home.benefit_list.1.title') }}</h4>
-                    <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        {{ __('pages/home.benefit_list.1.body') }}
-                    </p>
-                </div>
-                <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
-                <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img data-original="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
-                        class="w-[120px] h-auto md:mb-2">
-                    <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">
-                        {{ __('pages/home.benefit_list.2.title') }}</h4>
-                    <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        {{ __('pages/home.benefit_list.2.body') }}
-                    </p>
-                </div>
+    <section class="mx-6 pt-8 md:pt-24">
+        <div class="max-w-4xl w-full mx-auto">
+            <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
+                @foreach (__('pages/home.benefit_list') as $item)
+                    <div
+                        class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
+                        <img data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
+                            class="w-[120px] h-auto">
+                        <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
+                            {{ $item['title'] }}
+                        </h4>
+                        <p class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
+                            {{ __('pages/home.benefit_list.0.body') }}
+                        </p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
     {{-- ========================================== About Us Section ======================================= --}}
-    <section class="pt-24 max-w-4xl w-full px-6 mx-auto my-20">
+    <section class="pt-10 max-w-4xl w-full px-6 mx-auto my-20">
         <div class="flex flex-col items-center">
             <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
                 {{ __('pages/home.about') }}
@@ -167,14 +144,14 @@
                 </div>
             </div>
             <div class="flex flex-col items-center w-full mt-12 bg-primary">
-                <div class="w-full px-10 pt-10">
+                <div class="w-full px-10 pt-10 md:px-20">
                     <div class="splide" role="group">
-                        <div class="splide__arrows text-white">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
-                                <i class="fa-solid fa-chevron-left text-4xl"></i>
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
+                                <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
-                                <i class="fa-solid fa-chevron-right text-4xl"></i>
+                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
+                                <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
                             </button>
                         </div>
                         <div class="splide__track py-10">
@@ -187,20 +164,19 @@
                                                 <div
                                                     class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                     <div
-                                                        class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                        class="absolute left-0 right-0 bottom-0 px-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
                                                         <h3
                                                             class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                             {{ $mentor->mentor_firstname }} <br>
                                                             {{ $mentor->mentor_lastname }}
                                                         </h3>
                                                         <div
-                                                            class="mentor_graduation h-1/3 font-primary text-xs text-white leading-4 lg:leading-3">
+                                                            class="mentor_graduation flex flex-col h-1/3 font-primary text-xs text-white leading-4 lg:leading-3">
                                                             {!! $mentor->mentor_graduation !!}
                                                         </div>
                                                     </div>
                                                     <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}"
-                                                        class="bg-cover bg-center h-auto">
+                                                        alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">

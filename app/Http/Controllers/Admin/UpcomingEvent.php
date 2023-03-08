@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,13 +26,15 @@ class UpcomingEvent extends Controller
     public function checkPublish(){
         $upcoming_events = UpcomingEvents::where('event_status', 'draft')->get();
         foreach ($upcoming_events as $event) {
-            if ($event->publish_date == date('Y-m-d')) {
+            if (date('Y-m-d', strtotime($event->publish_date)) == date('Y-m-d')) {
                 DB::beginTransaction();
                 try {
                     $event->event_status = 'publish';
                     $event->save();
+                    Log::info('check publish is running');
                     DB::commit();
                 } catch (Exception $e) {
+                    Log::info('check publish not running');
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }
@@ -40,15 +43,17 @@ class UpcomingEvent extends Controller
     }
 
     public function checkTakeOff(){
-        $upcoming_events = UpcomingEvents::where('event_status', 'draft')->get();
+        $upcoming_events = UpcomingEvents::where('event_status', 'publish')->get();
         foreach ($upcoming_events as $event) {
-            if ($event->take_off_date == date('Y-m-d')) {
+            if (date('Y-m-d', strtotime($event->take_off_date)) == date('Y-m-d')) {
                 DB::beginTransaction();
                 try {
                     $event->event_status = 'draft';
                     $event->save();
+                    Log::info('check publish is running');
                     DB::commit();
                 } catch (Exception $e) {
+                    Log::error('check publish not running');
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }

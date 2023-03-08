@@ -42,10 +42,10 @@
                 <div class="splide" role="group">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                            <i class="fa-solid fa-chevron-left text-4xl"></i>
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                            <i class="fa-solid fa-chevron-right text-4xl"></i>
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                         </button>
                     </div>
                     <div class="splide__track py-8">

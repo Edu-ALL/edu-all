@@ -22,8 +22,8 @@
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>
 
-            <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/header-SAT-page.webp') }}" alt=""
-                class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
+            <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/header-SAT-page.webp') }}"
+                alt="" class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
         </div>
     </section>
 
@@ -141,8 +141,8 @@
                     {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
             </div>
             <div class="flex justify-center items-center w-full main-container gap-x-8">
-                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}" alt="frame 7"
-                    class="w-full max-w-4xl">
+                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
+                    alt="frame 7" class="w-full max-w-4xl">
             </div>
         </div>
     </section>
@@ -161,19 +161,24 @@
                 <div class="splide" role="group">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            @foreach ($testimonies as $item)
-                                <li class="splide__slide">
-                                    <div class="splide__container">
-                                        <div class="flex flex-col mx-2 mb-4 rounded-3xl bg-primary overflow-hidden md:mx-4">
-                                            <div class="flex flex-col p-6">
-                                                <h5 class="font-primary font-bold text-2xl text-yellow">
-                                                    {{ $item->testi_name }}</h5>
-                                                <div class="mt-3 font-primary font-black text-lg text-white">
-                                                    {!! $item->testi_subtitle !!}
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full">
+                                    <div class="splide__slide__container h-full">
+                                        <div
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            <div class="flex flex-col">
+                                                <img data-original="{{ asset('assets/logo/quote.png') }}"
+                                                    class="w-7 mb-3 h-auto">
+                                                <div class="font-primary text-sm text-white text-justify">
+                                                    {!! $testi->testi_desc !!}
                                                 </div>
-                                                <img data-original="{{ asset('assets/logo/quote.png') }}" class="w-6 my-4">
-                                                <div class="font-primary font-semibold text-base text-white">
-                                                    {!! $item->testi_desc !!}
+                                            </div>
+                                            <div class="mt-4 flex flex-col">
+                                                <div class="font-primary font-semibold text-base text-yellow">
+                                                    {{ $testi->testi_name }}
+                                                </div>
+                                                <div class="font-primary text-sm text-white">
+                                                    {!! $testi->testi_subtitle !!}
                                                 </div>
                                             </div>
                                         </div>

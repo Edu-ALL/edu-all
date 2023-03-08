@@ -2,31 +2,15 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-5 -z-10">
+    <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container h-full bg-gradient-to-tr">
-                <div class="flex flex-col items-center pt-10 md:items-start md:pl-28 lg:pt-16 ">
-                    <h1
-                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:w-1/2 md:text-left">
-                        {{ __('pages/about_us/about.title') }}
-                    </h1>
-                </div>
-            </div>
-
-            <img data-original="{{ asset('assets/img/about/home-header.webp') }}" alt="header image"
+            <img data-original="{{ asset('assets/img/banner/About us banner.webp') }}" alt="header image"
                 class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
-                class="absolute bottom-0 object-cover -mb-2 object-center sm:object-right scale-y-150 scale-x-[200%] -ml-20">
-                <path fill="#fff" fill-opacity="1"
-                    d="M0,192L40,192C80,192,160,192,240,170.7C320,149,400,107,480,128C560,149,640,235,720,224C800,213,880,107,960,58.7C1040,11,1120,21,1200,58.7C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
-                </path>
-            </svg>
         </div>
     </section>
 
     {{-- ================================== Descrtiption & List Section  ================================== --}}
-    <section class="pb-10">
+    <section class="pb-16">
         <div class="flex flex-col items-center main-container">
             <img data-original="{{ asset('assets/img/about/logo-1.png') }}" alt="Allin Logo" class="w-full max-w-xs">
             <div class="flex flex-col max-w-4xl mt-10 gap-y-4">
@@ -64,7 +48,7 @@
     </section>
 
     {{-- ================================== Question & Answer ================================== --}}
-    <section class="py-10">
+    <section class="py-16">
         <div class="flex flex-col items-center main-container">
             <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="Allin Logo">
             <h2 class="mt-4 font-primary font-bold text-3xl text-yellow text-center">Question & Answer</h2>
@@ -119,14 +103,14 @@
                                             <div
                                                 class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                 <div
-                                                    class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                    class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20 lg:pl-3">
                                                     <h3
                                                         class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
                                                         {{ $mentor->mentor_firstname }} <br>
                                                         {{ $mentor->mentor_lastname }}
                                                     </h3>
                                                     <div
-                                                        class="mentor_graduation h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
+                                                        class="mentor_graduation flex flex-col h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>

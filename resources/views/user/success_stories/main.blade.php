@@ -53,13 +53,15 @@
                                     @endif
                                 </div>
 
-                                <p class="mb-4 font-primary font-medium text-base text-primary leading-[26px]">
+                                <div
+                                    class="success_stories_desc mb-4 font-primary font-medium text-base text-primary leading-[26px]">
                                     {!! $item->description !!}
-                                </p>
+                                </div>
                                 @if ($item->video_link != null)
-                                    <a href="{{ $item->video_link }}"><span
-                                            class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-yellow">Learn
-                                            More </span> </a>
+                                    <a href="{{ $item->video_link }}"
+                                        class="self-start my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-yellow">
+                                        Learn More
+                                    </a>
                                 @endif
                                 <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievement_alt }}">
@@ -89,13 +91,14 @@
                                             class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_4 }}</span>
                                     @endif
                                 </div>
-                                <p class="mb-4 font-primary font-medium text-base text-primary leading-[26px]">
+                                <div
+                                    class="success_stories_desc mb-4 font-primary font-medium text-base text-primary leading-[26px]">
                                     {!! $item->description !!}
-                                </p>
+                                </div>
                                 @if ($item->video_link != null)
-                                    <a href="{{ $item->video_link }}"><span
-                                            class="inline-flex my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
-                                            More</span></a>
+                                    <a href="{{ $item->video_link }}"
+                                        class="self-start my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
+                                        More</a>
                                 @endif
                                 <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
                                     alt="{{ $item->achievment_alt }}">
@@ -115,8 +118,6 @@
     <section class="pt-10 pb-20">
         <div class="main-container">
             <div class="flex flex-col gap-4 max-w-5xl mx-auto">
-                <img data-original="{{ asset('assets/img/success-story/ALLIN-ALUMNIS-1024x497.webp') }}"
-                    alt="Allin Alumnis">
                 <h4 class="mt-10 mb-8 font-primary font-extrabold text-3xl text-yellow text-center leading-9">
                     {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
                 <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">

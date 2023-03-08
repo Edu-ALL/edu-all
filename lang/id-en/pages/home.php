@@ -4,15 +4,18 @@ return [
     'benefit_list' => [
         [
             'title' => 'Aspire',
-            'body' => 'Explore students’ passion & interest through a personalized mentorship'
+            'body' => 'Explore students’ passion & interest through a personalized mentorship',
+            'image' => 'home_Illustration_1.png',
         ],
         [
             'title' => 'Learn',
-            'body' => 'Guide students to improve their academic performance & project portfolio through experiential programs'
+            'body' => 'Guide students to improve their academic performance & project portfolio through experiential programs',
+            'image' => 'home_Illustration_2.png'
         ],
         [
             'title' => 'Lead',
-            'body' => 'Place students at their best fit universities to become future leaders'
+            'body' => 'Place students at their best fit universities to become future leaders',
+            'image' => 'home_Illustration_3.webp',
         ],
     ],
     'meta_description' => 'The only Jakarta Education Consultant that provides unique admissions mentoring services. We help you get into the best university that you want.',
@@ -40,7 +43,7 @@ return [
     'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',
     'stories_subbody' => 'They have been accepted to some of the top universities.',
 
-    'testi' => "WHAT OUR STUDNETS SAY",
+    'testi' => "WHAT OUR STUDENTS SAY",
     'testi_btn' => 'More',
 
     'bottom' => "Sign up for a FREE Initial Consultation!",

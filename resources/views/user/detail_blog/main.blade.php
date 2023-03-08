@@ -1,29 +1,32 @@
 @extends('layout.user.main')
 
 @section('head')
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property=og:url content="{{ url(app()->getLocale() . '/blog/' . $blog->slug) }}">
+    <meta property=og:image
+        content="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
+    <meta property=og:title content="{{ $blog->blog_title }}">
+
+
     <meta name="title" content="{{ $blog->seo_title }}">
     <meta name="description" content="{{ $blog->seo_desc }}">
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
 @endsection
 
 @section('content')
-    {{-- Header in Mobile  --}}
-    <div class="fixed top-[-100px] left-0 w-full z-[999] shadow-lg bg-white main-container lg:flex lg:items-center lg:justify-between transition-all duration-500 min-h-[75px]"
-        id="blog_navbar">
-        <h1 class="font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-start text-center">
+    <div id="blog_title_header" class="mt-32 sticky main-container transition-all">
+        <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
             {{ $blog->blog_title }}
         </h1>
-        <div class="flex lg:justify-end justify-center items-center gap-1 lg:relative absolute bottom-[6px] left-0 lg:w-[20%] w-[100%] h-100">
-            <div class="share share_button bg-primary text-white lg:py-2 py-1  px-4 rounded-2xl lg:text-[12px] text-[9px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+        <div class="share_container hidden items-center gap-1">
+            <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
-                <i class="fa fa-send lg:mr-2 mr-0" aria-hidden="true"></i> Share
+                <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
             </div>
             <div class="share share_icon hidden">
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
                     data-ss-content="false"></div>
             </div>
-            <div class="share share_close bg-red-600 text-white lg:py-2 py-[7px] lg:px-3 px-[10px] mt-[3px] rounded-full lg:text-[10px] text-[6px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+            <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
                 onclick="share_sosmed('close')">
                 <i class="fa fa-x" aria-hidden="true"></i>
             </div>
@@ -33,33 +36,36 @@
     <section class="pt-16">
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
-                <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
-                    {{ $blog->blog_title }}
-                </h1>
                 <div class="flex flex-col justify-between items-center gap-4 md:flex-row">
-                    <div class="">
+                    <div class="flex items-center justify-around gap-2">
                         @if ($blog->mentor)
-                            <div class="flex items-center gap-4">
-                                <img data-original="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                    alt="{{ $blog->mentor->mentor_alt }}"
-                                    class="w-8 h-8 rounded-full object-cover object-top">
+                            <div class="flex items-center gap-1">
+                                <div
+                                    class="w-6 h-6 text-center pt-1 text-white rounded-full object-cover object-top bg-gray-400">
+                                    <i class="fa fa-user"></i>
+                                </div>
                                 {{-- change author name with mentor name --}}
-                                <span class="font-primary text-base text-primary">
+                                <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
                                     {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
                                 </span>
                                 <div class="hidden w-px h-4 bg-primary md:block"></div>
                             </div>
                         @endif
                         @if (!empty($blog->duration_read))
-                            <i class="fa fa-book mr-1" aria-hidden="true"></i>
-                            <span class="font-inter text-base text-primary">{{ $blog->duration_read }}
-                                {{ __('pages/blog.min_read') }}</span>
-                            <div class="hidden w-px h-4 bg-primary md:block"></div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa fa-book mr-1" aria-hidden="true"></i>
+                                <span class="font-inter text-base text-primary md:text-[15px] text-[11px] leading-3">
+                                    {{ $blog->duration_read }}
+                                    {{ __('pages/blog.min_read') }}</span>
+                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                            </div>
                         @endif
-                        <span class="font-primary text-base text-primary">
+                        <div class="flex items-center gap-1">
                             <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
-                            {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
-                        </span>
+                            <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
+                                {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                            </span>
+                        </div>
                     </div>
                     <div class="flex items-center gap-1">
                         <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
@@ -160,17 +166,26 @@
 @section('script')
     <script>
         window.addEventListener("scroll", function() {
-            var navbar = document.querySelector("#blog_navbar");
-            if (window.scrollY > 200) {
-                navbar.classList.remove("top-[-100px]");
-                navbar.classList.add("top-0");
+            var navbar = document.querySelector("#blog_title_header");
+            var share_container = document.querySelector(".share_container");
+            var main_navbar = document.querySelector("header");
+
+            if (window.scrollY > 0) {
+                main_navbar.classList.add('-translate-y-[120px]');
             } else {
-                navbar.classList.remove("top-0");
-                navbar.classList.add("top-[-100px]");
+                main_navbar.classList.remove('-translate-y-[120px]');
+            }
+
+            if (window.scrollY > 80) {
+                share_container.classList.remove('hidden');
+                navbar.classList.add("blog_title_header_active");
+            } else {
+                share_container.classList.add('hidden');
+                navbar.classList.remove("blog_title_header_active");
             }
         });
 
-        // Sosmed Share 
+        // Sosmed Share
         function share_sosmed(method) {
             $('.share').removeClass('hidden').addClass('hidden')
             if (method == "open") {
@@ -245,7 +260,7 @@
 
         @media only screen and (max-width: 600px) {
             .ss-circle .ss-btn {
-            min-width: 15px !important;
+                min-width: 15px !important;
             }
 
             .ss-btn {

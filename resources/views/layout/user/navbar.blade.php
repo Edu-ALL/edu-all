@@ -1,4 +1,4 @@
-<header class="fixed w-full -top-1 left-0 z-50 bg-white shadow-sm lg:top-0">
+<header class="fixed w-full -top-1 left-0 z-50 bg-white shadow-sm transition-all lg:top-0">
     <div class="main-container">
         <div class="py-4 lg:gap-2 w-full">
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
@@ -8,14 +8,14 @@
                         class=" object-center w-[180px]">
                 </a>
 
-                <button title="menus"  id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
+                <button title="menus" id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
                     <i class="fa-solid fa-bars"></i>
                 </button>
 
                 <div id="nav-content"
                     class="absolute top-0 right-0 w-full text-primary bg-white transition-all duration-200 z-50 translate-x-full lg:sticky lg:flex lg:justify-between lg:items-center lg:w-full lg:min-h-fit lg:text-primary lg:bg-transparent lg:translate-x-0">
 
-                    <button title="close menu"  id='close-nav' type="button"
+                    <button title="close menu" id='close-nav' type="button"
                         class="flex justify-end w-full border-b-2 border-primary lg:hidden">
                         <i class="fa-solid fa-xmark py-3 px-4 text-2xl text-primary border-l-2 border-primary"></i>
                     </button>
@@ -34,7 +34,7 @@
                                 <a href="{{ url(app()->getLocale(), 'programs') }}"
                                     class="block w-full my-1.5 pl-4 font-semibold text-xl text-left lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.programs') }}
                                 </a>
-                                <button title="submenu"  id='open-nav-child' type="button"
+                                <button title="submenu" id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent ">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary"></i>
@@ -114,7 +114,7 @@
                                     class="inline w-full my-1.5 pl-4 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.about_us') }}
                                 </a>
-                                <button title="submenu"  id='open-nav-child' type="button"
+                                <button title="submenu" id='open-nav-child' type="button"
                                     class="flex justify-end bg-primary transition-all duration-300 lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down text-base py-3 px-4 text-white  transition-all duration-300  lg:p-0 lg:pl-1 lg:text-primary"></i>
@@ -154,14 +154,14 @@
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.resources') }}
                                 </div>
-                                <button title="submenu"  id='open-nav-child' type="button"
+                                <button title="submenu" id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
                                 </button>
                             </div>
                             <ul id="content-nav-child"
-                                class="programs-child hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0">
+                                class="programs-child hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:min-w-max lg:invisible lg:block lg:opacity-0">
                                 <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/resources/success-stories"
                                         class="child_child_nav_link">{{ __('pages/navbar.success_stories') }}</a>
@@ -178,6 +178,10 @@
                                     <a href="{{ url(app()->getLocale()) }}/resources/testimonial"
                                         class="child_child_nav_link">{{ __('pages/navbar.testimonial') }}</a>
                                 </li>
+                                <li class="child_nav group">
+                                    <a href="https://project-showcase.all-inedu.com/" target="_blank"
+                                        class="child_child_nav_link">{{ __('pages/navbar.showcase') }}</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -188,7 +192,7 @@
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.contact_us') }}
                                 </div>
-                                <button title="submenu"  id='open-nav-child' type="button"
+                                <button title="submenu" id='open-nav-child' type="button"
                                     class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
@@ -259,7 +263,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <button title="submenu"  id='open-nav-child' type="button"
+                                        <button title="submenu" id='open-nav-child' type="button"
                                             class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                             <i id='open-nav-child-btn'
                                                 class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
@@ -697,18 +701,18 @@
 <script>
     window.addEventListener("scroll", function() {
         var navbar = document.querySelector("header");
-        if(window.scrollY > 0) {
+        if (window.scrollY > 0) {
             navbar.classList.remove("shadow-sm");
             navbar.classList.add("shadow-lg");
-        } else { 
+        } else {
             navbar.classList.remove("shadow-lg");
             navbar.classList.add("shadow-sm");
         }
     });
-    
+
     const openBtn = document.querySelector("#open-nav"),
-         closeBtn = document.querySelector("#close-nav"),
-         navContent = document.querySelector("#nav-content");
+        closeBtn = document.querySelector("#close-nav"),
+        navContent = document.querySelector("#nav-content");
 
     openBtn.addEventListener('click', () => {
         navContent.classList.remove('translate-x-full');
@@ -721,8 +725,8 @@
     })
 
     const openChildBtns = document.querySelectorAll("#open-nav-child"),
-         navChildContents = document.querySelectorAll("#content-nav-child"),
-         childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
+        navChildContents = document.querySelectorAll("#content-nav-child"),
+        childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
 
     var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 

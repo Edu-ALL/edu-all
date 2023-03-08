@@ -150,6 +150,15 @@
         @apply hover:text-primary/80 underline decoration-primary decoration-2;
     }
 
+    .blog_title_header_active {
+        /* @apply fixed top-0 left-0 w-full z-[999] shadow-lg bg-white main-container lg:flex lg:items-center lg:justify-between h-[75px]; */
+        @apply top-0 z-[999] shadow-lg bg-white lg:flex lg:items-center lg:justify-between min-h-[75px];
+    }
+
+    .blog_title_header_active h1 {
+        @apply font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-left text-center transition-all duration-500;
+    }
+
     .mentor_card {
         transform-style: preserve-3d;
         perspective: 1000px;
@@ -183,7 +192,7 @@
         transform: rotateY(-360deg);
     }
     .mentor_graduation p {
-        @apply truncate;
+        @apply inline truncate;
     }
 
     #home_banner .splide__pagination {
@@ -248,6 +257,10 @@
     }
     .pilar_card:hover .back {
         transform: rotateY(-360deg);
+    }
+
+    .success_stories_desc a {
+        @apply underline decoration-primary hover:text-primary/70;
     }
 
     .widget-desc p {
