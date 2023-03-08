@@ -154,8 +154,8 @@ Route::middleware('is_admin')->group(function(){
 
     // Clear Cache
     Route::get('/clear-cache', function() {
-        Artisan::call('route:cache');     # route cache
-        Artisan::call('config:cache');    # config cache
+        Artisan::call('route:clear');     # route cache
+        Artisan::call('config:clear');    # config cache
         Artisan::call('cache:clear');     # application cache
         Artisan::call('view:clear');      # view cache
         Artisan::call('optimize:clear');  # cache using reoptimized class
