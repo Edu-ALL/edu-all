@@ -24,7 +24,7 @@ $undergraduate = [
 
     [
         'image' => "undergraduate_4.webp",
-        'title' => "Profile Development & Academic Planning",
+        'title' => "Academic Advising Support",
         "desc" => "Strategize and guide students on the academic aspect, based on international or national high school curriculum.",
         'lang' => 'en',
     ],

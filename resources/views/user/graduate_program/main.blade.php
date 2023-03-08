@@ -76,7 +76,7 @@
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col items-center">
-                <h2 class="max-w-4xl mx-auto font-primary font-bold text-4xl text-primary text-center leading-8">
+                <h2 class="max-w-3xl mx-auto font-primary font-bold text-4xl text-primary text-center leading-8">
                     {{ __('pages/programs/graduate_program.pilar_title') }}
                 </h2>
                 <div class="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">

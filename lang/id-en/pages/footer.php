@@ -11,15 +11,15 @@ return [
         ],
         [
             'title' => 'About Us',
-            'link' => "/"
+            'link' => "/about"
         ],
         [
             'title' => "Partnership & Careers",
-            'link' => "/"
+            'link' => "/about/partnership-careers"
         ],
         [
             'title' => "Contact Us",
-            'link' => "/"
+            'link' => "/contact-us"
         ],
         [
             'title' => "Privacy Policy",

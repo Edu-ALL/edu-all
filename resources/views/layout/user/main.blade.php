@@ -115,7 +115,7 @@
         effect: "fadeIn"
     });
 
-    // IG TOKEN 
+    // IG TOKEN
     sessionStorage.setItem('ig_token', '{{ env('IG_TOKEN') }}')
 </script>
 

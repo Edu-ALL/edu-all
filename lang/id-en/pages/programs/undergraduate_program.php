@@ -84,7 +84,7 @@ return [
 
     // why us
     'why_us_title' => "WHY US?",
-    'why_us_desc' => 'Our expert mentors are here to provide 360-degree guidance to land you a seat at leading Undergraduate programs at top universities across the globe.',
+    'why_us_desc' => 'Our expert mentors are here to give you guidance and network at top-ranked universities in the US, Canada, the UK, Europe, Australia, or Asia.',
 
     // testimony section
     "testimony_title" => "WHAT OUR STUDNETS SAY",
