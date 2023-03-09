@@ -27,54 +27,63 @@
     </section>
 
     {{-- ================================== Bennefit Section  ================================== --}}
-    <section class="py-10">
+    <section id="benefit" class="py-10">
         <div class="flex flex-col gap-y-6 main-container">
-            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-on-demand.webp') }}"
+            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-asset.webp') }}"
                 alt="acad on demand">
             <div class="grid grid-cols-1 gap-8 md:items-start md:justify-center md:grid-cols-3 ">
                 <div class="flex flex-col items-center">
-                    <div class="relative flex justify-center items-center w-full h-full rotate-[270deg]">
-                        <svg class="h-[240px] w-[240px]">
+                    <div
+                        class="animation_circle_wrap relative flex justify-center items-center w-full h-full rotate-[270deg]">
+                        <svg class=" h-[240px] w-[240px]">
                             <circle class="w-full h-full"
                                 style="fill:transparent; stroke-width:24; stroke: #f5e6d3; transform: translate(1.815rem, 1.815rem)"
                                 cx="90" cy="90" r="90"></circle>
-                            <circle class="w-full h-full"
-                                style="fill:transparent; stroke-width:24; stroke: #eab91f; transform: translate(1.815rem, 1.815rem); stroke-dasharray: 566; stroke-dashoffset: calc(566 - (566 * 97)/100);"
+                            <circle class="animation_circle w-full h-full"
+                                style="fill:transparent; stroke-width:24; stroke: #eab91f; transform: translate(1.815rem, 1.815rem); stroke-dasharray: 566; --animation-circle:97;--animation-circle-time:1.97s;"
                                 cx="90" cy="90" r="90"></circle>
                         </svg>
-                        <h2 class="absolute font-primary font-black text-4xl text-primary text-center -rotate-[270deg]">97%
+                        <h2
+                            class="animation_circle_persentage absolute font-primary font-black text-4xl text-primary text-center -rotate-[270deg]">
+                            0%
                         </h2>
                     </div>
                     <p class="font-primary font-bold text-[22px] text-primary text-center leading-6">
                         {{ __('pages/programs/academic_tutoring.wording_1') }}</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="relative flex justify-center items-center w-full h-full rotate-[270deg]">
+                    <div
+                        class="animation_circle_wrap relative flex justify-center items-center w-full h-full rotate-[270deg]">
                         <svg class="h-[240px] w-[240px]">
                             <circle class="w-full h-full"
                                 style="fill:transparent; stroke-width:24; stroke: #f5e6d3; transform: translate(1.815rem, 1.815rem)"
                                 cx="90" cy="90" r="90"></circle>
-                            <circle class="w-full h-full"
-                                style="fill:transparent; stroke-width:24; stroke: #efaa52; transform: translate(1.815rem, 1.815rem); stroke-dasharray: 566; stroke-dashoffset: calc(566 - (566 * 98)/100);"
+                            <circle class="animation_circle w-full h-full"
+                                style="fill:transparent; stroke-width:24; stroke: #efaa52; transform: translate(1.815rem, 1.815rem); stroke-dasharray: 566;  --animation-circle:98;--animation-circle-time:1.98s;"
                                 cx="90" cy="90" r="90"></circle>
                         </svg>
-                        <h2 class="absolute font-primary font-black text-4xl text-primary text-center -rotate-[270deg]">98%
+                        <h2
+                            class="animation_circle_persentage absolute font-primary font-black text-4xl text-primary text-center -rotate-[270deg]">
+                            0%
                         </h2>
                     </div>
                     <p class="font-primary font-bold text-[22px] text-primary text-center leading-6">
                         {{ __('pages/programs/academic_tutoring.wording_2') }}</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="relative flex justify-center items-center w-full h-full rotate-[270deg]">
+                    <div
+                        class="animation_circle_wrap relative flex justify-center items-center w-full h-full rotate-[270deg]">
                         <svg class="h-[240px] w-[240px]">
                             <circle class="w-full h-full"
                                 style="fill:transparent; stroke-width:24; stroke: #f5e6d3; transform: translate(1.815rem, 1.815rem)"
                                 cx="90" cy="90" r="90"></circle>
-                            <circle class="w-full h-full"
-                                style="fill:transparent; stroke-width:24; stroke: #f6921e; transform: translate(1.815rem, 1.815rem); stroke-dasharray: 566; stroke-dashoffset: calc(566 - (566 * 100)/100);"
+                            <circle class="animation_circle w-full h-full"
+                                style="fill:transparent; stroke-width:24; stroke: #f6921e; transform: translate(1.815rem, 1.815rem); stroke-dasharray: 566; --animation-circle:100;--animation-circle-time:2s;"
                                 cx="90" cy="90" r="90"></circle>
                         </svg>
-                        <h2 class="absolute font-primary font-black text-4xl text-primary text-center -rotate-[270deg]">100%
+                        <h2
+                            class="animation_circle_persentage absolute font-primary font-black text-4xl text-primary text-center -rotate-[270deg]">
+                            0%
                         </h2>
                     </div>
                     <p class="font-primary font-bold text-[22px] text-primary text-center leading-6">
@@ -309,6 +318,14 @@
 
             <div class="main-container my-12">
                 <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                        </button>
+                    </div>
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($testimonies as $testi)
@@ -360,7 +377,43 @@
 
 @section('script')
     <script>
+        // animation
+        const benefit_element = document.getElementById("benefit");
+        const animation_circle = document.querySelectorAll(".animation_circle");
+        const animation_circle_persentage = document.querySelectorAll(".animation_circle_persentage");
+        const persentages = [97, 98, 100];
+        const animation_times = [1970, 1980, 2000];
+        const position = benefit_element.offsetTop;
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset >= position) {
+                animation_circle.forEach((element, it) => {
+                    element.classList.add('animation_circle_active')
+                    persentage = animation_circle_persentage[it].textContent.trim();
+                    if (persentage == '0%') {
+                        persentage_animation(animation_circle_persentage[it], persentages[it],
+                            animation_times[it]);
+                    }
+                })
+            }
+        });
+
+        function persentage_animation(persentage_element, persentage, animation_time) {
+            let percent = 0;
+            let intervalID = setInterval(() => {
+                percent++;
+                persentage_element.textContent = `${percent}%`;
+                if (percent >= persentage) {
+                    clearInterval(intervalID);
+                }
+            }, animation_time / persentage);
+        }
+
+
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
 
@@ -384,10 +437,11 @@
         }).mount();
 
         new Splide(splides[1], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : 2,
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: false,
+            arrows: isMediumDevice ? false : true,
             autoplay: true,
             lazyload: true,
             interval: 4000,

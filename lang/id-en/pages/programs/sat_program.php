@@ -94,8 +94,8 @@ return [
     // WHY US?
     'why_us_title' => 'WHY US?',
 
-    // WHAT OUR STUDNETS SAY
-    'testimony_title' => 'WHAT OUR STUDNETS SAY',
+    // WHAT OUR STUDENTS SAY
+    'testimony_title' => 'WHAT OUR STUDENTS SAY',
     'testimonies' => [
         [
             'name' => 'Samuel Jovaren',

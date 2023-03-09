@@ -182,7 +182,7 @@
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                     <div class="flex flex-col items-center justify-center">
                                                         <div
-                                                            class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                            class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
                                                             {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                         </div>
@@ -219,11 +219,11 @@
             <div class="w-full py-5">
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4 h-auto">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                         </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4 h-auto">
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                         </button>
                     </div>
                     <div class="splide__track">
@@ -319,19 +319,21 @@
         }).mount();
 
         new Splide(splides[2], {
+            type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,
-            rewind: true,
-            arrows: false
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            autoplay: true,
+            lazyload: true,
+            interval: 4000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[103%]');
+            data.list.classList.add('top-[105%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

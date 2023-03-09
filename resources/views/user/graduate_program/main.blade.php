@@ -211,12 +211,15 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : 2,
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             autoplay: true,

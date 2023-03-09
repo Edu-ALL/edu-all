@@ -58,7 +58,7 @@ module.exports = {
                 "passion-project-bg-scien-2":
                     "url('../../public/assets/img/passion_project_mentoring/Rectangle-32.webp')",
                 "passion-project-bg-scien-3":
-                    "url('../../public/assets/img/passion_project_mentoring/timetable-research-crop-300x177.webp')",
+                    "url('../../public/assets/img/passion_project_mentoring/scientific research.png')",
 
                 // header upcomming event
                 "upcomming-header":

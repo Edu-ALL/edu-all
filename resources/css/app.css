@@ -266,4 +266,17 @@
     .widget-desc p {
         margin-bottom: 5px;
     }
+
+    .splide:not(.is-overflow) .splide__list {
+        justify-content: center;
+    }
+
+    .animation_circle {
+        transition: linear var(--animation-circle-time);
+        stroke-dashoffset: calc(566 - (566 * 0) / 100);
+    }
+
+    .animation_circle_active {
+        stroke-dashoffset: calc(566 - (566 * var(--animation-circle)) / 100);
+    }
 }

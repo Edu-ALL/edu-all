@@ -116,7 +116,7 @@ return [
     'entrepreneurship_learn' => 'BUSINESS KNOWLEDGE',
     'entrepreneurship_learn_list' => $entrepreneurship_learn_list,
     'entrepreneurship_sklil' => 'SKILLS',
-    'entrepreneurship_curriculum_overview' => 'KURIKULUM OVERVIEW',
+    'entrepreneurship_curriculum_overview' => 'CURRICULUM OVERVIEW',
     'entrepreneurship_curriculum_overview_decs' => 'The Entrepreneurship Mentoring Program offers 20-hour and 30-hour courses that cover basic business knowledge, cultivate entrepreneurial mindset and skills, and get the business running.',
     'entrepreneurship_curriculum_overview_btn' => 'View the Full curriculum here',
     'entrepreneurship_bottom' => 'GET YOUR BUSINESS STARTED WITH US!',
@@ -145,7 +145,7 @@ return [
     'other_programs' => 'OTHER PROGRAMS',
 
     // testimony section
-    "testimony" => "WHAT OUR STUDNETS SAY",
+    "testimony" => "WHAT OUR STUDENTS SAY",
     "testimonies" => $testimonies,
 
 
