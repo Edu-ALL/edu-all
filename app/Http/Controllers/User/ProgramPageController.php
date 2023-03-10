@@ -103,7 +103,8 @@ class ProgramPageController extends Controller
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
 
         return view('user.sat_program.main', [
-            'testimonies' => $testimonies
+            'testimonies' => $testimonies,
+            'locale' => $locale
         ]);
     }
 }

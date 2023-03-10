@@ -141,8 +141,13 @@
                     {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
             </div>
             <div class="flex justify-center items-center w-full main-container gap-x-8">
-                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
-                    alt="frame 7" class="w-full max-w-4xl">
+                @if ($locale == 'id')
+                    <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
+                        alt="frame 7" class="w-full max-w-2xl">
+                @else
+                    <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-8.webp') }}"
+                        alt="frame 7" class="w-full max-w-2xl">
+                @endif
             </div>
         </div>
     </section>
@@ -159,6 +164,14 @@
 
             <div class="main-container my-12">
                 <div class="splide" role="group">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                        </button>
+                    </div>
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($testimonies as $testi)
@@ -212,13 +225,17 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : 2,
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: false,
+            arrows: isMediumDevice ? false : true,
             autoplay: true,
             lazyload: true,
             interval: 4000,
