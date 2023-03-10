@@ -87,7 +87,7 @@ return [
     'why_us_desc' => 'Our expert mentors are here to provide 360-degree guidance to land you a seat at leading Undergraduate programs at top universities across the globe.',
 
     // testimony section
-    "testimony_title" => "WHAT OUR STUDNETS SAY",
+    "testimony_title" => "WHAT OUR STUDENTS SAY",
     "testimony_list" => [
         [
             'name' => 'Rachinta Marpaung',

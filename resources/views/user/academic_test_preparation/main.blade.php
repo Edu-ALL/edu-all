@@ -2,9 +2,9 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-16 -z-10">
+    <section class="-mt-16 pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full lg:bg-primary/50">
+            <div class="absolute main-container w-full h-screen lg:bg-primary/50">
                 <div class="flex flex-col justify-center items-center h-full lg:max-w-3xl lg:mx-auto">
                     <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
                         {{ __('pages/programs/academic_test_preparation.title') }}
@@ -15,7 +15,7 @@
             </div>
 
             <img data-original="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}"
-                alt="Academic Test Preparation Banner" class="w-full h-[400px] object-cover object-center">
+                alt="Academic Test Preparation Banner" class="w-full h-screen object-cover object-center">
 
         </div>
     </section>
@@ -140,8 +140,17 @@
                 {{ __('pages/programs/academic_test_preparation.testimony_title') }}
             </h2>
             <div class="splide" aria-labelledby="carousel-heading">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                        <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                        <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                    </button>
+                </div>
                 <ul class="splide__pagination"></ul>
                 <div class="splide__track">
+
                     <ul class="splide__list">
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full">
@@ -189,6 +198,9 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
 
@@ -209,22 +221,20 @@
 
         new Splide(splides[1], {
             type: 'slide',
-            perPage: isSmallDevice ? 1 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            focus: 0,
-            arrows: false,
+            arrows: isMediumDevice ? false : true,
             autoplay: true,
             lazyload: true,
-            interval: 5000,
+            interval: 4000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
+            data.list.classList.add('top-[105%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

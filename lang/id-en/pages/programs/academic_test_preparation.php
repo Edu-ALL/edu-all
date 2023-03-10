@@ -97,7 +97,7 @@ return [
     'sat_btn' => "Learn More",
 
     // Testimonies section
-    'testimony_title' => "WHAT OUR STUDNETS SAY",
+    'testimony_title' => "WHAT OUR STUDENTS SAY",
     'testimonies' => $testimonies,
 
     // bottom section

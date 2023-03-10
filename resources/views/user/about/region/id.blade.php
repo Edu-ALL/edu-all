@@ -84,7 +84,7 @@
                         {{ __('pages/about_us/about.mentor_desc') }}</p>
                 </div>
             </div>
-            <div class="w-full max-w-7xl px-10 py-10">
+            <div class="w-full px-10 py-10">
                 <div class="splide" role="group">
                     <div class="splide__arrows text-white">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
@@ -121,7 +121,7 @@
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                 <div class="flex flex-col items-center justify-center">
                                                     <div
-                                                        class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                        class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
                                                         {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                     </div>
