@@ -156,7 +156,7 @@
     }
 
     .blog_title_header_active h1 {
-        @apply font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-left text-center transition-all duration-500;
+        @apply font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-left text-center transition-all duration-700;
     }
 
     .mentor_card {
