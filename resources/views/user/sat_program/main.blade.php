@@ -11,7 +11,7 @@
                     </h1>
                     <p class="mt-6 font-primary font-normal text-xl text-white md:text-left md:w-1/2">
                         {{ __('pages/programs/sat_program.desc') }}</p>
-                    <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
+                    <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                         class="inline-block px-5 py-2 mt-10 font-primary font-bold text-lg text-white bg-yellow rounded-lg">
                         {{ __('pages/programs/sat_program.top_btn') }}
                     </a>
@@ -22,8 +22,8 @@
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>
 
-            <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/header-SAT-page.webp') }}"
-                alt="" class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
+            <img data-original="{{ asset('assets/img/banner/SAT banner.webp') }}" alt=""
+                class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
         </div>
     </section>
 
@@ -126,7 +126,7 @@
                 </ul>
             </div>
             <div class="text-center px-6 md:col-span-2">
-                <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
+                <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                     class="inline-flex px-5 py-2 mt-4 font-primary font-bold text-base text-white text-center bg-yellow rounded-2xl  md:text-xl">{{ __('pages/programs/sat_program.class_btn') }}</a>
             </div>
         </div>
@@ -215,7 +215,7 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/sat_program.bottom_subtitle') }}</span>
             </h2>
-            <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
+            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/sat_program.bottom_btn') }}</a>
         </div>
 

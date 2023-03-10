@@ -42,14 +42,14 @@
             <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
                 @foreach (__('pages/home.benefit_list') as $item)
                     <div
-                        class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
+                        class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                         <img data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
-                            class="w-[120px] h-auto">
+                            class="w-[120px] h-[auto]">
                         <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
                         </h4>
                         <p class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
-                            {{ __('pages/home.benefit_list.0.body') }}
+                            {{ $item['body'] }}
                         </p>
                     </div>
                 @endforeach
@@ -164,7 +164,7 @@
                                                 <div
                                                     class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                     <div
-                                                        class="absolute left-0 right-0 bottom-0 px-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                        class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20 lg:pl-3">
                                                         <h3
                                                             class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                             {{ $mentor->mentor_firstname }} <br>
@@ -269,7 +269,7 @@
             <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('testimonial', app()->getLocale()) }}"
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
                 class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
                 {{ __('pages/home.bottom_btn') }}
             </a>

@@ -85,8 +85,8 @@ return [
     'locale' => 'id-en',
     'available_locales' => [
         'id-en',
-        'sg',
-        'id',
+        'id-id',
+        'sg-en',
     ],
 
     /*
@@ -212,7 +212,6 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-    ])->toArray(),
+    'aliases' => Facade::defaultAliases()->merge([])->toArray(),
 
 ];

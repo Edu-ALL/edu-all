@@ -286,7 +286,8 @@
                                                                 <path fill="#fff" d="M0 240h640v240H0Z" />
                                                             </svg>
                                                         </div>
-                                                        <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID)
+                                                            <span class="hidden sm:block">Indonesia</span></span>
                                                         <span class="w-5 h-px ml-3 bg-primary"></span>
 
                                                     </a>
@@ -294,7 +295,7 @@
                                                         <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
                                                             class="font-medium hover:text-[#819CCB]">English</a>
                                                         <span>/</span>
-                                                        <a href="{{ route('blogs', ['locale' => 'id']) }}"
+                                                        <a href="{{ route('blogs', ['locale' => 'id-id']) }}"
                                                             class="font-medium hover:text-[#819CCB]">Bahasa</a>
                                                     </div>
                                                 </div>
@@ -302,7 +303,7 @@
                                                 <span class="block w-full h-px my-4 bg-primary"></span>
 
                                                 <div class="flex items-center gap-3 px-4 ">
-                                                    <a href="{{ route('blogs', ['locale' => 'sg']) }}"
+                                                    <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
                                                         class="flex items-center hover:text-[#819CCB]">
                                                         <div>
                                                             <svg class="w-6 h-4 shadow-md"
@@ -323,11 +324,12 @@
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                        <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG)
+                                                            <span class="hidden sm:block">Singapore</span></span>
                                                         <span class="w-5 h-px ml-3 bg-primary"></span>
                                                     </a>
                                                     <div class="flex items-center gap-2">
-                                                        <a href="{{ route('blogs', ['locale' => 'sg']) }}"
+                                                        <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
                                                             class="font-medium hover:text-[#819CCB]">English</a>
                                                     </div>
                                                 </div>
@@ -343,7 +345,8 @@
                                                                 <path fill="#fff" d="M0 240h640v240H0Z" />
                                                             </svg>
                                                         </div>
-                                                        <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID)
+                                                            <span class="hidden sm:block">Indonesia</span></span>
                                                         <span class="w-5 h-px ml-3 bg-primary"></span>
 
                                                     </a>
@@ -351,7 +354,7 @@
                                                         <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
                                                             class="font-medium hover:text-[#819CCB]">English</a>
                                                         <span>/</span>
-                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id') }} @endif"
+                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-id', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-id') }} @endif"
                                                             class="font-medium hover:text-[#819CCB]">Bahasa</a>
                                                     </div>
                                                 </div>
@@ -359,7 +362,7 @@
                                                 <span class="block w-full h-px my-4 bg-primary"></span>
 
                                                 <div class="flex items-center gap-3 px-4 ">
-                                                    <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg') }} @endif"
+                                                    <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
                                                         class="flex items-center hover:text-[#819CCB]">
                                                         <div>
                                                             <svg class="w-6 h-4 shadow-md"
@@ -380,11 +383,12 @@
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                        <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG)
+                                                            <span class="hidden sm:block">Singapore</span></span>
                                                         <span class="w-5 h-px ml-3 bg-primary"></span>
                                                     </a>
                                                     <div class="flex items-center gap-2">
-                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg') }} @endif"
+                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
                                                             class="font-medium hover:text-[#819CCB]">English</a>
                                                     </div>
                                                 </div>
@@ -400,7 +404,8 @@
                                                                 <path fill="#fff" d="M0 240h640v240H0Z" />
                                                             </svg>
                                                         </div>
-                                                        <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID)
+                                                            <span class="hidden sm:block">Indonesia</span></span>
                                                         <span class="w-5 h-px ml-3 bg-primary"></span>
 
                                                     </a>
@@ -408,7 +413,7 @@
                                                         <a href="{{ route('home', ['locale' => 'id-en']) }}"
                                                             class="font-medium hover:text-[#819CCB]">English</a>
                                                         <span>/</span>
-                                                        <a href="{{ route('home', ['locale' => 'id']) }}"
+                                                        <a href="{{ route('home', ['locale' => 'id-id']) }}"
                                                             class="font-medium hover:text-[#819CCB]">Bahasa</a>
                                                     </div>
                                                 </div>
@@ -416,7 +421,7 @@
                                                 <span class="block w-full h-px my-4 bg-primary"></span>
 
                                                 <div class="flex items-center gap-3 px-4 ">
-                                                    <a href="{{ route('home', ['locale' => 'sg']) }}"
+                                                    <a href="{{ route('home', ['locale' => 'sg-en']) }}"
                                                         class="flex items-center hover:text-[#819CCB]">
                                                         <div>
                                                             <svg class="w-6 h-4 shadow-md"
@@ -437,11 +442,12 @@
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                        <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG)
+                                                            <span class="hidden sm:block">Singapore</span></span>
                                                         <span class="w-5 h-px ml-3 bg-primary"></span>
                                                     </a>
                                                     <div class="flex items-center gap-2">
-                                                        <a href="{{ route('home', ['locale' => 'sg']) }}"
+                                                        <a href="{{ route('home', ['locale' => 'sg-en']) }}"
                                                             class="font-medium hover:text-[#819CCB]">English</a>
                                                     </div>
                                                 </div>
@@ -491,7 +497,8 @@
                                             <path fill="#fff" d="M0 240h640v240H0Z" />
                                         </svg>
                                     </div>
-                                    <span class="ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
+                                    <span
+                                        class="inline-flex ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
                                     </span>
                                 @elseif (substr(strtoupper(app()->getLocale()), 0, 2) == 'SG')
                                     <div>
@@ -512,7 +519,8 @@
                                             </g>
                                         </svg>
                                     </div>
-                                    <span class="ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
+                                    <span
+                                        class="inline-flex ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
                                     </span>
                                 @endif
 
@@ -534,7 +542,8 @@
                                                     <path fill="#fff" d="M0 240h640v240H0Z" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID) <span
+                                                    class="hidden sm:block">Indonesia</span></span>
                                             <span class="w-5 h-px ml-3 bg-primary"></span>
 
                                         </a>
@@ -542,7 +551,7 @@
                                             <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
                                                 class="font-medium hover:text-[#819CCB]">English</a>
                                             <span>/</span>
-                                            <a href="{{ route('blogs', ['locale' => 'id']) }}"
+                                            <a href="{{ route('blogs', ['locale' => 'id-id']) }}"
                                                 class="font-medium hover:text-[#819CCB]">Bahasa</a>
                                         </div>
                                     </div>
@@ -550,7 +559,7 @@
                                     <span class="block w-full h-px my-4 bg-primary"></span>
 
                                     <div class="flex items-center gap-3 px-4 ">
-                                        <a href="{{ route('blogs', ['locale' => 'sg']) }}"
+                                        <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
                                             class="flex items-center hover:text-[#819CCB]">
                                             <div>
                                                 <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
@@ -570,11 +579,12 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG) <span
+                                                    class="hidden sm:block">Singapore</span></span>
                                             <span class="w-5 h-px ml-3 bg-primary"></span>
                                         </a>
                                         <div class="flex items-center gap-2">
-                                            <a href="{{ route('blogs', ['locale' => 'sg']) }}"
+                                            <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
                                                 class="font-medium hover:text-[#819CCB]">English</a>
                                         </div>
                                     </div>
@@ -589,7 +599,8 @@
                                                     <path fill="#fff" d="M0 240h640v240H0Z" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID) <span
+                                                    class="hidden sm:block">Indonesia</span></span>
                                             <span class="w-5 h-px ml-3 bg-primary"></span>
 
                                         </a>
@@ -597,7 +608,7 @@
                                             <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
                                                 class="font-medium hover:text-[#819CCB]">English</a>
                                             <span>/</span>
-                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id') }} @endif"
+                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-id', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-id') }} @endif"
                                                 class="font-medium hover:text-[#819CCB]">Bahasa</a>
                                         </div>
                                     </div>
@@ -605,7 +616,7 @@
                                     <span class="block w-full h-px my-4 bg-primary"></span>
 
                                     <div class="flex items-center gap-3 px-4 ">
-                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg') }} @endif"
+                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
                                             class="flex items-center hover:text-[#819CCB]">
                                             <div>
                                                 <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
@@ -625,11 +636,12 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG) <span
+                                                    class="hidden sm:block">Singapore</span></span>
                                             <span class="w-5 h-px ml-3 bg-primary"></span>
                                         </a>
                                         <div class="flex items-center gap-2">
-                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg') }} @endif"
+                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
                                                 class="font-medium hover:text-[#819CCB]">English</a>
                                         </div>
                                     </div>
@@ -644,7 +656,8 @@
                                                     <path fill="#fff" d="M0 240h640v240H0Z" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 whitespace-nowrap">(ID) Indonesia</span>
+                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID) <span
+                                                    class="hidden sm:block">Indonesia</span></span>
                                             <span class="w-5 h-px ml-3 bg-primary"></span>
 
                                         </a>
@@ -652,7 +665,7 @@
                                             <a href="{{ route('home', ['locale' => 'id-en']) }}"
                                                 class="font-medium hover:text-[#819CCB]">English</a>
                                             <span>/</span>
-                                            <a href="{{ route('home', ['locale' => 'id']) }}"
+                                            <a href="{{ route('home', ['locale' => 'id-id']) }}"
                                                 class="font-medium hover:text-[#819CCB]">Bahasa</a>
                                         </div>
                                     </div>
@@ -660,7 +673,7 @@
                                     <span class="block w-full h-px my-4 bg-primary"></span>
 
                                     <div class="flex items-center gap-3 px-4 ">
-                                        <a href="{{ route('home', ['locale' => 'sg']) }}"
+                                        <a href="{{ route('home', ['locale' => 'sg-en']) }}"
                                             class="flex items-center hover:text-[#819CCB]">
                                             <div>
                                                 <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
@@ -680,11 +693,12 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 whitespace-nowrap">(SG) Singapore</span>
+                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG) <span
+                                                    class="hidden sm:block">Singapore</span></span>
                                             <span class="w-5 h-px ml-3 bg-primary"></span>
                                         </a>
                                         <div class="flex items-center gap-2">
-                                            <a href="{{ route('home', ['locale' => 'sg']) }}"
+                                            <a href="{{ route('home', ['locale' => 'sg-en']) }}"
                                                 class="font-medium hover:text-[#819CCB]">English</a>
                                         </div>
                                     </div>

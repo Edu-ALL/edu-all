@@ -23,7 +23,7 @@ return [
         ],
         [
             'title' => "Privacy Policy",
-            'link' => "/"
+            'link' => "/privacy-policy"
         ],
     ],
 ];

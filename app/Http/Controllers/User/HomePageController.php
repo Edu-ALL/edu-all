@@ -11,7 +11,7 @@ class HomePageController extends Controller
 {
     public function home($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $region = substr(app()->getLocale(), 0, 2);
 
         // Banner
@@ -30,8 +30,33 @@ class HomePageController extends Controller
         ]);
     }
 
-    public function sign_me()
+    public function sign_me_adm_mentoring()
     {
-        return view('user.sign_me.main');
+        return view('user.sign_me.adm_mentoring');
+    }
+
+    public function sign_me_acad_tutoring()
+    {
+        return view('user.sign_me.acad_tutoring');
+    }
+
+    public function sign_me_sat_prep()
+    {
+        return view('user.sign_me.sat_prep');
+    }
+
+    public function sign_me_passion_project()
+    {
+        return view('user.sign_me.passion_project');
+    }
+
+    public function sign_me_ee_coaching()
+    {
+        return view('user.sign_me.ee_coaching');
+    }
+
+    public function privacy_policy()
+    {
+        return view('user.privacy_policy.main');
     }
 }

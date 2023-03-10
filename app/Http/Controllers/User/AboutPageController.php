@@ -11,8 +11,8 @@ class AboutPageController extends Controller
 {
     public function about($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
-        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active');
+        $lang = substr(app()->getLocale(), 3, 2);
+        $all_mentor = Mentors::where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active')->get();
 
         $region = substr(app()->getLocale(), 0, 2);
 
@@ -39,10 +39,9 @@ class AboutPageController extends Controller
 
     public function mentor($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $allin_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active');
         $building_mentor = Mentors::all()->where('mentor_category', 'Profile Building Mentor')->where('lang', $lang)->where('mentor_status', 'active');
-
         return view('user.mentor.main', [
             'locale' => $locale,
             'allin_mentor' => $allin_mentor,
@@ -52,7 +51,7 @@ class AboutPageController extends Controller
 
     public function detail_mentor($locale, $slug)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $mentor = Mentors::with('mentor_video')->where('mentor_slug', $slug)->where('lang', $lang)->first();
 
         return view('user.detail_mentor.main', [

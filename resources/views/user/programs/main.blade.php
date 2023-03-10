@@ -71,7 +71,7 @@
                 <div class="flex flex-col items-center pb-10">
                     <h5 class="text-yellow text-lg xl:text-2xl mb-4 font-bold">
                         {{ __('pages/programs/programs.sign_up_text') }}</h5>
-                    <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+                    <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                         class="my-btn">{{ __('pages/programs/programs.sign_up_btn') }}</a>
                 </div>
             </div>

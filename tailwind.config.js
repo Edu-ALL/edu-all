@@ -14,8 +14,16 @@ module.exports = {
                 // Home
                 "sg-header":
                     "url('../../public/assets/img/home/sg/header.png')",
-                "sign-me":
-                    "url('../../public/assets/img/sign-me/header-consultation-page-1.webp')",
+
+                // Sign me
+                "sign-me-adm-mentoring":
+                    "url('../../public/assets/img/sign-me/banner/adm-mentoring.png')",
+                "sign-me-acad-tutor":
+                    "url('../../public/assets/img/sign-me/banner/acad-tutor.png')",
+                "sign-me-passin-project":
+                    "url('../../public/assets/img/sign-me/banner/passion-project.png')",
+                "sign-me-sat-prep":
+                    "url('../../public/assets/img/sign-me/banner/sat-prep.png')",
 
                 // Program
                 "program-image-1":
@@ -70,27 +78,10 @@ module.exports = {
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
-                // title: "Maven Pro, sans-serif",
-                // secondary: "Source Sans Pro, sans-serif",
-                // body: "Roboto, sans-serif",
-                // inter: "Roboto, sans-serif",
             },
             colors: {
                 primary: "#233469",
                 yellow: "#f78614",
-                // navbar: "#7895C7",
-                // secondary: "#7895C7",
-                // primary: "#081034",
-                // "top-navbar": "#666666",
-                // body: "#7A7A7A",
-                // dark: "#1d1d1d",
-                // light: "#ffffff",
-                // background: "#f6f6f6",
-                // text: "#546999",
-                // "subnavbar-dark": "#333333",
-                // "subnavbar-text": "#aaaaaa",
-                // "subnavbar-white": "#ffffff",
-                // "blue-light": "#1eb5f6",
             },
         },
     },
