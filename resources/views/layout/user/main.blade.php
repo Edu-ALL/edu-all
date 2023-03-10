@@ -131,7 +131,7 @@
     }
 
     // IG TOKEN
-    sessionStorage.setItem('ig_token', '{{ env('IG_TOKEN') }}')
+    sessionStorage.setItem('ig_token', '{{ app()->getLocale() == 'sg' ? env('IG_TOKEN_GLOBAL') : env('IG_TOKEN') }}')
 </script>
 
 </html>
