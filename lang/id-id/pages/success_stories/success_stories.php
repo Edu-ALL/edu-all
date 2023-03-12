@@ -9,5 +9,5 @@ return [
     di universitas top dunia yang mereka impikan!',
     'bottom_title' => 'Pelajari lebih lanjut mengenai bagaimana mentee kami menggapai kesuksesan akademis mereka dan menjelajahi minat karir mereka',
     'program_btn' => 'Program Kami',
-    'register_btn' => 'Daftar Sekarang'
+    'register_btn' => 'Buat Janji Konsultasi Gratis'
 ];

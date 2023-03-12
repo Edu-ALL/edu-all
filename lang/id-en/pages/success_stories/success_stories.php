@@ -11,5 +11,5 @@ return [
     'bottom_title' => 'Learn more about how our mentees achieve their academic success
     and explore their career interests!',
     'program_btn' => 'Our Program',
-    'register_btn' => 'Register Now'
+    'register_btn' => 'Book Free Consultation'
 ];

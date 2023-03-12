@@ -1,7 +1,7 @@
 <?php
 return [
     'title' => 'Upcoming Events',
-    'body' => 'Download Our 2022 Student-Friendly Calendar',
+    'body' => 'Download Our 2023 Student-Friendly Calendar',
     'btn' => "Download",
 
     'bottom_title' => 'For more info and registration',
