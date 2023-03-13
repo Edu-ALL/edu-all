@@ -14,46 +14,28 @@
     </section>
 
     {{-- ========================================== Benefits Section ======================================= --}}
-    <section class="relative mx-6 mt-8 md:h-0 md:mt-0">
-        <div
-            class="max-w-3xl w-full bg-white rounded-lg shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[200px]">
-            <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-6 md:gap-y-14 md:flex-row">
-                <div class="flex flex-1 flex-col items-center gap-6">
-                    <img src="{{ asset('assets/img/home/home_Illustration_1.png') }}" alt="ilustration 1" class="w-[120px]">
-                    <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">Aspire</h4>
-                    <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        Explore students’ passion &
-                        interest through a
-                        personalized mentorship
-                    </p>
-                </div>
-                <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
-                <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img src="{{ asset('assets/img/home/home_Illustration_2.png') }}" alt="ilustration 1" class="w-[120px]">
-                    <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">Learn</h4>
-                    <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        Guide students to improve their academic
-                        performance & project portfolio through
-                        experiential programs
-                    </p>
-                </div>
-                <div class="min-h-full w-[1px] bg-[#b6b6b6]"></div>
-                <div class="flex flex-1 flex-col items-center gap-6 ">
-                    <img src="{{ asset('assets/img/home/home_Illustration_3.webp') }}" alt="ilustration 1"
-                        class="w-[120px] md:mb-2">
-                    <h4 class="font-primary text-xl font-semibold text-center text-[#7895C7] ">Lead</h4>
-                    <p class="font-primary text-sm text-center text-[#7A7A7A]">
-                        Place students at their
-                        best fit universities to
-                        become future leaders
-                    </p>
-                </div>
+    <section class="mx-6 pt-8 md:pt-24">
+        <div class="max-w-4xl w-full mx-auto">
+            <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
+                @foreach (__('pages/home.benefit_list') as $item)
+                    <div
+                        class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
+                        <img data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
+                            class="w-[120px] h-auto">
+                        <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
+                            {{ $item['title'] }}
+                        </h4>
+                        <p class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
+                            {{ $item['body'] }}
+                        </p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
     {{-- ========================================== About Us Section ======================================= --}}
-    <section class="pt-10 md:pt-40 max-w-4xl w-full px-6 mx-auto my-20">
+    <section class="pt-10 max-w-4xl w-full px-6 mx-auto my-20">
         <div class="flex flex-col items-center">
             <h2 class="mb-6 font-primary font-bold text-2xl text-center text-primary">About Us</h2>
             <p class="w-full max-w-3xl mb-6 font-primary font-medium text-base text-center text-primary">
@@ -130,11 +112,11 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 gap-x-16 gap-y-8 md:grid-cols-2">
-                <a href="#">
+                <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#entrepreneurship']) }}">
                     <img src="{{ asset('assets/img/home/sg/Scientific Research.webp') }}" alt="Scientific Research"
                         class="rounded-xl">
                 </a>
-                <a href="#">
+                <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#scientific']) }}">
                     <img src="{{ asset('assets/img/home/sg/Entrepreneurship.webp') }}" alt="Entrepreneurship"
                         class="rounded-xl">
                 </a>
@@ -170,7 +152,7 @@
                         class="rounded-xl">
                 </a>
             </div>
-            <a href="#"
+            <a href="{{ route('success_stories', app()->getLocale()) }}"
                 class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-yellow rounded-[4px] md:px-16">
                 More
             </a>
@@ -188,11 +170,11 @@
             <div class="w-full py-5">
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                            <img src="{{ asset('assets/logo/arrow-left.png') }}" class="w-4">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                         </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                            <img src="{{ asset('assets/logo/arrow-right.png') }}" class="w-4">
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                         </button>
                     </div>
                     <div class="splide__track">
@@ -244,7 +226,7 @@
                 <h4 class="mt-8 font-primary font-bold text-2xl text-yellow text-center">
                     Now let's talk with mentors who will help you achieve yours.
                 </h4>
-                <a href="#"
+                <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
                     class="inline-block mt-8 px-6 py-2 mb-10 font-primary font-semibold text-base text-white text-center capitalize bg-[#F91A0C] rounded-[4px] md:px-16">
                     Book Free Assessment
                 </a>
@@ -263,19 +245,21 @@
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
+            type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                4 : 3,
-            rewind: true,
-            arrows: false
+                3 : 4,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            autoplay: true,
+            lazyload: true,
+            interval: 4000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[103%]');
+            data.list.classList.add('top-[105%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

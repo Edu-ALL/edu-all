@@ -3,26 +3,28 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
-        <div class="relative flex w-full left-0 overflow-hidden">
+        <div class="relative flex w-full h-screen left-0 overflow-hidden">
             <img data-original="{{ asset('assets/img/banner/About us banner.webp') }}" alt="header image"
-                class="w-full h-[70vh] object-cover object-center md:h-[40vh] lg:h-[550px]">
+                class="w-full h-full object-cover object-center">
         </div>
     </section>
 
     {{-- ================================== Descrtiption & List Section  ================================== --}}
     <section class="pb-16">
         <div class="flex flex-col items-center main-container">
-            <img data-original="{{ asset('assets/img/about/logo-1.png') }}" alt="Allin Logo" class="w-full max-w-xs">
             <div class="flex flex-col max-w-4xl mt-10 gap-y-4">
-                <p class="font-primary font-light text-2xl text-primary text-center">{{ __('pages/about_us/about.desc.0') }}
+                <p class="font-primary font-light text-2xl text-primary text-center">
+                    {{ __('pages/about_us/about.desc.0') }}
                 </p>
                 <p class="font-primary font-light text-2xl text-primary text-center italic">
-                    {{ __('pages/about_us/about.desc.1') }}</p>
+                    {{ __('pages/about_us/about.desc.1') }}
+                </p>
             </div>
             <div class="flex flex-col gap-y-8 max-w-4xl mt-20">
                 <div class="flex flex-col md:flex-row py-4">
                     <h4 class="mb-6 font-primary font-semibold text-xl text-yellow  md:w-1/3 ">
-                        {{ __('pages/about_us/about.about_list.0.title') }}</h4>
+                        {{ __('pages/about_us/about.about_list.0.title') }}
+                    </h4>
                     <p class="font-primary text-lg text-[#7A7A7A] md:w-2/3">
                         {{ __('pages/about_us/about.about_list.0.body') }}
                     </p>
@@ -30,7 +32,8 @@
                 <span class="block w-full h-[1px] bg-[#7e7e7e]"></span>
                 <div class="flex flex-col md:flex-row py-4">
                     <h4 class="mb-6 font-primary font-semibold text-xl text-yellow  md:w-1/3 ">
-                        {{ __('pages/about_us/about.about_list.1.title') }}</h4>
+                        {{ __('pages/about_us/about.about_list.1.title') }}
+                    </h4>
                     <p class="font-primary text-lg text-[#7A7A7A] md:w-2/3">
                         {{ __('pages/about_us/about.about_list.1.body') }}
                     </p>
@@ -38,7 +41,8 @@
                 <span class="block w-full h-[1px] bg-[#7e7e7e]"></span>
                 <div class="flex flex-col md:flex-row py-4">
                     <h4 class="mb-6 font-primary font-semibold text-xl text-yellow  md:w-1/3 ">
-                        {{ __('pages/about_us/about.about_list.2.title') }}</h4>
+                        {{ __('pages/about_us/about.about_list.2.title') }}
+                    </h4>
                     <p class="font-primary text-lg text-[#7A7A7A] md:w-2/3">
                         {{ __('pages/about_us/about.about_list.2.body') }}
                     </p>
@@ -103,14 +107,14 @@
                                             <div
                                                 class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                 <div
-                                                    class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20 lg:pl-3">
                                                     <h3
-                                                        class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
+                                                        class="font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
                                                         {{ $mentor->mentor_firstname }} <br>
                                                         {{ $mentor->mentor_lastname }}
                                                     </h3>
                                                     <div
-                                                        class="mentor_graduation flex flex-col h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
+                                                        class="mt-4 font-primary text-xs text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
@@ -149,7 +153,7 @@
             <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/about.bottom_title') }}
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 class="my-btn">{{ __('pages/about_us/about.bottom_btn') }}</a>
         </div>
     </section>
@@ -159,13 +163,6 @@
     <script>
         const questions = document.querySelectorAll('#question');
         const answers = document.querySelectorAll('#answer');
-        // const answersHegiht = [];
-
-        // answers.forEach((answer, it) => {
-        //     answersHegiht[it] = 200;
-        //     answers[it].classList.add('max-h-0');
-        //     console.log(answersHegiht[it])
-        // })
 
         let old = 0;
 

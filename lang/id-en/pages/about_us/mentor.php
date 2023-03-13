@@ -17,7 +17,7 @@ return [
     'bottom_btn' => "More",
 
     // Detail
-    'recent_videos' => 'Recent Videos?',
+    'recent_videos' => 'Recent Videos',
     'video_not_found' => 'Video Not Found!',
     'bottom_detail_title' => 'Schedule your Consultation with',
     'bottom_detail_body' => 'Let’s find out how to get into your dream university and future career path through the first consultation with our top-notch mentors and your profile assessment based on ALL-in’s Four Pillars of University Application.',

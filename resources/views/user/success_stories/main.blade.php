@@ -127,7 +127,7 @@
                             {{ __('pages/success_stories/success_stories.program_btn') }}
                         </span>
                     </a>
-                    <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}">
+                    <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}">
                         <span
                             class="px-20 py-4 font-primary font-semibold text-xl text-yellow text-center rounded-full border-[3px] border-yellow ">
                             {{ __('pages/success_stories/success_stories.register_btn') }}

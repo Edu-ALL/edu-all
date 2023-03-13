@@ -118,7 +118,7 @@
                         </div>
                     @endforeach
                 </div>
-                <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" class="mt-12">
+                <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}" class="mt-12">
                     <span
                         class="px-6 py-2 font-primary font-semibold text-white text-center rounded-md bg-yellow">{{ __('pages/programs/undergraduate_program.destination_btn') }}</span>
                 </a>
@@ -211,7 +211,7 @@
                     {{ __('pages/programs/undergraduate_program.bottom_subtitle') }}
                 </span>
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 class="px-5 py-2 mt-4 font-primary font-medium text-base text-white text-center bg-yellow rounded-md">{{ __('pages/programs/undergraduate_program.bottom_btn') }}
             </a>
         </div>

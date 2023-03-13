@@ -23,7 +23,7 @@
     {{-- ================================== Benefit Section ================================== --}}
     <section class="relative mx-6 md:h-10">
         <div
-            class="max-w-5xl min-w-max bg-white shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[180px]">
+            class="max-w-5xl mx-auto min-w-max bg-white shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[180px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-4 md:px-10 md:py-4 md:gap-y-14 md:gap-x-10 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
                     <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}" alt="ilustration 1"
@@ -278,7 +278,7 @@
                 {{ __('pages/programs/admission_mentoring.sign_up_text') }}
                 <span class="block text-yellow">{{ __('pages/programs/admission_mentoring.sign_up_text_sub') }}</span>
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 class="my-btn">{{ __('pages/programs/admission_mentoring.sign_up_btn') }}</a>
         </div>
 

@@ -188,7 +188,7 @@
             <h2 class=" font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/programs/academic_test_preparation.bottom') }}
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 class="my-btn">{{ __('pages/programs/academic_test_preparation.bottom_btn') }}</a>
         </div>
 

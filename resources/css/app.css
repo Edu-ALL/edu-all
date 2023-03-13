@@ -1,282 +1,294 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Asap:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@400;600;700;800;900&display=swap"); */
-/* @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");*/
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");  */
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .child_nav {
-        @apply text-left border-t border-white lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
-    }
-
-    .child_child_nav {
-        @apply pl-4 text-left border-t border-primary bg-primary/10 lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0 lg:border-b hover:lg:text-white lg:border-[#1d1d1d] lg:bg-[#333333];
-    }
-
-    .child_child_nav_link {
-        @apply block w-full px-4 py-2 text-left  lg:font-semibold lg:text-base lg:text-left;
-    }
-
-    .child_child_link {
-        @apply block px-4 py-2 text-sm text-left lg:font-semibold lg:text-base lg:text-left;
-    }
-
-    .programs:hover .programs-child {
-        @apply lg:visible lg:opacity-100;
-    }
-
-    /* Container */
-    .main-container {
-        @apply px-4 lg:px-20 xl:px-40;
-    }
-
-    .absolute-center {
-        @apply absolute left-[50%] -translate-x-[50%];
-    }
+/* Navbar */
+.child_nav {
+    @apply text-left border-t border-white lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
 }
 
-/* Utilities */
+.child_child_nav {
+    @apply pl-4 text-left border-t border-primary bg-primary/10 lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0 lg:border-b hover:lg:text-white lg:border-[#1d1d1d] lg:bg-[#333333];
+}
 
-@layer utilities {
-    .heading-1 {
-        @apply font-semibold font-primary uppercase text-3xl lg:text-5xl text-white;
-    }
+.child_child_nav_link {
+    @apply block w-full px-4 py-2 text-left  lg:font-semibold lg:text-base lg:text-left;
+}
 
-    .heading-2 {
-        @apply font-semibold font-primary capitalize text-4xl text-white tracking-widest;
-    }
+.child_child_link {
+    @apply block px-4 py-2 text-sm text-left lg:font-semibold lg:text-base lg:text-left;
+}
 
-    .my-btn {
-        @apply bg-yellow text-white rounded-[3px] py-1.5 px-5 font-medium font-primary capitalize;
-    }
+.programs:hover .programs-child {
+    @apply lg:visible lg:opacity-100;
+}
 
-    /* Program Card */
-    .program_card {
-        /* transform-style: preserve-3d;*/
-        @apply transition-all duration-700 relative h-[400px];
-        transform-style: preserve-3d;
-        perspective: 1000px;
-    }
+/* Container */
+.main-container {
+    @apply px-4 lg:px-20 xl:px-40;
+}
 
-    .program_card .front,
-    .program_card .back {
-        @apply rounded-xl overflow-hidden;
-        transition: transform 0.6s;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-    }
+.absolute-center {
+    @apply absolute left-[50%] -translate-x-[50%];
+}
 
-    .program_card .back {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.my-btn {
+    @apply bg-yellow text-white rounded-[3px] py-1.5 px-5 font-medium font-primary capitalize;
+}
 
-    .program_card .back {
-        transform: rotateY(-180deg);
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+/* Program Card */
+.program_card {
+    /* transform-style: preserve-3d;*/
+    @apply transition-all duration-700 relative h-[400px];
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
 
-    .program_card:hover .front {
-        transform: rotateY(-180deg);
-    }
-    .program_card:hover .back {
-        transform: rotateY(-360deg);
-    }
+.program_card .front,
+.program_card .back {
+    @apply rounded-xl overflow-hidden;
+    transition: transform 0.6s;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
 
-    /* Scrollbar Blog Category */
-    .horizontal_list::-webkit-scrollbar {
-        height: 4px;
-        background-color: #f5f5f5;
-    }
+.program_card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .horizontal_list::-webkit-scrollbar-thumb {
-        background-color: #000000;
-    }
+.program_card .back {
+    transform: rotateY(-180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .horizontal_list::-webkit-scrollbar-thumb:active {
-        background-color: #888;
-    }
+.program_card:hover .front {
+    transform: rotateY(-180deg);
+}
+.program_card:hover .back {
+    transform: rotateY(-360deg);
+}
 
-    /* Pagination Blog */
-    .Pagination:last-child {
-        background-color: #ff0000;
-    }
+/* Scrollbar Blog Category */
+.horizontal_list::-webkit-scrollbar {
+    height: 4px;
+    background-color: #f5f5f5;
+}
 
-    .pagination .page-item .page-link:hover {
-        background-color: #ffa500;
-        color: #ffffff;
-    }
+.horizontal_list::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
 
-    /* Blog Style */
+.horizontal_list::-webkit-scrollbar-thumb:active {
+    background-color: #888;
+}
 
-    .blog_style h1,
-    h2,
-    h3 {
-        @apply font-primary font-extrabold text-primary;
-    }
+/* Pagination Blog */
+.Pagination:last-child {
+    background-color: #ff0000;
+}
 
-    .blog_style h1 {
-        @apply text-xl  md:text-2xl;
-    }
+.pagination .page-item .page-link:hover {
+    background-color: #ffa500;
+    color: #ffffff;
+}
 
-    .blog_style h2 {
-        @apply text-lg  md:text-xl;
-    }
+/* Blog Style */
 
-    .blog_style h3 {
-        @apply text-base  md:text-lg;
-    }
+.blog_style p,
+.blog_style ul,
+.blog_style table {
+    margin-bottom: 20px;
+}
 
-    .blog_style p {
-        @apply font-primary font-medium text-sm text-primary md:text-base;
-    }
+.blog_style h2 {
+    margin-bottom: 5px;
+}
 
-    .blog_style ul {
-        @apply font-primary font-medium text-sm text-primary list-disc list-inside md:text-base;
-    }
+.blog_style table,
+th,
+td {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+.blog_style ul {
+    padding-left: 20px !important;
+    list-style-position: inherit !important;
+}
+.blog_style ul li {
+    padding-left: 5px !important;
+}
 
-    .blog_style ol {
-        @apply font-primary font-medium text-sm text-primary list-decimal list-inside md:text-base;
-    }
+.pilar_card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
 
-    .blog_style a {
-        @apply hover:text-primary/80 underline decoration-primary decoration-2;
-    }
+.blog_style h1,
+h2,
+h3 {
+    @apply font-primary font-extrabold text-primary;
+}
 
-    .blog_title_header_active {
-        /* @apply fixed top-0 left-0 w-full z-[999] shadow-lg bg-white main-container lg:flex lg:items-center lg:justify-between h-[75px]; */
-        @apply top-0 z-[999] shadow-lg bg-white lg:flex lg:items-center lg:justify-between min-h-[75px];
-    }
+.blog_style h1 {
+    @apply text-xl  md:text-2xl;
+}
 
-    .blog_title_header_active h1 {
-        @apply font-primary font-extrabold text-sm text-primary md:text-2xl text-[14.5px] lg:text-left text-center transition-all duration-700;
-    }
+.blog_style h2 {
+    @apply text-lg  md:text-xl;
+}
 
-    .mentor_card {
-        transform-style: preserve-3d;
-        perspective: 1000px;
-    }
+.blog_style h3 {
+    @apply text-base  md:text-lg;
+}
 
-    .mentor_card .front,
-    .mentor_card .back {
-        transition: transform 0.6s;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-    }
+.blog_style p {
+    @apply font-primary font-medium text-sm text-primary md:text-base;
+}
 
-    .mentor_card .back {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.blog_style ul {
+    @apply font-primary font-medium text-sm text-primary list-disc list-inside md:text-base;
+}
 
-    .mentor_card .back {
-        transform: rotateY(-180deg);
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.blog_style ol {
+    @apply font-primary font-medium text-sm text-primary list-decimal list-inside md:text-base;
+}
 
-    .mentor_card:hover .front {
-        transform: rotateY(-180deg);
-    }
-    .mentor_card:hover .back {
-        transform: rotateY(-360deg);
-    }
-    .mentor_graduation p {
-        @apply inline truncate;
-    }
+.blog_style a {
+    @apply hover:text-primary/80 underline decoration-primary decoration-2;
+}
 
-    #home_banner .splide__pagination {
-        display: flex;
-        flex-direction: column;
-        left: 95% !important;
-        bottom: 80vh;
-    }
+.blog_title_header_active {
+    /* @apply fixed top-0 left-0 w-full z-[999] shadow-lg bg-white main-container lg:flex lg:items-center lg:justify-between h-[75px]; */
+    @apply top-0 z-[999] shadow-lg bg-white lg:flex lg:items-center lg:justify-between min-h-[75px];
+}
 
-    .blog_style p,
-    .blog_style ul,
-    .blog_style table {
-        margin-bottom: 20px;
-    }
+.blog_title_header_active h1 {
+    @apply font-primary font-extrabold text-xl text-primary md:text-2xl  lg:text-left text-center transition-all duration-500;
+}
 
-    .blog_style h2 {
-        margin-bottom: 5px;
-    }
+.mentor_card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
 
-    .blog_style table,
-    th,
-    td {
-        border: 1px solid black;
-        padding: 5px 10px;
-    }
-    .blog_style ul {
-        padding-left: 20px !important;
-        list-style-position: inherit !important;
-    }
-    .blog_style ul li {
-        padding-left: 5px !important;
-    }
+.mentor_card .front,
+.mentor_card .back {
+    transition: transform 0.6s;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
 
-    .pilar_card {
-        transform-style: preserve-3d;
-        perspective: 1000px;
-    }
+.mentor_card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .pilar_card .front,
-    .pilar_card .back {
-        transition: transform 0.6s;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-    }
+.mentor_card .back {
+    transform: rotateY(-180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .pilar_card .back {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.mentor_card:hover .front {
+    transform: rotateY(-180deg);
+}
+.mentor_card:hover .back {
+    transform: rotateY(-360deg);
+}
 
-    .pilar_card .back {
-        transform: rotateY(-180deg);
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+#home_banner .splide__pagination {
+    display: flex;
+    flex-direction: column;
+    left: 95% !important;
+    bottom: 80vh;
+}
 
-    .pilar_card:hover .front {
-        transform: rotateY(-180deg);
-    }
-    .pilar_card:hover .back {
-        transform: rotateY(-360deg);
-    }
+.pilar_card .front,
+.pilar_card .back {
+    transition: transform 0.6s;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
 
-    .success_stories_desc a {
-        @apply underline decoration-primary hover:text-primary/70;
-    }
+.pilar_card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .widget-desc p {
-        margin-bottom: 5px;
-    }
+.pilar_card .back {
+    transform: rotateY(-180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .splide:not(.is-overflow) .splide__list {
-        justify-content: center;
-    }
+.pilar_card:hover .front {
+    transform: rotateY(-180deg);
+}
+.pilar_card:hover .back {
+    transform: rotateY(-360deg);
+}
 
-    .animation_circle {
-        transition: linear var(--animation-circle-time);
-        stroke-dashoffset: calc(566 - (566 * 0) / 100);
-    }
+.success_stories_desc a {
+    @apply underline decoration-primary hover:text-primary/70;
+}
 
-    .animation_circle_active {
-        stroke-dashoffset: calc(566 - (566 * var(--animation-circle)) / 100);
-    }
+.widget-desc p {
+    margin-bottom: 5px;
+}
+
+/* Academic Tutoring Animation */
+.animation_circle {
+    transition: linear var(--animation-circle-time);
+    stroke-dashoffset: calc(566 - (566 * 0) / 100);
+}
+
+.animation_circle_active {
+    stroke-dashoffset: calc(566 - (566 * var(--animation-circle)) / 100);
+}
+
+/* Slider */
+.splide:not(.is-overflow) .splide__list {
+    justify-content: center;
+}
+
+/* Privacy Policy */
+.privacy_policy h1 {
+    @apply my-8 font-primary font-bold text-4xl text-primary;
+}
+
+.privacy_policy h2 {
+    @apply my-6 font-primary font-medium text-3xl text-primary;
+}
+
+.privacy_policy h3 {
+    @apply my-6 font-primary font-medium text-2xl text-primary;
+}
+
+.privacy_policy p {
+    @apply font-primary text-xl text-primary leading-10;
+}
+
+.privacy_policy ul {
+    @apply list-disc list-inside lg:list-outside lg:pl-5;
+}
+
+.privacy_policy li {
+    @apply font-primary text-xl text-primary leading-10;
+}
+
+.privacy_policy a {
+    @apply underline;
 }

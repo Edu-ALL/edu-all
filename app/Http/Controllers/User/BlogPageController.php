@@ -14,7 +14,7 @@ class BlogPageController extends Controller
 {
     public function index($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
 
         // ambil semua blog dengan sesuai bahasa dan blog yang berstatus publish
         $blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish');
@@ -79,13 +79,13 @@ class BlogPageController extends Controller
 
         // dd($blog);
         $recomendation_blogs = Blogs::latest()
-        ->where('id', '!=', $blog->id)
-        ->where('cat_id', $blog->cat_id)
-        ->where('blog_status', 'publish')
-        ->take(3)->get();
+            ->where('id', '!=', $blog->id)
+            ->where('cat_id', $blog->cat_id)
+            ->where('blog_status', 'publish')
+            ->take(3)->get();
 
         $blog_widgets =  BlogWidgets::all()->where('blog_id', $blog->id);
-        
+
 
         // return $blog->blog_description;
         // Blog Section
@@ -96,14 +96,14 @@ class BlogPageController extends Controller
         $parent = $figure?->parentNode;
         $parent?->removeChild($figure);
 
-        
-        
+
+
         $blog_section = [];
         foreach ($title_list as $index => $title) {
             $title->setAttribute("id", "blog_title_" . $index);
             $blog_section[] = $title->nodeValue;
         }
-        
+
         $blog->blog_description = $doc->saveHTML();
 
         return view('user.detail_blog.main', [

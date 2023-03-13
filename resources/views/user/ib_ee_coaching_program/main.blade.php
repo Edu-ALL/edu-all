@@ -18,8 +18,8 @@
                     alt="academic tutoring points" class="hidden w-full mx-auto text-center md:block md:max-w-4xl  md:mb-10">
             </div>
 
-            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/header-SAT-page.webp') }}"
-                alt="header ib ee coaching program" class="w-full h-[50vh] object-cover object-center md:h-[80vh] ">
+            <img data-original="{{ asset('assets/img/banner/EE Banner.webp') }}" alt="header ib ee coaching program"
+                class="w-full h-[50vh] object-cover object-center md:h-[80vh] ">
         </div>
     </section>
 
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
-                class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
+                alt="" class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
         </div>
     </section>
 
@@ -93,7 +93,7 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/ib_ee_coaching_program.bottom_subtitle') }}</span>
             </h2>
-            <a href="https://landing.mailerlite.com/webforms/landing/w0z5g5"
+            <a href="{{ route('sign_me_ee_coaching', app()->getLocale()) }}"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/ib_ee_coaching_program.bottom_btn') }}</a>
         </div>
 
