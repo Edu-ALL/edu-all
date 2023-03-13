@@ -5,7 +5,7 @@ use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\ResourcesPageController;
-use App\Http\Controllers\user\SitemapController;
+use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 /*
