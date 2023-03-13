@@ -7,7 +7,7 @@
             <priority>1</priority>
         </url>
         <url>
-            <loc>{{ url('id/sitemap-pages.xml')}}</loc>
+            <loc>{{ url('id-id/sitemap-pages.xml')}}</loc>
             <lastmod>{{ date('c') }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1</priority>
