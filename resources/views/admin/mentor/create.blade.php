@@ -284,6 +284,5 @@
             submit.disabled = false;
         }
     };
-
 </script>
 @endsection
