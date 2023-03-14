@@ -15,17 +15,107 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Blog extends Controller
 {
     public function index(){
-        $blogs = Blogs::orderBy('updated_at', 'desc')->get();
-        $blogcategory = BlogCategorys::get();
-        // $this->checkPublish();
-        return view('admin.blog.index', [
-            'blogs' => $blogs,
-            'blogcategory' => $blogcategory
-        ]);
+        return view('admin.blog.index');
+    }
+
+    public function getBlog(Request $request){
+        if ($request->ajax()) {
+            $data = Blogs::orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->editColumn('category', function($d){
+                $result = $d->blog_category->category_name;
+                return $result;
+            })
+            ->editColumn('mentor', function($d){
+                if ($d->mt_id == null) {
+                    $result = '-';
+                } else {
+                    $result = $d->mentor->mentor_firstname;
+                }
+                return $result;
+            })
+            ->editColumn('image', function($d){
+                $path = asset('uploaded_files/'.'blogs/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->blog_thumbnail);
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
+                ';
+                return $result;
+            })
+            ->editColumn('language', function($d){
+                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
+                    <p class="pt-1" style="font-size: 13px !important">
+                        '.$d->languages->language.'
+                    </p>
+                ';
+                return $result;
+            })
+            ->editColumn('highlight', function($d){
+                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
+                $route = route('highlight-blogs', ['id' => $d->id]);
+                $toggle = ($d->is_highlight == "false") ? "" : "checked";
+                $check = ($d->is_highlight == "false") ? "Off" : "On";
+                $result = '
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <form action="'.$route.'" method="POST">
+                            '.csrf_field().'
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" '.$toggle.' onchange="this.form.submit()" style="font-size: 18px !important">
+                                <label class="form-label card-title p-0 pt-1 m-0" for="is_highlight">
+                                    '.$check.'
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                ';
+                return $result;
+            })
+            ->editColumn('status', function($d){
+                if ($d->blog_status == 'publish') {
+                    $result = '
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft('.$d->id.')">
+                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">
+                                '.$d->blog_status.'
+                            </span>
+                        </button>
+                    ';
+                } else {
+                    $result = '
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish('.$d->id.')">
+                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
+                                '.$d->blog_status.'
+                            </span>
+                        </button>
+                    ';
+                }
+                return $result;
+            })
+            ->editColumn('action', function($d){
+                $result = '
+                <div class="d-flex flex-row justify-content-center gap-1">
+                    <a type="button" class="btn btn-primary" href="/admin/blogs/'.$d->id.'/view">
+                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this blog"></i>
+                    </a>
+                    <a type="button" class="btn btn-warning" href="/admin/blogs/'.$d->id.'/edit">
+                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
+                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog"></i>
+                    </button>
+                </div>
+                ';
+                return $result;
+            })
+            ->rawColumns(['category', 'mentor', 'image', 'language', 'highlight', 'status', 'action'])
+            ->make(true);
+        }
     }
 
     public function checkPublish(){

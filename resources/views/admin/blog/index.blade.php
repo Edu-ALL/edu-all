@@ -37,7 +37,7 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listblog" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -51,91 +51,6 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($blogs as $blog)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $blog->blog_title }}</td>
-                                            <td>{{ $blog->cat_id != null ? $blog->blog_category->category_name : '-' }}</td>
-                                            <td>{{ $blog->mt_id != null ? $blog->mentor->mentor_firstname.' '.$blog->mentor->mentor_lastname : '-' }}</td>
-                                            <td>
-                                                <img data-original="{{ asset('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$blog->blog_thumbnail) }}" alt="" width="80">
-                                            </td>
-                                            <td class="text-center">
-                                                <img data-original="{{ asset('assets/img/flag/flag-'.$blog->lang.'.png') }}" alt="" width="30">
-                                                <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $blog->languages->language }}
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="col d-flex align-items-center justify-content-center">
-                                                    <form action="{{ route('highlight-blogs', ['id' => $blog->id]) }}" method="POST">
-                                                        @csrf
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" {{ $blog->is_highlight == 'false' ? '' : 'checked' }}  onchange="this.form.submit()" style="font-size: 18px !important">
-                                                            <label class="form-label card-title p-0 pt-1 m-0" for="is_highlight">
-                                                                {{ $blog->is_highlight == 'false' ? 'Off' : 'On' }}
-                                                            </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                            @if ($blog->blog_status == 'publish')
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-success"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#draft"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formDraft({{ $blog->id }})"
-                                                    >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Set to Draft">
-                                                            {{ $blog->blog_status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @else
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-danger"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#publish"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formPublish({{ $blog->id }})"
-                                                    >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
-                                                            {{ $blog->blog_status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @endif
-                                            <td class="text-center">
-                                                <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-primary" href="/admin/blogs/{{ $blog->id }}/view">
-                                                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this blog"></i>
-                                                    </a>
-                                                    <a type="button" class="btn btn-warning" href="/admin/blogs/{{ $blog->id }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog"></i>
-                                                    </a>
-                                                    <button 
-                                                    type="button"
-                                                    class="btn btn-danger"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#delete"
-                                                    onclick="formDelete({{ $blog->id }})"
-                                                    >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -218,6 +133,31 @@
 
 @section('js')
     <script>
+        // Tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        // List Blogs
+        $(function() {
+            $('#listblog').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-blogs') }}',
+                columns: [
+                    { data: 'DT_RowIndex', name: 'DT_RowIndex' },
+                    { data: 'blog_title', name: 'blog_title' },
+                    { data: 'category', name: 'category' },
+                    { data: 'mentor', name: 'mentor' },
+                    { data: 'image', name: 'image' },
+                    { data: 'language', name: 'language', class: 'text-center' },
+                    { data: 'highlight', name: 'highlight' },
+                    { data: 'status', name: 'status', class: 'text-center' },
+                    { data: 'action', name: 'action', class: 'text-center' },
+                ]
+            });
+        });
         function formDraft(id){
             $('#form_draft').attr('action', '{{ url('/admin/blogs/draft/') }}' + '/' + id);
         };
@@ -227,8 +167,5 @@
         function formDelete(id){
             $('#form_delete').attr('action', '{{ url('/admin/blogs/delete/') }}' + '/' + id);
         };
-        // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 @endsection
