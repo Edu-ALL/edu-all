@@ -80,7 +80,7 @@
                                                         <p class="m-0">:</p>
                                                     </div>
                                                     <div class="col p-0">
-                                                        <p class="m-0">{{ $mentor[0]->mentor_firstname.' '.$mentor[0]->mentor_lastname }}</p>
+                                                        <p class="m-0">{{ $mentor[0]->mentor_fullname }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="field-detail d-flex flex-row align-items-start">

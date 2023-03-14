@@ -27,8 +27,7 @@ class Mentor extends Controller
         $rules = [
             'mentor_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt' => 'required',
-            'mentor_firstname' => 'required',
-            'mentor_lastname' => 'nullable',
+            'mentor_fullname' => 'required|max:24',
             'mentor_slug' => 'required',
             'mentor_category' => 'required',
             'mentor_graduation_en' => 'required',
@@ -52,8 +51,7 @@ class Mentor extends Controller
         try {
             $mentor_en = new Mentors();
             $mentor_en->group = date('YmdHis');
-            $mentor_en->mentor_firstname = $request->mentor_firstname;
-            $mentor_en->mentor_lastname = $request->mentor_lastname;
+            $mentor_en->mentor_fullname = $request->mentor_fullname;
             $mentor_en->mentor_slug = $request->mentor_slug;
             $mentor_en->mentor_category = $request->mentor_category;
             $mentor_en->mentor_alt = $request->mentor_alt;
@@ -67,8 +65,7 @@ class Mentor extends Controller
 
             $mentor_id = new Mentors();
             $mentor_id->group = $mentor_en->group;
-            $mentor_id->mentor_firstname = $request->mentor_firstname;
-            $mentor_id->mentor_lastname = $request->mentor_lastname;
+            $mentor_id->mentor_fullname = $request->mentor_fullname;
             $mentor_id->mentor_slug = $request->mentor_slug;
             $mentor_id->mentor_category = $request->mentor_category;
             $mentor_id->mentor_alt = $request->mentor_alt;
@@ -123,8 +120,7 @@ class Mentor extends Controller
         $rules = [
             'mentor_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt' => 'required',
-            'mentor_firstname' => 'required',
-            'mentor_lastname' => 'nullable',
+            'mentor_fullname' => 'required|max:24',
             'mentor_slug' => 'required',
             'mentor_category' => 'required',
             'mentor_graduation_en' => 'required',
@@ -148,8 +144,7 @@ class Mentor extends Controller
         try {
             $mentor = Mentors::where('group', $group)->get();
             $mentor_en = $mentor[0];
-            $mentor_en->mentor_firstname = $request->mentor_firstname;
-            $mentor_en->mentor_lastname = $request->mentor_lastname;
+            $mentor_en->mentor_fullname = $request->mentor_fullname;
             $mentor_en->mentor_slug = $request->mentor_slug;
             $mentor_en->mentor_category = $request->mentor_category;
             $mentor_en->mentor_graduation = $request->mentor_graduation_en;
@@ -161,8 +156,7 @@ class Mentor extends Controller
             $mentor_en->updated_at = date('Y-m-d H:i:s');
 
             $mentor_id = $mentor[1];
-            $mentor_id->mentor_firstname = $request->mentor_firstname;
-            $mentor_id->mentor_lastname = $request->mentor_lastname;
+            $mentor_id->mentor_fullname = $request->mentor_fullname;
             $mentor_id->mentor_slug = $request->mentor_slug;
             $mentor_id->mentor_category = $request->mentor_category;
             $mentor_id->mentor_graduation = $request->mentor_graduation_id;

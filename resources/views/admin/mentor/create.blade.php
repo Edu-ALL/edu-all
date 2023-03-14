@@ -70,19 +70,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col d-flex flex-md-row flex-column pt-2 gap-md-3 gap-2">
-                                    <div class="col">
-                                        <label for="" class="form-label">
-                                            First Name <span style="color: var(--red)">*</span>
-                                        </label>
-                                        <input type="text" class="form-control" id="firstname" name="mentor_firstname" value="{{ old('mentor_firstname') }}" onchange="createSlug()">
-                                    </div>
-                                    <div class="col">
-                                        <label for="" class="form-label">
-                                            Last name
-                                        </label>
-                                        <input type="text" class="form-control" id="lastname" name="mentor_lastname" value="{{ old('mentor_lastname') }}" onchange="createSlug()">
-                                    </div>
+                                <div class="col-12 mt-2">
+                                    <label for="" class="form-label">
+                                        Full Name <span style="color: var(--red)">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="fullname" name="mentor_fullname" value="{{ old('mentor_fullname') }}" onchange="checkLength()">
+                                    <small class="d-none alert text-danger ps-0 fs-12" id="checkFullname">Maximum length of Full Name is 24 characters</small>
+                                    @error('mentor_fullname')
+                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="col d-flex flex-md-row flex-column pt-2 gap-md-3 gap-2">
                                     <div class="col">
@@ -256,19 +252,24 @@
     };
 
     function createSlug(){
-        let firstname = document.getElementById('firstname').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
-        let lastname = document.getElementById('lastname').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
+        let fullname = document.getElementById('fullname').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
         let slug = document.getElementById('slug');
-        if (document.getElementById('lastname').value != ''){
-            slug.value = firstname + '-' + lastname;
-        } else {
-            slug.value = firstname;
-        }
+        slug.value = fullname;
     };
 
+    function checkLength(){
+        let fullname = document.getElementById('fullname').value.length;
+        let checkFullname = document.getElementById('checkFullname');
+        if (fullname > 24) {
+            checkFullname.classList.remove('d-none');
+        } else {
+            checkFullname.classList.add('d-none');
+        }
+        createSlug();
+    }
+
     function checkInput(){
-        const firstname = document.getElementById('firstname').value;
-        const lastname = document.getElementById('lastname').value;
+        const fullname = document.getElementById('fullname').value;
         const slug = document.getElementById('slug').value;
         const category = document.getElementById('category').value;
         const graduation_en = tinymce.get('graduation_en').getContent();
@@ -277,7 +278,7 @@
         const image = document.getElementById('image').value;
         const alt = document.getElementById('alt').value;
         const submit = document.getElementById('submit');
-        if (firstname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image == "" || alt == "") {
+        if (fullname == "" || slug == "" || category == "" || graduation_en == "" || description_en == "" || short_description_en == "" || image == "" || alt == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;

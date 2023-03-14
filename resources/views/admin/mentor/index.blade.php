@@ -58,7 +58,7 @@
                                     @foreach ($mentors as $mentor)
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $mentor->mentor_firstname.' '.$mentor->mentor_lastname }}</td>
+                                            <td>{{ $mentor->mentor_fullname }}</td>
                                             <td>{{ $mentor->mentor_category }}</td>
                                             <td>{!! Str::limit($mentor->mentor_graduation, 120, '...') !!}</td>
                                             <td>{!! Str::limit($mentor->description, 120, '...') !!}</td>
