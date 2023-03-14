@@ -33,7 +33,7 @@
 
 
     {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/c278872066.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous"></script>
     {{-- Splide JS - JS --}}
     <script src="/js/splide.min.js"></script>
     {{-- JQuery --}}

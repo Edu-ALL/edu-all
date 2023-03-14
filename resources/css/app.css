@@ -264,6 +264,10 @@ h3 {
     justify-content: center;
 }
 
+#guidebook .splide:not(.is-overflow) .splide__list {
+    justify-content: flex-start !important;
+}
+
 /* Privacy Policy */
 .privacy_policy h1 {
     @apply my-8 font-primary font-bold text-4xl text-primary;

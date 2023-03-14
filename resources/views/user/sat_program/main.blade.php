@@ -18,11 +18,11 @@
                 </div>
 
                 <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
-                    alt="academic tutoring points"
+                    alt="Allineduspace academic tutoring points"
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/SAT banner.webp') }}" alt=""
+            <img data-original="{{ asset('assets/img/banner/SAT banner.webp') }}" alt="Allineduspace SAT Program Banner"
                 class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
         </div>
     </section>
@@ -118,7 +118,7 @@
                             <h4 class="font-primary font-bold text-lg text-yellow uppercase">{{ $item['title'] }}</h4>
                             <p class="font-primary text-base text-white leading-5">{{ $item['body'] }}</p>
                             @if ($item['btn'] != null)
-                                <a href="#"
+                                <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}" target="_blank"
                                     class="inline-block mt-3 px-3 py-1.5 font-primary font-medium text-base text-white rounded-2xl bg-yellow md:rounded-xl">{{ $item['btn'] }}</a>
                             @endif
                         </li>
@@ -143,10 +143,10 @@
             <div class="flex justify-center items-center w-full main-container gap-x-8">
                 @if ($locale == 'id')
                     <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
-                        alt="frame 7" class="w-full max-w-2xl">
+                        alt="Allineduspace Why Us" class="w-full max-w-2xl">
                 @else
                     <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-8.webp') }}"
-                        alt="frame 7" class="w-full max-w-2xl">
+                        alt="Allineduspace Why Us" class="w-full max-w-2xl">
                 @endif
             </div>
         </div>
@@ -181,7 +181,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>

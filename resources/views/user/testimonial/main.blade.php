@@ -18,7 +18,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
-                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}">
+                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}" alt="Allineduspace Testimony">
                         </div>
                         <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Admission <br> Mentoring</h2>
@@ -43,7 +43,7 @@
                                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                                         <div class="flex flex-col">
                                                             <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                                class="w-7 mb-3 h-auto">
+                                                                alt="Allineduspace Big Icon" class="w-7 mb-3 h-auto">
                                                             <div class="font-primary text-sm text-white text-justify">
                                                                 {!! $testi->testi_desc !!}
                                                             </div>
@@ -72,7 +72,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
-                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}">
+                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}" alt="Allineduspace Big Icon">
                         </div>
                         <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Experiential <br> Learning</h2>
@@ -97,7 +97,7 @@
                                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                                         <div class="flex flex-col">
                                                             <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                                class="w-7 mb-3 h-auto">
+                                                                alt="Allineduspace Big Icon" class="w-7 mb-3 h-auto">
                                                             <div class="font-primary text-sm text-white text-justify">
                                                                 {!! $testi->testi_desc !!}
                                                             </div>
@@ -136,7 +136,7 @@
                 <div class="flex flex-col md:flex-row">
                     <div class="relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
-                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}">
+                            <img data-original="{{ asset('assets/logo/quote-big.svg') }}" alt="Allineduspace Big Icon">
                         </div>
                         <h2 class="mt-16 font-primary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Academic <br> Preparation</h2>
@@ -161,7 +161,7 @@
                                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                                         <div class="flex flex-col">
                                                             <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                                class="w-7 mb-3 h-auto">
+                                                                alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                             <div class="font-primary text-sm text-white text-justify">
                                                                 {!! $testi->testi_desc !!}
                                                             </div>
