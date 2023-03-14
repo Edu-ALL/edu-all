@@ -5,7 +5,8 @@
     <section class="py-20 bg-sg-header bg-cover bg-center">
         <div class="main-container">
             <div class="py-28 flex flex-col items-center md:py-52">
-                <img data-original="{{ asset('assets/logo/allin-big.png') }}" class="w-full max-w-sm">
+                <img data-original="{{ asset('assets/logo/allin-big.png') }}" alt="allineduspace about banner"
+                    class="w-full max-w-sm">
             </div>
         </div>
     </section>
@@ -73,44 +74,46 @@
             <h2 class="mb-2 font-primary font-black text-4xl text-primary text-center">
                 Our Team
             </h2>
-            <div class="w-full max-w-7xl px-10 py-10">
+            <div class="w-full py-10">
                 <div class="splide" role="group">
                     <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
-                            <i class="fa-solid fa-chevron-left text-4xl"></i>
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                         </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
-                            <i class="fa-solid fa-chevron-right text-4xl"></i>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                         </button>
                     </div>
                     <div class="splide__track py-10">
                         <ul class="splide__list">
                             @foreach ($all_mentor as $mentor)
                                 <li class="splide__slide">
-                                    <div class="splide__slide__container px-4 w-full h-full">
+                                    <div
+                                        class="splide__slide__container px-4 w-full h-full min-h-[350px] flex items-center">
                                         <div class="mentor_card flex flex-col group">
                                             <div
                                                 class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                 <div
-                                                    class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                     <h3
-                                                        class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-5">
+                                                        class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                         {{ $mentor->mentor_firstname }} <br>
                                                         {{ $mentor->mentor_lastname }}
                                                     </h3>
                                                     <div
-                                                        class="mentor_graduation h-1/3 font-primary text-[10px] text-white leading-4 lg:leading-3">
+                                                        class="mt-2 font-primary text-xs text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->mentor_picture) }}"
-                                                    alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
+                                                <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                    alt="allineduspace mentor {{ $mentor->mentor_alt }}"
+                                                    class="bg-cover bg-center h-auto">
                                             </div>
                                             <div
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                 <div class="flex flex-col items-center justify-center">
                                                     <div
-                                                        class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                        class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
                                                         {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                     </div>
@@ -141,18 +144,27 @@
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : 4,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 5,
             perMove: 1,
-            focus: 0,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
-            pagination: false,
+            arrows: isMediumDevice ? false : true,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[90%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
         }).mount();
     </script>
 @endsection

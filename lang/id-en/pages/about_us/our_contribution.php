@@ -25,8 +25,8 @@ return [
             ],
         ],
         [
-            'title' => 'ALL-in Mentoring Scholarship',
-            'date' => 'April 2021 - June 2022',
+            'title' => 'ALL-in Annual Mentoring Scholarship ',
+            'date' => 'April 2021 - Present',
             'body' => [
                 'Starting from April 2021, ALL-in has provided a full-ride Admission Mentoring scholarship for students based on their achievements and financial needs. The Mentoring scholarship starts from Grade 11 until our mentees are accepted to top global universities. ',
                 'The Mentoring program includes personalized admission assessment, profile or CV development, selecting university, standardized testing strategy, university application, and also interview coaching.',

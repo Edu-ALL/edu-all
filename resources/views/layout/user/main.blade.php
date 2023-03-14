@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ app()->getLocale() == 'id' ? 'id' : 'en' }}" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex">
     <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
 
@@ -32,7 +33,7 @@
 
 
     {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/c278872066.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous"></script>
     {{-- Splide JS - JS --}}
     <script src="/js/splide.min.js"></script>
     {{-- JQuery --}}
@@ -86,20 +87,17 @@
             document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     </script>
     <!-- End Meta Pixel Code -->
-    <script>
-        fbq('init', '7966128296793473', {}, {
-            "agent": "wordpress-5.3-3.0.8"
-        });
-    </script>
-    <script>
-        fbq('track', 'PageView', []);
-    </script>
-    <!-- Meta Pixel Code -->
 
 
 </head>
 
 <body id="body">
+    <div class="fixed -bottom-[100px] right-10 z-[9999] transition-all duration-1000" id="topButton">
+        <div class="bg-primary rounded-full w-[40px] h-[40px] flex justify-center items-center text-white border border-[3px] border-[#F78614] cursor-pointer shadow "
+            onclick="topFunction()">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+    </div>
     @include('layout.user.navbar')
     <div class="mt-16">
         @yield('content')
@@ -115,8 +113,25 @@
         effect: "fadeIn"
     });
 
+    window.addEventListener("scroll", function() {
+        var topButtom = document.querySelector("#topButton");
+
+        if (window.scrollY > 300) {
+            topButtom.classList.remove('-bottom-[100px]');
+            topButtom.classList.add('bottom-10');
+        } else {
+            topButtom.classList.add('-bottom-[100px]');
+            topButtom.classList.remove('bottom-10');
+        }
+    });
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
     // IG TOKEN
-    sessionStorage.setItem('ig_token', '{{ env('IG_TOKEN') }}')
+    sessionStorage.setItem('ig_token', '{{ app()->getLocale() == 'sg' ? env('IG_TOKEN_GLOBAL') : env('IG_TOKEN') }}')
 </script>
 
 </html>

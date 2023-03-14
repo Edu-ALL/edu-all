@@ -92,7 +92,7 @@ return [
     // WHY US?
     'why_us_title' => 'KENAPA PILIH KAMI?',
 
-    // WHAT OUR STUDNETS SAY
+    // WHAT OUR STUDENTS SAY
     'testimony_title' => 'APA KATA MEREKA',
     'testimonies' => [
         [

@@ -4,19 +4,19 @@
     {{-- Header Section --}}
     <section class="py-24 bg-cover bg-center">
         <div class="main-container">
-            <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-5">
+            <div class="grid grid-cols-1 items-center gap-x-14 gap-y-8 md:grid-cols-5">
                 <div
-                    class="relative max-w-sm w-full mx-auto rounded-lg shadow-lg overflow-hidden md:mx-0 md:col-span-2 xl:row-span-2">
-                    <div class="absolute left-0 bottom-0 pl-6 pb-3  flex flex-col justify-between h-[30%] z-20">
-                        <h3 class="h-2/3 font-primary font-bold text-3xl text-white leading-7">
+                    class="relative justify-self-end max-w-sm w-full mx-auto rounded-lg shadow-lg overflow-hidden md:mx-0 md:col-span-2 xl:row-span-2">
+                    <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
+                        <h3 class="font-primary font-bold text-3xl text-white leading-7">
                             {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                         </h3>
-                        <div class="h-1/3 font-primary text-sm text-white leading-4">
+                        <div class="mt-4 font-primary text-sm text-white leading-4">
                             {!! $mentor->mentor_graduation !!}
                         </div>
                     </div>
                     <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                        alt="{{ $mentor->mentor_alt }}" class="w-full bg-cover bg-center">
+                        alt="Allineduspace {{ $mentor->mentor_alt }}" class="w-full bg-cover bg-center">
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">
                     <h1 class="font-primary font-bold text-4xl text-primary text-center md:text-6xl xl:text-start">
@@ -89,7 +89,7 @@
                 <p class="max-w-2xl mb-8 font-primary font-medium text-base text-primary text-center">
                     {{ __('pages/about_us/mentor.bottom_detail_body') }}
                 </p>
-                <a href="{{ route('sign_me', app()->getLocale()) }}">
+                <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
                     <span class="px-10 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">
                         {{ __('pages/about_us/mentor.bottom_detail_btn') }}
                     </span>

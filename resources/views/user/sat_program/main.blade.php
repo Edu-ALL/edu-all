@@ -11,19 +11,19 @@
                     </h1>
                     <p class="mt-6 font-primary font-normal text-xl text-white md:text-left md:w-1/2">
                         {{ __('pages/programs/sat_program.desc') }}</p>
-                    <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
+                    <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                         class="inline-block px-5 py-2 mt-10 font-primary font-bold text-lg text-white bg-yellow rounded-lg">
                         {{ __('pages/programs/sat_program.top_btn') }}
                     </a>
                 </div>
 
                 <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
-                    alt="academic tutoring points"
+                    alt="Allineduspace academic tutoring points"
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>
 
-            <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/header-SAT-page.webp') }}"
-                alt="" class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
+            <img data-original="{{ asset('assets/img/banner/SAT banner.webp') }}" alt="Allineduspace SAT Program Banner"
+                class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
         </div>
     </section>
 
@@ -118,7 +118,7 @@
                             <h4 class="font-primary font-bold text-lg text-yellow uppercase">{{ $item['title'] }}</h4>
                             <p class="font-primary text-base text-white leading-5">{{ $item['body'] }}</p>
                             @if ($item['btn'] != null)
-                                <a href="#"
+                                <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}" target="_blank"
                                     class="inline-block mt-3 px-3 py-1.5 font-primary font-medium text-base text-white rounded-2xl bg-yellow md:rounded-xl">{{ $item['btn'] }}</a>
                             @endif
                         </li>
@@ -126,7 +126,7 @@
                 </ul>
             </div>
             <div class="text-center px-6 md:col-span-2">
-                <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
+                <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                     class="inline-flex px-5 py-2 mt-4 font-primary font-bold text-base text-white text-center bg-yellow rounded-2xl  md:text-xl">{{ __('pages/programs/sat_program.class_btn') }}</a>
             </div>
         </div>
@@ -141,8 +141,13 @@
                     {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
             </div>
             <div class="flex justify-center items-center w-full main-container gap-x-8">
-                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
-                    alt="frame 7" class="w-full max-w-4xl">
+                @if ($locale == 'id')
+                    <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
+                        alt="Allineduspace Why Us" class="w-full max-w-2xl">
+                @else
+                    <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-8.webp') }}"
+                        alt="Allineduspace Why Us" class="w-full max-w-2xl">
+                @endif
             </div>
         </div>
     </section>
@@ -159,6 +164,14 @@
 
             <div class="main-container my-12">
                 <div class="splide" role="group">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                        </button>
+                    </div>
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($testimonies as $testi)
@@ -168,7 +181,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
@@ -202,7 +215,7 @@
                 <span class="block text-yellow">
                     {{ __('pages/programs/sat_program.bottom_subtitle') }}</span>
             </h2>
-            <a href="https://landing.mailerlite.com/webforms/landing/o4s6n0"
+            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                 class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/sat_program.bottom_btn') }}</a>
         </div>
 
@@ -212,13 +225,17 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : 2,
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: false,
+            arrows: isMediumDevice ? false : true,
             autoplay: true,
             lazyload: true,
             interval: 4000,

@@ -13,14 +13,15 @@
 @endsection
 
 @section('content')
-    <div id="blog_title_header" class="mt-32 sticky main-container transition-all">
+    <div id="blog_title_header"
+        class="mt-32 py-4 sticky flex flex-col items-center justify-center main-container transition-all md:flex-row md:justify-between">
         <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
             {{ $blog->blog_title }}
         </h1>
-        <div class="share_container hidden items-center gap-1">
-            <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+        <div class="share_container hidden justify-between items-center gap-1 ">
+            <div class="share share_button flex items-center bg-primary text-white  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
-                <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
+                <i class="fa fa-send md:mr-2" aria-hidden="true"></i> <span class="hidden md:inline-block">Share</span>
             </div>
             <div class="share share_icon hidden">
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
@@ -53,7 +54,7 @@
                         @endif
                         @if (!empty($blog->duration_read))
                             <div class="flex items-center gap-2">
-                                <i class="fa fa-book mr-1" aria-hidden="true"></i>
+                                <i class="fa fa-book mr-1  text-primary" aria-hidden="true"></i>
                                 <span class="font-inter text-base text-primary md:text-[15px] text-[11px] leading-3">
                                     {{ $blog->duration_read }}
                                     {{ __('pages/blog.min_read') }}</span>
@@ -61,13 +62,13 @@
                             </div>
                         @endif
                         <div class="flex items-center gap-1">
-                            <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
+                            <i class="fa fa-calendar-o mr-1 text-primary" aria-hidden="true"></i>
                             <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
                                 {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
                             </span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-1">
+                    <div class="share_container_bottom flex items-center gap-1">
                         <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                             onclick="share_sosmed('open')">
                             <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
@@ -84,7 +85,7 @@
                 </div>
                 <div class="mt-6 w-full">
                     <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                        alt="{{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96">
+                        alt="Allineduspace {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96">
                 </div>
             </div>
         </div>
@@ -118,7 +119,7 @@
             <h2 class="mb-6 font-primary font-extrabold text-3xl text-white text-center md:text-5xl">
                 {{ __('pages/blog.sign_up') }}
             </h2>
-            <a href="{{ route('sign_me', app()->getLocale()) }}">
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
                 <span class="px-8 py-1.5 font-primary text-base text-white text-center rounded-md bg-yellow">
                     {{ __('pages/blog.sign_up_btn') }}
                 </span>
@@ -137,7 +138,8 @@
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
+                                alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
+                                class="h-72 object-cover object-center">
                             <div class="flex justify-between">
                                 <span class="font-primary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
@@ -168,6 +170,7 @@
         window.addEventListener("scroll", function() {
             var navbar = document.querySelector("#blog_title_header");
             var share_container = document.querySelector(".share_container");
+            var share_container_bottom = document.querySelector(".share_container_bottom");
             var main_navbar = document.querySelector("header");
 
             if (window.scrollY > 0) {
@@ -178,9 +181,13 @@
 
             if (window.scrollY > 80) {
                 share_container.classList.remove('hidden');
+                share_container_bottom.classList.add('hidden');
+                share_container.classList.add('flex');
                 navbar.classList.add("blog_title_header_active");
             } else {
                 share_container.classList.add('hidden');
+                share_container_bottom.classList.remove('hidden');
+                share_container.classList.remove('flex');
                 navbar.classList.remove("blog_title_header_active");
             }
         });
@@ -221,7 +228,6 @@
         function blog_widget() {
             let paragraph = $('.blog_style p')
             let data = {!! $blog_widgets !!}
-            console.log(data);
             for (let index = 1; index <= paragraph.length; index++) {
                 data.forEach(element => {
                     if (index == element.position) {

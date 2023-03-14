@@ -168,7 +168,7 @@ return [
     ],
 
     // testimoni
-    'testi_title' => 'WHAT OUR STUDNETS SAY',
+    'testi_title' => 'WHAT OUR STUDENTS SAY',
     'testi_list' => [
         [
             'name' => 'Nayla',

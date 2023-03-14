@@ -2,15 +2,15 @@
 
 @section('content')
     {{-- Header Section --}}
-    <section class="py-20 bg-mentor-header bg-cover bg-center xl:py-40">
-        <div class="main-container lg:max-w-7xl lg:mx-auto">
+    <section class="py-20 flex items-center justify-start h-screen bg-mentor-header bg-cover bg-center">
+        <div class="main-container">
             <div class="flex flex-col">
                 <h1 class="mb-4 font-primary font-bold text-4xl text-white md:mb-8 md:text-6xl">
                     {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                <div class="mb-6 w-full font-primary font-medium text-lg text-white text-justify lg:max-w-xl md:mb-12">
+                <div class="mb-6 w-full font-primary font-medium text-lg text-white  lg:max-w-xl md:mb-12">
                     {!! __('pages/about_us/mentor.benner_body') !!}
                 </div>
-                <a href="#">
+                <a href="#mentor">
                     <span
                         class="px-10 py-2 font-primary font-semibold text-base text-white rounded-md bg-yellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
                 </a>
@@ -19,20 +19,18 @@
     </section>
 
     {{-- Mentor List Section --}}
-    <section class="py-20">
+    <section id="mentor" class="py-20">
         <div class="main-container lg:max-w-7xl lg:mx-auto">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-12">
                 @foreach ($allin_mentor as $mentor)
                     <div class="mentor_card flex flex-col rounded-xl">
                         <div class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
-                            <div
-                                class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20">
-                                <h3 class="h-2/3 font-primary font-bold text-3xl text-white leading-7">
+                            <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
+                                <h3 class="font-primary font-bold text-3xl text-white leading-7">
                                     {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                                 </h3>
-                                <div
-                                    class="mentor_graduation flex flex-col h-1/3 font-primary text-sm text-white leading-4 overflow-hidden">
-                                    {!! $mentor->mentor_graduation !!}
+                                <div class="mt-4 font-primary text-sm text-white leading-4 overflow-hidden">
+                                    {!! html_entity_decode(substr(strip_tags($mentor->mentor_graduation), 0, 60)) !!}...
                                 </div>
                             </div>
                             <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
@@ -42,7 +40,7 @@
                             class="back overflow-hidden flex justify-center items-center w-full p-8 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                             <div class="flex flex-col items-center justify-center">
                                 <div
-                                    class="mb-6 w-full h-full font-primary font-medium text-base text-white text-justify text-ellipsis ">
+                                    class="mb-6 w-full h-full font-primary font-medium text-base text-white text-center text-ellipsis ">
                                     {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...
 
                                 </div>
@@ -83,12 +81,11 @@
                                         <div
                                             class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                             <div
-                                                class="absolute left-0 right-0 bottom-0 px-6 pb-3 flex flex-col justify-between h-[30%] z-20">
-                                                <h3 class="h-2/3 font-primary font-bold text-3xl text-white leading-7">
+                                                class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
+                                                <h3 class="font-primary font-bold text-2xl text-white leading-5">
                                                     {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                                                 </h3>
-                                                <div
-                                                    class="mentor_graduation flex flex-col h-1/3 font-primary text-sm text-white leading-4 overflow-hidden">
+                                                <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
                                                     {!! $mentor->mentor_graduation !!}
                                                 </div>
                                             </div>
@@ -135,7 +132,7 @@
                 <h2 class="mb-8 font-primary font-bold text-4xl text-primary text-center">
                     {{ __('pages/about_us/mentor.bottom_title') }}
                 </h2>
-                <a href="#">
+                <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
                     <span class="px-10 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">
                         {{ __('pages/about_us/mentor.bottom_btn') }}
                     </span>

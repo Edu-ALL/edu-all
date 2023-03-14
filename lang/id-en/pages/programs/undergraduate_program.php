@@ -87,7 +87,7 @@ return [
     'why_us_desc' => 'Our expert mentors are here to give you guidance and network at top-ranked universities in the US, Canada, the UK, Europe, Australia, or Asia.',
 
     // testimony section
-    "testimony_title" => "WHAT OUR STUDNETS SAY",
+    "testimony_title" => "WHAT OUR STUDENTS SAY",
     "testimony_list" => [
         [
             'name' => 'Rachinta Marpaung',

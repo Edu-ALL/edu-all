@@ -43,7 +43,7 @@
                                         <div class="flex flex-col gap-6 md:flex-row">
                                             <div class="w-full md:w-2/3">
                                                 <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                                    alt="{{ $blog->blog_thumbnail_alt }}"
+                                                    alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                                     class="object-cover w-full h-full max-h-[60vh]">
                                             </div>
                                             <div
@@ -92,36 +92,20 @@
     <section class="py-16" id="blog-category">
         <div class="blog_page flex flex-col main-container">
             <div class="w-full mb-10">
-                <ul class="horizontal_list flex items-center gap-x-4 py-6 overflow-x-auto">
+                <ul class="horizontal_list flex items-center gap-x-1 py-6 overflow-x-auto">
                     <li class="flex-[0_0_auto]">
-                        @if (request('category'))
-                            <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                                class="px-5 py-1.5 font-primary font-bold text-sm text-primary border-[1px] border-primary rounded-md ">
-                                {{ __('pages/blog.category_all') }}
-                            </a>
-                        @else
-                            <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                                class="px-5 py-1.5 font-primary font-bold text-sm text-white border-[1px] border-primary rounded-md bg-primary">
-                                {{ __('pages/blog.category_all') }}
-                            </a>
-                        @endif
+                        <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
+                            class="px-5 py-1.5 font-primary font-bold text-sm border-[1px] border-primary rounded-md {{ request('category') ? 'text-primary' : 'bg-primary text-white' }} ">
+                            {{ __('pages/blog.category_all') }}
+                        </a>
                     </li>
                     @foreach ($blog_categories as $blog_category)
-                        @if (request('category') == $blog_category->slug)
-                            <li class="flex-[0_0_auto]">
-                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                    class="px-5 py-1.5 font-primary font-bold text-sm text-white border-[1px] border-primary rounded-md bg-primary">
-                                    {{ $blog_category->category_name }}
-                                </a>
-                            </li>
-                        @else
-                            <li class="flex-[0_0_auto]">
-                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                    class="px-5 py-1.5 font-primary font-bold text-sm text-primary border-[1px] border-primary rounded-md ">
-                                    {{ $blog_category->category_name }}
-                                </a>
-                            </li>
-                        @endif
+                        <li class="flex-[0_0_auto]">
+                            <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
+                                class="px-5 py-1.5 font-primary font-bold text-sm border-[1px] border-primary rounded-md {{ request('category') == $blog_category->slug ? 'bg-primary text-white' : 'text-primary' }}">
+                                {{ $blog_category->category_name }}
+                            </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -131,7 +115,8 @@
                         class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
+                                alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
+                                class="h-72 object-cover object-center">
                             <div class="flex justify-between">
                                 <span class="font-primary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}

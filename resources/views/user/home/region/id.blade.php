@@ -2,23 +2,24 @@
 
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
-    <div class="relative w-full left-0 overflow-hidden">
+    <div class="relative left-0 w-full h-screen -mt-16 overflow-hidden">
         <section class="splide" aria-labelledby="carousel-heading" id="home_banner">
             <div class="splide__track">
                 <ul class="splide__list">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
-                            <img class="object-bottom object-cover w-full h-[550px] md:h-[768px]"
+                            <img class="object-bottom object-cover w-full h-screen"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
-                                class="absolute-center top-0 -ml-1 bg-gradient-to-r w-full h-full from-primary/90 flex items-center md:items-start md:pt-32">
-                                <div class="px-8 lg:px-40 2xl:px-44 font-primary">
+                                class="absolute left-0 top-0 flex items-center w-full h-full pt-16 bg-gradient-to-r from-primary/90 md:items-start">
+                                <div
+                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-44 font-primary lg:items-start">
                                     <h2
-                                        class="font-primary text-3xl font-medium text-white  mb-6 sm:text-4xl  lg:text-5xl lg:w-[70%] xl:w-[55%]">
+                                        class="font-primary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
                                         {{ $banner->banner_title }}</h2>
                                     <div
-                                        class="text-sm font-normal text-white w-[90%] sm:text-lg lg:text-lg lg:w-[70%] xl:w-[55%]">
+                                        class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
                                         {!! $banner->banner_description !!}
                                     </div>
                                     <a href="{{ $banner->banner_link }}">
@@ -42,14 +43,14 @@
             <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
                 @foreach (__('pages/home.benefit_list') as $item)
                     <div
-                        class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                        <img data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
-                            class="w-[120px] h-auto">
+                        class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
+                        <img data-original="{{ asset('assets/img/home/' . $item['image']) }}"
+                            alt="Allineduspace ilustration" class="w-[120px] h-[auto]">
                         <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
                         </h4>
                         <p class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
-                            {{ __('pages/home.benefit_list.0.body') }}
+                            {{ $item['body'] }}
                         </p>
                     </div>
                 @endforeach
@@ -74,8 +75,8 @@
             <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
-                        <img data-original="{{ asset('assets/img/home/Icon_' . $loop->iteration . '.png') }}"
-                            alt="icon 1" class="mb-4 w-auto h-auto">
+                        <img data-original="{{ asset('assets/icon/about-us/about us icons-' . $loop->iteration . '.webp') }}"
+                            alt="Allineduspace About Us Icon" class="mb-4 w-40 h-32 object-contain">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
                 @endforeach
@@ -164,25 +165,26 @@
                                                 <div
                                                     class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                     <div
-                                                        class="absolute left-0 right-0 bottom-0 px-6 pb-3  flex flex-col justify-between h-[30%] z-20 lg:pl-3">
+                                                        class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                         <h3
-                                                            class="h-2/3 font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
+                                                            class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                             {{ $mentor->mentor_firstname }} <br>
                                                             {{ $mentor->mentor_lastname }}
                                                         </h3>
                                                         <div
-                                                            class="mentor_graduation flex flex-col h-1/3 font-primary text-xs text-white leading-4 lg:leading-3">
+                                                            class="mt-3 font-primary text-xs text-white leading-4 lg:leading-3">
                                                             {!! $mentor->mentor_graduation !!}
                                                         </div>
                                                     </div>
                                                     <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center h-auto">
+                                                        alt="Allineduspace {{ $mentor->mentor_alt }}"
+                                                        class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
                                                     class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                     <div class="flex flex-col items-center justify-center">
                                                         <div
-                                                            class="mb-6 w-full h-full font-primary font-medium text-sm text-white text-justify text-ellipsis ">
+                                                            class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
                                                             {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                         </div>
@@ -219,11 +221,11 @@
             <div class="w-full py-5">
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-left.png') }}" class="w-4 h-auto">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
                         </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -16px">
-                            <img data-original="{{ asset('assets/logo/arrow-right.png') }}" class="w-4 h-auto">
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
                         </button>
                     </div>
                     <div class="splide__track">
@@ -235,7 +237,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
@@ -269,7 +271,7 @@
             <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('testimonial', app()->getLocale()) }}"
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
                 class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
                 {{ __('pages/home.bottom_btn') }}
             </a>
@@ -292,11 +294,12 @@
                 wheel: false,
                 isNavigation: false,
                 arrows: false,
+                pagination: isMediumDevice ? false : true,
                 type: 'fade',
                 autoplay: true,
                 lazyload: true,
                 interval: 5000,
-                pauseOnHover: true
+                pauseOnHover: true,
             }).mount();
         });
 
@@ -319,19 +322,21 @@
         }).mount();
 
         new Splide(splides[2], {
+            type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,
-            rewind: true,
-            arrows: false
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            autoplay: true,
+            lazyload: true,
+            interval: 4000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[103%]');
+            data.list.classList.add('top-[105%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });
@@ -343,8 +348,8 @@
             display: block !important;
             flex-direction: column !important;
             right: 0 !important;
-            top: 25%;
-            /* bottom: 0; */
+            top: 50%;
+            transform: translate(0, -50%);
         }
 
         #home_banner .splide__pagination li {

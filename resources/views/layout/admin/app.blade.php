@@ -13,7 +13,7 @@
         rel="stylesheet">
 
     {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/c278872066.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous"></script>
 
     {{-- JQuery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -82,7 +82,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     {{-- Lazy Image Jquery --}}
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 
     <script>
         $("img").lazyload({

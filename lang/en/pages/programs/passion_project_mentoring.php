@@ -145,7 +145,7 @@ return [
     'other_programs' => 'OTHER PROGRAMS',
 
     // testimony section
-    "testimony" => "WHAT OUR STUDNETS SAY",
+    "testimony" => "WHAT OUR STUDENTS SAY",
     "testimonies" => $testimonies,
 
 

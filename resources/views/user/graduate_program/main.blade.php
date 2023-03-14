@@ -27,7 +27,7 @@
                 class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
                 <div class="w-full shadow-md rounded-3xl">
                     <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
-                        alt="admission mentoring benefit" class="w-full">
+                        alt="Allineduspace admission mentoring benefit" class="w-full">
                 </div>
             </div>
         </div>
@@ -57,7 +57,8 @@
                                     {{ $loop->iteration }}
                                 </span>
                                 <img data-original="{{ asset('assets/img/admission mentoring/Graduate/Graduate' . $loop->iteration . '.webp') }}"
-                                    alt="Allin" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                                    alt="Allineduspace Do"
+                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
                             </div>
                             <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
                                 <h4 class="font-primary font-semibold text-xl text-yellow">{{ $item['title'] }}</h4>
@@ -84,7 +85,7 @@
                         <div class="pilar_card h-72 md:h-60">
                             <div class="front flex items-center justify-center w-full overflow-hidden">
                                 <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}"
-                                    alt="4 pilar" class="w-full bg-cover bg-center">
+                                    alt="Allineduspace 4 pilar" class="w-full bg-cover bg-center">
                             </div>
                             <div
                                 class="back flex flex-col justify-center items-center w-full h-full px-4 bg-{{ $item['color'] }}">
@@ -106,10 +107,10 @@
                             class="px-6 py-2 font-primary font-semibold text-white text-center rounded-md bg-[#F90C0C]">{{ __('pages/programs/graduate_program.pilar_btn') }}
                         </span>
                     </a>
-                    <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}" target="_block"
+                    <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}" target="_block"
                         class="mt-8 rounded-xl overflow-hidden">
                         <img data-original="{{ asset('assets/img/admission mentoring/Graduate/Graduate IC.webp') }}"
-                            alt="graduate ic" class="mt-12 w-full max-w-2xl mx-auto object-contain">
+                            alt="Allineduspace Graduate" class="mt-12 w-full max-w-2xl mx-auto object-contain">
                     </a>
                 </div>
             </div>
@@ -131,10 +132,10 @@
                 </p>
                 @if (app()->getLocale() == 'id')
                     <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring) id.webp') }}"
-                        alt="why us mentoring curr" class="w-full max-w-4xl mx-auto">
+                        alt="Allineduspace why us mentoring curr" class="w-full max-w-4xl mx-auto">
                 @else
                     <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring).webp') }}"
-                        alt="why us mentoring curr" class="w-full max-w-4xl mx-auto">
+                        alt="Allineduspace why us mentoring curr" class="w-full max-w-4xl mx-auto">
                 @endif
             </div>
         </div>
@@ -168,7 +169,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
@@ -201,7 +202,7 @@
                     {{ __('pages/programs/graduate_program.bottom_subtitle') }}
                 </span>
             </h2>
-            <a href="{{ route('sign_me', ['locale' => app()->getLocale()]) }}"
+            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 class="px-5 py-2 mt-4 font-primary font-medium text-base text-white text-center bg-yellow rounded-md">{{ __('pages/programs/graduate_program.bottom_btn') }}
             </a>
         </div>
@@ -211,12 +212,15 @@
 @section('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : 2,
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             autoplay: true,

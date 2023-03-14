@@ -15,7 +15,7 @@ class ResourcesPageController extends Controller
 {
     public function success_stories($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->get();
 
         return view('user.success_stories.main', [
@@ -25,7 +25,7 @@ class ResourcesPageController extends Controller
 
     public function upcoming_events($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $events = UpcomingEvents::latest()->where('event_status', 'publish')->where('lang', $lang)->get();
 
         return view('user.upcoming_events.main', [
@@ -35,7 +35,7 @@ class ResourcesPageController extends Controller
 
     public function guidebook($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
 
         $guidebook = Guidebooks::all()->where('lang', $lang)->where('guidebook_status', 'active');
         $getting_started = $guidebook->where('guidebook_category', 'Getting Started');
@@ -55,7 +55,7 @@ class ResourcesPageController extends Controller
 
     public function testimonial($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
 
         $testimonial = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active');
 
