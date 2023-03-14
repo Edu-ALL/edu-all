@@ -26,7 +26,8 @@
                         <img data-original="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo"
                             class="w-4 h-4">
                     </a>
-                    <a href="https://instagram.com/{{app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME')}}" target="_blank">
+                    <a href="https://instagram.com/{{ app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}"
+                        target="_blank">
                         <span>{{ app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}</span>
                     </a>
                 </h4>
@@ -41,47 +42,11 @@
                 <ul class="flex flex-col items-start gap-2 w-full">
                     @foreach (__('pages/footer.page_list') as $item)
                         <li class="border-b-[1px] border-light w-full">
-                            @if ($loop->index == 0)
-                                <!-- MailerLite Universal -->
-                                <script>
-                                    (function(m, a, i, l, e, r) {
-                                        m['MailerLiteObject'] = e;
-
-                                        function f() {
-                                            var c = {
-                                                a: arguments,
-                                                q: []
-                                            };
-                                            var r = this.push(c);
-                                            return "number" != typeof r ? r : f.bind(c.q);
-                                        }
-                                        f.q = f.q || [];
-                                        m[e] = m[e] || f.bind(f.q);
-                                        m[e].q = m[e].q || f.q;
-                                        r = a.createElement(i);
-                                        var _ = a.getElementsByTagName(i)[0];
-                                        r.async = 1;
-                                        r.src = l + '?v' + (~~(new Date().getTime() / 1000000));
-                                        _.parentNode.insertBefore(r, _);
-                                    })
-                                    (window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
-
-                                    var ml_account = ml('accounts', '3236842', 'y1m1k0w0s1', 'load');
-                                </script>
-
-                                <!-- End MailerLite Universal -->
-                                <div class="flex justify-between text-white py-1 cursor-pointer lg:py-2 hover:text-white/70"
-                                    onclick="ml_account('webforms', '4486567', 'a2m9p2', 'show')" class="btn-subscribe">
-                                    <p class="">{{ $item['title'] }}</p>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            @else
-                                <a href="{{ url(app()->getLocale() . $item['link']) }}"
-                                    class="flex justify-between text-white py-1 lg:py-2 hover:text-white/70">
-                                    <p class="">{{ $item['title'] }}</p>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            @endif
+                            <a href="{{ url(app()->getLocale() . $item['link']) }}"
+                                class="flex justify-between text-white py-1 lg:py-2 hover:text-white/70">
+                                <p class="">{{ $item['title'] }}</p>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </li>
                     @endforeach
                 </ul>

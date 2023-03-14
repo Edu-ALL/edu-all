@@ -6,10 +6,6 @@ return [
     'company' => 'Company',
     'page_list' => [
         [
-            'title' => "Newsletters",
-            'link' => "/"
-        ],
-        [
             'title' => 'About Us',
             'link' => "/about"
         ],
