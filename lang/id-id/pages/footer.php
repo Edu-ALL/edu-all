@@ -6,8 +6,16 @@ return [
     'company' => 'Perusahaan',
     'page_list' => [
         [
+            'title' => 'Beranda',
+            'link' => "/"
+        ],
+        [
             'title' => 'Tentang Kami',
             'link' => "/about"
+        ],
+        [
+            'title' => 'ALL-info Blog',
+            'link' => "/blog"
         ],
         [
             'title' => "Kemitraan & Karir",

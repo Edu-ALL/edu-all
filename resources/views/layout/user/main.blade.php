@@ -92,15 +92,15 @@
 </head>
 
 <body id="body">
-    <div class="fixed -bottom-[100px] left-10 z-[9999] transition-all duration-1000" id="topButton">
+    <div class="fixed -bottom-[100px] lg:left-10 left-[10px] z-[9999] transition-all duration-1000" id="topButton">
         <div class="bg-primary rounded-full w-[40px] h-[40px] flex justify-center items-center text-white border border-[1px] border-[#F78614] cursor-pointer shadow "
             onclick="topFunction()">
             <i class="fa fa-arrow-up"></i>
         </div>
     </div>
 
-    <div class="fixed -bottom-[100%] right-10 z-[99999] transition-all duration-1000 bg-white lg:w-[400px] w-[80%] h-auto shadow-md rounded-md border-[1px]" id="newsForm">
-        <div class="text-right -mt-[5px] w-[20px] h-[20px] rounded-full bg-black text-white inline-block float-right flex justify-center items-center cursor-pointer" onclick="popupForm('close')">
+    <div class="fixed -bottom-[100%] lg:right-10 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[400px] w-[80%] h-auto shadow-md rounded-md border-[1px]" id="newsForm">
+        <div class="text-right -mt-[5px] w-[20px] h-[20px] rounded-full bg-yellow text-white inline-block float-right flex justify-center items-center cursor-pointer" onclick="popupForm('close')">
             <i class="fa fa-xmark"></i>
         </div>
         <div class="p-3">
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <div class="fixed -bottom-[100px] right-10 z-[9999] transition-all duration-1000" id="newsButton">
+    <div class="fixed -bottom-[100px] lg:right-10 right-[10px] z-[9999] transition-all duration-1000" id="newsButton">
         <div class="bg-primary rounded-md px-3 h-[40px] flex justify-center items-center text-white border border-[1px] border-[#F78614] cursor-pointer shadow "
             onclick="popupForm('open')">
             <i class="fa fa-newspaper mr-2"></i>

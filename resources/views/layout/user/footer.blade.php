@@ -1,15 +1,18 @@
 <footer class="bg-primary font-primary">
     <div class="main-container py-24">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 md:gap-4 lg:gap-x-10 gap-y-12">
-            <div class="flex flex-col">
+            <div class="flex flex-col sm:col-span-2">
                 <h4 class="font-bold text-base text-white mb-8">
                     {{ __('pages/footer.address') }}
                 </h4>
-                <p class="font-normal text-base text-white">Jl Jeruk Kembar Blok Q9/15 Srengseng, Kembangan DKI Jakarta
+                <p class="font-normal text-base text-white">
+                    Jl Jeruk Kembar Blok Q9 No. 15 Srengseng, <br>
+                    Kec. Kembangan, Kota Jakarta Barat, DKI Jakarta
                 </p>
-            </div>
-            <div class="flex flex-col">
-                <h4 class="font-bold text-base text-white mb-8">
+
+                <hr class="my-8">
+
+                <h4 class="font-bold text-base text-white mb-4">
                     {{ __('pages/footer.consultation') }}
                 </h4>
                 <p class="font-normal text-base text-white mb-4">Walk-in Consultation available on Mon-Fri, 09.00-17.00

@@ -6,8 +6,16 @@ return [
     'company' => 'Company',
     'page_list' => [
         [
+            'title' => 'Home',
+            'link' => "/"
+        ],
+        [
             'title' => 'About Us',
             'link' => "/about"
+        ],
+        [
+            'title' => 'ALL-info Blog',
+            'link' => "/blog"
         ],
         [
             'title' => "Partnership & Careers",

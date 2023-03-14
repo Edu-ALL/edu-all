@@ -76,7 +76,7 @@
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
                         <img data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
-                            alt="Allineduspace About Us Icon" class="mb-4 w-40 h-32 object-contain">
+                            alt="Allineduspace About Us Icon" class="mb-4 w-[90px] h-[90px] object-contain">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
                 @endforeach
