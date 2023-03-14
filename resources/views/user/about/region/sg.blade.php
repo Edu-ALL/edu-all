@@ -5,7 +5,8 @@
     <section class="py-20 bg-sg-header bg-cover bg-center">
         <div class="main-container">
             <div class="py-28 flex flex-col items-center md:py-52">
-                <img data-original="{{ asset('assets/logo/allin-big.png') }}" class="w-full max-w-sm">
+                <img data-original="{{ asset('assets/logo/allin-big.png') }}" alt="allineduspace about banner"
+                    class="w-full max-w-sm">
             </div>
         </div>
     </section>
@@ -93,7 +94,7 @@
                                             <div
                                                 class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                 <div
-                                                    class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20 lg:pl-3">
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                     <h3
                                                         class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                         {{ $mentor->mentor_firstname }} <br>
@@ -105,7 +106,8 @@
                                                     </div>
                                                 </div>
                                                 <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                    alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center h-auto">
+                                                    alt="allineduspace mentor {{ $mentor->mentor_alt }}"
+                                                    class="bg-cover bg-center h-auto">
                                             </div>
                                             <div
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">

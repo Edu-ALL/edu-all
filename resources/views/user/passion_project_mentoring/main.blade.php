@@ -21,15 +21,17 @@
 
                     <div class="flex justify-center max-h-fit pt-10 md:w-2/3 lg:w-1/2 lg:pt-20">
                         <img data-original="{{ asset('assets/img/passion_project_mentoring/stream.webp') }}"
-                            class="w-4/6 max-w-lg md:w-full">
+                            alt="Allineduspace Passion Project" class="w-4/6 max-w-lg md:w-full">
                     </div>
                 </div>
                 <div class="mt-10">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}">
+                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}"
+                        alt="Allineduspace Passion Project List">
                 </div>
             </div>
 
             <img data-original="{{ asset('assets/img/banner/Passion project banner.png') }}"
+                alt="Allineduspace Passion Project Banner"
                 class="w-full h-[900px] object-cover object-center sm:h-[1000px] md:h-[750px] lg:h-[850px]">
         </div>
     </section>
@@ -60,7 +62,7 @@
             <div class="grid grid-cols-1 items-center main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-entre-2 md:bg-cover md:bg-top md:min-h-[500px]">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
-                        class="md:hidden">
+                        alt="Allineduspace Passion Project Banner" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-primary text-base text-primary md:text-xl">
@@ -145,11 +147,11 @@
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
-                        class="object-cover flex-1">
+                        alt="Allineduspace Passion Project" class="object-cover flex-1">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-2.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-3.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
                 </div>
             </div>
 
@@ -159,7 +161,7 @@
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-entre-3 md:bg-cover md:bg-top">
                         <img data-original="{{ asset('assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp') }}"
-                            class="md:hidden">
+                            alt="Allineduspace Passion Project" class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-primary font-medium text-base text-primary tracking-wider md:text-xl">
@@ -202,10 +204,12 @@
                 </div>
                 <div class="self-start flex items-start mt-4">
                     <div class="flex items-center w-28 h-28 z-10">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}">
+                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}"
+                            alt="Allineduspace Passion Project">
                     </div>
                     <div class="flex items-center w-28 h-28 -ml-6">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}">
+                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}"
+                            alt="Allineduspace Passion Project">
                     </div>
                 </div>
             </div>
@@ -213,7 +217,7 @@
             <div class="grid grid-cols-1 items-center main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-scien-2 md:bg-cover md:bg-top md:min-h-[500px]">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
-                        class="md:hidden">
+                        alt="Allineduspace Passion Project" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-primary text-base text-primary md:text-xl">
@@ -300,11 +304,11 @@
                     {{ __('pages/programs/passion_project_mentoring.scientific_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
-                        class="object-cover flex-1">
+                        alt="Allineduspace Passion Project" class="object-cover flex-1">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-5.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-6.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
                 </div>
             </div>
 
@@ -314,7 +318,7 @@
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-scien-3 md:bg-cover md:bg-top">
                         <img data-original="{{ asset('assets/img/passion_project_mentoring/scientific research.png') }}"
-                            class="md:hidden">
+                            alt="Allineduspace Passion Project" class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-primary font-medium text-base text-primary tracking-wider md:text-xl">
@@ -385,7 +389,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>

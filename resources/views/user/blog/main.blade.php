@@ -43,7 +43,7 @@
                                         <div class="flex flex-col gap-6 md:flex-row">
                                             <div class="w-full md:w-2/3">
                                                 <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                                    alt="{{ $blog->blog_thumbnail_alt }}"
+                                                    alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                                     class="object-cover w-full h-full max-h-[60vh]">
                                             </div>
                                             <div
@@ -131,7 +131,8 @@
                         class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="{{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
+                                alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
+                                class="h-72 object-cover object-center">
                             <div class="flex justify-between">
                                 <span class="font-primary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}

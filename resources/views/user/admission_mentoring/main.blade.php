@@ -15,7 +15,8 @@
             </div>
 
             <img data-original="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}"
-                alt="Admission Mentoring Banner" class="w-full h-[400px] object-cover object-center md:h-[450px]">
+                alt="Allineduspace Admission Mentoring Banner"
+                class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
         </div>
     </section>
@@ -26,8 +27,8 @@
             class="max-w-5xl mx-auto min-w-max bg-white shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[180px]">
             <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-4 md:px-10 md:py-4 md:gap-y-14 md:gap-x-10 md:flex-row">
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}" alt="ilustration 1"
-                        class="h-36 object-center object-cover md:h-24">
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}"
+                        alt="Allineduspace ilustration 1" class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_1') }}
@@ -36,7 +37,7 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-black"></div>
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration 1"
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration"
                         class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
@@ -46,8 +47,8 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-black"></div>
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-3.png') }}" alt="ilustration 1"
-                        class="h-36 object-center object-cover md:h-24">
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-3.png') }}"
+                        alt="Allineduspace ilustration" class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_3') }}
@@ -56,8 +57,8 @@
                 </div>
                 <div class="min-h-full w-[1px] bg-black"></div>
                 <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-4.png') }}" alt="ilustration 1"
-                        class="h-36 object-center object-cover md:h-24">
+                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-4.png') }}"
+                        alt="Allineduspace ilustration" class="h-36 object-center object-cover md:h-24">
                     <h4
                         class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
                         <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_4') }}
@@ -102,8 +103,8 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img
-                                                data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
+                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
+                                                alt="Allineduspace Undergraduate">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
                                                     {{ $item['title'] }}</h4>
@@ -155,8 +156,8 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img
-                                                data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
+                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
+                                                alt="Allineduspace Graduate">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
                                                     {{ $item['title'] }}</h4>
@@ -209,8 +210,8 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
                                         <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
-                                            <img
-                                                data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}">
+                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
+                                                alt="Allineduspace University Transfer">
                                             <div class="py-6 px-4">
                                                 <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
                                                     {{ $item['title'] }}</h4>
@@ -247,7 +248,7 @@
                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                         <div class="flex flex-col">
                                             <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                class="w-7 mb-3 h-auto">
+                                                alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                             <div class="font-primary text-sm text-white text-justify">
                                                 {!! $testi->testi_desc !!}
                                             </div>

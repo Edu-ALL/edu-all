@@ -27,7 +27,7 @@
                 class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
                 <div class="w-full shadow-md rounded-3xl">
                     <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
-                        alt="admission mentoring benefit" class="w-full">
+                        alt="Allineduspace University Transfer Banner" class="w-full">
                 </div>
             </div>
         </div>
@@ -57,7 +57,8 @@
                                     {{ $loop->iteration }}
                                 </span>
                                 <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/Transfer ' . $loop->iteration . '.webp') }}"
-                                    alt="Allin" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                                    alt="Allineduspace"
+                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
                             </div>
                             <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
                                 <h4 class="font-primary font-semibold text-xl text-yellow">{{ $item['title'] }}</h4>
@@ -84,7 +85,7 @@
                         <div class="pilar_card h-72 md:h-60">
                             <div class="front flex items-center justify-center w-full overflow-hidden">
                                 <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}"
-                                    alt="4 pilar" class="w-full bg-cover bg-center">
+                                    alt="Allineduspace 4 pilar" class="w-full bg-cover bg-center">
                             </div>
                             <div
                                 class="back flex flex-col justify-center items-center w-full h-full px-4 bg-{{ $item['color'] }}">
@@ -109,7 +110,7 @@
                     <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}" target="_block"
                         class="mt-8 rounded-xl overflow-hidden">
                         <img data-original="{{ asset('assets/img/admission mentoring/Graduate/Graduate IC.webp') }}"
-                            alt="graduate ic" class="mt-12 w-full max-w-2xl mx-auto object-contain">
+                            alt="Allineduspace graduate ic" class="mt-12 w-full max-w-2xl mx-auto object-contain">
                     </a>
                 </div>
             </div>
@@ -168,7 +169,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>

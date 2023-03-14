@@ -15,8 +15,8 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Success Stories Banner.webp') }}" alt="success story banner"
-                class="w-full h-[400px] object-cover object-center">
+            <img data-original="{{ asset('assets/img/banner/Success Stories Banner.webp') }}"
+                alt="Allineduspace success story banner" class="w-full h-[400px] object-cover object-center">
         </div>
     </section>
 

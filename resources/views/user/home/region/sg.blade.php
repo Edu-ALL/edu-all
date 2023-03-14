@@ -46,7 +46,7 @@
                 We provide real-life experiences and professional skills needed, networking opportunities with professionals
                 in various fields, project mentoring, and up to university application preparation.
             </p>
-            <a href="#"
+            <a href="{{ route('about', app()->getLocale()) }}"
                 class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-primary rounded-[4px] md:px-16">
                 Find out more
             </a>
@@ -54,14 +54,16 @@
             <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="icon 1" class="mb-4">
+                    <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="Allineduspace About Us Section"
+                        class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         100% Students placed at target universities
                     </p>
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="icon 1" class="mb-4">
+                    <img src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="Allineduspace About Us Section"
+                        class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 40
                         <br> school Clients
@@ -69,21 +71,24 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="icon 1" class="mb-4">
+                    <img src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="Allineduspace About Us Section"
+                        class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 1.000 Essays Reviewed
                     </p>
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="icon 1" class="mb-4">
+                    <img src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="Allineduspace About Us Section"
+                        class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 50 Corporate Partners
                     </p>
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="icon 1" class="mb-4">
+                    <img src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="Allineduspace About Us Section"
+                        class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         150+ Point SAT Score Improvement
 
@@ -91,7 +96,8 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="icon 1" class="mb-4">
+                    <img src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="Allineduspace About Us Section"
+                        class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 1.500 Event Participants
                     </p>
@@ -112,26 +118,26 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 gap-x-16 gap-y-8 md:grid-cols-2">
-                <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#entrepreneurship']) }}">
+                <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#scientific']) }}">
                     <img src="{{ asset('assets/img/home/sg/Scientific Research.webp') }}" alt="Scientific Research"
                         class="rounded-xl">
                 </a>
-                <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#scientific']) }}">
+                <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#entrepreneurship']) }}">
                     <img src="{{ asset('assets/img/home/sg/Entrepreneurship.webp') }}" alt="Entrepreneurship"
                         class="rounded-xl">
                 </a>
             </div>
             <div class="max-w-3xl w-full mx-auto grid grid-cols-1 gap-x-16 gap-y-8 mt-12 md:grid-cols-3">
-                <a href="#">
+                <div>
                     <img src="{{ asset('assets/img/home/sg/LOGO Career bootcamp.webp') }}" alt="Career Bootcamp Logo"
                         class="rounded-xl">
-                </a>
-                <a href="#">
+                </div>
+                <div>
                     <img src="{{ asset('assets/img/home/sg/LOGO CEP.webp') }}" alt="CEP Logo" class="rounded-xl">
-                </a>
-                <a href="#">
+                </div>
+                <div>
                     <img src="{{ asset('assets/img/home/sg/Logo GIP.webp') }}" alt="GIP Logo" class="rounded-xl">
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -147,10 +153,8 @@
                 </p>
             </div>
             <div class="mt-6 p-8 mx-6 rounded-xl bg-white md:mx-0 md:grid-cols-3">
-                <a href="#">
-                    <img src="{{ asset('assets/img/home/sg/university logo.png') }}" alt="Career Bootcamp Logo"
-                        class="rounded-xl">
-                </a>
+                <img src="{{ asset('assets/img/home/sg/university logo.png') }}" alt="Career Bootcamp Logo"
+                    class="rounded-xl">
             </div>
             <a href="{{ route('success_stories', app()->getLocale()) }}"
                 class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-yellow rounded-[4px] md:px-16">

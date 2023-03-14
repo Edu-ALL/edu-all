@@ -4,7 +4,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
-            <img data-original="{{ asset('assets/img/banner/About us banner.webp') }}" alt="header image"
+            <img data-original="{{ asset('assets/img/banner/About us banner.webp') }}" alt="allineduspace about banner image"
                 class="w-full h-full object-cover object-center">
         </div>
     </section>
@@ -54,7 +54,7 @@
     {{-- ================================== Question & Answer ================================== --}}
     <section class="py-16">
         <div class="flex flex-col items-center main-container">
-            <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="Allin Logo">
+            <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="allineduspace Logo">
             <h2 class="mt-4 font-primary font-bold text-3xl text-yellow text-center">Question & Answer</h2>
 
             <div class="max-w-4xl mt-8 w-full">
@@ -107,7 +107,7 @@
                                             <div
                                                 class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                                                 <div
-                                                    class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20 lg:pl-3">
+                                                    class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                     <h3
                                                         class="font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
                                                         {{ $mentor->mentor_firstname }} <br>
@@ -119,7 +119,8 @@
                                                     </div>
                                                 </div>
                                                 <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                    alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
+                                                    alt="allineduspace mentor {{ $mentor->mentor_alt }}"
+                                                    class="bg-cover bg-center">
                                             </div>
                                             <div
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
