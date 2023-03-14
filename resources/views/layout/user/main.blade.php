@@ -134,19 +134,19 @@
     });
 
     window.addEventListener("scroll", function() {
-        var topButtom = document.querySelector("#topButton");
+        var topButton = document.querySelector("#topButton");
         var newsButton = document.querySelector("#newsButton");
 
         if (window.scrollY > 300) {
-            topButtom.classList.remove('-bottom-[100px]');
-            topButtom.classList.add('lg:bottom-10 bottom-[10px]');
+            topButton.classList.remove('-bottom-[100px]');
+            topButton.classList.add('lg:bottom-10','bottom-[15px]');
             newsButton.classList.remove('-bottom-[100px]');
-            newsButton.classList.add('lg:bottom-10 bottom-[10px]');
+            newsButton.classList.add('lg:bottom-10','bottom-[15px]');
         } else {
-            topButtom.classList.add('-bottom-[100px]');
-            topButtom.classList.remove('lg:bottom-10 bottom-[10px]');
+            topButton.classList.add('-bottom-[100px]');
+            topButton.classList.remove('lg:bottom-10','bottom-[15px]');
             newsButton.classList.add('-bottom-[100px]');
-            newsButton.classList.remove('lg:bottom-10 bottom-[10px]');
+            newsButton.classList.remove('lg:bottom-10','bottom-[15px]');
         }
     });
 
@@ -160,16 +160,16 @@
         var newsButton = document.querySelector("#newsButton");
 
         if(params=="open") {
-            newsButton.classList.remove('lg:bottom-10 bottom-[10px]');
+            newsButton.classList.remove('lg:bottom-10', 'bottom-[15px]');
             newsForm.classList.remove('-bottom-[100%]');
             newsButton.classList.add('-bottom-[100%]');
-            newsForm.classList.add('lg:bottom-10 bottom-[10px]');
+            newsForm.classList.add('lg:bottom-10', 'bottom-[15px]');
             // newsButton.classList.add('hidden');
         } else {
-            newsForm.classList.remove('lg:bottom-10 bottom-[10px]');
+            newsForm.classList.remove('lg:bottom-10', 'bottom-[15px]');
             newsButton.classList.remove('-bottom-[100%]');
             newsForm.classList.add('-bottom-[100%]');
-            newsButton.classList.add('lg:bottom-10 bottom-[10px]');
+            newsButton.classList.add('lg:bottom-10', 'bottom-[15px]');
             // newsButton.classList.remove('hidden');
         }
     }
