@@ -21,7 +21,7 @@
     @apply block px-4 py-2 text-sm text-left lg:font-semibold lg:text-base lg:text-left;
 }
 
-.programs:hover .programs-child {
+.nav_item:hover .nav_item_child {
     @apply lg:visible lg:opacity-100;
 }
 

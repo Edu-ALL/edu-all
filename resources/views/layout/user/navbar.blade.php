@@ -29,7 +29,7 @@
                         </li>
 
                         <li
-                            class="programs flex-[0_0_auto] text-left border-t-[1px] border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
+                            class="nav_item flex-[0_0_auto] text-left border-t-[1px] border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <div class="flex justify-between items-center">
                                 <a href="{{ url(app()->getLocale(), 'programs') }}"
                                     class="block w-full my-1.5 pl-4 font-semibold text-xl text-left lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.programs') }}
@@ -41,7 +41,7 @@
                                 </button>
                             </div>
                             <ul id="content-nav-child"
-                                class="programs-child hidden font-semibold text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:invisible lg:block lg:top-full lg:opacity-0">
+                                class="nav_item_child  hidden font-semibold text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:invisible lg:block lg:top-full lg:opacity-0">
                                 <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring"
                                         class="child_child_nav_link">
@@ -76,7 +76,7 @@
                                     </a>
 
                                 </li>
-                                <li class="child_nav group border-b-0">
+                                <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation"
                                         class="child_child_nav_link">
                                         <i class="fa-solid fa-pencil mr-2 text-base"></i>
@@ -104,11 +104,18 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="child_nav group">
+                                    <a href="{{ url(app()->getLocale()) }}/programs/global-innovators-project"
+                                        class="child_child_nav_link">
+                                        <i class="fa-solid fa-earth-americas mr-2 text-base"></i>
+                                        {{ __('pages/navbar.programs_global_innovators') }}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
                         <li
-                            class="programs flex-[0_0_auto] text-left border-t border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
+                            class="nav_item flex-[0_0_auto] text-left border-t border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <div class="flex justify-between items-center">
                                 <a href="{{ url(app()->getLocale(), 'about') }}"
                                     class="inline w-full my-1.5 pl-4 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center">
@@ -121,7 +128,7 @@
                                 </button>
                             </div>
                             <ul id="content-nav-child"
-                                class="programs-child hidden font-semibold text-lg text-white bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0 ">
+                                class="nav_item_child  hidden font-semibold text-lg text-white bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0 ">
                                 <li class="child_nav group">
                                     <a href="{{ route('mentor', app()->getLocale()) }}"
                                         class="child_child_nav_link">{{ __('pages/navbar.mentor') }}</a>
@@ -148,7 +155,7 @@
                         </li>
 
                         <li
-                            class="programs flex-[0_0_auto] text-left border-t border-primary md:border-y lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
+                            class="nav_item flex-[0_0_auto] text-left border-t border-primary md:border-y lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <div class="flex justify-between items-center">
                                 <div
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
@@ -161,7 +168,7 @@
                                 </button>
                             </div>
                             <ul id="content-nav-child"
-                                class="programs-child hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:min-w-max lg:invisible lg:block lg:opacity-0">
+                                class="nav_item_child  hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:min-w-max lg:invisible lg:block lg:opacity-0">
                                 <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/resources/success-stories"
                                         class="child_child_nav_link">{{ __('pages/navbar.success_stories') }}</a>
@@ -186,7 +193,7 @@
                         </li>
 
                         <li
-                            class="programs flex-[0_0_auto] text-left border-t border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
+                            class="nav_item flex-[0_0_auto] text-left border-t border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <div class="flex justify-between items-center">
                                 <div
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
@@ -200,7 +207,7 @@
                             </div>
 
                             <ul id="content-nav-child"
-                                class="programs-child hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0">
+                                class="nav_item_child  hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0">
                                 <li class="child_nav group">
                                     <a href="https://api.whatsapp.com/send?phone=6281808081363&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                                         target="_blank" class="child_child_nav_link flex items-center">
@@ -218,7 +225,7 @@
                         </li>
 
                         <li
-                            class="programs flex-[0_0_auto] text-left border-y border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
+                            class="nav_item flex-[0_0_auto] text-left border-y border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
                             <div class="relative flex items-center group">
                                 <div
                                     class="blockfont-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">

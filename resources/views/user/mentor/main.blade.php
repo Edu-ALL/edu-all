@@ -26,11 +26,11 @@
                     <div class="mentor_card flex flex-col rounded-xl">
                         <div class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                             <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
-                                <h3 class="font-primary font-bold text-3xl text-white leading-7">
+                                <h3 class="font-primary font-bold text-2xl text-white leading-5">
                                     {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                                 </h3>
-                                <div class="mt-4 font-primary text-sm text-white leading-4 overflow-hidden">
-                                    {!! html_entity_decode(substr(strip_tags($mentor->mentor_graduation), 0, 60)) !!}...
+                                <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
+                                    {!! $mentor->mentor_graduation !!}
                                 </div>
                             </div>
                             <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
@@ -42,7 +42,6 @@
                                 <div
                                     class="mb-6 w-full h-full font-primary font-medium text-base text-white text-center text-ellipsis ">
                                     {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...
-
                                 </div>
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $mentor->mentor_slug]) }}"
                                     class="flex-inline px-4 py-2 font-primary font-medium text-base text-white text-center rounded-md bg-yellow">
