@@ -26,7 +26,9 @@
                         <img data-original="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo"
                             class="w-4 h-4">
                     </a>
-                    <span>allineduspace</span>
+                    <a href="https://instagram.com/{{app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME')}}" target="_blank">
+                        <span>{{ app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}</span>
+                    </a>
                 </h4>
                 <div class="flex flex-col justify-evenly items-start gap-4 sm:flex-row">
                     @include('layout.user.instagram')

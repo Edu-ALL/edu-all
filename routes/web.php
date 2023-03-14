@@ -5,6 +5,7 @@ use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\ResourcesPageController;
+use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ Route::get('/', function () {
     return redirect(app()->getLocale());
 });
 
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+
+
 Route::group(
     [
         'prefix' => '{locale}',
@@ -29,6 +33,9 @@ Route::group(
         'middleware' => 'setlocale',
     ],
     function () {
+        Route::get('sitemap-blogs.xml', [SitemapController::class, 'sitemap_blog']);
+        Route::get('sitemap-pages.xml', [SitemapController::class, 'sitemap_pages']);
+
         Route::controller(HomePageController::class)->group(function () {
             Route::get('/', 'home')->name('home');
             Route::get('/sign-me/admission-mentoring', 'sign_me_adm_mentoring')->name('sign_me_adm_mentoring');
@@ -75,3 +82,6 @@ Route::group(
         });
     },
 );
+
+
+

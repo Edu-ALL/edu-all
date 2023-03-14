@@ -256,8 +256,8 @@
     };
 
     function createSlug(){
-        let firstname = document.getElementById('firstname').value.toLowerCase().split(' ').join('-');
-        let lastname = document.getElementById('lastname').value.toLowerCase().split(' ').join('-');
+        let firstname = document.getElementById('firstname').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
+        let lastname = document.getElementById('lastname').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
         let slug = document.getElementById('slug');
         if (document.getElementById('lastname').value != ''){
             slug.value = firstname + '-' + lastname;

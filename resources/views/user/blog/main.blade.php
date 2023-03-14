@@ -92,36 +92,20 @@
     <section class="py-16" id="blog-category">
         <div class="blog_page flex flex-col main-container">
             <div class="w-full mb-10">
-                <ul class="horizontal_list flex items-center gap-x-4 py-6 overflow-x-auto">
+                <ul class="horizontal_list flex items-center gap-x-1 py-6 overflow-x-auto">
                     <li class="flex-[0_0_auto]">
-                        @if (request('category'))
-                            <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                                class="px-5 py-1.5 font-primary font-bold text-sm text-primary border-[1px] border-primary rounded-md ">
-                                {{ __('pages/blog.category_all') }}
-                            </a>
-                        @else
-                            <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                                class="px-5 py-1.5 font-primary font-bold text-sm text-white border-[1px] border-primary rounded-md bg-primary">
-                                {{ __('pages/blog.category_all') }}
-                            </a>
-                        @endif
+                        <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
+                            class="px-5 py-1.5 font-primary font-bold text-sm border-[1px] border-primary rounded-md {{ request('category') ? 'text-primary' : 'bg-primary text-white' }} ">
+                            {{ __('pages/blog.category_all') }}
+                        </a>
                     </li>
                     @foreach ($blog_categories as $blog_category)
-                        @if (request('category') == $blog_category->slug)
-                            <li class="flex-[0_0_auto]">
-                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                    class="px-5 py-1.5 font-primary font-bold text-sm text-white border-[1px] border-primary rounded-md bg-primary">
-                                    {{ $blog_category->category_name }}
-                                </a>
-                            </li>
-                        @else
-                            <li class="flex-[0_0_auto]">
-                                <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                    class="px-5 py-1.5 font-primary font-bold text-sm text-primary border-[1px] border-primary rounded-md ">
-                                    {{ $blog_category->category_name }}
-                                </a>
-                            </li>
-                        @endif
+                        <li class="flex-[0_0_auto]">
+                            <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
+                                class="px-5 py-1.5 font-primary font-bold text-sm border-[1px] border-primary rounded-md {{ request('category') == $blog_category->slug ? 'bg-primary text-white' : 'text-primary' }}">
+                                {{ $blog_category->category_name }}
+                            </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
