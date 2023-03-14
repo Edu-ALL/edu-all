@@ -30,7 +30,9 @@
                                     {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
                                 </h3>
                                 <div class="mt-4 font-primary text-sm text-white leading-4 overflow-hidden">
-                                    {!! html_entity_decode(substr(strip_tags($mentor->mentor_graduation), 0, 60)) !!}...
+                                    {!! html_entity_decode(substr(strip_tags($mentor->mentor_graduation), 0, 60)) !!} @if (strlen($mentor->mentor_graduation) > 60)
+                                        ...
+                                    @endif
                                 </div>
                             </div>
                             <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
