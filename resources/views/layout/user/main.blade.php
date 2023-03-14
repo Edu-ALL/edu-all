@@ -24,7 +24,7 @@
     {{-- Blog SEO --}}
     @yield('head')
 
-    {{-- <link href="/css/app.css" rel="stylesheet"> --}}
+    <link href="/css/app.css" rel="stylesheet">
     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css">
