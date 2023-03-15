@@ -16,6 +16,14 @@
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
     @endif
 
+    {{-- Canonical  --}}
+    @if (app()->getLocale() == 'sg-en')
+        @if (!request()->is(app()->getLocale()) && !request()->is(app()->getLocale() . '/about'))
+            <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
+        @endif
+    @endif
+
+    {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/id-en') }}" />
     <link rel="alternate" hreflang="en-id" href="{{ url('/id-en') }}" />
     <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
@@ -100,15 +108,21 @@
         </div>
     </div>
 
-    <div class="fixed -bottom-[100%] lg:right-10 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[400px] w-[80%] h-auto shadow-md rounded-md border-[1px]" id="newsForm">
-        <div class="text-right -mt-[5px] w-[20px] h-[20px] rounded-full bg-yellow text-white inline-block float-right flex justify-center items-center cursor-pointer" onclick="popupForm('close')">
+    <div class="fixed -bottom-[100%] lg:right-10 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[400px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
+        id="newsForm">
+        <div class="text-right -mt-[5px] w-[20px] h-[20px] rounded-full bg-yellow text-white inline-block float-right flex justify-center items-center cursor-pointer"
+            onclick="popupForm('close')">
             <i class="fa fa-xmark"></i>
         </div>
         <div class="p-3">
             <h3>Form Data Newsletter</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente maxime unde facere atque similique provident cumque. Ab quidem, aperiam neque deserunt facere animi, esse quisquam tenetur praesentium natus provident enim.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente maxime unde facere atque similique
+            provident cumque. Ab quidem, aperiam neque deserunt facere animi, esse quisquam tenetur praesentium natus
+            provident enim.
             <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta non deserunt recusandae. Ex cupiditate vitae magni commodi esse tempore fugiat natus, officia nostrum facere, veniam delectus illum velit exercitationem.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta non deserunt recusandae. Ex cupiditate
+            vitae magni commodi esse tempore fugiat natus, officia nostrum facere, veniam delectus illum velit
+            exercitationem.
         </div>
     </div>
 
@@ -140,14 +154,14 @@
 
         if (window.scrollY > 300) {
             topButton.classList.remove('-bottom-[100px]');
-            topButton.classList.add('lg:bottom-10','bottom-[15px]');
+            topButton.classList.add('lg:bottom-10', 'bottom-[15px]');
             newsButton.classList.remove('-bottom-[100px]');
-            newsButton.classList.add('lg:bottom-10','bottom-[15px]');
+            newsButton.classList.add('lg:bottom-10', 'bottom-[15px]');
         } else {
             topButton.classList.add('-bottom-[100px]');
-            topButton.classList.remove('lg:bottom-10','bottom-[15px]');
+            topButton.classList.remove('lg:bottom-10', 'bottom-[15px]');
             newsButton.classList.add('-bottom-[100px]');
-            newsButton.classList.remove('lg:bottom-10','bottom-[15px]');
+            newsButton.classList.remove('lg:bottom-10', 'bottom-[15px]');
         }
     });
 
@@ -160,7 +174,7 @@
         var newsForm = document.querySelector("#newsForm");
         var newsButton = document.querySelector("#newsButton");
 
-        if(params=="open") {
+        if (params == "open") {
             newsButton.classList.remove('lg:bottom-10', 'bottom-[15px]');
             newsForm.classList.remove('-bottom-[100%]');
             newsButton.classList.add('-bottom-[100%]');
