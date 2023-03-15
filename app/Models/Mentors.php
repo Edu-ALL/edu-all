@@ -15,8 +15,7 @@ class Mentors extends Model
     protected $fillable = [
         'id',
         'group',
-        'mentor_firstname',
-        'mentor_lastname',
+        'mentor_fullname',
         'mentor_slug',
         'mentor_category',
         'mentor_graduation',
