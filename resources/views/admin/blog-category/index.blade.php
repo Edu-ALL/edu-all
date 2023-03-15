@@ -37,7 +37,7 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listblogcategory" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -47,7 +47,7 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @php
                                         $i = 1;
                                     @endphp
@@ -80,7 +80,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>
+                                </tbody> --}}
                             </table>
                         </div>
                     </div>
@@ -117,6 +117,41 @@
 
 @section('js')
     <script>
+        // List Blog Category
+        $(function() {
+            $('#listblogcategory').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-blog-category') }}',
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'category_name',
+                        name: 'category_name',
+                        class: 'w-25'
+                    },
+                    {
+                        data: 'slug',
+                        name: 'slug',
+                        class: 'w-25'
+                    },
+                    {
+                        data: 'language',
+                        name: 'language',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        class: 'text-center'
+                    },
+                ]
+            });
+        });
         function formDelete(group){
             $('#form_delete').attr('action', '{{ url('/admin/blog-category/delete/') }}' + '/' + group);
         };

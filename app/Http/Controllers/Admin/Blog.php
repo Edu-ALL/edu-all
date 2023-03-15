@@ -36,7 +36,7 @@ class Blog extends Controller
                 if ($d->mt_id == null) {
                     $result = '-';
                 } else {
-                    $result = $d->mentor->mentor_firstname;
+                    $result = $d->mentor->mentor_fullname;
                 }
                 return $result;
             })

@@ -37,7 +37,7 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listmentor" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -51,76 +51,6 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($mentors as $mentor)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $mentor->mentor_fullname }}</td>
-                                            <td>{{ $mentor->mentor_category }}</td>
-                                            <td>{!! Str::limit($mentor->mentor_graduation, 120, '...') !!}</td>
-                                            <td>{!! Str::limit($mentor->description, 120, '...') !!}</td>
-                                            <td>
-                                                <img data-original="{{ asset('uploaded_files/'.'mentor/'.$mentor->created_at->format('Y').'/'.$mentor->created_at->format('m').'/'.$mentor->mentor_picture) }}" alt="" width="80">
-                                            </td>
-                                            <td class="text-center">
-                                                <img data-original="{{ asset('assets/img/flag/flag-'.$mentor->lang.'.png') }}" alt="" width="30">
-                                                <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $mentor->languages->language }}
-                                                </p>
-                                            </td>
-                                            @if ($mentor->mentor_status == 'active')
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-success"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#deactivate"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $mentor->group }})"
-                                                    >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this mentor">
-                                                            {{ $mentor->mentor_status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @else
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-danger"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#activate"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $mentor->group }})"
-                                                    >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this mentor">
-                                                            {{ $mentor->mentor_status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @endif
-                                            <td class="text-center">
-                                                <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/mentor/{{ $mentor->group }}/view">
-                                                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this mentor"></i>
-                                                    </a>
-                                                    <button 
-                                                    type="button"
-                                                    class="btn btn-danger"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#delete"
-                                                    onclick="formDelete({{ $mentor->group }})"
-                                                    >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this mentor"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -203,6 +133,56 @@
 
 @section('js')
     <script>
+        // List Mentor
+        $(function() {
+            $('#listmentor').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-mentor') }}',
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'mentor_fullname',
+                        name: 'mentor_fullname'
+                    },
+                    {
+                        data: 'mentor_category',
+                        name: 'mentor_category'
+                    },
+                    {
+                        data: 'graduation',
+                        name: 'graduation'
+                    },
+                    {
+                        data: 'description',
+                        name: 'description'
+                    },
+                    {
+                        data: 'image',
+                        name: 'image'
+                    },
+                    {
+                        data: 'language',
+                        name: 'language',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        class: 'text-center'
+                    },
+                ]
+            });
+        });
         function formDeactivate(group){
             $('#form_deactivate').attr('action', '{{ url('/admin/mentor/deactivate/') }}' + '/' + group);
         };
@@ -212,8 +192,10 @@
         function formDelete(group){
             $('#form_delete').attr('action', '{{ url('/admin/mentor/delete/') }}' + '/' + group);
         };
-        // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        $(document).ajaxComplete(function() {
+            // Tooltips
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        });
     </script>
 @endsection

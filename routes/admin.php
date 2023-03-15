@@ -71,6 +71,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Blog Category
     Route::get('/blog-category', [BlogCategory::class, 'index']);
+    Route::get('/blog-category/data', [BlogCategory::class, 'getBlogCategory'])->name('data-blog-category');
     Route::get('/blog-category/create', [BlogCategory::class, 'create']);
     Route::post('/blog-category', [BlogCategory::class, 'store'])->name('create-blog-category');
     Route::get('/blog-category/{group}/edit', [BlogCategory::class, 'edit']);
@@ -121,6 +122,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Mentor
     Route::get('/mentor', [Mentor::class, 'index']);
+    Route::get('/mentor/data', [Mentor::class, 'getMentor'])->name('data-mentor');
     Route::get('/mentor/create', [Mentor::class, 'create']);
     Route::post('/mentor', [Mentor::class, 'store'])->name('create-mentor');
     Route::get('/mentor/{group}/view', [Mentor::class, 'view']);
