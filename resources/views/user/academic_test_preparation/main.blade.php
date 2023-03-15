@@ -140,7 +140,7 @@
 
 
     {{-- ================================== Testimonial Section ================================== --}}
-    <section class="pt-16 pb-20">
+    <section class="pt-16 pb-28">
         <div class="main-container">
             <h2 class="font-primary font-extrabold text-primary text-center text-4xl mb-4">
                 {{ __('pages/programs/academic_test_preparation.testimony_title') }}
@@ -184,18 +184,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-
-    </section>
-
-    {{-- ================================== Bottom Section ================================== --}}
-    <section class="py-16">
-        <div class="main-container flex flex-col items-center">
-            <h2 class=" font-primary font-semibold text-yellow text-center text-3xl mb-4">
-                {{ __('pages/programs/academic_test_preparation.bottom') }}
-            </h2>
-            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="my-btn">{{ __('pages/programs/academic_test_preparation.bottom_btn') }}</a>
         </div>
 
     </section>
