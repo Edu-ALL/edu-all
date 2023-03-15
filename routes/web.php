@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect(app()->getLocale());
-});
+Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
@@ -57,6 +55,7 @@ Route::group(
             Route::get('/programs/academic-test-preparation/academic-tutoring', 'academic_tutoring')->name('academic_tutoring');
             Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', 'ib_ee_coaching_program')->name('ib_ee_coaching_program');
             Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
+            Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
         });
 
         Route::controller(AboutPageController::class)->group(function () {

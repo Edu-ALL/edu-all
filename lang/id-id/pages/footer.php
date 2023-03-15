@@ -6,23 +6,27 @@ return [
     'company' => 'Perusahaan',
     'page_list' => [
         [
-            'title' => "Newsletters",
+            'title' => 'Beranda',
             'link' => "/"
         ],
         [
-            'title' => 'About Us',
+            'title' => 'Tentang Kami',
             'link' => "/about"
         ],
         [
-            'title' => "Partnership & Careers",
+            'title' => 'ALL-info Blog',
+            'link' => "/blog"
+        ],
+        [
+            'title' => "Kemitraan & Karir",
             'link' => "/about/partnership-careers"
         ],
         [
-            'title' => "Contact Us",
+            'title' => "Kontak Kami",
             'link' => "/contact-us"
         ],
         [
-            'title' => "Privacy Policy",
+            'title' => "Kebijakan Pribadi",
             'link' => "/privacy-policy"
         ],
     ],

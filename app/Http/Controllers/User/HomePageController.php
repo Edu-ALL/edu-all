@@ -9,7 +9,7 @@ use App\Models\Testimonials;
 
 class HomePageController extends Controller
 {
-    public function home($locale)
+    public function home()
     {
         $lang = substr(app()->getLocale(), 3, 2);
         $region = substr(app()->getLocale(), 0, 2);

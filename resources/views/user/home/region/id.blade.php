@@ -75,8 +75,8 @@
             <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
-                        <img data-original="{{ asset('assets/icon/about-us/about us icons-' . $loop->iteration . '.webp') }}"
-                            alt="Allineduspace About Us Icon" class="mb-4 w-40 h-32 object-contain">
+                        <img data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
+                            alt="Allineduspace About Us Icon" class="mb-4 w-[90px] h-[90px] object-contain">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
                 @endforeach
@@ -330,6 +330,7 @@
             autoplay: true,
             lazyload: true,
             interval: 4000,
+            pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');

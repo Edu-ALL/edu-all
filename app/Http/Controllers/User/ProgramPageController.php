@@ -107,4 +107,9 @@ class ProgramPageController extends Controller
             'locale' => $locale
         ]);
     }
+
+    public function global_innovators_project()
+    {
+        return view('user.global_innovators_projects.main');
+    }
 }
