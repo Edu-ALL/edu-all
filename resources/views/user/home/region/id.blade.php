@@ -168,8 +168,9 @@
                                                         class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                         <h3
                                                             class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
-                                                            {{ $mentor->mentor_firstname }} <br>
-                                                            {{ $mentor->mentor_lastname }}
+                                                            {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
+                                                            <br>
+                                                            {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
                                                         </h3>
                                                         <div
                                                             class="mt-3 font-primary text-xs text-white leading-4 lg:leading-3">
@@ -190,7 +191,8 @@
                                                         </div>
                                                         <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
                                                             class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
-                                                            Get to know {{ $mentor->mentor_firstname }}
+                                                            Get to know
+                                                            {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
                                                         </a>
                                                     </div>
                                                 </div>

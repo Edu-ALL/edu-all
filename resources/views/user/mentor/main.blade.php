@@ -27,7 +27,8 @@
                         <div class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                             <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                 <h3 class="font-primary font-bold text-2xl text-white leading-5">
-                                    {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
+                                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }} <br>
+                                    {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
                                 </h3>
                                 <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
                                     {!! $mentor->mentor_graduation !!}
@@ -45,7 +46,8 @@
                                 </div>
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $mentor->mentor_slug]) }}"
                                     class="flex-inline px-4 py-2 font-primary font-medium text-base text-white text-center rounded-md bg-yellow">
-                                    {{ __('pages/about_us/mentor.get_to_know') }} {{ $mentor->mentor_firstname }}
+                                    {{ __('pages/about_us/mentor.get_to_know') }}
+                                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
 
                                 </a>
                             </div>
@@ -82,7 +84,9 @@
                                             <div
                                                 class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                 <h3 class="font-primary font-bold text-2xl text-white leading-5">
-                                                    {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
+                                                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
+                                                    <br>
+                                                    {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
                                                 </h3>
                                                 <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
                                                     {!! $mentor->mentor_graduation !!}

@@ -9,7 +9,9 @@
                     class="relative justify-self-end max-w-sm w-full mx-auto rounded-lg shadow-lg overflow-hidden md:mx-0 md:col-span-2 xl:row-span-2">
                     <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                         <h3 class="font-primary font-bold text-3xl text-white leading-7">
-                            {{ $mentor->mentor_firstname }} <br> {{ $mentor->mentor_lastname }}
+                            {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
+                            <br>
+                            {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
                         </h3>
                         <div class="mt-4 font-primary text-sm text-white leading-4">
                             {!! $mentor->mentor_graduation !!}
@@ -20,7 +22,8 @@
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">
                     <h1 class="font-primary font-bold text-4xl text-primary text-center md:text-6xl xl:text-start">
-                        {{ __('pages/about_us/mentor.get_to_know') }} {{ $mentor->mentor_firstname }}
+                        {{ __('pages/about_us/mentor.get_to_know') }}
+                        {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
                     </h1>
                 </div>
                 <div class="w-full flex flex-col md:col-span-3 xl:row-span-1 xl:self-start">
@@ -84,7 +87,8 @@
         <div class="main-container">
             <div class="flex flex-col items-center">
                 <h2 class="mb-4 font-primary font-extrabold text-4xl text-primary text-center">
-                    {{ __('pages/about_us/mentor.bottom_detail_title') }} {{ $mentor->mentor_firstname }}!
+                    {{ __('pages/about_us/mentor.bottom_detail_title') }}
+                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}!
                 </h2>
                 <p class="max-w-2xl mb-8 font-primary font-medium text-base text-primary text-center">
                     {{ __('pages/about_us/mentor.bottom_detail_body') }}
