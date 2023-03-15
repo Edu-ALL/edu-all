@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() == 'id' ? 'id' : 'en' }}" class="scroll-smooth">
+<html lang="{{ app()->getLocale() == 'id-id' ? 'id' : 'en' }}" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -16,9 +16,10 @@
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
     @endif
 
-    <link rel="alternate" hreflang="id-en" href="{{ url('/id-en') }}" />
-    <link rel="alternate" hreflang="id" href="{{ url('/id') }}" />
-    <link rel="alternate" hreflang="sg" href="{{ url('/sg') }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ url('/id-en') }}" />
+    <link rel="alternate" hreflang="en-id" href="{{ url('/id-en') }}" />
+    <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
+    <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" />
 
 
     {{-- Blog SEO --}}
@@ -164,13 +165,13 @@
             newsForm.classList.remove('-bottom-[100%]');
             newsButton.classList.add('-bottom-[100%]');
             newsForm.classList.add('lg:bottom-10', 'bottom-[15px]');
-            // newsButton.classList.add('hidden');
+            newsButton.classList.add('hidden');
         } else {
             newsForm.classList.remove('lg:bottom-10', 'bottom-[15px]');
             newsButton.classList.remove('-bottom-[100%]');
             newsForm.classList.add('-bottom-[100%]');
             newsButton.classList.add('lg:bottom-10', 'bottom-[15px]');
-            // newsButton.classList.remove('hidden');
+            newsButton.classList.remove('hidden');
         }
     }
 
