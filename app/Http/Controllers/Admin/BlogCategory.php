@@ -10,12 +10,45 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class BlogCategory extends Controller
 {
     public function index(){
-        $blog_category = BlogCategorys::orderBy('category_name', 'asc')->get();
-        return view('admin.blog-category.index', ['blog_category' => $blog_category]);
+        return view('admin.blog-category.index');
+    }
+
+    public function getBlogCategory(Request $request){
+        if ($request->ajax()) {
+            $data = BlogCategorys::orderBy('category_name', 'asc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->editColumn('language', function($d){
+                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
+                    <p class="pt-1" style="font-size: 13px !important">
+                        '.$d->languages->language.'
+                    </p>
+                ';
+                return $result;
+            })
+            ->editColumn('action', function($d){
+                $result = '
+                <div class="d-flex flex-row justify-content-center gap-1">
+                    <a type="button" class="btn btn-warning" href="/admin/blog-category/'.$d->group.'/edit">
+                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->group.')">
+                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog category"></i>
+                    </button>
+                </div>
+                ';
+                return $result;
+            })
+            ->rawColumns(['language', 'action'])
+            ->make(true);
+        }
     }
 
     public function create(){
