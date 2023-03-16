@@ -108,9 +108,9 @@
 
                 <div class="ml-form-successContent">
 
-                    <h4>Thanks!</h4>
-
-                    <p style="text-align: center;">Our team will contact you very soon</p>
+                    <h4></h4>
+                    <p><span style="font-size: 20px;">Your submission has been received!</span></p>
+                    <p><span style="font-size: 16px;">Don't worry! We will keep your data private and away from bad people :)</span></p>
                     <p><br></p>
 
                 </div>
