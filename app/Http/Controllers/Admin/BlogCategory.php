@@ -37,7 +37,7 @@ class BlogCategory extends Controller
                 $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
                     <a type="button" class="btn btn-warning" href="/admin/blog-category/'.$d->group.'/edit">
-                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
+                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
                     </a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->group.')">
                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog category"></i>

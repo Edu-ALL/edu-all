@@ -10,12 +10,62 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Tutor extends Controller
 {
     public function index(){
-        $tutors = Tutors::orderBy('updated_at', 'desc')->get();
-        return view('admin.tutor.index', ['tutors' => $tutors]);
+        return view('admin.tutor.index');
+    }
+
+    public function getTutor(Request $request){
+        if ($request->ajax()) {
+            $data = Tutors::orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->editColumn('image', function($d){
+                $path = asset('uploaded_files/'.'tutor/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->thumbnail);
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
+                ';
+                return $result;
+            })
+            ->editColumn('status', function($d){
+                if ($d->status == 'active') {
+                    $result = '
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#deactivate" style="text-transform: capitalize;" onclick="formDeactivate('.$d->id.')">
+                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Deactivate this tutor">
+                                '.$d->status.'
+                            </span>
+                        </button>
+                    ';
+                } else {
+                    $result = '
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#activate" style="text-transform: capitalize;" onclick="formActivate('.$d->id.')">
+                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this tutor">
+                                '.$d->status.'
+                            </span>
+                        </button>
+                    ';
+                }
+                return $result;
+            })
+            ->editColumn('action', function($d){
+                $result = '
+                <div class="d-flex flex-row justify-content-center gap-1">
+                    <a type="button" class="btn btn-warning" href="/admin/tutor/'.$d->id.'/edit">
+                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this tutor"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
+                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this tutor"></i>
+                    </button>
+                </div>
+                ';
+                return $result;
+            })
+            ->rawColumns(['image', 'status', 'action'])
+            ->make(true);
+        }
     }
 
     public function create(){
