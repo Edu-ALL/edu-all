@@ -1,5 +1,4 @@
 @extends('layout.user.main')
-
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

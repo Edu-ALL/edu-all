@@ -31,7 +31,7 @@
                     </a>
                     <a href="https://instagram.com/{{ app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}"
                         target="_blank">
-                        <span>{{ app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}</span>
+                        <span>{{ app()->getLocale() == 'sg-en' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}</span>
                     </a>
                 </h4>
                 <div class="flex flex-col justify-evenly items-start gap-4 sm:flex-row">

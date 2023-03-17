@@ -104,13 +104,13 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="child_nav group">
+                                {{-- <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/global-innovators-project"
                                         class="child_child_nav_link">
                                         <i class="fa-solid fa-earth-americas mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_global_innovators') }}
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
 
@@ -478,14 +478,14 @@
                                 <div class="flex items-center gap-3 px-4">
                                     <a href="https://api.whatsapp.com/send?phone=6281808081363&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                                         target="_blank" class="flex items-center hover:text-[#819CCB]">
-                                        <span class="whitespace-nowrap">+62 818-0808-1363</span>
+                                        <span class="whitespace-nowrap"><i class="fa-brands fa-whatsapp mr-1"></i> +62 818-0808-1363</span>
                                     </a>
                                 </div>
                                 <span class="block w-full h-px my-4 bg-primary"></span>
                                 <div class="flex items-center gap-3 px-4">
                                     <a href="https://api.whatsapp.com/send?phone=6287860811413&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                                         target="_blank" class="flex items-center hover:text-[#819CCB]">
-                                        <span class="whitespace-nowrap">+62 878-6081-1413</span>
+                                        <span class="whitespace-nowrap"><i class="fa-brands fa-whatsapp mr-1"></i>  +62 878-6081-1413</span>
                                     </a>
                                 </div>
 

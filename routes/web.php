@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect(app()->getLocale());
-});
+Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
