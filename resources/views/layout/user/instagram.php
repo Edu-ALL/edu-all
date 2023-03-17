@@ -14,9 +14,10 @@
 
 <div id="instafeed" class="grid grid-cols-2 gap-3"></div>
 
-<script type="text/javascript">
+<script>
+    let token = '<?= app()->getLocale() == 'sg-en' ? env('IG_TOKEN_GLOBAL') : env('IG_TOKEN') ?>';
     var feed = new Instafeed({
-        accessToken: sessionStorage.getItem('ig_token'),
+        accessToken: token,
         limit: 4,
         resolution: 'standard_resolution',
         debug:false,

@@ -14,6 +14,7 @@ return [
     'programs_academic_tutoring' => 'Academic Tutoring',
     'programs_academic_ib' => 'IB Extended Essay Coaching Program',
     'programs_academic_sat' => 'SAT / ACT Preparation',
+    'programs_global_innovators' => 'Global Innovators Project',
 
     // about us
     'mentor' => 'Our Mentor',

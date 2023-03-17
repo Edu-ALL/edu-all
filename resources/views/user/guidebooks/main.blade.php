@@ -12,13 +12,13 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="Guidebooks Banner"
+            <img data-original="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="Allineduspace Guidebooks Banner"
                 class="w-full h-[400px] object-cover object-center">
         </div>
     </section>
 
     {{-- ================================== GETTING STARTED Section  ================================== --}}
-    <section class="py-4 lg:py-10">
+    <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <p class="font-primary text-xl text-[#6F6C90] text-justify">
@@ -42,7 +42,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -56,7 +56,7 @@
     </section>
 
     {{-- ================================== BUILD YOUR PROFILE  Section  ================================== --}}
-    <section class="py-4 lg:py-10">
+    <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
@@ -75,7 +75,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -89,7 +89,7 @@
     </section>
 
     {{-- ================================== APPLY TO YOUR DREAM UNIVERSITY Section  ================================== --}}
-    <section class="py-4 lg:py-10">
+    <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
@@ -107,7 +107,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -121,7 +121,7 @@
     </section>
 
     {{-- ================================== GRAB THE SCHOLARSHIP  Section  ================================== --}}
-    <section class="py-4">
+    <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
@@ -139,7 +139,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="{{ $guidebook->guidebook_alt }}"
+                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -196,7 +196,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container mx-3">
                                         <img data-original="{{ asset('assets/img/guidebooks/univ-list/' . $univ_logo) }}"
-                                            alt="univ logo" class="w-full">
+                                            alt="Allineduspace University Logo" class="w-full">
                                     </div>
                                 </li>
                             @endforeach

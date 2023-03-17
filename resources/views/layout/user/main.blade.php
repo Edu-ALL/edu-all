@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() == 'id' ? 'id' : 'en' }}" class="scroll-smooth">
-
+<html lang="{{ app()->getLocale() == 'id-id' ? 'id' : 'en' }}" class="scroll-smooth">
+{{-- ALL-in Eduspace  --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,24 +16,34 @@
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
     @endif
 
-    <link rel="alternate" hreflang="id-en" href="{{ url('/id-en') }}" />
-    <link rel="alternate" hreflang="id" href="{{ url('/id') }}" />
-    <link rel="alternate" hreflang="sg" href="{{ url('/sg') }}" />
+    {{-- Canonical  --}}
+    @if (app()->getLocale() == 'sg-en')
+        @if (!request()->is(app()->getLocale()) && !request()->is(app()->getLocale() . '/about'))
+            <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
+        @endif
+    @endif
+
+    {{-- Hreflang  --}}
+    <link rel="alternate" hreflang="x-default" href="{{ url('/id-en') }}" />
+    <link rel="alternate" hreflang="en-id" href="{{ url('/id-en') }}" />
+    <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
+    <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" />
 
 
     {{-- Blog SEO --}}
     @yield('head')
 
-    {{-- <link href="/css/app.css" rel="stylesheet"> --}}
+    <link href="/css/app.css" rel="stylesheet">
     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css">
     {{-- Splide JS - CSS --}}
     <link rel="stylesheet" href="/css/splide.min.css">
+    <link rel="stylesheet" href="/css/newsletter.css">
 
 
     {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/c278872066.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous"></script>
     {{-- Splide JS - JS --}}
     <script src="/js/splide.min.js"></script>
     {{-- JQuery --}}
@@ -92,17 +102,37 @@
 </head>
 
 <body id="body">
-    <div class="fixed -bottom-[100px] right-10 z-[9999] transition-all duration-1000" id="topButton">
-        <div class="bg-primary rounded-full w-[40px] h-[40px] flex justify-center items-center text-white border border-[3px] border-[#F78614] cursor-pointer shadow "
+    <div class="fixed -bottom-[100px] lg:left-5 left-[10px] z-[9999] transition-all duration-1000" id="topButton">
+        <div class="bg-white hover:bg-primary rounded-full w-[40px] h-[40px] flex justify-center items-center text-primary hover:text-white border-[1px] border-primary cursor-pointer shadow "
             onclick="topFunction()">
             <i class="fa fa-arrow-up"></i>
+        </div>
+    </div>
+
+    <div class="fixed -bottom-[100%] lg:right-5 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[400px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
+        id="newsForm">
+        <div class="absolute -right-2 -top-2 z-[99999] text-right -mt-[5px] w-[28px] h-[28px] rounded-full bg-yellow text-white inline-block float-right justify-center items-center cursor-pointer"
+            onclick="popupForm('close')">
+            <i class="fa fa-xmark"></i>
+        </div>
+        <div class="p-0">
+            <div class="rounded-md overflow-hidden">
+                @include('layout.user.newsletter')
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed lg:bottom-5 bottom-[15px] lg:right-5 right-[10px] z-[9999] transition-all duration-1000" id="newsButton">
+        <div class="bg-white hover:bg-yellow rounded-md px-3 h-[40px] flex justify-center items-center text-yellow hover:text-white border-[1px] border-[#F78614] cursor-pointer shadow transition-all duration-200"
+            onclick="popupForm('open')">
+            <i class="fa fa-newspaper mr-2"></i>
+            <span>Get Updates</span>
         </div>
     </div>
     @include('layout.user.navbar')
     <div class="mt-16">
         @yield('content')
     </div>
-
     @include('layout.user.footer')
 </body>
 
@@ -114,14 +144,15 @@
     });
 
     window.addEventListener("scroll", function() {
-        var topButtom = document.querySelector("#topButton");
+        var topButton = document.querySelector("#topButton");
+        var newsButton = document.querySelector("#newsButton");
 
         if (window.scrollY > 300) {
-            topButtom.classList.remove('-bottom-[100px]');
-            topButtom.classList.add('bottom-10');
+            topButton.classList.remove('-bottom-[100px]');
+            topButton.classList.add('lg:bottom-5', 'bottom-[15px]');
         } else {
-            topButtom.classList.add('-bottom-[100px]');
-            topButtom.classList.remove('bottom-10');
+            topButton.classList.add('-bottom-[100px]');
+            topButton.classList.remove('lg:bottom-5', 'bottom-[15px]');
         }
     });
 
@@ -130,8 +161,24 @@
         document.documentElement.scrollTop = 0;
     }
 
-    // IG TOKEN
-    sessionStorage.setItem('ig_token', '{{ env('IG_TOKEN') }}')
+    function popupForm(params) {
+        var newsForm = document.querySelector("#newsForm");
+        var newsButton = document.querySelector("#newsButton");
+
+        if (params == "open") {
+            newsButton.classList.remove('lg:bottom-5', 'bottom-[15px]');
+            newsForm.classList.remove('-bottom-[100%]');
+            newsButton.classList.add('-bottom-[100%]');
+            newsForm.classList.add('lg:bottom-5', 'bottom-[15px]');
+            newsButton.classList.add('hidden');
+        } else {
+            newsForm.classList.remove('lg:bottom-5', 'bottom-[15px]');
+            newsButton.classList.remove('-bottom-[100%]');
+            newsForm.classList.add('-bottom-[100%]');
+            newsButton.classList.add('lg:bottom-5', 'bottom-[15px]');
+            newsButton.classList.remove('hidden');
+        }
+    }
 </script>
 
 </html>

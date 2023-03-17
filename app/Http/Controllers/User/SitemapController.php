@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,10 +14,10 @@ class SitemapController extends Controller
     }
     
     function sitemap_blog($locale) {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->get();
 
-        return response()->view('sitemap.blog', compact('blogs','lang'))->header('Content-Type', 'text/xml');
+        return response()->view('sitemap.blog', ['blogs'=>$blogs, 'lang'=>$locale])->header('Content-Type', 'text/xml');
     }
 
     function sitemap_pages($locale) {

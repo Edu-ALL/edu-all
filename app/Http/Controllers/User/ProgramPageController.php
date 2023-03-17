@@ -18,7 +18,7 @@ class ProgramPageController extends Controller
 
     public function admissions_mentoring($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring');
 
         return view('user.admission_mentoring.main', [
@@ -28,7 +28,7 @@ class ProgramPageController extends Controller
 
     public function undergraduate_program($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'Undergraduate Program');
 
         return view(
@@ -41,7 +41,7 @@ class ProgramPageController extends Controller
 
     public function graduate_program($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'Graduate Program');
 
         return view('user.graduate_program.main', [
@@ -51,7 +51,7 @@ class ProgramPageController extends Controller
 
     public function university_transfer_program($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'University Transfer Program');
 
         return view('user.univ_transfer_program.main', [
@@ -61,7 +61,7 @@ class ProgramPageController extends Controller
 
     public function passion_project_mentoring($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Experiential Learning');
 
         return view('user.passion_project_mentoring.main', [
@@ -71,7 +71,7 @@ class ProgramPageController extends Controller
 
     public function academic_test_preparation($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation');
 
         return view('user.academic_test_preparation.main', [
@@ -81,7 +81,7 @@ class ProgramPageController extends Controller
 
     public function academic_tutoring($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "Academic Tutoring");
 
         $tutors = Tutors::all()->where('status', 'active');
@@ -99,12 +99,17 @@ class ProgramPageController extends Controller
 
     public function sat_program($locale)
     {
-        $lang = $locale == "id-en" || $locale == "sg" ? 'en' : 'id';
+        $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
 
         return view('user.sat_program.main', [
             'testimonies' => $testimonies,
             'locale' => $locale
         ]);
+    }
+
+    public function global_innovators_project()
+    {
+        return view('user.global_innovators_projects.main');
     }
 }

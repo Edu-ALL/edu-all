@@ -6,12 +6,16 @@ return [
     'company' => 'Company',
     'page_list' => [
         [
-            'title' => "Newsletters",
+            'title' => 'Home',
             'link' => "/"
         ],
         [
             'title' => 'About Us',
             'link' => "/about"
+        ],
+        [
+            'title' => 'ALL-info Blog',
+            'link' => "/blog"
         ],
         [
             'title' => "Partnership & Careers",
@@ -23,7 +27,7 @@ return [
         ],
         [
             'title' => "Privacy Policy",
-            'link' => "/"
+            'link' => "/privacy-policy"
         ],
     ],
 ];

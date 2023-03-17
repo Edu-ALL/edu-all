@@ -5,7 +5,7 @@ use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\ResourcesPageController;
-use App\Http\Controllers\user\SitemapController;
+use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect(app()->getLocale());
-});
+Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
@@ -38,7 +36,12 @@ Route::group(
 
         Route::controller(HomePageController::class)->group(function () {
             Route::get('/', 'home')->name('home');
-            Route::get('/sign-me', 'sign_me')->name('sign_me');
+            Route::get('/sign-me/admission-mentoring', 'sign_me_adm_mentoring')->name('sign_me_adm_mentoring');
+            Route::get('/sign-me/academic-tutoring', 'sign_me_acad_tutoring')->name('sign_me_acad_tutoring');
+            Route::get('/sign-me/ib-ee-coaching', 'sign_me_ee_coaching')->name('sign_me_ee_coaching');
+            Route::get('/sign-me/sat-preparation', 'sign_me_sat_prep')->name('sign_me_sat_prep');
+            Route::get('/sign-me/passion-project', 'sign_me_passion_project')->name('sign_me_passion_project');
+            Route::get('/privacy-policy', 'privacy_policy')->name('privacy_policy');
         });
 
         Route::controller(ProgramPageController::class)->group(function () {
@@ -52,6 +55,7 @@ Route::group(
             Route::get('/programs/academic-test-preparation/academic-tutoring', 'academic_tutoring')->name('academic_tutoring');
             Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', 'ib_ee_coaching_program')->name('ib_ee_coaching_program');
             Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
+            Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
         });
 
         Route::controller(AboutPageController::class)->group(function () {

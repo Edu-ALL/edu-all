@@ -15,27 +15,29 @@
                             alt="passion project title" class="w-72 object-contain md:w-96">
                         <p class="my-5 font-primary font-normal text-lg text-white md:text-xl md:leading-6">
                             {{ __('pages/programs/passion_project_mentoring.body') }}</p>
-                        <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
+                        <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
                             class="inline-block px-5 py-2 font-primary font-medium text-base text-white capitalize bg-yellow rounded-lg">{{ __('pages/programs/passion_project_mentoring.banner-btn') }}</a>
                     </div>
 
                     <div class="flex justify-center max-h-fit pt-10 md:w-2/3 lg:w-1/2 lg:pt-20">
                         <img data-original="{{ asset('assets/img/passion_project_mentoring/stream.webp') }}"
-                            class="w-4/6 max-w-lg md:w-full">
+                            alt="Allineduspace Passion Project" class="w-4/6 max-w-lg md:w-full">
                     </div>
                 </div>
                 <div class="mt-10">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}">
+                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}"
+                        alt="Allineduspace Passion Project List">
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/passion_project_mentoring/Header-2.webp') }}"
+            <img data-original="{{ asset('assets/img/banner/Passion project banner.png') }}"
+                alt="Allineduspace Passion Project Banner"
                 class="w-full h-[900px] object-cover object-center sm:h-[1000px] md:h-[750px] lg:h-[850px]">
         </div>
     </section>
 
     {{-- ================================== Entrepreneurship Section  ================================== --}}
-    <section class="pb-16">
+    <section id="entrepreneurship" class="pb-16">
         <div class="flex flex-col gap-y-16">
             <div
                 class="grid grid-cols-1  items-center py-8 bg-passion-project-bg-entre bg-cover bg-center min-h-[450px] md:grid-cols-2">
@@ -60,7 +62,7 @@
             <div class="grid grid-cols-1 items-center main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-entre-2 md:bg-cover md:bg-top md:min-h-[500px]">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
-                        class="md:hidden">
+                        alt="Allineduspace Passion Project Banner" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-primary text-base text-primary md:text-xl">
@@ -145,11 +147,11 @@
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
-                        class="object-cover flex-1">
+                        alt="Allineduspace Passion Project" class="object-cover flex-1">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-2.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-3.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
                 </div>
             </div>
 
@@ -159,7 +161,7 @@
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-entre-3 md:bg-cover md:bg-top">
                         <img data-original="{{ asset('assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp') }}"
-                            class="md:hidden">
+                            alt="Allineduspace Passion Project" class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-primary font-medium text-base text-primary tracking-wider md:text-xl">
@@ -179,7 +181,7 @@
                     class="font-primary font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_bottom') }}</h2>
                 <div>
-                    <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
+                    <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
                         class="inline-block px-5 py-2 mt-6 font-primary font-medium text-base text-white capitalize bg-yellow rounded-md">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_bottom_btn') }}
                     </a>
@@ -189,7 +191,7 @@
     </section>
 
     {{-- ================================== Scientific Section  ================================== --}}
-    <section class="pb-16">
+    <section id="scientific" class="pb-16">
         <div class="flex flex-col items-center gap-y-16">
             <div class="grid grid-cols-1 py-8 bg-passion-project-bg-scien-1 bg-cover bg-top min-h-[450px] md:grid-cols-2">
                 <div class="flex flex-col main-container">
@@ -202,10 +204,12 @@
                 </div>
                 <div class="self-start flex items-start mt-4">
                     <div class="flex items-center w-28 h-28 z-10">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}">
+                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}"
+                            alt="Allineduspace Passion Project">
                     </div>
                     <div class="flex items-center w-28 h-28 -ml-6">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}">
+                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}"
+                            alt="Allineduspace Passion Project">
                     </div>
                 </div>
             </div>
@@ -213,7 +217,7 @@
             <div class="grid grid-cols-1 items-center main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-scien-2 md:bg-cover md:bg-top md:min-h-[500px]">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
-                        class="md:hidden">
+                        alt="Allineduspace Passion Project" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-primary text-base text-primary md:text-xl">
@@ -300,11 +304,11 @@
                     {{ __('pages/programs/passion_project_mentoring.scientific_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
-                        class="object-cover flex-1">
+                        alt="Allineduspace Passion Project" class="object-cover flex-1">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-5.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-6.webp') }}"
-                        class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
+                        alt="Allineduspace Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
                 </div>
             </div>
 
@@ -314,7 +318,7 @@
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-scien-3 md:bg-cover md:bg-top">
                         <img data-original="{{ asset('assets/img/passion_project_mentoring/scientific research.png') }}"
-                            class="md:hidden">
+                            alt="Allineduspace Passion Project" class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-primary font-medium text-base text-primary tracking-wider md:text-xl">
@@ -333,7 +337,7 @@
                     class="font-primary font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_bottom') }}</h2>
                 <div>
-                    <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
+                    <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
                         class="inline-block px-5 py-2 mt-6 font-primary font-medium text-base text-white capitalize bg-yellow rounded-md">
                         {{ __('pages/programs/passion_project_mentoring.scientific_bottom_btn') }}
                     </a>
@@ -385,7 +389,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    class="w-7 mb-3 h-auto">
+                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
@@ -418,7 +422,7 @@
                 <span
                     class="block text-yellow">{{ __('pages/programs/passion_project_mentoring.sign_up_text_sub') }}</span>
             </h2>
-            <a href="https://landing.mailerlite.com/webforms/landing/j9v1o5"
+            <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
                 class="inline-block px-5 py-2 mt-6 font-primary font-bold text-lg text-white capitalize bg-yellow rounded-xl">{{ __('pages/programs/passion_project_mentoring.sign_up_btn') }}</a>
         </div>
 

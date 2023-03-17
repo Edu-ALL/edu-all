@@ -10,7 +10,7 @@ return [
     // Collaborative Partners
     'colab_title' => 'Collaborative Partners',
     'colab_bottom' => "Let's collaborate!",
-    'colab_btn' => 'Reigster Now',
+    'colab_btn' => 'Register Now',
 
     // Careers
     'careers_title' => 'Careers',

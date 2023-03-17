@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Kontak Kami',
+    'title' => 'Contact US',
 
     'address' => 'Jl Jeruk Kembar Blok Q9 No. 15 <br/>
     Srengseng, Kembangan <br/>

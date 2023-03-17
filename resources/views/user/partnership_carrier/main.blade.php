@@ -12,15 +12,16 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Partnership banner.webp') }}" alt="Partnership Banner"
-                class="w-full h-[350px] object-cover object-center">
+            <img data-original="{{ asset('assets/img/banner/Partnership banner.webp') }}"
+                alt="Allineduspace Partnership Banner" class="w-full h-[350px] object-cover object-center">
         </div>
     </section>
 
     {{-- ================================== Desc Section  ================================== --}}
     <section class="py-10">
         <div class="flex flex-col items-center main-container">
-            <img data-original="{{ asset('assets/img/about/partnership-career/Icon_2-2.png') }}">
+            <img data-original="{{ asset('assets/img/about/partnership-career/Icon_2-2.png') }}"
+                alt="Allineduspace Partnership Icon">
             <div class="max-w-3xl mx-auto mt-6">
                 <p class="font-primary text-lg text-primary text-center md:text-2xl">
                     {{ __('pages/about_us/partnership_careers.desc') }}
@@ -49,31 +50,31 @@
                             <li class="splide__slide">
                                 <div class="splide__container">
                                     <img data-original="{{ asset('assets/img/about/partnership-career/LOGO-PARTNERS-GROUP-01-min.png') }}"
-                                        alt="">
+                                        alt="Allineduspace Partnertship Logo Partners">
                                 </div>
                             </li>
                             <li class="splide__slide">
                                 <div class="splide__container">
                                     <img data-original="{{ asset('assets/img/about/partnership-career/LOGO-PARTNERS-GROUP-02-min.png') }}"
-                                        alt="">
+                                        alt="Allineduspace Partnertship Logo Partners">
                                 </div>
                             </li>
                             <li class="splide__slide">
                                 <div class="splide__container">
                                     <img data-original="{{ asset('assets/img/about/partnership-career/LOGO-PARTNERS-GROUP-03-min.png') }}"
-                                        alt="">
+                                        alt="Allineduspace Partnertship Logo Partners">
                                 </div>
                             </li>
                             <li class="splide__slide">
                                 <div class="splide__container">
                                     <img data-original="{{ asset('assets/img/about/partnership-career/LOGO-PARTNERS-GROUP-04.webp') }}"
-                                        alt="">
+                                        alt="Allineduspace Partnertship Logo Partners">
                                 </div>
                             </li>
                             <li class="splide__slide">
                                 <div class="splide__container">
                                     <img data-original="{{ asset('assets/img/about/partnership-career/LOGO-PARTNERS-GROUP-05.webp') }}"
-                                        alt="">
+                                        alt="Allineduspace Partnertship Logo Partners">
                                 </div>
                             </li>
                         </ul>
