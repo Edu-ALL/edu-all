@@ -37,7 +37,7 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listsuccessstories" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -49,74 +49,6 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($success_stories as $success_storie)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $success_storie->name}}</td>
-                                            <td>{!! Str::limit($success_storie->description, 120, '...') !!}</td>
-                                            <td>
-                                                <img data-original="{{ asset('uploaded_files/'.'success-stories/'.$success_storie->created_at->format('Y').'/'.$success_storie->created_at->format('m').'/'.$success_storie->thumbnail) }}" alt="" width="80">
-                                            </td>
-                                            <td class="text-center">
-                                                <img data-original="{{ asset('assets/img/flag/flag-'.$success_storie->lang.'.png') }}" alt="" width="30">
-                                                <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $success_storie->languages->language }}
-                                                </p>
-                                            </td>
-                                            @if ($success_storie->status == 'active')
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-success"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#deactivate"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formDeactivate({{ $success_storie->group }})"
-                                                    >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Deactivate this success stories">
-                                                            {{ $success_storie->status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @else
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-danger"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#activate"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formActivate({{ $success_storie->group }})"
-                                                    >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this success stories">
-                                                            {{ $success_storie->status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @endif
-                                            <td class="text-center">
-                                                <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/success-stories/{{ $success_storie->group }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this success stories"></i>
-                                                    </a>
-                                                    <button 
-                                                    type="button"
-                                                    class="btn btn-danger"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#delete"
-                                                    onclick="formDelete({{ $success_storie->group }})"
-                                                    >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this success stories"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -199,6 +131,48 @@
 
 @section('js')
     <script>
+        // List Success Stories
+        $(function() {
+            $('#listsuccessstories').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-success-stories') }}',
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'name',
+                        name: 'name'
+                    },
+                    {
+                        data: 'description',
+                        name: 'description'
+                    },
+                    {
+                        data: 'image',
+                        name: 'image'
+                    },
+                    {
+                        data: 'language',
+                        name: 'language',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        class: 'text-center'
+                    },
+                ]
+            });
+        });
         function formDeactivate(group){
             $('#form_deactivate').attr('action', '{{ url('/admin/success-stories/deactivate/') }}' + '/' + group);
         };
@@ -208,8 +182,10 @@
         function formDelete(group){
             $('#form_delete').attr('action', '{{ url('/admin/success-stories/delete/') }}' + '/' + group);
         };
-        // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        $(document).ajaxComplete(function() {
+            // Tooltips
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        });
     </script>
 @endsection

@@ -102,6 +102,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Upcoming Event
     Route::get('/upcoming-event', [UpcomingEvent::class, 'index']);
+    Route::get('/upcoming-event/data', [UpcomingEvent::class, 'getUpcomingEvent'])->name('data-upcoming-event');
     Route::get('/upcoming-event/create', [UpcomingEvent::class, 'create']);
     Route::post('/upcoming-event', [UpcomingEvent::class, 'store'])->name('create-upcoming-event');
     Route::get('/upcoming-event/{id}/edit', [UpcomingEvent::class, 'edit']);
@@ -114,6 +115,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Success Stories
     Route::get('/success-stories', [SuccessStory::class, 'index']);
+    Route::get('/success-stories/data', [SuccessStory::class, 'getSuccessStories'])->name('data-success-stories');
     Route::get('/success-stories/create', [SuccessStory::class, 'create']);
     Route::post('/success-stories', [SuccessStory::class, 'store'])->name('create-success-stories');
     Route::get('/success-stories/{group}/edit', [SuccessStory::class, 'edit']);
