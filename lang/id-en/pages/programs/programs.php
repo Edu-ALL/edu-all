@@ -1,8 +1,8 @@
 <?php
 
 return [
-    "title" => "Our Programs",
-    "body" => "Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application as well as enhance students’ personal brand.",
+    "title" => "Our Program",
+    "body" => "Our program consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application as well as enhance students’ personal brand.",
     "program_list" => [
         [
             'title' => 'Admission Mentoring',

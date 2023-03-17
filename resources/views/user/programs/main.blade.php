@@ -59,7 +59,7 @@
                                                 class="font-semibold text-base lg:text-lg font-primary mb-4 leading-7 text-center">
                                                 {{ $item['body'] }}
                                             </p>
-                                            <a href="{{ route('admissions_mentoring', ['locale' => app()->getLocale()]) }}"
+                                            <a href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
                                                 class="my-btn text-sm">View More</a>
                                         </div>
                                     </div>
