@@ -111,9 +111,9 @@
 
     <div class="fixed -bottom-[100%] lg:right-5 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[400px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
         id="newsForm">
-        <div class="absolute -right-2 -top-2 z-[99999] text-right -mt-[5px] w-[28px] h-[28px] rounded-full bg-yellow text-white inline-block float-right justify-center items-center cursor-pointer"
+        <div class="absolute -right-2 -top-2 z-[99999] text-right -mt-[5px] w-[28px] h-[28px] rounded-full bg-yellow text-white float-right flex justify-center items-center cursor-pointer"
             onclick="popupForm('close')">
-            <i class="fa fa-xmark"></i>
+            <i class="fa fa-xmark inline-block "></i>
         </div>
         <div class="p-0">
             <div class="rounded-md overflow-hidden">
