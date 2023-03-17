@@ -15,7 +15,7 @@
         <div class="main-container">
             <div class="flex flex-col items-center">
                 {{-- Description --}}
-                <div class="pb-10 flex flex-col items-center w-full max-w-3xl mx-auto">
+                <div class="pb-10 flex flex-col items-center w-full max-w-5xl mx-auto">
                     <div class="font-primary font-medium text-xl text-[#576996] text-center md:font-semibold md:text-2xl">
                         {!! __('pages/programs/global_innovators_projects.description') !!}
                     </div>
@@ -30,9 +30,17 @@
                     <img src="{{ asset('assets/img/global_innovators_project/Community Empowerment Program logo.webp') }}"
                         alt="Allineduspace Community Empowerment Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
-                    <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
-                        {{ __('pages/programs/global_innovators_projects.community_empowerment_program_date') }}
-                    </h3>
+                    <div class="flex items-center gap-4">
+                        <span
+                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#FDEFE0] shadow-xl">
+                            <img src="{{ asset('assets/icon/global-innovators-project/summer.webp') }}" alt="Summer Icon"
+                                class="w-8 h-8">
+                            Summer
+                        </span>
+                        <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
+                            {{ __('pages/programs/global_innovators_projects.community_empowerment_program_date') }}
+                        </h3>
+                    </div>
                     <p class="mt-2 font-primary text-base text-primary text-center">
                         {{ __('pages/programs/global_innovators_projects.community_empowerment_program_desc') }}
                     </p>
@@ -52,6 +60,20 @@
                 <div class="py-10 flex flex-col items-center gap-y-6 max-w-3xl mx-auto">
                     <img src="{{ asset('assets/img/global_innovators_project/Logo GIP.webp') }}"
                         alt="Allineduspace Global Immersion Programs Logo" class="w-full max-w-xs mx-auto object-contain">
+                    <div class="flex gap-4">
+                        <span
+                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
+                            <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
+                                class="h-8">
+                            Winter
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#FDEFE0] shadow-xl">
+                            <img src="{{ asset('assets/icon/global-innovators-project/summer.webp') }}" alt="Summer Icon"
+                                class="w-8 h-8">
+                            Summer
+                        </span>
+                    </div>
                     <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
                         {{ __('pages/programs/global_innovators_projects.business_date') }}
                     </h3>
@@ -148,10 +170,13 @@
     </section>
 
     {{-- =============================================== Bottom Section =============================================== --}}
-    <section id="form" class="py-16">
+    <section id="form" class="flex flex-col items-center py-16">
         <h2 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
             {{ __('pages/programs/global_innovators_projects.form_title') }}
         </h2>
+        <div class="mt-2 w-full font-primary font-medium text-base text-[#F90C0C] text-center">
+            {!! __('pages/programs/global_innovators_projects.form_desc') !!}
+        </div>
         <div class="main-container w-full mt-12">
             <div class="w-full  rounded-lg overflow-hidden">
 
