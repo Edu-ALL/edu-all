@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "Programs Kami",
+    "title" => "Program Kami",
     "body" => "Program kami terdiri dari bimbingan mentoring individu, kursus, dan program terapan untuk memenuhi persyaratan pendaftaran universitas maupun meningkatkan personal brand siswa.",
     "program_list" => [
         [

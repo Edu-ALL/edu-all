@@ -15,7 +15,7 @@ class HomePageController extends Controller
         $region = substr(app()->getLocale(), 0, 2);
 
         // Banner
-        $banners = Banners::all()->where('lang', $lang)->where('banner_status', 'active')->where('region', $region);
+        $banners = Banners::where('lang', $lang)->where('banner_status', 'active')->where('region', $region)->latest()->get();
 
         // Mentor
         $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active');

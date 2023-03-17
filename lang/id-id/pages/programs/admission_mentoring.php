@@ -101,7 +101,7 @@ $univtransfer = [
 
 return [
     // banner section
-    "title" => "Admissions Mentoring",
+    "title" => "Admission Mentoring",
     "body" => "Kami menawarkan bimbingan mentoring privat (1-on-1) sesuai kebutuhan setiap siswa dan membimbing mereka untuk menemukan universitas yang terbaik dan sesuai.",
 
     // benefits section

@@ -2,16 +2,40 @@
 
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
-    <section class="py-20 bg-sg-header bg-cover bg-center">
-        <div class="main-container">
-            <div class="py-28 flex flex-col md:py-52">
-                <h1 class="font-primary font-bold text-7xl text-primary text-center md:text-8xl">ALL-in Eduspace</h1>
-                <h4 class="font-primary font-bold text-3xl text-primary text-center">
-                    Let's #TakeOnYourFuture! Remember, #itsALLINtheprep!
-                </h4>
+    <div class="relative left-0 w-full h-screen -mt-16 overflow-hidden">
+        <section class="splide" aria-labelledby="carousel-heading" id="home_banner">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    @foreach ($banners as $banner)
+                        <li class="splide__slide relative">
+                            <img class="object-bottom object-cover w-full h-screen"
+                                src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
+                                alt="{{ $banner->banner_alt }}">
+                            <div
+                                class="absolute left-0 top-0 flex items-center w-full h-full pt-16 bg-gradient-to-r from-primary/90 md:items-start">
+                                <div
+                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-44 font-primary lg:items-start">
+                                    <h2
+                                        class="font-primary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
+                                        {{ $banner->banner_title }}</h2>
+                                    <div
+                                        class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
+                                        {!! $banner->banner_description !!}
+                                    </div>
+                                    <a href="{{ $banner->banner_link }}">
+                                        <span
+                                            class="inline-block mt-10 bg-[#7895C7] py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize">
+                                            {{ $banner->banner_button }}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     {{-- ========================================== Benefits Section ======================================= --}}
     <section class="mx-6 pt-8 md:pt-24">
@@ -248,7 +272,21 @@
 
         var splides = document.getElementsByClassName('splide');
 
-        new Splide(splides[0], {
+        document.addEventListener('DOMContentLoaded', function() {
+            var splide = new Splide(splides[0], {
+                wheel: false,
+                isNavigation: false,
+                arrows: false,
+                pagination: isMediumDevice ? false : true,
+                type: 'fade',
+                autoplay: true,
+                lazyload: true,
+                interval: 5000,
+                pauseOnHover: true,
+            }).mount();
+        });
+
+        new Splide(splides[1], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,
@@ -269,4 +307,29 @@
             });
         }).mount();
     </script>
+
+    <style>
+        #home_banner .splide__pagination {
+            display: block !important;
+            flex-direction: column !important;
+            right: 0 !important;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        #home_banner .splide__pagination li {
+            display: block !important;
+        }
+
+        #home_banner .splide__pagination .splide__pagination__page {
+            background: #233873 !important;
+            border: 2px solid #d2d2d2 !important;
+            height: 12px !important;
+            width: 12px !important;
+        }
+
+        #home_banner .splide__pagination .splide__pagination__page.is-active {
+            background: #F78614 !important;
+        }
+    </style>
 @endsection
