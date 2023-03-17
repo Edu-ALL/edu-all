@@ -37,7 +37,7 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listtutor" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -48,7 +48,7 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @php
                                         $i = 1;
                                     @endphp
@@ -109,7 +109,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>
+                                </tbody> --}}
                             </table>
                         </div>
                     </div>
@@ -192,6 +192,43 @@
 
 @section('js')
     <script>
+        // List Tutor
+        $(function() {
+            $('#listtutor').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-tutor') }}',
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'full_name',
+                        name: 'full_name'
+                    },
+                    {
+                        data: 'experience',
+                        name: 'experience'
+                    },
+                    {
+                        data: 'image',
+                        name: 'image'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        class: 'text-center'
+                    },
+                ]
+            });
+        });
         function formDeactivate(id){
             $('#form_deactivate').attr('action', '{{ url('/admin/tutor/deactivate/') }}' + '/' + id);
         };
@@ -201,8 +238,10 @@
         function formDelete(id){
             $('#form_delete').attr('action', '{{ url('/admin/tutor/delete/') }}' + '/' + id);
         };
-        // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        $(document).ajaxComplete(function() {
+            // Tooltips
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        });
     </script>
 @endsection

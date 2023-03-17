@@ -44,6 +44,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Banner
     Route::get('/banner', [Banner::class, 'index']);
+    Route::get('/banner/data', [Banner::class, 'getBanner'])->name('data-banner');
     Route::get('/banner/create', [Banner::class, 'create']);
     Route::post('/banner', [Banner::class, 'store'])->name('create-banner');
     Route::get('/banner/{id}/edit', [Banner::class, 'edit']);
@@ -90,6 +91,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Guidebook
     Route::get('/guidebook', [Guidebook::class, 'index']);
+    Route::get('/guidebook/data', [Guidebook::class, 'getGuidebook'])->name('data-guidebook');
     Route::get('/guidebook/create', [Guidebook::class, 'create']);
     Route::post('/guidebook', [Guidebook::class, 'store'])->name('create-guidebook');
     Route::get('/guidebook/{group}/edit', [Guidebook::class, 'edit']);
@@ -137,6 +139,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Tutor
     Route::get('/tutor', [Tutor::class, 'index']);
+    Route::get('/tutor/data', [Tutor::class, 'getTutor'])->name('data-tutor');
     Route::get('/tutor/create', [Tutor::class, 'create']);
     Route::post('/tutor', [Tutor::class, 'store'])->name('create-tutor');
     Route::get('/tutor/{id}/edit', [Tutor::class, 'edit']);
