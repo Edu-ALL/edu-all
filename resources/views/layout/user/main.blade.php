@@ -133,7 +133,6 @@
     <div class="mt-16">
         @yield('content')
     </div>
-
     @include('layout.user.footer')
 </body>
 
@@ -180,9 +179,6 @@
             newsButton.classList.remove('hidden');
         }
     }
-
-    // IG TOKEN
-    sessionStorage.setItem('ig_token', '{{ app()->getLocale() == 'sg' ? env('IG_TOKEN_GLOBAL') : env('IG_TOKEN') }}')
 </script>
 
 </html>

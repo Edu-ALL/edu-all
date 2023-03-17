@@ -104,13 +104,13 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="child_nav group">
+                                {{-- <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/global-innovators-project"
                                         class="child_child_nav_link">
                                         <i class="fa-solid fa-earth-americas mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_global_innovators') }}
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
 
