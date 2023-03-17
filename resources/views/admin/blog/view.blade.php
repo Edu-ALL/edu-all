@@ -57,6 +57,11 @@
                                 </div>
                                 <div class="col d-flex flex-row gap-2" style="max-width: fit-content">
                                     <div class="p-0" style="max-width: fit-content">
+                                        <a type="button" class="btn btn-success d-inline" href="{{url('id-'.$blog->lang.'/blog/'.$blog->slug)}}" target="_blank">
+                                            <i class="fa-solid fa-magnifying-glass me-md-1 me-0"></i><span class="d-md-inline d-none"> Preview Blogs</span>
+                                        </a>
+                                    </div>
+                                    <div class="p-0" style="max-width: fit-content">
                                         <a type="button" class="btn btn-warning d-inline" href="/admin/blogs/{{ $blog->id }}/edit">
                                             <i class="fa-solid fa-pen-to-square me-md-1 me-0"></i><span class="d-md-inline d-none"> Edit Blogs</span>
                                         </a>
