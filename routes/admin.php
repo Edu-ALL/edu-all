@@ -81,6 +81,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Testimonial
     Route::get('/testimonial', [Testimonial::class, 'index']);
+    Route::get('/testimonial/data', [Testimonial::class, 'getTestimonial'])->name('data-testimonial');
     Route::get('/testimonial/create', [Testimonial::class, 'create']);
     Route::post('/testimonial', [Testimonial::class, 'store'])->name('create-testimonial');
     Route::get('/testimonial/{group}/edit', [Testimonial::class, 'edit']);
@@ -152,6 +153,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Project Showcase
     Route::get('/project-showcase', [ProjectShowcase::class, 'index']);
+    Route::get('/project-showcase/data', [ProjectShowcase::class, 'getProjectShowcase'])->name('data-project-showcase');
     Route::get('/project-showcase/create', [ProjectShowcase::class, 'create']);
     Route::post('/project-showcase', [ProjectShowcase::class, 'store'])->name('create-project-showcase');
     Route::get('/project-showcase/{id}/edit', [ProjectShowcase::class, 'edit']);
