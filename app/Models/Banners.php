@@ -16,6 +16,7 @@ class Banners extends Model
         'id',
         'group',
         'banner_img',
+        'banner_img_mobile',
         'banner_alt',
         'banner_title',
         'banner_description',
