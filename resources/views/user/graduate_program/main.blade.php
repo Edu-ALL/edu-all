@@ -1,5 +1,9 @@
 @extends('layout.user.main')
-
+@section('head')
+    <meta name="title" content="Graduate Program" />
+    <meta name="description"
+        content="Achieve success in your graduate studies with All-in Eduspace&#039;s admission mentoring program. Professional guidance and support. Enroll now" />
+@endsection
 @section('content')
     {{-- ==================================== Header Section ========================================= --}}
     <section class="py-28 bg-graduate-header bg-cover bg-center md:py-48 ">

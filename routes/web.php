@@ -27,9 +27,9 @@ Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-Route::get('/{slug}', function($slug) {
-    return redirect('/id-en/blog/'.$slug);
-});
+// Route::get('/{slug}', function($slug) {
+//     return redirect('/id-en/blog/'.$slug);
+// });
 
 Route::get('/id/{slug}', function($slug) {
     return redirect('/id-id/blog/'.$slug);

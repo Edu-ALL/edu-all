@@ -1,4 +1,9 @@
 @extends('layout.user.main')
+@section('head')
+    <meta name="title" content="We offer personalized 1-on-1 admissions mentoring service" />
+    <meta name="description"
+        content="personalized 1-on-1 admissions mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best fit universities" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

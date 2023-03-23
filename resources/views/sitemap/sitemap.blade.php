@@ -17,4 +17,4 @@
             <loc>{{ url('id-id/sitemap-blogs.xml')}}</loc>
             <lastmod>{{ date('c') }}</lastmod>
         </sitemap>
-</sitemapindex>
+</sitemapindex>  

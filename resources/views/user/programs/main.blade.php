@@ -1,5 +1,11 @@
 @extends('layout.user.main')
 
+@section('head')
+    <meta name="title" content="Our Comprehensive, Proven, &amp; Personalize Programs" />
+    <meta name="description"
+        content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />
+@endsection
+
 @section('content')
     <section class="-mt-16 pb-16 -z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">

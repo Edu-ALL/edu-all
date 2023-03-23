@@ -40,7 +40,7 @@ class BlogPageController extends Controller
 
         // filter by search
         if ($search = request('search')) {
-            $blogs = $blogs->where('blog_title', 'LIKE', "%{$search}")->orWhere('blog_description', 'LIKE', "%{$search}%");
+            $blogs = $blogs->where('lang', $lang)->where('blog_title', 'LIKE', "%{$search}")->orWhere('blog_description', 'LIKE', "%{$search}%");
         }
 
         // filter by category

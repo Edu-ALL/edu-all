@@ -15,7 +15,7 @@
                 <h4 class="font-bold text-base text-white mb-4">
                     {{ __('pages/footer.consultation') }}
                 </h4>
-                <p class="font-normal text-base text-white mb-4">consultation available by appointment only on Mon-Fri 9-17</p>
+                <p class="font-normal text-base text-white mb-4">Consultation available by appointment only on Mon-Fri 9-17</p>
                 <p class="font-normal text-base text-white">Book your appointment now
                     <br /> +62 818-0808-1363
                     <br /> +62 878-6081-1413
@@ -80,7 +80,7 @@
                         class="w-5 h-5 object-contain">
                 </a>
             </div>
-            <p class="text-sm text-white">Copyright c 2021. ALL-in Eduspace.All rights reserved</p>
+            <p class="text-sm text-white">Copyright © {{date('Y')}}. ALL-in Eduspace. All rights reserved</p>
         </div>
     </div>
 </footer>
