@@ -19,13 +19,6 @@ class BlogPageController extends Controller
         // ambil semua blog dengan sesuai bahasa dan blog yang berstatus publish
         $blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish');
 
-        // filter by category
-        if (request('category')) {
-            $category = BlogCategorys::where('slug', request('category'))->first();
-            if ($category) $blogs = $blogs->where('cat_id', $category->id);
-            else return redirect()->route('blogs', app()->getLocale());
-        }
-
         // take blogs
         $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
 
@@ -42,6 +35,19 @@ class BlogPageController extends Controller
         } else {
             // update blogs hilangkan yang sudah dijadikan highlight
             $blogs = $blogs->where('is_highlight', '!=', 'true');
+        }
+
+
+        // filter by search
+        if ($search = request('search')) {
+            $blogs = $blogs->where('blog_title', 'LIKE', "%{$search}")->orWhere('blog_description', 'LIKE', "%{$search}%");
+        }
+
+        // filter by category
+        if (request('category')) {
+            $category = BlogCategorys::where('slug', request('category'))->first();
+            if ($category) $blogs = $blogs->where('cat_id', $category->id);
+            else return redirect()->route('blogs', app()->getLocale());
         }
 
         // take all blogs
