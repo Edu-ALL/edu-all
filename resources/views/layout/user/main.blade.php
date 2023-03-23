@@ -32,8 +32,7 @@
     <script type="application/ld+json">
         {"@context":"https://schema.org","@graph":[
             {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About Us","description":"Personalized Independent University Consultant","url":"https://all-inedu.com/id-en/about"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Programs
-            ","description":"Tailored Programs for Top Uni Application Success","url":"https://all-inedu.com/id-en/programs"},
+            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Programs","description":"Tailored Programs for Top Uni Application Success","url":"https://all-inedu.com/id-en/programs"},
             {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Success Stories","description":"Discover Our Mentee's Inspiring Success Stories","url":"https://all-inedu.com/id-en/resources/success-stories"},
             {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upcoming Events","description":"Exciting Events Crafted for Your Needs","url":"https://all-inedu.com/id-en/resources/upcoming-events"}]
         }

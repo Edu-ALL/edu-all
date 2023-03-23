@@ -1,5 +1,9 @@
 @extends('layout.user.main')
-
+@section('head')
+    <meta name="title" content="Mentoring Program; Explore your true potential in business or research" />
+    <meta name="description"
+        content="Explore your true potential in business or research, uncover your true self, we can help you through our Passion Mentoring Program" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
