@@ -47,7 +47,7 @@
                                 </div>
                                 {{-- change author name with mentor name --}}
                                 <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
-                                    {{ $blog->mentor->mentor_firstname }} {{ $blog->mentor->mentor_lastname }}
+                                    {{ $blog->mentor->mentor_fullname }}
                                 </span>
                                 <div class="hidden w-px h-4 bg-primary md:block"></div>
                             </div>
