@@ -33,7 +33,7 @@ class Blog extends Controller
                 return $result;
             })
             ->editColumn('mentor', function($d){
-                if ($d->mt_id == null) {
+                if ($d->mt_id == '' || $d->mt_id == null) {
                     $result = '-';
                 } else {
                     $result = $d->mentor->mentor_fullname;
