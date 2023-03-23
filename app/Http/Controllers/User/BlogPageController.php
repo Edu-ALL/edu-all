@@ -98,11 +98,6 @@ class BlogPageController extends Controller
         $doc =  new DOMDocument();
         $doc->loadHTML($blog->blog_description, LIBXML_NOERROR);
         $title_list = $doc->getElementsByTagName('h2');
-        $figure = $doc->getElementsByTagName('figure')->item(0);
-        $parent = $figure?->parentNode;
-        $parent?->removeChild($figure);
-
-
 
         $blog_section = [];
         foreach ($title_list as $index => $title) {
