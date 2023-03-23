@@ -296,3 +296,8 @@ h3 {
 .privacy_policy a {
     @apply underline;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+}

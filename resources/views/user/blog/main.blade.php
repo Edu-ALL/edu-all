@@ -15,7 +15,7 @@
                 {{ __('pages/blog.top_title') }}
             </h1>
             <div class="flex flex-col items-center lg:items-start">
-                <div class="mb-6">
+                <div class="mb-8 w-full flex flex-col items-center justify-between gap-4 md:flex-row">
                     <span
                         class="px-4 py-2 font-primary font-bold text-sm text-white text-center rounded-md bg-primary lg:text-base">
                         @if ($is_top_update)
@@ -23,8 +23,15 @@
                         @else
                             {{ __('pages/blog.top_choice') }}
                         @endif
-
                     </span>
+                    <form action="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}" method="GET"
+                        class="inline-flex justify-end gap-2 w-full max-w-md">
+                        <input type="search" name="search" placeholder="Search..." id="search"
+                            class="w-full rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary">
+                        <button type="submit" class="px-4 py-2 rounded-md bg-primary">
+                            <i class="fa-solid fa-magnifying-glass fa-xl text-white"></i>
+                        </button>
+                    </form>
                 </div>
                 <div class="splide w-full" role="group" aria-label="Splide Basic HTML Example">
                     <div class="splide__arrows">
