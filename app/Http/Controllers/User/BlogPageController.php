@@ -37,17 +37,18 @@ class BlogPageController extends Controller
             $blogs = $blogs->where('is_highlight', '!=', 'true');
         }
 
-
-        // filter by search
-        if ($search = request('search')) {
-            $blogs = $blogs->where('lang', $lang)->where('blog_title', 'LIKE', "%{$search}")->orWhere('blog_description', 'LIKE', "%{$search}%");
-        }
-
         // filter by category
         if (request('category')) {
             $category = BlogCategorys::where('slug', request('category'))->first();
             if ($category) $blogs = $blogs->where('cat_id', $category->id);
             else return redirect()->route('blogs', app()->getLocale());
+        }
+
+         // filter by search
+         if ($search = request('search')) {
+            $blogs = $blogs->where('lang', $lang)->where(function($s) use($search) {
+                $s->where('blog_title', 'LIKE', "%{$search}")->orWhere('blog_description', 'LIKE', "%{$search}%");
+            });
         }
 
         // take all blogs
@@ -98,6 +99,7 @@ class BlogPageController extends Controller
         $doc =  new DOMDocument();
         $doc->loadHTML($blog->blog_description, LIBXML_NOERROR);
         $title_list = $doc->getElementsByTagName('h2');
+
 
         $blog_section = [];
         foreach ($title_list as $index => $title) {

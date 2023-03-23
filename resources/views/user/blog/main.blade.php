@@ -121,6 +121,9 @@
                     @endforeach
                 </ul>
             </div>
+            @if(count($blogs)==0) 
+                <h3 class="text-center">Article Not Found !</h3>
+            @endif
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($blogs as $blog)
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog]) }}"
