@@ -13,14 +13,82 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class UpcomingEvent extends Controller
 {
     public function index(){
-        $upcoming_events = UpcomingEvents::orderBy('updated_at', 'desc')->get();
-        // $this->checkPublish();
-        // $this->checkTakeOff();
-        return view('admin.upcoming-event.index', ['upcoming_events' => $upcoming_events]);
+        return view('admin.upcoming-event.index');
+    }
+
+    public function getUpcomingEvent(Request $request){
+        if ($request->ajax()) {
+            $data = UpcomingEvents::orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->editColumn('image', function($d){
+                $path = asset('uploaded_files/'.'upcoming-event/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->event_thumbnail);
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
+                ';
+                return $result;
+            })
+            ->editColumn('region', function($d){
+                $path = asset('assets/img/flag/flag-'.$d->region.'.png');
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
+                    <p class="pt-1" style="font-size: 13px !important">
+                        '.$d->regions->region.'
+                    </p>
+                ';
+                return $result;
+            })
+            ->editColumn('language', function($d){
+                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
+                    <p class="pt-1" style="font-size: 13px !important">
+                        '.$d->languages->language.'
+                    </p>
+                ';
+                return $result;
+            })
+            ->editColumn('status', function($d){
+                if ($d->event_status == 'publish') {
+                    $result = '
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft('.$d->id.')">
+                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">
+                                '.$d->event_status.'
+                            </span>
+                        </button>
+                    ';
+                } else {
+                    $result = '
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish('.$d->id.')">
+                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
+                                '.$d->event_status.'
+                            </span>
+                        </button>
+                    ';
+                }
+                return $result;
+            })
+            ->editColumn('action', function($d){
+                $result = '
+                <div class="d-flex flex-row justify-content-center gap-1">
+                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/'.$d->id.'/edit">
+                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this upcoming event"></i>
+                    </a>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
+                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this upcoming event"></i>
+                    </button>
+                </div>
+                ';
+                return $result;
+            })
+            ->rawColumns(['image', 'region', 'language', 'status', 'action'])
+            ->make(true);
+        }
     }
 
     public function checkPublish(){

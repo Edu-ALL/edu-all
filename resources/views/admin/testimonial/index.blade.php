@@ -37,21 +37,20 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listtestimonial" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Subtitle</th>
                                         <th scope="col">Category</th>
+                                        <th scope="col">Subcategory</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Language</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @php
                                         $i = 1;
                                     @endphp
@@ -59,9 +58,8 @@
                                         <tr>
                                             <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $testimonial->testi_name }}</td>
-                                            <td>{!! Str::limit($testimonial->testi_desc, 120, '...') !!}</td>
-                                            <td>{!! $testimonial->testi_subtitle != null ? Str::limit($testimonial->testi_subtitle, 100, '...') : '-' !!}</td>
                                             <td>{{ $testimonial->testi_category }}</td>
+                                            <td>{{ $testimonial->testi_subcategory != null ? $testimonial->testi_subcategory : '-' }}</td>
                                             <td>
                                                 @if ($testimonial->testi_thumbnail)
                                                     <img data-original="{{ asset('uploaded_files/'.'testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
@@ -124,7 +122,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>
+                                </tbody> --}}
                             </table>
                         </div>
                     </div>
@@ -207,6 +205,52 @@
 
 @section('js')
     <script>
+        // List Testimonial
+        $(function() {
+            $('#listtestimonial').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-testimonial') }}',
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'testi_name',
+                        name: 'testi_name'
+                    },
+                    {
+                        data: 'testi_category',
+                        name: 'testi_category'
+                    },
+                    {
+                        data: 'subcategory',
+                        name: 'subcategory'
+                    },
+                    {
+                        data: 'image',
+                        name: 'image'
+                    },
+                    {
+                        data: 'language',
+                        name: 'language',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        class: 'text-center'
+                    },
+                ]
+            });
+        });
         function formDeactivate(group){
             $('#form_deactivate').attr('action', '{{ url('/admin/testimonial/deactivate/') }}' + '/' + group);
         };
@@ -216,8 +260,10 @@
         function formDelete(group){
             $('#form_delete').attr('action', '{{ url('/admin/testimonial/delete/') }}' + '/' + group);
         };
-        // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        $(document).ajaxComplete(function() {
+            // Tooltips
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        });
     </script>
 @endsection

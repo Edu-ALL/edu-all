@@ -37,7 +37,7 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table datatable display" style="width:100%">
+                            <table class="table display" id="listupcomingevent" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -50,80 +50,6 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($upcoming_events as $upcoming_event)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $upcoming_event->event_title }}</td>
-                                            <td>{{ $upcoming_event->event_date }}</td>
-                                            <td>
-                                                <img data-original="{{ asset('uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/'.$upcoming_event->event_thumbnail) }}" alt="" width="80">
-                                            </td>
-                                            <td class="text-center">
-                                                <img data-original="{{ asset('assets/img/flag/flag-'.$upcoming_event->region.'.png') }}" alt="" width="30">
-                                                <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $upcoming_event->regions->region }}
-                                                </p>
-                                            </td>
-                                            <td class="text-center">
-                                                <img data-original="{{ asset('assets/img/flag/flag-'.$upcoming_event->lang.'.png') }}" alt="" width="30">
-                                                <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $upcoming_event->languages->language }}
-                                                </p>
-                                            </td>
-                                            @if ($upcoming_event->event_status == 'publish')
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-success"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#draft"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formDraft({{ $upcoming_event->id }})"
-                                                    >
-                                                        <span data-bs-toggle="tooltip" data-bs-title="Set to Draft">
-                                                            {{ $upcoming_event->event_status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @else
-                                                <td class="text-center">
-                                                    <button 
-                                                    class="btn btn-danger"
-                                                    type="button"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#publish"
-                                                    style="text-transform: capitalize;"
-                                                    onclick="formPublish({{ $upcoming_event->id }})"
-                                                    >
-                                                        <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
-                                                            {{ $upcoming_event->event_status }}
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                            @endif
-                                            <td class="text-center">
-                                                <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/{{ $upcoming_event->id }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this upcoming event"></i>
-                                                    </a>
-                                                    <button 
-                                                    type="button"
-                                                    class="btn btn-danger"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#delete"
-                                                    onclick="formDelete({{ $upcoming_event->id }})"
-                                                    >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this upcoming event"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -206,6 +132,53 @@
 
 @section('js')
     <script>
+        // List Upcoming Event
+        $(function() {
+            $('#listupcomingevent').DataTable({
+                scrollX: true,
+                responsive: true,
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('data-upcoming-event') }}',
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'event_title',
+                        name: 'event_title'
+                    },
+                    {
+                        data: 'event_date',
+                        name: 'event_date'
+                    },
+                    {
+                        data: 'image',
+                        name: 'image'
+                    },
+                    {
+                        data: 'region',
+                        name: 'region',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'language',
+                        name: 'language',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        class: 'text-center'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        class: 'text-center'
+                    },
+                ]
+            });
+        });
         function formDraft(id){
             $('#form_draft').attr('action', '{{ url('/admin/upcoming-event/draft/') }}' + '/' + id);
         };
@@ -215,8 +188,10 @@
         function formDelete(id){
             $('#form_delete').attr('action', '{{ url('/admin/upcoming-event/delete/') }}' + '/' + id);
         };
-        // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        $(document).ajaxComplete(function() {
+            // Tooltips
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        });
     </script>
 @endsection

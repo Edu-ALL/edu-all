@@ -81,6 +81,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Testimonial
     Route::get('/testimonial', [Testimonial::class, 'index']);
+    Route::get('/testimonial/data', [Testimonial::class, 'getTestimonial'])->name('data-testimonial');
     Route::get('/testimonial/create', [Testimonial::class, 'create']);
     Route::post('/testimonial', [Testimonial::class, 'store'])->name('create-testimonial');
     Route::get('/testimonial/{group}/edit', [Testimonial::class, 'edit']);
@@ -102,6 +103,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Upcoming Event
     Route::get('/upcoming-event', [UpcomingEvent::class, 'index']);
+    Route::get('/upcoming-event/data', [UpcomingEvent::class, 'getUpcomingEvent'])->name('data-upcoming-event');
     Route::get('/upcoming-event/create', [UpcomingEvent::class, 'create']);
     Route::post('/upcoming-event', [UpcomingEvent::class, 'store'])->name('create-upcoming-event');
     Route::get('/upcoming-event/{id}/edit', [UpcomingEvent::class, 'edit']);
@@ -114,6 +116,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Success Stories
     Route::get('/success-stories', [SuccessStory::class, 'index']);
+    Route::get('/success-stories/data', [SuccessStory::class, 'getSuccessStories'])->name('data-success-stories');
     Route::get('/success-stories/create', [SuccessStory::class, 'create']);
     Route::post('/success-stories', [SuccessStory::class, 'store'])->name('create-success-stories');
     Route::get('/success-stories/{group}/edit', [SuccessStory::class, 'edit']);
@@ -150,6 +153,7 @@ Route::middleware('is_admin')->group(function(){
 
     // Project Showcase
     Route::get('/project-showcase', [ProjectShowcase::class, 'index']);
+    Route::get('/project-showcase/data', [ProjectShowcase::class, 'getProjectShowcase'])->name('data-project-showcase');
     Route::get('/project-showcase/create', [ProjectShowcase::class, 'create']);
     Route::post('/project-showcase', [ProjectShowcase::class, 'store'])->name('create-project-showcase');
     Route::get('/project-showcase/{id}/edit', [ProjectShowcase::class, 'edit']);
