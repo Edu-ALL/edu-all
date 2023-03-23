@@ -1,5 +1,8 @@
 @extends('layout.user.main')
-
+<title>Partnership & Careers</title>
+<meta name="title" content="Partnership & Careers" />
+<meta name="description"
+    content="We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills." />
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-5 -z-10">

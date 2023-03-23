@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Guidebook</title>
+    <meta name="title" content="Guidebook" />
+    <meta name="description"
+        content="Learn how you can ace your university application by improving your academic performance, writing skills, personal brand, and career exploration in every action!" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

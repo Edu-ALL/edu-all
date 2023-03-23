@@ -1,5 +1,6 @@
 @extends('layout.user.main')
 @section('head')
+    <title>Mentoring Program; Explore your true potential in business or research</title>
     <meta name="title" content="Mentoring Program; Explore your true potential in business or research" />
     <meta name="description"
         content="Explore your true potential in business or research, uncover your true self, we can help you through our Passion Mentoring Program" />

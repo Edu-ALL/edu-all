@@ -6,10 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
     <meta name="robots" content="index,follow" />
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
+    @if (request()->is('/') || request()->is(app()->getLocale()))
+        <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
+        <meta name="keywords"
+            content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
+        <meta name="title" content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
+        <meta name="description" content="{{ __('pages/home.meta_description') }}">
+
+        <meta property=og:url content="{{ url('/') }}">
+        <meta property=og:image content="{{ asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp') }}">
+        <meta property=og:title content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
+        <meta property=og:description content="{{ __('pages/home.meta_description') }}">
+    @endif
+
 
     <script type="application/ld+json">
         {
@@ -27,7 +39,7 @@
     <script type="application/ld+json">
         {"@context":"https://schema.org","@type":"EducationalOrganization","name":"ALL-in Eduspace","url":"https://all-inedu.com","ContactPoint":{"@type":"ContactPoint","contactType":"Meet Our Mentors","telephone":"+62 878-8882-7686","email":"info@all-inedu.com","url":"https://all-inedu.com/id-en/sign-me/admission-mentoring"},"sameAs":["https://www.instagram.com/allineduspace/","https://www.youtube.com/@allineduspace"]}
     </script>
-    
+
 
     <script type="application/ld+json">
         {"@context":"https://schema.org","@graph":[
@@ -37,18 +49,6 @@
             {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upcoming Events","description":"Exciting Events Crafted for Your Needs","url":"https://all-inedu.com/id-en/resources/upcoming-events"}]
         }
     </script>
-
-    @if(request()->is('/') || request()->is(app()->getLocale()))
-    <meta name="keywords"
-    content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
-    <meta name="title" content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
-    <meta name="description" content="{{ __('pages/home.meta_description') }}">
-
-    <meta property=og:url content="{{ url('/') }}">
-    <meta property=og:image content="{{ asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp') }}">
-    <meta property=og:title content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
-    <meta property=og:description content="{{ __('pages/home.meta_description') }}">
-    @endif
 
     {{-- Canonical  --}}
     @if (app()->getLocale() == 'sg-en')

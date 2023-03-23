@@ -1,5 +1,9 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Testimonial top university mentoring</title>
+    <meta name="title" content="Testimonial top university mentoring" />
+    <meta name="description" content="100% Mentee Acceptance Rate to Top Universities in US, UK, Europe, and Asia" />
+@endsection
 @section('content')
     {{-- ================================== Top Section  ================================== --}}
     <section class="py-16">

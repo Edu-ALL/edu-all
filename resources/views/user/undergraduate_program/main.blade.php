@@ -1,5 +1,6 @@
 @extends('layout.user.main')
 @section('head')
+    <title>Undergraduate Program</title>
     <meta name="title" content="Undergraduate Program" />
     <meta name="description"
         content="We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities" />

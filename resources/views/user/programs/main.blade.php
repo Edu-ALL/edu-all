@@ -1,6 +1,7 @@
 @extends('layout.user.main')
 
 @section('head')
+    <title>Our Comprehensive, Proven, &amp; Personalize Programs</title>
     <meta name="title" content="Our Comprehensive, Proven, &amp; Personalize Programs" />
     <meta name="description"
         content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />

@@ -1,5 +1,9 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Upcoming Events</title>
+    <meta name="title" content="Upcoming Events" />
+	<meta name="description" content="You have dreams entering world top uni? Check this page &amp; participate to our free &amp; premium events &amp; bootcamps." />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="bg-upcomming-header bg-bottom bg-cover bg-fixed">

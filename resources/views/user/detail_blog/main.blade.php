@@ -1,6 +1,7 @@
 @extends('layout.user.main')
 
 @section('head')
+    <title>{{ $blog->blog_title }}</title>
     <meta property=og:url content="{{ url(app()->getLocale() . '/blog/' . $blog->slug) }}">
     <meta property=og:image
         content="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">

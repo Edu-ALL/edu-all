@@ -1,5 +1,6 @@
 @extends('layout.user.main')
 @section('head')
+    <title>University Transfer Program</title>
     <meta name="title" content="University Transfer Program" />
     <meta name="description"
         content="Make a smooth transition to your dream university with All-in Eduspace&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now" />

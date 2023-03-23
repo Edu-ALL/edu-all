@@ -1,5 +1,9 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Global Innovators Program</title>
+    <meta name="title" content="Global Innovators Program">
+    <meta name="description" content="">
+@endsection
 @section('content')
     {{-- =============================================== Banner Section =============================================== --}}
     <section class="w-full">

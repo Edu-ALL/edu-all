@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Academic &amp; Test Preparation for your top university application success</title>
+    <meta name="title" content="Academic &amp; Test Preparation for your top university application success" />
+    <meta name="description"
+        content="Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="-mt-16 pb-16 -z-10">
@@ -161,7 +166,8 @@
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full">
                                 <div class="splide__slide__container h-full">
-                                    <div class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                    <div
+                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                         <div class="flex flex-col">
                                             <img data-original="{{ asset('assets/logo/quote.png') }}"
                                                 class="w-7 mb-3 h-auto">

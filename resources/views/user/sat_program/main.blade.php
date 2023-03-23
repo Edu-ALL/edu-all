@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>SAT Program</title>
+    <meta name="title" content="SAT Program" />
+    <meta name="description"
+        content="SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

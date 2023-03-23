@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>About Us</title>
+    <meta name="title" content="About Us">
+    <meta name="description"
+        content="We are an independent university consultant. Our mission is to ensure that students are thriving into the path they aspire to have in the future" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

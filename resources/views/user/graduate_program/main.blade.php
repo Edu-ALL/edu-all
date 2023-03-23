@@ -1,5 +1,6 @@
 @extends('layout.user.main')
 @section('head')
+    <title>Graduate Program</title>
     <meta name="title" content="Graduate Program" />
     <meta name="description"
         content="Achieve success in your graduate studies with All-in Eduspace&#039;s admission mentoring program. Professional guidance and support. Enroll now" />

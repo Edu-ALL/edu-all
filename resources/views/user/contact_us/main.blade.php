@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Contact Us for intial consult!</title>
+    <meta name="title" content="Contact Us for intial consult!">
+    <meta name="description"
+        content="Contact Us for intial consult! Let&#039;s discuss about study abroad, universities &amp; scholarship" />
+@endsection
 @section('content')
     <section class="pt-20 pb-10">
         <div class="main-container">

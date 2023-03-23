@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>See the success stories of how our mentees manage their projects</title>
+    <meta name="title" content="See the success stories of how our mentees manage their projects" />
+    <meta name="description"
+        content="See the success stories of how our mentees manage their projects or land their seatin top uni! We are so proud for their achievements" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

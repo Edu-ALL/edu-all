@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Our Contribution</title>
+    <meta name="title" content="Our Contribution" />
+    <meta name="description"
+        content="We are proud of the contribution we give to the community, especially in the education sector." />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-5 -z-10">

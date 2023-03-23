@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>Our Mentors</title>
+    <meta name="title" content="Our Mentors" />
+    <meta name="description"
+        content="ALL-in mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences." />
+@endsection
 @section('content')
     {{-- Header Section --}}
     <section class="py-20 flex items-center justify-start h-screen bg-mentor-header bg-cover bg-center">

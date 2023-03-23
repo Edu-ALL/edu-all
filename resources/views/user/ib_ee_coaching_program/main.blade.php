@@ -1,5 +1,10 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>IB EXTENDED ESSAY COACHING PROGRAM</title>
+    <meta name="title" content="IB EXTENDED ESSAY COACHING PROGRAM">
+    <meta name="description"
+        content="IB EXTENDED ESSAY COACHING PROGRAM: Drill your Extended Essay writing process in 3 months with our holistic approach!" />
+@endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

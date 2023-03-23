@@ -1,5 +1,9 @@
 @extends('layout.user.main')
-
+@section('head')
+    <title>{{$mentor->mentor_fullname}}</title>
+    <meta name="title" content="{{$mentor->mentor_fullname}}">
+    <meta name="description" content="{{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...">
+@endsection
 @section('content')
     {{-- Header Section --}}
     <section class="py-24 bg-cover bg-center">
