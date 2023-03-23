@@ -5,15 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="noindex">
     <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
+    <meta name="robots" content="index,follow" />
+	<meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
+    
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Product",
+          "name": "Best Jakarta Independent University Consultant",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue" : "5.0",
+            "ratingCount": "35",
+            "reviewCount": "35"
+          }
+        }
+    </script>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"EducationalOrganization","name":"ALL-in Eduspace","url":"https://all-inedu.com","ContactPoint":{"@type":"ContactPoint","contactType":"Meet Our Mentors","telephone":"+62 878-8882-7686","email":"info@all-inedu.com","url":"https://all-inedu.com/id-en/sign-me/admission-mentoring"},"sameAs":["https://www.instagram.com/allineduspace/","https://www.youtube.com/@allineduspace"]}
+    </script>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"WebSite","name":"ALL-in Eduspace","url":"https://all-inedu.com","potentialAction":[{"@type":"SearchAction","target":"https://all-inedu.com/?s={search_term_string}","query-input":"required name=search_term_string"}]}
+    </script>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About Us","url":"https://all-inedu.com/id-en/about"},{"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Partnership &#038; Careers","url":"https://all-inedu.com/id-en/about/partnership-careers"},{"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Contact Us","url":"https://all-inedu.com/id-en/contact-us"},{"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Privacy Policy","url":"https://all-inedu.com/id-en/privacy-policy"}]}
+    </script>
 
     @if (!request()->is(app()->getLocale() . '/blog/*'))
+	    <meta name="keywords" content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
         <meta property=og:url content="{{ url('/') }}">
         <meta property=og:image content="{{ asset('uploaded_files/blogs/2021/03/Header_Image_3-min.png') }}">
         <meta property=og:title content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
+        <meta name="description" content="{{ __('pages/home.meta_description') }}">
     @endif
 
     {{-- Canonical  --}}
@@ -24,7 +50,7 @@
     @endif
 
     {{-- Hreflang  --}}
-    <link rel="alternate" hreflang="x-default" href="{{ url('/id-en') }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
     <link rel="alternate" hreflang="en-id" href="{{ url('/id-en') }}" />
     <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
     <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" />
@@ -34,7 +60,7 @@
     @yield('head')
 
     <link href="/css/app.css" rel="stylesheet">
-    @vite('resources/css/app.css')
+    <!--@vite('resources/css/app.css')-->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css">
     {{-- Splide JS - CSS --}}

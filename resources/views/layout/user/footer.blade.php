@@ -15,8 +15,7 @@
                 <h4 class="font-bold text-base text-white mb-4">
                     {{ __('pages/footer.consultation') }}
                 </h4>
-                <p class="font-normal text-base text-white mb-4">Walk-in Consultation available on Mon-Fri, 09.00-17.00
-                    WIB With appointment only.</p>
+                <p class="font-normal text-base text-white mb-4">consultation available by appointment only on Mon-Fri 9-17</p>
                 <p class="font-normal text-base text-white">Book your appointment now
                     <br /> +62 818-0808-1363
                     <br /> +62 878-6081-1413
