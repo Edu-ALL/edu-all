@@ -303,7 +303,6 @@
                                                     <th scope="col">No</th>
                                                     <th scope="col">Video Embed</th>
                                                     <th scope="col">Youtube ID</th>
-                                                    {{-- <th scope="col">Description</th> --}}
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
@@ -320,7 +319,6 @@
                                                         <td>
                                                             {{ $mentor_video->youtube_id }}
                                                         </td>
-                                                        {{-- <td>{!! $mentor_video->description !!}</td> --}}
                                                         <td class="text-center">
                                                             <div class="d-flex flex-row gap-1">
                                                                 <button 
@@ -389,14 +387,6 @@
                                     <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
                                 @enderror
                             </div>
-                            {{-- <div class="col">
-                                <label for="" class="form-label">
-                                    Description <span style="color: var(--red)">*</span>
-                                </label>
-                                <textarea class="textarea" name="description_video" id="description_video">
-                                    {{ old('description_video') }}
-                                </textarea>
-                            </div> --}}
                     </div>
                 </form>
             </div>
