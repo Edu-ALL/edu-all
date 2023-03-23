@@ -92,28 +92,43 @@
                                             <img class="img-preview img-fluid" id="img_preview">
                                         </div>
                                     </div>
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div class="col-12">
-                                            <label for="" class="form-label">
-                                                Banner Image <span style="color: var(--red)">*</span>
-                                            </label>
-                                            <input type="file" class="form-control" id="image" onchange="previewImage()" name="banner_image">
-                                            @error('banner_image')
-                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                            @enderror
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Banner Image (Desktop) <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="file" class="form-control" id="image" onchange="previewImage()" name="banner_image">
+                                        @error('banner_image')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-md-row flex-column pt-2 gap-md-3 gap-2">
+                                    <div class="col-md-2 col">
+                                        <label for="" class="form-label">Banner Image Preview</label>
+                                        <div class="col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
+                                            <img class="img-preview img-fluid" id="img_mobile_preview">
                                         </div>
-                                        <div class="col-12">
-                                            <label for="" class="form-label">
-                                                Banner Alt <span style="color: var(--red)">*</span>
-                                            </label>
-                                            <input type="text" class="form-control" id="alt" name="banner_alt" value="{{ old('banner_alt') }}">
-                                            @error('banner_alt')
-                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                            @enderror
-                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Banner Image (Mobile) <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="file" class="form-control" id="image_mobile" onchange="previewImageMobile()" name="banner_image_mobile">
+                                        @error('banner_image_mobile')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col d-flex flex-column pt-2 gap-2">
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Banner Alt <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="alt" name="banner_alt" value="{{ old('banner_alt') }}">
+                                        @error('banner_alt')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">
                                             Banner Title <span style="color: var(--red)">*</span>
@@ -174,6 +189,16 @@
     function previewImage(){
         const image = document.querySelector('#image')
         const imgPreview = document.querySelector('#img_preview')
+        imgPreview.style.display = 'block'
+        const oFReader = new FileReader()
+        oFReader.readAsDataURL(image.files[0])
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result
+        }
+    };
+    function previewImageMobile(){
+        const image = document.querySelector('#image_mobile')
+        const imgPreview = document.querySelector('#img_mobile_preview')
         imgPreview.style.display = 'block'
         const oFReader = new FileReader()
         oFReader.readAsDataURL(image.files[0])

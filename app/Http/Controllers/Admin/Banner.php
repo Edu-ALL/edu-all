@@ -39,6 +39,13 @@ class Banner extends Controller
                 ';
                 return $result;
             })
+            ->editColumn('image_mobile', function($d){
+                $path = asset('uploaded_files/'.'banner/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->banner_img_mobile);
+                $result = '
+                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
+                ';
+                return $result;
+            })
             ->editColumn('region', function($d){
                 $path = asset('assets/img/flag/flag-'.$d->region.'.png');
                 $result = '
@@ -92,7 +99,7 @@ class Banner extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['description', 'image', 'region', 'language', 'status', 'action'])
+            ->rawColumns(['description', 'image', 'image_mobile', 'region', 'language', 'status', 'action'])
             ->make(true);
         }
     }
@@ -107,6 +114,7 @@ class Banner extends Controller
     public function store(Request $request){
         $rules = [
             'banner_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'banner_image_mobile' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt' => 'required',
             'banner_title' => 'required|max:255',
             'banner_description' => 'required',
@@ -133,6 +141,15 @@ class Banner extends Controller
                 $fileName = 'Banner-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
                 $banner->banner_img = $fileName;
+            }
+            if ($request->hasFile('banner_image_mobile')) {
+                $file = $request->file('banner_image_mobile');
+                $file_format = $request->file('banner_image_mobile')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'banner/'.date('Y').'/'.date('m').'/';
+                $time = $banner->group;
+                $fileName = 'Banner-Mobile-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $banner->banner_img_mobile = $fileName;
             }
             $banner->banner_alt = $request->banner_alt;
             $banner->banner_title = $request->banner_title;
@@ -164,6 +181,7 @@ class Banner extends Controller
     public function update($id, Request $request){
         $rules = [
             'banner_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'banner_image_mobile' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt' => 'required',
             'banner_title' => 'required|max:255',
             'banner_description' => 'required',
@@ -195,6 +213,21 @@ class Banner extends Controller
                 $fileName = 'Banner-'.$time.'.'.$file_format;
                 $file->move($destinationPath, $fileName);
                 $banner->banner_img = $fileName;
+            }
+            if ($request->hasFile('banner_image_mobile')) {
+                if ($old_image_path = $banner->banner_img_mobile) {
+                    $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
+                $file = $request->file('banner_image_mobile');
+                $file_format = $request->file('banner_image_mobile')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/';
+                $time = $banner->group;
+                $fileName = 'Banner-Mobile-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $banner->banner_img_mobile = $fileName;
             }
             $banner->banner_alt = $request->banner_alt;
             $banner->banner_title = $request->banner_title;
@@ -249,6 +282,12 @@ class Banner extends Controller
         try {
             $banner = Banners::find($id);
             if ($old_image_path = $banner->banner_img) {
+                $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
+                if (File::exists($file_path)) {
+                    File::delete($file_path);
+                }
+            }
+            if ($old_image_path = $banner->banner_img_mobile) {
                 $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);

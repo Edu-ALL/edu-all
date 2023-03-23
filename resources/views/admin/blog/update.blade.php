@@ -346,8 +346,8 @@
             $('#mentor').html('<option value=""></option>')
             data.forEach(element => {
                 $('#mentor').append(
-                    '<option value="' + element.id + '">' +
-                    element.mentor_fullname +
+                    '<option value="' + element.id + '">'
+                    +element.mentor_fullname+
                     '</option>'
                 )
                 // console.log(element);

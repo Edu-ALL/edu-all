@@ -46,7 +46,8 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Title</th>
                                             <th scope="col">Description</th>
-                                            <th scope="col">Image</th>
+                                            <th scope="col">Image (Desktop)</th>
+                                            <th scope="col">Image (Mobile)</th>
                                             <th scope="col">Region</th>
                                             <th scope="col">Language</th>
                                             <th scope="col">Status</th>
@@ -164,6 +165,10 @@
                     {
                         data: 'image',
                         name: 'image'
+                    },
+                    {
+                        data: 'image_mobile',
+                        name: 'image_mobile'
                     },
                     {
                         data: 'region',
