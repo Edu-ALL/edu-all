@@ -9,8 +9,8 @@
     <link href="{{ asset('favicon.png') }}" rel="icon">
     <meta name="robots" content="index,follow" />
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
+    <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
     @if (request()->is('/') || request()->is(app()->getLocale()))
-        <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title>
         <meta name="keywords"
             content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
         <meta name="title" content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
