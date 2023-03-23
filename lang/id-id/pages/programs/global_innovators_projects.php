@@ -29,5 +29,6 @@ return [
         'Identifikasi Masalah ', ' Pembuatan Ide ', ' Pembuatan Prototype ', ' Pitching ', ' Penemuan Customer'
     ],
 
-    'form_title' => 'DAFTAR SEKARANG'
+    'form_title' => 'DAFTAR SEKARANG!',
+    'form_desc' => "Karena keterbatasan jumlah peserta yang tersedia, kami menyarankan Anda untuk mengamankan pendaftaran Anda sekarang. <br/> Pendaftaran program kami cenderung berlangsung cepat, jadi jangan lewatkan kesempatan Anda!"
 ];
