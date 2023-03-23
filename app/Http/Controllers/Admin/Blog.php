@@ -33,12 +33,12 @@ class Blog extends Controller
                 return $result;
             })
             ->editColumn('mentor', function($d){
-                if ($d->mt_id == null) {
+                if ($d->mt_id == 0 || $d->mt_id == null) {
                     $result = '-';
                 } else {
                     $result = $d->mentor->mentor_fullname;
                 }
-                return 'Mentor';
+                return $result;
             })
             ->editColumn('image', function($d){
                 $path = asset('uploaded_files/'.'blogs/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->blog_thumbnail);
