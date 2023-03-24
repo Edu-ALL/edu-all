@@ -15,14 +15,39 @@
                 <h4 class="font-bold text-base text-white mb-4">
                     {{ __('pages/footer.consultation') }}
                 </h4>
-                <p class="font-normal text-base text-white mb-4">Consultation available by appointment only on Mon-Fri 9-17</p>
+                <p class="font-normal text-base text-white mb-4">Consultation available by appointment only on Mon-Fri
+                    9-17</p>
                 <p class="font-normal text-base text-white">Book your appointment now
                     <br /> +62 818-0808-1363
                     <br /> +62 878-6081-1413
                 </p>
             </div>
             <div class="flex flex-col sm:col-span-2">
-                <h4 class="flex items-center font-bold text-base text-white mb-4">
+                <h4 class="font-bold text-base text-white mb-4">
+                    <a href="https://www.youtube.com/@allineduspace">
+                        <div class="border rounded-full inline p-2 pr-1">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div> &nbsp;
+                        @allineduspace
+                    </a>
+                </h4>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="col">
+                        <iframe width="100%" height="210" src="https://www.youtube.com/embed/8X_Ah8cl7aw"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="col">
+                        <iframe width="100%" height="210" src="https://www.youtube.com/embed/DpsCZZ6HjC4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    </div>
+                </div>
+
+               
+                {{-- <h4 class="flex items-center font-bold text-base text-white mb-4">
                     <a href="https://www.instagram.com" target="_blank"
                         class="p-3 rounded-full border border-white block mr-3 bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
                         <img data-original="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo"
@@ -32,10 +57,10 @@
                         target="_blank">
                         <span>{{ app()->getLocale() == 'sg-en' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}</span>
                     </a>
-                </h4>
-                <div class="flex flex-col justify-evenly items-start gap-4 sm:flex-row">
+                </h4> --}}
+                {{-- <div class="flex flex-col justify-evenly items-start gap-4 sm:flex-row">
                     @include('layout.user.instagram')
-                </div>
+                </div> --}}
             </div>
             <div class="flex flex-col sm:col-span-2 lg:col-span-4 xl:col-span-2">
                 <h4 class="font-bold text-base text-white mb-8">
@@ -80,7 +105,7 @@
                         class="w-5 h-5 object-contain">
                 </a>
             </div>
-            <p class="text-sm text-white">Copyright © {{date('Y')}}. ALL-in Eduspace. All rights reserved</p>
+            <p class="text-sm text-white">Copyright © {{ date('Y') }}. ALL-in Eduspace. All rights reserved</p>
         </div>
     </div>
 </footer>
