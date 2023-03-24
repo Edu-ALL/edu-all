@@ -24,7 +24,7 @@ Route::get('robots.txt', function () {
     return response()->file(public_path('robots.txt'));
 });
 
-Route::middleware('gzip')->get('/', [HomePageController::class, 'home']);
+Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
@@ -187,7 +187,7 @@ Route::group(
     [
         'prefix' => '{locale}',
         'where' => ['locale' => '[a-zA-Z-]{2,5}'],
-        'middleware' => ['setlocale', 'gzip'],
+        'middleware' => 'setlocale',
 
     ],
     function () {
