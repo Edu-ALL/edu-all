@@ -175,7 +175,8 @@
 
 <script>
     $("img").lazyload({
-        effect: "fadeIn"
+        effect: "fadeIn",
+        placeholder: "{{asset('assets/img/loader.gif')}}",
     });
 
     window.addEventListener("scroll", function() {
