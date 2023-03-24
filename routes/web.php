@@ -31,7 +31,7 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 //     return redirect('/id-en/blog/'.$slug);
 // });
 
-Route::get('/id/{slug}', function($slug) {
+Route::get('/id/{slug}/', function($slug) {
     return redirect(url('/id-id/blog/'.$slug));
 });
 
