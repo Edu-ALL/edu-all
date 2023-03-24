@@ -16,7 +16,7 @@
 @section('content')
     <div id="blog_title_header"
         class="mt-32 py-4 sticky flex flex-col items-center justify-center main-container transition-all md:flex-row md:justify-between">
-        <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
+        <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-4xl">
             {{ $blog->blog_title }}
         </h1>
         <div class="share_container hidden justify-between items-center gap-1 ">
