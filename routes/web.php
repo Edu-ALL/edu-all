@@ -4,7 +4,6 @@ use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
-use App\Http\Controllers\User\RedirectController;
 use App\Http\Controllers\User\ResourcesPageController;
 use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Redirect;
@@ -25,7 +24,7 @@ Route::get('robots.txt', function () {
     return response()->file(public_path('robots.txt'));
 });
 
-Route::get('/', [HomePageController::class, 'home']);
+Route::middleware('gzip')->get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
@@ -188,7 +187,8 @@ Route::group(
     [
         'prefix' => '{locale}',
         'where' => ['locale' => '[a-zA-Z-]{2,5}'],
-        'middleware' => 'setlocale',
+        'middleware' => ['setlocale', 'gzip'],
+
     ],
     function () {
         Route::get('sitemap-blogs.xml', [SitemapController::class, 'sitemap_blog']);
