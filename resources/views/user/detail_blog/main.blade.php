@@ -135,7 +135,7 @@
             </h3>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($recomendation_blogs as $blog)
-                    <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog->slug]) }}"
+                    <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
