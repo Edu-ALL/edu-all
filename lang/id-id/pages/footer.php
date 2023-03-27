@@ -4,6 +4,8 @@ return [
     'address' => 'Alamat',
     'consultation' => 'Konsultasi',
     'company' => 'Perusahaan',
+    'article' => 'Artikel Terbaru',
+    'article_button' => 'Artikel Lainnya',
     'page_list' => [
         [
             'title' => 'Beranda',
@@ -14,7 +16,7 @@ return [
             'link' => "/about"
         ],
         [
-            'title' => 'ALL-info Blog',
+            'title' => 'ALL-INsight',
             'link' => "/blog"
         ],
         [

@@ -4,6 +4,8 @@ return [
     'address' => 'Address',
     'consultation' => 'Consultation',
     'company' => 'Company',
+    'article' => 'Latest Article',
+    'article_button' => 'More ALL-INsight',
     'page_list' => [
         [
             'title' => 'Home',
@@ -14,7 +16,7 @@ return [
             'link' => "/about"
         ],
         [
-            'title' => 'ALL-info Blog',
+            'title' => 'ALL-INsight',
             'link' => "/blog"
         ],
         [

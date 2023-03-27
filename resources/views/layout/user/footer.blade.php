@@ -23,30 +23,52 @@
                 </p>
             </div>
             <div class="flex flex-col sm:col-span-2">
+                @php
+                    use App\Models\Blogs;
+                    $lang = substr(app()->getLocale(), 3, 2);
+                    $latest = Blogs::latest()
+                        ->where('lang', $lang)
+                        ->where('blog_status', 'publish')
+                        ->take(2)
+                        ->get();
+                @endphp
+
                 <h4 class="font-bold text-base text-white mb-4">
-                    <a href="https://www.youtube.com/@allineduspace">
-                        <div class="border rounded-full inline p-2 pr-1">
-                            <i class="fa-brands fa-youtube"></i>
-                        </div> &nbsp;
-                        @allineduspace
-                    </a>
+                    <div class="border rounded-full inline p-2 pr-1">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div> &nbsp;
+                    {{ __('pages/footer.article') }}
                 </h4>
-                <div class="grid grid-cols-1 gap-3">
-                    <div class="col">
-                        <iframe width="100%" height="210" src="https://www.youtube.com/embed/8X_Ah8cl7aw"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="col">
-                        <iframe width="100%" height="210" src="https://www.youtube.com/embed/DpsCZZ6HjC4"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
+                <div class="grid grid-cols-2 gap-3">
+                    @foreach ($latest as $blog)
+                        <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
+                            class="block p-2 bg-[#f4f3f3] hover:bg-[#dfdfdf] rounded transition-all duration-300">
+                            <div class="flex flex-col gap-1">
+                                <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                    alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
+                                    class="h-[95px] object-cover object-center">
+                                <h2
+                                    class="font-primary font-extrabold text-sm text-primary lg:text-sm lg:tracking-normal lg:leading-6">
+                                    {{ html_entity_decode(substr(strip_tags($blog->blog_title), 0, 35)) }}...
+                                </h2>
+                                <span class="inline-flex font-primary font-semibold text-xs text-yellow">
+                                    {{ $blog->blog_category->category_name }}
+                                </span>
+                                <p class="font-primary font-medium text-sm text-primary">
+                                    {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 50)) }}...
+                                </p>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+                <div class="text-center mt-4">
+                    <button class="bg-yellow rounded py-1 px-4 text-white shadow hover:bg-yellow/75">
+                        {{ __('pages/footer.article_button') }}
+                    </button>
                 </div>
 
-               
+
+
                 {{-- <h4 class="flex items-center font-bold text-base text-white mb-4">
                     <a href="https://www.instagram.com" target="_blank"
                         class="p-3 rounded-full border border-white block mr-3 bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
