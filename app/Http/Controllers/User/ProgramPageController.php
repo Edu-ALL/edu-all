@@ -112,4 +112,9 @@ class ProgramPageController extends Controller
     {
         return view('user.global_innovators_projects.main');
     }
+
+    public function thank_page()
+    {
+        return view('user.sign_me.thank');
+    }
 }

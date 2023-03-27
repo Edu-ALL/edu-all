@@ -28,12 +28,12 @@ Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-// BLOG ID 
+// BLOG ID
 // Route::get('id/{slug}/{att?}', function ($slug, $att = null) {
 //     return Redirect::to('id-id/blog/' . $slug, 301);
 // });
 
-// Redirect Old Website 
+// Redirect Old Website
 Route::redirect('/id/daftar-universitas-jurusan-tata-boga-atau-culinary-arts-terbaik-di-dunia-﻿/', '/id-id/blog/daftar-universitas-jurusan-tata-boga-atau-culinary-arts-terbaik-di-dunia', 301);
 Route::redirect('/id/universitas-jurusan-teknik-industri-berikut-adalah-5-yang-terbaik-di-asia/', '/id-id/blog/universitas-jurusan-teknik-industri-berikut-adalah-5-yang-terbaik-di-asia', 301);
 Route::redirect('/id/jurusan-kuliah-di-korea-ini-5-yang-terbaik/', '/id-id/blog/jurusan-kuliah-di-korea-ini-5-yang-terbaik', 301);
@@ -216,6 +216,7 @@ Route::group(
             Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', 'ib_ee_coaching_program')->name('ib_ee_coaching_program');
             Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
             Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
+            Route::get('/programs/thank-you-for-your-interest-in-our-programs', 'thank_page')->name('thank_page');
         });
 
         Route::controller(AboutPageController::class)->group(function () {
