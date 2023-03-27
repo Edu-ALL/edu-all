@@ -236,7 +236,7 @@ Route::group(
 
         Route::controller(BlogPageController::class)->group(function () {
             Route::get('blog', "index")->name('blogs');
-            Route::get('/blog/{blog:slug}', 'show')->name('detail_blog');
+            Route::get('/blog/{slug}', 'show')->name('detail_blog');
         });
     },
 );

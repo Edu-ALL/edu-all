@@ -65,8 +65,11 @@ class BlogPageController extends Controller
         ]);
     }
 
-    public function show($locale, Blogs $blog)
+    public function show($locale, $slug)
     {
+        
+        $blog = Blogs::where('slug', $slug)->first();
+        
         // read ip address
         $ip_address = request()->ip();
 
