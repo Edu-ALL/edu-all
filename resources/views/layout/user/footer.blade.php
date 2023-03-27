@@ -35,7 +35,7 @@
                         ->get();
                 @endphp
 
-                <h4 class="font-bold text-base text-white mb-4">
+                <h4 class="font-bold text-base text-white mb-8">
                     <div class="border rounded-full inline p-2 pr-1">
                         <i class="fa-brands fa-youtube"></i>
                     </div> &nbsp;
