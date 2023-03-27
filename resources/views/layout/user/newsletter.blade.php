@@ -17,7 +17,6 @@
                     action="https://assets.mailerlite.com/jsonp/253019/forms/82679999451105091/subscribe" data-code=""
                     method="post" target="_blank">
                     <div class="ml-form-formContent">
-
                         <div class="ml-form-fieldRow ">
                             <div class="ml-field-group ml-field-name ml-validate-required">
 
@@ -93,14 +92,17 @@
 
                     <div class="ml-form-embedSubmit">
 
-                        <button type="submit" class="primary">Submit</button>
+                        <button type="submit" class="primary">Subscribe</button>
 
                         <button disabled="disabled" style="display: none;" type="button" class="loading">
                             <div class="ml-form-embedSubmitLoad"></div>
                             <span class="sr-only">Loading...</span>
                         </button>
                     </div>
+
+
                     <input type="hidden" name="anticsrf" value="true">
+
                 </form>
             </div>
 
@@ -110,7 +112,8 @@
 
                     <h4></h4>
                     <p><span style="font-size: 20px;">Your submission has been received!</span></p>
-                    <p><span style="font-size: 16px;">Don't worry! We will keep your data private and away from bad people :)</span></p>
+                    <p><span style="font-size: 16px;">Don't worry! We will keep your data private and away from bad
+                            people :)</span></p>
                     <p><br></p>
 
                 </div>
@@ -128,3 +131,6 @@
 </script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v300817f630ad0e957914d0b28a2b6d78"
     type="text/javascript"></script>
+<script>
+    fetch("https://assets.mailerlite.com/jsonp/253019/forms/82679999451105091/track-view")
+</script>
