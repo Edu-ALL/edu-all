@@ -3,6 +3,8 @@
 return [
     'address' => 'Address',
     'consultation' => 'Consultation',
+    'consultation_sub' => 'Consultation available by appointment only on Mon-Fri 9-17',
+    'consultation_desc' => 'Book your appointment now',
     'company' => 'Company',
     'article' => 'Latest Article',
     'article_button' => 'More ALL-INsight',

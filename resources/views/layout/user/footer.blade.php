@@ -15,9 +15,11 @@
                 <h4 class="font-bold text-base text-white mb-4">
                     {{ __('pages/footer.consultation') }}
                 </h4>
-                <p class="font-normal text-base text-white mb-4">Consultation available by appointment only on Mon-Fri
-                    9-17</p>
-                <p class="font-normal text-base text-white">Book your appointment now
+                <p class="font-normal text-base text-white mb-4">
+                    {{ __('pages/footer.consultation_sub') }}
+                </p>
+                <p class="font-normal text-base text-white">
+                    {{ __('pages/footer.consultation_desc') }}
                     <br /> +62 818-0808-1363
                     <br /> +62 878-6081-1413
                 </p>
