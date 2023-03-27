@@ -82,7 +82,7 @@
                                                         {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 300)) }}...
                                                     </p>
                                                 </div>
-                                                <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog->slug]) }}"
+                                                <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                                                     class="block my-5">
                                                     <span
                                                         class="px-4 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">
@@ -126,7 +126,7 @@
             @endif
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($blogs as $blog)
-                    <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'blog' => $blog]) }}"
+                    <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
