@@ -8,10 +8,10 @@
                 <ul class="splide__list">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
-                            <img class="object-bottom object-cover w-full h-screen md:block hidden"
+                            <img class="object-center object-cover w-full h-screen md:block hidden"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
-                            <img class="object-bottom object-cover w-full h-screen md:hidden block"
+                            <img class="object-center object-cover w-full h-screen md:hidden block"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
