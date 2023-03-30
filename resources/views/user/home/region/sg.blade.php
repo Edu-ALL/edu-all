@@ -15,7 +15,7 @@
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
-                                class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ $banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
+                                class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ !$banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
                                 <div
                                     class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-44 font-primary lg:items-start">
                                     <h2
