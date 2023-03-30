@@ -27,7 +27,7 @@
                                     </div>
                                     <a href="{{ $banner->banner_link }}">
                                         <span
-                                            class="inline-block mt-10 bg-[#7895C7] py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize">
+                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize">
                                             {{ $banner->banner_button }}
                                         </span>
                                     </a>
