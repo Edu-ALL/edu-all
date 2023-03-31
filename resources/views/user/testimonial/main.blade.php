@@ -118,8 +118,8 @@
                                                             </div>
                                                             <div class="w-24 h-24 rounded-full">
                                                                 @if ($testi->testi_thumbnail)
-                                                                    <img data-original="{{ asset('uploaded_files/testimonial/' . $testi->created_at->format('Y') . '/' . $testi->created_at->format('m') . '/' . $testi->testi_thumbnail) }}"
-                                                                        alt="{{ $testi->testi_thumbnail }}"
+                                                                    <img src="{{ asset('uploaded_files/testimonial/' . $testi->created_at->format('Y') . '/' . $testi->created_at->format('m') . '/' . $testi->testi_thumbnail) }}"
+                                                                        alt="{{ $testi->testi_thumbnail }}" loading="lazy"
                                                                         class="w-full h-full object-contain object-center">
                                                                 @endif
                                                             </div>
