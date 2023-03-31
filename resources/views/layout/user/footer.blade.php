@@ -43,8 +43,8 @@
                         <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                             class="block p-2 bg-[#f4f3f3] hover:bg-[#dfdfdf] rounded transition-all duration-300">
                             <div class="flex flex-col gap-1">
-                                <img src="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                    alt="Allineduspace {{ $blog->blog_thumbnail_alt }}" loading="lazy"
+                                <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                    alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                     class="h-[95px] object-cover object-center">
                                 <h2
                                     class="font-primary font-extrabold text-sm text-primary lg:text-sm lg:tracking-normal lg:leading-6">
@@ -102,28 +102,28 @@
         </div>
         <div
             class="mt-14 border-t-2 border-light pt-10 gap-8 flex flex-wrap justify-center md:justify-between items-center">
-            <img data-original="/assets/img/footer/ALL-in Eduspace Logo White.png" alt="image 1 footer">
+            <img src="/assets/img/footer/ALL-in Eduspace Logo White.png" alt="image 1 footer" loading="lazy">
             <div class="flex gap-4 items-center justify-between">
 
                 <a href="mailto:info@all-inedu.com" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img data-original="{{ asset('assets/logo/email.png') }}" alt="instagram logo"
-                        class="w-5 h-5 object-contain">
+                    <img src="{{ asset('assets/logo/email.png') }}" alt="instagram logo"
+                        class="w-5 h-5 object-contain" loading="lazy">
                 </a>
                 <a href="https://www.facebook.com/allineduspace/" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img data-original="{{ asset('assets/logo/facebook.png') }}" alt="facebook logo"
-                        class="w-5 h-5 object-contain">
+                    <img src="{{ asset('assets/logo/facebook.png') }}" alt="facebook logo"
+                        class="w-5 h-5 object-contain" loading="lazy">
                 </a>
                 <a href="https://www.linkedin.com/company/all-in-eduspace" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img data-original="{{ asset('assets/logo/linkedin.png') }}" alt="linkedin logo"
-                        class="w-5 h-5 object-contain">
+                    <img src="{{ asset('assets/logo/linkedin.png') }}" alt="linkedin logo"
+                        class="w-5 h-5 object-contain" loading="lazy">
                 </a>
                 <a href="https://www.youtube.com/channel/UCLZ0P-RRdr7k5j2dxhNlObg" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img data-original="{{ asset('assets/logo/youtube.png') }}" alt="youtube logo"
-                        class="w-5 h-5 object-contain">
+                    <img src="{{ asset('assets/logo/youtube.png') }}" alt="youtube logo"
+                        class="w-5 h-5 object-contain" loading="lazy">
                 </a>
             </div>
             <p class="text-sm text-white">Copyright © {{ date('Y') }}. ALL-in Eduspace. All rights reserved</p>
