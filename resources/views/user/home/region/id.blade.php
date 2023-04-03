@@ -339,7 +339,7 @@
             autoplay: true,
             lazyload: true,
             interval: 4000,
-            pagination: false,
+            pagination: isSmallDevice,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');

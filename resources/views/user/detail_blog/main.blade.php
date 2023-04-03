@@ -24,11 +24,11 @@
                 onclick="share_sosmed('open')">
                 <i class="fa fa-send md:mr-2" aria-hidden="true"></i> <span class="hidden md:inline-block">Share</span>
             </div>
-            <div class="share share_icon hidden">
+            <div class="mt-2 share share_icon hidden">
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
                     data-ss-content="false"></div>
             </div>
-            <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+            <div class="mt-2 share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
                 onclick="share_sosmed('close')">
                 <i class="fa fa-x" aria-hidden="true"></i>
             </div>
@@ -263,18 +263,6 @@
             margin: 0 3px !important;
             font-size: 14px !important;
             padding: 5px 10px !important;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .ss-circle .ss-btn {
-                min-width: 15px !important;
-            }
-
-            .ss-btn {
-                margin: 0 3px !important;
-                font-size: 9px !important;
-                padding: 5px 8px !important;
-            }
         }
     </style>
 @endsection

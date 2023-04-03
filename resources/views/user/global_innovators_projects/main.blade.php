@@ -183,9 +183,8 @@
         </div>
         <div class="main-container w-full mt-12">
             <div class="w-full  rounded-lg overflow-hidden">
-
                 <style type="text/css">
-                    @import url("https://assets.mlcdn.com/fonts.css?version=1678351");
+                    @import url("https://assets.mlcdn.com/fonts.css?version=1679399");
                 </style>
                 <style type="text/css">
                     /* LOADER */
@@ -939,6 +938,7 @@
                     }
                 </style>
 
+
                 <style type="text/css">
                     @media only screen and (max-width: 460px) {
                         .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields {
@@ -947,6 +947,163 @@
                         }
                     }
                 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <div id="mlb2-4053872" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-4053872">
                     <div class="ml-form-align-center ">
@@ -1228,10 +1385,10 @@
                                                             aria-required="true"
                                                             name="fields[participated_in_all_in_eventprogram]"
                                                             class="custom-control-input" type="radio"
-                                                            value="Community Empowerment Program"
+                                                            value="Community Empowerment Program (Summer Program Only)"
                                                             id="radio-4053872-53}-0">
                                                         <label class="custom-control-label" for="radio-4053872-53}-0">
-                                                            Community Empowerment Program
+                                                            Community Empowerment Program (Summer Program Only)
                                                         </label>
                                                     </div>
 
@@ -1402,6 +1559,10 @@
                     </div>
                 </div>
 
+
+
+
+
                 <script>
                     function ml_webform_success_4053872() {
                         var $ = ml_jQuery || jQuery;
@@ -1413,6 +1574,9 @@
 
                 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v300817f630ad0e957914d0b28a2b6d78"
                     type="text/javascript"></script>
+                <script>
+                    fetch("https://assets.mailerlite.com/jsonp/253019/forms/82774265184650402/track-view")
+                </script>
             </div>
         </div>
     </section>
