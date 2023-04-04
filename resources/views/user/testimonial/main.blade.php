@@ -20,7 +20,7 @@
             <div class="flex flex-col gap-y-28">
                 {{-- Admission Mentoring --}}
                 <div class="flex flex-col md:flex-row">
-                    <div class="relative w-full md:w-1/3">
+                    <div class="mb-4 sm:mb-0 relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
@@ -46,8 +46,8 @@
                                                     <div
                                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                                         <div class="flex flex-col">
-                                                            <img src="{{ asset('assets/logo/quote.png') }}"
-                                                                alt="Quote" class="w-7 mb-3 h-auto" loading="lazy">
+                                                            <img src="{{ asset('assets/logo/quote.png') }}" alt="Quote"
+                                                                class="w-7 mb-3 h-auto" loading="lazy">
                                                             <div class="font-primary text-sm text-white text-justify">
                                                                 {!! $testi->testi_desc !!}
                                                             </div>
@@ -74,7 +74,7 @@
 
                 {{-- Experiential Learning --}}
                 <div class="flex flex-col md:flex-row">
-                    <div class="relative w-full md:w-1/3">
+                    <div class="mb-4 sm:mb-0 relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
@@ -100,8 +100,8 @@
                                                     <div
                                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                                         <div class="flex flex-col">
-                                                            <img src="{{ asset('assets/logo/quote.png') }}"
-                                                                alt="Quote" class="w-7 mb-3 h-auto" loading="lazy">
+                                                            <img src="{{ asset('assets/logo/quote.png') }}" alt="Quote"
+                                                                class="w-7 mb-3 h-auto" loading="lazy">
                                                             <div class="font-primary text-sm text-white text-justify">
                                                                 {!! $testi->testi_desc !!}
                                                             </div>
@@ -138,7 +138,7 @@
 
                 {{-- Academic Preparation --}}
                 <div class="flex flex-col md:flex-row">
-                    <div class="relative w-full md:w-1/3">
+                    <div class="mb-4 sm:mb-0 relative w-full md:w-1/3">
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
@@ -164,8 +164,8 @@
                                                     <div
                                                         class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                                         <div class="flex flex-col">
-                                                            <img src="{{ asset('assets/logo/quote.png') }}" loading="lazy"
-                                                                alt="Quote" class="w-7 mb-3 h-auto">
+                                                            <img src="{{ asset('assets/logo/quote.png') }}"
+                                                                loading="lazy" alt="Quote" class="w-7 mb-3 h-auto">
                                                             <div class="font-primary text-sm text-white text-justify">
                                                                 {!! $testi->testi_desc !!}
                                                             </div>
@@ -210,19 +210,30 @@
 
 @section('script')
     <script>
-        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isLargeDevice = window.matchMedia("(min-width: 1024px)").matches
 
         var splides = document.querySelectorAll('.splide');
 
         for (var i = 0; i < splides.length; i++) {
             new Splide(splides[i], {
                 type: 'slide',
-                perPage: isLargeDevice ? 1 : 2,
+                perPage: isLargeDevice ? 2 : 1,
+                arrows: isLargeDevice,
                 focus: 0,
-                pagination: false,
+                pagination: !isLargeDevice,
                 autoplay: true,
                 lazyload: true,
                 interval: 5000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
             }).mount();
         }
     </script>

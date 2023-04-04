@@ -27,48 +27,56 @@
     </section>
 
     {{-- ================================== Benefit Section ================================== --}}
-    <section class="relative mx-6 md:h-10">
+    <section class="relative md:mb-28 mx-6 md:h-10">
         <div
             class="max-w-5xl mx-auto min-w-max bg-white shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[180px]">
-            <div class="flex flex-col px-4 py-8 gap-x-4 gap-y-4 md:px-10 md:py-4 md:gap-y-14 md:gap-x-10 md:flex-row">
-                <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}"
-                        alt="Allineduspace ilustration 1" class="h-36 object-center object-cover md:h-24">
-                    <h4
-                        class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
-                        <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_1') }}
-                        </span>{{ __('pages/programs/admission_mentoring.benefit_1_sub') }}
-                    </h4>
+            <div class="grid grid-cols-2 px-4 py-8 gap-6 md:px-10 md:py-4 md:gap-y-14 md:gap-x-10 md:grid-cols-4">
+                <div class="flex flex-1">
+                    <div class="flex flex-1 flex-col items-center gap-6">
+                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}"
+                            alt="Allineduspace ilustration 1" class="h-24 object-center object-cover md:h-24">
+                        <h4
+                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_1') }}
+                            </span>{{ __('pages/programs/admission_mentoring.benefit_1_sub') }}
+                        </h4>
+                    </div>
+                    <div class="hidden md:block min-h-full w-[1px] bg-black"></div>
                 </div>
-                <div class="min-h-full w-[1px] bg-black"></div>
-                <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration"
-                        class="h-36 object-center object-cover md:h-24">
-                    <h4
-                        class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
-                        <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_2') }}
-                        </span>{{ __('pages/programs/admission_mentoring.benefit_2_sub') }}
-                    </h4>
+                <div class="flex flex-1">
+                    <div class="flex flex-1 flex-col items-center gap-6">
+                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration"
+                            class="h-24 object-center object-cover md:h-24">
+                        <h4
+                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_2') }}
+                            </span>{{ __('pages/programs/admission_mentoring.benefit_2_sub') }}
+                        </h4>
+                    </div>
+                    <div class="hidden md:block min-h-full w-[1px] bg-black"></div>
                 </div>
-                <div class="min-h-full w-[1px] bg-black"></div>
-                <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-3.png') }}"
-                        alt="Allineduspace ilustration" class="h-36 object-center object-cover md:h-24">
-                    <h4
-                        class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
-                        <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_3') }}
-                        </span>{{ __('pages/programs/admission_mentoring.benefit_3_sub') }}
-                    </h4>
+                <div class="flex flex-1">
+                    <div class="flex flex-1 flex-col items-center gap-6">
+                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-3.png') }}"
+                            alt="Allineduspace ilustration" class="h-24 object-center object-cover md:h-24">
+                        <h4
+                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_3') }}
+                            </span>{{ __('pages/programs/admission_mentoring.benefit_3_sub') }}
+                        </h4>
+                    </div>
+                    <div class="hidden md:block min-h-full w-[1px] bg-black"></div>
                 </div>
-                <div class="min-h-full w-[1px] bg-black"></div>
-                <div class="flex flex-1 flex-col items-center gap-6">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit-4.png') }}"
-                        alt="Allineduspace ilustration" class="h-36 object-center object-cover md:h-24">
-                    <h4
-                        class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
-                        <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_4') }}
-                        </span>{{ __('pages/programs/admission_mentoring.benefit_4_sub') }}
-                    </h4>
+                <div class="flex flex-1">
+                    <div class="flex flex-1 flex-col items-center gap-6">
+                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-4.png') }}"
+                            alt="Allineduspace ilustration" class="h-24 object-center object-cover md:h-24">
+                        <h4
+                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_4') }}
+                            </span>{{ __('pages/programs/admission_mentoring.benefit_4_sub') }}
+                        </h4>
+                    </div>
                 </div>
             </div>
         </div>

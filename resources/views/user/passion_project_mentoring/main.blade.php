@@ -89,7 +89,8 @@
                 <div class="flex flex-col gap-y-4">
                     @foreach (__('pages/programs/passion_project_mentoring.entrepreneurship_do_list') as $item)
                         <div class="p-4 rounded-xl bg-yellow">
-                            <p class="font-primary font-bold  text-xl text-white leading-5">{{ $loop->iteration }}.
+                            <p class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                                {{ $loop->iteration }}.
                                 {{ $item }}
                             </p>
                         </div>
@@ -112,7 +113,7 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-yellow cursor-pointer">
-                                            <h4 class="font-primary font-bold text-xl text-white leading-5">
+                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
@@ -130,7 +131,7 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-yellow cursor-pointer">
-                                            <h4 class="font-primary font-bold text-xl text-white leading-5">
+                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
@@ -244,7 +245,8 @@
                 <div class="flex flex-col gap-y-4">
                     @foreach (__('pages/programs/passion_project_mentoring.scientific_do_list') as $item)
                         <div class="p-4 rounded-xl bg-[#1eb5f6]">
-                            <p class="font-primary font-bold  text-xl text-white leading-5">{{ $loop->iteration }}.
+                            <p class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                                {{ $loop->iteration }}.
                                 {{ $item }}
                             </p>
                         </div>
@@ -267,7 +269,7 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
-                                            <h4 class="font-primary font-bold text-xl text-white leading-5">
+                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
@@ -286,7 +288,7 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
-                                            <h4 class="font-primary font-bold text-xl text-white leading-5">
+                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
