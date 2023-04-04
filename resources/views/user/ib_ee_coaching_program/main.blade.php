@@ -82,7 +82,7 @@
                     <div class="mx-6 py-4 rounded-xl sm:px-6 md:mx-0 md:w-full lg:pl-20 xl:pl-40">
                         <p class="font-primary font-normal text-xl text-primary md:text-2xl">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_desc') }}</p>
-                        <a href="https://all-inedu.com/wp-content/uploads/2022/12/Coaching-Curriculum-Overview.pdf"
+                        <a href="https://all-inedu.com/uploaded_files/blogs/2022/12/Coaching-Curriculum-Overview.pdf"
                             class="inline-block mt-8 py-2 px-6 font-primary font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
                     </div>
                 </div>
