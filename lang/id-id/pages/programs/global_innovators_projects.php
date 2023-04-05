@@ -4,7 +4,7 @@ return [
     'description' => 'Lihat dunia sambil membuat perbedaan! <br> Dapatkan pengalaman langsung, kembangkan keterampilan yang berharga, dan buat dampak positif di lingkup lokal atau bahkan global!',
     'description_button' => 'Daftar Sekarang',
 
-    'community_empowerment_program_date' => 'Salatiga ', ' 20 - 27 Juni 2023',
+    'community_empowerment_program_date' => 'Salatiga | 20 - 27 Juni 2023',
     'community_empowerment_program_desc' => 'Mulailah perjalanan Anda dengan pengalaman langsung di mana Anda dapat mengidentifikasi masalah aktual yang terjadi di komunitas lokal Indonesia dan mengembangkan project yang nyata dan berdampak.',
     'community_empowerment_program_btn' => 'Info Lebih Lanjut',
 

@@ -79,7 +79,7 @@
                         </span>
                     </div>
                     <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
-                        {{ __('pages/programs/global_innovators_projects.business_date') }}
+                        {{ __('pages/programs/global_innovators_projects.global_immersion_program_date') }}
                     </h3>
                     <p class="mt-2 font-primary text-base text-primary text-center">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_desc') }}
@@ -1173,6 +1173,45 @@
                                             </div>
                                         </div>
                                         <div class="ml-form-fieldRow ">
+                                            <div class="ml-field-group ml-field-nama_anak ml-validate-required">
+
+
+
+
+                                                <!-- input -->
+                                                <input aria-label="nama_anak" aria-required="true" type="text"
+                                                    class="form-control" data-inputmask="" name="fields[nama_anak]"
+                                                    placeholder="My Child's Name (if you are a student, then fill in this column with your name)"
+                                                    autocomplete="">
+                                                <!-- /input -->
+
+                                                <!-- textarea -->
+
+                                                <!-- /textarea -->
+
+                                                <!-- select -->
+
+                                                <!-- /select -->
+
+                                                <!-- checkboxes -->
+
+                                                <!-- /checkboxes -->
+
+                                                <!-- radio -->
+
+                                                <!-- /radio -->
+
+                                                <!-- countries -->
+
+                                                <!-- /countries -->
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="ml-form-fieldRow ">
                                             <div
                                                 class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
 
@@ -1386,8 +1425,8 @@
                                                             name="fields[participated_in_all_in_eventprogram]"
                                                             class="custom-control-input" type="radio"
                                                             value="Community Empowerment Program (Summer Program Only)"
-                                                            id="radio-4053872-53}-0">
-                                                        <label class="custom-control-label" for="radio-4053872-53}-0">
+                                                            id="radio-4053872-63}-0">
+                                                        <label class="custom-control-label" for="radio-4053872-63}-0">
                                                             Community Empowerment Program (Summer Program Only)
                                                         </label>
                                                     </div>
@@ -1397,8 +1436,8 @@
                                                             aria-required="true"
                                                             name="fields[participated_in_all_in_eventprogram]"
                                                             class="custom-control-input" type="radio"
-                                                            value="Global Immersion Program" id="radio-4053872-53}-1">
-                                                        <label class="custom-control-label" for="radio-4053872-53}-1">
+                                                            value="Global Immersion Program" id="radio-4053872-63}-1">
+                                                        <label class="custom-control-label" for="radio-4053872-63}-1">
                                                             Global Immersion Program
                                                         </label>
                                                     </div>
@@ -1460,8 +1499,8 @@
                                                         <input aria-label="session" aria-required="true"
                                                             name="fields[session]" class="custom-control-input"
                                                             type="radio" value="Summer Program"
-                                                            id="radio-4053872-63}-0">
-                                                        <label class="custom-control-label" for="radio-4053872-63}-0">
+                                                            id="radio-4053872-73}-0">
+                                                        <label class="custom-control-label" for="radio-4053872-73}-0">
                                                             Summer Program
                                                         </label>
                                                     </div>
@@ -1470,8 +1509,8 @@
                                                         <input aria-label="session" aria-required="true"
                                                             name="fields[session]" class="custom-control-input"
                                                             type="radio" value="Winter Program"
-                                                            id="radio-4053872-63}-1">
-                                                        <label class="custom-control-label" for="radio-4053872-63}-1">
+                                                            id="radio-4053872-73}-1">
+                                                        <label class="custom-control-label" for="radio-4053872-73}-1">
                                                             Winter Program
                                                         </label>
                                                     </div>
@@ -1565,9 +1604,11 @@
 
                 <script>
                     function ml_webform_success_4053872() {
-                        var $ = ml_jQuery || jQuery;
-                        $('.ml-subscribe-form-4053872 .row-success').show();
-                        $('.ml-subscribe-form-4053872 .row-form').hide();
+                        try {
+                            window.top.location.href = '{{ route('thank_page', app()->getLocale()) }}';
+                        } catch (e) {
+                            window.location.href = '{{ route('thank_page', app()->getLocale()) }}';
+                        }
                     }
                 </script>
 

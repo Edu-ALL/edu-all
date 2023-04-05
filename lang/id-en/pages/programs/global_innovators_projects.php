@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'description' => 'Experience the world while making a difference during your  <span class="font-semibold text-4xl text-[#E85D32]"> Summer </span> or   <span class="font-semibold text-4xl text-primary"> Winter </span> holiday! <br/> Gain hands-on experience, develop valuable skillsets, and make a positive impact, locally and even globally!
+    'description' => 'Experience the world while making a difference during your  <span class="font-semibold text-4xl text-yellow"> Summer </span> or   <span class="font-semibold text-4xl text-primary"> Winter </span> holiday! <br/> Gain hands-on experience, develop valuable skillsets, and make a positive impact, locally and even globally!
     ',
     'description_button' => 'Apply Now',
 

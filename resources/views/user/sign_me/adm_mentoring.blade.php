@@ -1056,6 +1056,45 @@
                                                     </div>
                                                 </div>
                                                 <div class="ml-form-fieldRow ">
+                                                    <div class="ml-field-group ml-field-nama_anak ml-validate-required">
+
+
+
+
+                                                        <!-- input -->
+                                                        <input aria-label="nama_anak" aria-required="true" type="text"
+                                                            class="form-control" data-inputmask="" name="fields[nama_anak]"
+                                                            placeholder="My Child's Name (if you are a student, then fill in this column with your name)"
+                                                            autocomplete="">
+                                                        <!-- /input -->
+
+                                                        <!-- textarea -->
+
+                                                        <!-- /textarea -->
+
+                                                        <!-- select -->
+
+                                                        <!-- /select -->
+
+                                                        <!-- checkboxes -->
+
+                                                        <!-- /checkboxes -->
+
+                                                        <!-- radio -->
+
+                                                        <!-- /radio -->
+
+                                                        <!-- countries -->
+
+                                                        <!-- /countries -->
+
+
+
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="ml-form-fieldRow ">
                                                     <div
                                                         class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
 
@@ -1230,81 +1269,6 @@
 
                                                         <!-- radio -->
 
-                                                        <!-- /radio -->
-
-                                                        <!-- countries -->
-
-                                                        <!-- /countries -->
-
-
-
-
-
-                                                    </div>
-                                                </div>
-                                                <div class="ml-form-fieldRow ">
-                                                    <div class="ml-field-group ml-field-audience ml-validate-required">
-
-                                                        <label>You are a</label>
-
-
-                                                        <!-- input -->
-
-                                                        <!-- /input -->
-
-                                                        <!-- textarea -->
-
-                                                        <!-- /textarea -->
-
-                                                        <!-- select -->
-
-                                                        <!-- /select -->
-
-                                                        <!-- checkboxes -->
-
-                                                        <!-- /checkboxes -->
-
-                                                        <!-- radio -->
-                                                        <div class="custom-checkbox-radio-list">
-                                                            <!-- Visible if current or any next has value -->
-                                                            <div class="custom-control custom-radio">
-                                                                <input aria-label="audience" aria-required="true"
-                                                                    name="fields[audience]" class="custom-control-input"
-                                                                    type="radio" value="Parents"
-                                                                    id="radio-2547736-53}-0">
-                                                                <label class="custom-control-label"
-                                                                    for="radio-2547736-53}-0">
-                                                                    Parents
-                                                                </label>
-                                                            </div>
-
-                                                            <div class="custom-control custom-radio">
-                                                                <input aria-label="audience" aria-required="true"
-                                                                    name="fields[audience]" class="custom-control-input"
-                                                                    type="radio" value="Student"
-                                                                    id="radio-2547736-53}-1">
-                                                                <label class="custom-control-label"
-                                                                    for="radio-2547736-53}-1">
-                                                                    Student
-                                                                </label>
-                                                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                        </div>
                                                         <!-- /radio -->
 
                                                         <!-- countries -->

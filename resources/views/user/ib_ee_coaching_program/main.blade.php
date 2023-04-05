@@ -49,14 +49,22 @@
             <div class="flex items-center main-container gap-x-8">
                 <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-07.webp') }}"
                     alt="Allineduspace acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
-                <div class="grid grid-cols-2 gap-6 justify-items-center items-center md:grid-cols-1">
+                <div class="flex flex-col gap-4 w-full py-12 ">
                     @foreach (__('pages/programs/ib_ee_coaching_program.learn_list') as $item)
                         <div
-                            class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] sm:flex-row sm:rounded-full">
-                            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-' . $loop->iteration . '.webp') }}"
-                                alt="what will you do {{ $loop->iteration }}"
-                                class="w-full pt-4 px-4 sm:px-0 sm:pt-0 sm:w-1/5">
-                            <div class="flex flex-col w-4/5 mt-2 pb-4 sm:mt-0">
+                            class="flex justify-between items-stretch gap-4 w-full min-h-full rounded-lg bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden lg:rounded-full lg:min-h-max">
+
+                            <div
+                                class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
+                                <span
+                                    class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
+                                    {{ $loop->iteration }}
+                                </span>
+                                <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/IB-' . $loop->index . '.webp') }}"
+                                    alt="what will you do {{ $loop->iteration }}"
+                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                            </div>
+                            <div class="flex flex-col justify-center w-4/5 mt-2 pr-4 pb-2 sm:mt-0">
                                 <h4
                                     class="font-primary font-bold text-base text-center text-yellow md:text-left md:text-2xl">
                                     {{ $item }}</h4>
@@ -83,7 +91,8 @@
                     <div class="mx-6 py-4 rounded-xl sm:px-6 md:mx-0 md:w-full lg:pl-20 xl:pl-40">
                         <p class="font-primary font-normal text-xl text-primary md:text-2xl">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_desc') }}</p>
-                        <a href="https://all-inedu.com/uploaded_files/blogs/2022/12/Coaching-Curriculum-Overview.pdf" target="_blank"
+                        <a href="https://all-inedu.com/uploaded_files/blogs/2022/12/Coaching-Curriculum-Overview.pdf"
+                            target="_blank"
                             class="inline-block mt-8 py-2 px-6 font-primary font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
                     </div>
                 </div>
