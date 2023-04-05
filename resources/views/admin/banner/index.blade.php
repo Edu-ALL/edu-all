@@ -66,7 +66,7 @@
                 <div class="card" style="overflow: hidden">
                     <div class="card-body py-3">
                         <div class="d-flex flex-row align-items-center justify-content-between">
-                            <h5 class="card-title p-0 m-0">Banner Order</h5>
+                            <h5 class="card-title p-0 m-0">Banner Sort</h5>
                         </div>
                         {{-- <h5 class="card-title">Choose Region and Language</h5> --}}
                         <div class="row mt-3">
@@ -257,11 +257,13 @@
         function formDelete(id) {
             $('#form_delete').attr('action', '{{ url('/admin/banner/delete/') }}' + '/' + id);
         };
+
         $('#lang').change(function(){
             let region = $('#region').val()
             let lang = $('#lang').val()
             getListBanner(region, lang)
         });
+
         async function getListBanner(region, lang){
             let url_banner_list = "{{ url('api/banner/list') }}/"+region+"-"+lang
             try {
@@ -296,11 +298,11 @@
                     for (let j = 0; j <= numberOrder; j++) {
                         if (j == (numberOrder)) {
                             $(selector).append(
-                                `<option value="unorder">-- Delete Order --</option>`
+                                `<option value="unorder" data-order="${j+1}">-- Delete Order --</option>`
                             )
                         } else {
                             $(selector).append(
-                                `<option value="${j+1}">${j+1}</option>`
+                                `<option value="${j+1}" data-order="${j+1}">${j+1}</option>`
                             )
                         }
                     }
@@ -318,10 +320,34 @@
             }
             swal.close();
         }
-        function updateOrder(selector, id, region, lang){
-            $(selector).attr('action', '{{ url('/admin/banner/list/order/') }}' + '/' + id);
-            $(selector).submit();
+
+        async function updateOrder(selector, id, region, lang){
+            let order = $(selector + ' select').val()
+            let url = '{{ url('/admin/banner/list/order/') }}' + '/' + id
+            try {
+                swal.showLoading();
+                const response = await axios.post(url, {
+                    orderNumber:order
+                })
+
+                let data = response.data
+                if(data=='Success') {
+                    notif('success','The sort has been successful')
+                    setTimeout(() => {
+                        getListBanner(region, lang)
+                    }, 2000);
+                } else {
+                    notif('error','Please try again!')
+                }
+            } catch(error) {
+                console.error(error);
+                swal.close();
+            }
+
+            // $(selector).attr('action', '{{ url('/admin/banner/list/order/') }}' + '/' + id);
+            // $(selector).submit();
         }
+
         $(document).ajaxComplete(function() {
             // Tooltips
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

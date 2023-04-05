@@ -44,5 +44,5 @@ Route::get('/project-showcase/{category}', function ($category) {
 })->name('select-project-showcase');
 
 Route::get('/banner/list/{region}-{lang}', function ($region, $lang) {
-    return Banners::where('region', $region)->where('lang', $lang)->orderBy('banner_order', 'desc')->get();
+    return Banners::where('region', $region)->where('lang', $lang)->orderBy('banner_order', 'asc')->get();
 })->name('select-mentor');

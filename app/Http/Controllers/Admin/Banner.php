@@ -339,11 +339,13 @@ class Banner extends Controller
             }
             $banner->save();
             DB::commit();
+            $message = "Success";
         } catch (Exception $e) {
             DB::rollBack();
-            return Redirect::back()->withErrors($e->getMessage());
+            $message = "Failed";
+            return $message;
         }
 
-        return redirect('/admin/banner');
+        return $message;
     }
 }
