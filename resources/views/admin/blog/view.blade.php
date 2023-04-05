@@ -246,7 +246,7 @@
                                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">Add new widget</span>
                                             </button>
                                         </div>
-                                        <table class="table datatable display" style="width:100%">
+                                        <table class="table datatable display"" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
@@ -446,6 +446,7 @@
 
 @section('js')
 <script>
+    
     function formCreate(id){
         $("#title-info").text("Add new Blog Widget");
         $('#title').attr('value', '');
@@ -465,8 +466,11 @@
     function formDelete(blog_id, id){
         $('#form_delete').attr('action', '{{ url('/admin/blogs/widget/delete/') }}' + '/' + blog_id + '/' + id);
     };
-    // Tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    $(document).ajaxComplete(function() {
+        // Tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(
+            tooltipTriggerEl))
+    });
 </script>
 @endsection

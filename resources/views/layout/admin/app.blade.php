@@ -25,21 +25,21 @@
     {{-- TinyMCE --}}
     <script src="https://cdn.tiny.cloud/1/h7t62ozvqkx2ifkeh051fsy3k9irz7axx1g2zitzpbaqfo8m/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
-    {{-- <script src="https://cdn.tiny.cloud/1/h7t62ozvqkx2ifkeh051fsy3k9irz7axx1g2zitzpbaqfo8m/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
 
     {{-- Select2 --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     {{-- SweetAlert --}}
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.min.css">
 
     {{-- Axios  --}}
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
-    {{-- @vite('public/css/bootstrap.min.css') --}}
     @vite('public/css/admin/app.css')
     @yield('css')
     <style>
@@ -58,7 +58,7 @@
     @yield('content')
     @if (Session::has('success'))
         <script>
-            swal({
+            swal.fire({
                 title: "Congratulations!",
                 text: "{{ Session::get('success') }}",
                 icon: "success",
@@ -67,7 +67,7 @@
     @endif
     @if (Session::has('errors'))
         <script>
-            swal({
+            swal.fire({
                 title: "Something Went Wrong!",
                 text: "{{ Session::get('errors')->first() }}",
                 icon: "error",

@@ -52,6 +52,8 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/banner/deactivate/{id}', [Banner::class, 'deactivate']);
     Route::post('/banner/activate/{id}', [Banner::class, 'activate']);
     Route::post('/banner/delete/{id}', [Banner::class, 'delete']);
+    Route::post('/banner/list', [Banner::class, 'getListBanner'])->name('list-banner');
+    Route::post('/banner/list/order/{id}', [Banner::class, 'updateOrder'])->name('order-banner');
 
     // Blog
     Route::get('/blogs', [Blog::class, 'index']);
@@ -68,6 +70,7 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/blogs/widget/{id}', [BlogWidget::class, 'store']);
     Route::post('/blogs/widget/{blog_id}/{id}', [BlogWidget::class, 'update']);
     Route::post('/blogs/widget/delete/{blog_id}/{id}', [BlogWidget::class, 'delete']);
+    // Route::get('/blogs/{id}/widget/data', [Blog::class, 'getBlogWidget'])->name('data-blog-widget');
     Route::post('/blogs/checkPublish', [Blog::class, 'checkPublish']);
 
     // Blog Category
