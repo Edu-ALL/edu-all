@@ -17,8 +17,15 @@ use Yajra\DataTables\Facades\DataTables;
 
 class Banner extends Controller
 {
-    public function index(){
-        return view('admin.banner.index');
+    public function index(Request $request){
+        $regions = Regions::get();
+        $languages = Languages::get();
+        // $banner_list = Banners::get();
+        return view('admin.banner.index', [
+            'regions' => $regions,
+            'languages' => $languages,
+            // 'banner_list' => $banner_list,
+        ]);
     }
 
     public function getBanner(Request $request){
@@ -26,10 +33,24 @@ class Banner extends Controller
             $data = Banners::orderBy('updated_at', 'desc')->get();
             return Datatables::of($data)
             ->addIndexColumn()
+            ->editColumn('title', function($d){
+                if ($d->banner_title != null) {
+                    $result = '
+                        '.$d->banner_title.'
+                    ';
+                } else {
+                    $result = '-';
+                }
+                return $result;
+            })
             ->editColumn('description', function($d){
-                $result = '
-                    '.Str::limit($d->banner_description, 120, '...').'
-                ';
+                if ($d->banner_description != null) {
+                    $result = '
+                        '.Str::limit($d->banner_description, 120, '...').'
+                    ';
+                } else {
+                    $result = '-';
+                }
                 return $result;
             })
             ->editColumn('image', function($d){
@@ -99,7 +120,7 @@ class Banner extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['description', 'image', 'image_mobile', 'region', 'language', 'status', 'action'])
+            ->rawColumns(['title', 'description', 'image', 'image_mobile', 'region', 'language', 'status', 'action'])
             ->make(true);
         }
     }
@@ -116,9 +137,10 @@ class Banner extends Controller
             'banner_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_image_mobile' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt' => 'required',
-            'banner_title' => 'required|max:255',
-            'banner_description' => 'required',
+            'banner_title' => 'nullable|max:255',
+            'banner_description' => 'nullable',
             'banner_button' => 'required',
+            'banner_button_color' => 'required',
             'banner_link' => 'required|url',
             'region' => 'required',
             'lang' => 'required',
@@ -155,6 +177,7 @@ class Banner extends Controller
             $banner->banner_title = $request->banner_title;
             $banner->banner_description = $request->banner_description;
             $banner->banner_button = $request->banner_button;
+            $banner->banner_button_color = $request->banner_button_color;
             $banner->banner_link = $request->banner_link;
             $banner->banner_status = 'active';
             $banner->region = $request->region;
@@ -183,9 +206,10 @@ class Banner extends Controller
             'banner_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_image_mobile' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_alt' => 'required',
-            'banner_title' => 'required|max:255',
-            'banner_description' => 'required',
+            'banner_title' => 'nullable|max:255',
+            'banner_description' => 'nullable',
             'banner_button' => 'required',
+            'banner_button_color' => 'required',
             'banner_link' => 'required|url',
             'region' => 'required',
             'lang' => 'required',
@@ -233,6 +257,7 @@ class Banner extends Controller
             $banner->banner_title = $request->banner_title;
             $banner->banner_description = $request->banner_description;
             $banner->banner_button = $request->banner_button;
+            $banner->banner_button_color = $request->banner_button_color;
             $banner->banner_link = $request->banner_link;
             $banner->region = $request->region;
             $banner->lang = $request->lang;
@@ -301,5 +326,24 @@ class Banner extends Controller
         }
 
         return redirect('/admin/banner')->withSuccess('Banner Was Successfully Deleted');
+    }
+
+    public function updateOrder(Request $request, $id){
+        DB::beginTransaction();
+        try {
+            $banner = Banners::find($id);
+            if ($request->orderNumber == 'unorder') {
+                $banner->banner_order = NULL;
+            } else {
+                $banner->banner_order = $request->orderNumber;
+            }
+            $banner->save();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollBack();
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/banner');
     }
 }

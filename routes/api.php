@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Banners;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\BlogCategorys;
@@ -41,3 +42,7 @@ Route::get('/project-showcase/{category}', function ($category) {
     $projects = ProjectShowcases::where('category', $category)->get();
     return response()->json($projects, 200);
 })->name('select-project-showcase');
+
+Route::get('/banner/list/{region}-{lang}', function ($region, $lang) {
+    return Banners::where('region', $region)->where('lang', $lang)->orderBy('banner_order', 'desc')->get();
+})->name('select-mentor');

@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">
-                                            Banner Title <span style="color: var(--red)">*</span>
+                                            Banner Title
                                         </label>
                                         <input type="text" class="form-control" id="banner_title" name="banner_title" value="{{ old('banner_title') }}">
                                         @error('banner_title')
@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">
-                                            Banner Description <span style="color: var(--red)">*</span>
+                                            Banner Description
                                         </label>
                                         <textarea class="textarea" name="banner_description" id="banner_description">
                                             {{ old('banner_description') }}
@@ -149,14 +149,25 @@
                                             <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                         @enderror
                                     </div>
-                                    <div class="col-12">
-                                        <label for="" class="form-label">
-                                            Banner Button <span style="color: var(--red)">*</span>
-                                        </label>
-                                        <input type="text" class="form-control" id="banner_button" name="banner_button" value="{{ old('banner_button') }}">
-                                        @error('banner_button')
-                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                        @enderror
+                                    <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                        <div class="col">
+                                            <label for="" class="form-label">
+                                                Banner Button <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="banner_button" name="banner_button" value="{{ old('banner_button') }}">
+                                            @error('banner_button')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-4 col">
+                                            <label for="" class="form-label">
+                                                Banner Button Color <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <input type="color" class="form-control pick-color" id="banner_button_color" name="banner_button_color" value="{{ old('banner_button_color') }}">
+                                            @error('banner_button_color')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">

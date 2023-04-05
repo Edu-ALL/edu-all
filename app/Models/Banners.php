@@ -21,10 +21,12 @@ class Banners extends Model
         'banner_title',
         'banner_description',
         'banner_button',
+        'banner_button_color',
         'banner_link',
         'banner_status',
         'region',
         'lang',
+        'banner_order',
         'created_at',
         'updated_at'
     ];
