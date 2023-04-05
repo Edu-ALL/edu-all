@@ -11,7 +11,7 @@
                             <img class="object-top object-cover w-full h-screen md:block hidden"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
-                            <img class="object-top object-contain w-full h-screen md:hidden block"
+                            <img class="object-top object-cover w-full h-screen md:hidden block"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
@@ -27,7 +27,8 @@
                                     </div>
                                     <a href="{{ $banner->banner_link }}">
                                         <span
-                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize">
+                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize"
+                                            style="background-color: {{ $banner->banner_button_color }}">
                                             {{ $banner->banner_button }}
                                         </span>
                                     </a>
