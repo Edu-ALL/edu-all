@@ -122,66 +122,59 @@
                 <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-what-you-will-do-asset.webp') }}"
                     alt="Allineduspace acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
                 <div class="flex flex-col gap-y-6">
-                    <div
-                        class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:rounded-full">
-                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-1.webp') }}"
-                            alt="Allineduspace what will you do 1" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
-                        <div class="flex flex-col w-2/3">
-                            <h4 class="font-primary font-bold text-2xl text-yellow">
-                                {{ __('pages/programs/academic_tutoring.do_list.0.title') }}</h4>
-                            <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                {{ __('pages/programs/academic_tutoring.do_list.0.desc') }}</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:rounded-full">
-                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-2.webp') }}"
-                            alt="Allineduspace what will you do 2" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
-                        <div class="flex flex-col w-2/3 py-1.5">
-                            <h4 class="font-primary font-bold text-2xl text-yellow">
-                                {{ __('pages/programs/academic_tutoring.do_list.1.title') }}</h4>
-                            <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                {{ __('pages/programs/academic_tutoring.do_list.1.desc') }}</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:pr-6 md:rounded-full">
-                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-3.webp') }}"
-                            alt="Allineduspace what will you do 3" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
-                        <div class="flex flex-col w-2/3 py-1.5">
-                            <h4 class="font-primary font-bold text-2xl text-yellow">
-                                {{ __('pages/programs/academic_tutoring.do_list.2.title') }}</h4>
-                            <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                {{ __('pages/programs/academic_tutoring.do_list.2.desc') }}</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col items-center w-full gap-x-4 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:rounded-full">
-                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-4.webp') }}"
-                            alt="Allineduspace what will you do 4" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
-                        <div class="flex flex-col w-2/3 py-1.5">
-                            <h4 class="font-primary font-bold text-2xl text-yellow pr-6">
-                                {{ __('pages/programs/academic_tutoring.do_list.3.title') }}</h4>
-                            <ul class="list-outside pr-6">
-                                <li class="inline-flex text-white">
-                                    <i class="fa-regular fa-circle-right mt-0.5 mr-2"></i>
-                                    <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                        {{ __('pages/programs/academic_tutoring.do_list.3.desc.0') }}</p>
-                                </li>
-                                <li class="inline-flex text-white">
-                                    <i class="fa-regular fa-circle-right mt-0.5 mr-2"></i>
-                                    <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                        {{ __('pages/programs/academic_tutoring.do_list.3.desc.1') }}</p>
-                                </li>
-                                <li class="inline-flex text-white">
-                                    <i class="fa-regular fa-circle-right mt-0.5 mr-2"></i>
-                                    <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                        {{ __('pages/programs/academic_tutoring.do_list.3.desc.2') }}</p>
-                                </li>
+                    @foreach (__('pages/programs/academic_tutoring.do_list') as $item)
+                        @if ($loop->index == 3)
+                            <div
+                                class="flex justify-between items-stretch gap-4 w-full min-h-full rounded-lg bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden lg:rounded-full lg:min-h-max">
 
-                            </ul>
-                        </div>
-                    </div>
+                                <div
+                                    class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
+                                    <span
+                                        class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
+                                        {{ $loop->iteration }}
+                                    </span>
+                                    <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad (' . $loop->iteration . ').webp') }}"
+                                        alt="what will you do {{ $loop->iteration }}"
+                                        class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                                </div>
+                                <div class="flex flex-col justify-center w-4/5 mt-2 pr-4 pb-4 py-3 sm:mt-0">
+                                    <h4 class="font-primary font-bold text-2xl text-yellow">
+                                        {{ $item['title'] }}</h4>
+                                    <ul class="list-outside pr-6">
+                                        @foreach ($item['desc'] as $desc)
+                                            <li class="inline-flex text-white">
+                                                <i class="fa-regular fa-circle-right mt-0.5 mr-2"></i>
+                                                <p
+                                                    class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
+                                                    {{ $desc }}</p>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        @else
+                            <div
+                                class="flex justify-between items-stretch gap-4 w-full min-h-full rounded-lg bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden lg:rounded-full lg:min-h-max">
+
+                                <div
+                                    class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
+                                    <span
+                                        class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
+                                        {{ $loop->iteration }}
+                                    </span>
+                                    <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad (' . $loop->iteration . ').webp') }}"
+                                        alt="what will you do {{ $loop->iteration }}"
+                                        class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                                </div>
+                                <div class="flex flex-col justify-center w-4/5 mt-2 pr-4 pb-2 sm:mt-0">
+                                    <h4 class="font-primary font-bold text-2xl text-yellow">
+                                        {{ $item['title'] }}</h4>
+                                    <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
+                                        {{ $item['desc'] }}</p>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

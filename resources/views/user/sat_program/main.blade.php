@@ -68,18 +68,27 @@
                 <div class="flex flex-col gap-y-6">
                     @foreach (__('pages/programs/sat_program.do_list') as $item)
                         <div
-                            class="flex flex-col items-center w-full gap-x-4 py-3 rounded-3xl bg-gradient-to-r from-[#041038] to-[#233469] md:flex-row md:py-0 md:rounded-full">
-                            <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/what-will-you-do-' . $loop->iteration . '.webp') }}"
-                                alt="what will you do 4" class="w-full pt-4 px-4 md:px-0 md:pt-0 md:w-1/3">
-                            <div class="flex flex-col w-full px-6 py-1.5 md:w-2/3 md:px-0">
-                                <h4 class="font-primary font-bold text-2xl text-yellow md:pr-6">
+                            class="flex justify-between items-stretch gap-4 w-full min-h-full rounded-lg bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden lg:rounded-full lg:min-h-max">
+
+                            <div
+                                class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
+                                <span
+                                    class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
+                                    {{ $loop->iteration }}
+                                </span>
+                                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/sat (' . $loop->iteration . ').webp') }}"
+                                    alt="what will you do {{ $loop->iteration }}"
+                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                            </div>
+                            <div class="flex flex-col justify-center w-4/5 mt-2 pr-4 pb-4 py-3 sm:mt-0">
+                                <h4 class="font-primary font-bold text-2xl text-yellow">
                                     {{ $item['title'] }}</h4>
-                                <ul class="list-outside md:pr-6">
-                                    @foreach ($item['body'] as $body)
+                                <ul class="list-outside pr-6">
+                                    @foreach ($item['body'] as $desc)
                                         <li class="inline-flex text-white">
                                             <i class="fa-regular fa-circle-right mt-0.5 mr-2"></i>
                                             <p class="font-primary font-normal text-[17px] text-white leading-5 md:pr-4">
-                                                {{ $body }}</p>
+                                                {{ $desc }}</p>
                                         </li>
                                     @endforeach
                                 </ul>
