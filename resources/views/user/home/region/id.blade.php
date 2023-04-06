@@ -25,7 +25,7 @@
                                         class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
                                         {!! $banner->banner_description !!}
                                     </div>
-                                    <a href="{{ $banner->banner_link }}">
+                                    <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title ? 'mt-0' : 'mt-[30px]' }}">
                                         <span
                                             class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize"
                                             style="background-color: {{ $banner->banner_button_color }}">
