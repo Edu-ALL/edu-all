@@ -27,7 +27,7 @@
                                     </div>
                                     <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title == "" ? 'mt-[15vh]' : 'mt-0' }}">
                                         <span
-                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize">
+                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize" style="background-color: {{ $banner->banner_button_color }}">
                                             {{ $banner->banner_button }}
                                         </span>
                                     </a>
