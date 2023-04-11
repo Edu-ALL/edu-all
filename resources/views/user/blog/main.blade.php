@@ -32,11 +32,11 @@
                     <form action="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}" method="GET"
                         class="inline-flex justify-end w-full max-w-md">
                         <input type="search" name="search" placeholder="Search..." id="search"
-                            class="rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary absolute w-[55px] transition-all duration-500">
+                            class="rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary placeholder-transparent absolute w-[55px] transition-all duration-500">
                         <button type="button"
-                            class="px-4 py-2 rounded-md bg-primary hover:bg-yellow relative z-10 mt-[0px] transition-all duration-500"
+                            class="px-4 py-2 relative z-10 mt-[1px] transition-all duration-500"
                             onclick="getSearch()" id="search_button">
-                            <i class="fa-solid fa-magnifying-glass fa-xl text-white"></i>
+                            <i class="fa-solid fa-magnifying-glass fa-xl text-primary"></i>
                         </button>
                     </form>
                 </div>
@@ -178,14 +178,16 @@
             let search = $('#search')
             let search_button = $('#search_button')
             if (search.hasClass('w-[55px]')) {
+                search.removeClass('placeholder-transparent')
                 search.removeClass('w-[55px]')
                 search.addClass('w-[350px]')
-                search_button.html('<i class="fa-solid fa-xmark fa-xl text-white px-[2px]"></i>');
+                search_button.html('<i class="fa-solid fa-xmark fa-xl text-red-900 px-[2px]"></i>');
                 search.focus();
             } else {
+                search.addClass('placeholder-transparent')
                 search.addClass('w-[55px]')
                 search.removeClass('w-[350px]')
-                search_button.html('<i class="fa-solid fa-magnifying-glass fa-xl text-white"></i>')
+                search_button.html('<i class="fa-solid fa-magnifying-glass fa-xl text-primary"></i>')
             }
         }
     </script>
