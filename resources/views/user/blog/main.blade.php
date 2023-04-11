@@ -30,10 +30,12 @@
                         @endif
                     </span>
                     <form action="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}" method="GET"
-                        class="inline-flex justify-end gap-2 w-full max-w-md">
+                        class="inline-flex justify-end w-full max-w-md">
                         <input type="search" name="search" placeholder="Search..." id="search"
-                            class="w-full rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary">
-                        <button type="submit" class="px-4 py-2 rounded-md bg-primary">
+                            class="rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary absolute w-[55px] transition-all duration-500">
+                        <button type="button"
+                            class="px-4 py-2 rounded-md bg-primary hover:bg-yellow relative z-10 mt-[2px] transition-all duration-500"
+                            onclick="getSearch()" id="search_button">
                             <i class="fa-solid fa-magnifying-glass fa-xl text-white"></i>
                         </button>
                     </form>
@@ -121,7 +123,7 @@
                     @endforeach
                 </ul>
             </div>
-            @if(count($blogs)==0) 
+            @if (count($blogs) == 0)
                 <h3 class="text-center">Article Not Found !</h3>
             @endif
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -171,6 +173,22 @@
 @endsection
 
 @section('script')
+    <script>
+        function getSearch() {
+            let search = $('#search')
+            let search_button = $('#search_button')
+            if (search.hasClass('w-[55px]')) {
+                search.removeClass('w-[55px]')
+                search.addClass('w-[350px]')
+                search_button.html('<i class="fa-solid fa-xmark fa-xl text-white px-[2px]"></i>');
+                search.focus();
+            } else {
+                search.addClass('w-[55px]')
+                search.removeClass('w-[350px]')
+                search_button.html('<i class="fa-solid fa-magnifying-glass fa-xl text-white"></i>')
+            }
+        }
+    </script>
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 1024px)").matches
 
