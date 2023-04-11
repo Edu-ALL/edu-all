@@ -34,7 +34,7 @@
                         <input type="search" name="search" placeholder="Search..." id="search"
                             class="rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary absolute w-[55px] transition-all duration-500">
                         <button type="button"
-                            class="px-4 py-2 rounded-md bg-primary hover:bg-yellow relative z-10 mt-[2px] transition-all duration-500"
+                            class="px-4 py-2 rounded-md bg-primary hover:bg-yellow relative z-10 mt-[0px] transition-all duration-500"
                             onclick="getSearch()" id="search_button">
                             <i class="fa-solid fa-magnifying-glass fa-xl text-white"></i>
                         </button>
