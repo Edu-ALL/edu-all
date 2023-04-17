@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Sign Me - Passion Project</title>
-    <meta name="title" content="Sign Me - Passion Project" />
-    <meta name="description"
-        content="Submit your profile to get contacted by our team about study abroad &amp; our passion project that help our mentees study to Top Universities" />
+    @if (app()->getLocale() == 'id-en')
+        <title>ALL-in Eduspace Passion Project Mentoring Program - Sign Up Today</title>
+        <meta name="title" content="ALL-in Eduspace Passion Project Mentoring Program - Sign Up Today" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Program Passion Mentoring Project ALL-in Eduspace - Daftar Sekarang</title>
+        <meta name="title" content="Program Passion Mentoring Project ALL-in Eduspace - Daftar Sekarang" />
+    @else
+        <title>ALL-in Eduspace Passion Project Mentoring Program - Sign Up Today</title>
+        <meta name="title" content="ALL-in Eduspace Passion Project Mentoring Program - Sign Up Today" />
+    @endif
+    <meta name="description" content="Submit your profile to get contacted by our team about study abroad &amp; our passion project that help our mentees study to Top Universities" />
 @endsection
+
 @section('content')
     <section class="py-20 bg-sign-me-passin-project bg-cover bg-center">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">

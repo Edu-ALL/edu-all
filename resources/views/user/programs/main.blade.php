@@ -1,10 +1,17 @@
 @extends('layout.user.main')
 
 @section('head')
-    <title>Our Comprehensive, Proven, &amp; Personalize Programs</title>
-    <meta name="title" content="Our Comprehensive, Proven, &amp; Personalize Programs" />
-    <meta name="description"
-        content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />
+    @if (app()->getLocale() == 'id-en')
+        <title>Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors</title>
+        <meta name="title" content="Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>ALL-in Eduspace Program: Mentoring ke Top Uni, Persiapan Tes, dan Student Project</title>
+        <meta name="title" content="ALL-in Eduspace Program: Mentoring ke Top Uni, Persiapan Tes, dan Student Project" />
+    @else
+        <title>Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors</title>
+        <meta name="title" content="Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors" />
+    @endif
+    <meta name="description" content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />
 @endsection
 
 @section('content')

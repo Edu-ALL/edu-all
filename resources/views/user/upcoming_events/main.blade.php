@@ -1,9 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Upcoming Events</title>
-    <meta name="title" content="Upcoming Events" />
+    @if (app()->getLocale() == 'id-en')
+        <title>Upcoming Events: Join ALL-in Eduspace for Education and Career Insights</title>
+        <meta name="title" content="Upcoming Events: Join ALL-in Eduspace for Education and Career Insights" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Event Mendatang: Bergabunglah dengan ALL-in Eduspace untuk Wawasan Pendidikan dan Karir</title>
+        <meta name="title" content="Event Mendatang: Bergabunglah dengan ALL-in Eduspace untuk Wawasan Pendidikan dan Karir" />
+    @else
+        <title>Upcoming Events: Join ALL-in Eduspace for Education and Career Insights</title>
+        <meta name="title" content="Upcoming Events: Join ALL-in Eduspace for Education and Career Insights" />
+    @endif
 	<meta name="description" content="You have dreams entering world top uni? Check this page &amp; participate to our free &amp; premium events &amp; bootcamps." />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="bg-upcomming-header bg-bottom bg-cover bg-fixed">

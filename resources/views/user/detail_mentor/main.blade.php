@@ -1,9 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>{{$mentor->mentor_fullname}}</title>
-    <meta name="title" content="{{$mentor->mentor_fullname}}">
+    @if (app()->getLocale() == 'id-en')
+        <title>{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace</title>
+        <meta name="title" content="{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace">
+    @elseif (app()->getLocale() == 'id-id')
+        <title>{{$mentor->mentor_fullname}} - Mentor Berpengalaman di ALL-in Eduspace</title>
+        <meta name="title" content="{{$mentor->mentor_fullname}} - Mentor Berpengalaman di ALL-in Eduspace">
+    @else
+        <title>{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace</title>
+        <meta name="title" content="{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace">
+    @endif
     <meta name="description" content="{{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...">
 @endsection
+
 @section('content')
     {{-- Header Section --}}
     <section class="py-24 bg-cover bg-center">

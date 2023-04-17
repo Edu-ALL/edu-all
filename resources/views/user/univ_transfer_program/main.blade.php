@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>University Transfer Program</title>
-    <meta name="title" content="University Transfer Program" />
-    <meta name="description"
-        content="Make a smooth transition to your dream university with All-in Eduspace&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now" />
+    @if (app()->getLocale() == 'id-en')
+        <title>University Transfer Program</title>
+        <meta name="title" content="University Transfer Program" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Program Mentoring Pemindahan Universitas - ALL-in Eduspace Programs</title>
+        <meta name="title" content="Program Mentoring Pemindahan Universitas - ALL-in Eduspace Programs" />
+    @else
+        <title>University Transfer Program</title>
+        <meta name="title" content="University Transfer Program" />
+    @endif
+    <meta name="description" content="Make a smooth transition to your dream university with All-in Eduspace&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now" />
 @endsection
+
 @section('content')
     {{-- ==================================== Header Section ========================================= --}}
     <section class="py-28 bg-transfer-header bg-cover bg-center md:py-48 ">

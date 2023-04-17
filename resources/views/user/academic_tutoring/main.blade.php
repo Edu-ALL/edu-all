@@ -1,10 +1,16 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Academic Tutoring Services for IB &amp; A Level - All-in Eduspace</title>
-    <meta name="title" content="Academic Tutoring Services for IB &amp; A Level - All-in Eduspace" />
-    <meta name="description"
-        content="Get the best academic tutoring services with All-In Edu. We offer private tutoring, online tutoring, and tutoring programs for students" />
+    @if (app()->getLocale() == 'id-en')
+        <title>Academic Tutoring Services for IB &amp; A Level - All-in Eduspace</title>
+        <meta name="title" content="Academic Tutoring Services for IB &amp; A Level - All-in Eduspace" />
+    @else
+        <title>Academic Tutoring Services for IB &amp; A Level - All-in Eduspace</title>
+        <meta name="title" content="Academic Tutoring Services for IB &amp; A Level - All-in Eduspace" />
+    @endif
+    <meta name="description" content="Get the best academic tutoring services with All-In Edu. We offer private tutoring, online tutoring, and tutoring programs for students" />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

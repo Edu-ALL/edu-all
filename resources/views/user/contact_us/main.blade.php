@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Contact Us for intial consult!</title>
-    <meta name="title" content="Contact Us for intial consult!">
-    <meta name="description"
-        content="Contact Us for intial consult! Let&#039;s discuss about study abroad, universities &amp; scholarship" />
+    @if (app()->getLocale() == 'id-en')
+        <title>Contact Us for intial consult!</title>
+        <meta name="title" content="Contact Us for intial consult!" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Silakan Hubungi Kami untuk Konsultasi Awal</title>
+        <meta name="title" content="Silakan Hubungi Kami untuk Konsultasi Awal" />
+    @else
+        <title>Contact Us for intial consult!</title>
+        <meta name="title" content="Contact Us for intial consult!" />
+    @endif
+    <meta name="description" content="Contact Us for intial consult! Let&#039;s discuss about study abroad, universities &amp; scholarship" />
 @endsection
+
 @section('content')
     <section class="pt-20 pb-10">
         <div class="main-container">

@@ -1,9 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Global Innovators Program</title>
-    <meta name="title" content="Global Innovators Program">
+    @if (app()->getLocale() == 'id-en')
+        <title>Global Innovators Program</title>
+        <meta name="title" content="Global Innovators Program" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Program Global Innovators Project</title>
+        <meta name="title" content="Program Global Innovators Project" />
+    @else
+        <title>Global Innovators Program</title>
+        <meta name="title" content="Global Innovators Program" />
+    @endif
     <meta name="description" content="">
 @endsection
+
 @section('content')
     {{-- =============================================== Banner Section =============================================== --}}
     <section class="w-full">

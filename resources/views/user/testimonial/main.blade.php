@@ -1,9 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Testimonial top university mentoring</title>
-    <meta name="title" content="Testimonial top university mentoring" />
+    @if (app()->getLocale() == 'id-en')
+        <title>Testimonial top university mentoring</title>
+        <meta name="title" content="Testimonial top university mentoring" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Testimonial Mentoring Universitas Terbaik dari ALL-in Eduspace</title>
+        <meta name="title" content="Testimonial Mentoring Universitas Terbaik dari ALL-in Eduspace" />
+    @else
+        <title>Testimonial top university mentoring</title>
+        <meta name="title" content="Testimonial top university mentoring" />
+    @endif
     <meta name="description" content="100% Mentee Acceptance Rate to Top Universities in US, UK, Europe, and Asia" />
 @endsection
+
 @section('content')
     {{-- ================================== Top Section  ================================== --}}
     <section class="py-16">

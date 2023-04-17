@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>You can find articles about study abroad, university in USA, UK and Asia</title>
-    <meta name="title" content="You can find articles about study abroad, university in USA, UK and Asia">
-    <meta name="description"
-        content="Read our updates and stories here in our blog page. You can find articles about study abroad, university in USA, UK and Asia" />
+    @if (app()->getLocale() == 'id-en')
+        <title>You can find articles about study abroad, university in USA, UK and Asia</title>
+        <meta name="title" content="You can find articles about study abroad, university in USA, UK and Asia" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Anda dapat menemukan artikel tentang studi di luar negeri, universitas di US, UK, dan Asia</title>
+        <meta name="title" content="Anda dapat menemukan artikel tentang studi di luar negeri, universitas di US, UK, dan Asia" />
+    @else
+        <title>You can find articles about study abroad, university in USA, UK and Asia</title>
+        <meta name="title" content="You can find articles about study abroad, university in USA, UK and Asia" />
+    @endif
+    <meta name="description" content="Read our updates and stories here in our blog page. You can find articles about study abroad, university in USA, UK and Asia" />
 @endsection
+
 @section('head')
     @foreach ($blogs as $blog)
         <meta name="title" content="{{ $blog->seo_title }}">

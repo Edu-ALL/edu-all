@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>IB EXTENDED ESSAY COACHING PROGRAM</title>
-    <meta name="title" content="IB EXTENDED ESSAY COACHING PROGRAM">
-    <meta name="description"
-        content="IB EXTENDED ESSAY COACHING PROGRAM: Drill your Extended Essay writing process in 3 months with our holistic approach!" />
+    @if (app()->getLocale() == 'id-en')
+        <title>IB EXTENDED ESSAY COACHING PROGRAM</title>
+        <meta name="title" content="IB EXTENDED ESSAY COACHING PROGRAM" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>IB & EE Coaching Program | Academic Test Preparation - ALL-in Eduspace Programs</title>
+        <meta name="title" content="IB & EE Coaching Program | Academic Test Preparation - ALL-in Eduspace Programs" />
+    @else
+        <title>IB EXTENDED ESSAY COACHING PROGRAM</title>
+        <meta name="title" content="IB EXTENDED ESSAY COACHING PROGRAM" />
+    @endif
+    <meta name="description" content="IB EXTENDED ESSAY COACHING PROGRAM: Drill your Extended Essay writing process in 3 months with our holistic approach!" />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

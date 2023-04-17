@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Guidebook</title>
-    <meta name="title" content="Guidebook" />
-    <meta name="description"
-        content="Learn how you can ace your university application by improving your academic performance, writing skills, personal brand, and career exploration in every action!" />
+    @if (app()->getLocale() == 'id-en')
+        <title>The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success</title>
+        <meta name="title" content="The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>The ALL-in Eduspace Guidebook:Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir</title>
+        <meta name="title" content="The ALL-in Eduspace Guidebook:Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir" />
+    @else
+        <title>The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success</title>
+        <meta name="title" content="The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success" />
+    @endif
+    <meta name="description" content="Learn how you can ace your university application by improving your academic performance, writing skills, personal brand, and career exploration in every action!" />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">

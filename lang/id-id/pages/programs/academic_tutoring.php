@@ -15,10 +15,16 @@ $do_list = [
     ],
     [
         'title' => 'Jalankan Rencana dan Capai Sasaran dengan Tutor',
-        'desc' => '
-        Bergabung di kelas intensif dengan suasana yang menyenangkan dan santai,
-Dapatkan masukan berkualitas dan capai target nilai kamu,
-Laporan ke orang tua secara reguler untuk memantau perkembangan anak'
+        'desc' =>
+        [
+            'Bergabung di kelas intensif dengan suasana yang menyenangkan dan santai',
+            'Dapatkan masukan berkualitas dan capai target nilai kamu',
+            'Laporan ke orang tua secara reguler untuk memantau perkembangan anak'
+        ],
+//         'desc' => '
+//         Bergabung di kelas intensif dengan suasana yang menyenangkan dan santai,
+// Dapatkan masukan berkualitas dan capai target nilai kamu,
+// Laporan ke orang tua secara reguler untuk memantau perkembangan anak'
     ],
 ];
 

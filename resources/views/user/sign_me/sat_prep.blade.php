@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Sign Me - SAT Preparation</title>
-    <meta name="title" content="Sign Me - SAT Preparation" />
-    <meta name="description"
-        content="Submit your profile to get contacted by our team about study abroad &amp; our SAT Preparations Program that help our mentees study to Top Universities" />
+    @if (app()->getLocale() == 'id-en')
+        <title>ALL-in Eduspace SAT Preparetion Program - Sign Up Today</title>
+        <meta name="title" content="ALL-in Eduspace SAT Preparetion Program - Sign Up Today" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Program Persiapan SAT Project ALL-in Eduspace - Daftar Sekarang</title>
+        <meta name="title" content="Program Persiapan SAT Project ALL-in Eduspace - Daftar Sekarang" />
+    @else
+        <title>ALL-in Eduspace SAT Preparetion Program - Sign Up Today</title>
+        <meta name="title" content="ALL-in Eduspace SAT Preparetion Program - Sign Up Today" />
+    @endif
+    <meta name="description" content="Submit your profile to get contacted by our team about study abroad &amp; our SAT Preparations Program that help our mentees study to Top Universities" />
 @endsection
+
 @section('content')
     <section class="py-20 bg-sign-me-sat-prep bg-cover bg-center">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">

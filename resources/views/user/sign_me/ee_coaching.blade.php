@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Sign Me - IB EE Coaching Program</title>
-    <meta name="title" content="Sign Me - IB EE Coaching Program" />
-    <meta name="description"
-        content="Submit your profile to get contacted by our team about study abroad &amp; our IB EE Coaching Programs that help our mentees study to Top Universities" />
+    @if (app()->getLocale() == 'id-en')
+        <title>ALL-in Eduspace IB EE Coaching Program - Sign Up Today</title>
+        <meta name="title" content="ALL-in Eduspace IB EE Coaching Program - Sign Up Today" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Program IB EE Coaching ALL-in Eduspace - Daftar Sekarang</title>
+        <meta name="title" content="Program IB EE Coaching ALL-in Eduspace - Daftar Sekarang" />
+    @else
+        <title>ALL-in Eduspace IB EE Coaching Program - Sign Up Today</title>
+        <meta name="title" content="ALL-in Eduspace IB EE Coaching Program - Sign Up Today" />
+    @endif
+    <meta name="description" content="Submit your profile to get contacted by our team about study abroad &amp; our IB EE Coaching Programs that help our mentees study to Top Universities" />
 @endsection
+
 @section('content')
     <section class="py-20 bg-sign-me-acad-tutor bg-cover bg-top">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">

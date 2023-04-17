@@ -1,10 +1,22 @@
 @extends('layout.user.main')
+
 @section('head')
+    @if (app()->getLocale() == 'id-en')
+        <title>ALL-in Eduspace's Contribution to Education in Indonesia</title>
+        <meta name="title" content="ALL-in Eduspace's Contribution to Education in Indonesia" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Kontribusi ALL-in Eduspace untuk Pendidikan di Indonesia</title>
+        <meta name="title" content="Kontribusi ALL-in Eduspace untuk Pendidikan di Indonesia" />
+    @else
+        <title>ALL-in Eduspace's Contribution to Education in Indonesia</title>
+        <meta name="title" content="ALL-in Eduspace's Contribution to Education in Indonesia" />
+    @endif
     <title>Our Contribution</title>
     <meta name="title" content="Our Contribution" />
     <meta name="description"
         content="We are proud of the contribution we give to the community, especially in the education sector." />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-5 -z-10">

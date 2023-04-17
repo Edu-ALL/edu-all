@@ -1,8 +1,19 @@
 @extends('layout.user.main')
-<title>Partnership & Careers</title>
-<meta name="title" content="Partnership & Careers" />
-<meta name="description"
-    content="We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills." />
+
+@section('head')
+    @if (app()->getLocale() == 'id-en')
+        <title>Join Our Team and Build Partnerships - ALL-in Eduspace</title>
+        <meta name="title" content="Join Our Team and Build Partnerships - ALL-in Eduspace" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Bergabunglah dengan Tim Kami dan Bangun Kemitraan - ALL-in Eduspace</title>
+        <meta name="title" content="Bergabunglah dengan Tim Kami dan Bangun Kemitraan - ALL-in Eduspace" />
+    @else
+        <title>Join Our Team and Build Partnerships - ALL-in Eduspace</title>
+        <meta name="title" content="Join Our Team and Build Partnerships - ALL-in Eduspace" />
+    @endif
+    <meta name="description" content="We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills." />
+@endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-5 -z-10">

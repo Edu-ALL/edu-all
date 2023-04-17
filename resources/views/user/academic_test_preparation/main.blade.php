@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Academic &amp; Test Preparation for your top university application success</title>
-    <meta name="title" content="Academic &amp; Test Preparation for your top university application success" />
-    <meta name="description"
-        content="Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores" />
+    @if (app()->getLocale() == 'id-en')
+        <title>Academic &amp; Test Preparation for your top university application success</title>
+        <meta name="title" content="Academic &amp; Test Preparation for your top university application success" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Program Persiapan Ujian Akademik | ALL-in Eduspace Programs</title>
+        <meta name="title" content="Program Persiapan Ujian Akademik | ALL-in Eduspace Programs" />
+    @else
+        <title>Academic &amp; Test Preparation for your top university application success</title>
+        <meta name="title" content="Academic &amp; Test Preparation for your top university application success" />
+    @endif
+    <meta name="description" content="Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores" />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="-mt-16 pb-16 -z-10">

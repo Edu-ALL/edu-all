@@ -1,5 +1,16 @@
 @extends('layout.user.main')
 
+@section('head')
+    @if (app()->getLocale() == 'sg-en')
+        <title>Find Your Path to Success with ALL-in Eduspace's Programs and Expert Mentors</title>
+        <meta name="title" content="Find Your Path to Success with ALL-in Eduspace's Programs and Expert Mentors" />
+    @else
+        <title>Find Your Path to Success with ALL-in Eduspace's Programs and Expert Mentors</title>
+        <meta name="title" content="Find Your Path to Success with ALL-in Eduspace's Programs and Expert Mentors" />
+    @endif
+    <meta name="description" content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />
+@endsection
+
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <div class="relative left-0 w-full h-screen -mt-16 overflow-hidden">

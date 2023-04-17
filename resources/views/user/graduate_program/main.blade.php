@@ -1,10 +1,19 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>Graduate Program</title>
-    <meta name="title" content="Graduate Program" />
-    <meta name="description"
-        content="Achieve success in your graduate studies with All-in Eduspace&#039;s admission mentoring program. Professional guidance and support. Enroll now" />
+    @if (app()->getLocale() == 'id-en')
+        <title>Graduate Admissions Mentoring - ALL-in Eduspace Programs</title>
+        <meta name="title" content="Graduate Admissions Mentoring - ALL-in Eduspace Programs" />
+    @elseif (app()->getLocale() == 'id-id')
+        <title>Bimbingan Mentoring untuk Program Pascasarjana - ALL-in Eduspace Programs</title>
+        <meta name="title" content="Bimbingan Mentoring untuk Program Pascasarjana - ALL-in Eduspace Programs" />
+    @else
+        <title>Graduate Admissions Mentoring - ALL-in Eduspace Programs</title>
+        <meta name="title" content="Graduate Admissions Mentoring - ALL-in Eduspace Programs" />
+    @endif
+    <meta name="description" content="Achieve success in your graduate studies with All-in Eduspace&#039;s admission mentoring program. Professional guidance and support. Enroll now" />
 @endsection
+
 @section('content')
     {{-- ==================================== Header Section ========================================= --}}
     <section class="py-28 bg-graduate-header bg-cover bg-center md:py-48 ">

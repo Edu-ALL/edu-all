@@ -1,10 +1,11 @@
 @extends('layout.user.main')
+
 @section('head')
-    <title>About Us</title>
-    <meta name="title" content="About Us">
-    <meta name="description"
-        content="Learn more about All-in Eduspace, we provides admissions mentoring and academic tutoring services to students in Singapore. Find out how we can help you achieve your academic goals" />
+    <title>Discover Our Mission and Values at ALL-in Eduspace</title>
+    <meta name="title" content="Discover Our Mission and Values at ALL-in Eduspace" />
+    <meta name="description" content="Learn more about All-in Eduspace, we provides admissions mentoring and academic tutoring services to students in Singapore. Find out how we can help you achieve your academic goals" />
 @endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-20 bg-sg-header bg-cover bg-center">
