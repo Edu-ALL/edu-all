@@ -15,7 +15,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
-            <img data-original="{{ asset('assets/img/banner/About us banner.webp') }}" alt="allineduspace about banner image"
+            <img loading="lazy" src="{{ asset('assets/img/banner/About us banner.webp') }}" alt="allineduspace about banner image"
                 class="w-full h-full object-cover object-center">
         </div>
     </section>

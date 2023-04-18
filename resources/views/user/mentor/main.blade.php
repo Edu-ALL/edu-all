@@ -106,8 +106,8 @@
                                                     {!! $mentor->mentor_graduation !!}
                                                 </div>
                                             </div>
-                                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
+                                            <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center" loading="lazy">
                                         </div>
                                         <div
                                             class="back w-full h-full px-10 py-20  flex items-center justify-center rounded-xl bg-gradient-to-b from-primary to-[#070E36]">

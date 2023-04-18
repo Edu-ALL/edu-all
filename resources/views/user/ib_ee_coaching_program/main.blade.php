@@ -28,12 +28,12 @@
                         {{ __('pages/programs/ib_ee_coaching_program.desc') }}</p>
                 </div>
 
-                <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-point-1024x231.webp') }}"
+                <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-point-1024x231.webp') }}"
                     alt="Allineduspace academic tutoring points"
                     class="hidden w-full mx-auto text-center md:block md:max-w-4xl  md:mb-10">
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/EE Banner.webp') }}"
+            <img loading="lazy" src="{{ asset('assets/img/banner/EE Banner.webp') }}"
                 alt="Allineduspace header ib ee coaching program"
                 class="w-full h-[50vh] object-cover object-center md:h-[80vh] ">
         </div>

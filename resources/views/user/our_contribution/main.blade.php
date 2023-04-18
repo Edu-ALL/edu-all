@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Contribution banner.webp') }}"
+            <img src="{{ asset('assets/img/banner/Contribution banner.webp') }}" loading="lazy"
                 alt="Allineduspace Our Contribution Banner" class="w-full h-[350px] object-cover object-center">
         </div>
     </section>

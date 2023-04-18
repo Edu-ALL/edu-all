@@ -25,7 +25,7 @@
                             class="mb-5 pt-10 font-primary font-bold text-lg text-white text-center uppercase md:text-2xl  md:text-left">
                             {{ __('pages/programs/passion_project_mentoring.title') }}
                         </h1>
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/logo-passion-project-mentoring-program-768x292.webp') }}"
+                        <img loading="lazy" src="{{ asset('assets/img/passion_project_mentoring/logo-passion-project-mentoring-program-768x292.webp') }}"
                             alt="passion project title" class="w-72 object-contain md:w-96">
                         <p class="my-5 font-primary font-normal text-lg text-white md:text-xl md:leading-6">
                             {{ __('pages/programs/passion_project_mentoring.body') }}</p>
@@ -34,17 +34,17 @@
                     </div>
 
                     <div class="flex justify-center max-h-fit pt-10 md:w-2/3 lg:w-1/2 lg:pt-20">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/stream.webp') }}"
+                        <img loading="lazy" src="{{ asset('assets/img/passion_project_mentoring/stream.webp') }}"
                             alt="Allineduspace Passion Project" class="w-4/6 max-w-lg md:w-full">
                     </div>
                 </div>
                 <div class="mt-10">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/passion_project_mentoring/Overview.webp') }}"
                         alt="Allineduspace Passion Project List">
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Passion project banner.png') }}"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Passion project banner.png') }}"
                 alt="Allineduspace Passion Project Banner"
                 class="w-full h-[900px] object-cover object-center sm:h-[1000px] md:h-[750px] lg:h-[850px]">
         </div>

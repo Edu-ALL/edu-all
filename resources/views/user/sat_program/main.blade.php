@@ -31,7 +31,7 @@
                     </a>
                 </div>
 
-                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
+                <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
                     alt="Allineduspace academic tutoring points"
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>

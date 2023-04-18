@@ -17,10 +17,10 @@
 @section('content')
     {{-- =============================================== Banner Section =============================================== --}}
     <section class="w-full">
-        <img src="{{ asset('assets/img/global_innovators_project/Banner summer program.webp') }}"
+        <img loading="lazy" src="{{ asset('assets/img/global_innovators_project/Banner summer program.webp') }}"
             alt="Allineduspace Global Innovators Project Banner"
             class="hidden w-full h-full object-contain object-left lg:block xl:object-center xl:h-screen xl:object-cover">
-        <img src="{{ asset('assets/img/global_innovators_project/2023_Summer Program_Banner_Mobile.webp') }}"
+        <img loading="lazy" src="{{ asset('assets/img/global_innovators_project/2023_Summer Program_Banner_Mobile.webp') }}"
             alt="Allineduspace Global Innovators Project Banner" class="w-full h-full object-contain lg:hidden">
     </section>
 

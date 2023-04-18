@@ -11,7 +11,7 @@
     <section class="py-20 bg-sg-header bg-cover bg-center">
         <div class="main-container">
             <div class="py-28 flex flex-col items-center md:py-52">
-                <img data-original="{{ asset('assets/logo/allin-big.png') }}" alt="allineduspace about banner"
+                <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="allineduspace about banner"
                     class="w-full max-w-sm">
             </div>
         </div>

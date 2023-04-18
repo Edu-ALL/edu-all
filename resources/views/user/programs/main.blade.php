@@ -24,7 +24,7 @@
                     {{ __('pages/programs/programs.body') }}</p>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Program banner.webp') }}" alt="Allineduspace Program Banner"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Program banner.webp') }}" alt="Allineduspace Program Banner"
                 class="lazy w-full h-full object-cover object-center">
 
         </div>

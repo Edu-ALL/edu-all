@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="Allineduspace Guidebooks Banner"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="Allineduspace Guidebooks Banner"
                 class="w-full h-[400px] object-cover object-center">
         </div>
     </section>

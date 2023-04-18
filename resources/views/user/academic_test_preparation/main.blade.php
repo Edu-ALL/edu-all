@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}"
                 alt="Allineduspace Academic Test Preparation Banner" class="w-full h-screen object-cover object-center">
         </div>
     </section>

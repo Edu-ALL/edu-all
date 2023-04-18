@@ -28,11 +28,11 @@
                     </a>
                 </div>
 
-                <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-points.webp') }}"
+                <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-points.webp') }}"
                     alt="Allineduspace academic tutoring points" class="w-full md:max-w-2xl mx-auto text-center md:mb-10">
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Academic Tutoring banner.webp') }}"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Academic Tutoring banner.webp') }}"
                 alt="Allineduspace Academic Tutoring Banner" class="w-full h-[90vh] object-cover object-center">
         </div>
     </section>

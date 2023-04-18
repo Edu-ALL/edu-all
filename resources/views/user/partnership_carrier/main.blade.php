@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Partnership banner.webp') }}"
+            <img src="{{ asset('assets/img/banner/Partnership banner.webp') }}" loading="lazy"
                 alt="Allineduspace Partnership Banner" class="w-full h-[350px] object-cover object-center">
         </div>
     </section>

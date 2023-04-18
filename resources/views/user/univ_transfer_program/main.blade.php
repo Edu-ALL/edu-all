@@ -40,7 +40,7 @@
             <div
                 class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
                 <div class="w-full shadow-md rounded-3xl">
-                    <img data-original="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
                         alt="Allineduspace University Transfer Banner" class="w-full">
                 </div>
             </div>

@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}"
                 alt="Allineduspace Admission Mentoring Banner"
                 class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
