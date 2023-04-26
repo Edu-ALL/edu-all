@@ -1,18 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>See the success stories of how our mentees manage their projects</title>
-        <meta name="title" content="See the success stories of how our mentees manage their projects" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Lihatlah kisah sukses bagaimana para mentee kami mengelola personal project</title>
-        <meta name="title" content="Lihatlah kisah sukses bagaimana para mentee kami mengelola personal project" />
-    @else
-        <title>See the success stories of how our mentees manage their projects</title>
-        <meta name="title" content="See the success stories of how our mentees manage their projects" />
-    @endif
-    <meta name="description"
-        content="See the success stories of how our mentees manage their projects or land their seatin top uni! We are so proud for their achievements" />
+    <title>{{ __('pages/success_stories/success_stories.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/success_stories/success_stories.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/success_stories/success_stories.meta_description') }}" />
 @endsection
 
 @section('content')

@@ -1,5 +1,10 @@
 <?php
 return [
+    'meta_title' => "Mentor Ahli Kami - Program ALL-in Eduspace",
+    'meta_description' => 'Para mentor ALL-in adalah lulusan dari universitas-universitas top dunia dengan latar belakang akademik dan pengalaman kerja yang beragam.',
+
+    'meta_title_detail' => " - Mentor Berpengalaman di ALL-in Eduspace",
+
     // Banner
     'banner_title' => 'Mentor Kami',
     'benner_body' => 'Mentor ALL-in adalah lulusan dari universitas terkemuka dunia dengan latar belakang akademik dan pengalaman kerja yang bervariasi. <br> <br>Kami memanfaatkan beragam suara untuk mencapai visi bersama kami untuk memberdayakan Anda dengan keterampilan dunia nyata yang diperlukan dan jaringan yang luas untuk mencapai impian Anda di luar perguruan tinggi.',

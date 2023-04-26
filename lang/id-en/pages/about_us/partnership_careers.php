@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Join Our Team and Build Partnerships - ALL-in Eduspace",
+    'meta_description' => 'We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills.',
+
     // Top Section
     'title' => 'Partnership & Careers',
 

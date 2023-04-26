@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "SAT Program - ALL-in Eduspace Programs",
+    'meta_description' => 'SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years',
+
     'title' => 'SAT/ACT PREP',
     'desc' => 'Achieve high scores to enter the world’s top universities! Prepare for your standardized tests with our test experts with a proven strategy for years.',
     'top_btn' => 'Register Here',

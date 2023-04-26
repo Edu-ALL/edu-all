@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Program Global Innovators Project",
+    'meta_description' => '',
+
     'description' => 'Lihat dunia sambil membuat perbedaan! <br> Dapatkan pengalaman langsung, kembangkan keterampilan yang berharga, dan buat dampak positif di lingkup lokal atau bahkan global!',
     'description_button' => 'Daftar Sekarang',
 

@@ -1,14 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Unlock Your Potential with ALL-in Eduspace's Expert Mentors and Programs</title>
-        <meta name="title" content="Unlock Your Potential with ALL-in Eduspace's Expert Mentors and Programs" />
-    @else
-        <title>Unlock Your Potential with ALL-in Eduspace's Expert Mentors and Programs</title>
-        <meta name="title" content="Unlock Your Potential with ALL-in Eduspace's Expert Mentors and Programs" />
-    @endif
-    <meta name="description" content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />
+    <title>{{ __('pages/home.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/home.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/home.meta_description') }}" />
 @endsection
 
 @section('content')

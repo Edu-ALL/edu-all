@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Join Our Team and Build Partnerships - ALL-in Eduspace</title>
-        <meta name="title" content="Join Our Team and Build Partnerships - ALL-in Eduspace" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Bergabunglah dengan Tim Kami dan Bangun Kemitraan - ALL-in Eduspace</title>
-        <meta name="title" content="Bergabunglah dengan Tim Kami dan Bangun Kemitraan - ALL-in Eduspace" />
-    @else
-        <title>Join Our Team and Build Partnerships - ALL-in Eduspace</title>
-        <meta name="title" content="Join Our Team and Build Partnerships - ALL-in Eduspace" />
-    @endif
-    <meta name="description" content="We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills." />
+    <title>{{ __('pages/about_us/partnership_careers.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/about_us/partnership_careers.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/about_us/partnership_careers.meta_description') }}" />
 @endsection
 
 @section('content')

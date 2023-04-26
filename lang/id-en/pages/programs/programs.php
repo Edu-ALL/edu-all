@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors",
+    'meta_description' => 'Explore our tailored programs for university prep. Get personalized mentoring, courses & experiential learning to achieve your academic goals.',
+
     "title" => "Our Program",
     "body" => "Our program consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application as well as enhance students’ personal brand.",
     "program_list" => [

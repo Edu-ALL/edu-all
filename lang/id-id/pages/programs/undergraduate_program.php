@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Bimbingan Mentoring untuk Program Sarjana - ALL-in Eduspace Programs",
+    'meta_description' => 'Raih impianmu kuliah di universitas TOP Dunia dengan Program Admission Mentoring kami. Dapatkan panduan personal dari mentor kami sekarang!',
+
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "UNDERGRADUATE",

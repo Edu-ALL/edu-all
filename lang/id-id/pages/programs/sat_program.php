@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Program Persiapan SAT - ALL-in Eduspace Programs",
+    'meta_description' => 'Program SAT: Siapkan dirimu menghadapi tes SAT bersama para ahli tes kami yang memiliki strategi teruji selama bertahun-tahun',
+
     'title' => 'SAT/ACT PREP',
     'desc' => 'Raih skor tinggi untuk masuk ke universitas top dunia! Persiapkan tes kamu dengan expert SAT/ACT dengan strategi yang telah terbukti selama bertahun-tahun.',
     'top_btn' => 'Daftar Disini',

@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>You can find articles about study abroad, university in USA, UK and Asia</title>
-        <meta name="title" content="You can find articles about study abroad, university in USA, UK and Asia" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Anda dapat menemukan artikel tentang studi di luar negeri, universitas di US, UK, dan Asia</title>
-        <meta name="title" content="Anda dapat menemukan artikel tentang studi di luar negeri, universitas di US, UK, dan Asia" />
-    @else
-        <title>You can find articles about study abroad, university in USA, UK and Asia</title>
-        <meta name="title" content="You can find articles about study abroad, university in USA, UK and Asia" />
-    @endif
-    <meta name="description" content="Read our updates and stories here in our blog page. You can find articles about study abroad, university in USA, UK and Asia" />
+    <title>{{ __('pages/blog.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/blog.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/blog.meta_description') }}" />
 @endsection
 
 @section('head')

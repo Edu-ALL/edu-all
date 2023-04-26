@@ -66,6 +66,9 @@ $testimonies = [
 ];
 
 return [
+    'meta_title' => "Academic & Test Preparation for your top university application success",
+    'meta_description' => 'Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores',
+
     // banner section
     "title" => "Academic &
     Test Preparation",

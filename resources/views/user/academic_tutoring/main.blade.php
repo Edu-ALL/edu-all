@@ -1,14 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Academic Tutoring Services for IB &amp; A Level - All-in Eduspace</title>
-        <meta name="title" content="Academic Tutoring Services for IB &amp; A Level - All-in Eduspace" />
-    @else
-        <title>Academic Tutoring Services for IB &amp; A Level - All-in Eduspace</title>
-        <meta name="title" content="Academic Tutoring Services for IB &amp; A Level - All-in Eduspace" />
-    @endif
-    <meta name="description" content="Get the best academic tutoring services with All-In Edu. We offer private tutoring, online tutoring, and tutoring programs for students" />
+    <title>{{ __('pages/programs/academic_tutoring.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/academic_tutoring/programs.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/academic_tutoring/programs.meta_description') }}" />
 @endsection
 
 @section('content')

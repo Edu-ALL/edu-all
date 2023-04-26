@@ -1,5 +1,8 @@
 <?php
 return [
+    'meta_title' => "You can find articles about study abroad, university in USA, UK and Asia",
+    'meta_description' => 'Read our updates and stories here in our blog page. You can find articles about study abroad, university in USA, UK and Asia.',
+
     // General
     'top_title' => 'ALL-IN BLOG',
     'top_button' => "Read More",

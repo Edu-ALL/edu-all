@@ -1,5 +1,8 @@
 <?php
 return [
+    'meta_title' => "The ALL-in Eduspace Guidebook: Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir",
+    'meta_description' => 'Pelajari cara meningkatkan performa akademik, keterampilan menulis, citra diri, serta eksplorasi karir Anda dalam setiap tindakan untuk memastikan kelancaran aplikasi universitas Anda!',
+
     // banner
     'title' => 'PANDUAN LENGKAP UNTUK SETIAP LANGKAH PROSES APLIKASI UNIVERSITAS ANDA',
     'body' => 'Pelajari bagaimana Anda bisa mendapatkan aplikasi universitas Anda dengan meningkatkan kinerja akademik, keterampilan menulis, merek pribadi, dan eksplorasi karir Anda dalam setiap tindakan!',

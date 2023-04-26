@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors</title>
-        <meta name="title" content="Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>ALL-in Eduspace Program: Mentoring ke Top Uni, Persiapan Tes, dan Student Project</title>
-        <meta name="title" content="ALL-in Eduspace Program: Mentoring ke Top Uni, Persiapan Tes, dan Student Project" />
-    @else
-        <title>Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors</title>
-        <meta name="title" content="Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors" />
-    @endif
-    <meta name="description" content="Our programs consist of personalized and hands-on mentoring, courses, and experiential learning to meet the requirements of university application." />
+    <title>{{ __('pages/programs/programs.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/programs/programs.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/programs.meta_description') }}" />
 @endsection
 
 @section('content')

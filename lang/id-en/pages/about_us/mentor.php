@@ -1,5 +1,10 @@
 <?php
 return [
+    'meta_title' => "Our Expert Mentors - ALL-in Eduspace Programs",
+    'meta_description' => 'ALL-in mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences.',
+
+    'meta_title_detail' => " - Experienced Mentor at ALL-in Eduspace",
+
     // Banner
     'banner_title' => 'Our Mentors',
     'benner_body' => 'ALL-in mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences. <br> <br> We leverage diverse voices to accomplish our common vision to empower you with requisite real-world skills and an extensive network to achieve your dreams beyond college.',

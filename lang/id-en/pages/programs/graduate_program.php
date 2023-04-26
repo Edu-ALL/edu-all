@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Graduate Admissions Mentoring - ALL-in Eduspace Programs",
+    'meta_description' => 'Achieve success in your graduate studies with All-in Eduspace&#039;s admission mentoring program. Professional guidance and support. Enroll now',
+
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "GRADUATE",

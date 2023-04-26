@@ -1,16 +1,8 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace</title>
-        <meta name="title" content="{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace">
-    @elseif (app()->getLocale() == 'id-id')
-        <title>{{$mentor->mentor_fullname}} - Mentor Berpengalaman di ALL-in Eduspace</title>
-        <meta name="title" content="{{$mentor->mentor_fullname}} - Mentor Berpengalaman di ALL-in Eduspace">
-    @else
-        <title>{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace</title>
-        <meta name="title" content="{{$mentor->mentor_fullname}} - Experienced Mentor at ALL-in Eduspace">
-    @endif
+    <title>{{ $mentor->mentor_fullname }}{{ __('pages/about_us/mentor.meta_title_detail') }}</title>
+    <meta name="title" content="{{ $mentor->mentor_fullname }}{{ __('pages/about_us/mentor.meta_title_detail') }}" />
     <meta name="description" content="{{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...">
 @endsection
 

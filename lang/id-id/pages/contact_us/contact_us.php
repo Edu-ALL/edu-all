@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Silakan Hubungi Kami untuk Konsultasi Awal",
+    'meta_description' => "Hubungi Kami untuk Konsultasi Awal! Mari kita diskusikan tentang studi di luar negeri, universitas, dan beasiswa",
+
     'title' => 'Hubungi Kami',
 
     'address' => 'Jl Jeruk Kembar Blok Q9 No. 15 <br/>

@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Bimbingan Mentoring untuk Program Pascasarjana - ALL-in Eduspace Programs",
+    'meta_description' => 'Capai kesuksesan di studi pascasarjana dengan program mentoring penerimaan All-in Eduspace. Dapatkan panduan profesional dan dukungan penuh. Daftar sekarang',
+
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "GRADUATE",

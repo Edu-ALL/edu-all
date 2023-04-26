@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>SAT Program</title>
-        <meta name="title" content="SAT Program" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Program Persiapan SAT - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Program Persiapan SAT - ALL-in Eduspace Programs" />
-    @else
-        <title>SAT Program</title>
-        <meta name="title" content="SAT Program" />
-    @endif
-    <meta name="description" content="SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years" />
+    <title>{{ __('pages/programs/sat_program.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/sat_program/programs.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/sat_program/programs.meta_description') }}" />
 @endsection
 
 @section('content')

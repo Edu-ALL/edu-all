@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Contact Us for intial consult!",
+    'meta_description' => "Contact Us for intial consult! Let's discuss about study abroad, universities & scholarship",
+
     'title' => 'Contact US',
 
     'address' => 'Jl Jeruk Kembar Blok Q9 No. 15 <br/>

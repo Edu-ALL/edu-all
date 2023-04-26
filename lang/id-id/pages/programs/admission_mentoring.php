@@ -100,6 +100,9 @@ $univtransfer = [
 ];
 
 return [
+    'meta_title' => "ALL-in Eduspace Programs: Mentoring Individu, Kursus, dan Program Terapan untuk Pendaftaran Universitas dan Personal Branding",
+    'meta_description' => 'Cari panduan terbail untuk diterima di universitas TOP impianmu di program Admission Mentoring. Temukan solusi terbaik untuk masa depan akademismu sekarang!',
+    
     // banner section
     "title" => "Admission Mentoring",
     "body" => "Kami menawarkan bimbingan mentoring privat (1-on-1) sesuai kebutuhan setiap siswa dan membimbing mereka untuk menemukan universitas yang terbaik dan sesuai.",

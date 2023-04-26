@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Bergabunglah dengan Tim Kami dan Bangun Kemitraan - ALL-in Eduspace",
+    'meta_description' => 'Kami percaya kolaborasi menghasilkan hasil terbaik. Kami bercita-cita menjadi penopang pendidikan siswa dengan memberikan pemahaman kepemimpinan, komunikasi, berpikir kritis, dan analitis.',
+
     // Top Section
     'title' => 'Kemitraan dan Karir',
 

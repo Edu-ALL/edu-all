@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "ALL-in Eduspace Program: Mentoring ke Top Uni, Persiapan Tes, dan Student Project",
+    'meta_description' => 'Dapatkan program yang tepat untuk sukses akademikmu di All-In Edu. Dapatkan mentoring personal dan pengalaman belajar interaktif. Cek penawaran kami sekarang!',
+
     "title" => "Program Kami",
     "body" => "Program kami terdiri dari bimbingan mentoring individu, kursus, dan program terapan untuk memenuhi persyaratan pendaftaran universitas maupun meningkatkan personal brand siswa.",
     "program_list" => [

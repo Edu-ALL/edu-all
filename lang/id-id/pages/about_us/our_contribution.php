@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Kontribusi ALL-in Eduspace untuk Pendidikan di Indonesia",
+    'meta_description' => 'Kami bangga dengan kontribusi yang kami berikan pada masyarakat, terutama di sektor pendidikan.',
+
     // Top Section
     'title' => 'Kontribusi Kami',
     'body' => 'Sebagai konsultan universitas independen, kami selalu memberikan yang terbaik untuk membantu siswa berjuang ke jalur yang mereka cita-citakan di masa depan dengan memiliki tujuan karir yang jelas dengan memilih jurusan yang tepat, dan masuk ke universitas ternama.',

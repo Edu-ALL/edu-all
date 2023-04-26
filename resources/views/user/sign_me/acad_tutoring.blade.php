@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>ALL-in Eduspace Academic Tutoring Program - Sign Up Today</title>
-        <meta name="title" content="ALL-in Eduspace Academic Tutoring Program - Sign Up Today" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Program Academic Tutoring ALL-in Eduspace - Daftar Sekarang</title>
-        <meta name="title" content="Program Academic Tutoring ALL-in Eduspace - Daftar Sekarang" />
-    @else
-        <title>ALL-in Eduspace Academic Tutoring Program - Sign Up Today</title>
-        <meta name="title" content="ALL-in Eduspace Academic Tutoring Program - Sign Up Today" />
-    @endif
-    <meta name="description" content="Submit your profile to get contacted by our team about study abroad &amp; our admission mentoring programs that help our mentees study to Top Universities" />
+    <title>{{ __('pages/sign_me/acad_tutoring.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/sign_me/acad_tutoring.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/sign_me/acad_tutoring.meta_description') }}" />
 @endsection
 
 @section('content')

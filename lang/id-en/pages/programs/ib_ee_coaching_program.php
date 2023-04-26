@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "IB & EE Coaching Program | Academic Test Preparation - ALL-in Eduspace Programs",
+    'meta_description' => 'IB EXTENDED ESSAY COACHING PROGRAM: Drill your Extended Essay writing process in 3 months with our holistic approach!',
+
     "title" => "IB EXTENDED ESSAY COACHING PROGRAM",
     "desc" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
 
