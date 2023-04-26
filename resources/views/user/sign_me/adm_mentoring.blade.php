@@ -11,7 +11,8 @@
         <title>Sign Me - Admission Mentoring</title>
         <meta name="title" content="Sign Me - Admission Mentoring" />
     @endif
-    <meta name="description" content="Submit your profile to get contacted by our team about study abroad &amp; our admission mentoring programs that help our mentees study to Top Universities" />
+    <meta name="description"
+        content="Submit your profile to get contacted by our team about study abroad &amp; our admission mentoring programs that help our mentees study to Top Universities" />
 @endsection
 
 @section('content')
@@ -81,7 +82,7 @@
                     {{-- Emmbed Form --}}
                     <div class="w-full">
                         <style type="text/css">
-                            @import url("https://assets.mlcdn.com/fonts.css?version=1679399");
+                            @import url("https://assets.mlcdn.com/fonts.css?version=1681996");
                         </style>
                         <style type="text/css">
                             /* LOADER */
@@ -1035,7 +1036,7 @@
                                                         <!-- input -->
                                                         <input aria-label="name" aria-required="true" type="text"
                                                             class="form-control" data-inputmask="" name="fields[name]"
-                                                            placeholder="Name" autocomplete="name">
+                                                            placeholder="Name" autocomplete="given-name">
                                                         <!-- /input -->
 
                                                         <!-- textarea -->
@@ -1072,7 +1073,8 @@
 
                                                         <!-- input -->
                                                         <input aria-label="nama_anak" aria-required="true" type="text"
-                                                            class="form-control" data-inputmask="" name="fields[nama_anak]"
+                                                            class="form-control" data-inputmask=""
+                                                            name="fields[nama_anak]"
                                                             placeholder="My Child's Name (if you are a student, then fill in this column with your name)"
                                                             autocomplete="">
                                                         <!-- /input -->
@@ -1491,7 +1493,7 @@
 
 
 
-                        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v300817f630ad0e957914d0b28a2b6d78"
+                        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v08a893c96141fbc55feeeeac1fda7508"
                             type="text/javascript"></script>
                         <script>
                             fetch("https://assets.mailerlite.com/jsonp/253019/forms/74073337921275726/track-view")
