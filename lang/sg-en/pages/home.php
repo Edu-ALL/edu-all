@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'meta_title' => "Find Your Path to Success with ALL-in Eduspace's Programs and Expert Mentors",
+    'meta_description' => 'Unlock your academic potential with All-In Edu. Our personalized mentoring and comprehensive programs prepare you for success in university and beyond. Explore now!',
     'benefit_list' => [
         [
             'title' => 'Aspire',

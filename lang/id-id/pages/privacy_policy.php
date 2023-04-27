@@ -1,5 +1,8 @@
 <?php
 return [
+    'meta_title' => "Kebijakan Privasi ALL-in Eduspace: Komitmen Kami untuk Melindungi Data Anda",
+    'meta_description' => 'Kebijakan Privasi kami menjelaskan pengumpulan, penggunaan, dan pengungkapan informasi Anda saat menggunakan layanan kami serta hak privasi Anda.',
+
     'body' => '
         <h1>Kebijakan Privasi</h1>
         <p>Kebijakan Privasi ini menjelaskan kebijakan dan prosedur Kami tentang pengumpulan, penggunaan, dan pengungkapan informasi Anda saat Anda menggunakan Layanan serta memberitahukan Anda tentang hak privasi Anda dan bagaimana hukum melindungi Anda.</p>

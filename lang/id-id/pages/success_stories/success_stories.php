@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Lihatlah kisah sukses bagaimana para mentee kami mengelola personal project",
+    'meta_description' => 'Lihat kisah sukses bagaimana para mentee kami berhasil menyelesaikan proyek atau diterima di universitas top dunia! Kami sangat bangga atas pencapaian mereka',
+
     'title' => 'CERITA SUKSES',
     'desc' => 'Dengan bangga kami persembahkan mentee-mentee kami
     <br/>

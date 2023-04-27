@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Program Mentoring Pemindahan Universitas - ALL-in Eduspace Programs",
+    'meta_description' => 'Pindah ke universitas impianmu dengan mudah bersama program mentoring penerimaan All-in Eduspace untuk mahasiswa transfer. Dapatkan panduan profesional dan dukungan penuh. Daftar sekarang',
+
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "UNIVERSITY TRANSFER",

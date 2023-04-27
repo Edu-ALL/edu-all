@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>University Transfer Program</title>
-        <meta name="title" content="University Transfer Program" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Program Mentoring Pemindahan Universitas - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Program Mentoring Pemindahan Universitas - ALL-in Eduspace Programs" />
-    @else
-        <title>University Transfer Program</title>
-        <meta name="title" content="University Transfer Program" />
-    @endif
-    <meta name="description" content="Make a smooth transition to your dream university with All-in Eduspace&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now" />
+    <title>{{ __('pages/programs/univ_transfer_program.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/programs/univ_transfer_program.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/univ_transfer_program.meta_description') }}" />
 @endsection
 
 @section('content')

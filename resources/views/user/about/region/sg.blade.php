@@ -1,9 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    <title>Discover Our Mission and Values at ALL-in Eduspace</title>
-    <meta name="title" content="Discover Our Mission and Values at ALL-in Eduspace" />
-    <meta name="description" content="Learn more about All-in Eduspace, we provides admissions mentoring and academic tutoring services to students in Singapore. Find out how we can help you achieve your academic goals" />
+    <title>{{ __('pages/about_us/about.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/about_us/about.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/about_us/about.meta_description') }}" />
 @endsection
 
 @section('content')

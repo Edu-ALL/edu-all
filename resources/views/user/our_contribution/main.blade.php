@@ -1,20 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>ALL-in Eduspace's Contribution to Education in Indonesia</title>
-        <meta name="title" content="ALL-in Eduspace's Contribution to Education in Indonesia" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Kontribusi ALL-in Eduspace untuk Pendidikan di Indonesia</title>
-        <meta name="title" content="Kontribusi ALL-in Eduspace untuk Pendidikan di Indonesia" />
-    @else
-        <title>ALL-in Eduspace's Contribution to Education in Indonesia</title>
-        <meta name="title" content="ALL-in Eduspace's Contribution to Education in Indonesia" />
-    @endif
-    <title>Our Contribution</title>
-    <meta name="title" content="Our Contribution" />
-    <meta name="description"
-        content="We are proud of the contribution we give to the community, especially in the education sector." />
+    <title>{{ __('pages/about_us/our_contribution.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/about_us/our_contribution.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/about_us/our_contribution.meta_description') }}" />
 @endsection
 
 @section('content')

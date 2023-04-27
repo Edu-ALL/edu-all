@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Mentoring Program; Explore your true potential in business or research</title>
-        <meta name="title" content="Mentoring Program; Explore your true potential in business or research" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Bimbingan Mentoring Passion Project - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Bimbingan Mentoring Passion Project - ALL-in Eduspace Programs" />
-    @else
-        <title>Mentoring Program; Explore your true potential in business or research</title>
-        <meta name="title" content="Mentoring Program; Explore your true potential in business or research" />
-    @endif
-    <meta name="description" content="Explore your true potential in business or research, uncover your true self, we can help you through our Passion Mentoring Program" />
+    <title>{{ __('pages/programs/passion_project_mentoring.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/programs/passion_project_mentoring.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/passion_project_mentoring.meta_description') }}" />
 @endsection
 
 @section('content')

@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success</title>
-        <meta name="title" content="The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>The ALL-in Eduspace Guidebook:Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir</title>
-        <meta name="title" content="The ALL-in Eduspace Guidebook:Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir" />
-    @else
-        <title>The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success</title>
-        <meta name="title" content="The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success" />
-    @endif
-    <meta name="description" content="Learn how you can ace your university application by improving your academic performance, writing skills, personal brand, and career exploration in every action!" />
+    <title>{{ __('pages/resources/guidebook.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/resources/guidebook.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/resources/guidebook.meta_description') }}" />
 @endsection
 
 @section('content')

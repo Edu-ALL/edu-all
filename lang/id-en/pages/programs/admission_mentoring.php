@@ -114,6 +114,9 @@ $univtransfer = [
 
 ];
 return [
+    'meta_title' => "We offer personalized 1-on-1 admissions mentoring service",
+    'meta_description' => 'Personalized 1-on-1 admissions mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best fit universities',
+    
     // banner sections
     "title" => "Admission Mentoring",
     "body" => "We offer personalized 1-on-1 admissions mentoring service that will serve as an

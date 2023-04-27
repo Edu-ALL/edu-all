@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Graduate Admissions Mentoring - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Graduate Admissions Mentoring - ALL-in Eduspace Programs" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Bimbingan Mentoring untuk Program Pascasarjana - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Bimbingan Mentoring untuk Program Pascasarjana - ALL-in Eduspace Programs" />
-    @else
-        <title>Graduate Admissions Mentoring - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Graduate Admissions Mentoring - ALL-in Eduspace Programs" />
-    @endif
-    <meta name="description" content="Achieve success in your graduate studies with All-in Eduspace&#039;s admission mentoring program. Professional guidance and support. Enroll now" />
+    <title>{{ __('pages/programs/graduate_program.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/programs/graduate_program.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/graduate_program.meta_description') }}" />
 @endsection
 
 @section('content')

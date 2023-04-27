@@ -1,5 +1,8 @@
 <?php
 return [
+    'meta_title' => "ALL-in Eduspace Privacy Policy: Our Commitment to Protecting Your Data",
+    'meta_description' => 'This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.',
+
     'body' => '
     <h1>Privacy Policy</h1>
     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure

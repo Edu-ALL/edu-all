@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "University Transfer Program",
+    'meta_description' => 'Make a smooth transition to your dream university with All-in Eduspace&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now',
+
     // banner section
     "subtitle" => "UNIVERSITY ADMISSION MENTORING",
     "title" => "UNIVERSITY TRANSFER",

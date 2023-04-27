@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Academic &amp; Test Preparation for your top university application success</title>
-        <meta name="title" content="Academic &amp; Test Preparation for your top university application success" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Program Persiapan Ujian Akademik | ALL-in Eduspace Programs</title>
-        <meta name="title" content="Program Persiapan Ujian Akademik | ALL-in Eduspace Programs" />
-    @else
-        <title>Academic &amp; Test Preparation for your top university application success</title>
-        <meta name="title" content="Academic &amp; Test Preparation for your top university application success" />
-    @endif
-    <meta name="description" content="Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores" />
+    <title>{{ __('pages/programs/academic_test_preparation.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/academic_test_preparation/programs.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/academic_test_preparation/programs.meta_description') }}" />
 @endsection
 
 @section('content')

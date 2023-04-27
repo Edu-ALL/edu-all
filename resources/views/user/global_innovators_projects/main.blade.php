@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Global Innovators Program</title>
-        <meta name="title" content="Global Innovators Program" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Program Global Innovators Project</title>
-        <meta name="title" content="Program Global Innovators Project" />
-    @else
-        <title>Global Innovators Program</title>
-        <meta name="title" content="Global Innovators Program" />
-    @endif
-    <meta name="description" content="">
+    <title>{{ __('pages/programs/global_innovators_projects.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/global_innovators_projects/programs.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/global_innovators_projects/programs.meta_description') }}" />
 @endsection
 
 @section('content')

@@ -1,14 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>About ALL-in Eduspace: Our Mission and Values</title>
-        <meta name="title" content="About ALL-in Eduspace: Our Mission and Values" />
-    @else
-        <title>Tentang ALL-in Eduspace: Misi dan Nilai-nilai Kami</title>
-        <meta name="title" content="Tentang ALL-in Eduspace: Misi dan Nilai-nilai Kami" />
-    @endif
-    <meta name="description" content="We are an independent university consultant. Our mission is to ensure that students are thriving into the path they aspire to have in the future" />
+    <title>{{ __('pages/about_us/about.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/about_us/about.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/about_us/about.meta_description') }}" />
 @endsection
 
 @section('content')

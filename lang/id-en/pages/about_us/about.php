@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "About ALL-in Eduspace: Our Mission and Values",
+    'meta_description' => 'We are an independent university consultant. Our mission is to ensure that students are thriving into the path they aspire to have in the future.',
+
     // Top Section
     'title' => 'We are an Independent University Consultant',
     'desc' => [

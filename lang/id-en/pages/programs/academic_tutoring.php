@@ -25,6 +25,9 @@ $do_list = [
 ];
 
 return [
+    'meta_title' => "Academic Tutoring Services for IB & A Level - All-in Eduspace",
+    'meta_description' => 'Get the best academic tutoring services with All-In Edu. We offer private tutoring, online tutoring, and tutoring programs for students',
+
     'title' => 'ACADEMIC TUTORING',
     'desc' => 'Enhance your academic performance through a tailored learning style with core concept learning system and real-life application.',
     'top_btn' => 'Register Here',

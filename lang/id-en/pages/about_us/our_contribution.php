@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "ALL-in Eduspace's Contribution to Education in Indonesia",
+    'meta_description' => 'We are proud of the contribution we give to the community, especially in the education sector.',
+
     // Top Section
     'title' => 'Our Contribution',
     'body' => 'As an independent university consultant, we always give our best to help students strive into the path they aspire to in the future by having a clear career goal by choosing the right major, and getting into top universities.',

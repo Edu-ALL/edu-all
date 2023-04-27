@@ -1,18 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Sign Me - Admission Mentoring</title>
-        <meta name="title" content="Sign Me - Admission Mentoring" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Segera Bergabung dengan Program Admission Mentoring - ALL-in Eduspace</title>
-        <meta name="title" content="Segera Bergabung dengan Program Admission Mentoring - ALL-in Eduspace" />
-    @else
-        <title>Sign Me - Admission Mentoring</title>
-        <meta name="title" content="Sign Me - Admission Mentoring" />
-    @endif
-    <meta name="description"
-        content="Submit your profile to get contacted by our team about study abroad &amp; our admission mentoring programs that help our mentees study to Top Universities" />
+    <title>{{ __('pages/sign_me/adm_mentoring.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/sign_me/adm_mentoring.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/sign_me/adm_mentoring.meta_description') }}" />
 @endsection
 
 @section('content')

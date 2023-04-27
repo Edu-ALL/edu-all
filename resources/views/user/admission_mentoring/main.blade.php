@@ -1,19 +1,8 @@
 @extends('layout.user.main')
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>We offer personalized 1-on-1 admissions mentoring service</title>
-        <meta name="title" content="We offer personalized 1-on-1 admissions mentoring service" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>ALL-in Eduspace Programs: Mentoring Individu, Kursus, dan Program Terapan untuk Pendaftaran Universitas dan Personal Branding</title>
-        <meta name="title" content="ALL-in Eduspace Programs: Mentoring Individu, Kursus, dan Program Terapan untuk Pendaftaran Universitas dan Personal Branding" />
-    @else
-        <title>We offer personalized 1-on-1 admissions mentoring service</title>
-        <meta name="title" content="We offer personalized 1-on-1 admissions mentoring service" />
-    @endif
-    <title>We offer personalized 1-on-1 admissions mentoring service</title>
-    <meta name="title" content="We offer personalized 1-on-1 admissions mentoring service" />
-    <meta name="description"
-        content="personalized 1-on-1 admissions mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best fit universities" />
+    <title>{{ __('pages/programs/admission_mentoring.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/programs/admission_mentoring.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/admission_mentoring.meta_description') }}" />
 @endsection
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}

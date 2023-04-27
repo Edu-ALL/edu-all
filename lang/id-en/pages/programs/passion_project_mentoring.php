@@ -99,6 +99,9 @@ $testimonies = [
 ];
 
 return [
+    'meta_title' => "Mentoring Program; Explore your true potential in business or research",
+    'meta_description' => 'Explore your true potential in business or research, uncover your true self, we can help you through our Passion Mentoring Program',
+
     // banner section
     "title" => "EXPERIENTIAL LEARNING",
     "body" => "Explore your true potential in business or research, uncover your true self, and be the person behind successful ventures and revolutionary inventions!",

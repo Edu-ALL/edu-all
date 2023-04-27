@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>IB EXTENDED ESSAY COACHING PROGRAM</title>
-        <meta name="title" content="IB EXTENDED ESSAY COACHING PROGRAM" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>IB & EE Coaching Program | Academic Test Preparation - ALL-in Eduspace Programs</title>
-        <meta name="title" content="IB & EE Coaching Program | Academic Test Preparation - ALL-in Eduspace Programs" />
-    @else
-        <title>IB EXTENDED ESSAY COACHING PROGRAM</title>
-        <meta name="title" content="IB EXTENDED ESSAY COACHING PROGRAM" />
-    @endif
-    <meta name="description" content="IB EXTENDED ESSAY COACHING PROGRAM: Drill your Extended Essay writing process in 3 months with our holistic approach!" />
+    <title>{{ __('pages/programs/ib_ee_coaching_program.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/ib_ee_coaching_program/programs.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/ib_ee_coaching_program/programs.meta_description') }}" />
 @endsection
 
 @section('content')

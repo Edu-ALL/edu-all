@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Undergraduate Admissions Mentoring - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Undergraduate Admissions Mentoring - ALL-in Eduspace Programs" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Bimbingan Mentoring untuk Program Sarjana - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Bimbingan Mentoring untuk Program Sarjana - ALL-in Eduspace Programs" />
-    @else
-        <title>Undergraduate Admissions Mentoring - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Undergraduate Admissions Mentoring - ALL-in Eduspace Programs" />
-    @endif
-    <meta name="description" content="We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities" />
+    <title>{{ __('pages/programs/undergraduate_program.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/programs/undergraduate_program.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/undergraduate_program.meta_description') }}" />
 @endsection
 
 @section('content')

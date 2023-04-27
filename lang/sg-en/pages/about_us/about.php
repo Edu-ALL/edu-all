@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Discover Our Mission and Values at ALL-in Eduspace",
+    'meta_description' => 'Learn more about All-in Eduspace, we provides admissions mentoring and academic tutoring services to students in Singapore. Find out how we can help you achieve your academic goals',
+
     // Top Section
     'title' => 'We are an Independent University Consultant',
     'desc' => [

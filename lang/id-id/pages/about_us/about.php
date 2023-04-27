@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'meta_title' => "Tentang ALL-in Eduspace: Misi dan Nilai-nilai Kami",
+    'meta_description' => 'Kami adalah konsultan universitas independen. Misi kami adalah memastikan bahwa siswa mencapai kesuksesan pada jalur yang mereka impikan di masa depan.',
+
     // Top Section
     'title' => 'Kami adalah Konsultan Universitas Independen',
     'desc' => [

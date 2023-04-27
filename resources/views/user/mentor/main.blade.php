@@ -1,17 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    @if (app()->getLocale() == 'id-en')
-        <title>Our Expert Mentors - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Our Expert Mentors - ALL-in Eduspace Programs" />
-    @elseif (app()->getLocale() == 'id-id')
-        <title>Mentor Ahli Kami - Program ALL-in Eduspace</title>
-        <meta name="title" content="Mentor Ahli Kami - Program ALL-in Eduspace" />
-    @else
-        <title>Our Expert Mentors - ALL-in Eduspace Programs</title>
-        <meta name="title" content="Our Expert Mentors - ALL-in Eduspace Programs" />
-    @endif
-    <meta name="description" content="ALL-in mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences." />
+    <title>{{ __('pages/about_us/mentor.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/about_us/mentor.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/about_us/mentor.meta_description') }}" />
 @endsection
 
 @section('content')
