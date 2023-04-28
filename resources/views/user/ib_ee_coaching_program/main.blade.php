@@ -2,8 +2,8 @@
 
 @section('head')
     <title>{{ __('pages/programs/ib_ee_coaching_program.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/ib_ee_coaching_program/programs.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/ib_ee_coaching_program/programs.meta_description') }}" />
+    <meta name="title" content="{{ __('pages/programs/ib_ee_coaching_program.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/ib_ee_coaching_program.meta_description') }}" />
 @endsection
 
 @section('content')

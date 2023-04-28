@@ -70,7 +70,7 @@
                                                     </a>
                                                     <div class="flex items-center gap-2">
                                                         <span class="font-primary text-sm text-[#7C7C7C]">
-                                                            {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                                                            {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                                         </span>
                                                         <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
                                                         <span class="font-primary text-sm text-[#7C7C7C]">
@@ -137,7 +137,7 @@
                                 class="h-72 object-cover object-center">
                             <div class="flex justify-between">
                                 <span class="font-primary text-xs text-[#7C7C7C]">
-                                    {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                                    {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                 </span>
                                 <div class="flex items-center gap-2">
                                     @if ($blog->duration_read)

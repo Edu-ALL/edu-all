@@ -172,15 +172,49 @@ class Mentor extends Controller
         return redirect('/admin/mentor/'.$mentor_en->group.'/view')->withSuccess('Mentor Was Successfully Created');
     }
 
+    public function getMentorVideo(Request $request, $group){
+        if ($request->ajax()) {
+            $data = MentorVideos::where('mentor_id', $group)->orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->editColumn('video_embed', function($d){
+                $result = '
+                    <a href="'.$d->video_embed.'" target="_blank">'.$d->video_embed.'</a>
+                ';
+                return $result;
+            })
+            ->editColumn('yt_id', function($d){
+                $result = '
+                    '.$d->youtube_id.'
+                ';
+                return $result;
+            })
+            ->editColumn('action', function($d){
+                $video_embed = "'".$d->video_embed."'";
+                $result = '
+                    <div class="d-flex flex-row gap-1">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#video" style="text-transform: capitalize;" onclick="formUpdate('.$d->mentor_id.', '.$d->id.', '.$video_embed.')">
+                            <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this mentor video"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->mentor_id.', '.$d->id.')">
+                            <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this mentor video"></i>
+                        </button>
+                    </div>
+                ';
+                return $result;
+            })
+            ->rawColumns(['video_embed', 'yt_id', 'action'])
+            ->make(true);
+        }
+    }
+
     public function view($group){
         if (!Mentors::where('group', $group)->first('id')) {
             return redirect('/admin/mentor')->withErrors('Mentor Cannot Be Found');
         }
         $mentor = Mentors::where('group', $group)->get();
-        $mentor_video = MentorVideos::where('mentor_id', $group)->orderBy('updated_at', 'desc')->get();
         return view('admin.mentor.view', [
             'mentor' => $mentor,
-            'mentor_video' => $mentor_video,
         ]);
     }
 

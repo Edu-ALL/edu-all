@@ -246,7 +246,7 @@
                                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">Add new widget</span>
                                             </button>
                                         </div>
-                                        <table class="table datatable display"" style="width:100%">
+                                        <table class="table display" id="listblogwidget" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
@@ -257,45 +257,6 @@
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @php
-                                                    $i = 1;
-                                                @endphp
-                                                @foreach ($blog->blog_widget as $widget)
-                                                    <tr>
-                                                        <th scope="row">{{ $i++ }}</th>
-                                                        <td>{{ $widget->title }}</td>
-                                                        <td>{!! Str::limit($widget->description, 120, '...') !!}</td>
-                                                        <td>{{ $widget->position }}</td>
-                                                        <td>
-                                                            <a href="{{ $widget->link }}" target="_blank">{{ $widget->link }}</a>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="d-flex flex-row gap-1">
-                                                                <button 
-                                                                class="btn btn-warning"
-                                                                type="button"
-                                                                data-bs-toggle="modal" 
-                                                                data-bs-target="#widget"
-                                                                style="text-transform: capitalize;"
-                                                                onclick="formUpdate({{ $widget->blog_id }}, {{ $widget->id }}, '{{ $widget->title }}', '{!! $widget->description !!}', '{{ $widget->link }}', '{{ $widget->position }}')"
-                                                                >
-                                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog widget"></i>
-                                                                </button>
-                                                                <button 
-                                                                type="button"
-                                                                class="btn btn-danger"
-                                                                data-bs-toggle="modal" 
-                                                                data-bs-target="#delete"
-                                                                onclick="formDelete({{ $widget->blog_id }}, {{ $widget->id }})"
-                                                                >
-                                                                    <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog widget"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -313,24 +274,13 @@
                                         <div class="d-flex flex-row align-items-center justify-content-between">
                                             <h5 class="card-title">List Blog Read <span>| {{ now()->year }}</span></h5>
                                         </div>
-                                        <table class="table datatable display" style="width:100%">
+                                        <table class="table display" id="listblogread" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
                                                     <th scope="col">IP Address</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @php
-                                                    $i = 1;
-                                                @endphp
-                                                @foreach ($blog->blog_read as $blog_read)
-                                                    <tr>
-                                                        <th class="w-25" scope="row">{{ $i++ }}</th>
-                                                        <td>{{ $blog_read->ip_address }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -446,7 +396,64 @@
 
 @section('js')
 <script>
-    
+    // List Blog Widget
+    $(function() {
+        var blog_id = '<?php echo $blog->id ?>';
+        $('#listblogwidget').DataTable({
+            scrollX: true,
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: '{{ url('/admin/blogs/widget/data/') }}' + '/' + blog_id,
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                },
+                {
+                    data: 'title',
+                    name: 'title'
+                },
+                {
+                    data: 'description',
+                    name: 'description'
+                },
+                {
+                    data: 'position',
+                    name: 'position'
+                },
+                {
+                    data: 'link',
+                    name: 'link'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    class: 'text-center'
+                },
+            ]
+        });
+    });
+    // List Blog Read
+    $(function() {
+        var blog_id = '<?php echo $blog->id ?>';
+        $('#listblogread').DataTable({
+            scrollX: true,
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: '{{ url('/admin/blogs/read/data/') }}' + '/' + blog_id,
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex',
+                    class: 'w-25'
+                },
+                {
+                    data: 'ip_address',
+                    name: 'ip_address'
+                },
+            ]
+        });
+    });
     function formCreate(id){
         $("#title-info").text("Add new Blog Widget");
         $('#title').attr('value', '');

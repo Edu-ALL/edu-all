@@ -70,7 +70,8 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/blogs/widget/{id}', [BlogWidget::class, 'store']);
     Route::post('/blogs/widget/{blog_id}/{id}', [BlogWidget::class, 'update']);
     Route::post('/blogs/widget/delete/{blog_id}/{id}', [BlogWidget::class, 'delete']);
-    // Route::get('/blogs/{id}/widget/data', [Blog::class, 'getBlogWidget'])->name('data-blog-widget');
+    Route::get('/blogs/widget/data/{blog_id}', [Blog::class, 'getBlogWidget'])->name('data-blog-widget');
+    Route::get('/blogs/read/data/{blog_id}', [Blog::class, 'getBlogRead'])->name('data-blog-read');
     Route::post('/blogs/checkPublish', [Blog::class, 'checkPublish']);
 
     // Blog Category
@@ -134,6 +135,7 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/mentor/create', [Mentor::class, 'create']);
     Route::post('/mentor', [Mentor::class, 'store'])->name('create-mentor');
     Route::get('/mentor/{group}/view', [Mentor::class, 'view']);
+    Route::get('/mentor/data/video/{group}', [Mentor::class, 'getMentorVideo'])->name('data-mentor-video');
     Route::get('/mentor/{group}/edit', [Mentor::class, 'edit']);
     Route::post('/mentor/{group}', [Mentor::class, 'update'])->name('update-mentor');
     Route::post('/mentor/deactivate/{group}', [Mentor::class, 'deactivate']);

@@ -20,7 +20,6 @@ return [
             'image' => 'home_Illustration_3.webp',
         ],
     ],
-    'meta_description' => 'The only Jakarta Education Consultant that provides unique admissions mentoring services. We help you get into the best university that you want.',
     'about' => 'About Us',
     'about_body' => "We guide students who plan to study abroad at top universities and place them at their best fit schools.
     We provide personal and tailored consulting services, no matter where you are.",

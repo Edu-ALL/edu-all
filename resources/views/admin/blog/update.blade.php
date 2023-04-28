@@ -165,7 +165,7 @@
                                                 </label>
                                                 <small class="alert d-block p-0 m-0 mb-2 fs-12">Note: Please Use
                                                     <strong>'Heading 2'</strong> for a <strong>Section</strong></small>
-                                                <textarea class="textarea" name="blog_description" id="blog_description">
+                                                <textarea class="description" name="blog_description" id="blog_description">
                                                     {{ $blog->blog_description }}
                                                 </textarea>
                                                 @error('blog_description')
@@ -241,21 +241,14 @@
                                                     </label>
                                                     <div class="col d-flex flex-row py-1 gap-md-4 gap-4">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="blog_status" id="blog_status_draft" value="draft"
-                                                                {{ $blog->blog_status == 'draft' ? 'checked' : '' }}>
-                                                            <label class="form-label card-title p-0 m-0"
-                                                                for="blog_status_draft">
+                                                            <input class="form-check-input" type="radio" name="blog_status" id="blog_status_draft" value="draft" onchange="clearDate()" {{ $blog->blog_status == 'draft' ? 'checked' : '' }}>
+                                                            <label class="form-label card-title p-0 m-0" for="blog_status_draft">
                                                                 Draft
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="blog_status" id="blog_status_publish"
-                                                                value="publish"
-                                                                {{ $blog->blog_status == 'publish' ? 'checked' : '' }}>
-                                                            <label class="form-label card-title p-0 m-0"
-                                                                for="blog_status_publish">
+                                                            <input class="form-check-input" type="radio" name="blog_status" id="blog_status_publish" value="publish" onchange="clearDate()" {{ $blog->blog_status == 'publish' ? 'checked' : '' }}>
+                                                            <label class="form-label card-title p-0 m-0" for="blog_status_publish">
                                                                 Publish
                                                             </label>
                                                         </div>
@@ -315,6 +308,20 @@
         var wordcount = inst.plugins.wordcount.body.getWordCount();
         $('#duration_read').val(Math.round(wordcount/200));
     }
+
+    tinymce.init({
+        selector: '.description',
+        width: 'auto',
+        height: '350',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        paste_as_text: true,
+        setup: function (ed) {
+            ed.on("change", function () {
+                getDuration(ed); // function for duration minute in Blogs
+            })
+        }
+    });
 
     async function selectLang() {
         let lang = $('#lang').val()

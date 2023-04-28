@@ -17,16 +17,19 @@ class BlogPageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
 
         // ambil semua blog dengan sesuai bahasa dan blog yang berstatus publish
-        $blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish');
+        // $blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish');
+        $blogs = Blogs::where('lang', $lang)->where('blog_status', 'publish')->orderBy('publish_date', 'desc'); // orderby publish date
 
         // take blogs
-        $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
+        // $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->take(5)->get();
+        $top_blogs = Blogs::where('lang', $lang)->where('blog_status', 'publish')->where('is_highlight', 'true')->orderBy('publish_date', 'desc')->take(5)->get(); // orderby publish date
 
         // jika gak ada blog yang lagi higlight tampilin 2 blog terbaru dan ubah top choise menjadi top update
         $is_top_update = false;
         if (count($top_blogs) == 0) {
             $is_top_update = true;
-            $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->take(2)->get();
+            // $top_blogs = Blogs::latest()->where('lang', $lang)->where('blog_status', 'publish')->take(2)->get();
+            $top_blogs = Blogs::where('lang', $lang)->where('blog_status', 'publish')->orderBy('publish_date', 'desc')->take(2)->get(); // orderby publish date
 
             // update blogs hilangkan yang sudah dijadikan top update
             if (count($top_blogs) > 1) {
