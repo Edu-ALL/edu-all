@@ -54,7 +54,7 @@
                 @foreach (__('pages/home.benefit_list') as $item)
                     <div
                         class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                        <img data-original="{{ asset('assets/img/home/' . $item['image']) }}"
+                        <img width="120px" height="90px" data-original="{{ asset('assets/img/home/' . $item['image']) }}"
                             alt="Allineduspace ilustration" class="w-[120px] h-[auto]">
                         <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
@@ -85,7 +85,7 @@
             <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
-                        <img data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
+                        <img width="90px" height="90px" data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
                             alt="Allineduspace About Us Icon" class="mb-4 w-[90px] h-[90px] object-contain">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>

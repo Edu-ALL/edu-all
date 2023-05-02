@@ -4,8 +4,8 @@
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
                 <a href="{{ url(app()->getLocale()) }}"
                     class="flex justify-center items-center lg:min-w-fit lg:text-left">
-                    <img src="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New"
-                        class=" object-center w-[180px]">
+                    <img width="180px" height="90px" src="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New"
+                        class="object-center w-[180px]">
                 </a>
 
                 <button title="menus" id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
