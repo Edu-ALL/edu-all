@@ -157,7 +157,7 @@
 
     <div class="fixed lg:bottom-5 bottom-[15px] lg:right-5 right-[10px] z-[9999] transition-all duration-1000"
         id="newsButton">
-        <div class="bg-white hover:bg-yellow rounded-md px-3 h-[40px] flex justify-center items-center text-yellow hover:text-white border-[1px] border-[#F78614] cursor-pointer shadow transition-all duration-200"
+        <div class="bg-yellow hover:bg-white rounded-md px-3 h-[40px] flex justify-center items-center text-white hover:text-yellow border-[1px] border-[#F78614] cursor-pointer shadow transition-all duration-200"
             onclick="popupForm('open')">
             <i class="fa fa-newspaper mr-2"></i>
             <span>Get Updates</span>

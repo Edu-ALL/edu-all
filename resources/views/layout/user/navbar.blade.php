@@ -34,8 +34,8 @@
                                 <a href="{{ url(app()->getLocale(), 'programs') }}"
                                     class="block w-full my-1.5 pl-4 font-semibold text-xl text-left lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.programs') }}
                                 </a>
-                                <button title="submenu" id='open-nav-child' type="button"
-                                    class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent ">
+                                <button title="submenu" type="button"
+                                    class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent ">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary"></i>
                                 </button>
@@ -121,8 +121,8 @@
                                     class="inline w-full my-1.5 pl-4 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.about_us') }}
                                 </a>
-                                <button title="submenu" id='open-nav-child' type="button"
-                                    class="flex justify-end bg-primary transition-all duration-300 lg:bg-transparent">
+                                <button title="submenu" type="button"
+                                    class="open-nav-child flex justify-end bg-primary transition-all duration-300 lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down text-base py-3 px-4 text-white  transition-all duration-300  lg:p-0 lg:pl-1 lg:text-primary"></i>
                                 </button>
@@ -161,8 +161,8 @@
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.resources') }}
                                 </div>
-                                <button title="submenu" id='open-nav-child' type="button"
-                                    class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
+                                <button title="submenu" type="button"
+                                    class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
                                 </button>
@@ -199,8 +199,8 @@
                                     class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
                                     {{ __('pages/navbar.contact_us') }}
                                 </div>
-                                <button title="submenu" id='open-nav-child' type="button"
-                                    class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
+                                <button title="submenu" type="button"
+                                    class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                     <i id='open-nav-child-btn'
                                         class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
                                 </button>
@@ -270,8 +270,8 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <button title="submenu" id='open-nav-child' type="button"
-                                            class="flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
+                                        <button title="submenu" type="button"
+                                            class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
                                             <i id='open-nav-child-btn'
                                                 class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
                                         </button>
@@ -745,7 +745,7 @@
         navContent.classList.add('translate-x-full');
     })
 
-    const openChildBtns = document.querySelectorAll("#open-nav-child"),
+    const openChildBtns = document.querySelectorAll(".open-nav-child"),
         navChildContents = document.querySelectorAll("#content-nav-child"),
         childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
 
