@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Global Innovators Program",
-    'meta_description' => '',
+    'meta_title' => "Global Innovators Project - Empowering Students to Create Social Impact",
+    'meta_description' => 'Join our 8-day summer program for hands-on experience in personal project design and self-development sessions. Become a global innovator with us!',
 
     'description' => 'Experience the world while making a difference during your  <span class="font-semibold text-4xl text-yellow"> Summer </span> or   <span class="font-semibold text-4xl text-primary"> Winter </span> holiday! <br/> Gain hands-on experience, develop valuable skillsets, and make a positive impact, locally and even globally!
     ',

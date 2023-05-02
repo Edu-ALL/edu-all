@@ -189,7 +189,7 @@
                                                         <p class="m-0">:</p>
                                                     </div>
                                                     <div class="col p-0">
-                                                        <p class="m-0">{{ $mentor[1]->mentor_firstname.' '.$mentor[1]->mentor_lastname }}</p>
+                                                        <p class="m-0">{{ $mentor[1]->mentor_fullname }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="field-detail d-flex flex-row align-items-start">
@@ -297,7 +297,7 @@
                                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">Add new video</span>
                                             </button>
                                         </div>
-                                        <table class="table datatable display" style="width:100%">
+                                        <table class="table display" id="listmentorvideo" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
@@ -306,45 +306,6 @@
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                @php
-                                                    $i = 1;
-                                                @endphp
-                                                @foreach ($mentor_video as $mentor_video)
-                                                    <tr>
-                                                        <th scope="row">{{ $i++ }}</th>
-                                                        <td>
-                                                            <a href="{{ $mentor_video->video_embed }}" target="_blank">{{ $mentor_video->video_embed }}</a>
-                                                        </td>
-                                                        <td>
-                                                            {{ $mentor_video->youtube_id }}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="d-flex flex-row gap-1">
-                                                                <button 
-                                                                class="btn btn-warning"
-                                                                type="button"
-                                                                data-bs-toggle="modal" 
-                                                                data-bs-target="#video"
-                                                                style="text-transform: capitalize;"
-                                                                onclick="formUpdate({{ $mentor_video->mentor_id }}, {{ $mentor_video->id }}, '{{ $mentor_video->video_embed }}', '{!! $mentor_video->description !!}')"
-                                                                >
-                                                                    <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this mentor video"></i>
-                                                                </button>
-                                                                <button 
-                                                                type="button"
-                                                                class="btn btn-danger"
-                                                                data-bs-toggle="modal" 
-                                                                data-bs-target="#delete"
-                                                                onclick="formDelete({{ $mentor_video->mentor_id }}, {{ $mentor_video->id }})"
-                                                                >
-                                                                    <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this mentor video"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -424,13 +385,42 @@
 
 @section('js')
 <script>
+    // List Mentor Video
+    $(function() {
+        var group = '<?php echo $mentor[0]->group ?>';
+        $('#listmentorvideo').DataTable({
+            scrollX: true,
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: '{{ url('/admin/mentor/data/video/') }}' + '/' + group,
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex'
+                },
+                {
+                    data: 'video_embed',
+                    name: 'video_embed'
+                },
+                {
+                    data: 'yt_id',
+                    name: 'yt_id'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    class: 'text-center'
+                },
+            ]
+        });
+    });
     function formCreate(group){
         $("#title-info").text("Add new Video");
         $('#video_embed').attr('value', '');
         // tinymce.get("description_video").setContent('');
         $('#form_video').attr('action', '{{ url('/admin/mentor/video/') }}' + '/' + group);
     };
-    function formUpdate(group, id, video_embed, desc){
+    function formUpdate(group, id, video_embed){
         $("#title-info").text("Update Mentor Video");
         $('#video_embed').attr('value', video_embed);
         // tinymce.get("description_video").setContent(desc);
@@ -439,8 +429,10 @@
     function formDelete(group, id){
         $('#form_delete').attr('action', '{{ url('/admin/mentor/video/delete/') }}' + '/' + group + '/' + id);
     };
-    // Tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    $(document).ajaxComplete(function() {
+        // Tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    });
 </script>
 @endsection

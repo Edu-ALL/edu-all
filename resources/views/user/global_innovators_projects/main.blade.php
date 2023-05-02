@@ -2,8 +2,8 @@
 
 @section('head')
     <title>{{ __('pages/programs/global_innovators_projects.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/global_innovators_projects/programs.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/global_innovators_projects/programs.meta_description') }}" />
+    <meta name="title" content="{{ __('pages/programs/global_innovators_projects.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/global_innovators_projects.meta_description') }}" />
 @endsection
 
 @section('content')

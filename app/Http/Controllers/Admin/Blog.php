@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class Blog extends Controller
@@ -200,8 +201,10 @@ class Blog extends Controller
             $blogs->click_count = 0;
             $blogs->duration_read = $request->duration_read;
             $blogs->is_highlight = 'false';
-            if ($request->blog_status == 'publish'){
+            if ($request->blog_status == 'publish' && $request->publish_date == null){
                 $blogs->publish_date = date('Y-m-d H:i:s');
+            } else if ($request->blog_status == 'publish' && $request->publish_date != null) {
+                $blogs->publish_date = $request->publish_date;
             } else if ($request->blog_status == 'draft' && $request->publish_date != null) {
                 $blogs->publish_date = $request->publish_date;
             } else if ($request->blog_status == 'draft' && $request->publish_date == null) {
@@ -215,6 +218,53 @@ class Blog extends Controller
         }
 
         return redirect('/admin/blogs/'.$blogs->id.'/view')->withSuccess('Blogs Was Successfully Created');
+    }
+
+    public function getBlogWidget(Request $request, $blog_id){
+        if ($request->ajax()) {
+            $data = BlogWidgets::where('blog_id', $blog_id)->orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->editColumn('description', function($d){
+                $result = '
+                    '.Str::limit($d->description, 120, '...').'
+                ';
+                return $result;
+            })
+            ->editColumn('link', function($d){
+                $result = '
+                    <a href="'.$d->link.'" target="_blank">'.$d->link.'</a>
+                ';
+                return $result;
+            })
+            ->editColumn('action', function($d){
+                $title = "'".$d->title."'";
+                $desc = "'".$d->description."'";
+                $link = "'".$d->link."'";
+                $result = '
+                    <div class="d-flex flex-row gap-1">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="formUpdate('.$d->blog_id.', '.$d->id.', '.$title.', '.$desc.', '.$link.', '.$d->position.')">
+                            <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog widget"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->blog_id.', '.$d->id.')" >
+                            <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog widget"></i>
+                        </button>
+                    </div>
+                ';
+                return $result;
+            })
+            ->rawColumns(['description', 'link', 'action'])
+            ->make(true);
+        }
+    }
+
+    public function getBlogRead(Request $request, $blog_id){
+        if ($request->ajax()) {
+            $data = BlogReads::where('blog_id', $blog_id)->orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+            ->addIndexColumn()
+            ->make(true);
+        }
     }
 
     public function view($id){
@@ -295,8 +345,10 @@ class Blog extends Controller
             $blogs->click_count = 0;
             $blogs->duration_read = $request->duration_read;
             $blogs->is_highlight = 'false';
-            if ($request->blog_status == 'publish'){
+            if ($request->blog_status == 'publish' && $request->publish_date == null){
                 $blogs->publish_date = date('Y-m-d H:i:s');
+            } else if ($request->blog_status == 'publish' && $request->publish_date != null) {
+                $blogs->publish_date = $request->publish_date;
             } else if ($request->blog_status == 'draft' && $request->publish_date != null) {
                 $blogs->publish_date = $request->publish_date;
             } else if ($request->blog_status == 'draft' && $request->publish_date == null) {

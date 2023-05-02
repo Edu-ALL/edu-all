@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Program Global Innovators Project",
-    'meta_description' => '',
+    'meta_title' => "Global Innovators Project - Membekali Siswa untuk Menciptakan Dampak Sosial",
+    'meta_description' => 'Bergabunglah dengan program musim panas 8-hari kami untuk pengalaman langsung dalam desain proyek pribadi dan sesi pengembangan diri. Jadilah inovator global bersama kami!',
 
     'description' => 'Lihat dunia sambil membuat perbedaan! <br> Dapatkan pengalaman langsung, kembangkan keterampilan yang berharga, dan buat dampak positif di lingkup lokal atau bahkan global!',
     'description_button' => 'Daftar Sekarang',

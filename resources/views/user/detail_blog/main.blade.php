@@ -65,7 +65,7 @@
                         <div class="flex items-center gap-1">
                             <i class="fa fa-calendar-o mr-1 text-primary" aria-hidden="true"></i>
                             <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
-                                {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                                {{ strftime('%B %d, %Y', strtotime($blog->publish_date )) }}
                             </span>
                         </div>
                     </div>

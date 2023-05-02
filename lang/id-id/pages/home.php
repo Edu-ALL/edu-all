@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Unlock Your Potential with ALL-in Eduspace's Expert Mentors and Programs",
+    'meta_title' => "ALL-in Eduspace | Expert nya Top Uni Mentoring Service",
     'meta_description' => 'Capai potensimu di bidang akademik bersama All-In Edu. Dapatkan mentoring personal dan program komprehensif kami untuk sukses di masa depan',
     'benefit_list' => [
         [

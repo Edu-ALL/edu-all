@@ -2,8 +2,8 @@
 
 @section('head')
     <title>{{ __('pages/programs/academic_tutoring.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/academic_tutoring/programs.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/academic_tutoring/programs.meta_description') }}" />
+    <meta name="title" content="{{ __('pages/programs/academic_tutoring.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/academic_tutoring.meta_description') }}" />
 @endsection
 
 @section('content')

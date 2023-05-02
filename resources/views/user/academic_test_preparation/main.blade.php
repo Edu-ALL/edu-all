@@ -2,8 +2,8 @@
 
 @section('head')
     <title>{{ __('pages/programs/academic_test_preparation.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/academic_test_preparation/programs.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/academic_test_preparation/programs.meta_description') }}" />
+    <meta name="title" content="{{ __('pages/programs/academic_test_preparation.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/programs/academic_test_preparation.meta_description') }}" />
 @endsection
 
 @section('content')
