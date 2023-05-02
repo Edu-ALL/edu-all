@@ -24,13 +24,13 @@
                                 class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ !$banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
                                 <div
                                     class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-44 font-primary lg:items-start">
-                                    <h2
+                                    <h1
                                         class="font-primary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
-                                        {{ $banner->banner_title }}</h2>
-                                    <div
+                                        {{ $banner->banner_title }}</h1>
+                                    <h2
                                         class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
                                         {!! $banner->banner_description !!}
-                                    </div>
+                                    </h2>
                                     <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title == "" ? 'mt-[15vh]' : 'mt-0' }}">
                                         <span
                                             class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize"
@@ -56,12 +56,12 @@
                         class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                         <img width="120px" height="90px" data-original="{{ asset('assets/img/home/' . $item['image']) }}"
                             alt="Allineduspace ilustration" class="w-[120px] h-[auto]">
-                        <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
+                        <h3 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
-                        </h4>
-                        <p class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
+                        </h3>
+                        <h4 class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
                             {{ $item['body'] }}
-                        </p>
+                        </h4>
                     </div>
                 @endforeach
             </div>
@@ -71,12 +71,12 @@
     {{-- ========================================== About Us Section ======================================= --}}
     <section class="pt-10 max-w-4xl w-full px-6 mx-auto my-20">
         <div class="flex flex-col items-center">
-            <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
+            <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
                 {{ __('pages/home.about') }}
-            </h2>
-            <p class="mb-6 font-primary font-medium text-base text-center text-[#7A7A7A]">
+            </h3>
+            <h4 class="mb-6 font-primary font-medium text-base text-center text-[#7A7A7A]">
                 {{ __('pages/home.about_body') }}
-            </p>
+            </h4>
             <a href="{{ route('about', ['locale' => app()->getLocale()]) }}"
                 class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-yellow rounded-[4px]">
                 {{ __('pages/home.about_btn') }}
@@ -97,11 +97,11 @@
     {{-- ========================================== Program Section ======================================= --}}
     <section class="py-16">
         <div class="max-w-3xl w-full mx-auto px-6 mb-10 flex flex-col items-center">
-            <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">{{ __('pages/home.program') }}
-            </h2>
-            <p class="mb-6 font-primary font-medium text-base text-center text-[#7A7A7A]">
+            <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">{{ __('pages/home.program') }}
+            </h3>
+            <h4 class="mb-6 font-primary font-medium text-base text-center text-[#7A7A7A]">
                 {{ __('pages/home.program_body') }}
-            </p>
+            </h4>
         </div>
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -147,11 +147,11 @@
         <div class="flex flex-col items-center">
             <div class="main-container">
                 <div class="flex flex-col max-w-2xl">
-                    <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
+                    <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
                         {{ __('pages/home.mentor') }}
-                    </h2>
-                    <p class="font-primary text-lg text-[#7A7A7A] text-center leading-7">
-                        {{ __('pages/home.mentor_body') }}</p>
+                    </h3>
+                    <h4 class="font-primary text-lg text-[#7A7A7A] text-center leading-7">
+                        {{ __('pages/home.mentor_body') }}</h4>
                 </div>
             </div>
             <div class="flex flex-col items-center w-full mt-12 bg-primary">
@@ -226,9 +226,9 @@
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
             <div class="flex flex-col max-w-2xl mb-8">
-                <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
+                <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
                     {{ __('pages/home.testi') }}
-                </h2>
+                </h3>
             </div>
             <div class="w-full py-5">
                 <div class="splide" aria-label="Slide Container Example">
