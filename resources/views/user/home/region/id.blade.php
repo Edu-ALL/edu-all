@@ -248,7 +248,7 @@
                                         <div
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
-                                                <img data-original="{{ asset('assets/logo/quote.png') }}"
+                                                <img width="20px" height="20px" data-original="{{ asset('assets/logo/quote.png') }}"
                                                     alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
