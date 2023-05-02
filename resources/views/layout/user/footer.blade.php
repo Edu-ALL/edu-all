@@ -43,7 +43,7 @@
                         <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                             class="block p-2 bg-[#f4f3f3] hover:bg-[#dfdfdf] rounded transition-all duration-300">
                             <div class="flex flex-col gap-1">
-                                <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                <img width="95px" height="95px" data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                     alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                     class="h-[95px] object-cover object-center">
                                 <h2
