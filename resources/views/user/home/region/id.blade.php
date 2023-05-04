@@ -31,7 +31,7 @@
                                         class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
                                         {!! $banner->banner_description !!}
                                     </h2>
-                                    <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title == "" ? 'md:mt-[23vh] mt-[25vh]' : 'mt-0' }}">
+                                    <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title == "" ? 'md:mt-[21vh] mt-[25vh]' : 'mt-0' }}">
                                         <span
                                             class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize"
                                             style="background-color: {{ $banner->banner_button_color }}">
