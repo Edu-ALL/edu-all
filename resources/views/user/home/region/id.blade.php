@@ -188,7 +188,7 @@
                                                         </div>
                                                     </div>
                                                     <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}" loading="lazy"
+                                                        alt="{{ $mentor->mentor_alt }}" title="{{$mentor->mentor_fullname}}"
                                                         class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
