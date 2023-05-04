@@ -23,7 +23,7 @@
                             <div
                                 class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ !$banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
                                 <div
-                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-[220px] font-primary lg:items-start">
+                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-[215px] font-primary lg:items-start">
                                     <h1
                                         class="font-primary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
                                         {{ $banner->banner_title }}</h1>
