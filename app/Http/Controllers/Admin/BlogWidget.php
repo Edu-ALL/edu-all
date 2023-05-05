@@ -18,7 +18,7 @@ class BlogWidget extends Controller
             'title' => 'required',
             'description' => 'required',
             'position' => 'required',
-            'link' => 'required|url',
+            'link' => 'required|url'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -34,6 +34,7 @@ class BlogWidget extends Controller
             $blog_widget->description = $request->description;
             $blog_widget->position = $request->position;
             $blog_widget->link = $request->link;
+            $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
         } catch (Exception $e) {
@@ -68,6 +69,7 @@ class BlogWidget extends Controller
             $blog_widget->description = $request->description;
             $blog_widget->position = $request->position;
             $blog_widget->link = $request->link;
+            $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
         } catch (Exception $e) {

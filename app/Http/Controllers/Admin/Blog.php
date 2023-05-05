@@ -241,9 +241,10 @@ class Blog extends Controller
                 $title = "'".$d->title."'";
                 $desc = "'".$d->description."'";
                 $link = "'".$d->link."'";
+                $button = "'".$d->button_name."'";
                 $result = '
                     <div class="d-flex flex-row gap-1">
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="formUpdate('.$d->blog_id.', '.$d->id.', '.$title.', '.$desc.', '.$link.', '.$d->position.')">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="viewWidget('.$d->blog_id.', '.$d->id.', '.$title.', '.$desc.', '.$link.', '.$d->position.', '.$button.')">
                             <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog widget"></i>
                         </button>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->blog_id.', '.$d->id.')" >

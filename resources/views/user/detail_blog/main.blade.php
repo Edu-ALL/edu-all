@@ -35,6 +35,7 @@
         </div>
     </div>
 
+
     <section class="pt-16">
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
@@ -65,7 +66,7 @@
                         <div class="flex items-center gap-1">
                             <i class="fa fa-calendar-o mr-1 text-primary" aria-hidden="true"></i>
                             <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
-                                {{ strftime('%B %d, %Y', strtotime($blog->publish_date )) }}
+                                {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                             </span>
                         </div>
                     </div>
@@ -109,6 +110,33 @@
                 </div>
             </nav>
             <div class="blog_style w-full flex flex-col md:w-4/5">
+
+                {{-- <div class="flex p-4 border-t-4 border-[#233469] bg-gray-50 dark:bg-gray-800 dark:border-gray-600 shadow my-5 items-center"
+                    role="alert">
+                    <svg class="flex-shrink-0 w-5 h-5 text-gray-800 dark:text-gray-300" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="ml-3">
+                        <div class="text-md font-bold text-gray-800 dark:text-gray-300">
+                            A simple dark alert with an
+                        </div>
+                        <div class="text-sm font-medium text-gray-800 dark:text-gray-300">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium quidem magnam dignissimos
+                            facere vel! Amet quo quidem, nulla soluta, a explicabo rerum voluptatum quasi fuga eaque,
+                            aspernatur nam commodi. Suscipit.
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="no-underline text-sm py-2 px-3 bg-gray-500 w-1/5 rounded-md text-white cursor-pointer text-center hover:bg-slate-300 font-medium ml-5"
+                        style="text-decoration:none">
+                        Read More
+                    </a>
+                </div> --}}
+
+
                 {!! $blog->blog_description !!}
             </div>
 
@@ -232,19 +260,24 @@
             for (let index = 1; index <= paragraph.length; index++) {
                 data.forEach(element => {
                     if (index == element.position) {
+                        let button = element.button_name ? element.button_name : 'Read More'
                         paragraph.eq(element.position - 1).append(
-                            '<div class="px-5 py-5 border rounded-lg shadow-lg bg-zinc-100 mt-3">' +
-                            '<h3 class="text-primary tracking-wide">' + element.title + '</h3>' +
-                            '<hr class="py-1">' +
-                            '<div class="widget-desc">' +
+                            '<div class="flex p-4 border-t-4 border-[#233469] bg-gray-50 shadow mt-5 items-center" role="alert">' +
+                            ' <svg class="flex-shrink-0 w-7 h-7 mr-3 text-gray-800 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">' +
+                            '<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>' +
+                            '</svg>' +
+                            '<div class="ml-3 w-full">' +
+                            '<div class="text-md font-bold text-gray-800 dark:text-gray-300">' +
+                            element.title +
+                            '</div>' +
+                            '<div class="text-sm font-medium text-gray-800 dark:text-gray-300">' +
                             element.description +
                             '</div>' +
-                            '<div class="flex justify-end">' +
-                            '<a href="' + element.link +
-                            '" class="bg-primary hover:bg-yellow hover:no-underline px-4 py-2 rounded-lg text-white text-sm" target="_blank">' +
-                            'Read More <i class="fas fa-arrow-right ml-2"></i>' +
-                            '</a>' +
                             '</div>' +
+                            '<a href="' + element.link +
+                            '" class="no-underline text-sm py-2 px-3 bg-gray-500 w-1/5 rounded-md text-white cursor-pointer  text-center hover:bg-slate-300 font-medium ml-5" style="text-decoration:none">' +
+                            button +
+                            '</a>' +
                             '</div>'
                         )
                     }

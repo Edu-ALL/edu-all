@@ -18,6 +18,7 @@ class BlogWidgets extends Model
         'title',
         'description',
         'link',
+        'button_name',
         'created_at',
         'updated_at'
     ];

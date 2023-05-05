@@ -97,7 +97,7 @@ class BlogPageController extends Controller
             ->where('blog_status', 'publish')
             ->take(3)->get();
 
-        $blog_widgets =  BlogWidgets::all()->where('blog_id', $blog->id);
+        $blog_widgets =  BlogWidgets::where('blog_id', $blog->id)->get();
 
 
         // return $blog->blog_description;
