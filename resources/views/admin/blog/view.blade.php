@@ -77,7 +77,7 @@
                                             </a>
                                         </div>
                                         <div class="p-0" style="max-width: fit-content">
-                                            <a type="button" class="btn btn-primary d-inline" href="/admin/blogs">
+                                            <a type="button" class="btn btn-primary d-inline" href="{{url('/admin/blogs')}}">
                                                 <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span
                                                     class="d-md-inline d-none"> Back to List</span>
                                             </a>

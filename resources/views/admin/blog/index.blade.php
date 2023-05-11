@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <div class="d-flex flex-row align-items-center justify-content-between">
                                     <h5 class="card-title">List Blogs <span>| {{ now()->year }}</span></h5>
-                                    <a type="button" class="btn btn-primary" href="/admin/blogs/create">
+                                    <a type="button" class="btn btn-primary" href="{{url('/admin/blogs/create')}}">
                                         <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">
                                             Create new</span>
                                     </a>
