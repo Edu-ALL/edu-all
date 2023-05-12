@@ -34,6 +34,7 @@ class BlogWidget extends Controller
             $blog_widget->description = $request->description;
             $blog_widget->position = $request->position;
             $blog_widget->link = $request->link;
+            $blog_widget->image = $request->image;
             $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
@@ -69,6 +70,7 @@ class BlogWidget extends Controller
             $blog_widget->description = $request->description;
             $blog_widget->position = $request->position;
             $blog_widget->link = $request->link;
+            $blog_widget->image = $request->image;
             $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();

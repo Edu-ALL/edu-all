@@ -242,9 +242,10 @@ class Blog extends Controller
                 $desc = "'".$d->description."'";
                 $link = "'".$d->link."'";
                 $button = "'".$d->button_name."'";
+                $image = "'".$d->image."'";
                 $result = '
                     <div class="d-flex flex-row gap-1">
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="viewWidget('.$d->blog_id.', '.$d->id.', '.$title.', '.$desc.', '.$link.', '.$d->position.', '.$button.')">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="viewWidget('.$d->blog_id.', '.$d->id.', '.$title.', '.$desc.', '.$link.', '.$d->position.', '.$button.','.$image.')">
                             <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog widget"></i>
                         </button>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->blog_id.', '.$d->id.')" >
@@ -270,8 +271,10 @@ class Blog extends Controller
 
     public function view($id){
         $blog = Blogs::find($id);
+        $blogs = Blogs::orderBy('blog_title', 'asc')->where('lang',$blog->lang)->get();
         return view('admin.blog.view', [
             'blog' => $blog,
+            'blogs' => $blogs,
         ]);
     }
 

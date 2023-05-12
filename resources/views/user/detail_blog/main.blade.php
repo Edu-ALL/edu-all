@@ -15,7 +15,7 @@
 
 @section('content')
     <div id="blog_title_header"
-        class="mt-32 py-4 sticky flex flex-col items-center justify-center main-container transition-all md:flex-row md:justify-between">
+        class="md:mt-28 mt-10 py-4 sticky flex flex-col items-center justify-center main-container transition-all md:flex-row md:justify-between">
         <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-4xl">
             {{ $blog->blog_title }}
         </h1>
@@ -36,10 +36,10 @@
     </div>
 
 
-    <section class="pt-16">
+    <section class="md:pt-1 pt-0">
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
-                <div class="flex flex-col justify-between items-center gap-4 md:flex-row">
+                <div class="flex flex-col justify-between items-center md:gap-4 gap-2 md:flex-row">
                     <div class="flex items-center justify-around gap-2">
                         @if ($blog->mentor)
                             <div class="flex items-center gap-1">
@@ -261,23 +261,29 @@
                 data.forEach(element => {
                     if (index == element.position) {
                         let button = element.button_name ? element.button_name : 'Read More'
+                        let image = element.image ? '{{ asset('') }}' + element.image : ''
+                        let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'
                         paragraph.eq(element.position - 1).append(
-                            '<div class="flex p-4 border-t-4 border-[#233469] bg-gray-50 shadow mt-5 items-center" role="alert">' +
-                            ' <svg class="flex-shrink-0 w-7 h-7 mr-3 text-gray-800 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">' +
-                            '<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>' +
-                            '</svg>' +
-                            '<div class="ml-3 w-full">' +
-                            '<div class="text-md font-bold text-gray-800 dark:text-gray-300">' +
+                            '<div class="p-4 bg-white mt-5 items-center rounded-2xl drop-shadow-xl border border-2 border-gray-100" role="alert">' +
+                            '<div class="flex md:flex-row flex-col items-stretch gap-3">' +
+                            '<div class="' + image_class + '">' +
+                            '<img src="' + image +
+                            '" class="w-full h-full object-cover object-center rounded-md">' +
+                            '</div>' +
+                            '<div class="flex-auto">' +
+                            '<div class="text-md font-bold text-primary text-lg">' +
                             element.title +
                             '</div>' +
-                            '<div class="text-sm font-medium text-gray-800 dark:text-gray-300">' +
+                            '<div class="text-sm text-gray-200 dark:text-gray-300 mt-2 -mb-3">' +
                             element.description +
                             '</div>' +
-                            '</div>' +
+                            '<div class="flex justify-end">' +
                             '<a href="' + element.link +
-                            '" class="no-underline text-sm py-2 px-3 bg-gray-500 w-1/5 rounded-md text-white cursor-pointer  text-center hover:bg-slate-300 font-medium ml-5" style="text-decoration:none">' +
+                            '" target="_blank" type="button" class="text-sm bg-yellow py-2 px-3 rounded-md text-white cursor-pointer font-medium" style="text-decoration:none">' +
                             button +
                             '</a>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>'
                         )
                     }

@@ -87,6 +87,7 @@
     <script src="{{ url('js/instafeed.js') }}"></script>
     {{-- Social Share  --}}
     <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script>
+    @vite('resources/js/app.js')
 
 
     <!-- Google Analytics snippet added by Site Kit -->

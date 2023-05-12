@@ -64,7 +64,8 @@
                                     <div class="col d-flex flex-row gap-2" style="max-width: fit-content">
                                         <div class="p-0" style="max-width: fit-content">
                                             <a type="button" class="btn btn-success d-inline"
-                                                href="{{ url('id-' . $blog->lang . '/blog/' . $blog->slug) }}" target="_blank">
+                                                href="{{ url('id-' . $blog->lang . '/blog/' . $blog->slug) }}"
+                                                target="_blank">
                                                 <i class="fa-solid fa-magnifying-glass me-md-1 me-0"></i><span
                                                     class="d-md-inline d-none"> Preview Blogs</span>
                                             </a>
@@ -77,7 +78,8 @@
                                             </a>
                                         </div>
                                         <div class="p-0" style="max-width: fit-content">
-                                            <a type="button" class="btn btn-primary d-inline" href="{{url('/admin/blogs')}}">
+                                            <a type="button" class="btn btn-primary d-inline"
+                                                href="{{ url('/admin/blogs') }}">
                                                 <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span
                                                     class="d-md-inline d-none"> Back to List</span>
                                             </a>
@@ -327,7 +329,35 @@
                     <form action="" method="POST" id="form_widget">
                         @csrf
                         <h5 class="card-title">Form Blog Widget</h5>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="switchArticle"
+                                        onchange="isArticle()">
+                                    <label class="form-label" for="switchArticle">
+                                        From Article?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col d-flex flex-column gap-md-2 gap-2">
+                            <div class="col" id="article" hidden>
+                                <input type="hidden" name="image" id="image">
+                                <label for="" class="form-label">
+                                    Article
+                                </label>
+                                <div class="col">
+                                    <select class="select" name="category" id="select_article"
+                                        onchange="selectArticle()">
+                                        <option value=""></option>
+                                        @foreach ($blogs as $b)
+                                            <option value="{{ $b->id }}" data-blog="{{ $b }}">
+                                                {{ $b->blog_title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col">
                                 <label for="" class="form-label">
                                     Title <span style="color: var(--red)">*</span>
@@ -389,7 +419,8 @@
                                             Button Name <span style="color: var(--red)">*</span>
                                         </label>
                                         <div class="col select-position">
-                                            <input type="text" name="button_name" id="button_name" class="form-control">
+                                            <input type="text" name="button_name" id="button_name"
+                                                class="form-control">
                                         </div>
                                         @error('button_name')
                                             <small class="alert text-danger d-block p-0 m-0 fs-12">{{ $message }}</small>
@@ -438,6 +469,14 @@
 
 @section('js')
     <script>
+        $(document).ready(function() {
+            $('#select_article').select2({
+                dropdownParent: $("#widget"),
+                placeholder: "Select an article",
+                allowClear: true
+            });
+        });
+
         // List Blog Widget
         $(function() {
             var blog_id = '<?php echo $blog->id; ?>';
@@ -503,15 +542,22 @@
 
         function formCreate(id) {
             $("#title-info").text("Add new Blog Widget");
-            $('#title').attr('value', '');
+            $('#image').val('');
+            $('#title').val('');
             tinymce.get("description").setContent('');
-            $('#link').attr('value', '');
+            $('#link').val('');
             $('#position').val('').change();
             $('#button_name').val('')
             $('#form_widget').attr('action', '{{ url('/admin/blogs/widget/') }}' + '/' + id);
         };
 
-        function viewWidget(blog_id, id, title, desc, link, position, button) {
+        function viewWidget(blog_id, id, title, desc, link, position, button, image) {
+            if (image) {
+                $('#switchArticle').prop('checked', true)
+                $('#image').val(image);
+                isArticle();
+            }
+
             $("#title-info").text("Update Blog Widget");
             $('#title').attr('value', title);
             tinymce.get("description").setContent(desc);
@@ -530,5 +576,32 @@
             const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(
                 tooltipTriggerEl))
         });
+
+
+        function isArticle() {
+            const is_article = $('#switchArticle').is(':checked')
+
+            if (is_article) {
+                $('#article').prop('hidden', false);
+            } else {
+                $('#image').val('')
+                $('#article').prop('hidden', true);
+            }
+        }
+
+
+        function selectArticle() {
+            const id = $('#select_article').val()
+            const blog = $('#select_article').find(':selected').data('blog')
+            const localization = blog.lang == "id" ? "id-id" : "id-en"
+
+            $('#image').val('uploaded_files/blogs/' + moment(blog.created_at).format('YYYY') + '/' + moment(blog.created_at)
+                .format('MM') + '/' + blog
+                .blog_thumbnail);
+            $('#title').val(blog.blog_title);
+            tinymce.get("description").setContent(blog.seo_desc);
+            $('#link').val('{{ url('') }}' + '/' + localization + '/blog/' + blog.slug);
+            $('#button_name').val('Read More');
+        }
     </script>
 @endsection
