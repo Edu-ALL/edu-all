@@ -42,10 +42,6 @@
                                     id="form-create">
                                     @csrf
                                     <div class="col py-3">
-                                        @if (session()->has('errors'))
-                                            <?php session()->forget('errors'); ?>
-                                        @endif
-
                                         @if ($errors->any())
                                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                                 <strong>Failed Create Blogs!</strong> You have to check some fields.
