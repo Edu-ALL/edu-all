@@ -4,5 +4,5 @@ import './bootstrap';
 // window.Alpine = Alpine;
 // Alpine.start();
 
-import moment from 'moment'
+// import moment from 'moment'
 // console.log(moment().format());
