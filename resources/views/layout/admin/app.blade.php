@@ -106,7 +106,6 @@
         <script>
             notif('error', '{{ Session::get('errors')->first() }}')
         </script>
-        {{ Session::forget('errors') }}
     @endif
 
     @yield('js')
