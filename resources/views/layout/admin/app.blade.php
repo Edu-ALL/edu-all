@@ -56,24 +56,6 @@
 <body>
     {{-- Input Content --}}
     @yield('content')
-    @if (Session::has('success'))
-        <script>
-            swal.fire({
-                title: "Congratulations!",
-                text: "{{ Session::get('success') }}",
-                icon: "success",
-            });
-        </script>
-    @endif
-    @if (Session::has('errors'))
-        <script>
-            swal.fire({
-                title: "Something Went Wrong!",
-                text: "{{ Session::get('errors')->first() }}",
-                icon: "error",
-            });
-        </script>
-    @endif
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/admin/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -115,6 +97,17 @@
             })
         }
     </script>
+    @if (Session::has('success'))
+        <script>
+            notif('success', '{{ Session::get('success') }}')
+        </script>
+    @endif
+    @if (Session::has('errors'))
+        <script>
+            notif('error', '{{ Session::get('errors')->first() }}')
+        </script>
+        {{ Session::forget('errors') }}
+    @endif
 
     @yield('js')
 </body>
