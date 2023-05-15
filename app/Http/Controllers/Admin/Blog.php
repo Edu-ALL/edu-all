@@ -171,7 +171,7 @@ class Blog extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withInput()->withErrors($validator->messages());
+            redirect('/admin/blogs/create')->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -214,7 +214,7 @@ class Blog extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            return Redirect::back()->withErrors($e->getMessage());
+            return redirect('/admin/blogs/create')->withErrors($e->getMessage());
         }
 
         return redirect('/admin/blogs/'.$blogs->id.'/view')->withSuccess('Blogs Was Successfully Created');
