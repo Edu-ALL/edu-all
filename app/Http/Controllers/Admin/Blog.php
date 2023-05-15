@@ -139,7 +139,6 @@ class Blog extends Controller
     }
 
     public function create(){
-        session()->forget('errors');
         $category_en = BlogCategorys::where('lang', 'en')->get();
         $category_id = BlogCategorys::where('lang', 'id')->get();
         $mentor_en = Mentors::where('lang', 'en')->get();
