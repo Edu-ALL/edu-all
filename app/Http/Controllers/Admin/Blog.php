@@ -176,7 +176,7 @@ class Blog extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return redirect('/admin/blogs/create')->withInput()->withErrors($validator->messages());
+            return redirect('/admin/blogs/create')->withInput();
         }
 
         DB::beginTransaction();
