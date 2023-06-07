@@ -141,10 +141,6 @@
                                     <a href="{{ url(app()->getLocale()) }}/about/partnership-careers"
                                         class="child_child_nav_link">{{ __('pages/navbar.partnership') }}</a>
                                 </li>
-                                <li class="child_nav group border-b-0">
-                                    <a href="{{ route('contact_us', app()->getLocale()) }}"
-                                        class="child_child_nav_link">{{ __('pages/navbar.contact_us') }}</a>
-                                </li>
                             </ul>
                         </li>
 
@@ -193,35 +189,9 @@
                         </li>
 
                         <li
-                            class="nav_item flex-[0_0_auto] text-left border-t border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <div class="flex justify-between items-center">
-                                <div
-                                    class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
-                                    {{ __('pages/navbar.contact_us') }}
-                                </div>
-                                <button title="submenu" type="button"
-                                    class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
-                                    <i id='open-nav-child-btn'
-                                        class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
-                                </button>
-                            </div>
-
-                            <ul id="content-nav-child"
-                                class="nav_item_child  hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0">
-                                <li class="child_nav group">
-                                    <a href="https://api.whatsapp.com/send?phone=6281808081363&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                                        target="_blank" class="child_child_nav_link flex items-center">
-                                        <span class="whitespace-nowrap">+62 818-0808-1363</span>
-                                    </a>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="https://api.whatsapp.com/send?phone=6287860811413&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                                        target="_blank"
-                                        class="child_child_nav_link flex items-center hover:text-[#819CCB]">
-                                        <span class="whitespace-nowrap">+62 878-6081-1413</span>
-                                    </a>
-                                </li>
-                            </ul>
+                            class="flex-[0_0_auto] pl-4 text-left border-t border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
+                            <a href="{{ route('contact_us', app()->getLocale()) }}"
+                                class="block my-1.5 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center lg:pl-4">{{ __('pages/navbar.contact_us') }}</a>
                         </li>
 
                         <li
@@ -465,32 +435,14 @@
                         </li>
                     </ul>
                 </div>
+                
                 <div
                     class="hidden sm:flex justify-between items-center min-w-fit mt-1 gap-4 font-primary font-medium text-base sm:mt-0 lg:text-base">
                     <div class="relative flex items-center group">
-                        <div
-                            class="flex items-center font-primary font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
-                            {{ __('pages/navbar.contact_us') }} <i class="fa-solid fa-caret-down ml-1"></i>
-                        </div>
-                        <div
-                            class="text-primary absolute top-full right-0 invisible translate-x-[1px] translate-y-8 transition-all duration-100 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                            <div class="mt-6 flex flex-col py-4  items-start font-bold bg-white shadow-xl">
-                                <div class="flex items-center gap-3 px-4">
-                                    <a href="https://api.whatsapp.com/send?phone=6281808081363&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                                        target="_blank" class="flex items-center hover:text-[#819CCB]">
-                                        <span class="whitespace-nowrap"><i class="fa-brands fa-whatsapp mr-1"></i> +62 818-0808-1363</span>
-                                    </a>
-                                </div>
-                                <span class="block w-full h-px my-4 bg-primary"></span>
-                                <div class="flex items-center gap-3 px-4">
-                                    <a href="https://api.whatsapp.com/send?phone=6287860811413&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                                        target="_blank" class="flex items-center hover:text-[#819CCB]">
-                                        <span class="whitespace-nowrap"><i class="fa-brands fa-whatsapp mr-1"></i>  +62 878-6081-1413</span>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
+                        <a href="{{ route('contact_us', app()->getLocale()) }}"
+                            class="flex items-center font-primary font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base mr-2">
+                            {{ __('pages/navbar.contact_us') }}</i>
+                        </a>
                     </div>
                     <div class="relative flex items-center group">
                         <div
