@@ -41,19 +41,23 @@
             <div class="flex flex-col gap-y-8">
                 <div class="flex flex-col justify-between items-center md:gap-4 gap-2 md:flex-row">
                     <div class="flex items-center justify-around gap-2">
-                        @if ($blog->mentor)
-                            <div class="flex items-center gap-1">
-                                <div
-                                    class="w-6 h-6 text-center pt-1 text-white rounded-full object-cover object-top bg-gray-400">
-                                    <i class="fa fa-user"></i>
+                        <div class="flex items-center gap-1">
+                            @if ($blog->mentor)
+                                <div class="w-8 h-8 text-center text-white rounded-full overflow-hidden">
+                                    <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                        alt="" class="w-full object-cover">
                                 </div>
                                 {{-- change author name with mentor name --}}
-                                <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
-                                    {{ $blog->mentor->mentor_fullname }}
-                                </span>
+                                <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
+                                    target="_blank">
+                                    <span
+                                        class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3 hover:text-yellow">
+                                        {{ $blog->mentor->mentor_fullname }}
+                                    </span>
+                                </a>
                                 <div class="hidden w-px h-4 bg-primary md:block"></div>
-                            </div>
-                        @endif
+                            @endif
+                        </div>
                         @if (!empty($blog->duration_read))
                             <div class="flex items-center gap-2">
                                 <i class="fa fa-book mr-1  text-primary" aria-hidden="true"></i>

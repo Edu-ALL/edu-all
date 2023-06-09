@@ -61,6 +61,7 @@ class BlogPageController extends Controller
         $blog_categories = BlogCategorys::all()->where('lang', $lang);
 
         return view('user.blog.main', [
+            'locale' => $locale,
             'top_blogs' => $top_blogs,
             'blogs' => $blogs,
             'blog_categories' => $blog_categories,
@@ -76,8 +77,10 @@ class BlogPageController extends Controller
         // read ip address
         $ip_address = request()->ip();
 
+        
         // if ip address already registered then skip else register new ip address
         $ip_isregistered = BlogReads::where('blog_id', $blog->id)->where('ip_address',  $ip_address)->exists();
+  
         if (!$ip_isregistered) {
             BlogReads::create([
                 'blog_id' => $blog->id,
@@ -89,7 +92,7 @@ class BlogPageController extends Controller
                 'click_count' => $blog->click_count + 1,
             ]);
         }
-
+        
         // dd($blog);
         $recomendation_blogs = Blogs::latest()
             ->where('id', '!=', $blog->id)
@@ -116,6 +119,7 @@ class BlogPageController extends Controller
         $blog->blog_description = $doc->saveHTML();
 
         return view('user.detail_blog.main', [
+            'locale' => $locale,
             'blog' => $blog,
             "recomendation_blogs" => $recomendation_blogs,
             "blog_section_list" => $blog_section,

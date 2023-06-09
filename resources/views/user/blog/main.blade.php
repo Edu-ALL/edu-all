@@ -34,8 +34,7 @@
                         class="inline-flex justify-end w-full max-w-md">
                         <input type="search" name="search" placeholder="Search..." id="search"
                             class="rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary placeholder-transparent absolute w-[55px] transition-all duration-500">
-                        <button type="button"
-                            class="px-4 py-2 relative z-10 mt-[1px] transition-all duration-500"
+                        <button type="button" class="px-4 py-2 relative z-10 mt-[1px] transition-all duration-500"
                             onclick="getSearch()" id="search_button">
                             <i class="fa-solid fa-magnifying-glass fa-xl text-primary"></i>
                         </button>
@@ -69,6 +68,24 @@
                                                         {{ $blog->blog_category->category_name }}
                                                     </a>
                                                     <div class="flex items-center gap-2">
+                                                        @if ($blog->mentor)
+                                                            <div class="flex items-center gap-1">
+                                                                <div
+                                                                    class="w-8 h-8 text-center text-white rounded-full overflow-hidden">
+                                                                    <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                                                        alt="" class="w-full object-cover">
+                                                                </div>
+                                                                {{-- change author name with mentor name --}}
+                                                                <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
+                                                                    target="_blank">
+                                                                    <span
+                                                                        class="font-primary text-base text-[#7C7C7C] md:text-[15px] text-[11px] leading-3 hover:text-yellow">
+                                                                        {{ $blog->mentor->mentor_fullname }}
+                                                                    </span>
+                                                                </a>
+                                                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                                                            </div>
+                                                        @endif
                                                         <span class="font-primary text-sm text-[#7C7C7C]">
                                                             {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                                         </span>
@@ -77,10 +94,13 @@
                                                             {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
                                                         </span>
                                                     </div>
-                                                    <h2
-                                                        class="font-primary font-extrabold text-xl text-primary lg:text-3xl">
-                                                        {{ $blog->blog_title }}
-                                                    </h2>
+                                                    <a
+                                                        href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}">
+                                                        <h2
+                                                            class="font-primary font-extrabold text-xl text-primary hover:text-yellow lg:text-3xl">
+                                                            {{ $blog->blog_title }}
+                                                        </h2>
+                                                    </a>
                                                     <p class="font-primary font-medium text-base text-primary">
                                                         {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 300)) }}...
                                                     </p>
@@ -135,11 +155,23 @@
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                 alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                 class="h-72 object-cover object-center">
-                            <div class="flex justify-between">
-                                <span class="font-primary text-xs text-[#7C7C7C]">
-                                    {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
-                                </span>
+                            <div class="flex justify-between items-center">
+                                @if ($blog->mentor)
                                 <div class="flex items-center gap-2">
+                                        <div class="w-6 h-6 text-center text-white rounded-full overflow-hidden">
+                                            <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                                alt="" class="w-full object-cover">
+                                        </div>
+                                        <div class="text-primary">
+                                                {{ $blog->mentor->mentor_fullname }}
+                                        </div>
+                                    </div>
+                                    @endif
+                                <div class="flex items-center gap-2">
+                                    <span class="font-primary text-sm text-[#7C7C7C]">
+                                        {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
+                                    </span>
+                                    <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
                                     @if ($blog->duration_read)
                                         <span class="font-primary text-sm text-[#7C7C7C]">
                                             {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
