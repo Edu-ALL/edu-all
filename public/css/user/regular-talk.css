@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    src: url('/public/font/SF-Pro-Display-Regular.otf');
+}
+@font-face {
+    font-family: 'SF Pro Display Heavy';
+    src: url('/public/font/SF-Pro-Display-Heavy.otf');
+}
+:root {
+    scroll-behavior: smooth;
+    /* Add Color */
+    --white: #FFFFFF;
+    --black: #000000;
+    --blue: #27387A;
+    --orange: #E78724;
+    --light-orange: #e2913f;
+}
+
+* {
+    font-family: 'SF Pro Display Regular';
+}
+* a {
+    text-decoration: none;
+}
+.navbar a {
+    color: var(--blue);
+}
+.main {
+    min-height: 100vh;
+    max-width: 1920px;
+}
+.section-1 {
+    /* background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(197,214,238,0.7120973389355743) 100%); */
+    background-image: url('/public/assets/img/regular_talk/bg-img-color.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 56px;
+}
+.section-1 h3 {
+    color: var(--blue);
+    font-family: 'SF Pro Display Heavy';
+    font-size: 46px;
+}
+.section-1 h5 {
+    color: var(--blue);
+    font-size: 20px;
+    font-weight: 600;
+}
+.section-1 .icon {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 12px;
+    font-size: 28px;
+    border-radius: 50%;
+}
+.section-2 {
+    background: var(--blue);
+    color: var(--white);
+}
+.section-2 h3 {
+    color: var(--white);
+    font-family: 'SF Pro Display Heavy';
+    font-size: 32px;
+}
+.section-2 input {
+    color: var(--black);
+}
+.section-2 .btn {
+    background: var(--orange);
+    color: var(--white);
+    font-size: 18px;
+}
+.section-2 .btn:hover {
+    background: var(--light-orange);
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar img {
+        width: 70px;
+    }
+    .navbar a {
+        font-size: 12px;
+    }
+    .section-1 {
+        padding: 0 24px;
+    }
+    .section-1 h3 {
+        font-size: 26px;
+    }
+    .section-1 h5 {
+        font-size: 14px;
+    }
+    .section-1 .icon {
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 50%;
+    }
+    .section-2 h3 {
+        font-size: 24px;
+    }
+    .section-2 label,
+    .section-2 input,
+    .section-2 .btn {
+        font-size: 14px;
+    }
+}

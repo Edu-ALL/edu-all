@@ -241,3 +241,8 @@ Route::group(
         });
     },
 );
+
+// New Page Regular Talk
+Route::get('/regular-talk', function () {
+    return view('user.regular_talk.main');
+});

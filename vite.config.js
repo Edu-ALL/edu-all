@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'public/css/bootstrap.min.css',
                 'public/css/admin/app.css',
+                'public/css/user/regular-talk.css',
                 'public/js/bootstrap.bundle.min.js',
                 'public/js/admin/main.js',
             ],
