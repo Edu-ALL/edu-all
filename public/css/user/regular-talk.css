@@ -26,7 +26,7 @@
     color: var(--blue);
 }
 .main {
-    min-height: 100vh;
+    max-height: 100vh;
     max-width: 1920px;
 }
 .section-1 {
@@ -86,6 +86,23 @@
     }
     .section-2 h3 {
         font-size: 24px;
+    }
+
+    /**** Attributes Style Form Embed ****/
+    #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent .title-1 span {
+        font-size: 24px !important;
+    }
+    #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent .title-2 span {
+        font-size: 18px !important;
+    }
+    #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input.form-control {
+        font-size: 12px !important;
+    }
+    #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+        font-size: 15px !important;
+    }
+    #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary {
+        font-size: 15px !important;
     }
 }
 
@@ -234,7 +251,7 @@
 #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
     margin-bottom: 5px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     font-weight: bold; font-style: normal; text-decoration: none;;
     display: inline-block;
@@ -281,7 +298,7 @@
     border-style: solid !important;
     border-width: 1px !important;
     font-family: Verdana, Geneva, sans-serif;
-    font-size: 16px !important;
+    font-size: 14px !important;
     height: auto;
     line-height: 21px !important;
     margin-bottom: 0;
@@ -515,7 +532,7 @@
     color: #ffffff !important;
     cursor: pointer;
     font-family: Verdana, Geneva, sans-serif;
-    font-size: 19px !important;
+    font-size: 16px !important;
     font-weight: 700;
     line-height: 20px;
     margin: 0 !important;
@@ -585,7 +602,7 @@
     color: #ffffff !important;
     cursor: pointer;
     font-family: Verdana, Geneva, sans-serif !important;
-    font-size: 19px !important;
+    font-size: 16px !important;
     font-weight: 700 !important;
     line-height: 21px !important;
     height: auto;

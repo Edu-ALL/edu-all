@@ -47,7 +47,7 @@
                             <img src="{{ asset('assets/img/regular_talk/recommended.png') }}" alt="">
                         </div>
                     </div>
-                    <div class="flex flex-row items-end md:mt-3 mt-5 md:mb-6 mb-8">
+                    <div class="grid md:grid-cols-4 grid-cols-2 items-end md:mt-3 mt-5 md:mb-6 mb-8">
                         <div class="col p-0">
                             <img class="" src="{{ asset('assets/img/regular_talk/profile-1.png') }}" alt="">
                         </div>
@@ -62,8 +62,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-8">
-                    <div class="flex flex-col w-full md:px-4 px-8 mt-3 gap-2">
+                <div class="section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4">
+                    <div class="flex flex-col w-full md:px-4 px-4 my-3 gap-2">
                         <h3 class="text-center leading-tight mb-4">REGIST YOURSELF</h3>
                         <div>
                             <div
@@ -75,14 +75,12 @@
                                         <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
                                             <div class="ml-form-embedContent">
                                                 <h4></h4>
-                                                <p style="text-align: center">
-                                                    <span style="font-size: 30px">Save Your Seat!</span>
+                                                <p class="title-1" style="text-align: center">
+                                                    <span style="font-size: 28px">Save Your Seat!</span>
                                                 </p>
-                                                <p style="text-align: center">
-                                                    <span style="font-size: 24px"
-                                                        >Breaking Down the Journey to a Winning TOP
-                                                        University Application<br /></span
-                                                    ><br />
+                                                <p class="title-2" style="text-align: center">
+                                                    <span style="font-size: 20px">Breaking Down the Journey to a Winning TOP University Application</span>
+                                                    <br />
                                                 </p>
                                             </div>
 
