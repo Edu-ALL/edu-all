@@ -15,9 +15,11 @@
                     class="relative justify-self-end max-w-sm w-full mx-auto rounded-lg shadow-lg overflow-hidden md:mx-0 md:col-span-2 xl:row-span-2">
                     <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                         <h3 class="font-primary font-bold text-3xl text-white leading-7">
-                            {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
-                            <br>
-                            {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
+                            {!! strpos($mentor->mentor_fullname, ' ') == 0
+                                ? $mentor->mentor_fullname
+                                : substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) .
+                                    '<br>' .
+                                    substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) !!}
                         </h3>
                         <div class="mt-4 font-primary text-sm text-white leading-4">
                             {!! $mentor->mentor_graduation !!}

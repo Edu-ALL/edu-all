@@ -31,7 +31,8 @@
                                         class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
                                         {!! $banner->banner_description !!}
                                     </h2>
-                                    <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title == "" ? 'mt-[18vh]' : 'mt-0' }}">
+                                    <a href="{{ $banner->banner_link }}"
+                                        class="{{ $banner->banner_title == '' ? 'mt-[18vh]' : 'mt-0' }}">
                                         <span
                                             class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize"
                                             style="background-color: {{ $banner->banner_button_color }}">
@@ -85,7 +86,8 @@
             <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
                 @foreach (__('pages/home.about_list') as $item)
                     <div class="flex flex-col items-center p-4">
-                        <img width="90px" height="90px" data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
+                        <img width="90px" height="90px"
+                            data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
                             alt="Allineduspace About Us Icon" class="mb-4 w-[90px] h-[90px] object-contain">
                         <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
                     </div>
@@ -168,6 +170,12 @@
                         <div class="splide__track py-10">
                             <ul class="splide__list">
                                 @foreach ($all_mentor as $mentor)
+                                    <div class="text-white">
+                                        {!! strpos($mentor->mentor_fullname, ' ') == 0 ? 
+                                        $mentor->mentor_fullname : 
+                                        substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) . '<br>' . substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) 
+                                        !!}
+                                    </div>
                                     <li class="splide__slide">
                                         <div
                                             class="splide__slide__container px-4 w-full h-full min-h-[350px] flex items-center">
@@ -188,7 +196,8 @@
                                                         </div>
                                                     </div>
                                                     <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}" title="{{$mentor->mentor_fullname}}"
+                                                        alt="{{ $mentor->mentor_alt }}"
+                                                        title="{{ $mentor->mentor_fullname }}"
                                                         class="bg-cover bg-center h-auto">
                                                 </div>
                                                 <div
@@ -248,7 +257,8 @@
                                         <div
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
-                                                <img width="20px" height="20px" data-original="{{ asset('assets/logo/quote.png') }}"
+                                                <img width="20px" height="20px"
+                                                    data-original="{{ asset('assets/logo/quote.png') }}"
                                                     alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}

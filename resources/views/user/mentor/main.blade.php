@@ -33,8 +33,11 @@
                         <div class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
                             <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                 <h3 class="font-primary font-bold text-2xl text-white leading-5">
-                                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }} <br>
-                                    {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
+                                    {!! strpos($mentor->mentor_fullname, ' ') == 0
+                                        ? $mentor->mentor_fullname
+                                        : substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) .
+                                            '<br>' .
+                                            substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) !!}
                                 </h3>
                                 <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
                                     {!! $mentor->mentor_graduation !!}
