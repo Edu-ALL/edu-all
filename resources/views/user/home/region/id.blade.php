@@ -170,12 +170,6 @@
                         <div class="splide__track py-10">
                             <ul class="splide__list">
                                 @foreach ($all_mentor as $mentor)
-                                    <div class="text-white">
-                                        {!! strpos($mentor->mentor_fullname, ' ') == 0 ? 
-                                        $mentor->mentor_fullname : 
-                                        substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) . '<br>' . substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) 
-                                        !!}
-                                    </div>
                                     <li class="splide__slide">
                                         <div
                                             class="splide__slide__container px-4 w-full h-full min-h-[350px] flex items-center">
@@ -186,9 +180,11 @@
                                                         class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                         <h3
                                                             class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
-                                                            {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
-                                                            <br>
-                                                            {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
+                                                            {!! strpos($mentor->mentor_fullname, ' ') == 0
+                                                                ? $mentor->mentor_fullname
+                                                                : substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) .
+                                                                    '<br>' .
+                                                                    substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) !!}
                                                         </h3>
                                                         <div
                                                             class="mt-3 font-primary text-xs text-white leading-4 lg:leading-3">
