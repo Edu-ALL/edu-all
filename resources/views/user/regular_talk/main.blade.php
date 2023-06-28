@@ -15,8 +15,8 @@
     </head>
     <body>
         <div class="flex flex-row justify-center">
-            <div class="main grid md:grid-cols-3 grid-cols-1 p-0 m-0">
-                <div class="md:col-span-2 section-1">
+            <div class="main grid md:grid-cols-5 grid-cols-1 p-0 m-0">
+                <div class="md:col-span-3 section-1">
                     <nav class="navbar md:mb-3 mb-2">
                         <div class="flex flex-row items-end justify-start p-0 py-7 md:gap-8 gap-6">
                             <a class="navbar-brand">
@@ -62,9 +62,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4">
+                <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4">
                     <div class="flex flex-col w-full md:px-4 px-4 my-3 gap-2">
-                        <h3 class="text-center leading-tight mb-4">REGIST YOURSELF</h3>
+                        <h3 class="text-center leading-tight mb-2">REGIST YOURSELF</h3>
                         <div>
                             <div
                                 id="mlb2-5812118"
@@ -76,10 +76,10 @@
                                             <div class="ml-form-embedContent">
                                                 <h4></h4>
                                                 <p class="title-1" style="text-align: center">
-                                                    <span style="font-size: 28px">Save Your Seat!</span>
+                                                    <span style="font-size: 26px">Save Your Seat!</span>
                                                 </p>
                                                 <p class="title-2" style="text-align: center">
-                                                    <span style="font-size: 20px">Breaking Down the Journey to a Winning TOP University Application</span>
+                                                    <span style="font-size: 18px">Breaking Down the Journey to a Winning TOP University Application</span>
                                                     <br />
                                                 </p>
                                             </div>
