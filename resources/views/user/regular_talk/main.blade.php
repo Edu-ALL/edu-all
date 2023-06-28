@@ -25,29 +25,26 @@
                             <a class="leading-4" href="https://all-inedu.com/id-en/about" target="_blank">About us</a>
                         </div>
                     </nav>
-                    <h3 class="leading-tight">Breaking Down the Journey to a Winning TOP University Application</h3>
+                    <div class="relative">
+                        <img class="sticker absolute" loading="lazy" src="{{ asset('assets/img/regular_talk/merge-icon.png') }}" alt="">
+                        <h3>Breaking Down the <br> Journey to a Winning <br> TOP University Application</h3>
+                    </div>
                     <h5 class="leading-tight md:pr-8 md:mt-5 mt-4">
                         Discover the essential elements to maximize your chances of acceptance and unlock opportunities for a successful academic journey!
                     </h5>
                     <div class="flex flex-row mt-8">
-                        <div class="md:basis-2/5 basis-2/4 flex flex-col gap-2">
-                            <div class="flex items-center md:gap-5 gap-3">
+                        <div class="flex flex-row md:gap-6 gap-4">
+                            <div class="flex items-center md:gap-4 gap-2">
                                 <i class="icon fa-solid fa-calendar-days"></i>
                                 <h5 class="m-0">Saturday, 29 July 2023</h5>
                             </div>
-                            <div class="flex items-center md:gap-5 gap-3">
+                            <div class="flex items-center md:gap-4 gap-2">
                                 <i class="icon fa-regular fa-clock"></i>
                                 <h5 class="m-0">10 AM WIB</h5>
                             </div>
                         </div>
-                        <div class="md:basis-1/6 basis-1/4 flex flex-row items-center justify-center md:px-3 px-2">
-                            <img loading="lazy" src="{{ asset('assets/img/regular_talk/online-free.png') }}" alt="">
-                        </div>
-                        <div class="md:basis-1/6 basis-1/4 flex flex-row items-center justify-center md:px-3 px-2">
-                            <img loading="lazy" src="{{ asset('assets/img/regular_talk/recommended.png') }}" alt="">
-                        </div>
                     </div>
-                    <div class="grid md:grid-cols-4 grid-cols-2 items-end md:mt-3 mt-5 md:mb-6 mb-8">
+                    <div class="speaker grid md:grid-cols-4 grid-cols-2 items-end justify-start md:mt-3 mt-5 md:mb-6 mb-8">
                         <div class="col p-0">
                             <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-1.png') }}" alt="ALL-in Mentor">
                         </div>
@@ -63,7 +60,7 @@
                     </div>
                 </div>
                 <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4 h-[100vh] overflow-auto">
-                    <div class="flex flex-col w-full md:px-4 px-4 my-3 gap-2">
+                    <div class="flex flex-col w-full md:px-10 px-4 my-3 gap-2">
                         <h3 class="text-center leading-tight mb-2">REGIST YOURSELF</h3>
                         <div>
                             <div
