@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4">
+                <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4 h-[100vh]">
                     <div class="flex flex-col w-full md:px-4 px-4 my-3 gap-2">
                         <h3 class="text-center leading-tight mb-2">REGIST YOURSELF</h3>
                         <div>

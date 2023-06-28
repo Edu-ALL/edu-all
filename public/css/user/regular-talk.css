@@ -65,7 +65,7 @@
 .section-2 h3 {
     color: var(--white);
     font-family: 'SF Pro Display Heavy';
-    font-size: 26px;
+    font-size: 24px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -255,11 +255,11 @@
 #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
     margin-bottom: 5px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     font-weight: bold; font-style: normal; text-decoration: none;;
     display: inline-block;
-    line-height: 24px;
+    line-height: 20px;
 }
 #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p:last-child,
 #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p:last-child {
@@ -302,14 +302,14 @@
     border-style: solid !important;
     border-width: 1px !important;
     font-family: Verdana, Geneva, sans-serif;
-    font-size: 14px !important;
+    font-size: 13px !important;
     height: auto;
     line-height: 21px !important;
     margin-bottom: 0;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
-    padding: 8px 10px !important;
+    padding: 6px 10px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     max-width: 100% !important;
@@ -599,18 +599,18 @@
     width: 100%;
 }
 #mlb2-5812118.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-    background-color: #BE1E2D !important;
+    background-color: #ECA149 !important;
     border: none !important;
-    border-radius: 4px !important;
+    border-radius: 8px !important;
     box-shadow: none !important;
     color: #ffffff !important;
     cursor: pointer;
     font-family: Verdana, Geneva, sans-serif !important;
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
     line-height: 21px !important;
     height: auto;
-    padding: 10px !important;
+    padding: 5px !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
