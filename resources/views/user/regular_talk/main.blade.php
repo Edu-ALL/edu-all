@@ -20,9 +20,9 @@
                     <nav class="navbar md:mb-3 mb-2">
                         <div class="flex flex-row items-end justify-start p-0 py-7 md:gap-8 gap-6">
                             <a class="navbar-brand">
-                                <img src="{{ asset('assets/logo/allin-big.png') }}" alt="ALL-In" width="100">
+                                <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="ALL-In" width="100">
                             </a>
-                            <a class="leading-4">About us</a>
+                            <a class="leading-4" href="https://all-inedu.com/id-en/about" target="_blank">About us</a>
                         </div>
                     </nav>
                     <h3 class="leading-tight">Breaking Down the Journey to a Winning TOP University Application</h3>
@@ -41,28 +41,28 @@
                             </div>
                         </div>
                         <div class="md:basis-1/6 basis-1/4 flex flex-row items-center justify-center md:px-3 px-2">
-                            <img src="{{ asset('assets/img/regular_talk/online-free.png') }}" alt="">
+                            <img loading="lazy" src="{{ asset('assets/img/regular_talk/online-free.png') }}" alt="">
                         </div>
                         <div class="md:basis-1/6 basis-1/4 flex flex-row items-center justify-center md:px-3 px-2">
-                            <img src="{{ asset('assets/img/regular_talk/recommended.png') }}" alt="">
+                            <img loading="lazy" src="{{ asset('assets/img/regular_talk/recommended.png') }}" alt="">
                         </div>
                     </div>
                     <div class="grid md:grid-cols-4 grid-cols-2 items-end md:mt-3 mt-5 md:mb-6 mb-8">
                         <div class="col p-0">
-                            <img class="" src="{{ asset('assets/img/regular_talk/profile-1.png') }}" alt="">
+                            <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-1.png') }}" alt="ALL-in Mentor">
                         </div>
                         <div class="col p-0">
-                            <img class="" src="{{ asset('assets/img/regular_talk/profile-2.png') }}" alt="">
+                            <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-2.png') }}" alt="ALL-in Mentor">
                         </div>
                         <div class="col p-0">
-                            <img class="" src="{{ asset('assets/img/regular_talk/profile-3.png') }}" alt="">
+                            <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-3.png') }}" alt="ALL-in Mentor">
                         </div>
                         <div class="col p-0">
-                            <img class="" src="{{ asset('assets/img/regular_talk/profile-4.png') }}" alt="">
+                            <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-4.png') }}" alt="ALL-in Mentor">
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4">
+                <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4 h-[100vh] overflow-auto">
                     <div class="flex flex-col w-full md:px-4 px-4 my-3 gap-2">
                         <h3 class="text-center leading-tight mb-2">REGIST YOURSELF</h3>
                         <div>
