@@ -17,8 +17,8 @@
 
 <body>
     <div class="flex flex-row justify-center">
-        <div class="main grid md:grid-cols-5 grid-cols-1 p-0 m-0">
-            <div class="md:col-span-3 section-1">
+        <div class="main grid md:grid-cols-5 grid-cols-1 p-0 m-0 md:h-[100vh] h-auto">
+            <div class="md:col-span-3 section-1 h-full">
                 <nav class="navbar md:mb-3 mb-2">
                     <div class="flex flex-row items-end justify-start p-0 py-7 md:gap-8 gap-6">
                         <a class="navbar-brand">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4s">
+            <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4 h-full">
                 <div class="flex flex-col w-full md:px-10 px-4 my-3 gap-2">
                     <h3 class="text-center leading-tight mb-2">REGIST YOURSELF</h3>
                     <div>
