@@ -22,7 +22,7 @@
                             <a class="navbar-brand">
                                 <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="ALL-In" width="100">
                             </a>
-                            <a class="leading-4">About us</a>
+                            <a class="leading-4" href="https://all-inedu.com/id-en/about" target="_blank">About us</a>
                         </div>
                     </nav>
                     <h3 class="leading-tight">Breaking Down the Journey to a Winning TOP University Application</h3>
