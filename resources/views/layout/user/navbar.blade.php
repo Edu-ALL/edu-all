@@ -187,7 +187,8 @@
                                 </li>
                                 <li class="child_nav group">
                                     <a href="{{url('')}}/regular-talk" target="_blank"
-                                        class="child_child_nav_link">{{ __('pages/navbar.webinar') }}</a>
+                                        class="child_child_nav_link">{{ __('pages/navbar.webinar') }}
+                                    </a>
                                 </li>
                             </ul>
                         </li>
