@@ -39,6 +39,7 @@ Route::get('logout', [Authentication::class, 'logout'])->name('logout');
 /*--------------------------------------------------------------
 # Admin
 --------------------------------------------------------------*/
+Route::middleware('auth.expires')->group(function(){
 Route::middleware('is_admin')->group(function(){
     Route::get('/dashboard', [Dashboard::class, 'index']);
 
@@ -176,6 +177,7 @@ Route::middleware('is_admin')->group(function(){
         Artisan::call('optimize:clear'); # cache using reoptimized class
         return redirect()->back()->withSuccess('Successfully Clear Cache');
     });
+});
 });
 
 
