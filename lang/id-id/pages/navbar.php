@@ -32,6 +32,7 @@ return [
     'testimonial' => "Testimonial",
     'student_acceptances' => "Student Acceptances",
     'showcase' => "Mentee Project Showcase",
+    'webinar' => "Webinars & Workshops",
 
     // contact us
     'contact_us' => "Kontak Kami",
