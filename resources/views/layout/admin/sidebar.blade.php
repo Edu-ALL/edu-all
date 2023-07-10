@@ -67,6 +67,12 @@
                 <span>Project Showcase</span>
             </a>
         </li>
+        {{-- <li class="nav-item">
+            <a class="nav-link collapsed {{ request()->is('admin/regular-talk*') ? 'active' : '' }}" href="/admin/regular-talk">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Regular Talk</span>
+            </a>
+        </li> --}}
         <li class="nav-heading">System</li>
         {{-- <li class="nav-item">
             <a class="nav-link collapsed" href="">

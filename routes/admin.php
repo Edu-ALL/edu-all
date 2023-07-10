@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\MentorVideo;
 use App\Http\Controllers\Admin\ProjectShowcase;
+use App\Http\Controllers\admin\RegularTalk;
 use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
@@ -167,6 +168,17 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/project-showcase/deactivate/{id}', [ProjectShowcase::class, 'deactivate']);
     Route::post('/project-showcase/activate/{id}', [ProjectShowcase::class, 'activate']);
     Route::post('/project-showcase/delete/{id}', [ProjectShowcase::class, 'delete']);
+
+    // Regular Talk 
+    Route::get('/regular-talk', [RegularTalk::class, 'index']);
+    Route::get('/regular-talk/data', [RegularTalk::class, 'getRegularTalk'])->name('data-regular-talk');
+    Route::get('/regular-talk/create', [RegularTalk::class, 'create']);
+    Route::post('/regular-talk', [RegularTalk::class, 'store'])->name('create-regular-talk');
+    Route::get('/regular-talk/{id}/edit', [RegularTalk::class, 'edit']);
+    Route::post('/regular-talk/{id}', [RegularTalk::class, 'update'])->name('update-regular-talk');
+    Route::post('/regular-talk/deactivate/{id}', [RegularTalk::class, 'deactivate']);
+    Route::post('/regular-talk/activate/{id}', [RegularTalk::class, 'activate']);
+    Route::post('/regular-talk/delete/{id}', [RegularTalk::class, 'delete']);
 
     // Clear Cache
     Route::get('/clear-cache', function() {

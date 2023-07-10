@@ -51,6 +51,7 @@
                                             <th scope="col">Language</th>
                                             <th scope="col">Highlight</th>
                                             <th scope="col">Status</th>
+                                            <th scope="col">Last Updated</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -183,6 +184,16 @@
                         data: 'status',
                         name: 'status',
                         class: 'text-center'
+                    },
+                    {
+                        data: 'last_updated',
+                        name: 'last_updated',
+                        class: 'text-center',
+                        type: 'date',
+                        "render": function(value) {
+                            if (value === null) return "";
+                            return moment(value).format('MMM, Do YYYY');
+                        }
                     },
                     {
                         data: 'action',

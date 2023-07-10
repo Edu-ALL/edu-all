@@ -98,6 +98,10 @@ class Blog extends Controller
                 }
                 return $result;
             })
+            ->editColumn('last_updated', function($d){
+                $result = $d->updated_at ;
+                return $result;
+            })
             ->editColumn('action', function($d){
                 $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
@@ -114,7 +118,7 @@ class Blog extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['category', 'mentor', 'image', 'language', 'highlight', 'status', 'action'])
+            ->rawColumns(['category', 'mentor', 'image', 'language', 'highlight', 'status', 'last_updated', 'action'])
             ->make(true);
         }
     }
