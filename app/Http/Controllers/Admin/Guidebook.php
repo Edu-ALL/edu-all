@@ -89,6 +89,10 @@ class Guidebook extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'guidebook_category' => 'required',
             'guidebook_image_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
@@ -99,7 +103,7 @@ class Guidebook extends Controller
             'guidebook_link_id' => 'required|url',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -157,6 +161,10 @@ class Guidebook extends Controller
     }
 
     public function update($group, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'guidebook_category' => 'required',
             'guidebook_image_en' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
@@ -167,7 +175,7 @@ class Guidebook extends Controller
             'guidebook_link_id' => 'required|url',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

@@ -156,6 +156,10 @@ class Blog extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'blog_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'blog_alt' => 'required',
@@ -173,7 +177,7 @@ class Blog extends Controller
             'blog_status' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
            return redirect('/admin/blogs/create')->withInput()->withErrors($validator->messages());
         }
@@ -298,6 +302,10 @@ class Blog extends Controller
     }
 
     public function update($id, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'blog_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'blog_alt' => 'required',
@@ -315,7 +323,7 @@ class Blog extends Controller
             'blog_status' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

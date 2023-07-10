@@ -107,6 +107,10 @@ class ProjectShowcase extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'full_name' => 'required',
             'category' => 'required',
@@ -118,7 +122,7 @@ class ProjectShowcase extends Controller
             'gallery.*' => 'image|mimes:jpeg,jpg,png,bmp,webp|max:2048',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -170,6 +174,10 @@ class ProjectShowcase extends Controller
     }
 
     public function update(Request $request, $id){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'full_name' => 'required',
             'category' => 'required',
@@ -181,7 +189,7 @@ class ProjectShowcase extends Controller
             'gallery.*' => 'image|mimes:jpeg,jpg,png,bmp,webp|max:2048',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }

@@ -91,6 +91,10 @@ class SuccessStory extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'story_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
@@ -112,7 +116,7 @@ class SuccessStory extends Controller
             'story_achievement_alt_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -193,6 +197,10 @@ class SuccessStory extends Controller
     }
 
     public function update($group, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'story_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
@@ -214,7 +222,7 @@ class SuccessStory extends Controller
             'story_achievement_alt_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

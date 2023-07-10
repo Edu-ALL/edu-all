@@ -133,6 +133,10 @@ class Banner extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'banner_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_image_mobile' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
@@ -146,7 +150,7 @@ class Banner extends Controller
             'lang' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -202,6 +206,10 @@ class Banner extends Controller
     }
 
     public function update($id, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'banner_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'banner_image_mobile' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
@@ -215,7 +223,7 @@ class Banner extends Controller
             'lang' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

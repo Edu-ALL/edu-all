@@ -133,6 +133,18 @@
 
                                         <div class="col-12">
                                             <label for="" class="form-label">
+                                                Key Takeaways <span style="color: var(--red)">*</span>
+                                            </label>
+                                            <textarea class="textarea" name="key_takeaways" id="key_takeaways">
+                                            {{ old('key_takeaways') }}
+                                        </textarea>
+                                            @error('key_takeaways')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="" class="form-label">
                                                 Speaker Image <span style="color: var(--red)">*</span>
                                             </label>
                                             <input type="file" class="form-control" id="speaker" name="speaker[]"
@@ -178,7 +190,7 @@
 
     <script>
         const output = document.querySelector("#output")
-        const input = document.querySelector("#gallery")
+        const input = document.querySelector("#speaker")
         let imagesArray = []
         input.addEventListener("change", () => {
             imagesArray = []

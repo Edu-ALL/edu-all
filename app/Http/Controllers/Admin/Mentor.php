@@ -97,6 +97,10 @@ class Mentor extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'mentor_image' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt' => 'required',
@@ -115,7 +119,7 @@ class Mentor extends Controller
             'mentor_short_description_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -224,6 +228,10 @@ class Mentor extends Controller
     }
 
     public function update($group, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'mentor_image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'mentor_alt' => 'required',
@@ -242,7 +250,7 @@ class Mentor extends Controller
             'mentor_short_description_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

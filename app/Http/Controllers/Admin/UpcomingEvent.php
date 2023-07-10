@@ -137,6 +137,10 @@ class UpcomingEvent extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+        
         $rules = [
             'event_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'event_alt' => 'required',
@@ -151,7 +155,7 @@ class UpcomingEvent extends Controller
             'take_off_date' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -200,6 +204,10 @@ class UpcomingEvent extends Controller
     }
 
     public function update($id, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'event_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'event_alt' => 'required',
@@ -214,7 +222,7 @@ class UpcomingEvent extends Controller
             'take_off_date' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

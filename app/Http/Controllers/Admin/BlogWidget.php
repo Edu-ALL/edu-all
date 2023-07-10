@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Validator;
 class BlogWidget extends Controller
 {
     public function store(Request $request, $id){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'title' => 'required',
             'description' => 'required',
@@ -21,7 +25,7 @@ class BlogWidget extends Controller
             'link' => 'required|url'
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -51,6 +55,10 @@ class BlogWidget extends Controller
     }
 
     public function update(Request $request, $blog_id, $id){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'title' => 'required',
             'description' => 'required',
@@ -58,7 +66,7 @@ class BlogWidget extends Controller
             'link' => 'required|url',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

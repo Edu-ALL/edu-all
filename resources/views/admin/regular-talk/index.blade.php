@@ -10,6 +10,21 @@
     .dataTables_info, .dataTables_paginate {
         margin-top: 12px !important;
     }
+    .badge {
+        font-size: 12px !important;
+        letter-spacing: 1px;
+        top: 5px;
+        left: 90px;
+    }
+    .first-img {
+        left: -8px;
+        top: 6px;
+        height: 60px;
+        object-fit: cover;
+    }
+    .gallery {
+        overflow: auto;
+    }
 </style>
 @endsection
 @section('content')
@@ -37,14 +52,14 @@
                                     <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none"> Create new</span>
                                 </a>
                             </div>
-                            <table class="table display" id="listguidebook" style="width:100%">
+                            <table class="table display" id="listRegularTalk" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Topic</th>
                                         <th scope="col">Date</th>
-                                        <th scope="col">Time</th>
                                         <th scope="col">Recommended for?</th>
+                                        <th scope="col">Speaker</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -129,36 +144,36 @@
 </div>
 @endsection
 
-{{-- @section('js')
+@section('js')
     <script>
         // List Regular Talk
         $(function() {
-            $('#listguidebook').DataTable({
+            $('#listRegularTalk').DataTable({
                 scrollX: true,
                 responsive: true,
                 processing: true,
                 serverSide: true,
-                ajax: '{{ route('data-regular-talk') }}',
+                ajax: '{{ url('admin/regular-talk/data') }}',
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex'
                     },
                     {
-                        data: 'guidebook_category',
-                        name: 'guidebook_category'
+                        data: 'topic',
+                        name: 'topic'
                     },
                     {
-                        data: 'link',
-                        name: 'link'
+                        data: 'date',
+                        name: 'date'
                     },
                     {
-                        data: 'image',
-                        name: 'image'
+                        data: 'recommended_for',
+                        name: 'recommended_for'
                     },
                     {
-                        data: 'language',
-                        name: 'language',
-                        class: 'text-center'
+                        data: 'speaker_image',
+                        name: 'speaker_image',
+                        class: 'gallery'
                     },
                     {
                         data: 'status',
@@ -188,4 +203,4 @@
             const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         });
     </script>
-@endsection --}}
+@endsection

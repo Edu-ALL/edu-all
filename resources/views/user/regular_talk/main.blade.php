@@ -71,8 +71,8 @@
             <div class="md:col-span-2 section-2 grid place-items-center md:py-3 py-5 md:pb-0 pb-4 h-full">
                 <div class="flex flex-col w-full md:px-10 px-4 my-3 gap-2">
                     <h3 class="text-center leading-tight mb-2">REGIST YOURSELF</h3>
-                    <iframe src="https://crm.all-inedu.com/form/event" frameborder="0" class="w-100" style="height: 80vh"></iframe>
-                    {{-- <div>
+                    {{-- <iframe src="https://crm.all-inedu.com/form/event" frameborder="0" class="w-100" style="height: 80vh"></iframe> --}}
+                    <div>
                         <div id="mlb2-5812118"
                             class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-5812118">
                             <div class="ml-form-align-center">
@@ -270,7 +270,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

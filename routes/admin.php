@@ -178,7 +178,7 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/regular-talk/{id}', [RegularTalk::class, 'update'])->name('update-regular-talk');
     Route::post('/regular-talk/deactivate/{id}', [RegularTalk::class, 'deactivate']);
     Route::post('/regular-talk/activate/{id}', [RegularTalk::class, 'activate']);
-    Route::post('/regular-talk/delete/{id}', [RegularTalk::class, 'delete']);
+    Route::post('/regular-talk/delete/{id}', [RegularTalk::class, 'destroy']);
 
     // Clear Cache
     Route::get('/clear-cache', function() {

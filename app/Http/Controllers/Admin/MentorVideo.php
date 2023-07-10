@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Validator;
 class MentorVideo extends Controller
 {
     public function store(Request $request, $group){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'video_embed' => 'required|url',
             // 'description_video' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -47,12 +51,16 @@ class MentorVideo extends Controller
     }
 
     public function update(Request $request, $group, $id){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'video_embed' => 'required|url',
             // 'description_video' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

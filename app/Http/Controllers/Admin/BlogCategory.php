@@ -56,6 +56,10 @@ class BlogCategory extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'category_name_en' => 'required',
             'slug_en' => 'required',
@@ -63,7 +67,7 @@ class BlogCategory extends Controller
             'slug_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -99,6 +103,10 @@ class BlogCategory extends Controller
     }
 
     public function update(Request $request, $group){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'category_name_en' => 'required',
             'slug_en' => 'required',
@@ -106,7 +114,7 @@ class BlogCategory extends Controller
             'slug_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

@@ -97,6 +97,10 @@ class Testimonial extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'testi_name' => 'required',
             'testi_category' => 'required',
@@ -108,7 +112,7 @@ class Testimonial extends Controller
             'testi_desc_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -165,6 +169,10 @@ class Testimonial extends Controller
     }
 
     public function update($group, Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'testi_name' => 'required',
             'testi_category' => 'required',
@@ -176,7 +184,7 @@ class Testimonial extends Controller
             'testi_desc_id' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator->messages());
         }

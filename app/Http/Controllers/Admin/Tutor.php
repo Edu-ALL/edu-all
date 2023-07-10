@@ -73,6 +73,10 @@ class Tutor extends Controller
     }
 
     public function store(Request $request){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'alt' => 'required',
@@ -81,7 +85,7 @@ class Tutor extends Controller
             'subject' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
@@ -118,6 +122,10 @@ class Tutor extends Controller
     }
 
     public function update(Request $request, $id){
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
         $rules = [
             'thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'alt' => 'required',
@@ -126,7 +134,7 @@ class Tutor extends Controller
             'subject' => 'required',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
