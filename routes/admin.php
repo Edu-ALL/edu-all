@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\Guidebook;
 use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\MentorVideo;
 use App\Http\Controllers\Admin\ProjectShowcase;
-use App\Http\Controllers\admin\RegularTalk;
+use App\Http\Controllers\Admin\RegularTalk;
 use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
