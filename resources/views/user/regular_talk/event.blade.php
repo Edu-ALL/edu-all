@@ -74,7 +74,7 @@
                     class="speaker grid md:grid-cols-4 grid-cols-2 items-end justify-start md:mt-[25px] mt-5 md:mb-6 mb-8 gap-5">
                     @foreach (json_decode($regular_talk->speaker_image) as $image)
                         <div class="col p-0">
-                            <img loading="lazy" class="w-full md:h-[250px] h-[150px] object-contain"
+                            <img loading="lazy" class="w-full"
                                 src="{{ asset('uploaded_files/' . 'regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $image) }}"
                                 alt="Speaker">
                         </div>
