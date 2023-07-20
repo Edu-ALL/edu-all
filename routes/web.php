@@ -4,6 +4,7 @@ use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
+use App\Http\Controllers\User\RegularTalkPageController;
 use App\Http\Controllers\User\ResourcesPageController;
 use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Redirect;
@@ -239,8 +240,12 @@ Route::group(
             Route::get('blog', "index")->name('blogs');
             Route::get('/blog/{slug}', 'show')->name('detail_blog');
         });
+
+        Route::get('/webinar-workshop', [RegularTalkPageController::class, 'index']);
+        Route::get('/webinar-workshop/{slug}', [RegularTalkPageController::class, 'show']);
     },
 );
+
 
 // New Page Regular Talk
 Route::get('/regular-talk', function () {

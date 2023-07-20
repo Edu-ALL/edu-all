@@ -218,6 +218,8 @@ class Blog extends Controller
             } else if ($request->blog_status == 'draft' && $request->publish_date == null) {
                 $blogs->publish_date = null;
             }
+            $blogs->created_at = date('Y-m-d H:i:s');
+            $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
         } catch (Exception $e) {
@@ -415,6 +417,7 @@ class Blog extends Controller
             $blog = Blogs::find($id);
             $blog->blog_status = 'draft';
             $blog->publish_date = null;
+            $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
         } catch (Exception $e) {
@@ -431,6 +434,7 @@ class Blog extends Controller
             $blog = Blogs::find($id);
             $blog->blog_status = 'publish';
             $blog->publish_date = date('Y-m-d H:i:s');
+            $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
         } catch (Exception $e) {
@@ -450,6 +454,7 @@ class Blog extends Controller
             } else {
                 $blog->is_highlight = 'false';
             }
+            $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
         } catch (Exception $e) {
