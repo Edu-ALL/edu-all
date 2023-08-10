@@ -98,6 +98,7 @@ class UpcomingEvent extends Controller
                 DB::beginTransaction();
                 try {
                     $event->event_status = 'publish';
+                    $event->updated_at = date('Y-m-d');
                     $event->save();
                     Log::info('check publish is running');
                     DB::commit();
@@ -117,6 +118,7 @@ class UpcomingEvent extends Controller
                 DB::beginTransaction();
                 try {
                     $event->event_status = 'draft';
+                    $event->updated_at = date('Y-m-d');
                     $event->save();
                     Log::info('check publish is running');
                     DB::commit();
@@ -184,6 +186,8 @@ class UpcomingEvent extends Controller
             $upcoming_event->publish_date = $request->publish_date;
             $upcoming_event->take_off_date = $request->take_off_date;
             $upcoming_event->event_status = 'draft';
+            $upcoming_event->created_at = date('Y-m-d H:i:s');
+            $upcoming_event->updated_at = date('Y-m-d H:i:s');
             $upcoming_event->save();
             DB::commit();
         } catch (Exception $e) {

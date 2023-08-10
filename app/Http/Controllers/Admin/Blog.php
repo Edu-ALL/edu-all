@@ -130,6 +130,7 @@ class Blog extends Controller
                 DB::beginTransaction();
                 try {
                     $blog->blog_status = 'publish';
+                    $blog->update_at = date('Y-m-d H:i:s');
                     $blog->save();
                     Log::info('check publish is running');
                     DB::commit();
