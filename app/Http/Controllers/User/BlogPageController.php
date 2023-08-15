@@ -73,6 +73,10 @@ class BlogPageController extends Controller
     {
         
         $blog = Blogs::where('slug', $slug)->first();
+
+        if(!$blog) {
+            abort(404);
+        }
         
         // read ip address
         $ip_address = request()->ip();
