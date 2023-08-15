@@ -94,6 +94,7 @@ class BlogPageController extends Controller
             // update blog click count
             $blog->update([
                 'click_count' => $blog->click_count + 1,
+                'updated_at' => $blog->updated_at,
             ]);
         }
         
