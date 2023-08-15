@@ -11,6 +11,7 @@ class Blogs extends Model
 
     protected $table = "tb_blog";
     protected $primaryKey = 'id';
+    protected $timestamps = false;
 
     protected $fillable = [
         'id',
