@@ -71,20 +71,22 @@ class BlogPageController extends Controller
 
     public function show($locale, $slug)
     {
-        
+        $lang = substr($locale, 3, 2);
         $blog = Blogs::where('slug', $slug)->first();
 
-        if(!$blog) {
+        // check if blog is exsit
+        // or blog lang not equal with locale
+        if(!$blog || $lang != $blog->lang) {
             abort(404);
         }
-        
+
         // read ip address
         $ip_address = request()->ip();
 
-        
+
         // if ip address already registered then skip else register new ip address
         $ip_isregistered = BlogReads::where('blog_id', $blog->id)->where('ip_address',  $ip_address)->exists();
-  
+
         if (!$ip_isregistered) {
             BlogReads::create([
                 'blog_id' => $blog->id,
@@ -97,7 +99,7 @@ class BlogPageController extends Controller
                 'updated_at' => $blog->updated_at,
             ]);
         }
-        
+
         // dd($blog);
         $recomendation_blogs = Blogs::latest()
             ->where('id', '!=', $blog->id)
