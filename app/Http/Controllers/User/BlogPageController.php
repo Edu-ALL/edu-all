@@ -47,9 +47,9 @@ class BlogPageController extends Controller
             else return redirect()->route('blogs', app()->getLocale());
         }
 
-         // filter by search
-         if ($search = request('search')) {
-            $blogs = $blogs->where('lang', $lang)->where(function($s) use($search) {
+        // filter by search
+        if ($search = request('search')) {
+            $blogs = $blogs->where('lang', $lang)->where(function ($s) use ($search) {
                 $s->where('blog_title', 'LIKE', "%{$search}")->orWhere('blog_description', 'LIKE', "%{$search}%");
             });
         }
@@ -76,8 +76,14 @@ class BlogPageController extends Controller
 
         // check if blog is exsit
         // or blog lang not equal with locale
-        if(!$blog || $lang != $blog->lang) {
-            abort(404);
+        if (!$blog || $lang != $blog->lang) {
+            $lang = $lang == 'id' ? 'en' : 'id';
+
+            if (!$blog || $lang != $blog->lang) {
+                abort(404);
+            } else {
+                return redirect()->route('detail_blog', ['locale' => 'id-'.$lang, 'slug' => $slug]);
+            }
         }
 
         // read ip address
