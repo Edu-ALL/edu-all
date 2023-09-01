@@ -2,8 +2,8 @@
 
 @section('head')
     <title>{{ $mentor->mentor_fullname }}{{ __('pages/about_us/mentor.meta_title_detail') }}</title>
-    <meta name="title" content="{{ $mentor->mentor_fullname }}{{ __('pages/about_us/mentor.meta_title_detail') }}" />
-    <meta name="description" content="{{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...">
+    <meta name="title" content="{{ $mentor->meta_title != '' ? $mentor->meta_title : $mentor->mentor_fullname . '' . __('pages/about_us/mentor.meta_title_detail') }}" />
+    <meta name="description" content="{{ $mentor->meta_desc != '' ? html_entity_decode($mentor->meta_desc) : html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) . '...' }}">
 @endsection
 
 @section('content')
