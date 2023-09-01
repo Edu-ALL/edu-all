@@ -115,6 +115,26 @@
                                             <h5 class="card-title">Form English</h5>
                                             <div class="col d-flex flex-column gap-2">
                                                 <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Meta Title <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control"
+                                                                name="meta_title_en"
+                                                                value="{{ old('meta_title_en') }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Meta Description <span
+                                                                    style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control"
+                                                                name="meta_desc_en" value="{{ old('meta_desc_en') }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>
                                                     </label>
@@ -163,6 +183,26 @@
                                         <div class="col py-2">
                                             <h5 class="card-title">Form Indonesia</h5>
                                             <div class="col d-flex flex-column gap-2">
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Meta Title <span style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control"
+                                                                name="meta_title_id"
+                                                                value="{{ old('meta_title_id') }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Meta Description <span
+                                                                    style="color: var(--red)">*</span>
+                                                            </label>
+                                                            <input type="text" class="form-control"
+                                                                name="meta_desc_id" value="{{ old('meta_desc_id') }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
                                                         Graduation <span style="color: var(--red)">*</span>

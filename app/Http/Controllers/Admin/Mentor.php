@@ -137,6 +137,8 @@ class Mentor extends Controller
             $mentor_en->expertise = $request->mentor_expertise_en;
             $mentor_en->description = $request->mentor_description_en;
             $mentor_en->short_desc = $request->mentor_short_description_en;
+            $mentor_en->meta_title = $request->meta_title_en;
+            $mentor_en->meta_desc = $request->meta_desc_en;
             $mentor_en->mentor_status = 'active';
             $mentor_en->lang = 'en';
 
@@ -151,6 +153,8 @@ class Mentor extends Controller
             $mentor_id->expertise = $request->mentor_expertise_id;
             $mentor_id->description = $request->mentor_description_id;
             $mentor_id->short_desc = $request->mentor_short_description_id;
+            $mentor_id->meta_title = $request->meta_title_id;
+            $mentor_id->meta_desc = $request->meta_desc_id;
             $mentor_id->mentor_status = 'active';
             $mentor_id->lang = 'id';
 
@@ -268,6 +272,8 @@ class Mentor extends Controller
             $mentor_en->description = $request->mentor_description_en;
             $mentor_en->short_desc = $request->mentor_short_description_en;
             $mentor_en->mentor_alt = $request->mentor_alt;
+            $mentor_en->meta_title = $request->meta_title_en;
+            $mentor_en->meta_desc = $request->meta_desc_en;
             $mentor_en->updated_at = date('Y-m-d H:i:s');
 
             $mentor_id = $mentor[1];
@@ -280,6 +286,8 @@ class Mentor extends Controller
             $mentor_id->description = $request->mentor_description_id;
             $mentor_id->short_desc = $request->mentor_short_description_id;
             $mentor_id->mentor_alt = $request->mentor_alt;
+            $mentor_id->meta_title = $request->meta_title_id;
+            $mentor_id->meta_desc = $request->meta_desc_id;
             $mentor_id->updated_at = date('Y-m-d H:i:s');
 
             if ($request->hasFile('mentor_image')) {
