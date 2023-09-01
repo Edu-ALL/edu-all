@@ -54,6 +54,10 @@ class AboutPageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
         $mentor = Mentors::with('mentor_video')->where('mentor_slug', $slug)->where('lang', $lang)->first();
 
+        if(!$mentor) {
+            return redirect()->route('mentor',['locale'=>$locale]);
+        }
+
         return view('user.detail_mentor.main', [
             'mentor' => $mentor,
             'mentor_slug' => $slug
