@@ -73,6 +73,7 @@ class BlogPageController extends Controller
     {
         $lang = substr($locale, 3, 2);
         $blog = Blogs::where('slug', $slug)->first();
+        
 
         // check if blog is exsit
         // or blog lang not equal with locale
@@ -89,6 +90,7 @@ class BlogPageController extends Controller
         // read ip address
         $ip_address = request()->ip();
 
+        $last_updated = $blog->updated_at;
 
         // if ip address already registered then skip else register new ip address
         $ip_isregistered = BlogReads::where('blog_id', $blog->id)->where('ip_address',  $ip_address)->exists();
@@ -102,7 +104,7 @@ class BlogPageController extends Controller
             // update blog click count
             $blog->update([
                 'click_count' => $blog->click_count + 1,
-                // 'updated_at' => $blog->updated_at,
+                'updated_at' => $last_updated,
             ]);
         }
 
