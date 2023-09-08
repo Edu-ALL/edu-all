@@ -157,16 +157,16 @@
                                 class="h-72 object-cover object-center">
                             <div class="flex justify-between items-center">
                                 @if ($blog->mentor)
-                                <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2">
                                         <div class="w-6 h-6 text-center text-white rounded-full overflow-hidden">
                                             <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                 alt="" class="w-full object-cover">
                                         </div>
                                         <div class="text-primary">
-                                                {{ $blog->mentor->mentor_fullname }}
+                                            {{ $blog->mentor->mentor_fullname }}
                                         </div>
                                     </div>
-                                    @endif
+                                @endif
                                 <div class="flex items-center gap-2">
                                     <span class="font-primary text-sm text-[#7C7C7C]">
                                         {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
@@ -179,7 +179,7 @@
                                         <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
                                     @endif
                                     <span class="font-primary text-xs text-[#7C7C7C] text-right">
-                                        {{ $blog->click_count }}
+                                        {{ count($blog->blog_read) }}
                                         <i class="fa-solid fa-eye ml-1"></i>
                                     </span>
                                 </div>
