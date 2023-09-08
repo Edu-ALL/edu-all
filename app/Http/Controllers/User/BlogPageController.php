@@ -102,10 +102,10 @@ class BlogPageController extends Controller
             ]);
 
             // update blog click count
-            $blog->update([
-                'click_count' => $blog->click_count + 1,
-                'updated_at' => $last_updated,
-            ]);
+            // $blog->update([
+            //     'click_count' => $blog->click_count + 1,
+            //     'updated_at' => $last_updated,
+            // ]);
         }
 
         // dd($blog);
