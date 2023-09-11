@@ -151,14 +151,38 @@
                 @foreach ($blogs as $blog)
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]">
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 h-full justify-between">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                 alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                 class="h-72 object-cover object-center">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="inline-flex font-primary font-semibold text-xs text-yellow ">
+                                        {{ $blog->blog_category->category_name }}
+                                    </span>
+                                    <div class="flex items-center gap-2">
+                                        @if ($blog->duration_read)
+                                        <span class="font-primary text-sm text-[#7C7C7C]">
+                                            {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
+                                        </span>
+                                        <div class="w-px h-4 bg-[#7C7C7C] md:block"></div>
+                                        @endif
+                                        <span class="font-primary text-xs text-[#7C7C7C] text-right">
+                                            {{ count($blog->blog_read) }}
+                                            <i class="fa-solid fa-eye ml-1"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            <h2
+                                class="font-primary font-extrabold text-lg text-primary lg:text-xl lg:tracking-normal lg:leading-6">
+                                {{ $blog->blog_title }}
+                            </h2>
+                            <p class="font-primary font-medium text-sm text-primary">
+                                {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 200)) }}...
+                            </p>
                             <div class="flex justify-between items-center">
                                 @if ($blog->mentor)
                                     <div class="flex items-center gap-2">
-                                        <div class="w-6 h-6 text-center text-white rounded-full overflow-hidden">
+                                        <div class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-primary">
                                             <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                 alt="" class="w-full object-cover">
                                         </div>
@@ -171,29 +195,8 @@
                                     <span class="font-primary text-sm text-[#7C7C7C]">
                                         {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                     </span>
-                                    <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
-                                    @if ($blog->duration_read)
-                                        <span class="font-primary text-sm text-[#7C7C7C]">
-                                            {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
-                                        </span>
-                                        <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
-                                    @endif
-                                    <span class="font-primary text-xs text-[#7C7C7C] text-right">
-                                        {{ count($blog->blog_read) }}
-                                        <i class="fa-solid fa-eye ml-1"></i>
-                                    </span>
                                 </div>
                             </div>
-                            <h2
-                                class="font-primary font-extrabold text-lg text-primary lg:text-xl lg:tracking-normal lg:leading-6">
-                                {{ $blog->blog_title }}
-                            </h2>
-                            <span class="inline-flex font-primary font-semibold text-xs text-yellow">
-                                {{ $blog->blog_category->category_name }}
-                            </span>
-                            <p class="font-primary font-medium text-sm text-primary">
-                                {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 200)) }}...
-                            </p>
                         </div>
                     </a>
                 @endforeach
