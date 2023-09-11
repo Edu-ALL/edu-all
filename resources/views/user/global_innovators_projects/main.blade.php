@@ -56,7 +56,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
-                    <a href="#"
+                    <a href="https://youtu.be/r9JziM1yv50?si=rR96mh0HjHT2ImbE" target="_blank"
                         class="mt-4 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
                         {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_btn') }}
                     </a>
@@ -87,7 +87,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
-                    <a href="#"
+                    <a href="https://youtu.be/IVMpG0DRqiU?si=kGfUiWrGdMT6EAYS" target="_blank"
                         class="mt-4 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
                         {{ __('pages/programs/global_innovators_projects.innovators_in_residence_btn') }}
                     </a>
