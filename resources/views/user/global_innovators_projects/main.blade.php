@@ -31,38 +31,69 @@
                     </a>
                 </div>
 
-                {{-- Community Empowerment Program --}}
+                {{-- Cultural Immersion Research Program --}}
                 <div class="py-10 flex flex-col items-center gap-y-6 w-full max-w-3xl mx-auto">
-                    <img src="{{ asset('assets/img/global_innovators_project/Community Empowerment Program logo.webp') }}"
-                        alt="Allineduspace Community Empowerment Program Logo"
+                    <img src="{{ asset('assets/img/global_innovators_project/cirp.webp') }}"
+                        alt="Allineduspace Cultural Immersion Research Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
                     <div class="flex items-center gap-4">
                         <span
-                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#FDEFE0] shadow-xl">
-                            <img src="{{ asset('assets/icon/global-innovators-project/summer.webp') }}" alt="Summer Icon"
-                                class="w-8 h-8">
-                            Summer
+                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
+                            <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
+                                class="h-8">
+                            Winter
                         </span>
                         <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
-                            {{ __('pages/programs/global_innovators_projects.community_empowerment_program_date') }}
+                            {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_date') }}
                         </h3>
                     </div>
-                    <p class="mt-2 font-primary text-base text-primary text-center">
-                        {{ __('pages/programs/global_innovators_projects.community_empowerment_program_desc') }}
+                    <p class="max-w-2xl mt-2 font-primary text-base text-primary text-center">
+                        {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_desc') }}
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/r9JziM1yv50"
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/r9JziM1yv50?si=DL9-W6gbwoj2_8Rw"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
                     <a href="#"
                         class="mt-4 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
-                        {{ __('pages/programs/global_innovators_projects.community_empowerment_program_btn') }}
+                        {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_btn') }}
                     </a>
                 </div>
 
-                {{-- Global Immersion Programs --}}
+                {{-- Innovators In Residence Program --}}
+                <div class="py-10 flex flex-col items-center gap-y-6 w-full max-w-3xl mx-auto">
+                    <img src="{{ asset('assets/img/global_innovators_project/iir.webp') }}"
+                        alt="Allineduspace Innovators In Residence Program Logo"
+                        class="w-full max-w-xl mx-auto object-contain">
+                    <div class="flex items-center gap-4">
+                        <span
+                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
+                            <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
+                                class="h-8">
+                            Winter
+                        </span>
+                        <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
+                            {{ __('pages/programs/global_innovators_projects.innovators_in_residence_date') }}
+                        </h3>
+                    </div>
+                    <p class="max-w-2xl mt-2 font-primary text-base text-primary text-center">
+                        {{ __('pages/programs/global_innovators_projects.innovators_in_residence_desc') }}
+                    </p>
+                    <div class="mt-4 w-full max-w-xl mx-auto">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IVMpG0DRqiU?si=_sYE6eopIScF6gJx"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <a href="#"
+                        class="mt-4 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
+                        {{ __('pages/programs/global_innovators_projects.innovators_in_residence_btn') }}
+                    </a>
+                </div>
+
+                {{-- Global Immersion Programs
                 <div class="py-10 flex flex-col items-center gap-y-6 max-w-3xl mx-auto">
                     <img src="{{ asset('assets/img/global_innovators_project/Logo GIP.webp') }}"
                         alt="Allineduspace Global Immersion Programs Logo" class="w-full max-w-xs mx-auto object-contain">
@@ -83,16 +114,16 @@
                     <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_date') }}
                     </h3>
-                    <p class="mt-2 font-primary text-base text-primary text-center">
+                    <p class="max-w-2xl mt-2 font-primary text-base text-primary text-center">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_desc') }}
                     </p>
-                </div>
+                </div> --}}
 
                 {{-- Science Research & Businness --}}
-                <div class="flex flex-col items-center">
-                    <div class="pb-10 w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-16">
+                {{-- <div class="flex flex-col items-center">
+                    <div class="pb-10 w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-16"> --}}
                         {{-- Science Research --}}
-                        <div class="flex flex-col items-center gap-6 lg:items-end">
+                        {{-- <div class="flex flex-col items-center gap-6 lg:items-end">
                             <img src="{{ asset('assets/img/global_innovators_project/Science research logo.webp') }}"
                                 alt="Allineduspace Science Research Logo" class="w-full max-w-sm object-contain">
                             <div class="flex flex-col lg:items-end">
@@ -130,9 +161,9 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- Business --}}
-                        <div class="mt-10 flex flex-col items-center gap-6 lg:items-start lg:mt-0">
+                        {{-- <div class="mt-10 flex flex-col items-center gap-6 lg:items-start lg:mt-0">
                             <img src="{{ asset('assets/img/global_innovators_project/Business logo.webp') }}"
                                 alt="Allineduspace Business Logo" class="w-full max-w-sm object-contain">
                             <div class="flex flex-col gap-4 lg:items-start">
@@ -153,9 +184,9 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-2">
+                        </div> --}}
+                    {{-- </div> --}}
+                    {{-- <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-2">
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/NinMHhLOYTg"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -169,7 +200,7 @@
                         class="mt-8 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_btn') }}
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
 

@@ -8,39 +8,48 @@ return [
     ',
     'description_button' => 'Apply Now',
 
-    'community_empowerment_program_date' => 'Salatiga | 20 - 27 June 2023',
-    'community_empowerment_program_desc' => 'Begin your journey with a live-in experience where you can identify actual problems happening in the local Indonesian community and develop real, impactful projects.',
-    'community_empowerment_program_btn' => 'Learn More',
+    // 'community_empowerment_program_date' => 'Salatiga | 20 - 27 June 2023',
+    // 'community_empowerment_program_desc' => 'Begin your journey with a live-in experience where you can identify actual problems happening in the local Indonesian community and develop real, impactful projects.',
+    // 'community_empowerment_program_btn' => 'Learn More',
 
-    'global_immersion_program_date' => 'Singapore | July 2023',
-    'global_immersion_program_desc' => 'Take your knowledge and skills to the next level for the global community! Develop valuable skillsets in your field of interest, and provide a real-life implementation with tangible outcomes.',
-    'global_immersion_program_btn' => 'Learn More',
+    // 'global_immersion_program_date' => 'Singapore | July 2023',
+    // 'global_immersion_program_desc' => 'Take your knowledge and skills to the next level for the global community! Develop valuable skillsets in your field of interest, and provide a real-life implementation with tangible outcomes.',
+    // 'global_immersion_program_btn' => 'Learn More',
 
-    'science_research_physical_science_title' => 'PHYSICAL SCIENCE',
-    'science_research_physical_science_date' => '2-7 JULY 2023',
-    'science_research_physical_science_point' => [
-        'Robotics',
-        'Renewable Energy',
-        'Environmental Sustainability',
-    ],
-    'science_research_life_science_title' => 'LIFE SCIENCE',
-    'science_research_life_science_date' => '5-10 JULY 2023',
-    'science_research_life_science_point' => [
-        'Biotechnology',
-        'DNA Forensics Science',
-        'Genetic Engineering',
-        'Bionformatics',
-    ],
+    // 'science_research_physical_science_title' => 'PHYSICAL SCIENCE',
+    // 'science_research_physical_science_date' => '2-7 JULY 2023',
+    // 'science_research_physical_science_point' => [
+    //     'Robotics',
+    //     'Renewable Energy',
+    //     'Environmental Sustainability',
+    // ],
+    // 'science_research_life_science_title' => 'LIFE SCIENCE',
+    // 'science_research_life_science_date' => '5-10 JULY 2023',
+    // 'science_research_life_science_point' => [
+    //     'Biotechnology',
+    //     'DNA Forensics Science',
+    //     'Genetic Engineering',
+    //     'Bionformatics',
+    // ],
 
-    'business_date' => '10-14 JULY 2023',
-    'business_desc' => 'Transform your projects into purpose-driven ventures and master the entire business process. This program builds on the experiences and skills gained from the Community Empowerment Program and Science Research Immersion Program, allowing you to take your impact to the next level.',
-    'business_point' => [
-        'Problem Identification',
-        'Ideation',
-        'Prototyping',
-        'Pitching',
-        'Customer Discovery',
-    ],
+    // 'business_date' => '10-14 JULY 2023',
+    // 'business_desc' => 'Transform your projects into purpose-driven ventures and master the entire business process. This program builds on the experiences and skills gained from the Community Empowerment Program and Science Research Immersion Program, allowing you to take your impact to the next level.',
+    // 'business_point' => [
+    //     'Problem Identification',
+    //     'Ideation',
+    //     'Prototyping',
+    //     'Pitching',
+    //     'Customer Discovery',
+    // ],
+
+
+    'cultural_immersion_research_program_date' => 'Bali | 2 - 7 January 2024',
+    'cultural_immersion_research_program_desc' => 'Take charge of driving positive agricultural change and enhancing the local economy in Bali’s rural village through research projects!',
+    'cultural_immersion_research_program_btn' => 'Learn More',
+
+    'innovators_in_residence_date' => 'Singapore | 2 - 7 January 2024',
+    'innovators_in_residence_desc' => "Let's learn in a fun and hands-on way, work on creative projects, and collaborate with industry professionals and academic scholars to solve real-world problems!",
+    'innovators_in_residence_btn' => 'Learn More',
 
     'form_title' => 'BOOK YOUR SEAT',
     'form_desc' => "Due to the limited number of seats available, we strongly advise you to secure your booking now. <br/> Our programs tend to be booked quickly, so don't miss your chance to attend.",
