@@ -36,7 +36,7 @@
                     <img src="{{ asset('assets/img/global_innovators_project/cirp.webp') }}"
                         alt="Allineduspace Cultural Immersion Research Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
-                    <div class="flex items-center gap-4">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                         <span
                             class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
                             <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
@@ -67,7 +67,7 @@
                     <img src="{{ asset('assets/img/global_innovators_project/iir.webp') }}"
                         alt="Allineduspace Innovators In Residence Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
-                    <div class="flex items-center gap-4">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                         <span
                             class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
                             <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"

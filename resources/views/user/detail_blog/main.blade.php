@@ -40,16 +40,16 @@
         <div class="main-container">
             <div class="flex flex-col gap-y-8">
                 <div class="flex flex-col justify-between items-center md:gap-4 gap-2 md:flex-row">
-                    <div class="flex items-center justify-around gap-2">
+                    <div class="flex flex-wrap items-center justify-center md:justify-around gap-3">
                         <div class="flex items-center gap-1">
                             @if ($blog->mentor)
-                                <div class="w-8 h-8 text-center text-white rounded-full overflow-hidden">
-                                    <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                        alt="" class="w-full object-cover">
-                                </div>
-                                {{-- change author name with mentor name --}}
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
-                                    target="_blank">
+                                    target="_blank" class="flex justify-center items-center">
+                                    <div class="w-8 h-8 text-center bg-primary text-white rounded-full overflow-hidden  mr-2">
+                                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                            class="w-full object-cover">
+                                    </div>
+                                    {{-- change author name with mentor name --}}
                                     <span
                                         class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3 hover:text-yellow">
                                         {{ $blog->mentor->mentor_fullname }}
@@ -74,7 +74,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="share_container_bottom flex items-center gap-1">
+                    <div class="mt-4 share_container_bottom flex items-center gap-1">
                         <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                             onclick="share_sosmed('open')">
                             <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
