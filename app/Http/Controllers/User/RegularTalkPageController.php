@@ -22,8 +22,8 @@ class RegularTalkPageController extends Controller
         $prev30Day = Carbon::now()->subDays(30)->format('Y-m-d');
 
         $default = RegularTalks::whereBetween('date', [$today, $next30Day])->orderBy('date','asc')->first();
-        $prevRegular = RegularTalks::whereBetween('date', [$prev30Day, $today])->orderBy('date','desc')->first();
-        // $prevRegular = RegularTalks::where('date', '<', $today)->orderBy('date','desc')->first();
+        // $prevRegular = RegularTalks::whereBetween('date', [$prev30Day, $today])->orderBy('date','desc')->first();
+        $prevRegular = RegularTalks::where('date', '<', $today)->orderBy('date','desc')->first();
 
         if($default) {
             $slug = $default->topic_slug;
