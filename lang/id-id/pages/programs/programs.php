@@ -26,7 +26,7 @@ return [
                 'Scientific Research Mentoring Program',
             ],
             'route' => 'passion_project_mentoring',
-            'img' => 'Passion Project-Mentoring Program.webp',
+            'img' => 'Passion Project-Mentoring Program.png',
         ],
         [
             'title' => 'Persiapan Ujian dan Akademis',
