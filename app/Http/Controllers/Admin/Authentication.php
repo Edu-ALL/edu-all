@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -28,15 +29,18 @@ class Authentication extends Controller
 
         $validator = Validator::make($credentials, $rules, $messages);
         if ($validator->fails()) {
+            Log::error('Login failed : '.$request->email.' has not been registered');
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         if (!Auth::guard('web-admin')->attempt($credentials)) {
+            Log::error('Login failed : '.$request->email.', your password is wrong');
             return Redirect::back()->withInput()->withErrors([
                 'password' => 'Your password is wrong',
             ]);
         }
 
+        Log::notice('Email : '.Auth::guard('web-admin')->user()->email.' has been successfully logged in');
         return redirect('/admin/dashboard')->withSuccess('Signed in successfully');
     }
 
