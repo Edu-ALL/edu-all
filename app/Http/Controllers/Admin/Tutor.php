@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Tutors;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -110,7 +111,7 @@ class Tutor extends Controller
             $tutors->status = 'active';
             $tutors->save();
             DB::commit();
-            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Created');
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Tutor failed : '.$e->getMessage());
@@ -167,7 +168,7 @@ class Tutor extends Controller
             $tutors->updated_at = date('Y-m-d H:i:s');
             $tutors->save();
             DB::commit();
-            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Updated');
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Tutor failed : '.$e->getMessage());
@@ -189,7 +190,7 @@ class Tutor extends Controller
             }
             $tutors->delete();
             DB::commit();
-            Log::notice('Tutor : '.$tutor_full_name.' has been successfully Deleted');
+            Log::notice('Tutor : '.$tutor_full_name.' has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Tutor failed : '.$e->getMessage());
@@ -206,7 +207,7 @@ class Tutor extends Controller
             $tutors->status = 'inactive';
             $tutors->save();
             DB::commit();
-            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Deactivated');
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Deactivated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Deactivate Tutor failed : '.$e->getMessage());
@@ -223,7 +224,7 @@ class Tutor extends Controller
             $tutors->status = 'active';
             $tutors->save();
             DB::commit();
-            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Activated');
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Activated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Activate Tutor failed : '.$e->getMessage());

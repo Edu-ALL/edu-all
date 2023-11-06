@@ -7,6 +7,7 @@ use App\Models\Mentors;
 use App\Models\MentorVideos;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -173,7 +174,7 @@ class Mentor extends Controller
             $mentor_en->save();
             $mentor_id->save();
             DB::commit();
-            Log::notice('Mentor : '.$mentor_en->mentor_fullname.' has been successfully Created');
+            Log::notice('Mentor : '.$mentor_en->mentor_fullname.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Mentor failed : '.$e->getMessage());
@@ -314,7 +315,7 @@ class Mentor extends Controller
             $mentor_en->save();
             $mentor_id->save();
             DB::commit();
-            Log::notice('Mentor : '.$mentor_en->mentor_fullname.' has been successfully Updated');
+            Log::notice('Mentor : '.$mentor_en->mentor_fullname.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Mentor failed : '.$e->getMessage());
@@ -346,7 +347,7 @@ class Mentor extends Controller
                 $mentor[0]->delete();
                 $mentor[1]->delete();
                 DB::commit();
-                Log::notice('Mentor : '.$mentor_fullname.' has been successfully Delete');
+                Log::notice('Mentor : '.$mentor_fullname.' has been successfully Delete by '.Auth::guard('web-admin')->user()->name);
             }
         } catch (Exception $e) {
             DB::rollBack();
@@ -365,7 +366,7 @@ class Mentor extends Controller
             $mentor[0]->save();
             $mentor[1]->save();
             DB::commit();
-            Log::notice('Mentor : '.$mentor[0]->mentor_fullname.' has been successfully Deactivated');
+            Log::notice('Mentor : '.$mentor[0]->mentor_fullname.' has been successfully Deactivated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Deactivate Mentor failed : '.$e->getMessage());
@@ -384,7 +385,7 @@ class Mentor extends Controller
             $mentor[0]->save();
             $mentor[1]->save();
             DB::commit();
-            Log::notice('Mentor : '.$mentor[0]->mentor_fullname.' has been successfully Activated');
+            Log::notice('Mentor : '.$mentor[0]->mentor_fullname.' has been successfully Activated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Activate Tutor failed : '.$e->getMessage());

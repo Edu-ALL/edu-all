@@ -8,6 +8,7 @@ use App\Models\Languages;
 use App\Models\Regions;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -189,7 +190,7 @@ class Banner extends Controller
             $banner->lang = $request->lang;
             $banner->save();
             DB::commit();
-            Log::notice('Banner : '.$banner->banner_title.' has been successfully Created');
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Banner failed : '.$e->getMessage());
@@ -275,7 +276,7 @@ class Banner extends Controller
             $banner->updated_at = date('Y-m-d H:i:s');
             $banner->save();
             DB::commit();
-            Log::notice('Banner : '.$banner->banner_title.' has been successfully Updated');
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Banner failed : '.$e->getMessage());
@@ -292,7 +293,7 @@ class Banner extends Controller
             $banner->banner_status = 'inactive';
             $banner->save();
             DB::commit();
-            Log::notice('Banner : '.$banner->banner_title.' has been successfully Deactivated');
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Deactivated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Deactivate Banner failed : '.$e->getMessage());
@@ -309,7 +310,7 @@ class Banner extends Controller
             $banner->banner_status = 'active';
             $banner->save();
             DB::commit();
-            Log::notice('Banner : '.$banner->banner_title.' has been successfully Activated');
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Activated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Activate Banner failed : '.$e->getMessage());
@@ -338,7 +339,7 @@ class Banner extends Controller
             }
             $banner->delete();
             DB::commit();
-            Log::notice('Banner : '.$banner_title.' has been successfully Deleted');
+            Log::notice('Banner : '.$banner_title.' has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Banner failed : '.$e->getMessage());
@@ -354,10 +355,10 @@ class Banner extends Controller
             $banner = Banners::find($id);
             if ($request->orderNumber == 'unorder') {
                 $banner->banner_order = NULL;
-                Log::notice('Banner : '.$banner->banner_title.' has been successfully Unordered');
+                Log::notice('Banner : '.$banner->banner_title.' has been successfully Unordered by '.Auth::guard('web-admin')->user()->name);
             } else {
                 $banner->banner_order = $request->orderNumber;
-                Log::notice('Banner : '.$banner->banner_title.' has been successfully Ordered');
+                Log::notice('Banner : '.$banner->banner_title.' has been successfully Ordered by '.Auth::guard('web-admin')->user()->name);
             }
             $banner->save();
             DB::commit();

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogWidgets;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -43,7 +44,7 @@ class BlogWidget extends Controller
             $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
-            Log::notice('Blog Widget : "'.$blog_widget->title.'" has been successfully Created');
+            Log::notice('Blog Widget : "'.$blog_widget->title.'" has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Blog Widget failed : '.$e->getMessage());
@@ -85,7 +86,7 @@ class BlogWidget extends Controller
             $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
-            Log::notice('Blog Widget : "'.$blog_widget->title.'" has been successfully Updated');
+            Log::notice('Blog Widget : "'.$blog_widget->title.'" has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Blog Widget failed : '.$e->getMessage());
@@ -102,7 +103,7 @@ class BlogWidget extends Controller
             $blog_widget_title = $blog_widget->title;
             $blog_widget->delete();
             DB::commit();
-            Log::notice('Blog Widget : "'.$blog_widget_title.'" has been successfully Deleted');
+            Log::notice('Blog Widget : "'.$blog_widget_title.'" has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Blog Widget failed : '.$e->getMessage());

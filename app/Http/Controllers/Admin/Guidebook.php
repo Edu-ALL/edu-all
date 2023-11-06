@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Guidebooks;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -147,7 +148,7 @@ class Guidebook extends Controller
             $guidebook_id->lang = 'id';
             $guidebook_id->save();
             DB::commit();
-            Log::notice('Guidebook with Category : '.$guidebook_en->guidebook_category.' has been successfully Created');
+            Log::notice('Guidebook with Category : '.$guidebook_en->guidebook_category.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Guidebook failed : '.$e->getMessage());
@@ -230,7 +231,7 @@ class Guidebook extends Controller
             $guidebook_id->save();
 
             DB::commit();
-            Log::notice('Guidebook with Category : '.$guidebook_en->guidebook_category.' has been successfully Updated');
+            Log::notice('Guidebook with Category : '.$guidebook_en->guidebook_category.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Guidebook failed : '.$e->getMessage());
@@ -260,7 +261,7 @@ class Guidebook extends Controller
             $guidebook[0]->delete();
             $guidebook[1]->delete();
             DB::commit();
-            Log::notice('Guidebook with Category : '.$guidebook_category.' has been successfully Deleted');
+            Log::notice('Guidebook with Category : '.$guidebook_category.' has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Guidebook failed : '.$e->getMessage());
@@ -279,7 +280,7 @@ class Guidebook extends Controller
             $guidebook[0]->save();
             $guidebook[1]->save();
             DB::commit();
-            Log::notice('Guidebook with Category : '.$guidebook[0]->guidebook_category.' has been successfully Deactivated');
+            Log::notice('Guidebook with Category : '.$guidebook[0]->guidebook_category.' has been successfully Deactivated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Deactivate Guidebook failed : '.$e->getMessage());
@@ -298,7 +299,7 @@ class Guidebook extends Controller
             $guidebook[0]->save();
             $guidebook[1]->save();
             DB::commit();
-            Log::notice('Guidebook with Category : '.$guidebook[0]->guidebook_category.' has been successfully Activated');
+            Log::notice('Guidebook with Category : '.$guidebook[0]->guidebook_category.' has been successfully Activated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Activate Guidebook failed : '.$e->getMessage());
