@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\SuccessStories;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -185,7 +186,7 @@ class SuccessStory extends Controller
             $success_stories_id->save();
 
             DB::commit();
-            Log::info('New Success Story: '. $success_stories_en->name .', Was Successfully Created');
+            Log::notice('New Success Story : '. $success_stories_en->name .', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Success Story Failed To Create: ' . $e);
@@ -309,10 +310,10 @@ class SuccessStory extends Controller
             $success_stories_en->save();
             $success_stories_id->save();
             DB::commit();
-            Log::info('Success Story: '. $success_stories_en->name .', Was Successfully Updated');
+            Log::notice('Success Story : '. $success_stories_en->name .', Was Successfully Updated  By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Success Story Failed To Update: ' . $e);
+            Log::error('Success Story Failed To Update: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -345,10 +346,10 @@ class SuccessStory extends Controller
             $success_stories[0]->delete();
             $success_stories[1]->delete();
             DB::commit();
-            Log::info('Success Story: '. $success_stories[0]->name .', Was Successfully Deleted');
+            Log::notice('Success Story : '. $success_stories[0]->name .', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Success Story Failed To Delete: ' . $e);
+            Log::error('Success Story Failed To Delete:: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -364,10 +365,10 @@ class SuccessStory extends Controller
             $success_stories[0]->save();
             $success_stories[1]->save();
             DB::commit();
-            Log::info('Success Story: '. $success_stories[0]->name .', Was Successfully Deactivate');
+            Log::notice('Success Story : '. $success_stories[0]->name .', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Success Story Failed To Deactivate: ' . $e);
+            Log::error('Success Story Failed To Deactivate: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -383,11 +384,11 @@ class SuccessStory extends Controller
             $success_stories[0]->save();
             $success_stories[1]->save();
 
-            Log::info('Success Story: '. $success_stories[0]->name .', Was Successfully Activate');
+            Log::notice('Success Story : '. $success_stories[0]->name .', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Success Story Failed To Activate: ' . $e);
+            Log::error('Success Story Failed To Activate By : ' . Auth::guard('web-admin')->user()->name . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

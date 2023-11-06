@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ProjectShowcases;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -162,7 +163,7 @@ class ProjectShowcase extends Controller
             $project_showcase->status = 'active';
             $project_showcase->save();
             DB::commit();
-            Log::notice('New Project Showcase: '. $project_showcase->name .', Was Successfully Created');
+            Log::notice('New Project Showcase : '. $project_showcase->name .', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Project Showcase Was Failed To Create: ' . $e);
@@ -245,7 +246,7 @@ class ProjectShowcase extends Controller
             $project_showcase->updated_at = date('Y-m-d H:i:s');
             $project_showcase->save();
             DB::commit();
-            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Updated');
+            Log::notice('Project Showcase : '. $project_showcase->name .', Was Successfully Updated By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Project Showcase Was Failed To Update: ' . $e);
@@ -275,7 +276,7 @@ class ProjectShowcase extends Controller
             $project_showcase->delete();
 
             DB::commit();
-            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Deleted');
+            Log::notice('Project Showcase : '. $project_showcase->name .', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Project Showcase Was Failed To Delete: ' . $e);
@@ -292,7 +293,7 @@ class ProjectShowcase extends Controller
             $project_showcase->status = 'inactive';
             $project_showcase->save();
             DB::commit();
-            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Deactivate');
+            Log::notice('Project Showcase : '. $project_showcase->name .', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Project Showcase Was Failed To Deactivate: ' . $e);
@@ -309,7 +310,7 @@ class ProjectShowcase extends Controller
             $project_showcase->status = 'active';
             $project_showcase->save();
             DB::commit();
-            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Activate');
+            Log::notice('Project Showcase : '. $project_showcase->name .', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Project Showcase Was Failed To Activate: ' . $e);

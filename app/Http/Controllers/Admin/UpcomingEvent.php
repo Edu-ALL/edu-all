@@ -8,6 +8,7 @@ use App\Models\Regions;
 use App\Models\UpcomingEvents;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -191,10 +192,10 @@ class UpcomingEvent extends Controller
             $upcoming_event->save();
 
             DB::commit();
-            Log::notice('New Upcomming Event: '. $upcoming_event->event_title .', Was Successfully Created');
+            Log::notice('New Upcomming Event : '. $upcoming_event->event_title .', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Upcoming Event Failed To Create: ' . $e);
+            Log::error('Upcoming Event Failed To Create: : ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -266,10 +267,10 @@ class UpcomingEvent extends Controller
             $upcoming_event->save();
 
             DB::commit();
-            Log::notice('Upcomming Event: '. $upcoming_event->event_title .', Was Successfully Updated');
+            Log::notice('Upcomming Event : '. $upcoming_event->event_title .', Was Successfully Updated By: ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Upcoming Event Failed To Update: ' . $e);
+            Log::error('Upcoming Event Failed To Update: : ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -288,14 +289,14 @@ class UpcomingEvent extends Controller
             }
             $upcoming_event->delete();
             DB::commit();
-            Log::notice('Upcomming Event: '. $upcoming_event->event_title .', Was Successfully Deleted');
+            Log::notice('Upcomming Event : '. $upcoming_event->event_title . ', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Upcoming Event Failed To Delete: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/upcoming-event')->withSuccess('Upcoming Event Was Successfully Deleted');
+        return redirect('/admin/upcoming-event')->withSuccess('Upcoming Event Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
     }
 
     public function status_draft($id){
@@ -305,11 +306,11 @@ class UpcomingEvent extends Controller
             $upcoming_event->event_status = 'draft';
             $upcoming_event->save();
 
-            Log::notice('Upcomming Event: '. $upcoming_event->event_title .' Status Was Set To Draft');
+            Log::notice('Upcomming Event : '. $upcoming_event->event_title .' Status Was Set To Draft By : ' . Auth::guard('web-admin')->user()->name);
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Upcomming Event Status Was Failed To Set' . $e);
+            Log::error('Upcomming Event Status Was Failed To Set By: ' . Auth::guard('web-admin')->user()->name . ' ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -323,11 +324,11 @@ class UpcomingEvent extends Controller
             $upcoming_event->event_status = 'publish';
             $upcoming_event->save();
 
-            Log::notice('Upcomming Event: '. $upcoming_event->event_title .' Status Was Set To Publish');
             DB::commit();
+            Log::notice('Upcomming Event : '. $upcoming_event->event_title .' Status Was Set To Publish By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Upcomming Event Status Was Failed To Set' . $e);
+            Log::error('Upcomming Event Status Was Failed To Set: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

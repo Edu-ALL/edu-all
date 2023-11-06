@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\RegularTalks;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -187,7 +188,7 @@ class RegularTalk extends Controller
 
             $regular_talk->save();
             DB::commit();
-            Log::notice('New Regular Talk: '. $regular_talk->topic .', Was Successfully Created');
+            Log::notice('New Regular Talk : '. $regular_talk->topic .', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Was Failed To Create: ' . $e);
@@ -290,7 +291,7 @@ class RegularTalk extends Controller
 
             $regular_talk->save();
             DB::commit();
-            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Updated');
+            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Updated By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Was Failed To Update: ' . $e);
@@ -321,7 +322,7 @@ class RegularTalk extends Controller
             }
             $regular_talk->delete();
             DB::commit();
-            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Deleted');
+            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Talk Was Failed To Delete: ' . $e);
@@ -339,7 +340,7 @@ class RegularTalk extends Controller
             $regular_talk->status = 'inactive';
             $regular_talk->save();
             DB::commit();
-            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Deactivate');
+            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Talk Was Failed To Deactivate: ' . $e);
@@ -357,7 +358,7 @@ class RegularTalk extends Controller
             $regular_talk->status = 'active';
             $regular_talk->save();
             DB::commit();
-            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Activate');
+            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Talk Was Failed To Activate: ' . $e);
