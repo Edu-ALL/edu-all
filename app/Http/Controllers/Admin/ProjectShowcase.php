@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -161,8 +162,10 @@ class ProjectShowcase extends Controller
             $project_showcase->status = 'active';
             $project_showcase->save();
             DB::commit();
+            Log::notice('New Project Showcase: '. $project_showcase->name .', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Project Showcase Was Failed To Create: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/project-showcase')->withSuccess('Project Showcase Was Successfully Created');
@@ -242,8 +245,10 @@ class ProjectShowcase extends Controller
             $project_showcase->updated_at = date('Y-m-d H:i:s');
             $project_showcase->save();
             DB::commit();
+            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Project Showcase Was Failed To Update: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/project-showcase/'.$id.'/edit')->withSuccess('Project Showcase Was Successfully Updated');
@@ -268,9 +273,12 @@ class ProjectShowcase extends Controller
                 }
             }
             $project_showcase->delete();
+
             DB::commit();
+            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Project Showcase Was Failed To Delete: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -284,8 +292,10 @@ class ProjectShowcase extends Controller
             $project_showcase->status = 'inactive';
             $project_showcase->save();
             DB::commit();
+            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Deactivate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Project Showcase Was Failed To Deactivate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -299,8 +309,10 @@ class ProjectShowcase extends Controller
             $project_showcase->status = 'active';
             $project_showcase->save();
             DB::commit();
+            Log::notice('Project Showcase: '. $project_showcase->name .', Was Successfully Activate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Project Showcase Was Failed To Activate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

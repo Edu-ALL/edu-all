@@ -103,7 +103,7 @@ class UpcomingEvent extends Controller
                     Log::info('check publish is running');
                     DB::commit();
                 } catch (Exception $e) {
-                    Log::info('check publish not running');
+                    Log::error('check publish not running');
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }
@@ -142,7 +142,7 @@ class UpcomingEvent extends Controller
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
-        
+
         $rules = [
             'event_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'event_alt' => 'required',
@@ -189,9 +189,12 @@ class UpcomingEvent extends Controller
             $upcoming_event->created_at = date('Y-m-d H:i:s');
             $upcoming_event->updated_at = date('Y-m-d H:i:s');
             $upcoming_event->save();
+
             DB::commit();
+            Log::notice('New Upcomming Event: '. $upcoming_event->event_title .', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Upcoming Event Failed To Create: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -261,9 +264,12 @@ class UpcomingEvent extends Controller
             $upcoming_event->take_off_date = $request->take_off_date;
             $upcoming_event->updated_at = date('Y-m-d H:i:s');
             $upcoming_event->save();
+
             DB::commit();
+            Log::notice('Upcomming Event: '. $upcoming_event->event_title .', Was Successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Upcoming Event Failed To Update: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -282,8 +288,10 @@ class UpcomingEvent extends Controller
             }
             $upcoming_event->delete();
             DB::commit();
+            Log::notice('Upcomming Event: '. $upcoming_event->event_title .', Was Successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Upcoming Event Failed To Delete: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -296,9 +304,12 @@ class UpcomingEvent extends Controller
             $upcoming_event = UpcomingEvents::find($id);
             $upcoming_event->event_status = 'draft';
             $upcoming_event->save();
+
+            Log::notice('Upcomming Event: '. $upcoming_event->event_title .' Status Was Set To Draft');
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Upcomming Event Status Was Failed To Set' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -311,9 +322,12 @@ class UpcomingEvent extends Controller
             $upcoming_event = UpcomingEvents::find($id);
             $upcoming_event->event_status = 'publish';
             $upcoming_event->save();
+
+            Log::notice('Upcomming Event: '. $upcoming_event->event_title .' Status Was Set To Publish');
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Upcomming Event Status Was Failed To Set' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

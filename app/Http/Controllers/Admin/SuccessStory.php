@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -182,9 +183,12 @@ class SuccessStory extends Controller
 
             $success_stories_en->save();
             $success_stories_id->save();
+
             DB::commit();
+            Log::info('New Success Story: '. $success_stories_en->name .', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Success Story Failed To Create: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -305,8 +309,10 @@ class SuccessStory extends Controller
             $success_stories_en->save();
             $success_stories_id->save();
             DB::commit();
+            Log::info('Success Story: '. $success_stories_en->name .', Was Successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Success Story Failed To Update: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -339,8 +345,10 @@ class SuccessStory extends Controller
             $success_stories[0]->delete();
             $success_stories[1]->delete();
             DB::commit();
+            Log::info('Success Story: '. $success_stories[0]->name .', Was Successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Success Story Failed To Delete: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -356,8 +364,10 @@ class SuccessStory extends Controller
             $success_stories[0]->save();
             $success_stories[1]->save();
             DB::commit();
+            Log::info('Success Story: '. $success_stories[0]->name .', Was Successfully Deactivate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Success Story Failed To Deactivate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -372,9 +382,12 @@ class SuccessStory extends Controller
             $success_stories[1]->status = 'active';
             $success_stories[0]->save();
             $success_stories[1]->save();
+
+            Log::info('Success Story: '. $success_stories[0]->name .', Was Successfully Activate');
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Success Story Failed To Activate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

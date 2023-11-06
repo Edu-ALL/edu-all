@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -155,8 +156,10 @@ class Testimonial extends Controller
             $testi_en->save();
             $testi_id->save();
             DB::commit();
+            Log::notice('New Testimony: '. $testi_en->testi_name .', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Testimony Was Failed To Create: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -242,9 +245,12 @@ class Testimonial extends Controller
 
             $testi_en->save();
             $testi_id->save();
+
             DB::commit();
+            Log::notice('Testimony: '. $testi_en->testi_name .', Was Successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Testimony Was Failed To Update: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -270,8 +276,10 @@ class Testimonial extends Controller
             $testi[0]->delete();
             $testi[1]->delete();
             DB::commit();
+            Log::notice('Testimony: '. $testi[0]->testi_name .', Was Successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Testimony Was Failed To Delete: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -286,9 +294,12 @@ class Testimonial extends Controller
             $testi[1]->testi_status = 'inactive';
             $testi[0]->save();
             $testi[1]->save();
+
             DB::commit();
+            Log::notice('Testimony: '. $testi[0]->testi_name .', Was Successfully Deactivate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Testimony Was Failed To Deactivate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -304,8 +315,10 @@ class Testimonial extends Controller
             $testi[0]->save();
             $testi[1]->save();
             DB::commit();
+            Log::notice('Testimony: '. $testi[0]->testi_name .', Was Successfully Activate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Testimony Was Failed To Aactivate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

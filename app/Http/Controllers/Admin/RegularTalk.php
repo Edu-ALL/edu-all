@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -186,8 +187,10 @@ class RegularTalk extends Controller
 
             $regular_talk->save();
             DB::commit();
+            Log::notice('New Regular Talk: '. $regular_talk->topic .', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Regular Was Failed To Create: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -287,8 +290,10 @@ class RegularTalk extends Controller
 
             $regular_talk->save();
             DB::commit();
+            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Regular Was Failed To Update: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -316,8 +321,10 @@ class RegularTalk extends Controller
             }
             $regular_talk->delete();
             DB::commit();
+            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Regular Talk Was Failed To Delete: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -332,8 +339,10 @@ class RegularTalk extends Controller
             $regular_talk->status = 'inactive';
             $regular_talk->save();
             DB::commit();
+            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Deactivate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Regular Talk Was Failed To Deactivate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -348,8 +357,10 @@ class RegularTalk extends Controller
             $regular_talk->status = 'active';
             $regular_talk->save();
             DB::commit();
+            Log::notice('Regular Talk: '. $regular_talk->topic .', Was Successfully Activate');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Regular Talk Was Failed To Activate: ' . $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 

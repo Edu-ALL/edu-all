@@ -14,7 +14,7 @@ class Authentication extends Controller
     public function index(){
         return view('auth.login');
     }
-    
+
     public function loginAdmin(Request $request){
         $credentials = $request->only('email', 'password');
 
@@ -46,12 +46,15 @@ class Authentication extends Controller
 
     public function logout()
     {
+        $user = Auth::guard('web-admin')->user();
+
         Auth::guard('web-admin')->logout();
 
         request()->session()->invalidate();
 
         request()->session()->regenerateToken();
 
+        Log::notice('Email : '. $user->email.' has been successfully logged out');
         return redirect('/admin/login');
     }
 }
