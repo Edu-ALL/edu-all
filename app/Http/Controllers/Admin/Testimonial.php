@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Testimonials;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -156,10 +157,10 @@ class Testimonial extends Controller
             $testi_en->save();
             $testi_id->save();
             DB::commit();
-            Log::notice('New Testimony: '. $testi_en->testi_name .', Was Successfully Created');
+            Log::notice('New Testimony : '. $testi_en->testi_name .', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Testimony Was Failed To Create: ' . $e);
+            Log::error('Testimony Was Failed To Create: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -247,10 +248,10 @@ class Testimonial extends Controller
             $testi_id->save();
 
             DB::commit();
-            Log::notice('Testimony: '. $testi_en->testi_name .', Was Successfully Updated');
+            Log::notice('Testimony : '. $testi_en->testi_name .', Was Successfully Updated By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Testimony Was Failed To Update: ' . $e);
+            Log::error('Testimony Was Failed To Update: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -276,10 +277,10 @@ class Testimonial extends Controller
             $testi[0]->delete();
             $testi[1]->delete();
             DB::commit();
-            Log::notice('Testimony: '. $testi[0]->testi_name .', Was Successfully Deleted');
+            Log::notice('Testimony : '. $testi[0]->testi_name .', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Testimony Was Failed To Delete: ' . $e);
+            Log::error('Testimony Was Failed To Delete: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -296,10 +297,10 @@ class Testimonial extends Controller
             $testi[1]->save();
 
             DB::commit();
-            Log::notice('Testimony: '. $testi[0]->testi_name .', Was Successfully Deactivate');
+            Log::notice('Testimony : '. $testi[0]->testi_name .', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Testimony Was Failed To Deactivate: ' . $e);
+            Log::error('Testimony Was Failed To Deactivate: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -315,10 +316,10 @@ class Testimonial extends Controller
             $testi[0]->save();
             $testi[1]->save();
             DB::commit();
-            Log::notice('Testimony: '. $testi[0]->testi_name .', Was Successfully Activate');
+            Log::notice('Testimony : '. $testi[0]->testi_name .', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Testimony Was Failed To Aactivate: ' . $e);
+            Log::error('Testimony Was Failed To Aactivate: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
