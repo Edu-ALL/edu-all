@@ -46,12 +46,10 @@ class Authentication extends Controller
 
     public function logout()
     {
+        Log::notice('Email : '.Auth::guard('web-admin')->user()->email.' has been successfully logged out');
         Auth::guard('web-admin')->logout();
-
         request()->session()->invalidate();
-
         request()->session()->regenerateToken();
-
         return redirect('/admin/login');
     }
 }

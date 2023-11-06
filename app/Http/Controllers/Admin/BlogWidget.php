@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -42,8 +43,10 @@ class BlogWidget extends Controller
             $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
+            Log::notice('Blog Widget : "'.$blog_widget->title.'" has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Blog Widget failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -82,8 +85,10 @@ class BlogWidget extends Controller
             $blog_widget->button_name = $request->button_name;
             $blog_widget->save();
             DB::commit();
+            Log::notice('Blog Widget : "'.$blog_widget->title.'" has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Blog Widget failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -94,10 +99,13 @@ class BlogWidget extends Controller
         DB::beginTransaction();
         try {
             $blog_widget = BlogWidgets::find($id);
+            $blog_widget_title = $blog_widget->title;
             $blog_widget->delete();
             DB::commit();
+            Log::notice('Blog Widget : "'.$blog_widget_title.'" has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Blog Widget failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -89,8 +90,10 @@ class BlogCategory extends Controller
             $blog_category_id->save();
 
             DB::commit();
+            Log::notice('Blog Category : '.$blog_category_en->category_name.' and '.$blog_category_id->category_name.' has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -136,8 +139,10 @@ class BlogCategory extends Controller
             $blog_category_id->save();
 
             DB::commit();
+            Log::notice('Blog Category : '.$blog_category_en->category_name.' and '.$blog_category_id->category_name.' has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -148,17 +153,20 @@ class BlogCategory extends Controller
         DB::beginTransaction();
         try {
             $blog_category = BlogCategorys::with('blog')->where('group', $group)->get();
+            $category_name = [];
             for ($i=0; $i < $blog_category->count(); $i++) {
                 if ($blog_category[$i]->blog->count() == 0) {
+                    array_push($category_name, $blog_category[$i]->category_name);
                     $blog_category[$i]->delete();
                 } else {
                     return Redirect::back()->withErrors('Delete Blog Category Failed, because it is still used on other Blogs');
                 }
             }
             DB::commit();
-
+            Log::notice('Blog Category : '.$category_name[0].' and '.$category_name[1].' has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

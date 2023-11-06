@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -42,8 +43,10 @@ class MentorVideo extends Controller
             // $mentor_video->description = $request->description_video;
             $mentor_video->save();
             DB::commit();
+            Log::notice('Mentor Video : '.$mentor_video->video_embed.' has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Mentor Video failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -68,6 +71,7 @@ class MentorVideo extends Controller
         DB::beginTransaction();
         try {
             $mentor_video = MentorVideos::find($id);
+            $old_video_embed = $mentor_video->video_embed;
             $mentor_video->video_embed = $request->video_embed;
             if (str_contains($request->video_embed, 'https://youtu.be/')) {
                 $mentor_video->youtube_id = substr($request->video_embed, strrpos($request->video_embed, '/' ) + 1);
@@ -79,8 +83,10 @@ class MentorVideo extends Controller
             $mentor_video->updated_at = date('Y-m-d H:i:s');
             $mentor_video->save();
             DB::commit();
+            Log::notice('Mentor Video : '.$old_video_embed.' to '.$mentor_video->video_embed.' has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Mentor Video failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -91,10 +97,13 @@ class MentorVideo extends Controller
         DB::beginTransaction();
         try {
             $mentor_video = MentorVideos::find($id);
+            $old_video_embed = $mentor_video->video_embed;
             $mentor_video->delete();
             DB::commit();
+            Log::notice('Mentor Video : '.$old_video_embed.' has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Mentor Video failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

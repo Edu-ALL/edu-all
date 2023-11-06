@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -188,8 +189,10 @@ class Banner extends Controller
             $banner->lang = $request->lang;
             $banner->save();
             DB::commit();
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -272,8 +275,10 @@ class Banner extends Controller
             $banner->updated_at = date('Y-m-d H:i:s');
             $banner->save();
             DB::commit();
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -287,8 +292,10 @@ class Banner extends Controller
             $banner->banner_status = 'inactive';
             $banner->save();
             DB::commit();
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Deactivated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Deactivate Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -302,8 +309,10 @@ class Banner extends Controller
             $banner->banner_status = 'active';
             $banner->save();
             DB::commit();
+            Log::notice('Banner : '.$banner->banner_title.' has been successfully Activated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Activate Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -314,6 +323,7 @@ class Banner extends Controller
         DB::beginTransaction();
         try {
             $banner = Banners::find($id);
+            $banner_title = $banner->banner_title;
             if ($old_image_path = $banner->banner_img) {
                 $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
@@ -328,8 +338,10 @@ class Banner extends Controller
             }
             $banner->delete();
             DB::commit();
+            Log::notice('Banner : '.$banner_title.' has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Banner failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -342,8 +354,10 @@ class Banner extends Controller
             $banner = Banners::find($id);
             if ($request->orderNumber == 'unorder') {
                 $banner->banner_order = NULL;
+                Log::notice('Banner : '.$banner->banner_title.' has been successfully Unordered');
             } else {
                 $banner->banner_order = $request->orderNumber;
+                Log::notice('Banner : '.$banner->banner_title.' has been successfully Ordered');
             }
             $banner->save();
             DB::commit();
@@ -351,6 +365,7 @@ class Banner extends Controller
         } catch (Exception $e) {
             DB::rollBack();
             $message = "Failed";
+            Log::error('Order Banner failed : '.$e->getMessage());
             return $message;
         }
 

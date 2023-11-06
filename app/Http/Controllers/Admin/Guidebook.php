@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -145,10 +146,11 @@ class Guidebook extends Controller
             $guidebook_id->guidebook_status = 'active';
             $guidebook_id->lang = 'id';
             $guidebook_id->save();
-
             DB::commit();
+            Log::notice('Guidebook with Category : '.$guidebook_en->guidebook_category.' has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Guidebook failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -228,8 +230,10 @@ class Guidebook extends Controller
             $guidebook_id->save();
 
             DB::commit();
+            Log::notice('Guidebook with Category : '.$guidebook_en->guidebook_category.' has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Guidebook failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -240,6 +244,7 @@ class Guidebook extends Controller
         DB::beginTransaction();
         try {
             $guidebook = Guidebooks::where('group', $group)->get();
+            $guidebook_category = $guidebook[0]->guidebook_category;
             if ($old_image_path_en = $guidebook[0]->guidebook_image) {
                 $file_path_en = public_path('uploaded_files/'.'guidebook/'.$guidebook[0]->created_at->format('Y').'/'.$guidebook[0]->created_at->format('m').'/'.$old_image_path_en);
                 if (File::exists($file_path_en)) {
@@ -255,8 +260,10 @@ class Guidebook extends Controller
             $guidebook[0]->delete();
             $guidebook[1]->delete();
             DB::commit();
+            Log::notice('Guidebook with Category : '.$guidebook_category.' has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Guidebook failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -272,8 +279,10 @@ class Guidebook extends Controller
             $guidebook[0]->save();
             $guidebook[1]->save();
             DB::commit();
+            Log::notice('Guidebook with Category : '.$guidebook[0]->guidebook_category.' has been successfully Deactivated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Deactivate Guidebook failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -289,8 +298,10 @@ class Guidebook extends Controller
             $guidebook[0]->save();
             $guidebook[1]->save();
             DB::commit();
+            Log::notice('Guidebook with Category : '.$guidebook[0]->guidebook_category.' has been successfully Activated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Activate Guidebook failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

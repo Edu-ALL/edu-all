@@ -47,40 +47,6 @@
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                {{-- <tbody>
-                                    @php
-                                        $i = 1;
-                                    @endphp
-                                    @foreach ($blog_category as $category)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td class="w-75">{{ $category->category_name }}</td>
-                                            <td class="w-75">{{ $category->slug }}</td>
-                                            <td class="text-center">
-                                                <img data-original="{{ asset('assets/img/flag/flag-'.$category->lang.'.png') }}" alt="" width="30">
-                                                <p class="pt-1" style="font-size: 13px !important">
-                                                    {{ $category->languages->language }}
-                                                </p>
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="d-flex flex-row gap-1">
-                                                    <a type="button" class="btn btn-warning" href="/admin/blog-category/{{ $category->group }}/edit">
-                                                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
-                                                    </a>
-                                                    <button 
-                                                    type="button"
-                                                    class="btn btn-danger"
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#delete"
-                                                    onclick="formDelete({{ $category->group }})"
-                                                    >
-                                                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog category"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody> --}}
                             </table>
                         </div>
                     </div>

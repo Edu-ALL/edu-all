@@ -41,7 +41,7 @@
                                     </a>
                                 </div>
                                 <table class="table display" id="listbanner" style="width:100%">
-                                    <thead>
+                                    <thead class="">
                                         <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Title</th>
