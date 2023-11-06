@@ -180,7 +180,7 @@ class Blog extends Controller
 
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
-           return redirect('/admin/blogs/create')->withInput()->withErrors($validator->messages());
+            return redirect('/admin/blogs/create')->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -223,8 +223,10 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
+            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Blog failed : '.$e->getMessage());
             return redirect('/admin/blogs/create')->withErrors($e->getMessage());
         }
 
@@ -376,8 +378,10 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
+            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Blog failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -388,6 +392,7 @@ class Blog extends Controller
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
+            $blog_title = $blog->blog_title;
             if ($old_image_path = $blog->blog_thumbnail) {
                 $file_path = public_path('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
@@ -404,8 +409,10 @@ class Blog extends Controller
             }
             $blog->delete();
             DB::commit();
+            Log::notice('Blog : "'.$blog_title.'" has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Blog failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -421,8 +428,10 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
+            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Draft');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Set Draft Blog failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -438,8 +447,10 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
+            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Publish');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Set Publish Blog failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -450,16 +461,21 @@ class Blog extends Controller
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
+            $status_msg = '';
             if ($blog->is_highlight == 'false'){
                 $blog->is_highlight = 'true';
+                $status_msg = 'Highlighted';
             } else {
                 $blog->is_highlight = 'false';
+                $status_msg = 'removed from Highlight';
             }
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
+            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully '.$status_msg);
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Set Highlight Blog failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

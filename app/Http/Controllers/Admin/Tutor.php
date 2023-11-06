@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -109,8 +110,10 @@ class Tutor extends Controller
             $tutors->status = 'active';
             $tutors->save();
             DB::commit();
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Tutor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/tutor')->withSuccess('Tutors Was Successfully Created');
@@ -164,8 +167,10 @@ class Tutor extends Controller
             $tutors->updated_at = date('Y-m-d H:i:s');
             $tutors->save();
             DB::commit();
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Tutor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/tutor/'.$id.'/edit')->withSuccess('Tutors Was Successfully Updated');
@@ -175,6 +180,7 @@ class Tutor extends Controller
         DB::beginTransaction();
         try {
             $tutors = Tutors::find($id);
+            $tutor_full_name = $tutors->full_name;
             if ($old_image_path = $tutors->thumbnail) {
                 $file_path = public_path('uploaded_files/'.'tutor/'.$tutors->created_at->format('Y').'/'.$tutors->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
@@ -183,8 +189,10 @@ class Tutor extends Controller
             }
             $tutors->delete();
             DB::commit();
+            Log::notice('Tutor : '.$tutor_full_name.' has been successfully Deleted');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Tutor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -198,14 +206,16 @@ class Tutor extends Controller
             $tutors->status = 'inactive';
             $tutors->save();
             DB::commit();
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Deactivated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Deactivate Tutor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
-
+        
         return redirect('/admin/tutor');
     }
-
+    
     public function activate($id){
         DB::beginTransaction();
         try {
@@ -213,8 +223,10 @@ class Tutor extends Controller
             $tutors->status = 'active';
             $tutors->save();
             DB::commit();
+            Log::notice('Tutor : '.$tutors->full_name.' has been successfully Activated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Activate Tutor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

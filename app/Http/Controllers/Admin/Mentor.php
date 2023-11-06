@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -172,8 +173,10 @@ class Mentor extends Controller
             $mentor_en->save();
             $mentor_id->save();
             DB::commit();
+            Log::notice('Mentor : '.$mentor_en->mentor_fullname.' has been successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Create Mentor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -311,8 +314,10 @@ class Mentor extends Controller
             $mentor_en->save();
             $mentor_id->save();
             DB::commit();
+            Log::notice('Mentor : '.$mentor_en->mentor_fullname.' has been successfully Updated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Update Mentor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -323,6 +328,7 @@ class Mentor extends Controller
         DB::beginTransaction();
         try {
             $mentor = Mentors::where('group', $group)->get();
+            $mentor_fullname = $mentor[0]->mentor_fullname;
             if ($mentor[0]->blog->count() > 0 || $mentor[1]->blog->count() > 0) {
                 return Redirect::back()->withErrors('This Mentor is Still Used');
             } else {
@@ -340,9 +346,11 @@ class Mentor extends Controller
                 $mentor[0]->delete();
                 $mentor[1]->delete();
                 DB::commit();
+                Log::notice('Mentor : '.$mentor_fullname.' has been successfully Delete');
             }
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Delete Mentor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/mentor')->withSuccess('Mentor Was Successfully Deleted');
@@ -357,8 +365,10 @@ class Mentor extends Controller
             $mentor[0]->save();
             $mentor[1]->save();
             DB::commit();
+            Log::notice('Mentor : '.$mentor[0]->mentor_fullname.' has been successfully Deactivated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Deactivate Mentor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
@@ -374,8 +384,10 @@ class Mentor extends Controller
             $mentor[0]->save();
             $mentor[1]->save();
             DB::commit();
+            Log::notice('Mentor : '.$mentor[0]->mentor_fullname.' has been successfully Activated');
         } catch (Exception $e) {
             DB::rollBack();
+            Log::error('Activate Tutor failed : '.$e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 

@@ -49,9 +49,7 @@ class Authentication extends Controller
         $user = Auth::guard('web-admin')->user();
 
         Auth::guard('web-admin')->logout();
-
         request()->session()->invalidate();
-
         request()->session()->regenerateToken();
 
         Log::notice('Email : '. $user->email.' has been successfully logged out');
