@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MentorVideos;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -43,7 +44,7 @@ class MentorVideo extends Controller
             // $mentor_video->description = $request->description_video;
             $mentor_video->save();
             DB::commit();
-            Log::notice('Mentor Video : '.$mentor_video->video_embed.' has been successfully Created');
+            Log::notice('Mentor Video : '.$mentor_video->video_embed.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Mentor Video failed : '.$e->getMessage());
@@ -83,7 +84,7 @@ class MentorVideo extends Controller
             $mentor_video->updated_at = date('Y-m-d H:i:s');
             $mentor_video->save();
             DB::commit();
-            Log::notice('Mentor Video : '.$old_video_embed.' to '.$mentor_video->video_embed.' has been successfully Updated');
+            Log::notice('Mentor Video : '.$old_video_embed.' to '.$mentor_video->video_embed.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Mentor Video failed : '.$e->getMessage());
@@ -100,7 +101,7 @@ class MentorVideo extends Controller
             $old_video_embed = $mentor_video->video_embed;
             $mentor_video->delete();
             DB::commit();
-            Log::notice('Mentor Video : '.$old_video_embed.' has been successfully Deleted');
+            Log::notice('Mentor Video : '.$old_video_embed.' has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Mentor Video failed : '.$e->getMessage());

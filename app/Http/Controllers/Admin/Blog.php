@@ -10,6 +10,7 @@ use App\Models\BlogWidgets;
 use App\Models\Mentors;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -223,7 +224,7 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
-            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Created');
+            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Blog failed : '.$e->getMessage());
@@ -378,7 +379,7 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
-            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Updated');
+            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Blog failed : '.$e->getMessage());
@@ -409,7 +410,7 @@ class Blog extends Controller
             }
             $blog->delete();
             DB::commit();
-            Log::notice('Blog : "'.$blog_title.'" has been successfully Deleted');
+            Log::notice('Blog : "'.$blog_title.'" has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Blog failed : '.$e->getMessage());
@@ -428,7 +429,7 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
-            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Draft');
+            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Draft by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Set Draft Blog failed : '.$e->getMessage());
@@ -447,7 +448,7 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
-            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Publish');
+            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Publish by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Set Publish Blog failed : '.$e->getMessage());
@@ -472,7 +473,7 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
-            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully '.$status_msg);
+            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully '.$status_msg.' by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Set Highlight Blog failed : '.$e->getMessage());

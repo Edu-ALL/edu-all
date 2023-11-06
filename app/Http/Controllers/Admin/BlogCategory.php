@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -90,7 +91,7 @@ class BlogCategory extends Controller
             $blog_category_id->save();
 
             DB::commit();
-            Log::notice('Blog Category : '.$blog_category_en->category_name.' and '.$blog_category_id->category_name.' has been successfully Created');
+            Log::notice('Blog Category : '.$blog_category_en->category_name.' and '.$blog_category_id->category_name.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Banner failed : '.$e->getMessage());
@@ -139,7 +140,7 @@ class BlogCategory extends Controller
             $blog_category_id->save();
 
             DB::commit();
-            Log::notice('Blog Category : '.$blog_category_en->category_name.' and '.$blog_category_id->category_name.' has been successfully Updated');
+            Log::notice('Blog Category : '.$blog_category_en->category_name.' and '.$blog_category_id->category_name.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Update Banner failed : '.$e->getMessage());
@@ -163,7 +164,7 @@ class BlogCategory extends Controller
                 }
             }
             DB::commit();
-            Log::notice('Blog Category : '.$category_name[0].' and '.$category_name[1].' has been successfully Deleted');
+            Log::notice('Blog Category : '.$category_name[0].' and '.$category_name[1].' has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Delete Banner failed : '.$e->getMessage());
