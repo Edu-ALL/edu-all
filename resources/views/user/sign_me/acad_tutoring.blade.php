@@ -17,8 +17,8 @@
                 </h2>
                 <p class="mt-6 w-full font-primary text-lg text-white md:max-w-3xl ">
                     <span class="block"> DARE TO DREAM!</span>
-                    Let’s find out how to get into your dream university and future career path through the first
-                    consultation with our top-notch mentors.
+                    Let’s find out how to maximize your academic performance with our Academic Preparation programs FREE
+                    trial. Our expert and professional tutors will help you through them all!
                 </p>
             </div>
         </div>
@@ -30,21 +30,19 @@
                 <div class="flex flex-col w-full md:col-span-2">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-primary font-bold text-2xl text-primary">
-                            What you will earn in the consultation:
+                            What you will earn in the free trial:
                         </h4>
                         <ul class="mt-4 font-primary text-lg text-black">
                             <li class="flex">
                                 <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
                                 <span>
-                                    Big picture of what you will face in your dream universities’ application
-                                    process
+                                    Big picture of what you will face in your dream universities’ application process and how your academic performance will affect them
                                 </span>
                             </li>
                             <li class="flex">
                                 <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
                                 <span>
-
-                                    Personalized assessment of strengths and area of improvements on your profile
+                                    Personalized assessment of strengths and areas of improvement on your profile
                                 </span>
                             </li>
                             <li class="flex justify-start">
@@ -56,7 +54,6 @@
                             <li class="flex">
                                 <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
                                 <span>
-
                                     Recommendation and timeline on the next action to take for your application
                                 </span>
                             </li>
@@ -64,7 +61,7 @@
                     </div>
                     <div class="flex flex-col gap-x-10">
                         <h4 class="mb-6 font-primary font-bold text-2xl text-primary">
-                            Your current profile will be assessed based on Four Pillars of University Application
+                            Your current profile will be assessed based on:
                         </h4>
                         <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
                     </div>
@@ -1577,7 +1574,7 @@
             </h4>
             <div class="mt-4 w-full">
                 <ul class="flex flex-col gap-y-4">
-                    @foreach (__('pages/about_us/about.qna_list') as $item)
+                    @foreach (__('pages/sign_me/acad_tutoring.qna_list') as $item)
                         <li class="flex flex-col w-full rounded-[10px] bg-[#F2F7FF] overflow-hidden">
                             <div id="question"
                                 class="flex justify-between items-center cursor-pointer px-4 py-2 rounded-[10px]">

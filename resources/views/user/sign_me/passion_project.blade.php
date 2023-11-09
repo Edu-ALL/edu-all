@@ -1594,7 +1594,7 @@
             </h4>
             <div class="mt-4 w-full">
                 <ul class="flex flex-col gap-y-4">
-                    @foreach (__('pages/about_us/about.qna_list') as $item)
+                    @foreach (__('pages/sign_me/adm_mentoring.qna_list') as $item)
                         <li class="flex flex-col w-full rounded-[10px] bg-[#F2F7FF] overflow-hidden">
                             <div id="question"
                                 class="flex justify-between items-center cursor-pointer px-4 py-2 rounded-[10px]">
