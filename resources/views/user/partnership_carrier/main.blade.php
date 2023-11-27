@@ -93,7 +93,7 @@
             <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/partnership_careers.colab_bottom') }}
             </h2>
-            <a href="#" class="my-btn">{{ __('pages/about_us/partnership_careers.colab_btn') }}</a>
+            <a href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20ALL-in" target="_blank" class="my-btn">{{ __('pages/about_us/partnership_careers.colab_btn') }}</a>
         </div>
     </section>
 

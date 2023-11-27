@@ -13,7 +13,7 @@ return [
     // Collaborative Partners
     'colab_title' => 'Collaborative Partners',
     'colab_bottom' => "Mari Berkolaborasi",
-    'colab_btn' => 'Daftar Sekarang!',
+    'colab_btn' => 'Terhubung Dengan Kami',
 
     // Careers
     'careers_title' => 'Karir',
