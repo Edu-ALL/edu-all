@@ -12,6 +12,7 @@ use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\Tutors;
 use App\Models\UpcomingEvents;
+use App\Models\WebsiteSettings;
 use Illuminate\Http\Request;
 
 class Dashboard extends Controller
@@ -38,6 +39,7 @@ class Dashboard extends Controller
             'tutors' => $tutors,
             'project_showcase' => $project_showcase,
             'top_blogs' => $top_blogs,
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 }

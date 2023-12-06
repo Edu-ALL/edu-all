@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Testimonials;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ use Yajra\DataTables\Facades\DataTables;
 class Testimonial extends Controller
 {
     public function index(){
-        return view('admin.testimonial.index');
+        return view('admin.testimonial.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getTestimonial(Request $request){
@@ -95,7 +98,9 @@ class Testimonial extends Controller
     }
 
     public function create(){
-        return view('admin.testimonial.create');
+        return view('admin.testimonial.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -169,7 +174,10 @@ class Testimonial extends Controller
 
     public function edit($group){
         $testimonial = Testimonials::where('group', $group)->get();
-        return view('admin.testimonial.update', ['testimonial' => $testimonial]);
+        return view('admin.testimonial.update', [
+            'testimonial' => $testimonial,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update($group, Request $request){

@@ -55,7 +55,7 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  margin-top: 60px;
+  margin-top: 72px;
   padding: 20px 30px;
   transition: all 0.3s;
 }
@@ -180,7 +180,8 @@ h6 {
   }
 }
 .logo img {
-  max-height: 32px;
+  /* max-height: 52px; */
+  max-width: 150px;
   margin-right: 6px;
 }
 .logo span {
@@ -192,7 +193,7 @@ h6 {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 60px;
+  height: 72px;
   box-shadow: 0 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
   padding-left: 20px;
@@ -207,16 +208,16 @@ h6 {
 }
 
 /* Clear Cache */
-.clear-cache {
+.clear-cache, .setting {
   color: #899bbd !important;
-  font-size: 13px;
-  font-family: "Poppins", sans-serif !important;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif !important;;
 }
-.clear-cache:hover {
+.clear-cache:hover, .setting:hover {
   color: var(--blue) !important;
 }
 @media (max-width: 768px) {
-  .clear-cache {
+  .clear-cache, .setting {
     font-size: 14px;
   }
 }
@@ -231,7 +232,7 @@ h6 {
 }
 .sidebar {
   position: fixed;
-  top: 60px;
+  top: 72px;
   left: 0;
   bottom: 0;
   width: 240px;
@@ -598,4 +599,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 .pick-color {
   min-height: 35px;
+}
+
+.img-preview {
+  background-color: #eeeeee;
 }

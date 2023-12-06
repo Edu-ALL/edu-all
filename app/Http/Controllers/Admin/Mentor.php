@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Mentors;
 use App\Models\MentorVideos;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,9 @@ use Yajra\DataTables\Facades\DataTables;
 class Mentor extends Controller
 {
     public function index(){
-        return view('admin.mentor.index');
+        return view('admin.mentor.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getMentor(Request $request){
@@ -95,7 +98,9 @@ class Mentor extends Controller
     }
 
     public function create(){
-        return view('admin.mentor.create');
+        return view('admin.mentor.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -227,12 +232,16 @@ class Mentor extends Controller
         $mentor = Mentors::where('group', $group)->get();
         return view('admin.mentor.view', [
             'mentor' => $mentor,
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
     public function edit($group){
         $mentor = Mentors::where('group', $group)->get();
-        return view('admin.mentor.update', ['mentor' => $mentor]);
+        return view('admin.mentor.update', [
+            'mentor' => $mentor,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update($group, Request $request){

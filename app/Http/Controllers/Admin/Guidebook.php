@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Guidebooks;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ use Yajra\DataTables\Facades\DataTables;
 class Guidebook extends Controller
 {
     public function index(){
-        return view('admin.guidebook.index');
+        return view('admin.guidebook.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getGuidebook(Request $request){
@@ -87,7 +90,9 @@ class Guidebook extends Controller
     }
 
     public function create(){
-        return view('admin.guidebook.create');
+        return view('admin.guidebook.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -160,7 +165,10 @@ class Guidebook extends Controller
 
     public function edit($group){
         $guidebook = Guidebooks::where('group', $group)->get();
-        return view('admin.guidebook.update', ['guidebook' => $guidebook]);
+        return view('admin.guidebook.update', [
+            'guidebook' => $guidebook,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update($group, Request $request){

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Languages;
 use App\Models\Regions;
 use App\Models\UpcomingEvents;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,9 @@ use Yajra\DataTables\Facades\DataTables;
 class UpcomingEvent extends Controller
 {
     public function index(){
-        return view('admin.upcoming-event.index');
+        return view('admin.upcoming-event.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getUpcomingEvent(Request $request){
@@ -136,6 +139,7 @@ class UpcomingEvent extends Controller
         return view('admin.upcoming-event.create', [
             'regions' => Regions::get(),
             'languages' => Languages::get(),
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
@@ -208,6 +212,7 @@ class UpcomingEvent extends Controller
             'upcoming_event' => $upcoming_event,
             'regions' => Regions::get(),
             'languages' => Languages::get(),
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 

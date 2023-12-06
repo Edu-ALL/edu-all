@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tutors;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ use Yajra\DataTables\Facades\DataTables;
 class Tutor extends Controller
 {
     public function index(){
-        return view('admin.tutor.index');
+        return view('admin.tutor.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getTutor(Request $request){
@@ -71,7 +74,9 @@ class Tutor extends Controller
     }
 
     public function create(){
-        return view('admin.tutor.create');
+        return view('admin.tutor.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -122,7 +127,10 @@ class Tutor extends Controller
 
     public function edit($id){
         $tutors = Tutors::find($id);
-        return view('admin.tutor.update', ['tutors' => $tutors]);
+        return view('admin.tutor.update', [
+            'tutors' => $tutors,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update(Request $request, $id){

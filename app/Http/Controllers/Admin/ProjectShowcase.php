@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProjectShowcases;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ use Yajra\DataTables\Facades\DataTables;
 class ProjectShowcase extends Controller
 {
     public function index(){
-        return view('admin.project-showcase.index');
+        return view('admin.project-showcase.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getProjectShowcase(Request $request){
@@ -105,7 +108,9 @@ class ProjectShowcase extends Controller
     }
 
     public function create(){
-        return view('admin.project-showcase.create');
+        return view('admin.project-showcase.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -174,7 +179,10 @@ class ProjectShowcase extends Controller
 
     public function edit($id){
         $project_showcase = ProjectShowcases::find($id);
-        return view('admin.project-showcase.update', ['project_showcase' => $project_showcase]);
+        return view('admin.project-showcase.update', [
+            'project_showcase' => $project_showcase,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update(Request $request, $id){

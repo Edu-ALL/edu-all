@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\RegularTalks;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,9 @@ class RegularTalk extends Controller
      */
     public function index()
     {
-        return view('admin.regular-talk.index');
+        return view('admin.regular-talk.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getRegularTalk(Request $request)
@@ -126,7 +129,9 @@ class RegularTalk extends Controller
      */
     public function create()
     {
-        return view('admin.regular-talk.create');
+        return view('admin.regular-talk.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     /**
@@ -218,7 +223,10 @@ class RegularTalk extends Controller
     public function edit($id)
     {
         $project_showcase = RegularTalks::find($id);
-        return view('admin.regular-talk.update', ['regular_talk' => $project_showcase]);
+        return view('admin.regular-talk.update', [
+            'regular_talk' => $project_showcase,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     /**

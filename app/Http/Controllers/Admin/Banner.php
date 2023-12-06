@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banners;
 use App\Models\Languages;
 use App\Models\Regions;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +28,7 @@ class Banner extends Controller
             'regions' => $regions,
             'languages' => $languages,
             // 'banner_list' => $banner_list,
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
@@ -131,6 +133,7 @@ class Banner extends Controller
         return view('admin.banner.create', [
             'regions' => Regions::get(),
             'languages' => Languages::get(),
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
@@ -206,6 +209,7 @@ class Banner extends Controller
             'banner' => $banner,
             'regions' => Regions::get(),
             'languages' => Languages::get(),
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
