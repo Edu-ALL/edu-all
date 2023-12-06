@@ -38,10 +38,10 @@
                         class="w-full max-w-xl mx-auto object-contain">
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                         <span
-                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
-                            <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
+                            class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-yellow rounded-lg bg-[#f9cda6] shadow-xl">
+                            <img src="{{ asset('assets/icon/global-innovators-project/summer.webp') }}" alt="Summer Icon"
                                 class="h-8">
-                            Winter
+                            Summer
                         </span>
                         <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
                             {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_date') }}
@@ -51,10 +51,7 @@
                         {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_desc') }}
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/r9JziM1yv50?si=DL9-W6gbwoj2_8Rw"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qmxW3l3w1QE?si=HI0fVKNsoKAzBfg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <a href="https://cultural-research.all-inedu.com/" target="_blank"
                         class="mt-4 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
