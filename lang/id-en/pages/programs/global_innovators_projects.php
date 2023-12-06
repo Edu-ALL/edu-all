@@ -43,8 +43,8 @@ return [
     // ],
 
 
-    'cultural_immersion_research_program_date' => 'Bali | 2 - 7 January 2024',
-    'cultural_immersion_research_program_desc' => 'Take charge of driving positive agricultural change and enhancing the local economy in Bali’s rural village through research projects!',
+    'cultural_immersion_research_program_date' => 'Bali | 7 - 16 July 2024',
+    'cultural_immersion_research_program_desc' => 'Discover a world where adventure meets impact and experience transformative leadership involvement in Bali\'s captivating rural landscape! Connect deeply with local communities and contribute to meaningful projects that will leave a lasting impact.',
     'cultural_immersion_research_program_btn' => 'Learn More',
 
     'innovators_in_residence_date' => 'Singapore | 2 - 7 January 2024',
