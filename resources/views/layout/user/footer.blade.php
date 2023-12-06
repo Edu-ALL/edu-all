@@ -5,10 +5,9 @@
                 <h4 class="font-bold text-base text-white mb-8">
                     {{ __('pages/footer.address') }}
                 </h4>
-                <p class="font-normal text-base text-white">
-                    Jl Jeruk Kembar Blok Q9 No. 15 Srengseng, <br>
-                    Kec. Kembangan, Kota Jakarta Barat, DKI Jakarta
-                </p>
+                <div class="font-normal text-base text-white">
+                   {!! $website_settings->address !!}
+                </div>
 
                 <hr class="my-8">
 
@@ -18,12 +17,20 @@
                 <p class="font-normal text-base text-white mb-4">
                     {{ __('pages/footer.consultation_sub') }}
                 </p>
-                <p class="font-normal text-base text-white">
-                    {{ __('pages/footer.consultation_desc') }}
-                    <br /> +62 818-0808-1363
-                    <br /> +62 878-6081-1413
-                    <br /> +62 877-9838-5403
-                </p>
+                <div class="font-normal text-base text-white">
+                    <p>
+                        {{ __('pages/footer.consultation_desc') }}
+                    </p>
+                   <div class="flex flex-col">
+                        <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                        @if ($website_settings->phone_number_2 != null)
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
+                        @endif
+                        @if ($website_settings->phone_number_3 != null)
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
+                        @endif
+                    </div>
+                </div>
             </div>
             <div class="flex flex-col sm:col-span-2">
                 @php
@@ -67,22 +74,6 @@
                     </button>
                 </div>
 
-
-
-                {{-- <h4 class="flex items-center font-bold text-base text-white mb-4">
-                    <a href="https://www.instagram.com" target="_blank"
-                        class="p-3 rounded-full border border-white block mr-3 bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                        <img data-original="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo"
-                            class="w-4 h-4">
-                    </a>
-                    <a href="https://instagram.com/{{ app()->getLocale() == 'sg' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}"
-                        target="_blank">
-                        <span>{{ app()->getLocale() == 'sg-en' ? env('IG_GLOBAL_NAME') : env('IG_NAME') }}</span>
-                    </a>
-                </h4> --}}
-                {{-- <div class="flex flex-col justify-evenly items-start gap-4 sm:flex-row">
-                    @include('layout.user.instagram')
-                </div> --}}
             </div>
             <div class="flex flex-col sm:col-span-2 lg:col-span-4 xl:col-span-2">
                 <h4 class="font-bold text-base text-white mb-8">
@@ -103,25 +94,25 @@
         </div>
         <div
             class="mt-14 border-t-2 border-light pt-10 gap-8 flex flex-wrap justify-center md:justify-between items-center">
-            <img src="/assets/img/footer/ALL-in Eduspace Logo White.png" alt="image 1 footer" loading="lazy">
-            <div class="flex gap-4 items-center justify-between">
+            <img src={{ asset('uploaded_files/'.'website-settings/'. $website_settings->website_secondary_logo) }} width="160" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
 
-                <a href="mailto:info@all-inedu.com" target="_blank"
+            <div class="flex gap-4 items-center justify-between">
+                <a href="mailto:{{ $website_settings->email }}" target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
                     <img src="{{ asset('assets/logo/email.png') }}" alt="instagram logo"
                         class="w-5 h-5 object-contain" loading="lazy">
                 </a>
-                <a href="https://www.facebook.com/allineduspace/" target="_blank"
+                <a href={{ $website_settings->instagram }} target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/facebook.png') }}" alt="facebook logo"
+                    <img src="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo"
                         class="w-5 h-5 object-contain" loading="lazy">
                 </a>
-                <a href="https://www.linkedin.com/company/all-in-eduspace" target="_blank"
+                <a href={{ $website_settings->linkedin }} target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
                     <img src="{{ asset('assets/logo/linkedin.png') }}" alt="linkedin logo"
                         class="w-5 h-5 object-contain" loading="lazy">
                 </a>
-                <a href="https://www.youtube.com/channel/UCLZ0P-RRdr7k5j2dxhNlObg" target="_blank"
+                <a href={{ $website_settings->youtube_channel }} target="_blank"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
                     <img src="{{ asset('assets/logo/youtube.png') }}" alt="youtube logo"
                         class="w-5 h-5 object-contain" loading="lazy">

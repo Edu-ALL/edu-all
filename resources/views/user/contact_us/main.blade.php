@@ -42,31 +42,34 @@
                 <div class="flex flex-col w-full md:w-1/2">
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Address</h5>
-                        <p class="font-primary text-lg text-[#7a7a7a]">{!! __('pages/contact_us/contact_us.address') !!}</p>
+                        <p class="font-primary text-lg text-[#7a7a7a]">{!! $website_settings->address !!}</p>
                     </div>
 
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Telephone</h5>
                         <div class="flex flex-col">
-                            @foreach (__('pages/contact_us/contact_us.telephone') as $item)
-                                <a target="_blank" href="tel:{{ $item[0] }}"
-                                    class="font-primary text-lg">{{ $item[1] }}</a>
-                            @endforeach
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                            @if ($website_settings->phone_number_2 != null)
+                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
+                            @endif
+                            @if ($website_settings->phone_number_3 != null)
+                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
+                            @endif
                         </div>
                     </div>
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">E-mail</h5>
-                        <a target="_blank" href="mailto:info@all-inedu.com"
+                        <a target="_blank" href="mailto:{{ $website_settings->email }}"
                             class="font-primary text-lg">{!! __('pages/contact_us/contact_us.email') !!}</a>
                     </div>
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Youtube</h5>
-                        <a target="_blank" href="https://www.youtube.com/channel/UCLZ0P-RRdr7k5j2dxhNlObg"
+                        <a target="_blank" href={{ $website_settings->youtube_channel }}
                             class="font-primary text-lg">{{ __('pages/contact_us/contact_us.youtube') }}</a>
                     </div>
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Instagram</h5>
-                        <a target="_blank" href="https://www.instagram.com/allineduspace/"
+                        <a target="_blank" href="{{ $website_settings->instagram }}"
                             class="font-primary text-lg">{{ __('pages/contact_us/contact_us.instagram') }}</a>
                     </div>
                 </div>

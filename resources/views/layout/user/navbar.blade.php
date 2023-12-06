@@ -4,8 +4,8 @@
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
                 <a href="{{ url(app()->getLocale()) }}"
                     class="flex justify-center items-center lg:min-w-fit lg:text-left">
-                    <img width="180px" height="90px" src="/assets/img/navbar/ALLIN-LOGO-LONG-NEW.png" alt="All In Logo New"
-                        class="object-center w-[180px]">
+                    <img width="160px" height="80px" src={{ asset('uploaded_files/'.'website-settings/'. $website_settings->website_primary_logo) }} alt="{{ $website_settings->alt_primary_logo }}"
+                        class="object-center w-[160px]">
                 </a>
 
                 <button title="menus" id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
@@ -440,7 +440,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <div
                     class="hidden sm:flex justify-between items-center min-w-fit mt-1 gap-4 font-primary font-medium text-base sm:mt-0 lg:text-base">
                     <div class="relative flex items-center group">
