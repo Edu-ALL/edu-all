@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\SuccessStory;
 use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
 use App\Http\Controllers\Admin\UpcomingEvent;
+use App\Http\Controllers\Admin\WebsiteSetting;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -179,6 +180,10 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/regular-talk/deactivate/{id}', [RegularTalk::class, 'deactivate']);
     Route::post('/regular-talk/activate/{id}', [RegularTalk::class, 'activate']);
     Route::post('/regular-talk/delete/{id}', [RegularTalk::class, 'destroy']);
+
+    // Website Settings
+    Route::get('/settings', [WebsiteSetting::class, 'index']);
+    Route::post('/settings/update', [WebsiteSetting::class, 'update'])->name('update-website-settings');
 
     // Clear Cache
     Route::get('/clear-cache', function() {

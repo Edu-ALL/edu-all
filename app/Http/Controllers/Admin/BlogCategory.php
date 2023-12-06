@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,9 @@ use Yajra\DataTables\Facades\DataTables;
 class BlogCategory extends Controller
 {
     public function index(){
-        return view('admin.blog-category.index');
+        return view('admin.blog-category.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getBlogCategory(Request $request){
@@ -54,7 +57,9 @@ class BlogCategory extends Controller
     }
 
     public function create(){
-        return view('admin.blog-category.create');
+        return view('admin.blog-category.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -103,7 +108,10 @@ class BlogCategory extends Controller
 
     public function edit($group){
         $blog_category = BlogCategorys::where('group', $group)->get();
-        return view('admin.blog-category.update', ['blog_category' => $blog_category]);
+        return view('admin.blog-category.update', [
+            'blog_category' => $blog_category,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update(Request $request, $group){

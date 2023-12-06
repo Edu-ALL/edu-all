@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\SuccessStories;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,10 @@ class SuccessStory extends Controller
 {
     public function index(){
         $success_stories = SuccessStories::orderBy('updated_at', 'desc')->get();
-        return view('admin.success-stories.index', ['success_stories' => $success_stories]);
+        return view('admin.success-stories.index', [
+            'success_stories' => $success_stories,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getSuccessStories(Request $request){
@@ -89,7 +93,9 @@ class SuccessStory extends Controller
     }
 
     public function create(){
-        return view('admin.success-stories.create');
+        return view('admin.success-stories.create', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function store(Request $request){
@@ -198,7 +204,10 @@ class SuccessStory extends Controller
 
     public function edit($group){
         $success_stories = SuccessStories::where('group', $group)->get();
-        return view('admin.success-stories.update', ['success_stories' => $success_stories]);
+        return view('admin.success-stories.update', [
+            'success_stories' => $success_stories,
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function update($group, Request $request){

@@ -8,6 +8,7 @@ use App\Models\BlogReads;
 use App\Models\Blogs;
 use App\Models\BlogWidgets;
 use App\Models\Mentors;
+use App\Models\WebsiteSettings;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,9 @@ use Yajra\DataTables\Facades\DataTables;
 class Blog extends Controller
 {
     public function index(){
-        return view('admin.blog.index');
+        return view('admin.blog.index', [
+            'website_data' => WebsiteSettings::first(),
+        ]);
     }
 
     public function getBlog(Request $request){
@@ -154,6 +157,7 @@ class Blog extends Controller
             'category_id' => $category_id,
             'mentor_en' => $mentor_en,
             'mentor_id' => $mentor_id,
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
@@ -289,6 +293,7 @@ class Blog extends Controller
         return view('admin.blog.view', [
             'blog' => $blog,
             'blogs' => $blogs,
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
@@ -304,6 +309,7 @@ class Blog extends Controller
             'category_id' => $category_id,
             'mentor_en' => $mentor_en,
             'mentor_id' => $mentor_id,
+            'website_data' => WebsiteSettings::first(),
         ]);
     }
 
