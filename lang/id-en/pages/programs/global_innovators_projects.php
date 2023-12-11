@@ -47,8 +47,8 @@ return [
     'cultural_immersion_research_program_desc' => 'Discover a world where adventure meets impact and experience transformative leadership involvement in Bali\'s captivating rural landscape! Connect deeply with local communities and contribute to meaningful projects that will leave a lasting impact.',
     'cultural_immersion_research_program_btn' => 'Learn More',
 
-    'innovators_in_residence_date' => 'Singapore | 2 - 7 January 2024',
-    'innovators_in_residence_desc' => "Let's learn in a fun and hands-on way, work on creative projects, and collaborate with industry professionals and academic scholars to solve real-world problems!",
+    'innovators_in_residence_date' => 'Australia | 24 June - 3 July 2024',
+    'innovators_in_residence_desc' => "Experience the excitement of being a student in Australia and lay the foundation for your post-graduation career journey into diverse fields such as business, science, tech, and design with hands-on workshops, university and company visits, and networking sessions!",
     'innovators_in_residence_btn' => 'Learn More',
 
     'form_title' => 'BOOK YOUR SEAT',

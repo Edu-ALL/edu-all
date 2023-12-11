@@ -51,7 +51,7 @@
                         {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_desc') }}
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qmxW3l3w1QE?si=HI0fVKNsoKAzBfg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/N2_p7gUaa_E?si=UUC6QMEVDXPZJq7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <a href="https://cultural-research.all-inedu.com/" target="_blank"
                         class="mt-4 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-primary font-medium text-base text-white text-center">
@@ -61,7 +61,7 @@
 
                 {{-- Innovators In Residence Program --}}
                 <div class="py-10 flex flex-col items-center gap-y-6 w-full max-w-3xl mx-auto">
-                    <img src="{{ asset('assets/img/global_innovators_project/iir.webp') }}"
+                    <img src="{{ asset('assets/img/global_innovators_project/GIP Logo 2024.webp') }}"
                         alt="Allineduspace Innovators In Residence Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
@@ -79,7 +79,7 @@
                         {{ __('pages/programs/global_innovators_projects.innovators_in_residence_desc') }}
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IVMpG0DRqiU?si=_sYE6eopIScF6gJx"
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qmxW3l3w1QE?si=HI0fVKNsoKAzBfg8"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
