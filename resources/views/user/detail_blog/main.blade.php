@@ -16,11 +16,11 @@
 @section('content')
     <div id="blog_title_header"
         class="md:mt-28 mt-10 py-4 sticky flex flex-col items-center justify-center main-container transition-all md:flex-row md:justify-between">
-        <h1 class="font-primary font-extrabold text-3xl text-primary text-center md:text-4xl">
+        <h1 class="font-newprimary font-extrabold text-3xl text-newprimary text-center md:text-4xl">
             {{ $blog->blog_title }}
         </h1>
         <div class="share_container hidden justify-between items-center gap-1 ">
-            <div class="share share_button flex items-center bg-primary text-white  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+            <div class="share share_button flex items-center bg-newyellow text-dark  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
                 <i class="fa fa-send md:mr-2" aria-hidden="true"></i> <span class="hidden md:inline-block">Share</span>
             </div>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="mt-4 share_container_bottom flex items-center gap-1">
-                        <div class="share share_button bg-primary text-white p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+                        <div class="share share_button bg-newyellow text-dark p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
                             onclick="share_sosmed('open')">
                             <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
                         </div>
@@ -106,7 +106,7 @@
                             <li class="w-full px-4 py-2 border-b">
                                 <a href="#blog_title_{{ $index }}">
                                     <span
-                                        class="font-primary text-sm text-[#9E9E9E] xl:text-base">{{ $blog_section }}</span>
+                                        class="font-secondary text-sm text-[#9E9E9E] xl:text-base">{{ $blog_section }}</span>
                                 </a>
                             </li>
                         @endforeach
@@ -147,13 +147,13 @@
         </div>
     </section>
 
-    <section class="py-16 bg-primary">
+    <section class="py-8 bg-dark bg-detail-blog-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="mb-6 font-primary font-extrabold text-3xl text-white text-center md:text-5xl">
+            <h2 class="mb-6 font-newprimary font-extrabold text-3xl text-white text-center md:text-[38px]">
                 {{ __('pages/blog.sign_up') }}
             </h2>
             <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                <span class="px-8 py-1.5 font-primary text-base text-white text-center rounded-md bg-yellow">
+                <span class="px-8 md:px-12 py-1.5 font-newprimary text-base text-white text-center bg-newprimary">
                     {{ __('pages/blog.sign_up_btn') }}
                 </span>
             </a>
@@ -162,7 +162,7 @@
 
     <section class="py-16">
         <div class="main-container flex flex-col">
-            <h3 class="mb-12 font-primary font-extrabold text-4xl text-primary text-center ">
+            <h3 class="mb-12 font-newprimary font-bold text-4xl text-newprimary text-center ">
                 {{ __('pages/blog.more_blog') }}
             </h3>
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -174,21 +174,18 @@
                                 alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                 class="h-72 object-cover object-center">
                             <div class="flex justify-between">
-                                <span class="font-primary text-xs text-[#7C7C7C]">
+                                <span class="font-newprimary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
                                 </span>
-                                <span class="font-primary text-xs text-[#7C7C7C]">
+                                <span class="font-newprimary text-xs text-[#7C7C7C]">
                                     {{ $blog->click_count }}
                                     <i class="fa-solid fa-eye ml-1"></i>
                                 </span>
                             </div>
                             <h2
-                                class="font-primary font-extrabold text-lg text-primary lg:text-xl lg:tracking-normal lg:leading-6">
+                                class="pt-2 font-newprimary font-bold text-lg text-newprimary lg:text-xl lg:tracking-normal lg:leading-6">
                                 {{ $blog->blog_title }}
                             </h2>
-                            <p class="font-primary font-medium text-sm text-primary">
-                                {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 200)) }}...
-                            </p>
                         </div>
                     </a>
                 @endforeach
