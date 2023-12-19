@@ -76,7 +76,7 @@
                                             <label for="" class="form-label">
                                                 Name <span style="color: var(--red)">*</span>
                                             </label>
-                                            <input type="text" class="form-control" id="name" name="story_name" value="{{ $success_stories[0]->name }}">
+                                            <input type="text" class="form-control" id="name" name="story_name" value="{{ $success_stories[0]->name }}" onchange="checkInput()">
                                         </div>
                                         <div class="col">
                                             <label for="" class="form-label">
@@ -87,6 +87,21 @@
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
                                         </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="" class="form-label">
+                                            Category <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <div class="col">
+                                            <select class="select2" name="story_category" id="category" onchange="checkInput()">
+                                                <option value=""></option>
+                                                <option value="Admission Mentoring" {{ $success_stories[0]->category == 'Admission Mentoring' ? 'selected' : '' }}>Admission Mentoring</option>
+                                                <option value="Passion Project" {{ $success_stories[0]->category == 'Passion Project' ? 'selected' : '' }}>Passion Project</option>
+                                            </select>
+                                        </div>
+                                        @error('story_category')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
                                 <ul class="nav nav-tabs nav-tabs-bordered pt-3" id="borderedTab" role="tablist">
@@ -103,33 +118,31 @@
                                         <div class="col py-2">
                                             <h5 class="card-title">Form English</h5>
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                                <div class="col d-flex flex-column gap-2">
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 1 <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge1_en" name="story_badge1_en" value="{{ $success_stories[0]->badge_1 }}">
+                                                        <textarea class="textarea" name="story_badge1_en" id="badge1_en">
+                                                            {{ $success_stories[0]->badge_1 }}
+                                                        </textarea>
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 2
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge2_en" name="story_badge2_en" value="{{ $success_stories[0]->badge_2 }}">
+                                                        <textarea class="textarea" name="story_badge2_en" id="badge2_en">
+                                                            {{ $success_stories[0]->badge_2 }}
+                                                        </textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 3
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge3_en" name="story_badge3_en" value="{{ $success_stories[0]->badge_3 }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 4
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge4_en" name="story_badge4_en" value="{{ $success_stories[0]->badge_4 }}">
-                                                    </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Summary Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="story_summary_description_en" id="summary_description_en">
+                                                        {{ $success_stories[0]->summary_description }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
@@ -173,36 +186,31 @@
                                         <div class="col py-2">
                                             <h5 class="card-title">Form Indonesia</h5>
                                             <div class="col d-flex flex-column gap-2">
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
+                                                <div class="col d-flex flex-column gap-2">
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 1 <span style="color: var(--red)">*</span>
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge1_id" name="story_badge1_id" value="{{ $success_stories[1]->badge_1 }}">
-                                                        @error('story_badge1_id')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                        @enderror
+                                                        <textarea class="textarea" name="story_badge1_id" id="badge1_id">
+                                                            {{ $success_stories[1]->badge_1 }}
+                                                        </textarea>
                                                     </div>
                                                     <div class="col">
                                                         <label for="" class="form-label">
                                                             Badge 2
                                                         </label>
-                                                        <input type="text" class="form-control" id="badge2_id" name="story_badge2_id" value="{{ $success_stories[1]->badge_2 }}">
+                                                        <textarea class="textarea" name="story_badge2_id" id="badge2_id">
+                                                            {{ $success_stories[1]->badge_2 }}
+                                                        </textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col d-flex flex-md-row flex-column gap-md-3 gap-2">
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 3
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge3_id" name="story_badge3_id" value="{{ $success_stories[1]->badge_3 }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="" class="form-label">
-                                                            Badge 4
-                                                        </label>
-                                                        <input type="text" class="form-control" id="badge4_id" name="story_badge4_id" value="{{ $success_stories[1]->badge_4 }}">
-                                                    </div>
+                                                <div class="col-12">
+                                                    <label for="" class="form-label">
+                                                        Summary Description <span style="color: var(--red)">*</span>
+                                                    </label>
+                                                    <textarea class="textarea" name="story_summary_description_id" id="summary_description_id">
+                                                        {{ $success_stories[1]->summary_description }}
+                                                    </textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="" class="form-label">
@@ -299,13 +307,15 @@
         const thumbnail = document.getElementById('thumbnail').value;
         const alt = document.getElementById('alt').value;
         const name = document.getElementById('name').value;
+        const category = document.getElementById('category').value;
         const video_link = document.getElementById('video_link').value;
         const badge1_en = document.getElementById('badge1_en').value;
+        const summary_description_en = tinymce.get('summary_description_en').getContent();
         const description_en = tinymce.get('description_en').getContent();
         const achievement_img_en = document.getElementById('achievement_img_en').value;
         const achievement_alt_en = document.getElementById('achievement_alt_en').value;
         const submit = document.getElementById('submit');
-        if (alt == "" || name == "" || badge1_en == "" || description_en == "" || achievement_alt_en == "") {
+        if (alt == "" || name == "" || badge1_en == "" || summary_description_en == "" || description_en == "" || achievement_alt_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;
