@@ -107,11 +107,13 @@ class SuccessStory extends Controller
             'story_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
             'story_name' => 'required',
+            'story_category' => 'required',
             'story_video_link' => 'nullable|url',
             'story_badge1_en' => 'required',
             'story_badge2_en' => 'nullable',
             'story_badge3_en' => 'nullable',
             'story_badge4_en' => 'nullable',
+            'story_summary_description_en' => 'required',
             'story_description_en' => 'required',
             'story_achievement_img_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_achievement_alt_en' => 'required',
@@ -119,6 +121,7 @@ class SuccessStory extends Controller
             'story_badge2_id' => 'nullable',
             'story_badge3_id' => 'nullable',
             'story_badge4_id' => 'nullable',
+            'story_summary_description_id' => 'required',
             'story_description_id' => 'required',
             'story_achievement_img_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_achievement_alt_id' => 'required',
@@ -135,11 +138,13 @@ class SuccessStory extends Controller
             $success_stories_en->group = date('YmdHis');
             $success_stories_en->thumbnail_alt = $request->story_alt;
             $success_stories_en->name = $request->story_name;
+            $success_stories_en->category = $request->story_category;
             $success_stories_en->video_link = $request->story_video_link;
             $success_stories_en->badge_1 = $request->story_badge1_en;
             $success_stories_en->badge_2 = $request->story_badge2_en;
             $success_stories_en->badge_3 = $request->story_badge3_en;
             $success_stories_en->badge_4 = $request->story_badge4_en;
+            $success_stories_en->summary_description = $request->story_summary_description_en;
             $success_stories_en->description = $request->story_description_en;
             if ($request->hasFile('story_achievement_img_en')) {
                 $file_en = $request->file('story_achievement_img_en');
@@ -158,11 +163,13 @@ class SuccessStory extends Controller
             $success_stories_id->group = $success_stories_en->group;
             $success_stories_id->thumbnail_alt = $request->story_alt;
             $success_stories_id->name = $request->story_name;
+            $success_stories_id->category = $request->story_category;
             $success_stories_id->video_link = $request->story_video_link;
             $success_stories_id->badge_1 = $request->story_badge1_id;
             $success_stories_id->badge_2 = $request->story_badge2_id;
             $success_stories_id->badge_3 = $request->story_badge3_id;
             $success_stories_id->badge_4 = $request->story_badge4_id;
+            $success_stories_id->summary_description = $request->story_summary_description_id;
             $success_stories_id->description = $request->story_description_id;
             if ($request->hasFile('story_achievement_img_id')) {
                 $file_id = $request->file('story_achievement_img_id');
@@ -219,11 +226,13 @@ class SuccessStory extends Controller
             'story_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
             'story_name' => 'required',
+            'story_category' => 'required',
             'story_video_link' => 'nullable|url',
             'story_badge1_en' => 'required',
             'story_badge2_en' => 'nullable',
             'story_badge3_en' => 'nullable',
             'story_badge4_en' => 'nullable',
+            'story_summary_description_en' => 'required',
             'story_description_en' => 'required',
             'story_achievement_img_en' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_achievement_alt_en' => 'required',
@@ -231,6 +240,7 @@ class SuccessStory extends Controller
             'story_badge2_id' => 'nullable',
             'story_badge3_id' => 'nullable',
             'story_badge4_id' => 'nullable',
+            'story_summary_description_id' => 'required',
             'story_description_id' => 'required',
             'story_achievement_img_id' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_achievement_alt_id' => 'required',
@@ -247,11 +257,13 @@ class SuccessStory extends Controller
             $success_stories_en = $success_stories[0];
             $success_stories_en->thumbnail_alt = $request->story_alt;
             $success_stories_en->name = $request->story_name;
+            $success_stories_en->category = $request->story_category;
             $success_stories_en->video_link = $request->story_video_link;
             $success_stories_en->badge_1 = $request->story_badge1_en;
             $success_stories_en->badge_2 = $request->story_badge2_en;
             $success_stories_en->badge_3 = $request->story_badge3_en;
             $success_stories_en->badge_4 = $request->story_badge4_en;
+            $success_stories_en->summary_description = $request->story_summary_description_en;
             $success_stories_en->description = $request->story_description_en;
             if ($request->hasFile('story_achievement_img_en')) {
                 if ($old_image_path_en = $success_stories_en->achievement_image) {
@@ -274,11 +286,13 @@ class SuccessStory extends Controller
             $success_stories_id = $success_stories[1];
             $success_stories_id->thumbnail_alt = $request->story_alt;
             $success_stories_id->name = $request->story_name;
+            $success_stories_id->category = $request->story_category;
             $success_stories_id->video_link = $request->story_video_link;
             $success_stories_id->badge_1 = $request->story_badge1_id;
             $success_stories_id->badge_2 = $request->story_badge2_id;
             $success_stories_id->badge_3 = $request->story_badge3_id;
             $success_stories_id->badge_4 = $request->story_badge4_id;
+            $success_stories_id->summary_description = $request->story_summary_description_id;
             $success_stories_id->description = $request->story_description_id;
             if ($request->hasFile('story_achievement_img_id')) {
                 if ($old_image_path_id = $success_stories_id->achievement_image) {
