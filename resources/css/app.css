@@ -77,6 +77,10 @@
     @apply px-4 lg:px-20 xl:px-40;
 }
 
+.new-main-container {
+    @apply px-4 lg:px-10 xl:px-20;
+}
+
 .absolute-center {
     @apply absolute left-[50%] -translate-x-[50%];
 }

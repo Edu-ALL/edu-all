@@ -69,7 +69,7 @@ module.exports = {
                     "url('../../public/assets/img/passion_project_mentoring/scientific research.png')",
 
                 // Blog
-                "detail-blog-sign-up-banner":
+                "bottom-sign-up-banner":
                     "url('../../public/assets/img/blog/detail-blog-sign-up-banner.webp')",
 
                 // header upcomming event
@@ -79,6 +79,10 @@ module.exports = {
                 // header mentor
                 "mentor-header":
                     "url('../../public/assets/img/mentor/header.png')",
+
+                // resource
+                "success-stories-header":
+                    "url('../../public/assets/img/banner/Success Stories Banner.webp')",
             },
             fontFamily: {
                 primary: "Asap, sans-serif",

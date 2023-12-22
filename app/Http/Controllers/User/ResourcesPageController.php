@@ -16,10 +16,18 @@ class ResourcesPageController extends Controller
     public function success_stories($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);
-        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->get();
+
+        if (request('category') == 'passion-project') {
+            $tab_section = 'passion_project';
+            $success_stories = SuccessStories::where('category', 'Passion Project')->where('status', 'active')->where('lang', $lang)->paginate(5);
+        } else {
+            $tab_section = 'admission_mentoring';
+            $success_stories = SuccessStories::where('category', 'Admission Mentoring')->where('status', 'active')->where('lang', $lang)->paginate(5);
+        }
 
         return view('user.success_stories.main', [
-            'success_stories' => $success_stories
+            'success_stories' => $success_stories,
+            'tab_section' => $tab_section,
         ]);
     }
 
