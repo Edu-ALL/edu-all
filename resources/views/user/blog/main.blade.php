@@ -17,13 +17,13 @@
 @section('content')
     <section class="pt-10 lg:py-20">
         <div class="flex flex-col main-container">
-            <h1 class="mb-8 font-primary font-extrabold text-3xl text-primary text-center md:text-5xl">
+            <h1 class="mb-8 font-newprimary font-bold text-3xl text-newprimary text-center md:text-5xl">
                 {{ __('pages/blog.top_title') }}
             </h1>
             <div class="flex flex-col items-center lg:items-start">
                 <div class="mb-8 w-full flex flex-col items-center justify-between gap-4 md:flex-row">
                     <span
-                        class="px-4 py-2 font-primary font-bold text-sm text-white text-center rounded-md bg-primary lg:text-base">
+                        class="px-4 py-2 font-newprimary font-bold text-sm text-dark text-center bg-newyellow lg:text-base">
                         @if ($is_top_update)
                             {{ __('pages/blog.top_update') }}
                         @else
@@ -33,10 +33,10 @@
                     <form action="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}" method="GET"
                         class="inline-flex justify-end w-full max-w-md">
                         <input type="search" name="search" placeholder="Search..." id="search"
-                            class="rounded-md border-primary font-primary font-medium normal-case text-primary focus:border-primary focus:ring-primary placeholder-transparent absolute w-[55px] transition-all duration-500">
+                            class=" border-primary font-newprimary font-medium normal-case text-newprimary focus:border-primary focus:ring-primary placeholder-transparent absolute w-[55px] transition-all duration-500">
                         <button type="button" class="px-4 py-2 relative z-10 mt-[1px] transition-all duration-500"
                             onclick="getSearch()" id="search_button">
-                            <i class="fa-solid fa-magnifying-glass fa-xl text-primary"></i>
+                            <i class="fa-solid fa-magnifying-glass fa-xl text-newprimary"></i>
                         </button>
                     </form>
                 </div>
@@ -64,7 +64,7 @@
                                                 class="flex flex-col justify-between w-full md:w-1/3 md:gap-y-6 lg:gap-y-12">
                                                 <div class="mt-3 mb-5 flex flex-col gap-4">
                                                     <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog->blog_category->slug, '#blog-category']) }}"
-                                                        class="inline-flex self-start px-3 py-1 font-primary font-semibold text-sm text-primary rounded-md border border-primary hover:bg-primary/10">
+                                                        class="inline-flex self-start px-3 py-1 font-newprimary font-semibold text-sm text-primary border border-newprimary hover:bg-primary/10">
                                                         {{ $blog->blog_category->category_name }}
                                                     </a>
                                                     <div class="flex items-center gap-2">
@@ -79,36 +79,36 @@
                                                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
                                                                     target="_blank">
                                                                     <span
-                                                                        class="font-primary text-base text-[#7C7C7C] md:text-[15px] text-[11px] leading-3 hover:text-yellow">
+                                                                        class="font-newprimary text-base text-[#7C7C7C] md:text-[15px] text-[11px] leading-3 hover:text-yellow">
                                                                         {{ $blog->mentor->mentor_fullname }}
                                                                     </span>
                                                                 </a>
                                                                 <div class="hidden w-px h-4 bg-primary md:block"></div>
                                                             </div>
                                                         @endif
-                                                        <span class="font-primary text-sm text-[#7C7C7C]">
+                                                        <span class="font-newprimary text-sm text-[#7C7C7C]">
                                                             {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                                         </span>
                                                         <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
-                                                        <span class="font-primary text-sm text-[#7C7C7C]">
+                                                        <span class="font-newprimary text-sm text-[#7C7C7C]">
                                                             {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
                                                         </span>
                                                     </div>
                                                     <a
                                                         href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}">
                                                         <h2
-                                                            class="font-primary font-extrabold text-xl text-primary hover:text-yellow lg:text-3xl">
-                                                            {{ $blog->blog_title }}
+                                                            class="font-newprimary font-bold text-xl text-newprimary hover:text-yellow lg:text-3xl leading-10">
+                                                            {{ html_entity_decode($blog->blog_title) }}
                                                         </h2>
                                                     </a>
-                                                    <p class="font-primary font-medium text-base text-primary">
+                                                    <p class="font-newprimary font-medium text-base text-dark leading-8">
                                                         {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 300)) }}...
                                                     </p>
                                                 </div>
                                                 <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                                                     class="block my-5">
                                                     <span
-                                                        class="px-4 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">
+                                                        class="px-4 py-2 font-newprimary font-bold text-sm text-white bg-newprimary">
                                                         {{ __('pages/blog.top_button') }}
                                                     </span>
                                                 </a>
@@ -130,14 +130,14 @@
                 <ul class="horizontal_list flex items-center gap-x-1 py-6 overflow-x-auto">
                     <li class="flex-[0_0_auto]">
                         <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                            class="px-5 py-1.5 font-primary font-bold text-sm border-[1px] border-primary rounded-md {{ request('category') ? 'text-primary' : 'bg-primary text-white' }} ">
+                            class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') ? 'text-primary' : 'bg-newprimary text-white' }} ">
                             {{ __('pages/blog.category_all') }}
                         </a>
                     </li>
                     @foreach ($blog_categories as $blog_category)
                         <li class="flex-[0_0_auto]">
                             <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                class="px-5 py-1.5 font-primary font-bold text-sm border-[1px] border-primary rounded-md {{ request('category') == $blog_category->slug ? 'bg-primary text-white' : 'text-primary' }}">
+                                class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') == $blog_category->slug ? 'bg-newprimary text-white' : 'text-primary' }}">
                                 {{ $blog_category->category_name }}
                             </a>
                         </li>
@@ -156,28 +156,28 @@
                                 alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                 class="h-72 object-cover object-center">
                                 <div class="flex items-center justify-between gap-2">
-                                    <span class="inline-flex font-primary font-semibold text-xs text-yellow ">
+                                    <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
                                         {{ $blog->blog_category->category_name }}
                                     </span>
                                     <div class="flex items-center gap-2">
                                         @if ($blog->duration_read)
-                                        <span class="font-primary text-sm text-[#7C7C7C]">
+                                        <span class="font-newprimary text-sm text-[#7C7C7C]">
                                             {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
                                         </span>
                                         <div class="w-px h-4 bg-[#7C7C7C] md:block"></div>
                                         @endif
-                                        <span class="font-primary text-xs text-[#7C7C7C] text-right">
+                                        <span class="font-newprimary text-xs text-[#7C7C7C] text-right">
                                             {{ count($blog->blog_read) }}
                                             <i class="fa-solid fa-eye ml-1"></i>
                                         </span>
                                     </div>
                                 </div>
                             <h2
-                                class="font-primary font-extrabold text-lg text-primary lg:text-xl lg:tracking-normal lg:leading-6">
+                                class="pt-2 pb-1 font-newprimary font-bold text-lg text-newprimary lg:text-xl lg:tracking-normal lg:leading-7">
                                 {{ $blog->blog_title }}
                             </h2>
-                            <p class="font-primary font-medium text-sm text-primary">
-                                {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 200)) }}...
+                            <p class="font-newprimary font-normal text-md text-primary leading-7">
+                                {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 125)) }}...
                             </p>
                             <div class="flex justify-between items-center">
                                 @if ($blog->mentor)
@@ -186,13 +186,13 @@
                                             <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                 alt="" class="w-full object-cover">
                                         </div>
-                                        <div class="text-primary">
+                                        <div class="text-newprimary">
                                             {{ $blog->mentor->mentor_fullname }}
                                         </div>
                                     </div>
                                 @endif
                                 <div class="flex items-center gap-2">
-                                    <span class="font-primary text-sm text-[#7C7C7C]">
+                                    <span class="font-newprimary text-sm text-[#7C7C7C]">
                                         {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                     </span>
                                 </div>
@@ -223,7 +223,7 @@
                 search.addClass('placeholder-transparent')
                 search.addClass('w-[55px]')
                 search.removeClass('w-[350px]')
-                search_button.html('<i class="fa-solid fa-magnifying-glass fa-xl text-primary"></i>')
+                search_button.html('<i class="fa-solid fa-magnifying-glass fa-xl text-newprimary"></i>')
             }
         }
     </script>

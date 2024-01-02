@@ -68,6 +68,10 @@ module.exports = {
                 "passion-project-bg-scien-3":
                     "url('../../public/assets/img/passion_project_mentoring/scientific research.png')",
 
+                // Blog
+                "detail-blog-sign-up-banner":
+                    "url('../../public/assets/img/blog/detail-blog-sign-up-banner.webp')",
+
                 // header upcomming event
                 "upcomming-header":
                     "url('../../public/assets/img/banner/Upcoming event banner.webp')",
@@ -78,10 +82,15 @@ module.exports = {
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
+                newprimary: "Ambit, sans-serif",
+                secondary: "SF Pro Display, sans-serif",
             },
             colors: {
                 primary: "#233469",
+                newprimary: "#120FFD",
                 yellow: "#f78614",
+                newyellow: "#FED017",
+                dark: "#000000",
             },
         },
     },

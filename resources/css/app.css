@@ -4,6 +4,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font */
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 900;
+    src: url('/public/font/ambit/Ambit-Black.otf');
+}
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 700;
+    src: url('/public/font/ambit/Ambit-Bold.otf');
+}
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 600;
+    src: url('/public/font/ambit/Ambit-SemiBold.otf');
+}
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 400;
+    src: url('/public/font/ambit/Ambit-Regular.otf');
+}
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 300;
+    src: url('/public/font/ambit/Ambit-Light.otf');
+}
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 200;
+    src: url('/public/font/ambit/Ambit-ExtraLight.otf');
+}
+@font-face {
+    font-family: 'Ambit';
+    font-weight: 100;
+    src: url('/public/font/ambit/Ambit-Thin.otf');
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    src: url('/public/font//sf-pro-display/SF-Pro-Display-Regular.otf');
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    font-weight: 700;
+    src: url('/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf');
+}
+
 /* Navbar */
 .child_nav {
     @apply text-left border-t border-white lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
@@ -133,7 +180,7 @@ td {
 .blog_style h1,
 h2,
 h3 {
-    @apply font-primary font-extrabold text-primary;
+    @apply font-newprimary font-bold text-dark;
 }
 
 .blog_style h1 {
@@ -145,23 +192,23 @@ h3 {
 }
 
 .blog_style h3 {
-    @apply text-base  md:text-lg;
+    @apply text-base md:text-lg;
 }
 
 .blog_style p {
-    @apply font-primary font-medium text-sm text-primary md:text-base;
+    @apply font-newprimary font-normal text-sm text-dark md:text-base;
 }
 
 .blog_style ul {
-    @apply font-primary font-medium text-sm text-primary list-disc list-inside md:text-base;
+    @apply font-newprimary font-medium text-sm text-dark list-disc list-inside md:text-base;
 }
 
 .blog_style ol {
-    @apply font-primary font-medium text-sm text-primary list-decimal list-inside md:text-base;
+    @apply font-newprimary font-medium text-sm text-dark list-decimal list-inside md:text-base;
 }
 
 .blog_style a {
-    @apply hover:text-primary/80 underline decoration-primary decoration-2;
+    @apply hover:text-newprimary/80 text-dark underline decoration-newprimary decoration-2;
 }
 
 .blog_title_header_active {
@@ -170,7 +217,7 @@ h3 {
 }
 
 .blog_title_header_active h1 {
-    @apply font-primary font-extrabold text-xl text-primary md:text-2xl  lg:text-left text-center transition-all duration-500;
+    @apply font-primary font-extrabold text-xl text-newprimary md:text-2xl  lg:text-left text-center transition-all duration-500;
 }
 
 .mentor_card {

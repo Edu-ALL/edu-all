@@ -4,11 +4,11 @@
 /* Font */
 @font-face {
     font-family: 'SF Pro Display Regular';
-    src: url('/public/font/SF-Pro-Display-Regular.otf');
+    src: url('/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf');
 }
 @font-face {
     font-family: 'SF Pro Display Heavy';
-    src: url('/public/font/SF-Pro-Display-Heavy.otf');
+    src: url('/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf');
 }
 
 :root {

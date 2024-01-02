@@ -3,24 +3,24 @@
         <div class="flex justify-between w-full sm:hidden">
             @if ($paginator->onFirstPage())
                 <span
-                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-primary border border-primary rounded-md">
+                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-newprimary border border-newprimary">
                     Previous Page
                 </span>
             @else
                 <a href="{{ $paginator->previousPageUrl() }}"
-                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-yellow rounded-md bg-yellow">
+                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-newprimary bg-newprimary">
                     Previous Page
                 </a>
             @endif
 
             @if ($paginator->hasMorePages())
                 <a href="{{ $paginator->nextPageUrl() }}"
-                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-yellow rounded-md bg-yellow">
+                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-newprimary bg-newprimary">
                     Next Page
                 </a>
             @else
                 <span
-                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-primary border border-primary rounded-md">
+                    class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-newprimary border border-newprimary">
                     Next Page
                 </span>
             @endif
@@ -64,14 +64,14 @@
                     @if ($paginator->onFirstPage())
                         <span aria-disabled="true" aria-label="{{ __('pagination.previous') }}">
                             <span
-                                class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-primary border border-primary rounded-md"
+                                class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-newprimary border border-newprimary"
                                 aria-hidden="true">
                                 Previous Page
                             </span>
                         </span>
                     @else
                         <a href="{{ $paginator->previousPageUrl() }}" rel="prev"
-                            class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-yellow rounded-md bg-yellow"
+                            class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-newprimary bg-newprimary"
                             aria-label="{{ __('pagination.previous') }}">
                             Previous Page
                         </a>
@@ -82,14 +82,14 @@
                     {{-- Next Page Link --}}
                     @if ($paginator->hasMorePages())
                         <a href="{{ $paginator->nextPageUrl() }}" rel="next"
-                            class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-yellow rounded-md bg-yellow"
+                            class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-white border border-newprimary bg-newprimary"
                             aria-label="{{ __('pagination.next') }}">
                             Next Page
                         </a>
                     @else
                         <span aria-disabled="true" aria-label="{{ __('pagination.next') }}">
                             <span
-                                class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-primary border border-primary rounded-md"
+                                class="relative inline-flex items-center px-4 py-2 font-primary font-semibold text-sm text-newprimary border border-newprimary"
                                 aria-hidden="true">
                                 Next Page
                             </span>
