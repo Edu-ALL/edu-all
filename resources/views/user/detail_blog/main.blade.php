@@ -147,7 +147,7 @@
         </div>
     </section>
 
-    <section class="py-8 bg-dark bg-detail-blog-sign-up-banner bg-center bg-cover">
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="mb-6 font-newprimary font-extrabold text-3xl text-white text-center md:text-[38px]">
                 {{ __('pages/blog.sign_up') }}

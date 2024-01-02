@@ -8,139 +8,115 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-16 -z-10">
-        <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full lg:bg-primary/50">
-                <div class="flex flex-col justify-center items-center h-full lg:max-w-3xl lg:mx-auto">
-                    <h1
-                        class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center md:text-left">
-                        {{ __('pages/success_stories/success_stories.title') }}
-                    </h1>
-                    <p class="mt-5 font-primary font-normal text-xl text-white text-center">
-                        {!! __('pages/success_stories/success_stories.desc') !!}</p>
-                </div>
+    <section class="pb-4 -z-10">
+        <div
+            class="relative flex w-full left-0 overflow-hidden bg-success-stories-header pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
+            <div class="flex flex-col justify-center h-full">
+                <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center md:text-left">
+                    {{ __('pages/success_stories/success_stories.title') }}
+                </h1>
+                <p class="mt-5 font-newprimary font-semibold text-sm text-white max-w-lg text-center md:text-left">
+                    {!! __('pages/success_stories/success_stories.desc') !!}
+                </p>
             </div>
-
-            <img loading="lazy" src="{{ asset('assets/img/banner/Success Stories Banner.webp') }}"
-                alt="Allineduspace success story banner" class="w-full h-[400px] object-cover object-center">
         </div>
     </section>
 
     {{-- ================================== Success Story Section  ================================== --}}
-    <section class="py-10">
+    <section class="py-4">
         <div class="main-container">
-            <div class="flex flex-col gap-x-16 max-w-6xl mx-auto">
+            <div class="flex gap-6 items-center justify-center">
+                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'admission-mentoring']) }}"
+                    class="font-bold {{ $tab_section == 'passion_project'
+                        ? 'text-newprimary font-newprimary border-b-2 border-newprimary'
+                        : 'bg-newprimary  text-white font-newprimary' }}">Admission
+                    Mentoring</a>
+                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'passion-project']) }}"
+                    class="font-bold {{ $tab_section == 'passion_project'
+                        ? 'bg-newprimary  text-white font-newprimary'
+                        : 'text-newprimary font-newprimary border-b-2 border-newprimary' }}">Passion
+                    Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="main-container">
+            <div class="flex flex-col gap-y-16">
                 @foreach ($success_stories as $item)
-                    @if ($loop->index % 2 == 0)
-                        <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
-                            <div class="w-full md:w-1/3">
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                    alt="{{ $item->thumbnail_alt }}">
-                            </div>
-                            <div class="flex flex-col w-full md:w-2/3">
-                                <h2 class="font-primary font-semibold text-4xl text-primary text-center md:text-left">
-                                    {{ $item->name }}</h2>
-                                <div class="flex flex-col flex-wrap gap-3 mt-8 mb-2 md:flex-row">
-                                    <span
-                                        class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#fddfaf] to-[#e8b757]">{{ $item->badge_1 }}</span>
-                                    @if ($item->badge_2 != null)
-                                        <span
-                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#e58d52] to-[#e4b252]">{{ $item->badge_2 }}</span>
-                                    @endif
-
-                                    @if ($item->badge_3 != null)
-                                        <span
-                                            class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#fddfaf] to-[#e8b757]">{{ $item->badge_3 }}</span>
-                                    @endif
-
-                                    @if ($item->badge_4 != null)
-                                        <span
-                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#e58d52] to-[#e4b252]">{{ $item->badge_4 }}</span>
-                                    @endif
+                    <div class="flex flex-col gap-9 items-end md:flex-row">
+                        <div class="w-3/4 mx-auto md:w-5/12">
+                            <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                alt="{{ $item->thumbnail_alt }}">
+                        </div>
+                        <div class="w-full md:w-7/12">
+                            <div class="flex flex-col gap-1 items-start">
+                                {{-- Name --}}
+                                <h2 class="font-bold text-5xl font-newprimary">{{ $item->name }}</h2>
+                                {{-- Bedge 1 --}}
+                                <div class="font-newprimary text-newprimary text-base font-bold">
+                                    {!! $item->badge_1 !!}
                                 </div>
-
-                                <div
-                                    class="success_stories_desc mb-4 font-primary font-medium text-base text-primary leading-[26px]">
-                                    {!! $item->description !!}
+                                {{-- Bedge 2 --}}
+                                <div class="mt-4 font-newprimary text-newprimary text-base">
+                                    {!! $item->badge_2 !!}
                                 </div>
-                                @if ($item->video_link != null)
-                                    <a href="{{ $item->video_link }}"
-                                        class="self-start my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-yellow">
-                                        Learn More
-                                    </a>
+                                {{-- Achievement --}}
+                                @if ($tab_section != 'passion_project')
+                                    <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
+                                        alt="{{ $item->achievement_alt }}">
                                 @endif
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
-                                    alt="{{ $item->achievement_alt }}">
+                                {{-- Short Description --}}
+                                <div class="mt-4 font-newprimary text-base">
+                                    {!! $item->summary_description !!}
+                                </div>
+                                {{-- Read More --}}
+                                <button class="font-newprimary text-newprimary font-bold inline-flex items-center">
+                                    Read More
+                                    <div class="w-5">
+                                        <svg fill="#120FFD" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrow-ios-forward">
+                                                        <rect width="24" height="24" transform="rotate(-90 12 12)"
+                                                            opacity="0"></rect>
+                                                        <path
+                                                            d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
                             </div>
                         </div>
-                    @else
-                        <div class="flex flex-col items-center gap-x-10 mb-20 md:flex-row">
-                            <div class="flex flex-col w-full order-2 md:order-1 md:w-2/3">
-                                <h2 class="font-primary font-semibold text-4xl text-primary text-center md:text-left">
-                                    {{ $item->name }}
-                                </h2>
-                                <div class="flex flex-col flex-wrap gap-3 mt-8 mb-2 md:flex-row">
-                                    <span
-                                        class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_1 }}</span>
-                                    @if ($item->badge_2 != null)
-                                        <span
-                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_2 }}</span>
-                                    @endif
-
-                                    @if ($item->badge_3 != null)
-                                        <span
-                                            class="px-6 font-primary font-semibold text-base text-center text-primary rounded-full bg-gradient-to-r from-[#acd0e9] to-[#d4e3fa]">{{ $item->badge_3 }}</span>
-                                    @endif
-
-                                    @if ($item->badge_4 != null)
-                                        <span
-                                            class="px-6 font-primary font-semibold text-base text-center text-white rounded-full bg-gradient-to-r from-[#0d1d61] to-[#0d427f]">{{ $item->badge_4 }}</span>
-                                    @endif
-                                </div>
-                                <div
-                                    class="success_stories_desc mb-4 font-primary font-medium text-base text-primary leading-[26px]">
-                                    {!! $item->description !!}
-                                </div>
-                                @if ($item->video_link != null)
-                                    <a href="{{ $item->video_link }}"
-                                        class="self-start my-6 px-6 py-2 font-primary font-medium text-base text-white rounded-xl bg-primary">Learn
-                                        More</a>
-                                @endif
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
-                                    alt="{{ $item->achievment_alt }}">
-                            </div>
-                            <div class="w-full order-1  md:order-2 md:w-1/3">
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                    alt="{{ $item->thumbnail_alt }}">
-                            </div>
-                        </div>
-                    @endif
+                    </div>
                 @endforeach
+            </div>
+
+            <div class="mt-32">
+                {{ $success_stories->links('layout.user.pagination') }}
             </div>
         </div>
     </section>
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section class="pt-10 pb-20">
-        <div class="main-container">
-            <div class="flex flex-col gap-4 max-w-5xl mx-auto">
-                <h4 class="mt-10 mb-8 font-primary font-extrabold text-3xl text-yellow text-center leading-9">
-                    {{ __('pages/success_stories/success_stories.bottom_title') }}</h4>
-                <div class="flex flex-col justify-center items-center gap-y-14 gap-x-6 md:flex-row">
-                    <a href="{{ route('programs', ['locale' => app()->getLocale()]) }}">
-                        <span
-                            class="px-20 py-4 font-primary font-semibold text-xl text-white text-center rounded-full bg-yellow border-[3px] border-yellow md:mb-0 ">
-                            {{ __('pages/success_stories/success_stories.program_btn') }}
-                        </span>
-                    </a>
-                    <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}">
-                        <span
-                            class="px-20 py-4 font-primary font-semibold text-xl text-yellow text-center rounded-full border-[3px] border-yellow ">
-                            {{ __('pages/success_stories/success_stories.register_btn') }}
-                        </span>
-                    </a>
-                </div>
-            </div>
+
+    <section class="mb-24 py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+        <div class="main-container flex flex-col items-center">
+            <h2 class="mb-6 font-newprimary font-semibold text-3xl text-white text-center md:text-4xl">
+                {{ __('pages/success_stories/success_stories.bottom_title') }}
+            </h2>
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
+                <span class="px-8 md:px-12 py-1.5 font-bold font-newprimary text-base text-white text-center bg-newprimary">
+                    {{ __('pages/success_stories/success_stories.register_btn') }}
+                </span>
+            </a>
         </div>
     </section>
+
 @endsection
