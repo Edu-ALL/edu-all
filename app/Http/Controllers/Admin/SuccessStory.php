@@ -115,16 +115,16 @@ class SuccessStory extends Controller
             'story_badge4_en' => 'nullable',
             'story_summary_description_en' => 'required',
             'story_description_en' => 'required',
-            'story_achievement_img_en' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'story_achievement_alt_en' => 'required',
+            'story_achievement_img_en' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'story_achievement_alt_en' => 'nullable',
             'story_badge1_id' => 'required',
             'story_badge2_id' => 'nullable',
             'story_badge3_id' => 'nullable',
             'story_badge4_id' => 'nullable',
             'story_summary_description_id' => 'required',
             'story_description_id' => 'required',
-            'story_achievement_img_id' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'story_achievement_alt_id' => 'required',
+            'story_achievement_img_id' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'story_achievement_alt_id' => 'nullable',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);

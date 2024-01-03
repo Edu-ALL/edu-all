@@ -178,7 +178,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Image <span style="color: var(--red)">*</span>
+                                                                Achievement Image
                                                             </label>
                                                             <input type="file" class="form-control" id="achievement_img_en" onchange="previewAchievement_en()" name="story_achievement_img_en">
                                                             @error('story_achievement_img_en')
@@ -187,7 +187,7 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Alt <span style="color: var(--red)">*</span>
+                                                                Achievement Alt
                                                             </label>
                                                             <input type="text" class="form-control" id="achievement_alt_en" name="story_achievement_alt_en" value="{{ old('story_achievement_alt_en') }}">
                                                         </div>
@@ -271,7 +271,7 @@
                                                     <div class="col d-flex flex-column gap-2">
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Image <span style="color: var(--red)">*</span>
+                                                                Achievement Image
                                                             </label>
                                                             <input type="file" class="form-control" id="achievement_img_id" onchange="previewAchievement_id()" name="story_achievement_img_id">
                                                             @error('story_achievement_img_id')
@@ -280,7 +280,7 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Alt <span style="color: var(--red)">*</span>
+                                                                Achievement Alt
                                                             </label>
                                                             <input type="text" class="form-control" id="achievement_alt_id" name="story_achievement_alt_id" value="{{ old('story_achievement_alt_id') }}">
                                                             @error('story_achievement_alt_id')
@@ -350,10 +350,10 @@
         const badge1_en = document.getElementById('badge1_en').value;
         const summary_description_en = tinymce.get('summary_description_en').getContent();
         const description_en = tinymce.get('description_en').getContent();
-        const achievement_img_en = document.getElementById('achievement_img_en').value;
-        const achievement_alt_en = document.getElementById('achievement_alt_en').value;
+        // const achievement_img_en = document.getElementById('achievement_img_en').value;
+        // const achievement_alt_en = document.getElementById('achievement_alt_en').value;
         const submit = document.getElementById('submit');
-        if (thumbnail == "" || alt == "" || name == "" || category == "" || badge1_en == "" || summary_description_en == "" || description_en == "" || achievement_img_en == "" || achievement_alt_en == "") {
+        if (thumbnail == "" || alt == "" || name == "" || category == "" || badge1_en == "" || summary_description_en == "" || description_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;
