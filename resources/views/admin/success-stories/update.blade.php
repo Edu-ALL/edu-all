@@ -156,7 +156,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Achievement Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="achievement_preview_en" src="{{ asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[0]->achievement_image) }}">
+                                                            <img class="img-preview img-fluid" id="achievement_preview_en" src="{{ $success_stories[0]->achievement_image ? asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[0]->achievement_image) : '' }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -171,7 +171,7 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Alt <span style="color: var(--red)">*</span>
+                                                                Achievement Alt
                                                             </label>
                                                             <input type="text" class="form-control" id="achievement_alt_en" name="story_achievement_alt_en" value="{{ $success_stories[0]->achievement_alt }}">
                                                         </div>
@@ -227,7 +227,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Achievement Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="achievement_preview_id" src="{{ asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[1]->achievement_image) }}">
+                                                            <img class="img-preview img-fluid" id="achievement_preview_id" src="{{ $success_stories[1]->achievement_image ? asset('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$success_stories[1]->achievement_image) : '' }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -242,7 +242,7 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <label for="" class="form-label">
-                                                                Achievement Alt <span style="color: var(--red)">*</span>
+                                                                Achievement Alt
                                                             </label>
                                                             <input type="text" class="form-control" id="achievement_alt_id" name="story_achievement_alt_id" value="{{ $success_stories[1]->achievement_alt }}">
                                                             @error('story_achievement_alt_id')
@@ -312,10 +312,10 @@
         const badge1_en = document.getElementById('badge1_en').value;
         const summary_description_en = tinymce.get('summary_description_en').getContent();
         const description_en = tinymce.get('description_en').getContent();
-        const achievement_img_en = document.getElementById('achievement_img_en').value;
-        const achievement_alt_en = document.getElementById('achievement_alt_en').value;
+        // const achievement_img_en = document.getElementById('achievement_img_en').value;
+        // const achievement_alt_en = document.getElementById('achievement_alt_en').value;
         const submit = document.getElementById('submit');
-        if (alt == "" || name == "" || badge1_en == "" || summary_description_en == "" || description_en == "" || achievement_alt_en == "") {
+        if (alt == "" || name == "" || badge1_en == "" || summary_description_en == "" || description_en == "") {
             submit.disabled = true;
         } else {
             submit.disabled = false;
