@@ -71,7 +71,8 @@
                                     {!! $item->summary_description !!}
                                 </div>
                                 {{-- Read More --}}
-                                <button class="font-newprimary text-newprimary font-bold inline-flex items-center">
+                                <button id="open-desc-modal"
+                                    class="font-newprimary text-newprimary font-bold inline-flex items-center">
                                     Read More
                                     <div class="w-5">
                                         <svg fill="#120FFD" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -92,6 +93,8 @@
                                         </svg>
                                     </div>
                                 </button>
+
+
                             </div>
                         </div>
                     </div>
@@ -102,6 +105,8 @@
                 {{ $success_stories->links('layout.user.pagination') }}
             </div>
         </div>
+
+
     </section>
 
     {{-- ================================== Bottom Section  ================================== --}}
@@ -119,4 +124,65 @@
         </div>
     </section>
 
+
+    @foreach ($success_stories as $item)
+        <!-- Main modal -->
+        <div id="desc-modal"
+            class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 z-40 w-full inset-0 h-full max-h-full">
+            <div class="w-full h-full backdrop-blur-sm flex justify-center items-center z-50">
+                <div class="relative p-4 w-full max-w-3xl max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow ">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                            <h3 class="text-xl font-bold text-dark">
+                                {{ $item->name }}
+                            </h3>
+                            <button type="button" id="close-desc-modal"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                data-modal-hide="default-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4">
+                            <div class="text-base leading-relaxed text-dark">
+                                {!! $item->description !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+@endsection
+
+@section('script')
+    <script>
+        const openDescModals = document.querySelectorAll('#open-desc-modal');
+        const closeDescModals = document.querySelectorAll('#close-desc-modal');
+        const descModals = document.querySelectorAll('#desc-modal');
+
+        descModals.forEach((descModal, index) => {
+            openDescModals[index].addEventListener('click', () => {
+                descModals[index].classList.add('flex');
+                descModals[index].classList.remove('hidden');
+            });
+
+            closeDescModals[index].addEventListener('click', () => {
+                descModals[index].classList.remove('flex');
+                descModals[index].classList.add('hidden');
+            });
+
+            descModal.addEventListener('click', () => {
+                descModals[index].classList.remove('flex');
+                descModals[index].classList.add('hidden');
+            });
+        });
+    </script>
 @endsection
