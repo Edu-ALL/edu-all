@@ -68,6 +68,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link collapsed {{ request()->is('admin/important-date*') ? 'active' : '' }}" href="/admin/important-date">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Important Date</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed {{ request()->is('admin/regular-talk*') ? 'active' : '' }}" href="/admin/regular-talk">
                 <i class="fa-regular fa-calendar-days"></i>
                 <span>Regular Talk</span>
