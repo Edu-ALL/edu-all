@@ -15,6 +15,7 @@ class UpcomingEvents extends Model
     protected $fillable = [
         'id',
         'group',
+        'category',
         'event_date',
         'event_thumbnail',
         'event_alt',

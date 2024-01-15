@@ -111,6 +111,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col">
+                                        <label for="" class="form-label">
+                                            Category <span style="color: var(--red)">*</span>
+                                        </label>
+                                        <div class="col">
+                                            <select class="select2" name="category" id="category">
+                                                <option value=""></option>
+                                                <option value="Event" {{ old('category') == 'Event' ? 'selected' : '' }}>Event</option>
+                                                <option value="Regular Talk" {{ old('category') == 'Regular Talk' ? 'selected' : '' }}>Regular Talk</option>
+                                            </select>
+                                        </div>
+                                        @error('category')
+                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                        @enderror
+                                    </div>
                                     <div class="col-12">
                                         <label for="" class="form-label">
                                             Title <span style="color: var(--red)">*</span>
