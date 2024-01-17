@@ -73,6 +73,12 @@
                 <span>Important Date</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed {{ request()->is('admin/as-seen*') ? 'active' : '' }}" href="/admin/as-seen">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>As Seen</span>
+            </a>
+        </li>
         {{-- <li class="nav-item">
             <a class="nav-link collapsed {{ request()->is('admin/regular-talk*') ? 'active' : '' }}" href="/admin/regular-talk">
                 <i class="fa-regular fa-calendar-days"></i>
