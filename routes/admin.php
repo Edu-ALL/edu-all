@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BlogCategory;
 use App\Http\Controllers\Admin\BlogWidget;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Guidebook;
+use App\Http\Controllers\Admin\ImportantDate;
 use App\Http\Controllers\Admin\Mentor;
 use App\Http\Controllers\Admin\MentorVideo;
 use App\Http\Controllers\Admin\ProjectShowcase;
@@ -180,6 +181,15 @@ Route::middleware('is_admin')->group(function(){
     Route::post('/regular-talk/deactivate/{id}', [RegularTalk::class, 'deactivate']);
     Route::post('/regular-talk/activate/{id}', [RegularTalk::class, 'activate']);
     Route::post('/regular-talk/delete/{id}', [RegularTalk::class, 'destroy']);
+
+    // Important Dates
+    Route::get('/important-date', [ImportantDate::class, 'index']);
+    Route::get('/important-date/data', [ImportantDate::class, 'getImportantDates'])->name('data-important-date');
+    Route::get('/important-date/create', [ImportantDate::class, 'create']);
+    Route::post('/important-date', [ImportantDate::class, 'store'])->name('create-important-date');
+    Route::get('/important-date/{id}/edit', [ImportantDate::class, 'edit']);
+    Route::post('/important-date/{id}', [ImportantDate::class, 'update'])->name('update-important-date');
+    Route::post('/important-date/delete/{id}', [ImportantDate::class, 'delete']);
 
     // Website Settings
     Route::get('/settings', [WebsiteSetting::class, 'index']);
