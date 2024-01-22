@@ -49,16 +49,17 @@ Route::middleware('is_admin')->group(function(){
 
     // Banner
     Route::get('/banner', [Banner::class, 'index']);
-    Route::get('/banner/data', [Banner::class, 'getBanner'])->name('data-banner');
-    Route::get('/banner/create', [Banner::class, 'create']);
-    Route::post('/banner', [Banner::class, 'store'])->name('create-banner');
-    Route::get('/banner/{id}/edit', [Banner::class, 'edit']);
-    Route::post('/banner/{id}', [Banner::class, 'update'])->name('update-banner');
-    Route::post('/banner/deactivate/{id}', [Banner::class, 'deactivate']);
-    Route::post('/banner/activate/{id}', [Banner::class, 'activate']);
-    Route::post('/banner/delete/{id}', [Banner::class, 'delete']);
-    Route::post('/banner/list', [Banner::class, 'getListBanner'])->name('list-banner');
-    Route::post('/banner/list/order/{id}', [Banner::class, 'updateOrder'])->name('order-banner');
+    Route::post('/banner/update', [Banner::class, 'update'])->name('update-banner');
+    // Route::get('/banner/data', [Banner::class, 'getBanner'])->name('data-banner');
+    // Route::get('/banner/create', [Banner::class, 'create']);
+    // Route::post('/banner', [Banner::class, 'store'])->name('create-banner');
+    // Route::get('/banner/{id}/edit', [Banner::class, 'edit']);
+    // Route::post('/banner/{id}', [Banner::class, 'update'])->name('update-banner');
+    // Route::post('/banner/deactivate/{id}', [Banner::class, 'deactivate']);
+    // Route::post('/banner/activate/{id}', [Banner::class, 'activate']);
+    // Route::post('/banner/delete/{id}', [Banner::class, 'delete']);
+    // Route::post('/banner/list', [Banner::class, 'getListBanner'])->name('list-banner');
+    // Route::post('/banner/list/order/{id}', [Banner::class, 'updateOrder'])->name('order-banner');
 
     // Blog
     Route::get('/blogs', [Blog::class, 'index']);

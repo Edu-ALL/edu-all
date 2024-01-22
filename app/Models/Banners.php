@@ -14,19 +14,14 @@ class Banners extends Model
 
     protected $fillable = [
         'id',
-        'group',
-        'banner_img',
-        'banner_img_mobile',
-        'banner_alt',
-        'banner_title',
-        'banner_description',
-        'banner_button',
-        'banner_button_color',
-        'banner_link',
-        'banner_status',
-        'region',
-        'lang',
-        'banner_order',
+        'image',
+        'video_link',
+        'alt',
+        'accepatance',
+        'mentees',
+        'scholarship',
+        'sat_score',
+        'statisfaction_rate',
         'created_at',
         'updated_at'
     ];

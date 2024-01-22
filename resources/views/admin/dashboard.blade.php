@@ -33,18 +33,18 @@
                         <div class="card-body d-flex flex-column gap-2">
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="fa-solid fa-images"></i>
+                                    <i class="fa-solid fa-calendar-days"></i>
                                 </div>
                                 <div class="ps-md-3 ps-4 py-1 d-flex flex-column gap-1">
                                     <h5 class="card-title p-0 m-0">
                                         <a class="card-title link-card" href="/admin/banner">
-                                            Banner <span>| {{ now()->year }}</span>
+                                            Important Dates <span>| {{ now()->year }}</span>
                                         </a>
                                     </h5>
-                                    <h6 class="ps-1">{{ $banner->count() }}</h6>
+                                    <h6 class="ps-1">{{ $important_dates->count() }}</h6>
                                 </div>
                             </div>
-                            <small class="text-muted small"><i>Totals in Different Regions and Languages</i></small>
+                            <small class="text-muted small"><i>Total in English</i></small>
                         </div>
                     </div>
                 </div>

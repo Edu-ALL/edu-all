@@ -12,6 +12,9 @@
         .dataTables_paginate {
             margin-top: 12px !important;
         }
+        .fs-12 {
+            font-size: 12px;
+        }
     </style>
 @endsection
 @section('content')
@@ -34,82 +37,127 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-row align-items-center justify-content-between">
-                                    <h5 class="card-title">List Banners <span>| {{ now()->year }}</span></h5>
-                                    <a type="button" class="btn btn-primary" href="/admin/banner/create">
-                                        <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">
-                                            Create new</span>
-                                    </a>
+                                    <h5 class="card-title my-1">Banner Settings <span>| {{ now()->year }}</span></h5>
                                 </div>
-                                <table class="table display" id="listbanner" style="width:100%">
-                                    <thead class="">
-                                        <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Image (Desktop)</th>
-                                            <th scope="col">Image (Mobile)</th>
-                                            <th scope="col">Region</th>
-                                            <th scope="col">Language</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section dashboard mt-3">
-            <div class="col-lg-12">
-                <div class="card" style="overflow: hidden">
-                    <div class="card-body py-3">
-                        <div class="d-flex flex-row align-items-center justify-content-between">
-                            <h5 class="card-title p-0 m-0">Banner Sort</h5>
-                        </div>
-                        {{-- <h5 class="card-title">Choose Region and Language</h5> --}}
-                        <div class="row mt-3">
-                            <div class="col">
-                                <label for="" class="form-label">
-                                    Region
-                                </label>
-                                <div class="col">
-                                    <select class="select2" name="region" id="region">
-                                        <option value=""></option>
-                                        @foreach ($regions as $regions)
-                                            <option value="{{ $regions->region_id }}">
-                                                {{ $regions->region }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                @error('region')
-                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                @enderror
-                            </div>
-                            <div class="col">
-                                <label for="" class="form-label">
-                                    Language
-                                </label>
-                                <div class="col">
-                                    <select class="select2" name="lang" id="lang">
-                                        <option value=""></option>
-                                        @foreach ($languages as $languages)
-                                            <option value="{{ $languages->language_id }}">
-                                                {{ $languages->language }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                @error('lang')
-                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="container-fluid p-0 my-3">
-                            <div class="row mx-0 gap-2" id="listBanner">
-                                
+                                <ul class="nav nav-tabs nav-tabs-bordered"></ul>
+                                <form action="{{ route('update-banner') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @if($errors->any())
+                                        <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                                            <strong>Failed Update Website Settings!</strong> You have to check some fields.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
+                                    <div class="col d-flex flex-column mt-4 gap-3">
+                                        <div class="d-flex flex-md-row flex-column justify-content-between gap-3">
+                                            <div class="col-md-3 col">
+                                                <label for="" class="form-label fw-semibold">Preview Image</label>
+                                                <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 136px;">
+                                                    @if ($data->image)
+                                                        <img class="img-preview img-fluid rounded" id="img_preview_data" src="{{ $data->image ? asset('uploaded_files/'.'banner/'.$data->created_at->format('Y').'/'.$data->created_at->format('m').'/'.$data->image) : '' }}">
+                                                    @endif
+                                                    <img class="img-preview img-fluid rounded" id="img_preview">
+                                                </div>
+                                            </div>
+                                            <div class="col d-flex flex-column justify-content-between gap-3">
+                                                <div class="row flex-md-row flex-column align-items-md-end justify-content-start gap-md-3 gap-1" style="min-height: 20%">
+                                                    <div class="col input-field">
+                                                        <label for="image" class="form-label fw-semibold">
+                                                            Image
+                                                        </label>
+                                                        <div class="input-group input-with-btn">
+                                                            <input class="form-control " type="file" id="image" name="image" onchange="previewImage()">
+                                                            <button class="btn btn-primary" type="button" id="clear_file" disabled style="line-height: 1.4">Clear File</button>
+                                                        </div>
+                                                        @error('image')
+                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="col-md-3 col {{ $data->image ? 'd-block' : 'd-none' }} form-check form-check-inline mt-2 ms-md-0 ms-3">
+                                                        <input class="form-check-input" type="checkbox" id="delete_img" name="delete_img" value="delete">
+                                                        <label class="form-label fw-semibold mb-0" for="delete_img">Delete Image</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <label for="video_link" class="form-label fw-semibold">
+                                                        Video
+                                                    </label>
+                                                    <input type="text" class="form-control" id="video_link" name="video_link" value="{{ $data->video_link }}">
+                                                    <small class="alert pt-1 p-0 m-0 fs-12">Only supports <strong class="text-danger">Youtube</strong> videos. e.g. <b><i>https://youtu.be/eRb6lymJOIM</i></b></small>
+                                                    @error('video_link')
+                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="alt" class="form-label fw-semibold">
+                                                Alt Image/Video
+                                            </label>
+                                            <input type="text" class="form-control" id="alt" name="alt" value="{{ $data->alt }}">
+                                            @error('alt')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                        <div class="d-flex flex-md-row flex-column justify-content-between gap-4">
+                                            <div class="col">
+                                                <label for="accepatance" class="form-label fw-semibold">
+                                                    Accepatance
+                                                </label>
+                                                <input type="text" class="form-control" id="accepatance" name="accepatance" value="{{ $data->accepatance }}">
+                                                @error('accepatance')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col">
+                                                <label for="mentees" class="form-label fw-semibold">
+                                                    Mentees
+                                                </label>
+                                                <input type="text" class="form-control" id="mentees" name="mentees" value="{{ $data->mentees }}">
+                                                @error('mentees')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-md-row flex-column justify-content-between gap-4">
+                                            <div class="col">
+                                                <label for="scholarship" class="form-label fw-semibold">
+                                                    Scholarship
+                                                </label>
+                                                <input type="text" class="form-control" id="scholarship" name="scholarship" value="{{ $data->scholarship }}">
+                                                @error('scholarship')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <div class="col">
+                                                <label for="sat_score" class="form-label fw-semibold">
+                                                    SAT Score
+                                                </label>
+                                                <input type="text" class="form-control" id="sat_score" name="sat_score" value="{{ $data->sat_score }}">
+                                                @error('sat_score')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-md-row flex-column justify-content-between gap-4">
+                                            <div class="col">
+                                                <label for="statisfaction_rate" class="form-label fw-semibold">
+                                                    Statisfaction Rate
+                                                </label>
+                                                <input type="text" class="form-control" id="statisfaction_rate" name="statisfaction_rate" value="{{ $data->statisfaction_rate }}">
+                                                @error('statisfaction_rate')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary" id="submit">
+                                            <i class="fa-solid fa-pen-to-square me-1"></i> Save Changes
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -117,241 +165,42 @@
             </div>
         </section>
     </main>
-
-    {{-- Modal Deactive --}}
-    <div class="modal fade" id="deactivate" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0">
-                <div class="modal-header">
-                    <div class="col d-flex gap-2 align-items-center">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <h6 class="modal-title ms-2" id="title-info">Deactivate</h6>
-                    </div>
-                </div>
-                <div class="modal-body text-center mt-3 mb-1">
-                    <p id="desc-info">Are you sure, you want to Deactivate this banner?</p>
-                </div>
-                <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
-                    <button type="submit" style="font-size: 13px" data-bs-dismiss="modal"
-                        aria-label="Close">Cancel</button>
-                    <form action="" method="POST" id="form_deactivate">
-                        @csrf
-                        <button type="submit" id="btn-status"
-                            style="font-size: 13px; background: var(--danger);">Deactivate</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- Modal Activate --}}
-    <div class="modal fade" id="activate" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0">
-                <div class="modal-header">
-                    <div class="col d-flex gap-2 align-items-center">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <h6 class="modal-title ms-2" id="title-info">Activate</h6>
-                    </div>
-                </div>
-                <div class="modal-body text-center mt-3 mb-1">
-                    <p id="desc-info">Are you sure, you want to Activate this banner?</p>
-                </div>
-                <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
-                    <button type="submit" style="font-size: 13px" data-bs-dismiss="modal"
-                        aria-label="Close">Cancel</button>
-                    <form action="" method="POST" id="form_activate">
-                        @csrf
-                        <button type="submit" id="btn-status"
-                            style="font-size: 13px; background: var(--success);">Activate</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- Modal Delete --}}
-    <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0">
-                <div class="modal-header">
-                    <div class="col d-flex gap-2 align-items-center">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <h6 class="modal-title ms-2" id="title-info">Delete</h6>
-                    </div>
-                </div>
-                <div class="modal-body text-center mt-3 mb-1">
-                    <p id="desc-info">Are you sure, you want to Delete this banner?</p>
-                </div>
-                <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
-                    <button type="submit" style="font-size: 13px" data-bs-dismiss="modal"
-                        aria-label="Close">Cancel</button>
-                    <form action="" method="POST" id="form_delete">
-                        @csrf
-                        <button type="submit" id="btn-status"
-                            style="font-size: 13px; background: var(--danger);">Delete</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('js')
     <script>
-        // List Banner
-        $(function() {
-            $('#listbanner').DataTable({
-                scrollX: true,
-                responsive: true,
-                processing: true,
-                serverSide: true,
-                ajax: '{{ route('data-banner') }}',
-                columns: [{
-                        data: 'DT_RowIndex',
-                        name: 'DT_RowIndex'
-                    },
-                    {
-                        data: 'title',
-                        name: 'title'
-                    },
-                    {
-                        data: 'description',
-                        name: 'description'
-                    },
-                    {
-                        data: 'image',
-                        name: 'image'
-                    },
-                    {
-                        data: 'image_mobile',
-                        name: 'image_mobile'
-                    },
-                    {
-                        data: 'region',
-                        name: 'region',
-                        class: 'text-center'
-                    },
-                    {
-                        data: 'language',
-                        name: 'language',
-                        class: 'text-center'
-                    },
-                    {
-                        data: 'status',
-                        name: 'status',
-                        class: 'text-center'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        class: 'text-center'
-                    },
-                ]
-            });
-        });
-        function formDeactivate(id) {
-            $('#form_deactivate').attr('action', '{{ url('/admin/banner/deactivate/') }}' + '/' + id);
-        };
-        function formActivate(id) {
-            $('#form_activate').attr('action', '{{ url('/admin/banner/activate/') }}' + '/' + id);
-        };
-        function formDelete(id) {
-            $('#form_delete').attr('action', '{{ url('/admin/banner/delete/') }}' + '/' + id);
-        };
-
-        $('#lang').change(function(){
-            let region = $('#region').val()
-            let lang = $('#lang').val()
-            getListBanner(region, lang)
-        });
-
-        async function getListBanner(region, lang){
-            let url_banner_list = "{{ url('api/banner/list') }}/"+region+"-"+lang
-            try {
-                swal.showLoading();
-                const response = await axios.get(url_banner_list);
-                let data = response.data
-                let numberOrder = data.length
-                $('#listBanner').html('')
-                for (let i = 0; i < numberOrder; i++) {
-                    $('#listBanner').append(
-                        `
-                        <div class="col-2 p-0 m-0">
-                            <div class="card-item">
-                                <div class="card-body p-1 pb-0 text-center">
-                                    <div class="col p-0 m-0">
-                                        <form action="" method="POST" id="form-order${i}">
-                                            @csrf
-                                            <select class="form-select" name="orderNumber" id="listOrder${i}" onchange="updateOrder('#form-order${i}', ${data[i].id}, '${data[i].region}', '${data[i].lang}')">
-                                                <option value="">Select Order</option>
-                                            </select>
-                                        </form>
-                                        
-                                        <img class="mt-1" src="{{ asset('uploaded_files/banner/${data[i].created_at.substring(0, 4)}/${data[i].created_at.substring(5, 7)}/${data[i].banner_img}') }}" alt="" width="100%" style="border-radius: 4px;">
-                                    </div>
-                                    <h5 class="card-desc mt-2">${data[i].banner_title}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        `
-                    )
-                    var selector = "#listOrder" + i
-                    for (let j = 0; j <= numberOrder; j++) {
-                        if (j == (numberOrder)) {
-                            $(selector).append(
-                                `<option value="unorder" data-order="${j+1}">-- Delete Order --</option>`
-                            )
-                        } else {
-                            $(selector).append(
-                                `<option value="${j+1}" data-order="${j+1}">${j+1}</option>`
-                            )
-                        }
-                    }
-                }
-                for (let i = 0; i < numberOrder; i++) {
-                    var selector = "#listOrder" + i
-                    for (let j = 0; j < numberOrder; j++) {
-                        if (data[i].banner_order == (j+1)) {
-                            $(selector).val((j+1));
-                        }
-                    }
-                }
-            } catch (error) {
-                console.error(error);
+        function previewImage(){
+            const image = document.querySelector('#image')
+            const imgPreview = document.querySelector('#img_preview')
+            $("#img_preview_data").addClass("d-none")
+            $('#clear_file').prop("disabled", false)
+            const oFReader = new FileReader()
+            oFReader.readAsDataURL(image.files[0])
+            oFReader.onload = function(oFREvent){
+                imgPreview.src = oFREvent.target.result
             }
-            swal.close();
-        }
+        };
 
-        async function updateOrder(selector, id, region, lang){
-            let order = $(selector + ' select').val()
-            let url = '{{ url('/admin/banner/list/order/') }}' + '/' + id
-            try {
-                swal.showLoading();
-                const response = await axios.post(url, {
-                    orderNumber:order
-                })
-
-                let data = response.data
-                if(data=='Success') {
-                    notif('success','The sort has been successful')
-                    setTimeout(() => {
-                        getListBanner(region, lang)
-                    }, 2000);
-                } else {
-                    notif('error','Please try again!')
-                }
-            } catch(error) {
-                console.error(error);
-                swal.close();
+        // Clear File
+        $('#clear_file').on('click', function() {
+            $('#clear_file').prop("disabled", true)
+            $('#image').val(null)
+            $("#img_preview_data").removeClass("d-none")
+            $("#img_preview").attr('src', '')
+        });
+        
+        // Delete Image
+        $('#delete_img').on('change', function() {
+            if ($('#delete_img').is(":checked")) {
+                $('#clear_file').prop("disabled", true)
+                $('#image').prop("disabled", true)
+                $('#image').val(null)
+                $("#img_preview").attr('src', '')
+                $("#img_preview_data").addClass("d-none")
+            } else {
+                $('#image').prop("disabled", false)
+                $("#img_preview_data").removeClass("d-none")
             }
-
-            // $(selector).attr('action', '{{ url('/admin/banner/list/order/') }}' + '/' + id);
-            // $(selector).submit();
-        }
-
-        $(document).ajaxComplete(function() {
-            // Tooltips
-            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         });
     </script>
 @endsection
