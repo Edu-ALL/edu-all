@@ -160,6 +160,7 @@ class UpcomingEvent extends Controller
             'lang' => 'required',
             'publish_date' => 'required',
             'take_off_date' => 'required',
+            'category' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -191,8 +192,9 @@ class UpcomingEvent extends Controller
             $upcoming_event->publish_date = $request->publish_date;
             $upcoming_event->take_off_date = $request->take_off_date;
             $upcoming_event->event_status = 'draft';
-            $upcoming_event->created_at = date('Y-m-d H:i:s');
-            $upcoming_event->updated_at = date('Y-m-d H:i:s');
+            $upcoming_event->category = $request->category;
+            // $upcoming_event->created_at = date('Y-m-d H:i:s');
+            // $upcoming_event->updated_at = date('Y-m-d H:i:s');
             $upcoming_event->save();
 
             DB::commit();
@@ -233,6 +235,7 @@ class UpcomingEvent extends Controller
             'lang' => 'required',
             'publish_date' => 'required',
             'take_off_date' => 'required',
+            'category' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -268,7 +271,8 @@ class UpcomingEvent extends Controller
             $upcoming_event->lang = $request->lang;
             $upcoming_event->publish_date = $request->publish_date;
             $upcoming_event->take_off_date = $request->take_off_date;
-            $upcoming_event->updated_at = date('Y-m-d H:i:s');
+            $upcoming_event->category = $request->category;
+            // $upcoming_event->updated_at = date('Y-m-d H:i:s');
             $upcoming_event->save();
 
             DB::commit();

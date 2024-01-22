@@ -42,6 +42,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Title</th>
+                                        <th scope="col">Category</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Region</th>
@@ -146,11 +147,17 @@
                     },
                     {
                         data: 'event_title',
-                        name: 'event_title'
+                        name: 'event_title',
+                        class: 'text-nowrap',
+                    },
+                    {
+                        data: 'category',
+                        name: 'category'
                     },
                     {
                         data: 'event_date',
-                        name: 'event_date'
+                        name: 'event_date',
+                        class: 'text-nowrap',
                     },
                     {
                         data: 'image',

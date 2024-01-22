@@ -36,6 +36,15 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aab7cf;
+}
+
 .form-control:focus {
   box-shadow: none;
 }
@@ -327,9 +336,9 @@ h6 {
 /*--------------------------------------------------------------
 # Modal
 --------------------------------------------------------------*/
-.modal-dialog {
-  /* margin-top: 5px; */
-}
+/* .modal-dialog {
+  margin-top: 5px;
+} */
 .modal-header {
   background-color: var(--blue);
   padding: 24px !important;
