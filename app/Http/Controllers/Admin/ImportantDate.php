@@ -46,7 +46,7 @@ class ImportantDate extends Controller
                 ';
                 return $result;
             })
-            ->rawColumns(['language', 'action'])
+            ->rawColumns(['action'])
             ->make(true);
         }
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AsSeen;
 use App\Http\Controllers\Admin\Authentication;
 use App\Http\Controllers\Admin\Banner;
 use App\Http\Controllers\Admin\Blog;
@@ -190,6 +191,15 @@ Route::middleware('is_admin')->group(function(){
     Route::get('/important-date/{id}/edit', [ImportantDate::class, 'edit']);
     Route::post('/important-date/{id}', [ImportantDate::class, 'update'])->name('update-important-date');
     Route::post('/important-date/delete/{id}', [ImportantDate::class, 'delete']);
+
+    // As Seen
+    Route::get('/as-seen', [AsSeen::class, 'index']);
+    Route::get('/as-seen/data', [AsSeen::class, 'getAsSeens'])->name('data-as-seen');
+    Route::get('/as-seen/create', [AsSeen::class, 'create']);
+    Route::post('/as-seen', [AsSeen::class, 'store'])->name('create-as-seen');
+    Route::get('/as-seen/{id}/edit', [AsSeen::class, 'edit']);
+    Route::post('/as-seen/{id}', [AsSeen::class, 'update'])->name('update-as-seen');
+    Route::post('/as-seen/delete/{id}', [AsSeen::class, 'delete']);
 
     // Website Settings
     Route::get('/settings', [WebsiteSetting::class, 'index']);
