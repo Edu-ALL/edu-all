@@ -196,6 +196,32 @@
                                                         {{ $mentor[0]->short_desc }}
                                                     </textarea>
                                                     </div>
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="" class="form-label">
+                                                                    Value 1
+                                                                </label>
+                                                                <input type="text" class="form-control" name="value_1_en" value="{{ $mentor[0]->value_1 }}">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="" class="form-label">
+                                                                    Value 2
+                                                                </label>
+                                                                <input type="text" class="form-control" name="value_2_en" value="{{ $mentor[0]->value_2 }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="" class="form-label">
+                                                                    Value 3
+                                                                </label>
+                                                                <input type="text" class="form-control" name="value_3_en" value="{{ $mentor[0]->value_3 }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,6 +311,32 @@
                                                             <small
                                                                 class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="" class="form-label">
+                                                                    Value 1
+                                                                </label>
+                                                                <input type="text" class="form-control" name="value_1_id" value="{{ $mentor[1]->value_1 }}">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="" class="form-label">
+                                                                    Value 2
+                                                                </label>
+                                                                <input type="text" class="form-control" name="value_2_id" value="{{ $mentor[1]->value_2 }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="" class="form-label">
+                                                                    Value 3
+                                                                </label>
+                                                                <input type="text" class="form-control" name="value_3_id" value="{{ $mentor[1]->value_3 }}">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 

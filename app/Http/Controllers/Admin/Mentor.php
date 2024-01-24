@@ -146,6 +146,9 @@ class Mentor extends Controller
             $mentor_en->short_desc = $request->mentor_short_description_en;
             $mentor_en->meta_title = $request->meta_title_en;
             $mentor_en->meta_desc = $request->meta_desc_en;
+            $mentor_en->value_1 = $request->value_1_en;
+            $mentor_en->value_2 = $request->value_2_en;
+            $mentor_en->value_3 = $request->value_3_en;
             $mentor_en->mentor_status = 'active';
             $mentor_en->lang = 'en';
 
@@ -162,6 +165,9 @@ class Mentor extends Controller
             $mentor_id->short_desc = $request->mentor_short_description_id;
             $mentor_id->meta_title = $request->meta_title_id;
             $mentor_id->meta_desc = $request->meta_desc_id;
+            $mentor_id->value_1 = $request->value_1_id;
+            $mentor_id->value_2 = $request->value_2_id;
+            $mentor_id->value_3 = $request->value_3_id;
             $mentor_id->mentor_status = 'active';
             $mentor_id->lang = 'id';
 
@@ -287,6 +293,9 @@ class Mentor extends Controller
             $mentor_en->mentor_alt = $request->mentor_alt;
             $mentor_en->meta_title = $request->meta_title_en;
             $mentor_en->meta_desc = $request->meta_desc_en;
+            $mentor_en->value_1 = $request->value_1_en;
+            $mentor_en->value_2 = $request->value_2_en;
+            $mentor_en->value_3 = $request->value_3_en;
             $mentor_en->updated_at = date('Y-m-d H:i:s');
 
             $mentor_id = $mentor[1];
@@ -301,6 +310,9 @@ class Mentor extends Controller
             $mentor_id->mentor_alt = $request->mentor_alt;
             $mentor_id->meta_title = $request->meta_title_id;
             $mentor_id->meta_desc = $request->meta_desc_id;
+            $mentor_id->value_1 = $request->value_1_id;
+            $mentor_id->value_2 = $request->value_2_id;
+            $mentor_id->value_3 = $request->value_3_id;
             $mentor_id->updated_at = date('Y-m-d H:i:s');
 
             if ($request->hasFile('mentor_image')) {

@@ -160,6 +160,39 @@
                                                         {!! $mentor[0]->description !!}
                                                     </div>
                                                 </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Value 1</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0 desc-textarea">
+                                                        {!! $mentor[0]->value_1 == null ? '-' : $mentor[0]->value_1 !!}
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Value 2</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0 desc-textarea">
+                                                        {!! $mentor[0]->value_2 == null ? '-' : $mentor[0]->value_2 !!}
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Value 3</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0 desc-textarea">
+                                                        {!! $mentor[0]->value_3 == null ? '-' : $mentor[0]->value_3 !!}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -267,6 +300,39 @@
                                                     </div>
                                                     <div class="col p-0 desc-textarea">
                                                         {!! $mentor[1]->description !!}
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Value 1</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0 desc-textarea">
+                                                        {!! $mentor[1]->value_1 == null ? '-' : $mentor[1]->value_1 !!}
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Value 2</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0 desc-textarea">
+                                                        {!! $mentor[1]->value_2 == null ? '-' : $mentor[1]->value_2 !!}
+                                                    </div>
+                                                </div>
+                                                <div class="field-detail d-flex flex-row align-items-start">
+                                                    <div class="col-md-2 col-3 p-0">
+                                                        <h6 class="m-0 card-title p-0">Value 3</h6>
+                                                    </div>
+                                                    <div class="col-1 text-center p-0" style="max-width: 22px">
+                                                        <p class="m-0">:</p>
+                                                    </div>
+                                                    <div class="col p-0 desc-textarea">
+                                                        {!! $mentor[1]->value_3 == null ? '-' : $mentor[1]->value_3 !!}
                                                     </div>
                                                 </div>
                                             </div>
