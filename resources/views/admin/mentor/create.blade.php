@@ -174,6 +174,32 @@
                                                         {{ old('mentor_short_description_en') }}
                                                     </textarea>
                                                 </div>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Value 1
+                                                            </label>
+                                                            <input type="text" class="form-control" name="value_1_en" value="{{ old('value_1_en') }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Value 2
+                                                            </label>
+                                                            <input type="text" class="form-control" name="value_2_en" value="{{ old('value_2_en') }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="" class="form-label">
+                                                                Value 3
+                                                            </label>
+                                                            <input type="text" class="form-control" name="value_3_en" value="{{ old('value_3_en') }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -257,6 +283,32 @@
                                                     @error('mentor_short_description_id')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Value 1
+                                                            </label>
+                                                            <input type="text" class="form-control" name="value_1_id" value="{{ old('value_1_id') }}">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="" class="form-label">
+                                                                Value 2
+                                                            </label>
+                                                            <input type="text" class="form-control" name="value_2_id" value="{{ old('value_2_id') }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="" class="form-label">
+                                                                Value 3
+                                                            </label>
+                                                            <input type="text" class="form-control" name="value_3_id" value="{{ old('value_3_id') }}">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 

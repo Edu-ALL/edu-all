@@ -26,6 +26,9 @@ class Mentors extends Model
         'mentor_picture',
         'mentor_alt',
         'mentor_status',
+        'value_1',
+        'value_2',
+        'value_3',
         'lang',
         'created_at',
         'updated_at'
