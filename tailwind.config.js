@@ -15,6 +15,9 @@ module.exports = {
                 "sg-header":
                     "url('../../public/assets/img/home/sg/header.png')",
 
+                // Home
+                pathaway: "url('../../public/assets/img/home/pathaway.png')",
+
                 // Sign me
                 "sign-me-adm-mentoring":
                     "url('../../public/assets/img/sign-me/banner/adm-mentoring.png')",
@@ -95,6 +98,7 @@ module.exports = {
                 yellow: "#f78614",
                 newyellow: "#FED017",
                 dark: "#000000",
+                red: "#FF2519",
             },
         },
     },
