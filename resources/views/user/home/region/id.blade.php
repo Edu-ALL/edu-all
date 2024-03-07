@@ -8,266 +8,456 @@
 
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
-    <div class="relative left-0 w-full h-screen -mt-16 overflow-hidden">
-        <section class="splide" aria-labelledby="carousel-heading" id="home_banner">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    @foreach ($banners as $banner)
-                        <li class="splide__slide relative">
-                            <img class="object-top object-cover w-full h-screen md:block hidden"
-                                src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
-                                alt="{{ $banner->banner_alt }}">
-                            <img class="object-top object-cover w-full h-screen md:hidden block"
-                                src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
-                                alt="{{ $banner->banner_alt }}">
-                            <div
-                                class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ !$banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
-                                <div
-                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-[215px] font-primary lg:items-start">
-                                    <h1
-                                        class="font-primary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
-                                        {{ $banner->banner_title }}</h1>
-                                    <h2
-                                        class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
-                                        {!! $banner->banner_description !!}
-                                    </h2>
-                                    <a href="{{ $banner->banner_link }}"
-                                        class="{{ $banner->banner_title == '' ? 'mt-[18vh]' : 'mt-0' }}">
-                                        <span
-                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize"
-                                            style="background-color: {{ $banner->banner_button_color }}">
-                                            {{ $banner->banner_button }}
-                                        </span>
-                                    </a>
-                                </div>
+    <section class="h-[90%]">
+        <div class="relative">
+            <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner" class="w-full md:h-full h-screen object-cover">
+            <div class="absolute bottom-40 md:bottom-0 left-0 right-0">
+                <div class="relative">
+                    <div class="bg-newprimary mix-blend-multiply invisible md:visible h-24 absolute bottom-0 left-0 right-0"></div>
+                    <div class="w-full main-container mx-auto absolute bottom-0 left-0 right-0 h-24 flex items-center">
+                        <div class="flex gap-8 justify-between items-center w-full flex-col md:flex-row">
+                            {{-- Acceptance --}}
+                            <div class="flex flex-col justify-center items-center">
+                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                    {{ $banners->accepatance }}
+                                </h4>
+                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                    at Best-Fit Universities
+                                </span>
                             </div>
-                        </li>
-                    @endforeach
-                </ul>
+                            {{-- Mentees --}}
+                            <div class="flex flex-col justify-center items-center">
+                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                    {{ $banners->mentees }}
+                                </h4>
+                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                    mentees
+                                </span>
+                            </div>
+                            {{-- Scholarship --}}
+                            <div class="flex flex-col justify-center items-center">
+                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                    {{ $banners->scholarship }}
+                                </h4>
+                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                    in Scholarship Awards
+                                </span>
+                            </div>
+                            {{-- SAT Score --}}
+                            <div class="flex flex-col justify-center items-center">
+                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                    {{ $banners->sat_score }}
+                                </h4>
+                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                    on SAT Score
+                                </span>
+                            </div>
+                            {{-- Statisfaction Rate --}}
+                            <div class="flex flex-col justify-center items-center">
+                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                    {{ $banners->statisfaction_rate }}
+                                </h4>
+                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                    by Parents, Mentees, Partners, and Teachers
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     {{-- ========================================== Benefits Section ======================================= --}}
-    <section class="mx-6 pt-8 md:pt-24">
-        <div class="max-w-4xl w-full mx-auto">
-            <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
-                @foreach (__('pages/home.benefit_list') as $item)
-                    <div
-                        class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                        <img width="120px" height="90px" data-original="{{ asset('assets/img/home/' . $item['image']) }}"
-                            alt="Allineduspace ilustration" class="w-[120px] h-[auto]">
-                        <h3 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
-                            {{ $item['title'] }}
-                        </h3>
-                        <h4 class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
-                            {{ $item['body'] }}
-                        </h4>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- ========================================== About Us Section ======================================= --}}
-    <section class="pt-10 max-w-4xl w-full px-6 mx-auto my-20">
-        <div class="flex flex-col items-center">
-            <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
-                {{ __('pages/home.about') }}
-            </h3>
-            <h4 class="mb-6 font-primary font-medium text-base text-center text-[#7A7A7A]">
-                {{ __('pages/home.about_body') }}
-            </h4>
-            <a href="{{ route('about', ['locale' => app()->getLocale()]) }}"
-                class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-yellow rounded-[4px]">
-                {{ __('pages/home.about_btn') }}
-            </a>
-
-            <div class="grid grid-cols-2 justify-center gap-y-8 md:grid-cols-3">
-                @foreach (__('pages/home.about_list') as $item)
-                    <div class="flex flex-col items-center p-4">
-                        <img width="90px" height="90px"
-                            data-original="{{ asset('assets/icon/about-us/about us icons_' . $loop->index . '.webp') }}"
-                            alt="Allineduspace About Us Icon" class="mb-4 w-[90px] h-[90px] object-contain">
-                        <p class="font-primary text-sm text-[#7A7A7A] text-center">{{ $item }}</p>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- ========================================== Program Section ======================================= --}}
-    <section class="py-16">
-        <div class="max-w-3xl w-full mx-auto px-6 mb-10 flex flex-col items-center">
-            <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">{{ __('pages/home.program') }}
-            </h3>
-            <h4 class="mb-6 font-primary font-medium text-base text-center text-[#7A7A7A]">
-                {{ __('pages/home.program_body') }}
-            </h4>
-        </div>
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach (__('pages/programs/programs.program_list') as $item)
-                    <div class="program_card hover:rotate-program_card">
-                        <div class="relative front bg-cover bg-center">
-                            <div
-                                class="bg-gradient-to-t from-primary via-transparent h-full to-yellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
-                                <h4 class="font-semibold text-3xl font-primary mb-4 leading-7">
-                                    {{ $item['title'] }}
-                                </h4>
-                                <ul class="flex flex-col">
-                                    @foreach ($item['points'] as $point)
-                                        <li class="inline-flex items-start gap-1.5">
-                                            <i class="fa-solid text-sm fa-circle-check mt-1 text-yellow"></i>
-                                            <p class="text-sm">{{ $point }}</p>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
-                                alt="{{ $item['title'] }}"
-                                class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
-                        </div>
-                        <div
-                            class="back face_back bg-gradient-to-t top-0 left-0 from-primary py-8 px-4 via-primary  to-[#7895C7]  text-white">
-                            <div class="flex flex-col justify-center items-center h-full">
-                                <p class="font-semibold text-base lg:text-lg font-primary mb-4 leading-7 text-center">
-                                    {{ $item['body'] }}
-                                </p>
-                                <a href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
-                                    class="my-btn text-sm">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- ================================== Mentors ================================== --}}
-    <section class="pt-16">
-        <div class="flex flex-col items-center">
-            <div class="main-container">
-                <div class="flex flex-col max-w-2xl">
-                    <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
-                        {{ __('pages/home.mentor') }}
-                    </h3>
-                    <h4 class="font-primary text-lg text-[#7A7A7A] text-center leading-7">
-                        {{ __('pages/home.mentor_body') }}</h4>
+    <section class="py-12">
+        <div class="main-container">
+            <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
+                <div class="flex flex-col md:w-4/12">
+                    <h2 class="font-newprimary text-center md:text-left text-newprimary font-bold text-xl md:text-3xl mb-2">
+                        EduALL
+                    </h2>
+                    <h4 class="font-newprimary text-center md:text-left italic text-xl md:text-2xl">
+                        Integrative Mentoring and <br>
+                        Uni Prep Consultant
+                    </h4>
+                </div>
+                <div class="flex flex-col md:w-8/12">
+                    <p class="font-newprimary text-sm md:text-base md:text-left text-center">
+                        More than just a university consultant, EduALL empowers students through personalized guidance in
+                        academics, university and major selection, personal brand, and extracurriculars.
+                        <br><br>
+                        We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
+                        real-world problem-solving.
+                        <br><br>
+                        Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
+                            changemakers.</b>
+                    </p>
                 </div>
             </div>
-            <div class="flex flex-col items-center w-full mt-12 bg-primary">
-                <div class="w-full px-10 pt-10 md:px-20">
-                    <div class="splide" role="group">
-                        <div class="splide__arrows">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                                <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
-                            </button>
-                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                                <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
-                            </button>
-                        </div>
-                        <div class="splide__track py-10">
-                            <ul class="splide__list">
-                                @foreach ($all_mentor as $mentor)
-                                    <li class="splide__slide">
-                                        <div
-                                            class="splide__slide__container px-4 w-full h-full min-h-[350px] flex items-center">
-                                            <div class="mentor_card flex flex-col group">
-                                                <div
-                                                    class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
-                                                    <div
-                                                        class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
-                                                        <h3
-                                                            class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
-                                                            {!! strpos($mentor->mentor_fullname, ' ') == 0
-                                                                ? $mentor->mentor_fullname
-                                                                : substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) .
-                                                                    '<br>' .
-                                                                    substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) !!}
-                                                        </h3>
-                                                        <div
-                                                            class="mt-3 font-primary text-xs text-white leading-4 lg:leading-3">
-                                                            {!! $mentor->mentor_graduation !!}
-                                                        </div>
-                                                    </div>
-                                                    <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                        alt="{{ $mentor->mentor_alt }}"
-                                                        title="{{ $mentor->mentor_fullname }}"
-                                                        class="bg-cover bg-center h-auto">
-                                                </div>
-                                                <div
-                                                    class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
-                                                    <div class="flex flex-col items-center justify-center">
-                                                        <div
-                                                            class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
-                                                            {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
+        </div>
+    </section>
 
-                                                        </div>
-                                                        <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
-                                                            class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
-                                                            Get to know
-                                                            {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+    {{-- ========================================== Our Program Section ======================================= --}}
+    <section class="py-12">
+        <div class="main-container">
+            <h2 class="font-bold text-xl md:text-3xl uppercase">Our Programs</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <div class="flex flex-col relative">
+                    <img src="{{ asset('assets/img/home/benefits/Admission mentoring.png') }}"
+                        alt="Admission Mentoring image" class="w-full">
+                    <div class="ourprogram_card">
+                        <ul class="flex flex-col gap-2">
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">Undergraduate</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">Graduate</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">University Transfer</span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            details</a>
                     </div>
+                    <div class="ourprogram_side"></div>
+                    <div class="ourprogram_side2"></div>
                 </div>
-                <a href="{{ route('mentor', app()->getLocale()) }}"
-                    class="block max-w-[200px] w-full mb-8 px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                    {{ __('pages/home.mentor_btn') }}
-                </a>
+                <div class="flex flex-col relative">
+                    <img src="{{ asset('assets/img/home/benefits/Academic tutoring.png') }}"
+                        alt="Academic Tutoring image" class="w-full">
+                    <div class="ourprogram_card">
+                        <ul class="flex flex-col gap-2">
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">Academic Tutoring
+                                </span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">SAT/ACT Prep Class
+                                </span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">TOEFL/IELTS Prep Class</span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more details</a>
+                    </div>
+                    <div class="ourprogram_side"></div>
+                    <div class="ourprogram_side2"></div>
+                </div>
+                <div class="flex flex-col relative">
+                    <img src="{{ asset('assets/img/home/benefits/Exploration program.png') }}"
+                        alt="Exploration Program Image" class="w-full">
+                    <div class="ourprogram_card">
+                        <ul class="flex flex-col gap-2">
+                            <li class="flex items-center gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">Global Immersion Program
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span>
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <rect width="24" height="24" fill="white"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
+                                                fill="#120FFD"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="font-semibold text-base">Community Empowerment Program
+                                </span>
+                            </li>
+
+                        </ul>
+                        <a href="#"
+                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more details</a>
+                    </div>
+                    <div class="ourprogram_side"></div>
+                    <div class="ourprogram_side2"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- ========================================== What They Say Section ======================================= --}}
-    <section class="py-16">
-        <div class="main-container flex flex-col items-center">
-            <div class="flex flex-col max-w-2xl mb-8">
-                <h3 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
-                    {{ __('pages/home.testi') }}
-                </h3>
+    {{-- ========================================== Pathaway Excellence ========================================== --}}
+    <section class="pathaway_excellence relative bg-pathaway bg-contain bg-newprimary bg-blend-multiply">
+        <img src="{{ asset('assets/img/home/pathaway_exploration.png') }}" alt="exploration"
+            class="absolute inset-0 h-full exploration_pathaway_img opacity-0">
+        <img src="{{ asset('assets/img/home/pathaway_profile_building.png') }}" alt="profile building"
+            class="absolute inset-0 h-full profile_building_pathaway_img opacity-0">
+        <img src="{{ asset('assets/img/home/pathaway_academic.png') }}" alt="academic"
+            class="absolute inset-0 h-full academic_pathaway_img opacity-0">
+        <img src="{{ asset('assets/img/home/pathaway_writing.png') }}" alt="writing"
+            class="absolute inset-0 h-full writing_pathaway_img opacity-0">
+
+        <div class="panel panel-1 relative overflow-hidden w-full h-full">
+            <div class="flex flex-col items-center z-50">
+                <img src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
+                    class="max-w-xs w-full">
+
+                <h4 class="mt-12 font-newprimary font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
+                    EXCELLENCE</h4>
             </div>
-            <div class="w-full py-5">
-                <div class="splide" aria-label="Slide Container Example">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+        </div>
+
+        <div class="panel exploration_pathaway relative">
+            <div class="flex flex-col lg:absolute lg:top-60 lg:left-[420px]">
+                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                    Exploration
+                </h1>
+                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                    We guide our mentees in discovering their passions and interests through exposure to diverse learning
+                    opportunities, professionals from various fields, and real-world challenges. We aim to ignite curiosity
+                    and help students define their unique paths.
+                </h4>
+            </div>
+        </div>
+        <div class="panel profile_building_pathaway">
+            <div class="flex flex-col lg:absolute lg:bottom-40 lg:right-32">
+                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                    Profile <br> Building
+                </h1>
+                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                    This is where we assist mentees in shaping a well-rounded academic and extracurricular persona. We work
+                    together to identify strengths, achievements, and experiences that will set them apart, creating a
+                    compelling and authentic profile for university applications.
+                </h4>
+            </div>
+        </div>
+        <div class="panel academic_pathaway">
+            <div class="flex flex-col lg:absolute lg:top-60 lg:left-28">
+                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                    Academic
+                </h1>
+                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                    We strategically prepare students for their chosen major by offering tailored guidance for international
+                    curricula and specialized coaching for standardized tests. From course selection to targeted improvement
+                    strategies, we empower students for success in university studies and competitive admissions.
+                </h4>
+            </div>
+        </div>
+        <div class="panel writing_pathaway">
+            <div class="flex flex-col lg:absolute lg:bottom-36 lg:right-96">
+                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                    Writing
+                </h1>
+                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                    Crafting a compelling narrative is key. We offer guidance on personal statements, essays, and other
+                    written components of university applications. Through thoughtful storytelling and impactful writing, we
+                    aim to showcase each student's unique qualities, aspirations, and contributions.
+                </h4>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- ========================================== Mentors ========================================== --}}
+    <section class="pt-40 pb-24">
+        <div class="main-container">
+            <h1 class="font-newprimary font-bold text-4xl text-dark text-center">OUR MENTORS</h1>
+        </div>
+        <div class="flex flex-col items-center mt-56 lg:px-12 bg-[#F3F3F3] shadow-2xl">
+            <div class="w-full px-10 -mt-52">
+                <div class="splide" role="group">
+                    <div class="splide__arrows text-dark">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
+                            <i class="fa-solid fa-chevron-left text-4xl"></i>
                         </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
+                            <i class="fa-solid fa-chevron-right text-4xl"></i>
                         </button>
                     </div>
-                    <div class="splide__track">
+                    <div class="splide__track py-10">
                         <ul class="splide__list">
-                            @foreach ($testimonies as $testi)
-                                <li class="splide__slide w-full">
-                                    <div class="splide__slide__container h-full">
-                                        <div
-                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
-                                            <div class="flex flex-col">
-                                                <img width="20px" height="20px"
-                                                    data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
-                                                <div class="font-primary text-sm text-white text-justify">
-                                                    {!! $testi->testi_desc !!}
-                                                </div>
+                            @foreach ($all_mentor as $mentor)
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container px-5 w-full h-full mt-32">
+                                        <div class="flex flex-col rounded-3xl shadow-md relative ">
+                                            {{-- Mentor Image --}}
+                                            <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                alt="{{ $mentor->mentor_alt }}"
+                                                class="bg-cover bg-center absolute -top-40">
+                                            <div class="flex flex-col px-4 mt-24 overflow-visible">
+                                                {{-- Mentor Name --}}
+                                                <h2
+                                                    class="font-newprimary text-center font-semibold text-3xl text-dark mt-4">
+                                                    {{ $mentor->mentor_fullname }}
+                                                </h2>
+                                                <span class="font-newprimary text-newprimary text-xs text-center">
+                                                    {!! $mentor->mentor_graduation !!}
+                                                </span>
+
+                                                <ul class="flex flex-col gap-2 mt-8">
+                                                    @if ($mentor->value_1)
+                                                        <li class="flex items-start gap-4">
+                                                            <div class="w-4 h-4">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                        stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                            fill="#000000"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <h4
+                                                                class="font-newprimary text-base font-semibold text-dark leading-5">
+                                                                {{ $mentor->value_1 }}
+                                                            </h4>
+                                                        </li>
+                                                    @endif
+                                                    @if ($mentor->value_2)
+                                                        <li class="flex items-start gap-4">
+                                                            <div class="w-4 h-4">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                        stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                            fill="#000000"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <h4
+                                                                class="font-newprimary text-base font-semibold text-dark leading-5">
+                                                                {{ $mentor->value_2 }}
+                                                            </h4>
+                                                        </li>
+                                                    @endif
+                                                    @if ($mentor->value_3)
+                                                        <li class="flex items-start gap-4">
+                                                            <div class="w-4 h-4">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                        stroke-linejoin="round"></g>
+                                                                    <g id="SVGRepo_iconCarrier">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                            fill="#000000"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <h4
+                                                                class="font-newprimary text-base font-semibold text-dark leading-5">
+                                                                {{ $mentor->value_3 }}
+                                                            </h4>
+                                                        </li>
+                                                    @endif
+                                                </ul>
                                             </div>
-                                            <div class="mt-4 flex flex-col">
-                                                <div class="font-primary font-semibold text-base text-yellow">
-                                                    {{ $testi->testi_name }}
-                                                </div>
-                                                <div class="font-primary text-sm text-white">
-                                                    {!! $testi->testi_subtitle !!}
-                                                </div>
-                                            </div>
+                                            <a href="#"
+                                                class="mt-5 mb-4 flex flex-col justify-center items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
+                                                <span
+                                                    class="font-newprimary font-semibold text-xs text-newprimary leading-none">Get
+                                                    to
+                                                    know {{ $mentor->mentor_fullname }}</span>
+                                                <div class="w-24 h-[1px] bg-newprimary group-hover:invisible"></div>
+                                            </a>
                                         </div>
                                     </div>
                                 </li>
@@ -276,28 +466,167 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('testimonial', app()->getLocale()) }}"
-                class="block max-w-[200px] w-full mt-8 px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
-                {{ __('pages/home.testi_btn') }}
+            <a href="{{ route('mentor', app()->getLocale()) }}" class="flex justify-center w-full pb-8">
+                <span
+                    class="bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                    {{ __('pages/home.mentor_btn') }}
+                </span>
             </a>
         </div>
     </section>
 
-    {{-- ================================== Bottom Section ================================== --}}
-    <section class="-mt-2 py-16 ">
+
+    {{-- ========================================== Upcomming Events ========================================== --}}
+    <section class="pt-40 pb-24 bg-dark">
+        <div class="main-container">
+            <h1 class="font-newprimary font-bold text-4xl text-white uppercase text-center">Upcoming Events</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
+                {{-- Event --}}
+                <div class="flex flex-col items-center justify-between relative">
+                    <h4 class="absolute top-8 left-8 font-newprimary text-newyellow text-lg">Event</h4>
+                    <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                        alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
+                    <a href="#"
+                        class="w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more detail</a>
+                </div>
+
+                {{-- Upcomming Event --}}
+                <div class="flex flex-col">
+                    {{-- Regular Talk --}}
+                    <div class="flex flex-col items-center justify-between relative">
+                        <div class="splide" role="group">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    @foreach ($regular_talks as $regular_talk)
+                                        <li class="splide__slide">
+                                            <div class="splide__slide__container">
+                                                <div class="flex flex-col absolute top-8 left-8 pr-8 justify-between h-60">
+                                                    <h4 class="font-newprimary text-newyellow text-lg">Regular Talk</h4>
+                                                    <div class="flex flex-col">
+                                                        <h4 class="font-newprimary text-newyellow text-lg">
+                                                            {{ $regular_talk->event_date }}</h4>
+                                                        <h4 class="font-newprimary text-white text-2xl font-bold">
+                                                            {{ html_entity_decode(substr(strip_tags($regular_talk->event_title), 0, 80)) }}
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <img src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                    alt="{{ $regular_talk->event_alt }}"
+                                                    class="w-full object-cover object-center h-72">
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#"
+                            class="w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more events
+                        </a>
+                    </div>
+
+                    {{-- More Date --}}
+                    <div class="flex flex-col items-center justify-between">
+                        <div class="h-56 flex flex-col w-full py-8 px-6">
+                            <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
+                            <ul class="mt-2 overflow-scroll">
+                                <li class="flex justify-between border-b border-b-white py-2 px-2">
+                                    <h3 class="font-newprimary font-normal text-white">SAT</h3>
+                                    <span class="font-newprimary text-newyellow">6 Jan 2024</span>
+                                </li>
+                                <li class="flex justify-between border-b border-b-white py-2 px-2">
+                                    <h3 class="font-newprimary font-normal text-white">SAT</h3>
+                                    <span class="font-newprimary text-newyellow">6 Jan 2024</span>
+                                </li>
+                                <li class="flex justify-between border-b border-b-white py-2 px-2">
+                                    <h3 class="font-newprimary font-normal text-white">SAT</h3>
+                                    <span class="font-newprimary text-newyellow">6 Jan 2024</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#" class="w-full py-3 bg-red font-newprimary text-center text-white text-base">
+                            more important dates
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- ========================================== As Seen On ========================================== --}}
+    <section class="pt-40 pb-24">
+        <div class="main-container">
+            <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
+                <img src="{{ asset('assets/img/home/aso_media_indonesia.png') }}" alt="Media Indonesia"
+                    class="w-full h-16 object-contain">
+                <img src="{{ asset('assets/img/home/aso_kompas.png') }}" alt="Kompas"
+                    class="w-full h-12 object-contain">
+                <img src="{{ asset('assets/img/home/aso_times_indonesia.png') }}" alt="Times Indonesia"
+                    class="w-full h-12 object-contain">
+            </div>
+        </div>
+    </section>
+
+
+    {{-- ========================================== Success Stories ========================================== --}}
+    <section class="pt-40 pb-24">
+        <div class="main-container">
+            <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center max-w-4xl mx-auto">
+                Empowering 700+ Minds for Global
+                Success – From Exceptional Personal Projects!
+                to Top Universities Worldwide!
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @foreach ($success_stories as $item)
+                    <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
+                        <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
+                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center mt-10">
+                            {{-- Name --}}
+                            <h2 class="font-semibold text-xl font-newprimary text-center">{{ $item->name }}</h2>
+                            {{-- Bedge 1 --}}
+                            <div class="font-newprimary text-newprimary text-xs font-semibold text-center">
+                                {!! $item->badge_1 !!}
+                            </div>
+                            <div class="mt-4 font-newprimary text-dark text-base font-semibold text-center leading-4">
+                                {!! $item->badge_2 !!}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <a href="{{ route('mentor', app()->getLocale()) }}" class="flex justify-center w-full pb-8 mt-12">
+                <span
+                    class="bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                    Read More
+                </span>
+            </a>
+        </div>
+    </section>
+
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
+            <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                {{ __('pages/home.bottom_btn') }}
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
+                <span class="px-8 md:px-12 py-1.5 font-newprimary text-base text-white text-center bg-red">
+                    {{ __('pages/home.bottom_btn') }}
+                </span>
             </a>
         </div>
     </section>
 @endsection
 
 @section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script type="module" src="{{ asset('js/user/main.js') }}"></script>
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
@@ -307,23 +636,9 @@
 
         var splides = document.getElementsByClassName('splide');
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var splide = new Splide(splides[0], {
-                wheel: false,
-                isNavigation: false,
-                arrows: false,
-                pagination: isMediumDevice ? false : true,
-                type: 'fade',
-                autoplay: true,
-                lazyload: true,
-                interval: 5000,
-                pauseOnHover: true,
-            }).mount();
-        });
-
-        new Splide(splides[1], {
+        new Splide(splides[0], {
             type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 5,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 4,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             lazyload: true,
@@ -343,16 +658,15 @@
             });
         }).mount();
 
-        new Splide(splides[2], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                3 : 4,
+        new Splide(splides[1], {
+            type: 'loop',
+            perPage: 1,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
-            autoplay: true,
             lazyload: true,
-            interval: 4000,
-            pagination: isSmallDevice,
+            autoplay: true,
+            interval: 3000,
+            pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
@@ -365,29 +679,4 @@
             });
         }).mount();
     </script>
-
-    <style>
-        #home_banner .splide__pagination {
-            display: block !important;
-            flex-direction: column !important;
-            right: 0 !important;
-            top: 50%;
-            transform: translate(0, -50%);
-        }
-
-        #home_banner .splide__pagination li {
-            display: block !important;
-        }
-
-        #home_banner .splide__pagination .splide__pagination__page {
-            background: #233873 !important;
-            border: 2px solid #d2d2d2 !important;
-            height: 12px !important;
-            width: 12px !important;
-        }
-
-        #home_banner .splide__pagination .splide__pagination__page.is-active {
-            background: #F78614 !important;
-        }
-    </style>
 @endsection

@@ -38,7 +38,7 @@ return [
 
     'mentor' => 'Our Mentors',
     'mentor_body' => 'Our mentors are graduates from the world’s top universities with varied academic background and work experiences. We leverage off diverse voice to accomplish our common vision to empower you with requisite real-world skills and extensive network to achieve your dreams beyond college.',
-    'mentor_btn' => "More",
+    'mentor_btn' => "more mentor",
 
     'stories' => 'Success Stories',
     'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',
@@ -47,6 +47,6 @@ return [
     'testi' => "WHAT OUR STUDENTS SAY",
     'testi_btn' => 'More',
 
-    'bottom' => "Sign up for a FREE Initial Consultation!",
-    'bottom_btn' => "Register Now",
+    'bottom' => "Every year, 150+ of our mentees have gotten into their dream universities. It’s time for your turn.",
+    'bottom_btn' => "Schedule Your FREE Initial Consultation",
 ];

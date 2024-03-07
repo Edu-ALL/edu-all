@@ -4,51 +4,56 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 /* Font */
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 900;
-    src: url('/public/font/ambit/Ambit-Black.otf');
+    src: url("/public/font/ambit/Ambit-Black.otf");
 }
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 700;
-    src: url('/public/font/ambit/Ambit-Bold.otf');
+    src: url("/public/font/ambit/Ambit-Bold.otf");
 }
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 600;
-    src: url('/public/font/ambit/Ambit-SemiBold.otf');
+    src: url("/public/font/ambit/Ambit-SemiBold.otf");
 }
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 400;
-    src: url('/public/font/ambit/Ambit-Regular.otf');
+    src: url("/public/font/ambit/Ambit-Regular.otf");
 }
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 300;
-    src: url('/public/font/ambit/Ambit-Light.otf');
+    src: url("/public/font/ambit/Ambit-Light.otf");
 }
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 200;
-    src: url('/public/font/ambit/Ambit-ExtraLight.otf');
+    src: url("/public/font/ambit/Ambit-ExtraLight.otf");
 }
 @font-face {
-    font-family: 'Ambit';
+    font-family: "Ambit";
     font-weight: 100;
-    src: url('/public/font/ambit/Ambit-Thin.otf');
+    src: url("/public/font/ambit/Ambit-Thin.otf");
 }
 @font-face {
-    font-family: 'SF Pro Display';
+    font-family: "SF Pro Display";
     font-weight: 400;
-    src: url('/public/font//sf-pro-display/SF-Pro-Display-Regular.otf');
+    src: url("/public/font//sf-pro-display/SF-Pro-Display-Regular.otf");
 }
 @font-face {
-    font-family: 'SF Pro Display';
+    font-family: "SF Pro Display";
     font-weight: 700;
-    src: url('/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf');
+    src: url("/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf");
 }
 
 /* Navbar */
@@ -264,6 +269,20 @@ h3 {
     bottom: 80vh;
 }
 
+.ourprogram_card {
+    @apply shadow-lg p-8 relative overflow-hidden;
+    border-bottom-right-radius: 120px;
+}
+
+.ourprogram_side {
+    @apply bg-white w-12 h-[155px] -translate-x-[14px] translate-y-[38px] absolute bottom-0 right-0 rotate-45;
+}
+
+.ourprogram_side2 {
+    @apply bg-white w-4 h-[155px] -translate-x-[52px] translate-y-[16px] absolute bottom-0 right-0 rotate-45;
+    box-shadow: 8px 0 8px -2px rgb(0 0 0 / 0.1);
+}
+
 .pilar_card .front,
 .pilar_card .back {
     transition: transform 0.6s;
@@ -346,6 +365,18 @@ h3 {
 
 .privacy_policy a {
     @apply underline;
+}
+
+.pathaway_excellence {
+    width: 500vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.panel {
+    @apply flex justify-center items-center pt-20;
+    width: 100%;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

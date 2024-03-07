@@ -5,7 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Banners;
 use App\Models\Mentors;
+use App\Models\SuccessStories;
 use App\Models\Testimonials;
+use App\Models\UpcomingEvents;
 
 class HomePageController extends Controller
 {
@@ -14,19 +16,30 @@ class HomePageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
         $region = substr(app()->getLocale(), 0, 2);
 
-        // Banner
-        $banners = Banners::where('lang', $lang)->where('banner_status', 'active')->where('region', $region)->orderBy('banner_order', 'asc')->orderBy('updated_at', 'desc')->get();
-
         // Mentor
-        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('lang', $lang)->where('mentor_status', 'active');
+        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('mentor_status', 'active');
 
         // Testimoni
-        $testimonies = Testimonials::where('lang', $lang)->where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
+        // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
+
+        // Upcomming Event
+        $event = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->first();
+
+        // Upcomming Event
+        $regular_talks = UpcomingEvents::all()->where('event_status', 'publish')->where('category', 'Regular Talk');
+
+        // Success Stories
+        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
+
+        // Banners
+        $banners = Banners::first();
 
         return view('user.home.region.' . $region, [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
-            'testimonies' => $testimonies
+            'event' => $event,
+            'regular_talks' => $regular_talks,
+            'success_stories' => $success_stories,
         ]);
     }
 
