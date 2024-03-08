@@ -39,19 +39,19 @@ module.exports = {
                 // Admission mentoring
                 // Undergraduate
                 "undergraduate-header":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/Adm mentoring undergraduate resize.webp')",
+                    "url('../../public/assets/img/admission mentoring/Undergraduate/UnderGraduate.webp')",
                 "undergraduate-do":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
                 // Transfer
                 "transfer-header":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Adm mentoring master resize.webp')",
+                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer.webp')",
                 "transfer-do":
                     "url('../../public/assets/img/admission mentoring/Master transfer/master transfer photos.webp')",
 
                 // Graduate
                 "graduate-header":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Adm mentoring graduate resize.webp')",
+                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate.webp')",
                 "graduate-do":
                     "url('../../public/assets/img/admission mentoring/Graduate/Graduate photos.webp')",
 
@@ -89,7 +89,7 @@ module.exports = {
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
-                newprimary: "Ambit, sans-serif",
+                newprimary: "Ambit, sans-serif !important",
                 secondary: "SF Pro Display, sans-serif",
             },
             colors: {

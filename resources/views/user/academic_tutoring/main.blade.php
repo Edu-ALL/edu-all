@@ -24,11 +24,11 @@
                 </div>
 
                 <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-points.webp') }}"
-                    alt="Allineduspace academic tutoring points" class="w-full md:max-w-2xl mx-auto text-center md:mb-10">
+                    alt="EduALL academic tutoring points" class="w-full md:max-w-2xl mx-auto text-center md:mb-10">
             </div>
 
             <img loading="lazy" src="{{ asset('assets/img/banner/Academic Tutoring banner.webp') }}"
-                alt="Allineduspace Academic Tutoring Banner" class="w-full h-[90vh] object-cover object-center">
+                alt="EduALL Academic Tutoring Banner" class="w-full h-[90vh] object-cover object-center">
         </div>
     </section>
 
@@ -36,7 +36,7 @@
     <section id="benefit" class="py-10">
         <div class="flex flex-col gap-y-6 main-container">
             <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-asset.webp') }}"
-                alt="Allineduspace acad on demand">
+                alt="EduALL acad on demand">
             <div class="grid grid-cols-1 gap-8 md:items-start md:justify-center md:grid-cols-3 ">
                 <div class="flex flex-col items-center">
                     <div
@@ -100,13 +100,13 @@
                 <h2 class="mb-6 font-primary font-black text-5xl text-black text-center">
                     {{ __('pages/programs/academic_tutoring.ibdiploma') }}</h2>
                 <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/IB-DIPLOMA-ASSET.webp') }}"
-                    alt="Allineduspace IB Diploma asset" class="w-full max-w-3xl max-h-48 object-contain">
+                    alt="EduALL IB Diploma asset" class="w-full max-w-3xl max-h-48 object-contain">
             </div>
             <div class="flex flex-col items-center mt-12">
                 <h2 class="mb-6 font-primary font-black text-5xl text-black text-center">
                     {{ __('pages/programs/academic_tutoring.cambridge') }}</h2>
                 <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/CAMBRIDGE-A-LVLASSET.webp') }}"
-                    alt="Allineduspace Cambridge a lvl asset" class="w-full max-w-3xl max-h-48 object-contain">
+                    alt="EduALL Cambridge a lvl asset" class="w-full max-w-3xl max-h-48 object-contain">
             </div>
         </div>
     </section>
@@ -121,7 +121,7 @@
             </div>
             <div class="flex items-center main-container gap-x-8">
                 <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/acad-tutor-what-you-will-do-asset.webp') }}"
-                    alt="Allineduspace acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
+                    alt="EduALL acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
                 <div class="flex flex-col gap-y-6">
                     @foreach (__('pages/programs/academic_tutoring.do_list') as $item)
                         @if ($loop->index == 3)
@@ -250,7 +250,7 @@
                     @foreach (__('pages/programs/academic_tutoring.why_us_list') as $item)
                         <li class="flex flex-col mb-4 rounded-[2.75rem] bg-[#f6d7af] overflow-hidden">
                             <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/' . $item['image']) }}"
-                                alt="Allineduspace flexcibility learning" class="p-4 md:p-0">
+                                alt="EduALL flexcibility learning" class="p-4 md:p-0">
                             <div class="flex flex-col p-6">
                                 <h5 class="mb-4 font-primary font-bold text-2xl text-primary">{{ $item['title'] }}</h5>
                                 <p class="font-primary font-lg text-black">{{ $item['desc'] }}</p>
@@ -281,7 +281,7 @@
                                         <div
                                             class="flex flex-col h-full mx-4 mb-4 rounded-[3rem] bg-primary overflow-hidden">
                                             <img data-original="{{ asset('uploaded_files/tutor/' . $tutor->created_at->format('Y') . '/' . $tutor->created_at->format('m') . '/' . $tutor->thumbnail) }}"
-                                                alt="Allineduspace {{ $tutor->alt }}" class="p-4 md:p-0">
+                                                alt="EduALL {{ $tutor->alt }}" class="p-4 md:p-0">
                                             <div class="flex flex-col justify-between p-6">
                                                 <h5 class="mb-4 font-primary font-bold text-2xl text-yellow">
                                                     {{ $tutor->full_name }}
@@ -334,7 +334,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
+                                                    alt="EduALL Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>

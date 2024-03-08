@@ -11,7 +11,7 @@
     <section class="py-20 bg-sg-header bg-cover bg-center">
         <div class="main-container">
             <div class="py-28 flex flex-col items-center md:py-52">
-                <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="allineduspace about banner"
+                <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="EduALL about banner"
                     class="w-full max-w-sm">
             </div>
         </div>
@@ -113,7 +113,7 @@
                                                     </div>
                                                 </div>
                                                 <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                    alt="allineduspace mentor {{ $mentor->mentor_alt }}"
+                                                    alt="EduALL mentor {{ $mentor->mentor_alt }}"
                                                     class="bg-cover bg-center h-auto">
                                             </div>
                                             <div

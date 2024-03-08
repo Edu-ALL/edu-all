@@ -87,7 +87,7 @@
             <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="Allineduspace About Us Section"
+                    <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         100% Students placed at target universities
@@ -95,7 +95,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="Allineduspace About Us Section"
+                    <img src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 40
@@ -104,7 +104,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="Allineduspace About Us Section"
+                    <img src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 1.000 Essays Reviewed
@@ -112,7 +112,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="Allineduspace About Us Section"
+                    <img src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 50 Corporate Partners
@@ -120,7 +120,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="Allineduspace About Us Section"
+                    <img src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         150+ Point SAT Score Improvement
@@ -129,7 +129,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="Allineduspace About Us Section"
+                    <img src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-primary font-semibold text-lg text-yellow text-center">
                         More than 1.500 Event Participants

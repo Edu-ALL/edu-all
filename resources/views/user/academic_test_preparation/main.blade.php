@@ -21,7 +21,7 @@
             </div>
 
             <img loading="lazy" src="{{ asset('assets/img/banner/Academic and test prep banner.webp') }}"
-                alt="Allineduspace Academic Test Preparation Banner" class="w-full h-screen object-cover object-center">
+                alt="EduALL Academic Test Preparation Banner" class="w-full h-screen object-cover object-center">
         </div>
     </section>
 
@@ -34,10 +34,10 @@
                 {!! __('pages/programs/academic_test_preparation.aca_desc') !!}</h2>
             </p>
             <img data-original="{{ asset('assets/img/academic_test_preparation/academic-tutoring-flyer-logo-1024x234.webp') }}"
-                alt="Allineduspace Academic Tutoring" class="w-full max-w-2xl my-4">
+                alt="EduALL Academic Tutoring" class="w-full max-w-2xl my-4">
             <div class="flex flex-col mx-4 mt-8 md:flex-row md:max-w-4xl md:gap-x-8 md:items-center">
                 <img data-original="{{ asset('assets/img/academic_test_preparation/ACAD-TUTOR-photo.webp') }}"
-                    alt="Allineduspace Academic Tutoring" class="rounded-2xl md:w-1/2  md:mr-4">
+                    alt="EduALL Academic Tutoring" class="rounded-2xl md:w-1/2  md:mr-4">
                 <div class="flex flex-col mt-4 md:w-1/2 md:pl-4">
                     <h4 class="my-6 font-primary font-semibold text-lg text-[#7A7A7A] text-center md:mt-0 md:text-left">
                         {{ __('pages/programs/academic_test_preparation.aca_points_title') }}</h4>
@@ -78,17 +78,17 @@
                 </h4>
                 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:max-w-4xl  md:gap-8">
                     <img data-original="{{ asset('assets/img/academic_test_preparation/Topic 1.webp') }}"
-                        alt="Allineduspace IB EE Topic 1">
+                        alt="EduALL IB EE Topic 1">
                     <img data-original="{{ asset('assets/img/academic_test_preparation/Topic 2.webp') }}"
-                        alt="Allineduspace IB EE Topic 2">
+                        alt="EduALL IB EE Topic 2">
                     <img data-original="{{ asset('assets/img/academic_test_preparation/Topic 3.webp') }}"
-                        alt="Allineduspace IB EE Topic 3">
+                        alt="EduALL IB EE Topic 3">
                     <img data-original="{{ asset('assets/img/academic_test_preparation/Topic 4.webp') }}"
-                        alt="Allineduspace IB EE Topic 4">
+                        alt="EduALL IB EE Topic 4">
                     <img data-original="{{ asset('assets/img/academic_test_preparation/Topic 5.webp') }}"
-                        alt="Allineduspace IB EE Topic 5">
+                        alt="EduALL IB EE Topic 5">
                     <img data-original="{{ asset('assets/img/academic_test_preparation/Topic 6.webp') }}"
-                        alt="Allineduspace IB EE Topic 6">
+                        alt="EduALL IB EE Topic 6">
                 </div>
             </div>
             <a href="{{ route('ib_ee_coaching_program', ['locale' => app()->getLocale()]) }}"
@@ -102,7 +102,7 @@
     <section class="py-10">
         <div class="flex flex-col items-center main-container">
             <img data-original="{{ asset('assets/img/academic_test_preparation/Icon_1.png') }}"
-                alt="Allineduspace SAT Preparation Icon">
+                alt="EduALL SAT Preparation Icon">
             <h2 class="mt-4 font-primary font-semibold text-4xl text-primary text-center capitalize">
                 {{ __('pages/programs/academic_test_preparation.sat_title') }}</h2>
             <p class="my-4 font-primary text-xl text-primary text-center md:w-1/2">
@@ -127,10 +127,10 @@
                             <ul class="splide__list">
                                 <li class="splide__slide"><img
                                         src="{{ asset('assets/img/academic_test_preparation/card7.webp') }}"
-                                        alt="Allineduspace Academic Tutoring" class="rounded-2xl"></li>
+                                        alt="EduALL Academic Tutoring" class="rounded-2xl"></li>
                                 <li class="splide__slide"><img
                                         src="{{ asset('assets/img/academic_test_preparation/card8.webp') }}"
-                                        alt="Allineduspace Academic Tutoring" class="rounded-2xl"></li>
+                                        alt="EduALL Academic Tutoring" class="rounded-2xl"></li>
                             </ul>
                         </div>
                     </div>

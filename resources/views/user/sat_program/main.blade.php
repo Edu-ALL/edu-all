@@ -24,11 +24,11 @@
                 </div>
 
                 <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/sat_program/SAT-points.webp') }}"
-                    alt="Allineduspace academic tutoring points"
+                    alt="EduALL academic tutoring points"
                     class="hidden w-full md:max-w-5xl mx-auto text-center  md:block md:mb-10 ">
             </div>
 
-            <img data-original="{{ asset('assets/img/banner/SAT banner.webp') }}" alt="Allineduspace SAT Program Banner"
+            <img data-original="{{ asset('assets/img/banner/SAT banner.webp') }}" alt="EduALL SAT Program Banner"
                 class=" w-full h-[60vh] md:h-[90vh] object-cover object-center">
         </div>
     </section>
@@ -158,10 +158,10 @@
             <div class="flex justify-center items-center w-full main-container gap-x-8">
                 @if ($locale == 'id')
                     <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-7.webp') }}"
-                        alt="Allineduspace Why Us" class="w-full max-w-2xl">
+                        alt="EduALL Why Us" class="w-full max-w-2xl">
                 @else
                     <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/Frame-8.webp') }}"
-                        alt="Allineduspace Why Us" class="w-full max-w-2xl">
+                        alt="EduALL Why Us" class="w-full max-w-2xl">
                 @endif
             </div>
         </div>
@@ -196,7 +196,7 @@
                                             class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
+                                                    alt="EduALL Testimony" class="w-7 mb-3 h-auto">
                                                 <div class="font-primary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>

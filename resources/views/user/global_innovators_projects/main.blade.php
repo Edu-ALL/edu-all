@@ -10,10 +10,10 @@
     {{-- =============================================== Banner Section =============================================== --}}
     <section class="w-full">
         <img loading="lazy" src="{{ asset('assets/img/global_innovators_project/Banner summer program.webp') }}"
-            alt="Allineduspace Global Innovators Project Banner"
+            alt="EduALL Global Innovators Project Banner"
             class="hidden w-full h-full object-contain object-left lg:block xl:object-center xl:h-screen xl:object-cover">
         <img loading="lazy" src="{{ asset('assets/img/global_innovators_project/2023_Summer Program_Banner_Mobile.webp') }}"
-            alt="Allineduspace Global Innovators Project Banner" class="w-full h-full object-contain lg:hidden">
+            alt="EduALL Global Innovators Project Banner" class="w-full h-full object-contain lg:hidden">
     </section>
 
     {{-- =============================================== Main Section =============================================== --}}
@@ -34,7 +34,7 @@
                 {{-- Cultural Immersion Research Program --}}
                 <div class="py-10 flex flex-col items-center gap-y-6 w-full max-w-3xl mx-auto">
                     <img src="{{ asset('assets/img/global_innovators_project/cirp.webp') }}"
-                        alt="Allineduspace Cultural Immersion Research Program Logo"
+                        alt="EduALL Cultural Immersion Research Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                         <span
@@ -62,7 +62,7 @@
                 {{-- Innovators In Residence Program --}}
                 <div class="py-10 flex flex-col items-center gap-y-6 w-full max-w-3xl mx-auto">
                     <img src="{{ asset('assets/img/global_innovators_project/GIP Logo 2024.webp') }}"
-                        alt="Allineduspace Innovators In Residence Program Logo"
+                        alt="EduALL Innovators In Residence Program Logo"
                         class="w-full max-w-xl mx-auto object-contain">
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                         <span
@@ -93,7 +93,7 @@
                 {{-- Global Immersion Programs
                 <div class="py-10 flex flex-col items-center gap-y-6 max-w-3xl mx-auto">
                     <img src="{{ asset('assets/img/global_innovators_project/Logo GIP.webp') }}"
-                        alt="Allineduspace Global Immersion Programs Logo" class="w-full max-w-xs mx-auto object-contain">
+                        alt="EduALL Global Immersion Programs Logo" class="w-full max-w-xs mx-auto object-contain">
                     <div class="flex gap-4">
                         <span
                             class="inline-flex items-center gap-4 px-4 py-2 font-primary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
@@ -122,7 +122,7 @@
                         {{-- Science Research --}}
                         {{-- <div class="flex flex-col items-center gap-6 lg:items-end">
                             <img src="{{ asset('assets/img/global_innovators_project/Science research logo.webp') }}"
-                                alt="Allineduspace Science Research Logo" class="w-full max-w-sm object-contain">
+                                alt="EduALL Science Research Logo" class="w-full max-w-sm object-contain">
                             <div class="flex flex-col lg:items-end">
                                 <h3
                                     class="font-primary font-black text-2xl text-yellow text-center md:text-3xl lg:text-right">
@@ -162,7 +162,7 @@
                         {{-- Business --}}
                         {{-- <div class="mt-10 flex flex-col items-center gap-6 lg:items-start lg:mt-0">
                             <img src="{{ asset('assets/img/global_innovators_project/Business logo.webp') }}"
-                                alt="Allineduspace Business Logo" class="w-full max-w-sm object-contain">
+                                alt="EduALL Business Logo" class="w-full max-w-sm object-contain">
                             <div class="flex flex-col gap-4 lg:items-start">
                                 <h3 class="font-primary font-black text-2xl text-primary text-center md:text-3xl">
                                     {{ __('pages/programs/global_innovators_projects.business_date') }}

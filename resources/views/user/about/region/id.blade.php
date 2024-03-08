@@ -10,7 +10,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
-            <img loading="lazy" src="{{ asset('assets/img/banner/About us banner.webp') }}" alt="allineduspace about banner image"
+            <img loading="lazy" src="{{ asset('assets/img/banner/About us banner.webp') }}" alt="EduALL about banner image"
                 class="w-full h-full object-cover object-center">
         </div>
     </section>
@@ -60,7 +60,7 @@
     {{-- ================================== Question & Answer ================================== --}}
     <section class="py-16">
         <div class="flex flex-col items-center main-container">
-            <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="allineduspace Logo">
+            <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="EduALL Logo">
             <h2 class="mt-4 font-primary font-bold text-3xl text-yellow text-center">Question & Answer</h2>
 
             <div class="max-w-4xl mt-8 w-full">
@@ -126,7 +126,7 @@
                                                     </div>
                                                 </div>
                                                 <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                    alt="allineduspace mentor {{ $mentor->mentor_alt }}"
+                                                    alt="EduALL mentor {{ $mentor->mentor_alt }}"
                                                     class="bg-cover bg-center">
                                             </div>
                                             <div

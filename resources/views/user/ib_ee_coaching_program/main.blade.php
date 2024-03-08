@@ -21,12 +21,12 @@
                 </div>
 
                 <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-point-1024x231.webp') }}"
-                    alt="Allineduspace academic tutoring points"
+                    alt="EduALL academic tutoring points"
                     class="hidden w-full mx-auto text-center md:block md:max-w-4xl  md:mb-10">
             </div>
 
             <img loading="lazy" src="{{ asset('assets/img/banner/EE Banner.webp') }}"
-                alt="Allineduspace header ib ee coaching program"
+                alt="EduALL header ib ee coaching program"
                 class="w-full h-[50vh] object-cover object-center md:h-[80vh] ">
         </div>
     </section>
@@ -35,7 +35,7 @@
     <section class="py-10">
         <div class="flex flex-col gap-y-6 main-container">
             <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-people-assets-1024x348.webp') }}"
-                alt="Allineduspace acad on demand">
+                alt="EduALL acad on demand">
         </div>
     </section>
 
@@ -49,7 +49,7 @@
             </div>
             <div class="flex items-center main-container gap-x-8">
                 <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-07.webp') }}"
-                    alt="Allineduspace acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
+                    alt="EduALL acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
                 <div class="flex flex-col gap-4 w-full py-12 ">
                     @foreach (__('pages/programs/ib_ee_coaching_program.learn_list') as $item)
                         <div
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
-                alt="Allineduspace Curriculum Overview" class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
+                alt="EduALL Curriculum Overview" class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
         </div>
     </section>
 

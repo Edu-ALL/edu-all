@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <img loading="lazy" src="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="Allineduspace Guidebooks Banner"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Guidebook Banner.webp') }}" alt="EduALL Guidebooks Banner"
                 class="w-full h-[400px] object-cover object-center">
         </div>
     </section>
@@ -48,7 +48,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
+                                                alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -81,7 +81,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
+                                                alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -113,7 +113,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
+                                                alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -145,7 +145,7 @@
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
                                             <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
-                                                alt="Allineduspace {{ $guidebook->guidebook_alt }}"
+                                                alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
                                     </div>
@@ -202,7 +202,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container mx-3">
                                         <img data-original="{{ asset('assets/img/guidebooks/univ-list/' . $univ_logo) }}"
-                                            alt="Allineduspace University Logo" class="w-full">
+                                            alt="EduALL University Logo" class="w-full">
                                     </div>
                                 </li>
                             @endforeach

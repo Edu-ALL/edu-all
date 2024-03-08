@@ -8,18 +8,21 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full bg-primary/50">
-                <div class="flex flex-col justify-center items-center h-full md:pb-20 lg:max-w-3xl lg:mx-auto">
-                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
-                        {{ __('pages/programs/admission_mentoring.title') }}
-                    </h1>
-                    <p class="mt-2 font-primary font-normal text-xl text-white text-center">
-                        {{ __('pages/programs/admission_mentoring.body') }}</p>
+            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
+                <div class="flex items-center h-full md:pb-20 lg:max-w-xl">
+                    <div class="flex-row">
+                        <h1
+                            class="font-bold font-newprimary text-4xl text-newyellow tracking-widest mb-3 lg:text-start text-center uppercase">
+                            {{ __('pages/programs/admission_mentoring.title') }}
+                        </h1>
+                        <p class="mt-2 font-newprimary font-normal text-xl text-white lg:text-start text-center">
+                            {{ __('pages/programs/admission_mentoring.body') }}</p>
+                    </div>
                 </div>
             </div>
 
-            <img loading="lazy" src="{{ asset('assets/img/banner/Admission mentoring banner.webp') }}"
-                alt="Allineduspace Admission Mentoring Banner"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Admission_Mentoring.webp') }}"
+                alt="EduALL - Admission Mentoring Banner"
                 class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
         </div>
@@ -33,9 +36,9 @@
                 <div class="flex flex-1">
                     <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
                         <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}"
-                            alt="Allineduspace ilustration 1" class="h-20 object-center object-cover md:h-24">
+                            alt="EduALL - ilustration 1" class="h-20 object-center object-cover md:h-24">
                         <h4
-                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
                             <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_1') }}
                             </span>{{ __('pages/programs/admission_mentoring.benefit_1_sub') }}
                         </h4>
@@ -47,7 +50,7 @@
                         <img data-original="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration"
                             class="h-20 object-center object-cover md:h-24">
                         <h4
-                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
                             <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_2') }}
                             </span>{{ __('pages/programs/admission_mentoring.benefit_2_sub') }}
                         </h4>
@@ -57,9 +60,9 @@
                 <div class="flex flex-1">
                     <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
                         <img data-original="{{ asset('assets/img/admission mentoring/benefit-3.png') }}"
-                            alt="Allineduspace ilustration" class="h-20 object-center object-cover md:h-24">
+                            alt="EduALL - ilustration" class="h-20 object-center object-cover md:h-24">
                         <h4
-                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
                             <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_3') }}
                             </span>{{ __('pages/programs/admission_mentoring.benefit_3_sub') }}
                         </h4>
@@ -69,9 +72,9 @@
                 <div class="flex flex-1">
                     <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
                         <img data-original="{{ asset('assets/img/admission mentoring/benefit-4.png') }}"
-                            alt="Allineduspace ilustration" class="h-20 object-center object-cover md:h-24">
+                            alt="EduALL - ilustration" class="h-20 object-center object-cover md:h-24">
                         <h4
-                            class="font-primary text-xl  font-normal text-center text-primary tracking-tight leading-6 md:text-sm md:leading-4">
+                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
                             <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_4') }}
                             </span>{{ __('pages/programs/admission_mentoring.benefit_4_sub') }}
                         </h4>
@@ -85,13 +88,13 @@
     <section id="undergraduate" class="py-16">
         {{-- Undergraduate Program Title --}}
         <div class="main-container">
-            <h2 class="font-primary font-extrabold text-primary text-center text-4xl mb-4">
+            <h2 class="font-newprimary font-extrabold text-newprimary text-center text-4xl mb-4">
                 {{ __('pages/programs/admission_mentoring.undergraduate_title') }}
                 <span
-                    class=" block text-yellow">{{ __('pages/programs/admission_mentoring.undergraduate_subtitle') }}</span>
+                    class=" block text-newyellow">{{ __('pages/programs/admission_mentoring.undergraduate_subtitle') }}</span>
             </h2>
 
-            <p class="max-w-3xl mx-auto font-primary text-xl text-center">
+            <p class="max-w-3xl mx-auto font-newprimary text-xl text-center">
                 {{ __('pages/programs/admission_mentoring.undergraduate_desc') }}
             </p>
 
@@ -114,11 +117,11 @@
                             @foreach (__('pages/programs/admission_mentoring.undergraduate_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
-                                        <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
+                                        <div class="flex flex-col h-full bg-white overflow-hidden">
                                             <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
-                                                alt="Allineduspace Undergraduate">
+                                                alt="EduALL - Undergraduate">
                                             <div class="py-6 px-4">
-                                                <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
+                                                <h4 class="mb-4 font-newprimary font-bold text-newprimary text-2xl">
                                                     {{ $item['title'] }}</h4>
                                                 <p>{{ $item['desc'] }}</p>
                                             </div>
@@ -130,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute top-[100px] -z-10 bg-primary w-full h-[90%]"></div>
+            <div class="absolute top-[100px] -z-10 bg-[#0000FF] w-full h-[90%]"></div>
         </div>
 
     </section>
@@ -139,12 +142,12 @@
     <section id="graduate" class="py-16">
         {{-- Graduate Program Title --}}
         <div class="main-container">
-            <h2 class="font-primary font-extrabold text-primary text-center text-4xl mb-4">
+            <h2 class="font-newprimary font-extrabold text-newprimary text-center text-4xl mb-4">
                 {{ __('pages/programs/admission_mentoring.graduate_title') }}
-                <span class=" block text-yellow">{{ __('pages/programs/admission_mentoring.graduate_subtitle') }}</span>
+                <span class=" block text-newyellow">{{ __('pages/programs/admission_mentoring.graduate_subtitle') }}</span>
             </h2>
 
-            <p class="max-w-3xl mx-auto font-primary text-xl text-center">
+            <p class="max-w-3xl mx-auto font-newprimary text-xl text-center">
                 {{ __('pages/programs/admission_mentoring.graduate_desc') }}
             </p>
 
@@ -167,11 +170,11 @@
                             @foreach (__('pages/programs/admission_mentoring.graduate_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
-                                        <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
+                                        <div class="flex flex-col h-full bg-white overflow-hidden">
                                             <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
-                                                alt="Allineduspace Graduate">
+                                                alt="EduALL - Graduate">
                                             <div class="py-6 px-4">
-                                                <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
+                                                <h4 class="mb-4 font-newprimary font-bold text-newprimary text-2xl">
                                                     {{ $item['title'] }}</h4>
                                                 <p>{{ $item['desc'] }}</p>
                                             </div>
@@ -183,7 +186,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute top-[100px] -z-10 bg-primary w-full min-h-full"></div>
+            <div class="absolute top-[100px] -z-10 bg-[#0000FF] w-full min-h-full"></div>
         </div>
 
     </section>
@@ -192,13 +195,13 @@
     <section id="univ-transfer" class="py-16">
         {{-- univtransfer Program Title --}}
         <div class="main-container">
-            <h2 class="font-primary font-extrabold text-primary text-center text-4xl mb-4">
+            <h2 class="font-newprimary font-extrabold text-newprimary text-center text-4xl mb-4">
                 {{ __('pages/programs/admission_mentoring.univtransfer_title') }}
                 <span
-                    class=" block text-yellow">{{ __('pages/programs/admission_mentoring.univtransfer_subtitle') }}</span>
+                    class=" block text-newyellow">{{ __('pages/programs/admission_mentoring.univtransfer_subtitle') }}</span>
             </h2>
 
-            <p class="max-w-3xl mx-auto font-primary text-xl text-center">
+            <p class="max-w-3xl mx-auto font-newprimary text-xl text-center">
                 {{ __('pages/programs/admission_mentoring.univtransfer_desc') }}
             </p>
 
@@ -221,11 +224,11 @@
                             @foreach (__('pages/programs/admission_mentoring.univtransfer_list') as $item)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
-                                        <div class="flex flex-col h-full bg-white rounded-xl overflow-hidden">
+                                        <div class="flex flex-col h-full bg-white overflow-hidden">
                                             <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
-                                                alt="Allineduspace University Transfer">
+                                                alt="EduALL - University Transfer">
                                             <div class="py-6 px-4">
-                                                <h4 class="mb-4 font-primary font-bold text-primary text-2xl">
+                                                <h4 class="mb-4 font-newprimary font-bold text-newprimary text-2xl">
                                                     {{ $item['title'] }}</h4>
                                                 <p>{{ $item['desc'] }}</p>
                                             </div>
@@ -237,7 +240,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute top-[100px] -z-10 bg-primary w-full min-h-full"></div>
+            <div class="absolute top-[100px] -z-10 bg-[#0000FF] w-full min-h-full"></div>
         </div>
 
     </section>
@@ -245,7 +248,7 @@
     {{-- ================================== Testimonial Section ================================== --}}
     <section class="pt-16 pb-20">
         <div class="main-container">
-            <h2 class="font-primary font-bold text-primary text-center text-4xl mb-4">
+            <h2 class="font-newprimary font-bold text-newprimary text-center text-4xl mb-4">
                 {{ __('pages/programs/admission_mentoring.testimony') }}
             </h2>
 
@@ -255,21 +258,21 @@
                     <ul class="splide__list">
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full">
-                                <div class="splide__slide__container h-full">
+                                <div class="splide__slide__container h-full py-3">
                                     <div
-                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-md bg-white shadow-md">
                                         <div class="flex flex-col">
                                             <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                alt="Allineduspace Testimony" class="w-7 mb-3 h-auto">
-                                            <div class="font-primary text-sm text-white text-justify">
+                                                alt="EduALL - Testimony" class="w-7 mb-3 h-auto">
+                                            <div class="font-newprimary text-sm text-black text-justify">
                                                 {!! $testi->testi_desc !!}
                                             </div>
                                         </div>
                                         <div class="mt-4 flex flex-col">
-                                            <div class="font-primary font-semibold text-base text-yellow">
+                                            <div class="font-newprimary font-semibold text-base text-[#0000FF]">
                                                 {{ $testi->testi_name }}
                                             </div>
-                                            <div class="font-primary text-sm text-white">
+                                            <div class="font-newprimary text-sm text-balck">
                                                 {!! $testi->testi_subtitle !!}
                                             </div>
                                         </div>
@@ -284,17 +287,20 @@
 
     </section>
 
-    {{-- ================================== Bottom Section ================================== --}}
-    <section class="py-16">
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class=" font-primary font-extrabold text-primary text-center text-4xl mb-4 md:w-1/2">
-                {{ __('pages/programs/admission_mentoring.sign_up_text') }}
-                <span class="block text-yellow">{{ __('pages/programs/admission_mentoring.sign_up_text_sub') }}</span>
+            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center text-4xl">
+                {{ __('pages/programs/graduate_program.bottom_title') }}
+                <strong class="mt-3 block text-3xl text-newyellow">
+                    {{ __('pages/programs/graduate_program.bottom_subtitle') }}
+                </strong>
             </h2>
             <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="my-btn">{{ __('pages/programs/admission_mentoring.sign_up_btn') }}</a>
+                class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">
+                {{ __('pages/programs/graduate_program.bottom_btn') }}
+            </a>
         </div>
-
     </section>
 @endsection
 

@@ -19,7 +19,7 @@
             </div>
 
             <img src="{{ asset('assets/img/banner/Contribution banner.webp') }}" loading="lazy"
-                alt="Allineduspace Our Contribution Banner" class="w-full h-[350px] object-cover object-center">
+                alt="EduALL Our Contribution Banner" class="w-full h-[350px] object-cover object-center">
         </div>
     </section>
 
@@ -37,7 +37,7 @@
                     several programs to provide accessible higher education for both local and overseas study.</p>
             </div>
             <img data-original="{{ asset('assets/img/about/our-contribution/CSR-ASET-1.webp') }}"
-                alt="Allineduspace csr Asset" class="object-contain md:pl-6 md:w-1/3 md:max-w-xs">
+                alt="EduALL csr Asset" class="object-contain md:pl-6 md:w-1/3 md:max-w-xs">
         </div>
     </section>
 
@@ -54,7 +54,7 @@
                         </div>
                         <div class="flex flex-col items-start gap-4 md:flex-row">
                             <img data-original="{{ asset('assets/img/about/our-contribution/contribution-list-' . $loop->iteration . '.webp') }}"
-                                alt="Allineduspace Contribution aset" class="object-contain md:w-1/3 ">
+                                alt="EduALL Contribution aset" class="object-contain md:w-1/3 ">
                             <div class="flex flex-col gap-y-6 mb-6 md:w-2/3 md:mb-0">
                                 @foreach ($item['body'] as $body)
                                     <p class="font-primary text-lg text-primary text-justify">{{ $body }}</p>

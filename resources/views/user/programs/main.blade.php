@@ -16,7 +16,7 @@
                     {{ __('pages/programs/programs.body') }}</p>
             </div>
 
-            <img loading="lazy" src="{{ asset('assets/img/banner/Program banner.webp') }}" alt="Allineduspace Program Banner"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Program banner.webp') }}" alt="EduALL Program Banner"
                 class="lazy w-full h-full object-cover object-center">
 
         </div>
@@ -28,9 +28,9 @@
                 {{-- ------------------------------------ Banner Section ------------------------------------ --}}
                 <div class="flex flex-col justify-center items-center max-w-3xl mx-auto mb-16">
                     @if (app()->getLocale() == 'id')
-                        <img src="{{ asset('assets/img/programs/payung-id.png') }}" alt="Allineduspace 4 pillars">
+                        <img src="{{ asset('assets/img/programs/payung-id.png') }}" alt="EduALL 4 pillars">
                     @else
-                        <img src="{{ asset('assets/img/programs/payung.png') }}" alt="Allineduspace 4 pillars">
+                        <img src="{{ asset('assets/img/programs/payung.png') }}" alt="EduALL 4 pillars">
                     @endif
 
                 </div>
@@ -55,7 +55,7 @@
                                             </ul>
                                         </div>
                                         <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
-                                            alt="Allineduspace"
+                                            alt="EduALL"
                                             class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
                                     </div>
                                     <div

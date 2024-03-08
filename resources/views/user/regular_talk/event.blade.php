@@ -43,7 +43,7 @@
                 <nav class="navbar md:mb-3 mb-2">
                     <div class="flex flex-row items-end justify-start p-0 py-7 md:gap-8 gap-6">
                         <a class="navbar-brand">
-                            <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="ALL-In"
+                            <img loading="lazy" src="{{ asset('assets/logo/allin-big.png') }}" alt="EduALL"
                                 width="100">
                         </a>
                         <a class="leading-4" href="https://all-inedu.com/id-en/about" target="_blank">About us</a>
