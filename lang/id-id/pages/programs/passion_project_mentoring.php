@@ -58,7 +58,7 @@ $testimonies = [
 ];
 
 return [
-    'meta_title' => "Bimbingan Mentoring Passion Project - ALL-in Eduspace Programs",
+    'meta_title' => "Bimbingan Mentoring Passion Project - EduALL Programs",
     'meta_description' => 'Jelajahi potensimu di bidang bisnis atau penelitian, ungkap jati dirimu yang sebenarnya bersama Program Mentoring Passion kami. Kami siap membantu kamu meraih sukses',
 
     // banner section

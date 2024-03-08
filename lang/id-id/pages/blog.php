@@ -4,7 +4,7 @@ return [
     'meta_description' => 'Temukan update dan cerita terbaru kami di halaman blog. Artikel seputar studi di luar negeri, universitas di Amerika Serikat, Inggris, dan Asia ada di sini.',
 
     // General
-    'top_title' => 'BLOG ALL-IN',
+    'top_title' => 'EduALL Journal',
     'top_button' => "Selengkapnya",
     'top_update' => "Terbaru",
     'top_choice' => "Pilihan Teratas",

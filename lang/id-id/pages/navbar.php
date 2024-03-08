@@ -22,7 +22,7 @@ return [
     'partnership' => "Kemitraan dan Karir",
 
     // blog
-    'blog' => "All-INsights",
+    'blog' => "EduJournal",
 
     // resources
     'resources' => "Resources",

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "ALL-in Eduspace | Expert nya Top Uni Mentoring Service",
-    'meta_description' => 'Capai potensimu di bidang akademik bersama All-In Edu. Dapatkan mentoring personal dan program komprehensif kami untuk sukses di masa depan',
+    'meta_title' => "EduALL | Expert nya Top Uni Mentoring Service",
+    'meta_description' => 'Capai potensimu di bidang akademik bersama EduALL. Dapatkan mentoring personal dan program komprehensif kami untuk sukses di masa depan',
     'benefit_list' => [
         [
             'title' => 'Aspire',
@@ -43,7 +43,7 @@ return [
     'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',
     'stories_subbody' => 'They have been accepted to some of the top universities.',
 
-    'testi' => "Testimoni Siswa ALL-in",
+    'testi' => "Testimoni Siswa EduALL",
     'testi_btn' => 'Selanjutnya',
 
     'bottom' => "Daftar sekarang untuk mendapatkan konsultasi awal gratis!",

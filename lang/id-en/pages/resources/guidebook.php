@@ -1,6 +1,6 @@
 <?php
 return [
-    'meta_title' => "The ALL-in Eduspace Guidebook: Insights and Tips for Education and Career Success",
+    'meta_title' => "The EduALL Guidebook: Insights and Tips for Education and Career Success",
     'meta_description' => 'Learn how you can ace your university application by improving your academic performance, writing skills, personal brand, and career exploration in every action!',
 
     // banner

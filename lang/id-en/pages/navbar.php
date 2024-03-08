@@ -23,7 +23,7 @@ return [
     'partnership' => "Partnership & Careers",
 
     // blog
-    'blog' => "All-INsights",
+    'blog' => "EduJournal",
 
     // resources
     'resources' => "Resources",

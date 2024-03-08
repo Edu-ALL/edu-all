@@ -1,7 +1,7 @@
 <?php
 return [
-    'meta_title' => 'ALL-in Eduspace Academic Tutoring Program - Sign Up Today',
-    'meta_description' => "Improve your academic performance with All-In Edu's tutoring services. Private tutoring, online tutoring, and tutoring programs available. Enroll now",
+    'meta_title' => 'EduALL Academic Tutoring Program - Sign Up Today',
+    'meta_description' => "Improve your academic performance with EduALL's tutoring services. Private tutoring, online tutoring, and tutoring programs available. Enroll now",
 
     // QnA
     'qna_list' => [
@@ -15,7 +15,7 @@ return [
         ],
         [
             'question' => 'What should I do in the free trial?',
-            'answer' => 'You can share your concerns or questions related to the topic or subject that you are struggling with. Our top-notch mentors will be there to show you how you can get into your dream universities and the ways that ALL-in could help you through the academic aspects of your application.',
+            'answer' => 'You can share your concerns or questions related to the topic or subject that you are struggling with. Our top-notch mentors will be there to show you how you can get into your dream universities and the ways that EduALL could help you through the academic aspects of your application.',
         ],
         [
             'question' => 'What happens after a free trial?',

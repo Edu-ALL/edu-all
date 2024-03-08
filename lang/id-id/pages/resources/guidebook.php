@@ -1,6 +1,6 @@
 <?php
 return [
-    'meta_title' => "The ALL-in Eduspace Guidebook: Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir",
+    'meta_title' => "The EduALL Guidebook: Wawasan dan Tips untuk Kesuksesan Pendidikan dan Karir",
     'meta_description' => 'Pelajari cara meningkatkan performa akademik, keterampilan menulis, citra diri, serta eksplorasi karir Anda dalam setiap tindakan untuk memastikan kelancaran aplikasi universitas Anda!',
 
     // banner

@@ -46,7 +46,7 @@ return [
             One of the most important things in university application is the stand out factor. We take our time getting to know each student’s characteristic and uniqueness, so that we can help them showcase their potential and personal brand to their application.',
         ],
         [
-            'question' => 'How will ALL-in help my university application process?',
+            'question' => 'How will EduALL help my university application process?',
             'answer' => 'We do an initial consultation with students to obtain their current potential to match with their aspired goals. Then we strategize the A-Z of the admission plan, from the profile building, admission essay, and all the way to the interview preparation. <br />
             We also engage students in experiential learning activities that will help strengthen their mentality and sharpen their knowledge in the field they are going for. A set of focused activities and experiences will make students’ application solid and unique.',
         ],

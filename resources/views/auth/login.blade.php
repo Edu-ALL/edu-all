@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ALL-In Eduspace</title>
+    <title>EduALL</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
 
     {{-- Google Font --}}
@@ -20,8 +20,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.min.css">
 
-    @vite('public/css/bootstrap.min.css')
-    @vite('public/css/admin/app.css')
     <style>
         .alert {
             font-size: 12px;
@@ -38,7 +36,7 @@
                     <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
                         <div class="d-flex justify-content-center py-4">
                             <a href="/" class="logo d-flex align-items-center w-auto">
-                                <img class="img-fluid" src="{{ asset('assets/img/logo/logo-allin.png') }}"
+                                <img class="img-fluid" src="{{ asset('assets/logo/eduall.png') }}"
                                     alt="">
                             </a>
                         </div>

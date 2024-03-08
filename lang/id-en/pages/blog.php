@@ -4,7 +4,7 @@ return [
     'meta_description' => 'Read our updates and stories here in our blog page. You can find articles about study abroad, university in USA, UK and Asia.',
 
     // General
-    'top_title' => 'ALL-IN BLOG',
+    'top_title' => 'EduALL Journal',
     'top_button' => "Read More",
     'top_update' => "Top Update",
     'top_choice' => "Top Choice",

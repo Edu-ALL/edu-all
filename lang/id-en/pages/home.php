@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Unlock Your Potential with ALL-in Eduspace's Expert Mentors and Programs",
+    'meta_title' => "Unlock Your Potential with EduALL's Expert Mentors and Programs",
     'meta_description' => 'We offer tailored guidance, practical education, and interactive learning experiences to fulfill the prerequisites for applying to universities',
     'benefit_list' => [
         [

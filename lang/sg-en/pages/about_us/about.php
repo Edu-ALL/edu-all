@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Discover Our Mission and Values at ALL-in Eduspace",
-    'meta_description' => 'Learn more about All-in Eduspace, we provides admissions mentoring and academic tutoring services to students in Singapore. Find out how we can help you achieve your academic goals',
+    'meta_title' => "Discover Our Mission and Values at EduALL",
+    'meta_description' => 'Learn more about EduALL, we provides admissions mentoring and academic tutoring services to students in Singapore. Find out how we can help you achieve your academic goals',
 
     // Top Section
     'title' => 'We are an Independent University Consultant',
@@ -31,25 +31,25 @@ return [
     // QnA
     'qna_list' => [
         [
-            'question' => 'What does ALL-in Eduspace do?',
+            'question' => 'What does EduALL do?',
             'answer' => 'We offer mentoring and learning programs for students to help them prepare for their intended university major. We also help students to find best fit universities along with equipping them with industry skills that they need to thrive in the path they choose.',
         ],
         [
-            'question' => 'How is ALL-in Eduspace different from education agents?',
+            'question' => 'How is EduALL different from education agents?',
             'answer' => 'Most education agents have formal partnerships with specific universities. However, we are an independent university consultant and we represent <b>you</b> instead of universities. Therefore, we craft our services to support your needs to first explore the best-fit universities and reach your intended major & university.',
         ],
         [
-            'question' => 'What does ALL-in Eduspace do?',
+            'question' => 'What does EduALL do?',
             'answer' => 'We work attentively in mapping out students’ potential as well as helping them identify their passion and goals. Based on this, we devise strategy and engage students in activities that will boost them up in the field they are passionate about. <br/>
             One of the most important things in university application is the stand out factor. We take our time getting to know each student’s characteristic and uniqueness, so that we can help them showcase their potential and personal brand to their application.',
         ],
         [
-            'question' => 'How will ALL-in help my university application process?',
+            'question' => 'How will EduALL help my university application process?',
             'answer' => 'We do an initial consultation with students to obtain their current potential to match with their aspired goals. Then we strategize the A-Z of the admission plan, from the profile building, admission essay, and all the way to the interview preparation. <br />
             We also engage students in experiential learning activities that will help strengthen their mentality and sharpen their knowledge in the field they are going for. A set of focused activities and experiences will make students’ application solid and unique.',
         ],
         [
-            'question' => 'Why should I trust ALL-in Eduspace?',
+            'question' => 'Why should I trust EduALL?',
             'answer' => 'Our mentors graduated from world’s prestigious universities with various academic backgrounds, and are currently working in their field of expertise. The insights they provide are not limited to how students will get admitted to their dream schools and majors, but also expands to the passion-focus & industrial knowledge that students need after the academic pursuit. ',
         ],
         [

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "SAT Program - ALL-in Eduspace Programs",
+    'meta_title' => "SAT Program - EduALL Programs",
     'meta_description' => 'SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years',
 
     'title' => 'SAT/ACT PREP',

@@ -18,7 +18,7 @@ return [
             'link' => "/about"
         ],
         [
-            'title' => 'ALL-INsight',
+            'title' => 'EduJournal',
             'link' => "/blog"
         ],
         [

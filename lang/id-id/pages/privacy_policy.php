@@ -1,6 +1,6 @@
 <?php
 return [
-    'meta_title' => "Kebijakan Privasi ALL-in Eduspace: Komitmen Kami untuk Melindungi Data Anda",
+    'meta_title' => "Kebijakan Privasi EduALL: Komitmen Kami untuk Melindungi Data Anda",
     'meta_description' => 'Kebijakan Privasi kami menjelaskan pengumpulan, penggunaan, dan pengungkapan informasi Anda saat menggunakan layanan kami serta hak privasi Anda.',
 
     'body' => '
@@ -15,7 +15,7 @@ return [
         <h2><strong>Definisi</strong></h2>
         <p>Untuk tujuan Kebijakan Privasi ini:</p>
         <p><strong>Akun</strong> berarti akun unik yang dibuat untuk Anda untuk mengakses Layanan kami atau bagian dari Layanan kami.</p>
-        <p><strong>Perusahaan</strong> (yang disebut sebagai "Perusahaan", "Kami", "Kami", atau "Kami" dalam Perjanjian ini) merujuk pada ALL-in Eduspace, Jl Jeruk Kembar Blok Q9 No. 15 RT: 006 RW: 006, Srengseng, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11630.</p>
+        <p><strong>Perusahaan</strong> (yang disebut sebagai "Perusahaan", "Kami", "Kami", atau "Kami" dalam Perjanjian ini) merujuk pada EduALL, Jl Jeruk Kembar Blok Q9 No. 15 RT: 006 RW: 006, Srengseng, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11630.</p>
         <p><strong>Cookies</strong> adalah file kecil yang ditempatkan pada komputer Anda, perangkat seluler, atau perangkat lainnya oleh situs web, yang berisi detail riwayat penjelajahan Anda di situs web tersebut di antara banyak penggunaannya.</p>
         <p><strong>Negara</strong> merujuk pada Indonesia</p>
         <p><strong>Perangkat</strong> berarti setiap perangkat yang dapat mengakses Layanan seperti komputer, ponsel, atau tablet digital.</p>
@@ -23,7 +23,7 @@ return [
         <p><strong>Layanan</strong> merujuk pada Situs Web.</p>
         <p><strong>Penyedia Layanan</strong> berarti setiap orang atau badan hukum yang memproses data atas nama Perusahaan. Ini merujuk pada perusahaan atau individu pihak ketiga yang dipekerjakan oleh Perusahaan untuk memfasilitasi Layanan, untuk menyediakan Layanan atas nama Perusahaan, untuk melakukan layanan terkait Layanan, atau untuk membantu Perusahaan dalam menganalisis bagaimana Layanan digunakan.</p>
         <p><strong>Data Penggunaan</strong> merujuk pada data yang dikumpulkan secara otomatis, baik yang dihasilkan oleh penggunaan Layanan atau dari infrastruktur Layanan itu sendiri (misalnya, durasi kunjungan halaman).</p>
-        <p><strong>Situs Web</strong> merujuk pada ALL-in Eduspace, yang dapat diakses dari <a href="https://all-inedu.com/">https://all-inedu.com/</a>.</p>
+        <p><strong>Situs Web</strong> merujuk pada EduALL, yang dapat diakses dari <a href="https://edu-all.com/">https://edu-all.com/</a>.</p>
         <p><strong>Anda</strong> berarti individu yang mengakses atau menggunakan Layanan, atau perusahaan, atau entitas hukum lain atas nama individu tersebut yang mengakses atau menggunakan Layanan, sesuai yang berlaku.</p>
         <p>Mengumpulkan dan Menggunakan Data Pribadi Anda</p>
 
@@ -225,9 +225,9 @@ return [
             Kebijakan Privasi efektif saat diposting di halaman ini.</p>
         <p><strong>Hubungi Kami</strong></p>
         <p>Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, Anda dapat menghubungi kami:</p>
-        <p>Melalui email: info@all-inedu.com</p>
-        <p>Dengan mengunjungi halaman ini di situs web kami:<a href="https://all-inedu.com/contact-us/">
-                https://all-inedu.com/contact-us/</a></p>
+        <p>Melalui email: info@edu-all.com</p>
+        <p>Dengan mengunjungi halaman ini di situs web kami:<a href="https://edu-all.com/contact-us/">
+                https://edu-all.com/contact-us/</a></p>
         <p>Melalui nomor telepon: +62 818 0808 1363<br></p>
 '
 ];

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Start Your Journey to Success with ALL-in Eduspace's Programs and Mentors",
+    'meta_title' => "Start Your Journey to Success with EduALL's Programs and Mentors",
     'meta_description' => 'Explore our tailored programs for university prep. Get personalized mentoring, courses & experiential learning to achieve your academic goals.',
 
     "title" => "Our Program",

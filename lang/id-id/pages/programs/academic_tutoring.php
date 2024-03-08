@@ -29,8 +29,8 @@ $do_list = [
 ];
 
 return [
-    'meta_title' => "Academic Tutoring Services for IB & A Level - All-in Eduspace",
-    'meta_description' => 'Dapatkan layanan tutor akademik terbaik dengan All-In Edu. Kami menawarkan layanan tutor pribadi, tutor online, dan program tutoring untuk siswa',
+    'meta_title' => "Academic Tutoring Services for IB & A Level - EduALL",
+    'meta_description' => 'Dapatkan layanan tutor akademik terbaik dengan EduALL. Kami menawarkan layanan tutor pribadi, tutor online, dan program tutoring untuk siswa',
 
     'title' => 'ACADEMIC TUTORING',
     'desc' => 'Tingkatkan nilai akademik melalui gaya belajar yang dipersonalisasi dengan kebutuhanmu melalui pembelajaran berkonsep dan dapat diaplikasikan di sekolah.',

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Program Persiapan SAT - ALL-in Eduspace Programs",
+    'meta_title' => "Program Persiapan SAT - EduALL Programs",
     'meta_description' => 'Program SAT: Siapkan dirimu menghadapi tes SAT bersama para ahli tes kami yang memiliki strategi teruji selama bertahun-tahun',
 
     'title' => 'SAT/ACT PREP',

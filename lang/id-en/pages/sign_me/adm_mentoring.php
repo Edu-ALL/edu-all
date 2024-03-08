@@ -13,7 +13,7 @@ return [
         ],
         [
             'question' => 'Whom will I talk to in a consultation?',
-            'answer' => 'Our top-notch mentors will be there to show you how you can get into your dream universities and the ways that ALL-in could help you with.',
+            'answer' => 'Our top-notch mentors will be there to show you how you can get into your dream universities and the ways that EduALL could help you with.',
         ],
         [
             'question' => 'What happens after a consultation?',

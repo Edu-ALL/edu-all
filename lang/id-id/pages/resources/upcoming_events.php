@@ -1,6 +1,6 @@
 <?php
 return [
-    'meta_title' => "Event Mendatang: Bergabunglah dengan ALL-in Eduspace untuk Wawasan Pendidikan dan Karir",
+    'meta_title' => "Event Mendatang: Bergabunglah dengan EduALL untuk Wawasan Pendidikan dan Karir",
     'meta_description' => 'Anda bercita-cita untuk masuk ke universitas top dunia? Cek halaman ini dan ikuti acara-acara dan bootcamp gratis & premium kami',
 
     'title' => 'Upcoming Events',

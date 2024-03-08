@@ -64,7 +64,7 @@ $testimonies = [
 ];
 
 return [
-    'meta_title' => "Program Persiapan Ujian Akademik | ALL-in Eduspace Programs",
+    'meta_title' => "Program Persiapan Ujian Akademik | EduALL Programs",
     'meta_description' => 'Bangun dasar akademikmu untuk kesuksesan mendaftar universitas top bersama metode teruji kami yang akan meningkatkan transkrip dan nilai tes standar',
 
     // banner section

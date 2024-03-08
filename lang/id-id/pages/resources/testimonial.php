@@ -1,6 +1,6 @@
 <?php
 return [
-    'meta_title' => "Testimonial Mentoring Universitas Terbaik dari ALL-in Eduspace",
+    'meta_title' => "Testimonial Mentoring Universitas Terbaik dari EduALL",
     'meta_description' => 'Tingkat Penerimaan 100% Mentee ke Universitas Teratas di AS, Inggris, Eropa, dan Asia',
 
     'title' => 'Apa Yang Mereka Katakan',

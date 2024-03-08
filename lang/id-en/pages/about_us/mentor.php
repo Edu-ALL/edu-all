@@ -1,13 +1,13 @@
 <?php
 return [
-    'meta_title' => "Our Expert Mentors - ALL-in Eduspace Programs",
-    'meta_description' => 'ALL-in mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences.',
+    'meta_title' => "Our Expert Mentors - EduALL Programs",
+    'meta_description' => 'EduALL mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences.',
 
-    'meta_title_detail' => " - Experienced Mentor at ALL-in Eduspace",
+    'meta_title_detail' => " - Experienced Mentor at EduALL",
 
     // Banner
     'banner_title' => 'Our Mentors',
-    'benner_body' => 'ALL-in mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences. <br> <br> We leverage diverse voices to accomplish our common vision to empower you with requisite real-world skills and an extensive network to achieve your dreams beyond college.',
+    'benner_body' => 'EduALL mentors are graduates from the world’s top universities with varied academic backgrounds and work experiences. <br> <br> We leverage diverse voices to accomplish our common vision to empower you with requisite real-world skills and an extensive network to achieve your dreams beyond college.',
     'banner_btn' => "More",
 
     // Mentor
@@ -25,6 +25,6 @@ return [
     'recent_videos' => 'Recent Videos',
     'video_not_found' => 'Video Not Found!',
     'bottom_detail_title' => 'Schedule your Consultation with',
-    'bottom_detail_body' => 'Let’s find out how to get into your dream university and future career path through the first consultation with our top-notch mentors and your profile assessment based on ALL-in’s Four Pillars of University Application.',
+    'bottom_detail_body' => 'Let’s find out how to get into your dream university and future career path through the first consultation with our top-notch mentors and your profile assessment based on EduALL’s Four Pillars of University Application.',
     'bottom_detail_btn' => 'Start Your Consultation',
 ];

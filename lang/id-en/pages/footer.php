@@ -7,7 +7,7 @@ return [
     'consultation_desc' => 'Book your appointment now',
     'company' => 'Company',
     'article' => 'Latest Article',
-    'article_button' => 'More ALL-INsight',
+    'article_button' => 'More EduJournal',
     'page_list' => [
         [
             'title' => 'Home',
@@ -18,7 +18,7 @@ return [
             'link' => "/about"
         ],
         [
-            'title' => 'ALL-INsight',
+            'title' => 'EduJournal',
             'link' => "/blog"
         ],
         [

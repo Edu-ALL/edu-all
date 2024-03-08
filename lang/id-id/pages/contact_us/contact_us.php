@@ -16,7 +16,7 @@ Book your appointment now:',
         ['+6281808081363', '+62 818-0808-1363'],
         ['+6287860811413', '+62 878-6081-1413']
     ],
-    'email' => 'info@all-inedu.com',
-    'youtube' => 'ALL-in Eduspace',
+    'email' => 'info@edu-all.com',
+    'youtube' => 'EduALL',
     'instagram' => '@allineduspace'
 ];

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Bimbingan Mentoring untuk Program Sarjana - ALL-in Eduspace Programs",
+    'meta_title' => "Bimbingan Mentoring untuk Program Sarjana - EduALL Programs",
     'meta_description' => 'Raih impianmu kuliah di universitas TOP Dunia dengan Program Admission Mentoring kami. Dapatkan panduan personal dari mentor kami sekarang!',
 
     // banner section
@@ -95,7 +95,7 @@ return [
         [
             'name' => 'Rachinta Marpaung',
             'univ' => 'Columbia University',
-            'body' => 'ALL-IN has helped me tremendously throughout my uni application endeavors. From brainstorming essay ideas to editing the essays, to helping find internships, ALL-in has made the process so easy while ensuring my uni application is of top-notch quality. Also, the mentors are really hip and cool, so they’re really approachable! ',
+            'body' => 'EduALL has helped me tremendously throughout my uni application endeavors. From brainstorming essay ideas to editing the essays, to helping find internships, EduALL has made the process so easy while ensuring my uni application is of top-notch quality. Also, the mentors are really hip and cool, so they’re really approachable! ',
         ],
         [
             'name' => 'Helena Helga',
@@ -105,12 +105,12 @@ return [
         [
             'name' => 'Nathasya Tiaraputri',
             'univ' => 'Hong Kong University of Science and Technology',
-            'body' => 'ALL-in Eduspace definitely opened my eyes. I was a G11, still trying to figure out the exact major I want to take, and after I met my mentor for the first time and started talking, I realized that there were so many steps in an application for uni! I thought it was just submitting my reports, my A-level grades later and an “essay”, like I didn’t even know the difference between a personal statement and an essay or a CV. So I definitely feel more at ease throughout G12 knowing that I’m on the right track, and I didn’t have to panic as much because any question I have immediately went to my mentor!',
+            'body' => 'EduALL definitely opened my eyes. I was a G11, still trying to figure out the exact major I want to take, and after I met my mentor for the first time and started talking, I realized that there were so many steps in an application for uni! I thought it was just submitting my reports, my A-level grades later and an “essay”, like I didn’t even know the difference between a personal statement and an essay or a CV. So I definitely feel more at ease throughout G12 knowing that I’m on the right track, and I didn’t have to panic as much because any question I have immediately went to my mentor!',
         ],
         [
             'name' => 'Ramzi Putera Faisal',
             'univ' => 'Tokyo International University',
-            'body' => 'My earliest struggle is about what needs to be done regarding my uni prep. I don’t even know how to start one. But after getting thorough guidance from my mentor, I now know what I need to do and how to do it. Thanks ALL-in!',
+            'body' => 'My earliest struggle is about what needs to be done regarding my uni prep. I don’t even know how to start one. But after getting thorough guidance from my mentor, I now know what I need to do and how to do it. Thanks EduALL!',
         ],
     ],
 
