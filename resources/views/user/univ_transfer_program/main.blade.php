@@ -8,7 +8,7 @@
 
 @section('content')
     {{-- ==================================== Header Section ========================================= --}}
-    <section class="py-28 bg-graduate-header bg-cover bg-center md:py-48 ">
+    <section class="py-28 bg-transfer-header bg-cover bg-center md:py-48 ">
         <div class="relative main-container">
             <div class="flex items-center gap-y-4 md:max-w-xl lg:pb-[10px]">
                 <div class="flex-col">
