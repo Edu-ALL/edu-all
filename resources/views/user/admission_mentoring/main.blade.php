@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <img loading="lazy" src="{{ asset('assets/img/banner/Admission_Mentoring.webp') }}"
+            <img loading="lazy" src="{{ asset('assets/img/banner/Mentoring.webp') }}"
                 alt="EduALL - Admission Mentoring Banner"
                 class="w-full h-[400px] object-cover object-center md:h-[450px]">
 
