@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Tentang ALL-in Eduspace: Misi dan Nilai-nilai Kami",
+    'meta_title' => "Tentang EduALL: Misi dan Nilai-nilai Kami",
     'meta_description' => 'Kami adalah konsultan universitas independen. Misi kami adalah memastikan bahwa siswa mencapai kesuksesan pada jalur yang mereka impikan di masa depan.',
 
     // Top Section
@@ -10,6 +10,8 @@ return [
         'Kami adalah konsultan universitas independen berlokasi di Jakarta, Indonesia. Misi kami adalah memastikan siswa-siswa Indonesia dapat berkembang di jalur yang mereka impikan untuk masa depan.',
         'Kami melayani siswa dari berbagai tempat termasuk Jakarta, Bandung, Semarang, dan Surabaya, bahkan di luar Indonesia; Singapore, Amerika Serikat, dan lain-lain.'
     ],
+
+    'about_title' => 'Tentang Kami',
 
     // About Points
     'about_list' => [
@@ -31,12 +33,12 @@ return [
     // QnA
     'qna_list' => [
         [
-            'question' => 'Apa yang ditawarkan ALL-in Eduspace?',
+            'question' => 'Apa yang ditawarkan EduALL?',
             'answer' => 'Kami menawarkan program mentoring dan pembelajaran untuk mempersiapkan siswa di jurusan kuliah yang direncanakan. Kami juga membantu siswa untuk mencari universitas yang terbaik & sesuai untuk mereka beserta dengan membekali siswa dengan ilmu dan keterampilan industri sebagai persiapan karir mereka. ',
         ],
         [
             'question' => 'Apa yang membedakan ALL-in dengan agen pendidikan?',
-            'answer' => 'Kebanyakan dari agen pendidikan memiliki kemitraan resmi dengan universitas-universitas tertentu. Tetapi, ALL-in Eduspace berdiri secara mandiri dan kami merepresentasikan <b>kamu</b>, bukan universitas. Oleh sebab itu, layanan dan program kami dibuat khusus untuk memenuhi kebutuhan kamu dalam memilih universitas dan jurusan kuliah terbaik untuk kamu. ',
+            'answer' => 'Kebanyakan dari agen pendidikan memiliki kemitraan resmi dengan universitas-universitas tertentu. Tetapi, EduALL berdiri secara mandiri dan kami merepresentasikan <b>kamu</b>, bukan universitas. Oleh sebab itu, layanan dan program kami dibuat khusus untuk memenuhi kebutuhan kamu dalam memilih universitas dan jurusan kuliah terbaik untuk kamu. ',
         ],
         [
             'question' => 'Mengapa layanan mentoring ALL-in diperlukan?',

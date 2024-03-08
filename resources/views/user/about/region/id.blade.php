@@ -8,10 +8,22 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-16 -z-10">
+    <section class="-mt-16 pb-16 -z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
-            <img loading="lazy" src="{{ asset('assets/img/banner/About us banner.webp') }}" alt="EduALL about banner image"
-                class="w-full h-full object-cover object-center">
+            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
+                <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px]">
+                    <div class="flex-row">
+                        <h1
+                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            {{ __('pages/about_us/about.about_title') }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <img loading="lazy" src="{{ asset('assets/img/banner/About_Us.webp') }}" alt="EduALL About Us Banner"
+                class="lazy w-full h-full object-cover object-center">
+
         </div>
     </section>
 
@@ -19,37 +31,37 @@
     <section class="pb-16">
         <div class="flex flex-col items-center main-container">
             <div class="flex flex-col max-w-4xl mt-10 gap-y-4">
-                <p class="font-primary font-light text-2xl text-primary text-center">
+                <p class="font-newprimary font-light text-2xl text-newprimary text-center">
                     {{ __('pages/about_us/about.desc.0') }}
                 </p>
-                <p class="font-primary font-light text-2xl text-primary text-center italic">
+                <p class="font-newprimary font-light text-2xl text-newprimary text-center italic">
                     {{ __('pages/about_us/about.desc.1') }}
                 </p>
             </div>
             <div class="flex flex-col gap-y-8 max-w-4xl mt-20">
                 <div class="flex flex-col md:flex-row py-4">
-                    <h4 class="mb-6 font-primary font-semibold text-xl text-yellow  md:w-1/3 ">
+                    <h4 class="mb-6 font-newprimary font-semibold text-xl text-newyellow  md:w-1/3 ">
                         {{ __('pages/about_us/about.about_list.0.title') }}
                     </h4>
-                    <p class="font-primary text-lg text-[#7A7A7A] md:w-2/3">
+                    <p class="font-newprimary text-lg text-[#7A7A7A] md:w-2/3">
                         {{ __('pages/about_us/about.about_list.0.body') }}
                     </p>
                 </div>
                 <span class="block w-full h-[1px] bg-[#7e7e7e]"></span>
                 <div class="flex flex-col md:flex-row py-4">
-                    <h4 class="mb-6 font-primary font-semibold text-xl text-yellow  md:w-1/3 ">
+                    <h4 class="mb-6 font-newprimary font-semibold text-xl text-newyellow  md:w-1/3 ">
                         {{ __('pages/about_us/about.about_list.1.title') }}
                     </h4>
-                    <p class="font-primary text-lg text-[#7A7A7A] md:w-2/3">
+                    <p class="font-newprimary text-lg text-[#7A7A7A] md:w-2/3">
                         {{ __('pages/about_us/about.about_list.1.body') }}
                     </p>
                 </div>
                 <span class="block w-full h-[1px] bg-[#7e7e7e]"></span>
                 <div class="flex flex-col md:flex-row py-4">
-                    <h4 class="mb-6 font-primary font-semibold text-xl text-yellow  md:w-1/3 ">
+                    <h4 class="mb-6 font-newprimary font-semibold text-xl text-newyellow  md:w-1/3 ">
                         {{ __('pages/about_us/about.about_list.2.title') }}
                     </h4>
-                    <p class="font-primary text-lg text-[#7A7A7A] md:w-2/3">
+                    <p class="font-newprimary text-lg text-[#7A7A7A] md:w-2/3">
                         {{ __('pages/about_us/about.about_list.2.body') }}
                     </p>
                 </div>
@@ -61,19 +73,19 @@
     <section class="py-16">
         <div class="flex flex-col items-center main-container">
             <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="EduALL Logo">
-            <h2 class="mt-4 font-primary font-bold text-3xl text-yellow text-center">Question & Answer</h2>
+            <h2 class="mt-4 font-newprimary font-bold text-3xl text-newyellow text-center">Question & Answer</h2>
 
             <div class="max-w-4xl mt-8 w-full">
                 <ul class="flex flex-col gap-y-4">
                     @foreach (__('pages/about_us/about.qna_list') as $item)
                         <li class="flex flex-col w-full">
                             <div id="question" class="flex justify-between items-center cursor-pointer mb-3">
-                                <h4 class="mr-4 font-primary font-semibold text-xl text-primary"> {{ $item['question'] }}
+                                <h4 class="mr-4 font-newprimary font-semibold text-xl text-newprimary"> {{ $item['question'] }}
                                 </h4>
-                                <i class="fa-solid fa-chevron-down text-xl text-primary"></i>
+                                <i class="fa-solid fa-chevron-down text-xl text-newprimary"></i>
                             </div>
                             <p id="answer"
-                                class="max-h-0 font-primary text-lg text-[#7e7e7e] overflow-hidden transition-all duration-1000"
+                                class="max-h-0 font-newprimary text-lg text-[#7e7e7e] overflow-hidden transition-all duration-1000"
                                 {{-- style="transition: max-height 1s"> --}}>
                                 {!! $item['answer'] !!}</p>
                         </li>
@@ -84,13 +96,13 @@
     </section>
 
     {{-- ================================== Mentors ================================== --}}
-    <section class="py-10 bg-primary">
+    <section class="py-10 bg-newprimary">
         <div class="flex flex-col items-center">
             <div class=" main-container">
                 <div class="flex flex-col max-w-2xl">
-                    <h2 class="mt-10 font-primary font-bold text-3xl text-white text-center">
+                    <h2 class="mt-10 font-newprimary font-bold text-3xl text-white text-center">
                         {{ __('pages/about_us/about.mentor_title') }}</h2>
-                    <p class="mt-8 font-primary text-lg text-white text-center leading-7">
+                    <p class="mt-8 font-newprimary text-lg text-white text-center leading-7">
                         {{ __('pages/about_us/about.mentor_desc') }}</p>
                 </div>
             </div>
@@ -115,13 +127,13 @@
                                                 <div
                                                     class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                     <h3
-                                                        class="font-primary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
+                                                        class="font-newprimary font-bold text-2xl text-white leading-7 lg:text-xl lg:leading-4">
                                                         {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
                                                         <br>
                                                         {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
                                                     </h3>
                                                     <div
-                                                        class="mt-4 font-primary text-xs text-white leading-4 lg:leading-3">
+                                                        class="mt-4 font-newprimary text-xs text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
@@ -133,12 +145,12 @@
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                 <div class="flex flex-col items-center justify-center">
                                                     <div
-                                                        class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
+                                                        class="mb-6 px-4 w-full h-full font-newprimary font-medium text-sm text-white text-center text-ellipsis ">
                                                         {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                     </div>
                                                     <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
-                                                        class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
+                                                        class="px-4 py-2 flex-inline font-newprimary font-medium text-xs text-white text-center rounded-lg bg-yellow">
                                                         Get to know
                                                         {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
                                                     </a>
@@ -156,14 +168,16 @@
     </section>
 
 
-    {{-- ================================== Bottom Section ================================== --}}
-    <section class="-mt-2 py-16 ">
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="font-primary font-semibold text-yellow text-center text-3xl mb-4">
+            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center text-4xl">
                 {{ __('pages/about_us/about.bottom_title') }}
             </h2>
             <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="my-btn">{{ __('pages/about_us/about.bottom_btn') }}</a>
+                class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">
+                {{ __('pages/about_us/about.bottom_btn') }}
+            </a>
         </div>
     </section>
 @endsection
