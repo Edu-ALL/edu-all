@@ -22,12 +22,12 @@
                         {{ __('pages/footer.consultation_desc') }}
                     </p>
                    <div class="flex flex-col">
-                        <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                        <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
                         @if ($website_settings->phone_number_2 != null)
-                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
                         @endif
                         @if ($website_settings->phone_number_3 != null)
-                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
                         @endif
                     </div>
                 </div>
@@ -55,13 +55,13 @@
                                     alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
                                     class="h-[95px] object-cover object-center">
                                 <h2
-                                    class="font-primary font-extrabold text-sm text-primary lg:text-sm lg:tracking-normal lg:leading-6">
+                                    class="font-newprimary font-extrabold text-sm text-newprimary lg:text-sm lg:tracking-normal lg:leading-6">
                                     {{ html_entity_decode(substr(strip_tags($blog->blog_title), 0, 35)) }}...
                                 </h2>
-                                <span class="inline-flex font-primary font-semibold text-xs text-yellow">
+                                <span class="inline-flex font-newprimary font-semibold text-xs text-yellow">
                                     {{ $blog->blog_category->category_name }}
                                 </span>
-                                <p class="font-primary font-medium text-sm text-primary">
+                                <p class="font-newprimary font-medium text-sm text-newprimary">
                                     {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 50)) }}...
                                 </p>
                             </div>
@@ -69,7 +69,7 @@
                     @endforeach
                 </div>
                 <div class="text-center mt-4">
-                    <button class="bg-yellow rounded py-1 px-4 text-white shadow hover:bg-yellow/75">
+                    <button class="bg-red rounded py-1 px-4 text-white shadow hover:bg-red/75">
                         {{ __('pages/footer.article_button') }}
                     </button>
                 </div>

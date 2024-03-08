@@ -27,12 +27,12 @@
         <div class="main-container">
             <div class="flex gap-6 items-center justify-center">
                 <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'admission-mentoring']) }}"
-                    class="font-bold {{ $tab_section == 'passion_project'
+                    class="font-bold py-1 px-2 shadow-md {{ $tab_section == 'passion_project'
                         ? 'text-newprimary font-newprimary border-b-2 border-newprimary'
                         : 'bg-newprimary  text-white font-newprimary' }}">Admission
                     Mentoring</a>
                 <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'passion-project']) }}"
-                    class="font-bold {{ $tab_section == 'passion_project'
+                    class="font-bold py-1 px-2 shadow-md {{ $tab_section == 'passion_project'
                         ? 'bg-newprimary  text-white font-newprimary'
                         : 'text-newprimary font-newprimary border-b-2 border-newprimary' }}">Passion
                     Project</a>
@@ -111,13 +111,13 @@
 
     {{-- ================================== Bottom Section  ================================== --}}
 
-    <section class="mb-24 py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="mb-6 font-newprimary font-semibold text-3xl text-white text-center md:text-4xl">
                 {{ __('pages/success_stories/success_stories.bottom_title') }}
             </h2>
             <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                <span class="px-8 md:px-12 py-1.5 font-bold font-newprimary text-base text-white text-center bg-newprimary">
+                <span class="px-8 md:px-12 py-3 font-bold font-newprimary text-base text-white text-center bg-newprimary">
                     {{ __('pages/success_stories/success_stories.register_btn') }}
                 </span>
             </a>
