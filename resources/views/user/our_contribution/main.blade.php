@@ -8,18 +8,21 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-5 -z-10">
-        <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full bg-primary/50">
-                <div class="flex flex-col justify-center items-center h-full">
-                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
-                        {{ __('pages/about_us/our_contribution.title') }}
-                    </h1>
+    <section class="-mt-16 pb-16 -z-10">
+        <div class="relative flex w-full h-screen left-0 overflow-hidden">
+            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
+                <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px]">
+                    <div class="flex-row">
+                        <h1
+                            class="font-bold font-newnewnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            {{ __('pages/about_us/our_contribution.title') }}
+                        </h1>
+                    </div>
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/banner/Contribution banner.webp') }}" loading="lazy"
-                alt="EduALL Our Contribution Banner" class="w-full h-[350px] object-cover object-center">
+            <img loading="lazy" src="{{ asset('assets/img/banner/Partnership.webp') }}" alt="EduALL Our Contributor Banner"
+                class="lazy w-full h-full object-cover object-center">
         </div>
     </section>
 
@@ -36,8 +39,8 @@
                     our best to make everyone’s dream become true through education. ALL-in has created and engaged in
                     several programs to provide accessible higher education for both local and overseas study.</p>
             </div>
-            <img data-original="{{ asset('assets/img/about/our-contribution/CSR-ASET-1.webp') }}"
-                alt="EduALL csr Asset" class="object-contain md:pl-6 md:w-1/3 md:max-w-xs">
+            <img data-original="{{ asset('assets/img/about/our-contribution/CSR-ASET-1.webp') }}" alt="EduALL csr Asset"
+                class="object-contain md:pl-6 md:w-1/3 md:max-w-xs">
         </div>
     </section>
 
