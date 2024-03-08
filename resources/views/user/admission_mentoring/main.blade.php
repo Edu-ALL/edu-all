@@ -12,7 +12,7 @@
                 <div class="flex items-center h-full lg:max-w-xl">
                     <div class="flex-row">
                         <h1
-                            class="font-bold font-newprimary text-5xl text-newyellow tracking-widest mb-3 lg:text-start text-center capitalize">
+                            class="font-bold font-newprimary text-5xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
                             {{ __('pages/programs/admission_mentoring.title') }}
                         </h1>
                         <p class="mt-2 font-newprimary font-normal text-xl text-white lg:text-start text-center">

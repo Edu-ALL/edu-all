@@ -13,7 +13,7 @@
                 <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px]">
                     <div class="flex-row">
                         <h1
-                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-newyellow tracking-widest mb-3 lg:text-start text-center capitalize">
+                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
                             {{ __('pages/programs/programs.title') }}
                         </h1>
                         <p class="mt-2 font-newnewprimary font-normal text-xl lg:text-2xl text-white lg:text-start text-center">
