@@ -9,10 +9,10 @@
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full md:pb-20 lg:max-w-xl">
+                <div class="flex items-center h-full lg:max-w-xl">
                     <div class="flex-row">
                         <h1
-                            class="font-bold font-newprimary text-4xl text-newyellow tracking-widest mb-3 lg:text-start text-center uppercase">
+                            class="font-bold font-newprimary text-5xl text-newyellow tracking-widest mb-3 lg:text-start text-center capitalize">
                             {{ __('pages/programs/admission_mentoring.title') }}
                         </h1>
                         <p class="mt-2 font-newprimary font-normal text-xl text-white lg:text-start text-center">

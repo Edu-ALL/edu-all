@@ -47,7 +47,7 @@
             <div class="main-container z-10">
                 <div class="flex justify-center">
                     <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl lg:w-2/5">
+                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl lg:w-2/5">
                         {{ __('pages/programs/undergraduate_program.do_title') }}
                     </h2>
                 </div>
@@ -57,9 +57,9 @@
                 <div class="flex flex-col gap-4 w-full py-12 lg:w-1/2">
                     @foreach (__('pages/programs/undergraduate_program.do_list') as $item)
                         <div
-                            class="flex justify-between items-stretch gap-4 w-full min-h-full rounded-lg bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden lg:rounded-full lg:min-h-max">
+                            class="flex justify-between items-stretch gap-4 w-full min-h-full bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden  lg:min-h-max">
                             <div
-                                class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
+                                class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 ">
                                 <span
                                     class="font-newprimary font-extrabold text-8xl md:text-9xl text-newprimary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
@@ -141,7 +141,7 @@
             <div class="flex flex-col">
                 <div class="flex justify-center">
                     <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl lg:w-2/5">
+                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl lg:w-2/5">
                         {{ __('pages/programs/undergraduate_program.why_us_title') }}
                     </h2>
                 </div>
@@ -160,12 +160,13 @@
     </section>
 
     {{-- ====================================  Testimonial Section ========================================= --}}
+    @if(count($testimonies) > 0)
     <section class="py-10">
         <div class="main-container">
             <div class="flex flex-col">
                 <div class="flex justify-center">
                     <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight rounded-full bg-[#F5E6D3] md:w-4/6 md:text-4xl xl:w-3/6">
+                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
                         {{ __('pages/programs/undergraduate_program.testimony_title') }}
                     </h2>
                 </div>
@@ -210,6 +211,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
