@@ -69,7 +69,7 @@
                     @endforeach
                 </div>
                 <div class="text-center mt-4">
-                    <button class="bg-red rounded py-1 px-4 text-white shadow hover:bg-red/75">
+                    <button class="bg-red py-1 px-4 text-white shadow hover:bg-red/75">
                         {{ __('pages/footer.article_button') }}
                     </button>
                 </div>
