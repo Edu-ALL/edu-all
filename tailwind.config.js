@@ -77,7 +77,7 @@ module.exports = {
 
                 // header upcomming event
                 "upcomming-header":
-                    "url('../../public/assets/img/banner/Upcoming event banner.webp')",
+                    "url('../../public/assets/img/banner/Upcoming_Event.webp')",
 
                 // header mentor
                 "mentor-header":
