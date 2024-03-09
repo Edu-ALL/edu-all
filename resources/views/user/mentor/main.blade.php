@@ -29,7 +29,7 @@
         <div class="main-container lg:max-w-7xl lg:mx-auto">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 xl:gap-12">
                 @foreach ($allin_mentor as $mentor)
-                    <div class="flex flex-col rounded-3xl shadow-md relative -mt-[8rem] bg-white">
+                    <div class="flex flex-col rounded-3xl shadow-md relative -mt-[8rem] mb-[10rem] bg-white">
                         {{-- Mentor Image --}}
                         <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                             alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center absolute -top-[10rem]">
