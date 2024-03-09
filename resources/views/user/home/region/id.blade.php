@@ -10,7 +10,7 @@
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[90%]">
         <div class="relative">
-            <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner" class="w-full md:h-full h-screen object-cover">
+            <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner" class="w-full md:h-[92vh] h-screen object-cover">
             <div class="absolute bottom-40 md:bottom-0 left-0 right-0">
                 <div class="relative">
                     <div
