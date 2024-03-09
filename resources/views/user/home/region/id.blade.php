@@ -651,7 +651,7 @@
                 {{ __('pages/home.bottom') }}
             </h2>
             <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                <span class="px-8 md:px-12 py-1.5 font-newprimary text-base text-white text-center bg-red">
+                <span class="px-8 md:px-12 py-3 font-newprimary text-base text-white text-center bg-red">
                     {{ __('pages/home.bottom_btn') }}
                 </span>
             </a>

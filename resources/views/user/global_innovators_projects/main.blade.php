@@ -54,11 +54,11 @@
                                 class="h-8">
                             Summer
                         </span>
-                        <h3 class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl">
+                        <h3 class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl">
                             {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_date') }}
                         </h3>
                     </div>
-                    <p class="max-w-2xl mt-2 font-newprimary text-base text-primary text-center">
+                    <p class="max-w-2xl mt-2 font-newprimary text-base text-newprimary text-center">
                         {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_desc') }}
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
@@ -80,16 +80,16 @@
                         alt="EduALL Innovators In Residence Program Logo" class="w-full max-w-xl mx-auto object-contain">
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4">
                         <span
-                            class="inline-flex items-center gap-4 px-4 py-2 font-newprimary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
+                            class="inline-flex items-center gap-4 px-4 py-2 font-newprimary font-bold text-2xl text-newprimary rounded-lg bg-[#BAD6FF] shadow-xl">
                             <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
                                 class="h-8">
                             Winter
                         </span>
-                        <h3 class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl">
+                        <h3 class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl">
                             {{ __('pages/programs/global_innovators_projects.innovators_in_residence_date') }}
                         </h3>
                     </div>
-                    <p class="max-w-2xl mt-2 font-newprimary text-base text-primary text-center">
+                    <p class="max-w-2xl mt-2 font-newprimary text-base text-newprimary text-center">
                         {{ __('pages/programs/global_innovators_projects.innovators_in_residence_desc') }}
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
@@ -111,22 +111,22 @@
                         alt="EduALL Global Immersion Programs Logo" class="w-full max-w-xs mx-auto object-contain">
                     <div class="flex gap-4">
                         <span
-                            class="inline-flex items-center gap-4 px-4 py-2 font-newprimary font-bold text-2xl text-primary rounded-lg bg-[#BAD6FF] shadow-xl">
+                            class="inline-flex items-center gap-4 px-4 py-2 font-newprimary font-bold text-2xl text-newprimary rounded-lg bg-[#BAD6FF] shadow-xl">
                             <img src="{{ asset('assets/icon/global-innovators-project/winter.webp') }}" alt="Winter Icon"
                                 class="h-8">
                             Winter
                         </span>
                         <span
-                            class="inline-flex items-center gap-4 px-4 py-2 font-newprimary font-bold text-2xl text-primary rounded-lg bg-[#FDEFE0] shadow-xl">
+                            class="inline-flex items-center gap-4 px-4 py-2 font-newprimary font-bold text-2xl text-newprimary rounded-lg bg-[#FDEFE0] shadow-xl">
                             <img src="{{ asset('assets/icon/global-innovators-project/summer.webp') }}" alt="Summer Icon"
                                 class="w-8 h-8">
                             Summer
                         </span>
                     </div>
-                    <h3 class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl">
+                    <h3 class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_date') }}
                     </h3>
-                    <p class="max-w-2xl mt-2 font-newprimary text-base text-primary text-center">
+                    <p class="max-w-2xl mt-2 font-newprimary text-base text-newprimary text-center">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_desc') }}
                     </p>
                 </div> --}}
@@ -144,7 +144,7 @@
                                     {{ __('pages/programs/global_innovators_projects.science_research_physical_science_title') }}
                                 </h3>
                                 <h3
-                                    class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl lg:text-right">
+                                    class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl lg:text-right">
                                     {{ __('pages/programs/global_innovators_projects.science_research_physical_science_date') }}
                                 </h3>
                                 <div class="mt-4 flex flex-wrap justify-center gap-2 lg:justify-end lg:max-w-md">
@@ -160,7 +160,7 @@
                                 <h3 class="font-newprimary font-black text-2xl text-yellow text-center md:text-3xl">
                                     {{ __('pages/programs/global_innovators_projects.science_research_life_science_title') }}
                                 </h3>
-                                <h3 class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl">
+                                <h3 class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl">
                                     {{ __('pages/programs/global_innovators_projects.science_research_life_science_date') }}
 
                                 </h3>
@@ -179,10 +179,10 @@
                             <img src="{{ asset('assets/img/global_innovators_project/Business logo.webp') }}"
                                 alt="EduALL Business Logo" class="w-full max-w-sm object-contain">
                             <div class="flex flex-col gap-4 lg:items-start">
-                                <h3 class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl">
+                                <h3 class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl">
                                     {{ __('pages/programs/global_innovators_projects.business_date') }}
                                 </h3>
-                                <div class="font-newprimary text-base text-primary text-center lg:text-left">
+                                <div class="font-newprimary text-base text-newprimary text-center lg:text-left">
                                     {{ __('pages/programs/global_innovators_projects.business_desc') }}
 
                                 </div>
@@ -209,7 +209,7 @@
                             allowfullscreen></iframe>
                     </div>
                     <a href="#"
-                        class="mt-8 w-full max-w-[160px] px-4 py-2 rounded-md bg-yellow font-newprimary font-medium text-base text-white text-center">
+                        class="mt-8 w-full max-w-[160px] px-4 py-2 rounded-md bg-newyellow font-newprimary font-medium text-base text-white text-center">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_btn') }}
                     </a>
                 </div> --}}
@@ -220,7 +220,7 @@
 
     {{-- =============================================== Bottom Section =============================================== --}}
     <section id="form" class="flex flex-col items-center py-16">
-        <h2 class="font-newprimary font-black text-2xl text-primary text-center md:text-3xl">
+        <h2 class="font-newprimary font-black text-2xl text-newprimary text-center md:text-3xl">
             {{ __('pages/programs/global_innovators_projects.form_title') }}
         </h2>
         <div class="mt-2 w-full font-newprimary font-medium text-base text-[#F90C0C] text-center">

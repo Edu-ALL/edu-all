@@ -64,7 +64,7 @@
                                                 class="flex flex-col justify-between w-full md:w-1/3 md:gap-y-6 lg:gap-y-12">
                                                 <div class="mt-3 mb-5 flex flex-col gap-4">
                                                     <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog->blog_category->slug, '#blog-category']) }}"
-                                                        class="inline-flex self-start px-3 py-1 font-newprimary font-semibold text-sm text-primary border border-newprimary hover:bg-primary/10">
+                                                        class="inline-flex self-start px-3 py-1 font-newprimary font-semibold text-sm text-newprimary border border-newprimary hover:bg-newprimary/10">
                                                         {{ $blog->blog_category->category_name }}
                                                     </a>
                                                     <div class="flex items-center gap-2">
@@ -83,7 +83,7 @@
                                                                         {{ $blog->mentor->mentor_fullname }}
                                                                     </span>
                                                                 </a>
-                                                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                                                                <div class="hidden w-px h-4 bg-newprimary md:block"></div>
                                                             </div>
                                                         @endif
                                                         <span class="font-newprimary text-sm text-[#7C7C7C]">
@@ -130,14 +130,14 @@
                 <ul class="horizontal_list flex items-center gap-x-1 py-6 overflow-x-auto">
                     <li class="flex-[0_0_auto]">
                         <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                            class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') ? 'text-primary' : 'bg-newprimary text-white' }} ">
+                            class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') ? 'text-newprimary' : 'bg-newprimary text-white' }} ">
                             {{ __('pages/blog.category_all') }}
                         </a>
                     </li>
                     @foreach ($blog_categories as $blog_category)
                         <li class="flex-[0_0_auto]">
                             <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') == $blog_category->slug ? 'bg-newprimary text-white' : 'text-primary' }}">
+                                class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') == $blog_category->slug ? 'bg-newprimary text-white' : 'text-newprimary' }}">
                                 {{ $blog_category->category_name }}
                             </a>
                         </li>
@@ -176,13 +176,13 @@
                                 class="pt-2 pb-1 font-newprimary font-bold text-lg text-newprimary lg:text-xl lg:tracking-normal lg:leading-7">
                                 {{ $blog->blog_title }}
                             </h2>
-                            <p class="font-newprimary font-normal text-md text-primary leading-7">
+                            <p class="font-newprimary font-normal text-md text-newprimary leading-7">
                                 {{ html_entity_decode(substr(strip_tags($blog->blog_description), 0, 125)) }}...
                             </p>
                             <div class="flex justify-between items-center">
                                 @if ($blog->mentor)
                                     <div class="flex items-center gap-2">
-                                        <div class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-primary">
+                                        <div class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-newprimary">
                                             <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                 alt="" class="w-full object-cover">
                                         </div>

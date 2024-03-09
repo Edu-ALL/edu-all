@@ -18,7 +18,7 @@
                 </div>
                 <a href="#mentor">
                     <span
-                        class="px-10 py-2 font-newprimary font-semibold text-base text-white rounded-md bg-yellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
+                        class="px-10 py-2 font-newprimary font-semibold text-base text-white rounded-md bg-newyellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
                 </a>
             </div>
         </div>

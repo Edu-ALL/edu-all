@@ -206,9 +206,9 @@
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center text-4xl">
+            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/graduate_program.bottom_title') }}
-                <strong class="mt-3 block text-3xl text-newyellow">
+                <strong class="mt-3 block lg:text-3xl text-xl text-newyellow">
                     {{ __('pages/programs/graduate_program.bottom_subtitle') }}
                 </strong>
             </h2>

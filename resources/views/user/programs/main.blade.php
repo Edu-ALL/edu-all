@@ -8,9 +8,9 @@
 
 @section('content')
     <section class="-mt-16 pb-16 -z-10">
-        <div class="relative flex w-full h-screen left-0 overflow-hidden">
+        <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px]">
+                <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px] pt-[10vh]">
                     <div class="flex-row">
                         <h1
                             class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
@@ -88,7 +88,7 @@
      {{-- ================================== Bottom Section  ================================== --}}
      <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center text-4xl">
+            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/programs.sign_up_text') }}
             </h2>
             <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
