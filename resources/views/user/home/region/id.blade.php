@@ -13,7 +13,9 @@
             <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner" class="w-full md:h-full h-screen object-cover">
             <div class="absolute bottom-40 md:bottom-0 left-0 right-0">
                 <div class="relative">
-                    <div class="bg-newprimary mix-blend-multiply invisible md:visible h-24 absolute bottom-0 left-0 right-0"></div>
+                    <div
+                        class="bg-newprimary mix-blend-multiply invisible md:visible h-24 absolute bottom-0 left-0 right-0">
+                    </div>
                     <div class="w-full main-container mx-auto absolute bottom-0 left-0 right-0 h-24 flex items-center">
                         <div class="flex gap-8 justify-between items-center w-full flex-col md:flex-row">
                             {{-- Acceptance --}}
@@ -220,7 +222,8 @@
                             </li>
                         </ul>
                         <a href="#"
-                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more details</a>
+                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            details</a>
                     </div>
                     <div class="ourprogram_side"></div>
                     <div class="ourprogram_side2"></div>
@@ -267,7 +270,8 @@
 
                         </ul>
                         <a href="#"
-                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more details</a>
+                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            details</a>
                     </div>
                     <div class="ourprogram_side"></div>
                     <div class="ourprogram_side2"></div>
@@ -374,7 +378,7 @@
                                             <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                 alt="{{ $mentor->mentor_alt }}"
                                                 class="bg-cover bg-center absolute -top-[12rem]">
-                                            <div class="flex flex-col px-4 mt-[12rem] overflow-visible">
+                                            <div class="flex flex-col px-4 lg:mt-[12rem] mt-[10rem] overflow-visible">
                                                 {{-- Mentor Name --}}
                                                 <h2
                                                     class="font-newprimary text-center font-semibold text-3xl text-dark mt-4">
@@ -450,7 +454,7 @@
                                                     @endif
                                                 </ul>
                                             </div>
-                                            
+
                                             <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
                                                 class="mt-5 mb-4 flex flex-col justify-center items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
                                                 <span
@@ -484,11 +488,26 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
                 {{-- Event --}}
                 <div class="flex flex-col items-center justify-between relative">
-                    <h4 class="absolute top-8 left-8 font-newprimary text-newyellow text-lg">Event</h4>
-                    <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                        alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
-                    <a href="#"
-                        class="w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more detail</a>
+                    <div class="splide" role="group">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                @foreach ($events as $event)
+                                    <li class="splide__slide">
+                                        <div class="splide__slide__container">
+                                            <h4 class="absolute top-8 left-8 font-newprimary text-newyellow text-lg">Event
+                                            </h4>
+                                            <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
+                                                
+                                            <a href="#"
+                                                class="absolute bottom-0 w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more
+                                                detail</a>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 {{-- Upcomming Event --}}
@@ -660,6 +679,27 @@
         }).mount();
 
         new Splide(splides[1], {
+            type: 'slide',
+            perPage: 1,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            lazyload: true,
+            autoplay: false,
+            interval: 3000,
+            pagination: false,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[105%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
+
+        new Splide(splides[2], {
             type: 'slide',
             perPage: 1,
             perMove: 1,

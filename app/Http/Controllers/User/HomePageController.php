@@ -26,7 +26,7 @@ class HomePageController extends Controller
         // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
-        $event = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->first();
+        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->get();
 
         // Upcomming Event
         $regular_talks = UpcomingEvents::all()->where('event_status', 'publish')->where('category', 'Regular Talk');
@@ -41,7 +41,7 @@ class HomePageController extends Controller
         return view('user.home.region.id', [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
-            'event' => $event,
+            'events' => $events,
             'regular_talks' => $regular_talks,
             'success_stories' => $success_stories,
         ]);
