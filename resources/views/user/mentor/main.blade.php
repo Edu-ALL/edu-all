@@ -26,14 +26,14 @@
 
     {{-- Mentor List Section --}}
     <section id="mentor" class="py-20 mt-[15rem] bg-dark">
-        <div class="main-container lg:max-w-7xl lg:mx-auto">
+        <div class="main-container lg:max-w-10xl lg:mx-auto">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 xl:gap-12">
                 @foreach ($allin_mentor as $mentor)
-                    <div class="flex flex-col rounded-3xl shadow-md relative -mt-[8rem] mb-[10rem] bg-white">
+                    <div class="flex flex-col rounded-3xl shadow-md relative -mt-[8rem] mb-[15rem] bg-white">
                         {{-- Mentor Image --}}
                         <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                             alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center absolute -top-[10rem]">
-                        <div class="flex flex-col px-4 lg:mt-[6rem] mt-[10rem] overflow-visible">
+                        <div class="flex flex-col px-4 lg:mt-[11rem] mt-[10rem] overflow-visible">
                             {{-- Mentor Name --}}
                             <h2 class="font-newprimary text-center font-semibold text-2xl text-dark mt-4">
                                 {{ $mentor->mentor_fullname }}
@@ -121,7 +121,7 @@
 
     {{-- Mentor List Section --}}
     <section class="pt-32 pb-10">
-        <div class="main-container lg:max-w-7xl lg:mx-auto flex flex-col">
+        <div class="main-container lg:max-w-10xl lg:mx-auto flex flex-col">
             <h2 class="mb-8 font-newprimary font-bold text-4xl text-newprimary text-center">
                 {{ __('pages/about_us/mentor.mentor_building_title') }}
             </h2>
