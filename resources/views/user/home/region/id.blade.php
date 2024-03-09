@@ -373,8 +373,8 @@
                                             {{-- Mentor Image --}}
                                             <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                 alt="{{ $mentor->mentor_alt }}"
-                                                class="bg-cover bg-center absolute -top-40">
-                                            <div class="flex flex-col px-4 mt-24 overflow-visible">
+                                                class="bg-cover bg-center absolute -top-[12rem]">
+                                            <div class="flex flex-col px-4 mt-[12rem] overflow-visible">
                                                 {{-- Mentor Name --}}
                                                 <h2
                                                     class="font-newprimary text-center font-semibold text-3xl text-dark mt-4">
@@ -450,7 +450,8 @@
                                                     @endif
                                                 </ul>
                                             </div>
-                                            <a href="#"
+                                            
+                                            <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
                                                 class="mt-5 mb-4 flex flex-col justify-center items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
                                                 <span
                                                     class="font-newprimary font-semibold text-xs text-newprimary leading-none">Get
@@ -659,7 +660,7 @@
         }).mount();
 
         new Splide(splides[1], {
-            type: 'loop',
+            type: 'slide',
             perPage: 1,
             perMove: 1,
             arrows: isMediumDevice ? false : true,

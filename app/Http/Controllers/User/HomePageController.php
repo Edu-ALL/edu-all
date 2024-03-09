@@ -17,7 +17,10 @@ class HomePageController extends Controller
         $region = substr(app()->getLocale(), 0, 2);
 
         // Mentor
-        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('mentor_status', 'active');
+        $all_mentor = Mentors::all()
+            ->where('mentor_category', 'ALL-In Mentor')
+            ->where('mentor_status', 'active')
+            ->where('lang', $lang);
 
         // Testimoni
         // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
@@ -34,7 +37,8 @@ class HomePageController extends Controller
         // Banners
         $banners = Banners::first();
 
-        return view('user.home.region.' . $region, [
+        // $region 
+        return view('user.home.region.id', [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
             'event' => $event,
