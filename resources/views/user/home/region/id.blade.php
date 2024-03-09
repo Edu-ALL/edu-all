@@ -513,7 +513,7 @@
                 {{-- Upcomming Event --}}
                 <div class="flex flex-col">
                     {{-- Regular Talk --}}
-                    @if ($regular_talks)
+                    @if (count($regular_talks) > 0)
                         <div class="flex flex-col items-center justify-between relative">
                             <div class="splide" role="group">
                                 <div class="splide__track">
@@ -551,7 +551,7 @@
                     @endif
 
                     {{-- More Date --}}
-                    @if ($important_dates)
+                    @if (count($important_dates) > 0)
                         <div class="flex flex-col items-center justify-between">
                             <div class="h-56 flex flex-col w-full py-8 px-6">
                                 <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
