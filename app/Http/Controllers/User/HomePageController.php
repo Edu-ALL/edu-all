@@ -38,7 +38,7 @@ class HomePageController extends Controller
         $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
 
         // Important Dates
-        $important_dates = ImportantDates::where('date', '>', Carbon::now())->limit(5)->orderBy('date','ASC')->get();
+        $important_dates = ImportantDates::where('date', '>', Carbon::now())->orderBy('date','ASC')->get();
 
         // Banners
         $banners = Banners::first();

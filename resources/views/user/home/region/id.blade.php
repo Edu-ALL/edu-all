@@ -543,17 +543,24 @@
                                 </div>
                             </div>
 
-                            <a href="#"
-                                class="w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more
-                                events
-                            </a>
+                            <div class="px-6 w-full">
+                                <a href="#"
+                                    class="w-full block py-3 bg-newprimary font-newprimary text-center text-white text-base">more
+                                    events
+                                </a>
+                            </div>
+                        </div>
+                    @else
+                        <div class="flex flex-col w-full relative text-start px-6">
+                            <h4 class="font-newprimary text-newyellow text-lg">Regular Talks</h4>
+                            <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
                     @endif
 
                     {{-- More Date --}}
                     @if (count($important_dates) > 0)
                         <div class="flex flex-col items-center justify-between">
-                            <div class="h-56 flex flex-col w-full py-8 px-6">
+                            <div class="h-max-60 flex flex-col w-full py-8 px-6">
                                 <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
                                 <ul class="mt-2 overflow-y-auto overflow-x-hidden">
                                     @foreach ($important_dates as $important_date)
@@ -567,10 +574,16 @@
                                     @endforeach
                                 </ul>
                             </div>
-
-                            <a href="#" class="w-full py-3 bg-red font-newprimary text-center text-white text-base">
-                                more important dates
-                            </a>
+                            <div class="px-6 w-full">
+                                <a href="#" class="w-full block py-3 bg-red font-newprimary text-center text-white text-base">
+                                    more important dates
+                                </a>
+                            </div>
+                        </div>
+                    @else
+                        <div class="flex flex-col w-full relative text-start px-6">
+                            <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
+                            <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
                     @endif
                 </div>
