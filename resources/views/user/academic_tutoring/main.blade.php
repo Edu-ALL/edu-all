@@ -60,7 +60,7 @@
     {{-- SECTION 2 --}}
     <div class="pb-16" id="acad-tutoring-section-2">
         <div class="flex flex-col md:flex-row main-container w-full h-[100vh] md:h-[60vh]">
-            <div class="s2-item s2-active relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-active relative overflow-hidden">
                 <span>Personalized Learning Paths</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
@@ -68,7 +68,7 @@
                         alt="EduALL figure">
                 </div>
             </div>
-            <div class="s2-item s2-inactive relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden">
                 <span>2</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
@@ -76,7 +76,7 @@
                         alt="EduALL figure">
                 </div>
             </div>
-            <div class="s2-item s2-inactive relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden">
                 <span>3</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
@@ -84,7 +84,7 @@
                         alt="EduALL figure">
                 </div>
             </div>
-            <div class="s2-item s2-inactive relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden">
                 <span>4</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
@@ -125,56 +125,56 @@
             <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">IB DIPLOMA</h2>
             <div class="mt-12 flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center">
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Mathematics</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Physics</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Chemistry</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Biology</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Physics</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Chemistry</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Biology</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
                     </div>
@@ -187,35 +187,35 @@
             <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center uppercase">Cambridge A-Level</h2>
             <div class="mt-12 flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center">
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Mathematics</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-newprimary s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-48 md:h-40 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Physics</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Chemistry</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-newprimary s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-48 md:h-40 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
                     </div>
                     <span class="font-newprimary text-black text-lg">Biology</span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black s3-polygon flex items-center justify-center">
+                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
                             alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
                     </div>
@@ -231,7 +231,7 @@
             <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">MORE THAN JUST TUTORING</h2>
 
             <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-12">
-                <div class="s4-item s4-active relative overflow-hidden">
+                <div class="acad-tutor-s4-item acad-tutor-s4-active relative overflow-hidden">
                     <span>Discover Your Path</span>
                     <p class="desc">Find your unique learning style and best-suited mentors</p>
                     <div class="polygon bg-newprimary"></div>
@@ -240,7 +240,7 @@
                             alt="EduALL figure">
                     </div>
                 </div>
-                <div class="s4-item s4-inactive relative overflow-hidden">
+                <div class="acad-tutor-s4-item acad-tutor-s4-inactive relative overflow-hidden">
                     <span>Insightful</span>
                     <p class="desc">Get details of your academic  strengths and weaknesses</p>
                     <div class="polygon bg-black"></div>
@@ -249,7 +249,7 @@
                             alt="EduALL figure">
                     </div>
                 </div>
-                <div class="s4-item s4-inactive relative overflow-hidden">
+                <div class="acad-tutor-s4-item acad-tutor-s4-inactive relative overflow-hidden">
                     <span>Customized</span>
                     <p class="desc">Choose a tutoring style that suits your learning needs; Concept-focused,
                         Question-drilling, or Balanced.</p>
@@ -259,7 +259,7 @@
                             alt="EduALL figure">
                     </div>
                 </div>
-                <div class="s4-item s4-inactive relative overflow-hidden">
+                <div class="acad-tutor-s4-item acad-tutor-s4-inactive relative overflow-hidden">
                     <span>Dynamic</span>
                     <p class="desc">Enjoy a mix of intensive and fun learning sessions, with regular feedback and
                         progress reports to parents</p>
@@ -596,7 +596,7 @@
                         <span class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">Navigate the citation
                             style jungle</span>
-                        <span class="w-48 md:w-40 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
+                        <span class="w-48 md:w-44 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 70%, 80% 100%, 0 100%);">Conquer proscrastination
                             by agile project management</span>
                         <span class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
@@ -641,7 +641,7 @@
             }, animation_time / persentage);
         }
 
-        const s2_item = document.querySelectorAll('.s2-item');
+        const s2_item = document.querySelectorAll('.acad-tutor-s2-item');
         const s2_item_text = [
             "Personalized Learning Paths",
             "Diverse Subject Expertise",
@@ -653,11 +653,11 @@
         s2_item.forEach((item, it) => {
             item.addEventListener('click', () => {
                 if (it != s2ActiveIndex) {
-                    s2_item[s2ActiveIndex].classList.add('s2-inactive');
-                    s2_item[s2ActiveIndex].classList.remove('s2-active');
+                    s2_item[s2ActiveIndex].classList.add('acad-tutor-s2-inactive');
+                    s2_item[s2ActiveIndex].classList.remove('acad-tutor-s2-active');
                     s2_item[s2ActiveIndex].querySelector('span').textContent = s2ActiveIndex + 1;
-                    s2_item[it].classList.remove('s2-inactive');
-                    s2_item[it].classList.add('s2-active');
+                    s2_item[it].classList.remove('acad-tutor-s2-inactive');
+                    s2_item[it].classList.add('acad-tutor-s2-active');
                     s2_item[it].querySelector('span').classList.remove('opacity-100');
                     s2_item[it].querySelector('span').classList.add('opacity-0');
                     setTimeout(() => {
@@ -670,7 +670,7 @@
             })
         });
 
-        const s4_item = document.querySelectorAll('.s4-item');
+        const s4_item = document.querySelectorAll('.acad-tutor-s4-item');
         const s4_item_text_active = [
             "Discover Your Path",
             "Insightful Academic Analysis",
@@ -688,12 +688,12 @@
         s4_item.forEach((item, it) => {
             item.addEventListener('click', () => {
                 if (it != s4ActiveIndex) {
-                    s4_item[s4ActiveIndex].classList.add('s4-inactive');
-                    s4_item[s4ActiveIndex].classList.remove('s4-active');
+                    s4_item[s4ActiveIndex].classList.add('acad-tutor-s4-inactive');
+                    s4_item[s4ActiveIndex].classList.remove('acad-tutor-s4-active');
                     s4_item[s4ActiveIndex].querySelector('span').textContent = s4_item_text_inactive[
                         s4ActiveIndex];
-                    s4_item[it].classList.remove('s4-inactive');
-                    s4_item[it].classList.add('s4-active');
+                    s4_item[it].classList.remove('acad-tutor-s4-inactive');
+                    s4_item[it].classList.add('acad-tutor-s4-active');
                     s4_item[it].querySelector('span').classList.remove('opacity-100');
                     s4_item[it].querySelector('span').classList.add('opacity-0');
                     setTimeout(() => {

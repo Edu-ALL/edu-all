@@ -44,7 +44,10 @@ module.exports = {
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
                 // Academic and test preparation
-                "academic-tutoring-header" : "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.png')",
+                "academic-tutoring-header":
+                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.png')",
+                "sat-prep-header":
+                    "url('../../public/assets/img/academic_test_preparation/sat_program/new-asset/banner.png')",
 
                 // Transfer
                 "transfer-header":
@@ -102,6 +105,7 @@ module.exports = {
                 newyellow: "#FED017",
                 dark: "#000000",
                 red: "#FF2519",
+                newred: "#BF1C13",
             },
         },
     },
