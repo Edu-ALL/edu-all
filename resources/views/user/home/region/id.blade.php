@@ -498,7 +498,7 @@
                                             </h4>
                                             <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                 alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
-                                                
+
                                             <a href="#"
                                                 class="absolute bottom-0 w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more
                                                 detail</a>
@@ -513,62 +513,66 @@
                 {{-- Upcomming Event --}}
                 <div class="flex flex-col">
                     {{-- Regular Talk --}}
-                    <div class="flex flex-col items-center justify-between relative">
-                        <div class="splide" role="group">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    @foreach ($regular_talks as $regular_talk)
-                                        <li class="splide__slide">
-                                            <div class="splide__slide__container">
-                                                <div class="flex flex-col absolute top-8 left-8 pr-8 justify-between h-60">
-                                                    <h4 class="font-newprimary text-newyellow text-lg">Regular Talk</h4>
-                                                    <div class="flex flex-col">
-                                                        <h4 class="font-newprimary text-newyellow text-lg">
-                                                            {{ $regular_talk->event_date }}</h4>
-                                                        <h4 class="font-newprimary text-white text-2xl font-bold">
-                                                            {{ html_entity_decode(substr(strip_tags($regular_talk->event_title), 0, 80)) }}
+                    @if ($regular_talks)
+                        <div class="flex flex-col items-center justify-between relative">
+                            <div class="splide" role="group">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        @foreach ($regular_talks as $regular_talk)
+                                            <li class="splide__slide">
+                                                <div class="splide__slide__container">
+                                                    <div
+                                                        class="flex flex-col absolute top-8 left-8 pr-8 justify-between h-60">
+                                                        <h4 class="font-newprimary text-newyellow text-lg">Regular Talk
                                                         </h4>
+                                                        <div class="flex flex-col">
+                                                            <h4 class="font-newprimary text-newyellow text-lg">
+                                                                {{ $regular_talk->event_date }}</h4>
+                                                            <h4 class="font-newprimary text-white text-2xl font-bold">
+                                                                {{ html_entity_decode(substr(strip_tags($regular_talk->event_title), 0, 80)) }}
+                                                            </h4>
+                                                        </div>
                                                     </div>
+                                                    <img src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                        alt="{{ $regular_talk->event_alt }}"
+                                                        class="w-full object-cover object-center h-72">
                                                 </div>
-                                                <img src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                    alt="{{ $regular_talk->event_alt }}"
-                                                    class="w-full object-cover object-center h-72">
-                                            </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <a href="#"
+                                class="w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more
+                                events
+                            </a>
+                        </div>
+                    @endif
+
+                    {{-- More Date --}}
+                    @if ($important_dates)
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="h-56 flex flex-col w-full py-8 px-6">
+                                <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
+                                <ul class="mt-2 overflow-y-auto overflow-x-hidden">
+                                    @foreach ($important_dates as $important_date)
+                                        <li class="flex justify-between border-b border-b-white py-2 px-2">
+                                            <h3 class="font-newprimary font-normal text-white">
+                                                {{ $important_date->title }}</h3>
+                                            <span class="font-newprimary text-newyellow">
+                                                {{ date('M, d Y', strtotime($important_date->date)) }}
+                                            </span>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
+
+                            <a href="#" class="w-full py-3 bg-red font-newprimary text-center text-white text-base">
+                                more important dates
+                            </a>
                         </div>
-
-                        <a href="#"
-                            class="w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more events
-                        </a>
-                    </div>
-
-                    {{-- More Date --}}
-                    <div class="flex flex-col items-center justify-between">
-                        <div class="h-56 flex flex-col w-full py-8 px-6">
-                            <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
-                            <ul class="mt-2 overflow-scroll">
-                                <li class="flex justify-between border-b border-b-white py-2 px-2">
-                                    <h3 class="font-newprimary font-normal text-white">SAT</h3>
-                                    <span class="font-newprimary text-newyellow">6 Jan 2024</span>
-                                </li>
-                                <li class="flex justify-between border-b border-b-white py-2 px-2">
-                                    <h3 class="font-newprimary font-normal text-white">SAT</h3>
-                                    <span class="font-newprimary text-newyellow">6 Jan 2024</span>
-                                </li>
-                                <li class="flex justify-between border-b border-b-white py-2 px-2">
-                                    <h3 class="font-newprimary font-normal text-white">SAT</h3>
-                                    <span class="font-newprimary text-newyellow">6 Jan 2024</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="#" class="w-full py-3 bg-red font-newprimary text-center text-white text-base">
-                            more important dates
-                        </a>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>

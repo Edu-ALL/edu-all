@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Admin\ImportantDate;
 use App\Http\Controllers\Controller;
 use App\Models\Banners;
+use App\Models\ImportantDates;
 use App\Models\Mentors;
 use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\UpcomingEvents;
+use Carbon\Carbon;
 
 class HomePageController extends Controller
 {
@@ -26,13 +29,16 @@ class HomePageController extends Controller
         // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
-        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->get();
+        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->orderBy('event_date','ASC')->get();
 
         // Upcomming Event
-        $regular_talks = UpcomingEvents::all()->where('event_status', 'publish')->where('category', 'Regular Talk');
+        $regular_talks = UpcomingEvents::all()->where('event_status', 'publish')->orderBy('event_date','ASC')->where('category', 'Regular Talk');
 
         // Success Stories
         $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
+
+        // Important Dates
+        $important_dates = ImportantDates::where('date', '>', Carbon::now())->limit(5)->orderBy('date','ASC')->get();
 
         // Banners
         $banners = Banners::first();
@@ -43,6 +49,7 @@ class HomePageController extends Controller
             'all_mentor' => $all_mentor,
             'events' => $events,
             'regular_talks' => $regular_talks,
+            'important_dates' => $important_dates,
             'success_stories' => $success_stories,
         ]);
     }
