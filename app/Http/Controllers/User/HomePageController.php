@@ -29,10 +29,10 @@ class HomePageController extends Controller
         // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
-        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->orderBy('event_date','ASC')->get();
+        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->where('lang', $lang)->orderBy('event_date','ASC')->get();
 
         // Regular Talks
-        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->orderBy('event_date','ASC')->get();
+        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->where('lang', $lang)->orderBy('event_date','ASC')->get();
 
         // Success Stories
         $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
