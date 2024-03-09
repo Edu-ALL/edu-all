@@ -31,8 +31,8 @@ class HomePageController extends Controller
         // Upcomming Event
         $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->orderBy('event_date','ASC')->get();
 
-        // Upcomming Event
-        $regular_talks = UpcomingEvents::all()->where('event_status', 'publish')->orderBy('event_date','ASC')->where('category', 'Regular Talk');
+        // Regular Talks
+        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->orderBy('event_date','ASC')->get();
 
         // Success Stories
         $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
