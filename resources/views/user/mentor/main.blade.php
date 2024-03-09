@@ -11,56 +11,108 @@
     <section class="py-20 flex items-center justify-start h-screen bg-mentor-header bg-cover bg-center">
         <div class="main-container">
             <div class="flex flex-col">
-                <h1 class="mb-4 font-primary font-bold text-4xl text-white md:mb-8 md:text-6xl">
+                <h1 class="mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl">
                     {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                <div class="mb-6 w-full font-primary font-medium text-lg text-white  lg:max-w-xl md:mb-12">
+                <div class="mb-6 w-full font-newprimary font-medium text-lg text-white  lg:max-w-xl md:mb-12">
                     {!! __('pages/about_us/mentor.benner_body') !!}
                 </div>
                 <a href="#mentor">
                     <span
-                        class="px-10 py-2 font-primary font-semibold text-base text-white rounded-md bg-yellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
+                        class="px-10 py-2 font-newprimary font-semibold text-base text-white rounded-md bg-yellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
                 </a>
             </div>
         </div>
     </section>
 
     {{-- Mentor List Section --}}
-    <section id="mentor" class="py-20">
+    <section id="mentor" class="py-20 mt-[15rem] bg-dark">
         <div class="main-container lg:max-w-7xl lg:mx-auto">
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-12">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 xl:gap-12">
                 @foreach ($allin_mentor as $mentor)
-                    <div class="mentor_card flex flex-col rounded-xl">
-                        <div class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
-                            <div class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
-                                <h3 class="font-primary font-bold text-2xl text-white leading-5">
-                                    {!! strpos($mentor->mentor_fullname, ' ') == 0
-                                        ? $mentor->mentor_fullname
-                                        : substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) .
-                                            '<br>' .
-                                            substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) !!}
-                                </h3>
-                                <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
-                                    {!! $mentor->mentor_graduation !!}
-                                </div>
-                            </div>
-                            <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
-                        </div>
-                        <div
-                            class="back overflow-hidden flex justify-center items-center w-full p-8 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
-                            <div class="flex flex-col items-center justify-center">
-                                <div
-                                    class="mb-6 w-full h-full font-primary font-medium text-base text-white text-center text-ellipsis ">
-                                    {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 150)) }}...
-                                </div>
-                                <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $mentor->mentor_slug]) }}"
-                                    class="flex-inline px-4 py-2 font-primary font-medium text-base text-white text-center rounded-md bg-yellow">
-                                    {{ __('pages/about_us/mentor.get_to_know') }}
-                                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
+                    <div class="flex flex-col rounded-3xl shadow-md relative -mt-[8rem] bg-white">
+                        {{-- Mentor Image --}}
+                        <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                            alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center absolute -top-[10rem]">
+                        <div class="flex flex-col px-4 lg:mt-[6rem] mt-[10rem] overflow-visible">
+                            {{-- Mentor Name --}}
+                            <h2 class="font-newprimary text-center font-semibold text-2xl text-dark mt-4">
+                                {{ $mentor->mentor_fullname }}
+                            </h2>
+                            <span class="font-newprimary text-newprimary text-xs text-center">
+                                {!! $mentor->mentor_graduation !!}
+                            </span>
 
-                                </a>
-                            </div>
+                            <ul class="flex flex-col gap-2 mt-5">
+                                @if ($mentor->value_1)
+                                    <li class="flex items-start gap-4">
+                                        <div class="w-4 h-4">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                        fill="#000000"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                            {{ $mentor->value_1 }}
+                                        </h4>
+                                    </li>
+                                @endif
+                                @if ($mentor->value_2)
+                                    <li class="flex items-start gap-4">
+                                        <div class="w-4 h-4">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                        fill="#000000"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                            {{ $mentor->value_2 }}
+                                        </h4>
+                                    </li>
+                                @endif
+                                @if ($mentor->value_3)
+                                    <li class="flex items-start gap-4">
+                                        <div class="w-4 h-4">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                        fill="#000000"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                            {{ $mentor->value_3 }}
+                                        </h4>
+                                    </li>
+                                @endif
+                            </ul>
                         </div>
+
+                        <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
+                            class="mt-2 mb-4 flex flex-col justify-center items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
+                            <span class="font-newprimary font-semibold text-xs text-newprimary leading-none">Get
+                                to
+                                know {{ $mentor->mentor_fullname }}</span>
+                            <div class="w-24 h-[1px] bg-newprimary group-hover:invisible"></div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -70,16 +122,16 @@
     {{-- Mentor List Section --}}
     <section class="pt-32 pb-10">
         <div class="main-container lg:max-w-7xl lg:mx-auto flex flex-col">
-            <h2 class="mb-8 font-primary font-bold text-4xl text-primary text-center">
+            <h2 class="mb-8 font-newprimary font-bold text-4xl text-newprimary text-center">
                 {{ __('pages/about_us/mentor.mentor_building_title') }}
             </h2>
             <div class="splide" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                        <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
                     </button>
                     <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                        <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
                     </button>
                 </div>
                 <div class="splide__track  py-20">
@@ -87,46 +139,90 @@
                         @foreach ($building_mentor as $mentor)
                             <li class="splide__slide">
                                 <div class="splide__slide__container px-4 w-full h-full">
-                                    <div class="mentor_card flex flex-col group">
-                                        <div
-                                            class="front relative cursor-pointer w-full rounded-lg shadow-lg overflow-hidden">
-                                            <div
-                                                class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
-                                                <h3 class="font-primary font-bold text-2xl text-white leading-5">
-                                                    {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
-                                                    <br>
-                                                    {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
-                                                </h3>
-                                                <div class="mt-4 font-primary text-xs text-white leading-4 overflow-hidden">
-                                                    {!! $mentor->mentor_graduation !!}
-                                                </div>
-                                            </div>
-                                            <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center" loading="lazy">
+                                    <div class="flex flex-col rounded-3xl shadow-md relative mt-[5rem]">
+                                        {{-- Mentor Image --}}
+                                        <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                            alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center absolute -top-[10rem]">
+                                        <div class="flex flex-col px-4 lg:mt-[6rem] mt-[10rem] overflow-visible">
+                                            {{-- Mentor Name --}}
+                                            <h2 class="font-newprimary text-center font-semibold text-2xl text-dark mt-4">
+                                                {{ $mentor->mentor_fullname }}
+                                            </h2>
+                                            <span class="font-newprimary text-newprimary text-xs text-center">
+                                                {!! $mentor->mentor_graduation !!}
+                                            </span>
+                
+                                            <ul class="flex flex-col gap-2 mt-5">
+                                                @if ($mentor->value_1)
+                                                    <li class="flex items-start gap-4">
+                                                        <div class="w-4 h-4">
+                                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></g>
+                                                                <g id="SVGRepo_iconCarrier">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                        fill="#000000"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                                            {{ $mentor->value_1 }}
+                                                        </h4>
+                                                    </li>
+                                                @endif
+                                                @if ($mentor->value_2)
+                                                    <li class="flex items-start gap-4">
+                                                        <div class="w-4 h-4">
+                                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></g>
+                                                                <g id="SVGRepo_iconCarrier">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                        fill="#000000"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                                            {{ $mentor->value_2 }}
+                                                        </h4>
+                                                    </li>
+                                                @endif
+                                                @if ($mentor->value_3)
+                                                    <li class="flex items-start gap-4">
+                                                        <div class="w-4 h-4">
+                                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                    stroke-linejoin="round"></g>
+                                                                <g id="SVGRepo_iconCarrier">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                        fill="#000000"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                                            {{ $mentor->value_3 }}
+                                                        </h4>
+                                                    </li>
+                                                @endif
+                                            </ul>
                                         </div>
-                                        <div
-                                            class="back w-full h-full px-10 py-20  flex items-center justify-center rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
-                                            <div class="flex flex-col items-center">
-                                                <div class="mb-8">
-                                                    <h5 class="font-primary font-bold text-xl text-yellow text-center">
-                                                        {{ __('pages/about_us/mentor.card_current_work') }}
-                                                    </h5>
-                                                    <div
-                                                        class="font-primary font-medium text-lg text-white text-center leading-5">
-                                                        {!! $mentor->currently_working !!}
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h5 class="font-primary font-bold text-xl text-yellow text-center">
-                                                        {{ __('pages/about_us/mentor.card_expertise') }}
-                                                    </h5>
-                                                    <div
-                                                        class="font-primary font-medium text-lg text-white text-center leading-5">
-                                                        {!! $mentor->expertise !!}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                
+                                        <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
+                                            class="mt-2 mb-4 flex flex-col justify-center items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
+                                            <span class="font-newprimary font-semibold text-xs text-newprimary leading-none">Get
+                                                to
+                                                know {{ $mentor->mentor_fullname }}</span>
+                                            <div class="w-24 h-[1px] bg-newprimary group-hover:invisible"></div>
+                                        </a>
                                     </div>
                                 </div>
                             </li>
@@ -137,19 +233,17 @@
         </div>
     </section>
 
-    {{-- Bottom Section --}}
-    <section class="py-10">
-        <div class="main-container lg:max-w-7xl lg:mx-auto">
-            <div class="flex flex-col items-center">
-                <h2 class="mb-8 font-primary font-bold text-4xl text-primary text-center">
-                    {{ __('pages/about_us/mentor.bottom_title') }}
-                </h2>
-                <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                    <span class="px-10 py-2 font-primary font-medium text-base text-white rounded-md bg-yellow">
-                        {{ __('pages/about_us/mentor.bottom_btn') }}
-                    </span>
-                </a>
-            </div>
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+        <div class="main-container flex flex-col items-center">
+            <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
+                {{ __('pages/about_us/mentor.bottom_title') }}
+            </h2>
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
+                <span class="px-8 md:px-12 py-1.5 font-newprimary text-base text-white text-center bg-red">
+                    {{ __('pages/about_us/mentor.bottom_btn') }}
+                </span>
+            </a>
         </div>
     </section>
 @endsection
@@ -160,7 +254,7 @@
         var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
 
         var splide = new Splide('.splide', {
-            perPage: isSmallDevice ? 1 : 3,
+            perPage: isSmallDevice ? 1 : 4,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
         });

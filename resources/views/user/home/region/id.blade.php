@@ -551,7 +551,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="flex flex-col w-full relative text-start px-6">
+                        <div class="flex flex-col w-full relative text-start px-6 mb-10">
                             <h4 class="font-newprimary text-newyellow text-lg">Regular Talks</h4>
                             <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
