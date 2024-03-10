@@ -289,7 +289,7 @@
                     <span>Discover Your Path</span>
                     <p class="desc">Find your unique learning style and best-suited mentors</p>
                     <div class="polygon bg-newprimary"></div>
-                    <div class="w-full h-full">
+                    <div class="w-full h-full bg-black">
                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-1.webp') }}"
                             alt="EduALL figure">
                     </div>
