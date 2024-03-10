@@ -10,12 +10,12 @@
     <section class="py-20 bg-sign-me-adm-mentoring bg-cover bg-center">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
             <div class="flex flex-col">
-                <h2 class="font-primary font-semibold text-3xl text-white">
+                <h2 class="font-newprimary font-semibold text-3xl text-white">
                     #TakeOnYourFuture
                     <br>
                     with ALL-in Eduspace
                 </h2>
-                <p class="mt-6 w-full font-primary text-lg text-white md:max-w-xl ">
+                <p class="mt-6 w-full font-newprimary text-lg text-white md:max-w-xl ">
                     <span class="block font-semibold mb-1"> DARE TO DREAM!</span>
                     Let’s find out how to get into your dream university and future career path through the first
                     consultation with our top-notch mentors.
@@ -29,32 +29,32 @@
             <div class="grid grid-cols-1 gap-x-12 md:grid-cols-5">
                 <div class="flex flex-col w-full md:col-span-2">
                     <div class="mb-6 flex flex-col gap-x-10">
-                        <h4 class="font-primary font-bold text-2xl text-primary">
+                        <h4 class="font-newprimary font-bold text-2xl text-newprimary">
                             What you will earn in the consultation:
                         </h4>
-                        <ul class="mt-4 font-primary text-lg text-black">
+                        <ul class="mt-4 font-newprimary text-lg text-black">
                             <li class="flex">
-                                <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
+                                <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span>
                                     Big picture of what you will face in your dream universities’ application
                                     process
                                 </span>
                             </li>
                             <li class="flex">
-                                <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
+                                <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span>
 
                                     Personalized assessment of strengths and area of improvements on your profile
                                 </span>
                             </li>
                             <li class="flex justify-start">
-                                <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
+                                <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span class="w-full">
                                     Your needs and how ALL-in can help you professionally
                                 </span>
                             </li>
                             <li class="flex">
-                                <i class="fa-solid fa-check text-primary mt-1 mr-2"></i>
+                                <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span>
 
                                     Recommendation and timeline on the next action to take for your application
@@ -63,7 +63,7 @@
                         </ul>
                     </div>
                     <div class="flex flex-col gap-x-10">
-                        <h4 class="mb-6 font-primary font-bold text-2xl text-primary">
+                        <h4 class="mb-6 font-newprimary font-bold text-2xl text-newprimary">
                             Your current profile will be assessed based on Four Pillars of University Application
                         </h4>
                         <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
@@ -1497,7 +1497,7 @@
 
     <section class="py-10">
         <div class="flex flex-col main-container">
-            <h4 class="font-primary font-bold text-2xl text-primary">
+            <h4 class="font-newprimary font-bold text-2xl text-newprimary">
                 FAQ
             </h4>
             <div class="mt-4 w-full">
@@ -1506,14 +1506,14 @@
                         <li class="flex flex-col w-full rounded-[10px] bg-[#F2F7FF] overflow-hidden">
                             <div id="question"
                                 class="flex justify-between items-center cursor-pointer px-4 py-2 rounded-[10px]">
-                                <h4 class="mr-4 font-primary font-semibold text-xl text-primary">
+                                <h4 class="mr-4 font-newprimary font-semibold text-xl text-newprimary">
                                     {{ $item['question'] }}
                                 </h4>
-                                <i class="fa-solid fa-chevron-down text-xl text-primary mr-3"></i>
+                                <i class="fa-solid fa-chevron-down text-xl text-newprimary mr-3"></i>
                             </div>
                             <div id="answer"
                                 class="max-h-0 px-4 invisible overflow-hidden transition-all ease-linear duration-1000">
-                                <p class="font-primary py-5 text-lg text-primary">
+                                <p class="font-newprimary py-5 text-lg text-newprimary">
                                     {!! $item['answer'] !!}
                                 </p>
                             </div>

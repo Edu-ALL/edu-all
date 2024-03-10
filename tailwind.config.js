@@ -45,9 +45,9 @@ module.exports = {
 
                 // Academic and test preparation
                 "academic-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.webp')",
                 "sat-prep-header":
-                    "url('../../public/assets/img/academic_test_preparation/sat_program/new-asset/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/sat_program/new-asset/banner.webp')",
 
                 // Transfer
                 "transfer-header":

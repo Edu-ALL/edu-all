@@ -6,16 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
+
     <link href="{{ asset('favicon.png') }}" rel="icon">
     <meta name="robots" content="index,follow" />
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
-    {{-- <title>ALL-in Eduspace | Best Jakarta Independent University Consultant</title> --}}
+
     @if (request()->is('/') || request()->is(app()->getLocale()))
         <meta name="keywords"
             content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
-        {{-- <meta name="title" content="ALL-in Eduspace | Best Jakarta Independent University Consultant">
-        <meta name="description" content="{{ __('pages/home.meta_description') }}"> --}}
 
         <meta property=og:url content="{{ url('/') }}">
         <meta property=og:image content="{{ asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp') }}">
@@ -38,16 +36,16 @@
         }
     </script>
     <script type="application/ld+json">
-        {"@context":"https://schema.org","@type":"EducationalOrganization","name":"ALL-in Eduspace","url":"https://all-inedu.com","ContactPoint":{"@type":"ContactPoint","contactType":"Meet Our Mentors","telephone":"+62 878-8882-7686","email":"info@all-inedu.com","url":"https://all-inedu.com/id-en/sign-me/admission-mentoring"},"sameAs":["https://www.instagram.com/allineduspace/","https://www.youtube.com/@allineduspace"]}
+        {"@context":"https://schema.org","@type":"EducationalOrganization","name":"EduALL","url":"https://edu-all.com","ContactPoint":{"@type":"ContactPoint","contactType":"Meet Our Mentors","telephone":"+62 878-8882-7686","email":"info@edu-all.com","url":"https://edu-all.com/id-en/sign-me/admission-mentoring"},"sameAs":["https://www.instagram.com/allineduspace/","https://www.youtube.com/@allineduspace"]}
     </script>
 
 
     <script type="application/ld+json">
         {"@context":"https://schema.org","@graph":[
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About Us","description":"Personalized Independent University Consultant","url":"https://all-inedu.com/id-en/about"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Programs","description":"Tailored Programs for Top Uni Application Success","url":"https://all-inedu.com/id-en/programs"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Success Stories","description":"Discover Our Mentee's Inspiring Success Stories","url":"https://all-inedu.com/id-en/resources/success-stories"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upcoming Events","description":"Exciting Events Crafted for Your Needs","url":"https://all-inedu.com/id-en/resources/upcoming-events"}]
+            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About Us","description":"Personalized Independent University Consultant","url":"https://edu-all.com/id-en/about"},
+            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Programs","description":"Tailored Programs for Top Uni Application Success","url":"https://edu-all.com/id-en/programs"},
+            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Success Stories","description":"Discover Our Mentee's Inspiring Success Stories","url":"https://edu-all.com/id-en/resources/success-stories"},
+            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upcoming Events","description":"Exciting Events Crafted for Your Needs","url":"https://edu-all.com/id-en/resources/upcoming-events"}]
         }
     </script>
 
@@ -100,7 +98,7 @@
             dataLayer.push(arguments);
         }
         gtag('set', 'linker', {
-            "domains": ["all-inedu.com"]
+            "domains": ["edu-all.com"]
         });
         gtag("js", new Date());
         gtag("set", "developer_id.dZTNiMT", true);
@@ -137,13 +135,6 @@
 </head>
 
 <body id="body">
-    {{-- <div class="fixed -bottom-[100px] lg:left-[170px] left-[160px] z-[9999] transition-all duration-1000" id="topButton">
-        <div class="bg-white hover:bg-primary rounded-full w-[40px] h-[40px] flex justify-center items-center text-primary hover:text-white border-[1px] border-primary cursor-pointer shadow "
-            onclick="topFunction()">
-            <i class="fa fa-arrow-up"></i>
-        </div>
-    </div> --}}
-
     <div class="fixed lg:bottom-5 bottom-[15px] lg:right-5 right-[10px] z-[9999] transition-all duration-1000">
         <div class="relative group">
             {{-- <div class="absolute bottom-[65px] right-0 invisible translate-x-[1px] translate-y-8 transition-all duration-500 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
@@ -168,10 +159,11 @@
             </div> --}}
 
             {{-- Dont Display the button on this pages: "partnership-careers" --}}
-            @if(!str_contains(request()->url(), "partnership-careers"))
-                <div
-                    class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[60px] md:h-[60px] w-[50px] h-[50px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow" id='open-nav-child-btn'>
-                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*" target="_blank">
+            @if (!str_contains(request()->url(), 'partnership-careers'))
+                <div class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[60px] md:h-[60px] w-[50px] h-[50px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow"
+                    id='open-nav-child-btn'>
+                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                        target="_blank">
                         <i class="fa fa-whatsapp text-[30px]"></i>
                     </a>
                 </div>
@@ -192,9 +184,9 @@
         </div>
     </div>
 
-    <div class="fixed lg:bottom-5 bottom-[15px] lg:left-5 left-[10px] z-[9999] transition-all duration-1000"
+    <div class="fixed lg:left-5 left-[10px] z-[9999] transition-all duration-1000 -bottom-[100px]"
         id="newsButton">
-        <div class="bg-red hover:bg-white shadow-md px-3 h-[40px] flex justify-center items-center text-white hover:text-newprimary border-[1px] border-[#F78614] cursor-pointer shadow transition-all duration-200"
+        <div class="bg-red hover:bg-white shadow-md px-3 h-[40px] flex justify-center items-center text-white hover:text-newprimary border-[1px] border-[#F78614] cursor-pointer transition-all duration-200"
             onclick="popupForm('open')">
             <i class="fa fa-newspaper mr-2"></i>
             <span>Get Updates</span>
@@ -215,18 +207,17 @@
         placeholder: "{{ asset('assets/img/loader.gif') }}",
     });
 
-    // window.addEventListener("scroll", function() {
-    //     var topButton = document.querySelector("#topButton");
-    //     var newsButton = document.querySelector("#newsButton");
+    window.addEventListener("scroll", function() {
+        var newsButton = document.querySelector("#newsButton");
 
-    //     if (window.scrollY > 300) {
-    //         topButton.classList.remove('-bottom-[100px]');
-    //         topButton.classList.add('lg:bottom-5', 'bottom-[15px]');
-    //     } else {
-    //         topButton.classList.add('-bottom-[100px]');
-    //         topButton.classList.remove('lg:bottom-5', 'bottom-[15px]');
-    //     }
-    // });
+        if (window.scrollY > 300) {
+            newsButton.classList.remove('-bottom-[100px]');
+            newsButton.classList.add('lg:bottom-5', 'bottom-[15px]');
+        } else {
+            newsButton.classList.add('-bottom-[100px]');
+            newsButton.classList.remove('lg:bottom-5', 'bottom-[15px]');
+        }
+    });
 
     // function topFunction() {
     //     document.body.scrollTop = 0;

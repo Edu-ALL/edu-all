@@ -16,7 +16,7 @@
                 tutoring, covering a variety of subjects.
             </p>
             <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                class="mt-8 bg-newprimary text-white font-newprimary text-lg font-semibold py-2 px-6 shadow-xl">Register
+                class="mt-8 bg-newprimary text-white font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:bg-black hover:px-8 transition-all duration-150">Register
                 Here</a>
         </div>
     </section>
@@ -26,31 +26,34 @@
         <div class="flex flex-wrap justify-center items-center main-container gap-8 md:gap-16">
             <div class="polygon-shape h-40 w-40 md:h-60 md:w-60 rounded-xl bg-newprimary relative group overflow-hidden">
                 <div class="absolute-center flex flex-col items-center justify-center z-10 w-full px-2 md:px-7">
-                    <h4 class="animation_circle_persentage font-newprimary text-white text-3xl md:text-4xl font-bold">0%</h4>
+                    <h4 class="animation_circle_persentage font-newprimary text-white text-3xl md:text-4xl font-bold">0%
+                    </h4>
                     <span class="font-newprimary text-white text-[10px] text-center">of our A-Level Students earned A and
                         A+</span>
                 </div>
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/benefit-figure-1.png') }}"
+                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/benefit-figure-1.webp') }}"
                     alt="EduALL figure 1"
                     class="w-full h-full object-contain opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
             </div>
             <div class="polygon-shape h-40 w-40 md:h-60 md:w-60 rounded-xl bg-newprimary relative group overflow-hidden">
                 <div class="absolute-center flex flex-col items-center justify-center z-10 w-full px-2 md:px-7">
-                    <h4 class="animation_circle_persentage font-newprimary text-white text-3xl md:text-4xl font-bold">0%</h4>
+                    <h4 class="animation_circle_persentage font-newprimary text-white text-3xl md:text-4xl font-bold">0%
+                    </h4>
                     <span class="font-newprimary text-white text-[10px] text-center">of our IB Students boosted their scores
                         by
                         2 - 3 points and greater </span>
                 </div>
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/benefit-figure-2.png') }}"
+                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/benefit-figure-2.webp') }}"
                     alt="EduALL figure 1"
                     class="w-full h-full object-contain opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
             </div>
             <div class="polygon-shape h-40 w-40 md:h-60 md:w-60 rounded-xl bg-newprimary relative group overflow-hidden">
                 <div class="absolute-center flex flex-col items-center justify-center z-10 w-full px-2 md:px-7">
-                    <h4 class="animation_circle_persentage font-newprimary text-white text-3xl md:text-4xl font-bold">0%</h4>
+                    <h4 class="animation_circle_persentage font-newprimary text-white text-3xl md:text-4xl font-bold">0%
+                    </h4>
                     <span class="font-newprimary text-white text-[10px] text-center">Exam Success Rate</span>
                 </div>
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/benefit-figure-3.png') }}"
+                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/benefit-figure-3.webp') }}"
                     alt="EduALL figure 1"
                     class="w-full h-full object-contain opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
             </div>
@@ -60,35 +63,35 @@
     {{-- SECTION 2 --}}
     <div class="pb-16" id="acad-tutoring-section-2">
         <div class="flex flex-col md:flex-row main-container w-full h-[100vh] md:h-[60vh]">
-            <div class="acad-tutor-s2-item acad-tutor-s2-active relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-active relative overflow-hidden group">
                 <span>Personalized Learning Paths</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
-                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-1.png') }}"
+                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-1.webp') }}"
                         alt="EduALL figure">
                 </div>
             </div>
-            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden group">
                 <span>2</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
-                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-2.png') }}"
+                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-2.webp') }}"
                         alt="EduALL figure">
                 </div>
             </div>
-            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden group">
                 <span>3</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
-                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-3.png') }}"
+                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-3.webp') }}"
                         alt="EduALL figure">
                 </div>
             </div>
-            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden">
+            <div class="acad-tutor-s2-item acad-tutor-s2-inactive relative overflow-hidden group">
                 <span>4</span>
                 <div class="polygon"></div>
                 <div class="w-full h-full bg-black">
-                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-4.png') }}"
+                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s2-figure-4.webp') }}"
                         alt="EduALL figure">
                 </div>
             </div>
@@ -122,104 +125,155 @@
     {{-- SECTION 3 --}}
     <div class="py-16">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">IB DIPLOMA</h2>
-            <div class="mt-12 flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center">
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
+            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">IB DIPLOMA</h2>
+            <div class="mt-12 flex flex-col gap-8">
+                <div class="flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center items-center md:h-80">
+                    <div class="flex flex-col items-center gap-4 group">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">Mathematics</span>
                     </div>
-                    <span class="font-newprimary text-black text-lg">Mathematics</span>
+                    <div class="flex flex-col items-center gap-4 group">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">Physics</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 group">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">Chemistry</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 group">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">Biology</span>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
+                <div class="flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center items-center md:h-80">
+                    <div class="flex flex-col items-center gap-4 group">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/environmental.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center h-7">Environmental
+                            <span class="block md:inline"></span>
+                            System <br>
+                            and
+
+                            Societies</span>
                     </div>
-                    <span class="font-newprimary text-black text-lg">Physics</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
+                    <div class="flex flex-col items-center gap-4 group">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/economics.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">Economics</span>
                     </div>
-                    <span class="font-newprimary text-black text-lg">Chemistry</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
+                    <div class="flex flex-col items-center gap-4 group mt-8 md:mt-0">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/english.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">English</span>
                     </div>
-                    <span class="font-newprimary text-black text-lg">Biology</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
+                    <div class="flex flex-col items-center gap-4 group mt-16 md:mt-0">
+                        <div
+                            class="transition-all duration-300 group-hover:h-64 w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                            <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/Business.webp') }}"
+                                alt="EduALL icons"
+                                class="w-12 h-12 md:w-28 md:h-28 group-hover:scale-125 transition-all duration-700 object-contain">
+                        </div>
+                        <span
+                            class="group-hover:font-bold transition-all duration-300 font-newprimary text-black text-lg text-center">Businessl
+                            <span class="block md:inline"></span>
+                            Management</span>
                     </div>
-                    <span class="font-newprimary text-black text-lg">Physics</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
-                    </div>
-                    <span class="font-newprimary text-black text-lg">Chemistry</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
-                    </div>
-                    <span class="font-newprimary text-black text-lg">Biology</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-60 md:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-28 md:h-28 object-contain">
-                    </div>
-                    <span class="font-newprimary text-black text-lg">Mathematics</span>
                 </div>
             </div>
         </div>
 
         <div class="flex main-container w-full flex-col mt-16 ">
-            <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center uppercase">Cambridge A-Level</h2>
-            <div class="mt-12 flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center">
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
+            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center uppercase">Cambridge A-Level
+            </h2>
+            <div class="mt-12 flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-center items-center md:h-72">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div
+                        class="transition-all duration-300 w-32 h-32 md:w-48 md:h-40 group-hover:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/mathematics.webp') }}"
+                            alt="EduALL icons"
+                            class="w-12 h-12 md:w-20 md:h-20 group-hover:scale-125 transition-all duration-700 object-contain">
                     </div>
-                    <span class="font-newprimary text-black text-lg">Mathematics</span>
+                    <span
+                        class="font-newprimary text-black text-lg text-center group-hover:font-bold transition-all duration-300">Mathematics</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div
+                        class="transition-all duration-300 w-32 h-32 md:w-48 md:h-40 group-hover:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.webp') }}"
+                            alt="EduALL icons"
+                            class="w-12 h-12 md:w-20 md:h-20 group-hover:scale-125 transition-all duration-700 object-contain">
                     </div>
-                    <span class="font-newprimary text-black text-lg">Physics</span>
+                    <span
+                        class="font-newprimary text-black text-lg text-center group-hover:font-bold transition-all duration-300">Physics</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div
+                        class="transition-all duration-300 w-32 h-32 md:w-48 md:h-40 group-hover:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/chemistry.webp') }}"
+                            alt="EduALL icons"
+                            class="w-12 h-12 md:w-20 md:h-20 group-hover:scale-125 transition-all duration-700 object-contain">
                     </div>
-                    <span class="font-newprimary text-black text-lg">Chemistry</span>
+                    <span
+                        class="font-newprimary text-black text-lg text-center group-hover:font-bold transition-all duration-300">Chemistry</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div
+                        class="transition-all duration-300 w-32 h-32 md:w-48 md:h-40 group-hover:h-52 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/biology.webp') }}"
+                            alt="EduALL icons"
+                            class="w-12 h-12 md:w-20 md:h-20 group-hover:scale-125 transition-all duration-700 object-contain">
                     </div>
-                    <span class="font-newprimary text-black text-lg">Biology</span>
+                    <span
+                        class="font-newprimary text-black text-lg text-center group-hover:font-bold transition-all duration-300">Biology</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="w-32 h-32 md:w-48 md:h-40 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/physics.png') }}"
-                            alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain">
+                <div class="flex flex-col items-center gap-4 group">
+                    <div
+                        class="transition-all duration-300 w-32 h-32 md:w-48 md:h-40 group-hover:h-52 bg-black acad-tutor-s3-polygon flex items-center justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s3-icons/economics.webp') }}"
+                            alt="EduALL icons"
+                            class="w-12 h-12 md:w-20 md:h-20 group-hover:scale-125 transition-all duration-700 object-contain">
                     </div>
-                    <span class="font-newprimary text-black text-lg">Physics</span>
+                    <span
+                        class="font-newprimary text-black text-lg text-center group-hover:font-bold transition-all duration-300">Economics</span>
                 </div>
             </div>
         </div>
@@ -228,15 +282,15 @@
     {{-- SECTION 4 --}}
     <div class="py-16">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">MORE THAN JUST TUTORING</h2>
+            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">MORE THAN JUST TUTORING</h2>
 
             <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-12">
                 <div class="acad-tutor-s4-item acad-tutor-s4-active relative overflow-hidden">
                     <span>Discover Your Path</span>
                     <p class="desc">Find your unique learning style and best-suited mentors</p>
                     <div class="polygon bg-newprimary"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-1.png') }}"
+                    <div class="w-full h-full">
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-1.webp') }}"
                             alt="EduALL figure">
                     </div>
                 </div>
@@ -245,7 +299,7 @@
                     <p class="desc">Get details of your academic  strengths and weaknesses</p>
                     <div class="polygon bg-black"></div>
                     <div class="w-full h-full bg-black -z-10">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-2.png') }}"
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-2.webp') }}"
                             alt="EduALL figure">
                     </div>
                 </div>
@@ -255,7 +309,7 @@
                         Question-drilling, or Balanced.</p>
                     <div class="polygon bg-newprimary"></div>
                     <div class="w-full h-full bg-black -z-10">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-3.png') }}"
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-3.webp') }}"
                             alt="EduALL figure">
                     </div>
                 </div>
@@ -265,7 +319,7 @@
                         progress reports to parents</p>
                     <div class="polygon bg-black"></div>
                     <div class="w-full h-full bg-black -z-10">
-                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-4.png') }}"
+                        <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s4-figure-4.webp') }}"
                             alt="EduALL figure">
                     </div>
                 </div>
@@ -276,8 +330,9 @@
     {{-- SECTION 5 --}}
     <div class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">PRIVATE CLASS</h2>
-            <span class="font-newprimary mt-2 text-lg md:text-2xl text-black text-center">Private class with 3 different packages that
+            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">PRIVATE CLASS</h2>
+            <span class="font-newprimary mt-2 text-lg md:text-2xl text-black text-center">Private class with 3 different
+                packages that
                 you can choose</span>
             <div class="flex flex-col w-full md:flex-row gap-8 mt-6">
                 <div class="rounded-md bg-black flex flex-col w-full">
@@ -414,14 +469,15 @@
                 </div>
             </div>
             <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12">Learn More</a>
+                class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Learn
+                More</a>
         </div>
     </div>
 
     {{-- SECTION 6 --}}
     <div class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">WHY US?</h2>
+            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">WHY US?</h2>
             <div class="flex w-full mt-12 gap-4">
                 <div class="w-full md:w-8/12 bg-[#D9D9D9] rounded-lg"
                     style="clip-path: polygon(0 0, 100% 0%, 100% 70%, 90% 100%, 0 100%);">
@@ -429,34 +485,38 @@
                         <span
                             class="bg-newprimary px-3 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg">Flexibility
                             Learning</span>
-                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">Individualized learning schedule designed to
+                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">Individualized
+                            learning schedule designed to
                             maximize your abilities.</p>
                     </div>
                     <div class="flex flex-col px-6 pt-4 items-center md:items-start">
                         <span
                             class="bg-newprimary px-3 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg">On-Demand
                             Schedule</span>
-                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">Flexible time, low waiting period needed.
+                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">Flexible time, low
+                            waiting period needed.
                             Start your class based on your schedule.</p>
                     </div>
                     <div class="flex flex-col px-6 pt-4 items-center md:items-start">
                         <span
                             class="bg-newprimary px-3 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg">Progress
                             Tracking</span>
-                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">Track the progress through practice test
+                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">Track the progress
+                            through practice test
                             results and receive on-demand parent updates.</p>
                     </div>
                     <div class="flex flex-col px-6 pt py-4 items-center md:items-start">
                         <span
                             class="bg-newprimary px-3 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg">Access
                             Anywhere</span>
-                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">We bring the class to you! Learn with our
+                        <p class="font-newprimary text-black text-center md:text-start text-base mt-1">We bring the class
+                            to you! Learn with our
                             expert tutors online, live.</p>
                     </div>
                 </div>
                 <div class="hidden md:block md:w-4/12 rounded-lg overflow-hidden">
-                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s6-figure.png') }}"
-                        alt="EduALL figure" class="h-full object-cover">
+                    <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s6-figure.webp') }}"
+                        alt="EduALL figure" class="h-full object-cover hover:scale-110 transition-all duration-700">
                 </div>
             </div>
         </div>
@@ -465,9 +525,9 @@
     {{-- SECTION 7 --}}
     <div class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-3xl md:text-5xl text-black text-center">WHAT OUR STUDENT SAY</h2>
+            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">WHAT OUR STUDENT SAY</h2>
         </div>
-        <div class="main-container my-12">
+        <div class="main-container mt-12">
             <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
@@ -480,24 +540,25 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         @foreach ($testimonies as $testi)
-                            <li class="splide__slide w-full">
-                                <div class="splide__slide__container h-full">
+                            <li class="splide__slide w-full pb-8">
+                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
                                     <div
-                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
-                                        <div class="flex flex-col">
-                                            <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                alt="EduALL Testimony" class="w-7 mb-3 h-auto">
-                                            <div class="font-primary text-sm text-white text-justify">
-                                                {!! $testi->testi_desc !!}
-                                            </div>
+                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
+                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
+                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
+                                            {!! $testi->testi_desc !!}
                                         </div>
-                                        <div class="mt-4 flex flex-col">
-                                            <div class="font-primary font-semibold text-base text-yellow">
+                                        <div class="mt-4 flex flex-col w-full">
+                                            <div class="px-4 font-bold text-lg leading-5">
                                                 {{ $testi->testi_name }}
                                             </div>
-                                            <div class="font-primary text-sm text-white">
+                                            <div class="px-4 mb-4 text-xs font-semibold leading-3">
                                                 {!! $testi->testi_subtitle !!}
                                             </div>
+                                            <a href="#"
+                                                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
+                                                more <i
+                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -518,10 +579,10 @@
             <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
                 Discover the path to achieving your educational aspirations!
             </p>
-            <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}">
-                <span class="px-8 md:px-12 py-3 font-bold font-newprimary text-xs md:text-base text-white text-center bg-newprimary">
-                    Claim your FREE Academic Tutoring Trial
-                </span>
+            <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                class="px-8 md:px-12 py-3 font-bold font-newprimary text-xs md:text-base text-white text-center bg-newprimary hover:scale-105 transition-all duration-150">
+                Claim your FREE Academic Tutoring Trial
+
             </a>
         </div>
     </section>
@@ -529,9 +590,11 @@
     {{-- SECTION 9 --}}
     <section class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center">IB EXTENDED ESSAY COACHING PROGRAM
+            <h2 class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center">IB EXTENDED ESSAY COACHING
+                PROGRAM
             </h2>
-            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">Drill your Extended Essay writing process in 3 months
+            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">Drill your Extended Essay writing
+                process in 3 months
                 with our holistic approach!</p>
         </div>
         <div class="mt-4 main-container">
@@ -582,24 +645,29 @@
                 <h2 class="font-newprimary font-bold text-3xl text-black text-center">TOPICS COVERED</h2>
                 <div class="mt-8 md:mt-0 flex flex-wrap items-center md:gap-8">
                     <div class="w-2/4 md:w-1/4 flex flex-col items-center md:items-end gap-2 md:order-1 order-1">
-                        <span class="w-48 md:w-40 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-6 md:px-4 rounded-lg text-base md:text-xl"
+                        <span
+                            class="w-48 md:w-40 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-6 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">How to start and find the
                             right EE topic</span>
-                        <span class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
+                        <span
+                            class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 70%, 80% 100%, 0 100%);">Construct a bulletproof
                             research questionc</span>
                     </div>
                     <div class="w-3/4 md:w-1/4 md:order-2 order-3 mx-auto"><img
-                            src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s9-figure.png') }}"
+                            src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s9-figure.webp') }}"
                             alt="EduALL figure"></div>
                     <div class="w-2/4 md:w-1/4 flex flex-col items-center md:items-start gap-2 md:order-3 order-2">
-                        <span class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
+                        <span
+                            class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">Navigate the citation
                             style jungle</span>
-                        <span class="w-48 md:w-44 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
+                        <span
+                            class="w-48 md:w-44 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 70%, 80% 100%, 0 100%);">Conquer proscrastination
                             by agile project management</span>
-                        <span class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
+                        <span
+                            class="w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
                             style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">How to write your first
                             draft</span>
                     </div>

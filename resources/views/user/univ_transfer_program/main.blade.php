@@ -174,7 +174,7 @@
                                 <li class="splide__slide w-full">
                                     <div class="splide__slide__container h-full">
                                         <div
-                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
                                                     alt="EduALL Testimony" class="w-7 mb-3 h-auto">
@@ -206,9 +206,9 @@
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center text-4xl">
+            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/univ_transfer_program.bottom_title') }}
-                <span class="mt-3 block text-3xl text-newyellow">
+                <span class="mt-3 block lg:text-3xl text-xl text-newyellow">
                     {{ __('pages/programs/univ_transfer_program.bottom_subtitle') }}
                 </span>
             </h2>

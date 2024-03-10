@@ -24,6 +24,8 @@ return [
     // Detail
     'recent_videos' => 'Video Terbaru',
     'video_not_found' => 'Belum ada Video!',
+    'recent_articles' => 'Artikel Terbaru',
+    'article_not_found' => 'Belum ada Artikel!',
     'bottom_detail_title' => 'Jadwalkan Konsultasi Anda dengan',
     'bottom_detail_body' => 'Mari cari tahu cara masuk ke universitas impian dan jalur karier masa depan Anda melalui konsultasi pertama dengan mentor terkemuka kami dan penilaian profil Anda berdasarkan Aplikasi Empat Pilar Universitas EduALL.',
     'bottom_detail_btn' => 'Mulai Konsultasi Mu',

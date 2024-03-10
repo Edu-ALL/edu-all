@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Admin\ImportantDate;
 use App\Http\Controllers\Controller;
 use App\Models\Banners;
+use App\Models\ImportantDates;
 use App\Models\Mentors;
 use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\UpcomingEvents;
+use Carbon\Carbon;
 
 class HomePageController extends Controller
 {
@@ -17,28 +20,36 @@ class HomePageController extends Controller
         $region = substr(app()->getLocale(), 0, 2);
 
         // Mentor
-        $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('mentor_status', 'active');
+        $all_mentor = Mentors::all()
+            ->where('mentor_category', 'ALL-In Mentor')
+            ->where('mentor_status', 'active')
+            ->where('lang', $lang);
 
         // Testimoni
         $testimonies = Testimonials::where('testi_status', 'active')->where('lang', $lang)->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
-        $event = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->first();
+        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->where('lang', $lang)->orderBy('event_date','ASC')->get();
 
-        // Upcomming Event
-        $regular_talks = UpcomingEvents::all()->where('event_status', 'publish')->where('category', 'Regular Talk');
+        // Regular Talks
+        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->where('lang', $lang)->orderBy('event_date','ASC')->get();
 
         // Success Stories
         $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
 
+        // Important Dates
+        $important_dates = ImportantDates::where('date', '>', Carbon::now())->orderBy('date','ASC')->get();
+
         // Banners
         $banners = Banners::first();
 
-        return view('user.home.region.' . $region, [
+        // $region 
+        return view('user.home.region.id', [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
-            'event' => $event,
+            'events' => $events,
             'regular_talks' => $regular_talks,
+            'important_dates' => $important_dates,
             'success_stories' => $success_stories,
             'testimonies' => $testimonies,
         ]);

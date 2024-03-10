@@ -23,9 +23,9 @@
                             <div
                                 class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ !$banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
                                 <div
-                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-44 font-primary lg:items-start">
+                                    class="flex flex-col justify-center items-center w-full h-full max-w-5xl px-6 lg:px-40 2xl:px-44 font-newprimary lg:items-start">
                                     <h2
-                                        class="font-primary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
+                                        class="font-newprimary text-3xl font-bold text-white text-center mb-6 sm:text-4xl lg:text-5xl lg:text-left xl:text-6xl">
                                         {{ $banner->banner_title }}</h2>
                                     <div
                                         class="text-sm font-semibold text-white text-center sm:text-lg lg:text-lg lg:text-left xl:text-xl">
@@ -33,7 +33,7 @@
                                     </div>
                                     <a href="{{ $banner->banner_link }}" class="{{ $banner->banner_title == "" ? 'mt-[15vh]' : 'mt-0' }}">
                                         <span
-                                            class="inline-block mt-10 bg-primary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize" style="background-color: {{ $banner->banner_button_color }}">
+                                            class="inline-block mt-10 bg-newprimary py-2.5 px-8 rounded-lg font-bold text-white text-base capitalize" style="background-color: {{ $banner->banner_button_color }}">
                                             {{ $banner->banner_button }}
                                         </span>
                                     </a>
@@ -55,10 +55,10 @@
                         class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                         <img data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
                             class="w-[120px] h-auto">
-                        <h4 class="mt-4 font-primary font-semibold text-lg text-[#7895C7] text-center">
+                        <h4 class="mt-4 font-newprimary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
                         </h4>
-                        <p class="mt-2 font-primary text-sm text-center text-[#7A7A7A]">
+                        <p class="mt-2 font-newprimary text-sm text-center text-[#7A7A7A]">
                             {{ $item['body'] }}
                         </p>
                     </div>
@@ -70,8 +70,8 @@
     {{-- ========================================== About Us Section ======================================= --}}
     <section class="pt-10 max-w-4xl w-full px-6 mx-auto my-20">
         <div class="flex flex-col items-center">
-            <h2 class="mb-6 font-primary font-bold text-2xl text-center text-primary">About Us</h2>
-            <p class="w-full max-w-3xl mb-6 font-primary font-medium text-base text-center text-primary">
+            <h2 class="mb-6 font-newprimary font-bold text-2xl text-center text-newprimary">About Us</h2>
+            <p class="w-full max-w-3xl mb-6 font-newprimary font-medium text-base text-center text-newprimary">
                 ALL-in Eduspace is an independent university consultant specializing in developing hands-on exploration
                 programs and university preparation advising for students age 13-18.
                 <br>
@@ -80,7 +80,7 @@
                 in various fields, project mentoring, and up to university application preparation.
             </p>
             <a href="{{ route('about', app()->getLocale()) }}"
-                class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-primary rounded-[4px] md:px-16">
+                class="inline-block px-6 py-2 mb-10 font-newprimary font-semibold text-base text-white capitalize bg-newprimary rounded-[4px] md:px-16">
                 Find out more
             </a>
 
@@ -89,7 +89,7 @@
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
-                    <p class="font-primary font-semibold text-lg text-yellow text-center">
+                    <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         100% Students placed at target universities
                     </p>
                 </div>
@@ -97,7 +97,7 @@
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
-                    <p class="font-primary font-semibold text-lg text-yellow text-center">
+                    <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 40
                         <br> school Clients
                     </p>
@@ -106,7 +106,7 @@
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
-                    <p class="font-primary font-semibold text-lg text-yellow text-center">
+                    <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 1.000 Essays Reviewed
                     </p>
                 </div>
@@ -114,7 +114,7 @@
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
-                    <p class="font-primary font-semibold text-lg text-yellow text-center">
+                    <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 50 Corporate Partners
                     </p>
                 </div>
@@ -122,7 +122,7 @@
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
-                    <p class="font-primary font-semibold text-lg text-yellow text-center">
+                    <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         150+ Point SAT Score Improvement
 
                     </p>
@@ -131,7 +131,7 @@
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
                     <img src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
-                    <p class="font-primary font-semibold text-lg text-yellow text-center">
+                    <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 1.500 Event Participants
                     </p>
                 </div>
@@ -143,8 +143,8 @@
     <section class="py-10">
         <div class="main-container flex flex-col">
             <div class="max-w-3xl w-full mx-auto px-6 mb-10 flex flex-col items-center">
-                <h2 class="mb-6 font-primary font-bold text-2xl text-center text-primary">Our Program</h2>
-                <p class="w-full max-w-3xl mb-6 font-primary font-medium text-base text-center text-primary">
+                <h2 class="mb-6 font-newprimary font-bold text-2xl text-center text-newprimary">Our Program</h2>
+                <p class="w-full max-w-3xl mb-6 font-newprimary font-medium text-base text-center text-newprimary">
                     We offer end-to-end university prep programs: passion project mentoring in various fields, experiential
                     learning programs, career exploration programs, academic tutoring, and other university application
                     requirements.
@@ -176,11 +176,11 @@
     </section>
 
     {{-- ========================================== Success Story Section ======================================= --}}
-    <section class="py-16 bg-primary">
+    <section class="py-16 bg-newprimary">
         <div class="max-w-3xl w-full mx-auto flex flex-col items-center gap-8">
             <div class="flex flex-col">
-                <h2 class="mb-6 font-primary font-bold text-2xl text-center text-white">Success Stories</h2>
-                <p class="font-primary font-medium text-base text-center text-white">
+                <h2 class="mb-6 font-newprimary font-bold text-2xl text-center text-white">Success Stories</h2>
+                <p class="font-newprimary font-medium text-base text-center text-white">
                     Our mentees have thrived in their own field that they are passionate about, confirmed their best-fit
                     major and paved the way to top universities around the world.
                 </p>
@@ -190,7 +190,7 @@
                     class="rounded-xl">
             </div>
             <a href="{{ route('success_stories', app()->getLocale()) }}"
-                class="inline-block px-6 py-2 mb-10 font-primary font-semibold text-base text-white capitalize bg-yellow rounded-[4px] md:px-16">
+                class="inline-block px-6 py-2 mb-10 font-newprimary font-semibold text-base text-white capitalize bg-newyellow rounded-[4px] md:px-16">
                 More
             </a>
         </div>
@@ -200,7 +200,7 @@
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
             <div class="flex flex-col max-w-2xl mb-8">
-                <h2 class="mb-6 font-primary font-semibold text-2xl text-center text-[#7895C7]">
+                <h2 class="mb-6 font-newprimary font-semibold text-2xl text-center text-[#7895C7]">
                     {{ __('pages/home.testi') }}
                 </h2>
             </div>
@@ -208,10 +208,10 @@
                 <div class="splide" aria-label="Slide Container Example">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
                         </button>
                     </div>
                     <div class="splide__track">
@@ -220,18 +220,18 @@
                                 <li class="splide__slide w-full">
                                     <div class="splide__slide__container h-full">
                                         <div
-                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
                                             <div class="flex flex-col">
                                                 <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                                <div class="font-primary text-base text-white text-justify">
+                                                <div class="font-newprimary text-base text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
                                             </div>
                                             <div class="mt-12 flex flex-col">
-                                                <div class="font-primary font-semibold text-2xl text-yellow">
+                                                <div class="font-newprimary font-semibold text-2xl text-yellow">
                                                     {{ $testi->testi_name }}
                                                 </div>
-                                                <div class="font-primary text-sm text-white">
+                                                <div class="font-newprimary text-sm text-white">
                                                     {!! $testi->testi_subtitle !!}
                                                 </div>
                                             </div>
@@ -245,7 +245,7 @@
             </div>
             <a href="{{ route('testimonial', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
                 <span
-                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-primary font-primary font-semibold text-base text-white text-center">
+                    class="block max-w-[200px] w-full px-4 py-2 rounded-md bg-newprimary font-newprimary font-semibold text-base text-white text-center">
                     {{ __('pages/home.testi_btn') }}
                 </span>
             </a>
@@ -256,15 +256,15 @@
     <section class="py-10">
         <div class="main-container max-w-5xl w-full mx-auto">
             <div class="flex flex-col items-center">
-                <h2 class="font-primary font-extrabold text-4xl text-primary text-center">
+                <h2 class="font-newprimary font-extrabold text-4xl text-newprimary text-center">
                     250+ students have found their
                     passion and got into their dream universities.
                 </h2>
-                <h4 class="mt-8 font-primary font-bold text-2xl text-yellow text-center">
+                <h4 class="mt-8 font-newprimary font-bold text-2xl text-yellow text-center">
                     Now let's talk with mentors who will help you achieve yours.
                 </h4>
                 <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                    class="inline-block mt-8 px-6 py-2 mb-10 font-primary font-semibold text-base text-white text-center capitalize bg-[#F91A0C] rounded-[4px] md:px-16">
+                    class="inline-block mt-8 px-6 py-2 mb-10 font-newprimary font-semibold text-base text-white text-center capitalize bg-[#F91A0C] rounded-[4px] md:px-16">
                     Book Free Assessment
                 </a>
             </div>

@@ -21,25 +21,25 @@
     <section class="py-16">
         <div class="flex flex-col items-center main-container">
             <div class="flex flex-col max-w-4xl mt-10 gap-y-4">
-                <p class="font-primary text-xl text-primary text-center">ALL-in Eduspace is an independent
+                <p class="font-newprimary text-xl text-newprimary text-center">ALL-in Eduspace is an independent
                     university consultant specializing in developing hands-on exploration programs and university
                     preparation advising for students age 13-18.
                 </p>
-                <p class="font-primary text-xl text-primary text-center">
+                <p class="font-newprimary text-xl text-newprimary text-center">
                     We provide real-life experiences and professional skills needed, networking opportunities with
                     professionals in various fields, project mentoring, and up to university application preparation.
                 </p>
-                <p class="font-primary text-xl text-primary text-center">
+                <p class="font-newprimary text-xl text-newprimary text-center">
                     We help students explore their dream career paths, equipping them with the industry skills that they
                     need to thrive whilst also fostering an awareness of the impact they could have on the community.
                 </p>
             </div>
             <div class="flex flex-col gap-y-8 max-w-4xl mt-20">
-                <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-primary md:flex-row">
-                    <h4 class="mb-6 font-primary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
+                <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-newprimary md:flex-row">
+                    <h4 class="mb-6 font-newprimary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
                         All-Around Exploration
                     </h4>
-                    <p class="font-primary text-base text-white md:w-2/3">
+                    <p class="font-newprimary text-base text-white md:w-2/3">
                         We understand that students are unique in their own interests, especially in their teenage years. We
                         want them to explore these interests broadly by having them engage in workshops that explore various
                         careers and industries, then deepen their understanding of these industries through internships,
@@ -48,22 +48,22 @@
                     </p>
                 </div>
 
-                <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-primary md:flex-row">
-                    <h4 class="mb-6 font-primary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
+                <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-newprimary md:flex-row">
+                    <h4 class="mb-6 font-newprimary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
                         Diverse Area of Expertise
                     </h4>
-                    <p class="font-primary text-base text-white md:w-2/3">
+                    <p class="font-newprimary text-base text-white md:w-2/3">
                         Our team is localized with relevant first-hand knowledge of various education curricula. We have
                         been there done that. We understand students’ concerns of competing on an international stage. We
                         know how to supplement their educational experiences and bridge the gap.
                     </p>
                 </div>
 
-                <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-primary md:flex-row">
-                    <h4 class="mb-6 font-primary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
+                <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-newprimary md:flex-row">
+                    <h4 class="mb-6 font-newprimary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
                         Long-Term Results
                     </h4>
-                    <p class="font-primary text-base text-white md:w-2/3">
+                    <p class="font-newprimary text-base text-white md:w-2/3">
                         Our mentors provide insight on the skills, experiences, and industry knowledge students need beyond
                         their academic pursuit. This way, not only do we help students confirm their interests, establish
                         career goals, and find the right university major for them, but we also help them build a profile
@@ -77,17 +77,17 @@
     {{-- ================================== Team ================================== --}}
     <section class="pt-10 pb-10">
         <div class="main-container flex flex-col">
-            <h2 class="mb-2 font-primary font-black text-4xl text-primary text-center">
+            <h2 class="mb-2 font-newprimary font-black text-4xl text-newprimary text-center">
                 Our Team
             </h2>
             <div class="w-full py-10">
                 <div class="splide" role="group">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
                         </button>
                     </div>
                     <div class="splide__track py-10">
@@ -102,13 +102,13 @@
                                                 <div
                                                     class="absolute left-4 right-4 bottom-4 flex flex-col justify-between z-20">
                                                     <h3
-                                                        class="font-primary font-bold text-2xl text-white leading-7 lg:leading-5">
+                                                        class="font-newprimary font-bold text-2xl text-white leading-7 lg:leading-5">
                                                         {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
                                                         <br>
                                                         {{ substr($mentor->mentor_fullname, strpos($mentor->mentor_fullname, ' ') + 1) }}
                                                     </h3>
                                                     <div
-                                                        class="mt-2 font-primary text-xs text-white leading-4 lg:leading-3">
+                                                        class="mt-2 font-newprimary text-xs text-white leading-4 lg:leading-3">
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
@@ -120,12 +120,12 @@
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">
                                                 <div class="flex flex-col items-center justify-center">
                                                     <div
-                                                        class="mb-6 px-4 w-full h-full font-primary font-medium text-sm text-white text-center text-ellipsis ">
+                                                        class="mb-6 px-4 w-full h-full font-newprimary font-medium text-sm text-white text-center text-ellipsis ">
                                                         {{ html_entity_decode(substr(strip_tags($mentor->short_desc), 0, 60)) }}...
 
                                                     </div>
                                                     <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
-                                                        class="px-4 py-2 flex-inline font-primary font-medium text-xs text-white text-center rounded-lg bg-yellow">
+                                                        class="px-4 py-2 flex-inline font-newprimary font-medium text-xs text-white text-center rounded-lg bg-newyellow">
                                                         Get to know
                                                         {{ substr($mentor->mentor_fullname, 0, strpos($mentor->mentor_fullname, ' ')) }}
                                                     </a>

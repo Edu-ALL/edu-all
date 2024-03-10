@@ -20,7 +20,7 @@
             {{ $blog->blog_title }}
         </h1>
         <div class="share_container hidden justify-between items-center gap-1 ">
-            <div class="share share_button flex items-center bg-newyellow text-dark  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+            <div class="share share_button flex items-center bg-newyellow text-dark  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
                 <i class="fa fa-send md:mr-2" aria-hidden="true"></i> <span class="hidden md:inline-block">Share</span>
             </div>
@@ -28,7 +28,7 @@
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
                     data-ss-content="false"></div>
             </div>
-            <div class="mt-2 share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+            <div class="mt-2 share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden"
                 onclick="share_sosmed('close')">
                 <i class="fa fa-x" aria-hidden="true"></i>
             </div>
@@ -45,37 +45,37 @@
                             @if ($blog->mentor)
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
                                     target="_blank" class="flex justify-center items-center">
-                                    <div class="w-8 h-8 text-center bg-primary text-white rounded-full overflow-hidden  mr-2">
+                                    <div class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">
                                         <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                             class="w-full object-cover">
                                     </div>
                                     {{-- change author name with mentor name --}}
                                     <span
-                                        class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3 hover:text-yellow">
+                                        class="font-newprimary text-base text-newprimary md:text-[15px] text-[11px] leading-3 hover:text-yellow">
                                         {{ $blog->mentor->mentor_fullname }}
                                     </span>
                                 </a>
-                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                                <div class="hidden w-px h-4 bg-newprimary md:block"></div>
                             @endif
                         </div>
                         @if (!empty($blog->duration_read))
                             <div class="flex items-center gap-2">
-                                <i class="fa fa-book mr-1  text-primary" aria-hidden="true"></i>
-                                <span class="font-inter text-base text-primary md:text-[15px] text-[11px] leading-3">
+                                <i class="fa fa-book mr-1  text-newprimary" aria-hidden="true"></i>
+                                <span class="font-inter text-base text-newprimary md:text-[15px] text-[11px] leading-3">
                                     {{ $blog->duration_read }}
                                     {{ __('pages/blog.min_read') }}</span>
-                                <div class="hidden w-px h-4 bg-primary md:block"></div>
+                                <div class="hidden w-px h-4 bg-newprimary md:block"></div>
                             </div>
                         @endif
                         <div class="flex items-center gap-1">
-                            <i class="fa fa-calendar-o mr-1 text-primary" aria-hidden="true"></i>
-                            <span class="font-primary text-base text-primary md:text-[15px] text-[11px] leading-3">
+                            <i class="fa fa-calendar-o mr-1 text-newprimary" aria-hidden="true"></i>
+                            <span class="font-newprimary text-base text-newprimary md:text-[15px] text-[11px] leading-3">
                                 {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                             </span>
                         </div>
                     </div>
                     <div class="mt-4 share_container_bottom flex items-center gap-1">
-                        <div class="share share_button bg-newyellow text-dark p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg"
+                        <div class="share share_button bg-newyellow text-dark p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg"
                             onclick="share_sosmed('open')">
                             <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
                         </div>
@@ -83,7 +83,7 @@
                             <div class="ss-box ss-circle ss-shadow"
                                 data-ss-social="twitter, facebook, linkedin, share, whatsapp" data-ss-content="false"></div>
                         </div>
-                        <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-primary/20 hover:text-gray-600 shadow-lg hidden"
+                        <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden"
                             onclick="share_sosmed('close')">
                             <i class="fa fa-x" aria-hidden="true"></i>
                         </div>
@@ -272,7 +272,7 @@
                             '" class="w-full h-full object-cover object-center rounded-md">' +
                             '</div>' +
                             '<div class="flex-auto">' +
-                            '<div class="text-md font-bold text-primary text-lg">' +
+                            '<div class="text-md font-bold text-newprimary text-lg">' +
                             element.title +
                             '</div>' +
                             '<div class="text-sm text-gray-200 dark:text-gray-300 mt-2 -mb-3">' +
@@ -280,7 +280,7 @@
                             '</div>' +
                             '<div class="flex justify-end">' +
                             '<a href="' + element.link +
-                            '" target="_blank" type="button" class="text-sm bg-yellow py-2 px-3 rounded-md text-white cursor-pointer font-medium" style="text-decoration:none">' +
+                            '" target="_blank" type="button" class="text-sm bg-newyellow py-2 px-3 rounded-md text-white cursor-pointer font-medium" style="text-decoration:none">' +
                             button +
                             '</a>' +
                             '</div>' +

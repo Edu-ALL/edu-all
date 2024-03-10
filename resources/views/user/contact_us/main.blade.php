@@ -12,13 +12,13 @@
 
             <div class="flex flex-col max-w-4xl mx-auto gap-x-20 md:flex-row">
                 <div class="flex flex-col w-full md:w-1/2">
-                    <h2 class="mb-6 font-primary font-bold text-2xl text-primary uppercase">
+                    <h2 class="mb-6 font-newprimary font-bold text-2xl text-newprimary uppercase">
                         {{ __('pages/contact_us/contact_us.title') }}
                     </h2>
 
                     <form action="">
                         <div class="flex flex-col">
-                            <h4 class="font-primary text-base">Fields marked with an <span class="text-red-500">*</span> are
+                            <h4 class="font-newprimary text-base">Fields marked with an <span class="text-red-500">*</span> are
                                 required</h4>
                             <div class="flex flex-col mb-4">
                                 <label for="name">Name <span class="text-red-500">*</span></label>
@@ -35,42 +35,42 @@
                                 <textarea name="message" id="message" cols="20" rows="3" class="border-[#e3e3e3] rounded-[4px]"></textarea>
                             </div>
                             <button type="submit" class="w-full text-left"><span
-                                    class="inline-block px-6 py-1.5 font-primary font-semibold text-base text-white rounded-sm bg-yellow">SEND</span></button>
+                                    class="inline-block px-6 py-1.5 font-newprimary font-semibold text-base text-white rounded-sm bg-newyellow">SEND</span></button>
                         </div>
                     </form>
                 </div>
                 <div class="flex flex-col w-full md:w-1/2">
                     <div class="flex flex-col gap-y-3 mb-6">
-                        <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Address</h5>
-                        <p class="font-primary text-lg text-[#7a7a7a]">{!! $website_settings->address !!}</p>
+                        <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">Address</h5>
+                        <p class="font-newprimary text-lg text-[#7a7a7a]">{!! $website_settings->address !!}</p>
                     </div>
 
                     <div class="flex flex-col gap-y-3 mb-6">
-                        <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Telephone</h5>
+                        <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">Telephone</h5>
                         <div class="flex flex-col">
-                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
                             @if ($website_settings->phone_number_2 != null)
-                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
+                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
                             @endif
                             @if ($website_settings->phone_number_3 != null)
-                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-primary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
+                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
                             @endif
                         </div>
                     </div>
                     <div class="flex flex-col gap-y-3 mb-6">
-                        <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">E-mail</h5>
+                        <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">E-mail</h5>
                         <a target="_blank" href="mailto:{{ $website_settings->email }}"
-                            class="font-primary text-lg">{!! __('pages/contact_us/contact_us.email') !!}</a>
+                            class="font-newprimary text-lg">{!! __('pages/contact_us/contact_us.email') !!}</a>
                     </div>
                     <div class="flex flex-col gap-y-3 mb-6">
-                        <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Youtube</h5>
+                        <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">Youtube</h5>
                         <a target="_blank" href={{ $website_settings->youtube_channel }}
-                            class="font-primary text-lg">{{ __('pages/contact_us/contact_us.youtube') }}</a>
+                            class="font-newprimary text-lg">{{ __('pages/contact_us/contact_us.youtube') }}</a>
                     </div>
                     <div class="flex flex-col gap-y-3 mb-6">
-                        <h5 class="font-primary font-semibold text-xl text-[#7A7A7A] ">Instagram</h5>
+                        <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">Instagram</h5>
                         <a target="_blank" href="{{ $website_settings->instagram }}"
-                            class="font-primary text-lg">{{ __('pages/contact_us/contact_us.instagram') }}</a>
+                            class="font-newprimary text-lg">{{ __('pages/contact_us/contact_us.instagram') }}</a>
                     </div>
                 </div>
             </div>

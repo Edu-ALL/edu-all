@@ -14,15 +14,15 @@
                 <div class="md:flex md:items-center">
                     <div class="flex flex-col items-start md:w-2/3 lg:w-1/2 lg:mr-10 lg:pt-20">
                         <h1
-                            class="mb-5 pt-10 font-primary font-bold text-lg text-white text-center uppercase md:text-2xl  md:text-left">
+                            class="mb-5 pt-10 font-newprimary font-bold text-lg text-white text-center uppercase md:text-2xl  md:text-left">
                             {{ __('pages/programs/passion_project_mentoring.title') }}
                         </h1>
                         <img loading="lazy" src="{{ asset('assets/img/passion_project_mentoring/logo-passion-project-mentoring-program-768x292.webp') }}"
                             alt="passion project title" class="w-72 object-contain md:w-96">
-                        <p class="my-5 font-primary font-normal text-lg text-white md:text-xl md:leading-6">
+                        <p class="my-5 font-newprimary font-normal text-lg text-white md:text-xl md:leading-6">
                             {{ __('pages/programs/passion_project_mentoring.body') }}</p>
                         <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
-                            class="inline-block px-5 py-2 font-primary font-medium text-base text-white capitalize bg-yellow rounded-lg">{{ __('pages/programs/passion_project_mentoring.banner-btn') }}</a>
+                            class="inline-block px-5 py-2 font-newprimary font-medium text-base text-white capitalize bg-newyellow rounded-lg">{{ __('pages/programs/passion_project_mentoring.banner-btn') }}</a>
                     </div>
 
                     <div class="flex justify-center max-h-fit pt-10 md:w-2/3 lg:w-1/2 lg:pt-20">
@@ -50,9 +50,9 @@
                 <div class="flex flex-col main-container">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/Entrepreneurship-768x163.webp') }}"
                         alt="entrepreneurship img" class="w-72 md:w-[30rem]">
-                    <h2 class="mt-2 font-primary font-black text-4xl md:text-5xl">Mentoring <span
+                    <h2 class="mt-2 font-newprimary font-black text-4xl md:text-5xl">Mentoring <span
                             class="block sm:inline-block">Program</span></h2>
-                    <p class="mt-6 font-primary text-lg text-black">
+                    <p class="mt-6 font-newprimary text-lg text-black">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_body') }}</p>
                 </div>
                 <div class="self-start flex justify-start items-start mt-4">
@@ -71,10 +71,10 @@
                         alt="EduALL Passion Project Banner" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <p class="mb-5 font-primary text-base text-primary md:text-xl">
+                    <p class="mb-5 font-newprimary text-base text-newprimary md:text-xl">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_decs') }}
                     </p>
-                    <p class="font-primary font-extrabold text-xl text-yellow md:text-2xl">
+                    <p class="font-newprimary font-extrabold text-xl text-yellow md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_desc_bold') }}
                     </p>
                 </div>
@@ -82,15 +82,15 @@
 
             <div class="grid grid-cols-1 main-container gap-y-4 md:grid-cols-2 md:gap-x-20">
                 <div class="flex flex-col">
-                    <h2 class="font-primary font-black text-lg text-primary uppercase md:text-2xl">
+                    <h2 class="font-newprimary font-black text-lg text-newprimary uppercase md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_do_title') }}</h2>
-                    <h3 class="font-primary font-black text-2xl text-yellow uppercase md:text-4xl">
+                    <h3 class="font-newprimary font-black text-2xl text-yellow uppercase md:text-4xl">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_do') }}</h3>
                 </div>
                 <div class="flex flex-col gap-y-4">
                     @foreach (__('pages/programs/passion_project_mentoring.entrepreneurship_do_list') as $item)
-                        <div class="p-4 rounded-xl bg-yellow">
-                            <p class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                        <div class="p-4 rounded-xl bg-newyellow">
+                            <p class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                 {{ $loop->iteration }}.
                                 {{ $item }}
                             </p>
@@ -101,9 +101,9 @@
 
             <div class="grid grid-cols-1 main-container gap-y-4 md:grid-cols-2 md:gap-x-20">
                 <div class="flex flex-col">
-                    <h2 class="font-primary font-black text-lg text-primary uppercase md:text-2xl">
+                    <h2 class="font-newprimary font-black text-lg text-newprimary uppercase md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_learn_title') }}</h2>
-                    <h3 class="font-primary font-black text-2xl text-yellow uppercase md:text-4xl">
+                    <h3 class="font-newprimary font-black text-2xl text-yellow uppercase md:text-4xl">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_learn') }}</h3>
                 </div>
                 <div class="flex flex-col  col-span-2">
@@ -113,14 +113,14 @@
                                 @if ($loop->iteration <= 4)
                                     <div class="group">
                                         <div id="entre-learn-title"
-                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-yellow cursor-pointer">
-                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-newyellow cursor-pointer">
+                                            <h4 class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
                                                 class="fa-solid fa-angle-down ml-4 font-black text-white text-lg"></i>
                                         </div>
-                                        <p id="entre-learn-desc" class="px-4 mb-4 hidden font-primary text-base leading-5">
+                                        <p id="entre-learn-desc" class="px-4 mb-4 hidden font-newprimary text-base leading-5">
                                             {{ $item['desc'] }}</p>
                                     </div>
                                 @endif
@@ -131,14 +131,14 @@
                                 @if ($loop->iteration > 4)
                                     <div class="group">
                                         <div id="entre-learn-title"
-                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-yellow cursor-pointer">
-                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                                            class="flex justify-between items-center p-4 mb-4 rounded-xl bg-newyellow cursor-pointer">
+                                            <h4 class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
                                                 class="fa-solid fa-angle-down ml-4 font-black text-white text-lg"></i>
                                         </div>
-                                        <p id="entre-learn-desc" class="px-4 mb-4 hidden font-primary text-base leading-5">
+                                        <p id="entre-learn-desc" class="px-4 mb-4 hidden font-newprimary text-base leading-5">
                                             {{ $item['desc'] }}</p>
                                     </div>
                                 @endif
@@ -150,7 +150,7 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-primary font-black text-3xl text-primary text-center uppercase md:text-4xl md:text-left">
+                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
@@ -163,7 +163,7 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-primary font-black text-3xl text-primary text-center uppercase md:text-4xl md:text-left">
+                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_curriculum_overview') }}</h2>
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-entre-3 md:bg-cover md:bg-top">
@@ -171,12 +171,12 @@
                             alt="EduALL Passion Project" class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
-                        <p class="mb-5 font-primary font-medium text-base text-primary tracking-wider md:text-xl">
+                        <p class="mb-5 font-newprimary font-medium text-base text-newprimary tracking-wider md:text-xl">
                             {{ __('pages/programs/passion_project_mentoring.entrepreneurship_curriculum_overview_decs') }}
                         </p>
                         <a href="{{ asset('assets/files/passion-project/timetable-entrepreneurship.pdf') }}"
                             target="_blank"
-                            class="inline-block px-5 py-2 font-primary font-medium text-base text-white capitalize bg-red-500 rounded-md">
+                            class="inline-block px-5 py-2 font-newprimary font-medium text-base text-white capitalize bg-red-500 rounded-md">
                             {{ __('pages/programs/passion_project_mentoring.entrepreneurship_curriculum_overview_btn') }}
                         </a>
                     </div>
@@ -185,11 +185,11 @@
 
             <div class="flex flex-col items-center main-container">
                 <h2
-                    class="font-primary font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
+                    class="font-newprimary font-black  text-2xl text-newprimary text-center uppercase leading-6 md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_bottom') }}</h2>
                 <div>
                     <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
-                        class="inline-block px-5 py-2 mt-6 font-primary font-medium text-base text-white capitalize bg-yellow rounded-md">
+                        class="inline-block px-5 py-2 mt-6 font-newprimary font-medium text-base text-white capitalize bg-newyellow rounded-md">
                         {{ __('pages/programs/passion_project_mentoring.entrepreneurship_bottom_btn') }}
                     </a>
                 </div>
@@ -204,9 +204,9 @@
                 <div class="flex flex-col main-container">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/Scientific-Research-768x167.webp') }}"
                         alt="entrepreneurship img" class="w-72 md:w-[30rem]">
-                    <h2 class="mt-2 font-primary font-black text-4xl md:text-5xl">Mentoring <span
+                    <h2 class="mt-2 font-newprimary font-black text-4xl md:text-5xl">Mentoring <span
                             class="block sm:inline-block">Program</span></h2>
-                    <p class="mt-6 font-primary text-lg text-black">
+                    <p class="mt-6 font-newprimary text-lg text-black">
                         {{ __('pages/programs/passion_project_mentoring.scientific_body') }}</p>
                 </div>
                 <div class="self-start flex items-start mt-4">
@@ -227,10 +227,10 @@
                         alt="EduALL Passion Project" class="md:hidden">
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <p class="mb-5 font-primary text-base text-primary md:text-xl">
+                    <p class="mb-5 font-newprimary text-base text-newprimary md:text-xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_decs') }}
                     </p>
-                    <p class="font-primary font-extrabold text-xl text-[#1eb5f6] md:text-2xl">
+                    <p class="font-newprimary font-extrabold text-xl text-[#1eb5f6] md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_desc_bold') }}
                     </p>
                 </div>
@@ -238,15 +238,15 @@
 
             <div class="grid grid-cols-1 main-container gap-y-4 md:grid-cols-2 md:gap-x-20">
                 <div class="flex flex-col">
-                    <h2 class="font-primary font-black text-lg text-primary uppercase md:text-2xl">
+                    <h2 class="font-newprimary font-black text-lg text-newprimary uppercase md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_do_title') }}</h2>
-                    <h3 class="font-primary font-black text-2xl text-[#1eb5f6] uppercase md:text-4xl">
+                    <h3 class="font-newprimary font-black text-2xl text-[#1eb5f6] uppercase md:text-4xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_do') }}</h3>
                 </div>
                 <div class="flex flex-col gap-y-4">
                     @foreach (__('pages/programs/passion_project_mentoring.scientific_do_list') as $item)
                         <div class="p-4 rounded-xl bg-[#1eb5f6]">
-                            <p class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                            <p class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                 {{ $loop->iteration }}.
                                 {{ $item }}
                             </p>
@@ -257,9 +257,9 @@
 
             <div class="grid grid-cols-1 main-container gap-y-4 md:grid-cols-2 md:gap-x-20">
                 <div class="flex flex-col">
-                    <h2 class="font-primary font-black text-lg text-primary uppercase md:text-2xl">
+                    <h2 class="font-newprimary font-black text-lg text-newprimary uppercase md:text-2xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_learn_title') }}</h2>
-                    <h3 class="font-primary font-black text-2xl text-[#1eb5f6] uppercase md:text-4xl">
+                    <h3 class="font-newprimary font-black text-2xl text-[#1eb5f6] uppercase md:text-4xl">
                         {{ __('pages/programs/passion_project_mentoring.scientific_learn') }}</h3>
                 </div>
                 <div class="flex flex-col  col-span-2">
@@ -270,14 +270,14 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
-                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                                            <h4 class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
                                                 class="fa-solid fa-angle-down ml-4 font-black text-white text-lg"></i>
                                         </div>
                                         <p id="entre-learn-desc"
-                                            class="px-4 mb-4 hidden font-primary text-base leading-5">
+                                            class="px-4 mb-4 hidden font-newprimary text-base leading-5">
                                             {{ $item['desc'] }}</p>
                                     </div>
                                 @endif
@@ -289,14 +289,14 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
-                                            <h4 class="font-primary font-bold text-base text-white leading-5 md:text-xl">
+                                            <h4 class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
                                                 class="fa-solid fa-angle-down ml-4 font-black text-white text-lg"></i>
                                         </div>
                                         <p id="entre-learn-desc"
-                                            class="px-4 mb-4 hidden font-primary text-base leading-5">
+                                            class="px-4 mb-4 hidden font-newprimary text-base leading-5">
                                             {{ $item['desc'] }}</p>
                                     </div>
                                 @endif
@@ -308,7 +308,7 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-primary font-black text-3xl text-primary text-center uppercase md:text-4xl md:text-left">
+                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
@@ -321,7 +321,7 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-primary font-black text-3xl text-primary text-center uppercase md:text-4xl md:text-left">
+                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_curriculum_overview') }}</h2>
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-scien-3 md:bg-cover md:bg-top">
@@ -329,11 +329,11 @@
                             alt="EduALL Passion Project" class="md:hidden">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
-                        <p class="mb-5 font-primary font-medium text-base text-primary tracking-wider md:text-xl">
+                        <p class="mb-5 font-newprimary font-medium text-base text-newprimary tracking-wider md:text-xl">
                             {{ __('pages/programs/passion_project_mentoring.scientific_curriculum_overview_decs') }}
                         </p>
                         <a href="{{ asset('assets/files/passion-project/timetable-research.pdf') }}" target="_blank"
-                            class="inline-block px-5 py-2 font-primary font-medium text-base text-white capitalize bg-red-500 rounded-md">
+                            class="inline-block px-5 py-2 font-newprimary font-medium text-base text-white capitalize bg-red-500 rounded-md">
                             {{ __('pages/programs/passion_project_mentoring.scientific_curriculum_overview_btn') }}
                         </a>
                     </div>
@@ -342,11 +342,11 @@
 
             <div class="flex flex-col items-center main-container">
                 <h2
-                    class="font-primary font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
+                    class="font-newprimary font-black  text-2xl text-newprimary text-center uppercase leading-6 md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_bottom') }}</h2>
                 <div>
                     <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
-                        class="inline-block px-5 py-2 mt-6 font-primary font-medium text-base text-white capitalize bg-yellow rounded-md">
+                        class="inline-block px-5 py-2 mt-6 font-newprimary font-medium text-base text-white capitalize bg-newyellow rounded-md">
                         {{ __('pages/programs/passion_project_mentoring.scientific_bottom_btn') }}
                     </a>
                 </div>
@@ -358,7 +358,7 @@
     <section class="pt-10 pb-16">
         <div class="flex flex-col items-center main-container">
             <h2
-                class="font-primary font-black  text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
+                class="font-newprimary font-black  text-2xl text-newprimary text-center uppercase leading-6 md:text-4xl md:text-left">
                 {{ __('pages/programs/passion_project_mentoring.other_programs') }}</h2>
             <div class="grid grid-cols-1 items-center gap-y-4 px-14 mt-6 md:grid-cols-4 md:gap-x-12 md:px-0">
                 <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-CEP.webp') }}" alt="LogoCEP">
@@ -375,17 +375,17 @@
     <section class="pt-10 pb-16">
         <div class="flex flex-col items-center main-container">
             <h2
-                class="font-primary font-black text-2xl text-primary text-center uppercase leading-6 md:text-4xl md:text-left">
+                class="font-newprimary font-black text-2xl text-newprimary text-center uppercase leading-6 md:text-4xl md:text-left">
                 {{ __('pages/programs/passion_project_mentoring.testimony') }}</h2>
             <div class="relative w-full mt-8">
                 <div class="splide" aria-labelledby="carousel-heading">
                     <ul class="splide__pagination"></ul>
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                            <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
+                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
                         </button>
                         <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                            <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
+                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
                         </button>
                     </div>
                     <div class="splide__track">
@@ -394,19 +394,19 @@
                                 <li class="splide__slide w-full">
                                     <div class="splide__slide__container h-full">
                                         <div
-                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-primary">
+                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
                                             <div class="flex flex-col">
                                                 <img data-original="{{ asset('assets/logo/quote.png') }}"
                                                     alt="EduALL Testimony" class="w-7 mb-3 h-auto">
-                                                <div class="font-primary text-sm text-white text-justify">
+                                                <div class="font-newprimary text-sm text-white text-justify">
                                                     {!! $testi->testi_desc !!}
                                                 </div>
                                             </div>
                                             <div class="mt-4 flex flex-col">
-                                                <div class="font-primary font-semibold text-base text-yellow">
+                                                <div class="font-newprimary font-semibold text-base text-yellow">
                                                     {{ $testi->testi_name }}
                                                 </div>
-                                                <div class="font-primary text-sm text-white">
+                                                <div class="font-newprimary text-sm text-white">
                                                     {!! $testi->testi_subtitle !!}
                                                 </div>
                                             </div>
@@ -425,13 +425,13 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="py-16">
         <div class="main-container flex flex-col items-center">
-            <h2 class=" font-primary font-black text-primary text-center text-4xl mb-4">
+            <h2 class=" font-newprimary font-black text-newprimary text-center text-4xl mb-4">
                 {{ __('pages/programs/passion_project_mentoring.sign_up_text') }}
                 <span
                     class="block text-yellow">{{ __('pages/programs/passion_project_mentoring.sign_up_text_sub') }}</span>
             </h2>
             <a href="{{ route('sign_me_passion_project', app()->getLocale()) }}"
-                class="inline-block px-5 py-2 mt-6 font-primary font-bold text-lg text-white capitalize bg-yellow rounded-xl">{{ __('pages/programs/passion_project_mentoring.sign_up_btn') }}</a>
+                class="inline-block px-5 py-2 mt-6 font-newprimary font-bold text-lg text-white capitalize bg-newyellow rounded-xl">{{ __('pages/programs/passion_project_mentoring.sign_up_btn') }}</a>
         </div>
 
     </section>

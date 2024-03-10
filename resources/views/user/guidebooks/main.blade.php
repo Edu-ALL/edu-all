@@ -10,9 +10,9 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-16 -z-10">
         <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full lg:bg-primary/50">
+            <div class="absolute main-container w-full h-full lg:bg-newprimary/50">
                 <div class="flex flex-col justify-center items-center h-full lg:max-w-2xl lg:mx-auto">
-                    <h1 class="font-semibold font-primary capitalize text-4xl text-white tracking-widest text-center">
+                    <h1 class="font-semibold font-newprimary capitalize text-4xl text-white tracking-widest text-center">
                         {{ __('pages/resources/guidebook.title') }}
                     </h1>
                 </div>
@@ -27,15 +27,15 @@
     <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <p class="font-primary text-xl text-[#6F6C90] text-justify">
+                <p class="font-newprimary text-xl text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.body') }}
 
                 </p>
-                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-newprimary font-bold text-3xl text-newprimary text-center md:text-left">
                     {{ __('pages/resources/guidebook.getting_started') }}
 
                 </h2>
-                <p class="mt-2 font-primary text-lg text-[#6F6C90] text-justify">
+                <p class="mt-2 font-newprimary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.getting_started_body') }}
 
                 </p>
@@ -65,11 +65,11 @@
     <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-newprimary font-bold text-3xl text-newprimary text-center md:text-left">
                     {{ __('pages/resources/guidebook.build_your_profile') }}
 
                 </h2>
-                <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
+                <p class="mt-4 font-newprimary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.build_your_profile_body') }}
                 </p>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
@@ -98,10 +98,10 @@
     <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-newprimary font-bold text-3xl text-newprimary text-center md:text-left">
                     {{ __('pages/resources/guidebook.apply_to_your_dream_univ') }}
                 </h2>
-                <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
+                <p class="mt-4 font-newprimary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.apply_to_your_dream_univ_body') }}
                 </p>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
@@ -130,10 +130,10 @@
     <section id="guidebook" class="py-4 lg:py-10">
         <div class="main-container">
             <div class="flex flex-col">
-                <h2 class="mt-10 font-primary font-bold text-3xl text-primary text-center md:text-left">
+                <h2 class="mt-10 font-newprimary font-bold text-3xl text-newprimary text-center md:text-left">
                     {{ __('pages/resources/guidebook.grap_scholarship') }}
                 </h2>
-                <p class="mt-4 font-primary text-lg text-[#6F6C90] text-justify">
+                <p class="mt-4 font-newprimary text-lg text-[#6F6C90] text-justify">
                     {{ __('pages/resources/guidebook.grap_scholarship_body') }}
                 </p>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
@@ -161,26 +161,26 @@
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="py-4">
         <div class="flex flex-col">
-            <div class="py-3 main-container bg-primary">
+            <div class="py-3 main-container bg-newprimary">
                 <ul class="grid grid-cols-1 gap-4 md:grid-cols-3">
                     <li class="flex items-center gap-3"> <span
-                            class="w-1/5 font-primary font-black text-3xl text-yellow text-right">100%</span>
-                        <span class=" w-4/5 font-primary font-semibold text-base text-white leading-4">Mentee Acceptance
+                            class="w-1/5 font-newprimary font-black text-3xl text-yellow text-right">100%</span>
+                        <span class=" w-4/5 font-newprimary font-semibold text-base text-white leading-4">Mentee Acceptance
                             Rate
                             to Top
                             Universities in
                             US, UK, Europe, and Asia</span>
                     </li>
                     <li class="flex justify-center items-center gap-3"> <span
-                            class="w-1/5 font-primary font-black text-3xl text-yellow text-right">50+</span>
-                        <span class="w-4/5 font-primary font-semibold text-base text-white leading-4">Top Universities
+                            class="w-1/5 font-newprimary font-black text-3xl text-yellow text-right">50+</span>
+                        <span class="w-4/5 font-newprimary font-semibold text-base text-white leading-4">Top Universities
                             Around
                             the
                             World</span>
                     </li>
                     <li class="flex items-center gap-3"> <span
-                            class=" w-1/5 font-primary font-black text-3xl text-yellow text-right">114</span>
-                        <span class=" w-4/5 font-primary font-semibold text-base text-white leading-4">Mentee Acceptance
+                            class=" w-1/5 font-newprimary font-black text-3xl text-yellow text-right">114</span>
+                        <span class=" w-4/5 font-newprimary font-semibold text-base text-white leading-4">Mentee Acceptance
                             Rate
                             to Top
                             Career Exploration Programs Company Partners</span>
@@ -188,7 +188,7 @@
                 </ul>
             </div>
             <div class="mt-4 main-container">
-                <span class="font-primary font-semibold text-xl text-primary text-center md:text-left">
+                <span class="font-newprimary font-semibold text-xl text-newprimary text-center md:text-left">
                     {{ __('pages/resources/guidebook.bottom_title') }}
                 </span>
                 <div class="splide my-8" aria-labelledby="carousel-heading">
@@ -210,7 +210,7 @@
                     </div>
                 </div>
             </div>
-            <span class="mt-6 font-primary font-semibold text-xl text-yellow text-center">
+            <span class="mt-6 font-newprimary font-semibold text-xl text-yellow text-center">
                 {{ __('pages/resources/guidebook.bottom_bottom') }}
             </span>
         </div>

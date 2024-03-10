@@ -13,10 +13,10 @@
             <div class="absolute-center main-container w-full h-full md:flex md:flex-col">
                 <div class="flex flex-col items-start pt-10 mb-14 md:pl-28 lg:w-2/3 lg:pt-24">
                     <h1
-                        class="font-primary font-black text-3xl text-white uppercase md:text-[4rem] md:text-left md:leading-[60px]">
+                        class="font-newprimary font-black text-3xl text-white uppercase md:text-[4rem] md:text-left md:leading-[60px]">
                         {{ __('pages/programs/ib_ee_coaching_program.title') }}
                     </h1>
-                    <p class="mt-6 font-primary font-normal text-xl text-yellow">
+                    <p class="mt-6 font-newprimary font-normal text-xl text-yellow">
                         {{ __('pages/programs/ib_ee_coaching_program.desc') }}</p>
                 </div>
 
@@ -44,7 +44,7 @@
         <div class="flex flex-col">
             <div
                 class="mx-6 mb-12 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-2/3 md:rounded-r-full lg:pl-20 xl:pl-40 ">
-                <h2 class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                <h2 class="font-newprimary font-black text-2xl text-newprimary text-center uppercase md:text-6xl md:text-left">
                     {{ __('pages/programs/ib_ee_coaching_program.learn') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
@@ -58,7 +58,7 @@
                             <div
                                 class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 lg:rounded-full">
                                 <span
-                                    class="font-primary font-extrabold text-8xl md:text-9xl text-primary leading-none opacity-80 z-10">
+                                    class="font-newprimary font-extrabold text-8xl md:text-9xl text-newprimary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
                                 </span>
                                 <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/IB-' . $loop->index . '.webp') }}"
@@ -67,7 +67,7 @@
                             </div>
                             <div class="flex flex-col justify-center w-4/5 mt-2 pr-4 pb-2 sm:mt-0">
                                 <h4
-                                    class="font-primary font-bold text-base text-center text-yellow md:text-left md:text-2xl">
+                                    class="font-newprimary font-bold text-base text-center text-yellow md:text-left md:text-2xl">
                                     {{ $item }}</h4>
                             </div>
                         </div>
@@ -85,16 +85,16 @@
                     <div
                         class="mx-6 mb-6 py-4 rounded-xl bg-[#f5e6d3] sm:px-6 md:mx-0 md:w-full md:rounded-r-full lg:pl-20 xl:pl-40 ">
                         <h2
-                            class="font-primary font-black text-2xl text-primary text-center uppercase md:text-6xl md:text-left">
+                            class="font-newprimary font-black text-2xl text-newprimary text-center uppercase md:text-6xl md:text-left">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_title') }}</h2>
 
                     </div>
                     <div class="mx-6 py-4 rounded-xl sm:px-6 md:mx-0 md:w-full lg:pl-20 xl:pl-40">
-                        <p class="font-primary font-normal text-xl text-primary md:text-2xl">
+                        <p class="font-newprimary font-normal text-xl text-newprimary md:text-2xl">
                             {{ __('pages/programs/ib_ee_coaching_program.curr_desc') }}</p>
                         <a href="https://all-inedu.com/uploaded_files/blogs/2022/12/Coaching-Curriculum-Overview.pdf"
                             target="_blank"
-                            class="inline-block mt-8 py-2 px-6 font-primary font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
+                            class="inline-block mt-8 py-2 px-6 font-newprimary font-medium text-lg text-white rounded-lg bg-sky-700">{{ __('pages/programs/ib_ee_coaching_program.curr_btn') }}</a>
                     </div>
                 </div>
             </div>
@@ -106,13 +106,13 @@
     {{-- ================================== Bottom Section ================================== --}}
     <section class="py-10">
         <div class="main-container flex flex-col items-center">
-            <h2 class=" font-primary font-black text-primary text-center text-4xl mb-4">
+            <h2 class=" font-newprimary font-black text-newprimary text-center text-4xl mb-4">
                 {{ __('pages/programs/ib_ee_coaching_program.bottom_title') }}
                 <span class="block text-yellow">
                     {{ __('pages/programs/ib_ee_coaching_program.bottom_subtitle') }}</span>
             </h2>
             <a href="{{ route('sign_me_ee_coaching', app()->getLocale()) }}"
-                class="px-5 py-2 mt-4 font-primary font-bold text-xl text-white text-center bg-yellow rounded-2xl">{{ __('pages/programs/ib_ee_coaching_program.bottom_btn') }}</a>
+                class="px-5 py-2 mt-4 font-newprimary font-bold text-xl text-white text-center bg-newyellow rounded-2xl">{{ __('pages/programs/ib_ee_coaching_program.bottom_btn') }}</a>
         </div>
 
     </section>
