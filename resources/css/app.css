@@ -538,3 +538,18 @@ input[type="search"]::-webkit-search-cancel-button {
     @apply h-full w-full object-cover opacity-50;
 }
 
+progress::-webkit-progress-bar {
+    @apply bg-transparent;
+}
+
+progress::-webkit-progress-value {
+    @apply bg-white;
+}
+
+progress::-moz-progress-bar {
+    @apply bg-transparent;
+}
+
+progress::-ms-fill {
+    @apply bg-newprimary;
+}

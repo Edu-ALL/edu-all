@@ -13,7 +13,9 @@
             <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner" class="w-full md:h-full h-screen object-cover">
             <div class="absolute bottom-40 md:bottom-0 left-0 right-0">
                 <div class="relative">
-                    <div class="bg-newprimary mix-blend-multiply invisible md:visible h-24 absolute bottom-0 left-0 right-0"></div>
+                    <div
+                        class="bg-newprimary mix-blend-multiply invisible md:visible h-24 absolute bottom-0 left-0 right-0">
+                    </div>
                     <div class="w-full main-container mx-auto absolute bottom-0 left-0 right-0 h-24 flex items-center">
                         <div class="flex gap-8 justify-between items-center w-full flex-col md:flex-row">
                             {{-- Acceptance --}}
@@ -220,7 +222,8 @@
                             </li>
                         </ul>
                         <a href="#"
-                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more details</a>
+                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            details</a>
                     </div>
                     <div class="ourprogram_side"></div>
                     <div class="ourprogram_side2"></div>
@@ -267,7 +270,8 @@
 
                         </ul>
                         <a href="#"
-                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more details</a>
+                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            details</a>
                     </div>
                     <div class="ourprogram_side"></div>
                     <div class="ourprogram_side2"></div>
@@ -277,7 +281,14 @@
     </section>
 
     {{-- ========================================== Pathaway Excellence ========================================== --}}
-    <section class="pathaway_excellence relative bg-pathaway bg-contain bg-newprimary bg-blend-multiply">
+    <section class="pathaway_excellence relative h-full w-full bg-pathaway bg-contain bg-newprimary bg-blend-multiply">
+        <div class="absolute bottom-0 w-screen flex z-20">
+            <progress max="100" value="0" class="w-1/4 exploration_pathaway_progress"></progress>
+            <progress max="100" value="0" class="w-1/4 profile_building_pathaway_progress"></progress>
+            <progress max="100" value="0" class="w-1/4 academic_pathaway_progress"></progress>
+            <progress max="50" value="0" class="w-1/4 writing_pathaway_progress"></progress>
+        </div>
+
         <img src="{{ asset('assets/img/home/pathaway_exploration.png') }}" alt="exploration"
             class="absolute inset-0 h-full exploration_pathaway_img opacity-0">
         <img src="{{ asset('assets/img/home/pathaway_profile_building.png') }}" alt="profile building"
@@ -287,18 +298,9 @@
         <img src="{{ asset('assets/img/home/pathaway_writing.png') }}" alt="writing"
             class="absolute inset-0 h-full writing_pathaway_img opacity-0">
 
-        <div class="panel panel-1 relative overflow-hidden w-full h-full">
-            <div class="flex flex-col items-center z-50">
-                <img src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
-                    class="max-w-xs w-full">
-
-                <h4 class="mt-12 font-newprimary font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
-                    EXCELLENCE</h4>
-            </div>
-        </div>
-
-        <div class="panel exploration_pathaway relative">
-            <div class="flex flex-col lg:absolute lg:top-60 lg:left-[420px]">
+        <div class="h-full w-full relative">
+            <div
+                class="flex flex-col absolute translate-y-[120px] lg:top-60 lg:left-[420px] exploration_pathaway_text opacity-0">
                 <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
                     Exploration
                 </h1>
@@ -308,9 +310,8 @@
                     and help students define their unique paths.
                 </h4>
             </div>
-        </div>
-        <div class="panel profile_building_pathaway">
-            <div class="flex flex-col lg:absolute lg:bottom-40 lg:right-32">
+            <div
+                class="flex flex-col absolute translate-y-[120px] lg:bottom-36 lg:right-28  profile_building_pathaway_text opacity-0">
                 <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
                     Profile <br> Building
                 </h1>
@@ -320,9 +321,8 @@
                     compelling and authentic profile for university applications.
                 </h4>
             </div>
-        </div>
-        <div class="panel academic_pathaway">
-            <div class="flex flex-col lg:absolute lg:top-60 lg:left-28">
+            <div
+                class="flex flex-col absolute translate-y-[120px] lg:top-60 lg:left-28 academic_pathaway_text opacity-0">
                 <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
                     Academic
                 </h1>
@@ -332,9 +332,8 @@
                     strategies, we empower students for success in university studies and competitive admissions.
                 </h4>
             </div>
-        </div>
-        <div class="panel writing_pathaway">
-            <div class="flex flex-col lg:absolute lg:bottom-36 lg:right-96">
+            <div
+                class="flex flex-col absolute translate-y-[120px] lg:bottom-36 lg:right-96 writing_pathaway_text opacity-0">
                 <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
                     Writing
                 </h1>
@@ -344,12 +343,35 @@
                     aim to showcase each student's unique qualities, aspirations, and contributions.
                 </h4>
             </div>
+            <div class="panel panel-1 relative overflow-hidden w-full h-full">
+                <div class="flex flex-col items-center z-50">
+                    <img src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
+                        class="max-w-xs w-full">
+
+                    <h4 class="mt-12 font-newprimary font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
+                        EXCELLENCE</h4>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel exploration_pathaway relative">
+        </div>
+
+        <div class="panel profile_building_pathaway">
+        </div>
+
+        <div class="panel academic_pathaway">
+        </div>
+
+        <div class="panel writing_pathaway">
+
         </div>
     </section>
 
 
     {{-- ========================================== Mentors ========================================== --}}
-    <section class="pt-40 pb-24">
+    <section class="pt-40 pb-24" id="mentors">
         <div class="main-container">
             <h1 class="font-newprimary font-bold text-4xl text-dark text-center">OUR MENTORS</h1>
         </div>

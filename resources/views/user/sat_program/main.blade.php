@@ -159,6 +159,7 @@
                     <span>Discover Your Path</span>
                     <div class="desc">
                         <ul class="whitespace-nowrap">
+                        <ul class="whitespace-nowrap">
                             <li>
                                 Figure out your current level
                             </li>
@@ -177,6 +178,7 @@
                     <span>In-Depth Analysis</span>
                     <div class="desc">
                         <ul class="xl:whitespace-nowrap">
+                        <ul class="xl:whitespace-nowrap">
                             <li>
                                 Listing specific details on your SAT strengths and weaknesses
                             </li>
@@ -194,6 +196,7 @@
                         Calendar</span>
                     <div class="desc">
                         <ul class="xl:whitespace-nowrap">
+                        <ul class="xl:whitespace-nowrap">
                             <li>
                                 Develop a plan to tackle your weaknesses while retaining your strengths
                             </li>
@@ -208,6 +211,7 @@
                 <div class="sat-program-s3-item sat-program-s3-inactive relative overflow-hidden">
                     <span>Learn From Expert Tutors</span>
                     <div class="desc">
+                        <ul class="xl:whitespace-nowrap">
                         <ul class="xl:whitespace-nowrap">
                             <li>
                                 Concept lectures on reading, writing and language, and math
@@ -231,6 +235,7 @@
     </section>
 
     {{-- SECTION 4 --}}
+    <div class="py-16 flex flex-col items-center w-full">
     <div class="py-16 flex flex-col items-center w-full">
         <div
             class="md:h-[70vh] w-full flex items-center justify-center bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/new-asset/s4-figure.png')] bg-cover md:bg-center bg-bottom">
