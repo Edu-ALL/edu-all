@@ -159,7 +159,7 @@
                                 <span class="font-semibold text-base">University Transfer</span>
                             </li>
                         </ul>
-                        <a href="#"
+                        <a href="{{ route('admissions_mentoring', app()->getLocale()) }}"
                             class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
                             details</a>
                     </div>
@@ -222,7 +222,7 @@
                                 <span class="font-semibold text-base">TOEFL/IELTS Prep Class</span>
                             </li>
                         </ul>
-                        <a href="#"
+                        <a href="{{ route('academic_test_preparation', app()->getLocale()) }}"
                             class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
                             details</a>
                     </div>
@@ -270,7 +270,7 @@
                             </li>
 
                         </ul>
-                        <a href="#"
+                        <a href="{{ route('passion_project_mentoring', app()->getLocale()) }}"
                             class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
                             details</a>
                     </div>
@@ -650,7 +650,7 @@
                     <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
                         <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                             alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
-                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center mt-10">
+                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
                             {{-- Name --}}
                             <h2 class="font-semibold text-xl font-newprimary text-center">{{ $item->name }}</h2>
                             {{-- Bedge 1 --}}
@@ -729,10 +729,10 @@
             <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                <span class="px-8 md:px-12 py-3 font-newprimary text-base text-white text-center bg-red">
-                    {{ __('pages/home.bottom_btn') }}
-                </span>
+            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                class="px-8 md:px-12 py-3 font-newprimary text-base text-white text-center bg-red hover:scale-110 transition-all">
+                {{ __('pages/home.bottom_btn') }}
+
             </a>
         </div>
     </section>
