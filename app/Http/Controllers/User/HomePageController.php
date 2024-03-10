@@ -20,7 +20,7 @@ class HomePageController extends Controller
         $all_mentor = Mentors::all()->where('mentor_category', 'ALL-In Mentor')->where('mentor_status', 'active');
 
         // Testimoni
-        // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
+        $testimonies = Testimonials::where('testi_status', 'active')->where('lang', $lang)->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
         $event = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->first();
@@ -40,6 +40,7 @@ class HomePageController extends Controller
             'event' => $event,
             'regular_talks' => $regular_talks,
             'success_stories' => $success_stories,
+            'testimonies' => $testimonies,
         ]);
     }
 

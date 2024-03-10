@@ -321,8 +321,7 @@
                     compelling and authentic profile for university applications.
                 </h4>
             </div>
-            <div
-                class="flex flex-col absolute translate-y-[120px] lg:top-60 lg:left-28 academic_pathaway_text opacity-0">
+            <div class="flex flex-col absolute translate-y-[120px] lg:top-60 lg:left-28 academic_pathaway_text opacity-0">
                 <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
                     Academic
                 </h1>
@@ -629,6 +628,57 @@
         </div>
     </section>
 
+    {{-- ================================== Testimony Section  ================================== --}}
+    <section class="py-24">
+        <div class="flex main-container w-full flex-col">
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">WHAT OUR MENTEES & PARENTS
+                SAY</h2>
+        </div>
+        <div class="main-container mb-12 md:my-24">
+            <div class="splide" role="group">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                    </button>
+                </div>
+                <div class="splide__track">
+                    <ul class="splide__list font-newprimary text-black">
+                        @foreach ($testimonies as $testi)
+                            <li class="splide__slide w-full">
+                                <div class="splide__slide__container py-8 px-4 h-full w-full">
+                                    <div
+                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative">
+                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
+                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
+                                            {!! $testi->testi_desc !!}
+                                        </div>
+                                        <div class="mt-4 flex flex-col w-full">
+                                            <div class="px-4 font-bold text-lg leading-5">
+                                                {{ $testi->testi_name }}
+                                            </div>
+                                            <div class="px-4 text-xs font-semibold leading-3">
+                                                {!! $testi->testi_subtitle !!}
+                                            </div>
+                                            <span class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
+                                                {{ ($testi->testi_subcategory != null) ? $testi->testi_subcategory : $testi->testi_category }}
+                                            </span>
+                                            <a href="#"
+                                                class="w-full flex px-4 py-2 bg-newprimary text-right text-sm text-white font-semibold">Read
+                                                more <i class="ml-2 fa-solid fa-chevron-right text-xs text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
@@ -676,7 +726,7 @@
                 item.button.style.width = '7px';
                 item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+                item.button.style.backgroundColor = '#D9D9D9';
             });
         }).mount();
 
@@ -697,7 +747,27 @@
             // `items` contains all dot items
             data.items.forEach(function(item) {
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+                item.button.style.backgroundColor = '#D9D9D9';
+            });
+        }).mount();
+
+        new Splide(splides[2], {
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            autoplay: true,
+            lazyload: true,
+            interval: 4000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[100%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#D9D9D9';
             });
         }).mount();
     </script>
