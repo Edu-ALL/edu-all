@@ -526,7 +526,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .sat-program-s3-inactive .desc {
-    @apply font-newprimary text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-75;
+    @apply font-newprimary text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-300;
 }
 
 .sat-program-s3-inactive .polygon {

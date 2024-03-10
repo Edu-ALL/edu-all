@@ -92,6 +92,9 @@ module.exports = {
                 // resource
                 "success-stories-header":
                     "url('../../public/assets/img/banner/Success Stories Banner.webp')",
+
+                // Global
+                "bottom-sign-up-banner-2":  "url('../../public/assets/img/banner/signup-banner.png')",
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
