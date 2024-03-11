@@ -142,8 +142,9 @@
                                     <div class="flex flex-col rounded-3xl shadow-md relative mt-[5rem]">
                                         {{-- Mentor Image --}}
                                         <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                            alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center absolute -top-[10rem]">
-                                        <div class="flex flex-col px-4 lg:mt-[6rem] mt-[10rem] overflow-visible">
+                                            alt="{{ $mentor->mentor_alt }}"
+                                            class="bg-cover bg-center absolute -top-[10rem]">
+                                        <div class="flex flex-col px-4 lg:mt-[11rem] mt-[10rem] overflow-visible">
                                             {{-- Mentor Name --}}
                                             <h2 class="font-newprimary text-center font-semibold text-2xl text-dark mt-4">
                                                 {{ $mentor->mentor_fullname }}
@@ -151,13 +152,13 @@
                                             <span class="font-newprimary text-newprimary text-xs text-center">
                                                 {!! $mentor->mentor_graduation !!}
                                             </span>
-                
+
                                             <ul class="flex flex-col gap-2 mt-5">
                                                 @if ($mentor->value_1)
                                                     <li class="flex items-start gap-4">
                                                         <div class="w-4 h-4">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
+                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
                                                                     stroke-linejoin="round"></g>
@@ -168,7 +169,8 @@
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                                        <h4
+                                                            class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
                                                             {{ $mentor->value_1 }}
                                                         </h4>
                                                     </li>
@@ -176,8 +178,8 @@
                                                 @if ($mentor->value_2)
                                                     <li class="flex items-start gap-4">
                                                         <div class="w-4 h-4">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
+                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
                                                                     stroke-linejoin="round"></g>
@@ -188,7 +190,8 @@
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                                        <h4
+                                                            class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
                                                             {{ $mentor->value_2 }}
                                                         </h4>
                                                     </li>
@@ -196,8 +199,8 @@
                                                 @if ($mentor->value_3)
                                                     <li class="flex items-start gap-4">
                                                         <div class="w-4 h-4">
-                                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
+                                                            <svg width="20px" height="20px" viewBox="0 0 24 24"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
                                                                     stroke-linejoin="round"></g>
@@ -208,17 +211,19 @@
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                        <h4 class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
+                                                        <h4
+                                                            class="font-newprimary text-[.75rem] font-semibold text-dark leading-5">
                                                             {{ $mentor->value_3 }}
                                                         </h4>
                                                     </li>
                                                 @endif
                                             </ul>
                                         </div>
-                
+
                                         <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
                                             class="mt-2 mb-4 flex flex-col justify-center items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
-                                            <span class="font-newprimary font-semibold text-xs text-newprimary leading-none">Get
+                                            <span
+                                                class="font-newprimary font-semibold text-xs text-newprimary leading-none">Get
                                                 to
                                                 know {{ $mentor->mentor_fullname }}</span>
                                             <div class="w-24 h-[1px] bg-newprimary group-hover:invisible"></div>
