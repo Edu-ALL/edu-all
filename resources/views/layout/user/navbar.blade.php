@@ -173,10 +173,10 @@
                                     <a href="{{ url(app()->getLocale()) }}/resources/upcoming-events"
                                         class="child_child_nav_link">{{ __('pages/navbar.upcoming_events') }}</a>
                                 </li>
-                                <li class="child_nav group">
+                                {{-- <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/resources/guidebook"
                                         class="child_child_nav_link">{{ __('pages/navbar.guidebooks') }}</a>
-                                </li>
+                                </li> --}}
                                 <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/resources/testimonial"
                                         class="child_child_nav_link">{{ __('pages/navbar.testimonial') }}</a>
@@ -185,11 +185,11 @@
                                     <a href="https://project-showcase.all-inedu.com/" target="_blank"
                                         class="child_child_nav_link">{{ __('pages/navbar.showcase') }}</a>
                                 </li>
-                                <li class="child_nav group">
+                                {{-- <li class="child_nav group">
                                     <a href="{{url(app()->getLocale())}}/webinar-workshop" target="_blank"
                                         class="child_child_nav_link">{{ __('pages/navbar.webinar') }}
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
 

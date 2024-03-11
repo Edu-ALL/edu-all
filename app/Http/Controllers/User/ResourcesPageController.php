@@ -35,9 +35,25 @@ class ResourcesPageController extends Controller
     {
         $lang = substr(app()->getLocale(), 3, 2);
         $region = substr(app()->getLocale(), 0, 2);
-        $events = UpcomingEvents::latest()->where('event_status', 'publish')->where('lang', $lang)->where('region',$region)->get();
+
+        // Upcomming Event
+        $events = UpcomingEvents::where('event_status', 'publish')
+            ->where('category', 'Event')
+            ->where('lang', $lang)
+            ->where('region', $region)
+            ->orderBy('event_date', 'ASC')->get();
+
+        // Regular Talks
+        $regular_talks = UpcomingEvents::where('event_status', 'publish')
+            ->where('category', 'Regular Talk')
+            ->where('lang', $lang)
+            ->where('region', $region)
+            ->orderBy('event_date', 'ASC')->get();
+
+
         return view('user.upcoming_events.main', [
-            'events' => $events
+            'events' => $events,
+            'talks' => $regular_talks
         ]);
     }
 

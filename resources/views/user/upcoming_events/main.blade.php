@@ -20,8 +20,8 @@
                             class="font-newprimary font-light text-lg text-white lg:text-start text-center leading-6 mb-5 md:text-xl">
                             {{ __('pages/resources/upcoming_events.body') }}
                         </p>
-                        <a href="{{ asset('assets/files/upcoming-event/ALL IN CALENDAR 2023 WEB.pdf') }}" target="_blank"
-                            class="mt-5">
+                        <a href="{{ asset('assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                            target="_blank" class="mt-5">
                             <span class="px-6 py-2 font-newprimary font-semibold text-base text-white bg-red shadow-md">
                                 <i class="fa-solid fa-file-pdf mr-2"></i>
                                 {{ __('pages/resources/upcoming_events.btn') }}
@@ -36,50 +36,39 @@
     {{-- ================================== Events Section  ================================== --}}
     <section class="py-10">
         <div class="main-container">
-            <div class="flex flex-col gap-y-4">
+            <h2 class="lg:text-4xl text-2xl text-start mb-5">Upcoming Events</h2>
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-1 lg:grid-cols-3">
                 @foreach ($events as $event)
-                    {{-- ================================== Modal Detail Section  ================================== --}}
-                    <section class="event__detail--wrapper hidden fixed top-0 left-0 w-screen h-screen z-40">
-                        <div class="flex justify-center items-center w-full h-full bg-black/70">
-                            <div class="flex flex-col w-full max-w-3xl mx-6 bg-white rounded-md overflow-hidden z-50 ">
-                                <div class="flex justify-between items-center px-6 py-4 bg-[#4054b2]">
-                                    <h5 class="font-newprimary font-semibold text-lg text-white">{{ $event->event_title }}
-                                    </h5>
-                                    <div class="event__detail--close text-white text-2xl cursor-pointer"><i
-                                            class="fa-solid fa-xmark"></i></div>
-                                </div>
-                                <div class="px-6 py-4 font-newprimary text-base text-[#7e7e7e] leading-7 bg-white">
-                                    {!! $event->event_detail !!}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <a href="{{ $event->event_rsvp_link }}" class="cursor-pointer" target="_blank">
+                        <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                            alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
-                    <div
-                        class="px-12 py-6 flex flex-col items-stretch gap-8 @if ($loop->iteration % 2 == 0) bg-red @else bg-newprimary @endif md:flex-row">
-                        <div class="flex justify-center items-center w-full md:w-1/6">
-                            <h4 class="font-newprimary font-semibold text-2xl text-white text-center">{{ $event->event_date }}
-                            </h4>
-                        </div>
-                        <img data-original="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                            alt="{{ $event->event_alt }}" class="w-full object-contain md:w-1/6">
-                        <div class="flex flex-col justify-between gap-3 w-full py-4 md:w-4/6">
-                            <h2 class="font-newprimary font-semibold text-3xl text-white text-center md:text-left">
-                                {{ $event->event_title }}</h2>
-                            <div class="font-newprimary font-light text-lg text-white text-center md:text-left">
-                                {!! $event->event_subtitle !!}</div>
-                            <div class="flex flex-col gap-x-4 gap-y-6 mt-2 mb-2 items-center md:flex-row">
-                                <div class="event__detail--btn cursor-pointer"><span
-                                        class="px-6 py-3 font-newprimary font-medium text-base text-white bg-red shadow-md">Click
-                                        for more info <i class="fa-regular fa-note-sticky ml-2"></i></span></div>
-                                @if ($event->event_rsvp_link != null)
-                                    <a href="{{ $event->event_rsvp_link }}" target="_blank"><span
-                                            class="px-6 py-3 font-newprimary font-medium text-base text-white bg-red shadow-md">RSVP
-                                            <i class="fa-regular fa-circle-right ml-2"></i></span></a>
-                                @endif
+    <section class="py-10">
+        <div class="main-container">
+            <h2 class="lg:text-4xl text-2xl text-start mb-5">Talk Sessions</h2>
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-1 lg:grid-cols-2">
+                @foreach ($talks as $regular_talk)
+                    <a href="{{ $regular_talk->event_rsvp_link }}" class="cursor-pointer" target="_blank">
+                        <div class="relative">
+                            <img src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                alt="{{ $regular_talk->event_alt }}" class="w-full object-cover object-center h-72">
+
+                            <div class="absolute top-0 left-5 h-60">
+                                <div class="flex flex-col justify-end h-full mt-8">
+                                    <h4 class="font-newprimary text-newyellow text-lg">
+                                        {{ $regular_talk->event_date }}</h4>
+                                    <h4 class="font-newprimary text-white text-2xl font-bold mb-0">
+                                        {{ html_entity_decode(substr(strip_tags($regular_talk->event_title), 0, 80)) }}
+                                    </h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>

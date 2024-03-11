@@ -371,15 +371,18 @@
         </div>
     </section>
 
-    {{-- ================================== Testimony Section  ================================== --}}
+    {{-- ====================================  Testimonial Section ========================================= --}}
+    @if(count($testimonies) > 0)
     <section class="pt-10 pb-16">
-        <div class="flex flex-col items-center main-container">
-            <h2
-                class="font-newprimary font-black text-2xl text-newprimary text-center uppercase leading-6 md:text-4xl md:text-left">
-                {{ __('pages/programs/passion_project_mentoring.testimony') }}</h2>
-            <div class="relative w-full mt-8">
-                <div class="splide" aria-labelledby="carousel-heading">
-                    <ul class="splide__pagination"></ul>
+        <div class="main-container">
+            <div class="flex flex-col">
+                <div class="flex justify-center">
+                    <h2
+                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
+                        {{ __('pages/programs/univ_transfer_program.testimony_title') }}
+                    </h2>
+                </div>
+                <div class="mt-16 splide" role="group">
                     <div class="splide__arrows">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
                             <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
@@ -389,26 +392,30 @@
                         </button>
                     </div>
                     <div class="splide__track">
-                        <ul class="splide__list">
+                        <ul class="splide__list font-newprimary text-black px-8">
                             @foreach ($testimonies as $testi)
-                                <li class="splide__slide w-full">
-                                    <div class="splide__slide__container h-full">
+                                <li class="splide__slide w-full pb-8">
+                                    <div class="splide__slide__container py-8 px-4 h-full w-full ">
                                         <div
-                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
-                                            <div class="flex flex-col">
-                                                <img data-original="{{ asset('assets/logo/quote.png') }}"
-                                                    alt="EduALL Testimony" class="w-7 mb-3 h-auto">
-                                                <div class="font-newprimary text-sm text-white text-justify">
-                                                    {!! $testi->testi_desc !!}
-                                                </div>
+                                            class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
+                                            <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
+                                            <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
+                                                {!! $testi->testi_desc !!}
                                             </div>
-                                            <div class="mt-4 flex flex-col">
-                                                <div class="font-newprimary font-semibold text-base text-yellow">
+                                            <div class="mt-4 flex flex-col w-full">
+                                                <div class="px-4 font-bold text-lg leading-5">
                                                     {{ $testi->testi_name }}
                                                 </div>
-                                                <div class="font-newprimary text-sm text-white">
+                                                <div class="px-4 text-xs font-semibold leading-3">
                                                     {!! $testi->testi_subtitle !!}
                                                 </div>
+                                                <span class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
+                                                    {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
+                                                </span>
+                                                <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                    class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
+                                                    more <i
+                                                        class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -420,6 +427,7 @@
             </div>
         </div>
     </section>
+    @endif
 
 
     {{-- ================================== Bottom Section ================================== --}}

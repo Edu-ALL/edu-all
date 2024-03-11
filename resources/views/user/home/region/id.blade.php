@@ -527,7 +527,7 @@
                                             <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                 alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
 
-                                            <a href="#"
+                                            <a href="{{ route('upcoming_events', app()->getLocale()) }}"
                                                 class="absolute bottom-0 w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more
                                                 detail</a>
                                         </div>
@@ -540,7 +540,7 @@
 
                 {{-- Upcomming Event --}}
                 <div class="flex flex-col">
-                    {{-- Regular Talk --}}
+                    {{-- Talk Sessions --}}
                     @if (count($regular_talks) > 0)
                         <div class="flex flex-col items-center justify-between relative">
                             <div class="splide" role="group">
@@ -551,7 +551,7 @@
                                                 <div class="splide__slide__container">
                                                     <div
                                                         class="flex flex-col absolute top-8 left-8 pr-8 justify-between h-60">
-                                                        <h4 class="font-newprimary text-newyellow text-lg">Regular Talk
+                                                        <h4 class="font-newprimary text-newyellow text-lg">Talk Sessions
                                                         </h4>
                                                         <div class="flex flex-col">
                                                             <h4 class="font-newprimary text-newyellow text-lg">
@@ -572,22 +572,22 @@
                             </div>
 
                             <div class="px-6 w-full">
-                                <a href="#"
+                                <a href="{{ route('upcoming_events', app()->getLocale()) }}"
                                     class="w-full block py-3 bg-newprimary font-newprimary text-center text-white text-base">more
                                     events
                                 </a>
                             </div>
                         </div>
                     @else
-                        <div class="flex flex-col w-full relative text-start px-6 mb-10">
-                            <h4 class="font-newprimary text-newyellow text-lg">Regular Talks</h4>
+                        <div class="flex flex-col w-full relative text-start px-6">
+                            <h4 class="font-newprimary text-newyellow text-lg">Talk Sessionss</h4>
                             <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
                     @endif
 
                     {{-- More Date --}}
                     @if (count($important_dates) > 0)
-                        <div class="flex flex-col items-center justify-between">
+                        <div class="flex flex-col items-center justify-between mt-10">
                             <div class="h-max-60 flex flex-col w-full py-8 px-6">
                                 <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
                                 <ul class="mt-2 overflow-y-auto overflow-x-hidden">
@@ -610,7 +610,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="flex flex-col w-full relative text-start px-6">
+                        <div class="flex flex-col w-full relative text-start px-6 mt-10">
                             <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
                             <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
@@ -708,7 +708,7 @@
                                             <span class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
                                                 {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
                                             </span>
-                                            <a href="#"
+                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
                                                 class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
                                                 more <i
                                                     class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>

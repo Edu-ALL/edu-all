@@ -4,7 +4,7 @@ return [
     'meta_description' => 'You have dreams entering world top uni? Check this page & participate to our free & premium events & bootcamps.',
 
     'title' => 'Upcoming Events',
-    'body' => 'Download Our 2023 Student-Friendly Calendar',
+    'body' => 'Download Our 2024 Student-Friendly Calendar',
     'btn' => "Download",
 
     'bottom_title' => 'For more info and registration',

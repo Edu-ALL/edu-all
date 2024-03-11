@@ -26,7 +26,8 @@
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
-                        <h2 class="mt-16 font-newprimary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                        <h2
+                            class="mt-16 font-newprimary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Admission <br> Mentoring</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -43,24 +44,29 @@
                                 <div class="splide__track md:mx-14">
                                     <ul class="splide__list">
                                         @foreach ($admission_mentoring as $testi)
-                                            <li class="splide__slide w-full">
-                                                <div class="splide__slide__container h-full">
+                                            <li class="splide__slide w-full pb-8">
+                                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
                                                     <div
-                                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
-                                                        <div class="flex flex-col">
-                                                            <img src="{{ asset('assets/logo/quote.png') }}" alt="Quote"
-                                                                class="w-7 mb-3 h-auto" loading="lazy">
-                                                            <div class="font-newprimary text-sm text-white text-justify">
-                                                                {!! $testi->testi_desc !!}
-                                                            </div>
+                                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
+                                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
+                                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
+                                                            {!! $testi->testi_desc !!}
                                                         </div>
-                                                        <div class="mt-4 flex flex-col">
-                                                            <div class="font-newprimary font-semibold text-base text-yellow">
+                                                        <div class="mt-4 flex flex-col w-full">
+                                                            <div class="px-4 font-bold text-lg leading-5">
                                                                 {{ $testi->testi_name }}
                                                             </div>
-                                                            <div class="font-newprimary text-sm text-white">
+                                                            <div class="px-4 text-xs font-semibold leading-3">
                                                                 {!! $testi->testi_subtitle !!}
                                                             </div>
+                                                            <span
+                                                                class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
+                                                                {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
+                                                            </span>
+                                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
+                                                                more <i
+                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -70,7 +76,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -80,7 +85,8 @@
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
-                        <h2 class="mt-16 font-newprimary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                        <h2
+                            class="mt-16 font-newprimary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Experiential <br> Learning</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -97,34 +103,29 @@
                                 <div class="splide__track md:mx-14">
                                     <ul class="splide__list">
                                         @foreach ($experiential_learning as $testi)
-                                            <li class="splide__slide w-full">
-                                                <div class="splide__slide__container h-full">
+                                            <li class="splide__slide w-full pb-8">
+                                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
                                                     <div
-                                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
-                                                        <div class="flex flex-col">
-                                                            <img src="{{ asset('assets/logo/quote.png') }}" alt="Quote"
-                                                                class="w-7 mb-3 h-auto" loading="lazy">
-                                                            <div class="font-newprimary text-sm text-white text-justify">
-                                                                {!! $testi->testi_desc !!}
-                                                            </div>
+                                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
+                                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
+                                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
+                                                            {!! $testi->testi_desc !!}
                                                         </div>
-                                                        <div class="flex justify-between items-center mt-12">
-                                                            <div class="flex flex-col">
-                                                                <h5
-                                                                    class="font-newprimary font-semibold text-base text-yellow">
-                                                                    {{ $testi->testi_name }}
-                                                                </h5>
-                                                                <span class="font-newprimary text-sm text-white">
-                                                                    {!! $testi->testi_subtitle !!}
-                                                                </span>
+                                                        <div class="mt-4 flex flex-col w-full">
+                                                            <div class="px-4 font-bold text-lg leading-5">
+                                                                {{ $testi->testi_name }}
                                                             </div>
-                                                            <div class="w-24 h-24 rounded-full">
-                                                                @if ($testi->testi_thumbnail)
-                                                                    <img src="{{ asset('uploaded_files/testimonial/' . $testi->created_at->format('Y') . '/' . $testi->created_at->format('m') . '/' . $testi->testi_thumbnail) }}"
-                                                                        alt="{{ $testi->testi_thumbnail }}" loading="lazy"
-                                                                        class="w-full h-full object-contain object-center">
-                                                                @endif
+                                                            <div class="px-4 text-xs font-semibold leading-3">
+                                                                {!! $testi->testi_subtitle !!}
                                                             </div>
+                                                            <span
+                                                                class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
+                                                                {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
+                                                            </span>
+                                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
+                                                                more <i
+                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -144,7 +145,8 @@
                         <div class="absolute left-0 top-0">
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
-                        <h2 class="mt-16 font-newprimary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                        <h2
+                            class="mt-16 font-newprimary font-bold text-6xl text-[#6696E2] text-center md:ml-16 md:text-left">
                             Academic <br> Preparation</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -161,24 +163,29 @@
                                 <div class="splide__track md:mx-14">
                                     <ul class="splide__list">
                                         @foreach ($academic_preparation as $testi)
-                                            <li class="splide__slide w-full">
-                                                <div class="splide__slide__container h-full">
+                                            <li class="splide__slide w-full pb-8">
+                                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
                                                     <div
-                                                        class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
-                                                        <div class="flex flex-col">
-                                                            <img src="{{ asset('assets/logo/quote.png') }}"
-                                                                loading="lazy" alt="Quote" class="w-7 mb-3 h-auto">
-                                                            <div class="font-newprimary text-sm text-white text-justify">
-                                                                {!! $testi->testi_desc !!}
-                                                            </div>
+                                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
+                                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
+                                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
+                                                            {!! $testi->testi_desc !!}
                                                         </div>
-                                                        <div class="mt-4 flex flex-col">
-                                                            <div class="font-newprimary font-semibold text-base text-yellow">
+                                                        <div class="mt-4 flex flex-col w-full">
+                                                            <div class="px-4 font-bold text-lg leading-5">
                                                                 {{ $testi->testi_name }}
                                                             </div>
-                                                            <div class="font-newprimary text-sm text-white">
+                                                            <div class="px-4 text-xs font-semibold leading-3">
                                                                 {!! $testi->testi_subtitle !!}
                                                             </div>
+                                                            <span
+                                                                class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
+                                                                {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
+                                                            </span>
+                                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
+                                                                more <i
+                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
