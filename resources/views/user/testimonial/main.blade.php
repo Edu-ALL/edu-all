@@ -63,10 +63,10 @@
                                                                 class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
                                                                 {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
                                                             </span>
-                                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                            {{-- <a href="{{ route('testimonial', app()->getLocale()) }}"
                                                                 class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
                                                                 more <i
-                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
+                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -122,10 +122,10 @@
                                                                 class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
                                                                 {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
                                                             </span>
-                                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                            {{-- <a href="{{ route('testimonial', app()->getLocale()) }}"
                                                                 class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
                                                                 more <i
-                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
+                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -182,10 +182,10 @@
                                                                 class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
                                                                 {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
                                                             </span>
-                                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
+                                                            {{-- <a href="{{ route('testimonial', app()->getLocale()) }}"
                                                                 class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
                                                                 more <i
-                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
+                                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a> --}}
                                                         </div>
                                                     </div>
                                                 </div>
