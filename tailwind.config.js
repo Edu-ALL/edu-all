@@ -43,6 +43,12 @@ module.exports = {
                 "undergraduate-do":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
+                // Academic and test preparation
+                "academic-tutoring-header":
+                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.webp')",
+                "sat-prep-header":
+                    "url('../../public/assets/img/academic_test_preparation/sat_program/new-asset/banner.webp')",
+
                 // Transfer
                 "transfer-header":
                     "url('../../public/assets/img/admission mentoring/Master transfer/Transfer.webp')",
@@ -86,6 +92,9 @@ module.exports = {
                 // resource
                 "success-stories-header":
                     "url('../../public/assets/img/banner/Success Stories Banner.webp')",
+
+                // Global
+                "bottom-sign-up-banner-2":  "url('../../public/assets/img/banner/signup-banner.png')",
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
@@ -99,6 +108,7 @@ module.exports = {
                 newyellow: "#FED017",
                 dark: "#000000",
                 red: "#FF2519",
+                newred: "#BF1C13",
             },
         },
     },

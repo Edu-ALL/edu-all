@@ -88,7 +88,7 @@ body {
 }
 
 .absolute-center {
-    @apply absolute left-[50%] -translate-x-[50%];
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
 .my-btn {
@@ -383,4 +383,185 @@ h3 {
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     display: none;
+}
+
+/* Polygon */
+.polygon-shape {
+    clip-path: polygon(0 0, 100% 0%, 100% 60%, 70% 100%, 0 100%);
+}
+
+/* Acad Tutoring */
+.acad-tutor-s2-item {
+    @apply transition-all duration-500 h-full;
+}
+.acad-tutor-s2-active {
+    @apply w-full h-2/5 md:h-full md:w-3/6;
+}
+
+.acad-tutor-s2-active span {
+    @apply font-newprimary text-3xl text-white font-semibold absolute bottom-4 md:bottom-16 text-center right-6 z-10 w-1/2 transition-all duration-500;
+}
+
+.acad-tutor-s2-active .polygon {
+    @apply absolute h-full w-full md:h-[180%] bg-newprimary left-[15%] md:left-1/4 mix-blend-multiply bottom-0 transition-all  duration-500;
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.acad-tutor-s2-active img {
+    @apply w-full h-full object-cover;
+}
+
+.acad-tutor-s2-inactive {
+    @apply w-full h-1/5 md:h-full md:w-1/6 cursor-pointer;
+}
+
+.acad-tutor-s2-inactive span {
+    @apply font-newprimary text-3xl text-white font-semibold absolute bottom-4 text-center right-4 z-20 transition-all duration-500;
+}
+
+.acad-tutor-s2-inactive .polygon {
+    @apply absolute  h-1/2 w-full bg-newprimary left-1/4  mix-blend-multiply z-10 bottom-0  transition-all duration-500;
+    clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.acad-tutor-s2-inactive img {
+    @apply w-full h-full object-cover opacity-50 transition-all duration-300;
+}
+
+.acad-tutor-s2-inactive:hover.acad-tutor-s2-inactive img {
+    @apply w-full h-full object-cover scale-105 opacity-75;
+}
+
+.endless-scroll {
+    animation: scrollText 30s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.acad-tutor-s3-polygon {
+    clip-path: polygon(50% 10%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+}
+
+.acad-tutor-s4-item {
+    @apply transition-all duration-500 h-full;
+}
+.acad-tutor-s4-active {
+    @apply h-2/5 w-full md:h-full md:w-3/6;
+}
+
+.acad-tutor-s4-active span {
+    @apply px-4 font-newprimary text-xl md:text-3xl uppercase text-white font-bold tracking-wide absolute bottom-[18%] text-center z-10 w-full transition-all duration-[450];
+}
+
+.acad-tutor-s4-active .desc {
+    @apply font-newprimary text-sm px-2 md:text-base text-white font-light absolute top-[85%] text-center z-10 w-full opacity-100 transition-all duration-1000;
+}
+
+.acad-tutor-s4-active .polygon {
+    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all  duration-500;
+    clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%);
+}
+
+.acad-tutor-s4-active img {
+    @apply h-full w-full object-cover;
+}
+.acad-tutor-s4-inactive {
+    @apply cursor-pointer h-1/5 w-full md:h-full md:w-1/6;
+}
+
+.acad-tutor-s4-inactive span {
+    @apply font-newprimary text-xl uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[14%] text-center z-20 w-full transition-all duration-500;
+}
+
+.acad-tutor-s4-inactive .desc {
+    @apply font-newprimary text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-100;
+}
+
+.acad-tutor-s4-inactive .polygon {
+    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all duration-500 z-10;
+    clip-path: polygon(85% 40%, 100% 40%, 100% 100%, 0 100%, 0 40%);
+}
+
+.acad-tutor-s4-inactive img {
+    @apply h-full w-full object-cover opacity-50 transition-all duration-300;
+}
+
+.acad-tutor-s4-inactive:hover.acad-tutor-s4-inactive img {
+    @apply w-full h-full object-cover scale-105 opacity-75;
+}
+
+/* SAT PROGRAM */
+.sat-program-s3-item {
+    @apply transition-all duration-500 h-full;
+}
+.sat-program-s3-active {
+    @apply h-2/5 w-full md:h-full md:w-3/6;
+}
+
+.sat-program-s3-active span {
+    @apply px-4 font-newprimary text-xl md:text-[24px] uppercase text-white font-bold tracking-wide absolute bottom-[22%] text-center z-10 w-full transition-all duration-[450];
+}
+
+.sat-program-s3-active .desc {
+    @apply flex flex-col items-start font-newprimary text-sm px-2 md:text-[13px] text-white font-light absolute left-0 top-[78%] text-left z-10 w-full opacity-100 transition-all duration-1000;
+}
+
+.sat-program-s3-active .desc ul {
+    @apply px-8 list-disc;
+}
+
+.sat-program-s3-active .polygon {
+    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all  duration-500;
+    clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%);
+}
+
+.sat-program-s3-active img {
+    @apply h-full w-full object-cover;
+}
+.sat-program-s3-inactive {
+    @apply cursor-pointer h-1/5 w-full md:h-full md:w-1/6;
+}
+
+.sat-program-s3-inactive span {
+    @apply px-2 font-newprimary text-base uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[18%] translate-y-[50%] text-center z-20 w-full transition-all duration-100;
+}
+
+.sat-program-s3-inactive .desc {
+    @apply font-newprimary text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-300;
+}
+
+.sat-program-s3-inactive .polygon {
+    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all duration-500 z-10;
+    clip-path: polygon(85% 40%, 100% 40%, 100% 100%, 0 100%, 0 40%);
+}
+
+.sat-program-s3-inactive img {
+    @apply h-full w-full object-cover opacity-50 transition-all duration-300;
+}
+
+.sat-program-s3-inactive:hover.sat-program-s3-inactive img {
+    @apply w-full h-full object-cover scale-105 opacity-75;
+}
+
+progress::-webkit-progress-bar {
+    @apply bg-transparent;
+}
+
+progress::-webkit-progress-value {
+    @apply bg-white;
+}
+
+progress::-moz-progress-bar {
+    @apply bg-transparent;
+}
+
+progress::-ms-fill {
+    @apply bg-newprimary;
 }

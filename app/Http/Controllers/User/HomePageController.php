@@ -26,7 +26,7 @@ class HomePageController extends Controller
             ->where('lang', $lang);
 
         // Testimoni
-        // $testimonies = Testimonials::where('testi_status', 'active')->inRandomOrder()->limit(5)->get();
+        $testimonies = Testimonials::where('testi_status', 'active')->where('lang', $lang)->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
         $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->where('lang', $lang)->orderBy('event_date','ASC')->get();
@@ -51,6 +51,7 @@ class HomePageController extends Controller
             'regular_talks' => $regular_talks,
             'important_dates' => $important_dates,
             'success_stories' => $success_stories,
+            'testimonies' => $testimonies,
         ]);
     }
 
