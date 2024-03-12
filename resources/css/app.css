@@ -565,3 +565,72 @@ progress::-moz-progress-bar {
 progress::-ms-fill {
     @apply bg-newprimary;
 }
+
+.acad-program-our-programs .item-back {
+    @apply h-16 absolute left-[50%] top-[5%] -translate-x-1/2 -translate-y-full z-10 grayscale transition-all duration-500;
+}
+.acad-program-our-programs .item-left {
+    @apply h-24 absolute left-[25%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-20 grayscale transition-all duration-500;
+}
+.acad-program-our-programs .item-right {
+    @apply h-24 absolute left-[75%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-20 grayscale transition-all duration-500;
+}
+.acad-program-our-programs .item-front {
+    @apply h-64 absolute left-[50%] top-[55%] -translate-x-1/2 -translate-y-1/2 z-40 transition-all duration-500;
+}
+
+.acad-program-our-programs .item-text {
+    @apply absolute inset-0 flex flex-col items-center translate-y-1/4 transition-all duration-[1s];
+}
+
+.acad-program-acad-tutor-item {
+    @apply transition-all duration-500 h-full;
+}
+.acad-program-acad-tutor-active {
+    @apply h-2/5 w-full md:h-full md:w-3/6;
+}
+
+.acad-program-acad-tutor-active span {
+    @apply px-4 font-newprimary text-xl md:text-[24px] uppercase text-newprimary font-bold tracking-wide absolute bottom-[92%] text-center z-10 w-full transition-all duration-500;
+}
+
+.acad-program-acad-tutor-active .desc {
+    @apply flex items-start font-newprimary text-lg px-2 md:text-[13px] text-white font-light absolute left-0 top-[67%] text-left z-10 w-full opacity-100 transition-all duration-1000;
+}
+
+.acad-program-acad-tutor-active .desc ul {
+    @apply px-8 list-disc;
+}
+
+.acad-program-acad-tutor-active .polygon {
+    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all  duration-500;
+    clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%);
+}
+
+.acad-program-acad-tutor-active img {
+    @apply h-full w-full object-cover;
+}
+.acad-program-acad-tutor-inactive {
+    @apply cursor-pointer h-1/5 w-full md:h-full md:w-1/6;
+}
+
+.acad-program-acad-tutor-inactive span {
+    @apply px-2 font-newprimary text-xl uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[18%] translate-y-[50%] text-center z-20 w-full transition-all duration-500;
+}
+
+.acad-program-acad-tutor-inactive .desc {
+    @apply font-newprimary text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-300;
+}
+
+.acad-program-acad-tutor-inactive .polygon {
+    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all duration-500 z-10;
+    clip-path: polygon(85% 40%, 100% 40%, 100% 100%, 0 100%, 0 40%);
+}
+
+.acad-program-acad-tutor-inactive img {
+    @apply h-full w-full object-cover opacity-50 transition-all duration-300;
+}
+
+.acad-program-acad-tutor-inactive:hover.acad-program-acad-tutor-inactive img {
+    @apply w-full h-full object-cover scale-105 opacity-75;
+}

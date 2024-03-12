@@ -44,6 +44,8 @@ module.exports = {
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
                 // Academic and test preparation
+                "general-acad-header":
+                    "url('../../public/assets/img/academic_test_preparation/new-asset/banner.png')",
                 "academic-tutoring-header":
                     "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.webp')",
                 "sat-prep-header":
