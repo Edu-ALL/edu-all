@@ -5,7 +5,7 @@ return [
     'qna_list' => [
         [
             'question' => 'When does the SAT Diagnostic Test happen and how long does it last?',
-            'answer' => 'The SAT Diagnostic Test happens when your availability matches the proctor\'s availability. Our Education Coordinator will help you to arrange the test schedule. The test will take at least 3 hours and 30 minutes maximum via an online meeting.',
+            'answer' => 'The SAT Diagnostic Test happens when your availability matches the proctor\'s availability. Our Education Coordinator will help you to arrange the test schedule. The test will take at least 3 hours and 30 minutes maximum via online meeting.',
         ],
         [
             'question' => 'What happens during the SAT Diagnostic Test?',
@@ -22,7 +22,7 @@ return [
         ],
         [
             'question' => 'What happens after the SAT Diagnostic Test?',
-            'answer' => 'After the Diagnostic Test, our Education Coordinator or Client Management team will get back to you and discuss your SAT result within 3 working days. The result will describe the key answer of each section and also your score summary, so you will know your strength and what you can improve. If you are interested in joining our SAT Prep program, you may choose your class type and start your sessions with our tutor.',
+            'answer' => 'After the Diagnostic Test, our Education Coordinator or Client Management team will get back to you and discuss your SAT result within 3 working days. The result will describe the key answer of each section and also your score summary, so you will know your strengths and what you can improve. If you are interested in joining our SAT Prep program, you may choose your class type and start your sessions with our tutor.',
         ],
     ],
 ];

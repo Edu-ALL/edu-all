@@ -9,11 +9,11 @@ return [
         ],
         [
             'question' => 'What happens during a consultation?',
-            'answer' => 'As this is our first meeting with you, we will make sure you got the idea of what happens in the university application process and align it with your needs and current profile. You will be assessed based on our four pillars of university application: exploration, academic performance, personal brand, and writing skill.',
+            'answer' => 'As this is our first meeting with you, we will make sure you get an idea of what happens in the university application process and align it with your needs and current profile. <br/> <br/> You will be assessed based on our four pillars of university application: exploration, academic performance, personal brand, and writing skills.',
         ],
         [
-            'question' => 'Whom will I talk to in a consultation?',
-            'answer' => 'Our top-notch mentors will be there to show you how you can get into your dream universities and the ways that EduALL could help you with.',
+            'question' => 'Who will I talk to in a consultation?',
+            'answer' => 'Our top-notch mentors will be there to show you how you can get into your dream universities and the ways that EduALL could help you.',
         ],
         [
             'question' => 'What happens after a consultation?',

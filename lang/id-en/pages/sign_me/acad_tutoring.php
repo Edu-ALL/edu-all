@@ -7,11 +7,11 @@ return [
     'qna_list' => [
         [
             'question' => 'When does the free trial happen and how long does it last?',
-            'answer' => 'The free trial happens when your availability matches the tutor\'s availability. Our Education Coordinator will help you to set the schedule, and the session will take 1 hour 30 minutes via an online meeting.',
+            'answer' => 'The free trial happens when your availability matches the tutor\'s availability. Our Education Coordinator will help you to set the schedule and the session will take 1 hour 30 minutes via online meeting.',
         ],
         [
             'question' => 'What happens during a free trial?',
-            'answer' => 'As this is our first meeting with you, we will make sure you get an idea of how your academic performance could affect you in the university application process and align it with your current academic state. Then you will be introduced to our academic prep programs, and you will experience our tutors’ way of teaching through a weakness-targeting strategy, tailored, and hands-on learning style.',
+            'answer' => 'As this is our first meeting, we will ensure you get an idea of how your academic performance could affect you in the university application process and align it with your current academic state. <br/> <br/> Then you will be introduced to our academic prep programs and you will experience our tutors’ way of teaching through a weakness-targeting strategy, tailored, and hands-on learning style.',
         ],
         [
             'question' => 'What should I do in the free trial?',

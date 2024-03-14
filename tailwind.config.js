@@ -19,6 +19,7 @@ module.exports = {
                 pathaway: "url('../../public/assets/img/home/pathaway.png')",
 
                 // Sign me
+                "sign-me-banner":"url('../../public/assets/img/sign-me/banner/form-banner.webp')",
                 "sign-me-adm-mentoring":
                     "url('../../public/assets/img/sign-me/banner/adm-mentoring.png')",
                 "sign-me-acad-tutor":

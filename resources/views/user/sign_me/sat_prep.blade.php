@@ -7,17 +7,15 @@
 @endsection
 
 @section('content')
-    <section class="py-20 bg-sign-me-sat-prep bg-cover bg-center">
+    <section class="py-16 bg-sign-me-banner bg-cover bg-center">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="flex flex-col">
-                <h2 class="font-newprimary font-semibold text-3xl text-white">
-                    #TakeOnYourFuture
-                    <br>
-                    with ALL-in Eduspace
+            <div class="flex flex-col justify-between pt-10 pb-6">
+                <h2 class="font-newprimary text-3xl md:text-4xl font-bold text-white">
+                    WHAT’S NEXT?
                 </h2>
-                <p class="mt-6 w-full font-newprimary text-lg text-white md:max-w-3xl ">
-                    <span class="block"> DARE TO DREAM!</span>
-                    Let’s find out how to maximize your academic performance with our SAT Preparation program FREE Diagnostic Test. Our expert and professional tutors will help you through them all!
+                <p class="mt-4 w-full font-newprimary text-lg text-white md:max-w-lg">
+                    <span class="block font-bold mb-3">Prepare, Achieve, Flourish Together with EduALL!</span>
+                    Let’s find out how to maximize your academic performance with our Standardized Test Prep Programs FREE Diagnostic Test. Our expert and professional tutors will help you through them all!
                 </p>
             </div>
         </div>
@@ -47,7 +45,7 @@
                             <li class="flex justify-start">
                                 <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span class="w-full">
-                                    Your needs and how ALL-in can help you professionally
+                                    Your needs and how EduALL can help you professionally
                                 </span>
                             </li>
                             <li class="flex">

@@ -108,6 +108,16 @@
         gtag("config", "G-RN9CC3WCZ3");
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5HHPRQCSSE');
+    </script>
+
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
