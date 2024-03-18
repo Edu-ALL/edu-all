@@ -67,6 +67,7 @@
                     {{-- Emmbed Form --}}
                     <div class="w-full">
                       <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1710178");</style>
+                      <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1710411");</style>
                       <style type="text/css">
                       /* LOADER */
                       .ml-form-embedSubmitLoad {
@@ -910,7 +911,7 @@
                                     </div><div class="ml-form-fieldRow ">
                                       <div class="ml-field-group ml-field-name ml-validate-required">
                   
-                                        <label>Name</label>
+                                        <label>Your Name...</label>
                   
                   
                                         <!-- input -->
@@ -945,7 +946,7 @@
                                     </div><div class="ml-form-fieldRow ">
                                       <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                   
-                                        <label>Email</label>
+                                        <label>Email...</label>
                   
                   
                                         <!-- input -->
@@ -978,13 +979,48 @@
                   
                                       </div>
                                     </div><div class="ml-form-fieldRow ">
-                                      <div class="ml-field-group ml-field-phone ml-validate-required">
+                                      <div class="ml-field-group ml-field-phone_number ml-validate-required">
                   
-                                        <label>Phone Number</label>
+                                        <label>Phone  Number...</label>
                   
                   
                                         <!-- input -->
-                                        <input aria-label="phone" aria-required="true" type="text" class="form-control" data-inputmask="" name="fields[phone]" placeholder="" autocomplete="">
+                                        <input aria-label="phone_number" aria-required="true" type="number" class="form-control" data-inputmask="" name="fields[phone_number]" placeholder="" autocomplete="">
+                                        <!-- /input -->
+                  
+                                        <!-- textarea -->
+                                        
+                                        <!-- /textarea -->
+                  
+                                        <!-- select -->
+                                        
+                                        <!-- /select -->
+                  
+                                        <!-- checkboxes -->
+                              
+                              <!-- /checkboxes -->
+                  
+                                        <!-- radio -->
+                                        
+                                        <!-- /radio -->
+                  
+                                        <!-- countries -->
+                                        
+                                        <!-- /countries -->
+                  
+                  
+                  
+                  
+                  
+                                      </div>
+                                    </div><div class="ml-form-fieldRow ">
+                                      <div class="ml-field-group ml-field-school ml-validate-required">
+                  
+                                        <label>Your School Name...</label>
+                  
+                  
+                                        <!-- input -->
+                                        <input aria-label="school" aria-required="true" type="text" class="form-control" data-inputmask="" name="fields[school]" placeholder="" autocomplete="">
                                         <!-- /input -->
                   
                                         <!-- textarea -->
@@ -1015,7 +1051,7 @@
                                     </div><div class="ml-form-fieldRow ">
                                       <div class="ml-field-group ml-field-graduation_year ml-validate-required">
                   
-                                        <label>Expected Graduation Year</label>
+                                        <label>Expected Graduation Year...</label>
                   
                   
                                         <!-- input -->
@@ -1086,7 +1122,7 @@
                                     </div><div class="ml-form-fieldRow ">
                                       <div class="ml-field-group ml-field-study_destination_1 ml-validate-required">
                   
-                                        <label>My study destination...</label>
+                                        <label>Your Study Destination...</label>
                   
                   
                                         <!-- input -->
@@ -1178,43 +1214,43 @@
                                         <div class="custom-checkbox-radio-list">
                                           <!-- Visible if current or any next has value -->
                                           <div class="custom-control custom-radio">
-                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="Admission Mentoring &amp; Scholarship Application" id="radio-2547736-63}-0">
-                                            <label class="custom-control-label" for="radio-2547736-63}-0">
+                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="Admission Mentoring &amp; Scholarship Application" id="radio-2547736-73}-0">
+                                            <label class="custom-control-label" for="radio-2547736-73}-0">
                                               Admission Mentoring & Scholarship Application
                                             </label>
                                           </div>
                   
                                           <div class="custom-control custom-radio">
-                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="University Application Essay" id="radio-2547736-63}-1">
-                                            <label class="custom-control-label" for="radio-2547736-63}-1">
+                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="University Application Essay" id="radio-2547736-73}-1">
+                                            <label class="custom-control-label" for="radio-2547736-73}-1">
                                               University Application Essay
                                             </label>
                                           </div>
                   
                                           <div class="custom-control custom-radio">
-                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="Academic Tutoring" id="radio-2547736-63}-2">
-                                            <label class="custom-control-label" for="radio-2547736-63}-2">
+                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="Academic Tutoring" id="radio-2547736-73}-2">
+                                            <label class="custom-control-label" for="radio-2547736-73}-2">
                                               Academic Tutoring
                                             </label>
                                           </div>
                   
                                           <div class="custom-control custom-radio">
-                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="CV &amp; Personal Branding" id="radio-2547736-63}-3">
-                                            <label class="custom-control-label" for="radio-2547736-63}-3">
+                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="CV &amp; Personal Branding" id="radio-2547736-73}-3">
+                                            <label class="custom-control-label" for="radio-2547736-73}-3">
                                               CV & Personal Branding
                                             </label>
                                           </div>
                   
                                           <div class="custom-control custom-radio">
-                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="SAT &amp; ACT" id="radio-2547736-63}-4">
-                                            <label class="custom-control-label" for="radio-2547736-63}-4">
+                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="SAT &amp; ACT" id="radio-2547736-73}-4">
+                                            <label class="custom-control-label" for="radio-2547736-73}-4">
                                               SAT & ACT
                                             </label>
                                           </div>
                   
                                           <div class="custom-control custom-radio">
-                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="ALL of Them!!" id="radio-2547736-63}-5">
-                                            <label class="custom-control-label" for="radio-2547736-63}-5">
+                                            <input aria-label="program_interest" aria-required="true" name="fields[program_interest]" class="custom-control-input" type="radio" value="ALL of Them!!" id="radio-2547736-73}-5">
+                                            <label class="custom-control-label" for="radio-2547736-73}-5">
                                               ALL of Them!!
                                             </label>
                                           </div>
@@ -1299,9 +1335,9 @@
                     <script>
                       function ml_webform_success_2547736() {
                       try {
-                          window.top.location.href = 'https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs';
+                          window.top.location.href = 'https://all-inedu.com/thank-you-for-your-interest-in-our-programs/';
                         } catch (e) {
-                          window.location.href = 'https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs';
+                          window.location.href = 'https://all-inedu.com/thank-you-for-your-interest-in-our-programs/';
                         }
                       }
                         </script>
