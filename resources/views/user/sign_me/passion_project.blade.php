@@ -26,8 +26,8 @@
 
     <section class="py-20">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="grid grid-cols-1 gap-x-12 md:grid-cols-5">
-                <div class="flex flex-col w-full md:col-span-2">
+            <div class="grid grid-cols-1 gap-x-6 md:grid-cols-7">
+                <div class="flex flex-col w-full md:col-span-3">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-newprimary font-bold text-2xl text-newprimary">
                             What you will earn in the consultation:
@@ -69,7 +69,7 @@
                         <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
                     </div>
                 </div>
-                <div class="md:col-span-3">
+                <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
                         <style type="text/css">

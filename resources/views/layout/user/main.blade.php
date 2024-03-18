@@ -88,26 +88,6 @@
     {{-- Social Share  --}}
     <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script>
 
-
-    <!-- Google Analytics snippet added by Site Kit -->
-    <script src='https://www.googletagmanager.com/gtag/js?id=UA-133747692-1'></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('set', 'linker', {
-            "domains": ["edu-all.com"]
-        });
-        gtag("js", new Date());
-        gtag("set", "developer_id.dZTNiMT", true);
-        gtag("config", "UA-133747692-1", {
-            "anonymize_ip": true
-        });
-        gtag("config", "G-RN9CC3WCZ3");
-    </script>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
     <script>
