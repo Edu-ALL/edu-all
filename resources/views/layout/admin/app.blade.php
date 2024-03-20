@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
-    <title>ALL-In Eduspace</title>
+    <title>EduALL</title>
     <link href="{{ asset('favicon.png') }}" rel="icon">
 
     {{-- Google Font --}}
