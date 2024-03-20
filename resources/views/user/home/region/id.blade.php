@@ -11,17 +11,17 @@
     <section class="h-[90%]">
         <div class="relative">
             <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner"
-                class="w-full md:h-[92vh] h-screen object-cover">
-            <div class="absolute bottom-40 md:bottom-0 left-0 right-0">
-                <div class="relative">
+                class="w-full md:h-[92vh] h-[92dvh] object-cover">
+            <div class="absolute md:bottom-0 left-0 right-0">
+                <div class="relative h-full">
                     <div
-                        class="bg-newprimary mix-blend-multiply invisible md:visible h-24 absolute bottom-0 left-0 right-0">
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36dvh]  absolute bottom-0 left-0 right-0">
                     </div>
-                    <div class="w-full main-container mx-auto absolute bottom-0 left-0 right-0 h-24 flex items-center">
-                        <div class="flex gap-8 justify-between items-center w-full flex-col md:flex-row">
+                    <div class="w-full main-container mx-auto absolute md:bottom-0 bottom-20 left-0 right-0 h-24 flex items-center">
+                        <div class="flex md:flex-row flex-wrap gap-8 md:justify-between justify-center items-center w-full">
                             {{-- Acceptance --}}
-                            <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                            <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
+                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
                                     {{ $banners->accepatance }}
                                 </h4>
                                 <span class="font-newprimary font-light text-white text-sm text-center">
@@ -30,7 +30,7 @@
                             </div>
                             {{-- Mentees --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
                                     {{ $banners->mentees }}
                                 </h4>
                                 <span class="font-newprimary font-light text-white text-sm text-center">
@@ -39,7 +39,7 @@
                             </div>
                             {{-- Scholarship --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
                                     {{ $banners->scholarship }}
                                 </h4>
                                 <span class="font-newprimary font-light text-white text-sm text-center">
@@ -48,7 +48,7 @@
                             </div>
                             {{-- SAT Score --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
                                     {{ $banners->sat_score }}
                                 </h4>
                                 <span class="font-newprimary font-light text-white text-sm text-center">
@@ -57,7 +57,7 @@
                             </div>
                             {{-- Statisfaction Rate --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white text-xl text-center">
+                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
                                     {{ $banners->statisfaction_rate }}
                                 </h4>
                                 <span class="font-newprimary font-light text-white text-sm text-center">
@@ -587,15 +587,16 @@
 
                     {{-- More Date --}}
                     @if (count($important_dates) > 0)
-                        <div class="flex flex-col items-center justify-between mt-10">
-                            <div class="h-max-60 flex flex-col w-full py-8 px-6">
+                        <div class="flex flex-col items-center justify-between mt-2">
+                            <div class=" h-max-[300px] flex flex-col w-full py-8 px-6">
                                 <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
                                 <ul class="mt-2 overflow-y-auto overflow-x-hidden">
                                     @foreach ($important_dates as $important_date)
-                                        <li class="flex justify-between border-b border-b-white py-2 px-2">
-                                            <h3 class="font-newprimary font-normal text-white">
-                                                {{ $important_date->title }}</h3>
-                                            <span class="font-newprimary text-newyellow">
+                                        <li class="flex justify-between border-b border-b-white py-2 px-2 w-full">
+                                            <h3 class="font-newprimary font-normal text-white w-[75%]">
+                                                {{ $important_date->title }}
+                                            </h3>
+                                            <span class="font-newprimary text-newyellow w-[25%] text-end">
                                                 {{ date('M, d Y', strtotime($important_date->date)) }}
                                             </span>
                                         </li>
@@ -760,6 +761,7 @@
             lazyload: true,
             autoplay: true,
             interval: 4000,
+            pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
