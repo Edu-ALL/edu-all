@@ -10,14 +10,17 @@
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[90%]">
         <div class="relative">
-            <img src="{{ asset('assets/img/home/banner.png') }}" alt="banner"
-                class="w-full md:h-[92vh] h-[92dvh] object-cover">
+            @if ($banners->image)
+                <img src="{{ $banners->image ? asset('uploaded_files/' . 'banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) : '' }}"
+                    alt="{{$banners->alt}}" class="w-full md:h-[92vh] h-[92dvh] object-cover">
+            @endif
             <div class="absolute md:bottom-0 left-0 right-0">
                 <div class="relative h-full">
                     <div
                         class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36dvh]  absolute bottom-0 left-0 right-0">
                     </div>
-                    <div class="w-full main-container mx-auto absolute md:bottom-0 bottom-20 left-0 right-0 h-24 flex items-center">
+                    <div
+                        class="w-full main-container mx-auto absolute md:bottom-0 bottom-20 left-0 right-0 h-24 flex items-center">
                         <div class="flex md:flex-row flex-wrap gap-8 md:justify-between justify-center items-center w-full">
                             {{-- Acceptance --}}
                             <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
