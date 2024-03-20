@@ -54,7 +54,7 @@
                                                 <label for="" class="form-label fw-semibold">Preview Image</label>
                                                 <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 136px;">
                                                     @if ($data->image)
-                                                        <img class="img-preview img-fluid rounded" id="img_preview_data" src="{{ $data->image ? asset('uploaded_files/'.'banner/'.$data->created_at->format('Y').'/'.$data->created_at->format('m').'/'.$data->image) : '' }}">
+                                                        <img class="img-preview img-fluid rounded" id="img_preview_data" src="{{ $data->image ? asset('uploaded_files/'.'banner/'.$data->updated_at->format('Y').'/'.$data->updated_at->format('m').'/'.$data->image) : '' }}">
                                                     @endif
                                                     <img class="img-preview img-fluid rounded" id="img_preview">
                                                 </div>
