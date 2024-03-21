@@ -1,112 +1,115 @@
 <?php
 
-$do_list = [
-    [
-        'title' => 'Proses Ujicoba',
-        'desc' => 'Temukan gaya belajar terbaik kamu dan mentor yang paling cocok'
-    ],
-    [
-        'title' => 'Analisa Menyeluruh tentang Kinerja Akademik',
-        'desc' => 'Membuat detail spesifik tentang kekuatan dan kelemahan akademikmu'
-    ],
-    [
-        'title' => 'Bimbingan yang Dipersonalisasi',
-        'desc' => 'Kembangkan gaya yang paling sesuai dengan perkembangan; Konsep Terfokus atau Pengerjaan Soal Terfokus atau Seimbang'
-    ],
-    [
-        'title' => 'Jalankan Rencana dan Capai Sasaran dengan Tutor',
-        'desc' =>
-        [
-            'Bergabung di kelas intensif dengan suasana yang menyenangkan dan santai',
-            'Dapatkan masukan berkualitas dan capai target nilai kamu',
-            'Laporan ke orang tua secara reguler untuk memantau perkembangan anak'
-        ],
-//         'desc' => '
-//         Bergabung di kelas intensif dengan suasana yang menyenangkan dan santai,
-// Dapatkan masukan berkualitas dan capai target nilai kamu,
-// Laporan ke orang tua secara reguler untuk memantau perkembangan anak'
-    ],
-];
-
 return [
     'meta_title' => "Academic Tutoring Services for IB & A Level - EduALL",
-    'meta_description' => 'Dapatkan layanan tutor akademik terbaik dengan EduALL. Kami menawarkan layanan tutor pribadi, tutor online, dan program tutoring untuk siswa',
+    'meta_description' => 'Tingkatkan skor IBDP & Cambridge IGCSE Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.',
 
     'title' => 'ACADEMIC TUTORING',
-    'desc' => 'Tingkatkan nilai akademik melalui gaya belajar yang dipersonalisasi dengan kebutuhanmu melalui pembelajaran berkonsep dan dapat diaplikasikan di sekolah.',
-    'top_btn' => 'Daftar Disini',
+    'description' => 'Tingkatkan skor IBDP & Cambridge IGCSE Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.',
+    'header_button' => 'Daftar Segera!',
 
-    // wording
-    'wording_1' => '97% siswa A-Level mendapat nilai A & A*',
-    'wording_2' => '98% of siswa IB Diploma mendapat peningkatan nilai 2 - 3 poin, bahkan lebih',
-    'wording_3' => '100% Tingkat Kesuksesan Ujian',
+    'benefit_button' => "LEBIH DARI SEKEDAR TUTORING",
+    'benefit_section' => [
+        [
+            'title' => "Temukan Jalan",
+            'description' => "Temukan gaya belajar unik kamu dan mentor yang paling cocok",
+            's4_item_text_inactive' => "Temukan Jalan",
 
-    // ib diploma
-    'ibdiploma' => 'IB Diploma',
-
-    // Cambridge A-Level
-    'cambridge' => 'Cambridge A-Level',
-
-    // WHAT YOU WILL DO
-    'do_title' => 'YANG AKAN KAMU LAKUKAN:',
-    'do_list' => $do_list,
+        ],
+        [
+            'title' => "Analisis Akademik Mendalam",
+            'description' => "Dapatkan rincian kekuatan dan kelemahan akademis kamu",
+            's4_item_text_inactive' => "Insightful",
+        ],
+        [
+            'title' => "Pendekatan Pembelajaran yang Disesuaikan",
+            'description' => "Pilih gaya bimbingan belajar yang sesuai dengan kebutuhan belajar kamu; berfokus pada konsep, drilling pertanyaan, atau seimbang. ",
+            's4_item_text_inactive' => "Customized",
+        ],
+        [
+            'title' => "Pencapaian Goals",
+            'description' => "Nikmati perpaduan sesi pembelajaran intensif dan menyenangkan, dengan umpan balik rutin dan laporan kemajuan kepada orang tua",
+            's4_item_text_inactive' => "Dynamic",
+        ],
+    ],
+    's4_item_text_active' => [
+        "Temukan Jalan",
+        "Analisis Akademik Mendalam",
+        "Pendekatan Pembelajaran yang Disesuaikan",
+        "Pencapaian Goals",
+    ],
+    's4_item_text_inactive' => [
+        "Discover",
+        "Insightful",
+        "Customized",
+        "Dynamic",
+    ],
 
     // PRIVATE CLASS
-    'private_title' => 'Kelas Privat',
-    'private_desc' => 'Kelas privat dengan 3 pilihan paket yang bisa kamu pilih:',
-    'private_list_basic_title' => 'BASIC',
-    'private_list_basic_body' => [
-        "2 Bulan Bimbingan Intensif",
-        "5 Sesi (Max. 90 Menit)"
+    'private_class_title' => 'KELAS PRIVAT ',
+    'private_class_description' => 'Kelas privat dengan 3 paket berbeda yang bisa dipilih ',
+    'private_class_list' => [
+        [
+            'title' => 'BASIC',
+            'duration' => '2 Bulan',
+            'duration_text' => 'Tutoring Intensif',
+            'sessions' => '5 Sesi',
+            'sessions_text' => 'berdurasi 90 menit',
+        ],
+        [
+            'title' => 'PRO',
+            'duration' => '5 Bulan',
+            'duration_text' => 'Tutoring Intensif',
+            'sessions' => '12 Sesi',
+            'sessions_text' => 'berdurasi 90 menit',
+        ],
+        [
+            'title' => 'ELITE',
+            'duration' => '9 Bulan',
+            'duration_text' => 'Tutoring Intensif',
+            'sessions' => '22 Sesi',
+            'sessions_text' => 'berdurasi 90 menit',
+        ],
     ],
-    'private_list_pro_title' => 'PRO',
-    'private_list_pro_body' => [
-        "5 Bulan Bimbingan Intensif",
-        "12 Sesi (Max. 90 Menit)"
-    ],
-    'private_list_elite_title' => 'ELITE',
-    'private_list_elite_body' => [
-        "9 Bulan Bimbingan Intensif",
-        "22 Sesi (Max. 90 Menit)"
-    ],
-    'private_btn' => 'Get FREE Academic Tutoring Trial',
+    'private_class_button' => "Learn More",
 
-    // WHY US?
-    'why_us_title' => 'KENAPA MEMILIH KAMI?',
+    'why_us_title' => 'KENAPA EDUALL?',
     'why_us_list' => [
         [
-            'image' => 'acad-tutor-flexibility-learning.webp',
-
-            'title' => 'PEMBELAJARAN FLEKSIBEL',
-            'desc' => 'Jadwal pembelajaran individual yang dirancang untuk memaksimalkan kemampuanmu.'
+            'title' => 'Fleksibilitas Pembelajaran',
+            'desc' => 'Jadwal pembelajaran individual dirancang untuk memaksimalkan kemampuanmu.',
         ],
         [
-            'image' => 'acad-tutor-on-demand-sched.webp',
-
-            'title' => 'JADWAL MENYESUAIKAN MURID',
-            'desc' => 'Waktu fleksibel, dengan waktu tunggu yang singkat. Mulai kelas sesuai dengan jadwal kamu'
+            'title' => 'Jadwal Sesuai Permintaan',
+            'desc' => 'Waktu fleksibel, masa tunggu rendah diperlukan. Mulailah kelas berdasarkan jadwal kamu.',
         ],
         [
-            'image' => 'acad-tutor-progress-tracking.webp',
-
-            'title' => 'PELACAKAN PERKEMBANGAN',
-            'desc' => 'Lacak kemajuan melalui hasil tes latihan dan laporan berkala ke orang tua.'
+            'title' => 'Pelacakan Kemajuan',
+            'desc' => 'Lacak kemajuan melalui hasil tes latihan dan terima laporan ke orang tua sesuai permintaan.',
         ],
         [
-            'image' => 'acad-tutor-access-anywhere.webp',
-            'title' => 'AKSES DI MANA SAJA',
-            'desc' => 'Belajar dengan tutor ahli kami secara online, dimanapun dan kapanpun.'
+            'title' => 'Akses Dimana Saja',
+            'desc' => 'Kami menghadirkan kelas ini untuk kamu! Belajar dengan tutor ahli kami secara online, langsung.',
         ],
     ],
 
-    // OUR TUTORS
-    'tutors_title' => 'Tutor Kami',
+    'tetimony_title' => "Apa Yang Dikatakan Siswa Kami",
 
-    // testimoni
-    'testi_title' => 'APA YANG MEREKA KATAKAN',
+    'free_trial_title' => "Nilai akademik yang baik dapat memaksimalkan kesempatanmu masuk universitas top dunia!?",
+    'free_trial_desc' => "Ambil kesempatanmu!",
+    'free_trial_button' => "Dapatkan Trial untuk Academic Tutoring Sekarang!",
 
-    // bottom section
-    'bottom_title' => 'Nilai dengan warna terbang akan memberi Anda keunggulan dalam mendapatkan surat penerimaan',
-    'bottom_subtitle' => 'Ambil Kesempatan Mu!',
-    'bottom_btn' => 'Dapatkan Uji Coba Academic Tutoring GRATIS!'
+    'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
+    'ib_extended_description' => "Latih proses penulisan Extended Essay dalam 3 bulan dengan pendekatan holistik kami!",
+    'ib_extended_tag' => [
+        "FOR IB DIPLOMA STUDENTS",
+        "GRADE 12",
+    ],
+    'ib_extended_topic' => [
+        'Bagaimana Memulai dan Menemukan Topik EE yang Tepat',
+        'Buatlah Pertanyaan Penelitian Yang Baik',
+        'Navigasikan Cara Mengutip',
+        'Taklukkan Procrastination dengan Agile Project Management',
+        'Cara Menulis Draf Pertama dalam 3 Bulan',
+    ]
 ];

@@ -14,79 +14,8 @@
         <div class="main-container">
             <div class="grid grid-cols-1 items-center gap-x-14 gap-y-8 md:grid-cols-5">
                 <div
-                    class="relative justify-self-end max-w-sm w-full mx-auto rounded-lg shadow-lg md:mx-0 md:col-span-2 xl:row-span-2 mt-[10rem]">
-                    <div class="flex flex-col shadow-md relative bg-white">
-                        {{-- Mentor Image --}}
-                        <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                            alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center absolute -top-[15rem]">
-                        <div class="flex flex-col px-4 mt-[16rem] overflow-visible relative">
-                            <ul class="flex flex-col gap-2 my-5">
-                                @if ($mentor->value_1)
-                                    <li class="flex items-start gap-4">
-                                        <div class="w-4 h-4">
-                                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                </g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
-                                                        fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <h4 class="font-newprimary text-[1rem] font-semibold text-dark leading-5">
-                                            {{ $mentor->value_1 }}
-                                        </h4>
-                                    </li>
-                                @endif
-                                @if ($mentor->value_2)
-                                    <li class="flex items-start gap-4">
-                                        <div class="w-4 h-4">
-                                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                </g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
-                                                        fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <h4 class="font-newprimary text-[1rem] font-semibold text-dark leading-5">
-                                            {{ $mentor->value_2 }}
-                                        </h4>
-                                    </li>
-                                @endif
-                                @if ($mentor->value_3)
-                                    <li class="flex items-start gap-4">
-                                        <div class="w-4 h-4">
-                                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                </g>
-                                                <g id="SVGRepo_iconCarrier">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
-                                                        fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <h4 class="font-newprimary text-[1rem] font-semibold text-dark leading-5">
-                                            {{ $mentor->value_3 }}
-                                        </h4>
-                                    </li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
+                    class="relative justify-self-end max-w-sm w-full mx-auto md:mx-0 md:col-span-2 xl:row-span-2 mt-[10rem]">
+                    <x-mentor-card :mentor=$mentor :disabled-btn=true/>
                 </div>
                 <div class="md:col-span-5 md:-order-1 xl:col-span-3 xl:order-none xl:row-span-1 xl:self-end">
                     <h1 class="font-newprimary font-bold text-4xl text-dark text-center md:text-6xl xl:text-start">

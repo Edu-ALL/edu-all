@@ -31,11 +31,11 @@
                         ? 'text-newprimary font-newprimary border-b-2 border-newprimary'
                         : 'bg-newprimary  text-white font-newprimary' }}">Admission
                     Mentoring</a>
-                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'passion-project']) }}"
+                {{-- <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'passion-project']) }}"
                     class="font-bold py-1 px-2 shadow-md {{ $tab_section == 'passion_project'
                         ? 'bg-newprimary  text-white font-newprimary'
                         : 'text-newprimary font-newprimary border-b-2 border-newprimary' }}">Passion
-                    Project</a>
+                    Project</a> --}}
             </div>
         </div>
     </section>

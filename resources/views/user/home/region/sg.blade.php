@@ -219,23 +219,7 @@
                             @foreach ($testimonies as $testi)
                                 <li class="splide__slide w-full">
                                     <div class="splide__slide__container h-full">
-                                        <div
-                                            class="flex flex-col justify-between h-full mx-2 px-4 py-8 rounded-2xl bg-newprimary">
-                                            <div class="flex flex-col">
-                                                <img src="{{ asset('assets/logo/quote.png') }}" class="w-8 mb-6">
-                                                <div class="font-newprimary text-base text-white text-justify">
-                                                    {!! $testi->testi_desc !!}
-                                                </div>
-                                            </div>
-                                            <div class="mt-12 flex flex-col">
-                                                <div class="font-newprimary font-semibold text-2xl text-yellow">
-                                                    {{ $testi->testi_name }}
-                                                </div>
-                                                <div class="font-newprimary text-sm text-white">
-                                                    {!! $testi->testi_subtitle !!}
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <x-testimonial-card :testimonial=$testi />
                                     </div>
                                 </li>
                             @endforeach

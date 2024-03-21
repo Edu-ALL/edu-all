@@ -1,197 +1,115 @@
 <?php
 
-$do_list = [
-    [
-        'title' => 'Trial Process',
-        'desc' => 'Find your best learning style and best-suited mentors'
-    ],
-    [
-        'title' => 'Thorough Analysis of Academic Performance',
-        'desc' => 'Listing specific details on your academic strengths and weaknesses'
-    ],
-    [
-        'title' => 'Personalized Tutoring Style',
-        'desc' => 'Develop a style that best suits your progression; Concept Focused or Drilling Question Focused or Balanced.'
-    ],
-    [
-        'title' => 'Execute Plan and Goals with Tutor',
-        'desc' =>
-        [
-            'Execute intensive class with fun and relaxing vibes',
-            ' Get feedback and meet you goals',
-            ' Regular parental report to monitor progress'
-        ]
-    ],
-];
-
 return [
     'meta_title' => "Academic Tutoring Services for IB & A Level - EduALL",
     'meta_description' => 'Get the best academic tutoring services with EduALL. We offer private tutoring, online tutoring, and tutoring programs for students',
 
     'title' => 'ACADEMIC TUTORING',
-    'desc' => 'Enhance your academic performance through a tailored learning style with core concept learning system and real-life application.',
-    'top_btn' => 'Register Here',
+    'description' => 'Elevate your IBDP & Cambridge IGCSE scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.',
+    'header_button' => 'Register Here',
 
-    // wording
-    'wording_1' => 'of our A Level Students earned A and A*',
-    'wording_2' => 'of our IB Students boosted their scores by 2 - 3 points and greater',
-    'wording_3' => 'Exam Success Rate',
+    'benefit_button' => "MORE THAN JUST TUTORING",
+    'benefit_section' => [
+        [
+            'title' => "Discover Your Path",
+            'description' => "Find your unique learning style and best-suited mentors",
+            's4_item_text_inactive' => "Discover Your Path",
 
-    // ib diploma
-    'ibdiploma' => 'IB Diploma',
-
-    // Cambridge A-Level
-    'cambridge' => 'Cambridge A-Level',
-
-    // WHAT YOU WILL DO
-    'do_title' => 'WHAT YOU WILL DO',
-    'do_list' => $do_list,
+        ],
+        [
+            'title' => "Insightful Academic Analysis",
+            'description' => "Get details of your academic  strengths and weaknesses",
+            's4_item_text_inactive' => "Insightful",
+        ],
+        [
+            'title' => "Customized Learning Approach",
+            'description' => "Choose a tutoring style that suits your learning needs; Concept-focused, Question-drilling, or Balanced. ",
+            's4_item_text_inactive' => "Customized",
+        ],
+        [
+            'title' => "Dynamic Goal Achievement",
+            'description' => "Enjoy a mix of intensive and fun learning sessions, with regular feedback and progress reports to parents",
+            's4_item_text_inactive' => "Dynamic",
+        ],
+    ],
+    's4_item_text_active' => [
+        "Discover Your Path",
+        "Insightful Academic Analysis",
+        "Customized Learning Approach",
+        "Dynamic Goal Achievement",
+    ],
+    's4_item_text_inactive' => [
+        "Discover",
+        "Insightful",
+        "Customized",
+        "Dynamic",
+    ],
 
     // PRIVATE CLASS
-    'private_title' => 'PRIVATE CLASS',
-    'private_desc' => 'Private class with 3 different packages that you can choose',
-    'private_list_basic_title' => 'BASIC',
-    'private_list_basic_body' => [
-        "2 months intensive tutoring",
-        "5 sessions (up to 90 minutes)"
+    'private_class_title' => 'PRIVATE CLASS',
+    'private_class_description' => 'Private class with 3 different packages that you can choose',
+    'private_class_list' => [
+        [
+            'title' => 'BASIC',
+            'duration' => '2 Month',
+            'duration_text' => 'Intensive Tutoring',
+            'sessions' => '5 Sessions',
+            'sessions_text' => 'Up to 90 Minutes',
+        ],
+        [
+            'title' => 'PRO',
+            'duration' => '5 Month',
+            'duration_text' => 'Intensive Tutoring',
+            'sessions' => '12 Sessions',
+            'sessions_text' => 'Up to 90 Minutes',
+        ],
+        [
+            'title' => 'ELITE',
+            'duration' => '9 Month',
+            'duration_text' => 'Intensive Tutoring',
+            'sessions' => '22 Sessions',
+            'sessions_text' => 'Up to 90 Minutes',
+        ],
     ],
-    'private_list_pro_title' => 'PRO',
-    'private_list_pro_body' => [
-        "5 months intensive tutoring",
-        "12 sessions (up to 90 minutes)"
-    ],
-    'private_list_elite_title' => 'ELITE',
-    'private_list_elite_body' => [
-        "9 months intensive tutoring",
-        "22 sessions (up to 90 minutes)"
-    ],
-    'private_btn' => 'Get FREE Academic Tutoring Trial',
+    'private_class_button' => "Learn More",
 
-    // WHY US?
     'why_us_title' => 'WHY US?',
     'why_us_list' => [
         [
-            'image' => 'acad-tutor-flexibility-learning.webp',
             'title' => 'Flexibility Learning',
-            'desc' => 'Individualized learning schedule designed to maximize your abilities.'
+            'desc' => 'Individualized learning schedule designed to maximize your abilities.',
         ],
         [
-            'image' => 'acad-tutor-on-demand-sched.webp',
             'title' => 'On-Demand Schedule',
-            'desc' => 'Flexible time, low waiting period needed. Start your class based on your schedule.'
+            'desc' => 'Flexible time, low waiting period needed. Start your class based on your schedule.',
         ],
         [
-            'image' => 'acad-tutor-progress-tracking.webp',
             'title' => 'Progress Tracking',
-            'desc' => 'Track the progress through practice test results and receive on-demand parent updates.'
+            'desc' => 'Track the progress through practice test results and receive on-demand parent updates.',
         ],
         [
-            'image' => 'acad-tutor-access-anywhere.webp',
             'title' => 'Access Anywhere',
-            'desc' => 'We bring the class to you! Learn with our expert tutors online, live.'
+            'desc' => 'We bring the class to you! Learn with our expert tutors online, live.',
         ],
     ],
 
-    // OUR TUTORS
-    'tutors_title' => 'OUR TUTORS',
-    'tutors_list' => [
-        [
-            'image' => 'acad tutor steven.webp',
-            'name' => 'Steven',
-            'experience' => '7+ years of experience in STEM tutoring',
-            'role' => ['Science Master Tutor'],
-        ],
-        [
-            'image' => 'acad tutor ivander.webp',
-            'name' => 'Ivander L Teno',
-            'experience' => 'Chinese University of Hong Kong (CUHK)',
-            'role' => ['IBDP Mathematics'],
-        ],
-        [
-            'image' => 'acad tutor michele.webp',
-            'name' => 'Michele Liang',
-            'experience' => 'University of Technology Sydney',
-            'role' => ['IBDP Physics'],
-        ],
-        [
-            'image' => 'acad tutor joan.webp',
-            'name' => 'Joan Fong',
-            'experience' => 'ESMOD Jakarta',
-            'role' => ['English Language and Literature'],
-        ],
-        [
-            'image' => 'acad tutor deva.webp',
-            'name' => 'Devandhira Wijaya Wangsa',
-            'experience' => 'Hong Kong University of  Science and Technology (HKUST)',
-            'role' => [
-                'A-Level Mathematics',
-                'IGCSE Mathematics'
-            ],
-        ],
-        [
-            'image' => 'acad tutor kadek.webp',
-            'name' => 'I Kadek Irvan Adhista Putra',
-            'experience' => 'IBDP Chemistry Teacher',
-            'role' => [
-                'IBDP Chemistry',
-                'A-Level Chemistry',
-                'IGCSE Chemistry',
-            ],
-        ],
-        [
-            'image' => 'acad tutor desta.webp',
-            'name' => 'Desta Vantyca',
-            'experience' => 'IGCSE Chemistry Teacher',
-            'role' => [
-                'IBDP Chemistry',
-                'A-Level Chemistry',
-                'IGCSE Chemistry',
-            ],
-        ],
-        [
-            'image' => 'acad tutor juan denis.png',
-            'name' => 'Juan Dennis Bahrian',
-            'experience' => 'Independent Biology Researcher',
-            'role' => [
-                'IBDP Biology',
-                'A-Level Biology',
-                'IGCSE Biology'
-            ],
-        ],
-        [
-            'image' => 'acad tutor benjamin.webp',
-            'name' => 'Benjamin Arellano',
-            'experience' => 'IGCSE Physics Teacher',
-            'role' => [
-                'IBDP Physics',
-                'A-Level Physics',
-                'IGCSE Physics'
-            ],
-        ],
-    ],
+    'tetimony_title' => "What Our Students Say",
 
-    // testimoni
-    'testi_title' => 'WHAT OUR STUDENTS SAY',
-    'testi_list' => [
-        [
-            'name' => 'Nayla',
-            'grade' => 'Grade 11',
-            'body' => 'I like the program so much! It helps me understand better in class and my friends even like to gather at my desk and discuss Math with me at school now!',
-        ],
-        [
-            'name' => 'Evangeline',
-            'grade' => 'Grade 11',
-            'body' => 'It was nice! The tutor was nice working together with, easy going and helped me a lot!',
-        ],
-        [
-            'name' => 'Sharren',
-            'grade' => 'Grade 11',
-            'body' => 'I personally think that the way my tutor teaches me is really effective and enjoyable. I hope and look forward to continuing and learning more with the Academic Tutoring program. BIG THANKS!',
-        ],
-    ],
+    'free_trial_title' => "Ready to transform your academic journey?",
+    'free_trial_desc' => "Discover the path to achieving your educational aspirations! ",
+    'free_trial_button' => "Claim your FREE Academic Tutoring Trial",
 
-    // bottom section
-    'bottom_title' => 'Grade with flying colors will give you the edge on getting the acceptance letter',
-    'bottom_subtitle' => 'Take Your Chance!',
-    'bottom_btn' => 'Get FREE Academic Tutoring Trial'
+    'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
+    'ib_extended_description' => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
+    'ib_extended_tag' => [
+        "FOR IB DIPLOMA STUDENTS",
+        "GRADE 12",
+    ],
+    'ib_extended_topic' => [
+        'How to Start and Find the Right EE Topic ',
+        'Construct a Bulletproof Research Question ',
+        'Navigate the Citation Style Jungle',
+        'Conquer Procrastination by Agile Project Management ',
+        'How to Write Your First Draft in 3 Months',
+    ]
 ];

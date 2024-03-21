@@ -1,109 +1,80 @@
 <?php
 
-$aca_icon_title = [
-    'Pyhsics',
-    'Chemistry',
-    'Econs',
-    'English',
-    'Math'
-];
-
-$aca_points = [
-    "Real-life application to understand concepts",
-    "Personalized tutoring with 3 different packages",
-    "2-way student-tutor interaction with fun and relaxing vibes",
-    "Kickstarting major exploration",
-    "Entrance exam preparation with wide variety of textbooks, question banks, and complete past papers.",
-    "Student-tutor and parent report to monitor and develop the student's progress",
-];
-
-$eecoach_benefit = [
-    "Private Class",
-    "Flexible Starting Time",
-    "Unlimited On-Demand Support",
-    "Tried-and-Tested Curriculum"
-];
-
-$eecoach_point = [
-    "How to Start and Find The Right EE Topic",
-    "Conquer Procrastination by Agile Project Management",
-    "Construect a Bulletproof Research Question",
-    "How to Write Your Frist Draft",
-    "Manuscript Review (Additional)"
-];
-
-$testimonies = [
+$our_programs = [
     [
-        'name' => "Warren Nathaniel Kusumo",
-        'program' => "ACT Prep",
-        'body' => "explanation is clear and his teaching style is friendly and relatable, making it easier to understand the concept."
+        'title' => "Maximize Your Academic Scores",
+        'description' => "Elevate your IBDP & Cambridge IGCSE scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.",
+        'button' => "Improve Your Scores Now"
     ],
     [
-        'name' => "James Sunarto (parents)",
-        'program' => "SAT Prep",
-        'body' => "My son keeps having problems with the subject test and trying to improve his standardized test score as well. No problem at all this time around. Perfect score in one shot, the mentor has done something right for the test prep!"
+        'title' => "Achieve Top Standardized Test Scores",
+        'description' => "Master common standardized tests such as SAT/ACT and English Proficiency Tests such as TOEFL/IELTS with our proven tutoring class.",
+        'button' => "Start Preparing Now"
     ],
     [
-        'name' => "Hansen Purnama",
-        'program' => "SAT Prep",
-        'body' => "My tutor is very helpful. He made me enjoy doing SAT questions. They are challenging, but my tutor was always ready to assist me. I can’t believe I tackled almost 300 questions in just 4 days! I’m happy with my progress here."
+        'title' => "Reach Your Highest Potential",
+        'description' => [
+            [
+                "title" => "Algorithm & Programming",
+                "description" => "Make a mark on your university applications with specialized tutoring in algorithms and programming.",
+            ],
+            [
+                "title" => "Subject Olympiad Preparation ",
+                "description" => "Impress the world’s top universities by excelling in STEM-focused subjects such as Math and Biology Olympiads with our special olympiad prep. ",
+            ],
+            [
+                "title" => "English <br/> Writing ",
+                "description" => "Hone your essay and academic writing skills with our English writing program, designed for university success.",
+            ],
+        ],
+        'button' => "Discover More Tutoring Programs"
     ],
     [
-        'name' => "Sharren",
-        'program' => "Academic Tutoring",
-        'body' => "I personally think that the way my tutor teaches me is really effective and enjoyable. I hope and look forward to continuing and learning more with the Academic Tutoring program. BIG THANKS!"
-    ],
-    [
-        'name' => "Evangeline",
-        'program' => "Academic Tutoring",
-        'body' => "It was nice! The tutor was nice working together with, easy going and helped me a lot!"
-    ],
-    [
-        'name' => "Nayla Muna",
-        'program' => "Academic Tutoring",
-        'body' => "I like the program so much! It helps me understand better in class and my friends even like to gather at my desk and discuss Maths with me at school now!"
-    ],
+        'title' => "Finally, Secure Your Spot at a Top University!",
+        'button' => "Start Your Journey Here",
+    ]
 ];
 
 return [
     'meta_title' => "Academic & Test Preparation for your top university application success",
-    'meta_description' => 'Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores',
+    'meta_description' => 'Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.',
 
     // banner section
-    "title" => "Academic &
-    Test Preparation",
-    "body" => "Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores",
+    "title" => "Academic & Test Preparation",
+    "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",
+    "our_program_title" => "Our Programs",
+    "our_program_data" => $our_programs,
 
     // academic tutoring section
-    "aca_title" => "Academic Tutoring",
-    "aca_desc" => "With <b> core concept learning system</b> and <b>real-life application</b> for exploration, our academic
-    tutoring program will equip students with a strong foundation not only in academics, but also in
-    <b>problem solving and critical thinking.</b>",
-    "aca_icon_title" => $aca_icon_title,
-    "aca_points_title" => "Special Formula:",
-    "aca_points" => $aca_points,
-    "aca_btn" => "Learn More",
+    "academic_tutoring_title" => "Academic Tutoring",
+    "academic_tutoring_description" => "With <span class='text-newprimary'>core concept mastery </span> and <span class='text-newprimary'>internationally qualified tutors,</span> we prepare students with robust academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.",
+    "academic_tutoring_special_formula_title" => "Our Special Formula",
+    "academic_tutoring_special_formula" => [
+        'Personalized tutoring, based on the student’s ability',
+        '2-way student-tutor interaction with fun and relaxing vibes',
+        'Kickstarting major exploration',
+        'Entrance exam preparation with a wide variety of textbooks, question banks, and complete past papers.',
+        'Student-tutor and parent report to monitor and develop the student\'s progress',
+    ],
+    "academic_tutoring_special_formula_button" => "Learn More",
+
 
     // IB EXTENDED ESSAY COACHING PROGRAM Section
-    'eecoach_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
-    'eecoach_desc' => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
-    'eecoach_benefits' => $eecoach_benefit,
-    'eecoach_learn_title' => "Covered Topics:",
-    'eecoach_learn_point' => $eecoach_point,
-    'eecoach_btn' => "Learn More",
+    "ib_extended_title" => "IB EXTENDED ESSAY COACHING PROGRAM",
+    "ib_extended_description" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
+    "ib_extended_topic_title" => "TOPICS COVERED",
+    "ib_extended_button" => "Learn More",
 
-    // Persiapan Tes SAT/ACT Section
-    'sat_title' => "SAT / ACT Preparation",
-    'sat_desc' => "We tailor learning materials and methods that best suit your needs, including weakness targeting strategy, concept understanding, and drills to improve your performance.",
-    'sat_body' => "Achieve the high scores necessary for entrance into world’s top universities!
-    We combine western and eastern learning methods, tailor teaching materials to suit the student best, utilize weakness targeted practice, and maximize student’s potentials and increase scores.",
-    'sat_btn' => "Learn More",
+    // Standardized Test Preparation
+    "standardized_test_preparation_title" => "STANDARDIZED TEST PREPARATION",
+    "standardized_test_preparation_description" => "Excel in SAT, ACT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
+    "standardized_test_preparation_button" => "Learn More",
 
-    // Testimonies section
-    'testimony_title' => "WHAT OUR STUDENTS SAY",
-    'testimonies' => $testimonies,
+    // Skillset Tutoring
+    "skillset_tutoring_title" => "SKILLSET TUTORING",
+    "skillset_tutoring_description" => "Elevate your unique passions through personalized skillset tutoring that focuses on the needs of every student. This is designed to elevate students’ academic profile, making their university application stand out.",
+    "skillset_tutoring_button" => "Learn More",
 
-    // bottom section
-    'bottom' => 'Sign up for a FREE Initial Consultation!',
-    'bottom_btn' => "Register Now"
+    // Testimoial
+    "testimony_title" => "WHAT OUR STUDENT SAY",
 ];

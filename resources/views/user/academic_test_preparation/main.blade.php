@@ -10,18 +10,18 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 bg-general-acad-header bg-cover bg-center" id="banner">
         <div class="flex flex-col justify-between items-center md:items-start main-container py-24 gap-6">
-            <h2 class="font-newprimary font-bold text-5xl text-white text-center md:text-left max-w-xl">ACADEMIC & TEST
-                PREPARATION</h2>
+            <h2 class="font-newprimary font-bold text-5xl text-white text-center md:text-left max-w-xl">
+                {{ __('pages/programs/academic_test_preparation.title') }}</h2>
             <p class="font-newprimary text-white text-center md:text-justify max-w-sm">
-                Discover our proven approach to enhance your academic transcript and maximize test scores for elite
-                university admissions.
+                {{ __('pages/programs/academic_test_preparation.body') }}
             </p>
         </div>
     </section>
 
     <section class="acad-program-our-programs">
         <div class="flex main-container w-full flex-col h-[70vh] pt-24" id="our-programs-wrapper">
-            <h2 class="font-newprimary font-bold text-2xl md:text-6xl text-black text-center mb-20">OUR PROGRAMS</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-6xl text-black text-center mb-20 uppercase">
+                {{ __('pages/programs/academic_test_preparation.our_program_title') }}</h2>
             <div class="relative h-full group">
                 <div
                     class="button-left h-24 aspect-video absolute left-[25%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-30 hover:cursor-pointer">
@@ -50,57 +50,40 @@
         <div class="main-container w-full h-[50vh] z-50 -mt-[5.5rem]">
             <div class="relative h-full w-full">
                 <div class="item-text opacity-0 invisible">
-                    <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">Achieve Top Standardized Test Scores</h2>
-                    <p class="font-semibold text-center text-lg text-black max-w-2xl">Master common standardized tests such
-                        as SAT/ACT and English Proficiency Tests such as TOEFL/IELTS with our proven tutoring class.</p>
-                    <a href="{{ route('sat_program', app()->getLocale()) }}"
-                        class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Start
-                        Preparing Now</a>
+                    <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">
+                        {{ __('pages/programs/academic_test_preparation.our_program_data.1.title') }}</h2>
+                    <p class="font-semibold text-center text-lg text-black max-w-2xl">
+                        {{ __('pages/programs/academic_test_preparation.our_program_data.1.description') }}</p>
+                    <x-button href="{{ route('sat_program', app()->getLocale()) }}"
+                        title="{{ __('pages/programs/academic_test_preparation.our_program_data.1.button') }}" />
                 </div>
                 <div class="item-text opacity-0 invisible">
                     <div class="flex items-start justify-evenly gap-4">
-                        <div class="flex flex-col w-1/4">
-                            <h2 class="font-bold text-xl text-newprimary uppercase text-center">Algorithm
-                                & Programming
-                            </h2>
-                            <p class="text-center text-sm text-black">Make a mark on your university
-                                applications with specialized tutoring
-                                in algorithms and programming.</p>
-                        </div>
-                        <div class="flex flex-col w-1/4">
-                            <h2 class="font-bold text-xl text-newprimary uppercase text-center">Subject Olympiad Preparation
-                            </h2>
-                            <p class="text-center text-sm text-black">Impress the world’s top universities by excelling in
-                                STEM-focused subjects such as Math and Biology Olympiads with our special olympiad prep.</p>
-                        </div>
-                        <div class="flex flex-col w-1/4">
-                            <h2 class="font-bold text-xl text-newprimary uppercase text-center">Algorithm
-                                & Programming
-                            </h2>
-                            <p class="text-center text-sm text-black">Make a mark on your university
-                                applications with specialized tutoring
-                                in algorithms and programming.</p>
-                        </div>
+                        @foreach (__('pages/programs/academic_test_preparation.our_program_data.2.description') as $program_item)
+                            <div class="flex flex-col w-1/4">
+                                <div class="font-bold text-xl text-newprimary uppercase text-center">
+                                    {!! $program_item['title'] !!} </div>
+                                <div class="text-center text-sm text-black">{!! $program_item['description'] !!}</div>
+                            </div>
+                        @endforeach
                     </div>
-                    <a href="#academic-tutoring"
-                        class="block mt-8 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Discover More Tutoring Programsw</a>
+                    <x-button href="#academic-tutoring"
+                        title="{{ __('pages/programs/academic_test_preparation.our_program_data.2.button') }}" />
                 </div>
 
                 <div class="item-text opacity-0 invisible">
-                    <div class="font-bold text-6xl text-center text-newprimary uppercase mb-4 max-w-4xl">Finally, Secure
-                        Your Spot at a Top University!</div>
-                    <a href="#academic-tutoring"
-                        class="block mt-8 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Start
-                        Your Journey Here</a>
+                    <div class="font-bold text-6xl text-center text-newprimary uppercase mb-4 max-w-4xl">
+                        {{ __('pages/programs/academic_test_preparation.our_program_data.3.title') }}!</div>
+                    <x-button href="#academic-tutoring"
+                        title="{{ __('pages/programs/academic_test_preparation.our_program_data.3.button') }}" />
                 </div>
                 <div class="item-text opacity-100 visible">
-                    <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">Maximize Your Academic Scores</h2>
-                    <p class="font-semibold text-center text-lg text-black max-w-2xl">Elevate your IBDP & Cambridge IGCSE
-                        scores and unlock doors to prestigious universities with our academic tutoring, covering a variety
-                        of subjects.</p>
-                    <a href="{{ route('academic_tutoring', app()->getLocale()) }}"
-                        class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Improve
-                        Your Scores Now</a>
+                    <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">
+                        {{ __('pages/programs/academic_test_preparation.our_program_data.0.title') }}</h2>
+                    <p class="font-semibold text-center text-lg text-black max-w-2xl">
+                        {{ __('pages/programs/academic_test_preparation.our_program_data.0.description') }}</p>
+                    <x-button href="{{ route('sat_program', app()->getLocale()) }}"
+                        title="{{ __('pages/programs/academic_test_preparation.our_program_data.0.button') }}" />
                 </div>
             </div>
         </div>
@@ -108,13 +91,11 @@
 
     <section class="py-24" id="academic-tutoring">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center">ACADEMIC TUTORING</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center">{{ __('pages/programs/academic_test_preparation.academic_tutoring_title') }}</h2>
 
-            <p class="font-newprimary text-black text-base font-semibold text-center max-w-3xl mx-auto mt-2">
-                With <span class="text-newprimary">core concept mastery</span> and <span
-                    class="text-newprimary">internationally qualified tutors,</span> we prepare students with robust
-                academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.
-            </p>
+            <div class="font-newprimary text-black text-base font-semibold text-center max-w-3xl mx-auto mt-2">
+               {!! __('pages/programs/academic_test_preparation.academic_tutoring_description') !!}
+            </div>
             <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-8">
                 <div class="acad-program-acad-tutor-item acad-program-acad-tutor-active relative overflow-hidden">
                     <span>IBDP</span>
@@ -211,52 +192,41 @@
                 </div>
             </div>
             <div class="flex flex-col items-center w-full mt-10">
-                <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center mb-8">Our Special Formula
-                </h2>
+                <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center mb-8">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_title') }}</h2>
                 <div class="flex flex-col md:flex-row w-full items-center justify-center gap-8">
                     <div class="w-full md:w-1/3 flex flex-col gap-4 justify-between">
-                        <span class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-4 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Personalized tutoring, based on
-                            the
-                            student’s ability
-                        </span>
-                        <span class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">2-way student-tutor interaction
-                            with fun and relaxing vibes
-                        </span>
-                        <span class="hover:scale-110 transition-all duration-500 bg-newprimary py-4 px-4 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Kickstarting major exploration
-                        </span>
+                        <span
+                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-4 w-full text-center text-white"
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.0') }}</span>
+                        <span
+                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.1') }} </span>
+                        <span
+                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-4 px-4 w-full text-center text-white"
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.2') }}</span>
                     </div>
                     <div class="w-full md:w-1/4 hover:scale-95 transition-all duration-500 hover:rotate-2">
                         <img src="{{ asset('assets/img/academic_test_preparation/new-asset/special-formula.png') }}"
                             alt="EduALL Special Formula">
                     </div>
                     <div class="w-full md:w-1/3 flex flex-col gap-4 justify-between">
-                        <span class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-4 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Entrance exam preparation with
-                            a wide variety of textbooks, question banks, and complete past papers</span>
-                        <span class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Student-tutor and parent report
-                            to monitor and develop the student's progress</span>
+                        <span
+                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-8 w-full text-center text-white"
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.3') }}</span>
+                        <span
+                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.4') }}</span>
                     </div>
                 </div>
-                <a href="{{ route('academic_tutoring', app()->getLocale()) }}"
-                    class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Learn
-                    More</a>
+                <x-button href="{{ route('academic_tutoring', app()->getLocale()) }}" title="{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_button') }}" />
             </div>
         </div>
     </section>
 
     <section class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center max-w-2xl">IB EXTENDED ESSAY
-                COACHING
-                PROGRAM
-            </h2>
-            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">Drill your Extended Essay writing
-                process in 3 months
-                with our holistic approach!</p>
+            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center max-w-2xl">{{ __('pages/programs/academic_test_preparation.ib_extended_title') }}</h2>
+            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">{{ __('pages/programs/academic_test_preparation.ib_extended_description') }}</p>
         </div>
         <div class="mt-4 main-container">
             <div class="overflow-hidden bg-[#DEDEDE] p-1 md:p-2">
@@ -297,7 +267,7 @@
         </div>
         <div class="mt-8 main-container flex flex-col items-center w-full">
             <div class="mt-8 flex flex-col w-full">
-                <h2 class="font-newprimary font-bold text-3xl text-black text-center">TOPICS COVERED</h2>
+                <h2 class="font-newprimary font-bold text-3xl text-black text-center">{{ __('pages/programs/academic_test_preparation.ib_extended_topic_title') }}</h2>
                 <div class="mt-8 md:mt-0 flex flex-wrap items-center">
                     <div class="w-2/4 md:w-1/4 flex flex-col items-center md:items-end gap-2 md:order-1 order-1">
                         <span
@@ -328,49 +298,42 @@
                     </div>
                 </div>
             </div>
-
-            <a href="{{ route('sat_program', app()->getLocale()) }}"
-                class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Learn
-                More</a>
+            <x-button href="{{ route('sat_program', app()->getLocale()) }}" title="{{ __('pages/programs/academic_test_preparation.ib_extended_button') }}" />
         </div>
     </section>
 
     <div class="py-24">
         <div class="main-container flex flex-col items-center">
             <div class="flex items-center justify-between gap-8">
-            <div class="w-full md:w-1/2 flex flex-col">
-                <h2 class="font-bold text-[40px] text-black uppercase leading-[2.75rem]">Standardized Test Preparation
-                </h2>
-                <p class="text-base text-justify text-black mt-4 md:mt-8">
-                    Excel in SAT, ACT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic
-                    opportunities through comprehensive preparation strategies.
-                </p>
+                <div class="w-full md:w-1/2 flex flex-col">
+                    <h2 class="font-bold text-[40px] text-black uppercase leading-[2.75rem]">{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_title') }}</h2>
+                    <p class="text-base text-justify text-black mt-4 md:mt-8">{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_description') }}</p>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-end">
+                    <img src="{{ asset('assets/img/academic_test_preparation/new-asset/standart-test.png') }}"
+                        alt="EduALL assets" class="w-full h-full max-w-sm object-contain">
+                </div>
             </div>
-            <div class="w-full md:w-1/2 flex justify-end">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/standart-test.png') }}"
-                    alt="EduALL assets" class="w-full h-full max-w-sm object-contain">
-            </div>
-        </div>
-        <a href=""
-            class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Learn
-            More</a>
+            <x-button href="#" title="{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_button') }}" />
         </div>
     </div>
 
     <section class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center leading-[2.75rem] uppercase">Skillset Tutoring</h2>
+            <h2
+                class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center leading-[2.75rem] uppercase">{{ __('pages/programs/academic_test_preparation.skillset_tutoring_title') }}</h2>
             <div class="flex flex-col md:flex-row justify-evenly w-full gap-6 mt-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-1.png') }}"alt="EduALL Asset" class="w-full md:w-1/3 object-contain">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-2.png') }}"alt="EduALL Asset" class="w-full md:w-1/3 object-contain">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-3.png') }}"alt="EduALL Asset" class="w-full md:w-1/3 object-contain">
+                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-1.png') }}"alt="EduALL Asset"
+                    class="w-full md:w-1/3 object-contain">
+                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-2.png') }}"alt="EduALL Asset"
+                    class="w-full md:w-1/3 object-contain">
+                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-3.png') }}"alt="EduALL Asset"
+                    class="w-full md:w-1/3 object-contain">
             </div>
             <p class="text-lg text-center text-black mt-4 md:mt-8 max-w-5xl">
-                Elevate your unique passions through personalized skillset tutoring that focuses on the needs of every student. This is designed to elevate students’ academic profile, making their university application stand out.
+                {{ __('pages/programs/academic_test_preparation.skillset_tutoring_description') }}
             </p>
-            <a href=""
-            class="block mt-12 bg-black text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Learn
-            More</a>
+            <x-button href="#" title="{{ __('pages/programs/academic_test_preparation.skillset_tutoring_button') }}" />
         </div>
     </section>
 
@@ -378,7 +341,7 @@
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="pt-16">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">WHAT OUR STUDENT SAY</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">{{ __('pages/programs/academic_test_preparation.testimony_title') }}</h2>
         </div>
         <div class="main-container mb-12 md:my-12">
             <div class="splide" role="group">
@@ -395,28 +358,7 @@
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full pb-8">
                                 <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                    <div
-                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
-                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
-                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
-                                            {!! $testi->testi_desc !!}
-                                        </div>
-                                        <div class="mt-4 flex flex-col w-full">
-                                            <div class="px-4 font-bold text-lg leading-5">
-                                                {{ $testi->testi_name }}
-                                            </div>
-                                            <div class="px-4 text-xs font-semibold leading-3">
-                                                {!! $testi->testi_subtitle !!}
-                                            </div>
-                                            <span class="px-4 mt-2.5 mb-4 text-xs font-semibold text-newprimary">
-                                                {{ $testi->testi_subcategory != null ? $testi->testi_subcategory : $testi->testi_category }}
-                                            </span>
-                                            <a href="{{ route('testimonial', app()->getLocale()) }}"
-                                                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
-                                                more <i
-                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
-                                        </div>
-                                    </div>
+                                    <x-testimonial-card :testimonial=$testi />
                                 </div>
                             </li>
                         @endforeach

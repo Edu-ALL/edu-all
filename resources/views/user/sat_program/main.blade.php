@@ -10,14 +10,13 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 bg-sat-prep-header bg-cover bg-center" id="banner">
         <div class="flex flex-col justify-between items-center md:items-start main-container py-24 gap-8">
-            <h2 class="font-newprimary font-bold text-5xl text-white text-center">SAT/ACT PREP</h2>
+            <h2 class="font-newprimary font-bold text-5xl text-white text-center">
+                {{ __('pages/programs/sat_program.title') }}</h2>
             <p class="font-newprimary text-white text-center md:text-justify max-w-md">
-                Unlock your full potential for the world’s top universities!
-                Elevate your test scores with our expert mentors armed with proven strategies.
+                {{ __('pages/programs/sat_program.body') }}
             </p>
-            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="mt-8 bg-newprimary text-white font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">Register
-                Here</a>
+            <x-button type='secondary' href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
+                title="{{ __('pages/programs/sat_program.header_button') }}" />
         </div>
     </section>
 
@@ -25,72 +24,21 @@
     <section class="py-16">
         <div class="main-container max-w-screen-2xl mx-auto">
             <div class="flex flex-wrap justify-evenly w-full gap-4 uppercase">
-                <div
-                    class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-1.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
+                @foreach (__('pages/programs/sat_program.benefit_list') as $item)
+                    <div
+                        class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
+                        <div class="overflow-hidden h-3/5">
+                            <img src={{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-' . $loop->iteration . '.webp') }}
+                                alt="EduALL figure"
+                                class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
+                        </div>
+                        <div class="flex bg-newprimary h-2/5 w-full">
+                            <h4
+                                class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6 w-36">
+                                {{ $item }}</h4>
+                        </div>
                     </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4 class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6">Private
-                            & <br>
-                            Semi-Private <br> Class</h4>
-                    </div>
-                </div>
-                <div
-                    class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-2.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4 class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6">Tailored
-                            <br>
-                            Learning
-                            <br> Materials
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-3.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4 class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6">
-                            Weakness- <br>
-                            Targeting
-                            <br> Strategy
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-4.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4 class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6">Official
-                            <br> Mock
-                            Test
-                        </h4>
-                    </div>
-                </div>
-                <div
-                    class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-5.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4 class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6">SAT/ACT
-                            <br>
-                            Expert-Made <br> Curriculum
-                        </h4>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -105,7 +53,8 @@
                             <div
                                 class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                                 <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/reading.webp') }}"
-                                    alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
+                                    alt="EduALL icons"
+                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
                             </div>
                             <span class="font-newprimary text-black text-lg font-semibold">Reading</span>
                         </div>
@@ -113,7 +62,8 @@
                             <div
                                 class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                                 <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/writing.webp') }}"
-                                    alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
+                                    alt="EduALL icons"
+                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
                             </div>
                             <span class="font-newprimary text-black text-lg font-semibold">Writing & Language</span>
                         </div>
@@ -123,7 +73,8 @@
                             <div
                                 class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
                                 <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/mathematics.webp') }}"
-                                    alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
+                                    alt="EduALL icons"
+                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
                             </div>
                             <span class="font-newprimary text-black text-lg font-semibold">Mathematics</span>
                         </div>
@@ -131,7 +82,8 @@
                             <div
                                 class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-black acad-tutor-s3-polygon flex items-center justify-center">
                                 <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/physics.webp') }}"
-                                    alt="EduALL icons" class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
+                                    alt="EduALL icons"
+                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
                             </div>
                             <div class="flex flex-col items-center">
                                 <span class="font-newprimary text-black text-lg font-semibold">Science*</span>
@@ -145,10 +97,10 @@
                     <div class="rounded-md bg-newred py-2 px-5 flex items-center absolute top-0 left-0 right-0"
                         style="clip-path: polygon(0 0, 100% 0%, 100% 40%, 96% 100%, 0 100%);">
                         <h4 class="w-1/3 font-newprimary text-white text-xs md:text-base uppercase italic">
-                            GRADE 10-12
+                            {{ __('pages/programs/sat_program.benefit_class') }}
                         </h4>
                         <h4 class="font-newprimary text-white text-xs md:text-base uppercase italic">
-                            PRIVATE & SEMI-PRIVATE CLASS
+                            {{ __('pages/programs/sat_program.benefit_class_desc') }}
                         </h4>
                     </div>
                     <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-figure.webp') }}"
@@ -161,79 +113,28 @@
     {{-- SECTION 3 --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">YOUR JOURNEY TO SUCCESS</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
+                {{ __('pages/programs/sat_program.journey_title') }}</h2>
             <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-12">
-                <div class="sat-program-s3-item sat-program-s3-active relative overflow-hidden">
-                    <span>Discover Your Path</span>
-                    <div class="desc">
-                        <ul class="whitespace-nowrap">
-                            <li>
-                                Figure out your current level
-                            </li>
-                            <li>
-                                Give you a feel of the actual SAT format
-                            </li>
-                        </ul>
+                @foreach (__('pages/programs/sat_program.journey_list') as $item)
+                    <div
+                        class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
+                        <span>{{ $item['title'] }}</span>
+                        <div class="desc">
+                            <ul class="whitespace-nowrap">
+                                @foreach ($item['description'] as $description)
+                                    <li> {{ $description }} </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="polygon @if ($loop->index % 2 == 0) bg-newprimary @else bg-black @endif">
+                        </div>
+                        <div class="w-full h-full bg-black">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s3-figure-' . $loop->iteration . '.webp') }}"
+                                alt="EduALL figure">
+                        </div>
                     </div>
-                    <div class="polygon bg-newprimary"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s3-figure-1.webp') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-                <div class="sat-program-s3-item sat-program-s3-inactive relative overflow-hidden">
-                    <span>In-Depth Analysis</span>
-                    <div class="desc">
-                        <ul class="xl:whitespace-nowrap">
-                            <li>
-                                Listing specific details on your SAT strengths and weaknesses
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-black"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s3-figure-2.webp') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-                <div class="sat-program-s3-item sat-program-s3-inactive relative overflow-hidden">
-                    <span>Customized
-                        Preparation
-                        Calendar</span>
-                    <div class="desc">
-                        <ul class="xl:whitespace-nowrap">
-                            <li>
-                                Develop a plan to tackle your weaknesses while retaining your strengths
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-newprimary"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s3-figure-3.webp') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-                <div class="sat-program-s3-item sat-program-s3-inactive relative overflow-hidden">
-                    <span>Learn From Expert Tutors</span>
-                    <div class="desc">
-                        <ul class="xl:whitespace-nowrap">
-                            <li>
-                                Concept lectures on reading, writing and language, and math
-                            </li>
-                            <li>
-                                Numerous weakness-targeting practice problems and personal feedback
-                            </li>
-                            <li>
-                                Regular full SAT Practice test and its analysis to track your progress
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-black"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s3-figure-4.webp') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -247,55 +148,31 @@
                     <div class="flex flex-col items-start max-w-lg opacity-100 private-class transition-all duration-300">
                         <span
                             class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Ideal For Grade 12</span>
-                        <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">PRIVATE CLASS</h3>
-                        <p class="mt-2 sfont-newprimary text-white text-base">26 or 36 hours of one-on-one personalized
-                            sessions
-                            with our expert tutors.</p>
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.private_class_recomendation') }}</span>
+                        <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
+                            {{ __('pages/programs/sat_program.private_class_title') }}</h3>
+                        <p class="mt-2 sfont-newprimary text-white text-base">
+                            {{ __('pages/programs/sat_program.private_class_description') }}</p>
                         <ul>
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">TAILOR-MADE CURRICULUM</h6>
-                                </div>
-                                <p class="ml-8 text-sm">Individualized learning schedule designed to maximize your
-                                    abilities.</p>
-                            </li>
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">FLEXIBLE SCHEDULING</h6>
-                                </div>
-                                <p class="ml-8 text-sm">Start your journey instantly with adaptable class timings.</p>
-                            </li>
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">TRACK YOUR PROGRESS</h6>
-                                </div>
-                                <p class="ml-8 text-sm">Monitor improvements through practice test results and receive
-                                    on-demand parent updates.</p>
-                            </li>
+                            @foreach (__('pages/programs/sat_program.private_class_list') as $item)
+                                <li class="font-newprimary text-white mt-2">
+                                    <div class="flex items-center gap-3">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
+                                                fill="white" />
+                                        </svg>
+                                        <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
+                                    </div>
+                                    <p class="ml-8 text-sm">{{ $item['description'] }}</p>
+                                </li>
+                            @endforeach
                         </ul>
                         <button
                             class="slide-button-left mt-8 px-8 py-1 bg-newyellow shadow-xl rounded-lg hover:px-10 transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960"
-                                width="36" fill="#0000FF">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36"
+                                fill="#0000FF">
                                 <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
                             </svg>
                         </button>
@@ -304,56 +181,33 @@
                         class="flex w-full flex-col items-start max-w-lg opacity-0 -translate-x-2/3 pl-4 semi-private-class transition-all duration-700">
                         <span
                             class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Ideal For Grades 10-11</span>
-                        <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">SEMI-PRIVATE CLASS</h3>
-                        <p class="mt-2 sfont-newprimary text-white text-base">40 or 56-hour sessions in small groups, a
-                            maximum of 4 students with our SAT/ACT expert tutors.</p>
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.semi_private_class_recomendation') }}</span>
+                        <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
+                            {{ __('pages/programs/sat_program.semi_private_class_title') }}</h3>
+                        <p class="mt-2 sfont-newprimary text-white text-base">
+                            {{ __('pages/programs/sat_program.semi_private_class_description') }}</p>
                         <ul>
-                            <li class="font-newprimary text-white mt-2 w-full">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">CURATED & TESTED CURRICULUM</h6>
-                                </div>
-                                <p class="ml-8 text-sm">Carefully designed study plan that covers diagnostics, in-depth
-                                    subject exploration, and official SAT/ACT practice tests.</p>
-                                <div class="mt-2 w-full flex items-center justify-center">
-                                    <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}" target="_blank"
-                                        class="bg-newred font-semibold text-xs py-1 px-2 hover:bg-black hover:px-5 transition-all duration-150">Discover
-                                        the Full
-                                        Curriculum Here</a>
-                                </div>
-                            </li>
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">LEARN FROM ANYWHERE</h6>
-                                </div>
-                                <p class="ml-8 text-sm">We will come to you. Engaging online classes are also available!
-                                </p>
-                            </li>
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">BONUS LEARNING MATERIAL</h6>
-                                </div>
-                                <p class="ml-8 text-sm">Access supplementary videos at your convenience for a deeper
-                                    understanding. Watch anywhere, anytime.</p>
-                            </li>
+                            @foreach (__('pages/programs/sat_program.semi_private_class_list') as $item)
+                                <li class="font-newprimary text-white mt-2">
+                                    <div class="flex items-center gap-3">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
+                                                fill="white" />
+                                        </svg>
+                                        <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
+                                    </div>
+                                    <p class="ml-8 text-sm">{{ $item['description'] }}</p>
+                                    @if ($loop->index == 0)
+                                        <div class="mt-2 w-full flex items-center justify-center">
+                                            <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}"
+                                                target="_blank"
+                                                class="bg-newred font-semibold text-xs py-1 px-2 hover:bg-black hover:px-5 transition-all duration-150">{{ $item['btn'] }}</a>
+                                        </div>
+                                    @endif
+                                </li>
+                            @endforeach
                         </ul>
                         <button
                             class="slide-button-right rotate-180 mt-8 px-8 py-1 bg-newyellow shadow-xl rounded-lg hover:px-10 transition-all">
@@ -372,123 +226,73 @@
                 <div class="flex flex-col items-center max-w-lg bg-newprimary main-container  py-12 ">
                     <span
                         class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                        style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Ideal For Grade 12</span>
-                    <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">PRIVATE CLASS</h3>
-                    <p class="mt-2 sfont-newprimary text-white text-base text-center md:text-left">26 or 36 hours of
-                        one-on-one personalized
-                        sessions
-                        with our expert tutors.</p>
+                        style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.private_class_recomendation') }}</span>
+                    <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
+                        {{ __('pages/programs/sat_program.private_class_title') }}</h3>
+                    <p class="mt-2 sfont-newprimary text-white text-base text-center md:text-left">
+                        {{ __('pages/programs/sat_program.private_class_description') }}</p>
                     <ul>
-                        <li class="font-newprimary text-white mt-2">
-                            <div class="flex items-center gap-3">
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                        fill="white" />
-                                </svg>
-                                <h6 class="text-lg font-semibold">TAILOR-MADE CURRICULUM</h6>
-                            </div>
-                            <p class="ml-8 text-sm">Individualized learning schedule designed to maximize your
-                                abilities.</p>
-                        </li>
-                        <li class="font-newprimary text-white mt-2">
-                            <div class="flex items-center gap-3">
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                        fill="white" />
-                                </svg>
-                                <h6 class="text-lg font-semibold">FLEXIBLE SCHEDULING</h6>
-                            </div>
-                            <p class="ml-8 text-sm">Start your journey instantly with adaptable class timings.</p>
-                        </li>
-                        <li class="font-newprimary text-white mt-2">
-                            <div class="flex items-center gap-3">
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                        fill="white" />
-                                </svg>
-                                <h6 class="text-lg font-semibold">TRACK YOUR PROGRESS</h6>
-                            </div>
-                            <p class="ml-8 text-sm">Monitor improvements through practice test results and receive
-                                on-demand parent updates.</p>
-                        </li>
+                        @foreach (__('pages/programs/sat_program.private_class_list') as $item)
+                            <li class="font-newprimary text-white mt-2">
+                                <div class="flex items-center gap-3">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
+                                            fill="white" />
+                                    </svg>
+                                    <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
+                                </div>
+                                <p class="ml-8 text-sm">{{ $item['description'] }}</p>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="flex w-full flex-col items-center max-w-lg mt-12 bg-newprimary main-container  py-12 ">
                     <span
                         class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                        style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">Ideal For Grades 10-11</span>
-                    <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl text-center">SEMI-PRIVATE CLASS</h3>
-                    <p class="mt-2 sfont-newprimary text-white text-base text-center">40 or 56-hour sessions in small
-                        groups, a
-                        maximum of 4 students with our SAT/ACT expert tutors.</p>
+                        style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.private_class_recomendation') }}</span>
+                    <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
+                        {{ __('pages/programs/sat_program.semi_private_class_title') }}</h3>
+                    <p class="mt-2 sfont-newprimary text-white text-base">
+                        {{ __('pages/programs/sat_program.semi_private_class_description') }}</p>
                     <ul>
-                        <li class="font-newprimary text-white mt-2 w-full">
-                            <div class="flex items-center gap-3">
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                        fill="white" />
-                                </svg>
-                                <h6 class="text-lg font-semibold">CURATED & TESTED CURRICULUM</h6>
-                            </div>
-                            <p class="ml-8 text-sm">Carefully designed study plan that covers diagnostics, in-depth
-                                subject exploration, and official SAT/ACT practice tests.</p>
-                            <div class="mt-2 w-full flex items-center justify-center">
-                                <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}" target="_blank"
-                                    class="bg-newred font-semibold text-xs py-1 px-2">Discover the Full
-                                    Curriculum Here</a>
-                            </div>
-                        </li>
-                        <li class="font-newprimary text-white mt-2">
-                            <div class="flex items-center gap-3">
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                        fill="white" />
-                                </svg>
-                                <h6 class="text-lg font-semibold">LEARN FROM ANYWHERE</h6>
-                            </div>
-                            <p class="ml-8 text-sm">We will come to you. Engaging online classes are also available!
-                            </p>
-                        </li>
-                        <li class="font-newprimary text-white mt-2">
-                            <div class="flex items-center gap-3">
-                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                        fill="white" />
-                                </svg>
-                                <h6 class="text-lg font-semibold">BONUS LEARNING MATERIAL</h6>
-                            </div>
-                            <p class="ml-8 text-sm">Access supplementary videos at your convenience for a deeper
-                                understanding. Watch anywhere, anytime.</p>
-                        </li>
+                        @foreach (__('pages/programs/sat_program.semi_private_class_list') as $item)
+                            <li class="font-newprimary text-white mt-2">
+                                <div class="flex items-center gap-3">
+                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
+                                            fill="white" />
+                                    </svg>
+                                    <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
+                                </div>
+                                <p class="ml-8 text-sm">{{ $item['description'] }}</p>
+                                @if ($loop->index == 0)
+                                    <div class="mt-2 w-full flex items-center justify-center">
+                                        <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}"
+                                            target="_blank"
+                                            class="bg-newred font-semibold text-xs py-1 px-2 hover:bg-black hover:px-5 transition-all duration-150">{{ $item['btn'] }}</a>
+                                    </div>
+                                @endif
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </div>
         <div class="main-container">
-            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class=" block mt-12 bg-black text-white font-newprimary text-sm md:text-lg font-semibold py-1 md:py-2 px-4 md:px-12 hover:bg-newprimary hover:px-20 transition-all duration-150">Take
-                Your FREE
-                SAT
-                Diagnostic Test</a>
+            <x-button href="{{ route('sign_me_sat_prep', app()->getLocale()) }}" type='primary'
+                title=" {{ __('pages/programs/sat_program.private_semi_private_button') }}" />
         </div>
     </div>
 
     {{-- SECTION 5 --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">WHY US?</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
+                {{ __('pages/programs/sat_program.why_us_title') }}</h2>
             <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s5-table.webp') }}"
                 alt="EduALL Table" class="w-full h-full py-8">
         </div>
@@ -498,28 +302,21 @@
     <section
         class="py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/new-asset/s6-background.webp')] bg-newprimary bg-bottom bg-cover  bg-blend-multiply">
         <div class="flex main-container flex-col items-center justify-center gap-y-8 md:flex-row">
-            <div class="w-full md:w-1/4 flex flex-col items-center">
-                <h3 class="text-newyellow font-bold text-[52px] leading-10">1500+</h3>
-                <h4 class="text-white font-semibold text-xl uppercase mt-2">practice questions</h4>
-                <span class="text-white text-sm">to take</span>
-            </div>
-            <div class="w-full md:w-1/4 flex flex-col items-center">
-                <h3 class="text-newyellow font-bold text-[52px] leading-10">95%</h3>
-                <h4 class="text-white font-semibold text-xl uppercase mt-2">students</h4>
-                <span class="text-white text-sm">hit above average score</span>
-            </div>
-            <div class="w-full md:w-1/4 flex flex-col items-center">
-                <h3 class="text-newyellow font-bold text-[52px] leading-10">90%</h3>
-                <h4 class="text-white font-semibold text-xl uppercase mt-2">got accepted</h4>
-                <span class="text-white text-base">to their dream universities</span>
-            </div>
+            @foreach (__('pages/programs/sat_program.info_list') as $item)
+                <div class="w-full md:w-1/4 flex flex-col items-center">
+                    <h3 class="text-newyellow font-bold text-[52px] leading-10">{{ $item['quantity'] }}</h3>
+                    <h4 class="text-white font-semibold text-xl uppercase mt-2">{{ $item['body'] }}</h4>
+                    <span class="text-white text-sm">{{ $item['span'] }}</span>
+                </div>
+            @endforeach
         </div>
     </section>
 
     {{-- SECTION 7 --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">WHAT OUR STUDENT SAY</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
+                {{ __('pages/programs/sat_program.testimoni_title') }}</h2>
         </div>
         <div class="main-container my-12">
             <div class="splide" role="group">
@@ -536,26 +333,7 @@
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full pb-8">
                                 <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                    <div
-                                        class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
-                                        <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
-                                        <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
-                                            {!! $testi->testi_desc !!}
-                                        </div>
-                                        <div class="mt-4 flex flex-col w-full">
-                                            <div class="px-4 font-bold text-lg leading-5">
-                                                {{ $testi->testi_name }}
-                                            </div>
-                                            <div class="px-4 mb-4 text-xs font-semibold leading-3">
-                                                {!! $testi->testi_subtitle !!}
-                                            </div>
-                                            </span>
-                                            <a href="#"
-                                                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
-                                                more <i
-                                                    class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
-                                        </div>
-                                    </div>
+                                    <x-testimonial-card :testimonial=$testi/>
                                 </div>
                             </li>
                         @endforeach
@@ -569,12 +347,11 @@
     <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
-                175+ students have already navigated to their dream universities with stellar test scores. Now, it's your
-                turn!
+                {{ __('pages/programs/sat_program.free_trial_title') }}
             </h2>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                 class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150">
-                Take my FREE SAT Diagnostic Test
+                {{ __('pages/programs/sat_program.free_trial_button') }}
             </a>
         </div>
     </section>
@@ -583,15 +360,13 @@
     <section
         class="mt-16 py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/new-asset/s9-background.webp')] bg-cover bg-center">
         <div class="flex flex-col justify-between items-center md:items-start main-container py-16 gap-8">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-white text-center md:text-left max-w-xl">ENGLISH
-                PROFICIENCY
-                TEST PREP</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-white text-center md:text-left max-w-xl">
+                {{ __('pages/programs/sat_program.banner2_title') }}</h2>
             <p class="font-newprimary text-white text-center md:text-justify max-w-md">
-                Excel in English, excel in life! Unlock top university doors with our TOEFL/IELTS Prep!
+                {{ __('pages/programs/sat_program.banner2_body') }}
             </p>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="mt-8 bg-black text-white font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">Register
-                Here</a>
+                class="mt-8 bg-black text-white font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">{{ __('pages/programs/sat_program.banner2_button') }}</a>
         </div>
     </section>
 
@@ -604,30 +379,15 @@
                         alt="EduALL figure" class="h-full object-cover hover:scale-110 transition-all duration-700">
                 </div>
                 <div class="w-full md:w-1/2">
-                    <div class="flex flex-col pt-4  items-center md:items-start">
-                        <span
-                            class="bg-newprimary px-6 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg"
-                            style="clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);">Precision Teaching</span>
-                        <p class="md:pl-6 font-newprimary text-black text-center md:text-start text-base mt-1">Tailored,
-                            1-on-1 tutoring that cuts through the clutter, focusing on what you need to succeed.</p>
-                    </div>
-                    <div class="flex flex-col pt-4 items-center md:items-start">
-                        <span
-                            class="bg-newprimary px-6 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg"
-                            style="clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);">Mentorship from the Best</span>
-                        <p class="md:pl-6 font-newprimary text-black text-center md:text-start text-base mt-1">With more
-                            than 7 years, our tutors are more than teachers; they are here to guide you to the best result.
-                        </p>
-                    </div>
-                    <div class="flex flex-col pt-4 items-center md:items-start">
-                        <span
-                            class="bg-newprimary px-6 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg"
-                            style="clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);">Smart Learning, Real
-                            Results</span>
-                        <p class="md:pl-6 font-newprimary text-black text-center md:text-start text-base mt-1">From
-                            concept-based learning to strategic prep, our methods are designed for real understanding, not
-                            just memorization.</p>
-                    </div>
+                    @foreach (__('pages/programs/sat_program.benefit2_list') as $item)
+                        <div class="flex flex-col pt-4  items-center md:items-start">
+                            <span
+                                class="bg-newprimary px-6 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg"
+                                style="clip-path: {{ $item['polygon'] }};">{{ $item['title'] }}</span>
+                            <p class="md:pl-6 font-newprimary text-black text-center md:text-start text-base mt-1">
+                                {{ $item['description'] }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -636,64 +396,27 @@
     {{-- SECTION 11 --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">HOW WE WILL SUPPORT YOU</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
+                {{ __('pages/programs/sat_program.support_title') }}</h2>
             <div class="flex flex-col md:flex-row items-center justify-center mt-12 gap-8">
-                <div
-                    class="flex flex-col polygon-shape w-1/2 md:w-1/4 aspect-square rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s11-figure-1.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
+                @foreach (__('pages/programs/sat_program.support_list') as $item)
+                    <div
+                        class="flex flex-col polygon-shape w-1/2 md:w-1/4 aspect-square rounded-xl bg-newprimary group overflow-hidden">
+                        <div class="overflow-hidden h-3/5">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s11-figure-' . $loop->iteration . '.webp') }}"
+                                alt="EduALL figure"
+                                class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
+                        </div>
+                        <div class="flex bg-newprimary h-2/5 w-full">
+                            <h4
+                                class="font-newprimary text-sm md:text-xl uppercase md:leading-6 text-white font-semibold h-full md:pt-2 pl-2 md:pl-4 pr-6 w-52">
+                                {!! $item !!}</h4>
+                        </div>
                     </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4
-                            class="font-newprimary text-sm md:text-xl uppercase md:leading-6 text-white font-semibold h-full md:pt-2 pl-2 md:pl-4 pr-6">
-                            Access to <br>
-                            Practice <br> Test</h4>
-                    </div>
-                </div>
-                <div
-                    class="flex flex-col polygon-shape w-1/2 md:w-1/4 aspect-square rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s11-figure-2.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4
-                            class="font-newprimary text-sm md:text-xl uppercase md:leading-6 text-white font-semibold h-full md:pt-2 pl-2 md:pl-4 pr-6">
-                            Parental <br> Progress to <br> Stay On Track</h4>
-                    </div>
-                </div>
-                <div
-                    class="flex flex-col polygon-shape w-1/2 md:w-1/4 aspect-square rounded-xl bg-newprimary group overflow-hidden">
-                    <div class="overflow-hidden h-3/5">
-                        <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s11-figure-3.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="flex bg-newprimary h-2/5 w-full">
-                        <h4
-                            class="font-newprimary text-sm md:text-xl uppercase md:leading-6 text-white font-semibold h-full md:pt-2 pl-2 md:pl-4 pr-6">
-                            Flexible, <br> On-Demand <br> Schedule</h4>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="flex flex-col items-center text-center mt-20">
-                <h4 class="text-newred text-xl md:text-2xl font-bold uppercase">Top universities worldwide require high
-                    TOEFL/IELTS
-                    scores.</h4>
-                <h5 class="text-black text-xl md:text-2xl md:leading-[2.5rem]">Did you know the average accepted score at
-                    elite
-                    institutions <br> is
-                    <span class="text-3xl font-bold text-newprimary"> 7.5 </span>
-                    for
-                    <span class="text-newprimary font-bold uppercase">
-                        IELTS
-                    </span>
-                    and
-                    <span class="text-3xl font-bold text-newprimary"> 90 to 100 </span>
-                    for
-                    <span class="text-newprimary font-bold uppercase">TOEFL?</span>
-                </h5>
-
+                {!! __('pages/programs/sat_program.support_desc') !!}
             </div>
         </div>
     </section>
@@ -702,16 +425,16 @@
     <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
-                Seize this chance to stand out in university applications!
+                {{ __('pages/programs/sat_program.free_trial2_title') }}
             </h2>
             <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
-                Transform your English skills into an opportunity for global education.
+                {{ __('pages/programs/sat_program.free_trial2_description') }}
             </p>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                 class="px-8 md:px-12 py-3 font-bold
                 font-newprimary text-xs md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all
                 duration-150">
-                Book Your FREE Consultation Now
+                {{ __('pages/programs/sat_program.free_trial2_button') }}
             </a>
         </div>
     </section>
