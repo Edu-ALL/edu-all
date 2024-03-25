@@ -91,35 +91,72 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-5HHPRQCSSE');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5HHPRQCSSE');
     </script>
 
-    <!-- Meta Pixel Code -->
-    <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window,
-            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    </script>
-    <!-- End Meta Pixel Code -->
+    @if (Route::currentRouteName() == 'sign_me_adm_mentoring')
+        <!-- Meta Pixel Code -->
+        <script>
+            ! function(f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function() {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '395995446484778');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=395995446484778&ev=PageView&noscript=1" /></noscript>
+        <!-- End Meta Pixel Code -->
+    @else
+        <!-- Meta Pixel Code -->
+        <script>
+            ! function(f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function() {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '928080065534623');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
+        <!-- End Meta Pixel Code -->
+    @endif
+
 
 
 </head>
@@ -174,18 +211,20 @@
         </div>
     </div>
 
-    <div class="fixed lg:left-5 left-[10px] z-[9999] transition-all duration-1000 -bottom-[100px]"
-        id="newsButton">
+    <div class="fixed lg:left-5 left-[10px] z-[9999] transition-all duration-1000 -bottom-[100px]" id="newsButton">
         <div class="bg-red hover:bg-white shadow-md px-3 h-[40px] flex justify-center items-center text-white hover:text-newprimary border-[1px] border-[#F78614] cursor-pointer transition-all duration-200"
             onclick="popupForm('open')">
             <i class="fa fa-newspaper mr-2"></i>
             <span>Get Updates</span>
         </div>
     </div>
+
     @include('layout.user.navbar')
+
     <div class="mt-16">
         @yield('content')
     </div>
+    
     @include('layout.user.footer')
 </body>
 
