@@ -68,14 +68,14 @@
 
                                     </ul>
                                 </li>
-                                <li class="child_nav group">
+                                {{-- <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/passion-project-mentoring"
                                         class="child_child_nav_link">
                                         <i class="fa-solid fa-desktop mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_passion') }}
                                     </a>
 
-                                </li>
+                                </li> --}}
                                 <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation"
                                         class="child_child_nav_link">
@@ -90,12 +90,12 @@
                                                 {{ __('pages/navbar.programs_academic_tutoring') }}
                                             </a>
                                         </li>
-                                        {{-- <li class="child_child_nav">
+                                        <li class="child_child_nav">
                                             <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/ib-ee-coaching-program"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_academic_ib') }}
                                             </a>
-                                        </li> --}}
+                                        </li>
                                         <li class="child_child_nav lg:border-b-0">
                                             <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/sat-program"
                                                 class="child_child_link">
