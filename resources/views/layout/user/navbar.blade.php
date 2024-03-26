@@ -90,12 +90,12 @@
                                                 {{ __('pages/navbar.programs_academic_tutoring') }}
                                             </a>
                                         </li>
-                                        <li class="child_child_nav">
+                                        {{-- <li class="child_child_nav">
                                             <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/ib-ee-coaching-program"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_academic_ib') }}
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li class="child_child_nav lg:border-b-0">
                                             <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/sat-program"
                                                 class="child_child_link">
