@@ -29,7 +29,7 @@
         <div class="main-container lg:max-w-10xl lg:mx-auto">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:gap-12 h-full">
                 @foreach ($allin_mentor as $mentor)
-                    <div class="w-full md:-mt-[100px] md:mb-[250px]">
+                    <div class="w-full md:-mt-[100px] -mt-[150px] md:mb-[250px] mb-[350px]">
                         <x-mentor-card :mentor=$mentor />
                     </div>
                 @endforeach
