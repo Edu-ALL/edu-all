@@ -33,6 +33,9 @@ class ImportantDate extends Controller
             ';
                 return $result;
             })
+            ->editColumn('link', function ($d) {
+                return $d->link;
+            })
             ->editColumn('action', function($d){
                 $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
@@ -77,6 +80,7 @@ class ImportantDate extends Controller
             $important_date = new ImportantDates();
             $important_date->title = $request->title;
             $important_date->date = $request->date;
+            $important_date->link = $request->link;
             $important_date->save();
             DB::commit();
             Log::notice('Important Date : '.$important_date->title.', with date '.$important_date->date.' has been successfully Created by '.Auth::guard('web-admin')->user()->name);
@@ -116,6 +120,7 @@ class ImportantDate extends Controller
             $important_date = ImportantDates::find($id);
             $important_date->title = $request->title;
             $important_date->date = $request->date;
+            $important_date->link = $request->link;
             $important_date->save();
             DB::commit();
             Log::notice('Important Date : '.$important_date->title.', with date '.$important_date->date.' has been successfully Updated by '.Auth::guard('web-admin')->user()->name);

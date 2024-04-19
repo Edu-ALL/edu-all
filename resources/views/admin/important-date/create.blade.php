@@ -74,6 +74,16 @@
                                                     class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
                                         </div>
+                                        <div class="col">
+                                            <label for="" class="form-label">
+                                                Hyperlink 
+                                            </label>
+                                            <input type="url" class="form-control" id="link"
+                                                name="link" value="{{ old('link') }}">
+                                            @error('link')
+                                                <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="text-center mt-4">

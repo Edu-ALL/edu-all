@@ -16,6 +16,7 @@ class ImportantDates extends Model
         'id',
         'title',
         'date',
+        'link',
         'created_at',
         'updated_at'
     ];

@@ -498,19 +498,24 @@
                                 <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
                                 <ul class="mt-2 overflow-y-auto overflow-x-hidden">
                                     @foreach ($important_dates as $important_date)
-                                        <li class="flex justify-between border-b border-b-white py-2 px-2 w-full">
-                                            <h3 class="font-newprimary font-normal text-white w-[75%]">
-                                                {{ $important_date->title }}
-                                            </h3>
-                                            <span class="font-newprimary text-newyellow w-[25%] text-end">
-                                                {{ date('M, d Y', strtotime($important_date->date)) }}
-                                            </span>
-                                        </li>
+                                        <l>
+                                            <a href="{{ $important_date->link ? $important_date->link : '#' }}"
+                                                target="_blank"
+                                                class="flex justify-between border-b border-b-white py-2 px-2 w-ful">
+                                                <h3 class="font-newprimary font-normal hover:text-blue-500 text-white w-[75%]">
+                                                    {{ $important_date->title }}
+                                                </h3>
+                                                <span class="font-newprimary hover:text-blue-500 text-newyellow w-[25%] text-end">
+                                                    {{ date('M, d Y', strtotime($important_date->date)) }}
+                                                </span>
+                                            </a>
+                                            </li>
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="px-6 w-full">
                                 <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                    target="_blank"
                                     class="w-full block py-3 bg-red font-newprimary text-center text-white text-base">
                                     more important dates
                                 </a>
