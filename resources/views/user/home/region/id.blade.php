@@ -329,7 +329,8 @@
                     compelling and authentic profile for university applications.
                 </h4>
             </div>
-            <div class="flex flex-col absolute translate-y-[120px] lg:top-[25%] lg:left-[10%] academic_pathaway_text opacity-0">
+            <div
+                class="flex flex-col absolute translate-y-[120px] lg:top-[25%] lg:left-[10%] academic_pathaway_text opacity-0">
                 <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
                     Academic
                 </h1>
@@ -398,7 +399,7 @@
                             @foreach ($all_mentor as $mentor)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container px-4 w-full h-[80%] mt-32">
-                                        <x-mentor-card :mentor=$mentor/>
+                                        <x-mentor-card :mentor=$mentor />
                                     </div>
                                 </li>
                             @endforeach
@@ -509,7 +510,7 @@
                                 </ul>
                             </div>
                             <div class="px-6 w-full">
-                                <a href="#"
+                                <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
                                     class="w-full block py-3 bg-red font-newprimary text-center text-white text-base">
                                     more important dates
                                 </a>

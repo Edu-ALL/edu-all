@@ -34,13 +34,24 @@ class Mentors extends Model
         'updated_at'
     ];
 
-    public function mentor_video(){
+    public function mentor_video()
+    {
         return $this->hasMany(MentorVideos::class, 'mentor_id', 'group');
     }
-    public function blog(){
+    public function blog()
+    {
         return $this->hasMany(Blogs::class, 'mt_id', 'id');
     }
-    public function languages(){
+    public function languages()
+    {
         return $this->belongsTo(Languages::class, 'lang', 'language_id');
+    }
+    public function mentor_value()
+    {
+        $lang = substr(app()->getLocale(), 3, 2);
+        return $this->hasMany(MentorValues::class, 'mentor_id', 'group')
+            ->whereHas('languages', function ($query) use ($lang) {
+                $query->where('lang', $lang);
+            });
     }
 }
