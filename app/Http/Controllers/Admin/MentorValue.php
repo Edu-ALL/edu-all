@@ -108,7 +108,23 @@ class MentorValue extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mentor_value = MentorValues::find($id);
+
+        DB::beginTransaction();
+        try {
+            $mentor_value->value = $request->value;
+
+            $mentor_value->updated_at = date('Y-m-d H:i:s');
+            $mentor_value->save();
+            DB::commit();
+            Log::notice('Mentor Value : ' . $mentor_value->video_embed . ' has been successfully Updated by ' . Auth::guard('web-admin')->user()->name);
+        } catch (Exception $e) {
+            DB::rollBack();
+            Log::error('Update Mentor Value failed : ' . $e->getMessage());
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect('/admin/mentor/' . $mentor_value->mentor_id . '/view')->withSuccess('Mentor Value Was Successfully Updated');
     }
 
     /**
@@ -121,7 +137,7 @@ class MentorValue extends Controller
     {
         DB::beginTransaction();
         try {
-            $mentor_value = MentorValues::where('group',$id);
+            $mentor_value = MentorValues::where('group', $id);
             $mentor_value->delete();
             DB::commit();
             Log::notice('Mentor Value : ' . $id . ' has been successfully Deleted by ' . Auth::guard('web-admin')->user()->name);

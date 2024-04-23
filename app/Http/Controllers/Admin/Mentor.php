@@ -446,7 +446,10 @@ class Mentor extends Controller
                 })
                 ->editColumn('action', function ($d) {
                     $result = '
-                    <div class="text-end">
+                    <div class="text-center">
+                        <button class="btn btn-warning me-1" type="button" data-bs-toggle="modal" data-value="' . $d->value . '" data-bs-target="#editValue" style="text-transform: capitalize;" id="value' . $d->id . '" onclick="formUpdateValue(' . $d->id . ')">
+                            <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this mentor value"></i>
+                        </button>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteValue" onclick="formDeleteValue(' . $d->mentor_id . ',' . $d->group . ')">
                             <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this mentor value"></i>
                         </button>

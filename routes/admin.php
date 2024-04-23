@@ -147,6 +147,7 @@ Route::middleware('auth.expires')->group(function () {
         Route::get('/mentor/{group}/edit', [Mentor::class, 'edit']);
         Route::get('/mentor/data/value/{group}', [Mentor::class, 'getMentorValues'])->name('data-mentor-value');
         Route::post('/mentor/value/', [MentorValue::class, 'store']);
+        Route::post('/mentor/value/{id}', [MentorValue::class, 'update'])->name('update-mentor-value');
         Route::post('/mentor/value/delete/{group}/{id}', [MentorValue::class, 'delete']);
         Route::post('/mentor/{group}', [Mentor::class, 'update'])->name('update-mentor');
         Route::post('/mentor/deactivate/{group}', [Mentor::class, 'deactivate']);

@@ -553,7 +553,7 @@
         </div>
     </div>
 
-    {{-- Modal Delete --}}
+    {{-- Modal Delete Mentor Value --}}
     <div class="modal fade" id="deleteValue" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0">
@@ -569,13 +569,47 @@
                 <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 mb-2">
                     <button type="submit" style="font-size: 13px" data-bs-dismiss="modal"
                         aria-label="Close">Cancel</button>
-                    <form action="" method="POST"
-                        id="form_delete_value">
+                    <form action="" method="POST" id="form_delete_value">
                         @csrf
                         <button type="submit" id="btn-status"
                             style="font-size: 13px; background: var(--danger);">Delete</button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Modal Edit Mentor Value --}}
+    <div class="modal fade" id="editValue" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <form action="#" method="POST" id="form_update_value">
+                    @csrf
+                    <div class="modal-header">
+                        <div class="col d-flex gap-2 align-items-center">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <h6 class="modal-title ms-2">
+                                Edit Mentor Value
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="modal-body py-2">
+                        <div class="col d-flex flex-column gap-md-3 gap-2">
+                            <div class="col">
+                                <label for="" class="form-label">
+                                    Value <span style="color: var(--red)">*</span>
+                                </label>
+                                <textarea class="form-control" name="value" id="mentor_value" rows="5" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 py-3">
+                        <button type="submit" style="font-size: 13px" data-bs-dismiss="modal"
+                            aria-label="Close">Cancel</button>
+                        <button type="submit"
+                            style="font-size: 13px; background: var(--blue);">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -662,7 +696,16 @@
             $('#form_delete_value').attr('action', '{{ url('/admin/mentor/value/delete/') }}' + '/' + group + '/' + id);
         };
 
-        
+
+        function formUpdateValue(id) {
+            $('#form_update_value').attr('action', '{{ url('/admin/mentor/value/') }}/' + id);
+            // Retrieve the value of the data-value attribute
+            var value = document.querySelector('#value' + id).dataset.value;
+            $('#mentor_value').html(value);
+
+        };
+
+
         $(document).ajaxComplete(function() {
             // Tooltips
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
