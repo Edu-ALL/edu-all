@@ -604,7 +604,7 @@
                         </div>
                     </div>
                     <div class="modal-footer d-flex align-items-center justify-content-center border-0 gap-2 py-3">
-                        <button type="submit" style="font-size: 13px" data-bs-dismiss="modal"
+                        <button type="button" style="font-size: 13px" data-bs-dismiss="modal"
                             aria-label="Close">Cancel</button>
                         <button type="submit"
                             style="font-size: 13px; background: var(--blue);">Submit</button>
