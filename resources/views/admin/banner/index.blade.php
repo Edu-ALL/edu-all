@@ -142,7 +142,7 @@
                                         <div class="d-flex flex-md-row flex-column justify-content-between gap-4">
                                             <div class="col">
                                                 <label for="statisfaction_rate" class="form-label fw-semibold">
-                                                    Statisfaction Rate
+                                                    Student Projects Launched
                                                 </label>
                                                 <input type="text" class="form-control" id="statisfaction_rate" name="statisfaction_rate" value="{{ $data->statisfaction_rate }}">
                                                 @error('statisfaction_rate')
