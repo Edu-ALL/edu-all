@@ -64,8 +64,11 @@
                                     {{ $banners->statisfaction_rate }}
                                 </h4>
                                 <span class="font-newprimary font-light text-white text-sm text-center">
-                                    by Parents, Mentees, Partners, and Teachers
+                                    Student Projects Launched
                                 </span>
+                                {{-- <span class="font-newprimary font-light text-white text-sm text-center">
+                                    by Parents, Mentees, Partners, and Teachers
+                                </span> --}}
                             </div>
                         </div>
                     </div>
