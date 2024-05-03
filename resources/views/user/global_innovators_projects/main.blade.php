@@ -94,7 +94,7 @@
                     </p>
                     <div class="mt-4 w-full max-w-xl mx-auto">
                         <iframe width="100%" height="315"
-                            src="https://www.youtube.com/embed/qmxW3l3w1QE?si=HI0fVKNsoKAzBfg8" title="YouTube video player"
+                            src="https://www.youtube.com/embed/1F262wkev0A?si=3skgosSjKBYaP7So" title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -105,8 +105,8 @@
                     </a>
                 </div>
 
-                {{-- Global Immersion Programs
-                <div class="py-10 flex flex-col items-center gap-y-6 max-w-3xl mx-auto">
+                {{-- Global Immersion Programs --}}
+                {{-- <div class="py-10 flex flex-col items-center gap-y-6 max-w-3xl mx-auto">
                     <img src="{{ asset('assets/img/global_innovators_project/Logo GIP.webp') }}"
                         alt="EduALL Global Immersion Programs Logo" class="w-full max-w-xs mx-auto object-contain">
                     <div class="flex gap-4">
@@ -129,6 +129,13 @@
                     <p class="max-w-2xl mt-2 font-newprimary text-base text-newprimary text-center">
                         {{ __('pages/programs/global_innovators_projects.global_immersion_program_desc') }}
                     </p>
+                    <div class="mt-4 w-full max-w-xl mx-auto">
+                        <iframe width="100%" height="315"
+                        src="https://www.youtube.com/embed/1F262wkev0A?si=3skgosSjKBYaP7So"  title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
                 </div> --}}
 
                 {{-- Science Research & Businness --}}
