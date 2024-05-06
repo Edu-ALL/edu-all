@@ -216,6 +216,7 @@ Route::group(
             Route::get('/programs/academic-test-preparation/academic-tutoring', 'academic_tutoring')->name('academic_tutoring');
             Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', 'ib_ee_coaching_program')->name('ib_ee_coaching_program');
             Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
+            Route::get('/programs/academic-test-preparation/skillset-tutoring-program', 'skillset_tutoring_program')->name('skillset_tutoring_program');
             Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
             Route::get('/programs/thank-you-for-your-interest-in-our-programs', 'thank_page')->name('thank_page');
         });

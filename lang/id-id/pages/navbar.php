@@ -13,7 +13,8 @@ return [
     'programs_academic' => 'Academic & Test Preparation',
     'programs_academic_tutoring' => 'Academic Tutoring',
     'programs_academic_ib' => 'IB Extended Essay Coaching Program',
-    'programs_academic_sat' => 'Persiapan SAT / ACT',
+    'programs_standardized_test' => 'Standardized Test',
+    'programs_skillset_tutoring' => 'Skillset Tutoring',
     'programs_global_innovators' => 'Global Innovators Project',
     // about us
     'mentor' => 'Mentor Kami',

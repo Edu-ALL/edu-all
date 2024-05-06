@@ -91,17 +91,23 @@
                                             </a>
                                         </li>
                                         <li class="child_child_nav">
+                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/sat-program"
+                                                class="child_child_link">
+                                                {{ __('pages/navbar.programs_standardized_test') }}
+                                            </a>
+                                        </li>
+                                        <li class="child_child_nav lg:border-b-0">
+                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/skillset-tutoring-program"
+                                                class="child_child_link">
+                                                {{ __('pages/navbar.programs_skillset_tutoring') }}
+                                            </a>
+                                        </li>
+                                        {{-- <li class="child_child_nav lg:border-b-0">
                                             <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/ib-ee-coaching-program"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_academic_ib') }}
                                             </a>
-                                        </li>
-                                        <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/sat-program"
-                                                class="child_child_link">
-                                                {{ __('pages/navbar.programs_academic_sat') }}
-                                            </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
                                 <li class="child_nav group">

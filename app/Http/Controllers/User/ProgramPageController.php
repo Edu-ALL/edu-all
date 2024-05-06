@@ -108,6 +108,17 @@ class ProgramPageController extends Controller
         ]);
     }
 
+    public function skillset_tutoring_program($locale)
+    {
+        $lang = substr(app()->getLocale(), 3, 2);
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
+
+        return view('user.skillset_tutoring.main', [
+            'testimonies' => $testimonies,
+            'locale' => $locale
+        ]);
+    }
+
     public function global_innovators_project()
     {
         return view('user.global_innovators_projects.main');
