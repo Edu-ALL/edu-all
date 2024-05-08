@@ -4,9 +4,8 @@
             <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
                 <a href="{{ url(app()->getLocale()) }}"
                     class="flex justify-center items-center lg:min-w-fit lg:text-left">
-                    <img width="160px" height="80px"
-                        src={{ asset('uploaded_files/' . 'website-settings/' . $website_settings->website_primary_logo) }}
-                        alt="{{ $website_settings->alt_primary_logo }}" class="object-center w-[160px]">
+                    <img width="160px" height="80px" src={{ asset('uploaded_files/'.'website-settings/'. $website_settings->website_primary_logo) }} alt="{{ $website_settings->alt_primary_logo }}"
+                        class="object-center w-[160px]">
                 </a>
 
                 <button title="menus" id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
@@ -69,13 +68,14 @@
 
                                     </ul>
                                 </li>
-                                <li class="child_nav group">
+                                {{-- <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/passion-project-mentoring"
                                         class="child_child_nav_link">
                                         <i class="fa-solid fa-desktop mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_passion') }}
                                     </a>
-                                </li>
+
+                                </li> --}}
                                 <li class="child_nav group">
                                     <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation"
                                         class="child_child_nav_link">
