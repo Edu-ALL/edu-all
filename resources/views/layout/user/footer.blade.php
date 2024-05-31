@@ -22,10 +22,10 @@
                         {{ __('pages/footer.consultation_desc') }}
                     </p>
                    <div class="flex flex-col">
-                        <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                        {{-- <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
                         @if ($website_settings->phone_number_2 != null)
                             <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
-                        @endif
+                        @endif --}}
                         @if ($website_settings->phone_number_3 != null)
                             <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
                         @endif
