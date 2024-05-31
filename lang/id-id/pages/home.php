@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "EduALL | Expert nya Top Uni Mentoring Service",
-    'meta_description' => 'Capai potensimu di bidang akademik bersama EduALL. Dapatkan mentoring personal dan program komprehensif kami untuk sukses di masa depan',
+    'meta_title' => "Sukses Masuk Top Univ Dunia Bersama EduALL",
+    'meta_description' => 'Kami menyediakan mentoring university admission 1 on 1, career exploration, dan program peningkatan akademis berbasis penelitian.',
     'benefit_list' => [
         [
             'title' => 'Aspire',
