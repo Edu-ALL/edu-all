@@ -613,3 +613,8 @@ h1,h2,h3,h4,h5,h6 {
 .img-preview {
   background-color: #eeeeee;
 }
+
+.ck-editor__editable_inline:not(.ck-comment__input *) {
+    height: 250px;
+    overflow-y: auto;
+}
