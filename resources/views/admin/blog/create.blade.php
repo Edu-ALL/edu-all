@@ -8,6 +8,11 @@
         .fs-12 {
             font-size: 12px;
         }
+
+        .ck-editor__editable_inline:not(.ck-comment__input *) {
+            height: 550px;
+            overflow-y: auto;
+        }
     </style>
 @endsection
 @section('content')
@@ -319,32 +324,56 @@
             $('#publish_date').val(null).trigger('change');
         }
 
-        function getDuration(inst) {
-            // console.log(inst.plugins.wordcount.body.getWordCount());
-            var wordcount = inst.plugins.wordcount.body.getWordCount();
-            $('#duration_read').val(Math.round(wordcount / 200));
-        }
+        // function getDuration(inst) {
+        //     // console.log(inst.plugins.wordcount.body.getWordCount());
+        //     var wordcount = inst.plugins.wordcount.body.getWordCount();
+        //     $('#duration_read').val(Math.round(wordcount / 200));
+        // }
 
-        tinymce.init({
-            selector: '.description',
-            width: 'auto',
-            height: '350',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-            paste_as_text: false,
-            setup: function(ed) {
-                ed.on("change", function() {
-                    getDuration(ed); // function for duration minute in Blogs
-                })
-            }
-        });
+        ClassicEditor
+            .create(document.querySelector('.description'))
+            .then((editor) => {
+                // Function to count words
+                function countWords() {
+                    // Get editor content
+                    const content = editor.getData();
+
+                    // Count words (split by spaces)
+                    const wordCount = content.split(/\s+/).length - 1;
+                    $('#duration_read').val(Math.round(wordCount / 200));
+                }
+
+                // Call countWords() initially
+                countWords();
+
+                // Call countWords() whenever editor content changes
+                editor.model.document.on('change:data', countWords);
+
+            })
+            .catch(error => {
+                console.error('Error during initialization of the editor', error);
+            });
+
+        // tinymce.init({
+        //     selector: '.description',
+        //     width: 'auto',
+        //     height: '350',
+        //     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        //     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        //     paste_as_text: false,
+        //     setup: function(ed) {
+        //         ed.on("change", function() {
+        //             getDuration(ed); // function for duration minute in Blogs
+        //         })
+        //     }
+        // });
 
         async function selectLang() {
             let lang = $('#lang').val()
             let url_mentor = "{{ url('api/mentor') }}/" + lang
             let url_category = "{{ url('api/category') }}/" + lang
 
-            // Select Blog Category 
+            // Select Blog Category
             try {
                 const response = await axios.get(url_category);
                 let data = response.data
@@ -361,7 +390,7 @@
                 console.error(error);
             }
 
-            // Select Mentor 
+            // Select Mentor
             try {
                 const response = await axios.get(url_mentor);
                 let data = response.data

@@ -8,6 +8,11 @@
         .fs-12 {
             font-size: 12px;
         }
+
+        .ck-editor__editable_inline:not(.ck-comment__input *) {
+            height: 550px;
+            overflow-y: auto;
+        }
     </style>
 @endsection
 @section('content')
@@ -32,7 +37,7 @@
                             <div class="card-body">
                                 <div class="d-flex flex-row align-items-center justify-content-between">
                                     <h5 class="card-title">Update Blogs <span>| {{ now()->year }}</span></h5>
-                                    <a type="button" class="btn btn-primary" href="{{url('/admin/blogs')}}">
+                                    <a type="button" class="btn btn-primary" href="{{ url('/admin/blogs') }}">
                                         <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span class="d-md-inline d-none">
                                             Back to List</span>
                                     </a>
@@ -56,7 +61,7 @@
                                                     <div class="col d-flex align-items-center justify-content-center border rounded"
                                                         style="min-height: 110px">
                                                         <img class="img-preview img-fluid" id="img_preview"
-                                                            src="{{ asset('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'. $blog->blog_thumbnail) }}">
+                                                            src="{{ asset('uploaded_files/' . 'blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-column gap-2">
@@ -230,9 +235,11 @@
                                                             onclick="clearDate()" style="cursor: pointer">Clear
                                                             Date</small>
                                                     </div>
-                                                    <input type="date" class="form-control" id="publish_date" name="publish_date" value="{{ $blog->publish_date }}">
+                                                    <input type="date" class="form-control" id="publish_date"
+                                                        name="publish_date" value="{{ $blog->publish_date }}">
                                                     @error('publish_date')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        <small
+                                                            class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
                                                 </div>
                                                 <div class="col">
@@ -241,14 +248,22 @@
                                                     </label>
                                                     <div class="col d-flex flex-row py-1 gap-md-4 gap-4">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="blog_status" id="blog_status_draft" value="draft" onchange="clearDate()" {{ $blog->blog_status == 'draft' ? 'checked' : '' }}>
-                                                            <label class="form-label card-title p-0 m-0" for="blog_status_draft">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="blog_status" id="blog_status_draft" value="draft"
+                                                                onchange="clearDate()"
+                                                                {{ $blog->blog_status == 'draft' ? 'checked' : '' }}>
+                                                            <label class="form-label card-title p-0 m-0"
+                                                                for="blog_status_draft">
                                                                 Draft
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="blog_status" id="blog_status_publish" value="publish" onchange="clearDate()" {{ $blog->blog_status == 'publish' ? 'checked' : '' }}>
-                                                            <label class="form-label card-title p-0 m-0" for="blog_status_publish">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="blog_status" id="blog_status_publish"
+                                                                value="publish" onchange="clearDate()"
+                                                                {{ $blog->blog_status == 'publish' ? 'checked' : '' }}>
+                                                            <label class="form-label card-title p-0 m-0"
+                                                                for="blog_status_publish">
                                                                 Publish
                                                             </label>
                                                         </div>
@@ -278,93 +293,118 @@
 @endsection
 
 @section('js')
-<script>
-    function previewImage() {
-        const image = document.querySelector('#thumbnail')
-        const imgPreview = document.querySelector('#img_preview')
-        imgPreview.style.display = 'block'
-        const oFReader = new FileReader()
-        oFReader.readAsDataURL(image.files[0])
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result
+    <script>
+        function previewImage() {
+            const image = document.querySelector('#thumbnail')
+            const imgPreview = document.querySelector('#img_preview')
+            imgPreview.style.display = 'block'
+            const oFReader = new FileReader()
+            oFReader.readAsDataURL(image.files[0])
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result
+            }
+        };
+
+        function createSlug() {
+            const blog_title = document.getElementById('blog_title').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(
+                ' ').join('-');
+            const blog_slug = document.getElementById('blog_slug');
+            blog_slug.value = blog_title;
+        };
+
+        function clearMentor() {
+            $('#mentor').val(null).trigger('change');
         }
-    };
 
-    function createSlug() {
-        const blog_title = document.getElementById('blog_title').value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(' ').join('-');
-        const blog_slug = document.getElementById('blog_slug');
-        blog_slug.value = blog_title;
-    };
+        function clearDate() {
+            $('#publish_date').val(null).trigger('change');
+        }
 
-    function clearMentor() {
-        $('#mentor').val(null).trigger('change');
-    }
+        // function getDuration(inst) {
+        //     var wordcount = inst.plugins.wordcount.body.getWordCount();
+        //     $('#duration_read').val(Math.round(wordcount / 200));
+        // }
 
-    function clearDate() {
-        $('#publish_date').val(null).trigger('change');
-    }
+        ClassicEditor
+            .create(document.querySelector('.description'))
+            .then((editor) => {
+                // Function to count words
+                function countWords() {
+                    // Get editor content
+                    const content = editor.getData();
 
-    function getDuration(inst){
-        var wordcount = inst.plugins.wordcount.body.getWordCount();
-        $('#duration_read').val(Math.round(wordcount/200));
-    }
+                    // Count words (split by spaces)
+                    const wordCount = content.split(/\s+/).length - 1;
+                    $('#duration_read').val(Math.round(wordCount / 200));
+                }
 
-    tinymce.init({
-        selector: '.description',
-        width: 'auto',
-        height: '500',
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        // paste_as_text: false,
-        setup: function (ed) {
-            ed.on("change", function () {
-                getDuration(ed); // function for duration minute in Blogs
+                // Call countWords() initially
+                countWords();
+
+                // Call countWords() whenever editor content changes
+                editor.model.document.on('change:data', countWords);
+
             })
-        }
-    });
-
-    async function selectLang() {
-        let lang = $('#lang').val()
-        let url_category = "{{ url('api/category') }}/" + lang
-        let url_mentor = "{{ url('api/mentor') }}/" + lang
-
-        // Select Blog Category 
-        try {
-            const response = await axios.get(url_category);
-            let data = response.data
-            $('#category').html('<option value=""></option>')
-            data.forEach(element => {
-                $('#category').append(
-                    '<option value="' + element.id + '">' +
-                    element.category_name +
-                    '</option>'
-                )
-                // console.log(element);
+            .catch(error => {
+                console.error('Error during initialization of the editor', error);
             });
-            $('#category').val('{{ $blog->cat_id }}').trigger('change')
-        } catch (error) {
-            console.error(error);
+
+        // tinymce.init({
+        //     selector: '.description',
+        //     width: 'auto',
+        //     height: '500',
+        //     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        //     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        //     // paste_as_text: false,
+        //     setup: function (ed) {
+        //         ed.on("change", function () {
+        //             getDuration(ed); // function for duration minute in Blogs
+        //         })
+        //     }
+        // });
+
+        async function selectLang() {
+            let lang = $('#lang').val()
+            let url_category = "{{ url('api/category') }}/" + lang
+            let url_mentor = "{{ url('api/mentor') }}/" + lang
+
+            // Select Blog Category
+            try {
+                const response = await axios.get(url_category);
+                let data = response.data
+                $('#category').html('<option value=""></option>')
+                data.forEach(element => {
+                    $('#category').append(
+                        '<option value="' + element.id + '">' +
+                        element.category_name +
+                        '</option>'
+                    )
+                    // console.log(element);
+                });
+                $('#category').val('{{ $blog->cat_id }}').trigger('change')
+            } catch (error) {
+                console.error(error);
+            }
+
+            // Select Mentor
+            try {
+                const response = await axios.get(url_mentor);
+                let data = response.data
+                $('#mentor').html('<option value=""></option>')
+                data.forEach(element => {
+                    $('#mentor').append(
+                        '<option value="' + element.id + '">' +
+                        element.mentor_fullname +
+                        '</option>'
+                    )
+                    // console.log(element);
+                });
+                $('#mentor').val('{{ $blog->mt_id }}').trigger('change')
+            } catch (error) {
+                console.error(error);
+            }
         }
 
-        // Select Mentor 
-        try {
-            const response = await axios.get(url_mentor);
-            let data = response.data
-            $('#mentor').html('<option value=""></option>')
-            data.forEach(element => {
-                $('#mentor').append(
-                    '<option value="' + element.id + '">'
-                    +element.mentor_fullname+
-                    '</option>'
-                )
-                // console.log(element);
-            });
-            $('#mentor').val('{{ $blog->mt_id }}').trigger('change')
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    selectLang()
-</script>
+        selectLang()
+    </script>
 @endsection

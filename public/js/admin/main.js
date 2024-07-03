@@ -91,9 +91,7 @@
     const allTextArea = document.querySelectorAll('.textarea');
     allTextArea.forEach(textArea => {
         ClassicEditor
-            .create(textArea, {
-                height: 350,
-            })
+            .create(textArea)
             .catch(error => {
                 console.error('Error during initialization of the editor', error);
             });
