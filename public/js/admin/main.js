@@ -87,15 +87,25 @@
     });
   });
 
+    // Initialize CKEditor
+    const allTextArea = document.querySelectorAll('.textarea');
+    allTextArea.forEach(textArea => {
+        ClassicEditor
+            .create(textArea)
+            .catch(error => {
+                console.error('Error during initialization of the editor', error);
+            });
+    });
+
   // TinyMCE
-  tinymce.init({
-    selector: '.textarea',
-    width: 'auto',
-    height: '350',
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-    paste_as_text: true,
-  });
+//   tinymce.init({
+//     selector: '.textarea',
+//     width: 'auto',
+//     height: '350',
+//     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+//     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+//     paste_as_text: true,
+//   });
 
   // Select2
   $(document).ready(function() {
