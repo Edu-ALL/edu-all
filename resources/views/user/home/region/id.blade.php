@@ -4,6 +4,11 @@
     <title>{{ __('pages/home.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/home.meta_title') }}" />
     <meta name="description" content="{{ __('pages/home.meta_description') }}" />
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
 @endsection
 
 @section('content')
