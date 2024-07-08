@@ -44,7 +44,7 @@ class HomePageController extends Controller
         $banners = Banners::first();
 
         // $region 
-        return view('user.home.region.id', [
+        return response()->view('user.home.region.id', [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
             'events' => $events,
@@ -52,7 +52,7 @@ class HomePageController extends Controller
             'important_dates' => $important_dates,
             'success_stories' => $success_stories,
             'testimonies' => $testimonies,
-        ]);
+        ])->header('Cache-Control', 'public, max-age=3600');;
     }
 
     public function sign_me_adm_mentoring()

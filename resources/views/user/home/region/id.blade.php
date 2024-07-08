@@ -11,7 +11,7 @@
     <section class="h-[90%]">
         <div class="relative">
             @if ($banners->image)
-                <img src="{{ $banners->image ? asset('uploaded_files/' . 'banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) : '' }}"
+                <img loading="lazy" src="{{ $banners->image ? asset('uploaded_files/' . 'banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) : '' }}"
                     alt="{{ $banners->alt }}" class="w-full md:h-[92vh] h-[92dvh] object-cover">
             @endif
             <div class="absolute md:bottom-0 left-0 right-0">
@@ -112,7 +112,7 @@
             <h2 class="font-bold text-xl md:text-3xl uppercase">Our Programs</h2>
             <div class="grid md:grid-cols-3 gap-6 mt-6">
                 <div class="flex flex-col relative">
-                    <img src="{{ asset('assets/img/home/benefits/Admission mentoring.png') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Admission mentoring.png') }}"
                         alt="Admission Mentoring image" class="w-full">
                     <div class="ourprogram_card">
                         <ul class="flex flex-col gap-2">
@@ -173,7 +173,7 @@
                     <div class="ourprogram_side2"></div>
                 </div>
                 <div class="flex flex-col relative">
-                    <img src="{{ asset('assets/img/home/benefits/Academic tutoring.png') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Academic tutoring.png') }}"
                         alt="Academic Tutoring image" class="w-full">
                     <div class="ourprogram_card">
                         <ul class="flex flex-col gap-2">
@@ -236,7 +236,7 @@
                     <div class="ourprogram_side2"></div>
                 </div>
                 <div class="flex flex-col relative">
-                    <img src="{{ asset('assets/img/home/benefits/Exploration program.png') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Exploration program.png') }}"
                         alt="Exploration Program Image" class="w-full">
                     <div class="ourprogram_card">
                         <ul class="flex flex-col gap-2">
@@ -297,16 +297,16 @@
         </div>
 
         <div class="absolute inset-0 w-screen h-full mix-blend-multiply">
-            <img src="{{ asset('assets/img/home/pathaway.png') }}" alt="exploration"
+            <img loading="lazy" src="{{ asset('assets/img/home/pathaway.png') }}" alt="exploration"
                 class="object-cover w-full h-full opacity-100">
         </div>
-        <img src="{{ asset('assets/img/home/pathaway_exploration.png') }}" alt="exploration"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_exploration.png') }}" alt="exploration"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen exploration_pathaway_img opacity-0">
-        <img src="{{ asset('assets/img/home/pathaway_profile_building.png') }}" alt="profile building"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_profile_building.png') }}" alt="profile building"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen profile_building_pathaway_img opacity-0">
-        <img src="{{ asset('assets/img/home/pathaway_academic.png') }}" alt="academic"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_academic.png') }}" alt="academic"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen academic_pathaway_img opacity-0">
-        <img src="{{ asset('assets/img/home/pathaway_writing.png') }}" alt="writing"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_writing.png') }}" alt="writing"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen writing_pathaway_img opacity-0">
 
         <div class="h-full w-full relative">
@@ -356,7 +356,7 @@
             </div>
             <div class="panel panel-1 relative overflow-hidden w-full h-full">
                 <div class="flex flex-col items-center z-50">
-                    <img src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
+                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
                         class="max-w-xs w-full">
 
                     <h4 class="mt-12 font-newprimary font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
@@ -433,7 +433,7 @@
                                         <div class="splide__slide__container">
                                             <h4 class="absolute top-8 left-8 font-newprimary text-newyellow text-lg">Event
                                             </h4>
-                                            <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                            <img loading="lazy" src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                 alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
 
                                             <a href="{{ route('upcoming_events', app()->getLocale()) }}"
@@ -470,7 +470,7 @@
                                                             </h4>
                                                         </div>
                                                     </div>
-                                                    <img src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                    <img loading="lazy" src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                         alt="{{ $regular_talk->event_alt }}"
                                                         class="w-full object-cover object-center h-72">
                                                 </div>
@@ -553,11 +553,11 @@
         <div class="main-container">
             <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
             <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
-                <img src="{{ asset('assets/img/home/aso_media_indonesia.png') }}" alt="Media Indonesia"
+                <img loading="lazy" src="{{ asset('assets/img/home/aso_media_indonesia.png') }}" alt="Media Indonesia"
                     class="w-full h-16 object-contain">
-                <img src="{{ asset('assets/img/home/aso_kompas.png') }}" alt="Kompas"
+                <img loading="lazy" src="{{ asset('assets/img/home/aso_kompas.png') }}" alt="Kompas"
                     class="w-full h-12 object-contain">
-                <img src="{{ asset('assets/img/home/aso_times_indonesia.png') }}" alt="Times Indonesia"
+                <img loading="lazy" src="{{ asset('assets/img/home/aso_times_indonesia.png') }}" alt="Times Indonesia"
                     class="w-full h-12 object-contain">
             </div>
         </div>
@@ -575,7 +575,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @foreach ($success_stories as $item)
                     <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
-                        <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                        <img loading="lazy" data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                             alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
                         <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
                             {{-- Name --}}

@@ -14,10 +14,10 @@
                 <ul class="splide__list">
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
-                            <img class="object-top object-cover w-full h-screen md:block hidden"
+                            <img loading="lazy" class="object-top object-cover w-full h-screen md:block hidden"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
-                            <img class="object-top object-contain w-full h-screen md:hidden block"
+                            <img loading="lazy" class="object-top object-contain w-full h-screen md:hidden block"
                                 src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
@@ -53,7 +53,7 @@
                 @foreach (__('pages/home.benefit_list') as $item)
                     <div
                         class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                        <img data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
+                        <img loading="lazy" data-original="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
                             class="w-[120px] h-auto">
                         <h4 class="mt-4 font-newprimary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
@@ -87,7 +87,7 @@
             <div class="grid grid-cols-1 justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="EduALL About Us Section"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/about us 1.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         100% Students placed at target universities
@@ -95,7 +95,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="EduALL About Us Section"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/about us 2.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 40
@@ -104,7 +104,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="EduALL About Us Section"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/about us 3.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 1.000 Essays Reviewed
@@ -112,7 +112,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="EduALL About Us Section"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/about us 4.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 50 Corporate Partners
@@ -120,7 +120,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="EduALL About Us Section"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/about us 5.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         150+ Point SAT Score Improvement
@@ -129,7 +129,7 @@
                 </div>
                 <div
                     class="flex flex-col justify-end items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                    <img src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="EduALL About Us Section"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/about us 6.webp') }}" alt="EduALL About Us Section"
                         class="mb-4">
                     <p class="font-newprimary font-semibold text-lg text-yellow text-center">
                         More than 1.500 Event Participants
@@ -152,24 +152,24 @@
             </div>
             <div class="grid grid-cols-1 gap-x-16 gap-y-8 md:grid-cols-2">
                 <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#scientific']) }}">
-                    <img src="{{ asset('assets/img/home/sg/Scientific Research.webp') }}" alt="Scientific Research"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/Scientific Research.webp') }}" alt="Scientific Research"
                         class="rounded-xl">
                 </a>
                 <a href="{{ route('passion_project_mentoring', ['locale' => app()->getLocale(), '#entrepreneurship']) }}">
-                    <img src="{{ asset('assets/img/home/sg/Entrepreneurship.webp') }}" alt="Entrepreneurship"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/Entrepreneurship.webp') }}" alt="Entrepreneurship"
                         class="rounded-xl">
                 </a>
             </div>
             <div class="max-w-3xl w-full mx-auto grid grid-cols-1 gap-x-16 gap-y-8 mt-12 md:grid-cols-3">
                 <div>
-                    <img src="{{ asset('assets/img/home/sg/LOGO Career bootcamp.webp') }}" alt="Career Bootcamp Logo"
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/LOGO Career bootcamp.webp') }}" alt="Career Bootcamp Logo"
                         class="rounded-xl">
                 </div>
                 <div>
-                    <img src="{{ asset('assets/img/home/sg/LOGO CEP.webp') }}" alt="CEP Logo" class="rounded-xl">
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/LOGO CEP.webp') }}" alt="CEP Logo" class="rounded-xl">
                 </div>
                 <div>
-                    <img src="{{ asset('assets/img/home/sg/Logo GIP.webp') }}" alt="GIP Logo" class="rounded-xl">
+                    <img loading="lazy" src="{{ asset('assets/img/home/sg/Logo GIP.webp') }}" alt="GIP Logo" class="rounded-xl">
                 </div>
             </div>
         </div>
@@ -186,7 +186,7 @@
                 </p>
             </div>
             <div class="mt-6 p-8 mx-6 rounded-xl bg-white md:mx-0 md:grid-cols-3">
-                <img src="{{ asset('assets/img/home/sg/university logo.png') }}" alt="Career Bootcamp Logo"
+                <img loading="lazy" src="{{ asset('assets/img/home/sg/university logo.png') }}" alt="Career Bootcamp Logo"
                     class="rounded-xl">
             </div>
             <a href="{{ route('success_stories', app()->getLocale()) }}"
