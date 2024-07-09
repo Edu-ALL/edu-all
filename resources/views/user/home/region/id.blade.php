@@ -117,7 +117,7 @@
             <h2 class="font-bold text-xl md:text-3xl uppercase">Our Programs</h2>
             <div class="grid md:grid-cols-3 gap-6 mt-6">
                 <div class="flex flex-col relative">
-                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Admission mentoring.png') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Admission mentoring.webp') }}"
                         alt="Admission Mentoring image" class="w-full">
                     <div class="ourprogram_card">
                         <ul class="flex flex-col gap-2">
@@ -178,7 +178,7 @@
                     <div class="ourprogram_side2"></div>
                 </div>
                 <div class="flex flex-col relative">
-                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Academic tutoring.png') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Academic tutoring.webp') }}"
                         alt="Academic Tutoring image" class="w-full">
                     <div class="ourprogram_card">
                         <ul class="flex flex-col gap-2">
@@ -241,7 +241,7 @@
                     <div class="ourprogram_side2"></div>
                 </div>
                 <div class="flex flex-col relative">
-                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Exploration program.png') }}"
+                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Exploration program.webp') }}"
                         alt="Exploration Program Image" class="w-full">
                     <div class="ourprogram_card">
                         <ul class="flex flex-col gap-2">
@@ -302,16 +302,16 @@
         </div>
 
         <div class="absolute inset-0 w-screen h-full mix-blend-multiply">
-            <img loading="lazy" src="{{ asset('assets/img/home/pathaway.png') }}" alt="exploration"
+            <img loading="lazy" src="{{ asset('assets/img/home/pathaway.webp') }}" alt="exploration"
                 class="object-cover w-full h-full opacity-100">
         </div>
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_exploration.png') }}" alt="exploration"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_exploration.webp') }}" alt="exploration"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen exploration_pathaway_img opacity-0">
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_profile_building.png') }}" alt="profile building"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_profile_building.webp') }}" alt="profile building"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen profile_building_pathaway_img opacity-0">
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_academic.png') }}" alt="academic"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_academic.webp') }}" alt="academic"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen academic_pathaway_img opacity-0">
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_writing.png') }}" alt="writing"
+        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_writing.webp') }}" alt="writing"
             class="hidden md:block absolute inset-0 object-cover h-full w-screen writing_pathaway_img opacity-0">
 
         <div class="h-full w-full relative">
@@ -558,11 +558,11 @@
         <div class="main-container">
             <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
             <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
-                <img loading="lazy" src="{{ asset('assets/img/home/aso_media_indonesia.png') }}" alt="Media Indonesia"
+                <img loading="lazy" src="{{ asset('assets/img/home/aso_media_indonesia.webp') }}" alt="Media Indonesia"
                     class="w-full h-16 object-contain">
-                <img loading="lazy" src="{{ asset('assets/img/home/aso_kompas.png') }}" alt="Kompas"
+                <img loading="lazy" src="{{ asset('assets/img/home/aso_kompas.webp') }}" alt="Kompas"
                     class="w-full h-12 object-contain">
-                <img loading="lazy" src="{{ asset('assets/img/home/aso_times_indonesia.png') }}" alt="Times Indonesia"
+                <img loading="lazy" src="{{ asset('assets/img/home/aso_times_indonesia.webp') }}" alt="Times Indonesia"
                     class="w-full h-12 object-contain">
             </div>
         </div>
