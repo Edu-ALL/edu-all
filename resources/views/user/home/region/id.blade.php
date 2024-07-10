@@ -15,8 +15,16 @@
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[90%]">
         <div class="relative">
-            @if ($banners->image)
-                <img loading="lazy" src="{{ $banners->image ? asset('uploaded_files/' . 'banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) : '' }}"
+            @if ($banners->video_link)
+                <video class="w-full md:h-[92vh] h-[92dvh] object-cover" autoplay loop muted>
+                    <source
+                        src="{{ asset('uploaded_files/banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            @elseif ($banners->image)
+                <img loading="lazy"
+                    src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
                     alt="{{ $banners->alt }}" class="w-full md:h-[92vh] h-[92dvh] object-cover">
             @endif
             <div class="absolute md:bottom-0 left-0 right-0">
@@ -361,8 +369,8 @@
             </div>
             <div class="panel panel-1 relative overflow-hidden w-full h-full">
                 <div class="flex flex-col items-center z-50">
-                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
-                        class="max-w-xs w-full">
+                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}"
+                        alt="EduAll white logo" class="max-w-xs w-full">
 
                     <h4 class="mt-12 font-newprimary font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
                         EXCELLENCE</h4>
@@ -438,7 +446,8 @@
                                         <div class="splide__slide__container">
                                             <h4 class="absolute top-8 left-8 font-newprimary text-newyellow text-lg">Event
                                             </h4>
-                                            <img loading="lazy" src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                            <img loading="lazy"
+                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                 alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
 
                                             <a href="{{ route('upcoming_events', app()->getLocale()) }}"
@@ -475,7 +484,8 @@
                                                             </h4>
                                                         </div>
                                                     </div>
-                                                    <img loading="lazy" src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                    <img loading="lazy"
+                                                        src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                         alt="{{ $regular_talk->event_alt }}"
                                                         class="w-full object-cover object-center h-72">
                                                 </div>
@@ -580,7 +590,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @foreach ($success_stories as $item)
                     <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
-                        <img loading="lazy" data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                        <img loading="lazy"
+                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                             alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
                         <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
                             {{-- Name --}}

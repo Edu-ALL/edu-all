@@ -34,7 +34,7 @@ class Banner extends Controller
 
         $rules = [
             'image' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
-            'video_link' => 'nullable|url',
+            'video_link' => 'nullable|mimes:mp4,mov,ogg,qt|max:30000',
             'alt' => 'nullable',
             'accepatance' => 'nullable',
             'mentees' => 'nullable',
@@ -60,7 +60,7 @@ class Banner extends Controller
                     }
                 }
                 $file = $request->file('image');
-                $file_format = $request->file('image')->getClientOriginalExtension();
+                $file_format = $file->getClientOriginalExtension();
                 $destinationPath = public_path().'/uploaded_files/'.'banner/'.date('Y').'/'.date('m').'/';
                 $time = date('YmdHis');
                 $fileName = 'Banner-'.$time.'.'.$file_format;
@@ -78,14 +78,30 @@ class Banner extends Controller
                 }
             }
             // Video
-            if ($request->video_link) {
-                if (str_contains($request->video_link, 'https://youtu.be/')) {
-                    $banner->video_link = $request->video_link;
-                } else {
-                    return Redirect::back()->withErrors('Video URL must be from Youtube');
+            if ($request->hasFile('video_link')) {
+                if ($old_video_path = $banner->video_link) {
+                    $file_path = public_path('uploaded_files/'.'banner-video/'.$old_video_path);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
                 }
+                $file = $request->file('video_link');
+                $file_format = $file->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'banner-video/'.date('Y').'/'.date('m').'/';
+                $time = date('YmdHis');
+                $fileName = 'Banner-video-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $banner->video_link = $fileName;
             } else {
-                $banner->video_link = null;
+                if (isset($_POST['delete_video'])) {
+                    if ($old_video_path = $banner->video_link) {
+                        $file_path = public_path('uploaded_files/'.'banner-video/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_video_path);
+                        if (File::exists($file_path)) {
+                            File::delete($file_path);
+                        }
+                        $banner->video_link = null;
+                    }
+                }
             }
             $banner->alt = $request->alt;
             $banner->accepatance = $request->accepatance;
@@ -103,6 +119,7 @@ class Banner extends Controller
         }
         return redirect('/admin/banner')->withSuccess('Banner Was Successfully Updated');
     }
+
 
     // public function index(Request $request){
     //     $regions = Regions::get();

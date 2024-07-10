@@ -12,6 +12,7 @@
         .dataTables_paginate {
             margin-top: 12px !important;
         }
+
         .fs-12 {
             font-size: 12px;
         }
@@ -42,51 +43,101 @@
                                 <ul class="nav nav-tabs nav-tabs-bordered"></ul>
                                 <form action="{{ route('update-banner') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    @if($errors->any())
+                                    @if ($errors->any())
                                         <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
                                             <strong>Failed Update Website Settings!</strong> You have to check some fields.
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
                                         </div>
                                     @endif
                                     <div class="col d-flex flex-column mt-4 gap-3">
                                         <div class="d-flex flex-md-row flex-column justify-content-between gap-3">
                                             <div class="col-md-3 col">
                                                 <label for="" class="form-label fw-semibold">Preview Image</label>
-                                                <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 136px;">
+                                                <div class="col d-flex align-items-center justify-content-center border rounded"
+                                                    style="min-height: 136px;">
                                                     @if ($data->image)
-                                                        <img class="img-preview img-fluid rounded" id="img_preview_data" src="{{ $data->image ? asset('uploaded_files/'.'banner/'.$data->updated_at->format('Y').'/'.$data->updated_at->format('m').'/'.$data->image) : '' }}">
+                                                        <img class="img-preview img-fluid rounded" id="img_preview_data"
+                                                            src="{{ $data->image ? asset('uploaded_files/' . 'banner/' . $data->updated_at->format('Y') . '/' . $data->updated_at->format('m') . '/' . $data->image) : '' }}">
                                                     @endif
                                                     <img class="img-preview img-fluid rounded" id="img_preview">
                                                 </div>
                                             </div>
-                                            <div class="col d-flex flex-column justify-content-between gap-3">
-                                                <div class="row flex-md-row flex-column align-items-md-end justify-content-start gap-md-3 gap-1" style="min-height: 20%">
+                                            <div class="col d-flex flex-column justify-content-center gap-3">
+                                                <div class="row flex-md-row flex-column align-items-md-end justify-content-start gap-md-3 gap-1"
+                                                    style="min-height: 20%">
                                                     <div class="col input-field">
                                                         <label for="image" class="form-label fw-semibold">
                                                             Image
                                                         </label>
                                                         <div class="input-group input-with-btn">
-                                                            <input class="form-control " type="file" id="image" name="image" onchange="previewImage()">
-                                                            <button class="btn btn-primary" type="button" id="clear_file" disabled style="line-height: 1.4">Clear File</button>
+                                                            <input class="form-control " type="file" id="image"
+                                                                name="image" onchange="previewImage()">
+                                                            <button class="btn btn-primary" type="button" id="clear_file"
+                                                                disabled style="line-height: 1.4">Clear File</button>
                                                         </div>
                                                         @error('image')
-                                                            <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                            <small
+                                                                class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                         @enderror
                                                     </div>
-                                                    <div class="col-md-3 col {{ $data->image ? 'd-block' : 'd-none' }} form-check form-check-inline mt-2 ms-md-0 ms-3">
-                                                        <input class="form-check-input" type="checkbox" id="delete_img" name="delete_img" value="delete">
-                                                        <label class="form-label fw-semibold mb-0" for="delete_img">Delete Image</label>
+                                                </div>
+                                                <div
+                                                    class="col-md-3 col {{ $data->image ? 'd-block' : 'd-none' }} form-check form-check-inline mt-2 ms-md-0 ms-3">
+                                                    <input class="form-check-input" type="checkbox" id="delete_img"
+                                                        name="delete_img" value="delete">
+                                                    <label class="form-label fw-semibold mb-0" for="delete_img">Delete
+                                                        Image</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-md-row flex-column justify-content-between gap-3">
+                                            <div class="col-md-3 col">
+                                                <label for="" class="form-label fw-semibold">Preview Video</label>
+                                                <div class="col d-flex align-items-center justify-content-center border rounded"
+                                                    style="min-height: 136px;">
+                                                    @if ($data->video_link)
+                                                        <video class="video-preview rounded" id="video_preview_data"
+                                                            style="max-height: 146px" controls>
+                                                            <source
+                                                                src="{{ asset('uploaded_files/banner-video/' . $data->updated_at->format('Y') . '/' . $data->updated_at->format('m') . '/' . $data->video_link) }}"
+                                                                type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    @endif
+                                                    <video class="video-preview rounded d-none" id="video_preview"
+                                                        style="max-height: 146px" controls>
+                                                        <source id="video_source" src="" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                            <div class="col d-flex flex-column justify-content-center gap-3">
+                                                <div class="row flex-md-row flex-column align-items-md-end justify-content-start gap-md-3 gap-1"
+                                                    style="min-height: 20%">
+                                                    <div class="col input-field">
+                                                        <label for="video_link" class="form-label fw-semibold">
+                                                            Video
+                                                        </label>
+                                                        <div class="input-group input-with-btn">
+                                                            <input class="form-control" type="file" id="video_link"
+                                                                name="video_link" onchange="previewVideo()">
+                                                            <button class="btn btn-primary" type="button"
+                                                                id="clear_video_file" disabled
+                                                                style="line-height: 1.4">Clear File</button>
+                                                        </div>
+                                                        @error('video_link')
+                                                            <small
+                                                                class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                 </div>
-                                                <div class="col">
-                                                    <label for="video_link" class="form-label fw-semibold">
-                                                        Video
-                                                    </label>
-                                                    <input type="text" class="form-control" id="video_link" name="video_link" value="{{ $data->video_link }}">
-                                                    <small class="alert pt-1 p-0 m-0 fs-12">Only supports <strong class="text-danger">Youtube</strong> videos. e.g. <b><i>https://youtu.be/eRb6lymJOIM</i></b></small>
-                                                    @error('video_link')
-                                                        <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
-                                                    @enderror
+                                                <div
+                                                    class="col-md-3 col {{ $data->video_link ? 'd-block' : 'd-none' }} form-check form-check-inline mt-2 ms-md-0 ms-3">
+                                                    <input class="form-check-input" type="checkbox" id="delete_video"
+                                                        name="delete_video" value="delete">
+                                                    <label class="form-label fw-semibold mb-0" for="delete_video">Delete
+                                                        Video</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,7 +145,8 @@
                                             <label for="alt" class="form-label fw-semibold">
                                                 Alt Image/Video
                                             </label>
-                                            <input type="text" class="form-control" id="alt" name="alt" value="{{ $data->alt }}">
+                                            <input type="text" class="form-control" id="alt" name="alt"
+                                                value="{{ $data->alt }}">
                                             @error('alt')
                                                 <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                             @enderror
@@ -104,7 +156,8 @@
                                                 <label for="accepatance" class="form-label fw-semibold">
                                                     Accepatance
                                                 </label>
-                                                <input type="text" class="form-control" id="accepatance" name="accepatance" value="{{ $data->accepatance }}">
+                                                <input type="text" class="form-control" id="accepatance"
+                                                    name="accepatance" value="{{ $data->accepatance }}">
                                                 @error('accepatance')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -113,7 +166,8 @@
                                                 <label for="mentees" class="form-label fw-semibold">
                                                     Mentees
                                                 </label>
-                                                <input type="text" class="form-control" id="mentees" name="mentees" value="{{ $data->mentees }}">
+                                                <input type="text" class="form-control" id="mentees" name="mentees"
+                                                    value="{{ $data->mentees }}">
                                                 @error('mentees')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -124,7 +178,8 @@
                                                 <label for="scholarship" class="form-label fw-semibold">
                                                     Scholarship
                                                 </label>
-                                                <input type="text" class="form-control" id="scholarship" name="scholarship" value="{{ $data->scholarship }}">
+                                                <input type="text" class="form-control" id="scholarship"
+                                                    name="scholarship" value="{{ $data->scholarship }}">
                                                 @error('scholarship')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -133,7 +188,8 @@
                                                 <label for="sat_score" class="form-label fw-semibold">
                                                     SAT Score
                                                 </label>
-                                                <input type="text" class="form-control" id="sat_score" name="sat_score" value="{{ $data->sat_score }}">
+                                                <input type="text" class="form-control" id="sat_score"
+                                                    name="sat_score" value="{{ $data->sat_score }}">
                                                 @error('sat_score')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
@@ -144,14 +200,15 @@
                                                 <label for="statisfaction_rate" class="form-label fw-semibold">
                                                     Student Projects Launched
                                                 </label>
-                                                <input type="text" class="form-control" id="statisfaction_rate" name="statisfaction_rate" value="{{ $data->statisfaction_rate }}">
+                                                <input type="text" class="form-control" id="statisfaction_rate"
+                                                    name="statisfaction_rate" value="{{ $data->statisfaction_rate }}">
                                                 @error('statisfaction_rate')
                                                     <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                 @enderror
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <div class="text-center mt-4">
                                         <button type="submit" class="btn btn-primary" id="submit">
                                             <i class="fa-solid fa-pen-to-square me-1"></i> Save Changes
@@ -169,15 +226,31 @@
 
 @section('js')
     <script>
-        function previewImage(){
+        function previewImage() {
             const image = document.querySelector('#image')
             const imgPreview = document.querySelector('#img_preview')
             $("#img_preview_data").addClass("d-none")
             $('#clear_file').prop("disabled", false)
             const oFReader = new FileReader()
             oFReader.readAsDataURL(image.files[0])
-            oFReader.onload = function(oFREvent){
+            oFReader.onload = function(oFREvent) {
                 imgPreview.src = oFREvent.target.result
+            }
+        };
+
+        function previewVideo() {
+            const video = document.querySelector('#video_link')
+            const videoPreview = document.querySelector('#video_preview')
+            const videoSource = document.querySelector('#video_source')
+            $("#video_preview").removeClass("d-none")
+            $("#video_preview_data").addClass("d-none")
+            $('#clear_video_file').prop("disabled", false)
+            videoPreview.style.display = "block"
+            const oFReader = new FileReader()
+            oFReader.readAsDataURL(video.files[0])
+            oFReader.onload = function(oFREvent) {
+                videoSource.src = oFREvent.target.result
+                videoPreview.load()
             }
         };
 
@@ -188,7 +261,17 @@
             $("#img_preview_data").removeClass("d-none")
             $("#img_preview").attr('src', '')
         });
-        
+
+        // Clear Video File
+        $('#clear_video_file').on('click', function() {
+            $('#clear_video_file').prop("disabled", true)
+            $('#video_link').val(null)
+            $("#video_preview_data").removeClass("d-none")
+            $("#video_preview").attr('src', '').hide()
+            $("#video_source").attr('src', '')
+        });
+
+
         // Delete Image
         $('#delete_img').on('change', function() {
             if ($('#delete_img').is(":checked")) {
@@ -200,6 +283,20 @@
             } else {
                 $('#image').prop("disabled", false)
                 $("#img_preview_data").removeClass("d-none")
+            }
+        });
+
+        // Delete Video
+        $('#delete_video').on('change', function() {
+            if ($('#delete_video').is(":checked")) {
+                $('#clear_video_file').prop("disabled", true)
+                $('#video_link').prop("disabled", true)
+                $('#video_link').val(null)
+                $("#video_preview").attr('src', '').hide()
+                $("#video_preview_data").addClass("d-none")
+            } else {
+                $('#video_link').prop("disabled", false)
+                $("#video_preview_data").removeClass("d-none")
             }
         });
     </script>
