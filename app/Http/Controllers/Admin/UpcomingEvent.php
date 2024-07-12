@@ -118,7 +118,7 @@ class UpcomingEvent extends Controller
     public function checkTakeOff(){
         $upcoming_events = UpcomingEvents::where('event_status', 'publish')->get();
         foreach ($upcoming_events as $event) {
-            if (date('Y-m-d', strtotime($event->take_off_date)) == date('Y-m-d')) {
+            if (date('Y-m-d', strtotime($event->take_off_date)) <= date('Y-m-d')) {
                 DB::beginTransaction();
                 try {
                     $event->event_status = 'draft';
