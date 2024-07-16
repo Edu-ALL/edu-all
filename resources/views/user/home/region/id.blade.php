@@ -504,7 +504,7 @@
                         </div>
                     @else
                         <div class="flex flex-col w-full relative text-start px-6">
-                            <h4 class="font-newprimary text-newyellow text-lg">Talk Sessionss</h4>
+                            <h4 class="font-newprimary text-newyellow text-lg">Talk Sessions</h4>
                             <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
                     @endif
