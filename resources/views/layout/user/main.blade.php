@@ -78,15 +78,15 @@
     {{-- Font Awesome --}}
     <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous" async></script>
     {{-- Splide JS - JS --}}
-    <script src="/js/splide.min.js" defer></script>
+    <script src="/js/splide.min.js"></script>
     {{-- JQuery --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
     {{-- Lazy Image Jquery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" async></script>
     {{-- Instafeed  --}}
-    <script src="{{ url('js/instafeed.js') }}" defer></script>
+    <script src="{{ url('js/instafeed.js') }}" async></script>
     {{-- Social Share  --}}
-    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js" async></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
@@ -156,9 +156,6 @@
                 src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
         <!-- End Meta Pixel Code -->
     @endif
-
-
-
 </head>
 
 <body id="body">
@@ -204,11 +201,11 @@
     <div class="mt-16">
         @yield('content')
     </div>
-    
-    @include('layout.user.footer')
-</body>
 
-@stack('script')
+    @include('layout.user.footer')
+
+    @stack('script')
+</body>
 
 <script>
     $("img").lazyload({
