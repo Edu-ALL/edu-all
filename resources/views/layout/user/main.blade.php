@@ -76,17 +76,17 @@
 
 
     {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous" async></script>
     {{-- Splide JS - JS --}}
-    <script src="/js/splide.min.js"></script>
+    <script src="/js/splide.min.js" defer></script>
     {{-- JQuery --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     {{-- Lazy Image Jquery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" async></script>
     {{-- Instafeed  --}}
-    <script src="{{ url('js/instafeed.js') }}"></script>
+    <script src="{{ url('js/instafeed.js') }}" defer></script>
     {{-- Social Share  --}}
-    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
@@ -164,26 +164,6 @@
 <body id="body">
     <div class="fixed lg:bottom-5 bottom-[15px] lg:right-5 right-[10px] z-[9999] transition-all duration-1000">
         <div class="relative group">
-            {{-- <div class="absolute bottom-[65px] right-0 invisible translate-x-[1px] translate-y-8 transition-all duration-500 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <ul class="shadow-lg rounded bg-gray-100">
-                    <li class="p-2 border-b border-gray-500 hover:bg-primary hover:text-white">
-                        <a href="https://api.whatsapp.com/send?phone=6281808081363&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                            target="_blank" class="">
-                            <span class="whitespace-nowrap">
-                                <i class="fa fa-arrow-right mr-1"></i>
-                                +62 818-0808-1363</span>
-                        </a>
-                    </li>
-                    <li class="p-2 hover:bg-primary hover:text-white">
-                        <a href="https://api.whatsapp.com/send?phone=6287860811413&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                            target="_blank" class="">
-                            <span class="whitespace-nowrap">
-                                <i class="fa fa-arrow-right mr-1"></i>
-                                +62 878-6081-1413</span>
-                        </a>
-                    </li>
-                </ul>
-            </div> --}}
 
             {{-- Dont Display the button on this pages: "partnership-careers" --}}
             @if (!str_contains(request()->url(), 'partnership-careers'))
@@ -247,11 +227,6 @@
             newsButton.classList.remove('lg:bottom-5', 'bottom-[15px]');
         }
     });
-
-    // function topFunction() {
-    //     document.body.scrollTop = 0;
-    //     document.documentElement.scrollTop = 0;
-    // }
 
     function popupForm(params) {
         var newsForm = document.querySelector("#newsForm");
