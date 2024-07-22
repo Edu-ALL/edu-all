@@ -660,9 +660,9 @@
     </section>
 @endsection
 
-@section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+@push('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" async></script>
 
     <script type="module" src="{{ asset('js/user/main.js') }}"></script>
     <script>
@@ -759,4 +759,4 @@
             });
         }).mount();
     </script>
-@endsection
+@endpush

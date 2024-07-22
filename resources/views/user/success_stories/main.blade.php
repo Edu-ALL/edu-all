@@ -162,7 +162,7 @@
     @endforeach
 @endsection
 
-@section('script')
+@push('script')
     <script>
         const openDescModals = document.querySelectorAll('#open-desc-modal');
         const closeDescModals = document.querySelectorAll('#close-desc-modal');
@@ -185,4 +185,4 @@
             });
         });
     </script>
-@endsection
+@endpush

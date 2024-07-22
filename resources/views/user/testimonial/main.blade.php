@@ -151,7 +151,7 @@
     </section>
 @endsection
 
-@section('script')
+@push('script')
     <script>
         var isLargeDevice = window.matchMedia("(min-width: 1024px)").matches
 
@@ -180,4 +180,4 @@
             }).mount();
         }
     </script>
-@endsection
+@endpush

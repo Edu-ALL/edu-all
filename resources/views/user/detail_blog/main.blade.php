@@ -195,7 +195,7 @@
     </section>
 @endsection
 
-@section('script')
+@push('script')
     <script>
         window.addEventListener("scroll", function() {
             var navbar = document.querySelector("#blog_title_header");
@@ -305,4 +305,4 @@
             padding: 5px 10px !important;
         }
     </style>
-@endsection
+@endpush

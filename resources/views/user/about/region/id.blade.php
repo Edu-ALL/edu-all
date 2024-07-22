@@ -250,7 +250,7 @@
     </section>
 @endsection
 
-@section('script')
+@push('script')
     <script>
         const questions = document.querySelectorAll('#question');
         const answers = document.querySelectorAll('#answer');
@@ -299,4 +299,4 @@
             });
         }).mount();
     </script>
-@endsection
+@endpush

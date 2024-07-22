@@ -208,7 +208,7 @@
     </section>
 @endsection
 
-@section('script')
+@push('script')
     <script>
         function getSearch() {
             let search = $('#search')
@@ -248,4 +248,4 @@
             });
         }).mount();
     </script>
-@endsection
+@endpush

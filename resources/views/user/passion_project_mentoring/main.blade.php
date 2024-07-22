@@ -424,7 +424,7 @@
     </section>
 @endsection
 
-@section('script')
+@push('script')
     <script>
         const learn = document.querySelectorAll('#entre-learn-title');
         const learn_desc = document.querySelectorAll('#entre-learn-desc');
@@ -473,4 +473,4 @@
             });
         }).mount();
     </script>
-@endsection
+@endpush

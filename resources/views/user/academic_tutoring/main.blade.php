@@ -513,7 +513,7 @@
     </section>
 @endsection
 
-@section('script')
+@push('script')
     <script>
         // animation
         const benefit_element = document.getElementById("banner");
@@ -664,4 +664,4 @@
             });
         }).mount();
     </script>
-@endsection
+@endpush

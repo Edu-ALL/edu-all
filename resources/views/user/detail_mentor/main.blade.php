@@ -158,7 +158,7 @@
 
 @endsection
 
-@section('script')
+@push('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
@@ -205,4 +205,4 @@
             });
         }).mount();
     </script>
-@endsection
+@endpush
