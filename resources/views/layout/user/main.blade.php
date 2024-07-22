@@ -88,77 +88,6 @@
     {{-- Social Share  --}}
     <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5HHPRQCSSE');
-    </script>
-
-    @if (Route::currentRouteName() == 'sign_me_adm_mentoring')
-        <!-- Meta Pixel Code -->
-        <script>
-            ! function(f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '395995446484778');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id=395995446484778&ev=PageView&noscript=1" /></noscript>
-        <!-- End Meta Pixel Code -->
-    @else
-        <!-- Meta Pixel Code -->
-        <script>
-            ! function(f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '928080065534623');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
-        <!-- End Meta Pixel Code -->
-    @endif
-
-
-
 </head>
 
 <body id="body">
@@ -224,11 +153,83 @@
     <div class="mt-16">
         @yield('content')
     </div>
-    
+
     @include('layout.user.footer')
 </body>
 
 @yield('script')
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5HHPRQCSSE');
+</script>
+
+@if (Route::currentRouteName() == 'sign_me_adm_mentoring')
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '395995446484778');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=395995446484778&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+@else
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '928080065534623');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+@endif
+
+
 
 <script>
     $("img").lazyload({
