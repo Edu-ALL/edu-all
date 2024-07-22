@@ -208,7 +208,7 @@
     @include('layout.user.footer')
 </body>
 
-@yield('script')
+@stack('script')
 
 <script>
     $("img").lazyload({
