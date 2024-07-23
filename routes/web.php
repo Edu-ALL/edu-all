@@ -10,7 +10,7 @@ use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
-/*
+/*t
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------

@@ -4,8 +4,8 @@
     <section class="main-container">
         <div class="flex flex-col items-center justify-center max-w-4xl w-full  h-[60vh] mx-auto">
             <h1 class="font-newprimary font-bold md:text-3xl text-xl text-newprimary text-center">
-                Thank you for letting us know a little bit about you <i>Anggie</i> or <i>Derry</i> will contact you soon for
-                the further consultation
+                Thank you for letting us know a little bit about you, our sales team will contact you soon for the
+                further consultation
             </h1>
             <a href="{{ route('home', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
                 <span
