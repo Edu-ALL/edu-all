@@ -234,9 +234,8 @@
             {!! __('pages/programs/global_innovators_projects.form_desc') !!}
         </div>
         <div class="main-container w-full mt-12">
-            <div class="w-full  rounded-lg overflow-hidden">
-                @include('layout.user.external-form.gip')
-            </div>
+            {{-- Emmbed Form --}}
+            @include('layout.user.external-form.registration', ['prog_id' => 'GIPIIRJP', 'extClass' => '', 'scrolling' => 'no', 'height' => 600, 'width' => '100%'])
         </div>
     </section>
 @endsection
