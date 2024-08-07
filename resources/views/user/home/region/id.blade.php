@@ -433,7 +433,7 @@
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="pt-40 pb-24 bg-dark">
-        <div class="main-container lg:px-[150px]">
+        <div class="lg:px-[250px] px-[20px]">
             <h1 class="font-newprimary font-bold text-4xl text-white uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
                 {{-- Event --}}
