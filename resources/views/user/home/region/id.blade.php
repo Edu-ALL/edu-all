@@ -414,7 +414,7 @@
                         <ul class="splide__list">
                             @foreach ($all_mentor as $mentor)
                                 <li class="splide__slide">
-                                    <div class="splide__slide__container px-4 w-full h-[80%] mt-32">
+                                    <div class="splide__slide__container px-4 pt-5 w-full h-[80%] mt-32">
                                         <x-mentor-card :mentor=$mentor />
                                     </div>
                                 </li>
@@ -424,7 +424,7 @@
                 </div>
             </div>
             <a href="{{ route('mentor', app()->getLocale()) }}"
-                class="flex justify-center mt-5 mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                class="flex justify-center mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
                 {{ __('pages/home.mentor_btn') }}
             </a>
         </div>
