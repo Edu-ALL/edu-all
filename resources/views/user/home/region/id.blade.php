@@ -399,7 +399,7 @@
         <div class="main-container">
             <h1 class="font-newprimary font-bold text-4xl text-dark text-center">OUR MENTORS</h1>
         </div>
-        <div class="flex flex-col items-center mt-56 lg:px-12 bg-[#F3F3F3] shadow-2xl">
+        <div class="flex flex-col items-center mt-56 lg:px-[150px] bg-[#F3F3F3] shadow-2xl">
             <div class="w-full px-10 -mt-52 max-w-screen-2xl mx-auto">
                 <div class="splide" role="group">
                     <div class="splide__arrows text-dark">
@@ -424,7 +424,7 @@
                 </div>
             </div>
             <a href="{{ route('mentor', app()->getLocale()) }}"
-                class="flex justify-center mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                class="flex justify-center mt-5 mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
                 {{ __('pages/home.mentor_btn') }}
             </a>
         </div>
@@ -433,7 +433,7 @@
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="pt-40 pb-24 bg-dark">
-        <div class="main-container">
+        <div class="main-container lg:px-[150px]">
             <h1 class="font-newprimary font-bold text-4xl text-white uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
                 {{-- Event --}}
@@ -607,7 +607,7 @@
                     </div>
                 @endforeach
             </div>
-            <a href="{{ route('mentor', app()->getLocale()) }}"
+            <a href="{{ route('success_stories', app()->getLocale()) }}"
                 class="flex justify-center my-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
                 Read More
             </a>
@@ -674,9 +674,12 @@
 
         var splides = document.getElementsByClassName('splide');
 
+        console.log(splides[2]);
+        
+
         new Splide(splides[0], {
             type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 4,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             lazyload: true,
@@ -720,7 +723,7 @@
 
         new Splide(splides[2], {
             type: 'slide',
-            perPage: 1,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             lazyload: true,
@@ -731,26 +734,6 @@
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
             data.list.classList.add('top-[105%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
-            });
-        }).mount();
-
-        new Splide(splides[3], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
-            perMove: 1,
-            arrows: isMediumDevice ? false : true,
-            autoplay: true,
-            lazyload: true,
-            interval: 4000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
