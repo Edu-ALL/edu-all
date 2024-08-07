@@ -76,17 +76,17 @@
 
 
     {{-- Font Awesome --}}
-    <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- Splide JS - JS --}}
     <script src="/js/splide.min.js"></script>
     {{-- JQuery --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {{-- Lazy Image Jquery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
     {{-- Instafeed  --}}
-    <script src="{{ url('js/instafeed.js') }}" async></script>
+    <script src="{{ url('js/instafeed.js') }}"></script>
     {{-- Social Share  --}}
-    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
@@ -168,7 +168,7 @@
                     id='open-nav-child-btn'>
                     <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                         target="_blank">
-                        <i class="fa fa-whatsapp text-[30px]"></i>
+                        <i class="fa-brands fa-whatsapp text-[30px]"></i>
                     </a>
                 </div>
             @endif

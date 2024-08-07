@@ -414,7 +414,7 @@
                         <ul class="splide__list">
                             @foreach ($all_mentor as $mentor)
                                 <li class="splide__slide">
-                                    <div class="splide__slide__container px-4 pt-5 w-full h-[80%] mt-32">
+                                    <div class="splide__slide__container px-4 pt-[2rem] w-full h-[80%] mt-32">
                                         <x-mentor-card :mentor=$mentor />
                                     </div>
                                 </li>
@@ -673,9 +673,6 @@
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
-
-        console.log(splides[2]);
-        
 
         new Splide(splides[0], {
             type: 'loop',
