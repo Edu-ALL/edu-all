@@ -564,19 +564,22 @@
 
 
     {{-- ========================================== As Seen On ========================================== --}}
-    <section class="pt-40 pb-24">
-        <div class="main-container">
-            <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
-                <img loading="lazy" src="{{ asset('assets/img/home/aso_media_indonesia.webp') }}" alt="Media Indonesia"
-                    class="w-full h-16 object-contain">
-                <img loading="lazy" src="{{ asset('assets/img/home/aso_kompas.webp') }}" alt="Kompas"
-                    class="w-full h-12 object-contain">
-                <img loading="lazy" src="{{ asset('assets/img/home/aso_times_indonesia.webp') }}" alt="Times Indonesia"
-                    class="w-full h-12 object-contain">
+    @if (count($as_seen_on) > 0)
+        <section class="pt-40 pb-24">
+            <div class="main-container">
+                <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
+                <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
+                    @foreach ($as_seen_on as $item)
+                        <div class="h-16 w-full flex justify-center">
+                            <img loading="lazy"
+                                src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                alt="{{ $item->alt }}" class="h-full object-contain">
+                        </div>
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 
     {{-- ========================================== Success Stories ========================================== --}}

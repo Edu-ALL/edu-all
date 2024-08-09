@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Admin\ImportantDate;
 use App\Http\Controllers\Controller;
 use App\Models\Banners;
 use App\Models\ImportantDates;
@@ -10,6 +9,7 @@ use App\Models\Mentors;
 use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\UpcomingEvents;
+use App\Models\AsSeens;
 use Carbon\Carbon;
 
 class HomePageController extends Controller
@@ -43,6 +43,9 @@ class HomePageController extends Controller
         // Banners
         $banners = Banners::first();
 
+        // As Seen On
+        $as_seen_on = AsSeens::orderBy('created_at','DESC')->get();
+
         // $region 
         return view('user.home.region.id', [
             'banners' => $banners,
@@ -52,6 +55,7 @@ class HomePageController extends Controller
             'important_dates' => $important_dates,
             'success_stories' => $success_stories,
             'testimonies' => $testimonies,
+            'as_seen_on' => $as_seen_on,
         ]);
     }
 
