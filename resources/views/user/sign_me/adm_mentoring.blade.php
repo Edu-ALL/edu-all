@@ -66,7 +66,7 @@
                 <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                      @include('layout.user.external-form.adm_mentoring')
+                      @include('layout.user.external-form.registration', ['prog_id' => 'AAUP', 'extClass' => '', 'scrolling' => 'no', 'height' => 1000, 'width' => '95%'])
                     </div>
                 </div>
             </div>
