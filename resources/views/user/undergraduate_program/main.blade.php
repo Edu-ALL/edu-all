@@ -205,10 +205,8 @@
                     {{ __('pages/programs/undergraduate_program.bottom_subtitle') }}
                 </strong>
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">
-                {{ __('pages/programs/undergraduate_program.bottom_btn') }}
-            </a>
+            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                title="{{ __('pages/programs/undergraduate_program.bottom_btn') }}" type='secondary' bg-color="red" />
         </div>
     </section>
 @endsection

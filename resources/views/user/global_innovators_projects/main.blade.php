@@ -36,10 +36,8 @@
                     <div class="font-newprimary font-medium text-xl text-[#576996] text-center md:font-semibold md:text-2xl">
                         {!! __('pages/programs/global_innovators_projects.description') !!}
                     </div>
-                    <a href="#form"
-                        class="mt-8 w-full max-w-xs px-4 py-2 shadow-md bg-newprimary font-newprimary font-medium text-base text-white text-center">
-                        {{ __('pages/programs/global_innovators_projects.description_button') }}
-                    </a>
+                    <x-button href="#form"
+                        title="{{ __('pages/programs/global_innovators_projects.description_button') }}" bg-color="newprimary" />
                 </div>
 
                 {{-- Cultural Immersion Research Program --}}
@@ -68,10 +66,8 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
-                    <a href="https://cultural-research.all-inedu.com/" target="_blank"
-                        class="mt-4 w-full max-w-[160px] px-4 py-2 shadow-md bg-red font-newprimary font-medium text-base text-white text-center">
-                        {{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_btn') }}
-                    </a>
+                    <x-button href="https://cultural-research.all-inedu.com/"
+                        title="{{ __('pages/programs/global_innovators_projects.cultural_immersion_research_program_btn') }}" bg-color="red" />
                 </div>
 
                 {{-- Innovators In Residence Program --}}
@@ -99,10 +95,8 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
-                    <a href="https://immersion-program.all-inedu.com/" target="_blank"
-                        class="mt-4 w-full max-w-[160px] px-4 py-2 shadow-md bg-red font-newprimary font-medium text-base text-white text-center">
-                        {{ __('pages/programs/global_innovators_projects.innovators_in_residence_btn') }}
-                    </a>
+                    <x-button href="https://immersion-program.all-inedu.com/"
+                        title="{{ __('pages/programs/global_innovators_projects.innovators_in_residence_btn') }}" bg-color="red" />
                 </div>
 
                 {{-- Global Immersion Programs --}}

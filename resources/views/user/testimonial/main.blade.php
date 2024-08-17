@@ -143,9 +143,8 @@
             <h2 class="font-newprimary font-extrabold text-newprimary text-center text-3xl mb-4 md:w-1/2">
                 {{ __('pages/resources/testimonial.bottom_title') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}" class="my-btn">
-                {{ __('pages/resources/testimonial.bottom_btn') }}
-            </a>
+            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                title="{{ __('pages/resources/testimonial.bottom_btn') }}" type='secondary' bg-color="red" />
         </div>
 
     </section>

@@ -97,10 +97,8 @@
             <h1 class="mb-4 font-newprimary font-semibold text-2xl text-newprimary text-center">
                 {{ __('pages/resources/upcoming_events.bottom_title') }}
             </h1>
-            <a href="{{ route('contact_us', ['locale' => app()->getLocale()]) }}"><span
-                    class="px-6 py-2 font-newprimary font-semibold text-base text-white bg-red shadow-md">
-                    {{ __('pages/resources/upcoming_events.bottom_btn') }}
-                </span></a>
+            <x-button href="{{ route('contact_us', ['locale' => app()->getLocale()]) }}"
+                title="{{__('pages/resources/upcoming_events.bottom_btn') }}" type='secondary' bg-color="red" />
         </div>
     </section>
 @endsection

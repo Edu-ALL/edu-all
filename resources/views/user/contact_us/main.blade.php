@@ -35,7 +35,7 @@
                                 <textarea name="message" id="message" cols="20" rows="3" class="border-[#e3e3e3] rounded-[4px]"></textarea>
                             </div>
                             <button type="submit" class="w-full text-left"><span
-                                    class="inline-block px-6 py-1.5 font-newprimary font-semibold text-base text-white rounded-sm bg-newyellow">SEND</span></button>
+                                    class="inline-block px-6 py-1.5 font-newprimary font-semibold text-base text-white rounded-sm bg-black">SEND</span></button>
                         </div>
                     </form>
                 </div>

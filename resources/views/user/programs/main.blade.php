@@ -72,8 +72,8 @@
                                                 class="font-semibold text-base lg:text-lg font-newprimary mb-4 leading-7 text-center">
                                                 {{ $item['body'] }}
                                             </p>
-                                            <a href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
-                                                class="my-btn text-sm">View More</a>
+                                            <x-button href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
+                                                title="View More" bg-color="red" />
                                         </div>
                                     </div>
                                 </div>
@@ -91,10 +91,12 @@
             <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/programs.sign_up_text') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+            {{-- <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">
                 {{ __('pages/programs/programs.sign_up_btn') }}
-            </a>
+            </a> --}}
+            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                title="{{ __('pages/programs/programs.sign_up_btn') }}" type='secondary' bg-color="red" />
         </div>
     </section>
 @endsection

@@ -9,18 +9,22 @@ class Button extends Component
     public $title;
     public $type;
     public $href;
+    public $bgColor;
+    public $target;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $type = "primary", $href = "#")
+    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $target = null)
     {
         //
         $this->title = $title;
         $this->type = $type;
         $this->href = $href;
+        $this->bgColor = $bgColor;
+        $this->target = $target;
     }
 
     /**

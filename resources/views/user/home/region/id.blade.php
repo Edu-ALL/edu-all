@@ -654,11 +654,13 @@
             <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
                 {{ __('pages/home.bottom') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+            {{-- <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
                 class="px-8 md:px-12 py-3 font-newprimary text-base text-white text-center bg-red hover:scale-110 transition-all">
                 {{ __('pages/home.bottom_btn') }}
 
-            </a>
+            </a> --}}
+            <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="red" />
         </div>
     </section>
 @endsection

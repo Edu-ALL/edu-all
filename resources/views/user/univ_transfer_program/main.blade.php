@@ -108,12 +108,8 @@
                     <p class="w-full max-w-3xl mx-auto font-newprimary font-semibold text-newprimary text-center">
                         {{ __('pages/programs/univ_transfer_program.pilar_desc') }}
                     </p>
-                    <a href="https://drive.google.com/file/d/1kenqeMGb2C6rjRILuMFgbHODZxtze-yL/view?usp=sharing"
-                        target="_blank" class="mt-8">
-                        <span
-                            class="px-6 py-2 font-newprimary font-semibold text-white text-center rounded-md bg-[#F90C0C]">{{ __('pages/programs/univ_transfer_program.pilar_btn') }}
-                        </span>
-                    </a>
+                    <x-button href="https://drive.google.com/file/d/1kenqeMGb2C6rjRILuMFgbHODZxtze-yL/view?usp=sharing"
+                        title="{{ __('pages/programs/univ_transfer_program.pilar_btn') }}" bg-color="red" />
                     <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}" target="_block"
                         class="mt-8 rounded-xl overflow-hidden">
                         <img data-original="{{ asset('assets/img/admission mentoring/Graduate/Graduate IC.webp') }}"
@@ -195,9 +191,8 @@
                     {{ __('pages/programs/univ_transfer_program.bottom_subtitle') }}
                 </span>
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">{{ __('pages/programs/univ_transfer_program.bottom_btn') }}
-            </a>
+            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                title="{{ __('pages/programs/univ_transfer_program.bottom_btn') }}" type='secondary' bg-color="red" />
         </div>
     </section>
 @endsection

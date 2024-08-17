@@ -226,12 +226,8 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('mentor', app()->getLocale()) }}" class="flex justify-center w-full pb-8">
-                <span
-                    class="bg-white font-newprimary text-dark font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                    {{ __('pages/home.mentor_btn') }}
-                </span>
-            </a>
+            <x-button href="{{ route('mentor', app()->getLocale()) }}"
+                        title="{{ __('pages/home.mentor_btn') }}" bg-color="newprimary" />
         </div>
     </section>
 
@@ -242,10 +238,8 @@
             <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/about_us/about.bottom_title') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">
-                {{ __('pages/about_us/about.bottom_btn') }}
-            </a>
+            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                title="{{ __('pages/about_us/about.bottom_btn') }}" type="secondary" bg-color="red" />
         </div>
     </section>
 @endsection
@@ -288,7 +282,7 @@
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[100%]');
+            // data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {

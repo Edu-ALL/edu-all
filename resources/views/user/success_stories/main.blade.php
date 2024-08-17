@@ -116,11 +116,8 @@
             <h2 class="mb-6 font-newprimary font-semibold text-3xl text-white text-center md:text-4xl">
                 {{ __('pages/success_stories/success_stories.bottom_title') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                <span class="px-8 md:px-12 py-3 font-bold font-newprimary text-base text-white text-center bg-newprimary">
-                    {{ __('pages/success_stories/success_stories.register_btn') }}
-                </span>
-            </a>
+            <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                title="{{__('pages/success_stories/success_stories.register_btn') }}" type='secondary' />
         </div>
     </section>
 

@@ -10,16 +10,14 @@
     {{-- Header Section --}}
     <section class="py-20 flex items-center justify-start h-screen bg-mentor-header bg-cover bg-center">
         <div class="main-container">
-            <div class="flex flex-col">
+            <div class="flex flex-col items-start">
                 <h1 class="mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl">
                     {{ __('pages/about_us/mentor.banner_title') }}</h1>
                 <div class="mb-6 w-full font-newprimary font-medium text-lg text-white  lg:max-w-xl md:mb-12">
                     {!! __('pages/about_us/mentor.benner_body') !!}
                 </div>
-                <a href="#mentor">
-                    <span
-                        class="px-10 py-2 font-newprimary font-semibold text-base text-white rounded-md bg-newyellow">{{ __('pages/about_us/mentor.banner_btn') }}</span>
-                </a>
+                <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
+                    bg-color="newprimary" />
             </div>
         </div>
     </section>
@@ -68,16 +66,13 @@
     </section>
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+    <section class="py-8 mt-12 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
                 {{ __('pages/about_us/mentor.bottom_title') }}
             </h2>
-            <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}">
-                <span class="px-8 md:px-12 py-1.5 font-newprimary text-base text-white text-center bg-red">
-                    {{ __('pages/about_us/mentor.bottom_btn') }}
-                </span>
-            </a>
+            <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                title="{{ __('pages/about_us/mentor.bottom_btn') }}" type="secondary" bg-color="red" />
         </div>
     </section>
 @endsection
@@ -100,7 +95,7 @@
         splide.on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[90%]');
+            data.list.classList.add('top-[110%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {

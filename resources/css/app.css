@@ -97,7 +97,7 @@ body {
 /* Program Card */
 .program_card {
     /* transform-style: preserve-3d;*/
-    @apply transition-all duration-700 relative h-[400px];
+    @apply transition-all duration-700 relative h-[415px];
     transform-style: preserve-3d;
     perspective: 1000px;
 }
