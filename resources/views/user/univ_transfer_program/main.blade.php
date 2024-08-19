@@ -134,10 +134,10 @@
                     {{ __('pages/programs/univ_transfer_program.why_us_desc') }}
                 </p>
                 @if (app()->getLocale() == 'id-id')
-                    <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring) id - eduall.webp') }}"
+                    <img data-original="{{ asset('assets/img/admission mentoring/Admission mentoring bahasa ver') }}"
                         alt="EduALL why us mentoring curr" class="w-full max-w-4xl mx-auto">
                 @else
-                    <img data-original="{{ asset('assets/img/admission mentoring/Why Us (adm mentoring) - eduall.webp') }}"
+                    <img data-original="{{ asset('assets/img/admission mentoring/Admission mentoring.webp') }}"
                         alt="EduALL why us mentoring curr" class="w-full max-w-4xl mx-auto">
                 @endif
             </div>
