@@ -5,250 +5,303 @@
     <meta name="description" content="{{ __('pages/programs/admission_mentoring.meta_description') }}" />
 @endsection
 @section('content')
+    @include('layout.user.sub-navbar.admission-navbar', ['active' => 'general'])
+
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-16 -z-10">
-        <div class="relative flex w-full left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full lg:max-w-xl">
-                    <div class="flex-row">
-                        <h1
-                            class="font-bold font-newprimary text-5xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
-                            {{ __('pages/programs/admission_mentoring.title') }}
-                        </h1>
-                        <p class="mt-2 font-newprimary font-normal text-xl text-white lg:text-start text-center">
-                            {{ __('pages/programs/admission_mentoring.body') }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <img loading="lazy" src="{{ asset('assets/img/banner/Mentoring.webp') }}"
-                alt="EduALL - Admission Mentoring Banner" class="w-full h-[400px] object-cover object-center md:h-[450px]">
-
+    <section class="py-16 h-screen bg-adm-mentoring-header bg-cover bg-top" id="banner">
+        <div class="flex flex-col h-full justify-center items-center main-container py-20 gap-2">
+            <h2 class="font-newprimary font-bold text-5xl text-white text-center uppercase">
+                {{ __('pages/programs/admission_mentoring.title') }}
+            </h2>
+            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-lg font-light">
+                {{ __('pages/programs/admission_mentoring.body') }}
+            </p>
         </div>
     </section>
 
     {{-- ================================== Benefit Section ================================== --}}
-    <section class="relative md:mb-28 mx-6 md:h-10">
-        <div
-            class="max-w-5xl mx-auto min-w-max bg-white shadow-[0px_0px_10px_5px] shadow-black/20 md:absolute-center md:-top-[180px]">
-            <div class="grid grid-cols-2 px-4 py-8 gap-6 md:px-10 md:py-4 md:gap-y-14 md:gap-x-10 md:grid-cols-4">
-                <div class="flex flex-1">
-                    <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
-                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-1.png') }}"
-                            alt="EduALL - ilustration 1" class="h-20 object-center object-cover md:h-24">
-                        <h4
-                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
-                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_1') }}
-                            </span>{{ __('pages/programs/admission_mentoring.benefit_1_sub') }}
-                        </h4>
+    <section class="py-16">
+        <div class="main-container">
+            <div class="flex flex-wrap items-center justify-evenly gap-8">
+                <div class="shadow-clip">
+                    <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4"
+                        style="clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);">
+                        <div class="h-12 relative">
+                            <img data-original="{{ asset('assets/img/admission mentoring/revamp/benefit-1.svg') }}"
+                                alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                            <div class="absolute top-0 -right-4">
+                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-sm text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">1-on-1</h4>
+                        <span class="font-newprimary text-base font-normal text-center">Mentoring</span>
                     </div>
-                    <div class="hidden md:block min-h-full w-[1px] bg-black"></div>
                 </div>
-                <div class="flex flex-1">
-                    <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
-                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-2.png') }}" alt="ilustration"
-                            class="h-20 object-center object-cover md:h-24">
-                        <h4
-                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
-                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_2') }}
-                            </span>{{ __('pages/programs/admission_mentoring.benefit_2_sub') }}
-                        </h4>
+                <div class="shadow-clip">
+                    <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4"
+                        style="clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);">
+                        <div class="h-12 relative">
+                            <img data-original="{{ asset('assets/img/admission mentoring/revamp/benefit-2.svg') }}"
+                                alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                            <div class="absolute top-0 -right-4">
+                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-sm text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">Personalized</h4>
+                        <span class="font-newprimary text-base font-normal text-center">Strategy Plan</span>
                     </div>
-                    <div class="hidden md:block min-h-full w-[1px] bg-black"></div>
                 </div>
-                <div class="flex flex-1">
-                    <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
-                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-3.png') }}"
-                            alt="EduALL - ilustration" class="h-20 object-center object-cover md:h-24">
-                        <h4
-                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
-                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_3') }}
-                            </span>{{ __('pages/programs/admission_mentoring.benefit_3_sub') }}
-                        </h4>
+                <div class="shadow-clip">
+                    <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4"
+                        style="clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);">
+                        <div class="h-12 relative">
+                            <img data-original="{{ asset('assets/img/admission mentoring/revamp/benefit-3.svg') }}"
+                                alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                            <div class="absolute top-0 -right-4">
+                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-sm text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">Well-Rounded</h4>
+                        <span class="font-newprimary text-base font-normal text-center">Support</span>
                     </div>
-                    <div class="hidden md:block min-h-full w-[1px] bg-black"></div>
                 </div>
-                <div class="flex flex-1">
-                    <div class="flex flex-1 flex-col items-center gap-2 md:gap-6">
-                        <img data-original="{{ asset('assets/img/admission mentoring/benefit-4.png') }}"
-                            alt="EduALL - ilustration" class="h-20 object-center object-cover md:h-24">
-                        <h4
-                            class="font-newprimary text-xl  font-normal text-center text-newprimary tracking-tight leading-6 md:text-sm md:leading-4">
-                            <span class="block font-extrabold"> {{ __('pages/programs/admission_mentoring.benefit_4') }}
-                            </span>{{ __('pages/programs/admission_mentoring.benefit_4_sub') }}
-                        </h4>
+                <div class="shadow-clip">
+                    <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4"
+                        style="clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);">
+                        <div class="h-12 relative">
+                            <img data-original="{{ asset('assets/img/admission mentoring/revamp/benefit-4.svg') }}"
+                                alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                            <div class="absolute top-0 -right-4">
+                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-sm text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">Proven</h4>
+                        <span class="font-newprimary text-base font-normal text-center">Track Record</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- ================================== Undergraduate Program Section ================================== --}}
-    <section id="undergraduate" class="py-16">
-        {{-- Undergraduate Program Title --}}
+    <section class="py-12">
         <div class="main-container">
-            <h2 class="font-newprimary font-extrabold text-newprimary text-center text-4xl mb-4">
-                {{ __('pages/programs/admission_mentoring.undergraduate_title') }}
-                <span
-                    class=" block text-newyellow">{{ __('pages/programs/admission_mentoring.undergraduate_subtitle') }}</span>
-            </h2>
-
-            <p class="max-w-3xl mx-auto font-newprimary text-xl text-center">
-                {{ __('pages/programs/admission_mentoring.undergraduate_desc') }}
-            </p>
-
-        </div>
-
-        {{-- Undergraduate Program Cards --}}
-        <div class="relative">
-            <div class="splide mt-8 main-container" aria-label="Basic Structure Example">
-                <div class="md:position: md:relative">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                            <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                            <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
-                        </button>
-                    </div>
-                    <div class="splide__track">
-                        <ul class="splide__list flex">
-                            @foreach (__('pages/programs/admission_mentoring.undergraduate_list') as $item)
-                                <li class="splide__slide">
-                                    <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
-                                        <div class="flex flex-col h-full bg-white overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
-                                                alt="EduALL - Undergraduate">
-                                            <div class="py-6 px-4">
-                                                <h4 class="mb-4 font-newprimary font-bold text-newprimary text-2xl">
-                                                    {{ $item['title'] }}</h4>
-                                                <p>{{ $item['desc'] }}</p>
+            <div class="flex flex-col md:flex-row items-end justify-center gap-8">
+                @foreach (__('pages/programs/admission_mentoring.program_list') as $item)
+                    <div class="flex flex-col w-full md:w-1/3 my-4">
+                        @if ($item['is_popular'] == true)
+                            <div
+                                class="px-8 pt-5 pb-12 w-full bg-newprimary rounded-2xl flex items-center justify-center gap-2">
+                                <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                                <h3 class="text-newyellow text-lg font-bold text-center">
+                                    {{ __('pages/programs/admission_mentoring.popular_choice') }}
+                                </h3>
+                                <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                            </div>
+                        @endif
+                        <div class="-mt-8 pt-16 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
+                            <h3 class="font-bold uppercase text-2xl text-center">
+                                {!! $item['title'] !!}
+                            </h3>
+                            <div class="rounded-xl h-32 w-full overflow-hidden my-4">
+                                <img src="https://via.placeholder.com/80x40" alt=""
+                                    class="h-full w-full object-cover">
+                            </div>
+                            <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
+                                <p class="text-base text-justify px-4 leading-5">
+                                    {{ $item['desc'] }}
+                                </p>
+                            </div>
+                            <div class="w-full lg:h-56">
+                                <ul class="mt-4 w-full flex flex-col gap-3">
+                                    @foreach ($item['points'] as $point)
+                                        <li class="flex justify-center items-start gap-2">
+                                            <div
+                                                class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                                <i class="fa-solid fa-check fa-xs text-white"></i>
                                             </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
+                                            <p class="flex-1 text-sm font-newprimary">
+                                                {{ $point }}
+                                            </p>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <x-button
+                                href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/{{ $item['link'] }}"
+                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" />
+                            <span class="mt-1 text-sm text-[#9C9C9C]">
+                                {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
+                                <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
+                                    class="underline text-newprimary hover:text-black">
+                                    {{ __('pages/programs/admission_mentoring.book_now') }}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <div class="flex flex-col items-center w-full md:w-1/3 rounded-2xl shadow-md py-8 px-6">
+                    <h3 class="font-bold uppercase text-2xl text-center">
+                        {{ __('pages/programs/admission_mentoring.undergraduate_program_title') }}
+                    </h3>
+                    <div class="rounded-xl h-32 w-full overflow-hidden my-4">
+                        <img src="https://via.placeholder.com/80x40" alt="" class="h-full w-full object-cover">
+                    </div>
+                    <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
+                        <p class="text-base text-justify px-4 leading-5">
+                            {{ __('pages/programs/admission_mentoring.undergraduate_program_description') }}
+                        </p>
+                    </div>
+                    <div class="w-full md:h-52">
+                        <ul class="mt-4 w-full flex flex-col gap-3">
+                            <li class="flex justify-center items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.all_around_university_application') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.personalized_admission_assessment') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.profile_development_academic_planning') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.academic_advising_support') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.best_fit_university_research_selection') }}
+                                </p>
+                            </li>
                         </ul>
                     </div>
+                    <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                        title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" />
+                    <span class="mt-1 text-sm text-[#9C9C9C]">
+                        {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
+                        <a href="#" class="underline text-newprimary hover:text-black">
+                            {{ __('pages/programs/admission_mentoring.book_now') }}
+                        </a>
+                    </span>
                 </div>
-            </div>
-            <div class="absolute top-[100px] -z-10 bg-[#0000FF] w-full h-[90%]"></div>
-        </div>
-
-    </section>
-
-    {{-- ================================== Graduate Program Section ================================== --}}
-    <section id="graduate" class="py-16">
-        {{-- Graduate Program Title --}}
-        <div class="main-container">
-            <h2 class="font-newprimary font-extrabold text-newprimary text-center text-4xl mb-4">
-                {{ __('pages/programs/admission_mentoring.graduate_title') }}
-                <span class=" block text-newyellow">{{ __('pages/programs/admission_mentoring.graduate_subtitle') }}</span>
-            </h2>
-
-            <p class="max-w-3xl mx-auto font-newprimary text-xl text-center">
-                {{ __('pages/programs/admission_mentoring.graduate_desc') }}
-            </p>
-
-        </div>
-
-        {{-- Graduate Program Cards --}}
-        <div class="relative">
-            <div class="splide splide__testi  mt-8 main-container" aria-label="Basic Structure Example">
-                <div class="md:position: md:relative">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                            <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                            <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
-                        </button>
+                <div class="flex flex-col items-center w-full md:w-1/3 rounded-2xl shadow-md py-8 px-6">
+                    <h3 class="font-bold uppercase text-2xl text-center">
+                        {{ __('pages/programs/admission_mentoring.undergraduate_program_title') }}
+                    </h3>
+                    <div class="rounded-xl h-32 w-full overflow-hidden my-4">
+                        <img src="https://via.placeholder.com/80x40" alt="" class="h-full w-full object-cover">
                     </div>
-                    <div class="splide__track">
-                        <ul class="splide__list flex">
-                            @foreach (__('pages/programs/admission_mentoring.graduate_list') as $item)
-                                <li class="splide__slide">
-                                    <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
-                                        <div class="flex flex-col h-full bg-white overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
-                                                alt="EduALL - Graduate">
-                                            <div class="py-6 px-4">
-                                                <h4 class="mb-4 font-newprimary font-bold text-newprimary text-2xl">
-                                                    {{ $item['title'] }}</h4>
-                                                <p>{{ $item['desc'] }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
+                    <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
+                        <p class="text-base text-justify px-4 leading-5">
+                            {{ __('pages/programs/admission_mentoring.transfer_students_description') }}
+                        </p>
+                    </div>
+                    <div class="w-full md:h-52">
+                        <ul class="mt-4 w-full flex flex-col gap-3">
+                            <li class="flex justify-center items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.all_around_university_application') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.personalized_admission_assessment') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.profile_development_academic_planning') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.academic_advising_support') }}
+                                </p>
+                            </li>
+                            <li class="flex justify-start items-start gap-2">
+                                <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-xs text-white"></i>
+                                </div>
+                                <p class="flex-1 text-sm font-newprimary">
+                                    {{ __('pages/programs/admission_mentoring.best_fit_university_research_selection') }}
+                                </p>
+                            </li>
                         </ul>
                     </div>
-                </div>
+                    <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                        title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" />
+                    <span class="mt-1 text-sm text-[#9C9C9C]">
+                        {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
+                        <a href="#" class="underline text-newprimary hover:text-black">
+                            {{ __('pages/programs/admission_mentoring.book_now') }}
+                        </a>
+                    </span>
+                </div> --}}
             </div>
-            <div class="absolute top-[100px] -z-10 bg-[#0000FF] w-full min-h-full"></div>
         </div>
-
     </section>
 
-    {{-- ================================== Univtransfer Program Section ================================== --}}
-    <section id="univ-transfer" class="py-16">
-        {{-- univtransfer Program Title --}}
-        <div class="main-container">
-            <h2 class="font-newprimary font-extrabold text-newprimary text-center text-4xl mb-4">
-                {{ __('pages/programs/admission_mentoring.univtransfer_title') }}
-                <span
-                    class=" block text-newyellow">{{ __('pages/programs/admission_mentoring.univtransfer_subtitle') }}</span>
-            </h2>
-
-            <p class="max-w-3xl mx-auto font-newprimary text-xl text-center">
-                {{ __('pages/programs/admission_mentoring.univtransfer_desc') }}
-            </p>
-
-        </div>
-
-        {{-- univtransfer Program Cards --}}
-        <div class="relative">
-            <div class="splide mt-8 main-container" aria-label="Basic Structure Example">
-                <div class="md:position: md:relative">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                            <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                            <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
-                        </button>
-                    </div>
-                    <div class="splide__track">
-                        <ul class="splide__list flex">
-                            @foreach (__('pages/programs/admission_mentoring.univtransfer_list') as $item)
-                                <li class="splide__slide">
-                                    <div class="splide__slide__container h-full px-1 lg:px-2 xl:px-4 2xl:px-6">
-                                        <div class="flex flex-col h-full bg-white overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/' . $item['image']) }}"
-                                                alt="EduALL - University Transfer">
-                                            <div class="py-6 px-4">
-                                                <h4 class="mb-4 font-newprimary font-bold text-newprimary text-2xl">
-                                                    {{ $item['title'] }}</h4>
-                                                <p>{{ $item['desc'] }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute top-[100px] -z-10 bg-[#0000FF] w-full min-h-full"></div>
-        </div>
-
-    </section>
-
-    {{-- ================================== Testimonial Section ================================== --}}
+    <!-- Why Us Section -->
     <section class="pt-16 pb-20">
         <div class="main-container">
-            <h2 class="font-newprimary font-bold text-newprimary text-center text-4xl mb-4">
-                {{ __('pages/programs/admission_mentoring.testimony') }}
+            <div class="flex flex-col items-center justify-center">
+                <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
+                    {{ __('pages/programs/admission_mentoring.why_us_title') }}
+                </h2>
+                <p class="text-center text-base max-w-xl mx-auto mb-8">
+                    {{ __('pages/programs/admission_mentoring.why_us_description') }}
+                </p>
+                <img src="{{ asset('assets/img/admission mentoring/revamp/whyus.png') }}" alt=""
+                    class="w-full max-w-2xl object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="pt-16 pb-20">
+        <div class="main-container">
+            <h2 class="font-newprimary font-bold text-black text-center text-2xl mb-4">
+                {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
             </h2>
 
             <div class="splide" role="group">
@@ -273,20 +326,17 @@
                 </div>
             </div>
         </div>
-
     </section>
 
-    {{-- ================================== Bottom Section  ================================== --}}
+    <!-- Bottom Section -->
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
-                {{ __('pages/programs/graduate_program.bottom_title') }}
-                <strong class="mt-3 block lg:text-3xl text-xl text-newyellow">
-                    {{ __('pages/programs/graduate_program.bottom_subtitle') }}
-                </strong>
+            <h2 class="w-full mb-6 font-newprimary font-semibold text-white text-center lg:text-3xl text-2xl">
+                {{ __('pages/programs/admission_mentoring.bottom_section_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/programs/graduate_program.bottom_btn') }}" type='secondary' bg-color="red" />
+                title="{{ __('pages/programs/admission_mentoring.schedule_free_consultation') }}" type='secondary'
+                bg-color="red" />
         </div>
     </section>
 @endsection
@@ -300,20 +350,7 @@
 
         var splides = document.getElementsByClassName('splide');
 
-        for (var i = 0; i < splides.length - 1; i++) {
-            new Splide(splides[i], {
-                type: 'slide',
-                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : 3,
-                arrows: isLargeDevice ? false : true,
-                perMove: 1,
-                pagination: false,
-                autoplay: true,
-                lazyload: true,
-                interval: 5000,
-            }).mount();
-        }
-
-        new Splide(splides[3], {
+        new Splide(splides[0], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,

@@ -1,6 +1,6 @@
 @if ($type == 'primary')
     <a href="{{ $href }}" target="{{ $target ?? '' }}"
-        class="block mt-12 bg-{{ $bgColor ?? 'black' }} text-center text-white font-newprimary text-lg font-semibold py-2 px-12 hover:bg-{{ $bgColor ?? 'newprimary' }} hover:px-20 transition-all duration-150">
+        class="block mt-12 bg-{{ $bgColor ?? 'black' }} text-center text-white font-newprimary text-lg font-semibold py-2 px-14 hover:bg-{{ $bgColor ?? 'newprimary' }} hover:px-20 transition-all duration-150">
         {{ $title }}
     </a>
 @elseif ($type == 'secondary')

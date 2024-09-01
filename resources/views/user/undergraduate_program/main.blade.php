@@ -7,13 +7,16 @@
 @endsection
 
 @section('content')
+    @include('layout.user.sub-navbar.admission-navbar', ['active' => 'undergraduate'])
+
     {{-- ==================================== Header Section ========================================= --}}
     <section class="py-28 bg-undergraduate-header bg-cover bg-center md:py-48 ">
         <div class="relative main-container">
             <div class="flex items-center gap-y-4 md:max-w-xl lg:pb-[30px]">
                 <div class="flex-col">
                     <div class="w-full">
-                        <h4 class="mb-2 font-newprimary font-semibold text-xl text-white lg:text-start text-center md:text-2xl">
+                        <h4
+                            class="mb-2 font-newprimary font-semibold text-xl text-white lg:text-start text-center md:text-2xl">
                             {{ __('pages/programs/undergraduate_program.subtitle') }}
 
                         </h4>
@@ -58,15 +61,13 @@
                     @foreach (__('pages/programs/undergraduate_program.do_list') as $item)
                         <div
                             class="flex justify-between items-stretch gap-4 w-full min-h-full bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden  lg:min-h-max">
-                            <div
-                                class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 ">
+                            <div class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 ">
                                 <span
                                     class="font-newprimary font-extrabold text-8xl md:text-9xl text-newprimary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
                                 </span>
                                 <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/Undergraduate' . $loop->iteration . '.webp') }}"
-                                    alt="EduALL"
-                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                                    alt="EduALL" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
                             </div>
                             <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
                                 <h4 class="font-newprimary font-semibold text-xl text-newyellow">{{ $item['title'] }}</h4>
@@ -160,40 +161,41 @@
     </section>
 
     {{-- ====================================  Testimonial Section ========================================= --}}
-    @if(count($testimonies) > 0)
-    <section class="py-10">
-        <div class="main-container">
-            <div class="flex flex-col">
-                <div class="flex justify-center">
-                    <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
-                        {{ __('pages/programs/undergraduate_program.testimony_title') }}
-                    </h2>
-                </div>
-                <div class="mt-16 splide" role="group">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
-                        </button>
+    @if (count($testimonies) > 0)
+        <section class="py-10">
+            <div class="main-container">
+                <div class="flex flex-col">
+                    <div class="flex justify-center">
+                        <h2
+                            class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
+                            {{ __('pages/programs/undergraduate_program.testimony_title') }}
+                        </h2>
                     </div>
-                    <div class="splide__track">
-                        <ul class="splide__list font-newprimary text-black px-8">
-                            @foreach ($testimonies as $testi)
-                                <li class="splide__slide w-full pb-8">
-                                    <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                        <x-testimonial-card :testimonial=$testi />
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                    <div class="mt-16 splide" role="group">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                                <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next"
+                                style="background: transparent; right: -48px;">
+                                <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                            </button>
+                        </div>
+                        <div class="splide__track">
+                            <ul class="splide__list font-newprimary text-black px-8">
+                                @foreach ($testimonies as $testi)
+                                    <li class="splide__slide w-full pb-8">
+                                        <div class="splide__slide__container py-8 px-4 h-full w-full ">
+                                            <x-testimonial-card :testimonial=$testi />
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
     {{-- ================================== Bottom Section  ================================== --}}

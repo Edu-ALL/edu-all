@@ -38,6 +38,7 @@ module.exports = {
                     "url('../../public/assets/img/programs/Academic &-Test Preparation.webp')",
 
                 // Admission mentoring
+                "adm-mentoring-header": "url('../../public/assets/img/admission mentoring/revamp/banner-general.png')",
                 // Undergraduate
                 "undergraduate-header":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/UnderGraduate.webp')",
