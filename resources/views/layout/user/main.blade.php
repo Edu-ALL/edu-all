@@ -196,9 +196,9 @@
         </div>
     </div>
 
-    @include('layout.user.navbar')
+    {{-- @include('layout.user.navbar') --}}
 
-    <div class="mt-16">
+    <div class="">
         @yield('content')
     </div>
 
