@@ -117,6 +117,34 @@
                                         {{ __('pages/navbar.programs_global_innovators') }}
                                     </a>
                                 </li>
+                                <li class="child_nav group">
+                                    <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school"
+                                        class="child_child_nav_link">
+                                        <i class="fa-solid fa-handshake mr-2 text-base"></i>
+                                        Exclusive Program School</a>
+                                    <ul
+                                        class="text-[#1d1d1d] bg-white transition-all duration-300 lg:absolute lg:left-full lg:top-0 lg:invisible lg:w-full lg:text-[#aaaaaa] lg:opacity-0 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-[#333333]">
+                                        <li class="child_child_nav">
+                                            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/admission-accelerator"
+                                                class="child_child_link">
+                                                Admission Accelerator
+                                            </a>
+                                        </li>
+                                        <li class="child_child_nav">
+                                            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/experiential-learning"
+                                                class="child_child_link">
+                                                Experiential Learning
+                                            </a>
+                                        </li>
+                                        <li class="child_child_nav lg:border-b-0">
+                                            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/teacher-focused"
+                                                class="child_child_link">
+                                                Teacher Focused
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
 

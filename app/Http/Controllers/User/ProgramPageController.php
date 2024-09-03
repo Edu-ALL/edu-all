@@ -119,6 +119,22 @@ class ProgramPageController extends Controller
         ]);
     }
 
+    public function exclusive_program_school() {
+        return view('user.exclusive_program_school.main');
+    }
+
+    public function admission_accelerator() {
+        return view('user.admission_accelerator.main');
+    }
+
+    public function experiential_learning() {
+        return view('user.experiential_learning.main');
+    }
+
+    public function teacher_focused() {
+        return view('user.teacher_focused.main');
+    }
+
     public function global_innovators_project()
     {
         return view('user.global_innovators_projects.main');
