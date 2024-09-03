@@ -197,6 +197,7 @@
     </div>
 
     {{-- @include('layout.user.navbar') --}}
+    @include('layout.user.new-navbar')
 
     <div class="">
         @yield('content')

@@ -94,6 +94,19 @@ body {
     @apply bg-red text-white rounded-[2px] py-1.5 px-5 font-medium font-primary capitalize;
 }
 
+.active-navbar {
+    @apply bg-newprimary text-white font-semibold;
+}
+
+/* Custom CSS for the indicator */
+#active-indicator {
+    height: 100%;  /* Full height of nav items */
+    width: 100px;  /* Adjust width to match nav item */
+    top: 0;
+    z-index: -1;   /* Place behind the nav items */
+}
+
+
 /* Program Card */
 .program_card {
     /* transform-style: preserve-3d;*/
