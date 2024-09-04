@@ -6,7 +6,6 @@
     <meta name="description" content="{{ __('pages/programs/admission_accelerator.meta_description') }}" />
 @endsection
 
-
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-admission-accelerator-programs-header bg-cover bg-top" id="banner">
@@ -73,7 +72,7 @@
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
         <div class="new-main-container">
             <div class="flex flex-wrap w-full items-center">
-                <div class="md:w-2/3 w-full px-8 flex flex-col gap-8 md:my-0 my-8">
+                <div class="md:w-2/3 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12 order-2 md:order-1">
                     <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-newprimary md:text-left text-center">
                         {!! __('pages/programs/admission_accelerator.workshop_title') !!}
                     </h2>
@@ -82,15 +81,15 @@
                         {!! __('pages/programs/admission_accelerator.workshop_description') !!}
                     </p>
 
-                    <div class="bg-newprimary p-4">
-                        <ul class="text-white text-base list-disc ml-4">
+                    <div class="bg-newprimary p-4 lg:w-2/3 w-full">
+                        <ul class="text-white text-lg list-disc ml-4 font-semibold">
                             @foreach (__('pages/programs/admission_accelerator.workshop_item') as $item)
                                 <li>{{ $item }}</li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
-                <div class="md:w-1/3 w-full">
+                <div class="md:w-1/3 w-full order-1 md:order-2">
                     <img src="{{ asset('assets/img/admission_accelerator/Rectangle.webp') }}" alt=""
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
                 </div>
@@ -133,20 +132,7 @@
 
             <div class="flex flex-wrap gap-8 justify-center items-stretch">
                 @foreach (__('pages/programs/exclusive_program_school.collaborate_item') as $item)
-                    <div class="w-full md:w-1/3 flex flex-col items-center rounded-2xl shadow-xl py-8 px-6 bg-white">
-                        <h3 class="font-bold text-xl text-center h-12">
-                            {!! $item['title'] !!}
-                        </h3>
-                        <div class="rounded-xl h-52 w-full overflow-hidden my-4">
-                            <img src="{{ asset('assets/img/exclusive_program_school/Colaborate/' . $item['image']) }}"
-                                alt="" class="h-full w-full object-cover">
-                        </div>
-                        <div class="w-full">
-                            <p class="text-base text-justify px-4 leading-5">
-                                {{ $item['description'] }}
-                            </p>
-                        </div>
-                    </div>
+                    <x-collaborate-card :title="$item['title']" :image="$item['image']" :description="$item['description']" />
                 @endforeach
             </div>
         </div>
