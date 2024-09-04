@@ -82,6 +82,10 @@ module.exports = {
                 "passion-project-bg-scien-3":
                     "url('../../public/assets/img/passion_project_mentoring/scientific research.png')",
 
+                // exclusive program school
+                "exclusive-program-school-header":
+                    "url('../../public/assets/img/exclusive_program_school/Home banner General.webp')",
+
                 // Blog
                 "bottom-sign-up-banner":
                     "url('../../public/assets/img/blog/detail-blog-sign-up-banner.webp')",
