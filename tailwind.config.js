@@ -85,6 +85,8 @@ module.exports = {
                 // exclusive program school
                 "exclusive-program-school-header":
                     "url('../../public/assets/img/exclusive_program_school/Home banner General.webp')",
+                "admission-accelerator-programs-header":
+                    "url('../../public/assets/img/admission_accelerator/Home banner admission accelerator.webp')",
 
                 // Blog
                 "bottom-sign-up-banner":
