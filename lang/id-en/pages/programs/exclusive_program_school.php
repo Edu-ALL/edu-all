@@ -8,58 +8,62 @@ return [
     'description' => 'Our school programs empower students and teachers through tailored support in university admissions, experiential learning, and professional development. ',
     'sub_description' => 'Partner with us to inspire and equip the next generation of leaders!',
 
-    'program' => [
+    'benefit' => [
         [
-            'image' => 'Group 5621.webp',
+            'image' => 'benefit-01.webp',
             'title' => 'Workshop & Bootcamp',
         ],
         [
-            'image' => 'Group 5622.webp',
+            'image' => 'benefit-02.webp',
             'title' => 'Extracurricular Class',
         ],
         [
-            'image' => 'Group 5623.webp',
+            'image' => 'benefit-03.webp',
             'title' => 'Overseas Edu Trip',
         ],
         [
-            'image' => 'Group 5624.webp',
+            'image' => 'benefit-04.webp',
             'title' => 'Teacher Training',
         ],
     ],
     'program_title' => 'OUR EXCLUSIVE PROGRAMS FOR SCHOOL',
-    'sub_program' => [
+    'programs' => [
         [
-            'image' => 'Rectangle 184.webp',
+            'image' => 'programs-01.webp',
             'title' => 'ADMISSION ACCELERATOR PROGRAMS',
             'sub_title' => 'Designed to give students a competitive edge in the university application process through in-demand school programs.',
             'items' => [
                 'University Application Workshop (US/UK/Asian)',
                 'University Application Essay Bootcamp',
                 'SAT Prep Class Extracurricula'
-            ]
+            ],
+            'link' => 'admission-accelerator',
         ],
         [
-            'image' => 'Rectangle 1842.webp',
+            'image' => 'programs-02.webp',
             'title' => 'EXPERIENTIAL LEARNING PROGRAMS',
             'sub_title' => 'Immerse students in practical and impactful experiences to enhance their exploration process and spark personal growth. ',
             'items' => [
                 'Uni Connect & Interest Exploration Program',
                 'Research & Entrepreneurship Innovation Program',
                 'Community Service & Immersion Program'
-            ]
+            ],
+            'link'=> 'experiential-learning',
         ],
         [
-            'image' => 'Rectangle 1843.webp',
+            'image' => 'programs-03.webp',
             'title' => 'TEACHER-FOCUSED PROGRAMS',
             'sub_title' => 'Empower educators with workshops and trainings.',
             'items' => [
                 'ALL EmpowerED Teachers Conference',
                 'CREST Teacher Training',
                 'Recommendation Letter Workshop'
-            ]
+            ],
+            'link' => 'teacher-focused',
         ],
     ],
     'sub_program_button' => 'More Info',
+    'what_they_say' => 'WHAT THEY SAY',
     'cta_button' => 'COLLABORATE WITH US!',
 
     'collaborate' => 'WHY COLLABORATE WITH US?',

@@ -82,6 +82,16 @@ module.exports = {
                 "passion-project-bg-scien-3":
                     "url('../../public/assets/img/passion_project_mentoring/scientific research.png')",
 
+                // exclusive program school
+                "exclusive-program-school-header":
+                    "url('../../public/assets/img/exclusive_program_school/Home banner General.webp')",
+                "admission-accelerator-programs-header":
+                    "url('../../public/assets/img/admission_accelerator/Home banner admission accelerator.webp')",
+                "experiental-learning-programs-header":
+                    "url('../../public/assets/img/experiential_learning/Home banner exp learning.webp')",
+                "tea-programs-header":
+                    "url('../../public/assets/img/experiential_learning/Home banner teachers.webp')",
+
                 // Blog
                 "bottom-sign-up-banner":
                     "url('../../public/assets/img/blog/detail-blog-sign-up-banner.webp')",
