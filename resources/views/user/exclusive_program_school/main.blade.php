@@ -24,12 +24,12 @@
 
     {{-- ================================== Benefit Section  ================================== --}}
     <section class="py-20 mt-20">
-        <div class="new-main-container flex flex-wrap gap-12 gap-y-16 md:gap-8 items-center justify-center">
+        <div class="new-main-container flex flex-wrap gap-12 gap-y-16 md:gap-8 items-center justify-center md:mx-[150px]">
             @foreach (__('pages/programs/exclusive_program_school.benefit') as $item)
-                <div class="w-52 flex flex-col items-center gap-4">
+                <div class="w-1/3 md:w-1/5 flex flex-col items-center gap-4">
                     <img src="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
                         alt="{{ $item['title'] }}" class="scale-150 object-top object-cover">
-                    <h4 class="font-newprimary text-xl font-semibold text-center tracking-tight leading-6 w-32 -mt-20">
+                    <h4 class="font-newprimary text-xl font-semibold text-center tracking-tight leading-6 w-32 md:-mt-20 -mt-14">
                         {{ $item['title'] }}
                     </h4>
                 </div>
@@ -39,10 +39,10 @@
 
     {{-- ================================== Programs Section  ================================== --}}
     <section class="pb-20 pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container flex flex-col items-center gap-4 md:gap-8">
+        <div class="new-main-container flex flex-col items-center gap-4 md:gap-8 md:mx-[150px]">
             <h2 class="text-newprimary text-3xl text-center uppercase font-bold">
                 {{ __('pages/programs/exclusive_program_school.program_title') }}</h2>
-            <div class="md:-mb-40 flex flex-col lg:flex-row items-center w-full gap-8 xl:gap-16">
+            <div class="md:-mb-40 flex flex-col lg:flex-row items-center w-full gap-8">
                 @foreach (__('pages/programs/exclusive_program_school.programs') as $item)
                     <div class="flex flex-col w-full lg:w-1/3 my-4">
                         <div class="flex flex-col items-center rounded-2xl shadow-xl py-8 px-6 bg-white">
