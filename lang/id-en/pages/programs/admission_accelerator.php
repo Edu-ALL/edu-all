@@ -50,4 +50,7 @@ return [
     'sat_title' => 'SAT Prep Class Extracurricular',
     'sat_description' => 'Tailored for school extracurricular activities, this SAT Prep Class provides students with expert-led instruction to improve their SAT scores.',
     'sat_sub_description' =>  'The program fits seamlessly into a school’s existing schedule, offering focused lessons, practice tests, and personalized strategies that equip students to excel on the SAT, all while complementing their regular academic work.',
+
+    'cta_button' => 'Request Your Tailored School Program ',
+    'cta_link' => 'Here!',
 ];

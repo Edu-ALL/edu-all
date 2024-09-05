@@ -50,4 +50,8 @@ return [
     'sat_title' => 'SAT Prep Class Extracurricular',
     'sat_description' => 'Dibuat khusus untuk kegiatan ekstrakurikuler sekolah, Kelas Persiapan SAT ini memberikan siswa instruksi yang dipimpin oleh ahli untuk meningkatkan skor SAT mereka.',
     'sat_sub_description' =>  'Program ini cocok dengan jadwal sekolah yang ada, menawarkan pelajaran yang fokus, tes praktik, dan strategi yang dipersonalisasi yang membekali siswa untuk unggul dalam SAT, semua sambil melengkapi pekerjaan akademik reguler mereka.',
+    
+    
+    'cta_button' => 'Ayo Buat Program Sesuai dengan Keinginanmu  ',
+    'cta_link' => 'Disini !',
 ];

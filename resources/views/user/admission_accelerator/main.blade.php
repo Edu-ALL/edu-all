@@ -137,4 +137,14 @@
             </div>
         </div>
     </section>
+
+    {{-- ================================== CTA Section  ================================== --}}
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+        <div class="main-container flex flex-col items-center">
+            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
+                {{ __('pages/programs/admission_accelerator.cta_button') }} 
+                <a href="#" class="text-red">{{ __('pages/programs/admission_accelerator.cta_link') }} </a>
+            </h2>
+        </div>
+    </section>
 @endsection

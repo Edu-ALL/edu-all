@@ -119,8 +119,14 @@ class ProgramPageController extends Controller
         ]);
     }
 
-    public function exclusive_program_school() {
-        return view('user.exclusive_program_school.main');
+    public function exclusive_program_school($locale) {
+        $lang = substr(app()->getLocale(), 3, 2);
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Exclusive Program School');
+
+        return view('user.exclusive_program_school.main', [
+            'testimonies' => $testimonies,
+            'locale' => $locale
+        ]);
     }
 
     public function admission_accelerator() {

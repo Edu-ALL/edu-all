@@ -91,7 +91,6 @@
             <h2 class="font-newprimary font-bold text-center text-4xl mb-4">
                 {{ __('pages/programs/exclusive_program_school.what_they_say') }}
             </h2>
-
             <div class="splide" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
@@ -103,20 +102,20 @@
                 </div>
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black px-8">
-                        {{-- @foreach ($testimonies as $testi)
-                        <li class="splide__slide w-full pb-8">
-                            <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                <x-testimonial-card :testimonial=$testi />
-                            </div>
-                        </li>
-                        @endforeach --}}
+                        @foreach ($testimonies as $testi)
+                            <li class="splide__slide w-full pb-8">
+                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
+                                    <x-testimonial-card :testimonial=$testi />
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- ================================== Testimonial Section ================================== --}}
+    {{-- ================================== CTA Section ================================== --}}
     <section class="pt-16 pb-20">
         <div class="main-container flex items-center justify-center">
             <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/{{ $item['link'] }}"
@@ -126,3 +125,28 @@
         </div>
     </section>
 @endsection
+
+@push('script')
+    <script>
+        var splides = document.getElementsByClassName('splide');
+
+        new Splide(splides[0], {
+            perPage: isSmallDevice ? 1 : 3,
+            perMove: 1,
+            arrows: false,
+            autoplay: true,
+            lazyload: true,
+            interval: 3000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[105%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
+    </script>
+@endpush

@@ -88,5 +88,5 @@ return [
             'title' => 'Ongoing Support and Resources',
             'description' => 'Continuous support throughout the application process, including academic and non-academic guidance, interview preparation, and access to extensive resources to help students excel.'
         ],
-    ]
+    ],
 ];
