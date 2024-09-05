@@ -89,6 +89,8 @@ module.exports = {
                     "url('../../public/assets/img/admission_accelerator/Home banner admission accelerator.webp')",
                 "experiental-learning-programs-header":
                     "url('../../public/assets/img/experiential_learning/Home banner exp learning.webp')",
+                "tea-programs-header":
+                    "url('../../public/assets/img/experiential_learning/Home banner teachers.webp')",
 
                 // Blog
                 "bottom-sign-up-banner":
