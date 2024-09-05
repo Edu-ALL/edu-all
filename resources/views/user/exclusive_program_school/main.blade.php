@@ -118,7 +118,7 @@
     {{-- ================================== CTA Section ================================== --}}
     <section class="pt-16 pb-20">
         <div class="main-container flex items-center justify-center">
-            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/{{ $item['link'] }}"
+            <a href="https://wa.me/+6287888827686" target="_blank"
                 class="px-8 md:px-16 py-5 font-semibold font-newprimary text-lg md:text-xl text-white text-center bg-newprimary hover:scale-105 transition-all duration-150">
                 {{ __('pages/programs/exclusive_program_school.cta_button') }}
             </a>

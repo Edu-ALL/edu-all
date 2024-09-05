@@ -11,7 +11,7 @@
     <section class="py-16 h-screen bg-admission-accelerator-programs-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full justify-center items-center new-main-container py-20 gap-4">
             <h2 class="font-newprimary font-bold text-5xl text-white text-center">
-                {{ __('pages/programs/admission_accelerator.title') }}
+                {!! __('pages/programs/admission_accelerator.title') !!}
             </h2>
             <p class="font-newprimary text-white text-center max-w-xl leading-6 text-lg font-light">
                 {{ __('pages/programs/admission_accelerator.description') }}
@@ -143,7 +143,7 @@
         <div class="main-container flex flex-col items-center">
             <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/admission_accelerator.cta_button') }} 
-                <a href="#" class="text-red">{{ __('pages/programs/admission_accelerator.cta_link') }} </a>
+                <a href="https://wa.me/+6287888827686" target="_blank" class="border-b-2 border-red hover:text-yellow duration-100">{{ __('pages/programs/admission_accelerator.cta_link') }} </a>
             </h2>
         </div>
     </section>
