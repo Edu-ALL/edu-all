@@ -84,7 +84,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/3 w-full order-1 md:order-2">
-                    <img src="{{ asset('assets/img/teacher_focused/training.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/teacher_focused/CREST AWARDS.webp') }}" alt=""
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
                 </div>
             </div>
