@@ -54,7 +54,7 @@
                                     alt="" class="h-full w-full object-cover">
                             </div>
                             <div class="w-full md:h-24">
-                                <p class="text-base text-justify px-4 leading-5">
+                                <p class="text-base text-start px-0 leading-5">
                                     {{ $item['sub_title'] }}
                                 </p>
                             </div>
@@ -79,6 +79,21 @@
                                 bg-color="newprimary" />
                         </div>
                     </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================== COLLABORATE Section ================================== --}}
+    <section class="pt-16 pb-20">
+        <div class="new-main-container">
+            <h2 class="font-newprimary font-bold text-center text-2xl md:text-4xl mb-4">
+                {{ __('pages/programs/exclusive_program_school.collaborate') }}
+            </h2>
+
+            <div class="flex flex-wrap gap-8 justify-center items-stretch">
+                @foreach (__('pages/programs/exclusive_program_school.collaborate_item') as $item)
+                    <x-collaborate-card :title="$item['title']" :image="$item['image']" :description="$item['description']" />
                 @endforeach
             </div>
         </div>
@@ -114,6 +129,7 @@
             </div>
         </div>
     </section>
+    
 
     {{-- ================================== CTA Section ================================== --}}
     <section class="pt-16 pb-20">

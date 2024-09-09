@@ -45,31 +45,8 @@
         </div>
     </section>
 
-    {{-- ================================== Essay Section  ================================== --}}
-    <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container">
-            <div class="flex flex-wrap w-full items-center">
-                <div class="md:w-1/3 w-full">
-                    <img src="{{ asset('assets/img/admission_accelerator/Isolation_Mode.webp') }}" alt=""
-                        class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
-                </div>
-                <div class="md:w-2/3 w-full px-8 flex flex-col gap-8 md:my-0 my-8">
-                    <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-newprimary md:text-left text-center">
-                        {!! __('pages/programs/admission_accelerator.essay_title') !!}
-                    </h2>
-
-                    <p class="font-newprimary font-medium text-base md:text-lg text-black text-justify">
-                        {!! __('pages/programs/admission_accelerator.essay_description') !!}
-                    </p>
-
-                    <img src="{{ asset('assets/img/admission_accelerator/essay_flow.webp') }}" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- ================================== Workshop Section  ================================== --}}
-    <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
+       {{-- ================================== Workshop Section  ================================== --}}
+       <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
         <div class="new-main-container">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/3 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12 order-2 md:order-1">
@@ -92,6 +69,29 @@
                 <div class="md:w-1/3 w-full order-1 md:order-2">
                     <img src="{{ asset('assets/img/admission_accelerator/Rectangle.webp') }}" alt=""
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================== Essay Section  ================================== --}}
+    <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
+        <div class="new-main-container">
+            <div class="flex flex-wrap w-full items-center">
+                <div class="md:w-1/3 w-full">
+                    <img src="{{ asset('assets/img/admission_accelerator/Isolation_Mode.webp') }}" alt=""
+                        class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
+                </div>
+                <div class="md:w-2/3 w-full px-8 flex flex-col gap-8 md:my-0 my-8">
+                    <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-newprimary md:text-left text-center">
+                        {!! __('pages/programs/admission_accelerator.essay_title') !!}
+                    </h2>
+
+                    <p class="font-newprimary font-medium text-base md:text-lg text-black text-justify">
+                        {!! __('pages/programs/admission_accelerator.essay_description') !!}
+                    </p>
+
+                    <img src="{{ asset('assets/img/admission_accelerator/essay_flow.webp') }}" alt="">
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
 
 
     {{-- ================================== COLLABORATE Section ================================== --}}
-    <section class="pt-16 pb-20">
+    {{-- <section class="pt-16 pb-20">
         <div class="new-main-container">
             <h2 class="font-newprimary font-bold text-center text-2xl md:text-4xl mb-4">
                 {{ __('pages/programs/exclusive_program_school.collaborate') }}
@@ -136,7 +136,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- ================================== CTA Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">

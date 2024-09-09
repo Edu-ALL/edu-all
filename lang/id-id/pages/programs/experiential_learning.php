@@ -38,7 +38,7 @@ return [
         'Menanamkan pola pikir kewirausahaan.',
         'Pengalaman proyek langsung.',
         'Meningkatkan resume untuk pendaftaran universitas dan karier masa depan yang menonjol.',
-        'Pembelajaran kolaboratif dengan rekan-rekan yang memiliki pemikiran serupa dan menerima bimbingan profesional.',
+        'Pembangunan dan penelitian proyek kolaboratif',
         'Mengembangkan solusi yang efektif dan jangka panjang untuk komunitas.'
     ],
 

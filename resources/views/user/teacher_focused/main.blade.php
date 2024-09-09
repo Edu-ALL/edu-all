@@ -114,7 +114,7 @@
 
 
     {{-- ================================== COLLABORATE Section ================================== --}}
-    <section class="pt-16 pb-20">
+    {{-- <section class="pt-16 pb-20">
         <div class="new-main-container">
             <h2 class="font-newprimary font-bold text-center text-2xl md:text-4xl mb-4">
                 {{ __('pages/programs/exclusive_program_school.collaborate') }}
@@ -126,7 +126,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- ================================== CTA Section  ================================== --}}
     <section class="py-8 bg-bottom-sign-up-banner bg-center bg-cover">

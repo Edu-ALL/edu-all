@@ -38,7 +38,7 @@ return [
         'Fostering entrepreneurial mindset.',
         'Hands-on project experience.',
         'Boost resume for a stand-out college applications and future careers.',
-        'Collaborative learning with like-minded peers and receive professional mentorship.',
+        'Collaborative project building and research.',
         'Develop effective, long-term solutions for communities.'
     ],
 

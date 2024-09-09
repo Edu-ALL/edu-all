@@ -35,7 +35,7 @@ return [
             'items' => [
                 'University Application Workshop (US/UK/Asian)',
                 'University Application Essay Bootcamp',
-                'SAT Prep Class Extracurricula'
+                'SAT Prep Class Extracurricular'
             ],
             'link' => 'admission-accelerator',
         ],
@@ -56,7 +56,7 @@ return [
             'sub_title' => 'Empower educators with workshops and trainings.',
             'items' => [
                 'ALL EmpowerED Teachers Conference',
-                'CREST Teacher Training',
+                'CREST Awards Teacher Training',
                 'Recommendation Letter Workshop'
             ],
             'link' => 'teacher-focused',
@@ -81,7 +81,7 @@ return [
         [
             'image' => 'Rectangle 1843.webp',
             'title' => 'Flexible Delivery Formats',
-            'description' => 'We offer both online and offline sessions, with the flexibility to include personal appointments, phone calls, and email support, ensuring that students receive the attention and guidance they need.'
+            'description' => 'We offer both online and offline sessions, with the flexibility to include personal appointments, online meeting, and email support, ensuring that students receive the attention and guidance they need.'
         ],
         [
             'image' => 'Rectangle 1844.webp',

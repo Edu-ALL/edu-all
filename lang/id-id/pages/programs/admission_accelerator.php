@@ -18,7 +18,7 @@ return [
             'sub_title' => 'diluncurkan'
         ],
         [
-            'title' => '30+ sekolah',
+            'title' => '60+ sekolah',
             'sub_title' => ''
         ],
         [
@@ -29,7 +29,7 @@ return [
 
 
     'essay_title' => 'University Application Essay Bootcamp (US/UK/Asian)',
-    'essay_description' => 'Bootcamp intensif 2 minggu ini didedikasikan untuk menyempurnakan esai aplikasi universitas untuk institusi AS, Inggris, dan Asia.
+    'essay_description' => 'Bootcamp intensif ini didedikasikan untuk menyempurnakan esai aplikasi universitas untuk institusi AS, Inggris, dan Asia.
                             Siswa terlibat dalam latihan esai yang ketat, menerima umpan balik terus-menerus dan bimbingan ahli untuk menyusun pernyataan pribadi yang menonjol yang menangkap kisah dan kekuatan unik mereka.',
     'essay_flow' => [
         'Pelajari tentang esai AS dan Inggris',

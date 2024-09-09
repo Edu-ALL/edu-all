@@ -35,7 +35,7 @@ return [
             'items' => [
                 'University Application Workshop (US/UK/Asian)',
                 'University Application Essay Bootcamp',
-                'SAT Prep Class Extracurricula'
+                'SAT Prep Class Extracurricular'
             ],
             'link' => 'admission-accelerator',
         ],
@@ -56,7 +56,7 @@ return [
             'sub_title' => 'Memberdayakan pendidik dengan lokakarya dan pelatihan.',
             'items' => [
                 'ALL EmpowerED Teachers Conference',
-                'CREST Teacher Training',
+                'CREST Awards Teacher Training',
                 'Recommendation Letter Workshop'
             ],
             'link' => 'teacher-focused',
@@ -81,7 +81,7 @@ return [
         [
             'image' => 'Rectangle 1843.webp',
             'title' => 'Format Penyampaian yang Fleksibel',
-            'description' => 'Kami menawarkan sesi online dan offline, dengan fleksibilitas untuk memasukkan janji temu pribadi, panggilan telepon, dan dukungan email, memastikan bahwa siswa menerima perhatian dan bimbingan yang mereka butuhkan.'
+            'description' => 'Kami menawarkan sesi online dan offline, dengan fleksibilitas untuk memasukkan janji temu pribadi, pertemuan daring, dan dukungan email, memastikan bahwa siswa menerima perhatian dan bimbingan yang mereka butuhkan.'
         ],
         [
             'image' => 'Rectangle 1844.webp',
