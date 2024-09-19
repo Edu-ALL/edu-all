@@ -218,6 +218,10 @@ Route::group(
             Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
             Route::get('/programs/academic-test-preparation/skillset-tutoring-program', 'skillset_tutoring_program')->name('skillset_tutoring_program');
             Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
+            Route::get('/programs/exclusive-program-school','exclusive_program_school')->name('exclusive_program_school');
+            Route::get('/programs/exclusive-program-school/admission-accelerator','admission_accelerator')->name('admission_accelerator');
+            Route::get('/programs/exclusive-program-school/experiential-learning','experiential_learning')->name('experiential_learning');
+            Route::get('/programs/exclusive-program-school/teacher-focused','teacher_focused')->name('teacher_focused');
             Route::get('/programs/thank-you-for-your-interest-in-our-programs', 'thank_page')->name('thank_page');
         });
 
