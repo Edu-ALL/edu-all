@@ -1,40 +1,84 @@
 <?php
 
 return [
-    'home' => 'Beranda',
+    'home' => [
+        'link' => '/',
+        'title' => 'Beranda',
+    ],
 
     // programs
-    'programs' => 'Program Kami',
-    'programs_admission' => 'Admission Mentoring',
-    'programs_admission_undergraduate' => 'Undergraduate Program',
-    'programs_admission_graduate' => 'Graduate Program',
-    'programs_admission_university' => 'University Transfer',
-    'programs_passion' => 'Passion Project Mentoring',
-    'programs_academic' => 'Academic & Test Preparation',
-    'programs_academic_tutoring' => 'Academic Tutoring',
-    'programs_academic_ib' => 'IB Extended Essay Coaching Program',
-    'programs_standardized_test' => 'Standardized Test',
-    'programs_skillset_tutoring' => 'Skillset Tutoring',
-    'programs_global_innovators' => 'Global Innovators Project',
+    'programs' => [
+        'link' => '/programs',
+        'title' => 'Program Kami',
+        'submenu' => [
+            [
+                'link' => '/programs/admissions-mentoring',
+                'title' => 'Admission Mentoring',
+            ],
+            [
+                'link' => '/programs/academic-test-preparation',
+                'title' => 'Academic & Test Preparation',
+            ],
+            [
+                'link' => '/programs/global-innovators-project',
+                'title' => 'Global Innovators Project',
+            ],
+        ],
+    ],
+
     // about us
-    'mentor' => 'Mentor Kami',
-    'about_us' => 'Tentang Kami',
-    'our_contribution' => 'Kontribusi Kami',
-    'partnership' => "Kemitraan dan Karir",
+    'about_us' => [
+        'link' => '/about',
+        'title' => 'Tentang Kami',
+        'submenu' => [
+            [
+                'link' => '/about/mentor',
+                'title' => 'Mentor Kami',
+            ],
+            [
+                'link' => '/about/our-contribution',
+                'title' => 'Kontribusi Kami',
+            ],
+            [
+                'link' => '/about/partnership-careers',
+                'title' => 'Kemitraan dan Karir',
+            ],
+        ],
+    ],
 
     // blog
-    'blog' => "EduJournal",
+    'blog' => [
+        'link' => '/blog',
+        'title' => 'EduJournal',
+    ],
 
     // resources
-    'resources' => "Resources",
-    'success_stories' => 'Cerita Sukses',
-    'upcoming_events' => 'Event Kami',
-    "guidebooks" => "Guidebooks Gratis",
-    'testimonial' => "Testimonial",
-    'student_acceptances' => "Student Acceptances",
-    'showcase' => "Mentee Project Showcase",
-    'webinar' => "Webinars & Workshops",
+    'resources' => [
+        'link' => '/resources',
+        'title' => 'Sumber Daya',
+        'submenu' => [
+            [
+                'link' => '/resources/success-stories',
+                'title' => 'Cerita Sukses',
+            ],
+            [
+                'link' => '/resources/upcoming-events',
+                'title' => 'Event Kami',
+            ],
+            [
+                'link' => '/resources/testimonial',
+                'title' => 'Testimonial',
+            ],
+            [
+                'link' => '/resources/mentee-project-showcase',
+                'title' => 'Mentee Project Showcase',
+            ],
+        ],
+    ],
 
     // contact us
-    'contact_us' => "Kontak Kami",
+    'contact_us' => [
+        'link' => '/contact-us',
+        'title' => 'Kontak Kami',
+    ],
 ];

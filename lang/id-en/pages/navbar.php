@@ -1,42 +1,84 @@
 <?php
 
 return [
-    'home' => 'Home',
+    'home' => [
+        'link' => '/',
+        'title' => 'Home',
+    ],
 
     // programs
-    'programs' => 'Programs',
-    'programs_admission' => 'Admission Mentoring',
-    'programs_admission_undergraduate' => 'Undergraduate Program',
-    'programs_admission_graduate' => 'Graduate Program',
-    'programs_admission_university' => 'University Transfer',
-    'programs_passion' => 'Passion Project Mentoring',
-    'programs_academic' => 'Academic & Test Preparation',
-    'programs_academic_tutoring' => 'Academic Tutoring',
-    'programs_academic_ib' => 'IB Extended Essay Coaching Program',
-    'programs_standardized_test' => 'Standardized Test',
-    'programs_skillset_tutoring' => 'Skillset Tutoring',
-    'programs_global_innovators' => 'Global Innovators Project',
+    'programs' => [
+        'link' => '/programs',
+        'title' => 'Programs',
+        'submenu' => [
+            [
+                'link' => '/programs/admissions-mentoring',
+                'title' => 'Admission Mentoring',
+            ],
+            [
+                'link' => '/programs/academic-test-preparation',
+                'title' => 'Academic & Test Preparation',
+            ],
+            [
+                'link' => '/programs/global-innovators-project',
+                'title' => 'Global Innovators Project',
+            ],
+        ],
+    ],
 
     // about us
-    'mentor' => 'Our Mentor',
-    'about_us' => 'About Us',
-    'our_contribution' => 'Our Contribution',
-    'partnership' => "Partnership & Careers",
+    'about_us' => [
+        'link' => '/about',
+        'title' => 'About Us',
+        'submenu' => [
+            [
+                'link' => '/about/mentor',
+                'title' => 'Our Mentor',
+            ],
+            [
+                'link' => '/about/our-contribution',
+                'title' => 'Our Contribution',
+            ],
+            [
+                'link' => '/about/partnership-careers',
+                'title' => 'Partnership & Careers',
+            ],
+        ],
+    ],
 
     // blog
-    'blog' => "EduJournal",
+    'blog' => [
+        'link' => '/blog',
+        'title' => 'EduJournal',
+    ],
 
     // resources
-    'resources' => "Resources",
-    'success_stories' => 'Success Stories',
-    'upcoming_events' => 'Upcoming Events',
-    "guidebooks" => "Free Guidebooks",
-    'testimonial' => "Testimonial",
-    'student_acceptances' => "Student Acceptances",
-    'showcase' => "Mentee Project Showcase",
-    'webinar' => "Webinars & Workshops",
-
+    'resources' => [
+        'link' => '/resources',
+        'title' => 'Resources',
+        'submenu' => [
+            [
+                'link' => '/resources/success-stories',
+                'title' => 'Success Stories',
+            ],
+            [
+                'link' => '/resources/upcoming-events',
+                'title' => 'Upcoming Events',
+            ],
+            [
+                'link' => '/resources/testimonial',
+                'title' => 'Testimonial',
+            ],
+            [
+                'link' => '/resources/mentee-project-showcase',
+                'title' => 'Mentee Project Showcase',
+            ],
+        ],
+    ],
 
     // contact us
-    'contact_us' => "Contact Us",
+    'contact_us' => [
+        'link' => '/contact-us',
+        'title' => 'Contact Us',
+    ],
 ];
