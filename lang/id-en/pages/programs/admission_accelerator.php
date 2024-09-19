@@ -30,7 +30,7 @@ return [
 
     'essay_title' => 'University Application Essay Bootcamp (US/UK/Asian)',
     'essay_description' => 'This intensive bootcamp is dedicated to perfecting university application essays for US, UK, and Asian institutions.
-                            Students engage in rigorous essay drills, receiving continuous feedback and expert guidance to craft standout personal statements that capture their unique stories and strengths.',
+                            <br><br>Students engage in rigorous essay drills, receiving continuous feedback and expert guidance to craft standout personal statements that capture their unique stories and strengths.',
     'essay_flow' => [
         'Learn about US and UK essays',
         'Draft your essay in a week',
