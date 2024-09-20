@@ -9,7 +9,7 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-experiental-learning-programs-header bg-cover bg-top" id="banner">
-        <div class="flex flex-col h-full justify-center items-center new-main-container py-20 gap-4">
+        <div class="flex flex-col h-full justify-center items-start py-5 new-main-container py-20 gap-4">
             <h2 class="font-newprimary font-bold text-5xl text-white text-center mb-3">
                 {!! __('pages/programs/experiential_learning.title') !!}
             </h2>
@@ -21,7 +21,7 @@
 
     {{-- ================================== Benefit Section  ================================== --}}
     <section class="py-20">
-        <div class="new-main-container flex flex-wrap gap-4 items-center justify-center max-w-5xl mx-auto mb-10">
+        <div class="new-main-container flex flex-wrap gap-4 items-start py-5 justify-center max-w-5xl mx-auto mb-10">
             @foreach (__('pages/programs/experiential_learning.summary') as $item)
                 <div class="relative bg-black text-white h-20 md:h-24 py-4 px-4 rounded-md inline-block w-full md:flex-1"
                     style=" clip-path: polygon(0 0, 100% 0%, 100% 60%, 90% 100%, 0 100%);">
@@ -50,7 +50,7 @@
     {{-- ================================== Exploration Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
         <div class="new-main-container md:mx-[150px]">
-            <div class="flex flex-wrap w-full items-center">
+            <div class="flex flex-wrap w-full items-start py-5">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/experiential_learning/exploration.webp') }}" alt=""
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
@@ -83,7 +83,7 @@
     {{-- ================================== Research Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
         <div class="new-main-container md:mx-[150px]">
-            <div class="flex flex-wrap w-full items-center">
+            <div class="flex flex-wrap w-full items-start py-5">
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12 order-2 md:order-1">
                     <h2 class="font-newprimary font-bold text-2xl md:text-3xl text-newprimary md:text-left text-center">
                         {!! __('pages/programs/experiential_learning.research_title') !!}
@@ -116,7 +116,7 @@
     {{-- ================================== Immersion Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
         <div class="new-main-container md:mx-[150px]">
-            <div class="flex flex-wrap w-full items-center">
+            <div class="flex flex-wrap w-full items-start py-5">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/experiential_learning/immersion.webp') }}" alt=""
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
@@ -164,7 +164,7 @@
 
     {{-- ================================== CTA Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
+        <div class="main-container flex flex-col items-start py-5">
             <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/admission_accelerator.cta_button') }}
                 <a href="https://wa.me/+6287888827686" target="_blank"

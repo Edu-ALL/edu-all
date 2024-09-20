@@ -41,36 +41,42 @@ $undergraduate = [
 $graduate = [
     [
         'image' => "graduate_1.webp",
-        'title' => "All-Around University Application",
-        "desc" => "We assist our students with essays, activity resume, letter of recommendation, standardized testing strategy and other information needed for each application.",
+        'title' => "In-Depth Research & Shortlisting",
+        "desc" => "Understand the core concept of your intended major, consult, and shortlist your best-fit university with help from mentors and grad students.",
         'lang' => 'en',
     ],
 
     [
         'image' => "graduate_2.webp",
-        'title' => "Personalized Admission Assessment",
-        "desc" => "We evaluate students’ background in academic, personal and extracurricular areas.",
+        'title' => "Essay Drilling",
+        "desc" => "From ideation to writing execution, tell your story in a unique and compelling way.",
         'lang' => 'en',
     ],
 
     [
         'image' => "graduate_3.webp",
-        'title' => "Profile Development & Academic Planning",
-        "desc" => "Design and plan your courses, extracurricular choices, internship placement, personal project mentoring, subject tutoring and productive holiday planning in order to develop an academic edge.",
+        'title' => "First-hand Coaching",
+        "desc" => "Improve your CV and have interview simulations with mentors and grad school students who have been there before.",
         'lang' => 'en',
     ],
 
     [
         'image' => "graduate_4.webp",
-        'title' => "Profile Development & Academic Planning",
-        "desc" => "Strategize and guide students on the academic aspect, based on international or national high school curriculum.",
+        'title' => "Strategic GRE Prep",
+        "desc" => "Ace your test with personalized strategy and study resources curated by our mentors.",
         'lang' => 'en',
     ],
 
     [
         'image' => "graduate_5.webp",
-        'title' => "Best-Fit University Research & Selection",
-        "desc" => "We recommend a list of schools that fit each student best, taking into account their interests, personalities and dreams and shortlist them.",
+        'title' => "Alumni & Current Student Consulting",
+        "desc" => "Get your burning questions answered, ranging from university application to life as a graduate student from people that have experienced it before.",
+        'lang' => 'en',
+    ],
+    [
+        'image' => "graduate_6.webp",
+        'title' => "Targeted Scholarship Assistance",
+        "desc" => "Work on different scholarships strategies and get support for each scholarship essays.",
         'lang' => 'en',
     ],
 
@@ -79,36 +85,43 @@ $graduate = [
 $univtransfer = [
     [
         'image' => "transfer_1.webp",
-        'title' => "All-Around University Application",
-        "desc" => "We assist our students with essays, activity resume, letter of recommendation, standardized testing strategy and other information needed for each application.",
+        'title' => "In-Depth University Targeting Strategy & Research",
+        "desc" => "Understand core concept of your intended major and strategize on the target university.",
         'lang' => 'en',
     ],
 
     [
         'image' => "transfer_2.webp",
-        'title' => "Personalized Admission Assessment",
-        "desc" => "We evaluate students’ background in academic, personal and extracurricular areas.",
+        'title' => "Course Designing",
+        "desc" => "Check on initial courses to take, transferable courses, and courses to take in the next few quarters/semesters based on their desired major.",
         'lang' => 'en',
     ],
 
     [
         'image' => "transfer_3.webp",
-        'title' => "Profile Development & Academic Planning",
-        "desc" => "Design and plan your courses, extracurricular choices, internship placement, personal project mentoring, subject tutoring and productive holiday planning in order to develop an academic edge.",
+        'title' => "CV Touch-Up & Profile Building",
+        "desc" => "Find and curate the best-fit activities with hands-on guidance throughout the process with our mentors, whether it is the undergraduate research or internship opportunities and improve your CV.",
         'lang' => 'en',
     ],
 
     [
         'image' => "transfer_4.webp",
-        'title' => "Profile Development & Academic Planning",
-        "desc" => "Strategize and guide students on the academic aspect, based on international or national high school curriculum.",
+        'title' => "Well-Rounded University Application",
+        "desc" => "We help students with essays, activity resume, letter of recommendation, standardized testing strategy and other information needed for each application.",
         'lang' => 'en',
     ],
 
     [
         'image' => "transfer_5.webp",
-        'title' => "Best-Fit University Research & Selection",
-        "desc" => "We recommend a list of schools that fit each student best, taking into account their interests, personalities and dreams and shortlist them.",
+        'title' => "Supplementary Documents Guidance",
+        "desc" => "Get support for your transfering additional requirements such as interview, standardized tests, or language proficiency tests.",
+        'lang' => 'en',
+    ],
+
+    [
+        'image' => "transfer_6.webp",
+        'title' => "Successful Transfer Students Consulting",
+        "desc" => "Insights and tips from students who successfully transferred from community college or university to their target universities and activities they did prior to transfer.",
         'lang' => 'en',
     ],
 
