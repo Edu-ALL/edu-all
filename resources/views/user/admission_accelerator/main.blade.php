@@ -109,10 +109,9 @@
     {{-- ================================== SAT PREP Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
         <div class="new-main-container md:mx-[150px]">
-            <div class="flex flex-wrap w-full items-center">
+            <div class="flex flex-wrap w-full items-center py-10">
                 <div class="md:w-2/5 w-full">
-                    <img src="{{ asset('assets/img/admission_accelerator/Layer_1.webp') }}" alt=""
-                        class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/HEjR2awOLjg?si=a-QNmM-nLz2BOdgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12">
                     <h2 class="font-newprimary font-bold text-2xl md:text-3xl text-newprimary md:text-left text-center">
