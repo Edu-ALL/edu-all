@@ -38,10 +38,10 @@ module.exports = {
                     "url('../../public/assets/img/programs/Academic &-Test Preparation.webp')",
 
                 // Admission mentoring
-                "adm-mentoring-header": "url('../../public/assets/img/admission mentoring/revamp/banner-general.png')",
+                "adm-mentoring-header": "url('../../public/assets/img/admission mentoring/revamp/banner-admission-general.webp')",
                 // Undergraduate
                 "undergraduate-header":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/UnderGraduate.webp')",
+                    "url('../../public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png')",
                 "undergraduate-do":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
@@ -57,13 +57,13 @@ module.exports = {
 
                 // Transfer
                 "transfer-header":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/Transfer.webp')",
+                    "url('../../public/assets/img/admission mentoring/Master transfer/revamp/banner-transfer.png')",
                 "transfer-do":
                     "url('../../public/assets/img/admission mentoring/Master transfer/master transfer photos.webp')",
 
                 // Graduate
                 "graduate-header":
-                    "url('../../public/assets/img/admission mentoring/Graduate/Graduate.webp')",
+                    "url('../../public/assets/img/admission mentoring/Graduate/revamp/banner-graduate.png')",
                 "graduate-do":
                     "url('../../public/assets/img/admission mentoring/Graduate/Graduate photos.webp')",
 

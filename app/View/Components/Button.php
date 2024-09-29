@@ -11,13 +11,16 @@ class Button extends Component
     public $href;
     public $bgColor;
     public $target;
+    public $paddingX;
+    public $paddingY;
+    public $marginTop;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $target = null)
+    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $target = null, $paddingX = null, $paddingY = null, $marginTop = null)
     {
         //
         $this->title = $title;
@@ -25,6 +28,9 @@ class Button extends Component
         $this->href = $href;
         $this->bgColor = $bgColor;
         $this->target = $target;
+        $this->paddingX = $paddingX;
+        $this->paddingY = $paddingY;
+        $this->marginTop = $marginTop;
     }
 
     /**
@@ -37,3 +43,4 @@ class Button extends Component
         return view('components.button');
     }
 }
+

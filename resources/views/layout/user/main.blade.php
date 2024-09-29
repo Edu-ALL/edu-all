@@ -198,7 +198,7 @@
 
     @include('layout.user.navbar')
 
-    <div class="mt-16">
+    <div class="mt-20">
         @yield('content')
     </div>
 

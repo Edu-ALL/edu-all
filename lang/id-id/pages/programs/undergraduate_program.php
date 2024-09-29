@@ -1,21 +1,14 @@
 <?php
 
 return [
-    'meta_title' => "Bimbingan Mentoring untuk Program Sarjana - EduALL Programs",
-    'meta_description' => 'Raih impianmu kuliah di universitas TOP Dunia dengan Program Admission Mentoring kami. Dapatkan panduan personal dari mentor kami sekarang!',
+    'meta_title' => "Undergraduate Admissions Mentoring - EduALL Programs",
+    'meta_description' => 'We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities',
 
-    // banner section
-    "subtitle" => "UNIVERSITY ADMISSION MENTORING",
-    "title" => "UNDERGRADUATE",
-    "body" => "Kami menawarkan layanan bimbingan pendaftaran universitas 1-on-1 yang akan berfungsi sebagai panduan akademis bagi siswa untuk diterima di universitas impian mereka dan menemukan universitas yang paling cocok.",
+    'title' => "UNDERGRADUATE",
+    'body' => "UNIVERSITY ADMISSION MENTORING",
 
-    "benefits" => [
-        'Pendampingan 1-on-1', 'Strategi yang Dipersonalisasi', 'Bimbingan Menyeluruh', 'Rekam Jejak yang Telah Terbukti'
-    ],
-
-    // what will you do
-    'do_title' => "APA YANG AKAN KAMU DAPATKAN",
-    'do_list' => [
+    "what_you_will_get_title" => "APA YANG AKAN ANDA DAPATKAN",
+    "what_you_will_get_points" => [
         [
             'title' => 'Penilaian Pendaftaran Universitas yang Disesuaikan',
             'body' => 'Kami mengevaluasi latar belakang siswa di bidang akademik, personal dan ekstrakurikuler.',
@@ -38,84 +31,22 @@ return [
         ],
     ],
 
-    // 4 Pilar
-    'pilar_title' => 'PROSES TRANSFER UNIVERSITAS ANDA MELALUI 4 PILAR',
-    'pilar_list' => [
+    "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
+    "learning_scope_points" => [
         [
-            'title' => 'Academics',
-            'body' => 'Analyzing overall grades, course rigor at school and the required standardized tests to match with the targeted universities’ level of competitiveness',
-            'img' => 'ACADEMICS.webp',
-            'color' => 'primary'
+            "image" => 'us.webp',
+            "body" => "Mentoring untuk siswa yang menargetkan universitas di US mencakup semua aplikasi universitas secara seimbang dan beriringan selama proses pendampingan, mulai dari kinerja akademik hingga eksplorasi karier untuk membangun profil Anda.",
+            "button" => "Lihat silabus pembelajaran",
+            "link" => "Scope undergraduate mentoring (US).pdf",
         ],
         [
-            'title' => 'Exploration',
-            'body' => 'Exploration is essential to identify what to pursue in the future and, therefore, allows student to choose the right major',
-            'img' => 'EXPLO.webp',
-            'color' => 'primary'
-        ],
-        [
-            'title' => 'Personal Brand',
-            'body' => 'The impactful aspect that makes a student’s qualities stand out in admission',
-            'img' => 'PERSONAL BRAND.webp',
-            'color' => 'yellow'
-        ],
-        [
-            'title' => 'Writing Skills & University Application',
-            'body' => ' A required skill needed to clearly communicate student’s personal brand in university application and for university study',
-            'img' => 'WRITING.webp',
-            'color' => 'yellow'
+            "image" => 'uk.webp',
+            "body" => "Siswa yang ingin masuk ke universitas non-US akan dipandu melalui dua fase: pembangunan profil dan pendaftaran universitas sambil juga menekankan kinerja dan prestasi akademik.",
+            "button" => "Lihat silabus pembelajaran",
+            "link" => "Scope undergraduate mentoring (non US).pdf",
         ],
     ],
 
-    // destination section
-    'destination_title' => 'MENTORING PRIBADI BERDASARKAN TUJUAN STUDI IMPIAN ANDA',
-    'destination_list' => [
-        [
-            'title' => 'US',
-            'body' => 'Mentoring untuk siswa yang menargetkan universitas di US mencakup semua aplikasi universitas secara seimbang dan beriringan selama proses pendampingan, mulai dari kinerja akademik hingga eksplorasi karier untuk membangun profil Anda.',
-            'link' => 'https://drive.google.com/file/d/1Hs4mktkl5M40gSjfY73SPZQ1kD7RyOPV/view?usp=sharing',
-            'img' => 'US UNI.webp',
-        ],
-        [
-            'title' => 'NON-US',
-            'body' => 'Siswa yang ingin masuk ke universitas non-US akan dipandu melalui dua fase: pembangunan profil dan pendaftaran universitas sambil juga menekankan kinerja dan prestasi akademik.',
-            'link' => 'https://drive.google.com/file/d/1mEOo9pEvtcgPjqfKVbLQGKmLtkasdp52/view?usp=sharing',
-            'img' => 'NON US UNI.webp',
-        ],
-    ],
-    'destination_btn' => 'Daftar Initial Consultation GRATIS Anda',
-
-    // why us
-    'why_us_title' => "KENAPA PILIH KAMI?",
-    'why_us_desc' => 'Mentor ahli kami hadir untuk memberikan panduan 360 derajat agar kamu dapat masuk ke program Undergraduate terkemuka di universitas terbaik di seluruh dunia.',
-
-    // testimony section
-    "testimony_title" => "APA YANG MEREKA KATAKAN",
-    "testimony_list" => [
-        [
-            'name' => 'Rachinta Marpaung',
-            'univ' => 'Columbia University',
-            'body' => 'EduALL has helped me tremendously throughout my uni application endeavors. From brainstorming essay ideas to editing the essays, to helping find internships, EduALL has made the process so easy while ensuring my uni application is of top-notch quality. Also, the mentors are really hip and cool, so they’re really approachable! ',
-        ],
-        [
-            'name' => 'Helena Helga',
-            'univ' => 'Penn State University',
-            'body' => 'When the time came to start applying to universities, my mentor was helpful in every step of the way. Whenever I felt confused or didn’t know what to do, I could always turn to my mentor.',
-        ],
-        [
-            'name' => 'Nathasya Tiaraputri',
-            'univ' => 'Hong Kong University of Science and Technology',
-            'body' => 'EduALL definitely opened my eyes. I was a G11, still trying to figure out the exact major I want to take, and after I met my mentor for the first time and started talking, I realized that there were so many steps in an application for uni! I thought it was just submitting my reports, my A-level grades later and an “essay”, like I didn’t even know the difference between a personal statement and an essay or a CV. So I definitely feel more at ease throughout G12 knowing that I’m on the right track, and I didn’t have to panic as much because any question I have immediately went to my mentor!',
-        ],
-        [
-            'name' => 'Ramzi Putera Faisal',
-            'univ' => 'Tokyo International University',
-            'body' => 'My earliest struggle is about what needs to be done regarding my uni prep. I don’t even know how to start one. But after getting thorough guidance from my mentor, I now know what I need to do and how to do it. Thanks EduALL!',
-        ],
-    ],
-
-    // bottom section
-    "bottom_title" => "Setiap tahun, 150+ mentee kami berhasil masuk ke universitas impian mereka.",
-    "bottom_subtitle" => "Saatnya giliran Anda.",
-    "bottom_btn" => "Buat Janji Initial Consultation GRATIS Anda",
+    "bottom_section_title" => "Every year, 150+ of our mentees have gotten into their dream universities. It’s time for your turn.",
+    "bottom_section_button" => "Schedule Your FREE Initial Consultation",
 ];
