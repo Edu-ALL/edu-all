@@ -34,13 +34,13 @@ return [
     "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
     "learning_scope_points" => [
         [
-            "image" => 'us.webp',
+            "image" => 'US.webp',
             "body" => "Mentoring untuk siswa yang menargetkan universitas di US mencakup semua aplikasi universitas secara seimbang dan beriringan selama proses pendampingan, mulai dari kinerja akademik hingga eksplorasi karier untuk membangun profil Anda.",
             "button" => "Lihat silabus pembelajaran",
             "link" => "Scope undergraduate mentoring (US).pdf",
         ],
         [
-            "image" => 'uk.webp',
+            "image" => 'UK.webp',
             "body" => "Siswa yang ingin masuk ke universitas non-US akan dipandu melalui dua fase: pembangunan profil dan pendaftaran universitas sambil juga menekankan kinerja dan prestasi akademik.",
             "button" => "Lihat silabus pembelajaran",
             "link" => "Scope undergraduate mentoring (non US).pdf",

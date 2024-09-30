@@ -135,7 +135,7 @@
                 <div class="flex flex-col md:flex-row gap-8 mt-6">
                     @foreach (__('pages/programs/univ_transfer_program.learning_scope_points') as $item)
                         <div class="w-full flex flex-col items-center justify-center">
-                            <img data-original="{{ asset('assets/img/admission mentoring/Master Transfer/revamp/' . $item['image']) }}"
+                            <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/' . $item['image']) }}"
                                 alt="" class="w-full max-w-3xl object-contain">
                             <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
                             <x-button href="#"

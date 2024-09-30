@@ -36,13 +36,13 @@ return [
     "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
     "learning_scope_points" => [
         [
-            "image" => 'us.webp',
+            "image" => 'US.webp',
             "body" => "US universities-targeted admission mentoring covers all-around university application in balance throughout the mentoring process, from academic performance to career exploration to build your profile.",
             "button" => "View full learning scope here",
             "link" => "Scope undergraduate mentoring (US).pdf",
         ],
         [
-            "image" => 'uk.webp',
+            "image" => 'UK.webp',
             "body" => "Students aiming for non-US universities will be guided through two phases: profile building and university application while also emphasizing academic performance and achievements.",
             "button" => "View full learning scope here",
             "link" => "Scope undergraduate mentoring (non US).pdf",
