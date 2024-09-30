@@ -138,7 +138,7 @@
                             <img data-original="{{ asset('assets/img/admission mentoring/Graduate/revamp/' . $item['image']) }}"
                                 alt="" class="w-full max-w-3xl object-contain">
                             <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
-                            <x-button href=""
+                            <x-button href="#"
                                 target="_blank" title="{{ $item['button'] }}" margin-top="8" />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
                                 {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}

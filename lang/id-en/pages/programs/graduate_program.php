@@ -38,7 +38,7 @@ return [
     "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
     "learning_scope_points" => [
         [
-            "image" => 'us.webp',
+            "image" => 'graduate_learning_scope.webp',
             "body" => "Our Graduate Admission Mentoring Program focuses on students’ educational & professional profile enhancement while also helping develop the gameplan for their top graduate schools strategies.",
             "button" => "View full learning scope here",
             "link" => "Scope undergraduate mentoring (US).pdf",
