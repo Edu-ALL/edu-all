@@ -22,112 +22,115 @@ use Yajra\DataTables\Facades\DataTables;
 
 class Blog extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.blog.index', [
             'website_data' => WebsiteSettings::first(),
         ]);
     }
 
-    public function getBlog(Request $request){
+    public function getBlog(Request $request)
+    {
         if ($request->ajax()) {
             $data = Blogs::orderBy('updated_at', 'desc')->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->editColumn('category', function($d){
-                $result = $d->blog_category->category_name;
-                return $result;
-            })
-            ->editColumn('mentor', function($d){
-                if ($d->mt_id == 0 || $d->mt_id == null) {
-                    $result = '-';
-                } else {
-                    $result = $d->mentor?->mentor_fullname;
-                }
-                return $result;
-            })
-            ->editColumn('image', function($d){
-                $path = asset('uploaded_files/'.'blogs/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->blog_thumbnail);
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
+                ->addIndexColumn()
+                ->editColumn('category', function ($d) {
+                    $result = $d->blog_category->category_name;
+                    return $result;
+                })
+                ->editColumn('mentor', function ($d) {
+                    if ($d->mt_id == 0 || $d->mt_id == null) {
+                        $result = '-';
+                    } else {
+                        $result = $d->mentor?->mentor_fullname;
+                    }
+                    return $result;
+                })
+                ->editColumn('image', function ($d) {
+                    $path = asset('uploaded_files/' . 'blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
                 ';
-                return $result;
-            })
-            ->editColumn('language', function($d){
-                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
+                    return $result;
+                })
+                ->editColumn('language', function ($d) {
+                    $path = asset('assets/img/flag/flag-' . $d->lang . '.png');
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="30">
                     <p class="pt-1" style="font-size: 13px !important">
-                        '.$d->languages->language.'
+                        ' . $d->languages->language . '
                     </p>
                 ';
-                return $result;
-            })
-            ->editColumn('highlight', function($d){
-                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
-                $route = route('highlight-blogs', ['id' => $d->id]);
-                $toggle = ($d->is_highlight == "false") ? "" : "checked";
-                $check = ($d->is_highlight == "false") ? "Off" : "On";
-                $result = '
+                    return $result;
+                })
+                ->editColumn('highlight', function ($d) {
+                    $path = asset('assets/img/flag/flag-' . $d->lang . '.png');
+                    $route = route('highlight-blogs', ['id' => $d->id]);
+                    $toggle = ($d->is_highlight == "false") ? "" : "checked";
+                    $check = ($d->is_highlight == "false") ? "Off" : "On";
+                    $result = '
                     <div class="col d-flex align-items-center justify-content-center">
-                        <form action="'.$route.'" method="POST">
-                            '.csrf_field().'
+                        <form action="' . $route . '" method="POST">
+                            ' . csrf_field() . '
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" '.$toggle.' onchange="this.form.submit()" style="font-size: 18px !important">
+                                <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" ' . $toggle . ' onchange="this.form.submit()" style="font-size: 18px !important">
                                 <label class="form-label card-title p-0 pt-1 m-0" for="is_highlight">
-                                    '.$check.'
+                                    ' . $check . '
                                 </label>
                             </div>
                         </form>
                     </div>
                 ';
-                return $result;
-            })
-            ->editColumn('status', function($d){
-                if ($d->blog_status == 'publish') {
-                    $result = '
-                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft('.$d->id.')">
+                    return $result;
+                })
+                ->editColumn('status', function ($d) {
+                    if ($d->blog_status == 'publish') {
+                        $result = '
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft(' . $d->id . ')">
                             <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">
-                                '.$d->blog_status.'
+                                ' . $d->blog_status . '
                             </span>
                         </button>
                     ';
-                } else {
-                    $result = '
-                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish('.$d->id.')">
+                    } else {
+                        $result = '
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish(' . $d->id . ')">
                             <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
-                                '.$d->blog_status.'
+                                ' . $d->blog_status . '
                             </span>
                         </button>
                     ';
-                }
-                return $result;
-            })
-            ->editColumn('last_updated', function($d){
-                $result = $d->updated_at ;
-                return $result;
-            })
-            ->editColumn('action', function($d){
-                $result = '
+                    }
+                    return $result;
+                })
+                ->editColumn('last_updated', function ($d) {
+                    $result = $d->updated_at;
+                    return $result;
+                })
+                ->editColumn('action', function ($d) {
+                    $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-primary" href="/admin/blogs/'.$d->id.'/view">
+                    <a type="button" class="btn btn-primary" href="/admin/blogs/' . $d->id . '/view">
                         <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this blog"></i>
                     </a>
-                    <a type="button" class="btn btn-warning" href="/admin/blogs/'.$d->id.'/edit">
+                    <a type="button" class="btn btn-warning" href="/admin/blogs/' . $d->id . '/edit">
                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog"></i>
                     </a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')">
                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog"></i>
                     </button>
                 </div>
                 ';
-                return $result;
-            })
-            ->rawColumns(['category', 'mentor', 'image', 'language', 'highlight', 'status', 'last_updated', 'action'])
-            ->make(true);
+                    return $result;
+                })
+                ->rawColumns(['category', 'mentor', 'image', 'language', 'highlight', 'status', 'last_updated', 'action'])
+                ->make(true);
         }
     }
 
-    public function checkPublish(){
+    public function checkPublish()
+    {
         $blogs = Blogs::where('blog_status', 'draft')->get();
         foreach ($blogs as $blog) {
             if (date('Y-m-d', strtotime($blog->publish_date)) == date('Y-m-d')) {
@@ -147,7 +150,8 @@ class Blog extends Controller
         }
     }
 
-    public function create(){
+    public function create()
+    {
         $category_en = BlogCategorys::where('lang', 'en')->get();
         $category_id = BlogCategorys::where('lang', 'id')->get();
         $mentor_en = Mentors::where('lang', 'en')->get();
@@ -161,7 +165,8 @@ class Blog extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -194,9 +199,9 @@ class Blog extends Controller
             if ($request->hasFile('blog_thumbnail')) {
                 $file = $request->file('blog_thumbnail');
                 $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'blogs/'.date('Y').'/'.date('m').'/';
+                $destinationPath = public_path() . '/uploaded_files/' . 'blogs/' . date('Y') . '/' . date('m') . '/';
                 $time = date('YmdHis');
-                $fileName = 'Blogs-thumbnail-'.$time.'.'.$file_format;
+                $fileName = 'Blogs-thumbnail-' . $time . '.' . $file_format;
                 $file->move($destinationPath, $fileName);
                 $blogs->blog_thumbnail = $fileName;
             }
@@ -215,7 +220,7 @@ class Blog extends Controller
             $blogs->click_count = 0;
             $blogs->duration_read = $request->duration_read;
             $blogs->is_highlight = 'false';
-            if ($request->blog_status == 'publish' && $request->publish_date == null){
+            if ($request->blog_status == 'publish' && $request->publish_date == null) {
                 $blogs->publish_date = date('Y-m-d H:i:s');
             } else if ($request->blog_status == 'publish' && $request->publish_date != null) {
                 $blogs->publish_date = $request->publish_date;
@@ -228,68 +233,71 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
-            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Created by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Blog : "' . $blogs->blog_title . '" has been successfully Created by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Create Blog failed : '.$e->getMessage());
+            Log::error('Create Blog failed : ' . $e->getMessage());
             return redirect('/admin/blogs/create')->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blogs/'.$blogs->id.'/view')->withSuccess('Blogs Was Successfully Created');
+        return redirect('/admin/blogs/' . $blogs->id . '/view')->withSuccess('Blogs Was Successfully Created');
     }
 
-    public function getBlogWidget(Request $request, $blog_id){
+    public function getBlogWidget(Request $request, $blog_id)
+    {
         if ($request->ajax()) {
             $data = BlogWidgets::where('blog_id', $blog_id)->orderBy('updated_at', 'desc')->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->editColumn('description', function($d){
-                $result = '
-                    '.Str::limit($d->description, 120, '...').'
+                ->addIndexColumn()
+                ->editColumn('description', function ($d) {
+                    $result = '
+                    ' . Str::limit($d->description, 120, '...') . '
                 ';
-                return $result;
-            })
-            ->editColumn('link', function($d){
-                $result = '
-                    <a href="'.$d->link.'" target="_blank">'.$d->link.'</a>
+                    return $result;
+                })
+                ->editColumn('link', function ($d) {
+                    $result = '
+                    <a href="' . $d->link . '" target="_blank">' . $d->link . '</a>
                 ';
-                return $result;
-            })
-            ->editColumn('action', function($d){
-                $title = "'".$d->title."'";
-                $desc = "'".$d->description."'";
-                $link = "'".$d->link."'";
-                $button = "'".$d->button_name."'";
-                $image = "'".$d->image."'";
-                $result = '
+                    return $result;
+                })
+                ->editColumn('action', function ($d) {
+                    $title = "'" . $d->title . "'";
+                    $desc = "'" . $d->description . "'";
+                    $link = "'" . $d->link . "'";
+                    $button = "'" . $d->button_name . "'";
+                    $image = "'" . $d->image . "'";
+                    $result = '
                     <div class="d-flex flex-row gap-1">
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="viewWidget('.$d->blog_id.', '.$d->id.', '.$title.', '.$desc.', '.$link.', '.$d->position.', '.$button.','.$image.')">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#widget" style="text-transform: capitalize;" onclick="viewWidget(' . $d->blog_id . ', ' . $d->id . ', ' . $title . ', ' . $desc . ', ' . $link . ', ' . $d->position . ', ' . $button . ',' . $image . ')">
                             <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog widget"></i>
                         </button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->blog_id.', '.$d->id.')" >
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->blog_id . ', ' . $d->id . ')" >
                             <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog widget"></i>
                         </button>
                     </div>
                 ';
-                return $result;
-            })
-            ->rawColumns(['description', 'link', 'action'])
-            ->make(true);
+                    return $result;
+                })
+                ->rawColumns(['description', 'link', 'action'])
+                ->make(true);
         }
     }
 
-    public function getBlogRead(Request $request, $blog_id){
+    public function getBlogRead(Request $request, $blog_id)
+    {
         if ($request->ajax()) {
             $data = BlogReads::where('blog_id', $blog_id)->orderBy('updated_at', 'desc')->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->make(true);
+                ->addIndexColumn()
+                ->make(true);
         }
     }
 
-    public function view($id){
+    public function view($id)
+    {
         $blog = Blogs::find($id);
-        $blogs = Blogs::orderBy('blog_title', 'asc')->where('lang',$blog->lang)->get();
+        $blogs = Blogs::orderBy('blog_title', 'asc')->where('lang', $blog->lang)->get();
         return view('admin.blog.view', [
             'blog' => $blog,
             'blogs' => $blogs,
@@ -297,7 +305,8 @@ class Blog extends Controller
         ]);
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $blog = Blogs::find($id);
         $category_en = BlogCategorys::where('lang', 'en')->get();
         $category_id = BlogCategorys::where('lang', 'id')->get();
@@ -313,7 +322,8 @@ class Blog extends Controller
         ]);
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -345,16 +355,16 @@ class Blog extends Controller
             $blogs = Blogs::find($id);
             if ($request->hasFile('blog_thumbnail')) {
                 if ($old_image_path_en = $blogs->blog_thumbnail) {
-                    $file_path = public_path('uploaded_files/'.'blogs/'.$blogs->created_at->format('Y').'/'.$blogs->created_at->format('m').'/'.$old_image_path_en);
+                    $file_path = public_path('uploaded_files/' . 'blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/' . $old_image_path_en);
                     if (File::exists($file_path)) {
                         File::delete($file_path);
                     }
                 }
                 $file = $request->file('blog_thumbnail');
                 $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'blogs/'.$blogs->created_at->format('Y').'/'.$blogs->created_at->format('m').'/';
+                $destinationPath = public_path() . '/uploaded_files/' . 'blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/';
                 $time = date('YmdHis');
-                $fileName = 'Blogs-thumbnail-'.$time.'.'.$file_format;
+                $fileName = 'Blogs-thumbnail-' . $time . '.' . $file_format;
                 $file->move($destinationPath, $fileName);
                 $blogs->blog_thumbnail = $fileName;
             }
@@ -373,7 +383,7 @@ class Blog extends Controller
             $blogs->click_count = 0;
             $blogs->duration_read = $request->duration_read;
             $blogs->is_highlight = 'false';
-            if ($request->blog_status == 'publish' && $request->publish_date == null){
+            if ($request->blog_status == 'publish' && $request->publish_date == null) {
                 $blogs->publish_date = date('Y-m-d H:i:s');
             } else if ($request->blog_status == 'publish' && $request->publish_date != null) {
                 $blogs->publish_date = $request->publish_date;
@@ -385,23 +395,24 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
-            Log::notice('Blog : "'.$blogs->blog_title.'" has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Blog : "' . $blogs->blog_title . '" has been successfully Updated by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Update Blog failed : '.$e->getMessage());
+            Log::error('Update Blog failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/blogs/'.$id.'/view')->withSuccess('Blogs Was Successfully Updated');
+        return redirect('/admin/blogs/' . $id . '/view')->withSuccess('Blogs Was Successfully Updated');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
             $blog_title = $blog->blog_title;
             if ($old_image_path = $blog->blog_thumbnail) {
-                $file_path = public_path('uploaded_files/'.'blogs/'.$blog->created_at->format('Y').'/'.$blog->created_at->format('m').'/'.$old_image_path);
+                $file_path = public_path('uploaded_files/' . 'blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
                 }
@@ -416,17 +427,18 @@ class Blog extends Controller
             }
             $blog->delete();
             DB::commit();
-            Log::notice('Blog : "'.$blog_title.'" has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Blog : "' . $blog_title . '" has been successfully Deleted by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Delete Blog failed : '.$e->getMessage());
+            Log::error('Delete Blog failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
         return redirect('/admin/blogs')->withSuccess('Blogs Was Successfully Deleted');
     }
 
-    public function status_draft($id){
+    public function status_draft($id)
+    {
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
@@ -435,17 +447,18 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
-            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Draft by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Blog : "' . $blog->blog_title . '" has been successfully set to Draft by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Set Draft Blog failed : '.$e->getMessage());
+            Log::error('Set Draft Blog failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
         return redirect('/admin/blogs');
     }
 
-    public function status_publish($id){
+    public function status_publish($id)
+    {
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
@@ -454,22 +467,23 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
-            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully set to Publish by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Blog : "' . $blog->blog_title . '" has been successfully set to Publish by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Set Publish Blog failed : '.$e->getMessage());
+            Log::error('Set Publish Blog failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
         return redirect('/admin/blogs');
     }
 
-    public function set_highlight($id){
+    public function set_highlight($id)
+    {
         DB::beginTransaction();
         try {
             $blog = Blogs::find($id);
             $status_msg = '';
-            if ($blog->is_highlight == 'false'){
+            if ($blog->is_highlight == 'false') {
                 $blog->is_highlight = 'true';
                 $status_msg = 'Highlighted';
             } else {
@@ -479,13 +493,28 @@ class Blog extends Controller
             $blog->updated_at = date('Y-m-d H:i:s');
             $blog->save();
             DB::commit();
-            Log::notice('Blog : "'.$blog->blog_title.'" has been successfully '.$status_msg.' by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Blog : "' . $blog->blog_title . '" has been successfully ' . $status_msg . ' by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Set Highlight Blog failed : '.$e->getMessage());
+            Log::error('Set Highlight Blog failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
 
         return redirect('/admin/blogs');
+    }
+
+    public function uploadImage(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalExtension();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('uploaded_files/blog_assets'), $fileName);
+
+            $url = asset('uploaded_files/blog_assets/'.$fileName);
+            return response()->json(['fileName'=>$fileName, 'uploaded'=>1, 'url'=>$url]);
+        }
     }
 }
