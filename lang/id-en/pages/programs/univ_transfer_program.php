@@ -41,7 +41,7 @@ return [
             "image" => 'transfer_learning_scope.webp',
             "body" => "University Transfer Admission Mentoring offers a different kind of approach than the usual university admission program. Here, students will be able to not just select specific courses for their transfer purpose, but also network and enhance their resume through various activities based on their passion and interests while fulfilling the transfer application process.",
             "button" => "View full learning scope here",
-            "link" => "Scope undergraduate mentoring (US).pdf",
+            "link" => "Scope transfer mentoring (transfer).pdf",
         ],
     ],
 

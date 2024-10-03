@@ -40,7 +40,7 @@ return [
             "image" => 'graduate_learning_scope.webp',
             "body" => "Program Graduate Admission Mentoring kami berfokus pada peningkatan profil pendidikan & profesional sekaligus membantu mengembangkan strategi pendaftaran program Master terbaik untuk mereka.",
             "button" => "Lihat silabus pembelajaran",
-            "link" => "Scope undergraduate mentoring (US).pdf",
+            "link" => "Scope graduate mentoring (master).pdf",
         ],
     ],
 
