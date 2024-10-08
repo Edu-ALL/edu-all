@@ -45,6 +45,23 @@ return [
         "Dynamic",
     ],
 
+    "subjects_title" =>  "SUBJECTS",
+    "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
+    "subjects_tag" => [
+        [
+            'title' => 'Grade 6-12',
+            'image' => 'start.png',
+        ],
+        [
+            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level and AP Students',
+            'image' => 'user.png',
+        ],
+        [
+            'title' => 'Private Class',
+            'image' => 'people.png',
+        ],
+    ],
+
     // PRIVATE CLASS
     'private_class_title' => 'KELAS PRIVAT ',
     'private_class_description' => 'Kelas privat dengan 3 paket berbeda yang bisa dipilih ',
@@ -101,10 +118,29 @@ return [
 
     'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
     'ib_extended_description' => "Latih proses penulisan Extended Essay dalam 3 bulan dengan pendekatan holistik kami!",
-    'ib_extended_tag' => [
-        "FOR IB DIPLOMA STUDENTS",
-        "GRADE 12",
+    "ib_extended_tag" => [
+        [
+            'title' => 'Grade 12',
+            'image' => 'start.png',
+        ],
+        [
+            'title' => 'Online Class',
+            'image' => 'network.png',
+        ],
+        [
+            'title' => 'Private Class',
+            'image' => 'people.png',
+        ],
+        [
+            'title' => 'Flexible Starting Time',
+            'image' => 'calendar.png',
+        ],
+        [
+            'title' => 'Unlimited On-Demand Support',
+            'image' => 'hand-ball.png',
+        ]
     ],
+    'ib_extended_topic_title' => "Topics Covered",
     'ib_extended_topic' => [
         'Bagaimana Memulai dan Menemukan Topik EE yang Tepat',
         'Buatlah Pertanyaan Penelitian Yang Baik',

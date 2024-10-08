@@ -92,6 +92,7 @@ return [
     ],
 
     'learn_more' => "Learn More",
+    "lets_start" => "Let’s Start",
 
     // academic tutoring section
     "academic_tutoring_title" => "Academic Tutoring",

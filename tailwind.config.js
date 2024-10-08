@@ -51,7 +51,7 @@ module.exports = {
                 "academic-tutoring-header":
                     "url('../../public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.png')",
                 "sat-prep-header":
-                    "url('../../public/assets/img/academic_test_preparation/sat_program/new-asset/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/sat_program/revamp/banner.png')",
                 "skillset-tutoring-header":
                     "url('../../public/assets/img/academic_test_preparation/skillset_tutoring/banner.webp')",
 

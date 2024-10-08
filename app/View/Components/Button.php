@@ -10,6 +10,8 @@ class Button extends Component
     public $type;
     public $href;
     public $bgColor;
+    public $color;
+    public $fontSize;
     public $target;
     public $paddingX;
     public $paddingY;
@@ -20,13 +22,15 @@ class Button extends Component
      *
      * @return void
      */
-    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $target = null, $paddingX = null, $paddingY = null, $marginTop = null)
+    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $color = null, $fontSize = null, $target = null, $paddingX = null, $paddingY = null, $marginTop = null)
     {
         //
         $this->title = $title;
         $this->type = $type;
         $this->href = $href;
         $this->bgColor = $bgColor;
+        $this->color = $color;
+        $this->fontSize = $fontSize;
         $this->target = $target;
         $this->paddingX = $paddingX;
         $this->paddingY = $paddingY;
