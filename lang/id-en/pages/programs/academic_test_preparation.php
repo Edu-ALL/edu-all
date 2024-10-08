@@ -42,8 +42,56 @@ return [
     // banner section
     "title" => "Academic & Test Preparation",
     "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",
-    "our_program_title" => "Our Programs",
+    "our_program_title" => "YOUR JOURNEY TO SUCCESS",
     "our_program_data" => $our_programs,
+
+    "program_title" => "Choose Your Preparation",
+    "program_list" => [
+        [
+            "title" => "Academic <br/> Tutoring",
+            "desc" => "With core concept mastery and internationally qualified tutors, we prepare students with robust academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.",
+            'image' => "Academic tutoring.webp",
+            "points" => [
+                "IBDP",
+                "IB MYP",
+                "Cambridge A-Level",
+                "Cambridge IGCSE",
+                "Advanced Placement",
+            ],
+            'link' => 'academic-tutoring',
+        ],
+        [
+            "title" => "Standardized Test Preparation",
+            "desc" => "Excel in SAT, ACT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
+            'image' => "standardized test.webp",
+            "points" => [
+                "SAT",
+                "IELTS",
+                "ACT",
+                "TOEFL",
+            ],
+            'link' => 'sat-program',
+        ],
+        [
+            "title" => "Skillset <br/> Tutoring",
+            "desc" => "Elevate your unique passions through personalized skillset tutoring that focuses on the needs of every student. This is designed to elevate students’ academic profile, making their university application stand out.",
+            'image' => "skillset tutoring.webp",
+            "points" => [
+                "Algorithm & Programming",
+                "Subject Olympiad Preparation",
+                "English Writing Mastery",
+            ],
+            'link' => 'skillset-tutoring-program',
+        ],
+        [
+            "title" => "IB Extended Essay Coaching",
+            "desc" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
+            'image' => "IB essay.webp",
+            'link' => 'skillset-tutoring-program',
+        ],
+    ],
+
+    'learn_more' => "Learn More",
 
     // academic tutoring section
     "academic_tutoring_title" => "Academic Tutoring",
