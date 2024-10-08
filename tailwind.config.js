@@ -47,9 +47,9 @@ module.exports = {
 
                 // Academic and test preparation
                 "general-acad-header":
-                    "url('../../public/assets/img/academic_test_preparation/new-asset/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/revamp/banner.png')",
                 "academic-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/new-asset/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.png')",
                 "sat-prep-header":
                     "url('../../public/assets/img/academic_test_preparation/sat_program/new-asset/banner.webp')",
                 "skillset-tutoring-header":
@@ -96,6 +96,8 @@ module.exports = {
                 // Blog
                 "bottom-sign-up-banner":
                     "url('../../public/assets/img/blog/detail-blog-sign-up-banner.webp')",
+                "bottom-sign-up-banner-2":
+                    "url('../../public/assets/img/footer/footer-background.webp')",
 
                 // header upcomming event
                 "upcomming-header":

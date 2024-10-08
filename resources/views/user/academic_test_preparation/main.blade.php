@@ -8,19 +8,18 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 bg-general-acad-header bg-cover bg-center" id="banner">
-        <div class="flex flex-col justify-between items-center md:items-start main-container py-24 gap-6">
-            <h2 class="font-newprimary font-bold text-5xl text-white text-center md:text-left max-w-xl">
-                {{ __('pages/programs/academic_test_preparation.title') }}</h2>
-            <p class="font-newprimary text-white text-center md:text-justify max-w-sm">
-                {{ __('pages/programs/academic_test_preparation.body') }}
-            </p>
+    <section class="py-16 h-[90vh] bg-general-acad-header bg-cover bg-top" id="banner">
+        <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
+            <h2 class="font-newprimary font-bold text-4xl md:text-5xl text-white text-center uppercase max-w-3xl">
+                {{ __('pages/programs/academic_test_preparation.title') }}
+            </h2>
         </div>
     </section>
 
+
     <section class="acad-program-our-programs">
         <div class="flex main-container w-full flex-col h-[70vh] pt-24" id="our-programs-wrapper">
-            <h2 class="font-newprimary font-bold text-2xl md:text-6xl text-black text-center mb-20 uppercase">
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center mb-20 uppercase">
                 {{ __('pages/programs/academic_test_preparation.our_program_title') }}</h2>
             <div class="relative h-full group">
                 <div
@@ -89,12 +88,111 @@
         </div>
     </section>
 
-    <section class="py-24" id="academic-tutoring">
+
+    {{-- ================================== Benefit Section ================================== --}}
+    <section class="py-12">
+        <div class="new-main-container">
+            <div class="flex flex-wrap max-w-4xl mx-auto">
+                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
+                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-1.webp') }}"
+                        alt="benefit image">
+                </div>
+                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
+                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-2.webp') }}"
+                        alt="benefit image">
+                </div>
+                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
+                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-3.webp') }}"
+                        alt="benefit image">
+                </div>
+                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
+                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-4.webp') }}"
+                        alt="benefit image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="new-main-container relative">
+            <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-4xl mx-auto w-full bg-newprimary rounded-2xl">
+                <div class="flex items-center justify-center gap-4 md:gap-8">
+                    <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                    <h3 class="text-white text-2xl md:text-3xl font-bold text-center">
+                        {{ __('pages/programs/academic_test_preparation.program_title') }}
+                    </h3>
+                    <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                </div>
+            </div>
+            <div class="splide pt-24 max-w-5xl mx-auto" role="group">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev rounded-full bg-newprimary p-2 shadow-md"
+                        style="background: #120FFD; left: -48px;">
+                        <i class="fa-solid fa-arrow-left text-xl text-white"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next rounded-full bg-newprimary p-2 shadow-md"
+                        style="background: #120FFD; right: -48px;">
+                        <i class="fa-solid fa-arrow-right text-xl text-white"></i>
+                    </button>
+                </div>
+                <div class="splide__track">
+                    <ul class="splide__list font-newprimary text-black px-8">
+                        @foreach (__('pages/programs/academic_test_preparation.program_list') as $item)
+                            <li class="splide__slide w-full pb-8">
+                                <div class="splide__slide__container py-8 px-4 h-full w-full">
+                                    <div class="flex flex-col w-full md:w-full my-4">
+                                        <div
+                                            class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
+                                            <h3 class="font-bold uppercase text-2xl text-center">
+                                                {!! $item['title'] !!}
+                                            </h3>
+                                            <div class="rounded-xl h-32 w-full overflow-hidden my-4">
+                                                <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt=""
+                                                    class="h-full w-full object-cover">
+                                            </div>
+                                            <div class="w-full md:h-28 border-b border-b-[#DEDEDE]">
+                                                <p class="text-base text-justify leading-5">
+                                                    {{ $item['desc'] }}
+                                                </p>
+                                            </div>
+                                            @if (array_key_exists('points', $item) && $item['points'])
+                                                <div class="w-full lg:h-32 py-4">
+                                                    <ul class="list-outside list-disc pl-4 flex flex-col gap-1">
+                                                        @foreach ($item['points'] as $point)
+                                                            <li
+                                                                class="text-sm font-newprimary font-semibold text-newprimary">
+                                                                {{ $point }}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @else
+                                                <div class="h-32"></div>
+                                            @endif
+                                            <x-button
+                                                href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/{{ $item['link'] }}"
+                                                title="{{ __('pages/programs/academic_test_preparation.learn_more') }}"
+                                                bg-color="newprimary" padding-x="8" padding-y="2" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{--
+
+    <section class="py-14" id="academic-tutoring">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center">{{ __('pages/programs/academic_test_preparation.academic_tutoring_title') }}</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center">
+                {{ __('pages/programs/academic_test_preparation.academic_tutoring_title') }}</h2>
 
             <div class="font-newprimary text-black text-base font-semibold text-center max-w-3xl mx-auto mt-2">
-               {!! __('pages/programs/academic_test_preparation.academic_tutoring_description') !!}
+                {!! __('pages/programs/academic_test_preparation.academic_tutoring_description') !!}
             </div>
             <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-8">
                 <div class="acad-program-acad-tutor-item acad-program-acad-tutor-active relative overflow-hidden">
@@ -192,7 +290,8 @@
                 </div>
             </div>
             <div class="flex flex-col items-center w-full mt-10">
-                <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center mb-8">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_title') }}</h2>
+                <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center mb-8">
+                    {{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_title') }}</h2>
                 <div class="flex flex-col md:flex-row w-full items-center justify-center gap-8">
                     <div class="w-full md:w-1/3 flex flex-col gap-4 justify-between">
                         <span
@@ -200,7 +299,8 @@
                             style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.0') }}</span>
                         <span
                             class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.1') }} </span>
+                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.1') }}
+                        </span>
                         <span
                             class="hover:scale-110 transition-all duration-500 bg-newprimary py-4 px-4 w-full text-center text-white"
                             style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.2') }}</span>
@@ -218,15 +318,19 @@
                             style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.4') }}</span>
                     </div>
                 </div>
-                <x-button href="{{ route('academic_tutoring', app()->getLocale()) }}" title="{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_button') }}" />
+                <x-button href="{{ route('academic_tutoring', app()->getLocale()) }}"
+                    title="{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_button') }}" />
             </div>
         </div>
-    </section>
+    </section> --}}
 
+    {{--
     <section class="py-16">
         <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center max-w-2xl">{{ __('pages/programs/academic_test_preparation.ib_extended_title') }}</h2>
-            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">{{ __('pages/programs/academic_test_preparation.ib_extended_description') }}</p>
+            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center max-w-2xl">
+                {{ __('pages/programs/academic_test_preparation.ib_extended_title') }}</h2>
+            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">
+                {{ __('pages/programs/academic_test_preparation.ib_extended_description') }}</p>
         </div>
         <div class="mt-4 main-container">
             <div class="overflow-hidden bg-[#DEDEDE] p-1 md:p-2">
@@ -267,7 +371,8 @@
         </div>
         <div class="mt-8 main-container flex flex-col items-center w-full">
             <div class="mt-8 flex flex-col w-full">
-                <h2 class="font-newprimary font-bold text-3xl text-black text-center">{{ __('pages/programs/academic_test_preparation.ib_extended_topic_title') }}</h2>
+                <h2 class="font-newprimary font-bold text-3xl text-black text-center">
+                    {{ __('pages/programs/academic_test_preparation.ib_extended_topic_title') }}</h2>
                 <div class="mt-8 md:mt-0 flex flex-wrap items-center">
                     <div class="w-2/4 md:w-1/4 flex flex-col items-center md:items-end gap-2 md:order-1 order-1">
                         <span
@@ -298,7 +403,8 @@
                     </div>
                 </div>
             </div>
-            <x-button href="{{ route('sat_program', app()->getLocale()) }}" title="{{ __('pages/programs/academic_test_preparation.ib_extended_button') }}" />
+            <x-button href="{{ route('sat_program', app()->getLocale()) }}"
+                title="{{ __('pages/programs/academic_test_preparation.ib_extended_button') }}" />
         </div>
     </section>
 
@@ -306,22 +412,26 @@
         <div class="main-container flex flex-col items-center">
             <div class="flex items-center justify-between gap-8">
                 <div class="w-full md:w-1/2 flex flex-col">
-                    <h2 class="font-bold text-[40px] text-black uppercase leading-[2.75rem]">{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_title') }}</h2>
-                    <p class="text-base text-justify text-black mt-4 md:mt-8">{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_description') }}</p>
+                    <h2 class="font-bold text-[40px] text-black uppercase leading-[2.75rem]">
+                        {{ __('pages/programs/academic_test_preparation.standardized_test_preparation_title') }}</h2>
+                    <p class="text-base text-justify text-black mt-4 md:mt-8">
+                        {{ __('pages/programs/academic_test_preparation.standardized_test_preparation_description') }}</p>
                 </div>
                 <div class="w-full md:w-1/2 flex justify-end">
                     <img src="{{ asset('assets/img/academic_test_preparation/new-asset/standart-test.png') }}"
                         alt="EduALL assets" class="w-full h-full max-w-sm object-contain">
                 </div>
             </div>
-            <x-button href="#" title="{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_button') }}" />
+            <x-button href="#"
+                title="{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_button') }}" />
         </div>
     </div>
 
     <section class="py-16">
         <div class="flex main-container w-full flex-col items-center">
             <h2
-                class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center leading-[2.75rem] uppercase">{{ __('pages/programs/academic_test_preparation.skillset_tutoring_title') }}</h2>
+                class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center leading-[2.75rem] uppercase">
+                {{ __('pages/programs/academic_test_preparation.skillset_tutoring_title') }}</h2>
             <div class="flex flex-col md:flex-row justify-evenly w-full gap-6 mt-8">
                 <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-1.png') }}"alt="EduALL Asset"
                     class="w-full md:w-1/3 object-contain">
@@ -333,15 +443,17 @@
             <p class="text-lg text-center text-black mt-4 md:mt-8 max-w-5xl">
                 {{ __('pages/programs/academic_test_preparation.skillset_tutoring_description') }}
             </p>
-            <x-button href="#" title="{{ __('pages/programs/academic_test_preparation.skillset_tutoring_button') }}" />
+            <x-button href="#"
+                title="{{ __('pages/programs/academic_test_preparation.skillset_tutoring_button') }}" />
         </div>
     </section>
-
+ --}}
 
     {{-- ================================== Testimony Section  ================================== --}}
-    <section class="pt-16">
+    <section class="pt-14">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">{{ __('pages/programs/academic_test_preparation.testimony_title') }}</h2>
+            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
+                {{ __('pages/programs/academic_test_preparation.testimony_title') }}</h2>
         </div>
         <div class="main-container mb-12 md:my-12">
             <div class="splide" role="group">
@@ -451,6 +563,31 @@
         // SLIDER
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
+            type: 'slide',
+            perPage: 1,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            focus: 'center',
+            autoplay: true,
+            lazyload: true,
+            interval: 4000,
+            pagination: false,
+            padding: isSmallDevice || isMediumDevice ? "0rem" : '18rem',
+        }).on('pagination:mounted', function(data) {
+            if (isSmallDevice || isMediumDevice) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }
+        }).mount();
+
+        new Splide(splides[1], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
             perMove: 1,
