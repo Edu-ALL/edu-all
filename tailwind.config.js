@@ -53,7 +53,7 @@ module.exports = {
                 "sat-prep-header":
                     "url('../../public/assets/img/academic_test_preparation/sat_program/revamp/banner.png')",
                 "skillset-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/skillset_tutoring/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/skillset_tutoring/revamp/banner.png')",
 
                 // Transfer
                 "transfer-header":

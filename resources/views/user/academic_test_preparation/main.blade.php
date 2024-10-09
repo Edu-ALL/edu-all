@@ -17,7 +17,7 @@
     </section>
 
 
-    <section class="acad-program-our-programs">
+    <section class="acad-program-our-programs relative">
         <div class="flex main-container w-full flex-col h-[70vh] pt-24" id="our-programs-wrapper">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center mb-20 uppercase">
                 {{ __('pages/programs/academic_test_preparation.our_program_title') }}</h2>
@@ -84,6 +84,18 @@
                     <x-button href="{{ route('sat_program', app()->getLocale()) }}"
                         title="{{ __('pages/programs/academic_test_preparation.our_program_data.0.button') }}" />
                 </div>
+            </div>
+        </div>
+        <div class="absolute w-full max-w-5xl left-1/2 top-1/2 -translate-x-1/2">
+            <div class="flex items-center justify-between new-main-container">
+                <button id="left-journey-btn" class="w-7 h-7 rounded-full bg-newprimary p-2 shadow-md flex items-center justify-center"
+                    style="background: #120FFD;">
+                    <i class="fa-solid fa-arrow-left text-base text-white"></i>
+                </button>
+                <button id="right-journey-btn" class="w-7 h-7 rounded-full bg-newprimary p-2 shadow-md flex items-center justify-center"
+                    style="background: #120FFD;">
+                    <i class="fa-solid fa-arrow-right text-base  text-white"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -184,271 +196,6 @@
         </div>
     </section>
 
-    {{--
-
-    <section class="py-14" id="academic-tutoring">
-        <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center">
-                {{ __('pages/programs/academic_test_preparation.academic_tutoring_title') }}</h2>
-
-            <div class="font-newprimary text-black text-base font-semibold text-center max-w-3xl mx-auto mt-2">
-                {!! __('pages/programs/academic_test_preparation.academic_tutoring_description') !!}
-            </div>
-            <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-8">
-                <div class="acad-program-acad-tutor-item acad-program-acad-tutor-active relative overflow-hidden">
-                    <span>IBDP</span>
-                    <div class="desc">
-                        <ul class="whitespace-nowrap w-1/2">
-                            <li>Mathematics AA</li>
-                            <li>Mathematics AI</li>
-                            <li>Chemistry</li>
-                            <li> Physics</li>
-                            <li> Biology</li>
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/2">
-                            <li>ESS</li>
-                            <li>Economics</li>
-                            <li>English A: Lang & Lit</li>
-                            <li> Business Management</li>
-                            <li> EE/IA Guidance</li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-newprimary"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-1.png') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-                <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                    <span>IB MYP</span>
-                    <div class="desc">
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li>Mathematics</li>
-                            <li>Chemistry</li>
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li> Physics</li>
-                            <li> Biology</li>
-
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li>English</li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-black"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-2.png') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-                <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                    <span>Cambridge
-                        A-Levels</span>
-                    <div class="desc">
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li>Mathematics</li>
-                            <li>Chemistry</li>
-                            <li>Physics</li>
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li> Biology</li>
-                            <li> Computer Science</li>
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li>Economics</li>
-                            <li>English</li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-newprimary"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-3.png') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-                <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                    <span>Cambridge
-                        IGCSE</span>
-                    <div class="desc">
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li>Mathematics</li>
-                            <li>Physics</li>
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li> Biology</li>
-                            <li>Chemistry</li>
-                        </ul>
-                        <ul class="whitespace-nowrap w-1/3">
-                            <li>Economics</li>
-                            <li>English</li>
-                        </ul>
-                    </div>
-                    <div class="polygon bg-black"></div>
-                    <div class="w-full h-full bg-black">
-                        <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-4.png') }}"
-                            alt="EduALL figure">
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col items-center w-full mt-10">
-                <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center mb-8">
-                    {{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_title') }}</h2>
-                <div class="flex flex-col md:flex-row w-full items-center justify-center gap-8">
-                    <div class="w-full md:w-1/3 flex flex-col gap-4 justify-between">
-                        <span
-                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-4 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.0') }}</span>
-                        <span
-                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.1') }}
-                        </span>
-                        <span
-                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-4 px-4 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.2') }}</span>
-                    </div>
-                    <div class="w-full md:w-1/4 hover:scale-95 transition-all duration-500 hover:rotate-2">
-                        <img src="{{ asset('assets/img/academic_test_preparation/new-asset/special-formula.png') }}"
-                            alt="EduALL Special Formula">
-                    </div>
-                    <div class="w-full md:w-1/3 flex flex-col gap-4 justify-between">
-                        <span
-                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-8 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.3') }}</span>
-                        <span
-                            class="hover:scale-110 transition-all duration-500 bg-newprimary py-1 px-6 w-full text-center text-white"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula.4') }}</span>
-                    </div>
-                </div>
-                <x-button href="{{ route('academic_tutoring', app()->getLocale()) }}"
-                    title="{{ __('pages/programs/academic_test_preparation.academic_tutoring_special_formula_button') }}" />
-            </div>
-        </div>
-    </section> --}}
-
-    {{--
-    <section class="py-16">
-        <div class="flex main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-black text-center max-w-2xl">
-                {{ __('pages/programs/academic_test_preparation.ib_extended_title') }}</h2>
-            <p class="font-newprimary font-medium text-center text-lg md:text-2xl mt-1">
-                {{ __('pages/programs/academic_test_preparation.ib_extended_description') }}</p>
-        </div>
-        <div class="mt-4 main-container">
-            <div class="overflow-hidden bg-[#DEDEDE] p-1 md:p-2">
-                <div
-                    class="endless-scroll flex-inline gap-4 font-newprimary text-black text-lg md:text-3xl font-bold uppercase whitespace-nowrap">
-                    <span class="inline">ONLINE</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Flexible Starting Time FOR IBDP, Cambridge A-Level & IGCSE Students</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Grade 9 - 12</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">ONLINE</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Flexible Starting Time FOR IBDP, Cambridge A-Level & IGCSE Students</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Grade 9 - 12</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">ONLINE</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Flexible Starting Time FOR IBDP, Cambridge A-Level & IGCSE Students</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Grade 9 - 12</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">ONLINE</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Flexible Starting Time FOR IBDP, Cambridge A-Level & IGCSE Students</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Grade 9 - 12</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">ONLINE</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Flexible Starting Time FOR IBDP, Cambridge A-Level & IGCSE Students</span>
-                    <span class="text-newprimary mx-4">/</span>
-                    <span class="inline">Grade 9 - 12</span>
-                    <span class="text-newprimary mx-4">/</span>
-                </div>
-            </div>
-        </div>
-        <div class="mt-8 main-container flex flex-col items-center w-full">
-            <div class="mt-8 flex flex-col w-full">
-                <h2 class="font-newprimary font-bold text-3xl text-black text-center">
-                    {{ __('pages/programs/academic_test_preparation.ib_extended_topic_title') }}</h2>
-                <div class="mt-8 md:mt-0 flex flex-wrap items-center">
-                    <div class="w-2/4 md:w-1/4 flex flex-col items-center md:items-end gap-2 md:order-1 order-1">
-                        <span
-                            class="hover:scale-110 transition-all duration-500 w-48 md:w-40 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-6 md:px-4 rounded-lg text-base md:text-xl"
-                            style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">How to start and find the
-                            right EE topic</span>
-                        <span
-                            class="hover:scale-110 transition-all duration-500 w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
-                            style="clip-path: polygon(0 0, 100% 0%, 100% 70%, 80% 100%, 0 100%);">Construct a bulletproof
-                            research questionc</span>
-                    </div>
-                    <div class="w-3/4 md:w-2/4 md:order-2 order-3 mx-auto hover:scale-95 transition-all duration-500"><img
-                            src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/new-asset/s9-figure.webp') }}"
-                            alt="EduALL figure" class="w-full h-full object-contain px-8"></div>
-                    <div class="w-2/4 md:w-1/4 flex flex-col items-center md:items-start gap-2 md:order-3 order-2">
-                        <span
-                            class="hover:scale-110 transition-all duration-500 w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
-                            style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">Navigate the citation
-                            style jungle</span>
-                        <span
-                            class="hover:scale-110 transition-all duration-500 w-48 md:w-44 bg-black text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
-                            style="clip-path: polygon(0 0, 100% 0%, 100% 70%, 80% 100%, 0 100%);">Conquer proscrastination
-                            by agile project management</span>
-                        <span
-                            class="hover:scale-110 transition-all duration-500 w-48 md:w-40 bg-newprimary text-white pt-1 pb-2 px-2 md:pt-4 md:pb-4 md:px-4 rounded-lg text-base md:text-xl"
-                            style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 80% 100%, 0 100%);">How to write your first
-                            draft</span>
-                    </div>
-                </div>
-            </div>
-            <x-button href="{{ route('sat_program', app()->getLocale()) }}"
-                title="{{ __('pages/programs/academic_test_preparation.ib_extended_button') }}" />
-        </div>
-    </section>
-
-    <div class="py-24">
-        <div class="main-container flex flex-col items-center">
-            <div class="flex items-center justify-between gap-8">
-                <div class="w-full md:w-1/2 flex flex-col">
-                    <h2 class="font-bold text-[40px] text-black uppercase leading-[2.75rem]">
-                        {{ __('pages/programs/academic_test_preparation.standardized_test_preparation_title') }}</h2>
-                    <p class="text-base text-justify text-black mt-4 md:mt-8">
-                        {{ __('pages/programs/academic_test_preparation.standardized_test_preparation_description') }}</p>
-                </div>
-                <div class="w-full md:w-1/2 flex justify-end">
-                    <img src="{{ asset('assets/img/academic_test_preparation/new-asset/standart-test.png') }}"
-                        alt="EduALL assets" class="w-full h-full max-w-sm object-contain">
-                </div>
-            </div>
-            <x-button href="#"
-                title="{{ __('pages/programs/academic_test_preparation.standardized_test_preparation_button') }}" />
-        </div>
-    </div>
-
-    <section class="py-16">
-        <div class="flex main-container w-full flex-col items-center">
-            <h2
-                class="font-newprimary font-bold text-2xl md:text-[40px] text-black text-center leading-[2.75rem] uppercase">
-                {{ __('pages/programs/academic_test_preparation.skillset_tutoring_title') }}</h2>
-            <div class="flex flex-col md:flex-row justify-evenly w-full gap-6 mt-8">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-1.png') }}"alt="EduALL Asset"
-                    class="w-full md:w-1/3 object-contain">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-2.png') }}"alt="EduALL Asset"
-                    class="w-full md:w-1/3 object-contain">
-                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/skillset/asset-3.png') }}"alt="EduALL Asset"
-                    class="w-full md:w-1/3 object-contain">
-            </div>
-            <p class="text-lg text-center text-black mt-4 md:mt-8 max-w-5xl">
-                {{ __('pages/programs/academic_test_preparation.skillset_tutoring_description') }}
-            </p>
-            <x-button href="#"
-                title="{{ __('pages/programs/academic_test_preparation.skillset_tutoring_button') }}" />
-        </div>
-    </section>
- --}}
-
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="pt-14">
         <div class="flex main-container w-full flex-col">
@@ -508,7 +255,8 @@
 
         var track_item = 0;
         var track_item_text = 3;
-        our_programs_button_right.addEventListener("click", () => {
+
+        function moveRight() {
             our_programs_wrapper.scrollIntoView()
             items_position[track_item].forEach((cls, it) => {
                 image_items[it].classList.remove(cls);
@@ -525,8 +273,9 @@
             image_items_text[track_item_text].classList.add("opacity-100");
             image_items_text[track_item_text].classList.add("visible");
             image_items_text[track_item_text].classList.remove("invisible");
-        });
-        our_programs_button_left.addEventListener("click", () => {
+        }
+
+        function moveLeft() {
             our_programs_wrapper.scrollIntoView()
             items_position[track_item].forEach((cls, it) => {
                 image_items[it].classList.remove(cls);
@@ -542,7 +291,25 @@
             image_items_text[track_item_text].classList.add("opacity-100");
             image_items_text[track_item_text].classList.add("visible");
             image_items_text[track_item_text].classList.remove("invisible");
+        }
+
+        our_programs_button_right.addEventListener("click", () => {
+            moveRight();
         });
+
+        our_programs_button_left.addEventListener("click", () => {
+            moveLeft();
+        });
+
+        const left_journey_btn = document.getElementById('left-journey-btn');
+        const right_journey_btn = document.getElementById('right-journey-btn');
+
+        left_journey_btn.addEventListener("click", () => {
+            moveLeft();
+        })
+        right_journey_btn.addEventListener("click", () => {
+            moveRight();
+        })
 
         const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
         let s4ActiveIndex = 0;
