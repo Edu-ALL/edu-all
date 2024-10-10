@@ -359,6 +359,7 @@
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
+            pagination:false,
             autoplay: true,
             lazyload: true,
             interval: 4000,

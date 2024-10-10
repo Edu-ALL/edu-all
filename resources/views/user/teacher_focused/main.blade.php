@@ -40,7 +40,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center px-4">
             <p class="font-newprimary text-center max-w-3xl leading-6 text-lg font-light">
                 {{ __('pages/programs/teacher_focused.sub_description') }}
             </p>

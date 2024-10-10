@@ -40,7 +40,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center px-4">
             <p class="font-newprimary max-w-3xl text-center leading-6 text-lg font-light">
                 {{ __('pages/programs/admission_accelerator.sub_description') }}
             </p>
