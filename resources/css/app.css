@@ -591,7 +591,7 @@ progress::-ms-fill {
 }
 
 .acad-program-acad-tutor-active span {
-    @apply px-4 font-newprimary text-xl md:text-[24px] uppercase text-newprimary font-bold tracking-wide absolute bottom-[92%] text-center z-10 w-full transition-all duration-500;
+    @apply px-4 font-newprimary text-xl md:text-[24px] uppercase text-white py-1 font-bold tracking-wide absolute bottom-[38%] left-1/2 -translate-x-1/2 text-center z-10 transition-all duration-500;
 }
 
 .acad-program-acad-tutor-active .desc {
@@ -599,7 +599,7 @@ progress::-ms-fill {
 }
 
 .acad-program-acad-tutor-active .desc ul {
-    @apply px-8 list-disc;
+    @apply px-8 list-disc text-sm md:text-base;
 }
 
 .acad-program-acad-tutor-active .polygon {
@@ -615,11 +615,11 @@ progress::-ms-fill {
 }
 
 .acad-program-acad-tutor-inactive span {
-    @apply px-2 font-newprimary text-xl uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[18%] translate-y-[50%] text-center z-20 w-full transition-all duration-500;
+    @apply px-2 font-newprimary text-xl uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[18%] translate-y-[50%] left-1/2 -translate-x-1/2 text-center z-20 transition-all duration-500;
 }
 
 .acad-program-acad-tutor-inactive .desc {
-    @apply font-newprimary text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-300;
+    @apply font-newprimary md:text-base text-white font-light absolute bottom-[10%] text-center z-20 w-full opacity-0 transition-all duration-300;
 }
 
 .acad-program-acad-tutor-inactive .polygon {
@@ -649,13 +649,13 @@ progress::-ms-fill {
     height: 100%;
     background: linear-gradient(
         125deg,
-        #A7A9AC 2%,
-        #302D2E 2%,
-        #302D2E 4%,
-        #A7A9AC 4%,
-        #A7A9AC 6%,
-        #302D2E 6%,
-        #302D2E 8%,
+        #a7a9ac 2%,
+        #302d2e 2%,
+        #302d2e 4%,
+        #a7a9ac 4%,
+        #a7a9ac 6%,
+        #302d2e 6%,
+        #302d2e 8%,
         transparent 8%
     );
     z-index: 1;
@@ -671,14 +671,13 @@ progress::-ms-fill {
     background: linear-gradient(
         125deg,
         transparent 92%,
-        #302D2E 92%,
-        #302D2E 94%,
-        #A7A9AC 94%,
-        #A7A9AC 96%,
-        #302D2E 96%,
-        #302D2E 98%,
-        #A7A9AC 98%
+        #302d2e 92%,
+        #302d2e 94%,
+        #a7a9ac 94%,
+        #a7a9ac 96%,
+        #302d2e 96%,
+        #302d2e 98%,
+        #a7a9ac 98%
     );
     z-index: 1;
 }
-
