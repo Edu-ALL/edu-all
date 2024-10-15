@@ -81,7 +81,7 @@
                 <div class="mt-8 flex flex-wrap justify-center items-center">
                     <div class="flex flex-col md:flex-row w-full h-[180vh] md:h-[60vh]">
                         <div class="acad-program-acad-tutor-item acad-program-acad-tutor-active relative overflow-hidden">
-                            <span>IBDP</span>
+                            <span class="bg-newprimary">IBDP</span>
                             <div class="desc">
                                 <ul class="whitespace-nowrap w-1/3">
                                     <li class="leading-6">Physics</li>
@@ -663,6 +663,12 @@
                     acad_tutor_items[s1ActiveIndex].classList.remove('acad-program-acad-tutor-active');
                     acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
                     acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
+                    if (it % 2 == 0) {
+                        acad_tutor_items[it].querySelector('span').classList.add('bg-newprimary');
+                    } else {
+                        acad_tutor_items[it].querySelector('span').classList.add('bg-black');
+                    }
+                    acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
                     s1ActiveIndex = it;
                 }
             })
@@ -697,78 +703,6 @@
                 }
             }, animation_time / persentage);
         }
-
-        const s2_item = document.querySelectorAll('.acad-tutor-s2-item');
-        const s2_item_text = [
-            "Personalized Learning Paths",
-            "Diverse Subject Expertise",
-            "Expert Tutor Qualifications",
-            "On-Demand Schedule",
-        ];
-        let s2ActiveIndex = 0;
-
-        s2_item.forEach((item, it) => {
-            item.addEventListener('click', () => {
-                if (it != s2ActiveIndex) {
-                    s2_item[s2ActiveIndex].classList.add('acad-tutor-s2-inactive');
-                    s2_item[s2ActiveIndex].classList.remove('acad-tutor-s2-active');
-                    s2_item[s2ActiveIndex].querySelector('span').textContent = s2ActiveIndex + 1;
-                    s2_item[it].classList.remove('acad-tutor-s2-inactive');
-                    s2_item[it].classList.add('acad-tutor-s2-active');
-                    s2_item[it].querySelector('span').classList.remove('opacity-100');
-                    s2_item[it].querySelector('span').classList.add('opacity-0');
-                    setTimeout(() => {
-                        s2_item[it].querySelector('span').textContent = s2_item_text[it];
-                        s2_item[it].querySelector('span').classList.add('opacity-100');
-                        s2_item[it].querySelector('span').classList.remove('opacity-0');
-                    }, 300);
-                    s2ActiveIndex = it;
-                }
-            })
-        });
-
-        const s4_item = document.querySelectorAll('.acad-tutor-s4-item');
-        // const s4_item_text_active = [
-        //     "Discover Your Path",
-        //     "Insightful Academic Analysis",
-        //     "Customized Learning Approach",
-        //     "Dynamic Goal Achievement",
-        // ];
-        const s4_item_text_active = [
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_active.0') }}',
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_active.1') }}',
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_active.2') }}',
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_active.3') }}',
-        ];
-        const s4_item_text_inactive = [
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_inactive.0') }}',
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_inactive.1') }}',
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_inactive.2') }}',
-            '{{ __('pages/programs/academic_tutoring.s4_item_text_inactive.3') }}',
-        ];
-        let s4ActiveIndex = 0;
-
-        s4_item.forEach((item, it) => {
-            item.addEventListener('click', () => {
-                if (it != s4ActiveIndex) {
-                    s4_item[s4ActiveIndex].classList.add('acad-tutor-s4-inactive');
-                    s4_item[s4ActiveIndex].classList.remove('acad-tutor-s4-active');
-                    s4_item[s4ActiveIndex].querySelector('span').textContent = s4_item_text_inactive[
-                        s4ActiveIndex];
-                    s4_item[it].classList.remove('acad-tutor-s4-inactive');
-                    s4_item[it].classList.add('acad-tutor-s4-active');
-                    s4_item[it].querySelector('span').classList.remove('opacity-100');
-                    s4_item[it].querySelector('span').classList.add('opacity-0');
-                    setTimeout(() => {
-                        s4_item[it].querySelector('span').textContent = s4_item_text_active[it];
-                        s4_item[it].querySelector('span').classList.add('opacity-100');
-                        s4_item[it].querySelector('span').classList.remove('opacity-0');
-                    }, 300);
-                    s4ActiveIndex = it;
-                }
-            })
-        });
-
 
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
