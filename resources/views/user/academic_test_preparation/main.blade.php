@@ -23,33 +23,33 @@
                 {{ __('pages/programs/academic_test_preparation.our_program_title') }}</h2>
             <div class="relative h-full group">
                 <div
-                    class="button-left h-24 aspect-video absolute left-[25%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-30 hover:cursor-pointer">
+                    class="button-left md:w-40 w-24 aspect-video absolute left-[25%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-30 hover:cursor-pointer">
                 </div>
                 <div
-                    class="button-right h-24 aspect-video absolute left-[75%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-30 hover:cursor-pointer">
+                    class="button-right md:w-40 w-24 aspect-video absolute left-[75%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-30 hover:cursor-pointer">
                 </div>
                 <div class="item item-back">
                     <img src="{{ asset('assets/img/academic_test_preparation/new-asset/our-programs/figure-3.png') }}"
-                        alt="EduALL figure" class="w-full h-full">
+                        alt="EduALL figure" class="md:w-full h-full">
                 </div>
                 <div class="item item-left">
                     <img src="{{ asset('assets/img/academic_test_preparation/new-asset/our-programs/figure-4.png') }}"
-                        alt="EduALL figure" class="w-full h-full">
+                        alt="EduALL figure" class="md:w-full h-full">
                 </div>
                 <div class="item item-right">
                     <img src="{{ asset('assets/img/academic_test_preparation/new-asset/our-programs/figure-2.png') }}"
-                        alt="EduALL figure" class="w-full h-full">
+                        alt="EduALL figure" class="md:w-full h-full">
                 </div>
                 <div class="item item-front">
                     <img src="{{ asset('assets/img/academic_test_preparation/new-asset/our-programs/figure-1.png') }}"
-                        alt="EduALL figure" class="w-full h-full">
+                        alt="EduALL figure" class="md:w-full h-full">
                 </div>
             </div>
         </div>
         <div class="main-container w-full min-h-[50vh] z-50 md:mt-[2rem] -mt-[2rem]">
             <div class="relative h-full w-full">
                 <div class="item-text opacity-0 invisible">
-                    <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">
+                    <h2 class="font-bold md:text-4xl text-2xl text-center text-newprimary uppercase mb-4">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.1.title') }}</h2>
                     <p class="font-semibold text-center text-lg text-black max-w-2xl">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.1.description') }}</p>
@@ -57,9 +57,9 @@
                         title="{{ __('pages/programs/academic_test_preparation.our_program_data.1.button') }}" />
                 </div>
                 <div class="item-text opacity-0 invisible">
-                    <div class="flex items-start justify-evenly gap-4">
+                    <div class="md:flex items-start justify-evenly gap-4">
                         @foreach (__('pages/programs/academic_test_preparation.our_program_data.2.description') as $program_item)
-                            <div class="flex flex-col w-1/4">
+                            <div class="md:w-1/4 w-full md:mb-0 mb-4">
                                 <div class="font-bold text-xl text-newprimary uppercase text-center">
                                     {!! $program_item['title'] !!} </div>
                                 <div class="text-center text-sm text-black">{!! $program_item['description'] !!}</div>
@@ -71,13 +71,13 @@
                 </div>
 
                 <div class="item-text opacity-0 invisible">
-                    <div class="font-bold text-6xl text-center text-newprimary uppercase mb-4 max-w-4xl">
+                    <div class="font-bold md:text-6xl text-2xl text-center text-newprimary uppercase mb-4 max-w-4xl">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.3.title') }}!</div>
                     <x-button href="#academic-tutoring"
                         title="{{ __('pages/programs/academic_test_preparation.our_program_data.3.button') }}" />
                 </div>
                 <div class="item-text opacity-100 visible">
-                    <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">
+                    <h2 class="font-bold md:text-4xl text-2xl text-center text-newprimary uppercase mb-4">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.0.title') }}</h2>
                     <p class="font-semibold text-center text-lg text-black max-w-2xl">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.0.description') }}</p>
