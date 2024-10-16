@@ -100,7 +100,7 @@
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
                         <div class="desc mt-2">
-                            <ul class="whitespace-nowrap">
+                            <ul class="md:whitespace-nowrap">
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
                                 @endforeach

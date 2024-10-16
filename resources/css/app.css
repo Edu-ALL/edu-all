@@ -530,7 +530,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .sat-program-s3-inactive span {
-    @apply px-2 font-newprimary text-base uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[18%] translate-y-[50%] text-center z-20 w-full transition-all duration-100;
+    @apply px-2 font-newprimary text-base uppercase text-white font-bold tracking-wide absolute bottom-[15%] md:bottom-[18%] translate-y-[50%] text-center z-20 w-full transition-all duration-100;
 }
 
 .sat-program-s3-inactive .desc {
@@ -576,7 +576,7 @@ progress::-ms-fill {
     @apply h-24 absolute left-[75%] top-[12%] -translate-x-1/2 -translate-y-1/2 z-20 grayscale transition-all duration-500;
 }
 .acad-program-our-programs .item-front {
-    @apply h-64 absolute left-[50%] top-[55%] -translate-x-1/2 -translate-y-1/2 z-40 transition-all duration-500;
+    @apply md:h-64 h-40 absolute left-[50%] top-[55%] -translate-x-1/2 -translate-y-1/2 z-40 transition-all duration-500;
 }
 
 .acad-program-our-programs .item-text {
@@ -615,7 +615,7 @@ progress::-ms-fill {
 }
 
 .acad-program-acad-tutor-inactive span {
-    @apply px-2 font-newprimary text-xl uppercase text-white font-bold tracking-wide absolute bottom-[10%] md:bottom-[18%] translate-y-[50%] left-1/2 -translate-x-1/2 text-center z-20 transition-all duration-500;
+    @apply px-2 font-newprimary text-xl uppercase text-white font-bold tracking-wide absolute bottom-[15%] md:bottom-[18%] translate-y-[50%] left-1/2 -translate-x-1/2 text-center z-20 transition-all duration-500;
 }
 
 .acad-program-acad-tutor-inactive .desc {

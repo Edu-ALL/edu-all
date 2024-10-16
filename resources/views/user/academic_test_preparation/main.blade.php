@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-container w-full h-[50vh] z-50 -mt-[4rem]">
+        <div class="main-container w-full min-h-[50vh] z-50 md:mt-[2rem] -mt-[2rem]">
             <div class="relative h-full w-full">
                 <div class="item-text opacity-0 invisible">
                     <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">
@@ -151,7 +151,7 @@
                     <ul class="splide__list font-newprimary text-black px-8">
                         @foreach (__('pages/programs/academic_test_preparation.program_list') as $item)
                             <li class="splide__slide w-full pb-8">
-                                <div class="splide__slide__container py-8 px-4 h-full w-full">
+                                <div class="splide__slide__container py-8 h-full w-full">
                                     <div class="flex flex-col w-full md:w-full my-4">
                                         <div
                                             class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
@@ -330,16 +330,17 @@
         // SLIDER
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
-            type: 'loop',
-            perPage: 1,
+            type: 'slide',
+            perPage: isMediumDevice ? 1 : 3,
             perMove: 1,
-            arrows: isMediumDevice ? false : true,
+            arrows: false,
             focus: 'center',
+            gap:10,
             autoplay: true,
             lazyload: true,
             interval: 4000,
             pagination: false,
-            padding: isSmallDevice || isMediumDevice ? "0rem" : '18rem',
+            padding: 0,
         }).on('pagination:mounted', function(data) {
             if (isSmallDevice || isMediumDevice) {
                 // You can add your class to the UL element
