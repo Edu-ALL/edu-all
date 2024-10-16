@@ -7,33 +7,45 @@
     "file": "assets/banner-admission-general.41074365.webp",
     "src": "public/assets/img/admission mentoring/revamp/banner-admission-general.webp"
   },
-  "public/assets/img/exclusive_program_school/Home banner General.webp": {
-    "file": "assets/Home banner General.6a1d1024.webp",
-    "src": "public/assets/img/exclusive_program_school/Home banner General.webp"
+  "public/assets/img/admission_accelerator/Home banner admission accelerator.webp": {
+    "file": "assets/Home banner admission accelerator.499e17b1.webp",
+    "src": "public/assets/img/admission_accelerator/Home banner admission accelerator.webp"
   },
   "public/assets/img/experiential_learning/Home banner exp learning.webp": {
     "file": "assets/Home banner exp learning.be945809.webp",
     "src": "public/assets/img/experiential_learning/Home banner exp learning.webp"
   },
-  "public/assets/img/admission_accelerator/Home banner admission accelerator.webp": {
-    "file": "assets/Home banner admission accelerator.499e17b1.webp",
-    "src": "public/assets/img/admission_accelerator/Home banner admission accelerator.webp"
-  },
-  "public/assets/img/sign-me/banner/form-banner.webp": {
-    "file": "assets/form-banner.e5a2160d.webp",
-    "src": "public/assets/img/sign-me/banner/form-banner.webp"
+  "public/assets/img/exclusive_program_school/Home banner General.webp": {
+    "file": "assets/Home banner General.6a1d1024.webp",
+    "src": "public/assets/img/exclusive_program_school/Home banner General.webp"
   },
   "public/assets/img/banner/Success Stories Banner.webp": {
     "file": "assets/Success Stories Banner.fca550f3.webp",
     "src": "public/assets/img/banner/Success Stories Banner.webp"
   },
-  "public/font/ambit/Ambit-Bold.otf": {
-    "file": "assets/Ambit-Bold.7146332c.otf",
-    "src": "public/font/ambit/Ambit-Bold.otf"
+  "public/assets/img/banner/Upcoming_Event.webp": {
+    "file": "assets/Upcoming_Event.d046dea0.webp",
+    "src": "public/assets/img/banner/Upcoming_Event.webp"
+  },
+  "public/assets/img/sign-me/banner/form-banner.webp": {
+    "file": "assets/form-banner.e5a2160d.webp",
+    "src": "public/assets/img/sign-me/banner/form-banner.webp"
   },
   "public/font/ambit/Ambit-Black.otf": {
     "file": "assets/Ambit-Black.0a606992.otf",
     "src": "public/font/ambit/Ambit-Black.otf"
+  },
+  "public/font/ambit/Ambit-Thin.otf": {
+    "file": "assets/Ambit-Thin.b5641cc1.otf",
+    "src": "public/font/ambit/Ambit-Thin.otf"
+  },
+  "public/font/ambit/Ambit-Bold.otf": {
+    "file": "assets/Ambit-Bold.7146332c.otf",
+    "src": "public/font/ambit/Ambit-Bold.otf"
+  },
+  "public/font/ambit/Ambit-ExtraLight.otf": {
+    "file": "assets/Ambit-ExtraLight.11d650d2.otf",
+    "src": "public/font/ambit/Ambit-ExtraLight.otf"
   },
   "public/font/ambit/Ambit-SemiBold.otf": {
     "file": "assets/Ambit-SemiBold.1fddb759.otf",
@@ -47,89 +59,77 @@
     "file": "assets/Ambit-Regular.5ec71115.otf",
     "src": "public/font/ambit/Ambit-Regular.otf"
   },
-  "public/font/ambit/Ambit-ExtraLight.otf": {
-    "file": "assets/Ambit-ExtraLight.11d650d2.otf",
-    "src": "public/font/ambit/Ambit-ExtraLight.otf"
-  },
-  "public/assets/img/banner/Upcoming_Event.webp": {
-    "file": "assets/Upcoming_Event.d046dea0.webp",
-    "src": "public/assets/img/banner/Upcoming_Event.webp"
-  },
-  "public/font/ambit/Ambit-Thin.otf": {
-    "file": "assets/Ambit-Thin.b5641cc1.otf",
-    "src": "public/font/ambit/Ambit-Thin.otf"
-  },
   "public/font/sf-pro-display/SF-Pro-Display-Regular.otf": {
     "file": "assets/SF-Pro-Display-Regular.71a2162c.otf",
     "src": "public/font/sf-pro-display/SF-Pro-Display-Regular.otf"
-  },
-  "public/assets/img/passion_project_mentoring/scientific research.png": {
-    "file": "assets/scientific research.457f3aa5.png",
-    "src": "public/assets/img/passion_project_mentoring/scientific research.png"
   },
   "public/font/sf-pro-display/SF-Pro-Display-Heavy.otf": {
     "file": "assets/SF-Pro-Display-Heavy.1a346f2a.otf",
     "src": "public/font/sf-pro-display/SF-Pro-Display-Heavy.otf"
   },
-  "public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp": {
-    "file": "assets/preview-timetable-entrepreneurshiip.f2d7d980.webp",
-    "src": "public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp"
-  },
-  "public/assets/img/banner/signup-banner.png": {
-    "file": "assets/signup-banner.3925b2d4.png",
-    "src": "public/assets/img/banner/signup-banner.png"
-  },
   "public/assets/img/passion_project_mentoring/Rectangle-32.webp": {
     "file": "assets/Rectangle-32.03431854.webp",
     "src": "public/assets/img/passion_project_mentoring/Rectangle-32.webp"
+  },
+  "public/assets/img/passion_project_mentoring/scientific research.png": {
+    "file": "assets/scientific research.457f3aa5.png",
+    "src": "public/assets/img/passion_project_mentoring/scientific research.png"
+  },
+  "public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp": {
+    "file": "assets/preview-timetable-entrepreneurshiip.f2d7d980.webp",
+    "src": "public/assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp"
   },
   "public/assets/img/passion_project_mentoring/Rectangle-6.webp": {
     "file": "assets/Rectangle-6.7c2fbfe6.webp",
     "src": "public/assets/img/passion_project_mentoring/Rectangle-6.webp"
   },
+  "public/assets/img/banner/signup-banner.png": {
+    "file": "assets/signup-banner.3925b2d4.png",
+    "src": "public/assets/img/banner/signup-banner.png"
+  },
   "public/assets/img/home/sg/header.png": {
     "file": "assets/header.ce350fdb.png",
     "src": "public/assets/img/home/sg/header.png"
-  },
-  "public/assets/img/passion_project_mentoring/background-entre.webp": {
-    "file": "assets/background-entre.42f8a34c.webp",
-    "src": "public/assets/img/passion_project_mentoring/background-entre.webp"
   },
   "public/assets/img/passion_project_mentoring/background-science.webp": {
     "file": "assets/background-science.698ea23b.webp",
     "src": "public/assets/img/passion_project_mentoring/background-science.webp"
   },
+  "public/assets/img/passion_project_mentoring/background-entre.webp": {
+    "file": "assets/background-entre.42f8a34c.webp",
+    "src": "public/assets/img/passion_project_mentoring/background-entre.webp"
+  },
   "public/assets/img/admission mentoring/Graduate/revamp/banner-graduate.png": {
     "file": "assets/banner-graduate.9c515e0b.png",
     "src": "public/assets/img/admission mentoring/Graduate/revamp/banner-graduate.png"
-  },
-  "public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png": {
-    "file": "assets/banner-undergraduate.068f9815.png",
-    "src": "public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png"
-  },
-  "public/assets/img/mentor/header.png": {
-    "file": "assets/header.6e8f8ecb.png",
-    "src": "public/assets/img/mentor/header.png"
-  },
-  "public/assets/img/academic_test_preparation/revamp/banner.png": {
-    "file": "assets/banner.388fc40a.png",
-    "src": "public/assets/img/academic_test_preparation/revamp/banner.png"
   },
   "public/assets/img/admission mentoring/Master transfer/revamp/banner-transfer.png": {
     "file": "assets/banner-transfer.f78fc552.png",
     "src": "public/assets/img/admission mentoring/Master transfer/revamp/banner-transfer.png"
   },
+  "public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png": {
+    "file": "assets/banner-undergraduate.068f9815.png",
+    "src": "public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png"
+  },
+  "public/assets/img/academic_test_preparation/revamp/banner.png": {
+    "file": "assets/banner.388fc40a.png",
+    "src": "public/assets/img/academic_test_preparation/revamp/banner.png"
+  },
+  "public/assets/img/mentor/header.png": {
+    "file": "assets/header.6e8f8ecb.png",
+    "src": "public/assets/img/mentor/header.png"
+  },
   "public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.png": {
     "file": "assets/banner.509184a9.png",
     "src": "public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.png"
   },
-  "public/assets/img/academic_test_preparation/sat_program/revamp/banner.png": {
-    "file": "assets/banner.4464f814.png",
-    "src": "public/assets/img/academic_test_preparation/sat_program/revamp/banner.png"
-  },
   "public/assets/img/academic_test_preparation/skillset_tutoring/revamp/banner.png": {
     "file": "assets/banner.c89e8435.png",
     "src": "public/assets/img/academic_test_preparation/skillset_tutoring/revamp/banner.png"
+  },
+  "public/assets/img/academic_test_preparation/sat_program/revamp/banner.png": {
+    "file": "assets/banner.4464f814.png",
+    "src": "public/assets/img/academic_test_preparation/sat_program/revamp/banner.png"
   },
   "resources/js/app.js": {
     "file": "assets/app.5f8581c9.js",
@@ -137,7 +137,7 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.fe0fd492.css",
+    "file": "assets/app.83b1c89a.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }

@@ -518,8 +518,8 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .sat-program-s3-active .polygon {
-    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all  duration-500;
-    clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%);
+    @apply absolute h-2/5 w-full left-0 bottom-0 transition-all  duration-500;
+    /* clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%); */
 }
 
 .sat-program-s3-active img {
@@ -591,7 +591,7 @@ progress::-ms-fill {
 }
 
 .acad-program-acad-tutor-active span {
-    @apply px-4 font-newprimary text-xl md:text-[24px] uppercase text-white py-1 font-bold tracking-wide absolute bottom-[38%] left-1/2 -translate-x-1/2 text-center z-10 transition-all duration-500;
+    @apply px-4 font-newprimary text-xl md:text-[24px] uppercase text-white py-1 font-bold tracking-wide absolute bottom-[40%] left-1/2 -translate-x-1/2 text-center z-10 transition-all duration-500;
 }
 
 .acad-program-acad-tutor-active .desc {
@@ -603,8 +603,8 @@ progress::-ms-fill {
 }
 
 .acad-program-acad-tutor-active .polygon {
-    @apply absolute h-3/5 w-full left-0 bottom-0 transition-all  duration-500;
-    clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%);
+    @apply absolute h-[38%] w-full left-0 bottom-0 transition-all  duration-500;
+    /* clip-path: polygon(85% 40%, 100% 0, 100% 100%, 0 100%, 0 40%); */
 }
 
 .acad-program-acad-tutor-active img {

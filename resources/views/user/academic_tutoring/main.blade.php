@@ -89,7 +89,6 @@
                                     <li class="leading-6">Biology</li>
                                     <li class="leading-6">English</li>
                                     <li class="leading-6">Mathematics</li>
-                                    <li class="leading-6">Economics</li>
                                 </ul>
                                 <ul class="whitespace-nowrap w-1/2">
                                     <li>Environmental System & Societies</li>
@@ -130,15 +129,11 @@
                             <span>Cambridge
                                 A-Levels</span>
                             <div class="desc">
-                                <ul class="whitespace-nowrap w-1/3">
+                                <ul class="whitespace-nowrap w-1/2">
                                     <li>Physics</li>
-                                    <li>Chemistry</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Chemistry</li>
                                     <li>Biology</li>
                                 </ul>
-                                <ul class="whitespace-nowrap w-1/3">
+                                <ul class="whitespace-nowrap w-1/2">
                                     <li>Mathematics</li>
                                     <li>Economics</li>
                                 </ul>
@@ -520,7 +515,7 @@
                                     </h4>
                                 </div>
                                 <h4 class="ml-10 font-newprimary text-black text-base">
-                                    {{ $item['sessions_text'] }}
+                                    {!! $item['sessions_text'] !!}
                                 </h4>
                             </div>
                         </div>
@@ -562,7 +557,7 @@
         </div>
     </div>
 
-    <section class="py-16">
+    {{-- <section class="py-16">
         <div class="flex new-main-container w-full flex-col items-center">
             <h2 class="font-bold text-4xl uppercase text-center">
                 {{ __('pages/programs/academic_tutoring.ib_extended_title') }}
@@ -605,7 +600,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="py-8 bg-bottom-sign-up-banner-2 bg-center bg-cover">
         <div class="new-main-container flex flex-col items-center">

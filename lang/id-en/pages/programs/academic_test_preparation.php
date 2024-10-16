@@ -3,7 +3,7 @@
 $our_programs = [
     [
         'title' => "Maximize Your Academic Scores",
-        'description' => "Elevate your IBDP & Cambridge IGCSE scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.",
+        'description' => "Elevate your scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.",
         'button' => "Improve Your Scores Now"
     ],
     [
@@ -66,9 +66,9 @@ return [
             'image' => "standardized test.webp",
             "points" => [
                 "SAT",
-                "IELTS",
                 "ACT",
                 "TOEFL",
+                "IELTS",
             ],
             'link' => 'sat-program',
         ],
@@ -83,12 +83,12 @@ return [
             ],
             'link' => 'skillset-tutoring-program',
         ],
-        [
-            "title" => "IB Extended Essay Coaching",
-            "desc" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
-            'image' => "IB essay.webp",
-            'link' => 'skillset-tutoring-program',
-        ],
+        // [
+        //     "title" => "IB Extended Essay Coaching",
+        //     "desc" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
+        //     'image' => "IB essay.webp",
+        //     'link' => 'skillset-tutoring-program',
+        // ],
     ],
 
     'learn_more' => "Learn More",

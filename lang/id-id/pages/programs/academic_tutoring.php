@@ -2,10 +2,10 @@
 
 return [
     'meta_title' => "Academic Tutoring Services for IB & A Level - EduALL",
-    'meta_description' => 'Tingkatkan skor IBDP & Cambridge IGCSE Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.',
+    'meta_description' => 'Tingkatkan skor Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.',
 
     'title' => 'ACADEMIC TUTORING',
-    'description' => 'Tingkatkan skor IBDP & Cambridge IGCSE Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.',
+    'description' => 'Tingkatkan skor Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami.',
     'header_button' => 'Daftar Segera!',
 
     'benefit_button' => "LEBIH DARI SEKEDAR TUTORING",
@@ -49,7 +49,7 @@ return [
     "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
     "subjects_tag" => [
         [
-            'title' => 'Grade 6-12',
+            'title' => 'Grade 9-12',
             'image' => 'start.png',
         ],
         [
@@ -68,24 +68,24 @@ return [
     'private_class_list' => [
         [
             'title' => 'BASIC',
-            'duration' => '2 Bulan',
+            'duration' => '1 Bulan',
             'duration_text' => 'Tutoring Intensif',
-            'sessions' => '5 Sesi',
-            'sessions_text' => 'berdurasi 90 menit',
+            'sessions' => '5 Jam Tutoring',
+            'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
         ],
         [
             'title' => 'PRO',
-            'duration' => '5 Bulan',
+            'duration' => '3 Bulan',
             'duration_text' => 'Tutoring Intensif',
-            'sessions' => '12 Sesi',
-            'sessions_text' => 'berdurasi 90 menit',
+            'sessions' => '10 Jam Tutoring',
+            'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
         ],
         [
             'title' => 'ELITE',
-            'duration' => '9 Bulan',
+            'duration' => '5 Bulan',
             'duration_text' => 'Tutoring Intensif',
-            'sessions' => '22 Sesi',
-            'sessions_text' => 'berdurasi 90 menit',
+            'sessions' => '15 Jam Tutoring',
+            'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
         ],
     ],
     'private_class_button' => "Learn More",

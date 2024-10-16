@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-container w-full h-[50vh] z-50 -mt-[5.5rem]">
+        <div class="main-container w-full h-[50vh] z-50 -mt-[4rem]">
             <div class="relative h-full w-full">
                 <div class="item-text opacity-0 invisible">
                     <h2 class="font-bold text-4xl text-newprimary uppercase mb-4">
@@ -330,7 +330,7 @@
         // SLIDER
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
-            type: 'slide',
+            type: 'loop',
             perPage: 1,
             perMove: 1,
             arrows: isMediumDevice ? false : true,

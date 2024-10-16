@@ -99,7 +99,7 @@
                     <div
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
-                        <div class="desc">
+                        <div class="desc mt-2">
                             <ul class="whitespace-nowrap">
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
@@ -190,7 +190,7 @@
         <div class="flex main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/sat_program.why_us_title') }}</h2>
-            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s5-table.webp') }}"
+            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/why us.webp') }}"
                 alt="EduALL Table" class="w-full h-full py-8">
         </div>
     </section>
@@ -341,7 +341,7 @@
         let s4ActiveIndex = 0;
 
         s4_item.forEach((item, it) => {
-            item.addEventListener('click', () => {
+            item.addEventListener('mouseover', () => {
                 if (it != s4ActiveIndex) {
                     s4_item[s4ActiveIndex].classList.add('sat-program-s3-inactive');
                     s4_item[s4ActiveIndex].classList.remove('sat-program-s3-active');

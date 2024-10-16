@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "Undergraduate Admissions Mentoring - EduALL Programs",
+    'meta_title' => "Graduate Admissions Mentoring - EduALL Programs",
     'meta_description' => 'We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities',
 
     'title' => "GRADUATE",
