@@ -129,13 +129,16 @@
                             <span>Cambridge
                                 A-Levels</span>
                             <div class="desc">
-                                <ul class="whitespace-nowrap w-1/2">
+                                <ul class="whitespace-nowrap w-1/3">
                                     <li>Physics</li>
                                     <li>Biology</li>
                                 </ul>
-                                <ul class="whitespace-nowrap w-1/2">
+                                <ul class="whitespace-nowrap w-1/3">
                                     <li>Mathematics</li>
                                     <li>Economics</li>
+                                </ul>
+                                <ul class="whitespace-nowrap w-1/3">
+                                    <li>Chemistry</li>
                                 </ul>
                             </div>
                             <div class="polygon bg-newprimary"></div>
