@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'meta_title' => "EduALL: Pintu gerbang Anda ke universitas ternama dan karier impian",
+    'meta_title' => "EduALL: Pintu gerbang Anda ke Universitas Ternama dan Karier Impian",
     'meta_description' => 'Kami menyediakan mentoring university admission 1 on 1, career exploration, dan program peningkatan akademis berbasis penelitian.',
     'benefit_list' => [
         [
