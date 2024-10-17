@@ -99,8 +99,7 @@
                         EduALL
                     </h2>
                     <h4 class="font-newprimary text-center md:text-left italic text-xl md:text-2xl">
-                        Integrative Mentoring and <br>
-                        Uni Prep Consultant
+                        Your Gateway to Top Universities <br> and Dream Careers
                     </h4>
                 </div>
                 <div class="flex flex-col md:w-8/12">
