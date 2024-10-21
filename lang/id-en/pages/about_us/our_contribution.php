@@ -6,7 +6,8 @@ return [
 
     // Top Section
     'title' => 'Our Contribution',
-    'body' => 'As an independent university consultant, we always give our best to help students strive into the path they aspire to in the future by having a clear career goal by choosing the right major, and getting into top universities.',
+    'body' => 'As an integrative uni-prep and mentoring service, we are dedicated to helping students achieve their future goals by establishing clear career aspirations, selecting suitable majors, and gaining admissions to top universities.',
+    "body2" => "We intend to give back to the community through the education sector.",
     'body_bold' => 'We are proud of the contribution we give to the community, especially in the education sector.',
 
     // contribution list
@@ -36,4 +37,8 @@ return [
             ],
         ],
     ],
+
+    'bottom_section' => "We believe in pursuing future leaders who are committed to making a difference.
+To foster this spirit, we offer a range of programs designed to open doors to higher
+education and empower students to become changemakers within their communities.",
 ];

@@ -93,6 +93,9 @@ module.exports = {
                 "tea-programs-header":
                     "url('../../public/assets/img/experiential_learning/Home banner teachers.webp')",
 
+                // about
+                "our-contribution-banner":  "url('../../public/assets/img/banner/Partnership.webp')",
+
                 // Blog
                 "bottom-sign-up-banner":
                     "url('../../public/assets/img/blog/detail-blog-sign-up-banner.webp')",
