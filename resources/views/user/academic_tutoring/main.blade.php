@@ -710,20 +710,26 @@
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
-            perPage: isSmallDevice ? 1 : 3,
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: false,
+            focus: 0,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
-            interval: 3000,
-            pagination: false,
+            interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });

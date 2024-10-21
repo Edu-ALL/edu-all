@@ -99,8 +99,8 @@
                     <div
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
-                        <div class="desc mt-2">
-                            <ul class="md:whitespace-nowrap">
+                        <div class="desc mt-2 overflow-auto">
+                            <ul class="">
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
                                 @endforeach
@@ -409,22 +409,27 @@
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
             type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: isMediumDevice ? false : true,
+            focus: 0,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
-            interval: 4000,
-            pagination: false,
+            interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
+                item.button.style.backgroundColor = '#0367BF';
             });
         }).mount();
     </script>

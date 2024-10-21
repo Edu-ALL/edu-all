@@ -57,7 +57,7 @@
                     <ul class="splide__list">
                         @foreach (__('pages/about_us/our_contribution.contribution_list') as $item)
                             <li class="splide__slide">
-                                <div class="splide__slide__container flex px-3">
+                                <div class="splide__slide__container flex md:px-3">
                                     <div
                                         class="bg-newprimary border-newprimary border rounded-lg p-4 hover:bg-white transition-all duration-700 group relative w-full">
                                         <div class="flex flex-col justify-between">
@@ -67,7 +67,7 @@
                                                     class="object-cover w-full h-full aspect-[3/2] group-hover:hidden">
                                             </div>
                                             <div
-                                                class="flex items-end h-36 absolute bottom-12 group-hover:bottom-[72%] transition-all duration-700 pr-4">
+                                                class="flex items-end h-36 absolute bottom-12 group-hover:bottom-[76%] transition-all duration-700 pr-4">
                                                 <h2
                                                     class="font-newprimary font-bold text-xl text-white group-hover:text-newprimary leading-6">
                                                     {{ $item['title'] }}
@@ -89,7 +89,7 @@
                                                 <div>
                                                     @foreach ($item['body'] as $body)
                                                         <p
-                                                            class="opacity-0 group-hover:opacity-100 text-black text-xs py-1 transition-all duration-500 text-justify">
+                                                            class="opacity-0 group-hover:opacity-100 text-black text-[13px] py-1 transition-all duration-500 text-justify">
                                                             {{ $body }}</p>
                                                     @endforeach
                                                 </div>
@@ -97,7 +97,8 @@
                                         </div>
                                     </div>
                                     @if ($loop->index != count(__('pages/about_us/our_contribution.contribution_list')) - 1)
-                                        <div class="w-0.5 py-8 bg-gradient-to-b from-transparent via-black to-transparent ml-6 hidden md:block">
+                                        <div
+                                            class="w-0.5 py-8 bg-gradient-to-b from-transparent via-black to-transparent ml-6 hidden md:block">
                                         </div>
                                     @endif
                                 </div>
@@ -131,7 +132,10 @@
             perMove: 1,
             lazyload: true,
             autoplay: false,
-            arrows: isSmallDevice ? true : false,
+            gap: isSmallDevice ? 20 : 0,
+            width: "100%",
+            padding: 0,
+            arrows: false,
         });
 
         splide.on('pagination:mounted', function(data) {

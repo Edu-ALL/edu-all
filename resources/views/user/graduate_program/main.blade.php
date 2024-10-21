@@ -138,8 +138,8 @@
                             <img data-original="{{ asset('assets/img/admission mentoring/Graduate/revamp/' . $item['image']) }}"
                                 alt="" class="w-full max-w-3xl object-contain">
                             <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
-                            <x-button href="{{ asset('assets/files/programs/graduate/' . $item['link']) }}"
-                                target="_blank" title="{{ $item['button'] }}" margin-top="8" />
+                            <x-button href="{{ asset('assets/files/programs/graduate/' . $item['link']) }}" target="_blank"
+                                title="{{ $item['button'] }}" margin-top="8" />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
                                 {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                 <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
@@ -276,15 +276,16 @@
                 3 : 4,
             perMove: 1,
             focus: 0,
-            arrows: true,
-            pagination:false,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
             interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {

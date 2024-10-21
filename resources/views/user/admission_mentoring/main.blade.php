@@ -59,8 +59,7 @@
                 @foreach (__('pages/programs/admission_mentoring.program_list') as $item)
                     <div class="flex flex-col w-full md:w-1/3 my-4">
                         @if ($item['is_popular'] == true)
-                            <div
-                                class="px-8 pt-5 pb-12 w-full bg-red rounded-2xl flex items-center justify-center gap-2">
+                            <div class="px-8 pt-5 pb-12 w-full bg-red rounded-2xl flex items-center justify-center gap-2">
                                 <div class="h-2 w-2 bg-newyellow rounded-full"></div>
                                 <h3 class="text-white text-lg font-bold text-center">
                                     {{ __('pages/programs/admission_mentoring.popular_choice') }}
@@ -123,8 +122,8 @@
                 <p class="text-center text-base max-w-xl mx-auto mb-8">
                     {{ __('pages/programs/admission_mentoring.why_us_description') }}
                 </p>
-                <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/admission mentoring/revamp/whyus.png') : asset('assets/img/admission mentoring/revamp/whyus-id.png') }}" alt=""
-                    class="w-full max-w-2xl object-contain">
+                <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/admission mentoring/revamp/whyus.png') : asset('assets/img/admission mentoring/revamp/whyus-id.png') }}"
+                    alt="" class="w-full max-w-2xl object-contain">
             </div>
         </div>
     </section>
@@ -188,15 +187,16 @@
                 3 : 4,
             perMove: 1,
             focus: 0,
-            arrows: true,
-            pagination:false,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
             interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {

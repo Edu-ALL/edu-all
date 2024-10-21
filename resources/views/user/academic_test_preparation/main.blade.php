@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-container w-full min-h-[50vh] z-50 md:mt-[2rem] -mt-[2rem]">
+        <div class="main-container w-full min-h-[55vh] z-50 md:mt-[2rem] -mt-[2rem]">
             <div class="relative h-full w-full">
                 <div class="item-text opacity-0 invisible">
                     <h2 class="font-bold md:text-4xl text-2xl text-center text-newprimary uppercase mb-4">
@@ -357,20 +357,25 @@
 
         new Splide(splides[1], {
             type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: isMediumDevice ? false : true,
-            pagination:false,
+            focus: 0,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
-            interval: 4000,
+            interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });
