@@ -13,10 +13,10 @@
 
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
-    <section class="h-[90%]">
+    <section class="h-[100%]">
         <div class="relative">
             @if ($banners->video_link)
-                <video class="w-full md:h-[92vh] h-[92dvh] object-cover" autoplay loop muted>
+                <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
                     <source
                         src="{{ asset('uploaded_files/banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
                         type="video/mp4">
@@ -25,7 +25,7 @@
             @elseif ($banners->image)
                 <img loading="lazy"
                     src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
-                    alt="{{ $banners->alt }}" class="w-full md:h-[92vh] h-[92dvh] object-cover">
+                    alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover">
             @endif
             <div class="absolute md:bottom-0 left-0 right-0">
                 <div class="relative h-full">
@@ -399,7 +399,7 @@
             <h1 class="font-newprimary font-bold text-4xl text-dark text-center">OUR MENTORS</h1>
         </div>
         <div class="flex flex-col items-center mt-56 lg:px-[150px] bg-[#F3F3F3] shadow-2xl">
-            <div class="w-full px-10 -mt-52 max-w-screen-2xl mx-auto">
+            <div class="new-main-container w-full px-10 -mt-52 max-w-screen-2xl mx-auto">
                 <div class="splide" role="group">
                     <div class="splide__arrows text-dark">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
@@ -622,7 +622,7 @@
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">WHAT OUR MENTEES & PARENTS
                 SAY</h2>
         </div>
-        <div class="main-container mb-12 md:my-12">
+        <div class="new-main-container mb-12 md:my-12">
             <div class="splide" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">

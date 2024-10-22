@@ -1,4 +1,4 @@
-<header class="fixed left-1/2 -translate-x-1/2 bottom-16 z-50 transition-all hidden md:block">
+<header class="fixed left-1/2 -translate-x-1/2 bottom-20 z-50 transition-all hidden md:block">
     <nav class="bg-black md:rounded-full rounded-3xl shadow-lg md:py-1">
         <div class="container mx-auto px-1">
             <div class="flex justify-between items-center w-full">

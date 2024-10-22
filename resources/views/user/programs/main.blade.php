@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <section class="-mt-16 pb-16 -z-10">
+    <section class="-z-10">
         <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
                 <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px] pt-[10vh]">

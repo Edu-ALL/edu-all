@@ -8,7 +8,7 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="-mt-16 pb-16 -z-10">
+    <section class="-z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
                 <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px]">

@@ -204,7 +204,7 @@
     {{-- @include('layout.user.navbar') --}}
     @include('layout.user.new-navbar')
 
-    <div class="mt-20">
+    <div class="mt-0">
         @yield('content')
     </div>
 
