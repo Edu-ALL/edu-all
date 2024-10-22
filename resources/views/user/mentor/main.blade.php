@@ -23,7 +23,7 @@
     </section>
 
     {{-- Mentor List Section --}} 
-    <section id="mentor" class="py-20 mt-[15rem] bg-dark">
+    <section id="mentor" class="py-20 mt-[0rem] bg-dark">
         <div class="new-main-container lg:max-w-10xl lg:mx-auto">
             {{-- <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:gap-12 h-full">
                 @foreach ($allin_mentor as $mentor)
@@ -36,10 +36,10 @@
             <div class="splide mentor-1" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                        <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
                     </button>
                     <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                        <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
                     </button>
                 </div>
                 <div class="splide__track  py-20">
@@ -57,9 +57,9 @@
         </div>
     </section>
 
-    {{-- Mentor List Section --}}
+    {{-- External Mentor List Section --}}
     <section class="pt-32 pb-10">
-        <div class=new-main-container lg:max-w-10xl lg:mx-auto flex flex-col">
+        <div class="new-main-container lg:max-w-10xl lg:mx-auto flex flex-col">
             <h2 class="mb-8 font-newprimary font-bold text-4xl text-newprimary text-center">
                 {{ __('pages/about_us/mentor.mentor_building_title') }}
             </h2>
