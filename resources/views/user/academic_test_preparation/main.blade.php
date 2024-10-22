@@ -66,14 +66,14 @@
                             </div>
                         @endforeach
                     </div>
-                    <x-button href="#academic-tutoring"
+                    <x-button href="{{ route('skillset_tutoring_program', app()->getLocale()) }}"
                         title="{{ __('pages/programs/academic_test_preparation.our_program_data.2.button') }}" />
                 </div>
 
                 <div class="item-text opacity-0 invisible">
                     <div class="font-bold md:text-6xl text-2xl text-center text-newprimary uppercase mb-4 max-w-4xl">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.3.title') }}!</div>
-                    <x-button href="#academic-tutoring"
+                    <x-button href="#start-your-journey"
                         title="{{ __('pages/programs/academic_test_preparation.our_program_data.3.button') }}" />
                 </div>
                 <div class="item-text opacity-100 visible">
@@ -81,7 +81,7 @@
                         {{ __('pages/programs/academic_test_preparation.our_program_data.0.title') }}</h2>
                     <p class="font-semibold text-center text-lg text-black max-w-2xl">
                         {{ __('pages/programs/academic_test_preparation.our_program_data.0.description') }}</p>
-                    <x-button href="{{ route('sat_program', app()->getLocale()) }}"
+                    <x-button href="{{ route('academic_tutoring', app()->getLocale()) }}"
                         title="{{ __('pages/programs/academic_test_preparation.our_program_data.0.button') }}" />
                 </div>
             </div>
@@ -125,7 +125,7 @@
         </div>
     </section>
 
-    <section class="py-12">
+    <section class="py-12 scroll-mt-10" id="start-your-journey">
         <div class="new-main-container relative">
             <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-4xl mx-auto w-full bg-newprimary rounded-2xl">
                 <div class="flex items-center justify-center gap-4 md:gap-8">

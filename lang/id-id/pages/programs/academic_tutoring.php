@@ -53,7 +53,7 @@ return [
             'image' => 'start.png',
         ],
         [
-            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level and AP Students',
+            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
             'image' => 'user.png',
         ],
         [
