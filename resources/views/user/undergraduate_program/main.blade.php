@@ -1,214 +1,234 @@
 @extends('layout.user.main')
-
 @section('head')
     <title>{{ __('pages/programs/undergraduate_program.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/undergraduate_program.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/undergraduate_program.meta_description') }}" />
 @endsection
-
 @section('content')
-    @include('layout.user.sub-navbar.admission-navbar', ['active' => 'undergraduate'])
+    {{-- @include('layout.user.sub-navbar.admission-navbar', ['active' => 'general']) --}}
 
-    {{-- ==================================== Header Section ========================================= --}}
-    <section class="py-28 bg-undergraduate-header bg-cover bg-center md:py-48 ">
-        <div class="relative main-container">
-            <div class="flex items-center gap-y-4 md:max-w-xl lg:pb-[30px]">
-                <div class="flex-col">
-                    <div class="w-full">
-                        <h4
-                            class="mb-2 font-newprimary font-semibold text-xl text-white lg:text-start text-center md:text-2xl">
-                            {{ __('pages/programs/undergraduate_program.subtitle') }}
+    {{-- ================================== Banner Section  ================================== --}}
+    <section class="py-16 h-[90vh] bg-undergraduate-header bg-cover bg-top" id="banner">
+        <div class="flex flex-col h-full items-center new-main-container py-16 gap-3">
+            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+                {{ __('pages/programs/undergraduate_program.title') }}
+            </h2>
+            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-3xl font-semibold">
+                {{ __('pages/programs/undergraduate_program.body') }}
+            </p>
+        </div>
+    </section>
 
+    {{-- ================================== Benefit Section ================================== --}}
+    <section class="py-16">
+        <div class="new-main-container">
+            <div class="flex flex-col md:flex-row items-center justify-evenly pt-4 pb-10 border-b border-b-[#DADADA] gap-8">
+                @foreach (__('pages/programs/admission_mentoring.stats') as $item)
+                    <div class="flex flex-1 flex-col items-center">
+                        <h2 class="text-newprimary font-bold text-5xl leading-10">{{ $item['title'] }}</h2>
+                        <h4 class="text-newprimary font-semibold text-lg leading-6">{{ $item['sub_title'] }}</h4>
+                        <span class="text-xs font-semibold uppercase leading-3">{{ $item['comment'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+            <div class="text-center text-lg max-w-4xl mx-auto font-semibold py-8">
+                {{ __('pages/programs/admission_mentoring.body') }}
+            </div>
+            <div class="flex flex-wrap items-center justify-evenly gap-8 pt-4">
+                @foreach (__('pages/programs/admission_mentoring.benefits') as $item)
+                    <div class="shadow-clip flex flex-col items-center">
+                        <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
+                            style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
+                            <div class="h-16 relative">
+                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <div class="absolute top-0 -right-4">
+                                    <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                        <i class="fa-solid fa-check fa-sm text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">{{ $item['title'] }}
                         </h4>
-                        <span class="flex items-center mb-5">
-                            <span class="block w-2 h-2 rounded-full bg-white"></span>
-                            <span class="block w-full h-0.5 bg-white"></span>
-                            <span class="block w-2 h-2 rounded-full bg-white"></span>
-                        </span>
+                        <span class="font-newprimary text-base font-normal text-center">{{ $item['tag'] }}</span>
                     </div>
-                    <h1
-                        class="font-newprimary font-black text-4xl text-newyellow lg:text-start text-center tracking-normal md:text-3xl lg:text-4xl xl:text-5xl">
-                        {{ __('pages/programs/undergraduate_program.title') }}
-                    </h1>
-                    <p class="mt-4 font-newprimary text-base text-white lg:text-start text-center md:text-xl md:leading-6">
-                        {{ __('pages/programs/undergraduate_program.body') }}</p>
-                </div>
-            </div>
-            <div
-                class="hidden absolute -bottom-[70%] left-[50%] max-w-full w-full px-10 -translate-x-[50%] translate-y-[50%] md:block lg:max-w-4xl">
-                <div class="w-full shadow-md rounded-3xl">
-                    <img loading="lazy" src="{{ asset('assets/img/admission mentoring/benefit.webp') }}"
-                        alt="EduALL admission mentoring benefit" class="w-full">
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    {{-- ==================================== What Will You Do Section ========================================= --}}
-    <section class="py-10 md:py-40">
-        <div class="flex flex-col w-full">
-            <div class="main-container z-10">
-                <div class="flex justify-center">
-                    <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl lg:w-2/5">
-                        {{ __('pages/programs/undergraduate_program.do_title') }}
+    <section class="py-12">
+        <div class="new-main-container">
+            <div class="new-main-container">
+                <div class="flex flex-col items-center justify-center">
+                    <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-12 uppercase">
+                        {{ __('pages/programs/admission_mentoring.what_you_will_get_title') }}
                     </h2>
                 </div>
-            </div>
-            <div class="flex flex-col items-stretch gap-6 -mt-8 pl-4 pr-4 lg:pl-0 lg:pr-20 xl:pr-40 lg:flex-row">
-                <div class="w-full min-h-full bg-undergraduate-do bg-cover bg-center rounded-r-3xl lg:w-1/2"></div>
-                <div class="flex flex-col gap-4 w-full py-12 lg:w-1/2">
-                    @foreach (__('pages/programs/undergraduate_program.do_list') as $item)
-                        <div
-                            class="flex justify-between items-stretch gap-4 w-full min-h-full bg-gradient-to-r from-[#040F37] via-primary to-[#040F37] overflow-hidden  lg:min-h-max">
-                            <div class="relative flex items-center w-1/5 min-h-full px-2 overflow-hidden lg:w-1/3 lg:px-6 ">
-                                <span
-                                    class="font-newprimary font-extrabold text-8xl md:text-9xl text-newprimary leading-none opacity-80 z-10">
-                                    {{ $loop->iteration }}
-                                </span>
-                                <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/Undergraduate' . $loop->iteration . '.webp') }}"
-                                    alt="EduALL" class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
-                            </div>
-                            <div class="flex flex-col justify-center gap-2 w-4/5 lg:w-2/3 h-full pr-10 py-3">
-                                <h4 class="font-newprimary font-semibold text-xl text-newyellow">{{ $item['title'] }}</h4>
-                                <p class="font-newprimary text-base text-white leading-4">
-                                    {{ $item['body'] }}
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- ==================================== 4 PILLARS ========================================= --}}
-    <section class="py-10">
-        <div class="main-container">
-            <div class="flex flex-col">
-                <h2 class="max-w-3xl mx-auto font-newprimary font-bold text-4xl text-newprimary text-center leading-8">
-                    {{ __('pages/programs/undergraduate_program.pilar_title') }}
-                </h2>
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                    @foreach (__('pages/programs/undergraduate_program.pilar_list') as $item)
-                        <div class="pilar_card h-72 md:h-60">
-                            <div class="front flex items-center justify-center w-full overflow-hidden">
-                                <img data-original="{{ asset('assets/img/admission mentoring/' . $item['img']) }}"
-                                    alt="4 pilar" class="w-full bg-cover bg-center">
-                            </div>
-                            <div
-                                class="back flex flex-col justify-center items-center w-full h-full px-4 bg-{{ $item['color'] }}">
-                                <h4 class="mb-4 font-newprimary font-bold text-3xl text-white text-center leading-6">
-                                    {{ $item['title'] }}</h4>
-                                <p class="font-newprimary text-base text-white text-center leading-4">{{ $item['body'] }}
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- ==================================== DREAM STUDY DESTINATION ========================================= --}}
-    <section class="py-10">
-        <div class="main-container">
-            <div class="flex flex-col items-center">
-                <h2 class="max-w-3xl mx-auto font-newprimary font-bold text-4xl text-newprimary text-center leading-8">
-                    {{ __('pages/programs/undergraduate_program.destination_title') }}
-                </h2>
-                <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-                    @foreach (__('pages/programs/undergraduate_program.destination_list') as $item)
-                        <div class="flex flex-col gap-8">
-                            <a href="{{ $item['link'] }}" target="_block" class="rounded-xl overflow-hidden">
-                                <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/' . $item['img']) }}"
-                                    alt="EduALL Dream Study Destination">
-                            </a>
-                            <p class="font-newprimary font-semibold text-newprimary text-center">{{ $item['body'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-                <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}" class="mt-12">
-                    <span
-                        class="px-6 py-2 font-newprimary font-semibold text-white text-center rounded-md bg-newyellow">{{ __('pages/programs/undergraduate_program.destination_btn') }}</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    {{-- ==================================== Why us section ========================================= --}}
-    <section class="py-10">
-        <div class="main-container">
-            <div class="flex flex-col">
-                <div class="flex justify-center">
-                    <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl lg:w-2/5">
-                        {{ __('pages/programs/undergraduate_program.why_us_title') }}
-                    </h2>
-                </div>
-                <p class="max-w-2xl my-8 mx-auto font-newprimary font-medium text-newprimary text-center">
-                    {{ __('pages/programs/undergraduate_program.why_us_desc') }}
-                </p>
-                @if (app()->getLocale() == 'id-id')
-                    <img data-original="{{ asset('assets/img/admission mentoring/Admission mentoring bahasa ver.webp') }}"
-                        alt="EduALL why us mentoring curr" class="w-full max-w-4xl mx-auto">
-                @else
-                    <img data-original="{{ asset('assets/img/admission mentoring/Admission mentoring.webp') }}"
-                        alt="EduALL why us mentoring curr" class="w-full max-w-4xl mx-auto">
-                @endif
-            </div>
-        </div>
-    </section>
-
-    {{-- ====================================  Testimonial Section ========================================= --}}
-    @if (count($testimonies) > 0)
-        <section class="py-10">
-            <div class="main-container">
-                <div class="flex flex-col">
-                    <div class="flex justify-center">
-                        <h2
-                            class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
-                            {{ __('pages/programs/undergraduate_program.testimony_title') }}
-                        </h2>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div class="w-full md:w-1/2 overflow-hidden rounded-lg">
+                        <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
+                            alt="EduALL - ilustration"
+                            class="w-full h-full object-center object-cover aspect-[7/6]">
                     </div>
-                    <div class="mt-16 splide" role="group">
-                        <div class="splide__arrows">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                                <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
-                            </button>
-                            <button class="splide__arrow splide__arrow--next"
-                                style="background: transparent; right: -48px;">
-                                <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
-                            </button>
-                        </div>
-                        <div class="splide__track">
-                            <ul class="splide__list font-newprimary text-black px-8">
-                                @foreach ($testimonies as $testi)
-                                    <li class="splide__slide w-full pb-8">
-                                        <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                            <x-testimonial-card :testimonial=$testi />
+                    <div class="w-full md:w-1/2">
+                        <ul class="flex flex-col items-start justify-center gap-3">
+                            @foreach (__('pages/programs/undergraduate_program.what_you_will_get_points') as $item)
+                                <li class="w-full">
+                                    <div
+                                        class="w-full flex items-center gap-2 rounded-xl px-4 py-2 shadow-lg what-will-you-get-item cursor-pointer {{ $loop->first ? 'bg-newprimary text-white' : '' }}">
+                                        <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                            <i class="fa-solid fa-check fa-sm text-white"></i>
+                                            <p></p>
                                         </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+                                        <h4 class="w-full text-lg font-semibold">
+                                            {{ $item['title'] }}
+                                        </h4>
+                                    </div>
+                                    <p class="text-base ml-10 mt-2 what-will-you-get-content"
+                                        style="display: {{ $loop->first ? 'block' : 'none' }};">
+                                        {{ $item['body'] }}
+                                    </p>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    @endif
+        </div>
+    </section>
 
-    {{-- ================================== Bottom Section  ================================== --}}
+    {{-- =============================== 4 ASPECTS ============================== --}}
+    <section class="py-32 md:py-12 diagonal-shape">
+        <div class="new-main-container z-50">
+            <div class="flex flex-col items-center justify-center">
+                <h2 class="font-newprimary font-bold text-white text-center text-2xl mb-4 uppercase md:leading-4">
+                    {{ __('pages/programs/admission_mentoring.four_aspect_title') }}
+                </h2>
+                <span class="font-newprimary font-bold text-newyellow text-center text-3xl md:text-4xl mb-4 uppercase md:leading-6">
+                    {{ __('pages/programs/admission_mentoring.four_aspect_subtitle') }}
+                </span>
+
+                <div class="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto relative">
+                    @foreach (__('pages/programs/admission_mentoring.four_aspect_points') as $item)
+                        <div
+                            class="bg-[#F8F5F5] py-4 rounded-lg flex flex-col gap-2 px-6 md:px-0 @if ($loop->index % 2 == 0) md:pl-6 md:pr-20 @else md:pr-6 md:pl-20 @endif">
+                            <h3 class="text-newprimary text-2xl font-bold">{{ $item['title'] }}</h3>
+                            <p class="text-base text-justify leading-5">{{ $item['body'] }}</p>
+                        </div>
+                    @endforeach
+
+                    <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/four-aspect-logo.webp') }}"
+                        alt="EduALL - ilustration"
+                        class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-full object-center object-contain aspect-square">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="pt-16 pb-20">
+        <div class="new-main-container">
+            <div class="flex flex-col items-center justify-center max-w-4xl mx-auto">
+                <h2 class="font-newprimary font-bold text-black text-center max-w-3xl text-4xl mb-4 uppercase">
+                    {{ __('pages/programs/undergraduate_program.learning_scope_title') }}
+                </h2>
+                <div class="flex flex-col md:flex-row gap-8 mt-6">
+                    @foreach (__('pages/programs/undergraduate_program.learning_scope_points') as $item)
+                        <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
+                            <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/' . $item['image']) }}"
+                                alt="" class="w-full max-w-2xl object-contain">
+                            <p class="px-2 mt-6 leading-5 text-justify">{{ $item['body'] }}</p>
+                            <x-button href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
+                                target="_blank" title="{{ $item['button'] }}" margin-top="8" />
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= OUR MENTOR SECTION ========================================== -->
+    <section class="pt-24 pb-24" id="mentors">
+        <div class="new-main-container mt-4 mb-10">
+            <h1 class="font-newprimary font-bold text-4xl text-dark text-center">
+                {{ __('pages/programs/admission_mentoring.mentor_title') }}</h1>
+            <p class="font-newprimary text-base text-dark text-center max-w-xl mx-auto">
+                {{ __('pages/programs/admission_mentoring.mentor_desc') }}
+            </p>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="w-full px-10 new-main-container">
+                <div class="splide" role="group">
+                    <div class="splide__arrows text-dark">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
+                            <i class="fa-solid fa-chevron-left text-4xl"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
+                            <i class="fa-solid fa-chevron-right text-4xl"></i>
+                        </button>
+                    </div>
+                    <div class="splide__track py-10">
+                        <ul class="splide__list">
+                            @foreach ($all_mentor as $mentor)
+                                <li class="splide__slide">
+                                    <div class="splide__slide__container px-4 pt-[2rem] w-full h-[80%] mt-32">
+                                        <x-mentor-card :mentor=$mentor />
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ route('mentor', app()->getLocale()) }}"
+                class="flex justify-center mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                {{ __('pages/programs/admission_mentoring.mentor_button') }}
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="pt-16 pb-20">
+        <div class="new-main-container">
+            <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
+                {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
+            </h2>
+
+            <div class="splide" role="group">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                    </button>
+                </div>
+                <div class="splide__track">
+                    <ul class="splide__list font-newprimary text-black px-8">
+                        @foreach ($testimonies as $testi)
+                            <li class="splide__slide w-full pb-8">
+                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
+                                    <x-testimonial-card :testimonial=$testi />
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Section -->
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
-                {{ __('pages/programs/undergraduate_program.bottom_title') }}
-                <strong class="mt-3 block lg:text-3xl text-xl text-newyellow">
-                    {{ __('pages/programs/undergraduate_program.bottom_subtitle') }}
-                </strong>
+        <div class="new-main-container flex flex-col items-center">
+            <h2 class="w-full mb-6 font-newprimary font-semibold text-white text-center lg:text-3xl text-2xl">
+                {{ __('pages/programs/admission_mentoring.bottom_section_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/programs/undergraduate_program.bottom_btn') }}" type='secondary' bg-color="red" />
+                title="{{ __('pages/programs/admission_mentoring.schedule_free_consultation') }}" type='secondary'
+                bg-color="red" />
         </div>
     </section>
 @endsection
@@ -221,25 +241,68 @@
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
+
         new Splide(splides[0], {
+            type: 'loop',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            lazyload: true,
+            autoplay: true,
+            interval: 4000,
+            pagination: false,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[90%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#D9D9D9';
+            });
+        }).mount();
+
+        new Splide(splides[1], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,
             perMove: 1,
-            arrows: isMediumDevice ? false : true,
+            focus: 0,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
-            interval: 4000,
+            interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
                 item.button.style.backgroundColor = '#0367BF';
             });
         }).mount();
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on the what-will-you-get-item div
+            $('.what-will-you-get-item').on('click', function() {
+                // Find the currently active content and close it
+                $('.what-will-you-get-content').slideUp();
+                $('.what-will-you-get-item').removeClass('bg-newprimary text-white');
+
+                // Open the clicked content
+                $(this).next('.what-will-you-get-content').slideDown();
+                $(this).addClass('bg-newprimary text-white');
+            });
+        });
     </script>
 @endpush

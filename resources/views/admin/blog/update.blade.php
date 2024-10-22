@@ -326,7 +326,11 @@
         // }
 
         ClassicEditor
-            .create(document.querySelector('.description'))
+            .create(document.querySelector('.description'), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+                }
+            })
             .then((editor) => {
                 // Function to count words
                 function countWords() {

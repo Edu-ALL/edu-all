@@ -2,7 +2,7 @@
 $our_programs = [
     [
         'title' => "Maksimalkan Nilai Akademik Anda",
-        'description' => "Tingkatkan skor IBDP & Cambridge IGCSE dan buka pintu ke universitas top dunia dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.",
+        'description' => "Tingkatkan skor Anda dan buka pintu ke universitas top dunia dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.",
         'button' => "Pelajari Lebih Lanjut tentang Academic Tutoring"
     ],
     [

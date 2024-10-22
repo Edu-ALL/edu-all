@@ -8,34 +8,53 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 bg-sat-prep-header bg-cover bg-center" id="banner">
-        <div class="flex flex-col justify-between items-center md:items-start main-container py-24 gap-8">
-            <h2 class="font-newprimary font-bold text-5xl text-white text-center">
-                {{ __('pages/programs/sat_program.title') }}</h2>
-            <p class="font-newprimary text-white text-center md:text-justify max-w-md">
+    <section class="py-16 h-[90vh] bg-sat-prep-header bg-cover bg-top" id="banner">
+        <div class="flex flex-col h-full items-center new-main-container py-24 gap-2">
+            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+                {{ __('pages/programs/sat_program.title') }}
+            </h2>
+            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-lg font-light">
                 {{ __('pages/programs/sat_program.body') }}
             </p>
-            <x-button type='secondary' href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                title="{{ __('pages/programs/sat_program.header_button') }}" />
         </div>
     </section>
 
-    {{-- SECTION 1 --}}
+    <section class="pt-16">
+        <div class="new-main-container">
+            <div class="flex flex-col justify-between gap-8 md:flex-row">
+                @foreach (__('pages/programs/sat_program.summary') as $item)
+                    <div class="flex flex-col items-center max-w-xs mx-auto">
+                        <h3 class="font-bold text-5xl text-newprimary">{{ $item['title'] }}</h3>
+                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <section class="py-16">
-        <div class="main-container max-w-screen-2xl mx-auto">
-            <div class="flex flex-wrap justify-evenly w-full gap-4 uppercase">
-                @foreach (__('pages/programs/sat_program.benefit_list') as $item)
-                    <div
-                        class="group flex flex-col polygon-shape w-36 aspect-square md:w-44 md:h-44 rounded-xl bg-newprimary group overflow-hidden">
-                        <div class="overflow-hidden h-3/5">
-                            <img src={{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s1-figure-' . $loop->iteration . '.webp') }}
-                                alt="EduALL figure"
-                                class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
+        <div class="new-main-container">
+            <div class="flex flex-wrap items-center justify-center gap-8">
+                @foreach (__('pages/programs/sat_program.benefits') as $item)
+                    <div class="shadow-clip flex flex-col items-center relative">
+                        <div class="h-full w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
+                            style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
+                            <div class="h-12 mb-2">
+                                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                            </div>
+                            <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">{{ $item['title'] }}
+                            </h4>
+                            @if (isset($item['tag']))
+                                <span class="font-newprimary text-base font-normal text-center">{{ $item['tag'] }}</span>
+                            @else
+                                <span class="h-6"></span>
+                            @endif
                         </div>
-                        <div class="flex bg-newprimary h-2/5 w-full">
-                            <h4
-                                class="font-newprimary text-xs md:text-sm text-white font-bold h-full py-1.5 pl-4 pr-6 w-36">
-                                {{ $item }}</h4>
+                        <div class="absolute -top-2 -right-2">
+                            <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                <i class="fa-solid fa-check fa-sm text-white"></i>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -43,74 +62,34 @@
         </div>
     </section>
 
-    {{-- SECTION 2 --}}
     <section class="py-16">
-        <div class="main-container  max-w-screen-2xl mx-auto">
-            <div class="flex flex-col items-center md:flex-row gap-x-16 gap-y-10">
-                <div class="w-full md:w-2/5">
-                    <div class="flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-between items-center h-60">
-                        <div class="flex flex-col items-center gap-4 group">
-                            <div
-                                class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/reading.webp') }}"
-                                    alt="EduALL icons"
-                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
+        <div class="new-main-container">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <h2 class="font-bold text-4xl uppercase text-center">
+                    {{ __('pages/programs/sat_program.subjects_title') }}
+                </h2>
+                <div class="flex flex-wrap gap-4 mt-4 justify-center">
+                    @foreach (__('pages/programs/sat_program.subjects_tag') as $item)
+                        <div class="pl-2 pr-3 py-1 rounded-md border-black border flex items-center justify-center gap-2">
+                            <div class="w-6 h-5">
+                                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/icons/' . $item['image']) }}"
+                                    alt="icons" class="w-full h-full object-contain">
                             </div>
-                            <span class="font-newprimary text-black text-lg font-semibold">Reading</span>
+                            <span class="text-semibold flex-1">{{ $item['title'] }}</span>
                         </div>
-                        <div class="flex flex-col items-center gap-4 group">
-                            <div
-                                class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/writing.webp') }}"
-                                    alt="EduALL icons"
-                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
-                            </div>
-                            <span class="font-newprimary text-black text-lg font-semibold">Writing & Language</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-x-2 gap-y-8 justify-evenly md:justify-between items-center h-60">
-                        <div class="flex flex-col items-center gap-4 group">
-                            <div
-                                class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-newprimary acad-tutor-s3-polygon flex items-center justify-center">
-                                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/mathematics.webp') }}"
-                                    alt="EduALL icons"
-                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
-                            </div>
-                            <span class="font-newprimary text-black text-lg font-semibold">Mathematics</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-4 group">
-                            <div
-                                class="transition-all duration-300 hover:md:h-48 w-32 h-32 md:w-44 md:h-36 bg-black acad-tutor-s3-polygon flex items-center justify-center">
-                                <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-icons/physics.webp') }}"
-                                    alt="EduALL icons"
-                                    class="w-12 h-12 md:w-20 md:h-20 object-contain group-hover:scale-125 transition-all duration-700">
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <span class="font-newprimary text-black text-lg font-semibold">Science*</span>
-                                <span class="font-newprimary text-black text-xs h-0">*ACT Prep Class</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                </div>
+            </div>
 
-                </div>
-                <div class="w-full md:w-3/5 relative rounded-md overflow-hidden">
-                    <div class="rounded-md bg-newred py-2 px-5 flex items-center absolute top-0 left-0 right-0"
-                        style="clip-path: polygon(0 0, 100% 0%, 100% 40%, 96% 100%, 0 100%);">
-                        <h4 class="w-1/3 font-newprimary text-white text-xs md:text-base uppercase italic">
-                            {{ __('pages/programs/sat_program.benefit_class') }}
-                        </h4>
-                        <h4 class="font-newprimary text-white text-xs md:text-base uppercase italic">
-                            {{ __('pages/programs/sat_program.benefit_class_desc') }}
-                        </h4>
-                    </div>
-                    <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s2-figure.webp') }}"
-                        alt="EduALL Figure" class="w-full h-full object-cover">
-                </div>
+            <div class="mt-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                @for ($index = 1; $index <= 4; $index++)
+                    <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/subjects/subject-' . $index . '.png') }}"
+                        class="w-full" alt="asset">
+                @endfor
             </div>
         </div>
     </section>
 
-    {{-- SECTION 3 --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
@@ -120,8 +99,8 @@
                     <div
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
-                        <div class="desc">
-                            <ul class="whitespace-nowrap">
+                        <div class="desc mt-2 overflow-auto">
+                            <ul class="">
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
                                 @endforeach
@@ -139,152 +118,70 @@
         </div>
     </section>
 
-    {{-- SECTION 4 --}}
-    <div class="py-16 flex flex-col items-center w-full">
-        <div
-            class="md:h-[70vh] w-full flex items-center justify-center bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/new-asset/s4-figure.webp')] bg-cover md:bg-center bg-bottom">
-            <div class="hidden md:flex w-full h-full items-center relative group max-w-screen-xl mx-auto">
-                <div class="w-full flex main-container z-20 py-10">
-                    <div class="flex flex-col items-start max-w-lg opacity-100 private-class transition-all duration-300">
-                        <span
-                            class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.private_class_recomendation') }}</span>
-                        <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
-                            {{ __('pages/programs/sat_program.private_class_title') }}</h3>
-                        <p class="mt-2 sfont-newprimary text-white text-base">
-                            {{ __('pages/programs/sat_program.private_class_description') }}</p>
-                        <ul>
-                            @foreach (__('pages/programs/sat_program.private_class_list') as $item)
-                                <li class="font-newprimary text-white mt-2">
-                                    <div class="flex items-center gap-3">
-                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                                fill="white" />
-                                        </svg>
-                                        <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
-                                    </div>
-                                    <p class="ml-8 text-sm">{{ $item['description'] }}</p>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <button
-                            class="slide-button-left mt-8 px-8 py-1 bg-newyellow shadow-xl rounded-lg hover:px-10 transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36"
-                                fill="#0000FF">
-                                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
-                            </svg>
-                        </button>
+    <div class="py-16">
+        <div class="new-main-container">
+            <div class="flex max-w-4xl mx-auto w-full flex-col items-center relative">
+                <div
+                    class="absolute top-0 left-0 right-0 px-8 py-8 h-[105%] md:h-2/3 max-w-2xl mx-auto w-full bg-newprimary rounded-2xl -z-10">
+                    <div class="flex items-center justify-center gap-4 md:gap-8">
+                        <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                        <h3 class="text-white text-2xl md:text-3xl font-bold text-center">
+                            {{ __('pages/programs/academic_tutoring.private_class_title') }}
+                        </h3>
+                        <div class="h-2 w-2 bg-newyellow rounded-full"></div>
                     </div>
-                    <div
-                        class="flex w-full flex-col items-start max-w-lg opacity-0 -translate-x-2/3 pl-4 semi-private-class transition-all duration-700">
-                        <span
-                            class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                            style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.semi_private_class_recomendation') }}</span>
-                        <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
-                            {{ __('pages/programs/sat_program.semi_private_class_title') }}</h3>
-                        <p class="mt-2 sfont-newprimary text-white text-base">
-                            {{ __('pages/programs/sat_program.semi_private_class_description') }}</p>
-                        <ul>
-                            @foreach (__('pages/programs/sat_program.semi_private_class_list') as $item)
-                                <li class="font-newprimary text-white mt-2">
-                                    <div class="flex items-center gap-3">
-                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                                fill="white" />
-                                        </svg>
-                                        <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
-                                    </div>
-                                    <p class="ml-8 text-sm">{{ $item['description'] }}</p>
-                                    @if ($loop->index == 0)
-                                        <div class="mt-2 w-full flex items-center justify-center">
-                                            <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}"
-                                                target="_blank"
-                                                class="bg-newred font-semibold text-xs py-1 px-2 hover:bg-black hover:px-5 transition-all duration-150">{{ $item['btn'] }}</a>
+                </div>
+                <div class="flex flex-col w-full md:flex-row gap-8 mt-32 md:mt-24 px-4 md:px-0">
+                    @foreach (__('pages/programs/sat_program.class_list') as $item)
+                        <div class="rounded-md bg-white flex flex-col w-full shadow-xl py-4 px-8">
+                            <h4 class="font-newprimary font-bold text-black text-center text-4xl uppercase py-2">
+                                {{ $item['title'] }}
+                            </h4>
+                            <span class="text-red font-bold text-xl text-center my-1"> {{ $item['recomendation'] }}</span>
+                            <span class="mt-2 text-sm text-center">{{ $item['description'] }}</span>
+                            <div class="flex-1">
+                                @foreach ($item['list'] as $list_item)
+                                    <div class="flex justify-between w-full mt-2">
+                                        <div class="flex flex-col items-center">
+                                            <div class="flex items-center gap-4 w-full">
+                                                <div
+                                                    class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                                    <i class="fa-solid fa-check fa-base text-white"></i>
+                                                </div>
+                                                <h4 class="font-newprimary font-semibold text-black text-base">
+                                                    {{ $list_item['title'] }}
+                                                </h4>
+                                            </div>
+                                            <h4 class="ml-9 font-newprimary text-black text-sm font-light italic">
+                                                {{ $list_item['description'] }}
+                                            </h4>
+                                            @if (isset($list_item['btn']))
+                                                <x-button href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}"
+                                                    title="{{ $list_item['btn'] }}" bg-color="newprimary" padding-x="2"
+                                                    padding-y="1" margin-top="2" font-size="sm" color="black"
+                                                    bg-color="newyellow" target="_blank" />
+                                            @endif
                                         </div>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                        <button
-                            class="slide-button-right rotate-180 mt-8 px-8 py-1 bg-newyellow shadow-xl rounded-lg hover:px-10 transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960"
-                                width="36" fill="#0000FF">
-                                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="slide-background absolute bg-newprimary w-[200%] h-full -translate-x-[68%] ease-in-out transition-all duration-1000"
-                    style="clip-path: polygon(11% 0%, 100% 0%, 89% 100%, 0% 100%);"></div>
-            </div>
-            {{-- MOBILE --}}
-            <div class="flex flex-col md:hidden h-full gap-y-8">
-                <div class="flex flex-col items-center max-w-lg bg-newprimary main-container  py-12 ">
-                    <span
-                        class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                        style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.private_class_recomendation') }}</span>
-                    <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
-                        {{ __('pages/programs/sat_program.private_class_title') }}</h3>
-                    <p class="mt-2 sfont-newprimary text-white text-base text-center md:text-left">
-                        {{ __('pages/programs/sat_program.private_class_description') }}</p>
-                    <ul>
-                        @foreach (__('pages/programs/sat_program.private_class_list') as $item)
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
-                                </div>
-                                <p class="ml-8 text-sm">{{ $item['description'] }}</p>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="flex w-full flex-col items-center max-w-lg mt-12 bg-newprimary main-container  py-12 ">
-                    <span
-                        class="block font-newprimary text-lg md:text-lg font-bold text-white py-1 px-8 bg-black uppercase"
-                        style="clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);">{{ __('pages/programs/sat_program.private_class_recomendation') }}</span>
-                    <h3 class="mt-6 font-newprimary font-semibold text-white text-4xl">
-                        {{ __('pages/programs/sat_program.semi_private_class_title') }}</h3>
-                    <p class="mt-2 sfont-newprimary text-white text-base">
-                        {{ __('pages/programs/sat_program.semi_private_class_description') }}</p>
-                    <ul>
-                        @foreach (__('pages/programs/sat_program.semi_private_class_list') as $item)
-                            <li class="font-newprimary text-white mt-2">
-                                <div class="flex items-center gap-3">
-                                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM15.871 6.835C15.9178 6.78681 15.9544 6.72968 15.9786 6.66703C16.0028 6.60439 16.0142 6.5375 16.012 6.47037C16.0098 6.40324 15.9941 6.33725 15.9658 6.27632C15.9375 6.21539 15.8973 6.16078 15.8474 6.11575C15.7976 6.07072 15.7392 6.03619 15.6757 6.01423C15.6123 5.99227 15.545 5.98331 15.478 5.98791C15.411 5.99251 15.3456 6.01056 15.2857 6.04098C15.2259 6.07141 15.1727 6.11359 15.1295 6.165L9.14 12.7835L5.845 9.638C5.74912 9.54637 5.62077 9.49658 5.48819 9.49958C5.3556 9.50258 5.22963 9.55812 5.138 9.654C5.04637 9.74988 4.99658 9.87823 4.99958 10.0108C5.00258 10.1434 5.05812 10.2694 5.154 10.361L8.821 13.861L9.1925 14.216L9.537 13.835L15.871 6.835Z"
-                                            fill="white" />
-                                    </svg>
-                                    <h6 class="text-lg font-semibold">{{ $item['title'] }}</h6>
-                                </div>
-                                <p class="ml-8 text-sm">{{ $item['description'] }}</p>
-                                @if ($loop->index == 0)
-                                    <div class="mt-2 w-full flex items-center justify-center">
-                                        <a href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}"
-                                            target="_blank"
-                                            class="bg-newred font-semibold text-xs py-1 px-2 hover:bg-black hover:px-5 transition-all duration-150">{{ $item['btn'] }}</a>
                                     </div>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
+                                @endforeach
+                            </div>
+                            <div class="flex-1 text-center flex flex-col justify-end">
+                                <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                                    title="{{ __('pages/programs/academic_test_preparation.lets_start') }}"
+                                    bg-color="newprimary" padding-x="8" padding-y="1.5" />
+                                <span class="mt-1 text-sm text-[#9C9C9C] text-center">
+                                    {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
+                                    <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                                        class="underline text-newprimary hover:text-black">
+                                        {{ __('pages/programs/admission_mentoring.book_now') }}
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-        <div class="main-container">
-            <x-button href="{{ route('sign_me_sat_prep', app()->getLocale()) }}" type='primary'
-                title=" {{ __('pages/programs/sat_program.private_semi_private_button') }}" />
+
         </div>
     </div>
 
@@ -293,26 +190,23 @@
         <div class="flex main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/sat_program.why_us_title') }}</h2>
-            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s5-table.webp') }}"
+            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/why us.webp') }}"
                 alt="EduALL Table" class="w-full h-full py-8">
         </div>
     </section>
 
-    {{-- SECTION 6 --}}
-    <section
-        class="py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/new-asset/s6-background.webp')] bg-newprimary bg-bottom bg-cover  bg-blend-multiply">
-        <div class="flex main-container flex-col items-center justify-center gap-y-8 md:flex-row">
-            @foreach (__('pages/programs/sat_program.info_list') as $item)
-                <div class="w-full md:w-1/4 flex flex-col items-center">
-                    <h3 class="text-newyellow font-bold text-[52px] leading-10">{{ $item['quantity'] }}</h3>
-                    <h4 class="text-white font-semibold text-xl uppercase mt-2">{{ $item['body'] }}</h4>
-                    <span class="text-white text-sm">{{ $item['span'] }}</span>
-                </div>
-            @endforeach
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
+        <div class="main-container flex flex-col items-center">
+            <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
+                {{ __('pages/programs/sat_program.free_trial_title') }}
+            </h2>
+            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
+                class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150">
+                {{ __('pages/programs/sat_program.free_trial_button') }}
+            </a>
         </div>
     </section>
 
-    {{-- SECTION 7 --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
@@ -333,7 +227,7 @@
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full pb-8">
                                 <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                    <x-testimonial-card :testimonial=$testi/>
+                                    <x-testimonial-card :testimonial=$testi />
                                 </div>
                             </li>
                         @endforeach
@@ -343,87 +237,83 @@
         </div>
     </section>
 
-    {{-- SECTION 8 --}}
-    <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
-            <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
-                {{ __('pages/programs/sat_program.free_trial_title') }}
-            </h2>
-            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150">
-                {{ __('pages/programs/sat_program.free_trial_button') }}
-            </a>
-        </div>
-    </section>
-
-    {{-- SECTION 9 --}}
     <section
-        class="mt-16 py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/new-asset/s9-background.webp')] bg-cover bg-center">
-        <div class="flex flex-col justify-between items-center md:items-start main-container py-16 gap-8">
-            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-white text-center md:text-left max-w-xl">
+        class="mt-12 py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/revamp/banner-bottom.webp')] bg-cover bg-center">
+        <div class="flex flex-col justify-center items-center new-main-container py-16 gap-2">
+            <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-white text-center md:text-left">
                 {{ __('pages/programs/sat_program.banner2_title') }}</h2>
-            <p class="font-newprimary text-white text-center md:text-justify max-w-md">
+            <p class="font-newprimary text-white text-center md:text-justify">
                 {{ __('pages/programs/sat_program.banner2_body') }}
             </p>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="mt-8 bg-black text-white font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">{{ __('pages/programs/sat_program.banner2_button') }}</a>
+                class="mt-8 bg-white text-red font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">{{ __('pages/programs/sat_program.banner2_button') }}</a>
         </div>
     </section>
 
-    {{-- SECTION 10 --}}
-    <section class="py-16">
-        <div class="flex main-container w-full flex-col items-center">
-            <div class="flex flex-col md:flex-row w-full mt-12 md:gap-12">
-                <div class="w-full md:block md:w-1/2 rounded-lg overflow-hidden">
-                    <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s10-figure.webp') }}"
-                        alt="EduALL figure" class="h-full object-cover hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="w-full md:w-1/2">
-                    @foreach (__('pages/programs/sat_program.benefit2_list') as $item)
-                        <div class="flex flex-col pt-4  items-center md:items-start">
-                            <span
-                                class="bg-newprimary px-6 py-0.5 italic text-center md:text-start font-semibold font-newprimary text-white text-lg"
-                                style="clip-path: {{ $item['polygon'] }};">{{ $item['title'] }}</span>
-                            <p class="md:pl-6 font-newprimary text-black text-center md:text-start text-base mt-1">
-                                {{ $item['description'] }}</p>
+    <section class="pt-24 pb-12">
+        <div class="new-main-container">
+            <div class="flex flex-col md:flex-row gap-12 max-w-4xl mx-auto items-center">
+                <div class="w-full md:w-1/3 flex flex-col gap-0.5">
+                    @foreach (__('pages/programs/sat_program.support_list') as $item)
+                        <div class="rounded-sm bg-[#393636] w-full px-2 py-1 text-white uppercase font-semibold">
+                            {{ $item }}
                         </div>
                     @endforeach
                 </div>
+                <div class="w-full md:w-2/3">
+                    <div class="flex flex-col items-center text-center shadow-md py-4 rounded-sm bg-[#D9D9D9] relative">
+                        <span>
+                            {!! __('pages/programs/sat_program.support_desc') !!}
+                        </span>
+                        <div class="w-7 h-7 absolute -top-4 -left-4">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/warning.webp') }}"
+                                alt="asset">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- SECTION 11 --}}
-    <section class="py-24">
+    <section class="py-10">
         <div class="flex main-container w-full flex-col items-center">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/sat_program.support_title') }}</h2>
-            <div class="flex flex-col md:flex-row items-center justify-center mt-12 gap-8">
-                @foreach (__('pages/programs/sat_program.support_list') as $item)
-                    <div
-                        class="flex flex-col polygon-shape w-1/2 md:w-1/4 aspect-square rounded-xl bg-newprimary group overflow-hidden">
-                        <div class="overflow-hidden h-3/5">
-                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/new-asset/s11-figure-' . $loop->iteration . '.webp') }}"
-                                alt="EduALL figure"
-                                class="w-full h-full object-bottom object-cover bg-newprimary group-hover:scale-110 transition-all duration-500">
+            <div class="flex flex-wrap gap-4 mt-4 justify-center">
+                @foreach (__('pages/programs/sat_program.supports_tag') as $item)
+                    <div class="pl-2 pr-3 py-1 rounded-md border-black border flex items-center justify-center gap-2">
+                        <div class="w-6 h-5">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/icons/' . $item['image']) }}"
+                                alt="icons" class="w-full h-full object-contain">
                         </div>
-                        <div class="flex bg-newprimary h-2/5 w-full">
-                            <h4
-                                class="font-newprimary text-sm md:text-xl uppercase md:leading-6 text-white font-semibold h-full md:pt-2 pl-2 md:pl-4 pr-6 w-52">
-                                {!! $item !!}</h4>
-                        </div>
+                        <span class="text-semibold flex-1">{{ $item['title'] }}</span>
                     </div>
                 @endforeach
             </div>
-            <div class="flex flex-col items-center text-center mt-20">
-                {!! __('pages/programs/sat_program.support_desc') !!}
+            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                @foreach (__('pages/programs/sat_program.benefit2_list') as $item)
+                    <div class="p-2 w-full h-full">
+                        <div class="flex flex-col items-start border border-black p-4 rounded-xl h-full">
+                            <div class="flex items-center justify-start gap-2 flex-1">
+                                <div class="w-10 h-10">
+                                    <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/supports/support-' . $loop->iteration . '.png') }}"
+                                        alt="" class="w-full h-full object-contain">
+                                </div>
+                                <h4 class="font-semibold text-lg leading-6 flex-1">{!! $item['title'] !!}</h4>
+                            </div>
+                            <div class="flex-1 mt-2">
+                                <p class="text-justify mt-2 text-sm">{{ $item['description'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
     {{-- SECTION 12 --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
+        <div class="new-main-container flex flex-col items-center">
             <h2 class="font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
                 {{ __('pages/programs/sat_program.free_trial2_title') }}
             </h2>
@@ -451,7 +341,7 @@
         let s4ActiveIndex = 0;
 
         s4_item.forEach((item, it) => {
-            item.addEventListener('click', () => {
+            item.addEventListener('mouseover', () => {
                 if (it != s4ActiveIndex) {
                     s4_item[s4ActiveIndex].classList.add('sat-program-s3-inactive');
                     s4_item[s4ActiveIndex].classList.remove('sat-program-s3-active');
@@ -519,21 +409,27 @@
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
             type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
             perMove: 1,
-            arrows: isMediumDevice ? false : true,
+            focus: 0,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
             autoplay: true,
             lazyload: true,
-            interval: 4000,
+            interval: 5000,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            data.list.classList.add('top-[100%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
+                item.button.style.backgroundColor = '#0367BF';
             });
         }).mount();
     </script>

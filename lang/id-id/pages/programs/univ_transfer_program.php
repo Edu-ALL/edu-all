@@ -4,18 +4,11 @@ return [
     'meta_title' => "Program Mentoring Pemindahan Universitas - EduALL Programs",
     'meta_description' => 'Pindah ke universitas impianmu dengan mudah bersama program mentoring penerimaan EduALL untuk mahasiswa transfer. Dapatkan panduan profesional dan dukungan penuh. Daftar sekarang',
 
-    // banner section
-    "subtitle" => "UNIVERSITY ADMISSION MENTORING",
-    "title" => "UNIVERSITY TRANSFER",
-    "body" => "Kami menawarkan layanan bimbingan pendaftaran universitas 1-on-1 yang akan berfungsi sebagai panduan akademis bagi siswa community college atau universitas untuk pindah ke universitas impian mereka.",
+    'title' => "UNIVERSITY TRANSFER",
+    'body' => "UNIVERSITY ADMISSION MENTORING",
 
-    "benefits" => [
-        '1-on-1 Mentoring', 'Personalized Strategy Plan', ' Well-Rounded Support', 'Proven Track Record'
-    ],
-
-    // what will you do
-    'do_title' => "APA YANG AKAN ANDA DAPATKAN",
-    'do_list' => [
+    "what_you_will_get_title" => "APA YANG AKAN ANDA DAPATKAN",
+    "what_you_will_get_points" => [
         [
             'title' => 'Riset & Strategi Pemilihan Universitas yang Mendalam',
             'body' => 'Pahami konsep inti dari jurusan yang kamu tuju dan susun strategi pada universitas target.',
@@ -42,68 +35,16 @@ return [
         ],
     ],
 
-    // 4 Pilar
-    'pilar_title' => 'PROSES TRANSFER UNIVERSITAS ANDA MELALUI 4 PILAR',
-    'pilar_list' => [
+    "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
+    "learning_scope_points" => [
         [
-            'title' => 'Academics',
-            'body' => 'Analyzing overall grades, course rigor at school and the required standardized tests to match with the targeted universities’ level of competitiveness',
-            'img' => 'ACADEMICS.webp',
-            'color' => 'primary'
-        ],
-        [
-            'title' => 'Exploration',
-            'body' => 'Exploration is essential to identify what to pursue in the future and, therefore, allows student to choose the right major',
-            'img' => 'EXPLO.webp',
-            'color' => 'primary'
-        ],
-        [
-            'title' => 'Personal Brand',
-            'body' => 'The impactful aspect that makes a student’s qualities stand out in admission',
-            'img' => 'PERSONAL BRAND.webp',
-            'color' => 'yellow'
-        ],
-        [
-            'title' => 'Writing Skills & University Application',
-            'body' => ' A required skill needed to clearly communicate student’s personal brand in university application and for university study',
-            'img' => 'WRITING.webp',
-            'color' => 'yellow'
-        ],
-    ],
-    'pilar_desc' => 'Program University Transfer Admission Mentoring menawarkan pendekatan yang berbeda dari program penerimaan universitas biasa. Di sini, siswa tidak hanya dapat memilih mata kuliah khusus untuk proses transfer mereka, tetapi juga membangun jaringan dan meningkatkan resume mereka melalui berbagai aktivitas berdasarkan minat mereka sambil memenuhi proses aplikasi transfer universitas.',
-    'pilar_btn' => 'Lihat silabus pembelajaran lengkap di sini',
-
-    // why us
-    'why_us_title' => "KENAPA PILIH KAMI?",
-    'why_us_desc' => 'Mentor kami hadir untuk mendukung mahasiswa yang berniat untuk mentransfer dari community college ke universitas atau dari satu universitas ke universitas lain melalui strategi mentoring khusus dan terbukti dari kami.',
-
-    // testimony section
-    "testimony_title" => "APA YANG MEREKA KATAKAN",
-    "testimony_list" => [
-        [
-            'name' => 'Rachinta Marpaung',
-            'univ' => 'Columbia University',
-            'body' => 'EduALL has helped me tremendously throughout my uni application endeavors. From brainstorming essay ideas to editing the essays, to helping find internships, EduALL has made the process so easy while ensuring my uni application is of top-notch quality. Also, the mentors are really hip and cool, so they’re really approachable! ',
-        ],
-        [
-            'name' => 'Helena Helga',
-            'univ' => 'Penn State University',
-            'body' => 'When the time came to start applying to universities, my mentor was helpful in every step of the way. Whenever I felt confused or didn’t know what to do, I could always turn to my mentor.',
-        ],
-        [
-            'name' => 'Nathasya Tiaraputri',
-            'univ' => 'Hong Kong University of Science and Technology',
-            'body' => 'EduALL definitely opened my eyes. I was a G11, still trying to figure out the exact major I want to take, and after I met my mentor for the first time and started talking, I realized that there were so many steps in an application for uni! I thought it was just submitting my reports, my A-level grades later and an “essay”, like I didn’t even know the difference between a personal statement and an essay or a CV. So I definitely feel more at ease throughout G12 knowing that I’m on the right track, and I didn’t have to panic as much because any question I have immediately went to my mentor!',
-        ],
-        [
-            'name' => 'Ramzi Putera Faisal',
-            'univ' => 'Tokyo International University',
-            'body' => 'My earliest struggle is about what needs to be done regarding my uni prep. I don’t even know how to start one. But after getting thorough guidance from my mentor, I now know what I need to do and how to do it. Thanks EduALL!',
+            "image" => 'transfer_learning_scope.webp',
+            "body" => "Program University Transfer Admission Mentoring menawarkan pendekatan yang berbeda dari program penerimaan universitas biasa. Di sini, siswa tidak hanya dapat memilih mata kuliah khusus untuk proses transfer mereka, tetapi juga membangun jaringan dan meningkatkan resume mereka melalui berbagai aktivitas berdasarkan minat mereka sambil memenuhi proses aplikasi transfer universitas.",
+            "button" => "Lihat silabus pembelajaran",
+            "link" => "Scope transfer mentoring (transfer).pdf",
         ],
     ],
 
-    // bottom section
-    "bottom_title" => "Setiap tahun, 150+ mentee kami berhasil masuk ke universitas impian mereka.",
-    "bottom_subtitle" => "Saatnya giliran Anda.",
-    "bottom_btn" => "Buat Janji Initial Consultation GRATIS Anda",
+    "bottom_section_title" => "Every year, 150+ of our mentees have gotten into their dream universities. It’s time for your turn.",
+    "bottom_section_button" => "Schedule Your FREE Initial Consultation",
 ];

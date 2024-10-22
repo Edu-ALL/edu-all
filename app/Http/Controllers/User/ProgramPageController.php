@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Guidebooks;
+use App\Models\Mentors;
 use App\Models\Testimonials;
 use App\Models\Tutors;
 use Illuminate\Http\Request;
@@ -31,10 +32,17 @@ class ProgramPageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'Undergraduate Program');
 
+        // Mentor
+        $all_mentor = Mentors::all()
+            ->where('mentor_category', 'ALL-In Mentor')
+            ->where('mentor_status', 'active')
+            ->where('lang', $lang);
+
         return view(
             'user.undergraduate_program.main',
             [
                 'testimonies' => $testimonies,
+                'all_mentor' => $all_mentor,
             ]
         );
     }
@@ -44,8 +52,15 @@ class ProgramPageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'Graduate Program');
 
+        // Mentor
+        $all_mentor = Mentors::all()
+            ->where('mentor_category', 'ALL-In Mentor')
+            ->where('mentor_status', 'active')
+            ->where('lang', $lang);
+
         return view('user.graduate_program.main', [
-            'testimonies' => $testimonies
+            'testimonies' => $testimonies,
+            'all_mentor' => $all_mentor,
         ]);
     }
 
@@ -54,8 +69,15 @@ class ProgramPageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Admissions Mentoring')->where('testi_subcategory', 'University Transfer Program');
 
+        // Mentor
+        $all_mentor = Mentors::all()
+            ->where('mentor_category', 'ALL-In Mentor')
+            ->where('mentor_status', 'active')
+            ->where('lang', $lang);
+
         return view('user.univ_transfer_program.main', [
-            'testimonies' => $testimonies
+            'testimonies' => $testimonies,
+            'all_mentor' => $all_mentor,
         ]);
     }
 
@@ -119,7 +141,8 @@ class ProgramPageController extends Controller
         ]);
     }
 
-    public function exclusive_program_school($locale) {
+    public function exclusive_program_school($locale)
+    {
         $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Exclusive Program School');
 
@@ -129,15 +152,18 @@ class ProgramPageController extends Controller
         ]);
     }
 
-    public function admission_accelerator() {
+    public function admission_accelerator()
+    {
         return view('user.admission_accelerator.main');
     }
 
-    public function experiential_learning() {
+    public function experiential_learning()
+    {
         return view('user.experiential_learning.main');
     }
 
-    public function teacher_focused() {
+    public function teacher_focused()
+    {
         return view('user.teacher_focused.main');
     }
 

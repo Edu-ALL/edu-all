@@ -66,6 +66,7 @@ Route::middleware('auth.expires')->group(function () {
         // Blog
         Route::get('/blogs', [Blog::class, 'index']);
         Route::get('/blogs/data', [Blog::class, 'getBlog'])->name('data-blogs');
+        Route::post('/blogs/upload_image', [Blog::class, 'uploadImage'])->name('ckeditor.upload');
         Route::get('/blogs/create', [Blog::class, 'create']);
         Route::post('/blogs', [Blog::class, 'store'])->name('create-blogs');
         Route::get('/blogs/{id}/view', [Blog::class, 'view']);

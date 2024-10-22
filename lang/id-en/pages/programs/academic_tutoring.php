@@ -5,10 +5,25 @@ return [
     'meta_description' => 'Get the best academic tutoring services with EduALL. We offer private tutoring, online tutoring, and tutoring programs for students',
 
     'title' => 'ACADEMIC TUTORING',
-    'description' => 'Elevate your IBDP & Cambridge IGCSE scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.',
+    'description' => 'Elevate your scores to unlock top university offers with our comprehensive academic tutoring.',
     'header_button' => 'Register Here',
 
-    'benefit_button' => "MORE THAN JUST TUTORING",
+    'summary' => [
+        [
+            'title' => '97%',
+            'sub_title' => 'of our A-Level Students <br/> earned A and A+'
+        ],
+        [
+            'title' => '98%',
+            'sub_title' => 'of our IB Students boosted their scores by 2 - 3 points and greater'
+        ],
+        [
+            'title' => '100%',
+            'sub_title' => 'Exam Success Rate'
+        ]
+    ],
+
+    'benefit_title' => "MORE THAN JUST TUTORING",
     'benefit_section' => [
         [
             'title' => "Discover Your Path",
@@ -45,30 +60,47 @@ return [
         "Dynamic",
     ],
 
+    "subjects_title" =>  "SUBJECTS",
+    "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
+    "subjects_tag" => [
+        [
+            'title' => 'Grade 9-12',
+            'image' => 'start.png',
+        ],
+        [
+            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
+            'image' => 'user.png',
+        ],
+        [
+            'title' => 'Private Class',
+            'image' => 'people.png',
+        ],
+    ],
+
     // PRIVATE CLASS
-    'private_class_title' => 'PRIVATE CLASS',
+    'private_class_title' => 'Choose Your Private Class',
     'private_class_description' => 'Private class with 3 different packages that you can choose',
     'private_class_list' => [
         [
             'title' => 'BASIC',
-            'duration' => '2 Month',
+            'duration' => '1 Months',
             'duration_text' => 'Intensive Tutoring',
-            'sessions' => '5 Sessions',
-            'sessions_text' => 'Up to 90 Minutes',
+            'sessions' => '5 Hours Tutoring',
+            'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
         [
             'title' => 'PRO',
-            'duration' => '5 Month',
+            'duration' => '3 Months',
             'duration_text' => 'Intensive Tutoring',
-            'sessions' => '12 Sessions',
-            'sessions_text' => 'Up to 90 Minutes',
+            'sessions' => '10 Hours Tutoring',
+            'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
         [
             'title' => 'ELITE',
-            'duration' => '9 Month',
+            'duration' => '5 Months',
             'duration_text' => 'Intensive Tutoring',
-            'sessions' => '22 Sessions',
-            'sessions_text' => 'Up to 90 Minutes',
+            'sessions' => '15 Hours Tutoring',
+            'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
     ],
     'private_class_button' => "Learn More",
@@ -101,10 +133,29 @@ return [
 
     'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
     'ib_extended_description' => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
-    'ib_extended_tag' => [
-        "FOR IB DIPLOMA STUDENTS",
-        "GRADE 12",
+    "ib_extended_tag" => [
+        [
+            'title' => 'Grade 12',
+            'image' => 'start.png',
+        ],
+        [
+            'title' => 'Online Class',
+            'image' => 'network.png',
+        ],
+        [
+            'title' => 'Private Class',
+            'image' => 'people.png',
+        ],
+        [
+            'title' => 'Flexible Starting Time',
+            'image' => 'calendar.png',
+        ],
+        [
+            'title' => 'Unlimited On-Demand Support',
+            'image' => 'hand-ball.png',
+        ]
     ],
+    'ib_extended_topic_title' => "Topics Covered",
     'ib_extended_topic' => [
         'How to Start and Find the Right EE Topic ',
         'Construct a Bulletproof Research Question ',

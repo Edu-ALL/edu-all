@@ -50,43 +50,47 @@ return [
         ],
     ],
 
-    'private_class_recomendation' => 'Direkomendasikan untuk Kelas 12',
-    'private_class_title' => 'KELAS PRIVAT',
-    'private_class_description' => '26 atau 36 jam sesi 1:1 dengan tutor ahli SAT/ACT kami. ',
-    'private_class_list' => [
+    'class_list' => [
         [
-            'title' => 'TAILOR-MADE CURRICULUM',
-            'description' => 'Jadwal belajar individual dirancang untuk memaksimalkan kemampuan kamu.',
+            'title' => 'KELAS PRIVAT',
+            'description' => '26 atau 36 jam sesi 1:1 dengan tutor ahli SAT/ACT kami. ',
+            'recomendation' => 'Direkomendasikan untuk Kelas 12',
+            'list' => [
+                [
+                    'title' => 'TAILOR-MADE CURRICULUM',
+                    'description' => 'Jadwal belajar individual dirancang untuk memaksimalkan kemampuan kamu.',
+                ],
+                [
+                    'title' => 'ON-DEMAND SCHEDULE',
+                    'description' => 'Mulailah perjalanan kamu segera dengan waktu yang dapat diadaptasi. ',
+                ],
+                [
+                    'title' => 'PROGRESS TRACKING',
+                    'description' => 'Pantau peningkatan melalui hasil tes latihan dan terima pembaruan orang tua sesuai permintaan. ',
+                ],
+            ],
         ],
         [
-            'title' => 'ON-DEMAND SCHEDULE',
-            'description' => 'Mulailah perjalanan kamu segera dengan waktu yang dapat diadaptasi. ',
-        ],
-        [
-            'title' => 'PROGRESS TRACKING',
-            'description' => 'Pantau peningkatan melalui hasil tes latihan dan terima pembaruan orang tua sesuai permintaan. ',
+            'title' => 'KELAS SEMI-PRIVAT',
+            'description' => 'Sesi 40 jam atau 56 jam dengan kelompok kecil, maksimal 4 siswa dengan tutor ahli SAT/ACT kami.',
+            'recomendation' => 'Direkomendasikan untuk Kelas 10-11',
+            'list' => [
+                [
+                    'title' => 'CURATED & PROVEN CURRICULUM ',
+                    'description' => 'Rencana studi yang dirancang dengan cermat yang mencakup review Diagnostic Test, pendalaman materi, dan latihan SAT/ACT resmi.',
+                    'btn' => 'Lihat kurikulum lengkap di sini',
+                ],
+                [
+                    'title' => 'ACCESS ANYWHERE',
+                    'description' => 'Kami akan datang kepada kamu! Kelas daring yang menarik juga tersedia. ',
+                ],
+                [
+                    'title' => 'SUPPLEMENTAL VIDEOS',
+                    'description' => 'Video tambahan tersedia untuk membantu kamu memahami konsep lebih dalam. Tonton di mana saja, kapan saja.',
+                ],
+            ],
         ],
     ],
-    'semi_private_class_recomendation' => 'Direkomendasikan untuk Kelas 10-11',
-    'semi_private_class_title' => 'KELAS SEMI-PRIVAT',
-    'semi_private_class_description' => 'Sesi 40 jam atau 56 jam dengan kelompok kecil, maksimal 4 siswa dengan tutor ahli SAT/ACT kami.',
-    'semi_private_class_list' => [
-        [
-            'title' => 'CURATED & PROVEN CURRICULUM ',
-            'description' => 'Rencana studi yang dirancang dengan cermat yang mencakup review Diagnostic Test, pendalaman materi, dan latihan SAT/ACT resmi.',
-            'btn' => 'Lihat kurikulum lengkap di sini',
-        ],
-        [
-            'title' => 'ACCESS ANYWHERE',
-            'description' => 'Kami akan datang kepada kamu! Kelas daring yang menarik juga tersedia. ',
-        ],
-        [
-            'title' => 'SUPPLEMENTAL VIDEOS',
-            'description' => 'Video tambahan tersedia untuk membantu kamu memahami konsep lebih dalam. Tonton di mana saja, kapan saja.',
-        ],
-    ],
-
-    'private_semi_private_button' => "Ambil SAT Diagnostic Test GRATIS",
 
     'why_us_title' => "KENAPA PILIH KAMI?",
 
@@ -137,21 +141,21 @@ return [
 
     'support_title' => 'DUKUNGAN APA YANG AKAN KAMI BERI',
     'support_list' => [
-        'Akses ke Tes Latihan',
-        'Progress Tracking ke Orang Tua',
-        'Jadwal Fleksibel dan Sesuai Permintaan',
+        "TOP UNIVERSITIES",
+        "WORLDWIDE REQUIRE",
+        "HIGH TOEFL/IELTS SCORES"
     ],
-    'support_desc' => '<h4 class="text-newred text-xl md:text-2xl font-bold uppercase">Universitas ternama di dunia mensyaratkan nilai TOEFL/IELTS yang tinggi</h4>
-<h5 class="text-black text-xl md:text-2xl md:leading-[2.5rem]">Tahukah Anda bahwa rata-rata skor yang diterima di universitas elit  <br> adalah
-    <span class="text-3xl font-bold text-newprimary"> 7.5 </span>
+    'support_desc' => '
+<h5 class="text-black text-base md:text-base md:leading-[2.5rem]">Tahukah Anda bahwa rata-rata skor yang diterima di universitas elit  <br> adalah
+    <span class="text-2xl font-bold text-newprimary"> 7.5 </span>
     untuk
-    <span class="text-newprimary font-bold uppercase">
+    <span class="text-newprimary font-bold uppercase text-2xl">
         IELTS
     </span>
     dan
-    <span class="text-3xl font-bold text-newprimary"> 90 to 100 </span>
+    <span class="text-2xl font-bold text-newprimary"> 90 to 100 </span>
     untuk
-    <span class="text-newprimary font-bold uppercase">TOEFL?</span>
+    <span class="text-newprimary text-2xl font-bold uppercase">TOEFL?</span>
 </h5>',
 
     'free_trial2_title' => 'Raih kesempatan ini untuk menonjol dalam application universitas!',

@@ -3,7 +3,7 @@
 $our_programs = [
     [
         'title' => "Maximize Your Academic Scores",
-        'description' => "Elevate your IBDP & Cambridge IGCSE scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.",
+        'description' => "Elevate your scores and unlock doors to prestigious universities with our academic tutoring, covering a variety of subjects.",
         'button' => "Improve Your Scores Now"
     ],
     [
@@ -42,8 +42,57 @@ return [
     // banner section
     "title" => "Academic & Test Preparation",
     "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",
-    "our_program_title" => "Our Programs",
+    "our_program_title" => "YOUR JOURNEY TO SUCCESS",
     "our_program_data" => $our_programs,
+
+    "program_title" => "Choose Your Preparation",
+    "program_list" => [
+        [
+            "title" => "Academic <br/> Tutoring",
+            "desc" => "With core concept mastery and internationally qualified tutors, we prepare students with robust academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.",
+            'image' => "Academic tutoring.webp",
+            "points" => [
+                "IBDP",
+                "IB MYP",
+                "Cambridge A-Level",
+                "Cambridge IGCSE",
+                "Advanced Placement",
+            ],
+            'link' => 'academic-tutoring',
+        ],
+        [
+            "title" => "Standardized Test Preparation",
+            "desc" => "Excel in SAT, ACT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
+            'image' => "standardized test.webp",
+            "points" => [
+                "SAT",
+                "ACT",
+                "TOEFL",
+                "IELTS",
+            ],
+            'link' => 'sat-program',
+        ],
+        [
+            "title" => "Skillset <br/> Tutoring",
+            "desc" => "Elevate your unique passions through personalized skillset tutoring that focuses on the needs of every student. This is designed to elevate students’ academic profile, making their university application stand out.",
+            'image' => "skillset tutoring.webp",
+            "points" => [
+                "Algorithm & Programming",
+                "Subject Olympiad Preparation",
+                "English Writing Mastery",
+            ],
+            'link' => 'skillset-tutoring-program',
+        ],
+        // [
+        //     "title" => "IB Extended Essay Coaching",
+        //     "desc" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
+        //     'image' => "IB essay.webp",
+        //     'link' => 'skillset-tutoring-program',
+        // ],
+    ],
+
+    'learn_more' => "Learn More",
+    "lets_start" => "Let’s Start",
 
     // academic tutoring section
     "academic_tutoring_title" => "Academic Tutoring",
