@@ -324,7 +324,7 @@
         <div class="h-full w-full relative">
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:top-[30%] lg:left-[30%] exploration_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-newprimary font-bold md:text-6xl text-3xl uppercase text-white text-center lg:text-left">
                     Exploration
                 </h1>
                 <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
@@ -335,7 +335,7 @@
             </div>
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:bottom-[17%] lg:right-[10%]  profile_building_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-newprimary font-bold md:text-6xl text-3xl uppercase text-white text-center lg:text-left">
                     Profile <br> Building
                 </h1>
                 <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
@@ -346,7 +346,7 @@
             </div>
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:top-[25%] lg:left-[10%] academic_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-newprimary font-bold md:text-6xl text-3xl uppercase text-white text-center lg:text-left">
                     Academic
                 </h1>
                 <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
@@ -357,7 +357,7 @@
             </div>
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:bottom-[18%] lg:right-[30%] writing_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-newprimary font-bold md:text-6xl text-3xl uppercase text-white text-center lg:text-left">
                     Writing
                 </h1>
                 <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
@@ -396,7 +396,7 @@
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-40 pb-24" id="mentors">
         <div class="main-container">
-            <h1 class="font-newprimary font-bold text-4xl text-dark text-center">OUR MENTORS</h1>
+            <h1 class="font-newprimary font-bold md:text-4xl text-2xl text-dark text-center">OUR MENTORS</h1>
         </div>
         <div class="flex flex-col items-center mt-56 lg:px-[150px] bg-[#F3F3F3] shadow-2xl">
             <div class="new-main-container w-full px-10 -mt-52 max-w-screen-2xl mx-auto">
@@ -433,7 +433,8 @@
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="pt-40 pb-24 bg-dark">
         <div class="lg:px-[250px] px-[20px]">
-            <h1 class="font-newprimary font-bold text-4xl text-white uppercase text-center">Upcoming Events</h1>
+            <h1 class="font-newprimary font-bold md:text-4xl text-2xl text-white uppercase text-center">Upcoming Events
+            </h1>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
                 {{-- Event --}}
                 <div class="flex flex-col items-center justify-between relative">
@@ -565,11 +566,11 @@
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
         <section class="pt-40 pb-24">
-            <div class="main-container">
-                <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
+            <div class="new-main-container">
+                <h1 class="font-newprimary font-bold md:text-4xl text-2xl text-dark uppercase text-center">As Seen On</h1>
+                <div class="grid md:grid-cols-3 grid-cols-2 items-center md:justify-between justify-center md:gap-12 gap-5 mt-12 md:mt-24">
                     @foreach ($as_seen_on as $item)
-                        <div class="h-16 w-full flex justify-center">
+                        <div class="h-16 flex justify-center">
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                 alt="{{ $item->alt }}" class="h-full object-contain">
@@ -584,7 +585,7 @@
     {{-- ========================================== Success Stories ========================================== --}}
     <section class="pt-40 pb-24">
         <div class="main-container flex flex-col items-center">
-            <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center max-w-4xl mx-auto">
+            <h1 class="font-newprimary font-bold md:text-4xl text-2xl text-dark uppercase text-center max-w-4xl mx-auto">
                 Empowering 700+ Minds for Global
                 Success – From Exceptional Personal Projects!
                 to Top Universities Worldwide!

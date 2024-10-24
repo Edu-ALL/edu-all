@@ -46,11 +46,12 @@
         </div>
     </section>
 
+    {{-- Exclusive Program  --}}
     <section class="py-12 bg-[#F5F5F5] mt-[40%] shadow-2xl">
         <div class="new-main-container -mt-[40%]">
             <div class="new-main-container">
                 <div class="flex flex-col items-center justify-center">
-                    <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-12 uppercase">
+                    <h2 class="font-newprimary font-bold text-black text-center md:text-4xl text-2xl mb-12 uppercase">
                         {{ __('pages/programs/admission_mentoring.program_title') }}
                     </h2>
                 </div>
@@ -68,7 +69,7 @@
                             </div>
                         @endif
                         <div class="-mt-8 pt-16 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
-                            <h3 class="font-bold uppercase text-2xl text-center">
+                            <h3 class="font-bold uppercase md:text-2xl text-xl text-center">
                                 {!! $item['title'] !!}
                             </h3>
                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
@@ -116,7 +117,7 @@
     <section class="pt-16 pb-20">
         <div class="new-main-container">
             <div class="flex flex-col items-center justify-center">
-                <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
+                <h2 class="font-newprimary font-bold text-black text-center md:text-4xl text-2xl mb-4 uppercase">
                     {{ __('pages/programs/admission_mentoring.why_us_title') }}
                 </h2>
                 <p class="text-center text-base max-w-xl mx-auto mb-8">
@@ -131,7 +132,7 @@
     <!-- Testimonial Section -->
     <section class="pt-16 pb-20">
         <div class="new-main-container">
-            <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
+            <h2 class="font-newprimary font-bold text-black text-center md:text-4xl text-2xl mb-4 uppercase">
                 {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
             </h2>
 
