@@ -8,7 +8,7 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 h-[90vh] bg-sat-prep-header bg-cover bg-top" id="banner">
+    <section class="py-16 h-[100vh] bg-sat-prep-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-24 gap-2">
             <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
                 {{ __('pages/programs/sat_program.title') }}
@@ -187,7 +187,7 @@
 
     {{-- SECTION 5 --}}
     <section class="py-24">
-        <div class="flex main-container w-full flex-col">
+        <div class="flex new-main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/sat_program.why_us_title') }}</h2>
             <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/why us.webp') }}"
@@ -196,7 +196,7 @@
     </section>
 
     <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
+        <div class="new-main-container flex flex-col items-center">
             <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
                 {{ __('pages/programs/sat_program.free_trial_title') }}
             </h2>
@@ -208,11 +208,11 @@
     </section>
 
     <section class="py-24">
-        <div class="flex main-container w-full flex-col">
+        <div class="flex new-main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/sat_program.testimoni_title') }}</h2>
         </div>
-        <div class="main-container my-12">
+        <div class="new-main-container my-12">
             <div class="splide" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">

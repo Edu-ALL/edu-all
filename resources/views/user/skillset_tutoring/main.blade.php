@@ -8,7 +8,7 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 h-[90vh] bg-skillset-tutoring-header bg-cover bg-top" id="banner">
+    <section class="py-16 h-[100vh] bg-skillset-tutoring-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-24 gap-2">
             <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
                 {{ __('pages/programs/skillset_tutoring.title') }}
@@ -51,7 +51,7 @@
 
     {{-- WHY US 5 --}}
     <section class="py-12 md:py-24">
-        <div class="flex main-container w-full flex-col">
+        <div class="flex new-main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/skillset_tutoring.program_title') }}</h2>
             <div class="flex flex-col gap-8 py-12">
@@ -87,7 +87,7 @@
                         <div class="flex h-80 md:h-48">
                             <div class="bg-dark h-full w-full -mr-[3%]"
                                 style="clip-path: polygon(0 0, 100% 0%, 100% 0%, 85% 100%, 0 100%)">
-                                <div class="flex flex-col gap-4 px-4 justify-center h-full w-full">
+                                <div class="flex flex-col gap-4 md:px-20 justify-center h-full w-full">
                                     <h4
                                         class="font-newprimary font-bold text-white text-start text-xl md:text-2xl uppercase">
                                         {{ $item['title'] }}
@@ -113,7 +113,7 @@
                             </div>
                             <div class="bg-newprimary h-full w-full -ml-[3%]"
                                 style="clip-path: polygon(15% 0, 100% 0%, 100% 0%, 100% 100%, 0 100%)">
-                                <div class="flex flex-col gap-4 max-w-lg mr-auto justify-center h-full ml-[15%]">
+                                <div class="flex flex-col gap-4 md:pl-20 max-w-lg mr-auto justify-center h-full ml-[15%]">
                                     <h4
                                         class="font-newprimary font-bold text-white text-start text-xl md:text-2xl uppercase">
                                         {{ $item['title'] }}

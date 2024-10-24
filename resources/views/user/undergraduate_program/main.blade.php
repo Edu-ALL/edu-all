@@ -8,7 +8,7 @@
     {{-- @include('layout.user.sub-navbar.admission-navbar', ['active' => 'general']) --}}
 
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 h-[90vh] bg-undergraduate-header bg-cover bg-top" id="banner">
+    <section class="py-16 h-[100vh] bg-undergraduate-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-16 gap-3">
             <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
                 {{ __('pages/programs/undergraduate_program.title') }}

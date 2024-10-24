@@ -23,7 +23,7 @@
     </section>
 
     {{-- ================================== Benefit Section  ================================== --}}
-    <section class="py-20 mt-20">
+    <section class="py-20 mt-20 flex justify-center">
         <div class="new-main-container flex flex-wrap gap-12 gap-y-16 md:gap-8 items-center justify-center md:mx-[150px]">
             @foreach (__('pages/programs/exclusive_program_school.benefit') as $item)
                 <div class="w-1/3 md:w-1/5 flex flex-col items-center gap-4">
@@ -38,7 +38,7 @@
     </section>
 
     {{-- ================================== Programs Section  ================================== --}}
-    <section class="pb-20 pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
+    <section class="pb-20 pt-12 bg-[#F6F6F6] shadow-2xl mb-32 flex justify-center">
         <div class="new-main-container flex flex-col items-center gap-4 md:gap-8 md:mx-[150px]">
             <h2 class="text-newprimary text-3xl text-center uppercase font-bold">
                 {{ __('pages/programs/exclusive_program_school.program_title') }}</h2>
