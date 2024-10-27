@@ -39,6 +39,7 @@ return [
     'meta_title' => "Academic & Test Preparation for your top university application success",
     'meta_description' => 'Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.',
 
+    "navbar_title" => "Academic & Test Prep",
     // banner section
     "title" => "Academic & Test Preparation",
     "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",

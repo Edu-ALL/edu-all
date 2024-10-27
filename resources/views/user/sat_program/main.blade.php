@@ -6,10 +6,19 @@
     <meta name="description" content="{{ __('pages/programs/sat_program.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
+        ['title' => __('pages/programs/academic_tutoring.title'), 'url' => '/programs/academic-test-preparation/academic-tutoring'],
+        ['title' => __('pages/programs/sat_program.navbar_title'), 'url' => '/programs/academic-test-preparation/sat-program'],
+        ['title' => __('pages/programs/skillset_tutoring.title'), 'url' => '/programs/academic-test-preparation/skillset-tutoring-program'],
+    ]" :active="__('pages/programs/sat_program.navbar_title')" title="{!!  __('pages/programs/academic_test_preparation.navbar_title') !!}" />
+@endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 h-[90vh] bg-sat-prep-header bg-cover bg-top" id="banner">
-        <div class="flex flex-col h-full items-center new-main-container py-24 gap-2">
+    <section class="py-16 h-screen bg-sat-prep-header bg-cover bg-top" id="banner">
+        <div class="flex flex-col h-full items-center new-main-container py-[50%] md:py-[12%] gap-2">
             <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
                 {{ __('pages/programs/sat_program.title') }}
             </h2>

@@ -6,9 +6,18 @@
     <meta name="description" content="{{ __('pages/programs/academic_test_preparation.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
+        ['title' => __('pages/programs/academic_tutoring.title'), 'url' => '/programs/academic-test-preparation/academic-tutoring'],
+        ['title' => __('pages/programs/sat_program.navbar_title'), 'url' => '/programs/academic-test-preparation/sat-program'],
+        ['title' => __('pages/programs/skillset_tutoring.title'), 'url' => '/programs/academic-test-preparation/skillset-tutoring-program'],
+    ]" :active="'general'" title="{!!  __('pages/programs/academic_test_preparation.navbar_title') !!}" />
+@endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 h-[100vh] bg-general-acad-header bg-cover bg-top" id="banner">
+    <section class="py-16 h-screen bg-general-acad-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
             <h2 class="font-newprimary font-bold text-4xl md:text-5xl text-white text-center uppercase max-w-3xl">
                 {{ __('pages/programs/academic_test_preparation.title') }}
