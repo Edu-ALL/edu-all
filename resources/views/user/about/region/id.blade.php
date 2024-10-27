@@ -99,7 +99,7 @@
     {{-- ================================== Mentors ================================== --}}
     <section class="py-10 bg-newprimary">
         <div class="flex flex-col items-center">
-            <div class="main-container">
+            <div class="new-main-container">
                 <div class="flex flex-col max-w-2xl">
                     <h2 class="mt-10 font-newprimary font-bold text-3xl text-white text-center">
                         {{ __('pages/about_us/about.mentor_title') }}</h2>

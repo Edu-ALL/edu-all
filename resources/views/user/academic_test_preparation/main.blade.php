@@ -207,11 +207,11 @@
 
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="pt-14">
-        <div class="flex main-container w-full flex-col">
+        <div class="flex new-main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/academic_test_preparation.testimony_title') }}</h2>
         </div>
-        <div class="main-container mb-12 md:my-12">
+        <div class="new-main-container mb-12 md:my-12">
             <div class="splide" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">

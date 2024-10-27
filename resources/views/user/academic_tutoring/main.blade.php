@@ -628,11 +628,11 @@
     </section>
 
     <section class="py-16">
-        <div class="flex main-container w-full flex-col items-center">
+        <div class="flex new-main-container w-full flex-col items-center">
             <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center uppercase">
                 {{ __('pages/programs/academic_tutoring.tetimony_title') }}</h2>
         </div>
-        <div class="main-container mt-12">
+        <div class="new-main-container mt-12">
             <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">

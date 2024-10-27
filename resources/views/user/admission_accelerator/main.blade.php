@@ -20,8 +20,8 @@
     </section>
 
     {{-- ================================== Benefit Section  ================================== --}}
-    <section class="py-20">
-        <div class="new-main-container flex flex-wrap gap-4 items-center justify-center mb-10 md:mx-[150px]">
+    <section class="py-20 flex justify-center">
+        <div class="new-main-container flex flex-wrap gap-4 items-center justify-center md:mx-[150px]">
             @foreach (__('pages/programs/admission_accelerator.summary') as $item)
                 <div class="relative bg-black text-white h-20 md:h-24 py-4 px-4 rounded-md inline-block w-full md:flex-1"
                     style=" clip-path: polygon(0 0, 100% 0%, 100% 60%, 90% 100%, 0 100%);">
@@ -39,17 +39,17 @@
                     </div>
                 </div>
             @endforeach
-        </div>
-        <div class="flex justify-center px-4">
-            <p class="font-newprimary max-w-3xl text-center leading-6 text-lg font-light">
-                {{ __('pages/programs/admission_accelerator.sub_description') }}
-            </p>
+            <div class="flex justify-center px-4 mt-10">
+                <p class="font-newprimary max-w-3xl text-center leading-6 text-lg font-light">
+                    {{ __('pages/programs/admission_accelerator.sub_description') }}
+                </p>
+            </div>
         </div>
     </section>
 
     {{-- ================================== Workshop Section  ================================== --}}
-    <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+    <section class="pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/admission_accelerator/Rectangle.webp') }}" alt=""
@@ -83,7 +83,7 @@
 
     {{-- ================================== Essay Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/admission_accelerator/essay.webp') }}" alt=""
@@ -108,7 +108,7 @@
 
     {{-- ================================== SAT PREP Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center py-10">
                 <div class="md:w-2/5 w-full">
                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/HEjR2awOLjg?si=a-QNmM-nLz2BOdgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -49,7 +49,7 @@
 
     {{-- ================================== Conference Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center py-5">
                 <div class="md:w-2/5 w-full py-5">
                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/cRB_MeDNdnE?si=59CPmBd9WLrjBAX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="rounded-xl"></iframe>
@@ -69,7 +69,7 @@
 
     {{-- ================================== Training Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12 order-2 md:order-1">
                     <h2 class="font-newprimary font-bold text-2xl md:text-3xl text-newprimary md:text-left text-center">
@@ -94,7 +94,7 @@
 
     {{-- ================================== Letter Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/teacher_focused/letter.webp') }}" alt=""
@@ -116,7 +116,7 @@
 
     {{-- ================================== COLLABORATE Section ================================== --}}
     {{-- <section class="pt-16 pb-20">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <h2 class="font-newprimary font-bold text-center text-2xl md:text-4xl mb-4">
                 {{ __('pages/programs/exclusive_program_school.collaborate') }}
             </h2>

@@ -49,7 +49,7 @@
 
     {{-- ================================== Exploration Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-start py-5">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/experiential_learning/exploration.webp') }}" alt=""
@@ -82,7 +82,7 @@
 
     {{-- ================================== Research Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-start py-5">
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12 order-2 md:order-1">
                     <h2 class="font-newprimary font-bold text-2xl md:text-3xl text-newprimary md:text-left text-center">
@@ -115,7 +115,7 @@
 
     {{-- ================================== Immersion Section  ================================== --}}
     <section class=" pt-12 bg-[#F6F6F6] shadow-2xl mb-32">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-start py-5">
                 <div class="md:w-2/5 w-full">
                     <img src="{{ asset('assets/img/experiential_learning/immersion.webp') }}" alt=""
@@ -149,7 +149,7 @@
 
     {{-- ================================== COLLABORATE Section ================================== --}}
     {{-- <section class="pt-16 pb-20">
-        <div class="new-main-container md:mx-[150px]">
+        <div class="new-main-container flex justify-center">
             <h2 class="font-newprimary font-bold text-center text-2xl md:text-4xl mb-4">
                 {{ __('pages/programs/exclusive_program_school.collaborate') }}
             </h2>
@@ -164,7 +164,7 @@
 
     {{-- ================================== CTA Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="main-container flex flex-col items-start py-5">
+        <div class="new-main-container flex items-start justify-center py-5">
             <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
                 {{ __('pages/programs/admission_accelerator.cta_button') }}
                 <a href="https://wa.me/+6287888827686" target="_blank"
