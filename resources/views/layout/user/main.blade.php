@@ -202,6 +202,8 @@
     </div>
 
     {{-- @include('layout.user.navbar') --}}
+    @yield('sub-navbar')
+
     @include('layout.user.new-navbar')
 
     <div class="mt-0">
