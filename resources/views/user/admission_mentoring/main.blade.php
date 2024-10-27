@@ -4,12 +4,20 @@
     <meta name="title" content="{{ __('pages/programs/admission_mentoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/admission_mentoring.meta_description') }}" />
 @endsection
-@section('content')
-    {{-- @include('layout.user.sub-navbar.admission-navbar', ['active' => 'general']) --}}
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => 'general', 'url' => '/programs/admissions-mentoring'],
+        ['title' => __('pages/programs/undergraduate_program.navbar_title'), 'url' => '/programs/admissions-mentoring/undergraduate-program'],
+        ['title' => __('pages/programs/graduate_program.navbar_title'), 'url' => '/programs/admissions-mentoring/graduate-program'],
+        ['title' => __('pages/programs/univ_transfer_program.navbar_title'), 'url' => '/programs/admissions-mentoring/university-transfer-program'],
+    ]" :active="'general'" title="{{  __('pages/programs/admission_mentoring.title') }}" />
+@endsection
+
+@section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-[100vh] bg-adm-mentoring-header bg-cover bg-top" id="banner">
-        <div class="flex flex-col h-full items-center new-main-container py-28 gap-2">
+        <div class="flex flex-col h-full items-center new-main-container py-[50%] md:py-[12%] gap-2">
             <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
                 {{ __('pages/programs/admission_mentoring.title') }}
             </h2>

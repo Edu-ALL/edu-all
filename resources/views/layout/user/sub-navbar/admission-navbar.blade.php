@@ -45,7 +45,7 @@
 
 <script>
     $(window).scroll(function() {
-        if ($(window).scrollTop() > $(window).height() / 2) {
+        if ($(window).scrollTop() > $(window).height() / 10) {
             $('.nav-title').removeClass('-translate-y-[300%]').addClass('translate-y-0');
         } else {
             $('.nav-title').addClass('-translate-y-[300%]').removeClass('translate-y-0');

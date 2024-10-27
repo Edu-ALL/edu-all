@@ -4,6 +4,7 @@ return [
     'meta_title' => "University Transfer",
     'meta_description' => 'Make a smooth transition to your dream university with EduALL&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now',
 
+    'navbar_title' => "TRANSFER",
     'title' => "UNIVERSITY TRANSFER",
     'body' => "UNIVERSITY ADMISSION MENTORING",
 
