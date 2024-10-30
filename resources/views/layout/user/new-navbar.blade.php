@@ -1,4 +1,4 @@
-<header class="fixed left-1/2 -translate-x-1/2 bottom-20 z-50 transition-all hidden md:block">
+<header class="fixed left-1/2 -translate-x-1/2 bottom-8 z-50 transition-all hidden md:block">
     <nav class="bg-black md:rounded-full rounded-3xl shadow-lg md:py-1">
         <div class="container mx-auto px-1">
             <div class="flex justify-between items-center w-full">
@@ -103,12 +103,18 @@
     $(document).ready(function() {
         // Get the current URL
         var currentUrl = window.location.href;
+        const parsedUrl = new URL(currentUrl);
+
+        // Get the path and split it into segments
+        const segments = parsedUrl.pathname.split('/').filter(segment => segment);
+        const segmentsUrl = parsedUrl.origin + '/' + segments[0] + '/' + segments[1]
 
         // Cache the home link element
         var activeLink = $('.navbar-item').first();
 
         $('.navbar-item').each(function() {
-            if (currentUrl === $(this).find('a').attr('href')) {
+            if (currentUrl == $(this).find('a').attr('href') || segmentsUrl == $(this).find('a').attr(
+                    'href')) {
                 activeLink = $(this);
                 activeLink.addClass('active-navbar');
                 activeLink.children('a').addClass('font-semibold')
@@ -124,7 +130,7 @@
             function() {
                 $(this).children('a').removeClass('active-navbar');
 
-                if (currentUrl === activeLink.find('a').attr('href')) {
+                if (currentUrl == activeLink.find('a').attr('href') || segmentsUrl == activeLink.find('a').attr('href')) {
                     activeLink.addClass('active-navbar');
                 }
             }
