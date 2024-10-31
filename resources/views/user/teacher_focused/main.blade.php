@@ -6,6 +6,15 @@
     <meta name="description" content="{{ __('pages/programs/teacher_focused.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => 'general', 'url' => '/programs/exclusive-program-school'],
+        ['title' => __('pages/programs/admission_accelerator.title'), 'url' => '/programs/exclusive-program-school/admission-accelerator'],
+        ['title' => __('pages/programs/experiential_learning.title'), 'url' => '/programs/exclusive-program-school/experiential-learning'],
+        ['title' => __('pages/programs/teacher_focused.title'), 'url' => '/programs/exclusive-program-school/teacher-focused'],
+    ]" :active="__('pages/programs/teacher_focused.title')" title="{{  __('pages/programs/exclusive_program_school.title') }}" :string-limit="14" />
+@endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-experiental-learning-programs-header bg-cover bg-top" id="banner">
@@ -133,7 +142,7 @@
     <section class="py-8 bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
-                {{ __('pages/programs/admission_accelerator.cta_button') }} 
+                {{ __('pages/programs/admission_accelerator.cta_button') }}
                 <a href="https://wa.me/+6287888827686" target="_blank" class="border-b-2 border-red hover:text-yellow duration-100">{{ __('pages/programs/admission_accelerator.cta_link') }} </a>
             </h2>
         </div>

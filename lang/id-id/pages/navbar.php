@@ -2,45 +2,49 @@
 
 return [
     'home' => [
-        'link' => '/',
+        'link' => '',
         'title' => 'Beranda',
     ],
 
     // programs
     'programs' => [
-        'link' => '/programs',
+        'link' => 'programs',
         'title' => 'Program Kami',
         'submenu' => [
             [
-                'link' => '/programs/admissions-mentoring',
+                'link' => 'programs/admissions-mentoring',
                 'title' => 'Admission Mentoring',
             ],
             [
-                'link' => '/programs/academic-test-preparation',
+                'link' => 'programs/academic-test-preparation',
                 'title' => 'Academic & Test Preparation',
             ],
             [
-                'link' => '/programs/global-innovators-project',
+                'link' => 'programs/global-innovators-project',
                 'title' => 'Global Innovators Project',
+            ],
+            [
+                'link' => 'programs/exclusive-program-school',
+                'title' => 'Exclusive Programs for School',
             ],
         ],
     ],
 
     // about us
     'about_us' => [
-        'link' => '/about',
+        'link' => 'about',
         'title' => 'Tentang Kami',
         'submenu' => [
             [
-                'link' => '/about/mentor',
+                'link' => 'about/mentor',
                 'title' => 'Mentor Kami',
             ],
             [
-                'link' => '/about/our-contribution',
+                'link' => 'about/our-contribution',
                 'title' => 'Kontribusi Kami',
             ],
             [
-                'link' => '/about/partnership-careers',
+                'link' => 'about/partnership-careers',
                 'title' => 'Kemitraan dan Karir',
             ],
         ],
@@ -48,29 +52,29 @@ return [
 
     // blog
     'blog' => [
-        'link' => '/blog',
+        'link' => 'blog',
         'title' => 'EduJournal',
     ],
 
     // resources
     'resources' => [
-        'link' => '/resources',
+        'link' => '#',
         'title' => 'Sumber Daya',
         'submenu' => [
             [
-                'link' => '/resources/success-stories',
+                'link' => 'resources/success-stories',
                 'title' => 'Cerita Sukses',
             ],
             [
-                'link' => '/resources/upcoming-events',
+                'link' => 'resources/upcoming-events',
                 'title' => 'Event Kami',
             ],
             [
-                'link' => '/resources/testimonial',
+                'link' => 'resources/testimonial',
                 'title' => 'Testimonial',
             ],
             [
-                'link' => '/resources/mentee-project-showcase',
+                'link' => 'resources/mentee-project-showcase',
                 'title' => 'Mentee Project Showcase',
             ],
         ],
@@ -78,7 +82,7 @@ return [
 
     // contact us
     'contact_us' => [
-        'link' => '/contact-us',
+        'link' => 'contact-us',
         'title' => 'Kontak Kami',
     ],
 ];

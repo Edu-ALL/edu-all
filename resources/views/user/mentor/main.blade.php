@@ -6,6 +6,14 @@
     <meta name="description" content="{{ __('pages/about_us/mentor.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => __('pages/navbar.about_us.submenu.0.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.0.link')],
+        ['title' => __('pages/navbar.about_us.submenu.1.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.1.link')],
+        ['title' => __('pages/navbar.about_us.submenu.2.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.2.link')],
+    ]" :active="__('pages/navbar.about_us.submenu.0.title')" title="{{ __('pages/about_us/about.about_title') }}" />
+@endsection
+
 @section('content')
     {{-- Header Section --}}
     <section class="py-20 flex items-center justify-start h-screen bg-mentor-header bg-cover bg-center">
@@ -22,7 +30,7 @@
         </div>
     </section>
 
-    {{-- Mentor List Section --}} 
+    {{-- Mentor List Section --}}
     <section id="mentor" class="py-20 mt-[0rem] bg-dark">
         <div class="new-main-container lg:max-w-10xl lg:mx-auto">
             {{-- <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:gap-12 h-full">

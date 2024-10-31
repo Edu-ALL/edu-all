@@ -6,6 +6,15 @@
     <meta name="description" content="{{ __('pages/programs/admission_accelerator.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => 'general', 'url' => '/programs/exclusive-program-school'],
+        ['title' => __('pages/programs/admission_accelerator.title'), 'url' => '/programs/exclusive-program-school/admission-accelerator'],
+        ['title' => __('pages/programs/experiential_learning.title'), 'url' => '/programs/exclusive-program-school/experiential-learning'],
+        ['title' => __('pages/programs/teacher_focused.title'), 'url' => '/programs/exclusive-program-school/teacher-focused'],
+    ]" :active="__('pages/programs/admission_accelerator.title')" title="{{  __('pages/programs/exclusive_program_school.title') }}" :string-limit="14" />
+@endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-admission-accelerator-programs-header bg-cover bg-top" id="banner">
@@ -70,7 +79,7 @@
                                 <li class="flex items-start gap-3">
                                     <i class="fa-solid fa-check-circle text-newprimary mt-1"></i>
                                     {{ $item }}
-                                
+
                                 </li>
                             @endforeach
                         </ul>

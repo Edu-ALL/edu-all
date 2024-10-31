@@ -6,6 +6,15 @@
     <meta name="description" content="{{ __('pages/programs/global_innovators_projects.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => __('pages/navbar.programs.submenu.0.title'), 'url' => '/' . __('pages/navbar.programs.submenu.0.link')],
+        ['title' => __('pages/navbar.programs.submenu.1.title'), 'url' => '/' . __('pages/navbar.programs.submenu.1.link')],
+        ['title' => __('pages/navbar.programs.submenu.2.title'), 'url' => '/' . __('pages/navbar.programs.submenu.2.link')],
+        ['title' => __('pages/navbar.programs.submenu.3.title'), 'url' => '/' . __('pages/navbar.programs.submenu.3.link')],
+    ]" active="Global Innovators Project" title="{{  __('pages/programs/programs.title') }}" :string-limit="12" />
+@endsection
+
 @section('content')
     {{-- =============================================== Banner Section =============================================== --}}
     <section class="-z-10">
