@@ -14,7 +14,7 @@
                     <li>
                         <a
                             href="{{ url(app()->getLocale()) . $item['url'] }}" class=" {{ $active == $item['title'] ? 'text-black bg-white' : 'text-white bg-white/30' }} text-sm rounded-full px-6 py-2 font-semibold uppercase whitespace-nowrap">
-                            {{ $item['title'] }}
+                            {{ Str::limit($item['title'], $stringLimit ?? 15) }}
                         </a>
                     </li>
                 @endforeach

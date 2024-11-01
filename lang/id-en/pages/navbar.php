@@ -2,45 +2,49 @@
 
 return [
     'home' => [
-        'link' => '/',
+        'link' => '',
         'title' => 'Home',
     ],
 
     // programs
     'programs' => [
-        'link' => '/programs',
+        'link' => 'programs',
         'title' => 'Programs',
         'submenu' => [
             [
-                'link' => '/programs/admissions-mentoring',
+                'link' => "programs/admissions-mentoring",
                 'title' => 'Admission Mentoring',
             ],
             [
-                'link' => '/programs/academic-test-preparation',
+                'link' => 'programs/academic-test-preparation',
                 'title' => 'Academic & Test Preparation',
             ],
             [
-                'link' => '/programs/global-innovators-project',
+                'link' => 'programs/global-innovators-project',
                 'title' => 'Global Innovators Project',
+            ],
+            [
+                'link' => 'programs/exclusive-program-school',
+                'title' => 'Exclusive Programs for School',
             ],
         ],
     ],
 
     // about us
     'about_us' => [
-        'link' => '/about',
+        'link' => 'about',
         'title' => 'About Us',
         'submenu' => [
             [
-                'link' => '/about/mentor',
+                'link' => 'about/mentor',
                 'title' => 'Our Mentor',
             ],
             [
-                'link' => '/about/our-contribution',
+                'link' => 'about/our-contribution',
                 'title' => 'Our Contribution',
             ],
             [
-                'link' => '/about/partnership-careers',
+                'link' => 'about/partnership-careers',
                 'title' => 'Partnership & Careers',
             ],
         ],
@@ -48,29 +52,29 @@ return [
 
     // blog
     'blog' => [
-        'link' => '/blog',
+        'link' => 'blog',
         'title' => 'EduJournal',
     ],
 
     // resources
     'resources' => [
-        'link' => '/resources',
+        'link' => '#',
         'title' => 'Resources',
         'submenu' => [
             [
-                'link' => '/resources/success-stories',
+                'link' => 'resources/success-stories',
                 'title' => 'Success Stories',
             ],
             [
-                'link' => '/resources/upcoming-events',
+                'link' => 'resources/upcoming-events',
                 'title' => 'Upcoming Events',
             ],
             [
-                'link' => '/resources/testimonial',
+                'link' => 'resources/testimonial',
                 'title' => 'Testimonial',
             ],
             [
-                'link' => '/resources/mentee-project-showcase',
+                'link' => 'resources/mentee-project-showcase',
                 'title' => 'Mentee Project Showcase',
             ],
         ],
@@ -78,7 +82,7 @@ return [
 
     // contact us
     'contact_us' => [
-        'link' => '/contact-us',
+        'link' => 'contact-us',
         'title' => 'Contact Us',
     ],
 ];

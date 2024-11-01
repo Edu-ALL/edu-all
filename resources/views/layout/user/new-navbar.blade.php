@@ -7,7 +7,7 @@
                     class="flex-col md:flex-row whitespace-nowrap justify-center gap-1 hidden md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
                     @foreach (__('pages/navbar') as $itemKey => $item)
                         <li class="navbar-item relative group rounded-full transition-all font-light programs-menu">
-                            <a href="{{ url(app()->getLocale(), ltrim($item['link'], '/')) }}"
+                            <a href={{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}
                                 class="text-white text-base py-2 px-6 block rounded-full">
                                 {{ $item['title'] }}
                             </a>
@@ -19,8 +19,8 @@
                                     <div
                                         class="flex-col items-center justify-center mb-4 bg-black rounded-3xl shadow-lg pt-2 pb-2 px-2 text-white gap-1">
                                         @foreach ($item['submenu'] as $submenu)
-                                            <li class="hover:bg-newprimary/90 text-white rounded-full w-full">
-                                                <a href="{{ url(app()->getLocale(), ltrim($submenu['link'], '/')) }}"
+                                            <li class="hover:bg-newprimary text-white rounded-full w-full">
+                                                <a href="{{ url(app()->getLocale() . '/' . $submenu['link']) }}"
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
                                                 </a>
@@ -72,7 +72,7 @@
                         <li
                             class="navbar-item-mobile relative group rounded-full transitionall font-light programs-menu w-full">
                             <div class="flex items-center justify-between">
-                                <a href="{{ url(app()->getLocale(), ltrim($item['link'], '/')) }}"
+                                <a href="{{ $item['link'] == '#' ? '#' : url(app()->getLocale() . $item['link']) }}"
                                     class="text-white text-base py-2 px-6 block rounded-full">
                                     {{ $item['title'] }}
                                 </a>
@@ -93,7 +93,7 @@
                                         class="flex-col items-center justify-center bg-black rounded-3xl shadow-lg pt-2 pb-2 px-2 text-white gap-1">
                                         @foreach ($item['submenu'] as $submenu)
                                             <li class="text-white w-full">
-                                                <a href="{{ url(app()->getLocale(), ltrim($submenu['link'], '/')) }}"
+                                                <a href="{{ url(app()->getLocale() . '/' . ltrim($submenu['link'], '/')) }}"
                                                     class="text-white text-sm py-2 px-6 block rounded-full">
                                                     {{ $submenu['title'] }}
                                                 </a>

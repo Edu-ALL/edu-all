@@ -6,6 +6,15 @@
     <meta name="description" content="{{ __('pages/programs/programs.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => __('pages/navbar.programs.submenu.0.title'), 'url' => '/' . __('pages/navbar.programs.submenu.0.link')],
+        ['title' => __('pages/navbar.programs.submenu.1.title'), 'url' => '/' . __('pages/navbar.programs.submenu.1.link')],
+        ['title' => __('pages/navbar.programs.submenu.2.title'), 'url' => '/' . __('pages/navbar.programs.submenu.2.link')],
+        ['title' => __('pages/navbar.programs.submenu.3.title'), 'url' => '/' . __('pages/navbar.programs.submenu.3.link')],
+    ]" title="{{  __('pages/programs/programs.title') }}" :string-limit="12" />
+@endsection
+
 @section('content')
     <section class="-z-10">
         <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">

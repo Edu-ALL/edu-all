@@ -6,6 +6,14 @@
     <meta name="description" content="{{ __('pages/about_us/mentor.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => __('pages/navbar.about_us.submenu.0.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.0.link')],
+        ['title' => __('pages/navbar.about_us.submenu.1.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.1.link')],
+        ['title' => __('pages/navbar.about_us.submenu.2.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.2.link')],
+    ]" :active="__('pages/navbar.about_us.submenu.0.title')" title="{{ __('pages/about_us/about.about_title') }}" />
+@endsection
+
 @section('content')
     {{-- Header Section --}}
     <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">

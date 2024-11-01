@@ -6,10 +6,19 @@
     <meta name="description" content="{{ __('pages/programs/experiential_learning.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        ['title' => 'general', 'url' => '/programs/exclusive-program-school'],
+        ['title' => __('pages/programs/admission_accelerator.title'), 'url' => '/programs/exclusive-program-school/admission-accelerator'],
+        ['title' => __('pages/programs/experiential_learning.title'), 'url' => '/programs/exclusive-program-school/experiential-learning'],
+        ['title' => __('pages/programs/teacher_focused.title'), 'url' => '/programs/exclusive-program-school/teacher-focused'],
+    ]" :active="__('pages/programs/experiential_learning.title')" title="{{  __('pages/programs/exclusive_program_school.title') }}" :string-limit="14" />
+@endsection
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-experiental-learning-programs-header bg-cover bg-top" id="banner">
-        <div class="flex flex-col h-full justify-center items-start py-5 new-main-container py-20 gap-4">
+        <div class="flex flex-col h-full justify-center items-center new-main-container py-20 gap-4">
             <h2 class="font-newprimary font-bold text-5xl text-white text-center mb-3">
                 {!! __('pages/programs/experiential_learning.title') !!}
             </h2>
