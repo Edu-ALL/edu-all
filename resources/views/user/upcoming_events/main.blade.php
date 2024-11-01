@@ -9,24 +9,26 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="bg-upcomming-header bg-bottom bg-cover bg-fixed">
-        <div class="py-20 lg:bg-transparent bg-newprimary/70">
-            <div class="main-container">
-                <div class="flex items-center">
+        <div class="py-20 lg:bg-transparent bg-newprimary/70 h-[100vh]">
+            <div class="main-container h-full">
+                <div class="flex items-center h-full justify-center">
                     <div class="flex-row">
-                        <h1 class="mb-4 font-newprimary font-semibold text-4xl text-white lg:text-start text-center">
+                        <h1 class="mb-4 font-bold font-newnewprimary text-4xl lg:text-6xl text-white text-center">
                             {{ __('pages/resources/upcoming_events.title') }}
                         </h1>
                         <p
-                            class="font-newprimary font-light text-lg text-white lg:text-start text-center leading-6 mb-5 md:text-xl">
+                            class="font-newprimary font-light text-lg text-white text-center leading-6 mb-5 md:text-xl">
                             {{ __('pages/resources/upcoming_events.body') }}
                         </p>
-                        <a href="{{ asset('assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                            target="_blank" class="mt-5">
-                            <span class="px-6 py-2 font-newprimary font-semibold text-base text-white bg-red shadow-md">
-                                <i class="fa-solid fa-file-pdf mr-2"></i>
-                                {{ __('pages/resources/upcoming_events.btn') }}
-                            </span>
-                        </a>
+                        <div class="flex justify-center">
+                            <a href="{{ asset('assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                target="_blank" class="mt-5">
+                                <span class="px-6 py-2 font-newprimary font-semibold text-base text-white bg-red shadow-md">
+                                    <i class="fa-solid fa-file-pdf mr-2"></i>
+                                    {{ __('pages/resources/upcoming_events.btn') }}
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

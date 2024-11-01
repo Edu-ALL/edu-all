@@ -10,13 +10,13 @@
     <section class="-z-10">
         <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px] pt-[10vh]">
-                    <div class="flex-row">
+                <div class="flex items-center justify-center h-full lg:pt-[50px] pt-[10vh]">
+                    <div class="flex-row w-3/5">
                         <h1
-                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 text-center capitalize">
                             {{ __('pages/programs/programs.title') }}
                         </h1>
-                        <p class="mt-2 font-newnewprimary font-normal text-xl lg:text-2xl text-white lg:text-start text-center">
+                        <p class="mt-2 font-newnewprimary font-normal text-white text-center">
                             {{ __('pages/programs/programs.body') }}
                         </p>
                     </div>

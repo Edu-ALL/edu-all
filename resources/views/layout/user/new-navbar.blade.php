@@ -1,5 +1,5 @@
 <header class="fixed left-1/2 -translate-x-1/2 bottom-8 z-50 transition-all hidden md:block">
-    <nav class="bg-black md:rounded-full rounded-3xl shadow-lg md:py-1">
+    <nav class="bg-black/80 md:rounded-full rounded-3xl shadow-lg md:py-1">
         <div class="container mx-auto px-1">
             <div class="flex justify-between items-center w-full">
                 <!-- Navbar Items -->
@@ -19,7 +19,7 @@
                                     <div
                                         class="flex-col items-center justify-center mb-4 bg-black rounded-3xl shadow-lg pt-2 pb-2 px-2 text-white gap-1">
                                         @foreach ($item['submenu'] as $submenu)
-                                            <li class="hover:bg-newprimary text-white rounded-full w-full">
+                                            <li class="hover:bg-newprimary/90 text-white rounded-full w-full">
                                                 <a href="{{ url(app()->getLocale(), ltrim($submenu['link'], '/')) }}"
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
@@ -31,6 +31,20 @@
                             @endif
                         </li>
                     @endforeach
+                    @if (!str_contains(request()->url(), 'partnership-careers'))
+                        <li class="bg-[#008069]/80 hover:bg-[#1e5a4f]/90 text-white rounded-l-full w-full">
+                            <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                                target="_blank" class="pl-[15px] pr-[5px] text-center flex items-center h-full">
+                                <i class="fa-brands fa-whatsapp text-[30px]"></i>
+                            </a>
+                        </li>
+                    @endif
+                    <li class="bg-red/80 hover:bg-newprimary/90 text-white w-full rounded-r-full">
+                        <button onclick="popupForm('open')" id="newsButton"
+                            class="text-white text-base py-2 px-3 block text-center">
+                            Get Updates
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -130,7 +144,8 @@
             function() {
                 $(this).children('a').removeClass('active-navbar');
 
-                if (currentUrl == activeLink.find('a').attr('href') || segmentsUrl == activeLink.find('a').attr('href')) {
+                if (currentUrl == activeLink.find('a').attr('href') || segmentsUrl == activeLink.find('a')
+                    .attr('href')) {
                     activeLink.addClass('active-navbar');
                 }
             }

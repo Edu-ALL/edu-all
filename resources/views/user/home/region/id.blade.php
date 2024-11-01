@@ -92,7 +92,7 @@
 
     {{-- ========================================== Benefits Section ======================================= --}}
     <section class="py-12">
-        <div class="main-container">
+        <div class="new-main-container">
             <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
                 <div class="flex flex-col md:w-4/12">
                     <h2 class="font-newprimary text-center md:text-left text-newprimary font-bold text-xl md:text-3xl mb-2">
@@ -120,7 +120,7 @@
 
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="py-12">
-        <div class="main-container">
+        <div class="new-main-container">
             <h2 class="font-bold text-xl md:text-3xl uppercase">Our Programs</h2>
             <div class="grid md:grid-cols-3 gap-6 mt-6">
                 <div class="flex flex-col relative">

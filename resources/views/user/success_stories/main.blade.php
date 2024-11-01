@@ -10,12 +10,12 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-4 -z-10">
         <div
-            class="relative flex w-full left-0 overflow-hidden bg-success-stories-header pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
-            <div class="flex flex-col justify-center h-full">
-                <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center md:text-left">
+            class="relative flex w-full justify-center left-0 overflow-hidden bg-success-stories-header h-[100vh] pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
+            <div class="flex flex-col justify-center h-full w-3/5">
+                <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center">
                     {{ __('pages/success_stories/success_stories.title') }}
                 </h1>
-                <p class="mt-5 font-newprimary font-semibold text-sm text-white max-w-lg text-center md:text-left">
+                <p class="mt-5 font-newprimary text-white w-full text-center">
                     {!! __('pages/success_stories/success_stories.desc') !!}
                 </p>
             </div>

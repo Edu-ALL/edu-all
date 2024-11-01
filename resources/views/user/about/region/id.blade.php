@@ -11,10 +11,10 @@
     <section class="-z-10">
         <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px] mt-[8vh]">
-                    <div class="flex-row">
+                <div class="flex items-center justify-center h-full">
+                    <div class="flex-row w-3/5">
                         <h1
-                            class="font-boldfont-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 text-center capitalize">
                             {{ __('pages/about_us/about.about_title') }}
                         </h1>
                     </div>

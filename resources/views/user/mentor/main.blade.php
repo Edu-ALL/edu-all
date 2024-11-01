@@ -8,21 +8,23 @@
 
 @section('content')
     {{-- Header Section --}}
-    <section class="py-20 flex items-center justify-start h-screen bg-mentor-header bg-cover bg-center">
-        <div class="main-container">
+    <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
+        <div class="main-container w-4/6">
             <div class="flex flex-col items-start">
-                <h1 class="mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl">
+                <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
                     {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                <div class="mb-6 w-full font-newprimary font-medium text-lg text-white  lg:max-w-xl md:mb-12">
+                <div class="mb-6 w-full font-newprimary font-medium text-white text-center md:mb-12">
                     {!! __('pages/about_us/mentor.benner_body') !!}
                 </div>
-                <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
-                    bg-color="newprimary" />
+                <div class="w-full flex justify-center">
+                    <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
+                        bg-color="newprimary" />
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- Mentor List Section --}} 
+    {{-- Mentor List Section --}}
     <section id="mentor" class="py-20 mt-[0rem] bg-dark">
         <div class="new-main-container lg:max-w-10xl lg:mx-auto">
             {{-- <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:gap-12 h-full">
