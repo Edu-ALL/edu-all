@@ -18,7 +18,7 @@
             </span>
 
             <ul class="flex flex-col gap-2 mt-8">
-                @foreach ($mentor->mentor_value as $item)
+                {{-- @foreach ($mentor->mentor_value as $item)
                     <li class="flex items-start gap-4">
                         <div class="w-4 h-4">
                             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
@@ -36,9 +36,9 @@
                             {{ $item->value }}
                         </h4>
                     </li>
-                @endforeach
+                @endforeach --}}
                 
-                {{-- @if ($mentor->value_1)
+                @if ($mentor->value_1)
                     <li class="flex items-start gap-4">
                         <div class="w-4 h-4">
                             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
@@ -94,7 +94,7 @@
                             {{ $mentor->value_3 }}
                         </h4>
                     </li>
-                @endif --}}
+                @endif
             </ul>
         </div>
     </div>
