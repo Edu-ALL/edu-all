@@ -1,6 +1,6 @@
 <div id="sub-navbar" class="bg-gradient-to-b from-black to-transparent fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-in-out">
     <nav class="px-4 lg:px-10 xl:px-12 max-w-screen-2xl mx-auto overflow-hidden">
-        <div class="flex items-center flex-col lg:flex-row py-8 lg:py-0">
+        <div class="flex items-center flex-col lg:flex-row py-10 lg:py-0">
             <div
                 class="lg:order-1 order-3 w-full xl:w-4/12 lg:w-4/12 items-center flex nav-title transition-all duration-500 transform -translate-y-[600%] ">
                 <div class="flex items-center justify-center lg:justify-start mx-auto">
@@ -35,10 +35,10 @@
     <script>
         $(window).scroll(function() {
             if ($(window).scrollTop() > $(window).height() / 10) {
-                $('.nav-title').removeClass('-translate-y-[600%]').addClass('translate-y-0');
+                $('.nav-title').removeClass('-translate-y-[550%]').addClass('translate-y-0');
                 $('#sub-navbar').addClass('-translate-y-7');
             } else {
-                $('.nav-title').addClass('-translate-y-[600%]').removeClass('translate-y-0');
+                $('.nav-title').addClass('-translate-y-[550%]').removeClass('translate-y-0');
                 $('#sub-navbar').removeClass('-translate-y-7');
             }
         });

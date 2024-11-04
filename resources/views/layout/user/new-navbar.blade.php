@@ -1,12 +1,12 @@
-<header class="fixed left-1/2 -translate-x-1/2 bottom-8 z-50 transition-all hidden md:block">
-    <nav class="bg-black/80 md:rounded-full rounded-3xl shadow-lg md:py-1">
+<header class="fixed left-1/2 -translate-x-1/2 bottom-12 z-50 transition-all hidden md:block duration-[600ms] ease-in-out" id="bottom-navbar">
+    <nav class="bg-black/80 md:rounded-full rounded-3xl shadow-lg md:py-1 transition-all duration-500 ease-in-out">
         <div class="container mx-auto px-1">
             <div class="flex justify-between items-center w-full">
                 <!-- Navbar Items -->
                 <ul id="navbar-items"
                     class="flex-col md:flex-row whitespace-nowrap justify-center gap-1 hidden md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
                     @foreach (__('pages/navbar') as $itemKey => $item)
-                        <li class="navbar-item relative group rounded-full transition-all font-light programs-menu">
+                        <li class="navbar-item relative group rounded-full font-light programs-menu transition-all duration-1000 ease-in-out">
                             <a href={{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}
                                 class="text-white text-base py-2 px-6 block rounded-full">
                                 {{ $item['title'] }}
@@ -32,7 +32,7 @@
                         </li>
                     @endforeach
                     @if (!str_contains(request()->url(), 'partnership-careers'))
-                        <li class="bg-[#008069]/80 hover:bg-[#1e5a4f]/90 text-white rounded-l-full w-full">
+                        <li class="bg-[#30D14E]/80 hover:bg-[#30D14E]/90 text-white rounded-l-full w-full">
                             <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                                 target="_blank" class="pl-[15px] pr-[5px] text-center flex items-center h-full">
                                 <i class="fa-brands fa-whatsapp text-[30px]"></i>
@@ -63,7 +63,7 @@
     </div>
 
     <nav id="mobile-navbar" class="hidden z-50 fixed inset-0 h-screen md:rounded-full shadow-lg pb-12 md:py-1 w-full">
-        <div class="container mx-auto px-1 flex flex-col justify-end fixed bottom-8 z-50 max-w-xs left-0 right-0">
+        <div class="container mx-auto px-1 flex flex-col justify-end fixed bottom-8 z-50 max-w-xs left-0 right-0" id="mobile-bottom-navbar">
             <div class="flex flex-col justify-between items-center w-full gap-4 py-4 bg-black rounded-3xl px-4">
                 <!-- Navbar Items -->
                 <ul
@@ -99,6 +99,12 @@
                                                 </a>
                                             </li>
                                         @endforeach
+                                        <li class="text-white w-full">
+                                            <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                                                target="_blank" class="pl-[15px] pr-[5px] text-center flex items-center h-full">
+                                                <i class="fa-brands fa-whatsapp me-2"></i> Chat Now!
+                                            </a>
+                                        </li>
                                     </div>
                                 </ul>
                             @endif
@@ -114,6 +120,20 @@
 </header>
 
 <script>
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > $(window).height() / 10) {
+            $('#bottom-navbar').removeClass('bottom-12').addClass('bottom-5');
+            $('#bottom-navbar nav').removeClass('bg-black/80').addClass('bg-newprimary/80');
+            $('.active-navbar').removeClass('bg-newprimary/80').addClass('bg-black/80');
+            $('#mobile-bottom-navbar').removeClass('bottom-8').addClass('bottom-2');
+        } else {
+            $('#bottom-navbar').addClass('bottom-12').removeClass('bottom-5');
+            $('#bottom-navbar nav').addClass('bg-black/80').removeClass('bg-newprimary/80');
+            $('.active-navbar').addClass('bg-newprimary/80').removeClass('bg-black/80');
+            $('#mobile-bottom-navbar').addClass('bottom-8').removeClass('bottom-2');
+        }
+    });
+
     $(document).ready(function() {
         // Get the current URL
         var currentUrl = window.location.href;
@@ -130,7 +150,7 @@
             if (currentUrl == $(this).find('a').attr('href') || segmentsUrl == $(this).find('a').attr(
                     'href')) {
                 activeLink = $(this);
-                activeLink.addClass('active-navbar');
+                activeLink.addClass('active-navbar').addClass('bg-newprimary');
                 activeLink.children('a').addClass('font-semibold')
             }
         });

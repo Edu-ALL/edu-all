@@ -95,7 +95,7 @@ body {
 }
 
 .active-navbar {
-    @apply bg-newprimary text-white rounded-3xl md:rounded-full;
+    @apply text-white rounded-3xl md:rounded-full;
 }
 
 /* Custom CSS for the indicator */
