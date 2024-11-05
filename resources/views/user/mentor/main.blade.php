@@ -17,7 +17,7 @@
 @section('content')
     {{-- Header Section --}}
     <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
-        <div class="main-container w-4/6">
+        <div class="main-container md:w-4/6 w-full">
             <div class="flex flex-col items-start">
                 <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
                     {{ __('pages/about_us/mentor.banner_title') }}</h1>

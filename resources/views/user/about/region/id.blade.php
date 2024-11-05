@@ -17,7 +17,7 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="-z-10">
-        <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">
+        <div class="relative flex w-full lg:h-screen h-[100vh] left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
                 <div class="flex items-center justify-center h-full">
                     <div class="flex-row w-3/5">

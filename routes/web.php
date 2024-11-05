@@ -241,6 +241,11 @@ Route::group(
             Route::get('/resources/testimonial', "testimonial")->name('testimonial');
         });
 
+        Route::get('resources/mentee-project-showcase', function() {
+            return Redirect::to('https://project-showcase.edu-all.com');
+        });
+        
+
         Route::controller(BlogPageController::class)->group(function () {
             Route::get('blog', "index")->name('blogs');
             Route::get('/blog/{slug}', 'show')->name('detail_blog');

@@ -17,10 +17,10 @@
 
 @section('content')
     <section class="-z-10">
-        <div class="relative flex w-full lg:h-screen h-[60vh] left-0 overflow-hidden">
+        <div class="relative flex w-full lg:h-screen h-[100vh] left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
                 <div class="flex items-center justify-center h-full lg:pt-[50px] pt-[10vh]">
-                    <div class="flex-row w-3/5">
+                    <div class="flex-row md:w-3/5 w-full">
                         <h1
                             class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 text-center capitalize">
                             {{ __('pages/programs/programs.title') }}

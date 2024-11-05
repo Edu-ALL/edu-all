@@ -21,7 +21,7 @@
             <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
                 {{ __('pages/programs/univ_transfer_program.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-xl md:text-3xl font-semibold">
+            <p class="font-newprimary text-white text-center max-w-2xl md:leading-6 md:text-3xl text-2xl font-semibold">
                 {{ __('pages/programs/univ_transfer_program.body') }}
             </p>
         </div>
