@@ -21,10 +21,10 @@
                                 <ul
                                     class="dropdown-menu programs-menu absolute left-1/2 transform -translate-x-1/2 md:bottom-full hidden md:flex-col z-10">
                                     <div
-                                        class="flex-col items-center justify-center mb-4 bg-black rounded-3xl shadow-lg pt-2 pb-2 px-2 text-white gap-1">
+                                        class="flex-col items-center justify-center mb-2 bg-black/80 rounded-3xl shadow-lg pt-2 pb-2 px-2 text-white gap-1">
                                         @foreach ($item['submenu'] as $submenu)
                                             <li
-                                                class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary border-[#727272] border' : '' }}">
+                                                class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'active-sub-navbar border-[#727272] border' : '' }}">
                                                 <a href="{{ url(app()->getLocale() . '/' . $submenu['link']) }}"
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
@@ -145,11 +145,19 @@
         if ($(window).scrollTop() > $(window).height() / 10) {
             $('#bottom-navbar').removeClass('bottom-12').addClass('bottom-5');
             $('#bottom-navbar nav').removeClass('bg-black/80').addClass('bg-newprimary/80');
+            $('#navbar-items li').removeClass('hover:bg-newprimary').addClass('hover:bg-black')
+            $('#navbar-items li a').removeClass('bg-black/80').removeClass('bg-newprimary/80')
             $('.active-navbar').removeClass('bg-newprimary/80').addClass('bg-black/80');
+            $('.active-sub-navbar').removeClass('bg-newprimary/80').addClass('bg-black/80');
+            $('.dropdown-menu div').removeClass('bg-black/80').addClass('bg-newprimary/80')
             $('#mobile-bottom-navbar').removeClass('bottom-8').addClass('bottom-2');
         } else {
             $('#bottom-navbar').addClass('bottom-12').removeClass('bottom-5');
             $('#bottom-navbar nav').addClass('bg-black/80').removeClass('bg-newprimary/80');
+            $('#navbar-items li').addClass('hover:bg-newprimary').removeClass('hover:bg-black')
+            $('#navbar-items li a').removeClass('bg-newprimary/80').removeClass('bg-black/80')
+            $('.dropdown-menu div').addClass('bg-black/80').removeClass('bg-newprimary/80')
+            $('.active-sub-navbar').addClass('bg-newprimary/80').removeClass('bg-black/80');
             $('.active-navbar').addClass('bg-newprimary/80').removeClass('bg-black/80');
             $('#mobile-bottom-navbar').addClass('bottom-8').removeClass('bottom-2');
         }
@@ -175,22 +183,6 @@
                 activeLink.children('a').addClass('font-semibold')
             }
         });
-
-        $('.navbar-item').hover(
-            function() {
-                $('.navbar-item a.active-navbar').removeClass('active-navbar');
-                activeLink.removeClass('active-navbar');
-                $(this).children('a').addClass('active-navbar');
-            },
-            function() {
-                $(this).children('a').removeClass('active-navbar');
-
-                if (currentUrl == activeLink.find('a').attr('href') || segmentsUrl == activeLink.find('a')
-                    .attr('href')) {
-                    activeLink.addClass('active-navbar');
-                }
-            }
-        );
 
         // Handle hover for the "Programs" dropdown menu
         $('.programs-menu').hover(
