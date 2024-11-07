@@ -21,7 +21,7 @@
     <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
         function gtag_report_conversion(url) {            
-            gtag('event', 'form_submit_admission', {
+            gtag('event', 'Conversion - Submit Admission', {
                 'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
                 // 'event_callback': callback
             });
