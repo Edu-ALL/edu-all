@@ -106,6 +106,19 @@
         gtag('config', 'G-5HHPRQCSSE');
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXRKLPRKWF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-JXRKLPRKWF');
+        gtag('config', 'AW-329409030')
+    </script>
+
     @if (Route::currentRouteName() == 'sign_me_adm_mentoring')
         <!-- Meta Pixel Code -->
         <script>

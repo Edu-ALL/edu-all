@@ -3,6 +3,22 @@
     <title>{{ __('pages/programs/undergraduate_program.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/undergraduate_program.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/undergraduate_program.meta_description') }}" />
+
+    <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 @endsection
 @section('content')
     {{-- @include('layout.user.sub-navbar.admission-navbar', ['active' => 'general']) --}}
@@ -69,8 +85,7 @@
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                     <div class="w-full md:w-1/2 overflow-hidden rounded-lg">
                         <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
-                            alt="EduALL - ilustration"
-                            class="w-full h-full object-center object-cover aspect-[7/6]">
+                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover aspect-[7/6]">
                     </div>
                     <div class="w-full md:w-1/2">
                         <ul class="flex flex-col items-start justify-center gap-3">
@@ -106,7 +121,8 @@
                 <h2 class="font-newprimary font-bold text-white text-center text-2xl mb-4 uppercase md:leading-4">
                     {{ __('pages/programs/admission_mentoring.four_aspect_title') }}
                 </h2>
-                <span class="font-newprimary font-bold text-newyellow text-center text-3xl md:text-4xl mb-4 uppercase md:leading-6">
+                <span
+                    class="font-newprimary font-bold text-newyellow text-center text-3xl md:text-4xl mb-4 uppercase md:leading-6">
                     {{ __('pages/programs/admission_mentoring.four_aspect_subtitle') }}
                 </span>
 
