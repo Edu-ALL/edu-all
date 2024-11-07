@@ -23,7 +23,7 @@
         function gtag_report_conversion(url) {            
             gtag('event', 'submit_form', {
                 'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
-                'event_callback': callback
+                // 'event_callback': callback
             });
             
             return false;
