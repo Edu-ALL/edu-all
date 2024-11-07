@@ -4,6 +4,6 @@
       height="{{$height}}"
       src="https://registration.edu-all.com/form/program?program_id={{$prog_id}}"
       frameborder="0"
-      scrolling="{{$scrolling}}"
+      scrolling="{{$scrolling}}" onclick="return gtag_report_conversion('https://registration.edu-all.com/form/program?program_id={{$prog_id}}');"
     ></iframe>
   </section>
