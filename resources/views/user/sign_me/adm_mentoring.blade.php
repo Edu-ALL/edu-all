@@ -15,13 +15,13 @@
         }
         gtag('js', new Date());
         gtag('config', 'G-JXRKLPRKWF');
-        gtag('config', 'AW-329409030')
+        // gtag('config', 'AW-329409030')
     </script>
     
     <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
         function gtag_report_conversion(url) {            
-            gtag('event', 'submit_form', {
+            gtag('event', 'form_submit_admission', {
                 'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
                 // 'event_callback': callback
             });
