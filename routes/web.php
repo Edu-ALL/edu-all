@@ -25,14 +25,14 @@ Route::get('robots.txt', function () {
     return response()->file(public_path('robots.txt'));
 });
 
-Route::get('/', [HomePageController::class, 'home']);
-
-Route::get('/sitemap.xml', [SitemapController::class, 'index']);
-
 Route::get('public/{any}', function ($any) {
     // Redirect to the same URL without the '/public' prefix
     return redirect()->to('/' . $any, 301); // 301 is a permanent redirect
 })->where('any', '.*');
+
+Route::get('/', [HomePageController::class, 'home']);
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 Route::group(
     [
