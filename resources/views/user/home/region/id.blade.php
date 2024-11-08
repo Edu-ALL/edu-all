@@ -399,7 +399,7 @@
             <h1 class="font-bold text-section-title text-dark text-center">OUR MENTORS</h1>
         </div>
         <div class="flex flex-col items-center mt-56 bg-[#F3F3F3] shadow-2xl">
-            <div class="w-full px-10 -mt-52 max-w-screen-2xl mx-auto">
+            <div class="w-full md:px-10 px-3 -mt-52 max-w-screen-2xl mx-auto">
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-dark">
