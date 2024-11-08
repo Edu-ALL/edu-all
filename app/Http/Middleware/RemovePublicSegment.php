@@ -21,24 +21,26 @@ class RemovePublicSegment
         // Get the current path
         $parsed_url = parse_url(URL::current());
         // Extract the path from the parsed URL
-        $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
-        // Split the path into segments
-        $segments = explode('/', trim($path, '/'));
+        if (isset($parsed_url['path'])) {
+            $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
+            // Split the path into segments
+            $segments = explode('/', trim($path, '/'));
 
-        // Remove the 'public' segment if it exists
-        $path_segments = array_filter($segments, function ($segment) {
-            return $segment !== 'public';
-        });
+            // Remove the 'public' segment if it exists
+            $path_segments = array_filter($segments, function ($segment) {
+                return $segment !== 'public';
+            });
 
-        // Rebuild the path without 'public'
-        $new_path = '/' . implode('/', $path_segments);
+            // Rebuild the path without 'public'
+            $new_path = '/' . implode('/', $path_segments);
 
-        // Rebuild the full URL (if needed)
-        $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
+            // Rebuild the full URL (if needed)
+            $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
 
-        // Check if the path starts with 'public' and remove it
-        if (isset($segments[0]) && $segments[0] == 'public') {
-            return redirect($new_url);
+            // Check if the path starts with 'public' and remove it
+            if (isset($segments[0]) && $segments[0] == 'public') {
+                return redirect($new_url);
+            }
         }
 
         // Proceed with the request
