@@ -27,10 +27,6 @@ Route::middleware(['remove_public'])->group(function () {
         return response()->file(public_path('robots.txt'));
     });
 
-    Route::get('/main/public/index.php', function () {
-        return 'test';
-    });
-
     Route::get('/', function () {
         return redirect()->route('home', ['locale' => 'id-en']);
     });
