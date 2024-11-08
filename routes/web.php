@@ -29,7 +29,7 @@ Route::get('/', [HomePageController::class, 'home']);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-Route::get('/public/{any}', function ($any) {
+Route::get('public/{any}', function ($any) {
     // Redirect to the same URL without the '/public' prefix
     return redirect()->to('/' . $any, 301); // 301 is a permanent redirect
 })->where('any', '.*');
