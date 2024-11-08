@@ -23,17 +23,18 @@ class RemovePublicSegment
         // Extract the path from the parsed URL
         if (isset($parsed_url['path'])) {
             $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
+
             // Split the path into segments
             $segments = explode('/', trim($path, '/'));
 
             // Remove the 'public' segment if it exists
             $path_segments = array_filter($segments, function ($segment) {
-                return $segment !== 'public';
+                return !in_array($segment, ['main', 'public', 'index.php']);
             });
 
             // Rebuild the path without 'public'
             $new_path = '/' . implode('/', $path_segments);
-
+            
             // Rebuild the full URL (if needed)
             $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
 
