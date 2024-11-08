@@ -57,7 +57,7 @@
     @endif
 
     <link rel="canonical"
-        href="{{ request()->segment(1) === 'public' ? url(substr(request()->getRequestUri(), 7)) : url('/public' . request()->getRequestUri()) }}">
+        href="{{ request()->segment(1) == 'public' ? URL::current() : url('/public' . request()->getRequestUri()) }}">
 
 
     {{-- Hreflang  --}}
