@@ -26,9 +26,19 @@ class RemovePublicSegment
             // Split the path into segments
             $segments = explode('/', trim($path, '/'));
 
+            // Remove the 'main' segment if it exists
+            $path_segments = array_filter($segments, function ($segment) {
+                return $segment !== 'main';
+            });
+
             // Remove the 'public' segment if it exists
             $path_segments = array_filter($segments, function ($segment) {
                 return $segment !== 'public';
+            });
+
+            // Remove the 'index.php' segment if it exists
+            $path_segments = array_filter($segments, function ($segment) {
+                return $segment !== 'index.php';
             });
 
             // Rebuild the path without 'public'
