@@ -63,9 +63,9 @@
         // Split the path into segments
         $segments = explode('/', trim($path, '/')); // Remove leading/trailing slashes
 
-        // Remove the 'public' segment if it exists
+        // Remove 'main', 'public', and 'index.php' segments if they exist
         $path_segments = array_filter($segments, function ($segment) {
-            return $segment !== 'public';
+            return !in_array($segment, ['main', 'public', 'index.php']);
         });
 
         // Rebuild the path without 'public'
@@ -73,10 +73,11 @@
 
         // Rebuild the full URL (if needed)
         $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
+
+        $canonical = $segments[0] == 'main' || $segments[0] == 'public' || $segments[0] == 'index.php'  ? $new_url : url('/public' . request()->getRequestUri())
     @endphp
 
-    <link rel="canonical"
-        href="{{ $segments[0] == 'public' ? $new_url : url('/public' . request()->getRequestUri()) }}">
+    <link rel="canonical" href="{{ $segments[0] == 'public' ? $new_url : url('/public' . request()->getRequestUri()) }}">
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
