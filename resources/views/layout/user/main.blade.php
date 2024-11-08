@@ -56,7 +56,7 @@
         @endif
     @endif
 
-    {{-- @php
+    @php
         $parsed_url = parse_url(URL::current());
         // Extract the path from the parsed URL
         $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
@@ -76,7 +76,7 @@
     @endphp
 
     <link rel="canonical"
-        href="{{ $segments[0] == 'public' ? $new_url : url('/public' . request()->getRequestUri()) }}"> --}}
+        href="{{ $segments[0] == 'public' ? $new_url : url('/public' . request()->getRequestUri()) }}">
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
