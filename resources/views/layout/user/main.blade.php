@@ -30,8 +30,8 @@
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue" : "5.0",
-            "ratingCount": "61",
-            "reviewCount": "61"
+            "ratingCount": "65",
+            "reviewCount": "65"
           }
         }
     </script>
@@ -55,6 +55,10 @@
             <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
         @endif
     @endif
+
+    <link rel="canonical"
+        href="{{ request()->segment(1) === 'public' ? url(substr(request()->getRequestUri(), 7)) : url('/public' . request()->getRequestUri()) }}">
+
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
