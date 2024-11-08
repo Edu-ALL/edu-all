@@ -58,8 +58,6 @@ class AboutPageController extends Controller
             return redirect()->route('mentor', ['locale' => $locale]);
         }
 
-        return $mentor;
-
         return view('user.detail_mentor.main', [
             'mentor' => $mentor,
             'mentor_slug' => $slug
