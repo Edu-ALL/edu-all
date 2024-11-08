@@ -56,9 +56,27 @@
         @endif
     @endif
 
-    <link rel="canonical"
-        href="{{ request()->segment(1) == 'public' ? URL::current() : url('/public' . request()->getRequestUri()) }}">
+    @php
+        $parsed_url = parse_url(URL::current());
+        // Extract the path from the parsed URL
+        $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
+        // Split the path into segments
+        $segments = explode('/', trim($path, '/')); // Remove leading/trailing slashes
 
+        // Remove the 'public' segment if it exists
+        $path_segments = array_filter($segments, function ($segment) {
+            return $segment !== 'public';
+        });
+
+        // Rebuild the path without 'public'
+        $new_path = '/' . implode('/', $path_segments);
+
+        // Rebuild the full URL (if needed)
+        $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
+    @endphp
+
+    <link rel="canonical"
+        href="{{ $segments[0] == 'public' ? $new_url : url('/public' . request()->getRequestUri()) }}">
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
