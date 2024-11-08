@@ -27,9 +27,7 @@ Route::middleware(['remove_public'])->group(function () {
         return response()->file(public_path('robots.txt'));
     });
 
-    Route::get('/', function () {
-        return redirect()->route('home', ['locale' => 'id-en']);
-    });
+    Route::get('/', [HomePageController::class, 'home']);
 
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
