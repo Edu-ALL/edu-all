@@ -74,7 +74,9 @@
         // Rebuild the full URL (if needed)
         $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
 
-        $canonical = $segments[0] == 'main' || $segments[0] == 'public' || $segments[0] == 'index.php'  ? $new_url : url('/public' . request()->getRequestUri())
+        $canonical = in_array($segments[0], ['main', 'public', 'index.php'])
+            ? $new_url
+            : url('/public' . request()->getRequestUri());
     @endphp
 
     <link rel="canonical" href="{{ $canonical }}">

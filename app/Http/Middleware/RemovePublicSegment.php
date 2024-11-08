@@ -39,7 +39,7 @@ class RemovePublicSegment
             $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
 
             // Check if the path starts with 'public' and remove it
-            if (isset($segments[0]) && $segments[0] == 'public') {
+            if (isset($segments[0]) && in_array($segments[0], ['main', 'public', 'index.php'])) {
                 return redirect($new_url);
             }
         }
