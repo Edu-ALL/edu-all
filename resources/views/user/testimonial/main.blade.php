@@ -27,7 +27,7 @@
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
                         <h2
-                            class="mt-16 font-newprimary font-bold text-5xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                            class="mt-16 font-newprimary font-bold text-banner-title text-[#6696E2] text-center md:ml-16 md:text-left">
                             Admission <br> Mentoring</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -64,7 +64,7 @@
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
                         <h2
-                            class="mt-16 font-newprimary font-bold text-5xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                            class="mt-16 font-newprimary font-bold text-banner-title text-[#6696E2] text-center md:ml-16 md:text-left">
                             Experiential <br> Learning</h2>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -102,7 +102,7 @@
                             <img src="{{ asset('assets/logo/quote-big.svg') }}" alt="Quote" loading="lazy">
                         </div>
                         <h2
-                            class="mt-16 font-newprimary font-bold text-5xl text-[#6696E2] text-center md:ml-16 md:text-left">
+                            class="mt-16 font-newprimary font-bold text-banner-title text-[#6696E2] text-center md:ml-16 md:text-left">
                             Academic <br> Preparation</h2>
                     </div>
                     <div class="w-full md:w-2/3">

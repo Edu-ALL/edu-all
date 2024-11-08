@@ -10,10 +10,10 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-[90vh] bg-adm-mentoring-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-28 gap-2">
-            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+            <h2 class="font-bold text-banner-title text-white text-center uppercase">
                 {{ __('pages/programs/admission_mentoring.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-lg font-light">
+            <p class="text-white text-center max-w-2xl leading-6 text-banner-description font-light">
                 {{ __('pages/programs/admission_mentoring.body') }}
             </p>
         </div>

@@ -10,10 +10,10 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-[90vh] bg-graduate-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-16 gap-3">
-            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+            <h2 class="font-bold text-banner-title text-white text-center uppercase">
                 {{ __('pages/programs/graduate_program.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-3xl font-semibold">
+            <p class="text-white text-center max-w-2xl leading-6 text-banner-subtitle font-semibold">
                 {{ __('pages/programs/graduate_program.body') }}
             </p>
         </div>
@@ -25,7 +25,7 @@
             <div class="flex flex-col md:flex-row items-center justify-evenly pt-4 pb-10 border-b border-b-[#DADADA] gap-8">
                 @foreach (__('pages/programs/admission_mentoring.stats') as $item)
                     <div class="flex flex-1 flex-col items-center">
-                        <h2 class="text-newprimary font-bold text-5xl leading-10">{{ $item['title'] }}</h2>
+                        <h2 class="text-newprimary font-bold text-banner-title leading-10">{{ $item['title'] }}</h2>
                         <h4 class="text-newprimary font-semibold text-lg leading-6">{{ $item['sub_title'] }}</h4>
                         <span class="text-xs font-semibold uppercase leading-3">{{ $item['comment'] }}</span>
                     </div>

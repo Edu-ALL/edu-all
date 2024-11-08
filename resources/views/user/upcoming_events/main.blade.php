@@ -13,7 +13,7 @@
             <div class="main-container">
                 <div class="flex items-center">
                     <div class="flex-row">
-                        <h1 class="mb-4 font-newprimary font-semibold text-4xl text-white lg:text-start text-center">
+                        <h1 class="mb-4 font-semibold text-banner-title text-white lg:text-start text-center">
                             {{ __('pages/resources/upcoming_events.title') }}
                         </h1>
                         <p

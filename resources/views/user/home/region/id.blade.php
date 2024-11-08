@@ -37,49 +37,49 @@
                         <div class="flex md:flex-row flex-wrap gap-6 md:justify-between justify-center items-center w-full">
                             {{-- Acceptance --}}
                             <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
+                                <h4 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->accepatance }}
                                 </h4>
-                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                <span class="font-light text-white text-banner-subdescription text-center">
                                     at Best-Fit Universities
                                 </span>
                             </div>
                             {{-- Mentees --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
+                                <h4 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->mentees }}
                                 </h4>
-                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                <span class="font-light text-white text-banner-subdescription text-center">
                                     mentees
                                 </span>
                             </div>
                             {{-- Scholarship --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
+                                <h4 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->scholarship }}
                                 </h4>
-                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                <span class="font-light text-white text-banner-subdescription text-center">
                                     in Scholarship Awards
                                 </span>
                             </div>
                             {{-- SAT Score --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
+                                <h4 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->sat_score }}
                                 </h4>
-                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                <span class="font-light text-white text-banner-subdescription text-center">
                                     on SAT Score
                                 </span>
                             </div>
                             {{-- Statisfaction Rate --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-newprimary font-bold text-white md:text-xl text-md text-center">
+                                <h4 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->statisfaction_rate }}
                                 </h4>
-                                <span class="font-newprimary font-light text-white text-sm text-center">
+                                <span class="font-light text-white text-banner-subdescription text-center">
                                     Student Projects Launched
                                 </span>
-                                {{-- <span class="font-newprimary font-light text-white text-sm text-center">
+                                {{-- <span class="font-light text-white text-banner-subdescription text-center">
                                     by Parents, Mentees, Partners, and Teachers
                                 </span> --}}
                             </div>
@@ -95,15 +95,15 @@
         <div class="main-container">
             <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
                 <div class="flex flex-col md:w-4/12">
-                    <h2 class="font-newprimary text-center md:text-left text-newprimary font-bold text-xl md:text-3xl mb-2">
+                    <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
                         EduALL
                     </h2>
-                    <h4 class="font-newprimary text-center md:text-left italic text-xl md:text-2xl">
+                    <h4 class="text-center md:text-left italic text-section-description">
                         Your Gateway to Top Universities <br> and Dream Careers
                     </h4>
                 </div>
                 <div class="flex flex-col md:w-8/12">
-                    <p class="font-newprimary text-sm md:text-base md:text-left text-center">
+                    <p class="text-banner-subdescription md:text-base md:text-left text-center">
                         More than just a university consultant, EduALL empowers students through personalized guidance in
                         academics, university and major selection, personal brand, and extracurriculars.
                         <br><br>
@@ -121,7 +121,7 @@
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="py-12">
         <div class="main-container">
-            <h2 class="font-bold text-xl md:text-3xl uppercase">Our Programs</h2>
+            <h2 class="font-bold text-section-title uppercase">Our Programs</h2>
             <div class="grid md:grid-cols-3 gap-6 mt-6">
                 <div class="flex flex-col relative">
                     <img loading="lazy" src="{{ asset('assets/img/home/benefits/Admission mentoring.webp') }}"
@@ -178,7 +178,7 @@
                             </li>
                         </ul>
                         <a href="{{ route('admissions_mentoring', app()->getLocale()) }}"
-                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-medium text-lg hover:bg-newprimary transition-all duration-150">more
                             details</a>
                     </div>
                     <div class="ourprogram_side"></div>
@@ -241,7 +241,7 @@
                             </li>
                         </ul>
                         <a href="{{ route('academic_test_preparation', app()->getLocale()) }}"
-                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-medium text-lg hover:bg-newprimary transition-all duration-150">more
                             details</a>
                     </div>
                     <div class="ourprogram_side"></div>
@@ -289,7 +289,7 @@
 
                         </ul>
                         <a href="{{ route('passion_project_mentoring', app()->getLocale()) }}"
-                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-newprimary font-medium text-lg hover:bg-newprimary transition-all duration-150">more
+                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-medium text-lg hover:bg-newprimary transition-all duration-150">more
                             details</a>
                     </div>
                     <div class="ourprogram_side"></div>
@@ -324,10 +324,10 @@
         <div class="h-full w-full relative">
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:top-[30%] lg:left-[30%] exploration_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
                     Exploration
                 </h1>
-                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
                     We guide our mentees in discovering their passions and interests through exposure to diverse learning
                     opportunities, professionals from various fields, and real-world challenges. We aim to ignite curiosity
                     and help students define their unique paths.
@@ -335,10 +335,10 @@
             </div>
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:bottom-[17%] lg:right-[10%]  profile_building_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
                     Profile <br> Building
                 </h1>
-                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
                     This is where we assist mentees in shaping a well-rounded academic and extracurricular persona. We work
                     together to identify strengths, achievements, and experiences that will set them apart, creating a
                     compelling and authentic profile for university applications.
@@ -346,10 +346,10 @@
             </div>
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:top-[25%] lg:left-[10%] academic_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
                     Academic
                 </h1>
-                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
                     We strategically prepare students for their chosen major by offering tailored guidance for international
                     curricula and specialized coaching for standardized tests. From course selection to targeted improvement
                     strategies, we empower students for success in university studies and competitive admissions.
@@ -357,10 +357,10 @@
             </div>
             <div
                 class="flex flex-col absolute translate-y-[120px] lg:bottom-[18%] lg:right-[30%] writing_pathaway_text opacity-0">
-                <h1 class="font-newprimary font-bold text-6xl text-white text-center lg:text-left">
+                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
                     Writing
                 </h1>
-                <h4 class="px-6 lg:px-0 mt-4 font-newprimary max-w-md text-justify text-base text-white leading-8">
+                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
                     Crafting a compelling narrative is key. We offer guidance on personal statements, essays, and other
                     written components of university applications. Through thoughtful storytelling and impactful writing, we
                     aim to showcase each student's unique qualities, aspirations, and contributions.
@@ -371,7 +371,7 @@
                     <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}"
                         alt="EduAll white logo" class="max-w-xs w-full">
 
-                    <h4 class="mt-12 font-newprimary font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
+                    <h4 class="mt-12 font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
                         EXCELLENCE</h4>
                 </div>
             </div>
@@ -396,36 +396,42 @@
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-40 pb-24" id="mentors">
         <div class="main-container">
-            <h1 class="font-newprimary font-bold text-4xl text-dark text-center">OUR MENTORS</h1>
+            <h1 class="font-bold text-section-title text-dark text-center">OUR MENTORS</h1>
         </div>
-        <div class="flex flex-col items-center mt-56 lg:px-[150px] bg-[#F3F3F3] shadow-2xl">
+        <div class="flex flex-col items-center mt-56 bg-[#F3F3F3] shadow-2xl">
             <div class="w-full px-10 -mt-52 max-w-screen-2xl mx-auto">
-                <div class="splide" role="group">
-                    <div class="splide__arrows text-dark">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
-                            <i class="fa-solid fa-chevron-left text-4xl"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
-                            <i class="fa-solid fa-chevron-right text-4xl"></i>
-                        </button>
-                    </div>
-                    <div class="splide__track py-10">
-                        <ul class="splide__list">
-                            @foreach ($all_mentor as $mentor)
-                                <li class="splide__slide">
-                                    <div class="splide__slide__container px-4 pt-[2rem] w-full h-[80%] mt-32">
-                                        <x-mentor-card :mentor=$mentor />
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                <div class="new-main-container">
+                    <div class="splide" role="group">
+                        <div class="splide__arrows text-dark">
+                            <button class="splide__arrow splide__arrow--prev"
+                                style="background: transparent; left: -24px">
+                                <i class="fa-solid fa-chevron-left text-4xl"></i>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next"
+                                style="background: transparent; right: -24px">
+                                <i class="fa-solid fa-chevron-right text-4xl"></i>
+                            </button>
+                        </div>
+                        <div class="splide__track py-10">
+                            <ul class="splide__list">
+                                @foreach ($all_mentor as $mentor)
+                                    <li class="splide__slide">
+                                        <div class="splide__slide__container px-4 pt-[2rem] w-full h-[80%] mt-32">
+                                            <x-mentor-card :mentor=$mentor />
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="flex justify-center">
+                    <a href="{{ route('mentor', app()->getLocale()) }}"
+                        class="mb-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                        {{ __('pages/home.mentor_btn') }}
+                    </a>
+                </div>
             </div>
-            <a href="{{ route('mentor', app()->getLocale()) }}"
-                class="flex justify-center mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                {{ __('pages/home.mentor_btn') }}
-            </a>
         </div>
     </section>
 
@@ -433,7 +439,7 @@
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="pt-40 pb-24 bg-dark">
         <div class="lg:px-[250px] px-[20px]">
-            <h1 class="font-newprimary font-bold text-4xl text-white uppercase text-center">Upcoming Events</h1>
+            <h1 class="font-bold text-section-title text-white uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-12">
                 {{-- Event --}}
                 <div class="flex flex-col items-center justify-between relative">
@@ -443,14 +449,14 @@
                                 @foreach ($events as $event)
                                     <li class="splide__slide">
                                         <div class="splide__slide__container">
-                                            <h4 class="absolute top-8 left-8 font-newprimary text-newyellow text-lg">Event
+                                            <h4 class="absolute top-8 left-8 text-newyellow text-lg">Event
                                             </h4>
                                             <img loading="lazy"
                                                 src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                 alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
 
                                             <a href="{{ route('upcoming_events', app()->getLocale()) }}"
-                                                class="absolute bottom-0 w-full py-3 bg-newprimary font-newprimary text-center text-white text-base">more
+                                                class="absolute bottom-0 w-full py-3 bg-newprimary text-center text-white text-base">more
                                                 detail</a>
                                         </div>
                                     </li>
@@ -473,12 +479,12 @@
                                                 <div class="splide__slide__container">
                                                     <div
                                                         class="flex flex-col absolute top-8 left-8 pr-8 justify-between h-60">
-                                                        <h4 class="font-newprimary text-newyellow text-lg">Talk Sessions
+                                                        <h4 class="text-newyellow text-lg">Talk Sessions
                                                         </h4>
                                                         <div class="flex flex-col">
-                                                            <h4 class="font-newprimary text-newyellow text-lg">
+                                                            <h4 class="text-newyellow text-lg">
                                                                 {{ $regular_talk->event_date }}</h4>
-                                                            <h4 class="font-newprimary text-white text-2xl font-bold">
+                                                            <h4 class="text-white text-2xl font-bold">
                                                                 {{ html_entity_decode(substr(strip_tags($regular_talk->event_title), 0, 80)) }}
                                                             </h4>
                                                         </div>
@@ -496,14 +502,14 @@
 
                             <div class="px-6 w-full">
                                 <a href="{{ route('upcoming_events', app()->getLocale()) }}"
-                                    class="w-full block py-3 bg-newprimary font-newprimary text-center text-white text-base">more
+                                    class="w-full block py-3 bg-newprimary text-center text-white text-base">more
                                     events
                                 </a>
                             </div>
                         </div>
                     @else
                         <div class="flex flex-col w-full relative text-start px-6">
-                            <h4 class="font-newprimary text-newyellow text-lg">Talk Sessions</h4>
+                            <h4 class="text-newyellow text-lg">Talk Sessions</h4>
                             <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
                     @endif
@@ -512,28 +518,26 @@
                     @if (count($important_dates) > 0)
                         <div class="flex flex-col items-center justify-between mt-2">
                             <div class=" h-max-[300px] flex flex-col w-full py-8 px-6">
-                                <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
+                                <h4 class="text-newyellow text-lg">Important Dates</h4>
                                 <ul class="mt-2 overflow-y-auto overflow-x-hidden">
                                     @foreach ($important_dates as $important_date)
                                         <li>
                                             @if ($important_date->link)
                                                 <a href="{{ $important_date->link }}" target="_blank"
                                                     class="flex justify-between border-b border-b-white py-2 px-2 w-ful">
-                                                    <h3
-                                                        class="font-newprimary font-normal hover:text-blue-500 text-white w-[75%]">
+                                                    <h3 class="font-normal hover:text-blue-500 text-white w-[75%]">
                                                         {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
                                                     </h3>
-                                                    <span
-                                                        class="font-newprimary hover:text-blue-500 text-newyellow w-[25%] text-end">
+                                                    <span class="hover:text-blue-500 text-newyellow w-[25%] text-end">
                                                         {{ date('M, d Y', strtotime($important_date->date)) }}
                                                     </span>
                                                 </a>
                                             @else
                                                 <div class="flex justify-between border-b border-b-white py-2 px-2 w-ful">
-                                                    <h3 class="font-newprimary font-normal text-white w-[75%]">
+                                                    <h3 class="font-normal text-white w-[75%]">
                                                         {{ $important_date->title }}
                                                     </h3>
-                                                    <span class="font-newprimary text-newyellow w-[25%] text-end">
+                                                    <span class="text-newyellow w-[25%] text-end">
                                                         {{ date('M, d Y', strtotime($important_date->date)) }}
                                                     </span>
                                                 </div>
@@ -544,15 +548,14 @@
                             </div>
                             <div class="px-6 w-full">
                                 <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                    target="_blank"
-                                    class="w-full block py-3 bg-red font-newprimary text-center text-white text-base">
+                                    target="_blank" class="w-full block py-3 bg-red text-center text-white text-base">
                                     more important dates
                                 </a>
                             </div>
                         </div>
                     @else
                         <div class="flex flex-col w-full relative text-start px-6 mt-10">
-                            <h4 class="font-newprimary text-newyellow text-lg">Important Dates</h4>
+                            <h4 class="text-newyellow text-lg">Important Dates</h4>
                             <p class="text-white border-b border-b-white">Not Available</p>
                         </div>
                     @endif
@@ -566,7 +569,7 @@
     @if (count($as_seen_on) > 0)
         <section class="pt-40 pb-24">
             <div class="main-container">
-                <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center">As Seen On</h1>
+                <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
                 <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
                     @foreach ($as_seen_on as $item)
                         <div class="h-16 w-full flex justify-center">
@@ -584,7 +587,7 @@
     {{-- ========================================== Success Stories ========================================== --}}
     <section class="pt-40 pb-24">
         <div class="main-container flex flex-col items-center">
-            <h1 class="font-newprimary font-bold text-4xl text-dark uppercase text-center max-w-4xl mx-auto">
+            <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
                 Empowering 700+ Minds for Global
                 Success – From Exceptional Personal Projects!
                 to Top Universities Worldwide!
@@ -597,12 +600,12 @@
                             alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
                         <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
                             {{-- Name --}}
-                            <h2 class="font-semibold text-xl font-newprimary text-center">{{ $item->name }}</h2>
+                            <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
                             {{-- Bedge 1 --}}
-                            <div class="font-newprimary text-newprimary text-xs font-semibold text-center">
+                            <div class="text-newprimary text-card-small font-semibold text-center">
                                 {!! $item->badge_1 !!}
                             </div>
-                            <div class="mt-4 font-newprimary text-dark text-base font-semibold text-center leading-4">
+                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
                                 {!! $item->badge_2 !!}
                             </div>
                         </div>
@@ -610,7 +613,7 @@
                 @endforeach
             </div>
             <a href="{{ route('success_stories', app()->getLocale()) }}"
-                class="flex justify-center my-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                class="flex justify-center my-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
                 Read More
             </a>
         </div>
@@ -619,7 +622,7 @@
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="py-24">
         <div class="flex main-container w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">WHAT OUR MENTEES & PARENTS
+            <h2 class="font-bold text-section-title text-black text-center">WHAT OUR MENTEES & PARENTS
                 SAY</h2>
         </div>
         <div class="main-container mb-12 md:my-12">
@@ -633,7 +636,7 @@
                     </button>
                 </div>
                 <div class="splide__track">
-                    <ul class="splide__list font-newprimary text-black px-8">
+                    <ul class="splide__list text-black px-8">
                         @foreach ($testimonies as $testi)
                             <li class="splide__slide w-full pb-8">
                                 <div class="splide__slide__container py-8 px-4 h-full w-full ">
@@ -650,14 +653,9 @@
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="mb-6 font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
+            <h2 class="mb-6 font-semibold text-2xl text-white text-center text-section-title">
                 {{ __('pages/home.bottom') }}
             </h2>
-            {{-- <a href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                class="px-8 md:px-12 py-3 font-newprimary text-base text-white text-center bg-red hover:scale-110 transition-all">
-                {{ __('pages/home.bottom_btn') }}
-
-            </a> --}}
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
                 title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="red" />
         </div>
@@ -667,8 +665,6 @@
 @push('script')
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> --}}
 
     <script type="module" src="{{ asset('js/user/main.js') }}"></script>
     <script>

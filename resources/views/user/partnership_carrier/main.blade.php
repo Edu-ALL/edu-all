@@ -14,7 +14,7 @@
                 <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px]">
                     <div class="flex-row">
                         <h1
-                            class="font-bold font-newnewnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
                             {{ __('pages/about_us/partnership_careers.title') }}
                         </h1>
                     </div>

@@ -10,7 +10,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-[90vh] bg-general-acad-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
-            <h2 class="font-newprimary font-bold text-4xl md:text-5xl text-white text-center uppercase max-w-3xl">
+            <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
                 {{ __('pages/programs/academic_test_preparation.title') }}
             </h2>
         </div>

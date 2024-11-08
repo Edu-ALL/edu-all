@@ -36,7 +36,7 @@
             </div>
             <div class="flex flex-col gap-y-8 max-w-4xl mt-20">
                 <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-newprimary md:flex-row">
-                    <h4 class="mb-6 font-newprimary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
+                    <h4 class="mb-6 font-semibold text-banner-title text-[#6696E2] lext-right md:w-1/3 ">
                         All-Around Exploration
                     </h4>
                     <p class="font-newprimary text-base text-white md:w-2/3">
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-newprimary md:flex-row">
-                    <h4 class="mb-6 font-newprimary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
+                    <h4 class="mb-6 font-semibold text-banner-title text-[#6696E2] lext-right md:w-1/3 ">
                         Diverse Area of Expertise
                     </h4>
                     <p class="font-newprimary text-base text-white md:w-2/3">
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="flex flex-col items-center px-16 py-8 rounded-xl bg-newprimary md:flex-row">
-                    <h4 class="mb-6 font-newprimary font-semibold text-4xl text-[#6696E2] lext-right md:w-1/3 ">
+                    <h4 class="mb-6 font-semibold text-banner-title text-[#6696E2] lext-right md:w-1/3 ">
                         Long-Term Results
                     </h4>
                     <p class="font-newprimary text-base text-white md:w-2/3">

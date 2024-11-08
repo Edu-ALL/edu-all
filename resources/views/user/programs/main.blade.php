@@ -13,10 +13,10 @@
                 <div class="flex items-center h-full lg:max-w-xl lg:pt-[50px] pt-[10vh]">
                     <div class="flex-row">
                         <h1
-                            class="font-bold font-newnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
                             {{ __('pages/programs/programs.title') }}
                         </h1>
-                        <p class="mt-2 font-newnewprimary font-normal text-xl lg:text-2xl text-white lg:text-start text-center">
+                        <p class="mt-2 font-normal text-banner-description text-white lg:text-start text-center">
                             {{ __('pages/programs/programs.body') }}
                         </p>
                     </div>
@@ -88,13 +88,9 @@
      {{-- ================================== Bottom Section  ================================== --}}
      <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
-            <h2 class="w-full max-w-3xl mb-6 font-newprimary font-black text-white text-center lg:text-4xl text-2xl">
+            <h2 class="w-full max-w-3xl mb-6 font-black text-white text-center text-section-title">
                 {{ __('pages/programs/programs.sign_up_text') }}
             </h2>
-            {{-- <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                class="px-5 py-2 mt-4 font-newprimary font-medium text-base text-white text-center bg-red">
-                {{ __('pages/programs/programs.sign_up_btn') }}
-            </a> --}}
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
                 title="{{ __('pages/programs/programs.sign_up_btn') }}" type='secondary' bg-color="red" />
         </div>
