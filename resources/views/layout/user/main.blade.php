@@ -77,7 +77,7 @@
         $canonical = $segments[0] == 'main' || $segments[0] == 'public' || $segments[0] == 'index.php'  ? $new_url : url('/public' . request()->getRequestUri())
     @endphp
 
-    <link rel="canonical" href="{{ $segments[0] == 'public' ? $new_url : url('/public' . request()->getRequestUri()) }}">
+    <link rel="canonical" href="{{ $canonical }}">
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
