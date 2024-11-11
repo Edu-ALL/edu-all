@@ -50,10 +50,8 @@
     </script>
 
     {{-- Canonical  --}}
-    @if (app()->getLocale() == 'sg-en')
-        @if (!request()->is(app()->getLocale()) && !request()->is(app()->getLocale() . '/about'))
-            <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
-        @endif
+    @if (app()->getLocale() == 'sg-en' && !request()->is(app()->getLocale() . '/about'))
+        <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
 
     @php
