@@ -372,7 +372,7 @@
                                 <label for="" class="form-label">
                                     Description <span style="color: var(--red)">*</span>
                                 </label>
-                                <textarea class="textarea" name="description" id="description">
+                                <textarea class="form-control" name="description" id="description">
                                 {{ old('description') }}
                             </textarea>
                                 @error('description')
@@ -544,7 +544,7 @@
             $("#title-info").text("Add new Blog Widget");
             $('#image').val('');
             $('#title').val('');
-            tinymce.get("description").setContent('');
+            $('#description').html('');
             $('#link').val('');
             $('#position').val('').change();
             $('#button_name').val('')
@@ -560,7 +560,7 @@
 
             $("#title-info").text("Update Blog Widget");
             $('#title').attr('value', title);
-            tinymce.get("description").setContent(desc);
+            $('#description').html(desc);
             $('#link').attr('value', link);
             $('#position').val(position).change();
             $('#button_name').val(button)
@@ -599,7 +599,7 @@
                 .format('MM') + '/' + blog
                 .blog_thumbnail);
             $('#title').val(blog.blog_title);
-            tinymce.get("description").setContent(blog.seo_desc);
+            $('#description').html(blog.seo_desc);
             $('#link').val('{{ url('') }}' + '/' + localization + '/blog/' + blog.slug);
             $('#button_name').val('Read More');
         }
