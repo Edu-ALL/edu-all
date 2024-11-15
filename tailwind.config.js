@@ -119,7 +119,7 @@ module.exports = {
             },
             fontFamily: {
                 primary: "Asap, sans-serif",
-                newprimary: "Ambit, sans-serif !important",
+                newprimary: "SF Pro Display, sans-serif",
                 secondary: "SF Pro Display, sans-serif",
             },
             colors: {
