@@ -198,7 +198,7 @@
             @if (!str_contains(request()->url(), 'partnership-careers'))
                 <div class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[60px] md:h-[60px] w-[50px] h-[50px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow"
                     id='open-nav-child-btn'>
-                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20Edu-ALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                         target="_blank">
                         <i class="fa-brands fa-whatsapp text-[30px]"></i>
                     </a>

@@ -96,7 +96,7 @@
             <h2 class="font-newprimary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/partnership_careers.colab_bottom') }}
             </h2>
-            <x-button href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20ALL-in" target="_blank"
+            <x-button href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20Edu-ALL" target="_blank"
                 title="{{__('pages/about_us/partnership_careers.colab_btn') }}" bg-color="red" />
         </div>
     </section>
