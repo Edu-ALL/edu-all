@@ -9,7 +9,7 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-[90vh] bg-global-innovators-project-header bg-cover bg-top" id="banner">
-        <div class="flex flex-col h-full items-start md:items-center justify-center max-w-4xl mx-6 gap-2 md:mx-auto">
+        <div class="flex flex-col h-full items-center md:items-start justify-center max-w-4xl mx-6 gap-2 md:mx-auto">
             <h2 class="font-bold text-white text-center md:text-left leading-[3.5rem] tracking-wider max-w-xs text-5xl"> 
                 Global Innovators Project
             </h2>
