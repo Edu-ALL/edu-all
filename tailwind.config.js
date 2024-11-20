@@ -92,6 +92,9 @@ module.exports = {
                     "url('../../public/assets/img/experiential_learning/Home banner exp learning.webp')",
                 "tea-programs-header":
                     "url('../../public/assets/img/experiential_learning/Home banner teachers.webp')",
+                
+                "global-innovators-project-header": 
+                    "url('../../public/assets/img/global_innovators_project/Banner Exploration Program.webp')",
 
                 // about
                 "our-contribution-banner":  "url('../../public/assets/img/banner/Partnership.webp')",
