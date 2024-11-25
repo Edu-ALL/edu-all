@@ -104,7 +104,7 @@ body {
 }
 
 .text-banner-description {
-    @apply md:text-xl text-base;
+    @apply md:text-lg text-base font-newprimary;
 }
 
 .text-banner-subdescription {
