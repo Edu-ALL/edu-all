@@ -13,7 +13,7 @@
             <div class="main-container h-full">
                 <div class="flex items-center h-full justify-center">
                     <div class="flex-row">
-                        <h1 class="mb-4 font-bold font-newnewprimary text-4xl lg:text-6xl text-white text-center">
+                        <h1 class="mb-4 font-semibold text-banner-title text-white lg:text-start text-center">
                             {{ __('pages/resources/upcoming_events.title') }}
                         </h1>
                         <p
@@ -76,22 +76,6 @@
         </div>
     </section>
 
-    {{-- ================================== Modal Detail Section  ================================== --}}
-    {{-- <section class="event__detail--wrapper hidden fixed top-0 left-0 w-screen h-screen z-40">
-        <div class="flex justify-center items-center w-full h-full bg-black/70">
-            <div class="flex flex-col w-full max-w-3xl mx-6 bg-white rounded-md overflow-hidden z-50 ">
-                <div class="flex justify-between items-center px-6 py-4 bg-[#4054b2]">
-                    <h5 class="font-newprimary font-semibold text-lg text-white">{{ $event->event_title }}
-                    </h5>
-                    <div class="event__detail--close text-white text-2xl cursor-pointer"><i class="fa-solid fa-xmark"></i>
-                    </div>
-                </div>
-                <div class="px-6 py-4 font-newprimary text-base text-[#7e7e7e] leading-7 bg-white">
-                    {!! $event->event_detail !!}
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     {{-- ================================== Bottom Section  ================================== --}}
     <section class="pt-10 pb-28">

@@ -10,10 +10,10 @@
 
         <div class="flex flex-col px-4 overflow-visible">
             {{-- Mentor Name --}}
-            <h2 class="font-newprimary text-center font-semibold text-3xl text-dark mt-4 leading-7">
+            <h2 class="text-center font-semibold text-card-title text-dark mt-4 leading-7">
                 {{ $mentor->mentor_fullname }}
             </h2>
-            <span class="font-newprimary text-newprimary text-xs text-center mt-2">
+            <span class="text-newprimary text-card-small text-center mt-2">
                 {!! $mentor->mentor_graduation !!}
             </span>
 
@@ -32,7 +32,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="font-newprimary text-base font-semibold text-dark leading-5 mt-1">
+                        <h4 class="text-card-small font-semibold text-dark leading-5 mt-1">
                             {{ $item->value }}
                         </h4>
                     </li>
@@ -52,7 +52,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="font-newprimary text-base font-semibold text-dark leading-5">
+                        <h4 class="text-card-small font-semibold text-dark leading-5">
                             {{ $mentor->value_1 }}
                         </h4>
                     </li>
@@ -71,7 +71,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="font-newprimary text-base font-semibold text-dark leading-5">
+                        <h4 class="text-card-small font-semibold text-dark leading-5">
                             {{ $mentor->value_2 }}
                         </h4>
                     </li>
@@ -90,7 +90,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="font-newprimary text-base font-semibold text-dark leading-5">
+                        <h4 class="text-card-small font-semibold text-dark leading-5">
                             {{ $mentor->value_3 }}
                         </h4>
                     </li>
@@ -101,7 +101,7 @@
     @if (!$disabled_btn)
         <a href="{{ route('detail_mentor', ['locale' => app()->getLocale(), 'slug' => $mentor->mentor_slug]) }}"
             class="mt-5 mb-5 flex flex-col justify-center text-center group items-center gap-1 hover:bg-[#EBEBEB] transition-all group py-3">
-            <span class="font-newprimary font-semibold text-xs text-newprimary leading-none text-center">Get
+            <span class="font-semibold text-card-small text-newprimary leading-none text-center">Get
                 to
                 know {{ $mentor->mentor_fullname }}</span>
             <div class="w-24 h-[1px] bg-newprimary group-hover:w-0 transition-all">

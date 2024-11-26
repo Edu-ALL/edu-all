@@ -18,10 +18,10 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-undergraduate-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-[50%] md:py-[12%] gap-3">
-            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+            <h2 class="font-bold text-banner-title text-white text-center uppercase">
                 {{ __('pages/programs/undergraduate_program.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl md:leading-6 md:text-3xl text-2xl font-semibold">
+            <p class="text-white text-center max-w-2xl leading-6 text-banner-subtitle font-semibold">
                 {{ __('pages/programs/undergraduate_program.body') }}
             </p>
         </div>
@@ -33,7 +33,7 @@
             <div class="flex flex-col md:flex-row items-center justify-evenly pt-4 pb-10 border-b border-b-[#DADADA] gap-8">
                 @foreach (__('pages/programs/admission_mentoring.stats') as $item)
                     <div class="flex flex-1 flex-col items-center">
-                        <h2 class="text-newprimary font-bold text-5xl leading-10">{{ $item['title'] }}</h2>
+                        <h2 class="text-newprimary font-bold text-banner-title leading-10">{{ $item['title'] }}</h2>
                         <h4 class="text-newprimary font-semibold text-lg leading-6">{{ $item['sub_title'] }}</h4>
                         <span class="text-xs font-semibold uppercase leading-3">{{ $item['comment'] }}</span>
                     </div>
@@ -77,8 +77,7 @@
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                     <div class="w-full md:w-1/2 overflow-hidden rounded-lg">
                         <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
-                            alt="EduALL - ilustration"
-                            class="w-full h-full object-center object-cover aspect-[7/6]">
+                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover aspect-[7/6]">
                     </div>
                     <div class="w-full md:w-1/2">
                         <ul class="flex flex-col items-start justify-center gap-3">
@@ -114,7 +113,8 @@
                 <h2 class="font-newprimary font-bold text-white text-center text-2xl mb-4 uppercase md:leading-4">
                     {{ __('pages/programs/admission_mentoring.four_aspect_title') }}
                 </h2>
-                <span class="font-newprimary font-bold text-newyellow text-center text-3xl md:text-4xl mb-4 uppercase md:leading-6">
+                <span
+                    class="font-newprimary font-bold text-newyellow text-center text-3xl md:text-4xl mb-4 uppercase md:leading-6">
                     {{ __('pages/programs/admission_mentoring.four_aspect_subtitle') }}
                 </span>
 

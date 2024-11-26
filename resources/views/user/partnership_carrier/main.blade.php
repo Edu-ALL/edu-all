@@ -22,7 +22,7 @@
                 <div class="flex items-center h-full justify-center">
                     <div class="flex-row w-3/5">
                         <h1
-                            class="font-bold font-newnewnewprimary text-4xl lg:text-6xl text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
                             {{ __('pages/about_us/partnership_careers.title') }}
                         </h1>
                     </div>
@@ -104,7 +104,7 @@
             <h2 class="font-newprimary font-semibold text-yellow text-center text-3xl mb-4">
                 {{ __('pages/about_us/partnership_careers.colab_bottom') }}
             </h2>
-            <x-button href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20ALL-in" target="_blank"
+            <x-button href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20Edu-ALL" target="_blank"
                 title="{{__('pages/about_us/partnership_careers.colab_btn') }}" bg-color="red" />
         </div>
     </section>

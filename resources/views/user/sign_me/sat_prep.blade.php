@@ -4,6 +4,31 @@
     <title>{{ __('pages/sign_me/sat_prep.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/sign_me/sat_prep.meta_title') }}" />
     <meta name="description" content="{{ __('pages/sign_me/sat_prep.meta_description') }}" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXRKLPRKWF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-JXRKLPRKWF');
+        // gtag('config', 'AW-329409030')
+    </script>
+
+    <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            gtag('event', 'Conversion - SAT', {
+                'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
+                // 'event_callback': callback
+            });
+
+            return false;
+        }
+    </script>
 @endsection
 
 @section('content')
@@ -15,7 +40,8 @@
                 </h2>
                 <p class="mt-4 w-full font-newprimary text-lg text-white md:max-w-lg">
                     <span class="block font-bold mb-3">Prepare, Achieve, Flourish Together with EduALL!</span>
-                    Let’s find out how to maximize your academic performance with our Standardized Test Prep Programs FREE Diagnostic Test. Our expert and professional tutors will help you through them all!
+                    Let’s find out how to maximize your academic performance with our Standardized Test Prep Programs FREE
+                    Diagnostic Test. Our expert and professional tutors will help you through them all!
                 </p>
             </div>
         </div>
@@ -33,7 +59,8 @@
                             <li class="flex">
                                 <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span>
-                                    Big picture of what you will face in your SAT and how the SAT could help you for your dream universities’ application process
+                                    Big picture of what you will face in your SAT and how the SAT could help you for your
+                                    dream universities’ application process
                                 </span>
                             </li>
                             <li class="flex">
@@ -66,7 +93,13 @@
                 <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                      @include('layout.user.external-form.registration', ['prog_id' => 'SATPRIV', 'extClass' => '', 'scrolling' => 'no', 'height' => 1000, 'width' => '95%'])
+                        @include('layout.user.external-form.registration', [
+                            'prog_id' => 'SATPRIV',
+                            'extClass' => '',
+                            'scrolling' => 'no',
+                            'height' => 1000,
+                            'width' => '95%',
+                        ])
                     </div>
                 </div>
             </div>

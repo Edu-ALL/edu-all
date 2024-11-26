@@ -4,6 +4,31 @@
     <title>{{ __('pages/sign_me/adm_mentoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/sign_me/adm_mentoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/sign_me/adm_mentoring.meta_description') }}" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXRKLPRKWF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-JXRKLPRKWF');
+        // gtag('config', 'AW-329409030')
+    </script>
+    
+    <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {            
+            gtag('event', 'Conversion - Mentoring', {
+                'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
+                // 'event_callback': callback
+            });
+            
+            return false;
+        }
+    </script>
 @endsection
 
 @section('content')
@@ -66,7 +91,7 @@
                 <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                      @include('layout.user.external-form.registration', ['prog_id' => 'AAUP', 'extClass' => '', 'scrolling' => 'no', 'height' => 1000, 'width' => '95%'])
+                      @include('layout.user.external-form.registration', ['prog_id' => 'AAUP', 'extClass' => '', 'scrolling' => 'yes', 'height' => 1000, 'width' => '95%'])
                     </div>
                 </div>
             </div>

@@ -19,10 +19,10 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-sat-prep-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-[50%] md:py-[12%] gap-2">
-            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+            <h2 class="font-bold text-banner-title text-white text-center uppercase">
                 {{ __('pages/programs/sat_program.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-lg font-light">
+            <p class="text-white text-center max-w-2xl leading-6 text-banner-description font-light">
                 {{ __('pages/programs/sat_program.body') }}
             </p>
         </div>
@@ -33,7 +33,7 @@
             <div class="flex flex-col justify-between gap-8 md:flex-row">
                 @foreach (__('pages/programs/sat_program.summary') as $item)
                     <div class="flex flex-col items-center max-w-xs mx-auto">
-                        <h3 class="font-bold text-5xl text-newprimary">{{ $item['title'] }}</h3>
+                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
                         <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
                     </div>
                 @endforeach

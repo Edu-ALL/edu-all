@@ -30,8 +30,8 @@
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue" : "5.0",
-            "ratingCount": "61",
-            "reviewCount": "61"
+            "ratingCount": "65",
+            "reviewCount": "65"
           }
         }
     </script>
@@ -50,11 +50,38 @@
     </script>
 
     {{-- Canonical  --}}
-    @if (app()->getLocale() == 'sg-en')
-        @if (!request()->is(app()->getLocale()) && !request()->is(app()->getLocale() . '/about'))
-            <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
-        @endif
+    @if (app()->getLocale() == 'sg-en' && !request()->is(app()->getLocale() . '/about'))
+        <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
+
+    @php
+        $parsed_url = parse_url(URL::current());
+        // Extract the path from the parsed URL
+
+        if (isset($parsed_url['path'])) {
+            $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
+            // Split the path into segments
+            $segments = explode('/', trim($path, '/')); // Remove leading/trailing slashes
+
+            // Remove 'main', 'public', and 'index.php' segments if they exist
+            $path_segments = array_filter($segments, function ($segment) {
+                return !in_array($segment, ['main', 'public', 'index.php']);
+            });
+
+            // Rebuild the path without 'public'
+            $new_path = '/' . implode('/', $path_segments);
+
+            // Rebuild the full URL (if needed)
+            $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
+
+            $canonical = in_array($segments[0], ['main', 'public', 'index.php'])
+                ? $new_url
+                : url('/public' . request()->getRequestUri());
+        }
+
+    @endphp
+
+    <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current() }}">
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
@@ -164,21 +191,20 @@
 </head>
 
 <body id="body">
-    {{-- <div class="fixed lg:bottom-5 bottom-[15px] lg:right-5 right-[10px] z-[9999] transition-all duration-1000">
-        <div class="relative group"> --}}
-
+    <div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[9999] transition-all duration-1000">
+        <div class="relative group">
             {{-- Dont Display the button on this pages: "partnership-careers" --}}
-            {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
-                <div class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[60px] md:h-[60px] w-[50px] h-[50px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow"
+            @if (!str_contains(request()->url(), 'partnership-careers'))
+                <div class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow"
                     id='open-nav-child-btn'>
-                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                         target="_blank">
-                        <i class="fa-brands fa-whatsapp text-[30px]"></i>
+                        <i class="fa-brands fa-whatsapp text-[25px]"></i>
                     </a>
                 </div>
             @endif
         </div>
-    </div> --}}
+    </div>
 
     <div class="fixed -bottom-[500%] lg:right-5 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[450px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
         id="newsForm">

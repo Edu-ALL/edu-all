@@ -19,10 +19,10 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-exclusive-program-school-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full justify-center items-center new-main-container py-20 gap-4">
-            <h2 class="font-newprimary font-bold text-5xl text-white text-center uppercase mb-3">
+            <h2 class="font-newprimary font-bold text-banner-title text-white text-center uppercase mb-3">
                 {{ __('pages/programs/exclusive_program_school.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-lg font-light">
+            <p class="text-white text-center max-w-2xl leading-6 text-banner-description font-light">
                 {{ __('pages/programs/exclusive_program_school.description') }}
             </p>
             <p class="font-newprimary text-white text-center max-w-xl leading-6 text-lg font-light">

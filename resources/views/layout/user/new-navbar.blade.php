@@ -1,5 +1,5 @@
 <header
-    class="fixed left-1/2 -translate-x-1/2 bottom-12 z-50 transition-all hidden md:block duration-[600ms] ease-in-out"
+    class="fixed left-1/2 -translate-x-1/2 bottom-10 z-50 transition-all hidden md:block duration-[600ms] ease-in-out"
     id="bottom-navbar">
     <nav class="bg-black/80 md:rounded-full rounded-3xl shadow-lg md:py-1 transition-all duration-500 ease-in-out">
         <div class="container mx-auto px-1">
@@ -36,14 +36,14 @@
                             @endif
                         </li>
                     @endforeach
-                    @if (!str_contains(request()->url(), 'partnership-careers'))
+                    {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
                         <li class="bg-[#1f9034]/80 hover:bg-[#1f9034] text-white rounded-l-full w-full">
                             <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                                 target="_blank" class="pl-[15px] pr-[5px] text-center flex items-center h-full">
                                 <i class="fa-brands fa-whatsapp text-[30px]"></i>
                             </a>
                         </li>
-                    @endif
+                    @endif --}}
                     <li class="bg-red/80 hover:bg-red text-white w-full rounded-r-full">
                         <button onclick="popupForm('open')" id="newsButton"
                             class="text-white text-base py-2 px-3 block text-center">
@@ -59,9 +59,9 @@
 
 <header class="transition-all md:hidden">
     <!-- Mobile Menu Button -->
-    <div class="fixed bottom-8 transform -translate-x-1/2 left-1/2 bg-black rounded-xl z-50">
+    <div class="fixed  bottom-5 transform -translate-x-1/2 left-8 bg-black rounded-xl z-50">
         <span id="mobile-menu-toggle"
-            class="md:hidden flex items-center justify-center text-white text-2xl focus:outline-none p-1.5">
+            class="md:hidden flex items-center justify-start text-white text-2xl focus:outline-none p-1.5">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -111,7 +111,7 @@
                             @endif
                         </li>
                     @endforeach
-                    <li
+                    {{-- <li
                         class="navbar-item-mobile relative group rounded-full transitionall font-light programs-menu w-full">
                         <div class="flex items-center justify-center px-6">
                             <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
@@ -120,7 +120,7 @@
                                 <i class="fa-brands fa-whatsapp mr-2"></i> Chat Now!
                             </a>
                         </div>
-                    </li>
+                    </li> --}}
                     <li
                         class="navbar-item-mobile relative group rounded-full transitionall font-light programs-menu w-full">
                         <div class="flex items-center justify-center w-full px-6">

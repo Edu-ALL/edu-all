@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'setlocale' => \App\Http\Middleware\SetLocale::class,
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
         'auth.expires' => \App\Http\Middleware\SessionExpired::class,
+        'remove_public' => \App\Http\Middleware\RemovePublicSegment::class,
     ];
 }

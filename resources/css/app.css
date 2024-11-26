@@ -6,7 +6,7 @@
 
 html,
 body {
-    font-family: "Ambit" !important;
+    font-family: "Asap" !important;
 }
 
 /* Font */
@@ -94,17 +94,44 @@ body {
     @apply bg-red text-white rounded-[2px] py-1.5 px-5 font-medium font-primary capitalize;
 }
 
-.active-navbar {
-    @apply text-white rounded-3xl md:rounded-full;
+/* Font Size  */
+.text-banner-title {
+    @apply md:text-6xl text-3xl font-newprimary;
 }
 
-/* Custom CSS for the indicator */
-#active-indicator {
-    height: 100%;  /* Full height of nav items */
-    width: 100px;  /* Adjust width to match nav item */
-    top: 0;
+.text-banner-subtitle {
+    @apply md:text-3xl text-xl;
 }
 
+.text-banner-description {
+    @apply md:text-lg text-base font-newprimary;
+}
+
+.text-banner-subdescription {
+    @apply text-sm;
+}
+
+.text-section-title {
+    @apply md:text-4xl text-2xl uppercase font-newprimary;
+}
+
+.text-section-subtitle,
+.text-card-title {
+    @apply md:text-2xl text-xl;
+}
+
+.text-section-description,
+.text-card-description {
+    @apply md:text-base text-sm;
+}
+
+.text-card-subtitle {
+    @apply md:text-xl text-base;
+}
+
+.text-card-small {
+    @apply md:text-sm text-xs;
+}
 
 /* Program Card */
 .program_card {

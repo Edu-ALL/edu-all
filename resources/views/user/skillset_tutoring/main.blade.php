@@ -19,25 +19,14 @@
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-skillset-tutoring-header bg-cover bg-top" id="banner">
         <div class="flex flex-col h-full items-center new-main-container py-[50%] md:py-[12%] gap-2">
-            <h2 class="font-newprimary font-bold text-4xl md:text-7xl text-white text-center uppercase">
+            <h2 class="font-bold text-banner-title text-white text-center uppercase">
                 {{ __('pages/programs/skillset_tutoring.title') }}
             </h2>
-            <p class="font-newprimary text-white text-center max-w-2xl leading-6 text-lg font-light">
+            <p class="text-white text-center max-w-2xl leading-6 text-banner-description font-light">
                 {{ __('pages/programs/skillset_tutoring.body') }}
             </p>
         </div>
     </section>
-    {{-- <section class="py-16 bg-skillset-tutoring-header bg-cover bg-left md:bg-center" id="banner">
-        <div class="flex flex-col justify-between items-center md:items-start main-container py-24 gap-8">
-            <h2 class="font-newprimary font-bold text-5xl text-white text-center uppercase">
-                {{ __('pages/programs/skillset_tutoring.title') }}</h2>
-            <p class="font-newprimary text-white text-center md:text-justify max-w-md">
-                {{ __('pages/programs/skillset_tutoring.body') }}
-            </p>
-            <x-button type='secondary' href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                title="{{ __('pages/programs/skillset_tutoring.header_button') }}" />
-        </div>
-    </section> --}}
 
     {{-- SECTION 1 --}}
     <section class="md:bg-newprimary">

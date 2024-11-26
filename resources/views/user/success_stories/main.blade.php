@@ -52,7 +52,7 @@
                         <div class="w-full md:w-7/12">
                             <div class="flex flex-col gap-1 items-start">
                                 {{-- Name --}}
-                                <h2 class="font-bold text-5xl font-newprimary">{{ $item->name }}</h2>
+                                <h2 class="font-bold text-banner-title font-newprimary">{{ $item->name }}</h2>
                                 {{-- Bedge 1 --}}
                                 <div class="font-newprimary text-newprimary text-base font-bold">
                                     {!! $item->badge_1 !!}
