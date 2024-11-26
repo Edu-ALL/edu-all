@@ -50,7 +50,7 @@
                                         <div
                                             class="bg-gradient-to-t from-newprimary via-transparent h-full to-newyellow/40 py-8 px-4 text-white flex flex-col pt-[230px] lg:pt-[200px] xl:pt-[250px]">
                                             <h4 class="font-semibold text-3xl font-newprimary mb-4 leading-7">
-                                                {{ $item['title'] }}
+                                                {!! $item['title'] !!}
                                             </h4>
                                             <ul class="flex flex-col">
                                                 @foreach ($item['points'] as $point)
