@@ -281,9 +281,9 @@
     <section class="pt-40 pb-24">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
-            <div class="grid grid-cols-1 gap-3 mt-12">
+            <div class="grid grid-cols-1 gap-3 mt-5">
                 {{-- Upcomming Event --}}
-                <div class="flex flex-col">
+                <div class="flex flex-col max-w-4xl mx-auto">
                     {{-- Talk Sessions --}}
                     @if (count($regular_talks) > 0 || count($events) > 0)
                         <div class="flex flex-col items-center justify-between">
@@ -293,11 +293,13 @@
                                         @if (count($events) > 0)
                                             @foreach ($regular_talks as $regular_talk)
                                                 <li class="splide__slide">
-                                                    <div class="splide__slide__container max-h-96">
-                                                        <img loading="lazy"
-                                                            src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                            alt="{{ $regular_talk->event_alt }}"
-                                                            class="w-full object-cover object-center">
+                                                    <div class="splide__slide__container">
+                                                        <a href="{{ $regular_talk->event_rsvp_link }}" target="_blank">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                alt="{{ $regular_talk->event_alt }}"
+                                                                class="object-contain w-full">
+                                                        </a>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -306,11 +308,13 @@
                                         @if (count($events) > 0)
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
-                                                    <div class="splide__slide__container max-h-96">
-                                                        <img loading="lazy"
-                                                            src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                            alt="{{ $event->event_alt }}"
-                                                            class="object-cover w-full h-full">
+                                                    <div class="splide__slide__container">
+                                                        <a href="{{ $event->event_rsvp_link }}" target="_blank">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                                alt="{{ $event->event_alt }}"
+                                                                class="object-contain w-full">
+                                                        </a>
                                                     </div>
                                                 </li>
                                             @endforeach
