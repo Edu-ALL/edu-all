@@ -188,9 +188,9 @@
         var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        var splides = document.getElementsByClassName('testimonial');
+        var splides = document.getElementsByClassName('splide');
 
-        new Splide(splides, {
+        new Splide(splides[0], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,
