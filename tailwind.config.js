@@ -16,7 +16,8 @@ module.exports = {
                     "url('../../public/assets/img/home/sg/header.png')",
 
                 // Home
-                pathaway: "url('../../public/assets/img/home/pathaway.png')",
+                // pathaway: "url('../../public/assets/img/home/pathaway.png')",
+                "pathaway": "url('../../public/assets/img/home/pathway-to-excellence-bg.webp')",
 
                 // Sign me
                 "sign-me-banner":"url('../../public/assets/img/sign-me/banner/form-banner.webp')",
@@ -121,8 +122,8 @@ module.exports = {
                 "bottom-sign-up-banner-2":  "url('../../public/assets/img/banner/signup-banner.png')",
             },
             fontFamily: {
-                primary: "Asap, sans-serif",
-                newprimary: "SF Pro Display, sans-serif",
+                primary: "Ambit, sans-serif",
+                newprimary: "Ambit, SF Pro Display, sans-serif",
                 secondary: "SF Pro Display, sans-serif",
             },
             colors: {

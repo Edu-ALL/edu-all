@@ -38,7 +38,7 @@ return [
 
     'mentor' => 'Our Mentors',
     'mentor_body' => 'Our mentors are graduates from the world’s top universities with varied academic background and work experiences. We leverage off diverse voice to accomplish our common vision to empower you with requisite real-world skills and extensive network to achieve your dreams beyond college.',
-    'mentor_btn' => "more mentor",
+    'mentor_btn' => "Let’s meet our mentors",
 
     'stories' => 'Success Stories',
     'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',

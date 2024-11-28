@@ -37,7 +37,7 @@ return [
 
     'mentor' => 'Tentang Mentor-Mentor Kami',
     'mentor_body' => 'Semua mentor kami merupakan lulusan universitas-universitas ternama dunia dengan latar belakang akademis dan pengalaman kerja yang beragam. Kami memanfaatkan keanekaragaman untuk mencapai visi kami, yaitu membekali siswa dengan keterampilan dan jaringan agar siswa dapat meraih impiannya di jenjang kuliah dan bahkan mencapai kesuksesan di dunia profesional.',
-    'mentor_btn' => "Selanjutnya",
+    'mentor_btn' => "Lebih Banyak Mentor",
 
     'stories' => 'Success Stories',
     'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',
