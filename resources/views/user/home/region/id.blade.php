@@ -353,7 +353,7 @@
                                                 </a>
                                             @else
                                                 <div class="flex justify-between border-b border-b-dark py-2 w-ful">
-                                                    <h3 class="font-normal text-white w-[75%]">
+                                                    <h3 class="font-normal text-dark w-[75%]">
                                                         {{ $important_date->title }}
                                                     </h3>
                                                     <span class="text-dark w-[25%] text-end">
