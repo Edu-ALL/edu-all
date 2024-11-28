@@ -95,37 +95,9 @@
         </div>
     </section>
 
-    {{-- ========================================== Benefits Section ======================================= --}}
-    <!-- <section class="py-12">
-        <div class="main-container">
-            <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
-                <div class="flex flex-col md:w-4/12">
-                    <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
-                        EduALL
-                    </h2>
-                    <h4 class="text-center md:text-left italic text-section-description">
-                        Your Gateway to Top Universities <br> and Dream Careers
-                    </h4>
-                </div>
-                <div class="flex flex-col md:w-8/12">
-                    <p class="text-banner-subdescription md:text-base md:text-left text-center">
-                        More than just a university consultant, EduALL empowers students through personalized guidance in
-                        academics, university and major selection, personal brand, and extracurriculars.
-                        <br><br>
-                        We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
-                        real-world problem-solving.
-                        <br><br>
-                        Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
-                            changemakers.</b>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="pt-16">
-        <div class="main-container">
+        <div class="new-main-container">
             <h2 class="font-bold text-section-title uppercase text-center">Our Programs</h2>
             <div class="splide pt-12 max-w-5xl mx-auto" role="group">
                 <div class="splide__track">
@@ -173,275 +145,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div class="grid md:grid-cols-3 gap-6 mt-6">
-                <div class="flex flex-col relative">
-                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Admission mentoring.webp') }}"
-                        alt="Admission Mentoring image" class="w-full">
-                    <div class="ourprogram_card">
-                        <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">Undergraduate</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">Graduate</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">University Transfer</span>
-                            </li>
-                        </ul>
-                        <a href="{{ route('admissions_mentoring', app()->getLocale()) }}"
-                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-medium text-lg hover:bg-newprimary transition-all duration-150">more
-                            details</a>
-                    </div>
-                    <div class="ourprogram_side"></div>
-                    <div class="ourprogram_side2"></div>
-                </div>
-                <div class="flex flex-col relative">
-                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Academic tutoring.webp') }}"
-                        alt="Academic Tutoring image" class="w-full">
-                    <div class="ourprogram_card">
-                        <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">Academic Tutoring
-                                </span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">SAT/ACT Prep Class
-                                </span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">TOEFL/IELTS Prep Class</span>
-                            </li>
-                        </ul>
-                        <a href="{{ route('academic_test_preparation', app()->getLocale()) }}"
-                            class="mt-4 bg-dark py-2 px-8 inline-block text-white font-medium text-lg hover:bg-newprimary transition-all duration-150">more
-                            details</a>
-                    </div>
-                    <div class="ourprogram_side"></div>
-                    <div class="ourprogram_side2"></div>
-                </div>
-                <div class="flex flex-col relative">
-                    <img loading="lazy" src="{{ asset('assets/img/home/benefits/Exploration program.webp') }}"
-                        alt="Exploration Program Image" class="w-full">
-                    <div class="ourprogram_card">
-                        <ul class="flex flex-col gap-2">
-                            <li class="flex items-center gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">Global Immersion Program
-                                </span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span>
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier">
-                                            <rect width="24" height="24" fill="white"></rect>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z"
-                                                fill="#120FFD"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span class="font-semibold text-base">Community Empowerment Program
-                                </span>
-                            </li>
-
-                        </ul>
-                        <a href="{{ route('passion_project_mentoring', app()->getLocale()) }}"
-                            class="mt-6 bg-dark py-2 px-8 inline-block text-white font-medium text-lg hover:bg-newprimary transition-all duration-150">more
-                            details</a>
-                    </div>
-                    <div class="ourprogram_side"></div>
-                    <div class="ourprogram_side2"></div>
-                </div>
-            </div> -->
         </div>
     </section>
-
-    {{-- ========================================== Pathaway Excellence ========================================== --}}
-    <!-- <section class="pathaway_excellence relative h-full w-screen bg-contain bg-newprimary bg-blend-multiply">
-        <div class="absolute bottom-0 w-screen flex z-20">
-            <progress max="100" value="0" class="w-1/4 exploration_pathaway_progress"></progress>
-            <progress max="100" value="0" class="w-1/4 profile_building_pathaway_progress"></progress>
-            <progress max="100" value="0" class="w-1/4 academic_pathaway_progress"></progress>
-            <progress max="50" value="0" class="w-1/4 writing_pathaway_progress"></progress>
-        </div>
-
-        <div class="absolute inset-0 w-screen h-full mix-blend-multiply">
-            <img loading="lazy" src="{{ asset('assets/img/home/pathaway.webp') }}" alt="exploration"
-                class="object-cover w-full h-full opacity-100">
-        </div>
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_exploration.webp') }}" alt="exploration"
-            class="hidden md:block absolute inset-0 object-cover h-full w-screen exploration_pathaway_img opacity-0">
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_profile_building.webp') }}" alt="profile building"
-            class="hidden md:block absolute inset-0 object-cover h-full w-screen profile_building_pathaway_img opacity-0">
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_academic.webp') }}" alt="academic"
-            class="hidden md:block absolute inset-0 object-cover h-full w-screen academic_pathaway_img opacity-0">
-        <img loading="lazy" src="{{ asset('assets/img/home/pathaway_writing.webp') }}" alt="writing"
-            class="hidden md:block absolute inset-0 object-cover h-full w-screen writing_pathaway_img opacity-0">
-
-        <div class="h-full w-full relative">
-            <div
-                class="flex flex-col absolute translate-y-[120px] lg:top-[30%] lg:left-[30%] exploration_pathaway_text opacity-0">
-                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
-                    Exploration
-                </h1>
-                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
-                    We guide our mentees in discovering their passions and interests through exposure to diverse learning
-                    opportunities, professionals from various fields, and real-world challenges. We aim to ignite curiosity
-                    and help students define their unique paths.
-                </h4>
-            </div>
-            <div
-                class="flex flex-col absolute translate-y-[120px] lg:bottom-[17%] lg:right-[10%]  profile_building_pathaway_text opacity-0">
-                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
-                    Profile <br> Building
-                </h1>
-                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
-                    This is where we assist mentees in shaping a well-rounded academic and extracurricular persona. We work
-                    together to identify strengths, achievements, and experiences that will set them apart, creating a
-                    compelling and authentic profile for university applications.
-                </h4>
-            </div>
-            <div
-                class="flex flex-col absolute translate-y-[120px] lg:top-[25%] lg:left-[10%] academic_pathaway_text opacity-0">
-                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
-                    Academic
-                </h1>
-                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
-                    We strategically prepare students for their chosen major by offering tailored guidance for international
-                    curricula and specialized coaching for standardized tests. From course selection to targeted improvement
-                    strategies, we empower students for success in university studies and competitive admissions.
-                </h4>
-            </div>
-            <div
-                class="flex flex-col absolute translate-y-[120px] lg:bottom-[18%] lg:right-[30%] writing_pathaway_text opacity-0">
-                <h1 class="font-bold text-section-title text-white text-center lg:text-left">
-                    Writing
-                </h1>
-                <h4 class="px-6 lg:px-0 mt-4 max-w-md text-justify text-section-description text-white leading-8">
-                    Crafting a compelling narrative is key. We offer guidance on personal statements, essays, and other
-                    written components of university applications. Through thoughtful storytelling and impactful writing, we
-                    aim to showcase each student's unique qualities, aspirations, and contributions.
-                </h4>
-            </div>
-            <div class="panel panel-1 relative overflow-hidden w-full h-full">
-                <div class="flex flex-col items-center z-50">
-                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}"
-                        alt="EduAll white logo" class="max-w-xs w-full">
-
-                    <h4 class="mt-12 font-bold text-2xl text-center lg:text-4xl text-white">PATHWAY TO
-                        EXCELLENCE</h4>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="panel exploration_pathaway relative">
-        </div>
-
-        <div class="panel profile_building_pathaway">
-        </div>
-
-        <div class="panel academic_pathaway">
-        </div>
-
-        <div class="panel writing_pathaway">
-
-        </div>
-    </section> -->
 
     {{-- ========================================== New Pathaway Excellence ========================================== --}}
     <section class="py-24 bg-pathaway bg-cover bg-center">
@@ -481,7 +186,7 @@
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-40 pb-24" id="mentors">
-        <div class="main-container">
+        <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark text-center">OUR MENTORS</h1>
         </div>
         <div class="flex flex-col items-center">
@@ -524,34 +229,9 @@
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="pt-40 pb-24">
-        <div class="main-container">
+        <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 gap-3 mt-12">
-                {{-- Event --}}
-                <!-- <div class="flex flex-col items-center justify-between relative">
-                    <div class="splide" role="group">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                @foreach ($events as $event)
-                                    <li class="splide__slide">
-                                        <div class="splide__slide__container">
-                                            <h4 class="absolute top-8 left-8 text-newyellow text-lg">Event
-                                            </h4>
-                                            <img loading="lazy"
-                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
-
-                                            <a href="{{ route('upcoming_events', app()->getLocale()) }}"
-                                                class="absolute bottom-0 w-full py-3 bg-newprimary text-center text-white text-base">more
-                                                detail</a>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
-
                 {{-- Upcomming Event --}}
                 <div class="flex flex-col">
                     {{-- Talk Sessions --}}
