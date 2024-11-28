@@ -1,4 +1,5 @@
-<div id="sub-navbar" class=" bg-gradient-to-b from-black/80 hover:from-black to-transparent fixed left-0 right-0 top-0 pt-10 z-50 transition-all duration-700 ease-in-out">
+<div id="sub-navbar"
+    class=" bg-gradient-to-b from-black/80 hover:from-black to-transparent fixed left-0 right-0 top-0 pt-10 z-50 transition-all duration-700 ease-in-out">
     <nav class="px-4 lg:px-10 xl:px-12 max-w-screen-2xl mx-auto overflow-hidden">
         <div class="flex items-center flex-col lg:flex-row">
             <div
@@ -10,16 +11,26 @@
             </div>
             <div
                 class="lg:order-2 order-2 w-full xl:w-7/12 lg:w-8/12 container mx-auto lg:px-4 lg:py-5 overflow-x-auto lg:overflow-visible">
-                <ul class="flex items-center md:justify-center gap-2 py-4">
-                    @foreach ($menu as $item)
-                        <li>
-                            <a href="{{ url(app()->getLocale()) . $item['url'] }}"
-                                class=" {{ $active == $item['title'] ? 'text-black bg-white' : 'text-white bg-white/30' }} text-sm rounded-full px-6 py-2 font-semibold uppercase whitespace-nowrap hover:bg-white hover:text-black transition-all ease-in-out duration-300">
-                                {{ Str::limit($item['title'], $stringLimit ?? 15) }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+                <div class="tags-slider-container flex relative w-full px-10">
+                    <div class="outer w-full overflow-x-auto scrollbar-hidden scroll-smooth" id="scroll-container">
+                        <div class="tags-track w-max">
+                            @foreach ($menu as $item)
+                                <a href="{{ url(app()->getLocale()) . $item['url'] }}"
+                                    class=" {{ $active == $item['title'] ? 'text-black bg-white' : 'text-white bg-white/30' }} md:text-sm text-[10px] rounded-full text-center py-2 px-6 font-semibold uppercase whitespace-nowrap hover:bg-white hover:text-black transition-all ease-in-out duration-300 inline-block tag md:mx-1 mx-0">
+                                    {{ $item['title'] }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                    <button id="btn-prev" class="absolute left-0 px-3 py-1 md:mt-[2px] mt-[3px] bg-white/60 rounded-full md:text-base text-[10px]">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="left-overlay hide"></div>
+                    <button id="btn-next" class="absolute right-0 px-3 py-1 md:mt-[2px] mt-[3px] bg-white/60 rounded-full md:text-base text-[10px]">
+                        <i class="fas fa-chevron-right "></i>
+                    </button>
+                    <div class="right-overlay"></div>
+                </div>
             </div>
             <div
                 class="lg:order-3 order-1 w-full xl:w-4/12 lg:w-4/12 items-center flex nav-title transition-all duration-500 transform -translate-y-[600%]">
@@ -44,4 +55,52 @@
         });
     </script>
 
+    <script>
+        const scrollContainer = document.getElementById('scroll-container');
+        const prevButton = document.getElementById('btn-prev');
+        const nextButton = document.getElementById('btn-next');
+
+        let isMouseDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Scroll previous (by 300px)
+        prevButton.addEventListener('click', () => {
+            scrollContainer.scrollLeft -= 300; // Adjust the scroll distance as needed
+            toggleButtonsVisibility()
+        });
+
+        // Scroll next (by 300px)
+        nextButton.addEventListener('click', () => {
+            scrollContainer.scrollLeft += 300; // Adjust the scroll distance as needed
+            toggleButtonsVisibility()
+        });
+
+        function toggleButtonsVisibility() {
+            // Hide prev button when at the far left
+            if (scrollContainer.scrollLeft === 0) {
+                prevButton.classList.add('hidden');
+            } else {
+                prevButton.classList.remove('hidden');
+            }
+
+            // Hide next button when at the far right
+            if (scrollContainer.clientWidth === scrollContainer.scrollWidth) {
+                nextButton.classList.add('hidden');
+            } else {
+                nextButton.classList.remove('hidden');
+            }
+        }
+
+        scrollContainer.addEventListener('scroll', () => {
+            toggleButtonsVisibility()
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                nextButton.classList.add('hidden'); // Hide next button when at the far right
+            } else {
+                nextButton.classList.remove('hidden'); // Show next button when not at the far right
+            }
+        });
+
+        toggleButtonsVisibility()
+    </script>
 </div>

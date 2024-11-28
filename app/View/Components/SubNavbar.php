@@ -10,18 +10,20 @@ class SubNavbar extends Component
     public $menu;
     public $title;
     public $stringLimit;
+    public $page;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($active = null, $menu = [], $title = "", $stringLimit = 20)
+    public function __construct($active = null, $menu = [], $title = "", $stringLimit = 20, $page = 2)
     {
         $this->active = $active;
         $this->menu = $menu;
         $this->title = $title;
         $this->stringLimit = $stringLimit;
+        $this->page = $page;
     }
 
     /**
@@ -34,4 +36,3 @@ class SubNavbar extends Component
         return view('components.sub-navbar');
     }
 }
-

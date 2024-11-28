@@ -8,10 +8,19 @@
 @section('sub-navbar')
     <x-sub-navbar :menu="[
         ['title' => 'general', 'url' => '/programs/admissions-mentoring'],
-        ['title' => __('pages/programs/undergraduate_program.navbar_title'), 'url' => '/programs/admissions-mentoring/undergraduate-program'],
-        ['title' => __('pages/programs/graduate_program.navbar_title'), 'url' => '/programs/admissions-mentoring/graduate-program'],
-        ['title' => __('pages/programs/univ_transfer_program.navbar_title'), 'url' => '/programs/admissions-mentoring/university-transfer-program'],
-    ]" :active="__('pages/programs/undergraduate_program.navbar_title')" title="{{  __('pages/programs/admission_mentoring.title') }}" />
+        [
+            'title' => __('pages/programs/undergraduate_program.navbar_title'),
+            'url' => '/programs/admissions-mentoring/undergraduate-program',
+        ],
+        [
+            'title' => __('pages/programs/graduate_program.navbar_title'),
+            'url' => '/programs/admissions-mentoring/graduate-program',
+        ],
+        [
+            'title' => __('pages/programs/univ_transfer_program.navbar_title'),
+            'url' => '/programs/admissions-mentoring/university-transfer-program',
+        ],
+    ]" :active="__('pages/programs/undergraduate_program.navbar_title')" title="{{ __('pages/programs/admission_mentoring.title') }}" />
 @endsection
 
 @section('content')
@@ -168,7 +177,7 @@
         </div>
         <div class="flex flex-col items-center">
             <div class="w-full px-10 new-main-container">
-                <div class="splide" role="group">
+                <div class="splide undergraduate-splide" role="group">
                     <div class="splide__arrows text-dark">
                         <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                             <i class="fa-solid fa-chevron-left text-4xl"></i>
@@ -198,35 +207,37 @@
     </section>
 
     <!-- Testimonial Section -->
-    <section class="pt-16 pb-20">
-        <div class="new-main-container">
-            <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
-                {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
-            </h2>
+    @if (count($testimonies) > 0)
+        <section class="pt-16 pb-20">
+            <div class="new-main-container">
+                <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
+                    {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
+                </h2>
 
-            <div class="splide" role="group">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
-                    </button>
-                </div>
-                <div class="splide__track">
-                    <ul class="splide__list font-newprimary text-black px-8">
-                        @foreach ($testimonies as $testi)
-                            <li class="splide__slide w-full pb-8">
-                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                    <x-testimonial-card :testimonial=$testi />
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+                <div class="splide undergraduate-splide" role="group">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                        </button>
+                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list font-newprimary text-black px-8">
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full pb-8">
+                                    <div class="splide__slide__container py-8 px-4 h-full w-full ">
+                                        <x-testimonial-card :testimonial=$testi />
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <!-- Bottom Section -->
     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
@@ -248,7 +259,7 @@
         var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        var splides = document.getElementsByClassName('splide');
+        var splides = document.getElementsByClassName('undergraduate-splide');
 
         new Splide(splides[0], {
             type: 'loop',

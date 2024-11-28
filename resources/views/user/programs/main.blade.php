@@ -8,11 +8,23 @@
 
 @section('sub-navbar')
     <x-sub-navbar :menu="[
-        ['title' => __('pages/navbar.programs.submenu.0.title'), 'url' => '/' . __('pages/navbar.programs.submenu.0.link')],
-        ['title' => __('pages/navbar.programs.submenu.1.title'), 'url' => '/' . __('pages/navbar.programs.submenu.1.link')],
-        ['title' => __('pages/navbar.programs.submenu.2.title'), 'url' => '/' . __('pages/navbar.programs.submenu.2.link')],
-        ['title' => __('pages/navbar.programs.submenu.3.title'), 'url' => '/' . __('pages/navbar.programs.submenu.3.link')],
-    ]" title="{{  __('pages/programs/programs.title') }}" :string-limit="12" />
+        [
+            'title' => __('pages/navbar.programs.submenu.0.title'),
+            'url' => '/' . __('pages/navbar.programs.submenu.0.link'),
+        ],
+        [
+            'title' => __('pages/navbar.programs.submenu.1.title'),
+            'url' => '/' . __('pages/navbar.programs.submenu.1.link'),
+        ],
+        [
+            'title' => __('pages/navbar.programs.submenu.2.title'),
+            'url' => '/' . __('pages/navbar.programs.submenu.2.link'),
+        ],
+        [
+            'title' => __('pages/navbar.programs.submenu.3.title'),
+            'url' => '/' . __('pages/navbar.programs.submenu.3.link'),
+        ],
+    ]" title="{{ __('pages/programs/programs.title') }}" :string-limit="50" page="2" />
 @endsection
 
 @section('content')
@@ -94,8 +106,8 @@
         </div>
     </section>
 
-     {{-- ================================== Bottom Section  ================================== --}}
-     <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
         <div class="main-container flex flex-col items-center">
             <h2 class="w-full max-w-3xl mb-6 font-black text-white text-center text-section-title">
                 {{ __('pages/programs/programs.sign_up_text') }}

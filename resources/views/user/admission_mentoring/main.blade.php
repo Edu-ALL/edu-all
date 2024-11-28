@@ -144,7 +144,7 @@
                 {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
             </h2>
 
-            <div class="splide" role="group">
+            <div class="splide testimonial" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
                         <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
@@ -188,9 +188,9 @@
         var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        var splides = document.getElementsByClassName('splide');
+        var splides = document.getElementsByClassName('testimonial');
 
-        new Splide(splides[0], {
+        new Splide(splides, {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
                 3 : 4,

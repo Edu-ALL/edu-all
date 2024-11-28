@@ -56,6 +56,15 @@ body {
     src: url("/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf");
 }
 
+/* Hide scrollbar */
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hidden {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 /* Navbar */
 .child_nav {
     @apply text-left border-t border-white lg:pl-0 lg:border-0 lg:relative lg:flex lg:items-center lg:text-center lg:text-[#aaaaaa] lg:bg-[#333333] lg:border-b lg:border-[#1d1d1d] lg:z-30 hover:lg:text-white;
