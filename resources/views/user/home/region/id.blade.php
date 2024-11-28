@@ -28,7 +28,8 @@
                     alt="{{ $banners->alt }}" class="w-full md:h-[92vh] h-[92dvh] object-cover">
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
-                <h1 class="font-bold text-4xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                <h1
+                    class="font-bold text-4xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h1>
             </div>
@@ -105,7 +106,8 @@
                         @foreach (__('pages/programs/programs.program_list') as $item)
                             <li class="splide__slide w-full pb-8 px-3">
                                 <div class="splide__slide__container py-8 h-full w-full">
-                                    <div class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
+                                    <div
+                                        class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
                                         <h3 class="font-bold uppercase text-xl text-center">
                                             {!! $item['title'] !!}
                                         </h3>
@@ -130,7 +132,8 @@
                                         </div>
                                         <x-button
                                             href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/{{ $item['link'] }}"
-                                            title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" padding-y="1.5" />
+                                            title="{{ __('pages/programs/admission_mentoring.learn_more') }}"
+                                            bg-color="newprimary" padding-y="1.5" />
                                         <span class="mt-1 text-sm text-[#9C9C9C]">
                                             {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                             <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
@@ -153,31 +156,45 @@
         <div class="main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="col-span-6 md:col-span-4 flex flex-col justify-end">
-                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo" class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
+                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
+                        class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
                     <h2 class="mt-4 font-bold text-3xl md:text-5xl text-white">Pathway to Excellence</h2>
                 </div>
-                <div class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                <div
+                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Exploration</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        We guide our mentees in discovering their passions and interests through exposure to diverse learning opportunities, professionals from various fields, and real-world challenges. We aim to ignite curiosity and help students define their unique paths.
+                        We guide our mentees in discovering their passions and interests through exposure to diverse
+                        learning opportunities, professionals from various fields, and real-world challenges. We aim to
+                        ignite curiosity and help students define their unique paths.
                     </p>
                 </div>
-                <div class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                <div
+                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Profile Building</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        This is where we assist mentees in shaping a well-rounded academic and extracurricular persona. We work together to identify strengths, achievements, and experiences that will set them apart, creating a compelling and authentic profile for university applications.
+                        This is where we assist mentees in shaping a well-rounded academic and extracurricular persona. We
+                        work together to identify strengths, achievements, and experiences that will set them apart,
+                        creating a compelling and authentic profile for university applications.
                     </p>
                 </div>
-                <div class="col-span-6 md:col-span-6 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                <div
+                    class="col-span-6 md:col-span-6 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Academic</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        We strategically prepare students for their chosen major by offering tailored guidance for international curricula and specialized coaching for standardized tests. From course selection to targeted improvement strategies, we empower students for success in university studies and competitive admissions.                    
+                        We strategically prepare students for their chosen major by offering tailored guidance for
+                        international curricula and specialized coaching for standardized tests. From course selection to
+                        targeted improvement strategies, we empower students for success in university studies and
+                        competitive admissions.
                     </p>
                 </div>
-                <div class="col-span-6 md:col-span-6 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                <div
+                    class="col-span-6 md:col-span-6 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Writing</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        Crafting a compelling narrative is key. We offer guidance on personal statements, essays, and other written components of university applications. Through thoughtful storytelling and impactful writing, we aim to showcase each student's unique qualities, aspirations, and contributions.
+                        Crafting a compelling narrative is key. We offer guidance on personal statements, essays, and other
+                        written components of university applications. Through thoughtful storytelling and impactful
+                        writing, we aim to showcase each student's unique qualities, aspirations, and contributions.
                     </p>
                 </div>
             </div>
@@ -194,12 +211,10 @@
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-dark">
-                            <button class="splide__arrow splide__arrow--prev"
-                                style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next"
-                                style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
@@ -223,6 +238,41 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- ========================================== Success Stories ========================================== --}}
+    <section class="pt-24 pb-24">
+        <div class="main-container flex flex-col items-center">
+            <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
+                Empowering 700+ Minds for Global
+                Success – From Exceptional Personal Projects!
+                to Top Universities Worldwide!
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @foreach ($success_stories as $item)
+                    <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
+                        <img loading="lazy"
+                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
+                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
+                            {{-- Name --}}
+                            <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
+                            {{-- Bedge 1 --}}
+                            <div class="text-newprimary text-card-small font-semibold text-center">
+                                {!! $item->badge_1 !!}
+                            </div>
+                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
+                                {!! $item->badge_2 !!}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <a href="{{ route('success_stories', app()->getLocale()) }}"
+                class="flex justify-center my-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                Read More
+            </a>
         </div>
     </section>
 
@@ -255,9 +305,10 @@
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
                                                     <div class="splide__slide__container max-h-96">
-                                                    <img loading="lazy"
-                                                        src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                        alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
+                                                        <img loading="lazy"
+                                                            src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                            alt="{{ $event->event_alt }}"
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -314,7 +365,8 @@
                             </div>
                             <div class="w-full">
                                 <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                    target="_blank" class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                    target="_blank"
+                                    class="inline-block py-3 bg-red text-center text-white text-base px-6">
                                     more important dates
                                 </a>
                             </div>
@@ -327,41 +379,6 @@
                     @endif
                 </div>
             </div>
-        </div>
-    </section>
-
-    {{-- ========================================== Success Stories ========================================== --}}
-    <section class="pt-24 pb-24">
-        <div class="main-container flex flex-col items-center">
-            <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
-                Empowering 700+ Minds for Global
-                Success – From Exceptional Personal Projects!
-                to Top Universities Worldwide!
-            </h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                @foreach ($success_stories as $item)
-                    <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
-                        <img loading="lazy"
-                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
-                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
-                            {{-- Name --}}
-                            <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
-                            {{-- Bedge 1 --}}
-                            <div class="text-newprimary text-card-small font-semibold text-center">
-                                {!! $item->badge_1 !!}
-                            </div>
-                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
-                                {!! $item->badge_2 !!}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <a href="{{ route('success_stories', app()->getLocale()) }}"
-                class="flex justify-center my-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                Read More
-            </a>
         </div>
     </section>
 

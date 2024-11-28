@@ -122,7 +122,7 @@ module.exports = {
                 "bottom-sign-up-banner-2":  "url('../../public/assets/img/banner/signup-banner.png')",
             },
             fontFamily: {
-                primary: "Asap, sans-serif",
+                primary: "Ambit, sans-serif",
                 newprimary: "Ambit, SF Pro Display, sans-serif",
                 secondary: "SF Pro Display, sans-serif",
             },
