@@ -24,7 +24,7 @@
                                         class="flex-col items-center justify-center mb-2 bg-black/80 rounded-3xl shadow-lg pt-2 pb-2 px-2 text-white gap-1">
                                         @foreach ($item['submenu'] as $submenu)
                                             <li
-                                                class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'active-sub-navbar border-[#727272] border' : '' }}">
+                                                class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
                                                 <a href="{{ url(app()->getLocale() . '/' . $submenu['link']) }}"
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
@@ -36,14 +36,6 @@
                             @endif
                         </li>
                     @endforeach
-                    {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
-                        <li class="bg-[#1f9034]/80 hover:bg-[#1f9034] text-white rounded-l-full w-full">
-                            <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                                target="_blank" class="pl-[15px] pr-[5px] text-center flex items-center h-full">
-                                <i class="fa-brands fa-whatsapp text-[30px]"></i>
-                            </a>
-                        </li>
-                    @endif --}}
                     <li class="bg-red/80 hover:bg-red text-white w-full rounded-r-full">
                         <button onclick="popupForm('open')" id="newsButton"
                             class="text-white text-base py-2 px-3 block text-center">
@@ -71,7 +63,8 @@
     <nav id="mobile-navbar" class="hidden z-50 fixed inset-0 h-screen md:rounded-full shadow-lg pb-12 md:py-1 w-full">
         <div class="container mx-auto px-1 flex flex-col justify-end fixed bottom-8 z-50 max-w-[22rem] left-0 right-0"
             id="mobile-bottom-navbar">
-            <div class="flex flex-col justify-between items-center w-full gap-4 py-4 bg-black/70 rounded-3xl px-4 border border-newprimary">
+            <div
+                class="flex flex-col justify-between items-center w-full gap-4 py-4 bg-black/70 rounded-3xl px-4 border border-newprimary">
                 <!-- Navbar Items -->
                 <ul
                     class="w-full flex flex-col md:flex-row whitespace-nowrap justify-center gap-1 md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
@@ -102,7 +95,7 @@
                                             <li class="text-white w-full">
                                                 <a href="{{ url(app()->getLocale() . '/' . ltrim($submenu['link'], '/')) }}"
                                                     class="text-white text-sm py-2 px-6 block rounded-full">
-                                                   <i class="fa fa-arrow-right mr-2"></i> {{ $submenu['title'] }}
+                                                    <i class="fa fa-arrow-right mr-2"></i> {{ $submenu['title'] }}
                                                 </a>
                                             </li>
                                         @endforeach
@@ -111,16 +104,6 @@
                             @endif
                         </li>
                     @endforeach
-                    {{-- <li
-                        class="navbar-item-mobile relative group rounded-full transitionall font-light programs-menu w-full">
-                        <div class="flex items-center justify-center px-6">
-                            <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20ALL-in,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                                target="_blank"
-                                class="text-white text-base py-2 w-full block rounded-md bg-[#1f9034] text-center">
-                                <i class="fa-brands fa-whatsapp mr-2"></i> Chat Now!
-                            </a>
-                        </div>
-                    </li> --}}
                     <li
                         class="navbar-item-mobile relative group rounded-full transitionall font-light programs-menu w-full">
                         <div class="flex items-center justify-center w-full px-6">
@@ -140,26 +123,63 @@
     </nav>
 </header>
 
+
+{{-- Newsletter  --}}
+<div class="fixed -bottom-[500%] lg:right-5 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[450px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
+    id="newsForm">
+    <div class="absolute -right-2 -top-2 z-[99999] text-right -mt-[5px] w-[28px] h-[28px] rounded-full bg-red text-white float-right flex justify-center items-center cursor-pointer"
+        onclick="popupForm('close')">
+        <i class="fa fa-xmark inline-block "></i>
+    </div>
+    <div class="p-0">
+        <div class="rounded-md overflow-hidden">
+            @include('layout.user.newsletter')
+        </div>
+    </div>
+</div>
+
+{{-- whatsapp  --}}
+<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[9999] transition-all duration-1000" id="wa_button">
+    <div class="relative group">
+        {{-- Dont Display the button on this pages: "partnership-careers" --}}
+        @if (!str_contains(request()->url(), 'partnership-careers'))
+            <div
+                class="absolute right-0 bottom-0 bg-[#075E54] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#075E54] border-[1px] border-[#075E54] cursor-pointer shadow">
+                <i class="fa-brands fa-whatsapp text-[25px]"></i>
+            </div>
+        @endif
+    </div>
+</div>
+
+<div id="whatsappForm"
+    class="fixed -bottom-[50rem] right-5 w-[400px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
+    <div class="bg-[#075E54] text-white flex rounded-t-2xl p-4 gap-5 items-center">
+        <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
+        <h2 class="text-white">Title</h2>
+    </div>
+    <div class="bg-white rounded-b-2xl p-4">
+        <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+            target="_blank"
+            class="bg-gray-200/40 shadow-lg rounded-2xl p-3 flex items-center justify-between hover:bg-gray-500/30 transition-all ease-in-out duration-300">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+            <i class="fas fa-paper-plane text-2xl"></i>
+        </a>
+    </div>
+</div>
+
 <script>
     $(window).scroll(function() {
         if ($(window).scrollTop() > $(window).height() / 10) {
-            $('#bottom-navbar').removeClass('bottom-12').addClass('bottom-5');
-            $('#bottom-navbar nav').removeClass('bg-black/80').addClass('bg-newprimary/80');
-            $('#navbar-items li').removeClass('hover:bg-newprimary').addClass('hover:bg-black')
-            $('#navbar-items li a').removeClass('bg-black/80').removeClass('bg-newprimary/80')
-            $('.active-navbar').removeClass('bg-newprimary/80').addClass('bg-black/80');
-            $('.active-sub-navbar').removeClass('bg-newprimary/80').addClass('bg-black/80');
-            $('.dropdown-menu div').removeClass('bg-black/80').addClass('bg-newprimary/80')
+            $('#bottom-navbar').removeClass('bottom-10').addClass('bottom-5');
             $('#mobile-bottom-navbar').removeClass('bottom-8').addClass('bottom-2');
+            $('#wa_button').removeClass('lg:bottom-9').addClass('lg:bottom-5');
+            $('#whatsappForm').removeClass('bottom-24').addClass('bottom-20');
         } else {
-            $('#bottom-navbar').addClass('bottom-12').removeClass('bottom-5');
-            $('#bottom-navbar nav').addClass('bg-black/80').removeClass('bg-newprimary/80');
-            $('#navbar-items li').addClass('hover:bg-newprimary').removeClass('hover:bg-black')
-            $('#navbar-items li a').removeClass('bg-newprimary/80').removeClass('bg-black/80')
-            $('.dropdown-menu div').addClass('bg-black/80').removeClass('bg-newprimary/80')
-            $('.active-sub-navbar').addClass('bg-newprimary/80').removeClass('bg-black/80');
-            $('.active-navbar').addClass('bg-newprimary/80').removeClass('bg-black/80');
+            $('#bottom-navbar').addClass('bottom-10').removeClass('bottom-5');
             $('#mobile-bottom-navbar').addClass('bottom-8').removeClass('bottom-2');
+            $('#wa_button').addClass('lg:bottom-9').removeClass('lg:bottom-5');
+            $('#whatsappForm').addClass('bottom-24').removeClass('bottom-20');
         }
     });
 
@@ -220,5 +240,32 @@
             $('#mobile-navbar').stop(true, true).fadeOut(300);
             $('body').css('overflow', 'auto');
         })
+
+        // WA Form 
+
+        $('#wa_button').click(function() {
+            if ($('.bottom-24').length == 0 || $('.bottom-20').length == 0) {
+                $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24')
+            } else {
+                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24 bottom-20')
+            }
+        })
     });
+
+    function popupForm(params) {
+        var newsForm = document.querySelector("#newsForm");
+        var newsButton = document.querySelector("#newsButton");
+
+        if (params == "open") {
+            newsButton.classList.remove('lg:bottom-8', 'bottom-[15px]');
+            newsForm.classList.remove('-bottom-[500%]');
+            newsButton.classList.add('-bottom-[500%]');
+            newsForm.classList.add('lg:bottom-8', 'bottom-[15px]');
+        } else {
+            newsForm.classList.remove('lg:bottom-8', 'bottom-[15px]');
+            newsButton.classList.remove('-bottom-[500%]');
+            newsForm.classList.add('-bottom-[500%]');
+            newsButton.classList.add('lg:bottom-8', 'bottom-[15px]');
+        }
+    }
 </script>

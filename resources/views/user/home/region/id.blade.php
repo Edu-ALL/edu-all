@@ -428,10 +428,10 @@
 @endsection
 
 @push('script')
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-    <script type="module" src="{{ asset('js/user/main.js') }}"></script>
+    <script type="module" src="{{ asset('js/user/main.js') }}"></script> --}}
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches

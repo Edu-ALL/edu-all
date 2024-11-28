@@ -191,41 +191,6 @@
 </head>
 
 <body id="body">
-    <div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[9999] transition-all duration-1000">
-        <div class="relative group">
-            {{-- Dont Display the button on this pages: "partnership-careers" --}}
-            @if (!str_contains(request()->url(), 'partnership-careers'))
-                <div class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow"
-                    id='open-nav-child-btn'>
-                    <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                        target="_blank">
-                        <i class="fa-brands fa-whatsapp text-[25px]"></i>
-                    </a>
-                </div>
-            @endif
-        </div>
-    </div>
-
-    <div class="fixed -bottom-[500%] lg:right-5 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[450px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
-        id="newsForm">
-        <div class="absolute -right-2 -top-2 z-[99999] text-right -mt-[5px] w-[28px] h-[28px] rounded-full bg-red text-white float-right flex justify-center items-center cursor-pointer"
-            onclick="popupForm('close')">
-            <i class="fa fa-xmark inline-block "></i>
-        </div>
-        <div class="p-0">
-            <div class="rounded-md overflow-hidden">
-                @include('layout.user.newsletter')
-            </div>
-        </div>
-    </div>
-
-    <div class="fixed lg:left-5 left-[10px] z-[9999] transition-all duration-1000 -bottom-[100px]" id="newsButton">
-        <div class="bg-red hover:bg-white shadow-md px-3 h-[40px] flex justify-center items-center text-white hover:text-newprimary border-[1px] border-[#F78614] cursor-pointer transition-all duration-200"
-            onclick="popupForm('open')">
-            <i class="fa fa-newspaper mr-2"></i>
-            <span>Get Updates</span>
-        </div>
-    </div>
 
     {{-- @include('layout.user.navbar') --}}
     @yield('sub-navbar')
@@ -246,38 +211,6 @@
         effect: "fadeIn",
         placeholder: "{{ asset('assets/img/loader.gif') }}",
     });
-
-
-    // window.addEventListener("scroll", function() {
-    //     var newsButton = document.querySelector("#newsButton");
-
-    //     if (window.scrollY > 300) {
-    //         newsButton.classList.remove('-bottom-[100px]');
-    //         newsButton.classList.add('lg:bottom-5', 'bottom-[15px]');
-    //     } else {
-    //         newsButton.classList.add('-bottom-[100px]');
-    //         newsButton.classList.remove('lg:bottom-5', 'bottom-[15px]');
-    //     }
-    // });
-
-    function popupForm(params) {
-        var newsForm = document.querySelector("#newsForm");
-        var newsButton = document.querySelector("#newsButton");
-
-        if (params == "open") {
-            newsButton.classList.remove('lg:bottom-8', 'bottom-[15px]');
-            newsForm.classList.remove('-bottom-[500%]');
-            newsButton.classList.add('-bottom-[500%]');
-            newsForm.classList.add('lg:bottom-8', 'bottom-[15px]');
-            newsButton.classList.add('hidden');
-        } else {
-            newsForm.classList.remove('lg:bottom-8', 'bottom-[15px]');
-            newsButton.classList.remove('-bottom-[500%]');
-            newsForm.classList.add('-bottom-[500%]');
-            newsButton.classList.add('lg:bottom-8', 'bottom-[15px]');
-            newsButton.classList.remove('hidden');
-        }
-    }
 </script>
 
 </html>
