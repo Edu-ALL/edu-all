@@ -144,7 +144,7 @@
         {{-- Dont Display the button on this pages: "partnership-careers" --}}
         @if (!str_contains(request()->url(), 'partnership-careers'))
             <div
-                class="absolute right-0 bottom-0 bg-[#075E54] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#075E54] border-[1px] border-[#075E54] cursor-pointer shadow">
+                class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow">
                 <i class="fa-brands fa-whatsapp text-[25px]"></i>
             </div>
         @endif
@@ -153,18 +153,28 @@
 
 <div id="whatsappForm"
     class="fixed -bottom-[50rem] right-5 w-[400px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
-    <div class="bg-[#075E54] text-white flex rounded-t-2xl p-4 gap-5 items-center">
+    <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
         <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
-        <h2 class="text-white">Title</h2>
+        <div>
+            <h2 class="text-white text-xl">
+                Hey EduALL
+            </h2>
+            <p class="text-white text-sm">
+                I'm interested in learning more about the EduALL program
+            </p>
+        </div>
     </div>
     <div class="bg-white rounded-b-2xl p-4">
         <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
             target="_blank"
-            class="bg-gray-200/40 shadow-lg rounded-2xl p-3 flex items-center justify-between hover:bg-gray-500/30 transition-all ease-in-out duration-300">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
+            <h4 class="text-base">Free consultation Now</h4 class="text-xl">
 
             <i class="fas fa-paper-plane text-2xl"></i>
         </a>
+        <p class="text-[10px] text-gray-500 mt-2 text-end">
+            {{ date("Y/m/d") }}
+        </p>
     </div>
 </div>
 
@@ -174,12 +184,10 @@
             $('#bottom-navbar').removeClass('bottom-10').addClass('bottom-5');
             $('#mobile-bottom-navbar').removeClass('bottom-8').addClass('bottom-2');
             $('#wa_button').removeClass('lg:bottom-9').addClass('lg:bottom-5');
-            $('#whatsappForm').removeClass('bottom-24').addClass('bottom-20');
         } else {
             $('#bottom-navbar').addClass('bottom-10').removeClass('bottom-5');
             $('#mobile-bottom-navbar').addClass('bottom-8').removeClass('bottom-2');
             $('#wa_button').addClass('lg:bottom-9').removeClass('lg:bottom-5');
-            $('#whatsappForm').addClass('bottom-24').removeClass('bottom-20');
         }
     });
 
@@ -247,7 +255,7 @@
             if ($('.bottom-24').length == 0 || $('.bottom-20').length == 0) {
                 $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24')
             } else {
-                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24 bottom-20')
+                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24')
             }
         })
     });
