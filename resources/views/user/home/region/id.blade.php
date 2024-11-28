@@ -285,21 +285,23 @@
                 {{-- Upcomming Event --}}
                 <div class="flex flex-col">
                     {{-- Talk Sessions --}}
-                    @if (count($regular_talks) > 0)
+                    @if (count($regular_talks) > 0 || count($events) > 0)
                         <div class="flex flex-col items-center justify-between">
                             <div class="splide w-full" role="group">
                                 <div class="splide__track">
                                     <ul class="splide__list">
-                                        @foreach ($regular_talks as $regular_talk)
-                                            <li class="splide__slide">
-                                                <div class="splide__slide__container max-h-96">
-                                                    <img loading="lazy"
-                                                        src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                        alt="{{ $regular_talk->event_alt }}"
-                                                        class="w-full object-cover object-center">
-                                                </div>
-                                            </li>
-                                        @endforeach
+                                        @if (count($events) > 0)
+                                            @foreach ($regular_talks as $regular_talk)
+                                                <li class="splide__slide">
+                                                    <div class="splide__slide__container max-h-96">
+                                                        <img loading="lazy"
+                                                            src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                            alt="{{ $regular_talk->event_alt }}"
+                                                            class="w-full object-cover object-center">
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @endif
 
                                         @if (count($events) > 0)
                                             @foreach ($events as $event)
