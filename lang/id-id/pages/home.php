@@ -48,4 +48,10 @@ return [
 
     'bottom' => "Daftar sekarang untuk mendapatkan konsultasi awal gratis!",
     'bottom_btn' => "Daftar Sekarang",
+    
+    'wa' => [
+        'title' => 'Punya pertanyaan tentang program kami?',
+        'sub_title' => 'Kami siap membantu.',
+        'message' => 'Mulai konsultasi GRATIS sekarang!'
+    ],
 ];

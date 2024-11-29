@@ -156,11 +156,11 @@
     <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
         <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
         <div>
-            <h2 class="text-white text-xl">
-                Hey EduALL
+            <h2 class="text-white text-lg">
+                {{ __('pages/home.wa.title') }}
             </h2>
-            <p class="text-white text-sm">
-                I'm interested in learning more about the EduALL program
+            <p class="text-white text-base">
+                {{ __('pages/home.wa.sub_title') }}
             </p>
         </div>
     </div>
@@ -168,7 +168,7 @@
         <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
             target="_blank"
             class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
-            <h4 class="text-base">Free consultation Now</h4 class="text-xl">
+            <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
 
             <i class="fas fa-paper-plane text-2xl"></i>
         </a>

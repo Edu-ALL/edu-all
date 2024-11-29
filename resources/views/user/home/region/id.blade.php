@@ -100,6 +100,33 @@
         </div>
     </section>
 
+    {{-- ========================================== Benefits Section ======================================= --}}
+    <!-- <section class="py-12">
+        <div class="main-container">
+            <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
+                <div class="flex flex-col md:w-4/12">
+                    <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
+                        EduALL
+                    </h2>
+                    <h4 class="text-center md:text-left italic text-section-description">
+                        Your Gateway to Top Universities <br> and Dream Careers
+                    </h4>
+                </div>
+                <div class="flex flex-col md:w-8/12">
+                    <p class="text-banner-subdescription md:text-base md:text-left text-center">
+                        More than just a university consultant, EduALL empowers students through personalized guidance in
+                        academics, university and major selection, personal brand, and extracurriculars.
+                        <br><br>
+                        We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
+                        real-world problem-solving.
+                        <br><br>
+                        Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
+                            changemakers.</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="pt-16">
@@ -208,7 +235,7 @@
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-40 pb-24" id="mentors">
-        <div class="main-container">
+        <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark text-center">OUR MENTORS</h1>
         </div>
         <div class="flex flex-col items-center">
@@ -246,39 +273,102 @@
         </div>
     </section>
 
+    {{-- ========================================== Success Stories ========================================== --}}
+    <section class="pt-24 pb-24">
+        <div class="main-container flex flex-col items-center">
+            <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
+                Empowering 700+ Minds for Global
+                Success – From Exceptional Personal Projects!
+                to Top Universities Worldwide!
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @foreach ($success_stories as $item)
+                    <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
+                        <img loading="lazy"
+                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
+                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
+                            {{-- Name --}}
+                            <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
+                            {{-- Bedge 1 --}}
+                            <div class="text-newprimary text-card-small font-semibold text-center">
+                                {!! $item->badge_1 !!}
+                            </div>
+                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
+                                {!! $item->badge_2 !!}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <a href="{{ route('success_stories', app()->getLocale()) }}"
+                class="flex justify-center my-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
+                Read More
+            </a>
+        </div>
+    </section>
+
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="pt-40 pb-24">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 gap-3 mt-12">
+                {{-- Event --}}
+                <!-- <div class="flex flex-col items-center justify-between relative">
+                    <div class="splide" role="group">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                @foreach ($events as $event)
+                                    <li class="splide__slide">
+                                        <div class="splide__slide__container">
+                                            <h4 class="absolute top-8 left-8 text-newyellow text-lg">Event
+                                            </h4>
+                                            <img loading="lazy"
+                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
+
+                                            <a href="{{ route('upcoming_events', app()->getLocale()) }}"
+                                                class="absolute bottom-0 w-full py-3 bg-newprimary text-center text-white text-base">more
+                                                detail</a>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+
                 {{-- Upcomming Event --}}
-                <div class="flex flex-col">
+                <div class="flex flex-col max-w-4xl mx-auto">
                     {{-- Talk Sessions --}}
-                    @if (count($regular_talks) > 0)
+                    @if (count($regular_talks) > 0 || count($events) > 0)
                         <div class="flex flex-col items-center justify-between">
                             <div class="splide w-full" role="group">
                                 <div class="splide__track">
                                     <ul class="splide__list">
-                                        @foreach ($regular_talks as $regular_talk)
-                                            <li class="splide__slide">
-                                                <div class="splide__slide__container max-h-96">
-                                                    <img loading="lazy"
-                                                        src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                        alt="{{ $regular_talk->event_alt }}"
-                                                        class="w-full object-cover object-center">
-                                                </div>
-                                            </li>
-                                        @endforeach
+                                        @if (count($events) > 0)
+                                            @foreach ($regular_talks as $regular_talk)
+                                                <li class="splide__slide">
+                                                    <div class="splide__slide__container">
+                                                        <a href="{{ $regular_talk->event_rsvp_link }}" target="_blank">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                alt="{{ $regular_talk->event_alt }}"
+                                                                class="object-contain w-full">
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @endif
 
                                         @if (count($events) > 0)
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
                                                     <div class="splide__slide__container max-h-96">
-                                                        <img loading="lazy"
-                                                            src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                            alt="{{ $event->event_alt }}"
-                                                            class="object-cover w-full h-full">
+                                                    <img loading="lazy"
+                                                        src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                        alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -311,7 +401,7 @@
                                         <li>
                                             @if ($important_date->link)
                                                 <a href="{{ $important_date->link }}" target="_blank"
-                                                    class="flex justify-between border-b border-b-dark py-2 w-ful">
+                                                    class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
                                                     <h3 class="font-normal hover:text-blue-500 text-dark w-[75%]">
                                                         {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
                                                     </h3>
@@ -320,8 +410,8 @@
                                                     </span>
                                                 </a>
                                             @else
-                                                <div class="flex justify-between border-b border-b-dark py-2 w-ful">
-                                                    <h3 class="font-normal text-white w-[75%]">
+                                                <div class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
+                                                    <h3 class="font-normal text-dark w-[75%]">
                                                         {{ $important_date->title }}
                                                     </h3>
                                                     <span class="text-dark w-[25%] text-end">
@@ -344,7 +434,7 @@
                     @else
                         <div class="flex flex-col w-full relative text-start mt-10">
                             <h4 class="text-newyellow text-lg">Important Dates</h4>
-                            <p class="text-white border-b border-b-white">Not Available</p>
+                            <p class="text-dark border-b border-b-white">Not Available</p>
                         </div>
                     @endif
                 </div>
@@ -354,7 +444,7 @@
 
     {{-- ========================================== Success Stories ========================================== --}}
     <section class="pt-24 pb-24">
-        <div class="new-main-container flex flex-col items-center">
+        <div class="main-container flex flex-col items-center">
             <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
                 Empowering 700+ Minds for Global
                 Success – From Exceptional Personal Projects!
@@ -394,10 +484,10 @@
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
                 <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
                     @foreach ($as_seen_on as $item)
-                        <div class="h-16 flex justify-center">
+                        <div class="h-16 w-full flex justify-center">
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                alt="{{ $item->alt }}" class="md:h-full md:w-full w-[150px] h-auto object-contain">
+                                alt="{{ $item->alt }}" class="h-full object-contain">
                         </div>
                     @endforeach
                 </div>
@@ -449,10 +539,10 @@
 @endsection
 
 @push('script')
-    {{-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-    <script type="module" src="{{ asset('js/user/main.js') }}"></script> --}}
+    <script type="module" src="{{ asset('js/user/main.js') }}"></script>
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches

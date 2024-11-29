@@ -10,6 +10,18 @@ module.exports = {
 
     theme: {
         extend: {
+            animation: {
+                marquee: "marquee 15s linear infinite",
+                marquee_mobile: "marquee 10s linear infinite"
+            },
+            keyframes: {
+                marquee: {
+                    "0%": { transform: "translateX(0%)" },
+                    "100%": { transform: "translateX(-150%)" },
+                    "150%": { transform: "translateX(0%)" },
+                    "0%": { transform: "translateX(100%)" },
+                },
+            },
             backgroundImage: {
                 // Home
                 "sg-header":
@@ -17,10 +29,12 @@ module.exports = {
 
                 // Home
                 // pathaway: "url('../../public/assets/img/home/pathaway.png')",
-                "pathaway": "url('../../public/assets/img/home/pathway-to-excellence-bg.webp')",
+                pathaway:
+                    "url('../../public/assets/img/home/pathway-to-excellence-bg.webp')",
 
                 // Sign me
-                "sign-me-banner":"url('../../public/assets/img/sign-me/banner/form-banner.webp')",
+                "sign-me-banner":
+                    "url('../../public/assets/img/sign-me/banner/form-banner.webp')",
                 "sign-me-adm-mentoring":
                     "url('../../public/assets/img/sign-me/banner/adm-mentoring.png')",
                 "sign-me-acad-tutor":
@@ -39,7 +53,8 @@ module.exports = {
                     "url('../../public/assets/img/programs/Academic &-Test Preparation.webp')",
 
                 // Admission mentoring
-                "adm-mentoring-header": "url('../../public/assets/img/admission mentoring/revamp/banner-admission-general.webp')",
+                "adm-mentoring-header":
+                    "url('../../public/assets/img/admission mentoring/revamp/banner-admission-general.webp')",
                 // Undergraduate
                 "undergraduate-header":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png')",
@@ -93,12 +108,13 @@ module.exports = {
                     "url('../../public/assets/img/experiential_learning/Home banner exp learning.webp')",
                 "tea-programs-header":
                     "url('../../public/assets/img/experiential_learning/Home banner teachers.webp')",
-                
-                "global-innovators-project-header": 
+
+                "global-innovators-project-header":
                     "url('../../public/assets/img/global_innovators_project/Banner Exploration Program.webp')",
 
                 // about
-                "our-contribution-banner":  "url('../../public/assets/img/banner/Partnership.webp')",
+                "our-contribution-banner":
+                    "url('../../public/assets/img/banner/Partnership.webp')",
 
                 // Blog
                 "bottom-sign-up-banner":
@@ -119,10 +135,11 @@ module.exports = {
                     "url('../../public/assets/img/banner/Success Stories Banner.webp')",
 
                 // Global
-                "bottom-sign-up-banner-2":  "url('../../public/assets/img/banner/signup-banner.png')",
+                "bottom-sign-up-banner-2":
+                    "url('../../public/assets/img/banner/signup-banner.png')",
             },
             fontFamily: {
-                primary: "Asap, sans-serif",
+                primary: "Ambit, sans-serif",
                 newprimary: "Ambit, SF Pro Display, sans-serif",
                 secondary: "SF Pro Display, sans-serif",
             },

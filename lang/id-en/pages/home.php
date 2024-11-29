@@ -49,4 +49,10 @@ return [
 
     'bottom' => "Every year, 150+ of our mentees have gotten into their dream universities. It’s time for your turn.",
     'bottom_btn' => "Schedule Your FREE Initial Consultation",
+
+    'wa' => [
+        'title' => 'Have questions about our programs?',
+        'sub_title' => 'Our expert is just a message away.',
+        'message' => 'Start your FREE consultation now!'
+    ],
 ];

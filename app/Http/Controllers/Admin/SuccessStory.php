@@ -106,6 +106,8 @@ class SuccessStory extends Controller
         $rules = [
             'story_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
+            'story_home_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'story_home_alt' => 'required',
             'story_name' => 'required',
             'story_category' => 'required',
             'story_video_link' => 'nullable|url',
@@ -162,6 +164,7 @@ class SuccessStory extends Controller
             $success_stories_id = new SuccessStories();
             $success_stories_id->group = $success_stories_en->group;
             $success_stories_id->thumbnail_alt = $request->story_alt;
+            $success_stories_id->home_thumbnail_alt = $request->story_home_alt;
             $success_stories_id->name = $request->story_name;
             $success_stories_id->category = $request->story_category;
             $success_stories_id->video_link = $request->story_video_link;
@@ -184,6 +187,7 @@ class SuccessStory extends Controller
             $success_stories_id->status = 'active';
             $success_stories_id->lang = 'id';
 
+            // Thumbnail 
             if ($request->hasFile('story_thumbnail')) {
                 $file = $request->file('story_thumbnail');
                 $file_format = $request->file('story_thumbnail')->getClientOriginalExtension();
@@ -193,6 +197,18 @@ class SuccessStory extends Controller
                 $file->move($destinationPath, $fileName);
                 $success_stories_en->thumbnail = $fileName;
                 $success_stories_id->thumbnail = $fileName;
+            }
+
+            // Home Thumbnail
+            if ($request->hasFile('story_home_thumbnail')) {
+                $file = $request->file('story_home_thumbnail');
+                $file_format = $request->file('story_home_thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
+                $time = $success_stories_en->group;
+                $fileName = 'Success-Stories-home-thumbnail-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $success_stories_en->home_thumbnail = $fileName;
+                $success_stories_id->home_thumbnail = $fileName;
             }
 
             $success_stories_en->save();
@@ -225,6 +241,8 @@ class SuccessStory extends Controller
         $rules = [
             'story_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
+            'story_home_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'story_home_alt' => 'required',
             'story_name' => 'required',
             'story_category' => 'required',
             'story_video_link' => 'nullable|url',
@@ -256,6 +274,7 @@ class SuccessStory extends Controller
             $success_stories = SuccessStories::where('group', $group)->get();
             $success_stories_en = $success_stories[0];
             $success_stories_en->thumbnail_alt = $request->story_alt;
+            $success_stories_en->home_thumbnail_alt = $request->story_home_alt;
             $success_stories_en->name = $request->story_name;
             $success_stories_en->category = $request->story_category;
             $success_stories_en->video_link = $request->story_video_link;
@@ -285,6 +304,7 @@ class SuccessStory extends Controller
 
             $success_stories_id = $success_stories[1];
             $success_stories_id->thumbnail_alt = $request->story_alt;
+            $success_stories_id->home_thumbnail_alt = $request->story_home_alt;
             $success_stories_id->name = $request->story_name;
             $success_stories_id->category = $request->story_category;
             $success_stories_id->video_link = $request->story_video_link;
@@ -312,6 +332,7 @@ class SuccessStory extends Controller
             $success_stories_id->achievement_alt = $request->story_achievement_alt_id;
             $success_stories_id->updated_at = date('Y-m-d H:i:s');
 
+            // Thumbnail 
             if ($request->hasFile('story_thumbnail')) {
                 if ($success_stories_en->thumbnail == $success_stories_id->thumbnail) {
                     $old_image_path = $success_stories_en->thumbnail;
@@ -328,6 +349,25 @@ class SuccessStory extends Controller
                 $file->move($destinationPath, $fileName);
                 $success_stories_en->thumbnail = $fileName;
                 $success_stories_id->thumbnail = $fileName;
+            }
+
+            // Home Thumbnail 
+            if ($request->hasFile('story_home_thumbnail')) {
+                if ($success_stories_en->home_thumbnail == $success_stories_id->home_thumbnail) {
+                    $old_image_path = $success_stories_en->home_thumbnail;
+                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/'.$old_image_path);
+                    if (File::exists($file_path)) {
+                        File::delete($file_path);
+                    }
+                }
+                $file = $request->file('story_home_thumbnail');
+                $file_format = $request->file('story_home_thumbnail')->getClientOriginalExtension();
+                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/';
+                $time = $success_stories_en->group;
+                $fileName = 'Success-Stories-home-thumbnail-'.$time.'.'.$file_format;
+                $file->move($destinationPath, $fileName);
+                $success_stories_en->home_thumbnail = $fileName;
+                $success_stories_id->home_thumbnail = $fileName;
             }
 
             $success_stories_en->save();
@@ -349,6 +389,13 @@ class SuccessStory extends Controller
             $success_stories = SuccessStories::where('group', $group)->get();
             if ($success_stories[0]->thumbnail == $success_stories[1]->thumbnail) {
                 $old_image_path = $success_stories[0]->thumbnail;
+                $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path);
+                if (File::exists($file_path)) {
+                    File::delete($file_path);
+                }
+            }
+            if ($success_stories[0]->home_thumbnail == $success_stories[1]->home_thumbnail) {
+                $old_image_path = $success_stories[0]->home_thumbnail;
                 $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path);
                 if (File::exists($file_path)) {
                     File::delete($file_path);
