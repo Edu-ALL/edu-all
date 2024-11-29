@@ -394,7 +394,7 @@
             <div class="main-container">
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
                 <div class="relative flex overflow-x-hidden">
-                    <div class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 animate-marquee whitespace-nowrap">
+                    <div class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                         @foreach ($as_seen_on as $item)
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
