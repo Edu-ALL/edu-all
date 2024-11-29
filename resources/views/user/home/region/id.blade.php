@@ -347,7 +347,7 @@
                                         <li>
                                             @if ($important_date->link)
                                                 <a href="{{ $important_date->link }}" target="_blank"
-                                                    class="flex justify-between border-b border-b-dark py-2 w-ful">
+                                                    class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
                                                     <h3 class="font-normal hover:text-blue-500 text-dark w-[75%]">
                                                         {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
                                                     </h3>
@@ -356,7 +356,7 @@
                                                     </span>
                                                 </a>
                                             @else
-                                                <div class="flex justify-between border-b border-b-dark py-2 w-ful">
+                                                <div class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
                                                     <h3 class="font-normal text-dark w-[75%]">
                                                         {{ $important_date->title }}
                                                     </h3>
@@ -380,7 +380,7 @@
                     @else
                         <div class="flex flex-col w-full relative text-start mt-10">
                             <h4 class="text-newyellow text-lg">Important Dates</h4>
-                            <p class="text-white border-b border-b-white">Not Available</p>
+                            <p class="text-dark border-b border-b-white">Not Available</p>
                         </div>
                     @endif
                 </div>
@@ -393,14 +393,14 @@
         <section class="pt-20 pb-32">
             <div class="main-container">
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
-                    @foreach ($as_seen_on as $item)
-                        <div class="h-16 w-full flex justify-center">
+                <div class="relative flex overflow-x-hidden">
+                    <div class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 animate-marquee whitespace-nowrap">
+                        @foreach ($as_seen_on as $item)
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                alt="{{ $item->alt }}" class="h-full object-contain">
-                        </div>
-                    @endforeach
+                                alt="{{ $item->alt }}" class="md:w-1/4 w-1/3 h-full object-contain">
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
