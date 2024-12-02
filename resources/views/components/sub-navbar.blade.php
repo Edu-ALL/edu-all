@@ -22,14 +22,12 @@
                             @endforeach
                         </div>
                     </div>
-                    <button id="btn-prev" class="absolute left-0 px-3 py-1 md:mt-[2px] mt-[3px] bg-white/60 rounded-full md:text-base text-[10px]">
+                    <button id="btn-prev" class="absolute left-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <div class="left-overlay hide"></div>
-                    <button id="btn-next" class="absolute right-0 px-3 py-1 md:mt-[2px] mt-[3px] bg-white/60 rounded-full md:text-base text-[10px]">
+                    <button id="btn-next" class="absolute right-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
                         <i class="fas fa-chevron-right "></i>
                     </button>
-                    <div class="right-overlay"></div>
                 </div>
             </div>
             <div
@@ -83,18 +81,13 @@
             } else {
                 prevButton.classList.remove('hidden');
             }
-
-            // Hide next button when at the far right
-            if (scrollContainer.clientWidth === scrollContainer.scrollWidth) {
-                nextButton.classList.add('hidden');
-            } else {
-                nextButton.classList.remove('hidden');
-            }
         }
 
         scrollContainer.addEventListener('scroll', () => {
             toggleButtonsVisibility()
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+            console.log(scrollContainer.scrollLeft + scrollContainer.clientWidth + 1000);
+            
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth + 10 >= scrollContainer.scrollWidth) {
                 nextButton.classList.add('hidden'); // Hide next button when at the far right
             } else {
                 nextButton.classList.remove('hidden'); // Show next button when not at the far right
