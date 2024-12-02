@@ -173,7 +173,7 @@
             <i class="fas fa-paper-plane text-2xl"></i>
         </a>
         <p class="text-[10px] text-gray-500 mt-2 text-end">
-            {{ date("Y/m/d") }}
+            {{ date('Y/m/d') }}
         </p>
     </div>
 </div>
@@ -252,7 +252,7 @@
         // WA Form 
 
         $('#wa_button').click(function() {
-            if ($('.bottom-24').length == 0 || $('.bottom-20').length == 0) {
+            if ($('#whatsappForm.bottom-24').length == 0) {
                 $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24')
             } else {
                 $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24')
