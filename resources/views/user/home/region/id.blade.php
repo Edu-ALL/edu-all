@@ -290,34 +290,40 @@
     <section class="pt-40 pb-24">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
-            <div class="grid grid-cols-1 gap-3 mt-12">
+            <div class="grid grid-cols-1 gap-3 mt-5">
                 {{-- Upcomming Event --}}
-                <div class="flex flex-col">
+                <div class="flex flex-col max-w-4xl mx-auto">
                     {{-- Talk Sessions --}}
-                    @if (count($regular_talks) > 0)
+                    @if (count($regular_talks) > 0 || count($events) > 0)
                         <div class="flex flex-col items-center justify-between">
                             <div class="splide w-full" role="group">
                                 <div class="splide__track">
                                     <ul class="splide__list">
-                                        @foreach ($regular_talks as $regular_talk)
-                                            <li class="splide__slide">
-                                                <div class="splide__slide__container max-h-96">
-                                                    <img loading="lazy"
-                                                        src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                        alt="{{ $regular_talk->event_alt }}"
-                                                        class="w-full object-cover object-center">
-                                                </div>
-                                            </li>
-                                        @endforeach
+                                        @if (count($events) > 0)
+                                            @foreach ($regular_talks as $regular_talk)
+                                                <li class="splide__slide">
+                                                    <div class="splide__slide__container">
+                                                        <a href="{{ $regular_talk->event_rsvp_link }}" target="_blank">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                alt="{{ $regular_talk->event_alt }}"
+                                                                class="object-contain w-full">
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @endif
 
                                         @if (count($events) > 0)
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
-                                                    <div class="splide__slide__container max-h-96">
-                                                        <img loading="lazy"
-                                                            src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                            alt="{{ $event->event_alt }}"
-                                                            class="object-cover w-full h-full">
+                                                    <div class="splide__slide__container">
+                                                        <a href="{{ $event->event_rsvp_link }}" target="_blank">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                                alt="{{ $event->event_alt }}"
+                                                                class="object-contain w-full">
+                                                        </a>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -350,7 +356,7 @@
                                         <li>
                                             @if ($important_date->link)
                                                 <a href="{{ $important_date->link }}" target="_blank"
-                                                    class="flex justify-between border-b border-b-dark py-2 w-ful">
+                                                    class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
                                                     <h3 class="font-normal hover:text-blue-500 text-dark w-[75%]">
                                                         {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
                                                     </h3>
@@ -359,7 +365,7 @@
                                                     </span>
                                                 </a>
                                             @else
-                                                <div class="flex justify-between border-b border-b-dark py-2 w-ful">
+                                                <div class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
                                                     <h3 class="font-normal text-dark w-[75%]">
                                                         {{ $important_date->title }}
                                                     </h3>
@@ -383,7 +389,7 @@
                     @else
                         <div class="flex flex-col w-full relative text-start mt-10">
                             <h4 class="text-newyellow text-lg">Important Dates</h4>
-                            <p class="text-white border-b border-b-white">Not Available</p>
+                            <p class="text-dark border-b border-b-white">Not Available</p>
                         </div>
                     @endif
                 </div>
@@ -396,14 +402,14 @@
         <section class="pt-20 pb-32">
             <div class="main-container">
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
-                    @foreach ($as_seen_on as $item)
-                        <div class="h-16 w-full flex justify-center">
+                <div class="relative flex overflow-x-hidden">
+                    <div class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
+                        @foreach ($as_seen_on as $item)
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                alt="{{ $item->alt }}" class="h-full object-contain">
-                        </div>
-                    @endforeach
+                                alt="{{ $item->alt }}" class="md:w-1/4 w-1/3 h-full object-contain">
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
@@ -453,10 +459,6 @@
 @endsection
 
 @push('script')
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-    <script type="module" src="{{ asset('js/user/main.js') }}"></script>
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
