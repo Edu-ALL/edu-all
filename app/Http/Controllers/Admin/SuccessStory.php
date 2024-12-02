@@ -241,7 +241,7 @@ class SuccessStory extends Controller
         $rules = [
             'story_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_alt' => 'required',
-            'story_home_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'story_home_thumbnail' => 'nullable|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'story_home_alt' => 'required',
             'story_name' => 'required',
             'story_category' => 'required',
