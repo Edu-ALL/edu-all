@@ -152,7 +152,7 @@
 </div>
 
 <div id="whatsappForm"
-    class="fixed -bottom-[50rem] right-5 w-[400px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
+    class="fixed -bottom-[50rem] right-5 md:w-[400px] w-[350px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
     <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
         <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
         <div>

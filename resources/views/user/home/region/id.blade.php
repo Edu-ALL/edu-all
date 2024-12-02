@@ -15,9 +15,9 @@
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
         <div class="relative">
-            <div class="absolute top-10 right-20 z-[999999]">
+            {{-- <div class="absolute top-10 right-20 z-[999999]">
                 <x-form title="Program" program-id="AAUP" lead-id="LS001" />
-            </div>
+            </div> --}}
 
             @if ($banners->video_link)
                 <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
