@@ -86,12 +86,16 @@
                                                                 <div class="hidden w-px h-4 bg-newprimary md:block"></div>
                                                             </div>
                                                         @endif
-                                                        <span class="font-newprimary text-sm text-[#7C7C7C]">
+                                                        {{-- <span class="font-newprimary text-sm text-[#7C7C7C]">
                                                             {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
-                                                        </span>
-                                                        <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
+                                                        </span> --}}
                                                         <span class="font-newprimary text-sm text-[#7C7C7C]">
                                                             {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
+                                                        </span>
+                                                        <div class="hidden w-px h-4 bg-[#7C7C7C] md:block"></div>
+                                                        <span class="font-newprimary text-xs text-[#7C7C7C] text-right">
+                                                            {{ count($blog->blog_read) }}
+                                                            <i class="fa-solid fa-eye ml-1"></i>
                                                         </span>
                                                     </div>
                                                     <a
@@ -153,25 +157,24 @@
                         class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2 h-full justify-between">
                             <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                class="h-72 object-cover object-center">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
-                                        {{ $blog->blog_category->category_name }}
-                                    </span>
-                                    <div class="flex items-center gap-2">
-                                        @if ($blog->duration_read)
+                                alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
+                                    {{ $blog->blog_category->category_name }}
+                                </span>
+                                <div class="flex items-center gap-2">
+                                    @if ($blog->duration_read)
                                         <span class="font-newprimary text-sm text-[#7C7C7C]">
                                             {{ $blog->duration_read }} {{ __('pages/blog.min_read') }}
                                         </span>
                                         <div class="w-px h-4 bg-[#7C7C7C] md:block"></div>
-                                        @endif
-                                        <span class="font-newprimary text-xs text-[#7C7C7C] text-right">
-                                            {{ count($blog->blog_read) }}
-                                            <i class="fa-solid fa-eye ml-1"></i>
-                                        </span>
-                                    </div>
+                                    @endif
+                                    <span class="font-newprimary text-xs text-[#7C7C7C] text-right">
+                                        {{ count($blog->blog_read) }}
+                                        <i class="fa-solid fa-eye ml-1"></i>
+                                    </span>
                                 </div>
+                            </div>
                             <h2
                                 class="pt-2 pb-1 font-newprimary font-bold text-lg text-newprimary lg:text-xl lg:tracking-normal lg:leading-7">
                                 {{ $blog->blog_title }}
@@ -182,7 +185,8 @@
                             <div class="flex justify-between items-center">
                                 @if ($blog->mentor)
                                     <div class="flex items-center gap-2">
-                                        <div class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-newprimary">
+                                        <div
+                                            class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-newprimary">
                                             <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                 alt="" class="w-full object-cover">
                                         </div>
@@ -191,11 +195,11 @@
                                         </div>
                                     </div>
                                 @endif
-                                <div class="flex items-center gap-2">
+                                {{-- <div class="flex items-center gap-2">
                                     <span class="font-newprimary text-sm text-[#7C7C7C]">
                                         {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                     </span>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </a>

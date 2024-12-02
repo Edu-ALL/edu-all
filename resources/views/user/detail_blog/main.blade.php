@@ -265,7 +265,7 @@
                         let image = element.image ? '{{ asset('') }}' + element.image : ''
                         let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'
                         paragraph.eq(element.position - 1).append(
-                            '<div class="p-4 bg-white mt-5 items-center rounded-2xl drop-shadow-xl border border-2 border-gray-100" role="alert">' +
+                            '<div class="p-4 bg-gray-100 mt-5 items-center rounded-2xl drop-shadow-xl border border-2 border-gray-100" role="alert">' +
                             '<div class="flex md:flex-row flex-col items-stretch gap-3">' +
                             '<div class="' + image_class + '">' +
                             '<img src="' + image +
@@ -275,7 +275,7 @@
                             '<div class="text-md font-bold text-newprimary text-lg">' +
                             element.title +
                             '</div>' +
-                            '<div class="text-sm text-gray-200 dark:text-gray-300 mt-2 -mb-3">' +
+                            '<div class="text-sm text-gray-600 dark:text-gray-300 mt-2 -mb-3">' +
                             element.description +
                             '</div>' +
                             '<div class="flex justify-end">' +
