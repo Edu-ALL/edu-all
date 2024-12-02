@@ -22,10 +22,12 @@
                             @endforeach
                         </div>
                     </div>
-                    <button id="btn-prev" class="absolute left-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
+                    <button id="btn-prev"
+                        class="absolute left-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button id="btn-next" class="absolute right-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
+                    <button id="btn-next"
+                        class="absolute right-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
                         <i class="fas fa-chevron-right "></i>
                     </button>
                 </div>
@@ -81,12 +83,17 @@
             } else {
                 prevButton.classList.remove('hidden');
             }
+
+            // Hide next button when at the far right
+            if (scrollContainer.clientWidth === scrollContainer.scrollWidth) {
+                nextButton.classList.add('hidden');
+            } else {
+                nextButton.classList.remove('hidden');
+            }
         }
 
         scrollContainer.addEventListener('scroll', () => {
             toggleButtonsVisibility()
-            console.log(scrollContainer.scrollLeft + scrollContainer.clientWidth + 1000);
-            
             if (scrollContainer.scrollLeft + scrollContainer.clientWidth + 10 >= scrollContainer.scrollWidth) {
                 nextButton.classList.add('hidden'); // Hide next button when at the far right
             } else {
