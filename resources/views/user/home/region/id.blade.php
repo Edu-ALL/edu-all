@@ -274,7 +274,7 @@
     </section>
 
     {{-- ========================================== Success Stories ========================================== --}}
-    <section class="pt-24 pb-24">
+    <section class="pt-10 pb-10">
         <div class="main-container flex flex-col items-center">
             <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
                 Empowering 700+ Minds for Global
@@ -319,35 +319,10 @@
 
 
     {{-- ========================================== Upcomming Events ========================================== --}}
-    <section class="pt-40 pb-24">
+    <section class="pt-10 pb-10">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 gap-3 mt-12">
-                {{-- Event --}}
-                <!-- <div class="flex flex-col items-center justify-between relative">
-                    <div class="splide" role="group">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                @foreach ($events as $event)
-                                    <li class="splide__slide">
-                                        <div class="splide__slide__container">
-                                            <h4 class="absolute top-8 left-8 text-newyellow text-lg">Event
-                                            </h4>
-                                            <img loading="lazy"
-                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
-
-                                            <a href="{{ route('upcoming_events', app()->getLocale()) }}"
-                                                class="absolute bottom-0 w-full py-3 bg-newprimary text-center text-white text-base">more
-                                                detail</a>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
-
                 {{-- Upcomming Event --}}
                 <div class="flex flex-col max-w-4xl mx-auto">
                     {{-- Talk Sessions --}}
@@ -451,40 +426,6 @@
         </div>
     </section>
 
-    {{-- ========================================== Success Stories ========================================== --}}
-    <section class="pt-24 pb-24">
-        <div class="main-container flex flex-col items-center">
-            <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
-                Empowering 700+ Minds for Global
-                Success – From Exceptional Personal Projects!
-                to Top Universities Worldwide!
-            </h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                @foreach ($success_stories as $item)
-                    <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
-                        <img loading="lazy"
-                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
-                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
-                            {{-- Name --}}
-                            <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
-                            {{-- Bedge 1 --}}
-                            <div class="text-newprimary text-card-small font-semibold text-center">
-                                {!! $item->badge_1 !!}
-                            </div>
-                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
-                                {!! $item->badge_2 !!}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <a href="{{ route('success_stories', app()->getLocale()) }}"
-                class="flex justify-center my-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                Read More
-            </a>
-        </div>
-    </section>
 
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
