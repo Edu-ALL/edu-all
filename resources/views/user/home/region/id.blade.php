@@ -15,8 +15,8 @@
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
         <div class="relative">
-            <div class="absolute top-10 right-20">
-                <x-form title="Program" />
+            <div class="absolute top-10 right-20 z-[999999]">
+                <x-form title="Program" program-id="AAUP" lead-id="LS001" />
             </div>
 
             @if ($banners->video_link)
@@ -480,16 +480,16 @@
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
         <section class="pt-20 pb-32">
-            <div class="new-main-container">
+            <div class="main-container">
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-12 mt-12 md:mt-24">
-                    @foreach ($as_seen_on as $item)
-                        <div class="h-16 w-full flex justify-center">
+                <div class="relative flex overflow-x-hidden">
+                    <div class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
+                        @foreach ($as_seen_on as $item)
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                alt="{{ $item->alt }}" class="h-full object-contain">
-                        </div>
-                    @endforeach
+                                alt="{{ $item->alt }}" class="md:w-1/4 w-1/3 h-full object-contain">
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
@@ -539,10 +539,6 @@
 @endsection
 
 @push('script')
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-    <script type="module" src="{{ asset('js/user/main.js') }}"></script>
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches

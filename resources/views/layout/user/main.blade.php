@@ -89,6 +89,7 @@
     <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
     <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" />
 
+    @stack('style')
 
     {{-- Blog SEO --}}
     @yield('head')
