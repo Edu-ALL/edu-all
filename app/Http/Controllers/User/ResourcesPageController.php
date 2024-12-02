@@ -19,10 +19,10 @@ class ResourcesPageController extends Controller
 
         if (request('category') == 'passion-project') {
             $tab_section = 'passion_project';
-            $success_stories = SuccessStories::where('category', 'Passion Project')->where('status', 'active')->where('lang', $lang)->paginate(5);
+            $success_stories = SuccessStories::where('category', 'Passion Project')->where('status', 'active')->where('lang', $lang)->paginate(6);
         } else {
             $tab_section = 'admission_mentoring';
-            $success_stories = SuccessStories::where('category', 'Admission Mentoring')->where('status', 'active')->where('lang', $lang)->paginate(5);
+            $success_stories = SuccessStories::where('category', 'Admission Mentoring')->where('status', 'active')->where('lang', $lang)->paginate(6);
         }
 
         return view('user.success_stories.main', [

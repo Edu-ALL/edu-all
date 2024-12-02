@@ -285,8 +285,8 @@
                 @foreach ($success_stories as $item)
                     <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
                         <img loading="lazy"
-                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
+                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                            alt="{{ $item->home_thumbnail_alt }}" class="h-full w-1/2 object-contain">
                         <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
                             {{-- Name --}}
                             <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
@@ -294,9 +294,18 @@
                             <div class="text-newprimary text-card-small font-semibold text-center">
                                 {!! $item->badge_1 !!}
                             </div>
-                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
-                                {!! $item->badge_2 !!}
-                            </div>
+                            <ul class="flex flex-col gap-1.5 mt-1.5">
+                                @foreach (array_filter(array_map(function($item) {
+                                    return trim(strip_tags($item));
+                                }, explode('<li>', $item->badge_2))) as $badge)
+                                    <li class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
+                                        <span class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
+                                            <i class="fa-solid fa-check fa-xs text-white"></i>
+                                        </span>
+                                        <p class="w-full leading-[14px]">{!! $badge !!}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 @endforeach

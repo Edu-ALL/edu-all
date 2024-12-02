@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    {{-- ================================== Banner Section  ================================== --}}
+    <!-- {{-- ================================== Banner Section  ================================== --}}
     <section class="pb-4 -z-10">
         <div
             class="relative flex w-full justify-center left-0 overflow-hidden bg-success-stories-header h-[100vh] pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
@@ -20,7 +20,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- ================================== Success Story Section  ================================== --}}
     <section class="py-4">
@@ -41,69 +41,85 @@
     </section>
 
     <section class="py-4">
-        <div class="main-container">
-            <div class="flex flex-col gap-y-16">
-                @foreach ($success_stories as $item)
-                    <div class="flex flex-col gap-9 items-end md:flex-row">
-                        <div class="w-3/4 mx-auto md:w-5/12">
-                            <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                alt="{{ $item->thumbnail_alt }}">
-                        </div>
-                        <div class="w-full md:w-7/12">
-                            <div class="flex flex-col gap-1 items-start">
-                                {{-- Name --}}
-                                <h2 class="font-bold text-banner-title font-newprimary">{{ $item->name }}</h2>
-                                {{-- Bedge 1 --}}
-                                <div class="font-newprimary text-newprimary text-base font-bold">
-                                    {!! $item->badge_1 !!}
-                                </div>
-                                {{-- Bedge 2 --}}
-                                <div class="mt-4 font-newprimary text-newprimary text-base">
-                                    {!! $item->badge_2 !!}
-                                </div>
-                                {{-- Achievement --}}
-                                @if ($tab_section != 'passion_project')
-                                    <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
-                                        alt="{{ $item->achievement_alt }}">
-                                @endif
-                                {{-- Short Description --}}
-                                <div class="mt-4 font-newprimary text-base">
-                                    {!! $item->summary_description !!}
-                                </div>
-                                {{-- Read More --}}
-                                <button id="open-desc-modal"
-                                    class="font-newprimary text-newprimary font-bold inline-flex items-center">
-                                    Read More
-                                    <div class="w-5">
-                                        <svg fill="#120FFD" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-                                            </g>
-                                            <g id="SVGRepo_iconCarrier">
-                                                <g data-name="Layer 2">
-                                                    <g data-name="arrow-ios-forward">
-                                                        <rect width="24" height="24" transform="rotate(-90 12 12)"
-                                                            opacity="0"></rect>
-                                                        <path
-                                                            d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z">
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg>
+        <div class="new-main-container">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-7 gap-x-7">
+                    @foreach ($success_stories as $item)
+                        <div class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
+                            <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden">
+                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                    alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-full md:w-6/12 h-full">
+                                <div class="flex flex-col gap-1 h-full justify-between">
+                                    <div class="flex flex-col gap-1 items-start">
+                                        {{-- Name --}}
+                                        <h2 class="font-bold text-4xl font-newprimary">{{ $item->name }}</h2>
+                                        <div class="h-0.5 w-2/5 bg-[#393636]"></div>
+
+                                        {{-- Bedge 1 --}}
+                                        <div class="font-newprimary text-newprimary text-base font-semibold leading-tight">
+                                            {!! $item->badge_1 !!}
+                                        </div>
+                                        <div class="mt-2 font-newprimary text-dark">
+                                            <ul class="flex flex-col gap-1.5">
+                                                @foreach (array_filter(array_map(function($item) {
+                                                    return trim(strip_tags($item));
+                                                }, explode('<li>', $item->badge_2))) as $badge)
+                                                    <li class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
+                                                        <span class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
+                                                            <i class="fa-solid fa-check fa-xs text-white"></i>
+                                                        </span>
+                                                        <p class="w-full leading-[14px]">{!! $badge !!}</p>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        {{-- Achievement --}}
+                                        @if ($tab_section != 'passion_project')
+                                            <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
+                                                alt="{{ $item->achievement_alt }}" class="mt-2">
+                                        @endif
                                     </div>
-                                </button>
-
-
+                                    <div class="mt-4 flex flex-col gap-1 items-start border border-dark rounded-md p-2">
+                                        {{-- Short Description --}}
+                                        <div class="font-newprimary text-sm">
+                                            {!! Str::limit($item->summary_description, 60) !!}
+                                        </div>
+                                        {{-- Read More --}}
+                                        <button id="open-desc-modal"
+                                            class="font-newprimary text-white px-1.5 py-0.5 rounded-[4px] font-normal text-sm inline-flex items-center bg-newprimary">
+                                            Read More
+                                            <div class="w-4">
+                                                <svg fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                                    </g>
+                                                    <g id="SVGRepo_iconCarrier">
+                                                        <g data-name="Layer 2">
+                                                            <g data-name="arrow-ios-forward">
+                                                                <rect width="24" height="24" transform="rotate(-90 12 12)"
+                                                                    opacity="0"></rect>
+                                                                <path
+                                                                    d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z">
+                                                                </path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
 
-            <div class="mt-32">
-                {{ $success_stories->links('layout.user.pagination') }}
-            </div>
+                <div class="mt-32">
+                    {{ $success_stories->links('layout.user.pagination') }}
+                </div>
+            </div> 
         </div>
 
 
