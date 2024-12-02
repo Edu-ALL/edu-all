@@ -102,31 +102,31 @@
 
     {{-- ========================================== Benefits Section ======================================= --}}
     <!-- <section class="py-12">
-        <div class="main-container">
-            <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
-                <div class="flex flex-col md:w-4/12">
-                    <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
-                        EduALL
-                    </h2>
-                    <h4 class="text-center md:text-left italic text-section-description">
-                        Your Gateway to Top Universities <br> and Dream Careers
-                    </h4>
-                </div>
-                <div class="flex flex-col md:w-8/12">
-                    <p class="text-banner-subdescription md:text-base md:text-left text-center">
-                        More than just a university consultant, EduALL empowers students through personalized guidance in
-                        academics, university and major selection, personal brand, and extracurriculars.
-                        <br><br>
-                        We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
-                        real-world problem-solving.
-                        <br><br>
-                        Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
-                            changemakers.</b>
-                    </p>
+            <div class="main-container">
+                <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
+                    <div class="flex flex-col md:w-4/12">
+                        <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
+                            EduALL
+                        </h2>
+                        <h4 class="text-center md:text-left italic text-section-description">
+                            Your Gateway to Top Universities <br> and Dream Careers
+                        </h4>
+                    </div>
+                    <div class="flex flex-col md:w-8/12">
+                        <p class="text-banner-subdescription md:text-base md:text-left text-center">
+                            More than just a university consultant, EduALL empowers students through personalized guidance in
+                            academics, university and major selection, personal brand, and extracurriculars.
+                            <br><br>
+                            We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
+                            real-world problem-solving.
+                            <br><br>
+                            Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
+                                changemakers.</b>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section> -->
+        </section> -->
 
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="pt-16">
@@ -243,10 +243,12 @@
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-dark">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev"
+                                style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next"
+                                style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
@@ -274,7 +276,7 @@
     </section>
 
     {{-- ========================================== Success Stories ========================================== --}}
-    <section class="pt-10 pb-10">
+    <section class="pt-24 pb-24">
         <div class="main-container flex flex-col items-center">
             <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
                 Empowering 700+ Minds for Global
@@ -285,8 +287,8 @@
                 @foreach ($success_stories as $item)
                     <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
                         <img loading="lazy"
-                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                            alt="{{ $item->home_thumbnail_alt }}" class="h-full w-1/2 object-contain">
+                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
                         <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
                             {{-- Name --}}
                             <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
@@ -294,18 +296,9 @@
                             <div class="text-newprimary text-card-small font-semibold text-center">
                                 {!! $item->badge_1 !!}
                             </div>
-                            <ul class="flex flex-col gap-1.5 mt-1.5">
-                                @foreach (array_filter(array_map(function($item) {
-                                    return trim(strip_tags($item));
-                                }, explode('<li>', $item->badge_2))) as $badge)
-                                    <li class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
-                                        <span class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
-                                            <i class="fa-solid fa-check fa-xs text-white"></i>
-                                        </span>
-                                        <p class="w-full leading-[14px]">{!! $badge !!}</p>
-                                    </li>
-                                @endforeach
-                            </ul>
+                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
+                                {!! $item->badge_2 !!}
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -319,7 +312,7 @@
 
 
     {{-- ========================================== Upcomming Events ========================================== --}}
-    <section class="pt-10 pb-10">
+    <section class="pt-40 pb-24">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 gap-3 mt-12">
@@ -350,9 +343,10 @@
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
                                                     <div class="splide__slide__container max-h-96">
-                                                    <img loading="lazy"
-                                                        src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                        alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
+                                                        <img loading="lazy"
+                                                            src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                            alt="{{ $event->event_alt }}"
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -394,7 +388,8 @@
                                                     </span>
                                                 </a>
                                             @else
-                                                <div class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
+                                                <div
+                                                    class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
                                                     <h3 class="font-normal text-dark w-[75%]">
                                                         {{ $important_date->title }}
                                                     </h3>
@@ -426,14 +421,14 @@
         </div>
     </section>
 
-
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
         <section class="pt-20 pb-32">
             <div class="main-container">
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
                 <div class="relative flex overflow-x-hidden">
-                    <div class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
+                    <div
+                        class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                         @foreach ($as_seen_on as $item)
                             <img loading="lazy"
                                 src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
