@@ -94,26 +94,6 @@
     {{-- Blog SEO --}}
     @yield('head')
 
-    
-    {{-- JQuery --}}
-    <script src="{{ url('/js/jquery.js') }}"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
-</head>
-
-<body id="body">
-
-    {{-- @include('layout.user.navbar') --}}
-    @yield('sub-navbar')
-
-    @include('layout.user.new-navbar')
-
-    <div class="mt-0">
-        @yield('content')
-    </div>
-
-    @include('layout.user.footer')
-
-    
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
@@ -125,13 +105,15 @@
     
     {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
-
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="/css/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
     {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}
 
     {{-- Splide JS - JS --}}
     <script src="{{ url('/js/splide.min.js') }}"></script>
+    {{-- JQuery --}}
+    <script src="{{ url('/js/jquery.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
     <script src="{{ url('/js/lazyload.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
@@ -210,6 +192,20 @@
                 src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
         <!-- End Meta Pixel Code -->
     @endif
+</head>
+
+<body id="body">
+
+    {{-- @include('layout.user.navbar') --}}
+    @yield('sub-navbar')
+
+    @include('layout.user.new-navbar')
+
+    <div class="mt-0">
+        @yield('content')
+    </div>
+
+    @include('layout.user.footer')
 
     @stack('script')
 </body>

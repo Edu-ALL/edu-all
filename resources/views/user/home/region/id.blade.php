@@ -19,21 +19,15 @@
                 <x-form title="Program" program-id="AAUP" lead-id="LS001" />
             </div> --}}
 
-            @if ($banners->video_link)
-                <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
-                    <source
-                        src="{{ asset('uploaded_files/banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
-                        type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            @elseif ($banners->image)
+            @if ($banners->image)
                 <img loading="lazy"
                     src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
                     alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover">
             @endif
+
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
                 <h2
-                    class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                    class="font-bold text-4xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h2>
             </div>
@@ -215,12 +209,10 @@
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-dark">
-                            <button class="splide__arrow splide__arrow--prev"
-                                style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next"
-                                style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
