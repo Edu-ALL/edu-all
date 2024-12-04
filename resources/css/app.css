@@ -11,42 +11,49 @@ body {
 /* Font */
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 900;
     src: url("/public/font/ambit/Ambit-Black.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Black.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 700;
     src: url("/public/font/ambit/Ambit-Bold.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Bold.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 600;
     src: url("/public/font/ambit/Ambit-SemiBold.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-SemiBold.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 400;
     src: url("/public/font/ambit/Ambit-Regular.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Regular.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 300;
     src: url("/public/font/ambit/Ambit-Light.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Light.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 200;
     src: url("/public/font/ambit/Ambit-ExtraLight.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-ExtraLight.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 100;
     src: url("/public/font/ambit/Ambit-Thin.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Thin.woff") format("woff");
