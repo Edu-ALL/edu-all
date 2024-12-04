@@ -93,7 +93,22 @@
 
     {{-- Blog SEO --}}
     @yield('head')
+</head>
 
+<body id="body">
+
+    {{-- @include('layout.user.navbar') --}}
+    @yield('sub-navbar')
+
+    @include('layout.user.new-navbar')
+
+    <div class="mt-0">
+        @yield('content')
+    </div>
+
+    @include('layout.user.footer')
+
+    
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
@@ -193,20 +208,6 @@
                 src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
         <!-- End Meta Pixel Code -->
     @endif
-</head>
-
-<body id="body">
-
-    {{-- @include('layout.user.navbar') --}}
-    @yield('sub-navbar')
-
-    @include('layout.user.new-navbar')
-
-    <div class="mt-0">
-        @yield('content')
-    </div>
-
-    @include('layout.user.footer')
 
     @stack('script')
 </body>
