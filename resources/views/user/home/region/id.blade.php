@@ -15,9 +15,9 @@
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
         <div class="relative">
-            {{-- <div class="absolute top-10 right-20 z-[999999]">
+            <div class="absolute top-10 right-20 z-[999999]">
                 <x-form title="Program" program-id="AAUP" lead-id="LS001" />
-            </div> --}}
+            </div>
 
             @if ($banners->video_link)
                 <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
@@ -33,7 +33,7 @@
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
                 <h1
-                    class="font-bold text-4xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                    class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h1>
             </div>
@@ -99,34 +99,6 @@
             </div>
         </div>
     </section>
-
-    {{-- ========================================== Benefits Section ======================================= --}}
-    <!-- <section class="py-12">
-        <div class="main-container">
-            <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
-                <div class="flex flex-col md:w-4/12">
-                    <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
-                        EduALL
-                    </h2>
-                    <h4 class="text-center md:text-left italic text-section-description">
-                        Your Gateway to Top Universities <br> and Dream Careers
-                    </h4>
-                </div>
-                <div class="flex flex-col md:w-8/12">
-                    <p class="text-banner-subdescription md:text-base md:text-left text-center">
-                        More than just a university consultant, EduALL empowers students through personalized guidance in
-                        academics, university and major selection, personal brand, and extracurriculars.
-                        <br><br>
-                        We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
-                        real-world problem-solving.
-                        <br><br>
-                        Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
-                            changemakers.</b>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="pt-16">
