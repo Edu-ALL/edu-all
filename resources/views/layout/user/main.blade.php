@@ -97,17 +97,17 @@
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
-    <link rel="stylesheet" href="/css/socialshare.css">
+    <link rel="stylesheet" href="/css/socialshare.css" media="print" onload="this.media='all'">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css"> --}}
 
     {{-- Splide JS - CSS --}}
-    <link rel="stylesheet" href="/css/splide.min.css">
+    <link rel="stylesheet" href="/css/splide.min.css" media="print" onload="this.media='all'">
     
     {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
 
     {{-- Font Awesome --}}
-    <link rel="stylesheet" href="/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
     {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}
 
     {{-- Splide JS - JS --}}
@@ -119,14 +119,14 @@
     <script src="{{ url('/js/lazyload.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
     {{-- Instafeed  --}}
-    <script src="{{ url('/js/instafeed.js') }}"></script>
+    <script src="{{ url('/js/instafeed.js') }}" defer></script>
     {{-- Social Share  --}}
-    <script src="{{ url('/js/socialshare.js') }}"></script>
+    <script src="{{ url('/js/socialshare.js') }}" defer></script>
     {{-- <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script> --}}
 
     <!-- Google tag (gtag.js) -->
     {{-- <script src="{{ url('/js/gtag.js') }}"></script> --}}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE" defer></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
