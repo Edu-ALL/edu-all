@@ -93,6 +93,11 @@
 
     {{-- Blog SEO --}}
     @yield('head')
+
+    
+    {{-- JQuery --}}
+    <script src="{{ url('/js/jquery.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
 </head>
 
 <body id="body">
@@ -127,9 +132,6 @@
 
     {{-- Splide JS - JS --}}
     <script src="{{ url('/js/splide.min.js') }}"></script>
-    {{-- JQuery --}}
-    <script src="{{ url('/js/jquery.js') }}"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
     <script src="{{ url('/js/lazyload.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
