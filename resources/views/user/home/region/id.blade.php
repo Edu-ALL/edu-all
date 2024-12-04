@@ -100,34 +100,6 @@
         </div>
     </section>
 
-    {{-- ========================================== Benefits Section ======================================= --}}
-    <!-- <section class="py-12">
-            <div class="main-container">
-                <div class="flex flex-col gap-y-8 md:flex-row justify-center md:justify-between items-center">
-                    <div class="flex flex-col md:w-4/12">
-                        <h2 class="text-center md:text-left text-newprimary font-bold text-section-title mb-2">
-                            EduALL
-                        </h2>
-                        <h4 class="text-center md:text-left italic text-section-description">
-                            Your Gateway to Top Universities <br> and Dream Careers
-                        </h4>
-                    </div>
-                    <div class="flex flex-col md:w-8/12">
-                        <p class="text-banner-subdescription md:text-base md:text-left text-center">
-                            More than just a university consultant, EduALL empowers students through personalized guidance in
-                            academics, university and major selection, personal brand, and extracurriculars.
-                            <br><br>
-                            We go beyond by fostering a growth mindset, providing access to professionals, project-making, and
-                            real-world problem-solving.
-                            <br><br>
-                            Join EduALL for a transformative journey toward success and societal impact, <b>shaping future
-                                changemakers.</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
     {{-- ========================================== Our Program Section ======================================= --}}
     <section class="pt-16">
         <div class="new-main-container">
@@ -184,7 +156,7 @@
     </section>
 
     {{-- ========================================== New Pathaway Excellence ========================================== --}}
-    <section class="py-24 bg-pathaway bg-cover bg-center">
+    <section class="py-16 bg-pathaway bg-cover bg-center">
         <div class="main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="col-span-6 md:col-span-4 flex flex-col justify-end">
@@ -234,7 +206,7 @@
     </section>
 
     {{-- ========================================== Mentors ========================================== --}}
-    <section class="pt-40 pb-24" id="mentors">
+    <section class="md:py-16 py-10" id="mentors">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark text-center">OUR MENTORS</h1>
         </div>
@@ -276,7 +248,7 @@
     </section>
 
     {{-- ========================================== Success Stories ========================================== --}}
-    <section class="pt-24 pb-24">
+    <section class="md:py-16 py-10">
         <div class="main-container flex flex-col items-center">
             <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
                 Empowering 700+ Minds for Global
@@ -312,7 +284,7 @@
 
 
     {{-- ========================================== Upcomming Events ========================================== --}}
-    <section class="pt-40 pb-24">
+    <section class="md:py-16 py-10">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
             <div class="grid grid-cols-1 gap-3 mt-12">
@@ -423,7 +395,7 @@
 
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
-        <section class="pt-20 pb-32">
+        <section class="md:py-16 py-10">
             <div class="main-container">
                 <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
                 <div class="relative flex overflow-x-hidden">
@@ -452,7 +424,7 @@
     </section>
 
     {{-- ================================== Testimony Section  ================================== --}}
-    <section class="pt-24">
+    <section class="md:pt-16 pt-10">
         <div class="flex main-container w-full flex-col">
             <h2 class="font-bold text-section-title text-black text-center">WHAT OUR MENTEES & PARENTS
                 SAY</h2>

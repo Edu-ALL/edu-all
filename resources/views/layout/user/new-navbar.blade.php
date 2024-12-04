@@ -36,13 +36,6 @@
                             @endif
                         </li>
                     @endforeach
-                    <li class="bg-red/80 hover:bg-red text-white w-full rounded-r-full">
-                        <button onclick="popupForm('open')" id="newsButton"
-                            class="text-white text-base py-2 px-3 block text-center">
-                            <i class="fa fa-newspaper mr-2"></i>
-                            Get Updates
-                        </button>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -104,16 +97,6 @@
                             @endif
                         </li>
                     @endforeach
-                    <li
-                        class="navbar-item-mobile relative group rounded-full transitionall font-light programs-menu w-full">
-                        <div class="flex items-center justify-center w-full px-6">
-                            <button onclick="popupForm('open')" id="newsButton"
-                                class="text-white text-base py-2 w-full block text-center bg-red rounded-md">
-                                <i class="fa fa-newspaper mr-2"></i>
-                                Get Updates
-                            </button>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -123,20 +106,6 @@
     </nav>
 </header>
 
-
-{{-- Newsletter  --}}
-<div class="fixed -bottom-[500%] lg:right-5 right-[10px] z-[99999] transition-all duration-1000 bg-white lg:w-[450px] w-[80%] h-auto shadow-md rounded-md border-[1px]"
-    id="newsForm">
-    <div class="absolute -right-2 -top-2 z-[99999] text-right -mt-[5px] w-[28px] h-[28px] rounded-full bg-red text-white float-right flex justify-center items-center cursor-pointer"
-        onclick="popupForm('close')">
-        <i class="fa fa-xmark inline-block "></i>
-    </div>
-    <div class="p-0">
-        <div class="rounded-md overflow-hidden">
-            @include('layout.user.newsletter')
-        </div>
-    </div>
-</div>
 
 {{-- whatsapp  --}}
 <div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[9999] transition-all duration-1000" id="wa_button">
