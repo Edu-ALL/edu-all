@@ -97,32 +97,36 @@
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css">
+    <link rel="stylesheet" href="/css/socialshare.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css"> --}}
+
     {{-- Splide JS - CSS --}}
     <link rel="stylesheet" href="/css/splide.min.css">
-    <link rel="stylesheet" href="/css/newsletter.css">
+    
+    {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
 
     {{-- Font Awesome --}}
-    <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+    <link rel="stylesheet" href="/css/fontawesome/css/all.min.css">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}
+
     {{-- Splide JS - JS --}}
-    <script src="/js/splide.min.js"></script>
+    <script src="{{ url('/js/splide.min.js') }}"></script>
     {{-- JQuery --}}
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
+    <script src="{{ url('/js/jquery.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
-    <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script> --}}
+    <script src="{{ url('/js/lazyload.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
     {{-- Instafeed  --}}
-    <script src="{{ url('js/instafeed.js') }}"></script>
+    <script src="{{ url('/js/instafeed.js') }}"></script>
     {{-- Social Share  --}}
-    <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script>
+    <script src="{{ url('/js/socialshare.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script> --}}
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script>
+    <script src="{{ url('/js/gtag.js') }}"></script>
+    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE"></script> --}}
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -154,7 +158,7 @@
                 s = b.getElementsByTagName(e)[0];
                 s.parentNode.insertBefore(t, s)
             }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
+                '/js/fbevent.js');
             fbq('init', '395995446484778');
             fbq('track', 'PageView');
         </script>
@@ -181,7 +185,7 @@
                 s = b.getElementsByTagName(e)[0];
                 s.parentNode.insertBefore(t, s)
             }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
+                '/js/fbevent.js');
             fbq('init', '928080065534623');
             fbq('track', 'PageView');
         </script>
