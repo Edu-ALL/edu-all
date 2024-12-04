@@ -97,6 +97,8 @@
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
+    <link rel="preload" as="font" type="Ambit" href="{{url('/font/ambit/Ambit-Regular.woff')}}" crossorigin/>
+
     <link rel="stylesheet" href="/css/socialshare.css" media="print" onload="this.media='all'">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css"> --}}
 
