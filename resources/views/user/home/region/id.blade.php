@@ -14,7 +14,7 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
-        <div class="relative">
+        <div class="relative bg-black">
             {{-- <div class="absolute top-10 right-20 z-[999999]">
                 <x-form title="Program" program-id="AAUP" lead-id="LS001" />
             </div> --}}
