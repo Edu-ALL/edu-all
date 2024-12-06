@@ -187,7 +187,7 @@
                             thanksPage.classList.remove('hidden')
 
                             setTimeout(() => {
-                                formRegistPage.classList.add('hidden')
+                                location.reload()
                             }, 3000);
                         },
                         error: function(xhr, status, error) {

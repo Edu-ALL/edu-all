@@ -14,10 +14,14 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
+
+        {{-- Registration Component  --}}
+        
         <div class="md:absolute fixed md:top-7 md:right-20 -top-[100vh] right-4 z-[99999] ease-in-out duration-700" id="registerForm">
             <x-form title="Program" program-id="AAUP" lead-id="LS001" />
         </div>
         <div class="md:absolute hidden top-0 left-0 w-full h-full bg-black/60 z-[99998] ease-in-out duration-700" id="formOverlay" onclick="close_registration()"></div>
+        
 
         <div class="relative">
             @if ($banners->video_link)
@@ -272,7 +276,6 @@
                 duration="150" />
         </div>
     </section>
-
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     <section class="md:py-16 py-10">

@@ -1,9 +1,9 @@
 
 <div class="font-secondary h-full program_card hover:rotate-program_card">
     <div class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full front">
-        <span class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold"> 
+        {{-- <span class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold"> 
             {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
-        </span>
+        </span> --}}
         <img loading="lazy"
             src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
             alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
