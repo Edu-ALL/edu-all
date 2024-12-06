@@ -14,11 +14,12 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
-        <div class="relative">
-            {{-- <div class="absolute top-10 right-20 z-[999999]">
-                <x-form title="Program" program-id="AAUP" lead-id="LS001" />
-            </div> --}}
+        <div class="md:absolute fixed md:top-7 md:right-20 -top-[100vh] right-4 z-[99999] ease-in-out duration-700" id="registerForm">
+            <x-form title="Program" program-id="AAUP" lead-id="LS001" />
+        </div>
+        <div class="md:absolute hidden top-0 left-0 w-full h-full bg-black/60 z-[99998] ease-in-out duration-700" id="formOverlay" onclick="close_registration()"></div>
 
+        <div class="relative">
             @if ($banners->video_link)
                 <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
                     <source
@@ -36,6 +37,9 @@
                     class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h1>
+                <div class="md:hidden flex justify-center mt-2">
+                    <button class="bg-newprimary py-2 px-4 text-white" onclick="open_registration()">Register Now</button>
+                </div>
             </div>
             <div class="absolute md:bottom-10 left-0 right-0">
                 <div class="relative h-full">
@@ -168,28 +172,32 @@
                     class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Interest & Career Exploration</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        Discovering interests and future aspiration through various learning experience and exposure to professional opportunities while fostering curiosity for students’ unique paths.
+                        Discovering interests and future aspiration through various learning experience and exposure to
+                        professional opportunities while fostering curiosity for students’ unique paths.
                     </p>
                 </div>
                 <div
                     class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
-                    <h3 class="font-bold text-2xl text-newyellow">Profile <br/> Building</h3>
+                    <h3 class="font-bold text-2xl text-newyellow">Profile <br /> Building</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        Identify passions, strengths, achievements, and experiences that will set students apart, creating a compelling and authentic students’ profile for university applications.
+                        Identify passions, strengths, achievements, and experiences that will set students apart, creating a
+                        compelling and authentic students’ profile for university applications.
                     </p>
                 </div>
                 <div
                     class="col-span-6 md:col-span-8 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">University Application Strategy</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        Crafting personalized strategies for university applications, ensuring students effectively showcase their strengths, interests, and potential to stand out in competitive admissions processes.
+                        Crafting personalized strategies for university applications, ensuring students effectively showcase
+                        their strengths, interests, and potential to stand out in competitive admissions processes.
                     </p>
                 </div>
                 <div
                     class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Writing</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        Developing impactful storytelling in personal statements and essays to showcase unique qualities and aspirations.
+                        Developing impactful storytelling in personal statements and essays to showcase unique qualities and
+                        aspirations.
                     </p>
                 </div>
             </div>
@@ -206,8 +214,7 @@
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
-                            <button class="splide__arrow splide__arrow--prev"
-                                style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
                             <button class="splide__arrow splide__arrow--next"
@@ -220,22 +227,29 @@
                                 @for ($i = 0; $i < count($all_mentor); $i++)
                                     @php
                                         $mentor = $all_mentor[$i];
-                                    @endphp                                 
+                                    @endphp
                                     <li class="splide__slide w-full">
-                                        <div class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
-                                            <div class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full front">
-                                                <span class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold"> 
+                                        <div
+                                            class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
+                                            <div
+                                                class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full front">
+                                                <span
+                                                    class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold">
                                                     {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
                                                 </span>
                                                 <img loading="lazy"
                                                     src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                    alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
+                                                    alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}"
+                                                    class="h-full w-full object-cover">
                                             </div>
-                                            <div class="previous-mentor-item w-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden back face_back">
-                                                <div class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-start px-4 py-6">
+                                            <div
+                                                class="previous-mentor-item w-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden back face_back">
+                                                <div
+                                                    class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-start px-4 py-6">
                                                     <div class="flex flex-col items-center">
 
-                                                        <h2 class="text-center font-semibold font-secondary text-white text-2xl mt-4 leading-7">
+                                                        <h2
+                                                            class="text-center font-semibold font-secondary text-white text-2xl mt-4 leading-7">
                                                             {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
                                                         </h2>
                                                         <span class="text-white text-card-small text-center mt-2">
@@ -254,13 +268,15 @@
                                                                     </h4>
                                                                 </li>
                                                             @endforeach --}}
-                                                            
+
                                                             @if ($mentor->value_1)
                                                                 <li class="flex items-start gap-4">
                                                                     <div class="w-4 h-4">
-                                                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
+                                                                        <i
+                                                                            class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                                                     </div>
-                                                                    <h4 class="text-card-small font-medium text-white leading-5">
+                                                                    <h4
+                                                                        class="text-card-small font-medium text-white leading-5">
                                                                         {{ $mentor->value_1 }}
                                                                     </h4>
                                                                 </li>
@@ -268,9 +284,11 @@
                                                             @if ($mentor->value_2)
                                                                 <li class="flex items-start gap-4">
                                                                     <div class="w-4 h-4">
-                                                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>     
+                                                                        <i
+                                                                            class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                                                     </div>
-                                                                    <h4 class="text-card-small font-medium text-white leading-5">
+                                                                    <h4
+                                                                        class="text-card-small font-medium text-white leading-5">
                                                                         {{ $mentor->value_2 }}
                                                                     </h4>
                                                                 </li>
@@ -278,9 +296,11 @@
                                                             @if ($mentor->value_3)
                                                                 <li class="flex items-start gap-4">
                                                                     <div class="w-4 h-4">
-                                                                    <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>    
+                                                                        <i
+                                                                            class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                                                     </div>
-                                                                    <h4 class="text-card-small font-medium text-white leading-5">
+                                                                    <h4
+                                                                        class="text-card-small font-medium text-white leading-5">
                                                                         {{ $mentor->value_3 }}
                                                                     </h4>
                                                                 </li>
@@ -297,17 +317,9 @@
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <x-button href="{{ route('mentor', app()->getLocale()) }}"
-                        title="Click for more details"
-                        bg-color="newprimary"
-                        class="mb-8"
-                        padding-x="4" 
-                        padding-y="2"
-                        hover-bg-color="newprimary" 
-                        hover-padding-x="20"
-                        text-color="white"
-                        font="medium"
-                        text-size="lg"
+                    <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                        bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                        hover-padding-x="20" text-color="white" font="medium" text-size="lg"
                         transition="all duration-150" />
                 </div>
             </div>
@@ -318,7 +330,7 @@
     <section class="md:py-16 py-10 bg-dark">
         <div class="main-container flex flex-col items-center">
             <h1 class="font-bold text-section-title text-white uppercase text-center max-w-4xl mx-auto">
-            OUR MENTEES’ STORIES & PROJECTS
+                OUR MENTEES’ STORIES & PROJECTS
             </h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl py-12">
                 @foreach ($success_stories as $item)
@@ -335,18 +347,9 @@
                     </div>
                 @endforeach
             </div>
-            <x-button href="{{ route('success_stories', app()->getLocale()) }}"
-                title="Click for more details"
-                class="my-8"
-                bg-color="newprimary"
-                text-color="white"
-                font-weight="medium"
-                text-size="lg"
-                padding-y="2"
-                padding-x="4"
-                hover-bg-color="newprimary"
-                hover-padding-x="20"
-                transition="all"
+            <x-button href="{{ route('success_stories', app()->getLocale()) }}" title="Click for more details"
+                class="my-8" bg-color="newprimary" text-color="white" font-weight="medium" text-size="lg"
+                padding-y="2" padding-x="4" hover-bg-color="newprimary" hover-padding-x="20" transition="all"
                 duration="150" />
         </div>
     </section>
@@ -463,7 +466,8 @@
     </section>
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section class="py-8 bg-dark bg-[url('../../../../../public/assets/img/home/cta_image.png')] bg-right bg-contain bg-no-repeat">
+    <section
+        class="py-8 bg-dark bg-[url('../../../../../public/assets/img/home/cta_image.png')] bg-right bg-contain bg-no-repeat">
         <div class="new-main-container">
             <div class="flex flex-col items-start w-full">
                 <h2 class="mb-6 font-semibold text-newyellow text-start text-lg md:text-2xl md:max-w-xs">
@@ -480,14 +484,16 @@
         <section class="md:py-10 py-8">
             <div class="new-main-container">
                 <div class="flex items-center gap-4">
-                    <h1 class="block font-bold text-xl md:text-2xl text-dark uppercase text-start font-newprimary md:w-[550px] relative">As Seen On</h1>
+                    <h1
+                        class="block font-bold text-sm md:text-2xl text-dark uppercase text-start font-newprimary md:w-[550px] w-[550px] relative">
+                        As Seen On</h1>
                     <div class="relative flex overflow-x-hidden">
                         <div
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                             @foreach ($as_seen_on as $item)
                                 <img loading="lazy"
                                     src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                    alt="{{ $item->alt }}" class="md:w-2/12 w-1/5 h-full object-contain">
+                                    alt="{{ $item->alt }}" class="md:w-2/12 w-1/3 h-full object-contain">
                             @endforeach
                         </div>
                     </div>
@@ -495,7 +501,7 @@
             </div>
         </section>
     @endif
-    
+
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="md:pt-16 pt-10">
         <div class="flex main-container w-full flex-col">
@@ -529,10 +535,27 @@
 @endsection
 
 @push('script')
+<script>
+    // Register Form 
+    const registerForm = document.getElementById('registerForm') 
+    const formOverlay = document.getElementById('formOverlay')
+
+    const open_registration = () => {
+        formOverlay.classList.remove('hidden')
+        registerForm.classList.remove('-top-[100vh]')
+        formOverlay.classList.add('fixed')
+        registerForm.classList.add('top-20')
+    }
+
+    const close_registration = () => {
+        formOverlay.classList.add('hidden')
+        formOverlay.classList.remove('fixed')
+        registerForm.classList.add('-top-[100vh]')
+        registerForm.classList.remove('top-20')
+    }
+    
+</script>
     <script>
-        
-
-
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
