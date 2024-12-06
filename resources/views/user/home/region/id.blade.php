@@ -136,7 +136,7 @@
                                             {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                             <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
                                                 class="underline text-newprimary hover:text-black">
-                                                {{ __('pages/programs/admission_mentoring.book_now') }}
+                                                {{ $item['sign_me_text'] }}
                                             </a>
                                         </span>
                                     </div>
@@ -151,7 +151,7 @@
 
     {{-- ========================================== New Pathaway Excellence ========================================== --}}
     <section class="py-16 bg-pathaway bg-cover bg-center">
-        <div class="main-container md:py-12">
+        <div class="new-main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="col-span-6 md:col-span-4 flex flex-col justify-end">
                     <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
@@ -160,39 +160,30 @@
                 </div>
                 <div
                     class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
-                    <h3 class="font-bold text-2xl text-newyellow">Exploration</h3>
+                    <h3 class="font-bold text-2xl text-newyellow">Interest & Career Exploration</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        We guide our mentees in discovering their passions and interests through exposure to diverse
-                        learning opportunities, professionals from various fields, and real-world challenges. We aim to
-                        ignite curiosity and help students define their unique paths.
+                        Discovering interests and future aspiration through various learning experience and exposure to professional opportunities while fostering curiosity for students’ unique paths.
                     </p>
                 </div>
                 <div
                     class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
-                    <h3 class="font-bold text-2xl text-newyellow">Profile Building</h3>
+                    <h3 class="font-bold text-2xl text-newyellow">Profile <br/> Building</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        This is where we assist mentees in shaping a well-rounded academic and extracurricular persona. We
-                        work together to identify strengths, achievements, and experiences that will set them apart,
-                        creating a compelling and authentic profile for university applications.
+                        Identify passions, strengths, achievements, and experiences that will set students apart, creating a compelling and authentic students’ profile for university applications.
                     </p>
                 </div>
                 <div
-                    class="col-span-6 md:col-span-6 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
-                    <h3 class="font-bold text-2xl text-newyellow">Academic</h3>
+                    class="col-span-6 md:col-span-8 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                    <h3 class="font-bold text-2xl text-newyellow">University Application Strategy</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        We strategically prepare students for their chosen major by offering tailored guidance for
-                        international curricula and specialized coaching for standardized tests. From course selection to
-                        targeted improvement strategies, we empower students for success in university studies and
-                        competitive admissions.
+                        Crafting personalized strategies for university applications, ensuring students effectively showcase their strengths, interests, and potential to stand out in competitive admissions processes.
                     </p>
                 </div>
                 <div
-                    class="col-span-6 md:col-span-6 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
                     <h3 class="font-bold text-2xl text-newyellow">Writing</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
-                        Crafting a compelling narrative is key. We offer guidance on personal statements, essays, and other
-                        written components of university applications. Through thoughtful storytelling and impactful
-                        writing, we aim to showcase each student's unique qualities, aspirations, and contributions.
+                        Developing impactful storytelling in personal statements and essays to showcase unique qualities and aspirations.
                     </p>
                 </div>
             </div>
@@ -200,77 +191,160 @@
     </section>
 
     {{-- ========================================== Mentors ========================================== --}}
-    <section class="md:py-16 py-10" id="mentors">
-        <div class="new-main-container">
-            <h1 class="font-bold text-section-title text-dark text-center">OUR MENTORS</h1>
+    <section class="md:py-16 py-10 bg-dark" id="mentors">
+        <div class="new-main-container py-8">
+            <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
         </div>
         <div class="flex flex-col items-center">
             <div class="w-full md:px-10 px-3 max-w-screen-2xl mx-auto">
                 <div class="new-main-container">
                     <div class="splide" role="group">
-                        <div class="splide__arrows text-dark">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
+                        <div class="splide__arrows text-white">
+                            <button class="splide__arrow splide__arrow--prev"
+                                style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
                             <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
-                        <div class="splide__track py-10">
+                        <div class="splide__track my-12">
                             <ul class="splide__list">
-                                @foreach ($all_mentor as $mentor)
-                                    <li class="splide__slide">
-                                        <div class="splide__slide__container px-4 pt-[2rem] w-full h-[80%] mt-32">
-                                            <x-mentor-card :mentor=$mentor />
+                                @for ($i = 0; $i < count($all_mentor); $i++)
+                                    @php
+                                        $mentor = $all_mentor[$i];
+                                    @endphp                                 
+                                    <li class="splide__slide w-full">
+                                        <div class="splide__slide__container relative mx-2 font-secondary h-full">
+                                            <div class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full">
+                                                <span class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold"> 
+                                                    {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
+                                                </span>
+                                                <img loading="lazy"
+                                                    src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                    alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
+                                            </div>
+                                            <div class="previous-mentor-item w-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden">
+                                                @php
+                                                    $previous_mentor_index = $i > 0 ? $i - 1 : count($all_mentor) - 1;
+                                                    $previous_mentor = $all_mentor[$previous_mentor_index];
+                                                @endphp
+                                                <div class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-start px-4 py-6">
+                                                    <div class="flex flex-col items-center">
+
+                                                        <h2 class="text-center font-semibold font-secondary text-white text-2xl mt-4 leading-7">
+                                                            {{ explode(' ', trim($previous_mentor->mentor_fullname))[0] }}
+                                                        </h2>
+                                                        <span class="text-white text-card-small text-center mt-2">
+                                                            {!! $previous_mentor->mentor_graduation !!}
+                                                        </span>
+                                                    </div>
+                                                    <div class="h-full flex flex-col justify-center flex-1">
+                                                        <ul class="flex flex-col gap-2">
+                                                            {{-- @foreach ($previous_mentor->mentor_value as $item)
+                                                                <li class="flex items-start gap-4 mt-8">
+                                                                    <div class="w-4 h-4">
+                                                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i> 
+                                                                    </div>
+                                                                    <h4 class="text-card-small font-medium text-white leading-5 mt-1">
+                                                                        {{ $item->value }}
+                                                                    </h4>
+                                                                </li>
+                                                            @endforeach --}}
+                                                            
+                                                            @if ($previous_mentor->value_1)
+                                                                <li class="flex items-start gap-4">
+                                                                    <div class="w-4 h-4">
+                                                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
+                                                                    </div>
+                                                                    <h4 class="text-card-small font-medium text-white leading-5">
+                                                                        {{ $previous_mentor->value_1 }}
+                                                                    </h4>
+                                                                </li>
+                                                            @endif
+                                                            @if ($previous_mentor->value_2)
+                                                                <li class="flex items-start gap-4">
+                                                                    <div class="w-4 h-4">
+                                                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>     
+                                                                    </div>
+                                                                    <h4 class="text-card-small font-medium text-white leading-5">
+                                                                        {{ $previous_mentor->value_2 }}
+                                                                    </h4>
+                                                                </li>
+                                                            @endif
+                                                            @if ($previous_mentor->value_3)
+                                                                <li class="flex items-start gap-4">
+                                                                    <div class="w-4 h-4">
+                                                                    <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>    
+                                                                    </div>
+                                                                    <h4 class="text-card-small font-medium text-white leading-5">
+                                                                        {{ $previous_mentor->value_3 }}
+                                                                    </h4>
+                                                                </li>
+                                                            @endif
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </li>
-                                @endforeach
+                                @endfor
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <a href="{{ route('mentor', app()->getLocale()) }}"
-                        class="mb-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                        {{ __('pages/home.mentor_btn') }}
-                    </a>
+                    <x-button href="{{ route('mentor', app()->getLocale()) }}"
+                        title="Click for more details"
+                        bg-color="newprimary"
+                        class="mb-8"
+                        padding-x="4" 
+                        padding-y="2"
+                        hover-bg-color="newprimary" 
+                        hover-padding-x="20"
+                        text-color="white"
+                        font="medium"
+                        text-size="lg"
+                        transition="all duration-150" />
                 </div>
             </div>
         </div>
     </section>
 
     {{-- ========================================== Success Stories ========================================== --}}
-    <section class="md:py-16 py-10">
+    <section class="md:py-16 py-10 bg-dark">
         <div class="main-container flex flex-col items-center">
-            <h1 class="font-bold text-section-title text-dark uppercase text-center max-w-4xl mx-auto">
-                Empowering 700+ Minds for Global
-                Success – From Exceptional Personal Projects!
-                to Top Universities Worldwide!
+            <h1 class="font-bold text-section-title text-white uppercase text-center max-w-4xl mx-auto">
+            OUR MENTEES’ STORIES & PROJECTS
             </h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl py-12">
                 @foreach ($success_stories as $item)
-                    <div class="flex gap-6 justify-start @if ($loop->index > 1) flex-row-reverse @endif">
+                    <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                         <img loading="lazy"
-                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                            alt="{{ $item->thumbnail_alt }}" class="h-full w-1/2 object-contain">
-                        <div class="bg-newyellow px-4 py-6 flex flex-col items-center justify-center mt-10">
-                            {{-- Name --}}
-                            <h2 class="font-semibold text-card-subtitle text-center">{{ $item->name }}</h2>
-                            {{-- Bedge 1 --}}
-                            <div class="text-newprimary text-card-small font-semibold text-center">
-                                {!! $item->badge_1 !!}
-                            </div>
-                            <div class="mt-4 text-dark text-card-description font-semibold text-center leading-4">
-                                {!! $item->badge_2 !!}
-                            </div>
+                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
+                        <div>
+                            <a href="{{ route('success_stories', app()->getLocale()) }}"
+                                class="absolute bottom-0 left-1/4 transform -translate-x-1/4 mb-6 text-newyellow bg-black font-medium text-sm py-1 mx-4 rounded-full w-3/4 text-center">
+                                Get to Know {{ explode(' ', trim($item->name))[0] }}
+                            </a>
                         </div>
                     </div>
                 @endforeach
             </div>
-            <a href="{{ route('success_stories', app()->getLocale()) }}"
-                class="flex justify-center my-8 bg-dark text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                Read More
-            </a>
+            <x-button href="{{ route('success_stories', app()->getLocale()) }}"
+                title="Click for more details"
+                class="my-8"
+                bg-color="newprimary"
+                text-color="white"
+                font-weight="medium"
+                text-size="lg"
+                padding-y="2"
+                padding-x="4"
+                hover-bg-color="newprimary"
+                hover-padding-x="20"
+                transition="all"
+                duration="150" />
         </div>
     </section>
 
@@ -296,14 +370,14 @@
                                                             <img loading="lazy"
                                                                 src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                                 alt="{{ $regular_talk->event_alt }}"
-                                                                class="object-contain w-full">
+                                                                class="w-full">
                                                         </a>
                                                     </div>
                                                 </li>
                                             @endforeach
                                         @endif
 
-                                        @if (count($events) > 0)
+                                        {{-- @if (count($events) > 0)
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
                                                     <div class="splide__slide__container max-h-96">
@@ -314,7 +388,7 @@
                                                     </div>
                                                 </li>
                                             @endforeach
-                                        @endif
+                                        @endif --}}
                                     </ul>
                                 </div>
                             </div>
@@ -385,36 +459,40 @@
         </div>
     </section>
 
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="py-8 bg-dark bg-[url('../../../../../public/assets/img/home/cta_image.png')] bg-right bg-contain bg-no-repeat">
+        <div class="new-main-container">
+            <div class="flex flex-col items-start w-full">
+                <h2 class="mb-6 font-semibold text-newyellow text-start text-lg md:text-2xl md:max-w-xs">
+                    {{ __('pages/home.bottom') }}
+                </h2>
+                <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                    title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+            </div>
+        </div>
+    </section>
+
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
-        <section class="md:py-16 py-10">
+        <section class="md:py-10 py-8">
             <div class="main-container">
-                <h1 class="font-bold text-section-title text-dark uppercase text-center">As Seen On</h1>
-                <div class="relative flex overflow-x-hidden">
-                    <div
-                        class="flex items-center flex-nowrap justify-between gap-12 mt-12 md:mt-24 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
-                        @foreach ($as_seen_on as $item)
-                            <img loading="lazy"
-                                src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                alt="{{ $item->alt }}" class="md:w-1/4 w-1/3 h-full object-contain">
-                        @endforeach
+                <div class="flex items-center gap-4">
+                    <h1 class="block font-bold text-xl md:text-2xl text-dark uppercase text-center font-newprimary w-[500px] relative ">As Seen On</h1>
+                    <div class="relative flex overflow-x-hidden">
+                        <div
+                            class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
+                            @foreach ($as_seen_on as $item)
+                                <img loading="lazy"
+                                    src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                    alt="{{ $item->alt }}" class="md:w-2/12 w-1/5 h-full object-contain">
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     @endif
-
-    {{-- ================================== Bottom Section  ================================== --}}
-    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
-            <h2 class="mb-6 font-semibold text-2xl text-white text-center text-section-title">
-                {{ __('pages/home.bottom') }}
-            </h2>
-            <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="red" />
-        </div>
-    </section>
-
+    
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="md:pt-16 pt-10">
         <div class="flex main-container w-full flex-col">
@@ -449,6 +527,9 @@
 
 @push('script')
     <script>
+        
+
+
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
@@ -482,12 +563,12 @@
 
         new Splide(splides[1], {
             type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
             perMove: 1,
             arrows: isSmallDevice ? false : true,
             lazyload: false,
             autoplay: true,
-            interval: 4000,
+            interval: 3000,
             pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
@@ -505,13 +586,14 @@
 
         new Splide(splides[2], {
             type: 'slide',
-            perPage: 1,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             lazyload: true,
             autoplay: false,
             interval: 3000,
             pagination: false,
+            width: "100%",
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
@@ -523,6 +605,31 @@
                 item.button.style.backgroundColor = '#0367BF';
             });
         }).mount();
+
+        var mentorThumbnails = Array.from(document.getElementsByClassName('mentor-thumbnail'));
+        var previousMentorItems = Array.from(document.getElementsByClassName('previous-mentor-item'));
+        $(document).ready(function() {
+            $('.mentor-thumbnail').hover(
+                function() {
+                    var index = mentorThumbnails.indexOf(this);
+                    if (index < mentorThumbnails.length - 1) {
+                        var nextThumbnail = mentorThumbnails[index + 1];
+                        var previousItem = previousMentorItems[index];
+                        $(nextThumbnail).css('opacity', 0); // Hide the next thumbnail
+                        $(previousItem).clone().css('opacity', 1).insertAfter(this); // Show the previous item with full opacity
+                    }
+                },
+                function() {
+                    var index = mentorThumbnails.indexOf(this);
+                    if (index < mentorThumbnails.length - 1) {
+                        var nextThumbnail = mentorThumbnails[index + 1];
+                        var previousItem = previousMentorItems[index];
+                        $(nextThumbnail).css('opacity', 1); // Restore the next thumbnail opacity
+                        $(previousItem).remove(); // Remove the cloned previous item
+                    }
+                }
+            );
+        });
 
         new Splide(splides[3], {
             type: 'slide',

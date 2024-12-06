@@ -19,6 +19,7 @@ return [
             'img' => 'Admission Mentoring.webp',
             'link' => '/mentoring/admissions',
             'sign_me' => 'sign_me_adm_mentoring',
+            'sign_me_text' => "book your FREE CONSULTATION now"
         ],
         [
             'title' => 'ACADEMIC <br/> TUTORING',
@@ -32,19 +33,20 @@ return [
             'img' => 'Academic &-Test Preparation.webp',
             'link' => '/mentoring/academic-test',
             'sign_me' => 'sign_me_adm_mentoring',
+            'sign_me_text' => "book your FREE  TRIAL now"
         ],
-        [
-            'title' => 'EXPLORATION <br/> PROGRAM',
-            'body' => 'Explore your true potential in business or research, uncover your true self, and be the person behind successful ventures and revolutionary inventions.',
-            'points' => [
-                'Global Immersion Program',
-                'Community Empowerment Program',
-            ],
-            'route' => 'passion_project_mentoring',
-            'img' => 'Passion Project-Mentoring Program.png',
-            'link' => '/mentoring/passion-project',
-            'sign_me' => 'sign_me_adm_mentoring',
-        ],
+        // [
+        //     'title' => 'EXPLORATION <br/> PROGRAM',
+        //     'body' => 'Explore your true potential in business or research, uncover your true self, and be the person behind successful ventures and revolutionary inventions.',
+        //     'points' => [
+        //         'Global Immersion Program',
+        //         'Community Empowerment Program',
+        //     ],
+        //     'route' => 'passion_project_mentoring',
+        //     'img' => 'Passion Project-Mentoring Program.png',
+        //     'link' => '/mentoring/passion-project',
+        //     'sign_me' => 'sign_me_adm_mentoring',
+        // ],
     ],
     "sign_up_text" => "Sign up for a FREE Initial Consultation!",
     "sign_up_btn" => "Register Now",
