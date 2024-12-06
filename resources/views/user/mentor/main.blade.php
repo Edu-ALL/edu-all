@@ -52,11 +52,11 @@
                         <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
                     </button>
                 </div>
-                <div class="splide__track  py-20">
+                <div class="splide__track py-20">
                     <ul class="splide__list">
                         @foreach ($allin_mentor as $mentor)
                             <li class="splide__slide">
-                                <div class="splide__slide__container px-4 w-full h-[80%] mt-32">
+                                <div class="splide__slide__container px-2">
                                     <x-mentor-card :mentor=$mentor />
                                 </div>
                             </li>
@@ -82,11 +82,11 @@
                         <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
                     </button>
                 </div>
-                <div class="splide__track  py-20">
+                <div class="splide__track py-20">
                     <ul class="splide__list">
                         @foreach ($building_mentor as $mentor)
                             <li class="splide__slide">
-                                <div class="splide__slide__container px-4 w-full h-[80%] mt-32">
+                                <div class="splide__slide__container px-2">
                                     <x-mentor-card :mentor=$mentor />
                                 </div>
                             </li>
@@ -116,7 +116,7 @@
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splide = new Splide('.mentor-1', {
-            perPage: isSmallDevice ? 1 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 3 : isVeryLargeDevice ? 4 : 4,
             perMove: 1,
             lazyload: true,
             autoplay: false,
@@ -140,7 +140,7 @@
         }).mount();
 
         var splide = new Splide('.mentor-2', {
-            perPage: isSmallDevice ? 1 : 3,
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isVeryLargeDevice ? 3 : 4,
             perMove: 1,
             lazyload: true,
             autoplay: false,
