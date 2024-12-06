@@ -1,53 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-    font-family: "Asap" !important;
+    font-family: "Ambit" !important;
+    font-weight: 400;
 }
 
 /* Font */
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 900;
     src: url("/public/font/ambit/Ambit-Black.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Black.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 700;
     src: url("/public/font/ambit/Ambit-Bold.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Bold.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 600;
     src: url("/public/font/ambit/Ambit-SemiBold.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-SemiBold.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 400;
     src: url("/public/font/ambit/Ambit-Regular.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Regular.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 300;
     src: url("/public/font/ambit/Ambit-Light.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Light.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 200;
     src: url("/public/font/ambit/Ambit-ExtraLight.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-ExtraLight.woff") format("woff");
 }
 @font-face {
     font-family: "Ambit";
+    font-display: swap;
     font-weight: 100;
     src: url("/public/font/ambit/Ambit-Thin.woff2") format("woff2"),
          url("/public/font/ambit/Ambit-Thin.woff") format("woff");
