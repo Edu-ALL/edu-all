@@ -17,7 +17,7 @@ return [
             ],
             'route' => 'admissions_mentoring',
             'img' => 'Admission Mentoring.webp',
-            'link' => '/mentoring/admissions',
+            'link' => 'programs/admissions-mentoring',
             'sign_me' => 'sign_me_adm_mentoring',
             'sign_me_text' => "book your FREE CONSULTATION now"
         ],
@@ -31,7 +31,7 @@ return [
             ],
             'route' => 'academic_test_preparation',
             'img' => 'Academic &-Test Preparation.webp',
-            'link' => '/mentoring/academic-test',
+            'link' => 'programs/academic-test-preparation',
             'sign_me' => 'sign_me_adm_mentoring',
             'sign_me_text' => "book your FREE  TRIAL now"
         ],
@@ -44,7 +44,7 @@ return [
         //     ],
         //     'route' => 'passion_project_mentoring',
         //     'img' => 'Passion Project-Mentoring Program.png',
-        //     'link' => '/mentoring/passion-project',
+        //     'link' => 'mentoring/passion-project',
         //     'sign_me' => 'sign_me_adm_mentoring',
         // ],
     ],

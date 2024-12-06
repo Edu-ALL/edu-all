@@ -139,7 +139,7 @@
                                             </ul>
                                         </div>
                                         <x-button
-                                            href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/{{ $item['link'] }}"
+                                            href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
                                             title="{{ __('pages/programs/admission_mentoring.learn_more') }}"
                                             bg-color="newprimary" padding-y="1.5" />
                                         <span class="mt-1 text-sm text-[#9C9C9C]">
@@ -224,94 +224,13 @@
                         </div>
                         <div class="splide__track py-12">
                             <ul class="splide__list">
-                                @for ($i = 0; $i < count($all_mentor); $i++)
-                                    @php
-                                        $mentor = $all_mentor[$i];
-                                    @endphp
+                                @foreach ($all_mentor as $mentor)                      
                                     <li class="splide__slide w-full">
-                                        <div
-                                            class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
-                                            <div
-                                                class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full front">
-                                                <span
-                                                    class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold">
-                                                    {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
-                                                </span>
-                                                <img loading="lazy"
-                                                    src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
-                                                    alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}"
-                                                    class="h-full w-full object-cover">
-                                            </div>
-                                            <div
-                                                class="previous-mentor-item w-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden back face_back">
-                                                <div
-                                                    class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-start px-4 py-6">
-                                                    <div class="flex flex-col items-center">
-
-                                                        <h2
-                                                            class="text-center font-semibold font-secondary text-white text-2xl mt-4 leading-7">
-                                                            {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
-                                                        </h2>
-                                                        <span class="text-white text-card-small text-center mt-2">
-                                                            {!! $mentor->mentor_graduation !!}
-                                                        </span>
-                                                    </div>
-                                                    <div class="h-full flex flex-col justify-center flex-1">
-                                                        <ul class="flex flex-col gap-2">
-                                                            {{-- @foreach ($mentor->mentor_value as $item)
-                                                                <li class="flex items-start gap-4 mt-8">
-                                                                    <div class="w-4 h-4">
-                                                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i> 
-                                                                    </div>
-                                                                    <h4 class="text-card-small font-medium text-white leading-5 mt-1">
-                                                                        {{ $item->value }}
-                                                                    </h4>
-                                                                </li>
-                                                            @endforeach --}}
-
-                                                            @if ($mentor->value_1)
-                                                                <li class="flex items-start gap-4">
-                                                                    <div class="w-4 h-4">
-                                                                        <i
-                                                                            class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
-                                                                    </div>
-                                                                    <h4
-                                                                        class="text-card-small font-medium text-white leading-5">
-                                                                        {{ $mentor->value_1 }}
-                                                                    </h4>
-                                                                </li>
-                                                            @endif
-                                                            @if ($mentor->value_2)
-                                                                <li class="flex items-start gap-4">
-                                                                    <div class="w-4 h-4">
-                                                                        <i
-                                                                            class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
-                                                                    </div>
-                                                                    <h4
-                                                                        class="text-card-small font-medium text-white leading-5">
-                                                                        {{ $mentor->value_2 }}
-                                                                    </h4>
-                                                                </li>
-                                                            @endif
-                                                            @if ($mentor->value_3)
-                                                                <li class="flex items-start gap-4">
-                                                                    <div class="w-4 h-4">
-                                                                        <i
-                                                                            class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
-                                                                    </div>
-                                                                    <h4
-                                                                        class="text-card-small font-medium text-white leading-5">
-                                                                        {{ $mentor->value_3 }}
-                                                                    </h4>
-                                                                </li>
-                                                            @endif
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
+                                            <x-mentor-card :mentor=$mentor />
                                         </div>
                                     </li>
-                                @endfor
+                                @endforeach
                             </ul>
                         </div>
                     </div>
