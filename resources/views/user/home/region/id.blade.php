@@ -14,22 +14,28 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
-        <div class="relative bg-black">
+        <div class="relative">
             {{-- <div class="absolute top-10 right-20 z-[999999]">
                 <x-form title="Program" program-id="AAUP" lead-id="LS001" />
             </div> --}}
 
-            @if ($banners->image)
+            @if ($banners->video_link)
+                <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
+                    <source
+                        src="{{ asset('uploaded_files/banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            @elseif ($banners->image)
                 <img loading="lazy"
                     src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
                     alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover">
             @endif
-
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
-                <h2
-                    class="font-bold text-4xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                <h1
+                    class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
-                </h2>
+                </h1>
             </div>
             <div class="absolute md:bottom-10 left-0 right-0">
                 <div class="relative h-full">
@@ -204,19 +210,20 @@
                                 style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next"
+                                style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
-                        <div class="splide__track my-12">
+                        <div class="splide__track py-12">
                             <ul class="splide__list">
                                 @for ($i = 0; $i < count($all_mentor); $i++)
                                     @php
                                         $mentor = $all_mentor[$i];
                                     @endphp                                 
                                     <li class="splide__slide w-full">
-                                        <div class="splide__slide__container relative mx-2 font-secondary h-full">
-                                            <div class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full">
+                                        <div class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
+                                            <div class="mentor-thumbnail w-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full front">
                                                 <span class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold"> 
                                                     {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
                                                 </span>
@@ -224,24 +231,20 @@
                                                     src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                     alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
                                             </div>
-                                            <div class="previous-mentor-item w-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden">
-                                                @php
-                                                    $previous_mentor_index = $i > 0 ? $i - 1 : count($all_mentor) - 1;
-                                                    $previous_mentor = $all_mentor[$previous_mentor_index];
-                                                @endphp
+                                            <div class="previous-mentor-item w-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden back face_back">
                                                 <div class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-start px-4 py-6">
                                                     <div class="flex flex-col items-center">
 
                                                         <h2 class="text-center font-semibold font-secondary text-white text-2xl mt-4 leading-7">
-                                                            {{ explode(' ', trim($previous_mentor->mentor_fullname))[0] }}
+                                                            {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
                                                         </h2>
                                                         <span class="text-white text-card-small text-center mt-2">
-                                                            {!! $previous_mentor->mentor_graduation !!}
+                                                            {!! $mentor->mentor_graduation !!}
                                                         </span>
                                                     </div>
                                                     <div class="h-full flex flex-col justify-center flex-1">
                                                         <ul class="flex flex-col gap-2">
-                                                            {{-- @foreach ($previous_mentor->mentor_value as $item)
+                                                            {{-- @foreach ($mentor->mentor_value as $item)
                                                                 <li class="flex items-start gap-4 mt-8">
                                                                     <div class="w-4 h-4">
                                                                         <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i> 
@@ -252,33 +255,33 @@
                                                                 </li>
                                                             @endforeach --}}
                                                             
-                                                            @if ($previous_mentor->value_1)
+                                                            @if ($mentor->value_1)
                                                                 <li class="flex items-start gap-4">
                                                                     <div class="w-4 h-4">
                                                                         <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                                                     </div>
                                                                     <h4 class="text-card-small font-medium text-white leading-5">
-                                                                        {{ $previous_mentor->value_1 }}
+                                                                        {{ $mentor->value_1 }}
                                                                     </h4>
                                                                 </li>
                                                             @endif
-                                                            @if ($previous_mentor->value_2)
+                                                            @if ($mentor->value_2)
                                                                 <li class="flex items-start gap-4">
                                                                     <div class="w-4 h-4">
                                                                         <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>     
                                                                     </div>
                                                                     <h4 class="text-card-small font-medium text-white leading-5">
-                                                                        {{ $previous_mentor->value_2 }}
+                                                                        {{ $mentor->value_2 }}
                                                                     </h4>
                                                                 </li>
                                                             @endif
-                                                            @if ($previous_mentor->value_3)
+                                                            @if ($mentor->value_3)
                                                                 <li class="flex items-start gap-4">
                                                                     <div class="w-4 h-4">
                                                                     <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>    
                                                                     </div>
                                                                     <h4 class="text-card-small font-medium text-white leading-5">
-                                                                        {{ $previous_mentor->value_3 }}
+                                                                        {{ $mentor->value_3 }}
                                                                     </h4>
                                                                 </li>
                                                             @endif
@@ -370,14 +373,14 @@
                                                             <img loading="lazy"
                                                                 src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                                 alt="{{ $regular_talk->event_alt }}"
-                                                                class="w-full">
+                                                                class="object-contain w-full">
                                                         </a>
                                                     </div>
                                                 </li>
                                             @endforeach
                                         @endif
 
-                                        {{-- @if (count($events) > 0)
+                                        @if (count($events) > 0)
                                             @foreach ($events as $event)
                                                 <li class="splide__slide">
                                                     <div class="splide__slide__container max-h-96">
@@ -388,7 +391,7 @@
                                                     </div>
                                                 </li>
                                             @endforeach
-                                        @endif --}}
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
@@ -475,9 +478,9 @@
     {{-- ========================================== As Seen On ========================================== --}}
     @if (count($as_seen_on) > 0)
         <section class="md:py-10 py-8">
-            <div class="main-container">
+            <div class="new-main-container">
                 <div class="flex items-center gap-4">
-                    <h1 class="block font-bold text-xl md:text-2xl text-dark uppercase text-center font-newprimary w-[500px] relative ">As Seen On</h1>
+                    <h1 class="block font-bold text-xl md:text-2xl text-dark uppercase text-start font-newprimary md:w-[550px] relative">As Seen On</h1>
                     <div class="relative flex overflow-x-hidden">
                         <div
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
@@ -586,7 +589,7 @@
 
         new Splide(splides[2], {
             type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
+            perPage: 1,
             perMove: 1,
             arrows: isMediumDevice ? false : true,
             lazyload: true,
@@ -604,31 +607,6 @@
                 item.button.style.backgroundColor = '#0367BF';
             });
         }).mount();
-
-        var mentorThumbnails = Array.from(document.getElementsByClassName('mentor-thumbnail'));
-        var previousMentorItems = Array.from(document.getElementsByClassName('previous-mentor-item'));
-        $(document).ready(function() {
-            $('.mentor-thumbnail').hover(
-                function() {
-                    var index = mentorThumbnails.indexOf(this);
-                    if (index < mentorThumbnails.length - 1) {
-                        var nextThumbnail = mentorThumbnails[index + 1];
-                        var previousItem = previousMentorItems[index];
-                        $(nextThumbnail).css('opacity', 0); // Hide the next thumbnail
-                        $(previousItem).clone().css('opacity', 1).insertAfter(this); // Show the previous item with full opacity
-                    }
-                },
-                function() {
-                    var index = mentorThumbnails.indexOf(this);
-                    if (index < mentorThumbnails.length - 1) {
-                        var nextThumbnail = mentorThumbnails[index + 1];
-                        var previousItem = previousMentorItems[index];
-                        $(nextThumbnail).css('opacity', 1); // Restore the next thumbnail opacity
-                        $(previousItem).remove(); // Remove the cloned previous item
-                    }
-                }
-            );
-        });
 
         new Splide(splides[3], {
             type: 'slide',

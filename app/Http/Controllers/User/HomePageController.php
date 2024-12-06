@@ -35,7 +35,7 @@ class HomePageController extends Controller
         $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->where('lang', $lang)->orderBy('event_date','ASC')->get();
 
         // Success Stories
-        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(4)->get();
+        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(6)->get();
 
         // Important Dates
         $important_dates = ImportantDates::where('date', '>', Carbon::now())->orderBy('date','ASC')->get();
