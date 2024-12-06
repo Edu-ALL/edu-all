@@ -1,7 +1,8 @@
 <div class="mx-auto md:max-w-md max-w-[22rem] ease-in-out duration-500 z-[999999]" id="formRegist">
     <div class="bg-black p-4 rounded-xl shadow-2xl">
         <div id="myForm">
-            <h2 class="text-white text-base">Let us know you better by filling out this form</h2>
+            <h2 class="text-white {{ !empty($fontSize) ? 'text-xl' : 'text-base' }}">Let us know you better by filling out this
+                form</h2>
             <div class="mt-5">
                 <div class="flex flex-col">
                     <div class="mb-3">
@@ -9,33 +10,41 @@
                             <div class="flex items-center">
                                 <input type="radio" name="roles" value="student" id="student" checked required
                                     onchange="checkRole()">
-                                <label for="student" class="text-white text-sm ml-2">Student</label>
+                                <label for="student"
+                                    class="text-white {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} ml-2">Student</label>
                             </div>
                             <div class="flex items-center">
                                 <input type="radio" name="roles" value="parent" id="parent" required
                                     onchange="checkRole()">
-                                <label for="parent" class="text-white text-sm ml-2">Parent</label>
+                                <label for="parent"
+                                    class="text-white {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} ml-2">Parent</label>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="py-1 text-sm text-dark rounded-xl w-full" placeholder="Full Name *"
-                            id="primary_name" required>
+                        <input type="text"
+                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                            placeholder="Full Name *" id="primary_name" required>
                     </div>
                     <div>
-                        <input type="text" class="py-1 text-sm text-dark rounded-xl w-full hidden mb-3"
+                        <input type="text"
+                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full hidden mb-3"
                             placeholder="Child Name *" id="secondary_name" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="py-1 text-sm text-dark rounded-xl w-full"
+                        <input type="text"
+                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
                             placeholder="Phone Number *" id="phone_number" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="py-1 text-sm text-dark rounded-xl w-full"
+                        <input type="text"
+                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
                             placeholder="School Name *" id="school_name" required>
                     </div>
                     <div class="mb-3">
-                        <select class="py-1 text-sm text-dark rounded-xl w-full" id="graduation_year" required>
+                        <select
+                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                            id="graduation_year" required>
                             <option class="text-gray-300" value="">Select Graduation Year</option>
                             @for ($i = date('Y'); $i < date('Y') + 5; $i++)
                                 <option value="{{ $i }}">{{ $i }}</option>
@@ -128,7 +137,7 @@
             const formPage = document.getElementById('myForm')
             const thanksPage = document.getElementById('thanksForm')
             const formRegistPage = document.getElementById('formRegist')
-            
+
 
             loadingIcon.classList.remove('hidden')
             sendIcon.classList.add('hidden')

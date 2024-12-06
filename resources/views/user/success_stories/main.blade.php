@@ -8,19 +8,19 @@
 
 @section('content')
     <!-- {{-- ================================== Banner Section  ================================== --}}
-    <section class="pb-4 -z-10">
-        <div
-            class="relative flex w-full justify-center left-0 overflow-hidden bg-success-stories-header h-[100vh] pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
-            <div class="flex flex-col justify-center h-full w-3/5">
-                <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center">
-                    {{ __('pages/success_stories/success_stories.title') }}
-                </h1>
-                <p class="mt-5 font-newprimary text-white w-full text-center">
-                    {!! __('pages/success_stories/success_stories.desc') !!}
-                </p>
-            </div>
-        </div>
-    </section> -->
+            <section class="pb-4 -z-10">
+                <div
+                    class="relative flex w-full justify-center left-0 overflow-hidden bg-success-stories-header h-[100vh] pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
+                    <div class="flex flex-col justify-center h-full w-3/5">
+                        <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center">
+                            {{ __('pages/success_stories/success_stories.title') }}
+                        </h1>
+                        <p class="mt-5 font-newprimary text-white w-full text-center">
+                            {!! __('pages/success_stories/success_stories.desc') !!}
+                        </p>
+                    </div>
+                </div>
+            </section> -->
 
     {{-- ================================== Success Story Section  ================================== --}}
     <section class="py-4">
@@ -45,8 +45,10 @@
             <div class="max-w-5xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-7 gap-x-7">
                     @foreach ($success_stories as $item)
-                        <div class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
-                            <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden">
+                        <div
+                            class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
+                            <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden"
+                                id="{{ explode(' ', trim($item->name))[0] }}">
                                 <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover">
                             </div>
@@ -63,11 +65,15 @@
                                         </div>
                                         <div class="mt-2 font-newprimary text-dark">
                                             <ul class="flex flex-col gap-1.5">
-                                                @foreach (array_filter(array_map(function($item) {
-                                                    return trim(strip_tags($item));
-                                                }, explode('<li>', $item->badge_2))) as $badge)
-                                                    <li class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
-                                                        <span class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
+                                                @foreach (array_filter(
+            array_map(function ($item) {
+                return trim(strip_tags($item));
+            }, explode('<li>', $item->badge_2)),
+        ) as $badge)
+                                                    <li
+                                                        class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
+                                                        <span
+                                                            class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
                                                             <i class="fa-solid fa-check fa-xs text-white"></i>
                                                         </span>
                                                         <p class="w-full leading-[14px]">{!! $badge !!}</p>
@@ -93,13 +99,14 @@
                                             <div class="w-4">
                                                 <svg fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                        stroke-linejoin="round">
                                                     </g>
                                                     <g id="SVGRepo_iconCarrier">
                                                         <g data-name="Layer 2">
                                                             <g data-name="arrow-ios-forward">
-                                                                <rect width="24" height="24" transform="rotate(-90 12 12)"
-                                                                    opacity="0"></rect>
+                                                                <rect width="24" height="24"
+                                                                    transform="rotate(-90 12 12)" opacity="0"></rect>
                                                                 <path
                                                                     d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z">
                                                                 </path>
@@ -119,7 +126,7 @@
                 <div class="mt-32">
                     {{ $success_stories->links('layout.user.pagination') }}
                 </div>
-            </div> 
+            </div>
         </div>
 
 
@@ -133,7 +140,7 @@
                 {{ __('pages/success_stories/success_stories.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{__('pages/success_stories/success_stories.register_btn') }}" type='secondary' />
+                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' />
         </div>
     </section>
 

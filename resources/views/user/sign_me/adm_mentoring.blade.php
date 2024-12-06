@@ -17,38 +17,39 @@
         gtag('config', 'G-JXRKLPRKWF');
         // gtag('config', 'AW-329409030')
     </script>
-    
+
     <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-        function gtag_report_conversion(url) {            
+        function gtag_report_conversion(url) {
             gtag('event', 'Conversion - Mentoring', {
                 'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
                 // 'event_callback': callback
             });
-            
+
             return false;
         }
     </script>
 @endsection
 
 @section('content')
-<section class="py-16 bg-sign-me-banner bg-cover bg-center">
-    <div class="main-container w-full mx-auto md:max-w-[1440px]">
-        <div class="flex flex-col justify-between pt-10 pb-6">
-            <h2 class="font-newprimary text-3xl md:text-4xl font-bold text-white">
-                WHAT’S NEXT?
-            </h2>
-            <p class="mt-4 w-full font-newprimary text-lg text-white md:max-w-lg">
-                <span class="block font-bold mb-3">Prepare, Achieve, Flourish Together with EduALL!</span>
-                Let’s find out how to get into your dream university and future career path through the first consultation with our top-notch mentors.
-            </p>
+    <section class="py-16 bg-sign-me-banner bg-cover bg-center">
+        <div class="main-container w-full mx-auto md:max-w-[1440px]">
+            <div class="flex flex-col justify-between pt-10 pb-6">
+                <h2 class="font-newprimary text-3xl md:text-4xl font-bold text-white">
+                    WHAT’S NEXT?
+                </h2>
+                <p class="mt-4 w-full font-newprimary text-lg text-white md:max-w-lg">
+                    <span class="block font-bold mb-3">Prepare, Achieve, Flourish Together with EduALL!</span>
+                    Let’s find out how to get into your dream university and future career path through the first
+                    consultation with our top-notch mentors.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="py-20">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="grid grid-cols-1 gap-x-6 md:grid-cols-7">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-7">
                 <div class="flex flex-col w-full md:col-span-3">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-newprimary font-bold text-2xl text-newprimary">
@@ -91,7 +92,7 @@
                 <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                      @include('layout.user.external-form.registration', ['prog_id' => 'AAUP', 'extClass' => '', 'scrolling' => 'yes', 'height' => 1000, 'width' => '95%'])
+                        <x-form title="Program" program-id="AAUP" lead-id="LS001" font-size="15" />
                     </div>
                 </div>
             </div>

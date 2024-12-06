@@ -16,12 +16,14 @@
     <section class="h-[100%]">
 
         {{-- Registration Component  --}}
-        
-        <div class="md:absolute fixed md:top-7 md:right-20 -top-[100vh] right-4 z-[99999] ease-in-out duration-700" id="registerForm">
+
+        <div class="md:absolute fixed md:top-7 md:right-20 -top-[100vh] right-4 z-[99999] ease-in-out duration-700"
+            id="registerForm">
             <x-form title="Program" program-id="AAUP" lead-id="LS001" />
         </div>
-        <div class="md:absolute hidden top-0 left-0 w-full h-full bg-black/60 z-[99998] ease-in-out duration-700" id="formOverlay" onclick="close_registration()"></div>
-        
+        <div class="md:absolute hidden top-0 left-0 w-full h-full bg-black/60 z-[99998] ease-in-out duration-700"
+            id="formOverlay" onclick="close_registration()"></div>
+
 
         <div class="relative">
             @if ($banners->video_link)
@@ -142,8 +144,7 @@
                                                 @endforeach
                                             </ul>
                                         </div>
-                                        <x-button
-                                            href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
+                                        <x-button href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
                                             title="{{ __('pages/programs/admission_mentoring.learn_more') }}"
                                             bg-color="newprimary" padding-y="1.5" />
                                         <span class="mt-1 text-sm text-[#9C9C9C]">
@@ -218,7 +219,8 @@
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev"
+                                style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
                             <button class="splide__arrow splide__arrow--next"
@@ -228,9 +230,10 @@
                         </div>
                         <div class="splide__track py-12">
                             <ul class="splide__list">
-                                @foreach ($all_mentor as $mentor)                      
+                                @foreach ($all_mentor as $mentor)
                                     <li class="splide__slide w-full">
-                                        <div class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
+                                        <div
+                                            class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
                                             <x-mentor-card :mentor=$mentor />
                                         </div>
                                     </li>
@@ -262,7 +265,7 @@
                             data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
                             alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
                         <div>
-                            <a href="{{ route('success_stories', app()->getLocale()) }}"
+                            <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
                                 class="absolute bottom-0 left-1/4 transform -translate-x-1/4 mb-6 text-newyellow bg-black font-medium text-sm py-1 mx-4 rounded-full w-3/4 text-center">
                                 Get to Know {{ explode(' ', trim($item->name))[0] }}
                             </a>
@@ -457,26 +460,25 @@
 @endsection
 
 @push('script')
-<script>
-    // Register Form 
-    const registerForm = document.getElementById('registerForm') 
-    const formOverlay = document.getElementById('formOverlay')
+    <script>
+        // Register Form 
+        const registerForm = document.getElementById('registerForm')
+        const formOverlay = document.getElementById('formOverlay')
 
-    const open_registration = () => {
-        formOverlay.classList.remove('hidden')
-        registerForm.classList.remove('-top-[100vh]')
-        formOverlay.classList.add('fixed')
-        registerForm.classList.add('top-20')
-    }
+        const open_registration = () => {
+            formOverlay.classList.remove('hidden')
+            registerForm.classList.remove('-top-[100vh]')
+            formOverlay.classList.add('fixed')
+            registerForm.classList.add('top-20')
+        }
 
-    const close_registration = () => {
-        formOverlay.classList.add('hidden')
-        formOverlay.classList.remove('fixed')
-        registerForm.classList.add('-top-[100vh]')
-        registerForm.classList.remove('top-20')
-    }
-    
-</script>
+        const close_registration = () => {
+            formOverlay.classList.add('hidden')
+            formOverlay.classList.remove('fixed')
+            registerForm.classList.add('-top-[100vh]')
+            registerForm.classList.remove('top-20')
+        }
+    </script>
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches

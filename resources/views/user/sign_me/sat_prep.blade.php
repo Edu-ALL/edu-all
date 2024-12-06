@@ -49,7 +49,7 @@
 
     <section class="py-20">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="grid grid-cols-1 gap-x-6 md:grid-cols-7">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-7">
                 <div class="flex flex-col w-full md:col-span-3">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-newprimary font-bold text-2xl text-newprimary">
@@ -93,13 +93,7 @@
                 <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                        @include('layout.user.external-form.registration', [
-                            'prog_id' => 'SATPRIV',
-                            'extClass' => '',
-                            'scrolling' => 'no',
-                            'height' => 1000,
-                            'width' => '95%',
-                        ])
+                        <x-form title="Program" program-id="SATPRIV" lead-id="LS001" font-size="15" />
                     </div>
                 </div>
             </div>

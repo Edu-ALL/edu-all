@@ -17,15 +17,15 @@
         gtag('config', 'G-JXRKLPRKWF');
         // gtag('config', 'AW-329409030')
     </script>
-    
+
     <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-        function gtag_report_conversion(url) {            
+        function gtag_report_conversion(url) {
             gtag('event', 'Conversion - Tutoring', {
                 'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
                 // 'event_callback': callback
             });
-            
+
             return false;
         }
     </script>
@@ -40,7 +40,8 @@
                 </h2>
                 <p class="mt-4 w-full font-newprimary text-lg text-white md:max-w-lg">
                     <span class="block font-bold mb-3">Prepare, Achieve, Flourish Together with EduALL!</span>
-                    Let’s find out how to maximize your academic performance with our Academic Tutoring programs FREE trial. Our expert and professional tutors will help you through them all!
+                    Let’s find out how to maximize your academic performance with our Academic Tutoring programs FREE trial.
+                    Our expert and professional tutors will help you through them all!
                 </p>
             </div>
         </div>
@@ -48,7 +49,7 @@
 
     <section class="py-20">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="grid grid-cols-1 gap-x-6 md:grid-cols-7">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-7">
                 <div class="flex flex-col w-full md:col-span-3">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-newprimary font-bold text-2xl text-newprimary">
@@ -58,7 +59,8 @@
                             <li class="flex">
                                 <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
                                 <span>
-                                    Big picture of what you will face in your dream universities’ application process and how your academic performance will affect them
+                                    Big picture of what you will face in your dream universities’ application process and
+                                    how your academic performance will affect them
                                 </span>
                             </li>
                             <li class="flex">
@@ -91,7 +93,7 @@
                 <div class="md:col-span-4">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                      @include('layout.user.external-form.registration', ['prog_id' => 'ACADX', 'extClass' => '', 'scrolling' => 'no', 'height' => 1000, 'width' => '95%'])
+                        <x-form title="Program" program-id="ACADX" lead-id="LS001" font-size="15" />
                     </div>
                 </div>
             </div>
