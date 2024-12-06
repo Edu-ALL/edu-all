@@ -20,10 +20,10 @@ class HomePageController extends Controller
         $region = substr(app()->getLocale(), 0, 2);
 
         // Mentor
-        $all_mentor = Mentors::all()
-            ->where('mentor_category', 'ALL-In Mentor')
+        $all_mentor = Mentors::where('mentor_category', 'ALL-In Mentor')
             ->where('mentor_status', 'active')
-            ->where('lang', $lang);
+            ->where('lang', $lang)
+            ->get();
 
         // Testimoni
         $testimonies = Testimonials::where('testi_status', 'active')->where('lang', $lang)->inRandomOrder()->limit(5)->get();
