@@ -48,9 +48,31 @@
                     </div>
                     <div class="mb-3">
                         <button type="button" class="w-full bg-newprimary text-white text-center py-2 rounded-xl"
-                            onclick="submit()"> Submit </button>
+                            onclick="submit()">
+                            <span id="send">
+                                <i class="fas fa-paper-plane mr-4"></i>
+                            </span>
+                            <span id="loading" class="hidden">
+                                <i class="fas fa-spinner fa-spin mr-4"></i>
+                            </span>
+                            Submit </button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="thanksForm" class="hidden">
+            <div class="flex flex-col justify-center">
+                <h4 class="mb-4 mt-4 text-white text-center text-lg">
+                    <span>
+                        Thank You <br />
+                        For Submitting Your Form!
+                    </span>
+                </h4>
+                <p class="text-white text-center">
+                    You will receive a confirmation email and our team will contact you
+                    shortly.
+                </p>
             </div>
         </div>
     </div>
@@ -84,7 +106,7 @@
             var v = grecaptcha.getResponse();
 
             if (v.length == 0) {
-                document.getElementById('captcha').innerHTML = "You can't leave Captcha Code empty";
+                document.getElementById('captcha').innerHTML = "Please verify you are not a robot.";
                 return false;
             } else {
                 return true;
@@ -101,16 +123,28 @@
             const phoneNumber = document.getElementById('phone_number');
             const schoolName = document.getElementById('school_name');
             const graduationYear = document.getElementById('graduation_year');
+            const loadingIcon = document.getElementById('loading')
+            const sendIcon = document.getElementById('send')
+            const formPage = document.getElementById('myForm')
+            const thanksPage = document.getElementById('thanksForm')
+
+            loadingIcon.classList.remove('hidden')
+            sendIcon.classList.add('hidden')
 
             const formData = {
-                'roles': role.value,
-                'primary_name': primaryName.value,
+                'role': role.value,
+                'fullname': primaryName.value,
+                'mail': null,
+                'phone': phoneNumber.value,
                 'secondary_name': secondaryName.value,
-                'phone_number': phoneNumber.value,
-                'school_name': schoolName.value,
+                'secondary_mail': null,
+                'secondary_phone': null,
+                'school_id': 'new',
+                'other_school': schoolName.value,
                 'graduation_year': graduationYear.value,
-                'lead_source_id': "{{ $leadId }}",
-                'program_id': "{{ $programId }}",
+                'interest_prog': "{{ $programId }}",
+                'destination_country': [],
+                'lead_id': "{{ $leadId }}",
             }
 
             const inputs = document.querySelectorAll('#myForm input, #myForm select');
@@ -133,11 +167,42 @@
 
             // If the form is valid, proceed with submission
             if (isValid) {
+                console.log(formData);
 
                 const captcha = checkCaptcha();
                 if (captcha) {
-                    alert('Submitted')
+
+                    $.ajax({
+                        url: 'https://crm-allinedu.com/api/v1/register/public', // Replace with the API endpoint
+                        type: 'POST', // Specify the request type (POST)
+                        contentType: 'application/json', // Set content type to JSON
+                        data: JSON.stringify(formData), // Convert formData to a JSON string
+                        success: function(response) {
+                            // Handle the response on success
+                            console.log('Success:', response);
+
+                            loadingIcon.classList.add('hidden')
+                            sendIcon.classList.remove('hidden')
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle errors here
+                            console.error(error);
+                            loadingIcon.classList.add('hidden')
+                            sendIcon.classList.remove('hidden')
+                        }
+                    });
+
+                    // Move to Success Response 
+                    formPage.classList.add('hidden')
+                    thanksPage.classList.remove('hidden')
+
+                } else {
+                    loadingIcon.classList.add('hidden')
+                    sendIcon.classList.remove('hidden')
                 }
+            } else {
+                loadingIcon.classList.add('hidden')
+                sendIcon.classList.remove('hidden')
             }
 
             return true;
