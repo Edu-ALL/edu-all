@@ -87,7 +87,7 @@ return [
 
     'learn_more' => 'Learn More',
     'or_book_free_consultation' => 'or ',
-    'book_now' => 'book your FREE consultation now',
+    'book_now' => 'book your FREE trial now',
     'popular_choice' => 'Popular Choice',
     'graduate_school_description' => 'Offering guidance and network for Graduate school applicants that also aim for scholarships at top-ranked universities in the US, Canada, UK, Europe, Australia, or Asia.',
     'transfer_students_description' => 'Supporting current university students who intend to transfer from community college to a university or from one university to another university through our special and proven mentoring strategy.',

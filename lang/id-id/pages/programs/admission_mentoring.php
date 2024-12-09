@@ -86,7 +86,7 @@ return [
 
     'learn_more' => 'Learn More',
     'or_book_free_consultation' => 'or ',
-    'book_now' => 'book your FREE consultation now',
+    'book_now' => 'book your FREE trial now',
     'popular_choice' => 'Pilihan Populer',
     'why_us_title' => 'KENAPA PILIH KAMI?',
     'why_us_description' => 'Mentor ahli kami hadir untuk memberikan panduan 360 derajat agar kamu dapat masuk ke program Undergraduate terkemuka di universitas terbaik di seluruh dunia.',
