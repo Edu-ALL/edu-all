@@ -334,7 +334,7 @@
                     @else
                         <div class="flex flex-col w-full relative text-start">
                             <h4 class="text-newyellow text-lg">Talk Sessions</h4>
-                            <p class="text-white border-b border-b-white">Not Available</p>
+                            <p class="text-dark border-b border-b-white">Not Available</p>
                         </div>
                     @endif
 
