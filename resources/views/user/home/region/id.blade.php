@@ -281,6 +281,7 @@
     </section>
 
     {{-- ========================================== Upcomming Events ========================================== --}}
+    @if (count($regular_talks) > 0 || count($events) > 0 || count($important_dates) > 0)
     <section class="md:py-16 py-10">
         <div class="new-main-container">
             <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
@@ -389,10 +390,11 @@
             </div>
         </div>
     </section>
+    @endif
 
     {{-- ================================== Bottom Section  ================================== --}}
     <section
-        class="py-8 bg-dark bg-[url('../../../../../public/assets/img/home/cta_image.png')] bg-right bg-contain bg-no-repeat">
+        class="py-8 bg-dark bg-[url('../../../../../public/assets/img/home/cta_image.png')] bg-right bg-contain bg-no-repeat mt-1">
         <div class="new-main-container">
             <div class="flex flex-col items-start w-full">
                 <h2 class="mb-6 font-semibold text-newyellow text-start text-lg md:text-2xl md:max-w-xs">
