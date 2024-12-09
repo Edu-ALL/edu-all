@@ -247,7 +247,32 @@
             <h1 class="font-bold text-section-title text-white uppercase text-center max-w-4xl mx-auto">
                 OUR MENTEES’ STORIES & PROJECTS
             </h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl py-12">
+
+            <div class="md:hidden splide pt-12 max-w-5xl mx-auto" role="group">
+                <div class="splide__track">
+                    <ul class="splide__list font-newprimary text-black px-8">
+                        @foreach ($success_stories as $item)
+                            <li class="splide__slide w-full pb-8 px-3">
+                                <div class="splide__slide__container py-8 h-full w-full">
+                                    <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
+                                        <img loading="lazy"
+                                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
+                                        <div>
+                                            <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
+                                                class="absolute bottom-0 left-1/4 transform -translate-x-1/4 mb-6 text-newyellow bg-black font-medium text-sm py-1 mx-4 rounded-full w-3/4 text-center">
+                                                Get to Know {{ explode(' ', trim($item->name))[0] }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl py-12">
                 @foreach ($success_stories as $item)
                     <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                         <img loading="lazy"
@@ -510,8 +535,33 @@
         }).mount();
 
 
+        new Splide(splides[2], {
+            type: 'slide',
+            perPage: 1,
+            padding: '10%',
+            perMove: 1,
+            arrows: false,
+            lazyload: false,
+            autoplay: true,
+            interval: 4000,
+            pagination: false,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[90%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#D9D9D9';
+            });
+        }).mount();
+
+
         if (event > 0 || regular_talk > 0) {
-            new Splide(splides[2], {
+            new Splide(splides[3], {
                 type: 'slide',
                 perPage: 1,
                 perMove: 1,
@@ -534,7 +584,7 @@
         }
 
 
-        new Splide(splides[event > 0 || regular_talk > 0 ? 3 : 2], {
+        new Splide(splides[event > 0 || regular_talk > 0 ? 4 : 3], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
             perMove: 1,
