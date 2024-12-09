@@ -23,28 +23,29 @@ class HomePageController extends Controller
         $all_mentor = Mentors::where('mentor_category', 'ALL-In Mentor')
             ->where('mentor_status', 'active')
             ->where('lang', $lang)
+            ->orderBy('mentor_order', 'ASC')
             ->get();
 
         // Testimoni
         $testimonies = Testimonials::where('testi_status', 'active')->where('lang', $lang)->inRandomOrder()->limit(5)->get();
 
         // Upcomming Event
-        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->where('lang', $lang)->orderBy('event_date','ASC')->get();
+        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->where('lang', $lang)->orderBy('event_date', 'ASC')->get();
 
         // Regular Talks
-        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->where('lang', $lang)->orderBy('event_date','ASC')->get();
+        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->where('lang', $lang)->orderBy('event_date', 'ASC')->get();
 
         // Success Stories
-        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(6)->get();
+        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(6)->orderBy('story_order', 'ASC')->get();
 
         // Important Dates
-        $important_dates = ImportantDates::where('date', '>', Carbon::now())->orderBy('date','ASC')->get();
+        $important_dates = ImportantDates::where('date', '>', Carbon::now())->orderBy('date', 'ASC')->get();
 
         // Banners
         $banners = Banners::first();
 
         // As Seen On
-        $as_seen_on = AsSeens::orderBy('created_at','DESC')->get();
+        $as_seen_on = AsSeens::orderBy('created_at', 'DESC')->get();
 
         // $region 
         return view('user.home.region.id', [

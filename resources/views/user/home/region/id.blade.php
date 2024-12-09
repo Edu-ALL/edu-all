@@ -518,7 +518,7 @@
             arrows: isSmallDevice ? false : true,
             lazyload: false,
             autoplay: true,
-            interval: 3000,
+            interval: 5000,
             pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
