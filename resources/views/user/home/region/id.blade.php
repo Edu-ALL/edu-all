@@ -14,16 +14,7 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
-
-        {{-- Registration Component  --}}
-
-        <div class="md:absolute fixed md:top-7 md:right-20 -top-[100vh] right-4 z-[99999] ease-in-out duration-700"
-            id="registerForm">
-            <x-form title="Program" program-id="AAUP" lead-id="LS001" />
-        </div>
-        <div class="md:absolute hidden top-0 left-0 w-full h-full bg-black/60 z-[99998] ease-in-out duration-700"
-            id="formOverlay" onclick="close_registration()"></div>
-
+        <x-registration-form />
 
         <div class="relative">
             @if ($banners->video_link)
@@ -43,9 +34,7 @@
                     class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h1>
-                <div class="md:hidden flex justify-center mt-2">
-                    <button class="bg-newprimary py-2 px-4 text-white" onclick="open_registration()">Register Now</button>
-                </div>
+                <x-registration-form :is-button="true"/>
             </div>
             <div class="absolute md:bottom-10 left-0 right-0">
                 <div class="relative h-full">
@@ -462,25 +451,6 @@
 @endsection
 
 @push('script')
-    <script>
-        // Register Form 
-        const registerForm = document.getElementById('registerForm')
-        const formOverlay = document.getElementById('formOverlay')
-
-        const open_registration = () => {
-            formOverlay.classList.remove('hidden')
-            registerForm.classList.remove('-top-[100vh]')
-            formOverlay.classList.add('fixed')
-            registerForm.classList.add('top-20')
-        }
-
-        const close_registration = () => {
-            formOverlay.classList.add('hidden')
-            formOverlay.classList.remove('fixed')
-            registerForm.classList.add('-top-[100vh]')
-            registerForm.classList.remove('top-20')
-        }
-    </script>
     <script>
         // slider
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
