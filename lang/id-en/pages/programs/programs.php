@@ -32,7 +32,7 @@ return [
             'route' => 'academic_test_preparation',
             'img' => 'Academic &-Test Preparation.webp',
             'link' => 'programs/academic-test-preparation',
-            'sign_me' => 'sign_me_adm_mentoring',
+            'sign_me' => 'sign_me_acad_tutoring',
             'sign_me_text' => "book your FREE  TRIAL now"
         ],
         // [

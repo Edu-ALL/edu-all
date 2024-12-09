@@ -488,6 +488,9 @@
 
         var splides = document.getElementsByClassName('splide');
 
+        const regular_talk = "{{ count($regular_talks) }}"
+        const event = "{{ count($events) }}"
+
         new Splide(splides[0], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
@@ -534,28 +537,32 @@
             });
         }).mount();
 
-        new Splide(splides[2], {
-            type: 'slide',
-            perPage: 1,
-            perMove: 1,
-            arrows: isMediumDevice ? false : true,
-            lazyload: true,
-            autoplay: false,
-            interval: 3000,
-            pagination: false,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
+        if (event > 0 || regular_talk > 0) {
+            new Splide(splides[2], {
+                type: 'slide',
+                perPage: 1,
+                perMove: 1,
+                arrows: isMediumDevice ? false : true,
+                lazyload: true,
+                autoplay: false,
+                interval: 3000,
+                pagination: false,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
 
-        new Splide(splides[3], {
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        }
+
+
+        new Splide(splides[event > 0 || regular_talk > 0 ? 3 : 2], {
             type: 'slide',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
             perMove: 1,
