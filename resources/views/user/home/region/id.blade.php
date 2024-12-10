@@ -14,7 +14,7 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
-        <x-registration-form top-card="45"/>
+        <x-registration-form is-home />
 
         <div class="relative">
             @if ($banners->video_link)
@@ -34,7 +34,7 @@
                     class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h1>
-                <x-registration-form :is-button="true"/>
+                <x-registration-form :is-button="true" />
             </div>
             <div class="absolute md:bottom-10 left-0 right-0">
                 <div class="relative h-full">
@@ -208,12 +208,10 @@
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
-                            <button class="splide__arrow splide__arrow--prev"
-                                style="background: transparent; left: -24px">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next"
-                                style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
@@ -254,7 +252,8 @@
                         @foreach ($success_stories as $item)
                             <li class="splide__slide w-full pb-8 px-3">
                                 <div class="splide__slide__container py-8 h-full w-full">
-                                    <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
+                                    <div
+                                        class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                                         <img loading="lazy"
                                             data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
                                             alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
@@ -296,114 +295,115 @@
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     @if (count($regular_talks) > 0 || count($events) > 0 || count($important_dates) > 0)
-    <section class="md:py-16 py-10">
-        <div class="new-main-container">
-            <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
-            <div class="grid grid-cols-1 gap-3 mt-12">
-                {{-- Upcomming Event --}}
-                <div class="flex flex-col max-w-4xl mx-auto">
-                    {{-- Talk Sessions --}}
-                    @if (count($regular_talks) > 0 || count($events) > 0)
-                        <div class="flex flex-col items-center justify-between">
-                            <div class="splide w-full" role="group">
-                                <div class="splide__track">
-                                    <ul class="splide__list">
-                                        @if (count($events) > 0)
-                                            @foreach ($regular_talks as $regular_talk)
-                                                <li class="splide__slide">
-                                                    <div class="splide__slide__container">
-                                                        <a href="{{ $regular_talk->event_rsvp_link }}" target="_blank">
-                                                            <img loading="lazy"
-                                                                src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                                alt="{{ $regular_talk->event_alt }}"
-                                                                class="object-contain w-full">
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                            @endforeach
-                                        @endif
+        <section class="md:py-16 py-10">
+            <div class="new-main-container">
+                <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
+                <div class="grid grid-cols-1 gap-3 mt-12">
+                    {{-- Upcomming Event --}}
+                    <div class="flex flex-col max-w-4xl mx-auto">
+                        {{-- Talk Sessions --}}
+                        @if (count($regular_talks) > 0 || count($events) > 0)
+                            <div class="flex flex-col items-center justify-between">
+                                <div class="splide w-full" role="group">
+                                    <div class="splide__track">
+                                        <ul class="splide__list">
+                                            @if (count($events) > 0)
+                                                @foreach ($regular_talks as $regular_talk)
+                                                    <li class="splide__slide">
+                                                        <div class="splide__slide__container">
+                                                            <a href="{{ $regular_talk->event_rsvp_link }}"
+                                                                target="_blank">
+                                                                <img loading="lazy"
+                                                                    src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                    alt="{{ $regular_talk->event_alt }}"
+                                                                    class="object-contain w-full">
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @endif
 
-                                        @if (count($events) > 0)
-                                            @foreach ($events as $event)
-                                                <li class="splide__slide">
-                                                    <div class="splide__slide__container max-h-96">
-                                                        <img loading="lazy"
-                                                            src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
-                                                            alt="{{ $event->event_alt }}"
-                                                            class="object-cover w-full h-full">
-                                                    </div>
-                                                </li>
-                                            @endforeach
-                                        @endif
-                                    </ul>
+                                            @if (count($events) > 0)
+                                                @foreach ($events as $event)
+                                                    <li class="splide__slide">
+                                                        <div class="splide__slide__container max-h-96">
+                                                            <img loading="lazy"
+                                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                                alt="{{ $event->event_alt }}"
+                                                                class="object-cover w-full h-full">
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="w-full">
+                                    <a href="{{ route('upcoming_events', app()->getLocale()) }}"
+                                        class="w-full block py-3 bg-newprimary text-center text-white text-base">more
+                                        events
+                                    </a>
                                 </div>
                             </div>
+                        @else
+                            <div class="flex flex-col w-full relative text-start">
+                                <h4 class="text-newyellow text-lg">Talk Sessions</h4>
+                                <p class="text-dark border-b border-b-white">Not Available</p>
+                            </div>
+                        @endif
 
-                            <div class="w-full">
-                                <a href="{{ route('upcoming_events', app()->getLocale()) }}"
-                                    class="w-full block py-3 bg-newprimary text-center text-white text-base">more
-                                    events
-                                </a>
+                        {{-- More Date --}}
+                        @if (count($important_dates) > 0)
+                            <div class="flex flex-col items-center justify-between mt-2 font-newprimary">
+                                <div class=" h-max-[300px] flex flex-col w-full py-8">
+                                    <h4 class="text-dark text-lg">Important Dates</h4>
+                                    <ul class="mt-2 overflow-y-auto overflow-x-hidden">
+                                        @foreach ($important_dates as $important_date)
+                                            <li>
+                                                @if ($important_date->link)
+                                                    <a href="{{ $important_date->link }}" target="_blank"
+                                                        class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
+                                                        <h3 class="font-normal hover:text-blue-500 text-dark w-[75%]">
+                                                            {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
+                                                        </h3>
+                                                        <span class="hover:text-blue-500 text-dark w-[25%] text-end">
+                                                            {{ date('M, d Y', strtotime($important_date->date)) }}
+                                                        </span>
+                                                    </a>
+                                                @else
+                                                    <div
+                                                        class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
+                                                        <h3 class="font-normal text-dark w-[75%]">
+                                                            {{ $important_date->title }}
+                                                        </h3>
+                                                        <span class="text-dark w-[25%] text-end">
+                                                            {{ date('M, d Y', strtotime($important_date->date)) }}
+                                                        </span>
+                                                    </div>
+                                                @endif
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                <div class="w-full">
+                                    <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                        target="_blank"
+                                        class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                        more important dates
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    @else
-                        <div class="flex flex-col w-full relative text-start">
-                            <h4 class="text-newyellow text-lg">Talk Sessions</h4>
-                            <p class="text-dark border-b border-b-white">Not Available</p>
-                        </div>
-                    @endif
-
-                    {{-- More Date --}}
-                    @if (count($important_dates) > 0)
-                        <div class="flex flex-col items-center justify-between mt-2 font-newprimary">
-                            <div class=" h-max-[300px] flex flex-col w-full py-8">
-                                <h4 class="text-dark text-lg">Important Dates</h4>
-                                <ul class="mt-2 overflow-y-auto overflow-x-hidden">
-                                    @foreach ($important_dates as $important_date)
-                                        <li>
-                                            @if ($important_date->link)
-                                                <a href="{{ $important_date->link }}" target="_blank"
-                                                    class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
-                                                    <h3 class="font-normal hover:text-blue-500 text-dark w-[75%]">
-                                                        {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
-                                                    </h3>
-                                                    <span class="hover:text-blue-500 text-dark w-[25%] text-end">
-                                                        {{ date('M, d Y', strtotime($important_date->date)) }}
-                                                    </span>
-                                                </a>
-                                            @else
-                                                <div
-                                                    class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
-                                                    <h3 class="font-normal text-dark w-[75%]">
-                                                        {{ $important_date->title }}
-                                                    </h3>
-                                                    <span class="text-dark w-[25%] text-end">
-                                                        {{ date('M, d Y', strtotime($important_date->date)) }}
-                                                    </span>
-                                                </div>
-                                            @endif
-                                        </li>
-                                    @endforeach
-                                </ul>
+                        @else
+                            <div class="flex flex-col w-full relative text-start mt-10">
+                                <h4 class="text-newyellow text-lg">Important Dates</h4>
+                                <p class="text-dark border-b border-b-white">Not Available</p>
                             </div>
-                            <div class="w-full">
-                                <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                    target="_blank"
-                                    class="inline-block py-3 bg-red text-center text-white text-base px-6">
-                                    more important dates
-                                </a>
-                            </div>
-                        </div>
-                    @else
-                        <div class="flex flex-col w-full relative text-start mt-10">
-                            <h4 class="text-newyellow text-lg">Important Dates</h4>
-                            <p class="text-dark border-b border-b-white">Not Available</p>
-                        </div>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
     {{-- ================================== Bottom Section  ================================== --}}
