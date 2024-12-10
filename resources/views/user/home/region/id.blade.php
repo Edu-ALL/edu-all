@@ -14,7 +14,7 @@
 @section('content')
     {{-- ========================================== Banner Section ========================================== --}}
     <section class="h-[100%]">
-        <x-registration-form />
+        <x-registration-form top-card="45"/>
 
         <div class="relative">
             @if ($banners->video_link)

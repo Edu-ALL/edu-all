@@ -1,7 +1,8 @@
 <div class="mx-auto md:max-w-md max-w-[22rem] ease-in-out duration-500 z-[999999]" id="formRegist">
     <div class="bg-black p-4 rounded-xl shadow-2xl">
         <div id="myForm">
-            <h2 class="text-white {{ !empty($fontSize) ? 'text-xl' : 'text-base' }}">Let us know you better by filling out this
+            <h2 class="text-white {{ !empty($fontSize) ? 'text-xl' : 'text-base' }}">Let us know you better by filling
+                out this
                 form</h2>
             <div class="mt-5">
                 <div class="flex flex-col">
