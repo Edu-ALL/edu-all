@@ -24,27 +24,27 @@
                     </div>
                     <div class="mb-3">
                         <input type="text"
-                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
                             placeholder="Full Name *" id="primary_name" required>
                     </div>
                     <div>
                         <input type="text"
-                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full hidden mb-3"
+                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full hidden mb-3"
                             placeholder="Child Name *" id="secondary_name" required>
                     </div>
                     <div class="mb-3">
                         <input type="text"
-                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
                             placeholder="Phone Number *" id="phone_number" required>
                     </div>
                     <div class="mb-3">
                         <input type="text"
-                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
                             placeholder="School Name *" id="school_name" required>
                     </div>
                     <div class="mb-3">
                         <select
-                            class="py-1 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
                             id="graduation_year" required>
                             <option class="text-gray-300" value="">Select Graduation Year</option>
                             @for ($i = date('Y'); $i < date('Y') + 5; $i++)

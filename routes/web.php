@@ -86,6 +86,9 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
                 Route::get('/resources/guidebook', "guidebook")->name('guidebook');
                 Route::get('/resources/testimonial', "testimonial")->name('testimonial');
+                Route::get('/resources/mentee-project-showcase', function() {
+                    return redirect()->to('https://project-showcase.edu-all.com/');
+                } )->name('testimonial');
             });
 
             Route::controller(BlogPageController::class)->group(function () {
