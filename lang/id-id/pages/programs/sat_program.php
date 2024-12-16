@@ -4,7 +4,7 @@ return [
     'meta_title' => "SAT Program - EduALL Programs",
     'meta_description' => 'SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years',
 
-    'title' => "SAT/ACT PREP",
+    'title' => "Standardized Test",
     'body' => 'Raih potensi penuh untuk masuk ke universitas top dunia! Tingkatkan skor tes dengan mentor ahli yang dilengkapi dengan strategi yang telah terbukti.',
     'header_button' => 'Register Here',
 
