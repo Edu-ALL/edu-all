@@ -117,9 +117,43 @@
             </div>
         </div>
     </section>
-    <section class="w-full md:px-10 py-10 bg-dark">
+    <section class="w-full py-10 bg-dark">
         <div class="main-container">
-            <div class="flex flex-col items-center mt-56">
+        <div class="flex flex-col items-center">
+            <div class="w-full max-w-screen-2xl mx-auto">
+                <div class="new-main-container">
+                    <div class="splide" role="group">
+                        <div class="splide__arrows text-white">
+                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -32px">
+                                <i class="fa-solid fa-chevron-left text-4xl"></i>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -32px">
+                                <i class="fa-solid fa-chevron-right text-4xl"></i>
+                            </button>
+                        </div>
+                        <div class="splide__track py-12">
+                            <ul class="splide__list">
+                                @foreach ($all_mentor as $mentor)
+                                    <li class="splide__slide w-full">
+                                        <div
+                                            class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
+                                            <x-mentor-card :mentor=$mentor />
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                        bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                        hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                        transition="all duration-150" />
+                </div>
+            </div>
+        </div>
+            <!-- <div class="flex flex-col items-center mt-56">
                 <div class="w-full lg:px-[5rem] px-0 -mt-52">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
@@ -240,7 +274,7 @@
                 </div>
                 <x-button href="{{ route('mentor', app()->getLocale()) }}" title="{{ __('pages/home.mentor_btn') }}"
                     bg-color="newprimary" />
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -289,22 +323,25 @@
         var splides = document.getElementsByClassName('splide');
 
         new Splide(splides[0], {
-            perPage: isSmallDevice ? 1 : 3,
-            arrows: isSmallDevice ? false : true,
-            pagination: isSmallDevice ? true : false,
+            type: 'loop',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
             perMove: 1,
-            // arrows: isMediumDevice ? false : true,
+            arrows: isSmallDevice ? false : true,
+            lazyload: false,
+            autoplay: true,
+            interval: 5000,
+            pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            // data.list.classList.add('top-[100%]');
+            data.list.classList.add('top-[90%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
                 item.button.style.width = '7px';
                 item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+                item.button.style.backgroundColor = '#D9D9D9';
             });
         }).mount();
     </script>
