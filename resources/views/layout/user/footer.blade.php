@@ -350,7 +350,7 @@
                         class="w-5 h-5 object-contain" loading="lazy">
                 </a>
             </div>
-            <p class="text-sm text-white">Copyright © {{ date('Y') }}. EduALL. All rights reserved</p>
+            <p class="text-sm text-white">Copyright © {{ date('Y') }}. PT. Jawara Edukasih Indonesia</p>
         </div>
     </div>
 </footer>
