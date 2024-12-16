@@ -54,32 +54,32 @@ module.exports = {
 
                 // Admission mentoring
                 "adm-mentoring-header":
-                    "url('../../public/assets/img/admission mentoring/revamp/banner-admission-general.webp')",
+                    "url('../../public/assets/img/admission mentoring/revamp/admission_mentoring.webp')",
                 // Undergraduate
                 "undergraduate-header":
-                    "url('../../public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.png')",
+                    "url('../../public/assets/img/admission mentoring/Undergraduate/revamp/banner-undergraduate.webp')",
                 "undergraduate-do":
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
                 // Academic and test preparation
                 "general-acad-header":
-                    "url('../../public/assets/img/academic_test_preparation/revamp/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/revamp/banner.webp')",
                 "academic-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.webp')",
                 "sat-prep-header":
-                    "url('../../public/assets/img/academic_test_preparation/sat_program/revamp/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/sat_program/revamp/banner.webp')",
                 "skillset-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/skillset_tutoring/revamp/banner.png')",
+                    "url('../../public/assets/img/academic_test_preparation/skillset_tutoring/revamp/banner.webp')",
 
                 // Transfer
                 "transfer-header":
-                    "url('../../public/assets/img/admission mentoring/Master transfer/revamp/banner-transfer.png')",
+                    "url('../../public/assets/img/admission mentoring/Master transfer/revamp/banner-transfer.webp')",
                 "transfer-do":
                     "url('../../public/assets/img/admission mentoring/Master transfer/master transfer photos.webp')",
 
                 // Graduate
                 "graduate-header":
-                    "url('../../public/assets/img/admission mentoring/Graduate/revamp/banner-graduate.png')",
+                    "url('../../public/assets/img/admission mentoring/Graduate/revamp/banner-graduate.webp')",
                 "graduate-do":
                     "url('../../public/assets/img/admission mentoring/Graduate/Graduate photos.webp')",
 
@@ -113,8 +113,11 @@ module.exports = {
                     "url('../../public/assets/img/global_innovators_project/Banner Exploration Program.webp')",
 
                 // about
+                "our-partnership-banner":
+                    "url('../../public/assets/img/banner/partnership-carreer.webp')",
+                // partnership 
                 "our-contribution-banner":
-                    "url('../../public/assets/img/banner/Partnership.webp')",
+                    "url('../../public/assets/img/banner/our-contribution.webp')",
 
                 // Blog
                 "bottom-sign-up-banner":
@@ -128,7 +131,7 @@ module.exports = {
 
                 // header mentor
                 "mentor-header":
-                    "url('../../public/assets/img/mentor/header.png')",
+                    "url('../../public/assets/img/mentor/mentor.webp')",
 
                 // resource
                 "success-stories-header":

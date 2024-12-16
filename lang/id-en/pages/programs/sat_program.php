@@ -5,7 +5,7 @@ return [
     'meta_description' => 'SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years',
 
     'navbar_title' => "Standardized Test",
-    'title' => "SAT/ACT Preparation",
+    'title' => "Standardized Test",
     'body' => "Unleash your full potential for admission to the world's leading universities!Improve your test scores with our expert mentors and effective strategies.",
     'header_button' => 'Register Here',
 
