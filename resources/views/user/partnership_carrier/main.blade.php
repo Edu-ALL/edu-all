@@ -16,7 +16,7 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="-z-10">
+    <!-- <section class="-z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
                 <div class="flex items-center h-full justify-center">
@@ -29,8 +29,20 @@
                 </div>
             </div>
 
-            <img loading="lazy" src="{{ asset('assets/img/banner/Partnership.webp') }}" alt="EduALL Partnership Banner"
+            <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
                 class="lazy w-full h-full object-cover object-center">
+        </div>
+    </section> -->
+
+    <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
+        <x-registration-form />
+        <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
+            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
+                    {{ __('pages/about_us/partnership_careers.title') }}
+                </h2>
+                <x-registration-form :is-button="true" />
+            </div>
         </div>
     </section>
 

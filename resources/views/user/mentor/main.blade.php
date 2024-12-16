@@ -16,7 +16,19 @@
 
 @section('content')
     {{-- Header Section --}}
-    <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
+    <section class="py-16 h-screen bg-mentor-header bg-cover bg-top" id="banner">
+        <x-registration-form />
+        <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
+            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
+                    {{ __('pages/about_us/mentor.banner_title') }}
+                </h2>
+                <x-registration-form :is-button="true" />
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
         <div class="main-container md:w-4/6 w-full">
             <div class="flex flex-col items-start">
                 <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
@@ -30,7 +42,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- Mentor List Section --}}
     <section id="mentor" class="py-20 mt-[0rem] bg-dark">
