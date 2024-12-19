@@ -200,11 +200,15 @@
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="md:py-16 py-10 bg-dark" id="mentors">
-        <div class="new-main-container py-8">
+        <div class="new-main-container py-8 hidden md:block">
             <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
         </div>
+        <div class="new-main-container pt-8 pb-2 flex justify-start items-center fmd:hidden gap-4">
+            <h1 class="font-bold text-section-title text-white text-left md:text-center">Let’s meet Our Mentors</h1>
+            <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
+        </div>
         <div class="flex flex-col items-center">
-            <div class="w-full md:px-10 px-3 max-w-screen-2xl mx-auto">
+            <div class="w-full md:px-10 max-w-screen-2xl mx-auto">
                 <div class="new-main-container">
                     <div class="splide" role="group">
                         <div class="splide__arrows text-white">
@@ -220,7 +224,7 @@
                                 @foreach ($all_mentor as $mentor)
                                     <li class="splide__slide w-full">
                                         <div
-                                            class="splide__slide__container relative mx-2 font-secondary h-full program_card hover:rotate-program_card ">
+                                            class="splide__slide__container relative mx-3 md:mx-2 font-secondary h-full program_card hover:rotate-program_card ">
                                             <x-mentor-card :mentor=$mentor />
                                         </div>
                                     </li>
@@ -229,7 +233,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center">
+                <div class="hidden md:flex justify-center">
                     <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
                         bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
                         hover-padding-x="20" text-color="white" font="medium" text-size="lg"
@@ -242,9 +246,13 @@
     {{-- ========================================== Success Stories ========================================== --}}
     <section class="md:py-16 py-10 bg-dark">
         <div class="main-container flex flex-col items-center">
-            <h1 class="font-bold text-section-title text-white uppercase text-center max-w-4xl mx-auto">
-                OUR MENTEES’ STORIES & PROJECTS
-            </h1>
+            <div class="new-main-container py-8 hidden md:block">
+                <h1 class="font-bold text-section-title text-white text-center">OUR MENTEES’ STORIES & PROJECTS</h1>
+            </div>
+            <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
+                <h1 class="font-bold text-section-title text-white text-left md:text-center">OUR MENTEES’ STORIES</h1>
+                <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
+            </div>
 
             <div class="md:hidden splide pt-12 max-w-5xl mx-auto" role="group">
                 <div class="splide__track">
@@ -286,10 +294,12 @@
                     </div>
                 @endforeach
             </div>
-            <x-button href="{{ route('success_stories', app()->getLocale()) }}" title="Click for more details"
-                class="my-8" bg-color="newprimary" text-color="white" font-weight="medium" text-size="lg"
-                padding-y="2" padding-x="4" hover-bg-color="newprimary" hover-padding-x="20" transition="all"
-                duration="150" />
+            <div class="hidden md:block">
+                <x-button href="{{ route('success_stories', app()->getLocale()) }}" title="Click for more details"
+                    class="my-8" bg-color="newprimary" text-color="white" font-weight="medium" text-size="lg"
+                    padding-y="2" padding-x="4" hover-bg-color="newprimary" hover-padding-x="20" transition="all"
+                    duration="150" />
+            </div>
         </div>
     </section>
 
@@ -514,6 +524,7 @@
         new Splide(splides[1], {
             type: 'loop',
             perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            padding: isSmallDevice ? '10%' : '0',
             perMove: 1,
             arrows: isSmallDevice ? false : true,
             lazyload: false,
