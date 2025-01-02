@@ -203,7 +203,7 @@
         <div class="new-main-container py-8 hidden md:block">
             <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
         </div>
-        <div class="new-main-container pt-8 pb-2 flex justify-start items-center fmd:hidden gap-4">
+        <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
             <h1 class="font-bold text-section-title text-white text-left md:text-center">Let’s meet Our Mentors</h1>
             <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
         </div>
@@ -251,7 +251,7 @@
             </div>
             <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
                 <h1 class="font-bold text-section-title text-white text-left md:text-center">OUR MENTEES’ STORIES</h1>
-                <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
+                <a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
             </div>
 
             <div class="md:hidden splide pt-12 max-w-5xl mx-auto" role="group">
