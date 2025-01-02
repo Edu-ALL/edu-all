@@ -9,10 +9,20 @@
 @section('sub-navbar')
     <x-sub-navbar :menu="[
         ['title' => 'general', 'url' => '/programs/exclusive-program-school'],
-        ['title' => __('pages/programs/admission_accelerator.title'), 'url' => '/programs/exclusive-program-school/admission-accelerator'],
-        ['title' => __('pages/programs/experiential_learning.title'), 'url' => '/programs/exclusive-program-school/experiential-learning'],
-        ['title' => __('pages/programs/teacher_focused.title'), 'url' => '/programs/exclusive-program-school/teacher-focused'],
-    ]" :active="'general'" title="{{  __('pages/programs/exclusive_program_school.title') }}" :string-limit="14" />
+        [
+            'title' => __('pages/programs/admission_accelerator.title'),
+            'url' => '/programs/exclusive-program-school/admission-accelerator',
+        ],
+        [
+            'title' => __('pages/programs/experiential_learning.title'),
+            'url' => '/programs/exclusive-program-school/experiential-learning',
+        ],
+        [
+            'title' => __('pages/programs/teacher_focused.title'),
+            'url' => '/programs/exclusive-program-school/teacher-focused',
+        ],
+    ]" :active="'general'" title="{{ __('pages/programs/exclusive_program_school.title') }}"
+        :string-limit="14" />
 @endsection
 
 @section('content')
@@ -21,18 +31,20 @@
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center md:items-start new-main-container py-[50%] md:pt-[20%] gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-2/3 md:pb-[2%]">
+                <h2
+                    class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-2/3 md:pb-[2%]">
                     {{ __('pages/programs/exclusive_program_school.title') }}
                 </h2>
-                <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
+                <p
+                    class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
                     {{ __('pages/programs/exclusive_program_school.description') }}
                 </p>
                 <p class="font-newprimary text-white text-center max-w-xl leading-6 text-lg font-light">
                     {{ __('pages/programs/exclusive_program_school.sub_description') }}
                 </p>
                 <x-registration-form :is-button="true" />
-            <div>
-        </div>
+                <div>
+                </div>
     </section>
 
     {{-- ================================== Benefit Section  ================================== --}}
@@ -42,7 +54,8 @@
                 <div class="w-1/3 md:w-1/5 flex flex-col items-center gap-4">
                     <img src="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
                         alt="{{ $item['title'] }}" class="scale-150 object-top object-cover">
-                    <h4 class="font-newprimary text-xl font-semibold text-center tracking-tight leading-6 w-32 md:-mt-20 -mt-14">
+                    <h4
+                        class="font-newprimary text-xl font-semibold text-center tracking-tight leading-6 w-32 md:-mt-20 -mt-14">
                         {{ $item['title'] }}
                     </h4>
                 </div>
@@ -157,25 +170,27 @@
 
 @push('script')
     <script>
-        var splides = document.getElementsByClassName('splide');
+        document.addEventListener('DOMContentLoaded', function() {
+            var splides = document.getElementsByClassName('splide');
 
-        new Splide(splides[0], {
-            perPage: isSmallDevice ? 1 : 3,
-            perMove: 1,
-            arrows: false,
-            autoplay: true,
-            lazyload: true,
-            interval: 3000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            new Splide(splides[0], {
+                perPage: isSmallDevice ? 1 : 3,
+                perMove: 1,
+                arrows: false,
+                autoplay: true,
+                lazyload: true,
+                interval: 3000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        });
     </script>
 @endpush

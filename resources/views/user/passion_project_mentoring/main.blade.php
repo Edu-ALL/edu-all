@@ -17,7 +17,8 @@
                             class="mb-5 pt-10 font-newprimary font-bold text-lg text-white text-center uppercase md:text-2xl  md:text-left">
                             {{ __('pages/programs/passion_project_mentoring.title') }}
                         </h1>
-                        <img loading="lazy" src="{{ asset('assets/img/passion_project_mentoring/logo-passion-project-mentoring-program-768x292.webp') }}"
+                        <img loading="lazy"
+                            src="{{ asset('assets/img/passion_project_mentoring/logo-passion-project-mentoring-program-768x292.webp') }}"
                             alt="passion project title" class="w-72 object-contain md:w-96">
                         <p class="my-5 font-newprimary font-normal text-lg text-white md:text-xl md:leading-6">
                             {{ __('pages/programs/passion_project_mentoring.body') }}</p>
@@ -120,7 +121,8 @@
                                             <i id="entre-learn-arrow"
                                                 class="fa-solid fa-angle-down ml-4 font-black text-white text-lg"></i>
                                         </div>
-                                        <p id="entre-learn-desc" class="px-4 mb-4 hidden font-newprimary text-base leading-5">
+                                        <p id="entre-learn-desc"
+                                            class="px-4 mb-4 hidden font-newprimary text-base leading-5">
                                             {{ $item['desc'] }}</p>
                                     </div>
                                 @endif
@@ -138,7 +140,8 @@
                                             <i id="entre-learn-arrow"
                                                 class="fa-solid fa-angle-down ml-4 font-black text-white text-lg"></i>
                                         </div>
-                                        <p id="entre-learn-desc" class="px-4 mb-4 hidden font-newprimary text-base leading-5">
+                                        <p id="entre-learn-desc"
+                                            class="px-4 mb-4 hidden font-newprimary text-base leading-5">
                                             {{ $item['desc'] }}</p>
                                     </div>
                                 @endif
@@ -150,7 +153,8 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
+                <h2
+                    class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
@@ -163,7 +167,8 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
+                <h2
+                    class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_curriculum_overview') }}</h2>
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-entre-3 md:bg-cover md:bg-top">
@@ -270,7 +275,8 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
-                                            <h4 class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
+                                            <h4
+                                                class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
@@ -289,7 +295,8 @@
                                     <div class="group">
                                         <div id="entre-learn-title"
                                             class="flex justify-between items-center p-4 mb-4 rounded-xl bg-[#1eb5f6] cursor-pointer">
-                                            <h4 class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
+                                            <h4
+                                                class="font-newprimary font-bold text-base text-white leading-5 md:text-xl">
                                                 {{ $item['title'] }}
                                             </h4>
                                             <i id="entre-learn-arrow"
@@ -308,7 +315,8 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
+                <h2
+                    class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
                     <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
@@ -321,7 +329,8 @@
             </div>
 
             <div class="flex flex-col main-container">
-                <h2 class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
+                <h2
+                    class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_curriculum_overview') }}</h2>
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-scien-3 md:bg-cover md:bg-top">
@@ -372,40 +381,42 @@
     </section>
 
     {{-- ====================================  Testimonial Section ========================================= --}}
-    @if(count($testimonies) > 0)
-    <section class="pt-10 pb-16">
-        <div class="main-container">
-            <div class="flex flex-col">
-                <div class="flex justify-center">
-                    <h2
-                        class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
-                        {{ __('pages/programs/univ_transfer_program.testimony_title') }}
-                    </h2>
-                </div>
-                <div class="mt-16 splide" role="group">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
-                        </button>
+    @if (count($testimonies) > 0)
+        <section class="pt-10 pb-16">
+            <div class="main-container">
+                <div class="flex flex-col">
+                    <div class="flex justify-center">
+                        <h2
+                            class="w-full px-4 py-3 font-newprimary font-extrabold text-3xl text-newprimary text-center tracking-tight shadow-md bg-newyellow md:w-4/6 md:text-4xl xl:w-3/6">
+                            {{ __('pages/programs/univ_transfer_program.testimony_title') }}
+                        </h2>
                     </div>
-                    <div class="splide__track">
-                        <ul class="splide__list font-newprimary text-black px-8">
-                            @foreach ($testimonies as $testi)
-                                <li class="splide__slide w-full pb-8">
-                                    <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                        <x-testimonial-card :testimonial=$testi />
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                    <div class="mt-16 splide" role="group">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev"
+                                style="background: transparent; left: -48px;">
+                                <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next"
+                                style="background: transparent; right: -48px;">
+                                <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                            </button>
+                        </div>
+                        <div class="splide__track">
+                            <ul class="splide__list font-newprimary text-black px-8">
+                                @foreach ($testimonies as $testi)
+                                    <li class="splide__slide w-full pb-8">
+                                        <div class="splide__slide__container py-8 px-4 h-full w-full ">
+                                            <x-testimonial-card :testimonial=$testi />
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
 
@@ -426,51 +437,54 @@
 
 @push('script')
     <script>
-        const learn = document.querySelectorAll('#entre-learn-title');
-        const learn_desc = document.querySelectorAll('#entre-learn-desc');
-        const learn_arrow = document.querySelectorAll('#entre-learn-arrow');
+        document.addEventListener('DOMContentLoaded', function() {
+            const learn = document.querySelectorAll('#entre-learn-title');
+            const learn_desc = document.querySelectorAll('#entre-learn-desc');
+            const learn_arrow = document.querySelectorAll('#entre-learn-arrow');
 
-        let entre_pos = 0;
+            let entre_pos = 0;
 
-        learn.forEach((element, it) => {
-            element.addEventListener('click', () => {
+            learn.forEach((element, it) => {
+                element.addEventListener('click', () => {
 
-                learn_desc[entre_pos].classList.add('hidden')
-                learn_arrow[entre_pos].classList.remove('rotate-180')
+                    learn_desc[entre_pos].classList.add('hidden')
+                    learn_arrow[entre_pos].classList.remove('rotate-180')
 
-                learn_desc[it].classList.remove('hidden')
-                learn_arrow[it].classList.add('rotate-180')
+                    learn_desc[it].classList.remove('hidden')
+                    learn_arrow[it].classList.add('rotate-180')
 
-                entre_pos = it;
-            })
-        });
-
-        // testimony
-        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
-        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
-        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
-
-        var splides = document.getElementsByClassName('splide');
-        new Splide(splides[0], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                3 : 4,
-            perMove: 1,
-            arrows: isMediumDevice ? false : true,
-            autoplay: true,
-            lazyload: true,
-            interval: 4000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+                    entre_pos = it;
+                })
             });
-        }).mount();
+
+            // testimony
+            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+            var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+            var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+
+            var splides = document.getElementsByClassName('splide');
+            new Splide(splides[0], {
+                type: 'slide',
+                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                    3 : 4,
+                perMove: 1,
+                arrows: isMediumDevice ? false : true,
+                autoplay: true,
+                lazyload: true,
+                interval: 4000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+
+        });
     </script>
 @endpush

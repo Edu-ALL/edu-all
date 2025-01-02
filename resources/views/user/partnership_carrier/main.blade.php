@@ -8,37 +8,48 @@
 
 @section('sub-navbar')
     <x-sub-navbar :menu="[
-        ['title' => __('pages/navbar.about_us.submenu.0.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.0.link')],
-        ['title' => __('pages/navbar.about_us.submenu.1.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.1.link')],
-        ['title' => __('pages/navbar.about_us.submenu.2.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.2.link')],
+        [
+            'title' => __('pages/navbar.about_us.submenu.0.title'),
+            'url' => '/' . __('pages/navbar.about_us.submenu.0.link'),
+        ],
+        [
+            'title' => __('pages/navbar.about_us.submenu.1.title'),
+            'url' => '/' . __('pages/navbar.about_us.submenu.1.link'),
+        ],
+        [
+            'title' => __('pages/navbar.about_us.submenu.2.title'),
+            'url' => '/' . __('pages/navbar.about_us.submenu.2.link'),
+        ],
     ]" :active="__('pages/navbar.about_us.submenu.2.title')" title="{{ __('pages/about_us/about.about_title') }}" />
 @endsection
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <!-- <section class="-z-10">
-        <div class="relative flex w-full h-screen left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full justify-center">
-                    <div class="flex-row w-3/5">
-                        <h1
-                            class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
-                            {{ __('pages/about_us/partnership_careers.title') }}
-                        </h1>
+            <div class="relative flex w-full h-screen left-0 overflow-hidden">
+                <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
+                    <div class="flex items-center h-full justify-center">
+                        <div class="flex-row w-3/5">
+                            <h1
+                                class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                                {{ __('pages/about_us/partnership_careers.title') }}
+                            </h1>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
-                class="lazy w-full h-full object-cover object-center">
-        </div>
-    </section> -->
+                <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
+                    class="lazy w-full h-full object-cover object-center">
+            </div>
+        </section> -->
 
     <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
+            <div
+                class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2
+                    class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/about_us/partnership_careers.title') }}
                 </h2>
                 <x-registration-form :is-button="true" />
@@ -117,7 +128,7 @@
                 {{ __('pages/about_us/partnership_careers.colab_bottom') }}
             </h2>
             <x-button href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20Edu-ALL" target="_blank"
-                title="{{__('pages/about_us/partnership_careers.colab_btn') }}" bg-color="red" />
+                title="{{ __('pages/about_us/partnership_careers.colab_btn') }}" bg-color="red" />
         </div>
     </section>
 
@@ -131,8 +142,7 @@
                     <p class="font-newprimary text-lg text-[#71747B] leading-8">
                         {{ __('pages/about_us/partnership_careers.careers_desc') }}</p>
                     <p class="font-newprimary text-lg text-[#71747B] leading-8">
-                        Send your resume to <a href="mailto:careers@edu-all.com"
-                            class="text-black">careers@edu-all.com.</a>
+                        Send your resume to <a href="mailto:careers@edu-all.com" class="text-black">careers@edu-all.com.</a>
                         We have opportunities for a full-time or part-time or an internship. We even offer internship
                         opportunities for high-school students.</p>
                 </div>
@@ -152,28 +162,30 @@
 
 @push('script')
     <script>
-        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        document.addEventListener('DOMContentLoaded', function() {
+            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 
-        var splides = document.getElementsByClassName('splide');
+            var splides = document.getElementsByClassName('splide');
 
-        new Splide(splides[0], {
-            type: 'loop',
-            perPage: 1,
-            perMove: 1,
-            arrows: !isSmallDevice,
-            autoplay: true,
-            lazyload: true,
-            interval: 3000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            new Splide(splides[0], {
+                type: 'loop',
+                perPage: 1,
+                perMove: 1,
+                arrows: !isSmallDevice,
+                autoplay: true,
+                lazyload: true,
+                interval: 3000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        });
     </script>
 @endpush

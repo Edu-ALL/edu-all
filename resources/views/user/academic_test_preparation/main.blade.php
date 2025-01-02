@@ -9,10 +9,19 @@
 @section('sub-navbar')
     <x-sub-navbar :menu="[
         ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
-        ['title' => __('pages/programs/academic_tutoring.title'), 'url' => '/programs/academic-test-preparation/academic-tutoring'],
-        ['title' => __('pages/programs/sat_program.navbar_title'), 'url' => '/programs/academic-test-preparation/sat-program'],
-        ['title' => __('pages/programs/skillset_tutoring.title'), 'url' => '/programs/academic-test-preparation/skillset-tutoring-program'],
-    ]" :active="'general'" title="{!!  __('pages/programs/academic_test_preparation.navbar_title') !!}" />
+        [
+            'title' => __('pages/programs/academic_tutoring.title'),
+            'url' => '/programs/academic-test-preparation/academic-tutoring',
+        ],
+        [
+            'title' => __('pages/programs/sat_program.navbar_title'),
+            'url' => '/programs/academic-test-preparation/sat-program',
+        ],
+        [
+            'title' => __('pages/programs/skillset_tutoring.title'),
+            'url' => '/programs/academic-test-preparation/skillset-tutoring-program',
+        ],
+    ]" :active="'general'" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
 @endsection
 
 @section('content')
@@ -20,8 +29,10 @@
     <section class="py-16 h-screen bg-general-acad-header bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
+            <div
+                class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2
+                    class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/programs/academic_test_preparation.title') }}
                 </h2>
                 <x-registration-form :is-button="true" />
@@ -101,11 +112,13 @@
         </div>
         <div class="absolute w-full max-w-5xl left-1/2 top-1/2 -translate-x-1/2">
             <div class="flex items-center justify-between new-main-container">
-                <button id="left-journey-btn" class="w-7 h-7 rounded-full bg-newprimary p-2 shadow-md flex items-center justify-center"
+                <button id="left-journey-btn"
+                    class="w-7 h-7 rounded-full bg-newprimary p-2 shadow-md flex items-center justify-center"
                     style="background: #120FFD;">
                     <i class="fa-solid fa-arrow-left text-base text-white"></i>
                 </button>
-                <button id="right-journey-btn" class="w-7 h-7 rounded-full bg-newprimary p-2 shadow-md flex items-center justify-center"
+                <button id="right-journey-btn"
+                    class="w-7 h-7 rounded-full bg-newprimary p-2 shadow-md flex items-center justify-center"
                     style="background: #120FFD;">
                     <i class="fa-solid fa-arrow-right text-base  text-white"></i>
                 </button>
@@ -243,155 +256,159 @@
 
 @push('script')
     <script>
-        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
-        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
-        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+        document.addEventListener('DOMContentLoaded', function() {
+            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+            var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+            var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        // OUR PROGRAMS
-        // const item_back = document.querySelector('.acad-program-our-programs .item-back');
-        // var item_left = document.querySelector('.acad-program-our-programs .item-left');
-        // const item_right = document.querySelector('.acad-program-our-programs .item-right');
-        // const item_front = document.querySelector('.acad-program-our-programs .item-front');
-        const image_items = document.querySelectorAll('.acad-program-our-programs .item');
-        const our_programs_button_left = document.querySelector('.acad-program-our-programs .button-left');
-        const our_programs_button_right = document.querySelector('.acad-program-our-programs .button-right');
-        const our_programs_wrapper = document.getElementById('our-programs-wrapper');
-        const image_items_text = document.querySelectorAll('.acad-program-our-programs .item-text');
+            // OUR PROGRAMS
+            // const item_back = document.querySelector('.acad-program-our-programs .item-back');
+            // var item_left = document.querySelector('.acad-program-our-programs .item-left');
+            // const item_right = document.querySelector('.acad-program-our-programs .item-right');
+            // const item_front = document.querySelector('.acad-program-our-programs .item-front');
+            const image_items = document.querySelectorAll('.acad-program-our-programs .item');
+            const our_programs_button_left = document.querySelector('.acad-program-our-programs .button-left');
+            const our_programs_button_right = document.querySelector('.acad-program-our-programs .button-right');
+            const our_programs_wrapper = document.getElementById('our-programs-wrapper');
+            const image_items_text = document.querySelectorAll('.acad-program-our-programs .item-text');
 
-        const items_position = [
-            ['item-back', 'item-left', 'item-right', 'item-front'],
-            ['item-right', 'item-back', 'item-front', 'item-left'],
-            ['item-front', 'item-right', 'item-left', 'item-back'],
-            ['item-left', 'item-front', 'item-back', 'item-right'],
-        ];
+            const items_position = [
+                ['item-back', 'item-left', 'item-right', 'item-front'],
+                ['item-right', 'item-back', 'item-front', 'item-left'],
+                ['item-front', 'item-right', 'item-left', 'item-back'],
+                ['item-left', 'item-front', 'item-back', 'item-right'],
+            ];
 
-        var track_item = 0;
-        var track_item_text = 3;
+            var track_item = 0;
+            var track_item_text = 3;
 
-        function moveRight() {
-            our_programs_wrapper.scrollIntoView()
-            items_position[track_item].forEach((cls, it) => {
-                image_items[it].classList.remove(cls);
-                image_items[it].classList.add(items_position[(track_item + 1) % 4][it]);
+            function moveRight() {
+                our_programs_wrapper.scrollIntoView()
+                items_position[track_item].forEach((cls, it) => {
+                    image_items[it].classList.remove(cls);
+                    image_items[it].classList.add(items_position[(track_item + 1) % 4][it]);
+                })
+
+                track_item = (track_item + 1) % 4;
+                image_items_text[track_item_text].classList.remove("opacity-100");
+                image_items_text[track_item_text].classList.add("opacity-0");
+                image_items_text[track_item_text].classList.remove("visible");
+                image_items_text[track_item_text].classList.add("invisible");
+                track_item_text = (track_item_text + 1) % 4;
+                image_items_text[track_item_text].classList.remove("opacity-0");
+                image_items_text[track_item_text].classList.add("opacity-100");
+                image_items_text[track_item_text].classList.add("visible");
+                image_items_text[track_item_text].classList.remove("invisible");
+            }
+
+            function moveLeft() {
+                our_programs_wrapper.scrollIntoView()
+                items_position[track_item].forEach((cls, it) => {
+                    image_items[it].classList.remove(cls);
+                    image_items[it].classList.add(items_position[Math.abs((track_item - 1 + 4) % 4)][it]);
+                })
+                track_item = (track_item - 1 + 4) % 4;
+                image_items_text[track_item_text].classList.remove("opacity-100");
+                image_items_text[track_item_text].classList.add("opacity-0");
+                image_items_text[track_item_text].classList.remove("visible");
+                image_items_text[track_item_text].classList.add("invisible");
+                track_item_text = (track_item - 1 + 4) % 4;
+                image_items_text[track_item_text].classList.remove("opacity-0");
+                image_items_text[track_item_text].classList.add("opacity-100");
+                image_items_text[track_item_text].classList.add("visible");
+                image_items_text[track_item_text].classList.remove("invisible");
+            }
+
+            our_programs_button_right.addEventListener("click", () => {
+                moveRight();
+            });
+
+            our_programs_button_left.addEventListener("click", () => {
+                moveLeft();
+            });
+
+            const left_journey_btn = document.getElementById('left-journey-btn');
+            const right_journey_btn = document.getElementById('right-journey-btn');
+
+            left_journey_btn.addEventListener("click", () => {
+                moveLeft();
+            })
+            right_journey_btn.addEventListener("click", () => {
+                moveRight();
             })
 
-            track_item = (track_item + 1) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-100");
-            image_items_text[track_item_text].classList.add("opacity-0");
-            image_items_text[track_item_text].classList.remove("visible");
-            image_items_text[track_item_text].classList.add("invisible");
-            track_item_text = (track_item_text + 1) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-0");
-            image_items_text[track_item_text].classList.add("opacity-100");
-            image_items_text[track_item_text].classList.add("visible");
-            image_items_text[track_item_text].classList.remove("invisible");
-        }
+            const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
+            let s4ActiveIndex = 0;
 
-        function moveLeft() {
-            our_programs_wrapper.scrollIntoView()
-            items_position[track_item].forEach((cls, it) => {
-                image_items[it].classList.remove(cls);
-                image_items[it].classList.add(items_position[Math.abs((track_item - 1 + 4) % 4)][it]);
-            })
-            track_item = (track_item - 1 + 4) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-100");
-            image_items_text[track_item_text].classList.add("opacity-0");
-            image_items_text[track_item_text].classList.remove("visible");
-            image_items_text[track_item_text].classList.add("invisible");
-            track_item_text = (track_item - 1 + 4) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-0");
-            image_items_text[track_item_text].classList.add("opacity-100");
-            image_items_text[track_item_text].classList.add("visible");
-            image_items_text[track_item_text].classList.remove("invisible");
-        }
+            acad_tutor_items.forEach((item, it) => {
+                item.addEventListener('click', () => {
+                    if (it != s4ActiveIndex) {
+                        acad_tutor_items[s4ActiveIndex].classList.add(
+                            'acad-program-acad-tutor-inactive');
+                        acad_tutor_items[s4ActiveIndex].classList.remove(
+                            'acad-program-acad-tutor-active');
+                        acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
+                        acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
+                        s4ActiveIndex = it;
+                    }
+                })
+            });
 
-        our_programs_button_right.addEventListener("click", () => {
-            moveRight();
-        });
 
-        our_programs_button_left.addEventListener("click", () => {
-            moveLeft();
-        });
+            // SLIDER
+            var splides = document.getElementsByClassName('splide');
+            new Splide(splides[0], {
+                type: 'slide',
+                perPage: isMediumDevice ? 1 : 3,
+                perMove: 1,
+                arrows: false,
+                focus: 'center',
+                gap: 10,
+                autoplay: true,
+                lazyload: true,
+                interval: 4000,
+                pagination: false,
+                padding: 0,
+            }).on('pagination:mounted', function(data) {
+                if (isSmallDevice || isMediumDevice) {
+                    // You can add your class to the UL element
+                    data.list.classList.add('splide__pagination--custom');
+                    data.list.classList.add('top-[105%]');
 
-        const left_journey_btn = document.getElementById('left-journey-btn');
-        const right_journey_btn = document.getElementById('right-journey-btn');
-
-        left_journey_btn.addEventListener("click", () => {
-            moveLeft();
-        })
-        right_journey_btn.addEventListener("click", () => {
-            moveRight();
-        })
-
-        const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
-        let s4ActiveIndex = 0;
-
-        acad_tutor_items.forEach((item, it) => {
-            item.addEventListener('click', () => {
-                if (it != s4ActiveIndex) {
-                    acad_tutor_items[s4ActiveIndex].classList.add('acad-program-acad-tutor-inactive');
-                    acad_tutor_items[s4ActiveIndex].classList.remove('acad-program-acad-tutor-active');
-                    acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
-                    acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
-                    s4ActiveIndex = it;
+                    // `items` contains all dot items
+                    data.items.forEach(function(item) {
+                        item.button.style.margin = '0 6px'
+                        item.button.style.backgroundColor = '#0367BF';
+                    });
                 }
-            })
-        });
+            }).mount();
 
-
-        // SLIDER
-        var splides = document.getElementsByClassName('splide');
-        new Splide(splides[0], {
-            type: 'slide',
-            perPage: isMediumDevice ? 1 : 3,
-            perMove: 1,
-            arrows: false,
-            focus: 'center',
-            gap:10,
-            autoplay: true,
-            lazyload: true,
-            interval: 4000,
-            pagination: false,
-            padding: 0,
-        }).on('pagination:mounted', function(data) {
-            if (isSmallDevice || isMediumDevice) {
+            new Splide(splides[1], {
+                type: 'slide',
+                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                    3 : 4,
+                perMove: 1,
+                focus: 0,
+                width: "100%",
+                arrows: isSmallDevice ? false : true,
+                pagination: isSmallDevice ? true : false,
+                autoplay: true,
+                lazyload: true,
+                interval: 5000,
+            }).on('pagination:mounted', function(data) {
                 // You can add your class to the UL element
                 data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
+                data.list.classList.add('top-[100%]');
 
                 // `items` contains all dot items
                 data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
                     item.button.style.margin = '0 6px'
                     item.button.style.backgroundColor = '#0367BF';
                 });
-            }
-        }).mount();
-
-        new Splide(splides[1], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                3 : 4,
-            perMove: 1,
-            focus: 0,
-            width: "100%",
-            arrows: isSmallDevice ? false : true,
-            pagination: isSmallDevice ? true : false,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[100%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
+            }).mount();
+        });
     </script>
 @endpush

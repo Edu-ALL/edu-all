@@ -9,10 +9,19 @@
 @section('sub-navbar')
     <x-sub-navbar :menu="[
         ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
-        ['title' => __('pages/programs/academic_tutoring.title'), 'url' => '/programs/academic-test-preparation/academic-tutoring'],
-        ['title' => __('pages/programs/sat_program.navbar_title'), 'url' => '/programs/academic-test-preparation/sat-program'],
-        ['title' => __('pages/programs/skillset_tutoring.title'), 'url' => '/programs/academic-test-preparation/skillset-tutoring-program'],
-    ]" :active="__('pages/programs/sat_program.navbar_title')" title="{!!  __('pages/programs/academic_test_preparation.navbar_title') !!}" />
+        [
+            'title' => __('pages/programs/academic_tutoring.title'),
+            'url' => '/programs/academic-test-preparation/academic-tutoring',
+        ],
+        [
+            'title' => __('pages/programs/sat_program.navbar_title'),
+            'url' => '/programs/academic-test-preparation/sat-program',
+        ],
+        [
+            'title' => __('pages/programs/skillset_tutoring.title'),
+            'url' => '/programs/academic-test-preparation/skillset-tutoring-program',
+        ],
+    ]" :active="__('pages/programs/sat_program.navbar_title')" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
 @endsection
 
 @section('content')
@@ -20,8 +29,10 @@
     <section class="py-16 h-screen bg-sat-prep-header bg-cover bg-top" id="banner">
         <x-registration-form program-id="SATPRIV" />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/3 xl:w-1/3 md:pb-[2%]">
+            <div
+                class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2
+                    class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/3 xl:w-1/3 md:pb-[2%]">
                     {{ __('pages/programs/sat_program.title') }}
                 </h2>
                 <x-registration-form :is-button="true" program-id="SATPRIV" />
@@ -374,7 +385,7 @@
         const semi_private_class = document.querySelector('.semi-private-class');
         const slide_background = document.querySelector('.slide-background');
 
-        if (!isMediumDevice) {
+        if (!isMediumDevice && slide_button_left) {
             slide_button_left.addEventListener('click', () => {
                 private_class.classList.remove('opacity-100');
                 private_class.classList.add('opacity-0');
@@ -415,32 +426,33 @@
             });
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            var splides = document.getElementsByClassName('splide');
+            new Splide(splides[0], {
+                type: 'slide',
+                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                    3 : 4,
+                perMove: 1,
+                focus: 0,
+                width: "100%",
+                arrows: isSmallDevice ? false : true,
+                pagination: isSmallDevice ? true : false,
+                autoplay: true,
+                lazyload: true,
+                interval: 5000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[100%]');
 
-        var splides = document.getElementsByClassName('splide');
-        new Splide(splides[0], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                3 : 4,
-            perMove: 1,
-            focus: 0,
-            width: "100%",
-            arrows: isSmallDevice ? false : true,
-            pagination: isSmallDevice ? true : false,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[100%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        });
     </script>
 @endpush

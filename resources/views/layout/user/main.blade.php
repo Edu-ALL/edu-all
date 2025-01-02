@@ -97,14 +97,15 @@
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
-    <link rel="preload" as="font" type="Ambit" href="{{url('/font/ambit/Ambit-Regular.woff')}}" crossorigin/>
+    <link rel="preload" as="font" type="Ambit" href="{{ url('/font/ambit/Ambit-Regular.woff') }}"
+        crossorigin />
 
     <link rel="stylesheet" href="/css/socialshare.css" media="print" onload="this.media='all'">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css"> --}}
 
     {{-- Splide JS - CSS --}}
     <link rel="stylesheet" href="/css/splide.min.css" media="print" onload="this.media='all'">
-    
+
     {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
     {{-- Font Awesome --}}
@@ -112,12 +113,12 @@
     {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}
 
     {{-- Splide JS - JS --}}
-    <script src="{{ url('/js/splide.min.js') }}"></script>
+    <script async src="{{ url('/js/splide.min.js') }}"></script>
     {{-- JQuery --}}
     <script src="{{ url('/js/jquery.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
-    <script src="{{ url('/js/lazyload.js') }}"></script>
+    <script async src="{{ url('/js/lazyload.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
     {{-- Instafeed  --}}
     <script src="{{ url('/js/instafeed.js') }}" defer></script>
@@ -213,9 +214,11 @@
 </body>
 
 <script>
-    $("img").lazyload({
-        effect: "fadeIn",
-        placeholder: "{{ asset('assets/img/loader.gif') }}",
+    document.addEventListener('DOMContentLoaded', function() {
+        $("img").lazyload({
+            effect: "fadeIn",
+            placeholder: "{{ asset('assets/img/loader.gif') }}",
+        });
     });
 </script>
 

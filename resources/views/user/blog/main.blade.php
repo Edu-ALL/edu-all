@@ -232,24 +232,26 @@
         }
     </script>
     <script>
-        var isSmallDevice = window.matchMedia("(max-width: 1024px)").matches
+        document.addEventListener('DOMContentLoaded', function() {
+            var isSmallDevice = window.matchMedia("(max-width: 1024px)").matches
 
-        new Splide('.splide', {
-            perMove: 1,
-            arrows: isSmallDevice ? false : true,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
+            new Splide('.splide', {
+                perMove: 1,
+                arrows: isSmallDevice ? false : true,
+                autoplay: true,
+                lazyload: true,
+                interval: 5000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = 'black';
-            });
-        }).mount();
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = 'black';
+                });
+            }).mount();
+        });
     </script>
 @endpush

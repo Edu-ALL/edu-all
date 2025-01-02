@@ -8,27 +8,38 @@
 
 @section('sub-navbar')
     <x-sub-navbar :menu="[
-        ['title' => __('pages/navbar.about_us.submenu.0.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.0.link')],
-        ['title' => __('pages/navbar.about_us.submenu.1.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.1.link')],
-        ['title' => __('pages/navbar.about_us.submenu.2.title'), 'url' => '/' . __('pages/navbar.about_us.submenu.2.link')],
+        [
+            'title' => __('pages/navbar.about_us.submenu.0.title'),
+            'url' => '/' . __('pages/navbar.about_us.submenu.0.link'),
+        ],
+        [
+            'title' => __('pages/navbar.about_us.submenu.1.title'),
+            'url' => '/' . __('pages/navbar.about_us.submenu.1.link'),
+        ],
+        [
+            'title' => __('pages/navbar.about_us.submenu.2.title'),
+            'url' => '/' . __('pages/navbar.about_us.submenu.2.link'),
+        ],
     ]" :active="__('pages/navbar.about_us.submenu.1.title')" title="{{ __('pages/about_us/about.about_title') }}" />
 @endsection
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <!-- <section class="py-16 h-[100vh] bg-our-contribution-banner bg-cover bg-top" id="banner">
-        <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
-            <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
-                {{ __('pages/about_us/our_contribution.title') }}
-            </h2>
-        </div>
-    </section> -->
+            <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
+                <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
+                    {{ __('pages/about_us/our_contribution.title') }}
+                </h2>
+            </div>
+        </section> -->
 
     <section class="py-16 h-screen bg-our-contribution-banner bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
+            <div
+                class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2
+                    class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/about_us/our_contribution.title') }}
                 </h2>
                 <x-registration-form :is-button="true" />
@@ -143,33 +154,35 @@
 
 @push('script')
     <script>
-        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
-        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+        document.addEventListener('DOMContentLoaded', function() {
+            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+            var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
+            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        var splide = new Splide('.splide', {
-            perPage: isSmallDevice ? 1 : 3,
-            perMove: 1,
-            lazyload: true,
-            autoplay: false,
-            gap: isSmallDevice ? 20 : 0,
-            width: "100%",
-            padding: 0,
-            arrows: false,
-        });
-
-        splide.on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[105%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+            var splide = new Splide('.splide', {
+                perPage: isSmallDevice ? 1 : 3,
+                perMove: 1,
+                lazyload: true,
+                autoplay: false,
+                gap: isSmallDevice ? 20 : 0,
+                width: "100%",
+                padding: 0,
+                arrows: false,
             });
-        }).mount();
+
+            splide.on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        });
     </script>
 @endpush

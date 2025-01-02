@@ -205,7 +205,8 @@
         </div>
         <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
             <h1 class="font-bold text-section-title text-white text-left md:text-center">Let’s meet Our Mentors</h1>
-            <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
+            <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See
+                All</a>
         </div>
         <div class="flex flex-col items-center">
             <div class="w-full md:px-10 max-w-screen-2xl mx-auto">
@@ -215,7 +216,8 @@
                             <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                             </button>
-                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
+                            <button class="splide__arrow splide__arrow--next"
+                                style="background: transparent; right: -24px">
                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                             </button>
                         </div>
@@ -251,7 +253,8 @@
             </div>
             <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
                 <h1 class="font-bold text-section-title text-white text-left md:text-center">OUR MENTEES’ STORIES</h1>
-                <a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
+                <a href="{{ route('success_stories', app()->getLocale()) }}"
+                    class="text-newyellow text-md whitespace-nowrap">See All</a>
             </div>
 
             <div class="md:hidden splide pt-12 max-w-5xl mx-auto" role="group">
@@ -498,124 +501,130 @@
         const regular_talk = "{{ count($regular_talks) }}"
         const event = "{{ count($events) }}"
 
-        new Splide(splides[0], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
-            perMove: 1,
-            arrows: false,
-            lazyload: false,
-            autoplay: true,
-            interval: 4000,
-            pagination: false,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[90%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
-            });
-        }).mount();
-
-        new Splide(splides[1], {
-            type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
-            padding: isSmallDevice ? '10%' : '0',
-            perMove: 1,
-            arrows: isSmallDevice ? false : true,
-            lazyload: false,
-            autoplay: true,
-            interval: 5000,
-            pagination: false,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[90%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
-            });
-        }).mount();
-
-
-        new Splide(splides[2], {
-            type: 'slide',
-            perPage: 1,
-            padding: '10%',
-            perMove: 1,
-            arrows: false,
-            lazyload: false,
-            autoplay: true,
-            interval: 4000,
-            pagination: false,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[90%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
-            });
-        }).mount();
-
-
-        if (event > 0 || regular_talk > 0) {
-            new Splide(splides[3], {
+        document.addEventListener('DOMContentLoaded', function() {
+            new Splide(splides[0], {
                 type: 'slide',
-                perPage: 1,
+                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                    3 : 3,
                 perMove: 1,
-                arrows: isMediumDevice ? false : true,
-                lazyload: true,
-                autoplay: false,
-                interval: 3000,
+                arrows: false,
+                lazyload: false,
+                autoplay: true,
+                interval: 4000,
                 pagination: false,
             }).on('pagination:mounted', function(data) {
                 // You can add your class to the UL element
                 data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
+                data.list.classList.add('top-[90%]');
 
                 // `items` contains all dot items
                 data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
                     item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
+                    item.button.style.backgroundColor = '#D9D9D9';
                 });
             }).mount();
-        }
+
+            new Splide(splides[1], {
+                type: 'loop',
+                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ?
+                    4 : 4,
+                padding: isSmallDevice ? '10%' : '0',
+                perMove: 1,
+                arrows: isSmallDevice ? false : true,
+                lazyload: false,
+                autoplay: true,
+                interval: 5000,
+                pagination: false,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[90%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#D9D9D9';
+                });
+            }).mount();
 
 
-        new Splide(splides[event > 0 || regular_talk > 0 ? 4 : 3], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
-            perMove: 1,
-            arrows: false,
-            lazyload: false,
-            autoplay: true,
-            interval: 4000,
-            pagination: false,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[90%]');
+            new Splide(splides[2], {
+                type: 'slide',
+                perPage: 1,
+                padding: '10%',
+                perMove: 1,
+                arrows: false,
+                lazyload: false,
+                autoplay: true,
+                interval: 4000,
+                pagination: false,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[90%]');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
-            });
-        }).mount();
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#D9D9D9';
+                });
+            }).mount();
+
+
+            if (event > 0 || regular_talk > 0) {
+                new Splide(splides[3], {
+                    type: 'slide',
+                    perPage: 1,
+                    perMove: 1,
+                    arrows: isMediumDevice ? false : true,
+                    lazyload: true,
+                    autoplay: false,
+                    interval: 3000,
+                    pagination: false,
+                }).on('pagination:mounted', function(data) {
+                    // You can add your class to the UL element
+                    data.list.classList.add('splide__pagination--custom');
+                    data.list.classList.add('top-[105%]');
+
+                    // `items` contains all dot items
+                    data.items.forEach(function(item) {
+                        item.button.style.margin = '0 6px'
+                        item.button.style.backgroundColor = '#0367BF';
+                    });
+                }).mount();
+            }
+
+
+            new Splide(splides[event > 0 || regular_talk > 0 ? 4 : 3], {
+                type: 'slide',
+                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                    3 : 3,
+                perMove: 1,
+                arrows: false,
+                lazyload: false,
+                autoplay: true,
+                interval: 4000,
+                pagination: false,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[90%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#D9D9D9';
+                });
+            }).mount();
+
+        });
     </script>
 @endpush
