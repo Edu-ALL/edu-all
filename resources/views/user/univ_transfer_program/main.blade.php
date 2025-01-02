@@ -146,7 +146,6 @@
                         <div class="w-full flex flex-col items-center justify-center">
                             <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/' . $item['image']) }}"
                                 alt="" class="w-full max-w-3xl object-contain">
-                            <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
                             <x-button href="{{ asset('assets/files/programs/transfer/' . $item['link']) }}"
                                 target="_blank" title="{{ $item['button'] }}" margin-top="8" />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
@@ -156,6 +155,7 @@
                                     {{ __('pages/programs/admission_mentoring.book_now') }}
                                 </a>
                             </span>
+                            <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -203,8 +203,20 @@
         </div>
     </section>
 
+    <!-- Bottom Section -->
+    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
+        <div class="new-main-container flex flex-col items-center">
+            <h2 class="w-full mb-6 font-newprimary font-semibold text-white text-center lg:text-3xl text-2xl">
+                {{ __('pages/programs/admission_mentoring.bottom_section_title') }}
+            </h2>
+            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
+                title="{{ __('pages/programs/admission_mentoring.schedule_free_consultation') }}" type='secondary'
+                bg-color="red" />
+        </div>
+    </section>
+
     <!-- Testimonial Section -->
-    <section class="pt-16 pb-20">
+    <section class="pt-20 pb-20">
         <div class="new-main-container">
             <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-4 uppercase">
                 {{ __('pages/programs/admission_mentoring.what_our_mentees_say') }}
@@ -231,18 +243,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Bottom Section -->
-    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="new-main-container flex flex-col items-center">
-            <h2 class="w-full mb-6 font-newprimary font-semibold text-white text-center lg:text-3xl text-2xl">
-                {{ __('pages/programs/admission_mentoring.bottom_section_title') }}
-            </h2>
-            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/programs/admission_mentoring.schedule_free_consultation') }}" type='secondary'
-                bg-color="red" />
         </div>
     </section>
 @endsection

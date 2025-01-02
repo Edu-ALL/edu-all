@@ -65,10 +65,10 @@ return [
                 'link' => 'resources/success-stories',
                 'title' => 'Success Stories',
             ],
-            [
-                'link' => 'resources/upcoming-events',
-                'title' => 'Upcoming Events',
-            ],
+            // [
+            //     'link' => 'resources/upcoming-events',
+            //     'title' => 'Upcoming Events',
+            // ],
             [
                 'link' => 'resources/testimonial',
                 'title' => 'Testimonial',

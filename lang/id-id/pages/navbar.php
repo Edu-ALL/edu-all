@@ -65,10 +65,10 @@ return [
                 'link' => 'resources/success-stories',
                 'title' => 'Cerita Sukses',
             ],
-            [
-                'link' => 'resources/upcoming-events',
-                'title' => 'Event Kami',
-            ],
+            // [
+            //     'link' => 'resources/upcoming-events',
+            //     'title' => 'Event Kami',
+            // ],
             [
                 'link' => 'resources/testimonial',
                 'title' => 'Testimonial',

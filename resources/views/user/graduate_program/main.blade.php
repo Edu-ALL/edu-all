@@ -146,7 +146,6 @@
                         <div class="w-full flex flex-col items-center justify-center">
                             <img data-original="{{ asset('assets/img/admission mentoring/Graduate/revamp/' . $item['image']) }}"
                                 alt="" class="w-full max-w-3xl object-contain">
-                            <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
                             <x-button href="{{ asset('assets/files/programs/graduate/' . $item['link']) }}" target="_blank"
                                 title="{{ $item['button'] }}" margin-top="8" />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
@@ -156,6 +155,7 @@
                                     {{ __('pages/programs/admission_mentoring.book_now') }}
                                 </a>
                             </span>
+                            <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
                         </div>
                     @endforeach
                 </div>
