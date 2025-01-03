@@ -214,9 +214,11 @@
 </body>
 
 <script>
-    $("img").lazyload({
-        effect: "fadeIn",
-        placeholder: "{{ asset('assets/img/loader.gif') }}",
+    document.addEventListener('DOMContentLoaded', function() {
+        $("img").lazyload({
+            effect: "fadeIn",
+            placeholder: "{{ asset('assets/img/loader.gif') }}",
+        });
     });
 </script>
 
