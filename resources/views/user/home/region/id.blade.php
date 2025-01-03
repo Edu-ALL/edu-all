@@ -30,10 +30,10 @@
                     alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover">
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
-                <h1
-                    class="font-bold text-2xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                <h2
+                    class="font-bold text-xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
-                </h1>
+                </h2>
                 <x-registration-form :is-button="true" />
             </div>
             <div class="absolute md:bottom-10 left-0 right-0">

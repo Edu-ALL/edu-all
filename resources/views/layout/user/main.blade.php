@@ -97,8 +97,8 @@
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
 
-    <link rel="preload" as="font" type="Ambit" href="{{ url('/font/ambit/Ambit-Regular.woff') }}"
-        crossorigin />
+    {{-- <link rel="preload" as="font" type="Ambit" href="{{ url('/font/ambit/Ambit-Regular.woff') }}"
+        crossorigin /> --}}
 
     <link rel="stylesheet" href="/css/socialshare.css" media="print" onload="this.media='all'">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css"> --}}
@@ -118,7 +118,7 @@
     <script src="{{ url('/js/jquery.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
-    <script async src="{{ url('/js/lazyload.js') }}"></script>
+    <script src="{{ url('/js/lazyload.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
     {{-- Instafeed  --}}
     <script src="{{ url('/js/instafeed.js') }}" defer></script>
