@@ -160,51 +160,49 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-            var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
 
-            var article = new Splide('.article', {
-                perPage: isMediumDevice ? 1 : 3,
-                perMove: 1,
-                arrows: isMediumDevice ? false : true,
-                pagination: isMediumDevice ? true : false,
-            });
-
-            article.on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[90%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.width = '7px';
-                    item.button.style.height = '7px';
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
-
-            var video = new Splide('.video', {
-                perPage: isMediumDevice ? 1 : 2,
-                perMove: 1,
-                arrows: isMediumDevice ? false : true,
-                pagination: isMediumDevice ? true : false,
-            });
-
-            video.on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[110%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.width = '7px';
-                    item.button.style.height = '7px';
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
+        var article = new Splide('.article', {
+            perPage: isMediumDevice ? 1 : 3,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            pagination: isMediumDevice ? true : false,
         });
+
+        article.on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[90%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
+
+        var video = new Splide('.video', {
+            perPage: isMediumDevice ? 1 : 2,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            pagination: isMediumDevice ? true : false,
+        });
+
+        video.on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[110%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

@@ -350,93 +350,91 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
-            let s1ActiveIndex = 0;
+        const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
+        let s1ActiveIndex = 0;
 
-            acad_tutor_items.forEach((item, it) => {
-                item.addEventListener('click', () => {
-                    if (it != s1ActiveIndex) {
-                        acad_tutor_items[s1ActiveIndex].classList.add(
-                            'acad-program-acad-tutor-inactive');
-                        acad_tutor_items[s1ActiveIndex].classList.remove(
-                            'acad-program-acad-tutor-active');
-                        acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
-                        acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
-                        if (it % 2 == 0) {
-                            acad_tutor_items[it].querySelector('span').classList.add(
-                                'bg-newprimary');
-                        } else {
-                            acad_tutor_items[it].querySelector('span').classList.add('bg-black');
-                        }
-                        acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
-                        s1ActiveIndex = it;
+        acad_tutor_items.forEach((item, it) => {
+            item.addEventListener('click', () => {
+                if (it != s1ActiveIndex) {
+                    acad_tutor_items[s1ActiveIndex].classList.add(
+                        'acad-program-acad-tutor-inactive');
+                    acad_tutor_items[s1ActiveIndex].classList.remove(
+                        'acad-program-acad-tutor-active');
+                    acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
+                    acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
+                    if (it % 2 == 0) {
+                        acad_tutor_items[it].querySelector('span').classList.add(
+                            'bg-newprimary');
+                    } else {
+                        acad_tutor_items[it].querySelector('span').classList.add('bg-black');
+                    }
+                    acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
+                    s1ActiveIndex = it;
+                }
+            })
+        });
+
+        // animation
+        const benefit_element = document.getElementById("banner");
+        const animation_circle_persentage = document.querySelectorAll(".animation_circle_persentage");
+        const persentages = [97, 98, 100];
+        const animation_times = [1970, 1980, 2000];
+        const position = benefit_element.offsetTop;
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset >= position) {
+                animation_circle_persentage.forEach((element, it) => {
+                    persentage = animation_circle_persentage[it].textContent.trim();
+                    if (persentage == '0%') {
+                        persentage_animation(animation_circle_persentage[it], persentages[it],
+                            animation_times[it]);
                     }
                 })
-            });
-
-            // animation
-            const benefit_element = document.getElementById("banner");
-            const animation_circle_persentage = document.querySelectorAll(".animation_circle_persentage");
-            const persentages = [97, 98, 100];
-            const animation_times = [1970, 1980, 2000];
-            const position = benefit_element.offsetTop;
-
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset >= position) {
-                    animation_circle_persentage.forEach((element, it) => {
-                        persentage = animation_circle_persentage[it].textContent.trim();
-                        if (persentage == '0%') {
-                            persentage_animation(animation_circle_persentage[it], persentages[it],
-                                animation_times[it]);
-                        }
-                    })
-                }
-            });
-
-            function persentage_animation(persentage_element, persentage, animation_time) {
-                let percent = 0;
-                let intervalID = setInterval(() => {
-                    percent++;
-                    persentage_element.textContent = `${percent}%`;
-                    if (percent >= persentage) {
-                        clearInterval(intervalID);
-                    }
-                }, animation_time / persentage);
             }
-
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-            var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
-            var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
-            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
-
-            var splides = document.getElementsByClassName('splide');
-
-            new Splide(splides[0], {
-                type: 'slide',
-                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                    3 : 4,
-                perMove: 1,
-                focus: 0,
-                width: "100%",
-                arrows: isSmallDevice ? false : true,
-                pagination: isSmallDevice ? true : false,
-                autoplay: true,
-                lazyload: true,
-                interval: 5000,
-            }).on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[100%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.width = '7px';
-                    item.button.style.height = '7px';
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
         });
+
+        function persentage_animation(persentage_element, persentage, animation_time) {
+            let percent = 0;
+            let intervalID = setInterval(() => {
+                percent++;
+                persentage_element.textContent = `${percent}%`;
+                if (percent >= persentage) {
+                    clearInterval(intervalID);
+                }
+            }, animation_time / persentage);
+        }
+
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+
+        var splides = document.getElementsByClassName('splide');
+
+        new Splide(splides[0], {
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
+            perMove: 1,
+            focus: 0,
+            width: "100%",
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
+            autoplay: true,
+            lazyload: true,
+            interval: 5000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[100%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

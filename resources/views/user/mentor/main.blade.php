@@ -40,20 +40,20 @@
     </section>
 
     <!-- <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
-            <div class="main-container md:w-4/6 w-full">
-                <div class="flex flex-col items-start">
-                    <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
-                        {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                    <div class="mb-6 w-full font-newprimary font-medium text-white text-center md:mb-12">
-                        {!! __('pages/about_us/mentor.benner_body') !!}
-                    </div>
-                    <div class="w-full flex justify-center">
-                        <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
-                            bg-color="newprimary" />
+                <div class="main-container md:w-4/6 w-full">
+                    <div class="flex flex-col items-start">
+                        <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
+                            {{ __('pages/about_us/mentor.banner_title') }}</h1>
+                        <div class="mb-6 w-full font-newprimary font-medium text-white text-center md:mb-12">
+                            {!! __('pages/about_us/mentor.benner_body') !!}
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
+                                bg-color="newprimary" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section> -->
+            </section> -->
 
     {{-- Mentor List Section --}}
     <section id="mentor" class="py-20 mt-[0rem] bg-dark">
@@ -134,58 +134,56 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-            var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
-            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-            var splide = new Splide('.mentor-1', {
-                perPage: isSmallDevice ? 1 : isMediumDevice ? 3 : isVeryLargeDevice ? 4 : 4,
-                perMove: 1,
-                lazyload: true,
-                autoplay: false,
-                type: 'loop',
-                arrows: isSmallDevice ? false : true,
-                pagination: isSmallDevice ? true : false,
-            });
-
-            splide.on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[110%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.width = '7px';
-                    item.button.style.height = '7px';
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
-
-            var splide = new Splide('.mentor-2', {
-                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isVeryLargeDevice ? 3 : 4,
-                perMove: 1,
-                lazyload: true,
-                autoplay: false,
-                type: 'loop',
-                arrows: isSmallDevice ? false : true,
-                pagination: isSmallDevice ? true : false,
-            });
-
-            splide.on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[110%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.width = '7px';
-                    item.button.style.height = '7px';
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
+        var splide = new Splide('.mentor-1', {
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            perMove: 1,
+            lazyload: true,
+            autoplay: false,
+            type: 'loop',
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
         });
+
+        splide.on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[110%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
+
+        var splide = new Splide('.mentor-2', {
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isVeryLargeDevice ? 3 : 4,
+            perMove: 1,
+            lazyload: true,
+            autoplay: false,
+            type: 'loop',
+            arrows: isSmallDevice ? false : true,
+            pagination: isSmallDevice ? true : false,
+        });
+
+        splide.on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[110%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

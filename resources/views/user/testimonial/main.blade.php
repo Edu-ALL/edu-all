@@ -152,33 +152,31 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var isLargeDevice = window.matchMedia("(min-width: 1024px)").matches
+        var isLargeDevice = window.matchMedia("(min-width: 1024px)").matches
 
-            var splides = document.querySelectorAll('.splide');
+        var splides = document.querySelectorAll('.splide');
 
-            for (var i = 0; i < splides.length; i++) {
-                new Splide(splides[i], {
-                    type: 'slide',
-                    perPage: isLargeDevice ? 2 : 1,
-                    arrows: isLargeDevice,
-                    focus: 0,
-                    pagination: !isLargeDevice,
-                    autoplay: true,
-                    lazyload: true,
-                    interval: 5000,
-                }).on('pagination:mounted', function(data) {
-                    // You can add your class to the UL element
-                    data.list.classList.add('splide__pagination--custom');
-                    data.list.classList.add('top-[105%]');
+        for (var i = 0; i < splides.length; i++) {
+            new Splide(splides[i], {
+                type: 'slide',
+                perPage: isLargeDevice ? 2 : 1,
+                arrows: isLargeDevice,
+                focus: 0,
+                pagination: !isLargeDevice,
+                autoplay: true,
+                lazyload: true,
+                interval: 5000,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[105%]');
 
-                    // `items` contains all dot items
-                    data.items.forEach(function(item) {
-                        item.button.style.margin = '0 6px'
-                        item.button.style.backgroundColor = '#0367BF';
-                    });
-                }).mount();
-            }
-        });
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#0367BF';
+                });
+            }).mount();
+        }
     </script>
 @endpush

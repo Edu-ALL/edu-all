@@ -26,12 +26,12 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <!-- <section class="py-16 h-[100vh] bg-our-contribution-banner bg-cover bg-top" id="banner">
-            <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
-                <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
-                    {{ __('pages/about_us/our_contribution.title') }}
-                </h2>
-            </div>
-        </section> -->
+                <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
+                    <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
+                        {{ __('pages/about_us/our_contribution.title') }}
+                    </h2>
+                </div>
+            </section> -->
 
     <section class="py-16 h-screen bg-our-contribution-banner bg-cover bg-top" id="banner">
         <x-registration-form />
@@ -154,35 +154,33 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-            var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
-            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-            var splide = new Splide('.splide', {
-                perPage: isSmallDevice ? 1 : 3,
-                perMove: 1,
-                lazyload: true,
-                autoplay: false,
-                gap: isSmallDevice ? 20 : 0,
-                width: "100%",
-                padding: 0,
-                arrows: false,
-            });
-
-            splide.on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.width = '7px';
-                    item.button.style.height = '7px';
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
+        var splide = new Splide('.splide', {
+            perPage: isSmallDevice ? 1 : 3,
+            perMove: 1,
+            lazyload: true,
+            autoplay: false,
+            gap: isSmallDevice ? 20 : 0,
+            width: "100%",
+            padding: 0,
+            arrows: false,
         });
+
+        splide.on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[105%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

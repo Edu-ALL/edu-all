@@ -437,54 +437,51 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const learn = document.querySelectorAll('#entre-learn-title');
-            const learn_desc = document.querySelectorAll('#entre-learn-desc');
-            const learn_arrow = document.querySelectorAll('#entre-learn-arrow');
+        const learn = document.querySelectorAll('#entre-learn-title');
+        const learn_desc = document.querySelectorAll('#entre-learn-desc');
+        const learn_arrow = document.querySelectorAll('#entre-learn-arrow');
 
-            let entre_pos = 0;
+        let entre_pos = 0;
 
-            learn.forEach((element, it) => {
-                element.addEventListener('click', () => {
+        learn.forEach((element, it) => {
+            element.addEventListener('click', () => {
 
-                    learn_desc[entre_pos].classList.add('hidden')
-                    learn_arrow[entre_pos].classList.remove('rotate-180')
+                learn_desc[entre_pos].classList.add('hidden')
+                learn_arrow[entre_pos].classList.remove('rotate-180')
 
-                    learn_desc[it].classList.remove('hidden')
-                    learn_arrow[it].classList.add('rotate-180')
+                learn_desc[it].classList.remove('hidden')
+                learn_arrow[it].classList.add('rotate-180')
 
-                    entre_pos = it;
-                })
-            });
-
-            // testimony
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-            var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
-            var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
-            var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
-
-            var splides = document.getElementsByClassName('splide');
-            new Splide(splides[0], {
-                type: 'slide',
-                perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                    3 : 4,
-                perMove: 1,
-                arrows: isMediumDevice ? false : true,
-                autoplay: true,
-                lazyload: true,
-                interval: 4000,
-            }).on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
-
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
-
+                entre_pos = it;
+            })
         });
+
+        // testimony
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
+
+        var splides = document.getElementsByClassName('splide');
+        new Splide(splides[0], {
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
+                3 : 4,
+            perMove: 1,
+            arrows: isMediumDevice ? false : true,
+            autoplay: true,
+            lazyload: true,
+            interval: 4000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[105%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

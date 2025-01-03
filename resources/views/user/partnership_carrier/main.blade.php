@@ -26,22 +26,22 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <!-- <section class="-z-10">
-            <div class="relative flex w-full h-screen left-0 overflow-hidden">
-                <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                    <div class="flex items-center h-full justify-center">
-                        <div class="flex-row w-3/5">
-                            <h1
-                                class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
-                                {{ __('pages/about_us/partnership_careers.title') }}
-                            </h1>
+                <div class="relative flex w-full h-screen left-0 overflow-hidden">
+                    <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
+                        <div class="flex items-center h-full justify-center">
+                            <div class="flex-row w-3/5">
+                                <h1
+                                    class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                                    {{ __('pages/about_us/partnership_careers.title') }}
+                                </h1>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
-                    class="lazy w-full h-full object-cover object-center">
-            </div>
-        </section> -->
+                    <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
+                        class="lazy w-full h-full object-cover object-center">
+                </div>
+            </section> -->
 
     <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
         <x-registration-form />
@@ -162,30 +162,28 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
 
-            var splides = document.getElementsByClassName('splide');
+        var splides = document.getElementsByClassName('splide');
 
-            new Splide(splides[0], {
-                type: 'loop',
-                perPage: 1,
-                perMove: 1,
-                arrows: !isSmallDevice,
-                autoplay: true,
-                lazyload: true,
-                interval: 3000,
-            }).on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
+        new Splide(splides[0], {
+            type: 'loop',
+            perPage: 1,
+            perMove: 1,
+            arrows: !isSmallDevice,
+            autoplay: true,
+            lazyload: true,
+            interval: 3000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[105%]');
 
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
-        });
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

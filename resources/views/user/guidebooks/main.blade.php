@@ -226,40 +226,16 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-            var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
-            var isVeryLargeDevice = window.matchMedia("(min-width: 1280px)").matches
+        var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isVeryLargeDevice = window.matchMedia("(min-width: 1280px)").matches
 
-            var splides = document.getElementsByClassName('splide');
+        var splides = document.getElementsByClassName('splide');
 
-            for (var i = 0; i < splides.length - 1; i++) {
-                new Splide(splides[i], {
-                    type: 'slide',
-                    perPage: isVeryLargeDevice ? 4 : isSmallDevice ? 1 : isMediumDevice ? 2 : 3,
-                    focus: 0,
-                    arrows: false,
-                    autoplay: true,
-                    lazyload: true,
-                    interval: 5000,
-                }).on('pagination:mounted', function(data) {
-                    // You can add your class to the UL element
-                    data.list.classList.add('splide__pagination--custom');
-                    data.list.classList.add('top-[100%]');
-
-                    // `items` contains all dot items
-                    data.items.forEach(function(item) {
-                        item.button.style.width = '7px';
-                        item.button.style.height = '7px';
-                        item.button.style.margin = '0 6px'
-                        item.button.style.backgroundColor = '#0367BF';
-                    });
-                }).mount();
-            }
-
-
-            new Splide(splides[4], {
-                perPage: isSmallDevice ? 3 : 5,
+        for (var i = 0; i < splides.length - 1; i++) {
+            new Splide(splides[i], {
+                type: 'slide',
+                perPage: isVeryLargeDevice ? 4 : isSmallDevice ? 1 : isMediumDevice ? 2 : 3,
                 focus: 0,
                 arrows: false,
                 autoplay: true,
@@ -268,7 +244,7 @@
             }).on('pagination:mounted', function(data) {
                 // You can add your class to the UL element
                 data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[110%]');
+                data.list.classList.add('top-[100%]');
 
                 // `items` contains all dot items
                 data.items.forEach(function(item) {
@@ -278,6 +254,28 @@
                     item.button.style.backgroundColor = '#0367BF';
                 });
             }).mount();
-        });
+        }
+
+
+        new Splide(splides[4], {
+            perPage: isSmallDevice ? 3 : 5,
+            focus: 0,
+            arrows: false,
+            autoplay: true,
+            lazyload: true,
+            interval: 5000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[110%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

@@ -170,27 +170,25 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var splides = document.getElementsByClassName('splide');
+        var splides = document.getElementsByClassName('splide');
 
-            new Splide(splides[0], {
-                perPage: isSmallDevice ? 1 : 3,
-                perMove: 1,
-                arrows: false,
-                autoplay: true,
-                lazyload: true,
-                interval: 3000,
-            }).on('pagination:mounted', function(data) {
-                // You can add your class to the UL element
-                data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
+        new Splide(splides[0], {
+            perPage: isSmallDevice ? 1 : 3,
+            perMove: 1,
+            arrows: false,
+            autoplay: true,
+            lazyload: true,
+            interval: 3000,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[105%]');
 
-                // `items` contains all dot items
-                data.items.forEach(function(item) {
-                    item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
-                });
-            }).mount();
-        });
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#0367BF';
+            });
+        }).mount();
     </script>
 @endpush

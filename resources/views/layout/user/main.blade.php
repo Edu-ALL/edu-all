@@ -113,7 +113,7 @@
     {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}
 
     {{-- Splide JS - JS --}}
-    <script async src="{{ url('/js/splide.min.js') }}"></script>
+    <script src="{{ url('/js/splide.min.js') }}"></script>
     {{-- JQuery --}}
     <script src="{{ url('/js/jquery.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
@@ -214,11 +214,9 @@
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        $("img").lazyload({
-            effect: "fadeIn",
-            placeholder: "{{ asset('assets/img/loader.gif') }}",
-        });
+    $("img").lazyload({
+        effect: "fadeIn",
+        placeholder: "{{ asset('assets/img/loader.gif') }}",
     });
 </script>
 
