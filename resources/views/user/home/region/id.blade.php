@@ -33,7 +33,7 @@
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
                 <p
-                    class="font-bold text-base md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                    class="font-bold text-[16px] md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </p>
                 <x-registration-form :is-button="true" />
@@ -113,7 +113,7 @@
                                 <div class="splide__slide__container py-8 h-full w-full">
                                     <div
                                         class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
-                                        <h3 class="font-bold uppercase text-base md:text-xl text-center">
+                                        <h3 class="font-bold uppercase text-[16px] md:text-xl text-center">
                                             {!! $item['title'] !!}
                                         </h3>
                                         <div class="rounded-xl h-32 w-full overflow-hidden my-4">
