@@ -33,7 +33,7 @@
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
                 <p
-                    class="font-bold text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                    class="font-bold text-lg md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </p>
                 <x-registration-form :is-button="true" />
