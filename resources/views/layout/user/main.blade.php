@@ -108,14 +108,6 @@
 
     {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
-    <link rel="preload" href="{{ url('font/ambit/Ambit-Black.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ url('font/ambit/Ambit-Bold.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ url('font/ambit/Ambit-SemiBold.woff2') }}" as="font" type="font/woff2"
-        crossorigin>
-    <link rel="preload" href="{{ url('font/ambit/Ambit-Regular.woff2') }}" as="font" type="font/woff2"
-        crossorigin>
-    <link rel="preload" href="{{ url('font/ambit/Ambit-Light.woff2') }}" as="font" type="font/woff2" crossorigin>
-    
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="/css/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
     {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}

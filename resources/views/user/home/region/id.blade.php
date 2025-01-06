@@ -33,7 +33,7 @@
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
                 <p
-                    class="font-bold md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                    class="font-bold text-[16px] md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </p>
                 <x-registration-form :is-button="true" />
@@ -422,9 +422,10 @@
     @endif
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section
-        class="py-8 bg-dark bg-[url('../../../../../public/assets/img/home/cta_image.png')] bg-right bg-contain bg-no-repeat mt-1">
-        <div class="new-main-container">
+    <section class="py-8 bg-dark mt-1 relative overflow-hidden">
+        <img src="{{ url('assets/img/home/cta_image.webp') }}" alt="EduALL"
+            class="absolute bottom-0 right-0 w-[100vh] z-1" loading="lazy">
+        <div class="new-main-container relative z-2">
             <div class="flex flex-col items-start w-full">
                 <h2 class="mb-6 font-semibold text-newyellow text-start text-lg md:text-2xl md:max-w-xs">
                     {{ __('pages/home.bottom') }}
