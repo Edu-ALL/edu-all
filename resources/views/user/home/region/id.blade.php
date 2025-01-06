@@ -25,13 +25,15 @@
                     Your browser does not support the video tag.
                 </video>
             @elseif ($banners->image)
-                <img loading="lazy"
-                    src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
-                    alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover">
+                <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
+                    {{-- <img loading="lazy"
+                        src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
+                        alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0"> --}}
+                </div>
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
                 <h2
-                    class="font-bold text-xl md:text-[52px] font-newprimary text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                    class="font-bold text-xl md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
                 </h2>
                 <x-registration-form :is-button="true" />
