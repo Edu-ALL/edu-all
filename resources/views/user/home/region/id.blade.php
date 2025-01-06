@@ -160,7 +160,7 @@
         <div class="new-main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="col-span-6 md:col-span-4 flex flex-col justify-end">
-                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
+                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.webp') }}" alt="EduAll white logo"
                         class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
                     <h2 class="mt-4 font-bold text-3xl md:text-5xl text-white">Pathway to Excellence</h2>
                 </div>
