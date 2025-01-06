@@ -118,7 +118,7 @@ body {
 
 /* Font Size  */
 .text-banner-title {
-    @apply md:text-6xl text-3xl font-newprimary;
+    @apply md:text-6xl text-[16px] font-newprimary;
 }
 
 .text-banner-subtitle {
