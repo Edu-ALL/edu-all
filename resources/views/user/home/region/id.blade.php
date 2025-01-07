@@ -322,7 +322,7 @@
                                 <div class="splide w-full" role="group">
                                     <div class="splide__track">
                                         <ul class="splide__list">
-                                            @if (count($events) > 0)
+                                            @if (count($regular_talks) > 0)
                                                 @foreach ($regular_talks as $regular_talk)
                                                     <li class="splide__slide">
                                                         <div class="splide__slide__container">
