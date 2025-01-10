@@ -22,12 +22,12 @@ return [
             'sign_me_text' => "book your FREE CONSULTATION now"
         ],
         [
-            'title' => 'ACADEMIC <br/> TUTORING',
+            'title' => 'ACADEMIC & TEST <br/> PREPARATION',
             'body' => 'Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores.',
             'points' => [
                 'Academic Tutoring',
-                'SAT / ACT Prep Class',
-                'TOEFL / IELTS Prep Class',
+                'Standardized Test Program',
+                'Skillset Enrichment Program',
             ],
             'route' => 'academic_test_preparation',
             'img' => 'Academic &-Test Preparation.webp',
