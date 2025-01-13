@@ -4,7 +4,7 @@ return [
     'meta_title' => 'Skillset Tutoring - EduALL Programs',
     'meta_description' => 'Skillset Tutoring: Transform your passion into an outstanding achievement and become a pro in a field that matters most to you.',
 
-    'title' => 'Skillset Tutoring',
+    'title' => 'Skillset Enrichment Program',
     'body' => 'Transform your passion into an outstanding achievement and become a pro in a field that matters most to you.',
     'header_button' => 'Register Here',
 

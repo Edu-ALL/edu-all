@@ -140,7 +140,7 @@
         gtag('config', 'G-5HHPRQCSSE');
     </script>
 
-    @if (Route::currentRouteName() == 'sign_me_adm_mentoring')
+    {{-- @if (Route::currentRouteName() == 'sign_me_adm_mentoring')
         <!-- Meta Pixel Code -->
         <script>
             ! function(f, b, e, v, n, t, s) {
@@ -194,7 +194,7 @@
         <noscript><img height="1" width="1" style="display:none"
                 src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
         <!-- End Meta Pixel Code -->
-    @endif
+    @endif --}}
 </head>
 
 <body id="body">

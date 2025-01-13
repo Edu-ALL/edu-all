@@ -222,6 +222,19 @@
         </div>
     </section>
 
+    <section class="py-8 bg-bottom-sign-up-banner-2 bg-center bg-cover">
+        <div class="new-main-container flex flex-col items-center">
+            <h2 class="font-newprimary font-semibold text-2xl text-white text-center md:text-4xl uppercase">
+                {{ __('pages/programs/academic_tutoring.free_trial_title') }}
+            </h2>
+            <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
+                {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
+            </p>
+            <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}"/>
+        </div>
+    </section>
+
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="pt-14">
         <div class="flex new-main-container w-full flex-col">

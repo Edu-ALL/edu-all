@@ -1,6 +1,6 @@
 
-<div class="font-secondary h-full program_card hover:rotate-program_card">
-    <div class="mentor-thumbnail w-full max-h-[340px] md:max-h-full overflow-hidden rounded-3xl bg-[#D9D9D9] relative z-10 h-full front">
+<div class="font-secondary program_card hover:rotate-program_card">
+    <div class="mentor-thumbnail w-full max-h-[225px] md:max-h-[340px] overflow-hidden rounded-2xl bg-[#D9D9D9] relative z-10 h-full front">
         {{-- <span class="font-secondary absolute top-10 right-0 left-0 w-full h-full text-center text-2xl text-[#6D6D6D] font-semibold"> 
             {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
         </span> --}}
@@ -8,7 +8,7 @@
             src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
             alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
     </div>
-    <div class="previous-mentor-item w-full max-h-[340px] md:max-h-full absolute inset-0 h-full z-0 rounded-3xl overflow-hidden back face_back">
+    <div class="previous-mentor-item w-full max-h-[225px] md:max-h-[340px] absolute inset-0 h-full z-0 rounded-2xl overflow-hidden back face_back">
         <div class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-start px-4 pt-6 pb-2">
             <div class="flex flex-col items-center">
 
@@ -19,7 +19,7 @@
                     {!! $mentor->mentor_graduation !!}
                 </span>
             </div>
-            <div class="h-full flex flex-col justify-center flex-1">
+            <div class="md:flex md:h-full hidden flex-col justify-center flex-1">
                 <ul class="flex flex-col gap-2">
                     @if (!$mentor->value_1)
                         @foreach ($mentor->mentor_value as $item)
@@ -79,7 +79,7 @@
         </div>
     </div>
 </div>
-<!-- <div class="flex flex-col justify-between rounded-3xl shadow-md relative h-full bg-white">
+<!-- <div class="flex flex-col justify-between rounded-2xl shadow-md relative h-full bg-white">
     {{-- Mentor Image --}}
     <div class="flex flex-col @if ($disabled_btn) pb-8 @endif">
         <div class="-mt-52 relative">

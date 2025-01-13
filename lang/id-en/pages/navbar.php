@@ -8,7 +8,7 @@ return [
 
     // programs
     'programs' => [
-        'link' => 'programs',
+        'link' => '#',
         'title' => 'Programs',
         'submenu' => [
             [

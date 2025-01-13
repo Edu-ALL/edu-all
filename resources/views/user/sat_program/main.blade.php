@@ -379,52 +379,52 @@
             })
         });
 
-        const slide_button_left = document.querySelector('.slide-button-left');
-        const slide_button_right = document.querySelector('.slide-button-right');
-        const private_class = document.querySelector('.private-class');
-        const semi_private_class = document.querySelector('.semi-private-class');
-        const slide_background = document.querySelector('.slide-background');
+        // const slide_button_left = document.querySelector('.slide-button-left');
+        // const slide_button_right = document.querySelector('.slide-button-right');
+        // const private_class = document.querySelector('.private-class');
+        // const semi_private_class = document.querySelector('.semi-private-class');
+        // const slide_background = document.querySelector('.slide-background');
 
-        if (!isMediumDevice && slide_button_left) {
-            slide_button_left.addEventListener('click', () => {
-                private_class.classList.remove('opacity-100');
-                private_class.classList.add('opacity-0');
-                private_class.classList.add('translate-x-2/3');
-                private_class.classList.remove('visible');
-                private_class.classList.add('invisible');
-                private_class.classList.remove('duration-1000')
-                private_class.classList.add('duration-700')
-                semi_private_class.classList.add('opacity-100');
-                semi_private_class.classList.remove('opacity-0');
-                semi_private_class.classList.remove('-translate-x-2/3');
-                semi_private_class.classList.add('visible');
-                semi_private_class.classList.remove('invisible');
-                semi_private_class.classList.add('duration-1000')
-                semi_private_class.classList.remove('duration-700')
-                slide_background.classList.remove('-translate-x-[68%]');
-                slide_background.classList.add('translate-x-[14%]');
-            });
+        // if (!isMediumDevice) {
+        //     slide_button_left.addEventListener('click', () => {
+        //         private_class.classList.remove('opacity-100');
+        //         private_class.classList.add('opacity-0');
+        //         private_class.classList.add('translate-x-2/3');
+        //         private_class.classList.remove('visible');
+        //         private_class.classList.add('invisible');
+        //         private_class.classList.remove('duration-1000')
+        //         private_class.classList.add('duration-700')
+        //         semi_private_class.classList.add('opacity-100');
+        //         semi_private_class.classList.remove('opacity-0');
+        //         semi_private_class.classList.remove('-translate-x-2/3');
+        //         semi_private_class.classList.add('visible');
+        //         semi_private_class.classList.remove('invisible');
+        //         semi_private_class.classList.add('duration-1000')
+        //         semi_private_class.classList.remove('duration-700')
+        //         slide_background.classList.remove('-translate-x-[68%]');
+        //         slide_background.classList.add('translate-x-[14%]');
+        //     });
 
-            slide_button_right.addEventListener('click', () => {
-                private_class.classList.add('opacity-100');
-                private_class.classList.remove('opacity-0');
-                private_class.classList.add('visible');
-                private_class.classList.remove('translate-x-2/3');
-                private_class.classList.add('duration-1000')
-                private_class.classList.remove('invisible');
-                private_class.classList.remove('duration-700')
+        //     slide_button_right.addEventListener('click', () => {
+        //         private_class.classList.add('opacity-100');
+        //         private_class.classList.remove('opacity-0');
+        //         private_class.classList.add('visible');
+        //         private_class.classList.remove('translate-x-2/3');
+        //         private_class.classList.add('duration-1000')
+        //         private_class.classList.remove('invisible');
+        //         private_class.classList.remove('duration-700')
 
-                semi_private_class.classList.remove('opacity-100');
-                semi_private_class.classList.add('opacity-0');
-                semi_private_class.classList.add('-translate-x-2/3');
-                semi_private_class.classList.remove('visible');
-                semi_private_class.classList.add('invisible');
-                semi_private_class.classList.remove('duration-1000')
-                semi_private_class.classList.add('duration-700')
-                slide_background.classList.remove('translate-x-[14%]');
-                slide_background.classList.add('-translate-x-[68%]');
-            });
-        }
+        //         semi_private_class.classList.remove('opacity-100');
+        //         semi_private_class.classList.add('opacity-0');
+        //         semi_private_class.classList.add('-translate-x-2/3');
+        //         semi_private_class.classList.remove('visible');
+        //         semi_private_class.classList.add('invisible');
+        //         semi_private_class.classList.remove('duration-1000')
+        //         semi_private_class.classList.add('duration-700')
+        //         slide_background.classList.remove('translate-x-[14%]');
+        //         slide_background.classList.add('-translate-x-[68%]');
+        //     });
+        // }
 
 
         var splides = document.getElementsByClassName('splide');

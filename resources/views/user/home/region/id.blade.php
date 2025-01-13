@@ -105,7 +105,7 @@
     <section class="pt-16">
         <div class="new-main-container">
             <h2 class="font-bold text-section-title uppercase text-center">Our Programs</h2>
-            <div class="splide pt-12 max-w-5xl mx-auto" role="group">
+            <div class="splide splides pt-12 max-w-5xl mx-auto" role="group">
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black px-8">
                         @foreach (__('pages/programs/programs.program_list') as $item)
@@ -201,78 +201,86 @@
     </section>
 
     {{-- ========================================== Mentors ========================================== --}}
-    <section class="md:py-16 py-10 bg-dark" id="mentors">
-        <div class="new-main-container py-8 hidden md:block">
+    <section class="pt-16 pb-4 bg-dark" id="mentors">
+        <!-- <div class="new-main-container py-8 hidden md:block">
             <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
-        </div>
-        <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
-            <h1 class="font-bold text-section-title text-white text-left md:text-center">Let’s meet Our Mentors</h1>
-            <a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See
-                All</a>
+        </div> -->
+
+        <div class="new-main-container">
+            <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
+                <h1 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h1>
+                <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+            </div>
         </div>
         <div class="flex flex-col items-center">
-            <div class="w-full md:px-10 max-w-screen-2xl mx-auto">
+            <div class="w-full md:px-8 max-w-screen-2xl mx-auto">
                 <div class="new-main-container">
-                    <div class="splide" role="group">
-                        <div class="splide__arrows text-white">
-                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
-                                <i class="fa-solid fa-chevron-left text-4xl"></i>
-                            </button>
-                            <button class="splide__arrow splide__arrow--next"
-                                style="background: transparent; right: -24px">
-                                <i class="fa-solid fa-chevron-right text-4xl"></i>
-                            </button>
-                        </div>
-                        <div class="splide__track py-12">
-                            <ul class="splide__list">
-                                @foreach ($all_mentor as $mentor)
-                                    <li class="splide__slide w-full">
-                                        <div
-                                            class="splide__slide__container relative mx-3 md:mx-2 font-secondary h-full program_card hover:rotate-program_card ">
-                                            <x-mentor-card :mentor=$mentor />
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
+                    <div class="md:px-8">
+                        <div class="splide splides" role="group">
+                            <div class="splide__arrows text-white">
+                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                    <i class="fa-solid fa-chevron-left text-4xl"></i>
+                                </button>
+                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                    <i class="fa-solid fa-chevron-right text-4xl"></i>
+                                </button>
+                            </div>
+                            <div class="splide__track py-4 md:pb-12">
+                                <ul class="splide__list">
+                                    @foreach ($all_mentor as $mentor)
+                                        <li class="splide__slide w-full">
+                                            <div
+                                                class="splide__slide__container relative mx-1.5 md:mx-2 font-secondary program_card hover:rotate-program_card">
+                                                <x-mentor-card :mentor=$mentor />
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:flex justify-center">
+                <!-- <div class="hidden md:flex justify-center">
                     <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
                         bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
                         hover-padding-x="20" text-color="white" font="medium" text-size="lg"
                         transition="all duration-150" />
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
     {{-- ========================================== Success Stories ========================================== --}}
-    <section class="md:py-16 py-10 bg-dark">
-        <div class="main-container flex flex-col items-center">
-            <div class="new-main-container py-8 hidden md:block">
+    <section class="pt-4 pb-16 bg-dark">
+        <div class="new-main-container flex flex-col items-center">
+            <!-- <div class="new-main-container py-8 hidden md:block">
                 <h1 class="font-bold text-section-title text-white text-center">OUR MENTEES’ STORIES & PROJECTS</h1>
-            </div>
-            <div class="new-main-container pt-8 pb-2 flex justify-start items-center md:hidden gap-4">
-                <h1 class="font-bold text-section-title text-white text-left md:text-center">OUR MENTEES’ STORIES</h1>
-                <a href="{{ route('success_stories', app()->getLocale()) }}"
-                    class="text-newyellow text-md whitespace-nowrap">See All</a>
+            </div> -->
+            <!-- <div class="new-main-container pt-8 pb-2 flex justify-between items-center md:hidden gap-4 w-full">
+                <h1 class="font-bold text-section-title text-white text-left md:text-center">OUR MENTEES’ <br/> STORIES</h1>
+                <a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
+            </div> -->
+            <div class=" w-full">
+                <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
+                    <h1 class="font-bold text-section-title text-white text-left w-full">OUR MENTEES’ STORIES</h1>
+                    <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+                </div>
             </div>
 
-            <div class="md:hidden splide pt-12 max-w-5xl mx-auto" role="group">
+            <div class="splide splides pt-4 max-w-screen-2xl mx-auto md:px-16" role="group">
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black px-8">
                         @foreach ($success_stories as $item)
-                            <li class="splide__slide w-full pb-8 px-3">
-                                <div class="splide__slide__container py-8 h-full w-full">
+                            <li class="splide__slide w-full pb-8 px-1.5 md:px-2">
+                                <div class="splide__slide__container pb-8 h-full w-full">
                                     <div
                                         class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                                         <img loading="lazy"
                                             data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
                                             alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
-                                        <div>
+                                        <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
                                             <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
-                                                class="absolute bottom-0 left-1/4 transform -translate-x-1/4 mb-6 text-newyellow bg-black font-medium text-sm py-1 mx-4 rounded-full w-3/4 text-center">
+                                                class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
                                                 Get to Know {{ explode(' ', trim($item->name))[0] }}
                                             </a>
                                         </div>
@@ -283,7 +291,7 @@
                     </ul>
                 </div>
             </div>
-
+<!-- 
             <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl py-12">
                 @foreach ($success_stories as $item)
                     <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
@@ -304,27 +312,37 @@
                     class="my-8" bg-color="newprimary" text-color="white" font-weight="medium" text-size="lg"
                     padding-y="2" padding-x="4" hover-bg-color="newprimary" hover-padding-x="20" transition="all"
                     duration="150" />
-            </div>
+            </div> -->
         </div>
     </section>
 
     {{-- ========================================== Upcomming Events ========================================== --}}
     @if (count($regular_talks) > 0 || count($events) > 0 || count($important_dates) > 0)
-        <section class="md:py-16 py-10">
+        <section class="md:py-16 py-10 bg-dark">
             <div class="new-main-container">
-                <h1 class="font-bold text-section-title text-dark uppercase text-center">Upcoming Events</h1>
+                <h1 class="font-bold text-section-title text-white uppercase text-center">Upcoming Events & Important Dates</h1>
                 <div class="grid grid-cols-1 gap-3 mt-12">
                     {{-- Upcomming Event --}}
-                    <div class="flex flex-col max-w-4xl mx-auto">
+                    <div class="flex flex-col max-w-4xl mx-auto w-full">
                         {{-- Talk Sessions --}}
                         @if (count($regular_talks) > 0 || count($events) > 0)
                             <div class="flex flex-col items-center justify-between">
-                                <div class="splide w-full" role="group">
+                                <div class="splide splides w-full" role="group">
+                                    @if (count($regular_talks) + count($events) > 2)
+                                        <div class="splide__arrows text-white">
+                                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                                <i class="fa-solid fa-chevron-left text-4xl"></i>
+                                            </button>
+                                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                                <i class="fa-solid fa-chevron-right text-4xl"></i>
+                                            </button>
+                                        </div>
+                                    @endif
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             @if (count($regular_talks) > 0)
                                                 @foreach ($regular_talks as $regular_talk)
-                                                    <li class="splide__slide">
+                                                    <li class="splide__slide px-1.5 md:px-4">
                                                         <div class="splide__slide__container">
                                                             <a href="{{ $regular_talk->event_rsvp_link }}"
                                                                 target="_blank">
@@ -340,8 +358,8 @@
 
                                             @if (count($events) > 0)
                                                 @foreach ($events as $event)
-                                                    <li class="splide__slide">
-                                                        <div class="splide__slide__container max-h-96">
+                                                    <li class="splide__slide px-1.5 md:px-4">
+                                                        <div class="splide__slide__container">
                                                             <img loading="lazy"
                                                                 src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                                 alt="{{ $event->event_alt }}"
@@ -353,66 +371,69 @@
                                         </ul>
                                     </div>
                                 </div>
-
-                                <div class="w-full">
-                                    <a href="{{ route('upcoming_events', app()->getLocale()) }}"
-                                        class="w-full block py-3 bg-newprimary text-center text-white text-base">more
-                                        events
-                                    </a>
-                                </div>
                             </div>
-                        @else
-                            <div class="flex flex-col w-full relative text-start">
-                                <h4 class="text-newyellow text-lg">Talk Sessions</h4>
-                                <p class="text-dark border-b border-b-white">Not Available</p>
-                            </div>
+                        @endif
+                        
+                        @if ((count($regular_talks) > 0 || count($events) > 0) && count($important_dates) > 0)
+                            <hr class="mt-8 bg-white w-full h-[0.0625rem]">
                         @endif
 
                         {{-- More Date --}}
                         @if (count($important_dates) > 0)
-                            <div class="flex flex-col items-center justify-between mt-2 font-newprimary">
-                                <div class=" h-max-[300px] flex flex-col w-full py-8">
-                                    <h4 class="text-dark text-lg">Important Dates</h4>
-                                    <ul class="mt-2 overflow-y-auto overflow-x-hidden">
-                                        @foreach ($important_dates as $important_date)
-                                            <li>
-                                                @if ($important_date->link)
-                                                    <a href="{{ $important_date->link }}" target="_blank"
-                                                        class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
-                                                        <h3 class="font-normal hover:text-blue-500 text-dark w-[75%]">
-                                                            {{ $important_date->title }} <i class="fas fa-link ml-1"></i>
-                                                        </h3>
-                                                        <span class="hover:text-blue-500 text-dark w-[25%] text-end">
-                                                            {{ date('M, d Y', strtotime($important_date->date)) }}
-                                                        </span>
-                                                    </a>
-                                                @else
-                                                    <div
-                                                        class="flex justify-between items-center border-b border-b-dark py-2 w-ful">
-                                                        <h3 class="font-normal text-dark w-[75%]">
-                                                            {{ $important_date->title }}
-                                                        </h3>
-                                                        <span class="text-dark w-[25%] text-end">
-                                                            {{ date('M, d Y', strtotime($important_date->date)) }}
-                                                        </span>
-                                                    </div>
-                                                @endif
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                            <div class="flex flex-col items-center justify-between font-newprimary">
+                                <div class="flex flex-col w-full py-6">
+                                    <div class="splide splide-important-dates w-full" role="group">
+                                        @if (count($important_dates) > 2)
+                                            <div class="splide__arrows text-white">
+                                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                                    <i class="fa-solid fa-chevron-left text-4xl"></i>
+                                                </button>
+                                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                                    <i class="fa-solid fa-chevron-right text-4xl"></i>
+                                                </button>
+                                            </div>
+                                        @endif
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                @foreach ($important_dates as $important_date)
+                                                    <li class="splide__slide px-1.5 md:px-4 py-4">
+                                                        <div class="splide__slide__container">
+                                                                @if($important_date->link) <a href="{{ $important_date->link }}" target="_blank"> @else <div> @endif
+                                                                    <div class="relative py-2 md:py-3 {{ $important_date->link ? 'hover:scale-105 transform duration-300' : '' }}">
+                                                                        <div class="absolute left-0 bottom-0 top-0 flex flex-col px-2 w-20 md:w-24 gap-1">
+                                                                            <div class="bg-newprimary w-full rounded-t-lg rounded-b-sm text-center text-white md:text-xs text-xs font-semibold py-1">
+                                                                                {{ date('F', strtotime($important_date->date)) }}
+                                                                            </div>
+                                                                            <div class="bg-newprimary h-full w-full rounded-b-lg rounded-t-sm text-center text-white font-bold text-3xl md:text-4xl py-1 flex items-center justify-center">
+                                                                                {{ date('d', strtotime($important_date->date)) }}
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="flex">
+                                                                            <div class="w-16"></div>  
+                                                                            <div class="rounded-xl bg-white py-4 pl-14 pr-8 w-full">
+                                                                                <h3 class="{{ strlen($important_date->title) > 20 ? 'md:text-base' : 'md:text-lg' }} text-sm font-bold text-dark text-ellipsis whitespace-nowrap h-4 md:h-6">
+                                                                                    {{ $important_date->title }}
+                                                                                </h3>
+                                                                            </div>  
+                                                                        </div>                                                      
+                                                                    </div>
+                                                                @if($important_date->link) </a> @else </div> @endif
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="w-full">
+                                <x-button href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                    title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark" padding-x="4" />
+                                <!-- <div class="w-full">
                                     <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
                                         target="_blank"
                                         class="inline-block py-3 bg-red text-center text-white text-base px-6">
                                         more important dates
                                     </a>
-                                </div>
-                            </div>
-                        @else
-                            <div class="flex flex-col w-full relative text-start mt-10">
-                                <h4 class="text-newyellow text-lg">Important Dates</h4>
-                                <p class="text-dark border-b border-b-white">Not Available</p>
+                                </div> -->
                             </div>
                         @endif
                     </div>
@@ -422,16 +443,21 @@
     @endif
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section class="py-8 bg-dark mt-1 relative overflow-hidden">
-        <img src="{{ url('assets/img/home/cta_image.webp') }}" alt="EduALL"
-            class="absolute bottom-0 right-0 w-[100vh] z-1" loading="lazy">
-        <div class="new-main-container relative z-2">
-            <div class="flex flex-col items-start w-full">
-                <h2 class="mb-6 font-semibold text-newyellow text-start text-lg md:text-2xl md:max-w-xs">
-                    {{ __('pages/home.bottom') }}
-                </h2>
-                <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                    title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+    <section
+        class="md:pt-8 md:pb-20 md:bg-dark">
+        <div class="md:new-main-container">
+            <div class="flex md:flex-row flex-col items-center bg-dark md:bg-white md:rounded-3xl overflow-hidden md:mx-14">
+                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 bg-white py-6 px-6 -mt-6 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
+                        {{ __('pages/home.bottom') }}
+                    </h2>
+                    <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                </div>
+                <div class="w-full md:w-1/2 md:order-2 order-1">
+                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                        class="w-full h-full object-cover">
+                </div>
             </div>
         </div>
     </section>
@@ -466,7 +492,7 @@
                 SAY</h2>
         </div>
         <div class="new-main-container mb-12 md:my-12">
-            <div class="splide" role="group">
+            <div class="splide splides" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
                         <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
@@ -499,10 +525,11 @@
         var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        var splides = document.getElementsByClassName('splide');
+        var splides = document.getElementsByClassName('splides');
 
         const regular_talk = "{{ count($regular_talks) }}"
         const event = "{{ count($events) }}"
+        const important_date = "{{ count($important_dates) }}"
 
 
         new Splide(splides[0], {
@@ -531,9 +558,8 @@
 
         new Splide(splides[1], {
             type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ?
-                4 : 4,
-            padding: isSmallDevice ? '10%' : '0',
+            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            padding: isSmallDevice ? '6%' : '0',
             perMove: 1,
             arrows: isSmallDevice ? false : true,
             lazyload: false,
@@ -557,8 +583,8 @@
 
         new Splide(splides[2], {
             type: 'slide',
-            perPage: 1,
-            padding: '10%',
+            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            padding: isSmallDevice ? '6%' : '0',
             perMove: 1,
             arrows: false,
             lazyload: false,
@@ -579,26 +605,28 @@
             });
         }).mount();
 
-
         if (event > 0 || regular_talk > 0) {
             new Splide(splides[3], {
                 type: 'slide',
-                perPage: 1,
+                perPage: isSmallDevice || (parseInt(event) + parseInt(regular_talk) == 1) ? 1 : 2,
+                padding: ((parseInt(event) + parseInt(regular_talk) == 1) && !isSmallDevice) ? '15%' : '0',
                 perMove: 1,
-                arrows: isMediumDevice ? false : true,
-                lazyload: true,
-                autoplay: false,
-                interval: 3000,
+                arrows: (!isSmallDevice && (parseInt(event) + parseInt(regular_talk) > 2)) ? true : false,
+                lazyload: false,
+                autoplay: true,
+                interval: 5000,
                 pagination: false,
             }).on('pagination:mounted', function(data) {
                 // You can add your class to the UL element
                 data.list.classList.add('splide__pagination--custom');
-                data.list.classList.add('top-[105%]');
+                data.list.classList.add('top-[90%]');
 
                 // `items` contains all dot items
                 data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
                     item.button.style.margin = '0 6px'
-                    item.button.style.backgroundColor = '#0367BF';
+                    item.button.style.backgroundColor = '#D9D9D9';
                 });
             }).mount();
         }
@@ -613,6 +641,29 @@
             lazyload: false,
             autoplay: true,
             interval: 4000,
+            pagination: false,
+        }).on('pagination:mounted', function(data) {
+            // You can add your class to the UL element
+            data.list.classList.add('splide__pagination--custom');
+            data.list.classList.add('top-[90%]');
+
+            // `items` contains all dot items
+            data.items.forEach(function(item) {
+                item.button.style.width = '7px';
+                item.button.style.height = '7px';
+                item.button.style.margin = '0 6px'
+                item.button.style.backgroundColor = '#D9D9D9';
+            });
+        }).mount();
+
+        new Splide(document.querySelector('.splide-important-dates'), {
+            type: 'slide',
+            perPage: isSmallDevice ? 1 : 2,
+            perMove: 1,
+            arrows: (!isSmallDevice && important_date > 2) ? true : false,
+            lazyload: false,
+            autoplay: true,
+            interval: 5000,
             pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
