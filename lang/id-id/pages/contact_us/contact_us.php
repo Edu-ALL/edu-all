@@ -18,5 +18,5 @@ Book your appointment now:',
     ],
     'email' => 'info@edu-all.com',
     'youtube' => 'EduALL',
-    'instagram' => '@allineduspace'
+    'instagram' => '@eduall.official'
 ];
