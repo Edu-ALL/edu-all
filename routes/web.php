@@ -53,7 +53,7 @@ Route::middleware(['remove_public'])->group(function () {
             });
 
             Route::controller(ProgramPageController::class)->group(function () {
-                Route::get('/programs', 'index')->name('programs');
+                // Route::get('/programs', 'index')->name('programs');
                 Route::get('/programs/admissions-mentoring', 'admissions_mentoring')->name('admissions_mentoring');
                 Route::get('/programs/admissions-mentoring/undergraduate-program', 'undergraduate_program')->name('undergraduate_program');
                 Route::get('/programs/admissions-mentoring/graduate-program', 'graduate_program')->name('graduate_program');
@@ -83,7 +83,7 @@ Route::middleware(['remove_public'])->group(function () {
 
             Route::controller(ResourcesPageController::class)->group(function () {
                 Route::get('/resources/success-stories', "success_stories")->name('success_stories');
-                Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
+                // Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
                 Route::get('/resources/guidebook', "guidebook")->name('guidebook');
                 Route::get('/resources/testimonial', "testimonial")->name('testimonial');
                 Route::get('/resources/mentee-project-showcase', function() {
