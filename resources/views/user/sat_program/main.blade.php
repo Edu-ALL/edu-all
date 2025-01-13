@@ -112,7 +112,7 @@
     </section>
 
     <section class="py-24">
-        <div class="flex main-container w-full flex-col">
+        <div class="flex new-main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
                 {{ __('pages/programs/sat_program.journey_title') }}</h2>
             <div class="flex flex-col md:flex-row w-full h-[120vh] md:h-[60vh] mt-12">
