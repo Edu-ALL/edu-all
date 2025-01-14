@@ -3,6 +3,9 @@
 @section('content')
     <section class="main-container">
         <div class="flex flex-col items-center justify-center max-w-4xl w-full  h-[60vh] mx-auto">
+            <div class="flex justify-center">
+                <img src="{{asset('assets/img/send.webp')}}" alt="Send" width="20%" class="mb-5">
+            </div>
             <h1 class="font-newprimary font-bold md:text-3xl text-xl text-newprimary text-center">
                 Thank you for letting us know a little bit about you, our sales team will contact you soon for the
                 further consultation
