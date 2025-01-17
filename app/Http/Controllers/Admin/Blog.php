@@ -139,7 +139,7 @@ class Blog extends Controller
                     $blog->blog_status = 'publish';
                     $blog->updated_at = date('Y-m-d H:i:s');
                     $blog->save();
-                    Log::info('blog id: '.$blog->blog_id.' already published');
+                    Log::info('blog id: '.$blog->id.' already published');
                     DB::commit();
                 } catch (Exception $e) {
                     Log::error($e);

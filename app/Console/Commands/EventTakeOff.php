@@ -30,7 +30,6 @@ class EventTakeOff extends Command
     public function handle()
     {
         (new Event)->checkTakeOff();
-        Log::info('event take of is running');
         return Command::SUCCESS;
     }
 }

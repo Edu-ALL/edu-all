@@ -30,7 +30,6 @@ class BlogPublish extends Command
     public function handle()
     {
         (new Blog)->checkPublish();
-        Log::info('blog publis is running');
         return Command::SUCCESS;
     }
 }

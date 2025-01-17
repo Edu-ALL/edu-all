@@ -30,7 +30,6 @@ class EventPublish extends Command
     public function handle()
     {
         (new Event)->checkPublish();
-        Log::info('event publish is running');
         return Command::SUCCESS;
     }
 }

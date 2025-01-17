@@ -104,10 +104,10 @@ class UpcomingEvent extends Controller
                     $event->event_status = 'publish';
                     $event->updated_at = date('Y-m-d');
                     $event->save();
-                    Log::info('check publish is running');
+                    Log::info('event id: '.$event->id.' already published');
                     DB::commit();
                 } catch (Exception $e) {
-                    Log::error('check publish not running');
+                    Log::error($e);
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }
@@ -124,10 +124,10 @@ class UpcomingEvent extends Controller
                     $event->event_status = 'draft';
                     $event->updated_at = date('Y-m-d');
                     $event->save();
-                    Log::info('check publish is running');
+                    Log::info('event id: '.$event->id.' already take off');
                     DB::commit();
                 } catch (Exception $e) {
-                    Log::error('check publish not running');
+                    Log::error($e);
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }
