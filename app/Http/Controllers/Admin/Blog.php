@@ -137,12 +137,12 @@ class Blog extends Controller
                 DB::beginTransaction();
                 try {
                     $blog->blog_status = 'publish';
-                    $blog->update_at = date('Y-m-d H:i:s');
+                    $blog->updated_at = date('Y-m-d H:i:s');
                     $blog->save();
-                    Log::info('check publish is running');
+                    Log::info('blog id: '.$blog->blog_id.' already published');
                     DB::commit();
                 } catch (Exception $e) {
-                    Log::error('check publish not running');
+                    Log::error($e);
                     DB::rollBack();
                     return Redirect::back()->withErrors($e->getMessage());
                 }

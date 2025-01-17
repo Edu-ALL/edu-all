@@ -54,7 +54,7 @@
         <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
 
-    @php
+    {{-- @php
         $parsed_url = parse_url(URL::current());
         // Extract the path from the parsed URL
 
@@ -78,10 +78,9 @@
                 ? $new_url
                 : url('/public' . request()->getRequestUri());
         }
-
     @endphp
 
-    <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current() }}">
+    <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current() }}"> --}}
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
