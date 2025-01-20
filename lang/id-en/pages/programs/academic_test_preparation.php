@@ -8,7 +8,7 @@ $our_programs = [
     ],
     [
         'title' => "Achieve Top Standardized Test Scores",
-        'description' => "Master common standardized tests such as SAT/ACT and English Proficiency Tests such as TOEFL/IELTS with our proven tutoring class.",
+        'description' => "Master common standardized tests such as SAT and English Proficiency Tests such as TOEFL/IELTS with our proven tutoring class.",
         'button' => "Start Preparing Now"
     ],
     [
@@ -40,6 +40,30 @@ return [
     'meta_description' => 'Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.',
 
     "navbar_title" => "Academic & Test Prep",
+
+    "benefits" => [
+        [
+            'title' => "Personalized",
+            'tag' => "Learning Path",
+            'image'=> "benefit-01.png",
+        ],
+        [
+            'title' => "Expert Tutor",
+            'tag' => "Qualifications",
+            'image'=> "benefit-02.png",
+        ],
+        [
+            'title' => "Diverse Subject",
+            'tag' => "Expertise",
+            'image'=> "benefit-03.png",
+        ],
+        [
+            'title' => "On-Demand",
+            'tag' => "Schedule",
+            'image'=> "benefit-04.png",
+        ]
+    ],
+
     // banner section
     "title" => "Academic & Test Preparation",
     "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",
@@ -63,11 +87,10 @@ return [
         ],
         [
             "title" => "Standardized Test Preparation",
-            "desc" => "Excel in SAT, ACT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
+            "desc" => "Excel in SAT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
             'image' => "standardized test.webp",
             "points" => [
                 "SAT",
-                "ACT",
                 "TOEFL",
                 "IELTS",
             ],
@@ -117,7 +140,7 @@ return [
 
     // Standardized Test Preparation
     "standardized_test_preparation_title" => "STANDARDIZED TEST PREPARATION",
-    "standardized_test_preparation_description" => "Excel in SAT, ACT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
+    "standardized_test_preparation_description" => "Excel in SAT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
     "standardized_test_preparation_button" => "Learn More",
 
     // Skillset Tutoring

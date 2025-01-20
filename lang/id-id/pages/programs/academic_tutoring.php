@@ -8,30 +8,46 @@ return [
     'description' => 'Tingkatkan skor Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami.',
     'header_button' => 'Daftar Segera!',
 
-    'benefit_button' => "LEBIH DARI SEKEDAR TUTORING",
+    'summary' => [
+        [
+            'title' => '97%',
+            'sub_title' => 'of our A-Level Students <br/> earned A and A+'
+        ],
+        [
+            'title' => '98%',
+            'sub_title' => 'of our IB Students boosted their scores by 2 - 3 points and greater'
+        ],
+        [
+            'title' => '100%',
+            'sub_title' => 'Exam Success Rate'
+        ]
+    ],
+
+    'benefit_title' => "MORE THAN JUST TUTORING",
     'benefit_section' => [
         [
-            'title' => "Temukan Jalan",
-            'description' => "Temukan gaya belajar unik kamu dan mentor yang paling cocok",
-            's4_item_text_inactive' => "Temukan Jalan",
+            'title' => "Discover",
+            'description' => "Your Path",
+            's4_item_text_inactive' => "Discover Your Path",
 
         ],
         [
-            'title' => "Analisis Akademik Mendalam",
-            'description' => "Dapatkan rincian kekuatan dan kelemahan akademis kamu",
+            'title' => "Insightful",
+            'description' => "Academic Analysis",
             's4_item_text_inactive' => "Insightful",
         ],
         [
-            'title' => "Pendekatan Pembelajaran yang Disesuaikan",
-            'description' => "Pilih gaya bimbingan belajar yang sesuai dengan kebutuhan belajar kamu; berfokus pada konsep, drilling pertanyaan, atau seimbang. ",
+            'title' => "Customize",
+            'description' => "Learning Approach",
             's4_item_text_inactive' => "Customized",
         ],
         [
-            'title' => "Pencapaian Goals",
-            'description' => "Nikmati perpaduan sesi pembelajaran intensif dan menyenangkan, dengan umpan balik rutin dan laporan kemajuan kepada orang tua",
+            'title' => "Dynamic",
+            'description' => "Goal Achievement",
             's4_item_text_inactive' => "Dynamic",
         ],
     ],
+    
     's4_item_text_active' => [
         "Temukan Jalan",
         "Analisis Akademik Mendalam",
@@ -81,6 +97,7 @@ return [
             'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
         ],
         [
+            'is_popular' => true,
             'title' => 'ELITE',
             'duration' => '5 Bulan',
             'duration_text' => 'Tutoring Intensif',
