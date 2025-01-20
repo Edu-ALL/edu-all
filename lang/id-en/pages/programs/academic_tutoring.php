@@ -26,27 +26,28 @@ return [
     'benefit_title' => "MORE THAN JUST TUTORING",
     'benefit_section' => [
         [
-            'title' => "Discover Your Path",
-            'description' => "Find your unique learning style and best-suited mentors",
+            'title' => "Discover",
+            'description' => "Your Path",
             's4_item_text_inactive' => "Discover Your Path",
 
         ],
         [
-            'title' => "Insightful Academic Analysis",
-            'description' => "Get details of your academic  strengths and weaknesses",
+            'title' => "Insightful",
+            'description' => "Academic Analysis",
             's4_item_text_inactive' => "Insightful",
         ],
         [
-            'title' => "Customized Learning Approach",
-            'description' => "Choose a tutoring style that suits your learning needs; Concept-focused, Question-drilling, or Balanced. ",
+            'title' => "Customize",
+            'description' => "Learning Approach",
             's4_item_text_inactive' => "Customized",
         ],
         [
-            'title' => "Dynamic Goal Achievement",
-            'description' => "Enjoy a mix of intensive and fun learning sessions, with regular feedback and progress reports to parents",
+            'title' => "Dynamic",
+            'description' => "Goal Achievement",
             's4_item_text_inactive' => "Dynamic",
         ],
     ],
+    
     's4_item_text_active' => [
         "Discover Your Path",
         "Insightful Academic Analysis",
@@ -96,6 +97,7 @@ return [
             'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
         [
+            'is_popular' => true,
             'title' => 'ELITE',
             'duration' => '5 Months',
             'duration_text' => 'Intensive Tutoring',

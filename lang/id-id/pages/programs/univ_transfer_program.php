@@ -38,7 +38,7 @@ return [
     "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
     "learning_scope_points" => [
         [
-            "image" => 'transfer_learning_scope.webp',
+            "image" => 'transfer_learning_scope.png',
             "body" => "Program University Transfer Admission Mentoring menawarkan pendekatan yang berbeda dari program penerimaan universitas biasa. Di sini, siswa tidak hanya dapat memilih mata kuliah khusus untuk proses transfer mereka, tetapi juga membangun jaringan dan meningkatkan resume mereka melalui berbagai aktivitas berdasarkan minat mereka sambil memenuhi proses aplikasi transfer universitas.",
             "button" => "Lihat silabus pembelajaran",
             "link" => "Scope transfer mentoring (transfer).pdf",

@@ -13,7 +13,7 @@ return [
         'Tailored Learning Materials',
         'Weakness-Targeting Strategy',
         'Official Mock Test',
-        'SAT/ACT Expert-Made Curriculum'
+        'SAT Expert-Made Curriculum'
     ],
 
     'benefit_class' => "KELAS 10-12",
@@ -53,7 +53,7 @@ return [
     'class_list' => [
         [
             'title' => 'KELAS PRIVAT',
-            'description' => '26 atau 36 jam sesi 1:1 dengan tutor ahli SAT/ACT kami. ',
+            'description' => '26 atau 36 jam sesi 1:1 dengan tutor ahli SAT kami. ',
             'recomendation' => 'Direkomendasikan untuk Kelas 12',
             'list' => [
                 [
@@ -72,12 +72,12 @@ return [
         ],
         [
             'title' => 'KELAS SEMI-PRIVAT',
-            'description' => 'Sesi 40 jam atau 56 jam dengan kelompok kecil, maksimal 4 siswa dengan tutor ahli SAT/ACT kami.',
+            'description' => 'Sesi 40 jam atau 56 jam dengan kelompok kecil, maksimal 4 siswa dengan tutor ahli SAT kami.',
             'recomendation' => 'Direkomendasikan untuk Kelas 10-11',
             'list' => [
                 [
                     'title' => 'CURATED & PROVEN CURRICULUM ',
-                    'description' => 'Rencana studi yang dirancang dengan cermat yang mencakup review Diagnostic Test, pendalaman materi, dan latihan SAT/ACT resmi.',
+                    'description' => 'Rencana studi yang dirancang dengan cermat yang mencakup review Diagnostic Test, pendalaman materi, dan latihan SAT resmi.',
                     'btn' => 'Lihat kurikulum lengkap di sini',
                 ],
                 [

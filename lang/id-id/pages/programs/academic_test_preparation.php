@@ -7,7 +7,7 @@ $our_programs = [
     ],
     [
         'title' => "Raih Skor Tinggi di Standardized Test",
-        'description' => "Kuasai standardized test seperti SAT/ACT dan Tes Bahasa Inggris seperti TOEFL/IELTS dengan kelas kami. ",
+        'description' => "Kuasai standardized test seperti SAT dan Tes Bahasa Inggris seperti TOEFL/IELTS dengan kelas kami. ",
         'button' => "Pelajari Lebih Lanjut tentang Standardized Test"
     ],
     [
@@ -38,6 +38,29 @@ return [
     'meta_title' => "Persiapan Akademis & Tes untuk kesuksesan aplikasi universitas top Anda",
     'meta_description' => 'Temukan pendekatan kami yang terbukti untuk meningkatkan transkrip akademik Anda dan memaksimalkan skor tes untuk penerimaan universitas elit.',
 
+    "benefits" => [
+        [
+            'title' => "Personalized",
+            'tag' => "Learning Path",
+            'image'=> "benefit-01.png",
+        ],
+        [
+            'title' => "Expert Tutor",
+            'tag' => "Qualifications",
+            'image'=> "benefit-02.png",
+        ],
+        [
+            'title' => "Diverse Subject",
+            'tag' => "Expertise",
+            'image'=> "benefit-03.png",
+        ],
+        [
+            'title' => "On-Demand",
+            'tag' => "Schedule",
+            'image'=> "benefit-04.png",
+        ]
+    ],
+
     // banner section
     "title" => "Persiapan Akademis & Tes",
     "body" => "Temukan pendekatan kami yang telah terbukti untuk meningkatkan transkrip akademik dan memaksimalkan nilai ujian untuk penerimaan universitas top dunia. ",
@@ -66,7 +89,7 @@ return [
 
     // Standardized Test Preparation
     "standardized_test_preparation_title" => "STANDARDIZED TEST PREPARATION",
-    "standardized_test_preparation_description" => "Kuasai SAT, ACT, IELTS, dan TOEFL dengan bimbingan ahli kami yang disesuaikan dengan kemampuanmu, membuka peluang akademik global melalui strategi persiapan yang komprehensif",
+    "standardized_test_preparation_description" => "Kuasai SAT, IELTS, dan TOEFL dengan bimbingan ahli kami yang disesuaikan dengan kemampuanmu, membuka peluang akademik global melalui strategi persiapan yang komprehensif",
     "standardized_test_preparation_button" => "Pelajari Lebih Lanjut",
 
     // Skillset Tutoring

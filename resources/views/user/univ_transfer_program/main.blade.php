@@ -25,25 +25,39 @@
                 </h2>
                 <x-registration-form :is-button="true" />
             </div>
+
+            <div class="absolute md:bottom-10 left-0 right-0">
+                <div class="relative h-full">
+                    <div
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
+                    </div>
+                    <div
+                        class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-20 left-0 right-0 h-24 flex items-center">
+                        <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
+                            @foreach (__('pages/programs/admission_mentoring.stats') as $item)
+                                <div class="flex flex-col md:w-auto justify-center items-center">
+                                    <p class="font-bold text-white text-lg md:text-2xl text-center">
+                                        {{ $item['title'] }}
+                                    </p>
+                                    <p class="font-bold text-white text-banner-subdescription text-center">
+                                        {{ $item['sub_title'] }}
+                                    </p>
+                                    <p class="font-light text-white text-banner-subdescription text-center">
+                                        {{ $item['comment'] }}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     {{-- ================================== Benefit Section ================================== --}}
     <section class="py-16">
         <div class="new-main-container">
-            <div class="flex flex-col md:flex-row items-center justify-evenly pt-4 pb-10 border-b border-b-[#DADADA] gap-8">
-                @foreach (__('pages/programs/admission_mentoring.stats') as $item)
-                    <div class="flex flex-1 flex-col items-center">
-                        <h2 class="text-newprimary font-bold text-banner-title leading-10">{{ $item['title'] }}</h2>
-                        <h4 class="text-newprimary font-semibold text-lg leading-6">{{ $item['sub_title'] }}</h4>
-                        <span class="text-xs font-semibold uppercase leading-3">{{ $item['comment'] }}</span>
-                    </div>
-                @endforeach
-            </div>
-            <div class="text-center text-lg max-w-4xl mx-auto font-semibold py-8">
-                {{ __('pages/programs/admission_mentoring.body') }}
-            </div>
-            <div class="flex flex-wrap items-center justify-evenly gap-8 pt-4">
+            <div class="flex flex-wrap items-center justify-between gap-8 max-w-4xl mx-auto">
                 @foreach (__('pages/programs/admission_mentoring.benefits') as $item)
                     <div class="shadow-clip flex flex-col items-center">
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
@@ -64,154 +78,133 @@
                     </div>
                 @endforeach
             </div>
+
+            <div class="w-full border-t border-[#DADADA] pt-12 mt-12 max-w-4xl mx-auto">
+                <p class="font-newprimary text-center max-w-3xl mx-auto leading-6 text-base">
+                    University Transfer Admission Mentoring offers a different kind of approach than the usual university admission program. Here, students will be able to not just select specific courses for their transfer purpose, but also network and enhance their resume through various activities based on their passion and interests while fulfilling the transfer application process.
+                </p>
+            </div>
         </div>
     </section>
 
     <section class="py-12">
         <div class="new-main-container">
-            <div class="new-main-container">
-                <div class="flex flex-col items-center justify-center">
-                    <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-12 uppercase">
-                        {{ __('pages/programs/admission_mentoring.what_you_will_get_title') }}
-                    </h2>
-                </div>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-                    <div class="w-full md:w-1/2 overflow-hidden rounded-lg">
-                        <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/transfer.webp') }}"
-                            alt="EduALL - ilustration"
-                            class="w-full h-full object-center object-cover scale-105 aspect-[7/7]">
-                    </div>
-                    <div class="w-full md:w-1/2">
-                        <ul class="flex flex-col items-start justify-center gap-3">
-                            @foreach (__('pages/programs/univ_transfer_program.what_you_will_get_points') as $item)
-                                <li class="w-full">
-                                    <div
-                                        class="w-full flex items-center gap-2 rounded-xl px-4 py-2 shadow-lg what-will-you-get-item cursor-pointer {{ $loop->first ? 'bg-newprimary text-white' : '' }}">
-                                        <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
-                                            <i class="fa-solid fa-check fa-sm text-white"></i>
-                                            <p></p>
-                                        </div>
-                                        <h4 class="w-full text-lg font-semibold">
-                                            {{ $item['title'] }}
-                                        </h4>
-                                    </div>
-                                    <p class="text-base ml-10 mt-2 what-will-you-get-content"
-                                        style="display: {{ $loop->first ? 'block' : 'none' }};">
-                                        {{ $item['body'] }}
-                                    </p>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- =============================== 4 ASPECTS ============================== --}}
-    <section class="py-32 md:py-12 diagonal-shape">
-        <div class="new-main-container z-50">
             <div class="flex flex-col items-center justify-center">
-                <h2 class="font-newprimary font-bold text-white text-center text-2xl mb-4 uppercase md:leading-4">
-                    {{ __('pages/programs/admission_mentoring.four_aspect_title') }}
+                <h2 class="font-newprimary font-bold text-black text-center text-4xl mb-12 uppercase">
+                    {{ __('pages/programs/admission_mentoring.what_you_will_get_title') }}
                 </h2>
-                <span
-                    class="font-newprimary font-bold text-newyellow text-center text-3xl md:text-4xl mb-4 uppercase md:leading-6">
-                    {{ __('pages/programs/admission_mentoring.four_aspect_subtitle') }}
-                </span>
-
-                <div class="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto relative">
-                    @foreach (__('pages/programs/admission_mentoring.four_aspect_points') as $item)
-                        <div
-                            class="bg-[#F8F5F5] py-4 rounded-lg flex flex-col gap-2 px-6 md:px-0 @if ($loop->index % 2 == 0) md:pl-6 md:pr-20 @else md:pr-6 md:pl-20 @endif">
-                            <h3 class="text-newprimary text-2xl font-bold">{{ $item['title'] }}</h3>
-                            <p class="text-base text-justify leading-5">{{ $item['body'] }}</p>
-                        </div>
-                    @endforeach
-
-                    <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/four-aspect-logo.webp') }}"
-                        alt="EduALL - ilustration"
-                        class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-full object-center object-contain aspect-square">
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section class="pt-16 pb-20">
-        <div class="new-main-container">
-            <div class="flex flex-col items-center justify-center max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row gap-8 mt-6">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <div class="w-full md:w-1/2 overflow-hidden rounded-t-lg">
                     @foreach (__('pages/programs/univ_transfer_program.learning_scope_points') as $item)
-                        <div class="w-full flex flex-col items-center justify-center">
-                            <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/' . $item['image']) }}"
-                                alt="" class="w-full max-w-3xl object-contain">
-                            <x-button href="{{ asset('assets/files/programs/transfer/' . $item['link']) }}"
-                                target="_blank" title="{{ $item['button'] }}" margin-top="8" />
-                            <span class="mt-1 text-sm text-[#9C9C9C]">
-                                {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
-                                <a href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                                    class="underline text-newprimary hover:text-black">
-                                    {{ __('pages/programs/admission_mentoring.book_now') }}
-                                </a>
-                            </span>
-                            <p class="px-2 mt-6 leading-5 text-center max-w-3xl mx-auto">{{ $item['body'] }}</p>
+                        <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/' . $item['image']) }}"
+                            alt="EduALL - ilustration"
+                            class="w-full h-full object-center object-cover scale-105 aspect-[7/6] z-10">
+                        <div class="w-full -mt-4 z-20 relative">
+                            <a href="{{ asset('assets/files/programs/transfer/' . $item['link']) }}"
+                                target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
+                                {{ $item['button'] }}
+                            </a>
                         </div>
                     @endforeach
+                    <!-- <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/transfer.webp') }}"
+                        alt="EduALL - ilustration"
+                        class="w-full h-full object-center object-cover scale-105 aspect-[7/7]"> -->
+                </div>
+                <div class="w-full md:w-1/2">
+                    <ul class="flex flex-col items-start justify-center gap-3">
+                        @foreach (__('pages/programs/univ_transfer_program.what_you_will_get_points') as $item)
+                            <li class="w-full">
+                                <div
+                                    class="w-full flex items-center gap-2 rounded-xl px-4 py-2 shadow-lg what-will-you-get-item cursor-pointer {{ $loop->first ? 'bg-newprimary text-white' : '' }}">
+                                    <div class="h-5 w-5 bg-newprimary flex items-center justify-center rounded-full">
+                                        <i class="fa-solid fa-check fa-sm text-white"></i>
+                                        <p></p>
+                                    </div>
+                                    <h4 class="w-full text-lg font-semibold">
+                                        {{ $item['title'] }}
+                                    </h4>
+                                </div>
+                                <p class="text-base ml-10 mt-2 what-will-you-get-content"
+                                    style="display: {{ $loop->first ? 'block' : 'none' }};">
+                                    {{ $item['body'] }}
+                                </p>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section
+        class="pt-16 pb-20">
+        <div class="new-main-container">
+            <div class="flex md:flex-row flex-col items-center bg-[#F5F5F5] rounded-2xl overflow-hidden">
+                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
+                        {{ __('pages/home.bottom') }}
+                    </h2>
+                    <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                </div>
+                <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
+                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                        class="w-full h-full object-cover rounded-b-lg">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================= OUR MENTOR SECTION ========================================== -->
-    <section class="pt-24 pb-24" id="mentors">
-        <div class="new-main-container mt-4 mb-10">
-            <h1 class="font-newprimary font-bold text-4xl text-dark text-center">
-                {{ __('pages/programs/admission_mentoring.mentor_title') }}</h1>
-            <p class="font-newprimary text-base text-dark text-center max-w-xl mx-auto">
-                {{ __('pages/programs/admission_mentoring.mentor_desc') }}
-            </p>
+    {{-- ========================================== Mentors ========================================== --}}
+    <section class="pt-16 pb-4 bg-dark" id="mentors">
+        <!-- <div class="new-main-container py-8 hidden md:block">
+            <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
+        </div> -->
+
+        <div class="new-main-container">
+            <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
+                <h1 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h1>
+                <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+            </div>
         </div>
         <div class="flex flex-col items-center">
-            <div class="w-full px-10 new-main-container">
-                <div class="splide" role="group">
-                    <div class="splide__arrows text-dark">
-                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -24px">
-                            <i class="fa-solid fa-chevron-left text-4xl"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -24px">
-                            <i class="fa-solid fa-chevron-right text-4xl"></i>
-                        </button>
-                    </div>
-                    <div class="splide__track py-10">
-                        <ul class="splide__list">
-                            @foreach ($all_mentor as $mentor)
-                                <li class="splide__slide">
-                                    <div class="splide__slide__container px-4 pt-[2rem] w-full h-[80%] mt-32">
-                                        <x-mentor-card :mentor=$mentor />
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+            <div class="w-full md:px-8 max-w-screen-2xl mx-auto">
+                <div class="new-main-container">
+                    <div class="md:px-8">
+                        <div class="splide splides undergraduate-splide" role="group">
+                            <div class="splide__arrows text-white">
+                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                    <i class="fa-solid fa-chevron-left text-4xl"></i>
+                                </button>
+                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                    <i class="fa-solid fa-chevron-right text-4xl"></i>
+                                </button>
+                            </div>
+                            <div class="splide__track py-4 md:pb-12">
+                                <ul class="splide__list">
+                                    @foreach ($all_mentor as $mentor)
+                                        <li class="splide__slide w-full">
+                                            <div
+                                                class="splide__slide__container relative mx-1.5 md:mx-2 font-secondary program_card hover:rotate-program_card">
+                                                <x-mentor-card :mentor=$mentor />
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- <div class="hidden md:flex justify-center">
+                    <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                        bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                        hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                        transition="all duration-150" />
+                </div> -->
             </div>
-            <a href="{{ route('mentor', app()->getLocale()) }}"
-                class="flex justify-center mb-8 bg-dark font-newprimary text-white font-medium text-lg py-2 px-14 hover:bg-newprimary hover:px-20 transition-all duration-150">
-                {{ __('pages/programs/admission_mentoring.mentor_button') }}
-            </a>
-        </div>
-    </section>
-
-    <!-- Bottom Section -->
-    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="new-main-container flex flex-col items-center">
-            <h2 class="w-full mb-6 font-newprimary font-semibold text-white text-center lg:text-3xl text-2xl">
-                {{ __('pages/programs/admission_mentoring.bottom_section_title') }}
-            </h2>
-            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/programs/admission_mentoring.schedule_free_consultation') }}" type='secondary'
-                bg-color="red" />
         </div>
     </section>
 
@@ -254,16 +247,17 @@
         var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        var splides = document.getElementsByClassName('splide');
-
+        var splides = document.getElementsByClassName('splide'); 
+        
         new Splide(splides[0], {
             type: 'loop',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ? 3 : 3,
+            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            padding: isSmallDevice ? '6%' : '0',
             perMove: 1,
-            arrows: isMediumDevice ? false : true,
-            lazyload: true,
+            arrows: isSmallDevice ? false : true,
+            lazyload: false,
             autoplay: true,
-            interval: 4000,
+            interval: 5000,
             pagination: false,
         }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element

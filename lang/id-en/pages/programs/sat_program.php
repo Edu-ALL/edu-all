@@ -40,7 +40,7 @@ return [
             'image' => "benefit-2.png",
         ],
         [
-            'title' => "SAT/ACT Expert-Made",
+            'title' => "SAT Expert-Made",
             'tag' => "Curriculum",
             'image' => "benefit-3.png",
         ]
@@ -113,11 +113,11 @@ return [
         [
             'title' => 'Semi-Private',
             'recomendation' => 'IDEAL FOR GRADES 10-11',
-            'description' => '40 or 56-hour sessions in small groups, a maximum of 4 students with our SAT/ACT expert tutors.',
+            'description' => '40 or 56-hour sessions in small groups, a maximum of 4 students with our SAT expert tutors.',
             'list' => [
                 [
                     'title' => 'Curated & Tested Curriculum',
-                    'description' => 'Carefully designed study plan that covers diagnostics, in-depth subject exploration, and official SAT/ACT practice tests.',
+                    'description' => 'Carefully designed study plan that covers diagnostics, in-depth subject exploration, and official SAT practice tests.',
                     'btn' => 'Discover the Full Curriculum Here',
                 ],
                 [
