@@ -38,44 +38,24 @@
             <div class="absolute md:bottom-10 left-0 right-0">
                 <div class="relative h-full">
                     <div
-                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36dvh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
                     </div>
                     <div
                         class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-20 left-0 right-0 h-24 flex items-center">
                         <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
-                            <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
-                                <p class="font-bold text-white text-xl md:text-2xl text-center">
-                                    100%
-                                </p>
-                                <p class="font-bold text-white text-banner-subdescription text-center">
-                                    Acceptance
-                                </p>
-                                <p class="font-light text-white text-banner-subdescription text-center">
-                                    to the world’s top universities
-                                </p>
-                            </div>
-                            <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
-                                <p class="font-bold text-white text-xl md:text-2xl text-center">
-                                    $1 Million+
-                                </p>
-                                <p class="font-bold text-white text-banner-subdescription text-center">
-                                    Worth scholarships
-                                </p>
-                                <p class="font-light text-white text-banner-subdescription text-center">
-                                    every year
-                                </p>
-                            </div>
-                            <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
-                                <p class="font-bold text-white text-xl md:text-2xl text-center">
-                                    75+
-                                </p>
-                                <p class="font-bold text-white text-banner-subdescription text-center">
-                                    Top universities
-                                </p>
-                                <p class="font-light text-white text-banner-subdescription text-center">
-                                    around the world
-                                </p>
-                            </div>
+                            @foreach (__('pages/programs/admission_mentoring.stats') as $item)
+                                <div class="flex flex-col md:w-auto justify-center items-center">
+                                    <p class="font-bold text-white text-xl md:text-2xl text-center">
+                                        {{ $item['title'] }}
+                                    </p>
+                                    <p class="font-bold text-white text-banner-subdescription text-center">
+                                        {{ $item['sub_title'] }}
+                                    </p>
+                                    <p class="font-light text-white text-banner-subdescription text-center">
+                                        {{ $item['comment'] }}
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -176,9 +156,9 @@
                                 alt="" class="w-full max-w-2xl object-contain">
                             <div class="w-full -mt-4">
                                 <a href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
-                                target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
-                                {{ $item['button'] }}
-                            </a>
+                                    target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
+                                    {{ $item['button'] }}
+                                </a>
                             </div>
                             <!-- <x-button href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
                                 target="_blank" title="{{ $item['button'] }}" margin-top="6" /> -->

@@ -55,7 +55,7 @@
 
             <div class="w-full border-t border-[#DADADA] pt-12 mt-12 max-w-4xl mx-auto">
                 <p class="font-newprimary text-center max-w-3xl mx-auto leading-6 text-base">
-                    We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities.
+                    {{ __('pages/programs/admission_mentoring.body') }}                
                 </p>
             </div>
         </div>
