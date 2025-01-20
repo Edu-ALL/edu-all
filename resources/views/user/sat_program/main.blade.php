@@ -37,10 +37,36 @@
                 </h2>
                 <x-registration-form :is-button="true" program-id="SATPRIV" />
             </div>
+
+            <div class="absolute md:bottom-10 left-0 right-0">
+                <div class="relative h-full">
+                    <div
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
+                    </div>
+                    <div
+                        class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-20 left-0 right-0 h-24 flex items-center">
+                        <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
+                            @foreach (__('pages/programs/sat_program.summary') as $item)
+                                <div class="flex flex-col md:w-auto justify-center items-center">
+                                    <p class="font-bold text-white text-xl md:text-2xl text-center">
+                                        {{ $item['title'] }}
+                                    </p>
+                                    <!-- <p class="font-bold text-white text-banner-subdescription text-center">
+                                        {{ $item['sub_title'] }}
+                                    </p> -->
+                                    <p class="font-light text-white text-banner-subdescription text-center max-w-[240px]">
+                                        {!! $item['sub_title'] !!}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="pt-16">
+    <!-- <section class="pt-16">
         <div class="new-main-container">
             <div class="flex flex-col justify-between gap-8 md:flex-row">
                 @foreach (__('pages/programs/sat_program.summary') as $item)
@@ -51,11 +77,11 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="py-16">
         <div class="new-main-container">
-            <div class="flex flex-wrap items-center justify-center gap-8">
+            <div class="flex flex-wrap items-center justify-center gap-8 w-full">
                 @foreach (__('pages/programs/sat_program.benefits') as $item)
                     <div class="shadow-clip flex flex-col items-center relative">
                         <div class="h-full w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
@@ -177,7 +203,7 @@
                                                 {{ $list_item['description'] }}
                                             </h4>
                                             @if (isset($list_item['btn']))
-                                                <x-button href="{{ asset('assets/files/sat-program/SAT CURRICULUM.pdf') }}"
+                                                <x-button href="{{ asset('assets/files/sat-program/2025_SAT Curriculum.pdf') }}"
                                                     title="{{ $list_item['btn'] }}" bg-color="newprimary" padding-x="2"
                                                     padding-y="1" margin-top="2" font-size="sm" color="black"
                                                     bg-color="newyellow" target="_blank" />

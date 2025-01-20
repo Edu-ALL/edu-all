@@ -37,18 +37,30 @@
                 </h2>
                 <x-registration-form :is-button="true" program-id="ACADX" />
             </div>
-        </div>
-    </section>
-
-    <section class="py-16">
-        <div class="new-main-container">
-            <div class="flex flex-col justify-between gap-8 md:flex-row">
-                @foreach (__('pages/programs/academic_tutoring.summary') as $item)
-                    <div class="flex flex-col items-center max-w-xs mx-auto">
-                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
-                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
+            <div class="absolute md:bottom-10 left-0 right-0">
+                <div class="relative h-full">
+                    <div
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
                     </div>
-                @endforeach
+                    <div
+                        class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-20 left-0 right-0 h-24 flex items-center">
+                        <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
+                            @foreach (__('pages/programs/academic_tutoring.summary') as $item)
+                                <div class="flex flex-col md:w-auto justify-center items-center">
+                                    <p class="font-bold text-white text-xl md:text-2xl text-center">
+                                        {{ $item['title'] }}
+                                    </p>
+                                    <!-- <p class="font-bold text-white text-banner-subdescription text-center">
+                                        {{ $item['sub_title'] }}
+                                    </p> -->
+                                    <p class="font-light text-white text-banner-subdescription text-center max-w-[240px]">
+                                        {!! $item['sub_title'] !!}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -56,10 +68,29 @@
     <section class="py-16">
         <div class="new-main-container">
             <div class="flex flex-col">
-                <h2 class="font-bold text-4xl uppercase text-center">
-                    {{ __('pages/programs/academic_tutoring.benefit_title') }}</h2>
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                     @foreach (__('pages/programs/academic_tutoring.benefit_section') as $item)
+                        <div class="relative w-min">
+                            <div class="shadow-clip flex flex-col items-center relative">
+                                <div class="h-40 md:h-48 w-40 md:w-52 bg-white flex flex-col items-center justify-center py-4 mb-4"
+                                style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
+                                <div class="h-12">
+                                    <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/benefits/benefit-0' . $loop->iteration . '.png') }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="font-newprimary text-base font-bold text-center mt-4 leading-4">{{ $item['title'] }}
+                                    </h4>
+                                    <span class="font-newprimary text-base font-normal text-center">{{ $item['description'] }}</span>
+                                </div>
+                            </div>
+                            <div class="absolute -top-3 -right-3">
+                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-sm text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    <!-- @foreach (__('pages/programs/academic_tutoring.benefit_section') as $item)
                         <div class="p-2 w-full h-full">
                             <div class="flex flex-col items-start bg-[#F2F1F1] p-4 rounded-xl shadow-lg h-full">
                                 <div class="flex items-center justify-start gap-2">
@@ -74,7 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endforeach -->
                 </div>
             </div>
         </div>
@@ -220,7 +251,7 @@
 
     <div class="py-16">
         <div class="flex new-main-container w-full flex-col items-center relative">
-            <div
+            <!-- <div
                 class="absolute top-0 left-0 right-0 px-8 py-8 h-[105%] md:h-2/3 max-w-4xl mx-auto w-full bg-newprimary rounded-2xl -z-10">
                 <div class="flex items-center justify-center gap-4 md:gap-8">
                     <div class="h-2 w-2 bg-newyellow rounded-full"></div>
@@ -229,53 +260,64 @@
                     </h3>
                     <div class="h-2 w-2 bg-newyellow rounded-full"></div>
                 </div>
-            </div>
-            <div class="flex flex-col w-full md:flex-row gap-8 mt-32 md:mt-24">
+            </div> -->
+            <div class="flex flex-col w-full md:flex-row gap-8 mt-32 md:mt-24 md:px-12">
                 @foreach (__('pages/programs/academic_tutoring.private_class_list') as $item)
-                    <div class="rounded-md bg-white flex flex-col w-full shadow-xl py-4 px-4">
-                        <h4 class="font-newprimary font-bold text-black text-center text-4xl uppercase py-2">
-                            {{ $item['title'] }}
-                        </h4>
-                        <div class="flex justify-between py-4 w-full">
-                            <div class="flex flex-col">
-                                <div class="flex items-center gap-4">
-                                    <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
-                                        <i class="fa-solid fa-check fa-base text-white"></i>
+                    <div class="w-full flex flex-col items-center @if (isset($item['is_popular']) && $item['is_popular'] == true) -mt-[72px] @endif">
+                        @if (isset($item['is_popular']) && $item['is_popular'] == true)
+                            <div class="px-8 pt-5 pb-12 -mb-6 -z-10 w-full bg-red rounded-2xl flex items-center justify-center gap-2">
+                                <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                                <h3 class="text-white text-lg font-bold text-center">
+                                    {{ __('pages/programs/admission_mentoring.popular_choice') }}
+                                </h3>
+                                <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                            </div>
+                        @endif
+                        <div class="rounded-md bg-white flex flex-col w-full shadow-xl py-4 px-4">
+                            <h4 class="font-newprimary font-bold text-black text-center text-4xl uppercase py-2">
+                                {{ $item['title'] }}
+                            </h4>
+                            <div class="flex justify-between py-4 w-full">
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-4">
+                                        <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                            <i class="fa-solid fa-check fa-base text-white"></i>
+                                        </div>
+                                        <h4 class="font-newprimary font-semibold text-newprimary text-xl">
+                                            {{ $item['duration'] }}
+                                        </h4>
                                     </div>
-                                    <h4 class="font-newprimary font-semibold text-newprimary text-xl">
-                                        {{ $item['duration'] }}
+                                    <h4 class="ml-10 font-newprimary text-black text-base">
+                                        {{ $item['duration_text'] }}
                                     </h4>
                                 </div>
-                                <h4 class="ml-10 font-newprimary text-black text-base">
-                                    {{ $item['duration_text'] }}
-                                </h4>
                             </div>
-                        </div>
-                        <div class="flex justify-between w-full">
-                            <div class="flex flex-col">
-                                <div class="flex items-center gap-4">
-                                    <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
-                                        <i class="fa-solid fa-check fa-base text-white"></i>
+                            <div class="flex justify-between w-full">
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-4">
+                                        <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                            <i class="fa-solid fa-check fa-base text-white"></i>
+                                        </div>
+                                        <h4 class="font-newprimary font-semibold text-newprimary text-xl">
+                                            {{ $item['sessions'] }}
+                                        </h4>
                                     </div>
-                                    <h4 class="font-newprimary font-semibold text-newprimary text-xl">
-                                        {{ $item['sessions'] }}
+                                    <h4 class="ml-10 font-newprimary text-black text-base">
+                                        {!! $item['sessions_text'] !!}
                                     </h4>
                                 </div>
-                                <h4 class="ml-10 font-newprimary text-black text-base">
-                                    {!! $item['sessions_text'] !!}
-                                </h4>
                             </div>
+                            <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary"
+                                padding-x="8" padding-y="1.5" />
+                            <span class="mt-1 text-sm text-[#9C9C9C] text-center">
+                                {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
+                                <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                                    class="underline text-newprimary hover:text-black">
+                                    {{ __('pages/programs/admission_mentoring.book_now') }}
+                                </a>
+                            </span>
                         </div>
-                        <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                            title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary"
-                            padding-x="8" padding-y="1.5" />
-                        <span class="mt-1 text-sm text-[#9C9C9C] text-center">
-                            {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
-                            <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                                class="underline text-newprimary hover:text-black">
-                                {{ __('pages/programs/admission_mentoring.book_now') }}
-                            </a>
-                        </span>
                     </div>
                 @endforeach
             </div>
@@ -284,9 +326,13 @@
 
     <div class="py-20">
         <div class="flex new-main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">
-                {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2>
-            <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+            <!-- <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center">
+                {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2> -->
+            <div class="mt-8">
+                <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_english.webp') : asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_bahasa.webp') }}"
+                    alt="" class="w-full h-full object-contain">
+            </div>
+            <!-- <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                 @foreach (__('pages/programs/academic_tutoring.why_us_list') as $item)
                     <div class="p-2 w-full h-full">
                         <div
@@ -300,20 +346,30 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </div> -->
         </div>
     </div>
 
-    <section class="py-8 bg-bottom-sign-up-banner-2 bg-center bg-cover">
-        <div class="new-main-container flex flex-col items-center">
-            <h2 class="font-newprimary font-semibold text-2xl text-white text-center md:text-4xl uppercase">
-                {{ __('pages/programs/academic_tutoring.free_trial_title') }}
-            </h2>
-            <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
-                {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
-            </p>
-            <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}" />
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section
+        class="md:pt-8 md:pb-20">
+        <div class="new-main-container">
+            <div class="flex md:flex-row flex-col items-center bg-dark rounded-2xl overflow-hidden">
+                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="font-newprimary font-bold text-2xl text-white text-center md:text-left md:text-2xl uppercase mb-4">
+                        {{ __('pages/programs/academic_tutoring.free_trial_title') }}
+                    </h2>
+                    <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center md:text-left">
+                        {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
+                    </p>
+                    <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                        title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}"/>
+                </div>
+                <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
+                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                        class="w-full h-full object-cover rounded-b-lg">
+                </div>
+            </div>
         </div>
     </section>
 

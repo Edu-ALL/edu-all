@@ -37,7 +37,7 @@ return [
     "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
     "learning_scope_points" => [
         [
-            "image" => 'graduate_learning_scope.webp',
+            "image" => 'graduate_learning_scope.png',
             "body" => "Program Graduate Admission Mentoring kami berfokus pada peningkatan profil pendidikan & profesional sekaligus membantu mengembangkan strategi pendaftaran program Master terbaik untuk mereka.",
             "button" => "Lihat silabus pembelajaran",
             "link" => "Scope graduate mentoring (master).pdf",

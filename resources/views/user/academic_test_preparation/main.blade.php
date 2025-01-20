@@ -41,6 +41,37 @@
     </section>
 
 
+    {{-- ================================== Benefit Section ================================== --}}
+    <section class="py-16">
+        <div class="new-main-container">
+            <div class="flex flex-wrap w-full mx-auto">
+                <div class="flex flex-wrap items-center justify-evenly gap-8 mx-auto w-full">
+                    @foreach (__('pages/programs/academic_test_preparation.benefits') as $item)
+                        <div class="relative">
+                            <div class="shadow-clip flex flex-col items-center relative">
+                                <div class="h-40 md:h-48 w-40 md:w-48 bg-white flex flex-col items-center justify-center py-4 mb-4"
+                                style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
+                                <div class="h-12">
+                                    <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/benefits/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                </div>
+                                <h4 class="font-newprimary text-base font-bold text-center mt-4 leading-4">{{ $item['title'] }}
+                                    </h4>
+                                    <span class="font-newprimary text-base font-normal text-center">{{ $item['tag'] }}</span>
+                                </div>
+                            </div>
+                            <div class="absolute -top-3 -right-3">
+                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                    <i class="fa-solid fa-check fa-sm text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="acad-program-our-programs relative">
         <div class="flex main-container w-full flex-col h-[70vh] pt-24" id="our-programs-wrapper">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center mb-20 uppercase">
@@ -126,32 +157,7 @@
         </div>
     </section>
 
-
-    {{-- ================================== Benefit Section ================================== --}}
-    <section class="py-12">
-        <div class="new-main-container">
-            <div class="flex flex-wrap max-w-4xl mx-auto">
-                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
-                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-1.webp') }}"
-                        alt="benefit image">
-                </div>
-                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
-                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-2.webp') }}"
-                        alt="benefit image">
-                </div>
-                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
-                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-3.webp') }}"
-                        alt="benefit image">
-                </div>
-                <div class="md:w-1/4 w-1/2 p-2 md:p-4">
-                    <img src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/benefit-4.webp') }}"
-                        alt="benefit image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 scroll-mt-10" id="start-your-journey">
+    <section class="pb-12 scroll-mt-10" id="start-your-journey">
         <div class="new-main-container relative">
             <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-4xl mx-auto w-full bg-newprimary rounded-2xl">
                 <div class="flex items-center justify-center gap-4 md:gap-8">
@@ -176,7 +182,7 @@
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black px-8">
                         @foreach (__('pages/programs/academic_test_preparation.program_list') as $item)
-                            <li class="splide__slide w-full pb-8">
+                            <li class="splide__slide w-full pb-8 px-2">
                                 <div class="splide__slide__container py-8 h-full w-full">
                                     <div class="flex flex-col w-full md:w-full my-4">
                                         <div
@@ -188,8 +194,8 @@
                                                 <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt=""
                                                     class="h-full w-full object-cover">
                                             </div>
-                                            <div class="w-full md:h-28 border-b border-b-[#DEDEDE]">
-                                                <p class="text-base text-justify leading-5">
+                                            <div class="w-full md:h-32 border-b border-b-[#DEDEDE]">
+                                                <p class="text-sm text-justify leading-5">
                                                     {{ $item['desc'] }}
                                                 </p>
                                             </div>
@@ -222,19 +228,36 @@
         </div>
     </section>
 
-    <section class="py-8 bg-bottom-sign-up-banner-2 bg-center bg-cover">
-        <div class="new-main-container flex flex-col items-center">
-            <h2 class="font-newprimary font-semibold text-2xl text-white text-center md:text-4xl uppercase">
-                {{ __('pages/programs/academic_tutoring.free_trial_title') }}
-            </h2>
-            <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
-                {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
-            </p>
-            <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}"/>
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section
+        class="md:pt-8 md:pb-20">
+        <div class="new-main-container">
+            <div class="flex md:flex-row flex-col items-center bg-dark rounded-2xl overflow-hidden">
+                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="font-newprimary font-bold text-2xl text-white text-center md:text-left md:text-2xl uppercase mb-4">
+                        {{ __('pages/programs/academic_tutoring.free_trial_title') }}
+                    </h2>
+                    <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center md:text-left">
+                        {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
+                    </p>
+                    <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
+                        title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}"/>
+                </div>
+                <!-- <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="mb-6 font-bold text-white text-center text-lg md:text-2xl md:max-w-xs md:text-start">
+                        {{ __('pages/home.bottom') }}
+                    </h2>
+                    <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                </div> -->
+                <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
+                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                        class="w-full h-full object-cover rounded-b-lg">
+                </div>
+            </div>
         </div>
     </section>
-
+    
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="pt-14">
         <div class="flex new-main-container w-full flex-col">

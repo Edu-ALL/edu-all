@@ -39,7 +39,7 @@ return [
     "learning_scope_title" => "PERSONALIZED MENTORING BASED ON YOUR DREAM STUDY DESTINATION",
     "learning_scope_points" => [
         [
-            "image" => 'transfer_learning_scope.webp',
+            "image" => 'transfer_learning_scope.png',
             "body" => "University Transfer Admission Mentoring offers a different kind of approach than the usual university admission program. Here, students will be able to not just select specific courses for their transfer purpose, but also network and enhance their resume through various activities based on their passion and interests while fulfilling the transfer application process.",
             "button" => "View full learning scope here",
             "link" => "Scope transfer mentoring (transfer).pdf",

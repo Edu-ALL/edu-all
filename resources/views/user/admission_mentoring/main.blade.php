@@ -42,7 +42,7 @@
     {{-- ================================== Benefit Section ================================== --}}
     <section class="py-16">
         <div class="new-main-container">
-            <div class="flex flex-wrap items-center justify-evenly gap-8">
+            <div class="flex flex-wrap items-center justify-between gap-8 max-w-4xl mx-auto">
                 @foreach (__('pages/programs/admission_mentoring.benefits') as $item)
                     <div class="shadow-clip flex flex-col items-center">
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
@@ -62,6 +62,12 @@
                         <span class="font-newprimary text-base font-normal text-center">{{ $item['tag'] }}</span>
                     </div>
                 @endforeach
+            </div>
+
+            <div class="w-full border-t border-[#DADADA] pt-12 mt-12 max-w-4xl mx-auto">
+                <p class="font-newprimary text-center max-w-3xl mx-auto leading-6 text-base">
+                    {{ __('pages/programs/admission_mentoring.body') }}                
+                </p>
             </div>
         </div>
     </section>
@@ -133,6 +139,55 @@
         </div>
     </section>
 
+
+    {{-- ========================================== New Pathaway Excellence ========================================== --}}
+    <section class="py-16 bg-pathaway bg-cover bg-center">
+        <div class="new-main-container md:py-12 flex flex-col items-center">
+            <div class="flex flex-col justify-center items-center">
+                <h2 class="font-bold text-section-title text-white text-center">Your University Admission Process Through</h2>
+                <h2 class="font-bold md:text-5xl text-xl text-newyellow text-center uppercase">4 aspects</h2>
+            </div>  
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 relative">
+                <div class="md:flex absolute w-52 h-52 hidden justify-center items-center bg-black rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <img loading="lazy" src="{{ asset('assets/logo/eduall-white.png') }}" alt="EduAll white logo"
+                        class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
+                </div>
+                <div
+                    class="col-span-2 md:col-span-1 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 md:pr-28">
+                    <h3 class="font-bold text-2xl text-newyellow">Interest & Career Exploration</h3>
+                    <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
+                        Discovering interests and future aspiration through various learning experience and exposure to
+                        professional opportunities while fostering curiosity for students’ unique paths.
+                    </p>
+                </div>
+                <div
+                    class="col-span-2 md:col-span-1 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 md:pl-28">
+                    <h3 class="font-bold text-2xl text-newyellow">Profile <br /> Building</h3>
+                    <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
+                        Identify passions, strengths, achievements, and experiences that will set students apart, creating a
+                        compelling and authentic students’ profile for university applications.
+                    </p>
+                </div>
+                <div
+                    class="col-span-2 md:col-span-1 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 md:pr-28">
+                    <h3 class="font-bold text-2xl text-newyellow">University Application Strategy</h3>
+                    <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
+                        Crafting personalized strategies for university applications, ensuring students effectively showcase
+                        their strengths, interests, and potential to stand out in competitive admissions processes.
+                    </p>
+                </div>
+                <div
+                    class="col-span-2 md:col-span-1 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 md:pl-28">
+                    <h3 class="font-bold text-2xl text-newyellow">Writing</h3>
+                    <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
+                        Developing impactful storytelling in personal statements and essays to showcase unique qualities and
+                        aspirations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Us Section -->
     <section class="pt-16 pb-20">
         <div class="new-main-container">
@@ -143,8 +198,28 @@
                 <p class="text-center text-base max-w-xl mx-auto mb-8">
                     {{ __('pages/programs/admission_mentoring.why_us_description') }}
                 </p>
-                <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/admission mentoring/revamp/whyus.png') : asset('assets/img/admission mentoring/revamp/whyus-id.png') }}"
-                    alt="" class="w-full max-w-2xl object-contain">
+                <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/admission mentoring/revamp/why_us_english.webp') : asset('assets/img/admission mentoring/revamp/why_us_bahasa.webp') }}"
+                    alt="" class="w-full max-w-4xl object-contain">
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section
+        class="md:pt-8 md:pb-20">
+        <div class="new-main-container">
+            <div class="flex md:flex-row flex-col items-center bg-[#F5F5F5] rounded-2xl overflow-hidden">
+                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
+                        {{ __('pages/home.bottom') }}
+                    </h2>
+                    <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                </div>
+                <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
+                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                        class="w-full h-full object-cover rounded-b-lg">
+                </div>
             </div>
         </div>
     </section>
@@ -177,18 +252,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Bottom Section -->
-    <section class="py-8 bg-dark bg-bottom-sign-up-banner bg-center bg-cover">
-        <div class="new-main-container flex flex-col items-center">
-            <h2 class="w-full mb-6 font-newprimary font-semibold text-white text-center lg:text-3xl text-2xl">
-                {{ __('pages/programs/admission_mentoring.bottom_section_title') }}
-            </h2>
-            <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/programs/admission_mentoring.schedule_free_consultation') }}" type='secondary'
-                bg-color="red" />
         </div>
     </section>
 @endsection
