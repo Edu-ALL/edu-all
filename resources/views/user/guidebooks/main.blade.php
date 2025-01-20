@@ -47,7 +47,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img data-original="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
@@ -80,7 +80,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img data-original="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
@@ -112,7 +112,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img data-original="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>
@@ -144,7 +144,7 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img data-original="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
                                                 class="w-full max-w-[18rem] min-w-0 mx-auto">
                                         </a>

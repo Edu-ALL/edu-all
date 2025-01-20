@@ -58,7 +58,7 @@
                                                 <div class="col d-flex align-items-center justify-content-center border rounded"
                                                     style="min-height: 110px">
                                                     <img class="img-preview img-fluid" id="thumbnail_img_preview"
-                                                        src="{{ asset('uploaded_files/' . 'success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[0]->thumbnail) }}">
+                                                        src="{{ Storage::url('success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[0]->thumbnail) }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column gap-2">
@@ -88,7 +88,7 @@
                                                 <div class="col d-flex align-items-center justify-content-center border rounded"
                                                     style="min-height: 110px">
                                                     <img class="img-preview img-fluid" id="home_thumbnail_img_preview"
-                                                        src="{{ asset('uploaded_files/' . 'success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[0]->home_thumbnail) }}">
+                                                        src="{{ Storage::url('success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[0]->home_thumbnail) }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column gap-2">
@@ -215,7 +215,7 @@
                                                                 style="min-height: 110px">
                                                                 <img class="img-preview img-fluid"
                                                                     id="achievement_preview_en"
-                                                                    src="{{ $success_stories[0]->achievement_image ? asset('uploaded_files/' . 'success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[0]->achievement_image) : '' }}">
+                                                                    src="{{ $success_stories[0]->achievement_image ? Storage::url('success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[0]->achievement_image) : '' }}">
                                                             </div>
                                                         </div>
                                                         <div class="col d-flex flex-column gap-2">
@@ -299,7 +299,7 @@
                                                                 style="min-height: 110px">
                                                                 <img class="img-preview img-fluid"
                                                                     id="achievement_preview_id"
-                                                                    src="{{ $success_stories[1]->achievement_image ? asset('uploaded_files/' . 'success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[1]->achievement_image) : '' }}">
+                                                                    src="{{ $success_stories[1]->achievement_image ? Storage::url('success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $success_stories[1]->achievement_image) : '' }}">
                                                             </div>
                                                         </div>
                                                         <div class="col d-flex flex-column gap-2">

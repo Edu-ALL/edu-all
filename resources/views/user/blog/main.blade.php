@@ -56,7 +56,7 @@
                                     <div class="splide__slide__container">
                                         <div class="flex flex-col gap-6 md:flex-row">
                                             <div class="w-full md:w-2/3">
-                                                <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                                     alt="EduALL {{ $blog->blog_thumbnail_alt }}"
                                                     class="object-cover w-full h-full max-h-[60vh]">
                                             </div>
@@ -72,7 +72,7 @@
                                                             <div class="flex items-center gap-1">
                                                                 <div
                                                                     class="w-8 h-8 text-center text-white rounded-full overflow-hidden">
-                                                                    <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                                                    <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                                         alt="" class="w-full object-cover">
                                                                 </div>
                                                                 {{-- change author name with mentor name --}}
@@ -156,7 +156,7 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]">
                         <div class="flex flex-col gap-2 h-full justify-between">
-                            <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                            <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                 alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
@@ -187,7 +187,7 @@
                                     <div class="flex items-center gap-2">
                                         <div
                                             class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-newprimary">
-                                            <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                            <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                                 alt="" class="w-full object-cover">
                                         </div>
                                         <div class="text-newprimary">

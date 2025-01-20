@@ -224,7 +224,7 @@
                                 @foreach ($top_blogs as $top_blog)
                                     <div class="row flex-md-row flex-column align-items-center justify-content-center gap-md-1 gap-3 py-1">
                                         <div class="col-md-2 col text-center">
-                                            <img class="img-fluid" src="{{ asset('uploaded_files/'.'blogs/'.$top_blog->created_at->format('Y').'/'.$top_blog->created_at->format('m').'/'.$top_blog->blog_thumbnail) }}" alt="" style="border-radius: 10px">
+                                            <img class="img-fluid" src="{{ Storage::url('blogs/'.$top_blog->created_at->format('Y').'/'.$top_blog->created_at->format('m').'/'.$top_blog->blog_thumbnail) }}" alt="" style="border-radius: 10px">
                                         </div>
                                         <div class="col">
                                             <h4><a href="/admin/blogs/{{ $top_blog->id }}/view">{{ $top_blog->blog_title }}</a></h4>

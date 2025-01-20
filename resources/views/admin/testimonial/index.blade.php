@@ -62,7 +62,7 @@
                                             <td>{{ $testimonial->testi_subcategory != null ? $testimonial->testi_subcategory : '-' }}</td>
                                             <td>
                                                 @if ($testimonial->testi_thumbnail)
-                                                    <img data-original="{{ asset('uploaded_files/'.'testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
+                                                    <img data-original="{{ Storage::url('testimonial/'.$testimonial->created_at->format('Y').'/'.$testimonial->created_at->format('m').'/'.$testimonial->testi_thumbnail) }}" alt="" width="80">
                                                 @else
                                                     -
                                                 @endif

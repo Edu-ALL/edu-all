@@ -42,7 +42,7 @@
             <div class="grid grid-cols-1 gap-3 md:grid-cols-1 lg:grid-cols-3">
                 @foreach ($events as $event)
                     <a href="{{ $event->event_rsvp_link }}" class="cursor-pointer" target="_blank">
-                        <img src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                        <img src="{{ Storage::url('upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                             alt="{{ $event->event_alt }}" class="object-cover w-full h-full">
                     </a>
                 @endforeach
@@ -57,7 +57,7 @@
                 @foreach ($talks as $regular_talk)
                     <a href="{{ $regular_talk->event_rsvp_link }}" class="cursor-pointer" target="_blank">
                         <div class="relative">
-                            <img src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                            <img src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                 alt="{{ $regular_talk->event_alt }}" class="w-full object-cover object-center h-72">
 
                             <div class="absolute top-0 left-5 h-60">

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
@@ -46,7 +47,7 @@ class Mentor extends Controller
                     return $result;
                 })
                 ->editColumn('image', function ($d) {
-                    $path = asset('uploaded_files/' . 'mentor/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->mentor_picture);
+                    $path = Storage::url('mentor/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->mentor_picture);
                     $result = '
                     <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
                 ';
@@ -179,10 +180,10 @@ class Mentor extends Controller
             if ($request->hasFile('mentor_image')) {
                 $file = $request->file('mentor_image');
                 $file_format = $request->file('mentor_image')->getClientOriginalExtension();
-                $destinationPath = public_path() . '/uploaded_files/' . 'mentor/' . date('Y') . '/' . date('m') . '/';
+                $destinationPath = 'project/eduall-website/mentor/' . date('Y') . '/' . date('m') . '/';
                 $time = $mentor_en->group;
                 $fileName = 'Mentor-picture-' . $time . '.' . $file_format;
-                $file->move($destinationPath, $fileName);
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $mentor_en->mentor_picture = $fileName;
                 $mentor_id->mentor_picture = $fileName;
             }
@@ -327,17 +328,17 @@ class Mentor extends Controller
             if ($request->hasFile('mentor_image')) {
                 if ($mentor_en->mentor_picture == $mentor_id->mentor_picture) {
                     $old_image_path = $mentor_en->mentor_picture;
-                    $file_path = public_path('uploaded_files/' . 'mentor/' . $mentor_en->created_at->format('Y') . '/' . $mentor_en->created_at->format('m') . '/' . $old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/mentor/' . $mentor_en->created_at->format('Y') . '/' . $mentor_en->created_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('mentor_image');
                 $file_format = $request->file('mentor_image')->getClientOriginalExtension();
-                $destinationPath = public_path() . '/uploaded_files/' . 'mentor/' . $mentor_en->created_at->format('Y') . '/' . $mentor_en->created_at->format('m') . '/';
+                $destinationPath = 'project/eduall-website/mentor/' . $mentor_en->created_at->format('Y') . '/' . $mentor_en->created_at->format('m') . '/';
                 $time = $mentor_en->group;
                 $fileName = 'Mentor-picture-' . $time . '.' . $file_format;
-                $file->move($destinationPath, $fileName);
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $mentor_en->mentor_picture = $fileName;
                 $mentor_id->mentor_picture = $fileName;
             }
@@ -366,9 +367,9 @@ class Mentor extends Controller
             } else {
                 if ($mentor[0]->mentor_picture == $mentor[1]->mentor_picture) {
                     $old_image_path = $mentor[0]->mentor_picture;
-                    $file_path = public_path('uploaded_files/' . 'mentor/' . $mentor[0]->created_at->format('Y') . '/' . $mentor[0]->created_at->format('m') . '/' . $old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/mentor/' . $mentor[0]->created_at->format('Y') . '/' . $mentor[0]->created_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $mentor_videos = MentorVideos::where('mentor_id', $group)->get();

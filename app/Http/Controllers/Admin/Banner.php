@@ -14,20 +14,23 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class Banner extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $data = Banners::first();
         return view('admin.banner.index', [
             'data' => $data,
             'website_data' => WebsiteSettings::first(),
         ]);
     }
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -54,50 +57,63 @@ class Banner extends Controller
             // Image
             if ($request->hasFile('image')) {
                 if ($old_image_path = $banner->image) {
-                    $file_path = public_path('uploaded_files/'.'banner/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $old_image_path_s3 = 'project/eduall-website/banner/' . $banner->updated_at->format('Y') . '/' . $banner->updated_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($old_image_path_s3)) {
+                        Storage::disk('s3')->delete($old_image_path_s3);
                     }
                 }
+
+                // // Handle the new file upload
                 $file = $request->file('image');
                 $file_format = $file->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'banner/'.date('Y').'/'.date('m').'/';
-                $time = date('YmdHis');
-                $fileName = 'Banner-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $time = now()->format('YmdHis');
+                $fileName = 'Banner-' . $time . '.' . $file_format;
+
+                // // Store the new file on S3
+                $destinationPath = 'project/eduall-website/banner/' . now()->format('Y') . '/' . now()->format('m') . '/';
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
+
+                // // Update the banner's image path
                 $banner->image = $fileName;
             } else {
                 if (isset($_POST['delete_img'])) {
                     if ($old_image_path = $banner->image) {
-                        $file_path = public_path('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_image_path);
-                        if (File::exists($file_path)) {
-                            File::delete($file_path);
+                        // Construct the file path for the old image on S3
+                        $old_file_path = 'project/eduall-website/banner/' . $banner->updated_at->format('Y') . '/' . $banner->updated_at->format('m') . '/' . $old_image_path;
+
+                        // Delete the old image from S3 if it exists
+                        if (Storage::disk('s3')->exists($old_file_path)) {
+                            Storage::disk('s3')->delete($old_file_path);
                         }
+
+                        // Set the banner's image to null
                         $banner->image = null;
                     }
                 }
             }
+
+
             // Video
             if ($request->hasFile('video_link')) {
                 if ($old_video_path = $banner->video_link) {
-                    $file_path = public_path('uploaded_files/'.'banner-video/'.$old_video_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/banner-video/' . $banner->updated_at->format('Y') . '/' . $banner->updated_at->format('m') . '/' . $old_video_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('video_link');
                 $file_format = $file->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'banner-video/'.date('Y').'/'.date('m').'/';
                 $time = date('YmdHis');
-                $fileName = 'Banner-video-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Banner-video-' . $time . '.' . $file_format;
+                $destinationPath = 'project/eduall-website/banner-video/' . date('Y') . '/' . date('m') . '/';
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $banner->video_link = $fileName;
             } else {
                 if (isset($_POST['delete_video'])) {
                     if ($old_video_path = $banner->video_link) {
-                        $file_path = public_path('uploaded_files/'.'banner-video/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$old_video_path);
-                        if (File::exists($file_path)) {
-                            File::delete($file_path);
+                        $file_path = 'project/eduall-website/banner-video/' . $banner->updated_at->format('Y') . '/' . $banner->updated_at->format('m') . '/' . $old_video_path;
+                        if (Storage::disk('s3')->exists($file_path)) {
+                            Storage::disk('s3')->delete($file_path);
                         }
                         $banner->video_link = null;
                     }
@@ -111,10 +127,10 @@ class Banner extends Controller
             $banner->statisfaction_rate = $request->statisfaction_rate;
             $banner->save();
             DB::commit();
-            Log::notice('Banner has been successfully Updated by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('Banner has been successfully Updated by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Update Banner failed : '.$e->getMessage());
+            Log::error('Update Banner failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/banner')->withSuccess('Banner Was Successfully Updated');
@@ -159,14 +175,14 @@ class Banner extends Controller
     //             return $result;
     //         })
     //         ->editColumn('image', function($d){
-    //             $path = asset('uploaded_files/'.'banner/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->banner_img);
+    //             $path = Storage::url('banner/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->banner_img);
     //             $result = '
     //                 <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
     //             ';
     //             return $result;
     //         })
     //         ->editColumn('image_mobile', function($d){
-    //             $path = asset('uploaded_files/'.'banner/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->banner_img_mobile);
+    //             $path = Storage::url('banner/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->banner_img_mobile);
     //             $result = '
     //                 <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
     //             ';

@@ -182,7 +182,7 @@
                                                 <div class="splide__slide__container px-5 w-full h-full mt-32">
                                                     <div class="flex flex-col rounded-3xl shadow-md relative bg-white">
                                                         {{-- Mentor Image --}}
-                                                        <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                        <img src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                             alt="{{ $mentor->mentor_alt }}"
                                                             class="bg-cover bg-center absolute -top-[12rem]">
                                                         <div class="flex flex-col px-4 lg:mt-[12rem] mt-[10rem] overflow-visible">

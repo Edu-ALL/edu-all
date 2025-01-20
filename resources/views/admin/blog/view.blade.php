@@ -90,7 +90,7 @@
                                     <div class="col d-flex flex-column gap-4">
                                         <div class="pic-profile">
                                             <img class="img-blog"
-                                                src="{{ asset('uploaded_files/' . 'blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                                 alt="">
                                         </div>
                                         <div class="col d-flex flex-column justify-content-center gap-2 px-1">

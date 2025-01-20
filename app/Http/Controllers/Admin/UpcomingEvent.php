@@ -14,88 +14,92 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
 class UpcomingEvent extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.upcoming-event.index', [
             'website_data' => WebsiteSettings::first(),
         ]);
     }
 
-    public function getUpcomingEvent(Request $request){
+    public function getUpcomingEvent(Request $request)
+    {
         if ($request->ajax()) {
             $data = UpcomingEvents::orderBy('updated_at', 'desc')->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->editColumn('image', function($d){
-                $path = asset('uploaded_files/'.'upcoming-event/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->event_thumbnail);
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
-                ';
-                return $result;
-            })
-            ->editColumn('region', function($d){
-                $path = asset('assets/img/flag/flag-'.$d->region.'.png');
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
-                    <p class="pt-1" style="font-size: 13px !important">
-                        '.$d->regions->region.'
-                    </p>
-                ';
-                return $result;
-            })
-            ->editColumn('language', function($d){
-                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
-                    <p class="pt-1" style="font-size: 13px !important">
-                        '.$d->languages->language.'
-                    </p>
-                ';
-                return $result;
-            })
-            ->editColumn('status', function($d){
-                if ($d->event_status == 'publish') {
+                ->addIndexColumn()
+                ->editColumn('image', function ($d) {
+                    $path = Storage::url('upcoming-event/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->event_thumbnail);
                     $result = '
-                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft('.$d->id.')">
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
+                ';
+                    return $result;
+                })
+                ->editColumn('region', function ($d) {
+                    $path = asset('assets/img/flag/flag-' . $d->region . '.png');
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="30">
+                    <p class="pt-1" style="font-size: 13px !important">
+                        ' . $d->regions->region . '
+                    </p>
+                ';
+                    return $result;
+                })
+                ->editColumn('language', function ($d) {
+                    $path = asset('assets/img/flag/flag-' . $d->lang . '.png');
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="30">
+                    <p class="pt-1" style="font-size: 13px !important">
+                        ' . $d->languages->language . '
+                    </p>
+                ';
+                    return $result;
+                })
+                ->editColumn('status', function ($d) {
+                    if ($d->event_status == 'publish') {
+                        $result = '
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft(' . $d->id . ')">
                             <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">
-                                '.$d->event_status.'
+                                ' . $d->event_status . '
                             </span>
                         </button>
                     ';
-                } else {
-                    $result = '
-                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish('.$d->id.')">
+                    } else {
+                        $result = '
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish(' . $d->id . ')">
                             <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
-                                '.$d->event_status.'
+                                ' . $d->event_status . '
                             </span>
                         </button>
                     ';
-                }
-                return $result;
-            })
-            ->editColumn('action', function($d){
-                $result = '
+                    }
+                    return $result;
+                })
+                ->editColumn('action', function ($d) {
+                    $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/'.$d->id.'/edit">
+                    <a type="button" class="btn btn-warning" href="/admin/upcoming-event/' . $d->id . '/edit">
                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this upcoming event"></i>
                     </a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')">
                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this upcoming event"></i>
                     </button>
                 </div>
                 ';
-                return $result;
-            })
-            ->rawColumns(['image', 'region', 'language', 'status', 'action'])
-            ->make(true);
+                    return $result;
+                })
+                ->rawColumns(['image', 'region', 'language', 'status', 'action'])
+                ->make(true);
         }
     }
 
-    public function checkPublish(){
+    public function checkPublish()
+    {
         $upcoming_events = UpcomingEvents::where('event_status', 'draft')->get();
         foreach ($upcoming_events as $event) {
             if (date('Y-m-d', strtotime($event->publish_date)) == date('Y-m-d')) {
@@ -104,7 +108,7 @@ class UpcomingEvent extends Controller
                     $event->event_status = 'publish';
                     $event->updated_at = date('Y-m-d');
                     $event->save();
-                    Log::info('event id: '.$event->id.' already published');
+                    Log::info('event id: ' . $event->id . ' already published');
                     DB::commit();
                 } catch (Exception $e) {
                     Log::error($e);
@@ -115,7 +119,8 @@ class UpcomingEvent extends Controller
         }
     }
 
-    public function checkTakeOff(){
+    public function checkTakeOff()
+    {
         $upcoming_events = UpcomingEvents::where('event_status', 'publish')->get();
         foreach ($upcoming_events as $event) {
             if (date('Y-m-d', strtotime($event->take_off_date)) <= date('Y-m-d')) {
@@ -124,7 +129,7 @@ class UpcomingEvent extends Controller
                     $event->event_status = 'draft';
                     $event->updated_at = date('Y-m-d');
                     $event->save();
-                    Log::info('event id: '.$event->id.' already take off');
+                    Log::info('event id: ' . $event->id . ' already take off');
                     DB::commit();
                 } catch (Exception $e) {
                     Log::error($e);
@@ -135,7 +140,8 @@ class UpcomingEvent extends Controller
         }
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.upcoming-event.create', [
             'regions' => Regions::get(),
             'languages' => Languages::get(),
@@ -143,7 +149,8 @@ class UpcomingEvent extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -175,10 +182,10 @@ class UpcomingEvent extends Controller
             if ($request->hasFile('event_thumbnail')) {
                 $file = $request->file('event_thumbnail');
                 $file_format = $request->file('event_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'upcoming-event/'.date('Y').'/'.date('m').'/';
+                $destinationPath = 'project/eduall-website/upcoming-event/' . date('Y') . '/' . date('m') . '/';
                 $time = $upcoming_event->group;
-                $fileName = 'Upcoming-Event-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Upcoming-Event-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $upcoming_event->event_thumbnail = $fileName;
             }
             $upcoming_event->event_alt = $request->event_alt;
@@ -198,7 +205,7 @@ class UpcomingEvent extends Controller
             $upcoming_event->save();
 
             DB::commit();
-            Log::notice('New Upcomming Event : '. $upcoming_event->event_title .', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('New Upcomming Event : ' . $upcoming_event->event_title . ', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Upcoming Event Failed To Create: : ' .  $e);
@@ -208,7 +215,8 @@ class UpcomingEvent extends Controller
         return redirect('/admin/upcoming-event')->withSuccess('Upcoming Event Was Successfully Created');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $upcoming_event = UpcomingEvents::find($id);
         return view('admin.upcoming-event.update', [
             'upcoming_event' => $upcoming_event,
@@ -218,7 +226,8 @@ class UpcomingEvent extends Controller
         ]);
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -248,17 +257,17 @@ class UpcomingEvent extends Controller
             $upcoming_event = UpcomingEvents::find($id);
             if ($request->hasFile('event_thumbnail')) {
                 if ($old_image_path = $upcoming_event->event_thumbnail) {
-                    $file_path = public_path('uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/upcoming-event/' . $upcoming_event->created_at->format('Y') . '/' . $upcoming_event->created_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('event_thumbnail');
                 $file_format = $request->file('event_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/';
+                $destinationPath = 'project/eduall-website/upcoming-event/' . $upcoming_event->created_at->format('Y') . '/' . $upcoming_event->created_at->format('m') . '/';
                 $time = $upcoming_event->group;
-                $fileName = 'Upcoming-Event-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Upcoming-Event-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $upcoming_event->event_thumbnail = $fileName;
             }
             $upcoming_event->event_alt = $request->event_alt;
@@ -276,29 +285,30 @@ class UpcomingEvent extends Controller
             $upcoming_event->save();
 
             DB::commit();
-            Log::notice('Upcomming Event : '. $upcoming_event->event_title .', Was Successfully Updated By: ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Upcomming Event : ' . $upcoming_event->event_title . ', Was Successfully Updated By: ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Upcoming Event Failed To Update: : ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/upcoming-event/'.$id.'/edit')->withSuccess('Upcoming Event Was Successfully Updated');
+        return redirect('/admin/upcoming-event/' . $id . '/edit')->withSuccess('Upcoming Event Was Successfully Updated');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         DB::beginTransaction();
         try {
             $upcoming_event = UpcomingEvents::find($id);
             if ($old_image_path = $upcoming_event->event_thumbnail) {
-                $file_path = public_path('uploaded_files/'.'upcoming-event/'.$upcoming_event->created_at->format('Y').'/'.$upcoming_event->created_at->format('m').'/'.$old_image_path);
-                if (File::exists($file_path)) {
-                    File::delete($file_path);
+                $file_path = 'project/eduall-website/upcoming-event/' . $upcoming_event->created_at->format('Y') . '/' . $upcoming_event->created_at->format('m') . '/' . $old_image_path;
+                if (Storage::disk('s3')->exists($file_path)) {
+                    Storage::disk('s3')->delete($file_path);
                 }
             }
             $upcoming_event->delete();
             DB::commit();
-            Log::notice('Upcomming Event : '. $upcoming_event->event_title . ', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Upcomming Event : ' . $upcoming_event->event_title . ', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Upcoming Event Failed To Delete: ' . $e);
@@ -308,14 +318,15 @@ class UpcomingEvent extends Controller
         return redirect('/admin/upcoming-event')->withSuccess('Upcoming Event Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
     }
 
-    public function status_draft($id){
+    public function status_draft($id)
+    {
         DB::beginTransaction();
         try {
             $upcoming_event = UpcomingEvents::find($id);
             $upcoming_event->event_status = 'draft';
             $upcoming_event->save();
 
-            Log::notice('Upcomming Event : '. $upcoming_event->event_title .' Status Was Set To Draft By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Upcomming Event : ' . $upcoming_event->event_title . ' Status Was Set To Draft By : ' . Auth::guard('web-admin')->user()->name);
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
@@ -326,7 +337,8 @@ class UpcomingEvent extends Controller
         return redirect('/admin/upcoming-event');
     }
 
-    public function status_publish($id){
+    public function status_publish($id)
+    {
         DB::beginTransaction();
         try {
             $upcoming_event = UpcomingEvents::find($id);
@@ -334,7 +346,7 @@ class UpcomingEvent extends Controller
             $upcoming_event->save();
 
             DB::commit();
-            Log::notice('Upcomming Event : '. $upcoming_event->event_title .' Status Was Set To Publish By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Upcomming Event : ' . $upcoming_event->event_title . ' Status Was Set To Publish By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Upcomming Event Status Was Failed To Set: ' .  $e);

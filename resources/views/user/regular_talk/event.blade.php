@@ -75,7 +75,7 @@
                     @foreach (json_decode($regular_talk->speaker_image) as $image)
                         <div class="col p-0">
                             <img loading="lazy" class="w-full"
-                                src="{{ asset('uploaded_files/' . 'regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $image) }}"
+                                src="{{ Storage::url('regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $image) }}"
                                 alt="Speaker">
                         </div>
                     @endforeach

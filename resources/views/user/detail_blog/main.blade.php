@@ -4,7 +4,7 @@
     <title>{{ $blog->blog_title }}</title>
     <meta property=og:url content="{{ url(app()->getLocale() . '/blog/' . $blog->slug) }}">
     <meta property=og:image
-        content="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
+        content="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
     <meta property=og:title content="{{ $blog->blog_title }}">
 
 
@@ -46,7 +46,7 @@
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
                                     target="_blank" class="flex justify-center items-center">
                                     <div class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">
-                                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                        <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                             class="w-full object-cover">
                                     </div>
                                     {{-- change author name with mentor name --}}
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="mt-6 w-full">
-                    <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                    <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                         alt="EduALL {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96">
                 </div>
             </div>
@@ -170,7 +170,7 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
-                            <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                            <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                 alt="EduALL {{ $blog->blog_thumbnail_alt }}"
                                 class="h-72 object-cover object-center">
                             <div class="flex justify-between">

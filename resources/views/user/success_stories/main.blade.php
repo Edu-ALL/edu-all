@@ -49,7 +49,7 @@
                             class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
                             <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden"
                                 id="{{ explode(' ', trim($item->name))[0] }}">
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                <img data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                     alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover">
                             </div>
                             <div class="w-full md:w-6/12 h-full">
@@ -83,7 +83,7 @@
                                         </div>
                                         {{-- Achievement --}}
                                         @if ($tab_section != 'passion_project')
-                                            <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
+                                            <img data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
                                                 alt="{{ $item->achievement_alt }}" class="mt-2">
                                         @endif
                                     </div>

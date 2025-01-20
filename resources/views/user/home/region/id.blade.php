@@ -20,14 +20,14 @@
             @if ($banners->video_link)
                 <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
                     <source
-                        src="{{ asset('uploaded_files/banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
+                        src="{{ Storage::url('banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
                         type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             @elseif ($banners->image)
                 <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
                     <img loading="lazy"
-                        src="{{ asset('uploaded_files/banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
+                        src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
                         alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0">
                 </div>
             @endif
@@ -276,7 +276,7 @@
                                     <div
                                         class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                                         <img loading="lazy"
-                                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                                            data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
                                             alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
                                         <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
                                             <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
@@ -296,7 +296,7 @@
                 @foreach ($success_stories as $item)
                     <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                         <img loading="lazy"
-                            data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                            data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
                             alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
                         <div>
                             <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
@@ -347,7 +347,7 @@
                                                             <a href="{{ $regular_talk->event_rsvp_link }}"
                                                                 target="_blank">
                                                                 <img loading="lazy"
-                                                                    src="{{ asset('uploaded_files/upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                    src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                                     alt="{{ $regular_talk->event_alt }}"
                                                                     class="object-contain w-full">
                                                             </a>
@@ -361,7 +361,7 @@
                                                     <li class="splide__slide px-1.5 md:px-4">
                                                         <div class="splide__slide__container">
                                                             <img loading="lazy"
-                                                                src="{{ asset('uploaded_files/upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                                src="{{ Storage::url('upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                                 alt="{{ $event->event_alt }}"
                                                                 class="object-cover w-full h-full">
                                                         </div>
@@ -475,7 +475,7 @@
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                             @foreach ($as_seen_on as $item)
                                 <img loading="lazy"
-                                    src="{{ asset('uploaded_files/as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                    src="{{ Storage::url('as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                     alt="{{ $item->alt }}" class="md:w-2/12 w-1/3 h-full object-contain">
                             @endforeach
                         </div>

@@ -89,7 +89,7 @@
                                     <div class="col-md-2 col">
                                         <label for="" class="form-label">Banner Image Preview</label>
                                         <div class="col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
-                                            <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$banner->banner_img) }}">
+                                            <img class="img-preview img-fluid" id="img_preview" src="{{ Storage::url('banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$banner->banner_img) }}">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -106,7 +106,7 @@
                                     <div class="col-md-2 col">
                                         <label for="" class="form-label">Banner Image Preview</label>
                                         <div class="col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
-                                            <img class="img-preview img-fluid" id="img_mobile_preview" src="{{ asset('uploaded_files/'.'banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$banner->banner_img_mobile) }}">
+                                            <img class="img-preview img-fluid" id="img_mobile_preview" src="{{ Storage::url('banner/'.$banner->created_at->format('Y').'/'.$banner->created_at->format('m').'/'.$banner->banner_img_mobile) }}">
                                         </div>
                                     </div>
                                     <div class="col">

@@ -36,7 +36,7 @@
                 class="lg:order-3 order-1 w-full xl:w-4/12 lg:w-4/12 items-center flex nav-title transition-all duration-500 transform -translate-y-[600%]">
                 <div class="h-[1px] bg-[#DADADA] mr-4 hidden lg:block flex-grow"></div>
                 <div class="flex items-center justify-center lg:justify-end h-full mx-auto">
-                    <img src={{ asset('uploaded_files/' . 'website-settings/' . $website_settings->website_secondary_logo) }}
+                    <img src={{ Storage::url('website-settings/' . $website_settings->website_secondary_logo) }}
                         width="100" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
                 </div>
             </div>

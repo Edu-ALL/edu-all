@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
@@ -48,7 +49,7 @@ class Blog extends Controller
                     return $result;
                 })
                 ->editColumn('image', function ($d) {
-                    $path = asset('uploaded_files/' . 'blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
+                    $path = Storage::url('blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
                     $result = '
                     <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
                 ';
@@ -139,7 +140,7 @@ class Blog extends Controller
                     $blog->blog_status = 'publish';
                     $blog->updated_at = date('Y-m-d H:i:s');
                     $blog->save();
-                    Log::info('blog id: '.$blog->id.' already published');
+                    Log::info('blog id: ' . $blog->id . ' already published');
                     DB::commit();
                 } catch (Exception $e) {
                     Log::error($e);
@@ -199,10 +200,10 @@ class Blog extends Controller
             if ($request->hasFile('blog_thumbnail')) {
                 $file = $request->file('blog_thumbnail');
                 $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path() . '/uploaded_files/' . 'blogs/' . date('Y') . '/' . date('m') . '/';
+                $destinationPath = 'project/eduall-website/blogs/' . date('Y') . '/' . date('m') . '/';
                 $time = date('YmdHis');
                 $fileName = 'Blogs-thumbnail-' . $time . '.' . $file_format;
-                $file->move($destinationPath, $fileName);
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $blogs->blog_thumbnail = $fileName;
             }
             $blogs->blog_thumbnail_alt = $request->blog_alt;
@@ -355,17 +356,17 @@ class Blog extends Controller
             $blogs = Blogs::find($id);
             if ($request->hasFile('blog_thumbnail')) {
                 if ($old_image_path_en = $blogs->blog_thumbnail) {
-                    $file_path = public_path('uploaded_files/' . 'blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/' . $old_image_path_en);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/' . $old_image_path_en;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('blog_thumbnail');
                 $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path() . '/uploaded_files/' . 'blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/';
+                $destinationPath = 'project/eduall-website/blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/';
                 $time = date('YmdHis');
                 $fileName = 'Blogs-thumbnail-' . $time . '.' . $file_format;
-                $file->move($destinationPath, $fileName);
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $blogs->blog_thumbnail = $fileName;
             }
             $blogs->blog_thumbnail_alt = $request->blog_alt;
@@ -412,9 +413,9 @@ class Blog extends Controller
             $blog = Blogs::find($id);
             $blog_title = $blog->blog_title;
             if ($old_image_path = $blog->blog_thumbnail) {
-                $file_path = public_path('uploaded_files/' . 'blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $old_image_path);
-                if (File::exists($file_path)) {
-                    File::delete($file_path);
+                $file_path = 'project/eduall-website/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $old_image_path;
+                if (Storage::disk('s3')->exists($file_path)) {
+                    Storage::disk('s3')->delete($file_path);
                 }
             }
             $blog_widget = BlogWidgets::where('blog_id', $blog->id)->get();
@@ -511,10 +512,19 @@ class Blog extends Controller
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName . '_' . time() . '.' . $extension;
 
-            $request->file('upload')->move(public_path('uploaded_files/blog_assets'), $fileName);
+            // Get the file content
+            $file = $request->file('upload');
 
-            $url = asset('uploaded_files/blog_assets/'.$fileName);
-            return response()->json(['fileName'=>$fileName, 'uploaded'=>1, 'url'=>$url]);
+            // Store the file content on S3 using put()
+            $path = Storage::disk('s3')->put('project/eduall-website/blog_assets/' . $fileName, file_get_contents($file));
+
+            if ($path) {
+                // Generate the URL for the uploaded file
+                $url = Storage::url('blog_assets/' . $fileName);
+                return response()->json(['fileName' => $fileName, 'uploaded' => 1, 'url' => $url]);
+            } else {
+                return response()->json(['uploaded' => 0, 'error' => 'File upload failed']);
+            }
         }
     }
 }

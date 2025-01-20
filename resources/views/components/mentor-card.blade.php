@@ -5,7 +5,7 @@
             {{ explode(' ', trim($mentor->mentor_fullname))[0] }}
         </span> --}}
         <img loading="lazy"
-            src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+            src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
             alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
     </div>
     <div class="previous-mentor-item w-full max-h-[225px] md:max-h-[340px] absolute inset-0 h-full z-0 rounded-2xl overflow-hidden back face_back">
@@ -83,7 +83,7 @@
     {{-- Mentor Image --}}
     <div class="flex flex-col @if ($disabled_btn) pb-8 @endif">
         <div class="-mt-52 relative">
-            <img src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+            <img src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                 alt="{{ $mentor->mentor_alt }}" class="bg-cover bg-center">
             <img src="{{ asset('assets/logo/eduall.png') }}" alt="EduALL Logo"
                 class="w-12 h-12 object-contain absolute -bottom-2 right-2">
