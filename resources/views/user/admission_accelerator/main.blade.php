@@ -65,7 +65,7 @@
         <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/5 w-full">
-                    <img src="{{ asset('assets/img/admission_accelerator/Rectangle.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/admission_accelerator/Rectangle.webp') }}" alt="EduALL"
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
                 </div>
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12">
@@ -99,7 +99,7 @@
         <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/5 w-full">
-                    <img src="{{ asset('assets/img/admission_accelerator/essay.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/admission_accelerator/essay.webp') }}" alt="EduALL"
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
                 </div>
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8">

@@ -77,7 +77,7 @@
                             </h3>
                             <div class="rounded-xl h-44 w-full overflow-hidden my-4">
                                 <img src="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
-                                    alt="" class="h-full w-full object-cover">
+                                    alt="EduALL" class="h-full w-full object-cover">
                             </div>
                             <div class="w-full md:h-24">
                                 <p class="text-base text-start px-0 leading-5">

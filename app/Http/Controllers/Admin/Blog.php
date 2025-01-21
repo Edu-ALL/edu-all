@@ -39,85 +39,61 @@ class Blog extends Controller
         // Build the query
         $query = Blogs::orderBy('updated_at', 'desc');
 
-        // If a search term is provided, add search filters for blog title and category
+        // Apply search filter if provided
         if ($searchTerm) {
             $query->where('blog_title', 'like', '%' . $searchTerm . '%');
         }
 
-        // Apply pagination (offset and limit)
-        $data = $query->offset($start)  // Set offset
-            ->limit($length)  // Set limit (pagination)
-            ->get();  // Fetch the data
+        // Get paginated data
+        $data = $query->offset($start)
+            ->limit($length)
+            ->get();
 
-        if ($searchTerm) {
-            $totalRecords = Blogs::count();  // Total number of records without pagination
-            $totalFiltered = $query->count();
-        } else {
-            $totalRecords = Blogs::count();  // Total number of records without pagination
-            $totalFiltered = $totalRecords;
-        }
+        // Get total records (with or without search filter)
+        $totalRecords = Blogs::count();
+        $totalFiltered = $searchTerm ? $query->count() : $totalRecords;
 
-
-        $mappedData = $data->map(function ($d, $index) {
-            // Category
+        // Map the data to the required format
+        $mappedData = $data->map(function ($d, $index) use ($start) {
+            // Get related data
             $category = $d->blog_category->category_name;
+            $mentor = ($d->mt_id ?? 0) === 0 ? '-' : $d->mentor?->mentor_fullname;
+            $path = Storage::url('blogs/' . $d->created_at->format('Y/m') . '/' . $d->blog_thumbnail);
+            $image = '<img src="' . $path . '" alt="" width="80">';
+            $language = '<img src="' . asset('assets/img/flag/flag-' . $d->lang . '.png') . '" alt="" width="30">
+                     <p class="pt-1" style="font-size: 13px;">' . $d->languages->language . '</p>';
 
-            // Mentor
-            $mentor = ($d->mt_id == 0 || $d->mt_id == null) ? '-' : $d->mentor?->mentor_fullname;
-
-            // Image
-            $path = Storage::url('blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
-            $image = '<img data-original="' . $path . '" src="' . $path . '" alt="" width="80">';
-
-            // Language
-            $languageFlagPath = asset('assets/img/flag/flag-' . $d->lang . '.png');
-            $language = '
-                <img data-original="' . $languageFlagPath . '" src="' . $languageFlagPath . '" alt="" width="30">
-                <p class="pt-1" style="font-size: 13px !important">' . $d->languages->language . '</p>
-            ';
-
-            // Highlight
+            // Handle highlight switch
             $route = route('highlight-blogs', ['id' => $d->id]);
-            $toggle = ($d->is_highlight == "false") ? "" : "checked";
-            $check = ($d->is_highlight == "false") ? "Off" : "On";
+            $highlightToggle = ($d->is_highlight === "true") ? "checked" : "";
+            $highlightLabel = ($d->is_highlight === "true") ? "On" : "Off";
             $highlight = '
-                <div class="col d-flex align-items-center justify-content-center">
-                    <form action="' . $route . '" method="POST">
-                        ' . csrf_field() . '
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" ' . $toggle . ' onchange="this.form.submit()" style="font-size: 18px !important">
-                            <label class="form-label card-title p-0 pt-1 m-0" for="is_highlight">' . $check . '</label>
-                        </div>
-                    </form>
-                </div>
-            ';
+            <div class="col d-flex align-items-center justify-content-center">
+                <form action="' . $route . '" method="POST">
+                    ' . csrf_field() . '
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" name="is_highlight" ' . $highlightToggle . ' onchange="this.form.submit()">
+                        <label class="form-label card-title pt-1" for="is_highlight">' . $highlightLabel . '</label>
+                    </div>
+                </form>
+            </div>';
 
-            // Status
-            $statusButton = $d->blog_status == 'publish'
-                ? '<button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft(' . $d->id . ')"><span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">' . $d->blog_status . '</span></button>'
-                : '<button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish(' . $d->id . ')"><span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">' . $d->blog_status . '</span></button>';
+            // Handle status button
+            $statusButton = $d->blog_status === 'publish' ?
+                '<button class="btn btn-success" onclick="formDraft(' . $d->id . ')"><span data-bs-toggle="tooltip" title="Set to Draft">' . $d->blog_status . '</span></button>' :
+                '<button class="btn btn-danger" onclick="formPublish(' . $d->id . ')"><span data-bs-toggle="tooltip" title="Set to Publish">' . $d->blog_status . '</span></button>';
 
-            // Last Updated
-            $lastUpdated = $d->updated_at;
-
-            // Actions
+            // Action buttons
             $actions = '
-                <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-primary" href="/admin/blogs/' . $d->id . '/view">
-                        <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this blog"></i>
-                    </a>
-                    <a type="button" class="btn btn-warning" href="/admin/blogs/' . $d->id . '/edit">
-                        <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog"></i>
-                    </a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')">
-                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog"></i>
-                    </button>
-                </div>
-            ';
+            <div class="d-flex justify-content-center gap-1">
+                <a class="btn btn-primary" href="/admin/blogs/' . $d->id . '/view"><i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" title="View this blog"></i></a>
+                <a class="btn btn-warning" href="/admin/blogs/' . $d->id . '/edit"><i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" title="Edit this blog"></i></a>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')"><i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" title="Delete this blog"></i></button>
+            </div>';
 
             // Return the mapped array
             return [
-                'index' => $index + 1, // Add 1 to index for human-friendly display
+                'index' => $start + $index + 1,
                 'blog_title' => $d->blog_title,
                 'category' => $category,
                 'mentor' => $mentor,
@@ -125,7 +101,7 @@ class Blog extends Controller
                 'language' => $language,
                 'highlight' => $highlight,
                 'status' => $statusButton,
-                'last_updated' => $lastUpdated,
+                'last_updated' => $d->updated_at,
                 'action' => $actions,
             ];
         });
@@ -135,9 +111,10 @@ class Blog extends Controller
             'draw' => $request->get('draw'),
             'recordsTotal' => $totalRecords,
             'recordsFiltered' => $totalFiltered,
-            'data' =>  $mappedData
+            'data' => $mappedData
         ]);
     }
+
 
     public function checkPublish()
     {

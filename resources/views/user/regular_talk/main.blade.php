@@ -30,7 +30,7 @@
                 </nav>
                 <div class="relative">
                     <img class="sticker absolute" loading="lazy"
-                        src="{{ asset('assets/img/regular_talk/merge-icon.png') }}" alt="">
+                        src="{{ asset('assets/img/regular_talk/merge-icon.png') }}" alt="EduALL">
                     <h3>Breaking Down the <br> Journey to a Winning <br> TOP University Application</h3>
                 </div>
                 <h5 class="leading-tight md:pr-8 md:mt-5 mt-4">

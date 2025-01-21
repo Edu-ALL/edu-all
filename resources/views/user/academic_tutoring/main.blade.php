@@ -96,7 +96,7 @@
                                 <div class="flex items-center justify-start gap-2">
                                     <div class="w-10 h-10">
                                         <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/benefits/benefit-0' . $loop->iteration . '.png') }}"
-                                            alt="" class="w-full h-full object-contain">
+                                            alt="EduALL" class="w-full h-full object-contain">
                                     </div>
                                     <h4 class="font-semibold text-lg leading-6 flex-1">{{ $item['title'] }}</h4>
                                 </div>
@@ -330,7 +330,7 @@
                 {{ __('pages/programs/academic_tutoring.why_us_title') }}</h2> -->
             <div class="mt-8">
                 <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_english.webp') : asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_bahasa.webp') }}"
-                    alt="" class="w-full h-full object-contain">
+                    alt="EduALL" class="w-full h-full object-contain">
             </div>
             <!-- <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                 @foreach (__('pages/programs/academic_tutoring.why_us_list') as $item)
@@ -339,7 +339,7 @@
                             class="flex flex-col items-center justify-start bg-[#F2F1F1] p-4 rounded-xl shadow-lg h-full relative">
                             <div class="w-10 h-10 absolute top-0 -translate-y-1/2">
                                 <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why-us/why-us-0' . $loop->iteration . '.png') }}"
-                                    alt="" class="w-full h-full object-contain">
+                                    alt="EduALL" class="w-full h-full object-contain">
                             </div>
                             <h4 class="mt-4 font-semibold text-lg leading-6">{{ $item['title'] }}</h4>
                             <p class="text-center mt-2 text-sm">{{ $item['desc'] }}</p>

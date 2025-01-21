@@ -99,7 +99,7 @@
                                 {!! $item['title'] !!}
                             </h3>
                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt=""
+                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
                                     class="h-full w-full object-cover">
                             </div>
                             <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
@@ -199,7 +199,7 @@
                     {{ __('pages/programs/admission_mentoring.why_us_description') }}
                 </p>
                 <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/admission mentoring/revamp/why_us_english.webp') : asset('assets/img/admission mentoring/revamp/why_us_bahasa.webp') }}"
-                    alt="" class="w-full max-w-4xl object-contain">
+                    alt="EduALL" class="w-full max-w-4xl object-contain">
             </div>
         </div>
     </section>

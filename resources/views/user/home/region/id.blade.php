@@ -117,7 +117,7 @@
                                             {!! $item['title'] !!}
                                         </h3>
                                         <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                            <img data-original="{{ asset('assets/img/home/our-programs/' . $item['img']) }}"alt=""
+                                            <img data-original="{{ asset('assets/img/home/our-programs/' . $item['img']) }}"alt="EduALL"
                                                 class="h-full w-full object-cover">
                                         </div>
                                         <div class="w-full lg:h-20 border-t border-t-[#DEDEDE]">

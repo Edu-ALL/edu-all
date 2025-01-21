@@ -73,7 +73,7 @@
                                                                 <div
                                                                     class="w-8 h-8 text-center text-white rounded-full overflow-hidden">
                                                                     <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                                                        alt="" class="w-full object-cover">
+                                                                        alt="EduALL" class="w-full object-cover">
                                                                 </div>
                                                                 {{-- change author name with mentor name --}}
                                                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
@@ -188,7 +188,7 @@
                                         <div
                                             class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-newprimary">
                                             <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                                alt="" class="w-full object-cover">
+                                                alt="EduALL" class="w-full object-cover">
                                         </div>
                                         <div class="text-newprimary">
                                             {{ $blog->mentor->mentor_fullname }}

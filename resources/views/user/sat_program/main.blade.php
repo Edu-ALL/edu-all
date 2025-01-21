@@ -344,7 +344,7 @@
                             <div class="flex items-center justify-start gap-2 flex-1">
                                 <div class="w-10 h-10">
                                     <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/supports/support-' . $loop->iteration . '.png') }}"
-                                        alt="" class="w-full h-full object-contain">
+                                        alt="EduALL" class="w-full h-full object-contain">
                                 </div>
                                 <h4 class="font-semibold text-lg leading-6 flex-1">{!! $item['title'] !!}</h4>
                             </div>

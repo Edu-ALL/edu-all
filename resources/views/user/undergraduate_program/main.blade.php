@@ -155,7 +155,7 @@
                     @foreach (__('pages/programs/undergraduate_program.learning_scope_points') as $item)
                         <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
                             <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/' . $item['image']) }}"
-                                alt="" class="w-full max-w-2xl object-contain">
+                                alt="EduALL" class="w-full max-w-2xl object-contain">
                             <div class="w-full -mt-4">
                                 <a href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
                                     target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">

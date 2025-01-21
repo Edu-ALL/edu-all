@@ -191,7 +191,7 @@
                                                 {!! $item['title'] !!}
                                             </h3>
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt=""
+                                                <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt="EduALL"
                                                     class="h-full w-full object-cover">
                                             </div>
                                             <div class="w-full md:h-32 border-b border-b-[#DEDEDE]">

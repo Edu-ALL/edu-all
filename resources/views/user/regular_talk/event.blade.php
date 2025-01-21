@@ -51,7 +51,7 @@
                 </nav>
                 <div class="relative">
                     <img class="sticker absolute" loading="lazy"
-                        src="{{ asset('assets/img/regular_talk/'.$regular_talk->recommended_for).'.webp' }}" alt="">
+                        src="{{ asset('assets/img/regular_talk/'.$regular_talk->recommended_for).'.webp' }}" alt="EduALL">
 
                     <h3 class="w-[95%]">{{ $regular_talk->topic }}</h3>
                 </div>

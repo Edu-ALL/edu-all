@@ -286,7 +286,7 @@
                                             </select>
                                         </form>
                                         
-                                        <img class="mt-1" src="{{ asset('uploaded_files/banner/${data[i].created_at.substring(0, 4)}/${data[i].created_at.substring(5, 7)}/${data[i].banner_img}') }}" alt="" width="100%" style="border-radius: 4px;">
+                                        <img class="mt-1" src="{{ asset('uploaded_files/banner/${data[i].created_at.substring(0, 4)}/${data[i].created_at.substring(5, 7)}/${data[i].banner_img}') }}" alt="EduALL" width="100%" style="border-radius: 4px;">
                                     </div>
                                     <h5 class="card-desc mt-2">${data[i].banner_title}</h5>
                                 </div>
