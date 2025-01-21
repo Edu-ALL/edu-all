@@ -150,10 +150,17 @@
                 responsive: true,
                 processing: true,
                 serverSide: true,
-                ajax: '{{ route('data-blogs') }}',
+                ajax: {
+                    url: '{{ route('data-blogs') }}',
+                    type: "GET",
+                    // dataSrc: function(json) {
+                    //     console.log(json);
+                    //     return json;
+                    // }
+                },
                 columns: [{
-                        data: 'DT_RowIndex',
-                        name: 'DT_RowIndex'
+                        data: 'index',
+                        name: 'index'
                     },
                     {
                         data: 'blog_title',

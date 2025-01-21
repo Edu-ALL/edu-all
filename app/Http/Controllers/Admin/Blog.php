@@ -32,85 +32,76 @@ class Blog extends Controller
 
     public function getBlog(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Blogs::orderBy('updated_at', 'desc')->get();
-            return Datatables::of($data)
-                ->addIndexColumn()
-                ->editColumn('category', function ($d) {
-                    $result = $d->blog_category->category_name;
-                    return $result;
-                })
-                ->editColumn('mentor', function ($d) {
-                    if ($d->mt_id == 0 || $d->mt_id == null) {
-                        $result = '-';
-                    } else {
-                        $result = $d->mentor?->mentor_fullname;
-                    }
-                    return $result;
-                })
-                ->editColumn('image', function ($d) {
-                    $path = Storage::url('blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
-                    $result = '
-                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
-                ';
-                    return $result;
-                })
-                ->editColumn('language', function ($d) {
-                    $path = asset('assets/img/flag/flag-' . $d->lang . '.png');
-                    $result = '
-                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="30">
-                    <p class="pt-1" style="font-size: 13px !important">
-                        ' . $d->languages->language . '
-                    </p>
-                ';
-                    return $result;
-                })
-                ->editColumn('highlight', function ($d) {
-                    $path = asset('assets/img/flag/flag-' . $d->lang . '.png');
-                    $route = route('highlight-blogs', ['id' => $d->id]);
-                    $toggle = ($d->is_highlight == "false") ? "" : "checked";
-                    $check = ($d->is_highlight == "false") ? "Off" : "On";
-                    $result = '
-                    <div class="col d-flex align-items-center justify-content-center">
-                        <form action="' . $route . '" method="POST">
-                            ' . csrf_field() . '
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" ' . $toggle . ' onchange="this.form.submit()" style="font-size: 18px !important">
-                                <label class="form-label card-title p-0 pt-1 m-0" for="is_highlight">
-                                    ' . $check . '
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                ';
-                    return $result;
-                })
-                ->editColumn('status', function ($d) {
-                    if ($d->blog_status == 'publish') {
-                        $result = '
-                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft(' . $d->id . ')">
-                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">
-                                ' . $d->blog_status . '
-                            </span>
-                        </button>
-                    ';
-                    } else {
-                        $result = '
-                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish(' . $d->id . ')">
-                            <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">
-                                ' . $d->blog_status . '
-                            </span>
-                        </button>
-                    ';
-                    }
-                    return $result;
-                })
-                ->editColumn('last_updated', function ($d) {
-                    $result = $d->updated_at;
-                    return $result;
-                })
-                ->editColumn('action', function ($d) {
-                    $result = '
+        $start = $request->get('start');
+        $length = $request->get('length');
+        $searchTerm = $request->get('search')['value'];
+
+        // Build the query
+        $query = Blogs::orderBy('updated_at', 'desc');
+
+        // If a search term is provided, add search filters for blog title and category
+        if ($searchTerm) {
+            $query->where('blog_title', 'like', '%' . $searchTerm . '%');
+        }
+
+        // Apply pagination (offset and limit)
+        $data = $query->offset($start)  // Set offset
+            ->limit($length)  // Set limit (pagination)
+            ->get();  // Fetch the data
+
+        if ($searchTerm) {
+            $totalRecords = Blogs::count();  // Total number of records without pagination
+            $totalFiltered = $query->count();
+        } else {
+            $totalRecords = Blogs::count();  // Total number of records without pagination
+            $totalFiltered = $totalRecords;
+        }
+
+
+        $mappedData = $data->map(function ($d, $index) {
+            // Category
+            $category = $d->blog_category->category_name;
+
+            // Mentor
+            $mentor = ($d->mt_id == 0 || $d->mt_id == null) ? '-' : $d->mentor?->mentor_fullname;
+
+            // Image
+            $path = Storage::url('blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
+            $image = '<img data-original="' . $path . '" src="' . $path . '" alt="" width="80">';
+
+            // Language
+            $languageFlagPath = asset('assets/img/flag/flag-' . $d->lang . '.png');
+            $language = '
+                <img data-original="' . $languageFlagPath . '" src="' . $languageFlagPath . '" alt="" width="30">
+                <p class="pt-1" style="font-size: 13px !important">' . $d->languages->language . '</p>
+            ';
+
+            // Highlight
+            $route = route('highlight-blogs', ['id' => $d->id]);
+            $toggle = ($d->is_highlight == "false") ? "" : "checked";
+            $check = ($d->is_highlight == "false") ? "Off" : "On";
+            $highlight = '
+                <div class="col d-flex align-items-center justify-content-center">
+                    <form action="' . $route . '" method="POST">
+                        ' . csrf_field() . '
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" name="is_highlight" id="is_highlight" ' . $toggle . ' onchange="this.form.submit()" style="font-size: 18px !important">
+                            <label class="form-label card-title p-0 pt-1 m-0" for="is_highlight">' . $check . '</label>
+                        </div>
+                    </form>
+                </div>
+            ';
+
+            // Status
+            $statusButton = $d->blog_status == 'publish'
+                ? '<button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#draft" style="text-transform: capitalize;" onclick="formDraft(' . $d->id . ')"><span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Draft">' . $d->blog_status . '</span></button>'
+                : '<button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#publish" style="text-transform: capitalize;" onclick="formPublish(' . $d->id . ')"><span class="p-0" data-bs-toggle="tooltip" data-bs-title="Set to Publish">' . $d->blog_status . '</span></button>';
+
+            // Last Updated
+            $lastUpdated = $d->updated_at;
+
+            // Actions
+            $actions = '
                 <div class="d-flex flex-row justify-content-center gap-1">
                     <a type="button" class="btn btn-primary" href="/admin/blogs/' . $d->id . '/view">
                         <i class="fa-solid fa-magnifying-glass" data-bs-toggle="tooltip" data-bs-title="View this blog"></i>
@@ -122,12 +113,30 @@ class Blog extends Controller
                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog"></i>
                     </button>
                 </div>
-                ';
-                    return $result;
-                })
-                ->rawColumns(['category', 'mentor', 'image', 'language', 'highlight', 'status', 'last_updated', 'action'])
-                ->make(true);
-        }
+            ';
+
+            // Return the mapped array
+            return [
+                'index' => $index + 1, // Add 1 to index for human-friendly display
+                'blog_title' => $d->blog_title,
+                'category' => $category,
+                'mentor' => $mentor,
+                'image' => $image,
+                'language' => $language,
+                'highlight' => $highlight,
+                'status' => $statusButton,
+                'last_updated' => $lastUpdated,
+                'action' => $actions,
+            ];
+        });
+
+        return response()->json([
+            'start' => $start,
+            'draw' => $request->get('draw'),
+            'recordsTotal' => $totalRecords,
+            'recordsFiltered' => $totalFiltered,
+            'data' =>  $mappedData
+        ]);
     }
 
     public function checkPublish()

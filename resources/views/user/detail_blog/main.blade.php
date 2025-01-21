@@ -258,12 +258,13 @@
         function blog_widget() {
             let paragraph = $('.blog_style p')
             let data = {!! $blog_widgets !!}
+            
             for (let index = 1; index <= paragraph.length; index++) {
                 data.forEach(element => {
                     if (index == element.position) {
                         let button = element.button_name ? element.button_name : 'Read More'
-                        let image = element.image ? '{{ asset('') }}' + element.image : ''
-                        let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'
+                        let image = element.image ? '{{ Storage::url('') }}' + element.image : ''
+                        let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'                        
                         paragraph.eq(element.position - 1).append(
                             '<div class="p-4 bg-gray-100 mt-5 items-center rounded-2xl drop-shadow-xl border border-2 border-gray-100" role="alert">' +
                             '<div class="flex md:flex-row flex-col items-stretch gap-3">' +

@@ -595,9 +595,8 @@
             const blog = $('#select_article').find(':selected').data('blog')
             const localization = blog.lang == "id" ? "id-id" : "id-en"
 
-            $('#image').val('uploaded_files/blogs/' + moment(blog.created_at).format('YYYY') + '/' + moment(blog.created_at)
-                .format('MM') + '/' + blog
-                .blog_thumbnail);
+            $('#image').val('blogs/' + moment(blog.created_at).format('YYYY') + '/' + moment(blog.created_at)
+                .format('MM') + '/' + blog.blog_thumbnail);
             $('#title').val(blog.blog_title);
             $('#description').html(blog.seo_desc);
             $('#link').val('{{ url('') }}' + '/' + localization + '/blog/' + blog.slug);
