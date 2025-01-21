@@ -150,40 +150,51 @@
                 responsive: true,
                 processing: true,
                 serverSide: true,
-                ajax: '{{ route('data-blogs') }}',
+                ajax: {
+                    url: '{{ route('data-blogs') }}',
+                    method: 'GET',
+                },
                 columns: [{
-                        data: 'DT_RowIndex',
-                        name: 'DT_RowIndex'
+                        data: 'index',
+                        name: 'index',
+                        orderable: false,
                     },
                     {
                         data: 'blog_title',
-                        name: 'blog_title'
+                        name: 'blog_title',
+                        orderable: false,
                     },
                     {
                         data: 'category',
-                        name: 'category'
+                        name: 'category',
+                        orderable: false,
                     },
                     {
                         data: 'mentor',
-                        name: 'mentor'
+                        name: 'mentor',
+                        orderable: false,
                     },
                     {
                         data: 'image',
-                        name: 'image'
+                        name: 'image',
+                        orderable: false,
                     },
                     {
                         data: 'language',
                         name: 'language',
-                        class: 'text-center'
+                        class: 'text-center',
+                        orderable: false,
                     },
                     {
                         data: 'highlight',
-                        name: 'highlight'
+                        name: 'highlight',
+                        orderable: false,
                     },
                     {
                         data: 'status',
                         name: 'status',
-                        class: 'text-center'
+                        class: 'text-center',
+                        orderable: false,
                     },
                     {
                         data: 'last_updated',
@@ -193,12 +204,14 @@
                         "render": function(value) {
                             if (value === null) return "";
                             return moment(value).format('MMM, Do YYYY');
-                        }
+                        },
+                        orderable: false,
                     },
                     {
                         data: 'action',
                         name: 'action',
-                        class: 'text-center'
+                        class: 'text-center',
+                        orderable: false,
                     },
                 ]
             });
