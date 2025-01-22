@@ -17,13 +17,18 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <section class="py-16 h-[90vh] bg-global-innovators-project-header bg-cover bg-top" id="banner">
+    <section class="py-16 h-screen bg-global-innovators-project-header bg-cover bg-top" id="banner">
         <x-registration-form />
-        <div class="flex flex-col h-full items-center md:items-start justify-center max-w-4xl mx-6 gap-2 md:mx-auto">
-            <h2 class="font-bold text-white text-center md:text-left leading-[3.5rem] tracking-wider max-w-xs text-5xl"> 
-                Global Innovators Project
-            </h2>
-            <x-registration-form :is-button="true" />
+        <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
+            <div class="flex flex-col gap-2">
+                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:pb-[2%]">
+                    Global Innovators Project
+                </h2>
+                <!-- <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
+                    {{ __('pages/programs/global_innovators_projects.description') }}
+                </p> -->
+                <x-registration-form :is-button="true" />
+            </div>
         </div>
     </section>
 
