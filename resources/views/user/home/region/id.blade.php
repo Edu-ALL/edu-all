@@ -443,7 +443,7 @@
     {{-- ================================== Bottom Section  ================================== --}}
     <section
         class="md:pt-8 md:pb-20 md:bg-dark">
-        <div class="md:new-main-container">
+        <div class="lg:px-10 xl:px-20 max-w-screen-xl mx-auto">
             <div class="flex md:flex-row flex-col items-center bg-dark md:bg-white md:rounded-3xl overflow-hidden md:mx-14">
                 <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 bg-white py-6 px-6 -mt-6 md:mt-0 rounded-t-3xl md:rounded-none">
                     <h2 class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
