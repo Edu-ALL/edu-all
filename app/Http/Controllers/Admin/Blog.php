@@ -49,7 +49,7 @@ class Blog extends Controller
                     return $result;
                 })
                 ->editColumn('image', function ($d) {
-                    $path = asset('uploaded_files/' . 'blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
+                    $path = Storage::url('blogs/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->blog_thumbnail);
                     $result = '
                     <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
                 ';
