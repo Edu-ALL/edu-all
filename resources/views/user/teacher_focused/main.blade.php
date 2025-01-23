@@ -20,14 +20,16 @@
     <section class="py-16 h-screen bg-experiental-learning-programs-header bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-start new-main-container py-[50%] md:pt-[20%] gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-2/3 md:pb-[2%]">
-                    {{ __('pages/programs/teacher_focused.title') }}
-                </h2>
-                <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
-                    {{ __('pages/programs/teacher_focused.description') }}
-                </p>
-                <x-registration-form :is-button="true" />
+            <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:pb-[2%]">
+                        {{ __('pages/programs/teacher_focused.title') }}
+                    </h2>
+                    <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
+                        {{ __('pages/programs/teacher_focused.description') }}
+                    </p>
+                    <x-registration-form :is-button="true" />
+                </div>
             </div>
         </div>
     </section>

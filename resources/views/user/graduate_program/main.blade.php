@@ -37,13 +37,13 @@
                 <x-registration-form :is-button="true" />
             </div>
 
-            <div class="absolute md:bottom-10 left-0 right-0">
+            <div class="absolute md:bottom-0 left-0 right-0">
                 <div class="relative h-full">
                     <div
-                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[34vh] absolute md:bottom-0 bottom-0 left-0 right-0">
                     </div>
                     <div
-                        class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-20 left-0 right-0 h-24 flex items-center">
+                        class="w-full main-container mx-auto absolute md:bottom-0 bottom-24 left-0 right-0 h-24 flex items-center">
                         <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
                             @foreach (__('pages/programs/admission_mentoring.stats') as $item)
                                 <div class="flex flex-col md:w-auto justify-center items-center">
