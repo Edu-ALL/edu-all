@@ -150,55 +150,40 @@
                 responsive: true,
                 processing: true,
                 serverSide: true,
-                ajax: {
-                    url: '{{ route('data-blogs') }}',
-                    type: "GET",
-                    // dataSrc: function(json) {
-                    //     console.log(json);
-                    //     return json;
-                    // }
-                },
+                ajax: '{{ route('data-blogs') }}',
                 columns: [{
-                        data: 'index',
-                        name: 'index',
-                        orderable: false,
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
                     },
                     {
                         data: 'blog_title',
-                        name: 'blog_title',
-                        orderable: false,
+                        name: 'blog_title'
                     },
                     {
                         data: 'category',
-                        name: 'category',
-                        orderable: false,
+                        name: 'category'
                     },
                     {
                         data: 'mentor',
-                        name: 'mentor',
-                        orderable: false,
+                        name: 'mentor'
                     },
                     {
                         data: 'image',
-                        name: 'image',
-                        orderable: false,
+                        name: 'image'
                     },
                     {
                         data: 'language',
                         name: 'language',
-                        class: 'text-center',
-                        orderable: false,
+                        class: 'text-center'
                     },
                     {
                         data: 'highlight',
-                        name: 'highlight',
-                        orderable: false,
+                        name: 'highlight'
                     },
                     {
                         data: 'status',
                         name: 'status',
-                        class: 'text-center',
-                        orderable: false,
+                        class: 'text-center'
                     },
                     {
                         data: 'last_updated',
@@ -208,14 +193,12 @@
                         "render": function(value) {
                             if (value === null) return "";
                             return moment(value).format('MMM, Do YYYY');
-                        },
-                        orderable: false,
+                        }
                     },
                     {
                         data: 'action',
                         name: 'action',
-                        class: 'text-center',
-                        orderable: false,
+                        class: 'text-center'
                     },
                 ]
             });
