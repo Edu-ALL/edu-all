@@ -44,66 +44,74 @@
         </div>
     </section> -->
 
-    {{-- Mentor List Section --}}
-    <section id="mentor" class="py-20 mt-[0rem] bg-dark">
-        <div class="new-main-container lg:max-w-10xl lg:mx-auto">
-            {{-- <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:gap-12 h-full">
-                @foreach ($allin_mentor as $mentor)
-                    <div class="w-full md:-mt-[100px] -mt-[150px] md:mb-[250px] mb-[350px]">
-                        <x-mentor-card :mentor=$mentor />
+    {{-- ========================================== Mentors ========================================== --}}
+    <section class="pt-16 pb-4 bg-dark" id="mentors">
+        <div class="flex flex-col items-center">
+            <div class="w-full md:px-8 max-w-screen-2xl mx-auto">
+                <div class="new-main-container">
+                    <div class="md:px-8">
+                        <div class="splide splides mentor-1" role="group">
+                            <div class="splide__arrows text-white">
+                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                    <i class="fa-solid fa-chevron-left text-4xl"></i>
+                                </button>
+                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                    <i class="fa-solid fa-chevron-right text-4xl"></i>
+                                </button>
+                            </div>
+                            <div class="splide__track py-4 md:pb-12">
+                                <ul class="splide__list">
+                                    @foreach ($allin_mentor as $mentor)
+                                        <li class="splide__slide w-full">
+                                            <div
+                                                class="splide__slide__container relative mx-1.5 md:mx-2 font-secondary program_card hover:rotate-program_card">
+                                                <x-mentor-card :mentor=$mentor />
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                @endforeach
-            </div> --}}
-
-            <div class="splide mentor-1" role="group">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                        <i class="fa-solid fa-chevron-left text-3xl text-white"></i>
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                        <i class="fa-solid fa-chevron-right text-3xl text-white"></i>
-                    </button>
-                </div>
-                <div class="splide__track py-20">
-                    <ul class="splide__list">
-                        @foreach ($allin_mentor as $mentor)
-                            <li class="splide__slide">
-                                <div class="splide__slide__container px-2">
-                                    <x-mentor-card :mentor=$mentor />
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     {{-- External Mentor List Section --}}
-    <section class="pt-32 pb-10">
-        <div class="new-main-container lg:max-w-10xl lg:mx-auto flex flex-col">
-            <h2 class="mb-8 font-newprimary font-bold text-4xl text-newprimary text-center">
+    <section class="pt-16 pb-4" id="external-mentors">
+        <div class="flex flex-col items-center">
+
+            <h2 class="mb-8 font-newprimary font-bold text-section-title text-newprimary text-center">
                 {{ __('pages/about_us/mentor.mentor_building_title') }}
             </h2>
-            <div class="splide mentor-2" role="group">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px">
-                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px">
-                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
-                    </button>
-                </div>
-                <div class="splide__track py-20">
-                    <ul class="splide__list">
-                        @foreach ($building_mentor as $mentor)
-                            <li class="splide__slide">
-                                <div class="splide__slide__container px-2">
-                                    <x-mentor-card :mentor=$mentor />
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+
+            <div class="w-full md:px-8 max-w-screen-2xl mx-auto">
+                <div class="new-main-container">
+                    <div class="md:px-8">
+                        <div class="splide splides mentor-2" role="group">
+                            <div class="splide__arrows text-black">
+                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                    <i class="fa-solid fa-chevron-left text-4xl"></i>
+                                </button>
+                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                    <i class="fa-solid fa-chevron-right text-4xl"></i>
+                                </button>
+                            </div>
+                            <div class="splide__track py-4 md:pb-12">
+                                <ul class="splide__list">
+                                    @foreach ($building_mentor as $mentor)
+                                        <li class="splide__slide w-full">
+                                            <div
+                                                class="splide__slide__container relative mx-1.5 md:mx-2 font-secondary program_card hover:rotate-program_card">
+                                                <x-mentor-card :mentor=$mentor />
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,54 +132,55 @@
 @push('script')
     <script>
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-        var isMediumDevice = window.matchMedia("(max-width: 1024px)").matches
+        var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
+        var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splide = new Splide('.mentor-1', {
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 3 : isVeryLargeDevice ? 4 : 4,
-            perMove: 1,
-            lazyload: true,
-            autoplay: false,
             type: 'loop',
+            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            padding: isSmallDevice ? '6%' : '0',
+            perMove: 1,
             arrows: isSmallDevice ? false : true,
-            pagination: isSmallDevice ? true : false,
-        });
-
-        splide.on('pagination:mounted', function(data) {
+            lazyload: false,
+            autoplay: true,
+            interval: 5000,
+            pagination: false,
+        }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
+            data.list.classList.add('top-[90%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
                 item.button.style.width = '7px';
                 item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+                item.button.style.backgroundColor = '#D9D9D9';
             });
         }).mount();
 
         var splide = new Splide('.mentor-2', {
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isVeryLargeDevice ? 3 : 4,
-            perMove: 1,
-            lazyload: true,
-            autoplay: false,
             type: 'loop',
+            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            padding: isSmallDevice ? '6%' : '0',
+            perMove: 1,
             arrows: isSmallDevice ? false : true,
-            pagination: isSmallDevice ? true : false,
-        });
-
-        splide.on('pagination:mounted', function(data) {
+            lazyload: false,
+            autoplay: true,
+            interval: 5000,
+            pagination: false,
+        }).on('pagination:mounted', function(data) {
             // You can add your class to the UL element
             data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
+            data.list.classList.add('top-[90%]');
 
             // `items` contains all dot items
             data.items.forEach(function(item) {
                 item.button.style.width = '7px';
                 item.button.style.height = '7px';
                 item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
+                item.button.style.backgroundColor = '#D9D9D9';
             });
         }).mount();
     </script>
