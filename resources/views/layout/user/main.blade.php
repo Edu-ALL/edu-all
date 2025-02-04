@@ -114,7 +114,7 @@
     {{-- JQuery --}}
     <script src="{{ url('/js/jquery.js') }}"></script>
     {{-- Splide JS - JS --}}
-    <script async src="{{ url('/js/splide.min.js') }}"></script>
+    <script src="{{ url('/js/splide.min.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
     <script src="{{ url('/js/lazyload.js') }}"></script>
