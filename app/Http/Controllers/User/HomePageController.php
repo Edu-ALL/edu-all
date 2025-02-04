@@ -75,6 +75,11 @@ class HomePageController extends Controller
         return view('user.sign_me.sat_prep');
     }
 
+    public function sign_me_skillset_tutoring()
+    {
+        return view('user.sign_me.skillset_tutoring');
+    }
+
     public function sign_me_passion_project()
     {
         return view('user.sign_me.passion_project');
