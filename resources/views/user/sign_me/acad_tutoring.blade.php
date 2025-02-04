@@ -32,25 +32,10 @@
 @endsection
 
 @section('content')
-    <section class="py-16 bg-sign-me-banner bg-cover bg-center">
+    <section class="py-16">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="flex flex-col justify-between pt-10 pb-6">
-                <h2 class="font-newprimary text-3xl md:text-4xl font-bold text-white">
-                    WHAT’S NEXT?
-                </h2>
-                <p class="mt-4 w-full font-newprimary text-lg text-white md:max-w-lg">
-                    <span class="block font-bold mb-3">Prepare, Achieve, Flourish Together with EduALL!</span>
-                    Let’s find out how to maximize your academic performance with our Academic Tutoring programs FREE trial.
-                    Our expert and professional tutors will help you through them all!
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="main-container w-full mx-auto md:max-w-[1440px]">
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-7">
-                <div class="flex flex-col w-full md:col-span-3">
+            <div class="grid grid-cols-1 gap-6 gap-y-12 md:grid-cols-6">
+                <div class="flex flex-col w-full md:col-span-3 order-2 md:order-1">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-newprimary font-bold text-2xl text-newprimary">
                             What you will earn in the free trial:
@@ -90,7 +75,7 @@
                         <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
                     </div>
                 </div>
-                <div class="md:col-span-4">
+                <div class="md:col-span-3 order-1 md:order-2">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
                         <x-form title="Program" program-id="ACADX" lead-id="LS001" font-size="15" />
