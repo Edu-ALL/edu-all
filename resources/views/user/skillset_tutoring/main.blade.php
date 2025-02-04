@@ -141,7 +141,7 @@
             <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
                 {{ __('pages/programs/skillset_tutoring.free_trial2_description') }}
             </p>
-            <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
+            <a href="{{ route('sign_me_skillset_tutoring', app()->getLocale()) }}"
                 class="px-8 md:px-12 py-3 font-bold
                 font-newprimary text-xs md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all
                 duration-150">
