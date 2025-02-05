@@ -27,14 +27,14 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-general-acad-header bg-cover bg-top" id="banner">
-        <x-registration-form />
+        <x-registration-form program-id="ACADX"/>
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2 w-full">
                     <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-2/3 md:ml-12">
                         {{ __('pages/programs/academic_test_preparation.title') }}
                     </h2>
-                    <x-registration-form :is-button="true" />
+                    <x-registration-form :is-button="true" program-id="ACADX" />
                 </div>
             </div>
         </div>
