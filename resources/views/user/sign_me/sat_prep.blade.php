@@ -35,7 +35,7 @@
     <section class="py-16">
         <div class="main-container w-full mx-auto md:max-w-[1440px]">
             <div class="grid grid-cols-1 gap-6 gap-y-12 md:grid-cols-6">
-                <div class="flex flex-col w-full md:col-span-3">
+                <div class="flex flex-col w-full md:col-span-3 order-2 md:order-1">
                     <div class="mb-6 flex flex-col gap-x-10">
                         <h4 class="font-newprimary font-bold text-2xl text-newprimary">
                             What you will earn in the free diagnostic test:
@@ -75,7 +75,7 @@
                         <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
                     </div>
                 </div>
-                <div class="md:col-span-3">
+                <div class="md:col-span-3 order-1 md:order-2">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
                         <x-form title="Program" program-id="SATPRIV" lead-id="LS001" font-size="15" />
