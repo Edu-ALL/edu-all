@@ -209,7 +209,7 @@
                 if (captcha) {
 
                     $.ajax({
-                        url: 'https://crm-allinedu.com/api/v1/register/public', // Replace with the API endpoint
+                        url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
                         type: 'POST', // Specify the request type (POST)
                         contentType: 'application/json', // Set content type to JSON
                         data: JSON.stringify(formData), // Convert formData to a JSON string
