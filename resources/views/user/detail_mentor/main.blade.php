@@ -18,7 +18,7 @@
                     <div class="font-secondary">
                         <div class="mentor-thumbnail w-full overflow-hidden rounded-2xl bg-[#D9D9D9] relative z-10 h-full front">
                             <img loading="lazy"
-                                src="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                 alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
                         </div>
                     </div>
