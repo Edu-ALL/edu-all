@@ -27,7 +27,7 @@
                                 <div class="w-4 h-4">
                                     <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i> 
                                 </div>
-                                <h4 class="text-card-small font-medium text-white leading-5 mt-1">
+                                <h4 class="text-card-small font-medium text-white leading-5 overflow-hidden text-ellipsis mt-1"  style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;">
                                     {{ $item->value }}
                                 </h4>
                             </li>
@@ -39,7 +39,7 @@
                             <div class="w-4 h-4">
                                 <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                             </div>
-                            <h4 class="text-card-small font-medium text-white leading-5">
+                            <h4 class="text-card-small font-medium text-white leading-5 overflow-hidden text-ellipsis" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;">
                                 {{ $mentor->value_1 }}
                             </h4>
                         </li>
@@ -49,7 +49,7 @@
                             <div class="w-4 h-4">
                                 <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>     
                             </div>
-                            <h4 class="text-card-small font-medium text-white leading-5">
+                            <h4 class="text-card-small font-medium text-white leading-5 overflow-hidden text-ellipsis"  style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;">
                                 {{ $mentor->value_2 }}
                             </h4>
                         </li>
@@ -59,7 +59,7 @@
                             <div class="w-4 h-4">
                             <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>    
                             </div>
-                            <h4 class="text-card-small font-medium text-white leading-5">
+                            <h4 class="text-card-small font-medium text-white leading-5 overflow-hidden text-ellipsis"  style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;">
                                 {{ $mentor->value_3 }}
                             </h4>
                         </li>
