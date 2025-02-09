@@ -76,6 +76,7 @@ Route::middleware(['remove_public'])->group(function () {
             Route::controller(AboutPageController::class)->group(function () {
                 Route::get('/about', 'about')->name('about');
                 Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
+                Route::get('/partnership', 'partnership')->name('partnership');
                 Route::get('/about/partnership-careers', 'partnership_careers')->name('partnership_careers');
                 Route::get('/contact-us', 'contact_us')->name('contact_us');
                 Route::get('/about/mentor', "mentor")->name('mentor');
@@ -96,6 +97,7 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('blog', "index")->name('blogs');
                 Route::get('/blog/{slug}', 'show')->name('detail_blog');
             });
+
 
             Route::get('/webinar-workshop', [RegularTalkPageController::class, 'index']);
             Route::get('/webinar-workshop/{slug}', [RegularTalkPageController::class, 'show']);

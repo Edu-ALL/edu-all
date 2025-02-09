@@ -45,9 +45,15 @@ return [
             ],
             [
                 'link' => 'about/partnership-careers',
-                'title' => 'Partnership & Careers',
+                'title' => 'Careers',
             ],
         ],
+    ],
+
+    // partnership 
+    'partnership' => [
+        'link' => 'partnership',
+        'title' => 'Partnership',
     ],
 
     // blog

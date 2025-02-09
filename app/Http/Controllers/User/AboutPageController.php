@@ -26,6 +26,11 @@ class AboutPageController extends Controller
         return view('user.our_contribution.main');
     }
 
+    public function partnership()
+    {
+        return view('user.partnership.main');
+    }
+
     public function partnership_careers()
     {
         return view('user.partnership_carrier.main');

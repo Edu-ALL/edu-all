@@ -50,6 +50,12 @@ return [
         ],
     ],
 
+    // partnership 
+    'partnership' => [
+        'link' => 'partnership',
+        'title' => 'Partnership',
+    ],
+
     // blog
     'blog' => [
         'link' => 'blog',

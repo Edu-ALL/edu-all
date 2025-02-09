@@ -7,34 +7,47 @@
                 <div class="flex items-center justify-center lg:justify-start mx-auto">
                     <h3 class="text-white font-bold text-xl uppercase text-center">{{ $title }}</h3>
                 </div>
-                <div class="h-[1px] bg-[#DADADA] ml-4 hidden lg:block flex-grow"></div>
+                @if ($menu)
+                    <div class="h-[1px] bg-[#DADADA] ml-4 hidden lg:block flex-grow"></div>
+                @endif
             </div>
-            <div
-                class="lg:order-2 order-2 w-full xl:w-7/12 lg:w-8/12 container mx-auto lg:px-4 lg:py-5 overflow-x-auto lg:overflow-visible">
-                <div class="tags-slider-container flex relative w-full px-10">
-                    <div class="outer w-full overflow-x-auto scrollbar-hidden scroll-smooth" id="scroll-container">
-                        <div class="tags-track w-max">
-                            @foreach ($menu as $item)
-                                <a href="{{ url(app()->getLocale()) . $item['url'] }}"
-                                    class=" {{ $active == $item['title'] ? 'text-black bg-white' : 'text-white bg-white/30' }} md:text-sm text-[10px] rounded-full text-center py-2 px-6 font-semibold uppercase whitespace-nowrap hover:bg-white hover:text-black transition-all ease-in-out duration-300 inline-block tag md:mx-1 mx-0">
-                                    {{ $item['title'] }}
-                                </a>
-                            @endforeach
+            
+            @if ($menu)
+                <div
+                    class="lg:order-2 order-2 w-full xl:w-7/12 lg:w-8/12 container mx-auto lg:px-4 lg:py-5 overflow-x-auto lg:overflow-visible">
+                    <div class="tags-slider-container flex relative w-full px-10">
+                        <div class="outer w-full overflow-x-auto scrollbar-hidden scroll-smooth" id="scroll-container">
+                            <div class="tags-track w-max">
+                                @foreach ($menu as $item)
+                                    <a href="{{ url(app()->getLocale()) . $item['url'] }}"
+                                        class=" {{ $active == $item['title'] ? 'text-black bg-white' : 'text-white bg-white/30' }} md:text-sm text-[10px] rounded-full text-center py-2 px-6 font-semibold uppercase whitespace-nowrap hover:bg-white hover:text-black transition-all ease-in-out duration-300 inline-block tag md:mx-1 mx-0">
+                                        {{ $item['title'] }}
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
+                        <button id="btn-prev"
+                            class="absolute left-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="btn-next"
+                            class="absolute right-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
+                            <i class="fas fa-chevron-right "></i>
+                        </button>
                     </div>
-                    <button id="btn-prev"
-                        class="absolute left-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button id="btn-next"
-                        class="absolute right-0 px-3 md:py-1 py-[0.45rem] md:mt-[2px] mt-[0px] bg-white/60 rounded-full md:text-base text-[10px]">
-                        <i class="fas fa-chevron-right "></i>
-                    </button>
                 </div>
-            </div>
+            @else   
+                <div
+                    class="lg:order-2 order-2 w-full xl:w-7/12 lg:w-8/12 container mx-auto lg:py-12 overflow-x-auto lg:overflow-visible nav-title  transition-all duration-500 transform -translate-y-[600%]">
+                    <div class="h-[1px] bg-[#DADADA] hidden lg:block flex-grow"></div> 
+                </div>
+            @endif
+
             <div
                 class="lg:order-3 order-1 w-full xl:w-4/12 lg:w-4/12 items-center flex nav-title transition-all duration-500 transform -translate-y-[600%]">
-                <div class="h-[1px] bg-[#DADADA] mr-4 hidden lg:block flex-grow"></div>
+                @if ($menu)
+                    <div class="h-[1px] bg-[#DADADA] mr-4 hidden lg:block flex-grow"></div>
+                @endif
                 <div class="flex items-center justify-center lg:justify-end h-full mx-auto">
                     <img src={{ asset('uploaded_files/' . 'website-settings/' . $website_settings->website_secondary_logo) }}
                         width="100" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
