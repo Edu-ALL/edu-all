@@ -50,6 +50,7 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/sign-me/sat-preparation', 'sign_me_sat_prep')->name('sign_me_sat_prep');
                 Route::get('/sign-me/skillset-tutoring', 'sign_me_skillset_tutoring')->name('sign_me_skillset_tutoring');
                 Route::get('/sign-me/passion-project', 'sign_me_passion_project')->name('sign_me_passion_project');
+                Route::get('/sign-me/partnership', 'sign_me_partnership')->name('sign_me_partnership');
                 Route::get('/privacy-policy', 'privacy_policy')->name('privacy_policy');
             });
 
