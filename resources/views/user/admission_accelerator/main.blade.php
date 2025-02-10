@@ -18,7 +18,7 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-admission-accelerator-programs-header bg-cover bg-top" id="banner">
-        <x-registration-form />
+        <x-registration-form :is-partner="true" />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2">
@@ -28,7 +28,7 @@
                     <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
                         {{ __('pages/programs/admission_accelerator.description') }}
                     </p>
-                    <x-registration-form :is-button="true" />
+                    <x-registration-form :is-button="true" :is-partner="true" />
                 </div>
             </div>
         </div>
