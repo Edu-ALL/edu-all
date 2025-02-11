@@ -94,4 +94,9 @@ class HomePageController extends Controller
     {
         return view('user.privacy_policy.main');
     }
+
+    public function sign_me_partnership()
+    {
+        return view('user.sign_me.sign_me_partnership');
+    }
 }
