@@ -496,12 +496,18 @@ input[type="search"]::-webkit-search-cancel-button {
     animation: scrollText 30s linear infinite;
 }
 
+@media (max-width: 768px) {
+    .endless-scroll {
+        animation-duration: 15s;
+    }
+}
+
 @keyframes scrollText {
     0% {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-200%);
     }
 }
 
