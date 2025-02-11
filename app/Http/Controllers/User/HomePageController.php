@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PartnershipMail;
 use App\Models\Banners;
 use App\Models\ImportantDates;
 use App\Models\Mentors;
@@ -11,6 +12,11 @@ use App\Models\Testimonials;
 use App\Models\UpcomingEvents;
 use App\Models\AsSeens;
 use Carbon\Carbon;
+use Exception;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 
 class HomePageController extends Controller
 {
@@ -95,8 +101,28 @@ class HomePageController extends Controller
         return view('user.privacy_policy.main');
     }
 
-    public function sign_me_partnership()
+    public function sign_me_partnership($locale, $slug)
     {
-        return view('user.sign_me.sign_me_partnership');
+        return view('user.sign_me.sign_me_partnership', [
+            'slug' => $slug,
+            'locale' => $locale
+        ]);
+    }
+
+    public function submit_partnership(Request $request, $locale, $slug)
+    {
+        try {
+            $data = [
+                'data' => $request::all(),
+                'category' => $slug
+            ];
+
+            Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
+
+            return redirect($locale . '/programs/thank-you-for-your-interest-in-our-programs');
+        } catch (Exception $e) {
+            Log::error('Update Banner failed : ' . $e->getMessage());
+            return Redirect::back()->withErrors($e->getMessage());
+        }
     }
 }

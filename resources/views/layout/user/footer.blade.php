@@ -202,7 +202,7 @@
                                                     class="font-medium hover:text-[#819CCB]">English</a>
                                             </div>
                                         </div>
-                                    @elseif (Route::currentRouteName())
+                                    @elseif (Route::currentRouteName() == 'detail_mentor')
                                         <div class="flex items-center gap-3 px-4">
                                             <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
                                                 class="flex items-center hover:text-[#819CCB]">
