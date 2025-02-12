@@ -54,41 +54,41 @@
                         <div id="myForm">
                             <div class="">
                                 <div class="flex flex-col">
-                                    <div class="mb-3">
+                                    <div class="md:mb-3">
                                         <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>
                                         <input type="text"
                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                         placeholder="Full Name *" id="primary_name" required>
                                     </div>
-                                    <div class="flex gap-4">
-                                        <div class="mb-3 md:w-1/2">
+                                    <div class="flex gap-4 md:flex-row flex-col">
+                                        <div class="md:mb-3 md:w-1/2 mt-3 md:mt-0">
                                             <label for="company_name" class="text-dark text-sm py-2">Company / Organization Name</label>
                                             <input type="text"
                                             class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                             placeholder="Company / Organization Name *" id="company_name" required>
                                         </div>
-                                        <div class="mb-3 md:w-1/2">
+                                        <div class="md:mb-3 md:w-1/2 md:mt-0">
                                             <label for="position" class="text-dark text-sm py-2">Position</label>
                                             <input type="text"
                                                 class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                 placeholder="Position *" id="position" required>
                                         </div>
                                     </div>
-                                    <div class="flex gap-4">
-                                        <div class="mb-3 md:w-1/2">
+                                    <div class="flex gap-4 md:flex-row flex-col">
+                                        <div class="md:mb-3 md:w-1/2 mt-3 md:mt-0">
                                             <label for="email" class="text-dark text-sm py-2">Email</label>
                                             <input type="email"
                                             class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                             placeholder="Email *" id="email" required>
                                         </div>
-                                        <div class="mb-3 md:w-1/2">
+                                        <div class="md:mb-3 md:w-1/2">
                                             <label for="phone_number" class="text-dark text-sm py-2">Phone Number</label>
                                             <input type="text"
                                                 class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                 placeholder="Phone Number *" id="phone_number" required>
                                         </div>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="md:mb-3 mt-3 md:mt-0">
                                         <label for="school_name" class="text-dark text-sm py-2">School Name</label>
                                         <textarea
                                             class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
@@ -99,7 +99,7 @@
                                         <span id="captcha" class="text-red" />
                                     </div>
                                     <div class="mb-3 flex items-center justify-center">
-                                        <button type="button" class="max-w-max bg-newprimary text-white text-center py-2 px-20"
+                                        <button type="button" class="max-w-max bg-newprimary text-white text-center py-2 md:px-20 px-6"
                                             onclick="submit()">
                                             <span id="loading" class="hidden">
                                                 <i class="fas fa-spinner fa-spin mr-4"></i>

@@ -51,6 +51,7 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/sign-me/skillset-tutoring', 'sign_me_skillset_tutoring')->name('sign_me_skillset_tutoring');
                 Route::get('/sign-me/passion-project', 'sign_me_passion_project')->name('sign_me_passion_project');
                 Route::get('/sign-me/partnership', 'sign_me_partnership')->name('sign_me_partnership');
+                Route::get('/sign-me/thank-partnership', 'thank_partnership')->name('thank_partnership');
                 Route::get('/privacy-policy', 'privacy_policy')->name('privacy_policy');
             });
 
