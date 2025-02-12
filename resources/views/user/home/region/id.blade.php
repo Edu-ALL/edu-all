@@ -157,13 +157,13 @@
     <section class="py-16 bg-pathaway bg-cover bg-center">
         <div class="new-main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                <div class="col-span-6 md:col-span-4 flex flex-col justify-end">
+                <div class="col-span-6 md:col-span-4 flex flex-col justify-end order-1">
                     <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll white logo"
                         class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
                     <h2 class="mt-4 font-bold text-3xl md:text-5xl text-white">Pathway to Excellence</h2>
                 </div>
                 <div
-                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 order-2">
                     <h3 class="font-bold text-2xl text-newyellow">Interest & Career Exploration</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
                         Discovering interests and future aspiration through various learning experience and exposure to
@@ -171,7 +171,7 @@
                     </p>
                 </div>
                 <div
-                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 order-3">
                     <h3 class="font-bold text-2xl text-newyellow">Profile <br /> Building</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
                         Identify passions, strengths, achievements, and experiences that will set students apart, creating a
@@ -179,7 +179,7 @@
                     </p>
                 </div>
                 <div
-                    class="col-span-6 md:col-span-8 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                    class="col-span-6 md:col-span-8 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 order-5 md:order-4">
                     <h3 class="font-bold text-2xl text-newyellow">University Application Strategy</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
                         Crafting personalized strategies for university applications, ensuring students effectively showcase
@@ -187,7 +187,7 @@
                     </p>
                 </div>
                 <div
-                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3">
+                    class="col-span-6 md:col-span-4 backdrop-blur-md border-newyellow border rounded-lg px-5 py-5 flex flex-col items-start gap-3 order-4 md:order-5">
                     <h3 class="font-bold text-2xl text-newyellow">Writing</h3>
                     <p class="text-white font-newprimary text-sm text-justify leading-5 font-light">
                         Developing impactful storytelling in personal statements and essays to showcase unique qualities and

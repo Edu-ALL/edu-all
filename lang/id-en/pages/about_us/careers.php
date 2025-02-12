@@ -5,7 +5,7 @@ return [
     'meta_description' => 'We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills.',
 
     // Top Section
-    'title' => 'Partnership & Careers',
+    'title' => 'Careers',
 
     // Body Section
     'desc' => 'We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills.',
@@ -25,5 +25,4 @@ return [
         'Enjoy working with students and love to make true impacts to their learning journey',
         'Think <a href="https://edu-all.com/">EduALL</a> is an awesome idea and have ideas on how to make it even better',
     ],
-
 ];

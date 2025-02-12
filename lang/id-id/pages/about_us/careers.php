@@ -5,7 +5,7 @@ return [
     'meta_description' => 'Kami percaya kolaborasi menghasilkan hasil terbaik. Kami bercita-cita menjadi penopang pendidikan siswa dengan memberikan pemahaman kepemimpinan, komunikasi, berpikir kritis, dan analitis.',
 
     // Top Section
-    'title' => 'Kemitraan dan Karir',
+    'title' => 'Karir',
 
     // Body Section
     'desc' => 'Kami percaya kolaborasi memberikan hasil terbaik. Kami bercita-cita untuk menjadi landasan dalam pendidikan siswa dengan memperkaya siswa dengan kepemimpinan, komunikasi, pemikiran kritis, dan keterampilan analitis.',
