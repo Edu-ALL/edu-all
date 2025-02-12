@@ -121,7 +121,7 @@ class HomePageController extends Controller
 
             return redirect($locale . '/sign-me/thank-partnership');
         } catch (Exception $e) {
-            Log::error('Update Banner failed : ' . $e->getMessage());
+            Log::error('Send partnership email failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
     }
