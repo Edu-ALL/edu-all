@@ -129,34 +129,36 @@
 
 
     {{-- ================================== Testimonial Section ================================== --}}
-    <section class="pt-16 pb-20">
-        <div class="main-container">
-            <h2 class="font-newprimary font-bold text-center text-4xl mb-4">
-                {{ __('pages/programs/exclusive_program_school.what_they_say') }}
-            </h2>
-            <div class="splide" role="group">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                        <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                        <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
-                    </button>
-                </div>
-                <div class="splide__track">
-                    <ul class="splide__list font-newprimary text-black px-8">
-                        @foreach ($testimonies as $testi)
-                            <li class="splide__slide w-full pb-8">
-                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                    <x-testimonial-card :testimonial=$testi />
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+    @if ($testimonies)
+        <section class="pt-16 pb-20">
+            <div class="main-container">
+                <h2 class="font-newprimary font-bold text-center text-4xl mb-4">
+                    {{ __('pages/programs/exclusive_program_school.what_they_say') }}
+                </h2>
+                <div class="splide" role="group">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
+                            <i class="fa-solid fa-chevron-left text-3xl text-newprimary"></i>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
+                            <i class="fa-solid fa-chevron-right text-3xl text-newprimary"></i>
+                        </button>
+                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list font-newprimary text-black px-8">
+                            @foreach ($testimonies as $testi)
+                                <li class="splide__slide w-full pb-8">
+                                    <div class="splide__slide__container py-8 px-4 h-full w-full ">
+                                        <x-testimonial-card :testimonial=$testi />
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 
     {{-- ================================== CTA Section ================================== --}}

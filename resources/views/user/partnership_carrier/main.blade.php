@@ -1,9 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    <title>{{ __('pages/about_us/partnership_careers.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/about_us/partnership_careers.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/about_us/partnership_careers.meta_description') }}" />
+    <title>{{ __('pages/about_us/careers.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/about_us/careers.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/about_us/careers.meta_description') }}" />
 @endsection
 
 @section('sub-navbar')
@@ -25,32 +25,28 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <!-- <section class="-z-10">
-                <div class="relative flex w-full h-screen left-0 overflow-hidden">
-                    <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                        <div class="flex items-center h-full justify-center">
-                            <div class="flex-row w-3/5">
-                                <h1
-                                    class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
-                                    {{ __('pages/about_us/partnership_careers.title') }}
-                                </h1>
-                            </div>
-                        </div>
+    {{-- <section class="-z-10">
+        <div class="relative flex w-full h-screen left-0 overflow-hidden">
+            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
+                <div class="flex items-center h-full justify-center">
+                    <div class="flex-row w-3/5">
+                        <h1
+                            class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
+                            {{ __('pages/about_us/careers.title') }}
+                        </h1>
                     </div>
 
-                    <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
-                        class="lazy w-full h-full object-cover object-center">
-                </div>
-            </section> -->
+            <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
+                class="lazy w-full h-full object-cover object-center">
+        </div>
+    </section> --}}
 
     <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div
-                class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
-                    class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
-                    {{ __('pages/about_us/partnership_careers.title') }}
+            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
+                    {{ __('pages/about_us/careers.title') }}
                 </h2>
                 <x-registration-form :is-button="true" />
             </div>
@@ -63,18 +59,18 @@
             <img data-original="{{ asset('assets/img/about/partnership-career/Icon_2-2.png') }}"
                 alt="EduALL Partnership Icon">
             <div class="max-w-3xl mx-auto mt-6">
-                <p class="font-newprimary text-lg text-newprimary text-center md:text-2xl">
-                    {{ __('pages/about_us/partnership_careers.desc') }}
+                <p class="font-newprimary text-lg text-dark text-center md:text-2xl">
+                    {{ __('pages/about_us/careers.desc') }}
                 </p>
             </div>
         </div>
     </section>
 
     {{-- ================================== Collaborative Section  ================================== --}}
-    <section class="py-10">
+    {{-- <section class="py-10">
         <div class="flex flex-col main-container">
             <h2 class="font-newprimary font-semibold text-newprimary text-center text-3xl mb-4">
-                {{ __('pages/about_us/partnership_careers.colab_title') }}</h2>
+                {{ __('pages/about_us/careers.colab_title') }}</h2>
             <div class="max-w-4xl mx-auto  pb-20">
                 <div class="splide px-16" role="group" aria-label="Splide Basic HTML Example">
                     <div class="splide__arrows">
@@ -125,12 +121,12 @@
         </div>
         <div class="main-container flex flex-col items-center">
             <h2 class="font-newprimary font-semibold text-yellow text-center text-3xl mb-4">
-                {{ __('pages/about_us/partnership_careers.colab_bottom') }}
+                {{ __('pages/about_us/careers.colab_bottom') }}
             </h2>
             <x-button href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20Edu-ALL" target="_blank"
-                title="{{ __('pages/about_us/partnership_careers.colab_btn') }}" bg-color="red" />
+                title="{{__('pages/about_us/careers.colab_btn') }}" bg-color="red" />
         </div>
-    </section>
+    </section> --}}
 
     {{-- ================================== Carrers Section  ================================== --}}
     <section class="pt-20 pb-10">
@@ -138,9 +134,9 @@
             <div class="flex flex-col gap-x-20 max-w-4xl mx-auto md:flex-row">
                 <div class="flex flex-col w-full gap-y-5 md:w-1/3">
                     <h4 class="font-newprimary font-semibold text-2xl text-[#71747B]">
-                        {{ __('pages/about_us/partnership_careers.careers_title') }}</h4>
+                        {{ __('pages/about_us/careers.careers_title') }}</h4>
                     <p class="font-newprimary text-lg text-[#71747B] leading-8">
-                        {{ __('pages/about_us/partnership_careers.careers_desc') }}</p>
+                        {{ __('pages/about_us/careers.careers_desc') }}</p>
                     <p class="font-newprimary text-lg text-[#71747B] leading-8">
                         Send your resume to <a href="mailto:careers@edu-all.com" class="text-black">careers@edu-all.com.</a>
                         We have opportunities for a full-time or part-time or an internship. We even offer internship
@@ -148,7 +144,7 @@
                 </div>
                 <div class="w-full md:w-2/3">
                     <ul class="flex flex-col">
-                        @foreach (__('pages/about_us/partnership_careers.careers_list') as $item)
+                        @foreach (__('pages/about_us/careers.careers_list') as $item)
                             <li class="py-4 mb-4 @if ($loop->iteration <= 4) border-b-[1px] border-[#71747B] @endif)">
                                 <p class="font-newprimary text-lg text-[#71747B]">{!! $item !!}</p>
                             </li>

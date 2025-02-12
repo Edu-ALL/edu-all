@@ -119,10 +119,15 @@ class HomePageController extends Controller
 
             Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
 
-            return redirect($locale . '/programs/thank-you-for-your-interest-in-our-programs');
+            return redirect($locale . '/sign-me/thank-partnership');
         } catch (Exception $e) {
             Log::error('Update Banner failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
+    }
+
+    public function thanks_partnership()
+    {
+        return view('user.sign_me.thank_partnership');
     }
 }

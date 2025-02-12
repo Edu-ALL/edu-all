@@ -95,7 +95,8 @@
                                                         Home Thumbnail <span style="color: var(--red)">*</span>
                                                     </label>
                                                     <input type="file" class="form-control" id="home_thumbnail"
-                                                        onchange="previewImage('home_thumbnail')" name="story_home_thumbnail">
+                                                        onchange="previewImage('home_thumbnail')"
+                                                        name="story_home_thumbnail">
                                                     @error('story_home_thumbnail')
                                                         <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
                                                     @enderror
@@ -143,6 +144,9 @@
                                                     <option value="Passion Project"
                                                         {{ old('story_category') == 'Passion Project' ? 'selected' : '' }}>
                                                         Passion Project</option>
+                                                    <option value="Competitions"
+                                                        {{ old('story_category') == 'Competitions' ? 'selected' : '' }}>
+                                                        Competitions</option>
                                                 </select>
                                             </div>
                                             @error('story_category')

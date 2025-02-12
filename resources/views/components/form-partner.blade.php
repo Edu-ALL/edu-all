@@ -183,7 +183,7 @@
                             // formPage.classList.add('hidden')
                             // thanksPage.classList.remove('hidden')
 
-                            // location.href = "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
+                            location.href = "https://edu-all.com/id-en/sign-me/thank-partnership";
                         },
                         error: function(xhr, status, error) {
                             // Handle errors here
