@@ -1,46 +1,45 @@
-<div class="mx-auto md:max-w-md max-w-[22rem] ease-in-out duration-500 z-[999999]" id="formRegist">
-    <div class="bg-black p-4 rounded-xl shadow-2xl">
+<div class="mx-auto md:max-w-lg max-w-[22rem] ease-in-out duration-500 z-[999999]" id="formRegist">
+    <div class="bg-[#EAEAEA] p-4 rounded-lg shadow-2xl">
         <div id="myForm">
-            <h2 class="text-white {{ !empty($fontSize) ? 'text-xl' : 'text-base' }}">Let us know you better by filling
-                out this
-                form</h2>
-            <div class="mt-5">
-                <div class="flex flex-col">
-                    <div class="mb-3">
-                        <input type="text"
-                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="Full Name *" id="primary_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="email"
-                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="Email *" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text"
-                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="Phone Number *" id="phone_number" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text"
-                            class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="School Name *" id="school_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
-                        <span id="captcha" class="text-red" />
-                    </div>
-                    <div class="mb-3">
-                        <button type="button" class="w-full bg-newprimary text-white text-center py-2 rounded-xl"
-                            onclick="submit()">
-                            <span id="send">
-                                <i class="fas fa-paper-plane mr-4"></i>
-                            </span>
-                            <span id="loading" class="hidden">
-                                <i class="fas fa-spinner fa-spin mr-4"></i>
-                            </span>
-                            Submit </button>
-                    </div>
+            <div class="flex flex-col px-2">
+                <div class="mb-3">
+                    <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>
+                    <input type="text"
+                    class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                    placeholder="Full Name *" id="primary_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="text-dark text-sm py-2">Email</label>
+                    <input type="email"
+                    class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                    placeholder="Email *" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone_number" class="text-dark text-sm py-2">Phone Numbe</label>
+                    <input type="text"
+                    class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                    placeholder="Phone Number *" id="phone_number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="school_name" class="text-dark text-sm py-2">School Name</label>
+                    <input type="text"
+                        class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                        placeholder="School Name *" id="school_name" required>
+                </div>
+                <div class="mb-4">
+                    <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
+                    <span id="captcha" class="text-red" />
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="w-full bg-red text-white text-center py-2"
+                        onclick="submit()">
+                        <span id="send">
+                            <i class="fas fa-paper-plane mr-4"></i>
+                        </span>
+                        <span id="loading" class="hidden">
+                            <i class="fas fa-spinner fa-spin mr-4"></i>
+                        </span>
+                        Collaborate Now </button>
                 </div>
             </div>
         </div>

@@ -14,12 +14,12 @@ return [
             'comment' => "Partners",
         ],
         [
-            'title' => "50+",
-            'comment' => "Exlusive School Programs",
+            'title' => "65+",
+            'comment' => "Exclusive School <br> Workshops and Programs",
         ],
         [
-            'title' => "30+",
-            'comment' => "Collaboration Projects",
+            'title' => "60+",
+            'comment' => "Collaboration <br> Activities",
         ],
     ],
 
@@ -33,8 +33,8 @@ return [
             'title' => "School Partnership",
             "body" => "Partner with us to provide students with enhanced learning opportunities, career guidance, and university application insights.",
             "image" => "school-partnership.webp",
-            "btn" => "Let's Collaborate",
-            "link" => "programs/exclusive-program-school/admission-accelerator",
+            "btn" => "Get to Know More",
+            "link" => "programs/exclusive-program-school",
         ],
         [
             'title' => "Company Partnership",
