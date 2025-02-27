@@ -135,4 +135,9 @@ class HomePageController extends Controller
     {
         return view('user.sign_me.sign_up_mentor');
     }
+
+    public function thank_mentor()
+    {
+        return view('user.sign_me.thank_mentor');
+    }
 }
