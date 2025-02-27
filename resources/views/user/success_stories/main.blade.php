@@ -6,41 +6,25 @@
     <meta name="description" content="{{ __('pages/success_stories/success_stories.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        [
+            'title' => 'Admission Mentoring',
+            'url' => '/resources/success-stories?category=admission-mentoring',
+        ],
+        [
+            'title' => 'Passion Project',
+            'url' => '/resources/success-stories?category=passion-project',
+        ],
+        [
+            'title' => 'Competition',
+            'url' => '/resources/success-stories/?category=competition',
+        ],
+    ]" :active="Str::title(str_replace('-', ' ', request()->query('category', 'Admission Mentoring')))" title="{{ __('pages/programs/admission_mentoring.title') }}" />
+@endsection
+
 @section('content')
-    <!-- {{-- ================================== Banner Section  ================================== --}}
-            <section class="pb-4 -z-10">
-                <div
-                    class="relative flex w-full justify-center left-0 overflow-hidden bg-success-stories-header h-[100vh] pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
-                    <div class="flex flex-col justify-center h-full w-3/5">
-                        <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center">
-                            {{ __('pages/success_stories/success_stories.title') }}
-                        </h1>
-                        <p class="mt-5 font-newprimary text-white w-full text-center">
-                            {!! __('pages/success_stories/success_stories.desc') !!}
-                        </p>
-                    </div>
-                </div>
-            </section> -->
-
-    {{-- ================================== Success Story Section  ================================== --}}
-    <section class="py-4">
-        <div class="main-container">
-            <div class="flex gap-6 items-center justify-center">
-                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'admission-mentoring']) }}"
-                    class="font-bold py-1 px-2 {{ $tab_section == 'passion_project'
-                        ? 'text-newprimary font-newprimary border-b-2 border-newprimary'
-                        : 'bg-newprimary  text-white font-newprimary' }}">Admission
-                    Mentoring</a>
-                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'passion-project']) }}"
-                    class="font-bold py-1 px-2 {{ $tab_section == 'passion_project'
-                        ? 'bg-newprimary  text-white font-newprimary'
-                        : 'text-newprimary font-newprimary border-b-2 border-newprimary' }}">Passion
-                    Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4">
+    <section class="py-24 mt-12">
         <div class="new-main-container">
             <div class="max-w-5xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-7 gap-x-7">
@@ -66,10 +50,10 @@
                                         <div class="mt-2 font-newprimary text-dark">
                                             <ul class="flex flex-col gap-1.5">
                                                 @foreach (array_filter(
-            array_map(function ($item) {
-                return trim(strip_tags($item));
-            }, explode('<li>', $item->badge_2)),
-        ) as $badge)
+                                                    array_map(function ($item) {
+                                                        return trim(strip_tags($item));
+                                                    }, explode('<li>', $item->badge_2)),
+                                                ) as $badge)
                                                     <li
                                                         class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
                                                         <span
