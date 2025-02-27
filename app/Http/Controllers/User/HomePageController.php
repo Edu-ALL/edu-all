@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\MentorMail;
 use App\Mail\PartnershipMail;
 use App\Models\Banners;
 use App\Models\ImportantDates;
@@ -143,7 +144,7 @@ class HomePageController extends Controller
                 'data' => $request::all(),
             ];
 
-            Mail::to('willie.romansyah@edu-all.com')->cc(['lawrence.benning@edu-all.com', 'irene@edu-all.com'])->send(new PartnershipMail($data));
+            Mail::to('willie.romansyah@edu-all.com')->cc(['lawrence.benning@edu-all.com', 'irene@edu-all.com'])->send(new MentorMail($data));
 
             return redirect($locale . '/sign-me/thank-partnership');
         } catch (Exception $e) {
