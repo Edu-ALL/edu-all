@@ -118,15 +118,22 @@
     {{-- ================================== Endless Running Image Section ================================== --}}
     <section class="overflow-hidden pb-16">
         <div class="new-main-container overflow-hidden relative">
-            <div class="relative max-w-4xl overflow-hidden mx-auto">
-                <div class="absolute h-full md:w-24 w-12 bg-gradient-to-r from-white to-transparent  z-10 -left-4"> </div>
-                <div class="absolute h-full md:w-24 w-12 bg-gradient-to-l from-white to-transparent  z-10 -right-4"> </div>
-                <div class="flex endless-scroll whitespace-nowrap">
-                    @for ($i = 0; $i < 3; $i++)
-                        <img src="{{ asset('assets/img/about/partnership/logo-partners.webp') }}" alt="Partnership Image" class="md:h-[500px] h-48 object-cover mx-4">
-                    @endfor
-                </div> 
-            </div> 
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute h-full md:w-24 w-12 bg-gradient-to-r from-white to-transparent z-10 -left-4"></div>
+                <div class="absolute h-full md:w-24 w-12 bg-gradient-to-l from-white to-transparent z-10 -right-4"></div>
+                
+                <div class="h-full overflow-hidden">
+                    <div class="flex endless-scroll">
+                        @for ($i = 0; $i < 3; $i++)
+                            <div class="flex-none md:mx-8">
+                                <img src="{{ asset('assets/img/about/partnership/logo-partners.webp') }}" 
+                                     alt="Partnership Image" 
+                                     class="md:h-[450px] h-48 w-auto object-contain">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
