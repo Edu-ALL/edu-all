@@ -33,37 +33,16 @@
 
 @section('content')
     <section class="flex flex-col md:flex-row items-center">
-        <div class="px-12 bg-white w-full md:w-1/2 order-2 md:order-1">
-            <div class="w-full flex flex-col items-center md:items-end justify-center gap-4 h-full py-8 md:py-0 md:mt-12">
-                <h2 class="font-newprimary font-bold text-2xl md:text-3xl mb-4 text-dark text-center md:text-left">
-                    @if ($slug == 'company')
-                        Event & Program Collaboration
-                    @else
-                        Volunteer & Project Collaboration
-                    @endif
-                </h2>
-                <div class="grid grid-rows-3 grid-cols-2 gap-4 max-w-md w-full h-full">
-                    @if ($slug == 'company')
-                        <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_1.webp') }}" alt="Collaboration 1" class="w-full h-full rounded-xl object-cover row-span-2">
-                        <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_3.webp') }}" alt="Collaboration 3" class="w-full h-full rounded-xl object-cover">
-                        <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_4.webp') }}" alt="Collaboration 4" class="w-full h-full rounded-xl object-cover">
-                        <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_2.webp') }}" alt="Collaboration 2" class="w-full h-full rounded-xl object-cover">
-                        <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_5.webp') }}" alt="Collaboration 5" class="w-full h-full rounded-xl object-cover">
-                    @else 
-                        <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_1.webp') }}" alt="Collaboration 1" class="w-full h-full rounded-xl object-cover col-span-2 row-span-1">
-                        <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_3.webp') }}" alt="Collaboration 3" class="w-full h-full rounded-xl object-cover col-span-1 row-span-1">
-                        <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_4.webp') }}" alt="Collaboration 4" class="w-full h-full rounded-xl object-cover col-span-1 row-span-2">
-                        <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_2.webp') }}" alt="Collaboration 2" class="w-full h-full rounded-xl object-cover col-span-1 row-span-1">
-                    @endif
-                </div>
-            </div>
-        </div>
-        <div class="py-16 bg-gradient-to-b from-[#000099] to-dark w-full md:w-1/2 order-1 md:order-2">
+        <div class="py-16 bg-gradient-to-b from-[#000099] to-dark w-full">
             <div class="new-main-container w-full">
                 <div class="md:col-span-3">
                     {{-- Emmbed Form --}}
-                    <div class="w-full max-w-xl">
-                        <div class="mx-auto md:max-w-4xl ease-in-out duration-500 z-[999999] flex flex-col items-center "
+                    <div class="w-full">
+                    <h2 class="font-newprimary font-bold text-3xl text-white text-center mb-6">
+                        Sign Up Mentor
+                    </h2>
+
+                        {{-- <div class="mx-auto md:max-w-4xl ease-in-out duration-500 z-[999999] flex flex-col items-center "
                             id="formRegist">
                             <div class="w-full flex md:justify-end justify-center md:mb-8">
                                 <img loading="lazy" src="{{ asset('assets/logo/eduall-white.png') }}" alt="EduAll white logo"
@@ -159,62 +138,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
-@push('style')
-    <script script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
-    <script type="text/javascript">
-        var onloadCallback = function() {
-            grecaptcha.render('rcaptcha', {
-                'sitekey': '6LeKwI8qAAAAAGA8ypgp-u0gDloCz27jeVQmniif',
-                'callback': checkCaptcha
-            });
-        };
-
-        const checkCaptcha = () => {
-            var v = grecaptcha.getResponse();
-
-            if (v.length == 0) {
-                document.getElementById('captcha').innerHTML = "Please verify you are not a robot.";
-                return false;
-            } else {
-                return true
-                // Here you can perform an actual form submission if needed, e.g., using an AJAX request or form.submit().
-            }
-        }
-
-        const submitData = () => {
-            const inputs = document.querySelectorAll('#myForm input, #myForm textarea');
-            let isValid = true;
-
-            // Loop through inputs and check for validation
-            inputs.forEach(function(input) {
-                if (input.required && !input.value && input.value != ' ' && !input.classList.contains(
-                        'hidden')) {
-                    console.log(input);
-
-                    isValid = false;
-                    input.setCustomValidity('Please fill in required fields');
-                    input.classList.add('border-red'); // Add red border to invalid inputs (optional)
-                    input.classList.remove('border-none'); // Remove green border if any
-                } else {
-                    input.setCustomValidity('');
-                    input.classList.remove('border-red');
-                    input.classList.add('border-none');
-                }
-            });
-
-            if(isValid) {
-                const captcha = checkCaptcha();
-                if (captcha) {
-                    document.getElementById('myForm').submit();
-                }
-            }
-        }
-    </script>
-@endpush

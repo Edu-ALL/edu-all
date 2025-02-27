@@ -101,7 +101,7 @@ module.exports = {
 
                 // exclusive program school
                 "exclusive-program-school-header":
-                    "url('../../public/assets/img/exclusive_program_school/Home banner General.webp')",
+                    "url('../../public/assets/img/exclusive_program_school/exclusive_program_for_school_banner.webp')",
                 "admission-accelerator-programs-header":
                     "url('../../public/assets/img/admission_accelerator/Home banner admission accelerator.webp')",
                 "experiental-learning-programs-header":
@@ -114,7 +114,7 @@ module.exports = {
 
                 // about
                 "our-partnership-banner":
-                    "url('../../public/assets/img/banner/partnership-carreer.webp')",
+                    "url('../../public/assets/img/banner/partnership_banner.webp')",
                 // partnership 
                 "our-contribution-banner":
                     "url('../../public/assets/img/banner/our-contribution.webp')",

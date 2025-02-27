@@ -12,7 +12,7 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <!-- <section class="-z-10">
+    {{-- <section class="-z-10">
         <div class="relative flex w-full h-screen left-0 overflow-hidden">
             <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
                 <div class="flex items-center h-full justify-center">
@@ -28,41 +28,41 @@
             <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
                 class="lazy w-full h-full object-cover object-center">
         </div>
-    </section> -->
+    </section> --}}
 
     <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
-        <!-- <x-registration-form /> -->
+        {{-- <!-- <x-registration-form /> --> --}}
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
+            <div class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
                 <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/about_us/partnership.title') }}
                 </h2>
-                <!-- <x-registration-form :is-button="true" /> -->
+                {{-- <!-- <x-registration-form :is-button="true" /> --> --}}
             </div>
         </div>
 
         <div class="absolute md:bottom-10 left-0 right-0">
-                <div class="relative h-full">
-                    <div
-                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
-                    </div>
-                    <div
-                        class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-24 left-0 right-0 h-24 flex items-center">
-                        <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
-                            @foreach (__('pages/about_us/partnership.stats') as $item)
-                                <div class="flex flex-col md:w-auto justify-center items-center">
-                                    <p class="font-bold text-white text-3xl md:text-4xl text-center">
-                                        {{ $item['title'] }}
-                                    </p>
-                                    <p class="font-light text-white text-banner-subdescription text-center">
-                                        {{ $item['comment'] }}
-                                    </p>
-                                </div>
-                            @endforeach
-                        </div>
+            <div class="relative h-full">
+                <div
+                    class="bg-newprimary mix-blend-multiply visible md:h-28 h-[36vh] absolute md:bottom-[8vh] bottom-0 left-0 right-0">
+                </div>
+                <div
+                    class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-24 left-0 right-0 h-28 flex items-center">
+                    <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
+                        @foreach (__('pages/about_us/partnership.stats') as $item)
+                            <div class="flex flex-col md:w-auto justify-start items-center">
+                                <p class="font-bold text-white text-3xl md:text-4xl text-center">
+                                    {{ $item['title'] }}
+                                </p>
+                                <p class="font-light text-white text-banner-subdescription text-center h-10 flex items-center">
+                                    {!! $item['comment'] !!}
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     
     {{-- ================================== Desc Section  ================================== --}}
@@ -118,13 +118,15 @@
     {{-- ================================== Endless Running Image Section ================================== --}}
     <section class="overflow-hidden pb-16">
         <div class="new-main-container overflow-hidden relative">
-            <div class="absolute h-full md:w-24 w-12 bg-gradient-to-r from-white to-transparent  z-10 -left-4"> </div>
-            <div class="absolute h-full md:w-24 w-12 bg-gradient-to-l from-white to-transparent  z-10 -right-4"> </div>
-            <div class="flex endless-scroll whitespace-nowrap">
-                @foreach (['partnership-logo-1.webp', 'partnership-logo-2.webp', 'partnership-logo-3.webp'] as $image)
-                    <img src="{{ asset('assets/img/about/partnership/' . $image) }}" alt="Partnership Image" class="md:h-96 h-48 object-contain mx-4">
-                @endforeach
-            </div>
+            <div class="relative max-w-4xl overflow-hidden mx-auto">
+                <div class="absolute h-full md:w-24 w-12 bg-gradient-to-r from-white to-transparent  z-10 -left-4"> </div>
+                <div class="absolute h-full md:w-24 w-12 bg-gradient-to-l from-white to-transparent  z-10 -right-4"> </div>
+                <div class="flex endless-scroll whitespace-nowrap">
+                    @for ($i = 0; $i < 3; $i++)
+                        <img src="{{ asset('assets/img/about/partnership/logo-partners.webp') }}" alt="Partnership Image" class="md:h-[500px] h-48 object-cover mx-4">
+                    @endfor
+                </div> 
+            </div> 
         </div>
     </section>
 
