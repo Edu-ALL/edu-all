@@ -1,4 +1,4 @@
-@extends('layout.user.main')
+@extends('layout.user.landing_page')
 
 @section('head')
     <title>Become a mentor and empower future changemakers!</title>
