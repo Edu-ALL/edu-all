@@ -137,6 +137,11 @@ class HomePageController extends Controller
         return view('user.sign_me.sign_up_mentor');
     }
 
+    public function thank_mentor()
+    {
+        return view('user.sign_me.thank_mentor');
+    }
+  
     public function submit_mentor(Request $request, $locale)
     {
         try {
