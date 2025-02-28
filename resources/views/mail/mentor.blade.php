@@ -51,18 +51,18 @@
         <tr>
             <td>Phone Number</td>
             <td>:</td>
-            <td>{{ $data['data']['phone'] }}</td>
+            <td>{{ $data['data']['phone_number'] }}</td>
         </tr>
         <tr>
 
             <td>Linkedin Link</td>
             <td>:</td>
-            <td>{{ $data['data']['linkedin'] }}</td>
+            <td>{{ $data['data']['linkedin_link'] }}</td>
         </tr>
         <tr>
             <td>Category</td>
             <td>:</td>
-            <td>{{ $data['data']['category'] }}</td>
+            <td>{{ $data['data']['mentor_type'] }}</td>
         </tr>
     </table>
 

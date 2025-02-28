@@ -151,9 +151,9 @@ class HomePageController extends Controller
 
             Mail::to('willie.romansyah@edu-all.com')->cc(['lawrence.benning@edu-all.com', 'irene@edu-all.com'])->send(new MentorMail($data));
 
-            return redirect($locale . '/sign-me/thank-partnership');
+            return redirect($locale . '/sign-up/mentor/thank');
         } catch (Exception $e) {
-            Log::error('Send partnership email failed : ' . $e->getMessage());
+            Log::error('Send mentor email failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
     }

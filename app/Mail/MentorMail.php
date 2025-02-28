@@ -54,7 +54,13 @@ class MentorMail extends Mailable
      *
      * @return array
      */
-    public function attachments()
+
+     public function attachments()
+    {
+        return [];
+    }
+
+    public function headers()
     {
         return new Headers(
             text: [
