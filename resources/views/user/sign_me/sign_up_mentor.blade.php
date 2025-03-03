@@ -97,12 +97,12 @@
                                                 <label class="inline-flex items-center flex-1 gap-2">
                                                     <input type="radio" class="form-radio w-6 h-6" name="mentor_type"
                                                         value="Full Time" required>
-                                                    <span class="ml-2 text-white text-lg">Full-time</span>
+                                                    <span class="ml-2 text-white text-lg">Full-time (Hybrid)</span>
                                                 </label>
                                                 <label class="inline-flex items-center flex-1 gap-2">
                                                     <input type="radio" class="form-radio w-6 h-6" name="mentor_type"
                                                         value="Part Time" required>
-                                                    <span class="ml-2 text-white text-lg">Part-time</span>
+                                                    <span class="ml-2 text-white text-lg">Part-time (Remote)</span>
                                                 </label>
                                             </div>
                                         </div>
