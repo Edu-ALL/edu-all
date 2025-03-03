@@ -110,28 +110,28 @@
                                         <div class="mb-3">
                                             <label for="primary_name" class="text-white text-sm py-2">Full Name</label>
                                             <input type="text" name="fullname"
-                                                class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-4 my-1 w-full"
+                                                class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                 placeholder="Full Name *" id="primary_name" required>
                                         </div>
                                         <div class="flex gap-4 flex-col md:flex-row">
                                             <div class="md:mb-3 md:w-1/2">
                                                 <label for="email" class="text-white text-sm py-2">Email</label>
                                                 <input type="email" name="email"
-                                                    class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-4 my-1 w-full"
+                                                    class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                     placeholder="Email *" id="email" required>
                                             </div>
                                             <div class="mb-3 md:w-1/2">
                                                 <label for="phone_number" class="text-white text-sm py-2">Phone
                                                     Number</label>
                                                 <input type="text"
-                                                    class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-4 my-1 w-full"
+                                                    class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                     placeholder="Phone Number *" id="phone_number" name="phone_number" required>
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <label for="linkedin_link" class="text-white text-sm py-2">Linkedin Link</label>
                                             <input type="text" name="linkedin_link"
-                                                class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-4 my-1 w-full"
+                                                class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                 placeholder="Linkedin Link *" id="linkedin_link" required>
                                         </div>
                                         <div class="flex justify-center mb-5">
