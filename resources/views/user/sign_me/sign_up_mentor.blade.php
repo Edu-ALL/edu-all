@@ -89,8 +89,8 @@
                         <div class="py-4 md:px-6 px-4 border-[0.5px] border-newyellow rounded-xl w-full h-full">
                             <form action="" method="POST" id="myForm">
                                 @csrf
-                                <span class="ml-2 text-white text-lg mb-4">* Fluent english required</span>
-                                <div class="flex flex-col justify-between h-full">
+                                <span class="text-white text-lg">* Fluent english required</span>
+                                <div class="flex flex-col justify-between h-full mt-4">
                                     <div class="flex flex-col h-full flex-1">
                                         <div class="mb-4">
                                             <div class="flex space-x-4 items-center">
