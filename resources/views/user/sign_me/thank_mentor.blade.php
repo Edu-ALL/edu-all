@@ -1,4 +1,4 @@
-@extends('layout.user.main')
+@extends('layout.user.landing_page')
 
 @section('content')
     <section class="bg-dark overflow-hidden">

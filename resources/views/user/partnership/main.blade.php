@@ -1,9 +1,9 @@
 @extends('layout.user.main')
 
 @section('head')
-    <title>{{ __('pages/about_us/partnership_careers.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/about_us/partnership_careers.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/about_us/partnership_careers.meta_description') }}" />
+    <title>Partnership</title>
+    <meta name="title" content="Partnership" />
+    <meta name="description" content="Partner with Us to Make an Impact, Explore different ways we can work together and create meaningful impact" />
 @endsection
 
 @section('sub-navbar')
