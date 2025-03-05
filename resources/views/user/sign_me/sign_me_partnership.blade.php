@@ -196,7 +196,6 @@
             inputs.forEach(function(input) {
                 if (input.required && !input.value && input.value != ' ' && !input.classList.contains(
                         'hidden')) {
-                    console.log(input);
 
                     isValid = false;
                     input.setCustomValidity('Please fill in required fields');
