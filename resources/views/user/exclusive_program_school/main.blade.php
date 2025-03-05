@@ -215,8 +215,11 @@
                     </div>
                 </div>
                 <div id="get-in-touch" class="w-full md:w-6/12 flex flex-col items-center md:items-start justify-start gap-4">
-                    <h2 class="font-newprimary font-bold text-2xl md:text-4xl mb-4 text-white ml-4 text-center md:text-left">
+                    <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-white ml-4 text-center md:text-left">
                         Get In Touch
+                    </h2>
+                    <h2 class="font-newprimary font-bold text-xl md:text-lg text-white ml-4 text-center md:text-left">
+                        Let us know you better by filling out this form
                     </h2>
                     <x-registration-form :is-partner="true" :is-absolute-style="false"/>
                 </div>
