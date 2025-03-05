@@ -8,23 +8,38 @@
                     class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                     placeholder="Full Name *" id="primary_name" required>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="text-dark text-sm py-2">Email</label>
-                    <input type="email"
-                    class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                    placeholder="Email *" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone_number" class="text-dark text-sm py-2">Phone Numbe</label>
-                    <input type="text"
-                    class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                    placeholder="Phone Number *" id="phone_number" required>
-                </div>
-                <div class="mb-3">
-                    <label for="school_name" class="text-dark text-sm py-2">School Name</label>
-                    <input type="text"
+                <div class="flex items-center gap-4">
+                    <div class="mb-3 flex-1">
+                        <label for="email" class="text-dark text-sm py-2">Email</label>
+                        <input type="email"
                         class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                        placeholder="School Name *" id="school_name" required>
+                        placeholder="Email *" id="email" required>
+                    </div>
+                    <div class="mb-3 flex-1">
+                        <label for="phone_number" class="text-dark text-sm py-2">Phone Numbe</label>
+                        <input type="text"
+                        class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                        placeholder="Phone Number *" id="phone_number" required>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="mb-3 flex-1">
+                        <label for="school_name" class="text-dark text-sm py-2">School Name</label>
+                        <input type="text"
+                            class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                            placeholder="School Name *" id="school_name" required>
+                    </div>
+                    <div class="mb-3 flex-1">
+                        <label for="position" class="text-dark text-sm py-2">Position</label>
+                        <input type="text"
+                            class="py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                            placeholder="Position *" id="position" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inquiry" class="text-dark text-sm py-2">Inquiry</label>
+                    <textarea class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full" placeholder="Inquiry *"
+                        id="inquiry" name="inquiry" rows="4" required></textarea>
                 </div>
                 <div class="mb-4">
                     <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
