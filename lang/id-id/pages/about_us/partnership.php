@@ -41,14 +41,14 @@ return [
             "body" => "Join forces with us to create innovative solutions, co-develop projects, or explore strategic collaborations together.",
             "image" => "company-partnership.webp",
             "btn" => "Let's Collaborate",
-            "link" => "sign-me/partnership",
+            "link" => "sign-me/partnership/company",
         ],
         [
             'title' => "NGO Partnership",
             "body" => "Let's work together to support communities, education, and sustainability.",
             "image" => "ngo-partnership.webp",
             "btn" => "Let's Collaborate",
-            "link" => "sign-me/partnership",
+            "link" => "sign-me/partnership/organization",
         ],
     ],
 
