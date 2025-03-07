@@ -170,7 +170,7 @@ class HomePageController extends Controller
         $body = json_decode(file_get_contents('php://input'), true);
         foreach ($body['entry'] as $page) {
             foreach ($page['changes'] as $change) {
-                Log::info('Data :' . $change);
+                Log::info('Data :' . json_encode($change));
                 // We get page, form, and lead IDs from the change here.
                 // We need the lead gen ID to get the lead data.
                 // The form ID and page ID are optional. You may want to record them into your CRM system.
@@ -204,7 +204,6 @@ class HomePageController extends Controller
     public function get_handle_webhook(Request $request)
     {
         // A token that Facebook will echo back to you as part of callback URL verification.
-        Log::info($request::all());
         $VERIFY_TOKEN = 'EduALL04';
         // Extract a verify token we set in the webhook subscription and a challenge to echo back.
         $verify_token = $request::get('hub_verify_token');
