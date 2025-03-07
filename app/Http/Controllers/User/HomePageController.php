@@ -141,7 +141,7 @@ class HomePageController extends Controller
     {
         return view('user.sign_me.thank_mentor');
     }
-  
+
     public function submit_mentor(Request $request, $locale)
     {
         try {
@@ -156,5 +156,56 @@ class HomePageController extends Controller
             Log::error('Send mentor email failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
+    }
+
+    public function post_handle_webhook(Request $request)
+    {
+        // Verifikasi signature dari Meta (opsional, tapi direkomendasikan)
+        $signature = $request->header('X-Hub-Signature-256');
+        $payload = $request->getContent();
+        $secret = '96d8102c55050e25d9ab233b1e786448'; // Ganti dengan secret key dari Meta App Anda
+
+        $expectedSignature = 'sha256=' . hash_hmac('sha256', $payload, $secret);
+
+        if (!hash_equals($signature, $expectedSignature)) {
+            Log::error('Invalid signature');
+            return response('Invalid signature', 401);
+        }
+
+        // Proses data leads
+        $data = $request->all();
+        Log::info('Received leads data:', $data);
+
+        // Simpan data leads ke database atau proses sesuai kebutuhan
+        // Contoh:
+        // Lead::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'phone' => $data['phone'],
+        // ]);
+
+        return response('Webhook received', 200);
+    }
+
+    public function get_handle_webhook(Request $request)
+    {
+        if ($request->method() === 'GET') {
+            // Verifikasi webhook
+            $challenge = $request->query('hub_challenge');
+            $verifyToken = $request->query('hub_verify_token');
+
+            if ($verifyToken === 'EduALL04') { // Ganti dengan token verifikasi Anda
+                return response($challenge, 200);
+            }
+
+            return response('Invalid verification token', 401);
+        }
+
+        // Proses POST request untuk leads
+        $data = $request->all();
+        Log::info('Received leads data:', $data);
+
+        // Simpan atau proses data leads
+        return response('Webhook received',);
     }
 }
