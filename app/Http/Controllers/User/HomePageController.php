@@ -171,8 +171,8 @@ class HomePageController extends Controller
     public function verify(Request $request)
     {
         try {
-            if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
-                Log::notice('Challenge Data', $request::get('hub.challenge'));
+            if ($request->get('hub.mode') == 'subscribe' && $request->get('hub.verify_token') == $this->token) {
+                Log::notice('Challenge Data', $request->get('hub.challenge'));
                 return response()->json(['challenge'=>$request::get('hub.challenge')]);
             }
 
