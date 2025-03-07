@@ -190,13 +190,13 @@ class HomePageController extends Controller
         return response($challenge);
     }
 
-    public function handleAds(Request $request)
+    public function handle_ads(Request $request)
     {
         // Graph API endpoint
         $GRAPH_API_VERSION = 'v18.0';
         $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/' . $GRAPH_API_VERSION;
 
-        $access_token = '96d8102c55050e25d9ab233b1e786448';
+        $access_token = '1df6c4059c25f25d4f118ae9703687e3';
 
         $body = $request->json()->all();
         
