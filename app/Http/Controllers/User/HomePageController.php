@@ -170,31 +170,39 @@ class HomePageController extends Controller
     // Route: GET /facebook, /instagram, /threads
     public function verify(Request $request)
     {
-        if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
-            Log::notice('Challenge Data', $request::get('hub.challenge'));
-            return response()->json(['status' => 'success'], 200);
+        try {
+            if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
+                Log::notice('Challenge Data', $request::get('hub.challenge'));
+                return response($request::get('hub.challenge'));
+            }
+
+            return response()->json(['error' => 'Invalid request'], 400);
+        } catch (Exception $e) {
+            Log::error('GET ERROR : ' . $e->getMessage());
         }
-        
-        return response()->json(['error' => 'Invalid request'], 400);
     }
 
     // Route: POST /facebook
     public function handleFacebook(Request $request)
     {
-        Log::notice('Facebook request body: ', $request::all());
+        try {
+            Log::notice('Facebook request body: ', $request::all());
 
-        // Verify X-Hub-Signature
-        $signature = $request->header('X-Hub-Signature');
-        if (!$this->isValidSignature($signature, $request->getContent())) {
-            Log::warning('Invalid or missing X-Hub-Signature');
-            return response()->json(['error' => 'Invalid signature'], 401);
+            // Verify X-Hub-Signature
+            $signature = $request->header('X-Hub-Signature');
+            if (!$this->isValidSignature($signature, $request->getContent())) {
+                Log::warning('Invalid or missing X-Hub-Signature');
+                return response()->json(['error' => 'Invalid signature'], 401);
+            }
+
+            Log::notice('X-Hub-Signature validated');
+            // Process the Facebook updates here
+            array_unshift($this->receivedUpdates, $request::all());
+
+            return response()->json(['status' => 'success']);
+        } catch (Exception $e) {
+            Log::error('POST ERROR : ' . $e->getMessage());
         }
-
-        Log::notice('X-Hub-Signature validated');
-        // Process the Facebook updates here
-        array_unshift($this->receivedUpdates, $request::all());
-
-        return response()->json(['status' => 'success']);
     }
 
     // Route: POST /instagram
