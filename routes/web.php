@@ -32,7 +32,7 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
     // WebHook 
-    Route::post('/webhook', [HomePageController::class, 'post_handle_webhook']);
+    // Route::post('/webhook', [HomePageController::class, 'post_handle_webhook']);
     Route::get('/webhook', [HomePageController::class, 'get_handle_webhook']);
 
     Route::group(
