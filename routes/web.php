@@ -37,9 +37,9 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('webhook/instagram', [HomePageController::class, 'verify']);
     Route::get('webhook/threads', [HomePageController::class, 'verify']);
 
-    Route::post('webhook/facebook', [HomePageController::class, 'handleFacebook']);
-    Route::post('webhook/instagram', [HomePageController::class, 'handleInstagram']);
-    Route::post('webhook/threads', [HomePageController::class, 'handleThreads']);
+    // Route::post('webhook/facebook', [HomePageController::class, 'handleFacebook']);
+    // Route::post('webhook/instagram', [HomePageController::class, 'handleInstagram']);
+    // Route::post('webhook/threads', [HomePageController::class, 'handleThreads']);
 
     Route::group(
         [
