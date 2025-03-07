@@ -170,10 +170,11 @@ class HomePageController extends Controller
     // Route: GET /facebook, /instagram, /threads
     public function verify(Request $request)
     {
+        Log::notice($request::get('hub.challenge'));
         try {
-            if ($request->get('hub.mode') == 'subscribe' && $request->get('hub.verify_token') == $this->token) {
-                Log::notice('Challenge Data', $request->get('hub.challenge'));
-                return response()->json(['challenge'=>$request::get('hub.challenge')]);
+            if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
+                Log::notice('Challenge Data', $request::get('hub.challenge'));
+                return response()->json(['challenge'=>$request::get('hub.challenge')], 200);
             }
 
             return response()->json(['error' => 'Invalid request'], 400);
