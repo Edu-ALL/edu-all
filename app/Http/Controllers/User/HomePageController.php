@@ -170,8 +170,8 @@ class HomePageController extends Controller
     // Route: GET /facebook, /instagram, /threads
     public function verify(Request $request)
     {
-        if ($request->query('hub.mode') == 'subscribe' && $request->query('hub.verify_token') == $this->token) {
-            return response($request->query('hub.challenge'));
+        if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
+            return response($request::get('hub.challenge'));
         }
 
         return response()->json(['error' => 'Invalid request'], 400);
@@ -180,18 +180,18 @@ class HomePageController extends Controller
     // Route: POST /facebook
     public function handleFacebook(Request $request)
     {
-        Log::info('Facebook request body: ', $request->all());
+        Log::info('Facebook request body: ', $request::all());
 
         // Verify X-Hub-Signature
-        $signature = $request->header('X-Hub-Signature');
-        if (!$this->isValidSignature($signature, $request->getContent())) {
+        $signature = $request::header('X-Hub-Signature');
+        if (!$this->isValidSignature($signature, $request::getContent())) {
             Log::warning('Invalid or missing X-Hub-Signature');
             return response()->json(['error' => 'Invalid signature'], 401);
         }
 
         Log::info('X-Hub-Signature validated');
         // Process the Facebook updates here
-        array_unshift($this->receivedUpdates, $request->all());
+        array_unshift($this->receivedUpdates, $request::all());
 
         return response()->json(['status' => 'success']);
     }
@@ -199,10 +199,10 @@ class HomePageController extends Controller
     // Route: POST /instagram
     public function handleInstagram(Request $request)
     {
-        Log::info('Instagram request body: ', $request->all());
+        Log::info('Instagram request body: ', $request::all());
 
         // Process Instagram updates here
-        array_unshift($this->receivedUpdates, $request->all());
+        array_unshift($this->receivedUpdates, $request::all());
 
         return response()->json(['status' => 'success']);
     }
@@ -210,10 +210,10 @@ class HomePageController extends Controller
     // Route: POST /threads
     public function handleThreads(Request $request)
     {
-        Log::info('Threads request body: ', $request->all());
+        Log::info('Threads request body: ', $request::all());
 
         // Process Threads updates here
-        array_unshift($this->receivedUpdates, $request->all());
+        array_unshift($this->receivedUpdates, $request::all());
 
         return response()->json(['status' => 'success']);
     }
