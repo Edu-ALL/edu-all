@@ -173,7 +173,7 @@ class HomePageController extends Controller
         }
 
         // Proses data leads
-        $data = $request->all();
+        $data = $request::all();
         Log::info('Received leads data:', $data);
 
         // Simpan data leads ke database atau proses sesuai kebutuhan
@@ -190,10 +190,11 @@ class HomePageController extends Controller
     public function get_handle_webhook(Request $request)
     {
         // A token that Facebook will echo back to you as part of callback URL verification.
+        Log::info($request::all());
         $VERIFY_TOKEN = 'EduALL04';
         // Extract a verify token we set in the webhook subscription and a challenge to echo back.
-        $verify_token = $request->get('hub_verify_token');
-        $challenge = $request->get('hub_challenge');
+        $verify_token = $request::get('hub_verify_token');
+        $challenge = $request::get('hub_challenge');
 
         if (!$verify_token || !$challenge) {
             Log::alert('Missing hub.verify_token and hub.challenge params');
