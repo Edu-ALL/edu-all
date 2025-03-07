@@ -172,9 +172,9 @@ class HomePageController extends Controller
     {
         if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
             Log::notice('Challenge Data', $request::get('hub.challenge'));
-            return response($request::get('hub.challenge'));
+            return response()->json(['status' => 'success'], 200);
         }
-
+        
         return response()->json(['error' => 'Invalid request'], 400);
     }
 
