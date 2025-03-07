@@ -189,23 +189,22 @@ class HomePageController extends Controller
 
     public function get_handle_webhook(Request $request)
     {
-        if ($request->method() === 'GET') {
-            // Verifikasi webhook
-            $challenge = $request->query('hub_challenge');
-            $verifyToken = $request->query('hub_verify_token');
+        // A token that Facebook will echo back to you as part of callback URL verification.
+        $VERIFY_TOKEN = 'EduALL04';
+        // Extract a verify token we set in the webhook subscription and a challenge to echo back.
+        $verify_token = $request->get('hub_verify_token');
+        $challenge = $request->get('hub_challenge');
 
-            if ($verifyToken === 'EduALL04') { // Ganti dengan token verifikasi Anda
-                return response($challenge, 200);
-            }
-
-            return response('Invalid verification token', 401);
+        if (!$verify_token || !$challenge) {
+            Log::alert('Missing hub.verify_token and hub.challenge params');
+            exit();
         }
 
-        // Proses POST request untuk leads
-        $data = $request->all();
-        Log::info('Received leads data:', $data);
-
-        // Simpan atau proses data leads
-        return response('Webhook received',);
+        if ($verify_token !== $VERIFY_TOKEN) {
+            Log::alert('Verify token does not match');
+            exit();
+        }
+        // We echo the received challenge back to Facebook to finish the verification process.
+        Log::info('Challenge data:', $challenge);
     }
 }
