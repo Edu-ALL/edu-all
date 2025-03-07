@@ -33,7 +33,7 @@ Route::middleware(['remove_public'])->group(function () {
 
     // WebHook 
     Route::get('webhook/ads', [HomePageController::class, 'verify']);
-    Route::post('webhook/ads', [HomePageController::class, 'handleAds']);
+    // Route::post('webhook/ads', [HomePageController::class, 'handleAds']);
 
     Route::group(
         [
