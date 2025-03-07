@@ -171,6 +171,7 @@ class HomePageController extends Controller
     public function verify(Request $request)
     {
         if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
+            Log::notice('Challenge Data', $request::get('hub.challenge'));
             return response($request::get('hub.challenge'));
         }
 
@@ -180,16 +181,16 @@ class HomePageController extends Controller
     // Route: POST /facebook
     public function handleFacebook(Request $request)
     {
-        Log::info('Facebook request body: ', $request::all());
+        Log::notice('Facebook request body: ', $request::all());
 
         // Verify X-Hub-Signature
-        $signature = $request::header('X-Hub-Signature');
-        if (!$this->isValidSignature($signature, $request::getContent())) {
+        $signature = $request->header('X-Hub-Signature');
+        if (!$this->isValidSignature($signature, $request->getContent())) {
             Log::warning('Invalid or missing X-Hub-Signature');
             return response()->json(['error' => 'Invalid signature'], 401);
         }
 
-        Log::info('X-Hub-Signature validated');
+        Log::notice('X-Hub-Signature validated');
         // Process the Facebook updates here
         array_unshift($this->receivedUpdates, $request::all());
 
