@@ -193,7 +193,7 @@ class HomePageController extends Controller
     public function handleAds(Request $request)
     {
         // Graph API endpoint
-        $GRAPH_API_VERSION = 'v2.12';
+        $GRAPH_API_VERSION = 'v18.0';
         $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/' . $GRAPH_API_VERSION;
 
         $access_token = '96d8102c55050e25d9ab233b1e786448';
