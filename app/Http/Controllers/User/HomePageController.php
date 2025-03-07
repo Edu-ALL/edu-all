@@ -160,31 +160,45 @@ class HomePageController extends Controller
 
     public function post_handle_webhook(Request $request)
     {
-        // Verifikasi signature dari Meta (opsional, tapi direkomendasikan)
-        $signature = $request->header('X-Hub-Signature-256');
-        $payload = $request->getContent();
-        $secret = '96d8102c55050e25d9ab233b1e786448'; // Ganti dengan secret key dari Meta App Anda
+        $GRAPH_API_VERSION = 'v2.12';
+        $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/' . $GRAPH_API_VERSION;
 
-        $expectedSignature = 'sha256=' . hash_hmac('sha256', $payload, $secret);
+        // Facebook will post realtime leads to this endpoint if we've already subscribed to the webhook in part 1.
+        // Read access token for calling graph API
+        $access_token = '96d8102c55050e25d9ab233b1e786448';
+        // Get value from request body
+        $body = json_decode(file_get_contents('php://input'), true);
+        foreach ($body['entry'] as $page) {
+            foreach ($page['changes'] as $change) {
+                Log::info('Data :' . $change);
+                // We get page, form, and lead IDs from the change here.
+                // We need the lead gen ID to get the lead data.
+                // The form ID and page ID are optional. You may want to record them into your CRM system.
+                $page_id = $change['value']['page_id'];
+                $form_id = $change['value']['form_id'];
+                $leadgen_id = $change['value']['leadgen_id'];
+                Log::info('Page ID ' . $page_id . ', Form ID ' . $form_id . ', Lead gen ID ' . $leadgen_id);
 
-        if (!hash_equals($signature, $expectedSignature)) {
-            Log::error('Invalid signature');
-            return response('Invalid signature', 401);
+                // Call graph API to request lead info with the lead ID and access token.
+                $leadgen_uri = $GRAPH_API_ENDPOINT . '/' . $leadgen_id . '?access_token=' . $access_token;
+                $response = json_decode(file_get_contents($leadgen_uri));
+                $id = $response->id;
+                $created_time = $response->created_time;
+                $field_data = $response->field_data;
+
+                // Handle lead answer here (insert data into your CRM system)
+                Log::info('Lead ID ' . $id);
+                Log::info('Created time ' . $created_time);
+                foreach ($field_data as $field) {
+                    $question = $field->name;
+                    $answers = $field->values;
+                    Log::info('Question ' . $question);
+                    Log::info('Answers ' . print_r($answers, true));
+                }
+            }
         }
-
-        // Proses data leads
-        $data = $request::all();
-        Log::info('Received leads data:', $data);
-
-        // Simpan data leads ke database atau proses sesuai kebutuhan
-        // Contoh:
-        // Lead::create([
-        //     'name' => $data['name'],
-        //     'email' => $data['email'],
-        //     'phone' => $data['phone'],
-        // ]);
-
-        return response('Webhook received', 200);
+        // Send HTTP 200 OK status to indicate we've received the update.
+        http_response_code(200);
     }
 
     public function get_handle_webhook(Request $request)
