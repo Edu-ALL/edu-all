@@ -32,8 +32,14 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
     // WebHook 
-    // Route::post('/webhook', [HomePageController::class, 'post_handle_webhook']);
-    Route::get('/webhook', [HomePageController::class, 'get_handle_webhook']);
+    Route::get('webhook/', [HomePageController::class, 'showReceivedUpdates']);
+    Route::get('webhook/facebook', [HomePageController::class, 'verify']);
+    Route::get('webhook/instagram', [HomePageController::class, 'verify']);
+    Route::get('webhook/threads', [HomePageController::class, 'verify']);
+
+    Route::post('webhook/facebook', [HomePageController::class, 'handleFacebook']);
+    Route::post('webhook/instagram', [HomePageController::class, 'handleInstagram']);
+    Route::post('webhook/threads', [HomePageController::class, 'handleThreads']);
 
     Route::group(
         [
@@ -98,9 +104,9 @@ Route::middleware(['remove_public'])->group(function () {
                 // Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
                 Route::get('/resources/guidebook', "guidebook")->name('guidebook');
                 Route::get('/resources/testimonial', "testimonial")->name('testimonial');
-                Route::get('/resources/mentee-project-showcase', function() {
+                Route::get('/resources/mentee-project-showcase', function () {
                     return redirect()->to('https://project-showcase.edu-all.com/');
-                } )->name('testimonial');
+                })->name('testimonial');
             });
 
             Route::controller(BlogPageController::class)->group(function () {

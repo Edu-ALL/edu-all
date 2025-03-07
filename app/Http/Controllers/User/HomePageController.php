@@ -21,6 +21,15 @@ use Illuminate\Support\Facades\Request;
 
 class HomePageController extends Controller
 {
+    private $token;
+    private $receivedUpdates = [];
+
+    public function __construct()
+    {
+        // Set the token and secret here
+        $this->token = '96d8102c55050e25d9ab233b1e786448';
+    }
+
     public function home()
     {
         $lang = substr(app()->getLocale(), 3, 2);
@@ -158,67 +167,69 @@ class HomePageController extends Controller
         }
     }
 
-    public function post_handle_webhook(Request $request)
+    // Route: GET /facebook, /instagram, /threads
+    public function verify(Request $request)
     {
-        $GRAPH_API_VERSION = 'v2.12';
-        $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/' . $GRAPH_API_VERSION;
-
-        // Facebook will post realtime leads to this endpoint if we've already subscribed to the webhook in part 1.
-        // Read access token for calling graph API
-        $access_token = '96d8102c55050e25d9ab233b1e786448';
-        // Get value from request body
-        $body = json_decode(file_get_contents('php://input'), true);
-        foreach ($body['entry'] as $page) {
-            foreach ($page['changes'] as $change) {
-                Log::info('Data :' . json_encode($change));
-                // We get page, form, and lead IDs from the change here.
-                // We need the lead gen ID to get the lead data.
-                // The form ID and page ID are optional. You may want to record them into your CRM system.
-                $page_id = $change['value']['page_id'];
-                $form_id = $change['value']['form_id'];
-                $leadgen_id = $change['value']['leadgen_id'];
-                Log::info('Page ID ' . $page_id . ', Form ID ' . $form_id . ', Lead gen ID ' . $leadgen_id);
-
-                // Call graph API to request lead info with the lead ID and access token.
-                $leadgen_uri = $GRAPH_API_ENDPOINT . '/' . $leadgen_id . '?access_token=' . $access_token;
-                $response = json_decode(file_get_contents($leadgen_uri));
-                $id = $response->id;
-                $created_time = $response->created_time;
-                $field_data = $response->field_data;
-
-                // Handle lead answer here (insert data into your CRM system)
-                Log::info('Lead ID ' . $id);
-                Log::info('Created time ' . $created_time);
-                foreach ($field_data as $field) {
-                    $question = $field->name;
-                    $answers = $field->values;
-                    Log::info('Question ' . $question);
-                    Log::info('Answers ' . print_r($answers, true));
-                }
-            }
+        if ($request->query('hub.mode') == 'subscribe' && $request->query('hub.verify_token') == $this->token) {
+            return response($request->query('hub.challenge'));
         }
-        // Send HTTP 200 OK status to indicate we've received the update.
-        http_response_code(200);
+
+        return response()->json(['error' => 'Invalid request'], 400);
     }
 
-    public function get_handle_webhook(Request $request)
+    // Route: POST /facebook
+    public function handleFacebook(Request $request)
     {
-        // A token that Facebook will echo back to you as part of callback URL verification.
-        $VERIFY_TOKEN = 'EduALL04';
-        // Extract a verify token we set in the webhook subscription and a challenge to echo back.
-        $verify_token = $request::get('hub_verify_token');
-        $challenge = $request::get('hub_challenge');
+        Log::info('Facebook request body: ', $request->all());
 
-        if (!$verify_token || !$challenge) {
-            Log::alert('Missing hub.verify_token and hub.challenge params');
-            exit();
+        // Verify X-Hub-Signature
+        $signature = $request->header('X-Hub-Signature');
+        if (!$this->isValidSignature($signature, $request->getContent())) {
+            Log::warning('Invalid or missing X-Hub-Signature');
+            return response()->json(['error' => 'Invalid signature'], 401);
         }
 
-        if ($verify_token !== $VERIFY_TOKEN) {
-            Log::alert('Verify token does not match');
-            exit();
-        }
-        // We echo the received challenge back to Facebook to finish the verification process.
-        Log::info('Challenge data:', $challenge);
+        Log::info('X-Hub-Signature validated');
+        // Process the Facebook updates here
+        array_unshift($this->receivedUpdates, $request->all());
+
+        return response()->json(['status' => 'success']);
+    }
+
+    // Route: POST /instagram
+    public function handleInstagram(Request $request)
+    {
+        Log::info('Instagram request body: ', $request->all());
+
+        // Process Instagram updates here
+        array_unshift($this->receivedUpdates, $request->all());
+
+        return response()->json(['status' => 'success']);
+    }
+
+    // Route: POST /threads
+    public function handleThreads(Request $request)
+    {
+        Log::info('Threads request body: ', $request->all());
+
+        // Process Threads updates here
+        array_unshift($this->receivedUpdates, $request->all());
+
+        return response()->json(['status' => 'success']);
+    }
+
+    // Helper function to validate X-Hub-Signature
+    private function isValidSignature($signature, $body)
+    {
+        $secret = env('APP_SECRET');
+        $hash = 'sha1=' . hash_hmac('sha1', $body, $secret);
+
+        return hash_equals($signature, $hash);
+    }
+
+    // Route: GET / (to view received updates)
+    public function showReceivedUpdates()
+    {
+        return response()->json($this->receivedUpdates);
     }
 }
