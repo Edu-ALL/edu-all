@@ -200,7 +200,7 @@ class HomePageController extends Controller
 
         $body = $request::all();
 
-        Log::info('body', $request::all());
+        Log::info('Muncul Data');
 
         // Loop through the entries in the request payload
         foreach ($body['entry'] as $page) {
