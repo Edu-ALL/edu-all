@@ -21,14 +21,7 @@ use Illuminate\Support\Facades\Request;
 
 class HomePageController extends Controller
 {
-    private $token;
-    private $receivedUpdates = [];
-
-    public function __construct()
-    {
-        // Set the token and secret here
-        $this->token = 'EduALL04';
-    }
+    private $VERIFY_TOKEN = 'EDUALL04';
 
     public function home()
     {
@@ -167,79 +160,83 @@ class HomePageController extends Controller
         }
     }
 
-    // Route: GET /facebook, /instagram, /threads
     public function verify(Request $request)
     {
-        Log::notice($request::get('hub.challenge'));
-        try {
-            if ($request::get('hub.mode') == 'subscribe' && $request::get('hub.verify_token') == $this->token) {
-                Log::notice('Challenge Data', $request::get('hub.challenge'));
-                return response()->json(['challenge'=>$request::get('hub.challenge')], 200);
-            }
+        // Extract verify_token and challenge from query parameters
+        $verify_token = $request::get('hub_verify_token');
+        $challenge = $request::get('hub_challenge');
 
-            return response()->json(['error' => 'Invalid request'], 400);
-        } catch (Exception $e) {
-            Log::error('GET ERROR : ' . $e->getMessage());
+        // Check if the verify_token and challenge are present
+        if (!$verify_token || !$challenge) {
+            Log::warning('Missing parameters', [
+                'verify_token' => $verify_token,
+                'challenge' => $challenge
+            ]);
+            return response('Missing hub.verify_token and hub.challenge params', 400);
         }
-    }
 
-    // Route: POST /facebook
-    public function handleFacebook(Request $request)
-    {
-        try {
-            Log::notice('Facebook request body: ', $request::all());
-
-            // Verify X-Hub-Signature
-            $signature = $request->header('X-Hub-Signature');
-            if (!$this->isValidSignature($signature, $request->getContent())) {
-                Log::warning('Invalid or missing X-Hub-Signature');
-                return response()->json(['error' => 'Invalid signature'], 401);
-            }
-
-            Log::notice('X-Hub-Signature validated');
-            // Process the Facebook updates here
-            array_unshift($this->receivedUpdates, $request::all());
-
-            return response()->json(['status' => 'success']);
-        } catch (Exception $e) {
-            Log::error('POST ERROR : ' . $e->getMessage());
+        // Validate the verify_token
+        if ($verify_token !== $this->VERIFY_TOKEN) {
+            Log::warning('Token mismatch', ['verify_token' => $verify_token]);
+            return response('Verify token does not match', 400);
         }
+
+        // Successfully validated, return the challenge to complete the verification process
+        Log::info('Webhook verification successful', [
+            'verify_token' => $verify_token,
+            'challenge' => $challenge
+        ]);
+
+        return response($challenge);
     }
 
-    // Route: POST /instagram
-    public function handleInstagram(Request $request)
+    public function handleAds(Request $request)
     {
-        Log::info('Instagram request body: ', $request::all());
+        // Graph API endpoint
+        $GRAPH_API_VERSION = 'v2.12';
+        $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/' . $GRAPH_API_VERSION;
 
-        // Process Instagram updates here
-        array_unshift($this->receivedUpdates, $request::all());
+        $access_token = '96d8102c55050e25d9ab233b1e786448';
 
+        $body = $request::all();
+
+        // Loop through the entries in the request payload
+        foreach ($body['entry'] as $page) {
+            foreach ($page['changes'] as $change) {
+                // Extract the necessary information from the change
+                $page_id = $change['value']['page_id'];
+                $form_id = $change['value']['form_id'];
+                $leadgen_id = $change['value']['leadgen_id'];
+
+                Log::info("Page ID {$page_id}, Form ID {$form_id}, Leadgen ID {$leadgen_id}");
+
+                // Call the Graph API to fetch the lead information
+                $leadgen_uri = "{$GRAPH_API_ENDPOINT}/{$leadgen_id}?access_token={$access_token}";
+                $response = json_decode(file_get_contents($leadgen_uri));
+
+                if ($response && isset($response->field_data)) {
+                    $id = $response->id;
+                    $created_time = $response->created_time;
+                    $field_data = $response->field_data;
+
+                    // Log the lead data
+                    Log::info("Lead ID {$id}");
+                    Log::info("Created time {$created_time}");
+
+                    // Log the field data (questions and answers)
+                    foreach ($field_data as $field) {
+                        $question = $field->name;
+                        $answers = $field->values;
+                        Log::info("Question: {$question}");
+                        Log::info("Answers: " . print_r($answers, true));
+                    }
+                } else {
+                    Log::error("Failed to fetch lead information for Leadgen ID: {$leadgen_id}");
+                }
+            }
+        }
+
+        // Send HTTP 200 OK status to indicate we've successfully received and processed the update
         return response()->json(['status' => 'success']);
-    }
-
-    // Route: POST /threads
-    public function handleThreads(Request $request)
-    {
-        Log::info('Threads request body: ', $request::all());
-
-        // Process Threads updates here
-        array_unshift($this->receivedUpdates, $request::all());
-
-        return response()->json(['status' => 'success']);
-    }
-
-    // Helper function to validate X-Hub-Signature
-    private function isValidSignature($signature, $body)
-    {
-        $secret = '96d8102c55050e25d9ab233b1e786448';
-        $hash = 'sha1=' . hash_hmac('sha1', $body, $secret);
-
-        return hash_equals($signature, $hash);
-    }
-
-    // Route: GET / (to view received updates)
-    public function showReceivedUpdates()
-    {
-        return response()->json($this->receivedUpdates);
     }
 }

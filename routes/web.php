@@ -32,14 +32,8 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
     // WebHook 
-    Route::get('webhook/', [HomePageController::class, 'showReceivedUpdates']);
-    Route::get('webhook/facebook', [HomePageController::class, 'verify']);
-    Route::get('webhook/instagram', [HomePageController::class, 'verify']);
-    Route::get('webhook/threads', [HomePageController::class, 'verify']);
-
-    // Route::post('webhook/facebook', [HomePageController::class, 'handleFacebook']);
-    // Route::post('webhook/instagram', [HomePageController::class, 'handleInstagram']);
-    // Route::post('webhook/threads', [HomePageController::class, 'handleThreads']);
+    Route::get('webhook/ads', [HomePageController::class, 'verify']);
+    Route::post('webhook/ads', [HomePageController::class, 'handleAds']);
 
     Route::group(
         [
