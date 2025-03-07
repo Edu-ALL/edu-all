@@ -27,7 +27,7 @@ class HomePageController extends Controller
     public function __construct()
     {
         // Set the token and secret here
-        $this->token = '96d8102c55050e25d9ab233b1e786448';
+        $this->token = 'EduALL04';
     }
 
     public function home()
@@ -221,7 +221,7 @@ class HomePageController extends Controller
     // Helper function to validate X-Hub-Signature
     private function isValidSignature($signature, $body)
     {
-        $secret = env('APP_SECRET');
+        $secret = '96d8102c55050e25d9ab233b1e786448';
         $hash = 'sha1=' . hash_hmac('sha1', $body, $secret);
 
         return hash_equals($signature, $hash);
