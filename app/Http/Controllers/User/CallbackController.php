@@ -51,13 +51,13 @@ class CallbackController extends Controller
         Log::info('Webhook received', $log_data);
 
         // Extract Leadgen ID from the POST data
-        // $input_data = json_decode($request->getContent(), true);
-        // $leadgen_id = $input_data['entry'][0]['changes'][0]['value']['leadgen_id'] ?? null;
+        $input_data = json_decode($request->getContent(), true);
+        $leadgen_id = $input_data['entry'][0]['changes'][0]['value']['leadgen_id'] ?? null;
 
-        // if ($leadgen_id) {
-        //     // If we have the Leadgen ID, proceed with further logic
-        //     $this->processLeadgenData($leadgen_id);
-        // }
+        if ($leadgen_id) {
+            // If we have the Leadgen ID, proceed with further logic
+            $this->processLeadgenData($leadgen_id);
+        }
 
         return response()->json(['message' => 'Webhook received successfully.'], 200);
     }
