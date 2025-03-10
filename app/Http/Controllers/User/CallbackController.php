@@ -53,21 +53,26 @@ class CallbackController extends Controller
         // Extract Leadgen ID from the POST data
         $input_data = json_decode($request->getContent(), true);
         $leadgen_id = $input_data['entry'][0]['changes'][0]['value']['leadgen_id'] ?? null;
+        $form_id = $input_data['entry'][0]['changes'][0]['value']['form_id'] ?? null;
 
         if ($leadgen_id) {
             // If we have the Leadgen ID, proceed with further logic
-            $this->processLeadgenData($leadgen_id);
+            $this->processLeadgenData($leadgen_id, $form_id);
         }
 
         return response()->json(['message' => 'Webhook received successfully.'], 200);
     }
 
-    public function processLeadgenData($leadgen_id)
+    public function processLeadgenData($leadgen_id, $form_id)
     {
         // Check if the access token is valid
         if (!$this->isAccessTokenValid($this->access_token)) {
             $this->access_token = $this->refreshAccessToken();
         }
+
+        $form = Http::get("https://graph.facebook.com/v17.0/{$form_id}", [
+            'access_token' => $this->access_token
+        ]);
 
         // Call Facebook Graph API to fetch lead data
         $response = Http::get("https://graph.facebook.com/v17.0/{$leadgen_id}", [
@@ -75,6 +80,9 @@ class CallbackController extends Controller
         ]);
 
         if ($response->successful()) {
+            Log::alert('Form Data', $form->json());
+            Log::alert('Lead Data', $response->json());
+            
             $data = $response->json();
             $this->logLeadData($data);
         } else {
@@ -117,7 +125,6 @@ class CallbackController extends Controller
                 $log_entry .= $field['name'] . ": " . $field['values'][0] . "\n";
             }
         }
-        Log::notice('Lead Data', $data);
         Log::info('Lead Data:', ['data' => $log_entry]);
     }
 }
