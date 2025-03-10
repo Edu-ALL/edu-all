@@ -118,6 +118,8 @@ module.exports = {
                 // partnership 
                 "our-contribution-banner":
                     "url('../../public/assets/img/banner/our-contribution.webp')",
+                "career-banner":
+                    "url('../../public/assets/img/about/partnership-career/career_page_banner.webp')",
 
                 // Blog
                 "bottom-sign-up-banner":

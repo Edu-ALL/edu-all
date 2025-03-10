@@ -15,6 +15,7 @@ class Careers extends Model
     protected $fillable = [
         'id',
         'job_position',
+        'slug',
         'department',
         'work_type',
         'application_deadline',
