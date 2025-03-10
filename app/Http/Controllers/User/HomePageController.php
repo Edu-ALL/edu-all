@@ -162,83 +162,201 @@ class HomePageController extends Controller
 
     public function verify(Request $request)
     {
-        // Extract verify_token and challenge from query parameters
-        $verify_token = $request::get('hub_verify_token');
-        $challenge = $request::get('hub_challenge');
+        // Replace with your own verify token
+        $verify_token = 'EDUALL04';
 
-        // Check if the verify_token and challenge are present
-        if (!$verify_token || !$challenge) {
-            Log::warning('Missing parameters', [
-                'verify_token' => $verify_token,
-                'challenge' => $challenge
-            ]);
-            return response('Missing hub.verify_token and hub.challenge params', 400);
+        // Retrieve the parameters sent by Facebook
+        $mode = $request->query('hub_mode');
+        $challenge = $request->query('hub_challenge');
+        $verify_token_received = $request->query('hub_verify_token');
+
+        // Verify the token matches what you expect
+        if ($mode === 'subscribe' && $verify_token === $verify_token_received) {
+            // Return the challenge code to complete the verification
+            Log::info('Verification success : ' . $challenge);
+            return response($challenge);
+        } else {
+            // If the verification fails
+            Log::error('Verification failed.');
+            return response('Verification failed.', 400);
         }
-
-        // Validate the verify_token
-        if ($verify_token !== $this->VERIFY_TOKEN) {
-            Log::warning('Token mismatch', ['verify_token' => $verify_token]);
-            return response('Verify token does not match', 400);
-        }
-
-        // Successfully validated, return the challenge to complete the verification process
-        Log::info('Webhook verification successful', [
-            'verify_token' => $verify_token,
-            'challenge' => $challenge
-        ]);
-
-        return response($challenge);
     }
 
-    public function handle_ads(Request $request)
+    public function read_lead(Request $request)
     {
-        // Graph API endpoint
-        $GRAPH_API_VERSION = 'v22.0';
-        $GRAPH_API_ENDPOINT = 'https://graph.facebook.com/' . $GRAPH_API_VERSION;
+        // Get the raw POST data
+        $raw_post_data = file_get_contents('php://input');
 
-        $access_token = '6de7019731055d7689fd03904d9f3bf1';
+        $input_data = json_decode($raw_post_data, true);
+        $leadgen_id = $input_data['entry'][0]['changes'][0]['value']['leadgen_id'];  // Extract the Leadgen ID from webhook data
 
-        $body = $request->json()->all();
-        
-        // Loop through the entries in the request payload
-        foreach ($body['entry'] as $page) {
-            foreach ($page['changes'] as $change) {
-                // Extract the necessary information from the change
-                $page_id = $change['value']['page_id'];
-                $form_id = $change['value']['form_id'];
-                $leadgen_id = $change['value']['leadgen_id'];
+        LOG::info('RAW POST DATA - ' . date("Y-m-d H:i:s") . ' : ' . $raw_post_data);
 
-                Log::info("Page ID {$page_id}, Form ID {$form_id}, Leadgen ID {$leadgen_id}");
+        // Optionally, send a response to indicate successful receipt of the data
+        http_response_code(200); // HTTP 200 OK
+        echo "Webhook received successfully.";
 
-                // Call the Graph API to fetch the lead information
-                $leadgen_uri = "{$GRAPH_API_ENDPOINT}/{$leadgen_id}?access_token={$access_token}";
-                $response = json_decode(file_get_contents($leadgen_uri));
 
-                if ($response && isset($response->field_data)) {
-                    $id = $response->id;
-                    $created_time = $response->created_time;
-                    $field_data = $response->field_data;
+        // Your Facebook App Credentials
+        $app_id         = '573232928556496';
+        $app_secret     = 'c961704609b4a4e72c8474518683f2d8';
+        $access_token   = 'EAAIJWjEUhdABO97oH267rcNmsiLRlVU77jMWzznMeZAp5ZBE7e1mVJTlJGauYZCluUjPDnogcH5GGjdo870ZCRughE4EY1XU1zMiSGqKY51dCQqipZBlPFtfS9pLBax7siHtthVnN0cBKRzFcAG5HfN7SMA799HZAXKij302ssG5N4mMeONo8wTv1mckPy';
 
-                    // Log the lead data
-                    Log::info("Lead ID {$id}");
-                    Log::info("Created time {$created_time}");
-
-                    // Log the field data (questions and answers)
-                    foreach ($field_data as $field) {
-                        $question = $field->name;
-                        $answers = $field->values;
-                        Log::info("Question: {$question}");
-                        Log::info("Answers: " . print_r($answers, true));
-                    }
-                } else {
-                    Log::error("Failed to fetch lead information for Leadgen ID: {$leadgen_id}");
-                }
+        // If the access token is expired, refresh it
+        if ($access_token) {
+            $access_token = $this->refreshAccessToken($access_token, $app_id, $app_secret);
+            if (!$access_token) {
+                exit('Failed to refresh access token.');
             }
         }
 
-        // Send HTTP 200 OK status to indicate we've successfully received and processed the update
-        return response()->json(['status' => 'success']);
+        // Graph API URL to fetch the specific lead data
+        $graph_url = "https://graph.facebook.com/v22.0/{$leadgen_id}?access_token={$access_token}";
+
+        // Initialize cURL session
+        $ch = curl_init();
+
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_URL, $graph_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // Execute the cURL request and get the response
+        $response = curl_exec($ch);
+
+        // Check for errors in the cURL request
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+
+        // Close the cURL session
+        curl_close($ch);
+
+        // Decode the JSON response
+        Log::notice("RAW DATA", $response);
+        
+        $data = json_decode($response, true);
+
+        // Prepare the final data with lead details and log it
+        $final_data = [];
+
+        if (isset($data['id'])) {
+            $final_data['lead_id'] = $data['id'];
+            $final_data['created_time'] = $data['created_time'];
+
+            // Loop through the field responses (e.g., name, email, etc.)
+            if (isset($data['field_data'])) {
+                $fields = [];
+                foreach ($data['field_data'] as $field) {
+                    $fields[$field['name']] = $field['values'][0];  // key-value pair
+                }
+                $final_data['fields'] = $fields;
+
+                // Log the key-value pairs to the log file
+                $log_entry = "\n------ " . date("Y-m-d H:i:s") . " ------\n";
+                $log_entry .= "Lead ID: " . $final_data['lead_id'] . "\n";
+                $log_entry .= "Created Time: " . $final_data['created_time'] . "\n";
+                $log_entry .= "Form Fields:\n";
 
 
+                foreach ($fields as $key => $value) {
+                    $log_entry .= "$key: $value\n";
+                }
+                $log_entry .= "-----------------------------------------\n";
+                // Open log file again to append the detailed log
+
+                LOG::info($log_entry);
+                $log_file = 'webhook_log.txt';
+                $log = fopen($log_file, 'a');
+                fwrite($log, $log_entry);
+                fclose($log);
+            }
+        } else {
+            $final_data['error'] = "No leads found or error in fetching data.";
+            LOG::error($final_data['error']);
+        }
+
+        // Output the final JSON response
+        header('Content-Type: application/json');
+        Log::info('LEAD DATA', $final_data);
+        echo json_encode($final_data, JSON_PRETTY_PRINT);
+    }
+
+    // Function to check if the access token is still valid
+    public function isAccessTokenValid($access_token, $app_id, $app_secret)
+    {
+        // URL to check the token validity
+        $url = "https://graph.facebook.com/v22.0/debug_token?input_token={$access_token}&access_token={$app_id}|{$app_secret}";
+
+        // Initialize cURL session
+        $ch = curl_init();
+
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // Execute the cURL request and get the response
+        $response = curl_exec($ch);
+
+        // Check for errors in the cURL request
+        if (curl_errno($ch)) {
+            Log::error('Error:' . curl_error($ch));
+            return false;
+        }
+
+        // Close the cURL session
+        curl_close($ch);
+
+        // Decode the JSON response
+        $data = json_decode($response, true);
+
+        // Check if the token is valid
+        if (isset($data['data']) && isset($data['data']['is_valid']) && $data['data']['is_valid']) {
+            return true;  // Token is valid
+        } else {
+            return false; // Token is not valid
+        }
+    }
+
+    // Function to get a long-lived access token if the current one is expired
+    public function refreshAccessToken($access_token, $app_id, $app_secret)
+    {
+
+        // If the token is valid, return it without refreshing
+        if ($this->isAccessTokenValid($access_token, $app_id, $app_secret)) {
+            return $access_token;
+        }
+
+        // URL to refresh the access token
+        $url = "https://graph.facebook.com/v22.0/oauth/access_token?grant_type=fb_exchange_token&client_id={$app_id}&client_secret={$app_secret}&fb_exchange_token={$access_token}";
+
+        // Initialize cURL session
+        $ch = curl_init();
+
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // Execute the cURL request and get the response
+        $response = curl_exec($ch);
+
+        // Check for errors in the cURL request
+        if (curl_errno($ch)) {
+            Log::error('Error:' . curl_error($ch));
+            return null;
+        }
+
+        // Close the cURL session
+        curl_close($ch);
+
+        // Decode the JSON response
+        $data = json_decode($response, true);
+
+        // Check if the response contains a new access token
+        if (isset($data['access_token'])) {
+            return $data['access_token']; // Return the new long-lived access token
+        } else {
+            Log::error('Error refreshing access token.');
+            return null;
+        }
     }
 }
