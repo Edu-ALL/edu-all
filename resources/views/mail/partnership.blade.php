@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Registered NGO/Company Partnership</title>
+    <title>Registered School/NGO/Company Partnership</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="x-apple-disable-message-reformatting">
@@ -33,7 +33,7 @@
     <p>
         I hope you're doing well. <br>
         Please find below the registration details for
-        {{ $data['category'] == 'company' ? 'Company Partnership' : 'NGO Partnership' }}:
+        {{ ucwords($data['category']) }} Partnership
     </p>
 
     <table border="0">
@@ -44,7 +44,7 @@
 
         </tr>
         <tr>
-            <td>{{ $data['category'] == 'company' ? 'Company' : 'Organization' }} Name</td>
+            <td>{{ ucwords($data['category']) }} Name</td>
             <td>:</td>
             <td>{{ $data['data']['company_name'] }}</td>
         </tr>
