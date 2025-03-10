@@ -166,9 +166,9 @@ class HomePageController extends Controller
         $verify_token = 'EDUALL04';
 
         // Retrieve the parameters sent by Facebook
-        $mode = $request->query('hub_mode');
-        $challenge = $request->query('hub_challenge');
-        $verify_token_received = $request->query('hub_verify_token');
+        $mode = $request::get('hub_mode');
+        $challenge = $request::get('hub_challenge');
+        $verify_token_received = $request::get('hub_verify_token');
 
         // Verify the token matches what you expect
         if ($mode === 'subscribe' && $verify_token === $verify_token_received) {
