@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\BlogPageController;
+use App\Http\Controllers\User\CallbackController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\RegularTalkPageController;
@@ -32,8 +33,8 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
     // WebHook 
-    Route::get('webhook/ads', [HomePageController::class, 'verify']);
-    Route::post('webhook/ads', [HomePageController::class, 'read_lead']);
+    Route::get('callback/facebook', [CallbackController::class, 'verify']);
+    Route::post('callback/facebook', [CallbackController::class, 'read_lead']);
 
     Route::group(
         [
