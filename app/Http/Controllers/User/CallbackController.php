@@ -80,11 +80,7 @@ class CallbackController extends Controller
         ]);
 
         if ($response->successful()) {
-            Log::alert('Form Data', $form->json());
-            Log::alert('Lead Data', $response->json());
-            
-            // $data = $response->json();
-            // $this->logLeadData($data);
+            Log::notice('Lead received successfully', ['Form' => $form->json(), 'Lead' => $response->json()]);
         } else {
             Log::error("Error fetching lead data: " . $response->body());
         }
@@ -112,19 +108,5 @@ class CallbackController extends Controller
 
         Log::error("Error refreshing access token: " . $response->body());
         return null;
-    }
-
-    public function logLeadData($data)
-    {
-        $log_entry = "------ " . now() . " ------\n";
-        $log_entry .= "Lead ID: " . $data['id'] . "\n";
-        $log_entry .= "Created Time: " . $data['created_time'] . "\n";
-
-        if (isset($data['field_data'])) {
-            foreach ($data['field_data'] as $field) {
-                $log_entry .= $field['name'] . ": " . $field['values'][0] . "\n";
-            }
-        }
-        Log::info('Lead Data:', ['data' => $log_entry]);
     }
 }
