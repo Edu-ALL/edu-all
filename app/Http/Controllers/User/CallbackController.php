@@ -76,6 +76,7 @@ class CallbackController extends Controller
 
         if ($response->successful()) {
             $data = $response->json();
+            Log::info('LEADGEN DATA',$data);
             $this->logLeadData($data);
         } else {
             Log::error("Error fetching lead data: " . $response->body());
