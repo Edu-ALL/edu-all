@@ -182,7 +182,7 @@ class HomePageController extends Controller
         }
     }
 
-    public function read_lead(Request $request)
+    public function read_lead()
     {
         try {
             // Get the raw POST data
