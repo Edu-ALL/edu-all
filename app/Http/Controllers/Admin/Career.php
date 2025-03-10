@@ -92,11 +92,12 @@ class Career extends Controller
     public function store(Request $request)
     {
         $messages = [
-            'required' => 'The :attribute field is required.',
+            'required' => 'The :attribute field is required',
+            'unique' => 'The :attribute already exists',
         ];
 
         $rules = [
-            'job_position' => 'required',
+            'job_position' => 'required|unique:tb_career,job_position',
             'department' => 'required',
             'work_type' => 'required',
             'application_deadline' => 'required|date',
@@ -116,6 +117,7 @@ class Career extends Controller
         try {
             $career = new Careers();
             $career->job_position = $request->job_position;
+            $career->slug = str()->slug($request->job_position);
             $career->department = $request->department;
             $career->work_type = $request->work_type;
             $career->application_deadline = $request->application_deadline;
@@ -159,10 +161,11 @@ class Career extends Controller
     {
         $messages = [
             'required' => 'The :attribute field is required.',
+            'unique' => 'The :attribute already exists',
         ];
 
         $rules = [
-            'job_position' => 'required',
+            'job_position' => 'required|unique:tb_career,job_position,' . $id,
             'department' => 'required',
             'work_type' => 'required',
             'application_deadline' => 'required|date',
@@ -182,6 +185,7 @@ class Career extends Controller
         try {
             $career = Careers::findOrFail($id);
             $career->job_position = $request->job_position;
+            $career->slug = str()->slug($request->job_position);
             $career->department = $request->department;
             $career->work_type = $request->work_type;
             $career->application_deadline = $request->application_deadline;
