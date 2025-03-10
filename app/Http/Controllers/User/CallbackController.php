@@ -83,8 +83,8 @@ class CallbackController extends Controller
             Log::alert('Form Data', $form->json());
             Log::alert('Lead Data', $response->json());
             
-            $data = $response->json();
-            $this->logLeadData($data);
+            // $data = $response->json();
+            // $this->logLeadData($data);
         } else {
             Log::error("Error fetching lead data: " . $response->body());
         }
