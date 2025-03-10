@@ -198,9 +198,9 @@ class HomePageController extends Controller
 
 
         // Your Facebook App Credentials
-        $app_id         = '573232928556496';
-        $app_secret     = 'c961704609b4a4e72c8474518683f2d8';
-        $access_token   = 'EAAIJWjEUhdABO97oH267rcNmsiLRlVU77jMWzznMeZAp5ZBE7e1mVJTlJGauYZCluUjPDnogcH5GGjdo870ZCRughE4EY1XU1zMiSGqKY51dCQqipZBlPFtfS9pLBax7siHtthVnN0cBKRzFcAG5HfN7SMA799HZAXKij302ssG5N4mMeONo8wTv1mckPy';
+        $app_id         = '1699212087341766';
+        $app_secret     = '7ed420184fb95f1fcd1d9d231aafcbda';
+        $access_token   = 'EAAYJbKTdMsYBO54KOMff8l5qM2gcV3kgbvIWMJrwkyQsMkXh1h5aZBDWh52VLrwPQUBocG5UzoKbvEDQwUx7Dxf8BGdYoVXoY3PWe343EF2gW8qA43CX5pz6DG2COO0KIhUczgzyd50wRt9NslhZBqWawdrhkL3dD3WnDsNhDI3ItfcDT7ZCftZCDZBRKmVnNahxKUqfyRg2GNZBbl';
 
         // If the access token is expired, refresh it
         if ($access_token) {
@@ -233,7 +233,7 @@ class HomePageController extends Controller
 
         // Decode the JSON response
         Log::notice("RAW DATA", $response);
-        
+
         $data = json_decode($response, true);
 
         // Prepare the final data with lead details and log it
