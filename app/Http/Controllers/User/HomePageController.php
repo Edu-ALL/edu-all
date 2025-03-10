@@ -184,7 +184,7 @@ class HomePageController extends Controller
 
     public function read_lead(Request $request)
     {
-        Log::alert('Reques', $request);
+        Log::alert('Reques', $request::all());
         // try {
         //     // Get the raw POST data
         //     $raw_post_data = file_get_contents('php://input');
