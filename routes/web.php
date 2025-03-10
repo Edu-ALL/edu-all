@@ -32,8 +32,8 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
     // WebHook 
-    Route::get('webhook/ads', [HomePageController::class, 'verify']);
-    Route::post('webhook/ads', [HomePageController::class, 'read_lead']);
+    Route::post('webhook/ads', [HomePageController::class, 'verify']);
+    Route::get('webhook/ads', [HomePageController::class, 'read_lead']);
 
     Route::group(
         [
