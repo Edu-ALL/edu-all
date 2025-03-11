@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\Tutor;
 use App\Http\Controllers\Admin\UpcomingEvent;
 use App\Http\Controllers\Admin\WebsiteSetting;
+use App\Http\Controllers\Admin\Career;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -91,6 +92,17 @@ Route::middleware('auth.expires')->group(function () {
         Route::get('/blog-category/{group}/edit', [BlogCategory::class, 'edit']);
         Route::post('/blog-category/{group}', [BlogCategory::class, 'update'])->name('update-blog-category');
         Route::post('/blog-category/delete/{group}', [BlogCategory::class, 'delete']);
+
+        // Career
+        Route::get('/career', [Career::class, 'index']);
+        Route::get('/career/data', [Career::class, 'getCareers'])->name('data-careers');
+        Route::get('/career/create', [Career::class, 'create']);
+        Route::post('/career', [Career::class, 'store'])->name('create-career');
+        Route::get('/career/{id}/edit', [Career::class, 'edit']);
+        Route::post('/career/{id}', [Career::class, 'update'])->name('update-career');
+        Route::post('/career/deactivate/{id}', [Career::class, 'deactivate']);
+        Route::post('/career/activate/{id}', [Career::class, 'activate']);
+        Route::post('/career/delete/{id}', [Career::class, 'delete']);
 
         // Testimonial
         Route::get('/testimonial', [Testimonial::class, 'index']);

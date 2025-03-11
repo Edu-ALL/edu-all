@@ -89,6 +89,7 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
                 Route::get('/partnership', 'partnership')->name('partnership');
                 Route::get('/about/partnership-careers', 'partnership_careers')->name('partnership_careers');
+                Route::get('/about/partnership-careers/{slug}', 'detail_careers')->name('detail_careers');
                 Route::get('/contact-us', 'contact_us')->name('contact_us');
                 Route::get('/about/mentor', "mentor")->name('mentor');
                 Route::get('/about/mentor/{slug}', "detail_mentor")->name('detail_mentor');

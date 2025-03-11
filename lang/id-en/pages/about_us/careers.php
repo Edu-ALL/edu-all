@@ -6,9 +6,38 @@ return [
 
     // Top Section
     'title' => 'Careers',
+    'tag' => 'Work at EduALL',
+    'body' => "Empowering youth through caring and continuous learning",
+
+    "benefits" => [
+        [
+            'title' => "Hybrid",
+            'tag' => "Working Arrangement",
+            'image'=> "icon_1.webp",
+        ],
+        [
+            'title' => "Growth-Oriented",
+            'tag' => "Environment",
+            'image'=> "icon_2.webp",
+        ],
+        [
+            'title' => "Supportive",
+            'tag' => "Work Environment",
+            'image'=> "icon_3.webp",
+        ],
+        [
+            'title' => "Telemedicine",
+            'tag' => "Insurance",
+            'image'=> "icon_4.webp",
+        ]
+    ],
+
 
     // Body Section
-    'desc' => 'We believe collaboration makes the best result. We aspire to be the cornerstone in students’ education by enriching students with leadership, communication, critical thinking and analytical skills.',
+    'desc' => 'Turn your passion into purpose and #SecureBestFuture with us!',
+
+    // Gallery
+    'life_at_edu_all' => "Life at EduALL",
 
     // Collaborative Partners
     'colab_title' => 'Collaborative Partners',
