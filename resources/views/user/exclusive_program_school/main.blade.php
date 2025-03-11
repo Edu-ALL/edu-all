@@ -83,7 +83,8 @@
                         </div>
                         <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-6">{{ $item['title'] }}
                         </h4>
-                        <span class="font-newprimary text-base font-normal text-center leading-5">{!! $item['tag'] !!}</span>
+                        <span
+                            class="font-newprimary text-base font-normal text-center leading-5">{!! $item['tag'] !!}</span>
                     </div>
                 @endforeach
             </div>
@@ -136,7 +137,7 @@
             </div>
         </div>
     </section> --}}
-    
+
     <section class="py-16 bg-gradient-to-b from-newprimary via-newprimary to-dark">
         <div class="new-main-container">
             <h2 class="text-white text-3xl text-center font-bold">
@@ -164,18 +165,20 @@
                                         </div>
                                         <div class="w-full">
                                             <ul class="mt-4 w-full flex flex-col">
-                                                @foreach($program['items'] as $item)
+                                                @foreach ($program['items'] as $item)
                                                     <li class="cursor-pointer flex items-center gap-2 py-2 hover:bg-[#F5F5F5] border-b px-5 pb-2"
                                                         data-program-item="{{ json_encode([
                                                             'title' => $item['title'],
                                                             'desc' => $item['desc'],
-                                                            'points' => $item['points'] ?? $item['point'] ?? [],
-                                                            'additional' => $item['additional'] ?? "",
+                                                            'points' => $item['points'] ?? ($item['point'] ?? []),
+                                                            'additional' => $item['additional'] ?? '',
                                                         ]) }}">
-                                                        <p class="flex-1 text-sm font-newprimary text-newprimary font-semibold">
+                                                        <p
+                                                            class="flex-1 text-sm font-newprimary text-newprimary font-semibold">
                                                             {!! $item['title'] !!}
                                                         </p>
-                                                        <div class="h-4 w-4 bg-[#393636] flex items-center justify-center rounded-full">
+                                                        <div
+                                                            class="h-4 w-4 bg-[#393636] flex items-center justify-center rounded-full">
                                                             <i class="fa-solid fa-info text-[10px] text-white"></i>
                                                         </div>
                                                     </li>
@@ -191,12 +194,11 @@
             </div>
 
             <div class="flex justify-center -mt-12">
-                <x-button href="#get-in-touch" title="Let's Collaborate"
-                    bg-color="red" class="mb-8" padding-x="12" padding-y="2" hover-bg-color="newprimary"
-                    hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                    transition="all duration-150" />
+                <x-button href="#get-in-touch" title="Let's Collaborate" bg-color="red" class="mb-8" padding-x="12"
+                    padding-y="2" hover-bg-color="newprimary" hover-padding-x="20" text-color="white" font="medium"
+                    text-size="lg" transition="all duration-150" />
             </div>
-        </div> 
+        </div>
     </section>
 
     <section class="py-16 bg-dark">
@@ -207,21 +209,109 @@
                         Our Past Collaboration
                     </h2>
                     <div class="grid grid-rows-3 grid-cols-2 gap-4">
-                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_1.webp') }}" alt="Collaboration 1" class="w-full h-auto object-cover row-span-2">
-                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_2.webp') }}" alt="Collaboration 2" class="w-full h-auto object-cover">
-                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_3.webp') }}" alt="Collaboration 3" class="w-full h-auto object-cover">
-                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_4.webp') }}" alt="Collaboration 4" class="w-full h-auto object-cover">
-                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_5.webp') }}" alt="Collaboration 5" class="w-full h-auto object-cover">
+                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_1.webp') }}"
+                            alt="Collaboration 1" class="w-full h-auto object-cover row-span-2">
+                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_2.webp') }}"
+                            alt="Collaboration 2" class="w-full h-auto object-cover">
+                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_3.webp') }}"
+                            alt="Collaboration 3" class="w-full h-auto object-cover">
+                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_4.webp') }}"
+                            alt="Collaboration 4" class="w-full h-auto object-cover">
+                        <img src="{{ asset('assets/img/exclusive_program_school/past_collaboration/image_5.webp') }}"
+                            alt="Collaboration 5" class="w-full h-auto object-cover">
                     </div>
                 </div>
-                <div id="get-in-touch" class="w-full md:w-6/12 flex flex-col items-center md:items-start justify-start gap-4">
+                <div id="get-in-touch"
+                    class="w-full md:w-6/12 flex flex-col items-center md:items-start justify-start gap-4">
                     <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-white ml-4 text-center md:text-left">
                         Get In Touch
                     </h2>
                     <h2 class="font-newprimary font-bold text-xl md:text-lg text-white ml-4 text-center md:text-left">
                         Let us know you better by filling out this form
                     </h2>
-                    <x-registration-form :is-partner="true" :is-absolute-style="false"/>
+                    <div class="bg-[#EAEAEA] py-8 px-10 rounded-xl shadow-2xl w-full">
+                        <form action="{{ route('submit_partnership', ['locale' => 'id-en', 'slug' => 'school']) }}"
+                            method="POST" id="myForm">
+                            @csrf
+                            <div class="">
+                                <div class="flex flex-col">
+                                    <div class="mb-3">
+                                        <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>
+                                        <input type="text" name="fullname"
+                                            class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                                            placeholder="Full Name *" id="primary_name" required>
+                                    </div>
+                                    <div class="flex gap-4 flex-col md:flex-row">
+                                        <div class="md:mb-3 w-full md:w-1/2">
+                                            <label for="company_name" class="text-dark text-sm py-2">
+                                                School Name
+                                            </label>
+                                            <input type="text" name="company_name"
+                                                class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                                                placeholder="School Name *" id="company_name" required>
+                                        </div>
+                                        <div class="mb-3 w-full md:w-1/2">
+                                            <label for="position" class="text-dark text-sm py-2">Position</label>
+                                            <input type="text" name="position"
+                                                class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                                                placeholder="Position *" id="position" required>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 flex-col md:flex-row">
+                                        <div class="md:mb-3 md:w-1/2">
+                                            <label for="email" class="text-dark text-sm py-2">Email</label>
+                                            <input type="email" name="email"
+                                                class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                                                placeholder="Email *" id="email" required>
+                                        </div>
+                                        <div class="mb-3 md:w-1/2">
+                                            <label for="phone_number" class="text-dark text-sm py-2">Phone
+                                                Number</label>
+                                            <input type="text"
+                                                class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
+                                                placeholder="Phone Number *" id="phone_number" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inquiry" class="text-dark text-sm py-2">Inquiry</label>
+                                        <textarea class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full" placeholder="Inquiry *"
+                                            id="inquiry" name="inquiry" rows="4" required></textarea>
+                                    </div>
+                                    <div class="flex justify-center mb-3">
+                                        <div class="text-center">
+                                            <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
+                                            <span id="captcha" class="text-red" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 flex items-center justify-center">
+                                        <button type="button" class="max-w-max bg-red text-white text-center py-2 px-20"
+                                            onclick="submitData()">
+                                            <span id="loading" class="hidden">
+                                                <i class="fas fa-spinner fa-spin mr-4"></i>
+                                            </span>
+                                            Collaborate Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="thanksForm" class="hidden">
+                            <div class="flex flex-col justify-center">
+                                <h4 class="mb-4 mt-4 text-newprimary font-bold text-center text-lg leading-6">
+                                    Thank you for letting us know a little bit about you! Our partnership team will contact
+                                    you in 24 hours for further collaboration
+                                </h4>
+                                <a href="{{ route('home', app()->getLocale()) }}"
+                                    class="flex justify-center w-full pt-4">
+                                    <span
+                                        class="block px-4 py-2 rounded-sm bg-red font-newprimary font-semibold text-base text-white text-center">
+                                        Back to Home
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -287,7 +377,8 @@
     </section> --}}
 
     <!-- Modal -->
-    <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm hidden items-center justify-center z-50">
+    <div id="infoModal"
+        class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm hidden items-center justify-center z-50">
         <div class="bg-[#EAEAEA] p-6 rounded-lg shadow-lg md:max-w-5xl w-full mx-4 relative">
             <h2 id="modalTitle" class="text-2xl font-bold mb-4 max-w-xs"></h2>
             <p id="modalDesc" class="mb-4 text-sm"></p>
@@ -295,7 +386,8 @@
                 <ul class="list-disc gap-2 flex flex-col"></ul>
             </div>
             <div id="modalAdditional"></div>
-            <button onclick="closeModal()" class="mt-4 bg-newprimary text-white rounded-full hover:bg-opacity-90 absolute top-2 right-4">
+            <button onclick="closeModal()"
+                class="mt-4 bg-newprimary text-white rounded-full hover:bg-opacity-90 absolute top-2 right-4">
                 <div class="h-6 w-6 flex items-center justify-center rounded-full">
                     <i class="fa-solid fa-close text-[12px] text-white"></i>
                 </div>
@@ -363,13 +455,13 @@
             const desc = document.getElementById('modalDesc');
             const pointsList = document.getElementById('modalPoints').querySelector('ul');
             const additional = document.getElementById('modalAdditional');
-            
+
             title.textContent = item.title;
             desc.textContent = item.desc;
-            
+
             // Clear existing points
             pointsList.innerHTML = '';
-            
+
             // Add points if they exist
             if (item.points && item.points.length > 0) {
                 item.points.forEach(point => {
@@ -386,13 +478,13 @@
                     pointsList.appendChild(li);
                 });
             }
-            
+
             if (item.additional != "") {
                 additional.innerHTML = item.additional;
             } else {
                 additional.innerHTML = "";
             }
-            
+
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
@@ -409,5 +501,57 @@
                 openModal(itemData);
             });
         });
+    </script>
+@endpush
+
+@push('style')
+    <script script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('rcaptcha', {
+                'sitekey': '6LeKwI8qAAAAAGA8ypgp-u0gDloCz27jeVQmniif',
+                'callback': checkCaptcha
+            });
+        };
+
+        const checkCaptcha = () => {
+            var v = grecaptcha.getResponse();
+
+            if (v.length == 0) {
+                document.getElementById('captcha').innerHTML = "Please verify you are not a robot.";
+                return false;
+            } else {
+                return true
+                // Here you can perform an actual form submission if needed, e.g., using an AJAX request or form.submit().
+            }
+        }
+
+        const submitData = () => {
+            const inputs = document.querySelectorAll('#myForm input, #myForm textarea');
+            let isValid = true;
+
+            // Loop through inputs and check for validation
+            inputs.forEach(function(input) {
+                if (input.required && !input.value && input.value != ' ' && !input.classList.contains(
+                        'hidden')) {
+
+                    isValid = false;
+                    input.setCustomValidity('Please fill in required fields');
+                    input.classList.add('border-red'); // Add red border to invalid inputs (optional)
+                    input.classList.remove('border-none'); // Remove green border if any
+                } else {
+                    input.setCustomValidity('');
+                    input.classList.remove('border-red');
+                    input.classList.add('border-none');
+                }
+            });
+
+            if (isValid) {
+                const captcha = checkCaptcha();
+                if (captcha) {
+                    document.getElementById('myForm').submit();
+                }
+            }
+        }
     </script>
 @endpush

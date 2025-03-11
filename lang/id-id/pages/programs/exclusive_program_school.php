@@ -90,10 +90,11 @@ return [
                         </div>',                            
                 ],
                 [
-                    'title' => "SAT Prep Class",
-                    'desc' => "Tailored for school extracurricular activities, this SAT Prep Class provides students with expert-led instruction to improve their SAT scores. The program fits seamlessly into a school’s existing schedule, offering focused lessons, practice tests, and personalized strategies that equip students to excel on the SAT, all while complementing their regular academic work.",
+                    'title' => "SAT Prep Class Extracurricular",
+                    'desc' => "Tailored for school extracurricular activities, this SAT Prep Class provides students with expert-led instruction to improve their SAT scores. The program fits seamlessly into a school’s existing schedule, offering focused lessons, practice tests, and personalized strategies that equip students to excel on the SAT.",
                 ],
             ],
+            'link' => 'admission-accelerator',
         ],
         [
             'image' => 'programs-02.webp',
@@ -104,9 +105,9 @@ return [
                     'title' => "Uni Connect & Interest Exploration Program",
                     'desc' => "Designed to give students a comprehensive understanding of various academic and career paths, this program gives students firsthand insights into different fields of study and explore a wide range of universities, connecting with professors, industry experts, and current university students from diverse majors.",
                     'point' => [
-                        'Partnering with Singapore\'s top universities, such as NUS and NTU.',
+                        'Visit and tour to Singapore’s top universities',
                         'Experience world-class education and research.',
-                        'Make informed choices about students\' future.',
+                        'Make informed choices about students’ future.',                        
                     ],
                 ],
                 [
@@ -121,6 +122,7 @@ return [
                     ],
                 ],
             ],
+            'link'=> 'experiential-learning',
         ],
         [
             'image' => 'programs-03.webp',
@@ -141,6 +143,7 @@ return [
                     'desc' => "Equip teachers with the skills to craft personalized and persuasive recommendation letters that make a significant impact on students' college and scholarship applications. This workshop provides educators with practical strategies and insights to highlight each student's unique strengths, helping them stand out in the competitive application process.",
                 ],
             ],
+            'link' => 'teacher-focused',
         ],
     ],
     'sub_program_button' => 'Lebih Lanjut',

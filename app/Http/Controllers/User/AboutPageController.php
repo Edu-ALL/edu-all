@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Careers;
 use App\Models\Mentors;
 use App\Models\MentorVideos;
 use Illuminate\Http\Request;
@@ -31,9 +32,37 @@ class AboutPageController extends Controller
         return view('user.partnership.main');
     }
 
-    public function partnership_careers()
+    public function partnership_careers(Request $request)
     {
-        return view('user.partnership_carrier.main');
+        $query = Careers::query();
+
+        if ($request->has('department')) {
+            $query->where('department', $request->department);
+        }
+
+        if ($request->has('status')) {
+            $query->where('work_type', $request->status);
+        }
+
+        if ($request->has('search')) {
+            $query->where('job_position', 'like', '%' . $request->search . '%');
+        }
+
+        $careers = $query->where('status', 'active')
+            ->orderBy('job_position', 'asc')
+            ->paginate(3);
+
+        return view('user.partnership_carrier.main', [
+            'careers' => $careers
+        ]);
+    }
+
+    public function detail_careers($locale, $slug)
+    {
+        $career = Careers::where('slug', $slug)->firstOrFail();
+        return view('user.detail_career.main', [
+            'career' => $career,
+        ]);
     }
 
     public function contact_us()

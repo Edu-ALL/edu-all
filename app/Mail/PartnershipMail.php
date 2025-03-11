@@ -33,7 +33,7 @@ class PartnershipMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Registered NGO/Company Partnership',
+            subject: 'Registered School/NGO/Company Partnership',
         );
     }
 
