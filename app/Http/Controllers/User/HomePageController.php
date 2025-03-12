@@ -120,7 +120,7 @@ class HomePageController extends Controller
                 'category' => $slug
             ];
 
-            Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
+            // Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
 
             return redirect($locale . '/sign-me/thank-partnership');
         } catch (Exception $e) {
