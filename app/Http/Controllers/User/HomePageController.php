@@ -120,9 +120,12 @@ class HomePageController extends Controller
                 'category' => $slug
             ];
 
-            // Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
-
-            return redirect($locale . '/sign-me/thank-partnership');
+            if ($request::get('g-recaptcha-response')) {
+                Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
+                return redirect($locale . '/sign-me/thank-partnership');
+            } else {
+                return Redirect::back();
+            }
         } catch (Exception $e) {
             Log::error('Send partnership email failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
