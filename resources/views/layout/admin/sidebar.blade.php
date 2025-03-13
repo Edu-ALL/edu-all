@@ -26,6 +26,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link collapsed {{ request()->is('admin/career*') ? 'active' : '' }}" href="/admin/career">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Career</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link collapsed {{ request()->is('admin/mentor*') ? 'active' : '' }}" href="/admin/mentor">
                 <i class="fa-solid fa-users"></i>
                 <span>Mentor</span>
@@ -77,12 +83,6 @@
             <a class="nav-link collapsed {{ request()->is('admin/as-seen*') ? 'active' : '' }}" href="/admin/as-seen">
                 <i class="fa-solid fa-newspaper"></i>
                 <span>As Seen</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed {{ request()->is('admin/career*') ? 'active' : '' }}" href="/admin/career">
-                <i class="fa-solid fa-briefcase"></i>
-                <span>Career</span>
             </a>
         </li>
         {{-- <li class="nav-item">
