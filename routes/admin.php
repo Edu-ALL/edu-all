@@ -94,15 +94,15 @@ Route::middleware('auth.expires')->group(function () {
         Route::post('/blog-category/delete/{group}', [BlogCategory::class, 'delete']);
 
         // Career
-        Route::get('/career', [Career::class, 'index']);
-        Route::get('/career/data', [Career::class, 'getCareers'])->name('data-careers');
-        Route::get('/career/create', [Career::class, 'create']);
-        Route::post('/career', [Career::class, 'store'])->name('create-career');
-        Route::get('/career/{id}/edit', [Career::class, 'edit']);
-        Route::post('/career/{id}', [Career::class, 'update'])->name('update-career');
-        Route::post('/career/deactivate/{id}', [Career::class, 'deactivate']);
-        Route::post('/career/activate/{id}', [Career::class, 'activate']);
-        Route::post('/career/delete/{id}', [Career::class, 'delete']);
+        Route::get('/careers', [Career::class, 'index']);
+        Route::get('/careers/data', [Career::class, 'getCareers'])->name('data-careers');
+        Route::get('/careers/create', [Career::class, 'create']);
+        Route::post('/careers', [Career::class, 'store'])->name('create-career');
+        Route::get('/careers/{id}/edit', [Career::class, 'edit']);
+        Route::post('/careers/{id}', [Career::class, 'update'])->name('update-career');
+        Route::post('/careers/deactivate/{id}', [Career::class, 'deactivate']);
+        Route::post('/careers/activate/{id}', [Career::class, 'activate']);
+        Route::post('/careers/delete/{id}', [Career::class, 'delete']);
 
         // Testimonial
         Route::get('/testimonial', [Testimonial::class, 'index']);

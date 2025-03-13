@@ -26,7 +26,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed {{ request()->is('admin/career*') ? 'active' : '' }}" href="/admin/career">
+            <a class="nav-link collapsed {{ request()->is('admin/career*') ? 'active' : '' }}" href="/admin/careers">
                 <i class="fa-solid fa-briefcase"></i>
                 <span>Career</span>
             </a>

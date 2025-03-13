@@ -67,7 +67,7 @@ class Career extends Controller
                 ->editColumn('action', function ($d) {
                     $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-warning" href="/admin/career/' . $d->id . '/edit">
+                    <a type="button" class="btn btn-warning" href="/admin/careers/' . $d->id . '/edit">
                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this career"></i>
                     </a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')">
@@ -110,7 +110,7 @@ class Career extends Controller
 
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
-            return redirect('/admin/career/create')->withInput()->withErrors($validator->messages());
+            return redirect('/admin/careers/create')->withInput()->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -135,10 +135,10 @@ class Career extends Controller
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Create Career failed : ' . $e->getMessage());
-            return redirect('/admin/career/create')->withErrors($e->getMessage());
+            return redirect('/admin/careers/create')->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/career')->withSuccess('Career Was Successfully Created');
+        return redirect('/admin/careers')->withSuccess('Career Was Successfully Created');
     }
 
     public function show(Careers $careers)
@@ -205,7 +205,7 @@ class Career extends Controller
             return redirect()->back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/career')->withSuccess('Career Was Successfully Updated');
+        return redirect('/admin/careers')->withSuccess('Career Was Successfully Updated');
     }
 
     public function delete($id)
@@ -223,7 +223,7 @@ class Career extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/career')->withSuccess('Career Was Successfully Deleted');
+        return redirect('/admin/careers')->withSuccess('Career Was Successfully Deleted');
     }
 
 
@@ -243,7 +243,7 @@ class Career extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/career');
+        return redirect('/admin/careers');
     }
 
     public function activate($id)
@@ -262,6 +262,6 @@ class Career extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/career');
+        return redirect('/admin/careers');
     }
 }
