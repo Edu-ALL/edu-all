@@ -70,9 +70,9 @@ return [
                     'title' => "University Application Workshop (US/UK/Asian)",
                     "desc" => "This comprehensive workshop prepares students for the university application process across the US, UK, and Asia",
                     "points" => [
-                        "Hands-on bootcamp on admission tests, scholarships, personal statements, and more",
+                        "Hands-on bootcamp on admission preparation, scholarships, essay/personal statements, crafting an academic CV, and more",
                         "Direct feedback to make students' applications stand out",
-                        "Expert guidance on crafting an academic CV",
+                        "Find best-fit major dan do university research and shortlisting",
                         "Securing recommendation letters for top universities around the world"
                     ],
                 ],
@@ -114,11 +114,11 @@ return [
                     'title' => "Community Service & Immersion Program",
                     'desc' => "Offers students the unique opportunity to immerse themselves in communities in Salatiga, Bali, or other rural areas of Indonesia. Students work alongside local residents to address pressing community issues through collaborative projects that prioritize sustainability and empathy.",
                     'point' => [
-                        'Design or execute education-focused community project that counts.',
+                        'Design or execute community project that counts',
                         'Personal development skills through real-life challenges.',
                         'Vital insights to become a leader with global perspectives.',
-                        'Vast network with diverse peers and professionals.',
-                        'Suitable for CAS, community service hours & university applications.'
+                        'Vast network with diverse peers and professionals ',
+                        'Suitable for CAS, community service hours & university applications'
                     ],
                 ],
             ],
