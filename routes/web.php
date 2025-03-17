@@ -56,6 +56,7 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/sign-up/mentor', 'sign_up_mentor')->name('sign_up_mentor');
                 Route::post('/sign-up/mentor', 'submit_mentor')->name('submit_mentor');
                 Route::get('/sign-up/mentor/thank', 'thank_mentor')->name('thank_mentor');
+                Route::get('/sign-me/mentoring', 'sign_me_mentoring')->name('sign_me_mentoring');
                 Route::get('/privacy-policy', 'privacy_policy')->name('privacy_policy');
             });
 
