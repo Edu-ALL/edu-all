@@ -116,6 +116,8 @@ Route::middleware(['remove_public'])->group(function () {
         },
     );
 
+    Route::get('/sign-me/mentoring', [HomePageController::class, 'sign_me_mentoring'])->name('sign_me_mentoring');
+
 
     // New Page Regular Talk
     Route::get('/regular-talk', function () {
