@@ -217,7 +217,7 @@
                 <div class="flex flex-col md:flex-row gap-6 border-[0.5px] border-[#6D6D6D] rounded-2xl py-8 px-8 h-full">
                     <div class="flex flex-col items-center w-full relative">
                         <h3
-                            class="absolute left-0 top-0 text-[#9C9C9C] text-3xl md:text-4xl font-bold mb-4 font-newprimary md:w-56 text-left">
+                            class="absolute left-0 top-0 text-[#9C9C9C] text-3xl md:text-2xl font-bold mb-4 font-newprimary md:w-56 text-left">
                             What Makes EduALL Different?</h3>
 
                         <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/what_make_different.webp') }}"
