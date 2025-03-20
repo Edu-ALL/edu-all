@@ -408,7 +408,7 @@
                 'graduation_year': graduationYear.value,
                 'interest_prog': "AAUP",
                 'destination_country': [],
-                'lead_id': "LS045",
+                'lead_id': "LS079",
             }
 
             const inputs = document.querySelectorAll('#myForm' + area + ' input, #myForm' + area + ' select');
