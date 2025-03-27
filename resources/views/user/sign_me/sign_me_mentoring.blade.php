@@ -33,7 +33,7 @@
 @endsection
 
 @section('content')
-    <section class="md:py-16 py-8 bg-dark overflow-clip">
+    <section class="md:py-16 py-8 overflow-clip">
         <div class="new-main-container relative z-10">
             <div
                 class="circular-gradient-1 absolute z-10 -top-40 -left-full md:-left-1/3 md:-top-1/3 h-[1000px] w-[1000px] md:h-[1000px] md:w-[1000px]">
@@ -44,43 +44,73 @@
             <div class="circular-gradient-2 absolute z-10 md:hidden -left-96 -bottom-40 h-[700px] w-[700px] "></div>
             <div class="flex flex-col max-w-4xl mx-auto h-full gap-8 z-20 relative">
                 <div class="flex flex-col md:flex-row items-stretch gap-8">
-                    <div class="md:w-1/2 w-full gap-4 flex flex-col order-2 md:order-1">
+                    <div class="md:w-7/12 w-full gap-4 flex flex-col order-2 md:order-1">
                         {{-- EduALL Logo  --}}
                         <div class="h-16 md:block hidden">
-                            <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll logo"
+                            <img loading="lazy" src="{{ asset('assets/img/home/EduALL-logo.webp') }}" alt="EduAll logo"
                                 class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
                         </div>
                         {{-- About EduALL --}}
-                        <div class="border-[0.5px] border-[#6D6D6D] rounded-2xl py-6 px-6 h-full mt-2">
+                        <div class="border-[0.5px] border-[#6D6D6D] rounded-2xl py-8 px-6 h-full mt-2">
                             <div class="flex flex-col">
-                                <h3 class="text-[#9C9C9C] text-3xl md:text-4xl font-bold mb-3 font-newprimary">Who We Are?
+                                <h3 class="text-newprimary text-3xl md:text-3xl font-bold mb-3 font-newprimary">Kenapa
+                                    Ratusan Orang Tua
+                                    Memilih EduALL?
                                 </h3>
-                                <p class="text-white text-sm leading-relaxed text-justify">
-                                    EduALL offers integrative uni-prep and mentoring for middle & high school students to
-                                    foster a growth mindset, develop academic & life skills, and facilitate access to
-                                    high-quality education globally and real-world experiences, all while having fun in the
-                                    process.
-                                    <br>
-                                    Our students come from many cities such as Jakarta, Bandung, Semarang, and Surabaya,
-                                    even outside of Indonesia; Singapore, US, and many more.
+                                <p class="text-dark text-sm leading-relaxed text-justify">
+                                    EduALL adalah platform mentoring dan persiapan kuliah yang mendukung siswa SMP dan SMA
+                                    mengembangkan keterampilan akademik, growth mindset, dan akses pendidikan berkualitas di
+                                    dunia. Dengan bimbingan mentor berpengalaman, EduALL berhasil mengantarkan <b>100% siswa
+                                        diterima di universitas top dunia</b> setiap tahun — termasuk di <b>Amerika Serikat,
+                                        Kanada,
+                                        Inggris, Asia, Australia,</b> dan berbagai negara lainnya.
                                 </p>
-                                <h3 class="text-[#9C9C9C] text-3xl md:text-4xl font-bold mb-3 mt-6">What We Do?</h3>
-                                <p class="text-white text-sm leading-relaxed text-justify">
-                                    We offer personalized 1-on-1 admissions mentoring service that will serve as an academic
-                                    walk-through for students to get accepted at their dream schools and find best
-                                    fit-universities.
-                                </p>
+                                <div class="grid grid-cols-3 mt-6 justify-center place-items-center items-start">
+                                    {{-- Acceptance --}}
+                                    <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
+                                        <h4 class="font-bold text-newprimary text-xl md:text-3xl text-center">
+                                            100%
+                                        </h4>
+                                        <h6 class="font-bold text-dark text-banner-subdescription text-center">
+                                            Acceptance
+                                        </h6>
+                                        <span class="font-light text-dark text-banner-subdescription text-center">
+                                            at Best-Fit Universities
+                                        </span>
+                                    </div>
+                                    {{-- Mentees --}}
+                                    <div class="flex flex-col justify-center items-center">
+                                        <h4 class="font-bold text-newprimary text-xl md:text-3xl text-center">
+                                            800+
+                                        </h4>
+                                        <h6 class="font-bold text-dark text-banner-subdescription text-center">
+                                            Mentees
+                                        </h6>
+                                    </div>
+                                    {{-- Scholarship --}}
+                                    <div class="flex flex-col justify-center items-center">
+                                        <h4 class="font-bold text-newprimary text-xl md:text-3xl text-center">
+                                            $1 Million+
+                                        </h4>
+                                        <h6 class="font-bold text-dark text-banner-subdescription text-center">
+                                            in Scholarship
+                                        </h6>
+                                        <span class="font-light text-dark text-banner-subdescription text-center">
+                                            Awards
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="md:w-1/2 w-full gap-4 flex flex-col order-1 md:order-2">
+                    <div class="md:w-5/12 w-full gap-4 flex flex-col order-1 md:order-2">
                         {{-- EduALL Logo  --}}
                         <div class="md:hidden">
-                            <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll logo"
+                            <img loading="lazy" src="{{ asset('assets/img/home/EduALL-logo.webp') }}" alt="EduAll logo"
                                 class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
                         </div>
                         {{-- Form --}}
-                        <div class="py-4 md:px-6 px-4 border-[0.5px] border-newyellow rounded-xl w-full h-full">
+                        <div class="py-4 md:px-6 px-4 border-[0.5px] bg-[#1E1E1E] rounded-xl w-full h-full">
                             <div id="myForm_header">
                                 <div class="mt-5">
                                     <div class="flex flex-col">
@@ -90,12 +120,12 @@
                                                     <input type="radio" name="roles_header" value="student"
                                                         id="student_header" checked required
                                                         onchange="checkRole('_header')">
-                                                    <label for="student" class="text-white ml-2">Student</label>
+                                                    <label for="student" class="text-newyellow ml-2">Student</label>
                                                 </div>
                                                 <div class="flex items-center">
                                                     <input type="radio" name="roles_header" value="parent"
                                                         id="parent_header" required onchange="checkRole('_header')">
-                                                    <label for="parent" class="text-white ml-2">Parent</label>
+                                                    <label for="parent" class="text-newyellow ml-2">Parent</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,7 +161,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <button type="button"
-                                                class="w-full bg-newprimary text-white text-center py-2 rounded-xl"
+                                                class="w-full bg-newyellow text-dark text-center py-2 rounded-xl"
                                                 onclick="submit('_header')">
                                                 <span id="send_header">
                                                     <i class="fas fa-paper-plane mr-4"></i>
@@ -147,142 +177,174 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row gap-6 border-[0.5px] border-[#6D6D6D] rounded-2xl py-6 px-6 h-full">
+                <div class="flex flex-col md:flex-row gap-6 h-full mt-8">
                     <div class="flex flex-col items-center w-full">
-                        <div
-                            class="flex flex-wrap items-center justify-evenly md:justify-center gap-8 max-w-2xl mx-auto w-full">
-                            @foreach (__('pages/programs/admission_mentoring.benefits') as $item)
-                                <div class="shadow-clip flex flex-col items-center">
-                                    <div class="h-24 w-28 bg-newprimary flex flex-col items-center justify-center py-4 mb-4"
-                                        style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
-                                        <div class="h-12 relative">
-                                            <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                                alt="EduALL - ilustration" class="w-full h-full object-center object-cover"
-                                                style="filter: brightness(0) invert(1);">
-                                            <div class="absolute -top-4 -right-4">
-                                                <div
-                                                    class="h-4 w-4 bg-white flex items-center justify-center rounded-full">
-                                                    <i class="fa-solid fa-check fa-sm text-black"></i>
+                        <div class="flex md:flex-row flex-col gap-4 items-center justify-center">
+                            <div class="flex flex-col md:w-1/3">
+                                <h3
+                                    class="text-[#393636] text-2xl md:text-3xl font-bold mb-3 font-newprimary md:text-left text-center">
+                                    Apa Layanan
+                                    yang
+                                    Diberikan EduALL?
+                                </h3>
+                                <p class="text-dark text-sm leading-4 text-justify">
+                                    Kami menawarkan layanan mentoring 1-on-1 yang dipersonalisasi untuk membantu siswa
+                                    memahami proses masuk universitas, menemukan kampus yang paling cocok, dan mencapai
+                                    impian mereka!
+                                </p>
+                            </div>
+                            <div
+                                class="flex flex-wrap items-center justify-evenly md:justify-center gap-8 max-w-2xl mx-auto w-full md:w-2/3">
+                                @foreach (__('pages/programs/admission_mentoring.benefits') as $item)
+                                    <div class="shadow-clip flex flex-col items-center">
+                                        <div class="h-24 w-28 bg-white flex flex-col items-center justify-center py-4 mb-4"
+                                            style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
+                                            <div class="h-12 relative">
+                                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                                    alt="EduALL - ilustration"
+                                                    class="w-full h-full object-center object-cover">
+                                                <div class="absolute -top-4 -right-4">
+                                                    <div
+                                                        class="h-4 w-4 bg-newprimary flex items-center justify-center rounded-full">
+                                                        <i class="fa-solid fa-check fa-xs text-white"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <h4 class="font-newprimary text-dark text-sm font-bold text-center mt-2 leading-4">
+                                            {{ $item['title'] }}
+                                        </h4>
+                                        <span
+                                            class="font-newprimary text-dark text-sm font-normal text-center">{{ $item['tag'] }}</span>
                                     </div>
-                                    <h4 class="font-newprimary text-white text-sm font-bold text-center mt-2 leading-4">
-                                        {{ $item['title'] }}
-                                    </h4>
-                                    <span
-                                        class="font-newprimary text-white text-sm font-normal text-center">{{ $item['tag'] }}</span>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                        <h3 class="text-[#9C9C9C] text-3xl md:text-4xl font-bold mt-12 mb-3 font-newprimary leading-4">What
-                            You Will Get?</h3>
-                        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-4">
-                            <div class="flex flex-col items-center gap-3 justify-center">
-                                <img loading="lazy"
-                                    src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-01.webp') }}"
-                                    alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
-                                <span class="text-white text-sm max-w-[120px] text-center">Personalized online or offline
-                                    mentoring</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-3 justify-center">
-                                <img loading="lazy"
-                                    src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-02.webp') }}"
-                                    alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
-                                <span class="text-white text-sm max-w-[120px] text-center">Well-Rounded Support</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-3 justify-center">
-                                <img loading="lazy"
-                                    src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-03.webp') }}"
-                                    alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
-                                <span class="text-white text-sm max-w-[120px] text-center">Essay Writing Guidance</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-3 justify-center">
-                                <img loading="lazy"
-                                    src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-04.webp') }}"
-                                    alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
-                                <span class="text-white text-sm max-w-[120px] text-center">Interview Preparation with Mock
-                                    Questions</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-3 justify-center">
-                                <img loading="lazy"
-                                    src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-05.webp') }}"
-                                    alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
-                                <span class="text-white text-sm max-w-[120px] text-center">9+ years of experienced
-                                    mentors</span>
+                        <div class="flex md:flex-row flex-col gap-4 mt-12 items-center justify-center">
+                            <h3
+                                class="text-[#393636] text-2xl md:text-3xl font-bold mb-3 font-newprimary md:text-left text-center">
+                                Apa yang Akan
+                                Anda Dapatkan?
+                            </h3>
+                            <div class="flex flex-wrap items-start justify-center gap-6 md:gap-4 mt-4 w-full">
+                                <div class="flex flex-col items-center gap-3 justify-start">
+                                    <img loading="lazy"
+                                        src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-1.webp') }}"
+                                        alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
+                                    <span class="text-dark text-sm max-w-[120px] text-center">Mentoring Online
+                                        atau Offline</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-3 justify-start">
+                                    <img loading="lazy"
+                                        src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-2.webp') }}"
+                                        alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
+                                    <span class="text-dark text-sm max-w-[120px] text-center">Mentor Berpengalaman
+                                        9 Tahun+</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-3 justify-start">
+                                    <img loading="lazy"
+                                        src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-3.webp') }}"
+                                        alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
+                                    <span class="text-dark text-sm max-w-[120px] text-center">Panduan Essay
+                                        Writing</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-3 justify-start">
+                                    <img loading="lazy"
+                                        src="{{ asset('assets/img/sign-me/sign-me-mentoring/icons-4.webp') }}"
+                                        alt="EduAll logo" class="w-12 h-12 md:mx-0 object-contain mx-auto">
+                                    <span class="text-dark text-sm max-w-[120px] text-center">Persiapan Interview
+                                        dengan Mock Questions</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row gap-6 border-[0.5px] border-[#6D6D6D] rounded-2xl py-8 px-8 h-full">
-                    <div class="flex flex-col items-center w-full relative">
-                        <h3
-                            class="absolute left-0 top-0 text-[#9C9C9C] text-3xl md:text-2xl font-bold mb-4 font-newprimary md:w-56 text-left">
-                            What Makes EduALL Different?</h3>
+            </div>
+        </div>
+    </section>
 
-                        <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/what_make_different.webp') }}"
-                            alt="What makes EduAll Different?" class="w-full mt-22 md:block hidden">
-                        <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/what_make_different_mobile.webp') }}"
-                            alt="What makes EduAll Different?" class="w-full mt-20 md:hidden">
-                    </div>
+
+    <section class="bg-newprimary py-24">
+        <div class="new-main-container">
+            <div class="flex flex-col max-w-4xl mx-auto gap-8">
+                <h4 class="uppercase text-xl md:text-2xl text-white font-semibold text-center">
+                    800+ mentee Eduall lolos ke univERSITAS top dunia seperti ...
+                </h4>
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    @for ($i = 1; $i <= 19; $i++)
+                        <div>
+                            <img loading="lazy"
+                                src="{{ asset('assets/img/sign-me/sign-me-mentoring/univ-logo/logo-' . $i . '.webp') }}"
+                                alt="EduAll logo" class="w-24 md:mx-0 object-contain mx-auto">
+                        </div>
+                    @endfor
+                    <span class="text-white text-base w-24">
+                        dan masih banyak lagi
+                    </span>
                 </div>
                 <div class="flex flex-col md:flex-row items-stretch gap-8">
                     <div class="md:w-5/12 w-full gap-4 flex flex-col order-2 md:order-1">
                         {{-- Form --}}
-                        <div class="py-4 md:px-6 px-4 border-[0.5px] border-newyellow rounded-xl w-full h-full">
-                            <div id="myForm_footer">
-                                <div class="mt-5">
-                                    <div class="flex flex-col">
-                                        <div class="mb-5">
-                                            <div class="flex gap-10">
-                                                <div class="flex items-center">
-                                                    <input type="radio" name="roles_footer" value="student"
-                                                        id="student_footer" checked required
-                                                        onchange="checkRole('_footer')">
-                                                    <label for="student" class="text-white ml-2">Student</label>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <input type="radio" name="roles_footer" value="parent"
-                                                        id="parent_footer" required onchange="checkRole('_footer')">
-                                                    <label for="parent" class="text-white ml-2">Parent</label>
+                        <div class="py-4 md:px-6 px-4 bg-[#1E1E1E] rounded-xl w-full h-full">
+                            <div id="myForm_header" class="h-full">
+                                <div class="mt-5 h-full">
+                                    <div class="flex flex-col justify-between h-full pb-8">
+                                        <div class="flex flex-col">
+                                            <div class="mb-5">
+                                                <div class="flex gap-10">
+                                                    <div class="flex items-center">
+                                                        <input type="radio" name="roles_header" value="student"
+                                                            id="student_header" checked required
+                                                            onchange="checkRole('_header')">
+                                                        <label for="student" class="text-newyellow ml-2">Student</label>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <input type="radio" name="roles_header" value="parent"
+                                                            id="parent_header" required onchange="checkRole('_header')">
+                                                        <label for="parent" class="text-newyellow ml-2">Parent</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="mb-5">
+                                            <div class="mb-5">
 
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                placeholder="Full Name *" id="primary_name_footer" required>
-                                        </div>
-                                        <div>
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full hidden mb-5"
-                                                placeholder="Child Name *" id="secondary_name_footer" required>
-                                        </div>
-                                        <div class="mb-5">
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                placeholder="Phone Number *" id="phone_number_footer" required>
-                                        </div>
-                                        <div class="mb-5">
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                placeholder="School Name *" id="school_name_footer" required>
-                                        </div>
-                                        <div class="mb-5">
-                                            <select class="py-2 text-dark rounded-xl w-full" id="graduation_year_footer"
-                                                required>
-                                                <option class="text-gray-300" value="">Select Graduation Year
-                                                </option>
-                                                @for ($i = date('Y'); $i < date('Y') + 5; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                @endfor
-                                            </select>
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full"
+                                                    placeholder="Full Name *" id="primary_name_header" required>
+                                            </div>
+                                            <div>
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full hidden mb-5"
+                                                    placeholder="Child Name *" id="secondary_name_header" required>
+                                            </div>
+                                            <div class="mb-5">
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full"
+                                                    placeholder="Phone Number *" id="phone_number_header" required>
+                                            </div>
+                                            <div class="mb-5">
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full"
+                                                    placeholder="School Name *" id="school_name_header" required>
+                                            </div>
+                                            <div class="mb-5">
+                                                <select class="py-2 text-dark rounded-xl w-full"
+                                                    id="graduation_year_header" required>
+                                                    <option class="text-gray-300" value="">Select Graduation Year
+                                                    </option>
+                                                    @for ($i = date('Y'); $i < date('Y') + 5; $i++)
+                                                        <option value="{{ $i }}">{{ $i }}</option>
+                                                    @endfor
+                                                </select>
+                                            </div>
+                                            <div class="mb-5">
+                                                <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
+                                                <span id="captcha" class="text-red" />
+                                            </div>
                                         </div>
                                         <div class="mb-3">
                                             <button type="button"
-                                                class="w-full bg-newprimary text-white text-center py-2 rounded-xl"
-                                                onclick="submit('_footer')">
-                                                <span id="send_footer">
+                                                class="w-full bg-newyellow text-dark text-center py-2 rounded-xl"
+                                                onclick="submit('_header')">
+                                                <span id="send_header">
                                                     <i class="fas fa-paper-plane mr-4"></i>
                                                 </span>
-                                                <span id="loading_footer" class="hidden">
+                                                <span id="loading_header" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
                                                 Submit </button>
@@ -294,19 +356,20 @@
                     </div>
                     <div class="md:w-7/12 w-full gap-4 flex flex-col order-1 md:order-2">
                         {{-- About EduALL --}}
-                        <div class="border-[0.5px] border-newyellow rounded-2xl h-full relative overflow-hidden">
-                            <div class="flex flex-col justify-start items-center gap-2 py-12 px-6 absolute inset-0">
-                                <h5 class="uppercase text-xl md:text-2xl text-white font-bold text-center">
-                                    Schedule a consultation today and get a FREE
+                        <div class="border-newprimary rounded-2xl h-full relative overflow-hidden bg-white">
+                            <div class="flex flex-col justify-start items-center gap-2 py-6 px-6 absolute inset-0">
+                                <h5 class="uppercase text-xl md:text-2xl text-dark font-bold text-center">
+                                    JADWALKAN KONSULTASI HARI INI
+                                    DAN DAPATKAN GRATIS VOUCHER
                                 </h5>
                                 <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/free-bonus.webp') }}"
                                     alt="free bonus" class="w-full">
-                                <span class="uppercase text-sm md:text-lg text-white text-center bg-black/20">
-                                    voucher for Admission Mentoring Program!
+                                <span class="uppercase text-sm md:text-lg text-dark text-center font-semibold">
+                                    UNTUK ADMISSION MENTORING PROGRAM!
                                 </span>
                             </div>
-                            <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/free-bonus-background.webp') }}"
-                                alt="free bonus background" class="w-full h-[500px] md:h-full object-cover">
+                            <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/free-bonus-background-white.webp') }}"
+                                alt="free bonus background" class="w-full h-[500px] md:min-h-fit object-cover">
                         </div>
                     </div>
                 </div>
