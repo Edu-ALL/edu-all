@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Request;
 
 class HomePageController extends Controller
 {
+    private $VERIFY_TOKEN = 'EDUALL04';
+
     public function home()
     {
         $lang = substr(app()->getLocale(), 3, 2);
@@ -118,9 +120,12 @@ class HomePageController extends Controller
                 'category' => $slug
             ];
 
-            Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
-
-            return redirect($locale . '/sign-me/thank-partnership');
+            if ($request::get('g-recaptcha-response')) {
+                Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
+                return redirect($locale . '/sign-me/thank-partnership');
+            } else {
+                return Redirect::back();
+            }
         } catch (Exception $e) {
             Log::error('Send partnership email failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());

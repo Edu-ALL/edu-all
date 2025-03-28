@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <div class="d-flex flex-row align-items-center justify-content-between">
                                     <h5 class="card-title">List Careers <span>| {{ now()->year }}</span></h5>
-                                    <a class="btn btn-primary" href="{{ url('/admin/career/create') }}">
+                                    <a class="btn btn-primary" href="{{ url('/admin/careers/create') }}">
                                         <i class="fa-solid fa-plus me-md-1 me-0"></i><span class="d-md-inline d-none">
                                             Create new</span>
                                     </a>
@@ -199,14 +199,14 @@
         });
     
         function formDeactivate(id){
-            $('#form_deactivate').attr('action', '{{ url('/admin/career/deactivate/') }}' + '/' + id);
+            $('#form_deactivate').attr('action', '{{ url('/admin/careers/deactivate/') }}' + '/' + id);
         };
         function formActivate(id){
-            $('#form_activate').attr('action', '{{ url('/admin/career/activate/') }}' + '/' + id);
+            $('#form_activate').attr('action', '{{ url('/admin/careers/activate/') }}' + '/' + id);
         };
 
         function formDelete(id) {
-            $('#form_delete').attr('action', '{{ url('/admin/career/delete/') }}' + '/' + id);
+            $('#form_delete').attr('action', '{{ url('/admin/careers/delete/') }}' + '/' + id);
         };
 
         $(document).ajaxComplete(function() {

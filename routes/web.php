@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\BlogPageController;
+use App\Http\Controllers\User\CallbackController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\RegularTalkPageController;
@@ -31,6 +32,10 @@ Route::middleware(['remove_public'])->group(function () {
 
     Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
+    // WebHook 
+    Route::get('callback/facebook', [CallbackController::class, 'verify']);
+    Route::post('callback/facebook', [CallbackController::class, 'read_lead']);
+
     Route::group(
         [
             'prefix' => '{locale}',
@@ -56,7 +61,6 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/sign-up/mentor', 'sign_up_mentor')->name('sign_up_mentor');
                 Route::post('/sign-up/mentor', 'submit_mentor')->name('submit_mentor');
                 Route::get('/sign-up/mentor/thank', 'thank_mentor')->name('thank_mentor');
-                Route::get('/sign-me/mentoring', 'sign_me_mentoring')->name('sign_me_mentoring');
                 Route::get('/privacy-policy', 'privacy_policy')->name('privacy_policy');
             });
 
@@ -96,9 +100,9 @@ Route::middleware(['remove_public'])->group(function () {
                 // Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
                 Route::get('/resources/guidebook', "guidebook")->name('guidebook');
                 Route::get('/resources/testimonial', "testimonial")->name('testimonial');
-                Route::get('/resources/mentee-project-showcase', function() {
+                Route::get('/resources/mentee-project-showcase', function () {
                     return redirect()->to('https://project-showcase.edu-all.com/');
-                } )->name('testimonial');
+                })->name('testimonial');
             });
 
             Route::controller(BlogPageController::class)->group(function () {
@@ -111,6 +115,8 @@ Route::middleware(['remove_public'])->group(function () {
             Route::get('/webinar-workshop/{slug}', [RegularTalkPageController::class, 'show']);
         },
     );
+
+    Route::get('/sign-me/mentoring', [HomePageController::class, 'sign_me_mentoring'])->name('sign_me_mentoring');
 
 
     // New Page Regular Talk
