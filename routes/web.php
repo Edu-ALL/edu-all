@@ -117,6 +117,7 @@ Route::middleware(['remove_public'])->group(function () {
     );
 
     Route::get('/sign-me/mentoring', [HomePageController::class, 'sign_me_mentoring'])->name('sign_me_mentoring');
+    Route::get('/sign-me/sat', [HomePageController::class, 'sign_me_sat'])->name('sign_me_sat');
 
 
     // New Page Regular Talk

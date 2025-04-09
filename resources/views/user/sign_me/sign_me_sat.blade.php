@@ -22,7 +22,7 @@
     <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
         function gtag_report_conversion(url) {
-            gtag('event', 'Conversion - Mentoring', {
+            gtag('event', 'Conversion - SAT', {
                 'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
                 // 'event_callback': callback
             });
@@ -469,7 +469,7 @@
                 'school_id': 'new',
                 'other_school': schoolName.value,
                 'graduation_year': graduationYear.value,
-                'interest_prog': "AAUP",
+                'interest_prog': "SATPRIV",
                 'destination_country': [],
                 'lead_id': "LS079",
             }
