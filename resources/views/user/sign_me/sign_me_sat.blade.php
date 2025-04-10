@@ -436,7 +436,8 @@
             // If the form is valid, proceed with submission
             if (isValid) {
                 // const captcha = area == '_header' ? checkCaptcha() : true;
-
+                console.log(formData);
+                
                 // if (captcha) {
                 $.ajax({
                     url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
@@ -448,8 +449,8 @@
                         loadingIcon.classList.add('hidden')
                         sendIcon.classList.remove('hidden')
 
-                        location.href =
-                            "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
+                        // location.href =
+                        //     "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
                     },
                     error: function(xhr, status, error) {
                         // Handle errors here
