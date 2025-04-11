@@ -131,7 +131,7 @@
                                                 <span id="loading_header" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
-                                                Submit </button>
+                                                Contact us now! </button>
                                         </div>
                                     </div>
                                 </div>
@@ -145,33 +145,33 @@
 
     <section class="py-12">
         <div class="new-main-container">
-            <div class="flex flex-wrap gap-8 justify-evenly items-center">
+            <div class="flex flex-wrap gap-8 justify-evenly items-center px-6 md:px-0">
                 {{-- Acceptance --}}
                 <div
-                    class="flex md:flex-col justify-center items-center border-b-[1px] border-b-dark md:border-b-0 gap-2 pb-8 w-full md:w-fit md:pb-0">
-                    <h4 class="font-bold text-newprimary text-2xl md:text-5xl text-center">
+                    class="flex md:flex-col justify-start md:justify-center items-center gap-6 border-b-[1px] border-b-dark md:border-b-0 md:gap-2 pb-8 w-full md:w-fit md:pb-0">
+                    <h4 class="font-bold text-newprimary text-4xl w-32 md:w-40 md:text-5xl text-left md:text-center">
                         1,500+
                     </h4>
-                    <span class="text-dark text-banner-subdescription font-semibold text-center uppercase max-w-[12rem]">
+                    <span class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
                         practice questions to take
                     </span>
                 </div>
                 {{-- Mentees --}}
                 <div
-                    class="flex md:flex-col justify-center items-center border-b-[1px] border-b-dark md:border-b-0 gap-2 pb-8 w-full md:w-fit md:pb-0">
-                    <h4 class="font-bold text-newprimary text-2xl md:text-5xl text-center">
+                    class="flex md:flex-col justify-start md:justify-center items-center gap-6 border-b-[1px] border-b-dark md:border-b-0 md:gap-2 pb-8 w-full md:w-fit md:pb-0">
+                    <h4 class="font-bold text-newprimary text-4xl w-32 md:w-40 md:text-5xl text-left md:text-center">
                         95%
                     </h4>
-                    <span class="text-dark text-banner-subdescription font-semibold text-center uppercase max-w-[12rem]">
+                    <span class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
                         students hit above average score
                     </span>
                 </div>
                 {{-- Scholarship --}}
-                <div class="flex md:flex-col justify-center items-center gap-2">
-                    <h4 class="font-bold text-newprimary text-2xl md:text-5xl text-center">
+                <div class="flex md:flex-col justify-start md:justify-center items-center gap-6 md:gap-2 w-full md:w-fit">
+                    <h4 class="font-bold text-newprimary text-4xl w-32 md:w-40 md:text-5xl text-left md:text-center">
                         90%
                     </h4>
-                    <span class="text-dark text-banner-subdescription font-semibold text-center uppercase max-w-[12rem]">
+                    <span class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
                         got accepted
                         to their best fit universities
                     </span>
@@ -193,7 +193,7 @@
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-12 mb-2">
                                 <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-contain">
                             </div>
                             <h4 class="font-newprimary text-xs md:text-base font-bold text-center mt-2 leading-4">
                                 {{ $item['title'] }}
@@ -305,7 +305,7 @@
                                                 <span id="loading_footer" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
-                                                Submit </button>
+                                                Contact us now! </button>
                                         </div>
                                     </div>
                                 </div>
