@@ -111,54 +111,53 @@
                         </div>
                         {{-- Form --}}
                         <div class="py-4 md:px-6 px-4 border-[0.5px] bg-[#1E1E1E] rounded-xl w-full h-full">
-                            <div id="myForm_header">
-                                <div class="mt-5">
-                                    <div class="flex flex-col">
-                                        <div class="mb-5">
-                                            <div class="flex gap-10">
-                                                <div class="flex items-center">
-                                                    <input type="radio" name="roles_header" value="student"
-                                                        id="student_header" checked required
-                                                        onchange="checkRole('_header')">
-                                                    <label for="student" class="text-newyellow ml-2">Student</label>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <input type="radio" name="roles_header" value="parent"
-                                                        id="parent_header" required onchange="checkRole('_header')">
-                                                    <label for="parent" class="text-newyellow ml-2">Parent</label>
+                            <div id="myForm_header" class="h-full">
+                                <div class="mt-5 h-full">
+                                    <div class="flex flex-col justify-between h-full pb-8">
+                                        <div class="flex flex-col">
+                                            <div class="mb-5">
+                                                <div class="flex gap-10">
+                                                    <div class="flex items-center">
+                                                        <input type="radio" name="roles_header" value="student"
+                                                            id="student_header" checked required
+                                                            onchange="checkRole('_header')">
+                                                        <label for="student" class="text-newyellow ml-2">Student</label>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <input type="radio" name="roles_header" value="parent"
+                                                            id="parent_header" required onchange="checkRole('_header')">
+                                                        <label for="parent" class="text-newyellow ml-2">Parent</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="mb-5">
+                                            <div class="mb-5">
 
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                placeholder="Full Name *" id="primary_name_header" required>
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full"
+                                                    placeholder="Full Name *" id="primary_name_header" required>
+                                            </div>
+                                            <div>
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full hidden mb-5"
+                                                    placeholder="Child Name *" id="secondary_name_header" required>
+                                            </div>
+                                            <div class="mb-5">
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full"
+                                                    placeholder="Phone Number *" id="phone_number_header" required>
+                                            </div>
+                                            <div class="mb-5">
+                                                <input type="text" class="py-2 text-dark rounded-xl w-full"
+                                                    placeholder="School Name *" id="school_name_header" required>
+                                            </div>
+                                            <div class="mb-5">
+                                                <select class="py-2 text-dark rounded-xl w-full" id="graduation_year_header"
+                                                    required>
+                                                    <option class="text-gray-300" value="">Select Graduation Year</option>
+                                                    @for ($i = date('Y'); $i < date('Y') + 5; $i++)
+                                                        <option value="{{ $i }}">{{ $i }}</option>
+                                                    @endfor
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full hidden mb-5"
-                                                placeholder="Child Name *" id="secondary_name_header" required>
-                                        </div>
-                                        <div class="mb-5">
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                placeholder="Phone Number *" id="phone_number_header" required>
-                                        </div>
-                                        <div class="mb-5">
-                                            <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                placeholder="School Name *" id="school_name_header" required>
-                                        </div>
-                                        <div class="mb-5">
-                                            <select class="py-2 text-dark rounded-xl w-full" id="graduation_year_header"
-                                                required>
-                                                <option class="text-gray-300" value="">Select Graduation Year</option>
-                                                @for ($i = date('Y'); $i < date('Y') + 5; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                @endfor
-                                            </select>
-                                        </div>
-                                        <div class="mb-5">
-                                            <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
-                                            <span id="captcha" class="text-red" />
-                                        </div>
+
                                         <div class="mb-3">
                                             <button type="button"
                                                 class="w-full bg-newyellow text-dark text-center py-2 rounded-xl"
@@ -169,7 +168,7 @@
                                                 <span id="loading_header" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
-                                                Submit </button>
+                                                Contact us now!  </button>
                                         </div>
                                     </div>
                                 </div>
@@ -286,21 +285,21 @@
                     <div class="md:w-5/12 w-full gap-4 flex flex-col order-2 md:order-1">
                         {{-- Form --}}
                         <div class="py-4 md:px-6 px-4 bg-[#1E1E1E] rounded-xl w-full h-full">
-                            <div id="myForm_header" class="h-full">
+                            <div id="myForm_footer" class="h-full">
                                 <div class="mt-5 h-full">
                                     <div class="flex flex-col justify-between h-full pb-8">
                                         <div class="flex flex-col">
                                             <div class="mb-5">
                                                 <div class="flex gap-10">
                                                     <div class="flex items-center">
-                                                        <input type="radio" name="roles_header" value="student"
-                                                            id="student_header" checked required
-                                                            onchange="checkRole('_header')">
+                                                        <input type="radio" name="roles_footer" value="student"
+                                                            id="student_footer" checked required
+                                                            onchange="checkRole('_footer')">
                                                         <label for="student" class="text-newyellow ml-2">Student</label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input type="radio" name="roles_header" value="parent"
-                                                            id="parent_header" required onchange="checkRole('_header')">
+                                                        <input type="radio" name="roles_footer" value="parent"
+                                                            id="parent_footer" required onchange="checkRole('_footer')">
                                                         <label for="parent" class="text-newyellow ml-2">Parent</label>
                                                     </div>
                                                 </div>
@@ -308,23 +307,23 @@
                                             <div class="mb-5">
 
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                    placeholder="Full Name *" id="primary_name_header" required>
+                                                    placeholder="Full Name *" id="primary_name_footer" required>
                                             </div>
                                             <div>
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full hidden mb-5"
-                                                    placeholder="Child Name *" id="secondary_name_header" required>
+                                                    placeholder="Child Name *" id="secondary_name_footer" required>
                                             </div>
                                             <div class="mb-5">
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                    placeholder="Phone Number *" id="phone_number_header" required>
+                                                    placeholder="Phone Number *" id="phone_number_footer" required>
                                             </div>
                                             <div class="mb-5">
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                    placeholder="School Name *" id="school_name_header" required>
+                                                    placeholder="School Name *" id="school_name_footer" required>
                                             </div>
                                             <div class="mb-5">
                                                 <select class="py-2 text-dark rounded-xl w-full"
-                                                    id="graduation_year_header" required>
+                                                    id="graduation_year_footer" required>
                                                     <option class="text-gray-300" value="">Select Graduation Year
                                                     </option>
                                                     @for ($i = date('Y'); $i < date('Y') + 5; $i++)
@@ -332,22 +331,18 @@
                                                     @endfor
                                                 </select>
                                             </div>
-                                            <div class="mb-5">
-                                                <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
-                                                <span id="captcha" class="text-red" />
-                                            </div>
                                         </div>
                                         <div class="mb-3">
                                             <button type="button"
                                                 class="w-full bg-newyellow text-dark text-center py-2 rounded-xl"
-                                                onclick="submit('_header')">
-                                                <span id="send_header">
+                                                onclick="submit('_footer')">
+                                                <span id="send_footer">
                                                     <i class="fas fa-paper-plane mr-4"></i>
                                                 </span>
-                                                <span id="loading_header" class="hidden">
+                                                <span id="loading_footer" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
-                                                Submit </button>
+                                                Contact us now!  </button>
                                         </div>
                                     </div>
                                 </div>
@@ -378,8 +373,8 @@
     </section>
 @endsection
 
-@push('style')
-    <script script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+{{-- @push('style')
+    {{-- <script script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
     <script type="text/javascript">
         var onloadCallback = function() {
             grecaptcha.render('rcaptcha', {
@@ -388,7 +383,7 @@
             });
         };
     </script>
-@endpush
+@endpush --}}
 @push('script')
     <!-- Meta Pixel Code -->
     <script>
@@ -429,17 +424,17 @@
             }
         }
 
-        const checkCaptcha = () => {
-            var v = grecaptcha.getResponse();
+        // const checkCaptcha = () => {
+        //     var v = grecaptcha.getResponse();
 
-            if (v.length == 0) {
-                document.getElementById('captcha').innerHTML = "Please verify you are not a robot.";
-                return false;
-            } else {
-                return true;
-                // Here you can perform an actual form submission if needed, e.g., using an AJAX request or form.submit().
-            }
-        }
+        //     if (v.length == 0) {
+        //         document.getElementById('captcha').innerHTML = "Please verify you are not a robot.";
+        //         return false;
+        //     } else {
+        //         return true;
+        //         // Here you can perform an actual form submission if needed, e.g., using an AJAX request or form.submit().
+        //     }
+        // }
 
 
         const submit = (area = null) => {
@@ -494,7 +489,7 @@
 
             // If the form is valid, proceed with submission
             if (isValid) {
-                const captcha = area == '_header' ? checkCaptcha() : true;
+                // const captcha = area == '_header' ? checkCaptcha() : true;
 
                 if (captcha) {
                     $.ajax({
@@ -507,22 +502,22 @@
                             loadingIcon.classList.add('hidden')
                             sendIcon.classList.remove('hidden')
 
-                            location.href =
-                                "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
-                        },
-                        error: function(xhr, status, error) {
-                            // Handle errors here
-                            console.error(error);
-                            loadingIcon.classList.add('hidden')
-                            sendIcon.classList.remove('hidden')
-                        }
-                    });
+                        location.href =
+                            "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors here
+                        console.error(error);
+                        loadingIcon.classList.add('hidden')
+                        sendIcon.classList.remove('hidden')
+                    }
+                });
 
 
-                } else {
-                    loadingIcon.classList.add('hidden')
-                    sendIcon.classList.remove('hidden')
-                }
+                // } else {
+                //     loadingIcon.classList.add('hidden')
+                //     sendIcon.classList.remove('hidden')
+                // }
             } else {
                 loadingIcon.classList.add('hidden')
                 sendIcon.classList.remove('hidden')
