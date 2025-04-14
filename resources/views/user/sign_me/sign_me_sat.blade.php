@@ -240,7 +240,7 @@
                                         'Master key techniques for the English & Math sections. (Including Desmos Calculator)',
                                 ],
                             ],
-                            'price' => 'Rp8.000.000',
+                            'price' => 'Rp6.000.000',
                         ],
                         [
                             'title' => 'SAT FULL PREP',
