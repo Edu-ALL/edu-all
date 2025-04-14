@@ -56,7 +56,7 @@ class HomePageController extends Controller
         // As Seen On
         $as_seen_on = AsSeens::orderBy('created_at', 'DESC')->get();
 
-        // $region 
+        // $region
         return view('user.home.region.id', [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
@@ -154,9 +154,11 @@ class HomePageController extends Controller
 
     public function sign_me_sat()
     {
-        return view('user.sign_me.sign_me_sat');
+        $path = request()->segments();
+        $path = end($path);
+        return view('user.sign_me.sign_me_sat', ['price_page' => $path == 'price',]);
     }
-  
+
     public function submit_mentor(Request $request, $locale)
     {
         try {
