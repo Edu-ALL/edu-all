@@ -152,7 +152,8 @@
                     <h4 class="font-bold text-newprimary text-4xl w-32 md:w-40 md:text-5xl text-left md:text-center">
                         1,500+
                     </h4>
-                    <span class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
+                    <span
+                        class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
                         practice questions to take
                     </span>
                 </div>
@@ -162,7 +163,8 @@
                     <h4 class="font-bold text-newprimary text-4xl w-32 md:w-40 md:text-5xl text-left md:text-center">
                         95%
                     </h4>
-                    <span class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
+                    <span
+                        class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
                         students hit above average score
                     </span>
                 </div>
@@ -171,7 +173,8 @@
                     <h4 class="font-bold text-newprimary text-4xl w-32 md:w-40 md:text-5xl text-left md:text-center">
                         90%
                     </h4>
-                    <span class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
+                    <span
+                        class="text-dark text-banner-subdescription font-semibold text-left uppercase max-w-[12rem] md:text-center">
                         got accepted
                         to their best fit universities
                     </span>
@@ -180,7 +183,7 @@
         </div>
     </section>
 
-    <section class="py-8 bg-[#EFEFEF]">
+    <section class="py-8 md:bg-[#EFEFEF] bg-gradient-to-b from-[#EFEFEF] to-transparent">
         <div class="new-main-container">
             <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-2 leading-4 mb-12 text-newprimary">
                 What
@@ -211,9 +214,123 @@
         </div>
     </section>
 
+    @if ($price_page)
+        <section class="py-8">
+            <div class="new-main-container">
+                @php
+                    $sat_programs = [
+                        [
+                            'title' => 'SAT EXPRESS',
+                            'tags' => [
+                                ['label' => 'ONLINE', 'type' => 'online'],
+                                ['label' => 'PRIVATE CLASS', 'type' => 'private'],
+                            ],
+                            'features' => [
+                                [
+                                    'title' => 'Quick SAT Readiness',
+                                    'description' => 'Perfect for those taking the test soon.',
+                                ],
+                                [
+                                    'title' => 'All Essential Knowledge Covered',
+                                    'description' => 'Get all the SAT basics in one go.',
+                                ],
+                                [
+                                    'title' => 'Time-Management Strategies',
+                                    'description' =>
+                                        'Master key techniques for the English & Math sections. (Including Desmos Calculator)',
+                                ],
+                            ],
+                            'price' => 'Rp6.000.000',
+                        ],
+                        [
+                            'title' => 'SAT FULL PREP',
+                            'tags' => [
+                                ['label' => 'ONLINE', 'type' => 'online'],
+                                ['label' => 'PRIVATE CLASS', 'type' => 'private'],
+                            ],
+                            'features' => [
+                                [
+                                    'title' => 'Score Boost Focused',
+                                    'description' => 'Ideal for students needing serious score improvement',
+                                ],
+                                [
+                                    'title' => 'Full Curriculum Mastery',
+                                    'description' => 'Covers everything from foundational to essential SAT material.',
+                                ],
+                                [
+                                    'title' => 'For students who need to start from the basics in Math or English.',
+                                    'description' => 'No prior skills needed',
+                                ],
+                            ],
+                            'price' => 'Rp18.500.000',
+                        ],
+                    ];
+                @endphp
+
+                <div
+                    class="flex flex-col sm:flex-row items-stretch justify-center gap-3 md:gap-8 w-full max-w-4xl mx-auto">
+                    @foreach ($sat_programs as $program)
+                        <div class="flex flex-col w-full sm:w-1/2 my-4">
+                            <div class="rounded-2xl bg-white p-6 flex flex-col gap-4 h-full shadow-[0_-4px_6px_-1px_rgb(0,0,0,0.1),_0_2px_4px_2px_rgb(0,0,0,0.1)]">
+                                <h2
+                                    class="text-2xl md:text-3xl font-bold text-indigo-600 uppercase text-center md:text-left">
+                                    {{ $program['title'] }}
+                                </h2>
+
+                                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                    @foreach ($program['tags'] as $tag)
+                                        @if ($tag['type'] == 'online')
+                                            <span
+                                                class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                                                <span class="h-1.5 w-1.5 bg-green-500 rounded-full"></span>
+                                                {{ $tag['label'] }}
+                                            </span>
+                                        @elseif ($tag['type'] == 'private')
+                                            <span
+                                                class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-newyellow/20 text-dark">
+                                                <span class="h-1.5 w-1.5 bg-newyellow rounded-full"></span>
+                                                {{ $tag['label'] }}
+                                            </span>
+                                        @endif
+                                    @endforeach
+                                </div>
+
+                                <hr class="my-2 border-t-3 border-gray-300">
+
+                                <ul class="flex flex-col gap-3 flex-grow">
+                                    @foreach ($program['features'] as $feature)
+                                        <li class="flex items-start gap-2">
+                                            <div
+                                                class="mt-1 h-5 w-5 bg-indigo-600 flex items-center justify-center rounded-full flex-shrink-0">
+                                                <i class="fa-solid fa-check fa-xs text-white"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <p class="font-bold text-base text-gray-800 leading-5">{{ $feature['title'] }}
+                                                </p>
+                                                <p class="text-sm text-gray-600 leading-5">{{ $feature['description'] }}</p>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+
+                                <hr class="my-2 border-t-3 border-gray-300">
+
+                                <div class="text-center mt-auto">
+                                    <p class="text-2xl md:text-2xl font-bold text-indigo-600">
+                                        {{ $program['price'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
     <section class="py-8">
         <div class="new-main-container">
-            <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-2 leading-4 mb-12 text-dark">What they
+            <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-2 leading-4 mb-12 text-newprimary">What they
                 say
             </h2>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-8 w-full max-w-4xl mx-auto">
@@ -436,7 +553,7 @@
             // If the form is valid, proceed with submission
             if (isValid) {
                 // const captcha = area == '_header' ? checkCaptcha() : true;
-                
+
                 // if (captcha) {
                 $.ajax({
                     url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
