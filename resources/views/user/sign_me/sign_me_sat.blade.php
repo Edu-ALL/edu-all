@@ -566,7 +566,7 @@
                         sendIcon.classList.remove('hidden')
 
                         location.href =
-                            "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
+                            "https://edu-all.com/thanks/sat";
                     },
                     error: function(xhr, status, error) {
                         // Handle errors here

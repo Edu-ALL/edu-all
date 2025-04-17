@@ -174,4 +174,9 @@ class HomePageController extends Controller
             return Redirect::back()->withErrors($e->getMessage());
         }
     }
+
+    public function thank_form_ads()
+    {
+        return view('user.sign_me.thank_partnership');
+    }
 }
