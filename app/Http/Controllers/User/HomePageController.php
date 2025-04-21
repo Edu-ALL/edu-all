@@ -177,6 +177,6 @@ class HomePageController extends Controller
 
     public function thank_form_ads()
     {
-        return view('user.sign_me.thank_ads');
+        return view('user.sign_me.thank_partnership');
     }
 }
