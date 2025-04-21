@@ -15,7 +15,7 @@
             
             <div class="flex flex-col items-center justify-center w-full h-[100vh] mx-auto relative z-10 max-w-sm md:max-w-3xl">
                 <h1 class="font-newprimary font-bold md:text-3xl text-xl text-white text-center">
-                    Thank you for letting us know a little bit about you, our consultant team team will contact you soon for the
+                    Thank you for letting us know a little bit about you, our consultant team will contact you soon for the
                     further consultation
                 </h1>
                 <a href="{{ route('home', app()->getLocale()) }}" class="flex justify-center w-full pt-8">
