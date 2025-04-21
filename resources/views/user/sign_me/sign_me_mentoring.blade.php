@@ -150,7 +150,8 @@
                                             <div class="mb-5">
                                                 <select class="py-2 text-dark rounded-xl w-full" id="graduation_year_header"
                                                     required>
-                                                    <option class="text-gray-300" value="">Select Graduation Year</option>
+                                                    <option class="text-gray-300" value="">Select Graduation Year
+                                                    </option>
                                                     @for ($i = date('Y'); $i < date('Y') + 5; $i++)
                                                         <option value="{{ $i }}">{{ $i }}</option>
                                                     @endfor
@@ -168,7 +169,7 @@
                                                 <span id="loading_header" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
-                                                Contact us now!  </button>
+                                                Contact us now! </button>
                                         </div>
                                     </div>
                                 </div>
@@ -342,7 +343,7 @@
                                                 <span id="loading_footer" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
-                                                Contact us now!  </button>
+                                                Contact us now! </button>
                                         </div>
                                     </div>
                                 </div>
@@ -502,28 +503,29 @@
                             loadingIcon.classList.add('hidden')
                             sendIcon.classList.remove('hidden')
 
-                        location.href =
-                            "https://edu-all.com/thanks/mentoring";
-                    },
-                    error: function(xhr, status, error) {
-                        // Handle errors here
-                        console.error(error);
-                        loadingIcon.classList.add('hidden')
-                        sendIcon.classList.remove('hidden')
-                    }
-                });
+                            location.href =
+                                "https://edu-all.com/thanks/mentoring";
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle errors here
+                            console.error(error);
+                            loadingIcon.classList.add('hidden')
+                            sendIcon.classList.remove('hidden')
+                        }
+                    });
 
 
-                // } else {
-                //     loadingIcon.classList.add('hidden')
-                //     sendIcon.classList.remove('hidden')
-                // }
-            } else {
-                loadingIcon.classList.add('hidden')
-                sendIcon.classList.remove('hidden')
+                    // } else {
+                    //     loadingIcon.classList.add('hidden')
+                    //     sendIcon.classList.remove('hidden')
+                    // }
+                } else {
+                    loadingIcon.classList.add('hidden')
+                    sendIcon.classList.remove('hidden')
+                }
+
+                return true;
             }
-
-            return true;
         }
     </script>
 @endpush
