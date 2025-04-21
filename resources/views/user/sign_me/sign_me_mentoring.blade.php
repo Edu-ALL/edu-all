@@ -492,37 +492,37 @@
             if (isValid) {
                 // const captcha = area == '_header' ? checkCaptcha() : true;
 
-                if (captcha) {
-                    $.ajax({
-                        url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
-                        type: 'POST', // Specify the request type (POST)
-                        contentType: 'application/json', // Set content type to JSON
-                        data: JSON.stringify(formData), // Convert formData to a JSON string
-                        success: function(response) {
-                            // Handle the response on success
-                            loadingIcon.classList.add('hidden')
-                            sendIcon.classList.remove('hidden')
+                // if (captcha) {
+                $.ajax({
+                    url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
+                    type: 'POST', // Specify the request type (POST)
+                    contentType: 'application/json', // Set content type to JSON
+                    data: JSON.stringify(formData), // Convert formData to a JSON string
+                    success: function(response) {
+                        // Handle the response on success
+                        loadingIcon.classList.add('hidden')
+                        sendIcon.classList.remove('hidden')
 
-                            location.href =
-                                "https://edu-all.com/thanks/mentoring";
-                        },
-                        error: function(xhr, status, error) {
-                            // Handle errors here
-                            console.error(error);
-                            loadingIcon.classList.add('hidden')
-                            sendIcon.classList.remove('hidden')
-                        }
-                    });
+                        location.href =
+                            "https://edu-all.com/thanks/mentoring";
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors here
+                        console.error(error);
+                        loadingIcon.classList.add('hidden')
+                        sendIcon.classList.remove('hidden')
+                    }
+                });
 
 
-                    // } else {
-                    //     loadingIcon.classList.add('hidden')
-                    //     sendIcon.classList.remove('hidden')
-                    // }
-                } else {
-                    loadingIcon.classList.add('hidden')
-                    sendIcon.classList.remove('hidden')
-                }
+                // } else {
+                //     loadingIcon.classList.add('hidden')
+                //     sendIcon.classList.remove('hidden')
+                // }
+                // } else {
+                //     loadingIcon.classList.add('hidden')
+                //     sendIcon.classList.remove('hidden')
+                // }
 
                 return true;
             }
