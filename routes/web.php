@@ -30,7 +30,7 @@ Route::middleware(['remove_public'])->group(function () {
 
     Route::get('/', [HomePageController::class, 'home']);
 
-    Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+    Route::get('/sitemap', [SitemapController::class, 'index']);
 
     // WebHook
     Route::get('callback/facebook', [CallbackController::class, 'verify']);
@@ -44,8 +44,8 @@ Route::middleware(['remove_public'])->group(function () {
 
         ],
         function () {
-            Route::get('sitemap-blogs.xml', [SitemapController::class, 'sitemap_blog']);
-            Route::get('sitemap-pages.xml', [SitemapController::class, 'sitemap_pages']);
+            Route::get('sitemap-blogs', [SitemapController::class, 'sitemap_blog']);
+            Route::get('sitemap-pages', [SitemapController::class, 'sitemap_pages']);
 
             Route::controller(HomePageController::class)->group(function () {
                 Route::get('/', 'home')->name('home');
