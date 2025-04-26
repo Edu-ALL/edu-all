@@ -47,7 +47,7 @@ return [
             's4_item_text_inactive' => "Dynamic",
         ],
     ],
-    
+
     's4_item_text_active' => [
         "Discover Your Path",
         "Insightful Academic Analysis",
@@ -130,8 +130,8 @@ return [
     'tetimony_title' => "What Our Students Say",
 
     'free_trial_title' => "Ready to transform your academic journey?",
-    'free_trial_desc' => "Discover the path to achieving your educational aspirations! ",
-    'free_trial_button' => "Claim your FREE Academic Tutoring Trial",
+    'free_trial_desc' => "Discover the path to achieving your educational aspirations!",
+    'free_trial_button' => "Claim My FREE Academic Tutoring Trial",
 
     'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
     'ib_extended_description' => "Drill your Extended Essay writing process in 3 months with our holistic approach!",

@@ -65,7 +65,7 @@ return [
     ],
 
     // banner section
-    "title" => "Academic & Test Preparation",
+    "title" => "Tutoring <br> Program",
     "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",
     "our_program_title" => "YOUR JOURNEY TO SUCCESS",
     "our_program_data" => $our_programs,
@@ -77,10 +77,10 @@ return [
             "desc" => "With core concept mastery and internationally qualified tutors, we prepare students with robust academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.",
             'image' => "Academic tutoring.webp",
             "points" => [
-                "IBDP",
-                "IB MYP",
+                "IBDP (International Baccalaureate Diploma Programme)",
+                "IB MYP (International Baccalaureate Middle Years Programme)",
                 "Cambridge A-Level",
-                "Cambridge IGCSE",
+                "Cambridge IGCSE (International General Certificate of Secondary Education)",
                 "Advanced Placement",
             ],
             'link' => 'academic-tutoring',
@@ -90,9 +90,9 @@ return [
             "desc" => "Excel in SAT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
             'image' => "standardized test.webp",
             "points" => [
-                "SAT",
-                "TOEFL",
-                "IELTS",
+                "SAT (Scholastic Assessment Test)",
+                "TOEFL (Test of English as a Foreign Language)",
+                "IELTS (International English Language Testing System)",
             ],
             'link' => 'sat-program',
         ],
@@ -102,8 +102,7 @@ return [
             'image' => "skillset tutoring.webp",
             "points" => [
                 "Algorithm & Programming",
-                "Subject Olympiad Preparation",
-                "English Writing Mastery",
+                "Olympiad Preparation Class",
             ],
             'link' => 'skillset-tutoring-program',
         ],
@@ -115,6 +114,7 @@ return [
         // ],
     ],
 
+    'get_to_know_more' => "Get to Know More",
     'learn_more' => "Learn More",
     "lets_start" => "Let’s Start",
 

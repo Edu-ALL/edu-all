@@ -62,7 +62,7 @@ return [
     ],
 
     // banner section
-    "title" => "Persiapan Akademis & Tes",
+    "title" => "Tutoring <br> Program",
     "body" => "Temukan pendekatan kami yang telah terbukti untuk meningkatkan transkrip akademik dan memaksimalkan nilai ujian untuk penerimaan universitas top dunia. ",
     "our_program_title" => "Program Kami",
     "our_program_data" => $our_programs,

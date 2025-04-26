@@ -17,12 +17,14 @@ class Button extends Component
     public $paddingY;
     public $marginTop;
 
+    public $isRounded;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $color = null, $fontSize = null, $target = null, $paddingX = null, $paddingY = null, $marginTop = null)
+    public function __construct($title, $type = "primary", $href = "#", $bgColor = null, $color = null, $fontSize = null, $target = null, $paddingX = null, $paddingY = null, $marginTop = null, $isRounded = false)
     {
         //
         $this->title = $title;
@@ -35,6 +37,7 @@ class Button extends Component
         $this->paddingX = $paddingX;
         $this->paddingY = $paddingY;
         $this->marginTop = $marginTop;
+        $this->isRounded = $isRounded;
     }
 
     /**
