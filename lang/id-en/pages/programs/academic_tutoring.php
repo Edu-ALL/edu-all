@@ -11,7 +11,7 @@ return [
     'summary' => [
         [
             'title' => '97%',
-            'sub_title' => 'of our A-Level Students <br/> earned A and A+'
+            'sub_title' => 'of our A-Level Students <br/> earned A and A*'
         ],
         [
             'title' => '98%',
@@ -20,62 +20,65 @@ return [
         [
             'title' => '100%',
             'sub_title' => 'Exam Success Rate'
-        ]
-    ],
+            ]
+        ],
 
-    'benefit_title' => "MORE THAN JUST TUTORING",
-    'benefit_section' => [
-        [
-            'title' => "Discover",
-            'description' => "Your Path",
-            's4_item_text_inactive' => "Discover Your Path",
+        'benefit_title' => "MORE THAN JUST TUTORING",
+        'benefit_section' => [
+            [
+                'title' => "Discover",
+                'description' => "Your Path",
+                's4_item_text_inactive' => "Discover Your Path",
 
+            ],
+            [
+                'title' => "Insightful",
+                'description' => "Academic Analysis",
+                's4_item_text_inactive' => "Insightful",
+            ],
+            [
+                'title' => "Customize",
+                'description' => "Learning Approach",
+                's4_item_text_inactive' => "Customized",
+            ],
+            [
+                'title' => "Dynamic",
+                'description' => "Goal Achievement",
+                's4_item_text_inactive' => "Dynamic",
+            ],
         ],
-        [
-            'title' => "Insightful",
-            'description' => "Academic Analysis",
-            's4_item_text_inactive' => "Insightful",
-        ],
-        [
-            'title' => "Customize",
-            'description' => "Learning Approach",
-            's4_item_text_inactive' => "Customized",
-        ],
-        [
-            'title' => "Dynamic",
-            'description' => "Goal Achievement",
-            's4_item_text_inactive' => "Dynamic",
-        ],
-    ],
 
-    's4_item_text_active' => [
-        "Discover Your Path",
-        "Insightful Academic Analysis",
-        "Customized Learning Approach",
-        "Dynamic Goal Achievement",
-    ],
-    's4_item_text_inactive' => [
-        "Discover",
-        "Insightful",
-        "Customized",
-        "Dynamic",
-    ],
+        's4_item_text_active' => [
+            "Discover Your Path",
+            "Insightful Academic Analysis",
+            "Customized Learning Approach",
+            "Dynamic Goal Achievement",
+        ],
+        's4_item_text_inactive' => [
+            "Discover",
+            "Insightful",
+            "Customized",
+            "Dynamic",
+        ],
 
-    "subjects_title" =>  "SUBJECTS",
-    "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
-    "subjects_tag" => [
-        [
-            'title' => 'Grade 9-12',
-            'image' => 'start.png',
-        ],
-        [
-            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
-            'image' => 'user.png',
-        ],
-        [
-            'title' => 'Private Class',
-            'image' => 'people.png',
-        ],
+        "subjects_title" =>  "SUBJECTS",
+        "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
+        "subjects_tag" => [
+            [
+                'title' => 'Grade 9-12',
+                'image' => 'start.webp',
+                'order' => '1',
+            ],
+            [
+                'title' => 'Private Class',
+                'image' => 'users.webp',
+                'order' => '3',
+            ],
+            [
+                'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
+                'image' => 'people.webp',
+                'order' => '2',
+            ],
     ],
 
     // PRIVATE CLASS
