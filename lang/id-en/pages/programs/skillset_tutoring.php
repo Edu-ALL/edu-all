@@ -4,7 +4,7 @@ return [
     'meta_title' => 'Skillset Tutoring - EduALL Programs',
     'meta_description' => 'Skillset Tutoring: Transform your passion into an outstanding achievement and become a pro in a field that matters most to you.',
 
-    'title' => 'Skillset Enrichment Program',
+    'title' => 'Skillset Tutoring',
     'body' => 'Transform your passion into an outstanding achievement and become a pro in a field that matters most to you.',
     'header_button' => 'Register Here',
 
@@ -16,14 +16,12 @@ return [
         [
             'title' => 'Algorithm & Programming',
             'desc' => "Dive into the world of coding and algorithms - a critical skill for tomorrow's innovators. Master logical thinking and problem-solving, essentials for top-tier university applications.",
+            'image' => 'program-1.webp',
         ],
         [
             'title' => 'Subject Olympiad Preparation',
             'desc' => "Excel in international STEM (Math & Biology) Olympiads with our expert guidance. Stand out in your university application by showcasing exceptional subject mastery.",
-        ],
-        [
-            'title' => 'English Writing Mastery',
-            'desc' => "Elevate your writing skills to craft compelling essays and assignments. A must-have skill for acing university applications and succeeding in higher education.",
+            'image' => 'program-2.webp',
         ],
     ],
 
