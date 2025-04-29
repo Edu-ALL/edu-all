@@ -135,8 +135,11 @@ class ProgramPageController extends Controller
     {
         $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
-        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(6)->orderBy('created_at', 'ASC')->get();
-
+        $success_stories = SuccessStories::where('category', 'Skillset Tutoring')
+            ->where('status', 'active')
+            ->where('lang', $lang)
+            ->orderBy('created_at', 'ASC')
+            ->get();
 
         return view('user.skillset_tutoring.main', [
             'testimonies' => $testimonies,

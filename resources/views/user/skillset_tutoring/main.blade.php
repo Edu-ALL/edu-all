@@ -9,10 +9,19 @@
 @section('sub-navbar')
     <x-sub-navbar :menu="[
         ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
-        ['title' => __('pages/programs/academic_tutoring.title'), 'url' => '/programs/academic-test-preparation/academic-tutoring'],
-        ['title' => __('pages/programs/sat_program.navbar_title'), 'url' => '/programs/academic-test-preparation/sat-program'],
-        ['title' => __('pages/programs/skillset_tutoring.title'), 'url' => '/programs/academic-test-preparation/skillset-tutoring-program'],
-    ]" :active="__('pages/programs/skillset_tutoring.title')" title="{!!  __('pages/programs/academic_test_preparation.navbar_title') !!}" />
+        [
+            'title' => __('pages/programs/academic_tutoring.title'),
+            'url' => '/programs/academic-test-preparation/academic-tutoring',
+        ],
+        [
+            'title' => __('pages/programs/sat_program.navbar_title'),
+            'url' => '/programs/academic-test-preparation/sat-program',
+        ],
+        [
+            'title' => __('pages/programs/skillset_tutoring.title'),
+            'url' => '/programs/academic-test-preparation/skillset-tutoring-program',
+        ],
+    ]" :active="__('pages/programs/skillset_tutoring.title')" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
 @endsection
 
 @section('content')
@@ -22,7 +31,8 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2 w-full">
-                    <h2 class="font-bold text-banner-title md:text-7xl text-white md:text-left text-center md:w-1/2 xl:w-1/3 md:ml-12">
+                    <h2
+                        class="font-bold text-banner-title md:text-7xl text-white md:text-left text-center md:w-1/2 xl:w-1/3 md:ml-12">
                         {{ __('pages/programs/skillset_tutoring.title') }}
                     </h2>
                     <x-registration-form :is-button="true" program-id="SATPRIV" />
@@ -32,9 +42,11 @@
     </section>
 
     <section class="py-24 scroll-mt-10" id="start-your-journey">
-        <h3 class="text-2xl md:text-4xl font-bold text-center mb-12">
-            {{ __('pages/programs/skillset_tutoring.program_title') }}
-        </h3>
+        <div class="new-main-container">
+            <h3 class="text-2xl md:text-4xl font-bold text-center mb-12">
+                {{ __('pages/programs/skillset_tutoring.program_title') }}
+            </h3>
+        </div>
         <div class="lg:px-10 xl:px-20 max-w-5xl mx-auto relative">
             <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-lg mx-auto w-full bg-newprimary rounded-2xl">
                 <div class="flex items-center justify-center gap-4 md:gap-8">
@@ -78,8 +90,8 @@
 
                                                 <x-button
                                                     href="{{ route('sign_me_skillset_tutoring', app()->getLocale()) }}"
-                                                    title="I Want to Register Now"
-                                                    bg-color="newprimary" padding-x="8" padding-y="1.5" margin-top="0" :is-rounded="true" fontSize="base" />
+                                                    title="I Want to Register Now" bg-color="newprimary" padding-x="8"
+                                                    padding-y="1.5" margin-top="0" :is-rounded="true" fontSize="base" />
                                             </div>
                                         </div>
                                     </div>
@@ -93,41 +105,46 @@
     </section>
 
     {{-- ========================================== Success Stories ========================================== --}}
-    <section class="pt-4 pb-16 bg-dark">
-        <div class="new-main-container flex flex-col items-center">
-            <div class=" w-full">
-                <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                    <h1 class="font-bold text-section-title text-white text-left w-full">OUR MENTEES’ STORIES</h1>
-                    <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+    @if (count($success_stories) > 0)
+        <section class="pt-4 pb-16 bg-dark">
+            <div class="new-main-container flex flex-col items-center">
+                <div class=" w-full">
+                    <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
+                        <h1 class="font-bold text-section-title text-white text-left w-full">Our Mentees’ Success stories
+                        </h1>
+                        <div class="border border-newyellow rounded-md py-1 px-6"><a
+                                href="{{ route('success_stories', app()->getLocale()) . '?category=skillset-tutoring' }}"
+                                class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="splide splides pt-4 max-w-screen-2xl mx-auto md:px-16" role="group">
-                <div class="splide__track">
-                    <ul class="splide__list font-newprimary text-black px-8">
-                        @foreach ($success_stories as $item)
-                            <li class="splide__slide w-full pb-8 px-1.5 md:px-2">
-                                <div class="splide__slide__container pb-8 h-full w-full">
-                                    <div
-                                        class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
-                                        <img loading="lazy"
-                                            data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
-                                        <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
-                                            <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
-                                                class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
-                                                Get to Know {{ explode(' ', trim($item->name))[0] }}
-                                            </a>
+                <div class="splide splides pt-4 max-w-screen-2xl mx-auto md:px-16" role="group">
+                    <div class="splide__track">
+                        <ul class="splide__list font-newprimary text-black px-8">
+                            @foreach ($success_stories as $item)
+                                <li class="splide__slide w-full pb-8 px-1.5 md:px-2">
+                                    <div class="splide__slide__container pb-8 h-full w-full">
+                                        <div
+                                            class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
+                                            <img loading="lazy"
+                                                data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                                                alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
+                                            <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
+                                                <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
+                                                    class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
+                                                    Get to Know {{ explode(' ', trim($item->name))[0] }}
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 
 
