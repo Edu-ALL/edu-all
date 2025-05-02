@@ -113,10 +113,14 @@
         {{-- Dont Display the button on this pages: "partnership-careers" --}}
         {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
         @endif --}}
-            <div
-                class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow">
-                <i class="fa-brands fa-whatsapp text-[25px]"></i>
-            </div>
+        <div
+            class="absolute right-[35px] bottom-[7px] bg-[#008069] py-2 pl-2 pr-5 md:flex hidden justify-center items-center text-white w-[120px] text-[12px] cursor-pointer shadow rounded-lg">
+            Chat With Us!
+        </div>
+        <div
+            class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-white cursor-pointer shadow">
+            <i class="fa-brands fa-whatsapp text-[25px]"></i>
+        </div>
     </div>
 </div>
 
@@ -136,18 +140,18 @@
     <div class="bg-white rounded-b-2xl p-4">
         @if (str_contains(request()->url(), 'careers') || str_contains(request()->url(), 'partnership'))
             <a href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-        @else
-            <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-        @endif
-            target="_blank"
-            class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
-            <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
+            @else <a
+                href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                @endif
+                target="_blank"
+                class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
+                <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
 
-            <i class="fas fa-paper-plane text-2xl"></i>
-        </a>
-        <p class="text-[10px] text-gray-500 mt-2 text-end">
-            {{ date('Y/m/d') }}
-        </p>
+                <i class="fas fa-paper-plane text-2xl"></i>
+            </a>
+            <p class="text-[10px] text-gray-500 mt-2 text-end">
+                {{ date('Y/m/d') }}
+            </p>
     </div>
 </div>
 

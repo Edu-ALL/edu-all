@@ -124,7 +124,7 @@
                             </div>
                             <x-button
                                 href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/{{ $item['link'] }}"
-                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" />
+                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" is-rounded />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
                                 {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                 <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
@@ -214,7 +214,7 @@
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"

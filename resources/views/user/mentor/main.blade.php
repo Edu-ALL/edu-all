@@ -135,7 +135,7 @@
                 {{ __('pages/about_us/mentor.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{ __('pages/about_us/mentor.bottom_btn') }}" type="secondary" bg-color="red" />
+                title="{{ __('pages/about_us/mentor.bottom_btn') }}" type="secondary" bg-color="red" is-rounded />
         </div>
     </section>
 @endsection

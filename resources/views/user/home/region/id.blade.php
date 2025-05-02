@@ -137,7 +137,7 @@
                                         </div>
                                         <x-button href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
                                             title="{{ __('pages/programs/admission_mentoring.learn_more') }}"
-                                            bg-color="newprimary" padding-y="1.5" />
+                                            bg-color="newprimary" padding-y="1.5" is-rounded />
                                         <span class="mt-1 text-sm text-[#9C9C9C]">
                                             {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                             <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
@@ -426,7 +426,7 @@
                                     </div>
                                 </div>
                                 <x-button href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                    title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark" padding-x="4" />
+                                    title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark" padding-x="4" is-rounded />
                                 <!-- <div class="w-full">
                                     <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
                                         target="_blank"
@@ -452,7 +452,7 @@
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"

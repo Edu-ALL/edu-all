@@ -88,8 +88,8 @@ Route::middleware(['remove_public'])->group(function () {
                 Route::get('/about', 'about')->name('about');
                 Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
                 Route::get('/partnership', 'partnership')->name('partnership');
-                Route::get('/about/partnership-careers', 'partnership_careers')->name('partnership_careers');
-                Route::get('/about/partnership-careers/{slug}', 'detail_careers')->name('detail_careers');
+                Route::get('/about/careers', 'partnership_careers')->name('partnership_careers');
+                Route::get('/about/careers/{slug}', 'detail_careers')->name('detail_careers');
                 Route::get('/contact-us', 'contact_us')->name('contact_us');
                 Route::post('/contact-us', 'submit_contact_us')->name('submit_contact_us');
                 Route::get('/contact-us/thank', 'thank_contact_us')->name('thank_contact_us');

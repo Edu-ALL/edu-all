@@ -94,7 +94,7 @@
                                                 {{ $item['body'] }}
                                             </p>
                                             <x-button href="{{ route($item['route'], ['locale' => app()->getLocale()]) }}"
-                                                title="View More" bg-color="red" />
+                                                title="View More" bg-color="red" is-rounded />
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                 {{ __('pages/programs/programs.sign_up_text') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/programs/programs.sign_up_btn') }}" type='secondary' bg-color="red" />
+                title="{{ __('pages/programs/programs.sign_up_btn') }}" type='secondary' bg-color="red" is-rounded />
         </div>
     </section>
 @endsection

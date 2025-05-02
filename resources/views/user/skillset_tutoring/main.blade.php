@@ -91,7 +91,7 @@
                                                 <x-button
                                                     href="{{ route('sign_me_skillset_tutoring', app()->getLocale()) }}"
                                                     title="I Want to Register Now" bg-color="newprimary" padding-x="8"
-                                                    padding-y="1.5" margin-top="0" :is-rounded="true" fontSize="base" />
+                                                    padding-y="1.5" margin-top="0" :is-rounded="true" fontSize="base" is-rounded />
                                             </div>
                                         </div>
                                     </div>

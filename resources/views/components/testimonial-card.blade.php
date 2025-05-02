@@ -1,5 +1,5 @@
 <div
-    class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500">
+    class="bg-[#F3F3F3] pt-4 flex flex-col justify-between items-start h-full shadow-xl relative hover:scale-105 transition-all duration-500 rounded-xl">
     <span class="absolute top-2 left-2 text-6xl font-normal">“</span>
     <div class="px-4 mt-4 text-sm text-justify font-semibold italic">
         {!! $testi->testi_desc !!}
@@ -16,7 +16,7 @@
         </span>
         @if (!$disabled_btn)
             <a href="{{ route('testimonial', app()->getLocale()) }}"
-                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all">Read
+                class="w-full flex px-4 py-2 group bg-newprimary justify-end text-sm text-white font-semibold items-center transition-all rounded-lg">Read
                 more <i
                     class="ml-2 group-hover:ml-4 fa-solid fa-chevron-right text-xs text-white transition-all"></i></a>
         @endif

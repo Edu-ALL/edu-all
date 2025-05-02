@@ -196,7 +196,7 @@
             <div class="flex justify-center -mt-12">
                 <x-button href="#get-in-touch" title="Let's Collaborate" bg-color="red" class="mb-8" padding-x="12"
                     padding-y="2" hover-bg-color="newprimary" hover-padding-x="20" text-color="white" font="medium"
-                    text-size="lg" transition="all duration-150" />
+                    text-size="lg" transition="all duration-150" is-rounded />
             </div>
         </div>
     </section>

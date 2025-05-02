@@ -104,7 +104,7 @@
                                         </div>
                                         <x-button href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
                                             title="{!! $item['btn'] !!}"
-                                            bg-color="newprimary" padding-y="1.5" />
+                                            bg-color="newprimary" padding-y="1.5" is-rounded />
                                     </div>
                                 </div>
                             </li>

@@ -134,7 +134,7 @@
                 {{ __('pages/success_stories/success_stories.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' />
+                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' is-rounded />
         </div>
     </section>
 

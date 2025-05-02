@@ -206,7 +206,7 @@
                                                 <x-button href="{{ asset('assets/files/sat-program/2025_SAT Curriculum.pdf') }}"
                                                     title="{{ $list_item['btn'] }}" bg-color="newprimary" padding-x="2"
                                                     padding-y="1" margin-top="2" font-size="sm" color="black"
-                                                    bg-color="newyellow" target="_blank" />
+                                                    bg-color="newyellow" target="_blank" is-rounded />
                                             @endif
                                         </div>
                                     </div>
@@ -215,7 +215,7 @@
                             <div class="flex-1 text-center flex flex-col justify-end">
                                 <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
                                     title="{{ __('pages/programs/academic_test_preparation.lets_start') }}"
-                                    bg-color="newprimary" padding-x="8" padding-y="1.5" />
+                                    bg-color="newprimary" padding-x="8" padding-y="1.5" is-rounded />
                                 <span class="mt-1 text-sm text-[#9C9C9C] text-center">
                                     {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                     <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"

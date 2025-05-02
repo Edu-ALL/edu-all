@@ -160,7 +160,7 @@
                         <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
                             bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
                             hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                            transition="all duration-150" />
+                            transition="all duration-150" is-rounded />
                     </div>
                 </div>
             </div>
@@ -297,7 +297,7 @@
                 {{ __('pages/about_us/about.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/about_us/about.bottom_btn') }}" type="secondary" bg-color="red" />
+                title="{{ __('pages/about_us/about.bottom_btn') }}" type="secondary" bg-color="red" is-rounded />
         </div>
     </section>
 @endsection
