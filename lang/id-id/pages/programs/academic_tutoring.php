@@ -11,7 +11,7 @@ return [
     'summary' => [
         [
             'title' => '97%',
-            'sub_title' => 'of our A-Level Students <br/> earned A and A+'
+            'sub_title' => 'of our A-Level Students <br/> earned A and A*'
         ],
         [
             'title' => '98%',
@@ -47,7 +47,7 @@ return [
             's4_item_text_inactive' => "Dynamic",
         ],
     ],
-    
+
     's4_item_text_active' => [
         "Temukan Jalan",
         "Analisis Akademik Mendalam",
@@ -66,15 +66,18 @@ return [
     "subjects_tag" => [
         [
             'title' => 'Grade 9-12',
-            'image' => 'start.png',
-        ],
-        [
-            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
-            'image' => 'user.png',
+            'image' => 'start.web',
+            'order' => '1',
         ],
         [
             'title' => 'Private Class',
-            'image' => 'people.png',
+            'image' => 'users.web',
+            'order' => '3',
+        ],
+        [
+            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
+            'image' => 'people.web',
+            'order' => '2',
         ],
     ],
 

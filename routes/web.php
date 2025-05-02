@@ -30,7 +30,7 @@ Route::middleware(['remove_public'])->group(function () {
 
     Route::get('/', [HomePageController::class, 'home']);
 
-    Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+    Route::get('/sitemap', [SitemapController::class, 'index']);
 
     // WebHook
     Route::get('callback/facebook', [CallbackController::class, 'verify']);
@@ -44,8 +44,8 @@ Route::middleware(['remove_public'])->group(function () {
 
         ],
         function () {
-            Route::get('sitemap-blogs.xml', [SitemapController::class, 'sitemap_blog']);
-            Route::get('sitemap-pages.xml', [SitemapController::class, 'sitemap_pages']);
+            Route::get('sitemap-blogs', [SitemapController::class, 'sitemap_blog']);
+            Route::get('sitemap-pages', [SitemapController::class, 'sitemap_pages']);
 
             Route::controller(HomePageController::class)->group(function () {
                 Route::get('/', 'home')->name('home');
@@ -121,6 +121,8 @@ Route::middleware(['remove_public'])->group(function () {
     Route::get('/sign-me/mentoring', [HomePageController::class, 'sign_me_mentoring'])->name('sign_me_mentoring');
     Route::get('/sign-me/sat', [HomePageController::class, 'sign_me_sat'])->name('sign_me_sat');
     Route::get('/sign-me/sat/price', [HomePageController::class, 'sign_me_sat'])->name('sign_me_sat_price');
+    Route::get('/thanks/mentoring', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_mentoring');
+    Route::get('/thanks/sat', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_sat');
 
 
     // New Page Regular Talk

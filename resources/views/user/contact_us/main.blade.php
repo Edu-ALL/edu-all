@@ -51,7 +51,7 @@
                         <p class="font-newprimary text-lg text-[#7a7a7a]">{!! $website_settings->address !!}</p>
                     </div>
 
-                    <div class="flex flex-col gap-y-3 mb-6">
+                    {{-- <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">Telephone</h5>
                         <div class="flex flex-col">
                             <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}"
@@ -65,7 +65,7 @@
                                     class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">E-mail</h5>
                         <a target="_blank" href="mailto:{{ $website_settings->email }}"
@@ -136,7 +136,7 @@
                     input.classList.remove('border-red');
                     input.classList.remove('border-[#e3e3e3]');
                     input.classList.add('border-green-500');
-                }                
+                }
             });
 
             const captchaValid = checkCaptcha()

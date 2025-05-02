@@ -146,6 +146,12 @@
                                                     <option value="Passion Project"
                                                         {{ $success_stories[0]->category == 'Passion Project' ? 'selected' : '' }}>
                                                         Passion Project</option>
+                                                    <option value="Competitions"
+                                                        {{ $success_stories[0]->category == 'Competitions' ? 'selected' : '' }}>
+                                                        Competitions</option>
+                                                    <option value="Skillset Tutoring"
+                                                        {{ $success_stories[0]->category == 'Skillset Tutoring' ? 'selected' : '' }}>
+                                                        Skillset Tutoring</option>
                                                 </select>
                                             </div>
                                             @error('story_category')

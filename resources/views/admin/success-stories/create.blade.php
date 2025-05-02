@@ -147,6 +147,9 @@
                                                     <option value="Competitions"
                                                         {{ old('story_category') == 'Competitions' ? 'selected' : '' }}>
                                                         Competitions</option>
+                                                    <option value="Skillset Tutoring"
+                                                        {{ old('story_category') == 'Skillset Tutoring' ? 'selected' : '' }}>
+                                                        Skillset Tutoring</option>
                                                 </select>
                                             </div>
                                             @error('story_category')

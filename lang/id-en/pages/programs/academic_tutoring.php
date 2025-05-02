@@ -11,7 +11,7 @@ return [
     'summary' => [
         [
             'title' => '97%',
-            'sub_title' => 'of our A-Level Students <br/> earned A and A+'
+            'sub_title' => 'of our A-Level Students <br/> earned A and A*'
         ],
         [
             'title' => '98%',
@@ -20,62 +20,65 @@ return [
         [
             'title' => '100%',
             'sub_title' => 'Exam Success Rate'
-        ]
-    ],
+            ]
+        ],
 
-    'benefit_title' => "MORE THAN JUST TUTORING",
-    'benefit_section' => [
-        [
-            'title' => "Discover",
-            'description' => "Your Path",
-            's4_item_text_inactive' => "Discover Your Path",
+        'benefit_title' => "MORE THAN JUST TUTORING",
+        'benefit_section' => [
+            [
+                'title' => "Discover",
+                'description' => "Your Path",
+                's4_item_text_inactive' => "Discover Your Path",
 
+            ],
+            [
+                'title' => "Insightful",
+                'description' => "Academic Analysis",
+                's4_item_text_inactive' => "Insightful",
+            ],
+            [
+                'title' => "Customize",
+                'description' => "Learning Approach",
+                's4_item_text_inactive' => "Customized",
+            ],
+            [
+                'title' => "Dynamic",
+                'description' => "Goal Achievement",
+                's4_item_text_inactive' => "Dynamic",
+            ],
         ],
-        [
-            'title' => "Insightful",
-            'description' => "Academic Analysis",
-            's4_item_text_inactive' => "Insightful",
-        ],
-        [
-            'title' => "Customize",
-            'description' => "Learning Approach",
-            's4_item_text_inactive' => "Customized",
-        ],
-        [
-            'title' => "Dynamic",
-            'description' => "Goal Achievement",
-            's4_item_text_inactive' => "Dynamic",
-        ],
-    ],
-    
-    's4_item_text_active' => [
-        "Discover Your Path",
-        "Insightful Academic Analysis",
-        "Customized Learning Approach",
-        "Dynamic Goal Achievement",
-    ],
-    's4_item_text_inactive' => [
-        "Discover",
-        "Insightful",
-        "Customized",
-        "Dynamic",
-    ],
 
-    "subjects_title" =>  "SUBJECTS",
-    "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
-    "subjects_tag" => [
-        [
-            'title' => 'Grade 9-12',
-            'image' => 'start.png',
+        's4_item_text_active' => [
+            "Discover Your Path",
+            "Insightful Academic Analysis",
+            "Customized Learning Approach",
+            "Dynamic Goal Achievement",
         ],
-        [
-            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
-            'image' => 'user.png',
+        's4_item_text_inactive' => [
+            "Discover",
+            "Insightful",
+            "Customized",
+            "Dynamic",
         ],
-        [
-            'title' => 'Private Class',
-            'image' => 'people.png',
-        ],
+
+        "subjects_title" =>  "SUBJECTS",
+        "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
+        "subjects_tag" => [
+            [
+                'title' => 'Grade 9-12',
+                'image' => 'start.webp',
+                'order' => '1',
+            ],
+            [
+                'title' => 'Private Class',
+                'image' => 'users.webp',
+                'order' => '3',
+            ],
+            [
+                'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
+                'image' => 'people.webp',
+                'order' => '2',
+            ],
     ],
 
     // PRIVATE CLASS
@@ -130,8 +133,8 @@ return [
     'tetimony_title' => "What Our Students Say",
 
     'free_trial_title' => "Ready to transform your academic journey?",
-    'free_trial_desc' => "Discover the path to achieving your educational aspirations! ",
-    'free_trial_button' => "Claim your FREE Academic Tutoring Trial",
+    'free_trial_desc' => "Discover the path to achieving your educational aspirations!",
+    'free_trial_button' => "Claim My FREE Academic Tutoring Trial",
 
     'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
     'ib_extended_description' => "Drill your Extended Essay writing process in 3 months with our holistic approach!",

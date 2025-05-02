@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Guidebooks;
 use App\Models\Mentors;
+use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\Tutors;
 use Illuminate\Http\Request;
@@ -134,10 +135,16 @@ class ProgramPageController extends Controller
     {
         $lang = substr(app()->getLocale(), 3, 2);
         $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
+        $success_stories = SuccessStories::where('category', 'Skillset Tutoring')
+            ->where('status', 'active')
+            ->where('lang', $lang)
+            ->orderBy('created_at', 'ASC')
+            ->get();
 
         return view('user.skillset_tutoring.main', [
             'testimonies' => $testimonies,
-            'locale' => $locale
+            'locale' => $locale,
+            'success_stories' => $success_stories
         ]);
     }
 
