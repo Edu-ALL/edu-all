@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/id-en', 301);
 
 Route::middleware(['remove_public'])->group(function () {
     Route::get('robots.txt', function () {
