@@ -29,7 +29,7 @@ Route::middleware(['remove_public'])->group(function () {
         return response()->file(public_path('robots.txt'));
     });
 
-    Route::get('/', [HomePageController::class, 'home']);
+    Route::get('/id-en', [HomePageController::class, 'home']);
 
     Route::get('/sitemap', [SitemapController::class, 'index']);
 
