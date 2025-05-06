@@ -114,7 +114,7 @@
         {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
         @endif --}}
         <div
-            class="absolute right-[35px] bottom-[7px] bg-[#008069] py-2 pl-2 pr-5 md:flex hidden justify-center items-center text-white w-[120px] text-[12px] cursor-pointer shadow rounded-lg">
+            class="absolute md:right-[35px] right-[15px] md:bottom-[7px] bottom-[3px] bg-[#008069] py-2 pl-2 pr-5 md:flex justify-center items-center text-white w-[120px] text-[12px] cursor-pointer shadow rounded-lg">
             Chat With Us!
         </div>
         <div
