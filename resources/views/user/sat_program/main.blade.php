@@ -218,13 +218,13 @@
                                 <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
                                     title="{{ __('pages/programs/academic_test_preparation.lets_start') }}"
                                     bg-color="newprimary" padding-x="8" padding-y="1.5" is-rounded />
-                                <span class="mt-1 text-sm text-[#9C9C9C] text-center">
+                                {{-- <span class="mt-1 text-sm text-[#9C9C9C] text-center">
                                     {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                     <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                                        class="underline text-newprimary hover:text-black">
+                                        class="underline text-newprimary hover:text-black rounded-lg">
                                         {{ __('pages/programs/admission_mentoring.book_now') }}
                                     </a>
-                                </span>
+                                </span> --}}
                             </div>
                         </div>
                     @endforeach
@@ -250,7 +250,7 @@
                 {{ __('pages/programs/sat_program.free_trial_title') }}
             </h2>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150">
+                class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150 rounded-lg">
                 {{ __('pages/programs/sat_program.free_trial_button') }}
             </a>
         </div>
@@ -285,7 +285,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="mt-12 py-12 bg-cover bg-center"
         style="background-image: url({{ asset('assets/img/academic_test_preparation/sat_program/revamp/banner-bottom.webp') }})">
         <div class="flex flex-col justify-center items-center new-main-container py-16 gap-2">
@@ -295,7 +295,7 @@
                 {{ __('pages/programs/sat_program.banner2_body') }}
             </p>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="mt-8 bg-white text-red font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">{{ __('pages/programs/sat_program.banner2_button') }}</a>
+                class="mt-8 bg-white text-red font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150 rounded-lg">{{ __('pages/programs/sat_program.banner2_button') }}</a>
         </div>
     </section>
 
@@ -372,7 +372,7 @@
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                 class="px-8 md:px-12 py-3 font-bold
                 font-newprimary text-xs md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all
-                duration-150">
+                duration-150 rounded-lg">
                 {{ __('pages/programs/sat_program.free_trial2_button') }}
             </a>
         </div>
