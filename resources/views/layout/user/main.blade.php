@@ -54,7 +54,7 @@
         <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
 
-    <link rel="canonical" href="{{ url()->current() }}" />
+    <link rel="canonical" href="{{ rtrim(url()->current(), '/') }}" />
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
