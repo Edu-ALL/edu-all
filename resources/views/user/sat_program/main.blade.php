@@ -31,7 +31,8 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2 w-full">
-                    <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:ml-12">
+                    <h2
+                        class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:ml-12">
                         {{ __('pages/programs/sat_program.title') }}
                     </h2>
                     <x-registration-form :is-button="true" program-id="SATPRIV" />
@@ -52,8 +53,8 @@
                                         {{ $item['title'] }}
                                     </p>
                                     <!-- <p class="font-bold text-white text-banner-subdescription text-center">
-                                        {{ $item['sub_title'] }}
-                                    </p> -->
+                                                        {{ $item['sub_title'] }}
+                                                    </p> -->
                                     <p class="font-light text-white text-banner-subdescription text-center max-w-[240px]">
                                         {!! $item['sub_title'] !!}
                                     </p>
@@ -67,17 +68,17 @@
     </section>
 
     <!-- <section class="pt-16">
-        <div class="new-main-container">
-            <div class="flex flex-col justify-between gap-8 md:flex-row">
-                @foreach (__('pages/programs/sat_program.summary') as $item)
-                    <div class="flex flex-col items-center max-w-xs mx-auto">
-                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
-                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section> -->
+                        <div class="new-main-container">
+                            <div class="flex flex-col justify-between gap-8 md:flex-row">
+                                @foreach (__('pages/programs/sat_program.summary') as $item)
+    <div class="flex flex-col items-center max-w-xs mx-auto">
+                                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
+                                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
+                                    </div>
+    @endforeach
+                            </div>
+                        </div>
+                    </section> -->
 
     <section class="py-16">
         <div class="new-main-container">
@@ -203,7 +204,8 @@
                                                 {{ $list_item['description'] }}
                                             </h4>
                                             @if (isset($list_item['btn']))
-                                                <x-button href="{{ asset('assets/files/sat-program/2025_SAT Curriculum.pdf') }}"
+                                                <x-button
+                                                    href="{{ asset('assets/files/sat-program/2025_SAT Curriculum.pdf') }}"
                                                     title="{{ $list_item['btn'] }}" bg-color="newprimary" padding-x="2"
                                                     padding-y="1" margin-top="2" font-size="sm" color="black"
                                                     bg-color="newyellow" target="_blank" is-rounded />
@@ -283,9 +285,9 @@
             </div>
         </div>
     </section>
-
-    <section
-        class="mt-12 py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/revamp/banner-bottom.webp')] bg-cover bg-center">
+    
+    <section class="mt-12 py-12 bg-cover bg-center"
+        style="background-image: url({{ asset('assets/img/academic_test_preparation/sat_program/revamp/banner-bottom.webp') }})">
         <div class="flex flex-col justify-center items-center new-main-container py-16 gap-2">
             <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-white text-center md:text-left">
                 {{ __('pages/programs/sat_program.banner2_title') }}</h2>
