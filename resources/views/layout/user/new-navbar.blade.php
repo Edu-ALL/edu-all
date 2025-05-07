@@ -129,9 +129,9 @@
     <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
         <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
         <div>
-            <h1 class="text-white text-lg leading-5">
+            <h2 class="text-white text-lg leading-5">
                 {{ __('pages/home.wa.title') }}
-            </h1>
+            </h2>
             <h3 class="text-white text-base mt-2">
                 {{ __('pages/home.wa.sub_title') }}
             </h3>
