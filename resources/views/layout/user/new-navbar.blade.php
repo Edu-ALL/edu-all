@@ -129,12 +129,12 @@
     <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
         <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
         <div>
-            <p class="text-white text-lg leading-5">
+            <h1 class="text-white text-lg leading-5">
                 {{ __('pages/home.wa.title') }}
-            </p>
-            <p class="text-white text-base mt-2">
+            </h1>
+            <h3 class="text-white text-base mt-2">
                 {{ __('pages/home.wa.sub_title') }}
-            </p>
+            </h3>
         </div>
     </div>
     <div class="bg-white rounded-b-2xl p-4">

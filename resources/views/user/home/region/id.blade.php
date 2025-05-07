@@ -48,45 +48,45 @@
                         <div class="flex md:flex-row flex-wrap gap-6 md:justify-between justify-center items-center w-full">
                             {{-- Acceptance --}}
                             <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
-                                <h4 class="font-bold text-white text-banner-description text-center">
+                                <h3 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->accepatance }}
-                                </h4>
+                                </h3>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     at Best-Fit Universities
                                 </span>
                             </div>
                             {{-- Mentees --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-bold text-white text-banner-description text-center">
+                                <h3 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->mentees }}
-                                </h4>
+                                </h3>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     mentees
                                 </span>
                             </div>
                             {{-- Scholarship --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-bold text-white text-banner-description text-center">
+                                <h3 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->scholarship }}
-                                </h4>
+                                </h3>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     in Scholarship Awards
                                 </span>
                             </div>
                             {{-- SAT Score --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-bold text-white text-banner-description text-center">
+                                <h3 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->sat_score }}
-                                </h4>
+                                </h3>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     on SAT Score
                                 </span>
                             </div>
                             {{-- Statisfaction Rate --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h4 class="font-bold text-white text-banner-description text-center">
+                                <h3 class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->statisfaction_rate }}
-                                </h4>
+                                </h3>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     Student Projects Launched
                                 </span>
