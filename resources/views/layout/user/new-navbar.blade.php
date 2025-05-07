@@ -108,7 +108,7 @@
 
 
 {{-- whatsapp  --}}
-<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[9999] transition-all duration-1000" id="wa_button">
+<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[45] transition-all duration-1000" id="wa_button">
     <div class="relative group">
         {{-- Dont Display the button on this pages: "partnership-careers" --}}
         {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
@@ -216,6 +216,8 @@
         $('#mobile-menu-toggle').click(function() {
             $('#mobile-navbar').stop(true, true).fadeIn(300);
             $('body').css('overflow', 'hidden');
+
+            $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24')
         });
 
         $('#mobile-navbar-overlay').click(function() {
@@ -226,6 +228,9 @@
         // WA Form 
 
         $('#wa_button').click(function() {
+            $('#mobile-navbar').stop(true, true).fadeOut(300);
+            $('body').css('overflow', 'auto');
+
             if ($('#whatsappForm.bottom-24').length == 0) {
                 $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24')
             } else {
