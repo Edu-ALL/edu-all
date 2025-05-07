@@ -91,8 +91,8 @@
                                     <div
                                         class="flex flex-col items-center rounded-md border border-[#DEDEDE] pb-8 bg-white overflow-hidden">
                                         <div class="h-40 w-full overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/about/partnership/' . $item['image']) }}"alt=""
-                                            class="h-full w-full object-cover">
+                                            <img  data-src="{{ asset('assets/img/about/partnership/' . $item['image']) }}"alt=""
+                                            class="h-full w-full object-cover lazyload">
                                         </div>
                                         <h3 class="font-bold text-2xl text-center mt-8">
                                             {!! $item['title'] !!}

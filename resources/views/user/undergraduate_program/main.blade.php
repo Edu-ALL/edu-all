@@ -86,8 +86,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -114,8 +114,8 @@
                 </div>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                     <div class="w-full md:w-1/2 overflow-hidden rounded-lg">
-                        <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
-                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover aspect-[7/6]">
+                        <img  data-src="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
+                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover aspect-[7/6] lazyload">
                     </div>
                     <div class="w-full md:w-1/2">
                         <ul class="flex flex-col items-start justify-center gap-3">
@@ -154,8 +154,8 @@
                 <div class="flex flex-col md:flex-row gap-8 mt-6">
                     @foreach (__('pages/programs/undergraduate_program.learning_scope_points') as $item)
                         <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
-                            <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/' . $item['image']) }}"
-                                alt="EduALL" class="w-full max-w-2xl object-contain">
+                            <img  data-src="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/' . $item['image']) }}"
+                                alt="EduALL" class="w-full max-w-2xl object-contain lazyload">
                             <div class="w-full -mt-4">
                                 <a href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
                                     target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">

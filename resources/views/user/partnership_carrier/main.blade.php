@@ -35,8 +35,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/about/partnership-career/benefit/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/about/partnership-career/benefit/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -176,8 +176,8 @@
                             @for ($i = 1; $i < 7; $i++)
                                 <li class="splide__slide">
                                     <div class="px-4">
-                                        <img data-original="{{ asset('assets/img/about/partnership-career/gallery/gallery_' . $i . '.webp') }}"
-                                            alt="EduALL Career Activity" class="w-full rounded-lg">
+                                        <img  data-src="{{ asset('assets/img/about/partnership-career/gallery/gallery_' . $i . '.webp') }}"
+                                            alt="EduALL Career Activity" class="w-full rounded-lg lazyload">
                                     </div>
                                 </li>
                             @endfor

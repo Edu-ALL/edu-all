@@ -49,8 +49,8 @@
             <div
                 class="grid grid-cols-1  items-center py-8 bg-passion-project-bg-entre bg-cover bg-center min-h-[450px] md:grid-cols-2">
                 <div class="flex flex-col main-container">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Entrepreneurship-768x163.webp') }}"
-                        alt="entrepreneurship img" class="w-72 md:w-[30rem]">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/Entrepreneurship-768x163.webp') }}"
+                        alt="entrepreneurship img" class="w-72 md:w-[30rem] lazyload">
                     <h2 class="mt-2 font-newprimary font-black text-4xl md:text-5xl">Mentoring <span
                             class="block sm:inline-block">Program</span></h2>
                     <p class="mt-6 font-newprimary text-lg text-black">
@@ -58,18 +58,18 @@
                 </div>
                 <div class="self-start flex justify-start items-start mt-4">
                     <div class="flex items-center w-28 h-28 z-10">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}">
+                        <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}">
                     </div>
                     <div class="flex items-center w-28 h-28 -ml-6">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}">
+                        <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}">
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 items-center main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-entre-2 md:bg-cover md:bg-top md:min-h-[500px]">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
-                        alt="EduALL Passion Project Banner" class="md:hidden">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
+                        alt="EduALL Passion Project Banner" class="md:hidden lazyload">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-newprimary text-base text-newprimary md:text-xl">
@@ -157,12 +157,12 @@
                     class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
-                        alt="EduALL Passion Project" class="object-cover flex-1">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-2.webp') }}"
-                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-3.webp') }}"
-                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/skill-1.webp') }}"
+                        alt="EduALL Passion Project" class="object-cover flex-1 lazyload">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/skill-2.webp') }}"
+                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5 lazyload">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/skill-3.webp') }}"
+                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10 lazyload">
                 </div>
             </div>
 
@@ -172,8 +172,8 @@
                     {{ __('pages/programs/passion_project_mentoring.entrepreneurship_curriculum_overview') }}</h2>
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-entre-3 md:bg-cover md:bg-top">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp') }}"
-                            alt="EduALL Passion Project" class="md:hidden">
+                        <img  data-src="{{ asset('assets/img/passion_project_mentoring/preview-timetable-entrepreneurshiip.webp') }}"
+                            alt="EduALL Passion Project" class="md:hidden lazyload">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-newprimary font-medium text-base text-newprimary tracking-wider md:text-xl">
@@ -207,8 +207,8 @@
         <div class="flex flex-col items-center gap-y-16">
             <div class="grid grid-cols-1 py-8 bg-passion-project-bg-scien-1 bg-cover bg-top min-h-[450px] md:grid-cols-2">
                 <div class="flex flex-col main-container">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Scientific-Research-768x167.webp') }}"
-                        alt="entrepreneurship img" class="w-72 md:w-[30rem]">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/Scientific-Research-768x167.webp') }}"
+                        alt="entrepreneurship img" class="w-72 md:w-[30rem] lazyload">
                     <h2 class="mt-2 font-newprimary font-black text-4xl md:text-5xl">Mentoring <span
                             class="block sm:inline-block">Program</span></h2>
                     <p class="mt-6 font-newprimary text-lg text-black">
@@ -216,11 +216,11 @@
                 </div>
                 <div class="self-start flex items-start mt-4">
                     <div class="flex items-center w-28 h-28 z-10">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}"
+                        <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/Online.webp') }}"
                             alt="EduALL Passion Project">
                     </div>
                     <div class="flex items-center w-28 h-28 -ml-6">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}"
+                        <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/Grade.webp') }}"
                             alt="EduALL Passion Project">
                     </div>
                 </div>
@@ -228,8 +228,8 @@
 
             <div class="grid grid-cols-1 items-center main-container overflow-hidden md:grid-cols-2 md:gap-x-20">
                 <div class="md:bg-passion-project-bg-scien-2 md:bg-cover md:bg-top md:min-h-[500px]">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
-                        alt="EduALL Passion Project" class="md:hidden">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/Rectangle-6.webp') }}"
+                        alt="EduALL Passion Project" class="md:hidden lazyload">
                 </div>
                 <div class="mt-4 md:mt-0">
                     <p class="mb-5 font-newprimary text-base text-newprimary md:text-xl">
@@ -319,12 +319,12 @@
                     class="font-newprimary font-black text-3xl text-newprimary text-center uppercase md:text-4xl md:text-left">
                     {{ __('pages/programs/passion_project_mentoring.scientific_sklil') }}</h2>
                 <div class="grid grid-cols-1 mt-4 px-10 md:grid-cols-3">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
-                        alt="EduALL Passion Project" class="object-cover flex-1">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-5.webp') }}"
-                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5">
-                    <img data-original="{{ asset('assets/img/passion_project_mentoring/skill-6.webp') }}"
-                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/skill-4.webp') }}"
+                        alt="EduALL Passion Project" class="object-cover flex-1 lazyload">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/skill-5.webp') }}"
+                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-5 lazyload">
+                    <img  data-src="{{ asset('assets/img/passion_project_mentoring/skill-6.webp') }}"
+                        alt="EduALL Passion Project" class="-mt-14 object-cover flex-1 md:mt-0 md:-ml-10 lazyload">
                 </div>
             </div>
 
@@ -334,8 +334,8 @@
                     {{ __('pages/programs/passion_project_mentoring.scientific_curriculum_overview') }}</h2>
                 <div class="grid grid-cols-1 mt-8 md:grid-cols-2 md:gap-x-10">
                     <div class="md:bg-passion-project-bg-scien-3 md:bg-cover md:bg-top">
-                        <img data-original="{{ asset('assets/img/passion_project_mentoring/scientific research.png') }}"
-                            alt="EduALL Passion Project" class="md:hidden">
+                        <img  data-src="{{ asset('assets/img/passion_project_mentoring/scientific research.png') }}"
+                            alt="EduALL Passion Project" class="md:hidden lazyload">
                     </div>
                     <div class="mt-4 md:py-8 md:mt-0">
                         <p class="mb-5 font-newprimary font-medium text-base text-newprimary tracking-wider md:text-xl">
@@ -370,12 +370,12 @@
                 class="font-newprimary font-black  text-2xl text-newprimary text-center uppercase leading-6 md:text-4xl md:text-left">
                 {{ __('pages/programs/passion_project_mentoring.other_programs') }}</h2>
             <div class="grid grid-cols-1 items-center gap-y-4 px-14 mt-6 md:grid-cols-4 md:gap-x-12 md:px-0">
-                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-CEP.webp') }}" alt="LogoCEP">
-                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-Dr-share.webp') }}"
+                <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/LOGO-CEP.webp') }}" alt="LogoCEP">
+                <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/LOGO-Dr-share.webp') }}"
                     alt="LogoCEP">
-                <img data-original="{{ asset('assets/img/passion_project_mentoring/LOGO-Career-bootcamp.webp') }}"
+                <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/LOGO-Career-bootcamp.webp') }}"
                     alt="LogoCEP">
-                <img data-original="{{ asset('assets/img/passion_project_mentoring/Logo-GIP.webp') }}" alt="LogoCEP">
+                <img class="lazyload" data-src="{{ asset('assets/img/passion_project_mentoring/Logo-GIP.webp') }}" alt="LogoCEP">
             </div>
         </div>
     </section>

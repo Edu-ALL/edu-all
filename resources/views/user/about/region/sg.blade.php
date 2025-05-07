@@ -112,9 +112,9 @@
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <img data-original="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                <img data-src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                     alt="EduALL mentor {{ $mentor->mentor_alt }}"
-                                                    class="bg-cover bg-center h-auto">
+                                                    class="bg-cover bg-center h-auto lazyload">
                                             </div>
                                             <div
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">

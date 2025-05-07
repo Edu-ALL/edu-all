@@ -88,8 +88,8 @@
                         <div class="h-full w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-12 mb-2">
-                                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                             </div>
                             <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">{{ $item['title'] }}
                             </h4>
@@ -148,7 +148,7 @@
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
                         <div class="desc mt-2 overflow-auto">
-                            <ul class="">
+                            <ul >
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
                                 @endforeach

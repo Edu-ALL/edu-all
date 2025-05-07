@@ -195,8 +195,8 @@
                         <div class="h-full w-36 md:w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-12 mb-2">
-                                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-contain">
+                                <img  data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-contain lazyload">
                             </div>
                             <h4 class="font-newprimary text-xs md:text-base font-bold text-center mt-2 leading-4">
                                 {{ $item['title'] }}
@@ -335,12 +335,12 @@
             </h2>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-8 w-full max-w-4xl mx-auto">
                 <div class="w-full">
-                    <img data-original="{{ asset('assets/img/sign-me/sat/what_they_say_1.webp') }}"
-                        alt="EduALL - ilustration" class="w-full object-contain">
+                    <img  data-src="{{ asset('assets/img/sign-me/sat/what_they_say_1.webp') }}"
+                        alt="EduALL - ilustration" class="w-full object-contain lazyload">
                 </div>
                 <div class="w-full">
-                    <img data-original="{{ asset('assets/img/sign-me/sat/what_they_say_2.webp') }}"
-                        alt="EduALL - ilustration" class="w-full object-contain">
+                    <img  data-src="{{ asset('assets/img/sign-me/sat/what_they_say_2.webp') }}"
+                        alt="EduALL - ilustration" class="w-full object-contain lazyload">
                 </div>
             </div>
             <div class="w-full mt-8">

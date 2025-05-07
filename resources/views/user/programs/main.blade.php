@@ -82,9 +82,9 @@
                                                 @endforeach
                                             </ul>
                                         </div>
-                                        <img data-original="{{ asset('assets/img/programs/' . $item['img']) }}"
+                                        <img  data-src="{{ asset('assets/img/programs/' . $item['img']) }}"
                                             alt="EduALL"
-                                            class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10">
+                                            class="absolute w-full h-full top-0 right-0 object-cover object-center -z-10 lazyload">
                                     </div>
                                     <div
                                         class="back face_back bg-gradient-to-t top-0 left-0 from-newprimary py-8 px-4 via-newprimary  to-[#7895C7]  text-white">

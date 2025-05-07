@@ -48,8 +48,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -99,8 +99,8 @@
                                 {!! $item['title'] !!}
                             </h3>
                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
-                                    class="h-full w-full object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
+                                    class="h-full w-full object-cover lazyload">
                             </div>
                             <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
                                 <p class="text-base text-justify px-4 leading-5">

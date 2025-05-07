@@ -89,7 +89,7 @@
     {{-- ================================== Question & Answer ================================== --}}
     <section class="py-16">
         <div class="flex flex-col items-center main-container">
-            <img data-original="{{ asset('assets/img/about/Icon_2.png') }}" alt="EduALL Logo">
+            <img class="lazyload" data-src="{{ asset('assets/img/about/Icon_2.png') }}" alt="EduALL Logo">
             <h2 class="mt-4 font-newprimary font-bold text-3xl text-newyellow text-center">Question & Answer</h2>
 
             <div class="max-w-4xl mt-8 w-full">

@@ -52,8 +52,8 @@
                                 <div class="h-40 md:h-36 w-40 md:w-44 bg-white flex flex-col items-center justify-center py-4 mb-4"
                                 style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                                 <div class="h-8">
-                                    <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/benefits/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                    <img data-src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 </div>
                                 <h4 class="font-newprimary text-sm font-bold text-center mt-4 leading-4">{{ $item['title'] }}
                                     </h4>
@@ -191,8 +191,8 @@
                                                 {!! $item['title'] !!}
                                             </h3>
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt="EduALL"
-                                                    class="h-full w-full object-cover">
+                                                <img data-src="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt="EduALL"
+                                                    class="h-full w-full object-cover lazyload">
                                             </div>
                                             <div class="w-full h-32 flex flex-col justify-between">
                                                 <p class="text-xs text-justify leading-4">

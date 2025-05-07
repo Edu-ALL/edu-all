@@ -80,8 +80,8 @@
                                                 {!! $item['title'] !!}
                                             </h3>
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img data-original="{{ asset('assets/img/academic_test_preparation/skillset_tutoring/revamp/' . $item['image']) }}"alt="EduALL"
-                                                    class="h-full w-full object-cover">
+                                                <img  data-src="{{ asset('assets/img/academic_test_preparation/skillset_tutoring/revamp/' . $item['image']) }}"alt="EduALL"
+                                                    class="h-full w-full object-cover lazyload">
                                             </div>
                                             <div class="w-full h-28 flex flex-col justify-between">
                                                 <p class="text-xs text-justify leading-4">
@@ -127,8 +127,8 @@
                                         <div
                                             class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                                             <img loading="lazy"
-                                                data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                                                alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
+                                                 data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                                                alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain lazyload">
                                             <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
                                                 <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
                                                     class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
