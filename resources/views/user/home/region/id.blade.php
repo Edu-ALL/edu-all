@@ -26,9 +26,9 @@
                 </video>
             @elseif ($banners->image)
                 <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                    <img loading="lazy"
-                        src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
-                        alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0">
+                    <img
+                        data-src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
+                        alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0 lazyload">
                 </div>
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
@@ -117,8 +117,8 @@
                                             {!! $item['title'] !!}
                                         </h3>
                                         <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                            <img data-original="{{ asset('assets/img/home/our-programs/' . $item['img']) }}"alt="EduALL"
-                                                class="h-full w-full object-cover">
+                                            <img data-src="{{ asset('assets/img/home/our-programs/' . $item['img']) }}"alt="EduALL"
+                                                class="h-full w-full object-cover lazyload">
                                         </div>
                                         <div class="w-full lg:h-20 border-t border-t-[#DEDEDE]">
                                             <ul class="mt-4 w-full flex flex-col gap-2">
@@ -160,8 +160,8 @@
         <div class="new-main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="col-span-6 md:col-span-4 flex flex-col justify-end order-1">
-                    <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll logo"
-                        class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto">
+                    <img data-src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll logo"
+                        class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto lazyload">
                     <h2 class="mt-4 font-bold text-3xl md:text-5xl text-white">Pathway to Excellence</h2>
                 </div>
                 <div
@@ -264,9 +264,9 @@
                                 <div class="splide__slide__container pb-8 h-full w-full">
                                     <div
                                         class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
-                                        <img loading="lazy"
-                                            data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
+                                        <img
+                                            data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain lazyload">
                                         <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
                                             <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
                                                 class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
@@ -313,10 +313,10 @@
                                                         <div class="splide__slide__container">
                                                             <a href="{{ $regular_talk->event_rsvp_link }}"
                                                                 target="_blank">
-                                                                <img loading="lazy"
-                                                                    src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                <img
+                                                                    data-src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                                     alt="{{ $regular_talk->event_alt }}"
-                                                                    class="object-contain w-full">
+                                                                    class="object-contain w-full lazyload">
                                                             </a>
                                                         </div>
                                                     </li>
@@ -327,10 +327,10 @@
                                                 @foreach ($events as $event)
                                                     <li class="splide__slide px-1.5 md:px-4">
                                                         <div class="splide__slide__container">
-                                                            <img loading="lazy"
-                                                                src="{{ Storage::url('upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                            <img
+                                                                data-src="{{ Storage::url('upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                                 alt="{{ $event->event_alt }}"
-                                                                class="object-cover w-full h-full">
+                                                                class="object-cover w-full h-full lazyload">
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -422,8 +422,8 @@
                         title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1">
-                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
-                        class="w-full h-full object-cover">
+                    <img data-src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                        class="w-full h-full object-cover lazyload">
                 </div>
             </div>
         </div>
@@ -441,9 +441,9 @@
                         <div
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                             @foreach ($as_seen_on as $item)
-                                <img loading="lazy"
-                                    src="{{ Storage::url('as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                    alt="{{ $item->alt }}" class="md:w-2/12 w-1/3 h-full object-contain">
+                                <img
+                                    data-src="{{ Storage::url('as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                    alt="{{ $item->alt }}" class="md:w-2/12 w-1/3 h-full object-contain lazyload">
                             @endforeach
                         </div>
                     </div>
