@@ -72,8 +72,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -154,8 +154,8 @@
                                                 {!! $program['title'] !!}
                                             </h3>
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img data-original="{{ asset('assets/img/exclusive_program_school/' . $program['image']) }}"alt="EduALL"
-                                                    class="h-full w-full object-cover">
+                                                <img  data-src="{{ asset('assets/img/exclusive_program_school/' . $program['image']) }}"alt="EduALL"
+                                                    class="h-full w-full object-cover lazyload">
                                             </div>
                                             <div class="w-full md:h-20">
                                                 <p class="text-sm text-justify leading-5">
@@ -196,7 +196,7 @@
             <div class="flex justify-center -mt-12">
                 <x-button href="#get-in-touch" title="Let's Collaborate" bg-color="red" class="mb-8" padding-x="12"
                     padding-y="2" hover-bg-color="newprimary" hover-padding-x="20" text-color="white" font="medium"
-                    text-size="lg" transition="all duration-150" />
+                    text-size="lg" transition="all duration-150" is-rounded />
             </div>
         </div>
     </section>
@@ -233,7 +233,7 @@
                         <form action="{{ route('submit_partnership', ['locale' => 'id-en', 'slug' => 'school']) }}"
                             method="POST" id="myForm">
                             @csrf
-                            <div class="">
+                            <div >
                                 <div class="flex flex-col">
                                     <div class="mb-3">
                                         <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>

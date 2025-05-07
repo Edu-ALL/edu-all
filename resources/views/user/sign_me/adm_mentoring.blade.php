@@ -71,7 +71,7 @@
                         <h4 class="mb-6 font-newprimary font-bold text-2xl text-newprimary">
                             Your current profile will be assessed based on Four Pillars of University Application
                         </h4>
-                        <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
+                        <img class="lazyload" data-src="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
                     </div> --}}
                 </div>
                 <div class="md:col-span-3 order-1 md:order-2">

@@ -74,8 +74,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -108,9 +108,9 @@
             <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                 <div class="w-full md:w-1/2 overflow-hidden rounded-t-lg">
                     @foreach (__('pages/programs/univ_transfer_program.learning_scope_points') as $item)
-                        <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/' . $item['image']) }}"
+                        <img  data-src="{{ asset('assets/img/admission mentoring/Master transfer/revamp/' . $item['image']) }}"
                             alt="EduALL - ilustration"
-                            class="w-full h-full object-center object-cover scale-105 aspect-[7/6] z-10">
+                            class="w-full h-full object-center object-cover scale-105 aspect-[7/6] z-10 lazyload">
                         <div class="w-full -mt-4 z-20 relative">
                             <a href="{{ asset('assets/files/programs/transfer/' . $item['link']) }}"
                                 target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
@@ -118,9 +118,6 @@
                             </a>
                         </div>
                     @endforeach
-                    <!-- <img data-original="{{ asset('assets/img/admission mentoring/Master transfer/revamp/transfer.webp') }}"
-                        alt="EduALL - ilustration"
-                        class="w-full h-full object-center object-cover scale-105 aspect-[7/7]"> -->
                 </div>
                 <div class="w-full md:w-1/2">
                     <ul class="flex flex-col items-start justify-center gap-3">
@@ -159,7 +156,7 @@
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"

@@ -48,8 +48,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -99,8 +99,8 @@
                                 {!! $item['title'] !!}
                             </h3>
                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
-                                    class="h-full w-full object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
+                                    class="h-full w-full object-cover lazyload">
                             </div>
                             <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
                                 <p class="text-base text-justify px-4 leading-5">
@@ -124,7 +124,7 @@
                             </div>
                             <x-button
                                 href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/{{ $item['link'] }}"
-                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" />
+                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" is-rounded />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
                                 {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                 <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
@@ -214,7 +214,7 @@
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"

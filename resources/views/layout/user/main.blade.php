@@ -54,33 +54,7 @@
         <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
 
-    {{-- @php
-        $parsed_url = parse_url(URL::current());
-        // Extract the path from the parsed URL
-
-        if (isset($parsed_url['path'])) {
-            $path = $parsed_url['path']; // '/id-en/programs/admissions-mentoring'
-            // Split the path into segments
-            $segments = explode('/', trim($path, '/')); // Remove leading/trailing slashes
-
-            // Remove 'main', 'public', and 'index.php' segments if they exist
-            $path_segments = array_filter($segments, function ($segment) {
-                return !in_array($segment, ['main', 'public', 'index.php']);
-            });
-
-            // Rebuild the path without 'public'
-            $new_path = '/' . implode('/', $path_segments);
-
-            // Rebuild the full URL (if needed)
-            $new_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $new_path;
-
-            $canonical = in_array($segments[0], ['main', 'public', 'index.php'])
-                ? $new_url
-                : url('/public' . request()->getRequestUri());
-        }
-    @endphp
-
-    <link rel="canonical" href="{{ isset($canonical) ? $canonical : URL::current() }}"> --}}
+    <link rel="canonical" href="{{ rtrim(url()->current(), '/') }}" />
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
@@ -117,6 +91,7 @@
     <script src="{{ url('/js/splide.min.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
     <script src="{{ url('/js/lazyload.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
     {{-- Instafeed  --}}
@@ -138,62 +113,6 @@
 
         gtag('config', 'G-5HHPRQCSSE');
     </script>
-
-    {{-- @if (Route::currentRouteName() == 'sign_me_adm_mentoring')
-        <!-- Meta Pixel Code -->
-        <script>
-            ! function(f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                '/js/fbevent.js');
-            fbq('init', '395995446484778');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id=395995446484778&ev=PageView&noscript=1" /></noscript>
-        <!-- End Meta Pixel Code -->
-    @else
-        <!-- Meta Pixel Code -->
-        <script>
-            ! function(f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function() {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                '/js/fbevent.js');
-            fbq('init', '928080065534623');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id=928080065534623&ev=PageView&noscript=1" /></noscript>
-        <!-- End Meta Pixel Code -->
-    @endif --}}
 </head>
 
 <body id="body">

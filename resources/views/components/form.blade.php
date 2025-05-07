@@ -73,12 +73,10 @@
 
         <div id="thanksForm" class="hidden">
             <div class="flex flex-col justify-center">
-                <h4 class="mb-4 mt-4 text-white text-center text-lg">
-                    <span>
-                        Thank You <br />
-                        For Submitting Your Form!
-                    </span>
-                </h4>
+                <h3 class="mb-4 mt-4 text-white text-center text-lg">
+                    Thank You <br />
+                    For Submitting Your Form!
+                </h3>
                 <p class="text-white text-center">
                     You will receive a confirmation email and our team will contact you
                     shortly.
@@ -222,7 +220,8 @@
                             // formPage.classList.add('hidden')
                             // thanksPage.classList.remove('hidden')
 
-                            location.href = "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
+                            location.href =
+                                "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
                         },
                         error: function(xhr, status, error) {
                             // Handle errors here

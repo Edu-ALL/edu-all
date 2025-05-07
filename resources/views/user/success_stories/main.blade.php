@@ -43,8 +43,8 @@
                                 class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
                                 <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden"
                                     id="{{ explode(' ', trim($item->name))[0] }}">
-                                    <img data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                        alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover">
+                                    <img  data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                        alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover lazyload">
                                 </div>
                                 <div class="w-full md:w-6/12 h-full">
                                     <div class="flex flex-col gap-1 h-full justify-between">
@@ -77,8 +77,8 @@
                                             </div>
                                             {{-- Achievement --}}
                                             @if ($tab_section != 'passion_project')
-                                                <img data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
-                                                    alt="{{ $item->achievement_alt }}" class="mt-2">
+                                                <img  data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
+                                                    alt="{{ $item->achievement_alt }}" class="mt-2 lazyload">
                                             @endif
                                         </div>
                                         <div class="mt-4 flex flex-col gap-1 items-start border border-dark rounded-md p-2">
@@ -134,7 +134,7 @@
                 {{ __('pages/success_stories/success_stories.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' />
+                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' is-rounded />
         </div>
     </section>
 

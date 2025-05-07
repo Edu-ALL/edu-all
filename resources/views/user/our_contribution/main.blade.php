@@ -93,9 +93,9 @@
                                         class="bg-newprimary border-newprimary border rounded-lg p-4 hover:bg-white transition-all duration-700 group relative w-full">
                                         <div class="flex flex-col justify-between">
                                             <div class="rounded-lg overflow-hidden h-52">
-                                                <img data-original="{{ asset('assets/img/about/our-contribution/our-contribution-' . $loop->iteration . '.png') }}"
+                                                <img  data-src="{{ asset('assets/img/about/our-contribution/our-contribution-' . $loop->iteration . '.png') }}"
                                                     alt="EduALL Contribution aset"
-                                                    class="object-cover w-full h-full aspect-[3/2] group-hover:hidden">
+                                                    class="object-cover w-full h-full aspect-[3/2] group-hover:hidden lazyload">
                                             </div>
                                             <div
                                                 class="flex items-end h-36 absolute bottom-12 group-hover:bottom-[76%] transition-all duration-700 pr-4">

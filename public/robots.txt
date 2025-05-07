@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /sg-en/*
+
+Sitemap: https://edu-all.com/sitemap

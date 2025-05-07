@@ -44,8 +44,9 @@
                         <div class="flex items-center gap-1">
                             @if ($blog->mentor)
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
-                                    target="_blank" class="flex justify-center items-center">
-                                    <div class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">
+                                    class="flex justify-center items-center">
+                                    <div
+                                        class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">
                                         <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                             class="w-full object-cover">
                                     </div>
@@ -90,8 +91,8 @@
                     </div>
                 </div>
                 <div class="mt-6 w-full">
-                    <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                        alt="EduALL {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96">
+                    <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                        alt="EduALL {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96 lazyload">
                 </div>
             </div>
         </div>
@@ -170,9 +171,8 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
-                            <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                class="h-72 object-cover object-center">
+                            <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center lazyload">
                             <div class="flex justify-between">
                                 <span class="font-newprimary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
@@ -258,13 +258,13 @@
         function blog_widget() {
             let paragraph = $('.blog_style p')
             let data = {!! $blog_widgets !!}
-            
+
             for (let index = 1; index <= paragraph.length; index++) {
                 data.forEach(element => {
                     if (index == element.position) {
                         let button = element.button_name ? element.button_name : 'Read More'
                         let image = element.image ? '{{ Storage::url('') }}' + element.image : ''
-                        let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'                        
+                        let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'
                         paragraph.eq(element.position - 1).append(
                             '<div class="p-4 bg-gray-100 mt-5 items-center rounded-2xl drop-shadow-xl border border-2 border-gray-100" role="alert">' +
                             '<div class="flex md:flex-row flex-col items-stretch gap-3">' +
