@@ -139,10 +139,7 @@
     </div>
     <div class="bg-white rounded-b-2xl p-4">
         @if (str_contains(request()->url(), 'careers') || str_contains(request()->url(), 'partnership'))
-            <a href="https://api.whatsapp.com/send?phone=6287888827686&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-            @else <a
-                href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-                @endif
+        <a href="https://bit.ly/partnerwithus-website" @else <a href="https://bit.ly/eduall-contactus" @endif
                 target="_blank"
                 class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
                 <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
