@@ -30,9 +30,9 @@
     <section class="py-16 h-screen bg-exclusive-program-school-header bg-cover bg-top" id="banner">
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full  justify-center md:justify-end main-container py-[18%] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white text-center uppercase md:pb-[2%]">
+                <h1 class="font-bold text-banner-title text-white text-center uppercase md:pb-[2%]">
                     {{ __('pages/programs/exclusive_program_school.title') }}
-                </h2>
+                </h1>
                 {{-- <!-- <x-registration-form :is-button="true" /> --> --}}
             </div>
         </div>

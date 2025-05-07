@@ -27,7 +27,7 @@
     {{-- ================================== Banner Section  ================================== --}}
     <!-- <section class="py-16 h-[100vh] bg-our-contribution-banner bg-cover bg-top" id="banner">
                 <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
-                    <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
+                    <h1 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
                         {{ __('pages/about_us/our_contribution.title') }}
                     </h2>
                 </div>
@@ -38,10 +38,10 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/about_us/our_contribution.title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
         </div>

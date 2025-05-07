@@ -30,10 +30,10 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/3 xl:w-1/3 md:pb-[2%]">
                     {{ __('pages/programs/admission_mentoring.title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
         </div>
@@ -66,7 +66,7 @@
 
             <div class="w-full border-t border-[#DADADA] pt-12 mt-12 max-w-4xl mx-auto">
                 <p class="font-newprimary text-center max-w-3xl mx-auto leading-6 text-base">
-                    {{ __('pages/programs/admission_mentoring.body') }}                
+                    {{ __('pages/programs/admission_mentoring.body') }}
                 </p>
             </div>
         </div>
@@ -146,7 +146,7 @@
             <div class="flex flex-col justify-center items-center">
                 <h2 class="font-bold text-section-title text-white text-center">Your University Admission Process Through</h2>
                 <h2 class="font-bold md:text-5xl text-xl text-newyellow text-center uppercase">4 aspects</h2>
-            </div>  
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 relative">
                 <div class="md:flex absolute w-52 h-52 hidden justify-center items-center bg-black rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                     <img loading="lazy" src="{{ asset('assets/logo/eduall-white.png') }}" alt="EduAll white logo"

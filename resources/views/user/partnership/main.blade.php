@@ -34,9 +34,9 @@
         {{-- <!-- <x-registration-form /> --> --}}
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container md:pb-[32vh] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white text-center uppercase md:w-1/2 xl:w-1/2">
+                <h1 class="font-bold text-banner-title text-white text-center uppercase md:w-1/2 xl:w-1/2">
                     {{ __('pages/about_us/partnership.title') }}
-                </h2>
+                </h1>
                 {{-- <!-- <x-registration-form :is-button="true" /> --> --}}
             </div>
         </div>

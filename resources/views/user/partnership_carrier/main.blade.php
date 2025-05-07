@@ -16,9 +16,9 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container md:pb-[18vh] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white text-center">
+                <h1 class="font-bold text-banner-title text-white text-center">
                     {{ __('pages/about_us/careers.tag') }}
-                </h2>
+                </h1>
                 <h2 class="font-medium text-lg text-white text-center mt-2">
                     {{ __('pages/about_us/careers.body') }}
                 </h2>
