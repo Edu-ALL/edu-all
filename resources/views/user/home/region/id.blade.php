@@ -32,10 +32,10 @@
                 </div>
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
-                <p
-                    class="font-bold text-[16px] md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
+                <h1
+                    class="font-bold text-[16h1x] md:text-[52px] text-white text-center lg:text-left max-w-lg mx-auto lg:mx-0 md:leading-[3.5rem]">
                     Your Gateway to Top Universities & Dream Careers
-                </p>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
             <div class="absolute md:bottom-10 left-0 right-0">
@@ -202,13 +202,9 @@
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-16 pb-4 bg-dark" id="mentors">
-        <!-- <div class="new-main-container py-8 hidden md:block">
-            <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
-        </div> -->
-
         <div class="new-main-container">
             <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                <h1 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h1>
+                <h2 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h2>
                 <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
             </div>
         </div>
@@ -253,16 +249,9 @@
     {{-- ========================================== Success Stories ========================================== --}}
     <section class="pt-4 pb-16 bg-dark">
         <div class="new-main-container flex flex-col items-center">
-            <!-- <div class="new-main-container py-8 hidden md:block">
-                <h1 class="font-bold text-section-title text-white text-center">OUR MENTEES’ STORIES & PROJECTS</h1>
-            </div> -->
-            <!-- <div class="new-main-container pt-8 pb-2 flex justify-between items-center md:hidden gap-4 w-full">
-                <h1 class="font-bold text-section-title text-white text-left md:text-center">OUR MENTEES’ <br/> STORIES</h1>
-                <a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-md whitespace-nowrap">See All</a>
-            </div> -->
             <div class=" w-full">
                 <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                    <h1 class="font-bold text-section-title text-white text-left w-full">OUR MENTEES’ STORIES</h1>
+                    <h2 class="font-bold text-section-title text-white text-left w-full">OUR MENTEES’ STORIES</h2>
                     <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
                 </div>
             </div>
@@ -291,28 +280,6 @@
                     </ul>
                 </div>
             </div>
-<!-- 
-            <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl py-12">
-                @foreach ($success_stories as $item)
-                    <div class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
-                        <img loading="lazy"
-                            data-original="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain">
-                        <div>
-                            <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
-                                class="absolute bottom-0 left-1/4 transform -translate-x-1/4 mb-6 text-newyellow bg-black font-medium text-sm py-1 mx-4 rounded-full w-3/4 text-center">
-                                Get to Know {{ explode(' ', trim($item->name))[0] }}
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="hidden md:block">
-                <x-button href="{{ route('success_stories', app()->getLocale()) }}" title="Click for more details"
-                    class="my-8" bg-color="newprimary" text-color="white" font-weight="medium" text-size="lg"
-                    padding-y="2" padding-x="4" hover-bg-color="newprimary" hover-padding-x="20" transition="all"
-                    duration="150" />
-            </div> -->
         </div>
     </section>
 
@@ -320,7 +287,7 @@
     @if (count($regular_talks) > 0 || count($events) > 0 || count($important_dates) > 0)
         <section class="md:py-16 py-10 bg-dark">
             <div class="new-main-container">
-                <h1 class="font-bold text-section-title text-white uppercase text-center">Upcoming Events & Important Dates</h1>
+                <h2 class="font-bold text-section-title text-white uppercase text-center">Upcoming Events & Important Dates</h2>
                 <div class="grid grid-cols-1 gap-3 mt-12">
                     {{-- Upcomming Event --}}
                     <div class="flex flex-col max-w-4xl mx-auto w-full">
@@ -467,9 +434,9 @@
         <section class="md:py-10 py-8">
             <div class="new-main-container">
                 <div class="flex items-center gap-4">
-                    <h1
+                    <h2
                         class="block font-bold text-sm md:text-2xl text-dark uppercase text-start font-newprimary md:w-[550px] w-[550px] relative">
-                        As Seen On</h1>
+                        As Seen On</h2>
                     <div class="relative flex overflow-x-hidden">
                         <div
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
