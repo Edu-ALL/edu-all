@@ -17,7 +17,7 @@ return [
             ],
             [
                 'link' => 'programs/academic-test-preparation',
-                'title' => 'Academic & Test Preparation',
+                'title' => 'Tutoring Program',
             ],
             [
                 'link' => 'programs/global-innovators-project',
@@ -44,7 +44,7 @@ return [
                 'title' => 'Kontribusi Kami',
             ],
             [
-                'link' => 'about/partnership-careers',
+                'link' => 'about/careers',
                 'title' => 'Kemitraan dan Karir',
             ],
         ],

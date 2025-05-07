@@ -34,7 +34,7 @@
     {{-- ================================== Bennefit Section  ================================== --}}
     <section class="py-10">
         <div class="flex flex-col gap-y-6 main-container">
-            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-people-assets-1024x348.webp') }}"
+            <img class="lazyload" data-src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/EEC-people-assets-1024x348.webp') }}"
                 alt="EduALL acad on demand">
         </div>
     </section>
@@ -48,8 +48,8 @@
                     {{ __('pages/programs/ib_ee_coaching_program.learn') }}</h2>
             </div>
             <div class="flex items-center main-container gap-x-8">
-                <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-07.webp') }}"
-                    alt="EduALL acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block">
+                <img  data-src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-07.webp') }}"
+                    alt="EduALL acad tutor what you will do asset" class="hidden w-2/6 object-cover md:block lazyload">
                 <div class="flex flex-col gap-4 w-full py-12 ">
                     @foreach (__('pages/programs/ib_ee_coaching_program.learn_list') as $item)
                         <div
@@ -61,9 +61,9 @@
                                     class="font-newprimary font-extrabold text-8xl md:text-9xl text-newprimary leading-none opacity-80 z-10">
                                     {{ $loop->iteration }}
                                 </span>
-                                <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/IB-' . $loop->index . '.webp') }}"
+                                <img  data-src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/IB-' . $loop->index . '.webp') }}"
                                     alt="what will you do {{ $loop->iteration }}"
-                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center">
+                                    class="absolute w-full h-full -m-2 sm:-m-6 object-cover object-center lazyload">
                             </div>
                             <div class="flex flex-col justify-center w-4/5 mt-2 pr-4 pb-2 sm:mt-0">
                                 <h4
@@ -98,8 +98,8 @@
                     </div>
                 </div>
             </div>
-            <img data-original="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
-                alt="EduALL Curriculum Overview" class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40">
+            <img  data-src="{{ asset('assets/img/academic_test_preparation/ib_ee_coaching_program/aset-13.webp') }}"
+                alt="EduALL Curriculum Overview" class="md:w-2/5 mx-6 mb-6 py-4  lg:pr-20 xl:pr-40 lazyload">
         </div>
     </section>
 

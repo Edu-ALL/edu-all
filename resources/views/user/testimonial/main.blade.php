@@ -144,7 +144,7 @@
                 {{ __('pages/resources/testimonial.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/resources/testimonial.bottom_btn') }}" type='secondary' bg-color="red" />
+                title="{{ __('pages/resources/testimonial.bottom_btn') }}" type='secondary' bg-color="red" is-rounded />
         </div>
 
     </section>

@@ -31,10 +31,10 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2 w-full">
-                    <h2
+                    <h1
                         class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:ml-12">
                         {{ __('pages/programs/academic_tutoring.title') }}
-                    </h2>
+                    </h1>
                     <x-registration-form :is-button="true" program-id="ACADX" />
                 </div>
             </div>
@@ -73,8 +73,8 @@
                                 <div class="h-40 md:h-36 w-40 md:w-44 bg-white flex flex-col items-center justify-center py-4 mb-4"
                                     style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                                     <div class="h-8">
-                                        <img data-original="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/benefits/benefit-0' . $loop->iteration . '.png') }}"
-                                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                        <img data-src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/benefits/benefit-0' . $loop->iteration . '.png') }}"
+                                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                     </div>
                                     <h4 class="font-newprimary text-sm font-bold text-center mt-4 leading-4">
                                         {{ $item['title'] }}

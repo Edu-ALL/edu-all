@@ -34,9 +34,9 @@
         {{-- <!-- <x-registration-form /> --> --}}
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container md:pb-[32vh] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white text-center uppercase md:w-1/2 xl:w-1/2">
+                <h1 class="font-bold text-banner-title text-white text-center uppercase md:w-1/2 xl:w-1/2">
                     {{ __('pages/about_us/partnership.title') }}
-                </h2>
+                </h1>
                 {{-- <!-- <x-registration-form :is-button="true" /> --> --}}
             </div>
         </div>
@@ -91,8 +91,8 @@
                                     <div
                                         class="flex flex-col items-center rounded-md border border-[#DEDEDE] pb-8 bg-white overflow-hidden">
                                         <div class="h-40 w-full overflow-hidden">
-                                            <img data-original="{{ asset('assets/img/about/partnership/' . $item['image']) }}"alt=""
-                                            class="h-full w-full object-cover">
+                                            <img  data-src="{{ asset('assets/img/about/partnership/' . $item['image']) }}"alt=""
+                                            class="h-full w-full object-cover lazyload">
                                         </div>
                                         <h3 class="font-bold text-2xl text-center mt-8">
                                             {!! $item['title'] !!}
@@ -104,7 +104,7 @@
                                         </div>
                                         <x-button href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
                                             title="{!! $item['btn'] !!}"
-                                            bg-color="newprimary" padding-y="1.5" />
+                                            bg-color="newprimary" padding-y="1.5" is-rounded />
                                     </div>
                                 </div>
                             </li>

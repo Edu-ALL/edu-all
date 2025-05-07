@@ -200,10 +200,10 @@
                                         <div class="h-24 w-28 bg-white flex flex-col items-center justify-center py-4 mb-4"
                                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                                             <div class="h-12 relative">
-                                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                                <img  data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
                                                     alt="EduALL - ilustration"
-                                                    class="w-full h-full object-center object-cover">
-                                                <div class="absolute -top-4 -right-4">
+                                                    class="w-full h-full object-center object-cover lazyload">
+                                                <div class="absolute -top-4 -right-4 ">
                                                     <div
                                                         class="h-4 w-4 bg-newprimary flex items-center justify-center rounded-full">
                                                         <i class="fa-solid fa-check fa-xs text-white"></i>

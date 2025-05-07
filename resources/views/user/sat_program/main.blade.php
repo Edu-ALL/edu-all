@@ -31,9 +31,10 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2 w-full">
-                    <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:ml-12">
+                    <h2
+                        class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:ml-12">
                         {{ __('pages/programs/sat_program.title') }}
-                    </h2>
+                    </h1>
                     <x-registration-form :is-button="true" program-id="SATPRIV" />
                 </div>
             </div>
@@ -52,8 +53,8 @@
                                         {{ $item['title'] }}
                                     </p>
                                     <!-- <p class="font-bold text-white text-banner-subdescription text-center">
-                                        {{ $item['sub_title'] }}
-                                    </p> -->
+                                                        {{ $item['sub_title'] }}
+                                                    </p> -->
                                     <p class="font-light text-white text-banner-subdescription text-center max-w-[240px]">
                                         {!! $item['sub_title'] !!}
                                     </p>
@@ -67,17 +68,17 @@
     </section>
 
     <!-- <section class="pt-16">
-        <div class="new-main-container">
-            <div class="flex flex-col justify-between gap-8 md:flex-row">
-                @foreach (__('pages/programs/sat_program.summary') as $item)
-                    <div class="flex flex-col items-center max-w-xs mx-auto">
-                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
-                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section> -->
+                        <div class="new-main-container">
+                            <div class="flex flex-col justify-between gap-8 md:flex-row">
+                                @foreach (__('pages/programs/sat_program.summary') as $item)
+    <div class="flex flex-col items-center max-w-xs mx-auto">
+                                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
+                                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
+                                    </div>
+    @endforeach
+                            </div>
+                        </div>
+                    </section> -->
 
     <section class="py-16">
         <div class="new-main-container">
@@ -87,8 +88,8 @@
                         <div class="h-full w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-12 mb-2">
-                                <img data-original="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                             </div>
                             <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">{{ $item['title'] }}
                             </h4>
@@ -147,7 +148,7 @@
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
                         <div class="desc mt-2 overflow-auto">
-                            <ul class="">
+                            <ul >
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
                                 @endforeach
@@ -203,10 +204,11 @@
                                                 {{ $list_item['description'] }}
                                             </h4>
                                             @if (isset($list_item['btn']))
-                                                <x-button href="{{ asset('assets/files/sat-program/2025_SAT Curriculum.pdf') }}"
+                                                <x-button
+                                                    href="{{ asset('assets/files/sat-program/2025_SAT Curriculum.pdf') }}"
                                                     title="{{ $list_item['btn'] }}" bg-color="newprimary" padding-x="2"
                                                     padding-y="1" margin-top="2" font-size="sm" color="black"
-                                                    bg-color="newyellow" target="_blank" />
+                                                    bg-color="newyellow" target="_blank" is-rounded />
                                             @endif
                                         </div>
                                     </div>
@@ -215,14 +217,14 @@
                             <div class="flex-1 text-center flex flex-col justify-end">
                                 <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
                                     title="{{ __('pages/programs/academic_test_preparation.lets_start') }}"
-                                    bg-color="newprimary" padding-x="8" padding-y="1.5" />
-                                <span class="mt-1 text-sm text-[#9C9C9C] text-center">
+                                    bg-color="newprimary" padding-x="8" padding-y="1.5" is-rounded />
+                                {{-- <span class="mt-1 text-sm text-[#9C9C9C] text-center">
                                     {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                     <a href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                                        class="underline text-newprimary hover:text-black">
+                                        class="underline text-newprimary hover:text-black rounded-lg">
                                         {{ __('pages/programs/admission_mentoring.book_now') }}
                                     </a>
-                                </span>
+                                </span> --}}
                             </div>
                         </div>
                     @endforeach
@@ -248,7 +250,7 @@
                 {{ __('pages/programs/sat_program.free_trial_title') }}
             </h2>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150">
+                class="px-4 md:px-12 py-3 font-bold font-newprimary text-sm md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all duration-150 rounded-lg">
                 {{ __('pages/programs/sat_program.free_trial_button') }}
             </a>
         </div>
@@ -284,8 +286,8 @@
         </div>
     </section>
 
-    <section
-        class="mt-12 py-12 bg-[url('../../../../../public/assets/img/academic_test_preparation/sat_program/revamp/banner-bottom.webp')] bg-cover bg-center">
+    <section class="mt-12 py-12 bg-cover bg-center"
+        style="background-image: url({{ asset('assets/img/academic_test_preparation/sat_program/revamp/banner-bottom.webp') }})">
         <div class="flex flex-col justify-center items-center new-main-container py-16 gap-2">
             <h2 class="font-newprimary font-bold text-2xl md:text-5xl text-white text-center md:text-left">
                 {{ __('pages/programs/sat_program.banner2_title') }}</h2>
@@ -293,7 +295,7 @@
                 {{ __('pages/programs/sat_program.banner2_body') }}
             </p>
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
-                class="mt-8 bg-white text-red font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150">{{ __('pages/programs/sat_program.banner2_button') }}</a>
+                class="mt-8 bg-white text-red font-newprimary text-lg font-semibold py-2 px-6 shadow-xl hover:scale-110 transition-all duration-150 rounded-lg">{{ __('pages/programs/sat_program.banner2_button') }}</a>
         </div>
     </section>
 
@@ -370,7 +372,7 @@
             <a href="{{ route('sign_me_sat_prep', app()->getLocale()) }}"
                 class="px-8 md:px-12 py-3 font-bold
                 font-newprimary text-xs md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all
-                duration-150">
+                duration-150 rounded-lg">
                 {{ __('pages/programs/sat_program.free_trial2_button') }}
             </a>
         </div>

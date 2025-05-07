@@ -55,8 +55,8 @@
                 @foreach (__('pages/home.benefit_list') as $item)
                     <div
                         class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                        <img loading="lazy" data-original="{{ asset('assets/img/home/' . $item['image']) }}"
-                            alt="ilustration 1" class="w-[120px] h-auto">
+                        <img loading="lazy"  data-src="{{ asset('assets/img/home/' . $item['image']) }}"
+                            alt="ilustration 1" class="w-[120px] h-auto lazyload">
                         <h4 class="mt-4 font-newprimary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
                         </h4>

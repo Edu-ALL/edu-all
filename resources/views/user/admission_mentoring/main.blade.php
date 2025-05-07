@@ -30,10 +30,10 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/3 xl:w-1/3 md:pb-[2%]">
                     {{ __('pages/programs/admission_mentoring.title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
         </div>
@@ -48,8 +48,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -66,7 +66,7 @@
 
             <div class="w-full border-t border-[#DADADA] pt-12 mt-12 max-w-4xl mx-auto">
                 <p class="font-newprimary text-center max-w-3xl mx-auto leading-6 text-base">
-                    {{ __('pages/programs/admission_mentoring.body') }}                
+                    {{ __('pages/programs/admission_mentoring.body') }}
                 </p>
             </div>
         </div>
@@ -99,8 +99,8 @@
                                 {!! $item['title'] !!}
                             </h3>
                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
-                                    class="h-full w-full object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"alt="EduALL"
+                                    class="h-full w-full object-cover lazyload">
                             </div>
                             <div class="w-full md:h-36 border-b border-b-[#DEDEDE]">
                                 <p class="text-base text-justify px-4 leading-5">
@@ -124,7 +124,7 @@
                             </div>
                             <x-button
                                 href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/{{ $item['link'] }}"
-                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" />
+                                title="{{ __('pages/programs/admission_mentoring.learn_more') }}" bg-color="newprimary" is-rounded />
                             <span class="mt-1 text-sm text-[#9C9C9C]">
                                 {{ __('pages/programs/admission_mentoring.or_book_free_consultation') }}
                                 <a href="{{ route($item['sign_me'], ['locale' => app()->getLocale()]) }}"
@@ -146,7 +146,7 @@
             <div class="flex flex-col justify-center items-center">
                 <h2 class="font-bold text-section-title text-white text-center">Your University Admission Process Through</h2>
                 <h2 class="font-bold md:text-5xl text-xl text-newyellow text-center uppercase">4 aspects</h2>
-            </div>  
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 relative">
                 <div class="md:flex absolute w-52 h-52 hidden justify-center items-center bg-black rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                     <img loading="lazy" src="{{ asset('assets/logo/eduall-white.png') }}" alt="EduAll white logo"
@@ -214,7 +214,7 @@
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"

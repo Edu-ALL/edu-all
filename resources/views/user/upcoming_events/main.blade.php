@@ -84,7 +84,7 @@
                 {{ __('pages/resources/upcoming_events.bottom_title') }}
             </h1>
             <x-button href="{{ route('contact_us', ['locale' => app()->getLocale()]) }}"
-                title="{{__('pages/resources/upcoming_events.bottom_btn') }}" type='secondary' bg-color="red" />
+                title="{{__('pages/resources/upcoming_events.bottom_btn') }}" type='secondary' bg-color="red" is-rounded />
         </div>
     </section>
 @endsection

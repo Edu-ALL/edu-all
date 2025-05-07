@@ -16,9 +16,9 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container md:pb-[18vh] md:pt-[15%] gap-2">
-                <h2 class="font-bold text-banner-title text-white text-center">
+                <h1 class="font-bold text-banner-title text-white text-center">
                     {{ __('pages/about_us/careers.tag') }}
-                </h2>
+                </h1>
                 <h2 class="font-medium text-lg text-white text-center mt-2">
                     {{ __('pages/about_us/careers.body') }}
                 </h2>
@@ -35,8 +35,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/about/partnership-career/benefit/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/about/partnership-career/benefit/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -176,8 +176,8 @@
                             @for ($i = 1; $i < 7; $i++)
                                 <li class="splide__slide">
                                     <div class="px-4">
-                                        <img data-original="{{ asset('assets/img/about/partnership-career/gallery/gallery_' . $i . '.webp') }}"
-                                            alt="EduALL Career Activity" class="w-full rounded-lg">
+                                        <img  data-src="{{ asset('assets/img/about/partnership-career/gallery/gallery_' . $i . '.webp') }}"
+                                            alt="EduALL Career Activity" class="w-full rounded-lg lazyload">
                                     </div>
                                 </li>
                             @endfor

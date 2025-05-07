@@ -158,9 +158,9 @@
                                         <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                                             class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                                             <div class="flex flex-col gap-2">
-                                                <img data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                                     alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                                    class="h-72 object-cover object-center">
+                                                    class="h-72 object-cover object-center lazyload">
                                                 <div class="flex justify-between">
                                                     <span class="font-newprimary text-xs text-[#7C7C7C]">
                                                         {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}

@@ -82,7 +82,7 @@
                             <div class="bg-[#EAEAEA] py-8 px-10 rounded-xl shadow-2xl w-full">
                                 <form action="" method="POST" id="myForm">
                                     @csrf
-                                    <div class="">
+                                    <div >
                                         <div class="flex flex-col">
                                             <div class="mb-3">
                                                 <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>

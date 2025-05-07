@@ -68,7 +68,7 @@
                 </div>
                 <div class="text-center mt-4">
                     <a href="{{ url(app()->getLocale()) }}/blog"
-                        class="bg-red py-1 px-4 text-white shadow hover:bg-red/75">
+                        class="bg-red py-1 px-4 text-white shadow hover:bg-red/75 rounded-lg">
                         {{ __('pages/footer.article_button') }}
                     </a>
                 </div>

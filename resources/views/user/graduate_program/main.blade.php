@@ -30,10 +30,10 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/3 xl:w-1/3 md:pb-[2%]">
                     {{ __('pages/programs/graduate_program.title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
 
@@ -74,8 +74,8 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img  data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -92,12 +92,12 @@
 
             <div class="w-full border-t border-[#DADADA] pt-12 mt-12 max-w-4xl mx-auto">
                 <p class="font-newprimary text-center max-w-3xl mx-auto leading-6 text-base">
-                    Our Graduate Admission Mentoring Program focuses on students’ educational & professional profile enhancement while also helping develop the gameplan for their top graduate schools strategies.                
+                    Our Graduate Admission Mentoring Program focuses on students’ educational & professional profile enhancement while also helping develop the gameplan for their top graduate schools strategies.
                 </p>
             </div>
         </div>
     </section>
-    
+
     <section class="py-16">
         <div class="new-main-container">
             <div class="flex flex-col items-center justify-center">
@@ -108,9 +108,9 @@
             <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                 <div class="w-full md:w-1/2 overflow-hidden rounded-t-lg">
                     @foreach (__('pages/programs/graduate_program.learning_scope_points') as $item)
-                        <img data-original="{{ asset('assets/img/admission mentoring/Graduate/revamp/' . $item['image']) }}"
+                        <img  data-src="{{ asset('assets/img/admission mentoring/Graduate/revamp/' . $item['image']) }}"
                             alt="EduALL - ilustration"
-                            class="w-full h-full object-center object-cover scale-105 aspect-[7/6] z-10">
+                            class="w-full h-full object-center object-cover scale-105 aspect-[7/6] z-10 lazyload">
                         <div class="w-full -mt-4 z-20 relative">
                             <a href="{{ asset('assets/files/programs/graduate/' . $item['link']) }}"
                                 target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
@@ -155,7 +155,7 @@
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
@@ -255,7 +255,7 @@
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
         var splides = document.getElementsByClassName('splide');
-        
+
         new Splide(splides[0], {
             type: 'loop',
             perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,

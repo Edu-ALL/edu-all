@@ -1,7 +1,7 @@
 {{-- Registration Component  --}}
 @if (isset($isButton) && $isButton == true)
-    <div class="md:hidden flex justify-center mt-2 z-[50]">
-        <button class="bg-newprimary py-2 px-4 text-white" onclick="open_registration()">Register Now</button>
+    <div class="md:hidden flex justify-center mt-2 md:z-[50] z-[10]">
+        <button class="bg-newprimary py-2 px-4 text-white rounded-lg" onclick="open_registration()">Register Now</button>
     </div>
 @else
     @if($isPartner) 

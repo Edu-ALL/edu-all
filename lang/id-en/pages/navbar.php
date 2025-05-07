@@ -17,7 +17,7 @@ return [
             ],
             [
                 'link' => 'programs/academic-test-preparation',
-                'title' => 'Academic & Test Preparation',
+                'title' => 'Tutoring Program',
             ],
             [
                 'link' => 'programs/global-innovators-project',
@@ -44,7 +44,7 @@ return [
                 'title' => 'Our Contribution',
             ],
             [
-                'link' => 'about/partnership-careers',
+                'link' => 'about/careers',
                 'title' => 'Careers',
             ],
         ],
@@ -87,8 +87,8 @@ return [
     ],
 
     // contact us
-    'contact_us' => [
-        'link' => 'contact-us',
-        'title' => 'Contact Us',
-    ],
+    // 'contact_us' => [
+    //     'link' => 'contact-us',
+    //     'title' => 'Contact Us',
+    // ],
 ];
