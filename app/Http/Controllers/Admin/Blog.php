@@ -356,6 +356,7 @@ class Blog extends Controller
         DB::beginTransaction();
         try {
             $blogs = Blogs::find($id);
+
             if ($request->hasFile('blog_thumbnail')) {
                 if ($old_image_path_en = $blogs->blog_thumbnail) {
                     $file_path = 'project/eduall-website/blogs/' . $blogs->created_at->format('Y') . '/' . $blogs->created_at->format('m') . '/' . $old_image_path_en;
@@ -371,7 +372,7 @@ class Blog extends Controller
                 Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $blogs->blog_thumbnail = $fileName;
             }
-            $blogs->old_slug = $blogs->slug;
+            $blogs->old_slug = $blogs->old_slug != $blogs->slug ? $blogs->slug : $blogs->old_slug;
             $blogs->blog_thumbnail_alt = $request->blog_alt;
             $blogs->cat_id = $request->category;
             $blogs->mt_id = $request->mentor;
