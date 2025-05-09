@@ -122,6 +122,7 @@ class HomePageController extends Controller
 
             if ($request::get('g-recaptcha-response')) {
                 Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
+                Log::notice('Email partnership successfully sent.', $data['data']);
                 return redirect($locale . '/sign-me/thank-partnership');
             } else {
                 return Redirect::back();
