@@ -25,14 +25,6 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <!-- <section class="py-16 h-[100vh] bg-our-contribution-banner bg-cover bg-top" id="banner">
-                <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
-                    <h1 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
-                        {{ __('pages/about_us/our_contribution.title') }}
-                    </h2>
-                </div>
-            </section> -->
-
     <section class="py-16 h-screen bg-our-contribution-banner bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">

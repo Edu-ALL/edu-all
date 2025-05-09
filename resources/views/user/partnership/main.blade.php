@@ -12,24 +12,6 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    {{-- <section class="-z-10">
-        <div class="relative flex w-full h-screen left-0 overflow-hidden">
-            <div class="absolute main-container w-full h-full lg:bg-transparent bg-[#0000FF]/50">
-                <div class="flex items-center h-full justify-center">
-                    <div class="flex-row w-3/5">
-                        <h1
-                            class="font-bold text-banner-title text-white tracking-normal mb-3 lg:text-start text-center capitalize">
-                            {{ __('pages/about_us/partnership_careers.title') }}
-                        </h1>
-                    </div>
-                </div>
-            </div>
-
-            <img loading="lazy" src="{{ asset('assets/img/banner/partnership_carreer.webp') }}" alt="EduALL Partnership Banner"
-                class="lazy w-full h-full object-cover object-center">
-        </div>
-    </section> --}}
-
     <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
         {{-- <!-- <x-registration-form /> --> --}}
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
