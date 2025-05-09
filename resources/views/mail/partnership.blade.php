@@ -60,6 +60,11 @@
             <td>{{ $data['data']['email'] }}</td>
         </tr>
         <tr>
+            <td>Phone</td>
+            <td>:</td>
+            <td>{{ $data['data']['phone_number'] }}</td>
+        </tr>
+        <tr>
             <td>Inquiry</td>
             <td>:</td>
             <td>{{ $data['data']['inquiry'] }}</td>

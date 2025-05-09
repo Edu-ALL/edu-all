@@ -116,7 +116,7 @@
                                                 <div class="mb-3 md:w-1/2">
                                                     <label for="phone_number" class="text-dark text-sm py-2">Phone
                                                         Number</label>
-                                                    <input type="text"
+                                                    <input type="text" name="phone_number"
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                         placeholder="Phone Number *" id="phone_number" required>
                                                 </div>

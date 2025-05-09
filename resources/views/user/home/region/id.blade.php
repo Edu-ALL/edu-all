@@ -48,45 +48,45 @@
                         <div class="flex md:flex-row flex-wrap gap-6 md:justify-between justify-center items-center w-full">
                             {{-- Acceptance --}}
                             <div class="flex flex-col md:w-auto w-[50%] justify-center items-center">
-                                <h3 class="font-bold text-white text-banner-description text-center">
+                                <p class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->accepatance }}
-                                </h3>
+                                </p>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     at Best-Fit Universities
                                 </span>
                             </div>
                             {{-- Mentees --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h3 class="font-bold text-white text-banner-description text-center">
+                                <p class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->mentees }}
-                                </h3>
+                                </p>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     mentees
                                 </span>
                             </div>
                             {{-- Scholarship --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h3 class="font-bold text-white text-banner-description text-center">
+                                <p class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->scholarship }}
-                                </h3>
+                                </p>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     in Scholarship Awards
                                 </span>
                             </div>
                             {{-- SAT Score --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h3 class="font-bold text-white text-banner-description text-center">
+                                <p class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->sat_score }}
-                                </h3>
+                                </p>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     on SAT Score
                                 </span>
                             </div>
                             {{-- Statisfaction Rate --}}
                             <div class="flex flex-col justify-center items-center">
-                                <h3 class="font-bold text-white text-banner-description text-center">
+                                <p class="font-bold text-white text-banner-description text-center">
                                     {{ $banners->statisfaction_rate }}
-                                </h3>
+                                </p>
                                 <span class="font-light text-white text-banner-subdescription text-center">
                                     Student Projects Launched
                                 </span>
@@ -340,7 +340,7 @@
                                 </div>
                             </div>
                         @endif
-                        
+
                         @if ((count($regular_talks) > 0 || count($events) > 0) && count($important_dates) > 0)
                             <hr class="mt-8 bg-white w-full h-[0.0625rem]">
                         @endif
@@ -376,13 +376,13 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="flex">
-                                                                            <div class="w-16"></div>  
+                                                                            <div class="w-16"></div>
                                                                             <div class="rounded-xl bg-white py-4 pl-14 pr-8 w-full">
                                                                                 <h3 class="{{ strlen($important_date->title) > 20 ? 'md:text-base' : 'md:text-lg' }} text-sm font-bold text-dark text-ellipsis whitespace-nowrap h-4 md:h-6">
                                                                                     {{ $important_date->title }}
                                                                                 </h3>
-                                                                            </div>  
-                                                                        </div>                                                      
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 @if($important_date->link) </a> @else </div> @endif
                                                         </div>

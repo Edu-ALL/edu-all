@@ -194,13 +194,9 @@
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-16 pb-4 bg-dark" id="mentors">
-        <!-- <div class="new-main-container py-8 hidden md:block">
-            <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
-        </div> -->
-
         <div class="new-main-container">
             <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                <h1 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h1>
+                <h2 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h2>
                 <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
             </div>
         </div>
