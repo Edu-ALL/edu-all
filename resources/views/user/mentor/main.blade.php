@@ -39,22 +39,6 @@
         </div>
     </section>
 
-    <!-- <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
-                <div class="main-container md:w-4/6 w-full">
-                    <div class="flex flex-col items-start">
-                        <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
-                            {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                        <div class="mb-6 w-full font-newprimary font-medium text-white text-center md:mb-12">
-                            {!! __('pages/about_us/mentor.benner_body') !!}
-                        </div>
-                        <div class="w-full flex justify-center">
-                            <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
-                                bg-color="newprimary" />
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-16 pb-4 bg-dark" id="mentors">
         <div class="flex flex-col items-center">

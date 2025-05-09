@@ -110,8 +110,8 @@
             <div class="new-main-container flex flex-col items-center">
                 <div class=" w-full">
                     <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                        <h1 class="font-bold text-section-title text-white text-left w-full">Our Mentees’ Success stories
-                        </h1>
+                        <h2 class="font-bold text-section-title text-white text-left w-full">Our Mentees’ Success stories
+                        </h2>
                         <div class="border border-newyellow rounded-md py-1 px-6"><a
                                 href="{{ route('success_stories', app()->getLocale()) . '?category=skillset-tutoring' }}"
                                 class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>

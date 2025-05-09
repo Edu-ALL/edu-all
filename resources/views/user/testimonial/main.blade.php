@@ -10,9 +10,9 @@
     {{-- ================================== Top Section  ================================== --}}
     <section class="py-16">
         <div class="main-container">
-            <h2 class="font-newprimary font-bold text-4xl text-[#6696E2] text-center">
+            <h1 class="font-newprimary font-bold text-4xl text-[#6696E2] text-center">
                 {{ __('pages/resources/testimonial.title') }}
-            </h2>
+            </h1>
         </div>
     </section>
 
