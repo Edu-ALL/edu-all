@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Admin\Blog;
 use App\Http\Controllers\Admin\BlogWidget;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategorys;
@@ -73,7 +74,13 @@ class BlogPageController extends Controller
     {
         $lang = substr($locale, 3, 2);
         $blog = Blogs::where('slug', $slug)->first();
-        
+        $old_slug = Blogs::where('old_slug', $slug)->first();
+
+        // check with old_slug 
+        if ($old_slug) {
+            return redirect()->route('detail_blog', ['locale' => 'id-' . $lang, 'slug' => $old_slug->slug])->setStatusCode(301);
+        }
+
 
         // check if blog is exsit
         // or blog lang not equal with locale
@@ -83,7 +90,7 @@ class BlogPageController extends Controller
             if (!$blog || $lang != $blog->lang) {
                 abort(404);
             } else {
-                return redirect()->route('detail_blog', ['locale' => 'id-'.$lang, 'slug' => $slug]);
+                return redirect()->route('detail_blog', ['locale' => 'id-' . $lang, 'slug' => $slug]);
             }
         }
 
@@ -117,13 +124,15 @@ class BlogPageController extends Controller
 
         $blog_widgets =  BlogWidgets::where('blog_id', $blog->id)->get();
 
-
-        // return $blog->blog_description;
         // Blog Section
-        $doc =  new DOMDocument();
-        $doc->loadHTML($blog->blog_description, LIBXML_NOERROR);
-        $title_list = $doc->getElementsByTagName('h2');
+        $doc = new \DOMDocument();
+        libxml_use_internal_errors(true); // Avoid warnings
 
+        // Prepend meta charset to force UTF-8
+        $html = '<?xml encoding="utf-8" ?>' . $blog->blog_description;
+        $doc->loadHTML($html, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        $title_list = $doc->getElementsByTagName('h2');
 
         $blog_section = [];
         foreach ($title_list as $index => $title) {
