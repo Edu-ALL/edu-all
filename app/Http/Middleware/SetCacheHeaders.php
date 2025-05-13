@@ -19,7 +19,7 @@ class SetCacheHeaders
         $response = $next($request);
 
         // Set Cache-Control headers
-        // $response->header('Cache-Control', 'public, max-age=604800'); // 1 week (604800 seconds)
+        $response->header('Cache-Control', 'public, max-age=604800'); // 1 week (604800 seconds)
 
         return $response;
     }
