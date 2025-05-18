@@ -35,7 +35,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
-            \App\Http\Middleware\SetCacheHeaders::class,
+            // \App\Http\Middleware\SetCacheHeaders::class,
         ],
 
         'api' => [
@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
         'auth.expires' => \App\Http\Middleware\SessionExpired::class,
         'remove_public' => \App\Http\Middleware\RemovePublicSegment::class,
+        'cache_header' => \App\Http\Middleware\SetCacheHeaders::class,
     ];
 }
