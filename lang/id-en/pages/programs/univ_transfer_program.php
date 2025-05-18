@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "University Transfer",
-    'meta_description' => 'Make a smooth transition to your dream university with EduALL&#039;s admission mentoring program for university transfer students. Professional guidance and support. Apply now',
+    'meta_title' => "University Transfer Program for Study Abroad - EduAll",
+    'meta_description' => 'Advance your academic journey with our university transfer program, designed to help international students transition smoothly to top global universities.',
 
     'navbar_title' => "TRANSFER",
     'title' => "UNIVERSITY TRANSFER",

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => 'Skillset Tutoring - EduALL Programs',
-    'meta_description' => 'Skillset Tutoring: Transform your passion into an outstanding achievement and become a pro in a field that matters most to you.',
+    'meta_title' => 'Skillset Tutoring Program for Study Abroad - EduAll',
+    'meta_description' => "Programming course and Subject Olympiad programs to support students' applications to world universities",
 
     'title' => 'Skillset Tutoring',
     'body' => 'Transform your passion into an outstanding achievement and become a pro in a field that matters most to you.',

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "SAT Program - EduALL Programs",
-    'meta_description' => 'SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years',
+    'meta_title' => "SAT Test Preparation Course & Classes - EduAll",
+    'meta_description' => "Take EduAll's SAT Test preparation class with the best curriculum and can be taken by grades 10-12. Take a FREE Trial now!",
 
     'navbar_title' => "Standardized Test",
     'title' => "Standardized Test",

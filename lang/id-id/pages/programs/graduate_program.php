@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Bimbingan Mentoring untuk Program Pascasarjana - EduALL Programs",
-    'meta_description' => 'Capai kesuksesan di studi pascasarjana dengan program mentoring penerimaan EduALL. Dapatkan panduan profesional dan dukungan penuh. Daftar sekarang',
+    'meta_title' => "Program Persiapan S2 di Kampus Luar Negeri - EduAll",
+    'meta_description' => 'Ikuti program bimbingan persiapan kuliah S2 di universitas luar negeri dari EduAll dengan kurikulum lengkap dan mentor berpengalaman.',
     'title' => "GRADUATE",
     'body' => "UNIVERSITY ADMISSION MENTORING",
 
