@@ -36,8 +36,8 @@ $our_programs = [
 ];
 
 return [
-    'meta_title' => "Academic & Test Preparation for your top university application success",
-    'meta_description' => 'Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.',
+    'meta_title' => "Study Abroad Test Preparation Program - EduAll",
+    'meta_description' => 'Intensive program to help students take university entrance exams abroad. Pick your class and book your Free Trial now!',
 
     "navbar_title" => "Academic & Test Prep",
 

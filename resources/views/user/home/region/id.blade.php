@@ -415,9 +415,9 @@
         <div class="lg:px-10 xl:px-20 max-w-screen-xl mx-auto">
             <div class="flex md:flex-row flex-col items-center bg-dark md:bg-white md:rounded-3xl overflow-hidden md:mx-14">
                 <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 bg-white py-6 px-6 -mt-6 md:mt-0 rounded-t-3xl md:rounded-none">
-                    <h2 class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
+                    <p class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
                         {{ __('pages/home.bottom') }}
-                    </h2>
+                    </p>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
                         title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
                 </div>
@@ -434,9 +434,9 @@
         <section class="md:py-10 py-8">
             <div class="new-main-container">
                 <div class="flex items-center gap-4">
-                    <h2
+                    <h3
                         class="block font-bold text-sm md:text-2xl text-dark uppercase text-start font-newprimary md:w-[550px] w-[550px] relative">
-                        As Seen On</h2>
+                        As Seen On</h3>
                     <div class="relative flex overflow-x-hidden">
                         <div
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">

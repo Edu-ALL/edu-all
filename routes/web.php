@@ -385,7 +385,7 @@ Route::redirect('/study-abroad-scholarship-application-prep/', '/id-id', 301);
 Route::redirect('/university-of-manchester:-a-full-essential-profile-overview!/', '/id-id', 301);
 
 
-Route::middleware(['remove_public'])->group(function () {
+Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('robots.txt', function () {
         return response()->file(public_path('robots.txt'));
     });

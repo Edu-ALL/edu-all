@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Academic Tutoring Services for IB & A Level - EduALL",
-    'meta_description' => 'Get the best academic tutoring services with EduALL. We offer private tutoring, online tutoring, and tutoring programs for students',
+    'meta_title' => "Cambridge IGCSE, A-Level and IB Tutoring - EduAll",
+    'meta_description' => 'Cambridge, A-level and IB exam course classes for grade 9-12 students with the best and most efficient curriculum at EduAll.',
 
     'title' => 'ACADEMIC TUTORING',
     'description' => 'Elevate your scores to unlock top university offers with our comprehensive academic tutoring.',

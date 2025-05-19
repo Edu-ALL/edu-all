@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Academic Tutoring Services for IB & A Level - EduALL",
-    'meta_description' => 'Tingkatkan skor Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami, yang mencakup berbagai mata pelajaran.',
+    'meta_title' => "Persiapan Ujian Cambridge IGSCE, A-Level dan IB - EduAll",
+    'meta_description' => 'Ikuti kelas kursus ujian cambridge, A-level, dan IB untuk siswa grade 9-12 dengan kurikulum terbaik dan terefisien di EduAll',
 
     'title' => 'ACADEMIC TUTORING',
     'description' => 'Tingkatkan skor Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami.',

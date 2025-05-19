@@ -35,8 +35,8 @@ $our_programs = [
 ];
 
 return [
-    'meta_title' => "Persiapan Akademis & Tes untuk kesuksesan aplikasi universitas top Anda",
-    'meta_description' => 'Temukan pendekatan kami yang terbukti untuk meningkatkan transkrip akademik Anda dan memaksimalkan skor tes untuk penerimaan universitas elit.',
+    'meta_title' => "Kelas Persiapan Tes Kuliah di Luar Negeri - EduAll",
+    'meta_description' => 'Program intensif bantu siswa mengikuti tes masuk universitas di luar negeri. Pilih kelas dan ambil Free Trial sekarang!',
 
     "benefits" => [
         [
