@@ -76,8 +76,8 @@ class BlogPageController extends Controller
         $blog = Blogs::where('slug', $slug)->first();
         $old_slug = Blogs::where('old_slug', $slug)->first();
 
-        // check with old_slug 
-        if ($old_slug) {
+        // check with old_slug and empty new_slug
+        if ($old_slug && !$blog) {
             return redirect()->route('detail_blog', ['locale' => 'id-' . $lang, 'slug' => $old_slug->slug])->setStatusCode(301);
         }
 
