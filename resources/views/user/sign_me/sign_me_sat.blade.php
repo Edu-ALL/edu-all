@@ -195,8 +195,9 @@
                         <div class="h-full w-36 md:w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-12 mb-2">
-                                <img  data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-contain lazyload">
+                                <img data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration"
+                                    class="w-full h-full object-center object-contain lazyload">
                             </div>
                             <h4 class="font-newprimary text-xs md:text-base font-bold text-center mt-2 leading-4">
                                 {{ $item['title'] }}
@@ -271,7 +272,8 @@
                     class="flex flex-col sm:flex-row items-stretch justify-center gap-3 md:gap-8 w-full max-w-4xl mx-auto">
                     @foreach ($sat_programs as $program)
                         <div class="flex flex-col w-full sm:w-1/2 my-4">
-                            <div class="rounded-2xl bg-white p-6 flex flex-col gap-4 h-full shadow-[0_-4px_6px_-1px_rgb(0,0,0,0.1),_0_2px_4px_2px_rgb(0,0,0,0.1)]">
+                            <div
+                                class="rounded-2xl bg-white p-6 flex flex-col gap-4 h-full shadow-[0_-4px_6px_-1px_rgb(0,0,0,0.1),_0_2px_4px_2px_rgb(0,0,0,0.1)]">
                                 <h2
                                     class="text-2xl md:text-3xl font-bold text-indigo-600 uppercase text-center md:text-left">
                                     {{ $program['title'] }}
@@ -305,9 +307,11 @@
                                                 <i class="fa-solid fa-check fa-xs text-white"></i>
                                             </div>
                                             <div class="flex-1">
-                                                <p class="font-bold text-base text-gray-800 leading-5">{{ $feature['title'] }}
+                                                <p class="font-bold text-base text-gray-800 leading-5">
+                                                    {{ $feature['title'] }}
                                                 </p>
-                                                <p class="text-sm text-gray-600 leading-5">{{ $feature['description'] }}</p>
+                                                <p class="text-sm text-gray-600 leading-5">{{ $feature['description'] }}
+                                                </p>
                                             </div>
                                         </li>
                                     @endforeach
@@ -330,17 +334,18 @@
 
     <section class="py-8">
         <div class="new-main-container">
-            <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-2 leading-4 mb-12 text-newprimary">What they
+            <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-2 leading-4 mb-12 text-newprimary">
+                What they
                 say
             </h2>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-8 w-full max-w-4xl mx-auto">
                 <div class="w-full">
-                    <img  data-src="{{ asset('assets/img/sign-me/sat/what_they_say_1.webp') }}"
-                        alt="EduALL - ilustration" class="w-full object-contain lazyload">
+                    <img data-src="{{ asset('assets/img/sign-me/sat/what_they_say_1.webp') }}" alt="EduALL - ilustration"
+                        class="w-full object-contain lazyload">
                 </div>
                 <div class="w-full">
-                    <img  data-src="{{ asset('assets/img/sign-me/sat/what_they_say_2.webp') }}"
-                        alt="EduALL - ilustration" class="w-full object-contain lazyload">
+                    <img data-src="{{ asset('assets/img/sign-me/sat/what_they_say_2.webp') }}" alt="EduALL - ilustration"
+                        class="w-full object-contain lazyload">
                 </div>
             </div>
             <div class="w-full mt-8">
@@ -530,6 +535,7 @@
                 'interest_prog': "SATPRIV",
                 'destination_country': [],
                 'lead_id': "LS079",
+                'utm_content': "{{ request()->get('utm_content') ?? null }}"
             }
 
             const inputs = document.querySelectorAll('#myForm' + area + ' input, #myForm' + area + ' select');
@@ -556,7 +562,7 @@
 
                 // if (captcha) {
                 $.ajax({
-                    url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
+                    url: '{{ env('CRM_DOMAIN') }}register/public',
                     type: 'POST', // Specify the request type (POST)
                     contentType: 'application/json', // Set content type to JSON
                     data: JSON.stringify(formData), // Convert formData to a JSON string
