@@ -87,8 +87,8 @@ return [
     ],
 
     // contact us
-    'contact_us' => [
-        'link' => 'contact-us',
-        'title' => 'Kontak Kami',
-    ],
+    // 'contact_us' => [
+    //     'link' => 'contact-us',
+    //     'title' => 'Kontak Kami',
+    // ],
 ];

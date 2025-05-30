@@ -203,11 +203,11 @@
             var share_container_bottom = document.querySelector(".share_container_bottom");
             var main_navbar = document.querySelector("header");
 
-            if (window.scrollY > 0) {
-                main_navbar.classList.add('-translate-y-[120px]');
-            } else {
-                main_navbar.classList.remove('-translate-y-[120px]');
-            }
+            // if (window.scrollY > 0) {
+            //     main_navbar.classList.add('-translate-y-[120px]');
+            // } else {
+            //     main_navbar.classList.remove('-translate-y-[120px]');
+            // }
 
             if (window.scrollY > 80) {
                 share_container.classList.remove('hidden');
