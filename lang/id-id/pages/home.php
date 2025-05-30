@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "EduALL: Pintu gerbang Anda ke Universitas Ternama dan Karier Impian",
-    'meta_description' => 'Kami menyediakan mentoring university admission 1 on 1, career exploration, dan program peningkatan akademis berbasis penelitian.',
+    'meta_title' => "Kuliah di Luar Negeri dengan EduALL | Konsultan Pendidikan Global",
+    'meta_description' => 'Raih impian kuliah di luar negeri bersama EduALL. Dapatkan bimbingan masuk universitas top dunia, persiapan tes, dan strategi terbaik dari mentor berpengalaman.',
     'benefit_list' => [
         [
             'title' => 'Aspire',
@@ -48,7 +48,7 @@ return [
 
     'bottom' => "Daftar sekarang untuk mendapatkan konsultasi awal gratis!",
     'bottom_btn' => "Daftar Sekarang",
-    
+
     'wa' => [
         'title' => 'Punya pertanyaan tentang program kami?',
         'sub_title' => 'Kami siap membantu.',

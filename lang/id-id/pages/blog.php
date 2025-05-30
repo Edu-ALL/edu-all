@@ -1,7 +1,7 @@
 <?php
 return [
-    'meta_title' => "Anda dapat menemukan artikel tentang studi di luar negeri, universitas di US, UK, dan Asia",
-    'meta_description' => 'Temukan update dan cerita terbaru kami di halaman blog. Artikel seputar studi di luar negeri, universitas di Amerika Serikat, Inggris, dan Asia ada di sini.',
+    'meta_title' => "Blog EduALL | Berita & Artikel tentang Kuliah di Luar Negeri Terbaru",
+    'meta_description' => 'Baca artikel tentang kuliah di luar negeri dan berita terbaru di Blog EduAll',
 
     // General
     'top_title' => 'EduALL Journal',

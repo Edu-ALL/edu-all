@@ -175,7 +175,7 @@
                                 alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center lazyload">
                             <div class="flex justify-between">
                                 <span class="font-newprimary text-xs text-[#7C7C7C]">
-                                    {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                                    {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                 </span>
                                 <span class="font-newprimary text-xs text-[#7C7C7C]">
                                     {{ $blog->click_count }}

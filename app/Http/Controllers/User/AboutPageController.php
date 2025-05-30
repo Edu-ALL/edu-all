@@ -86,7 +86,7 @@ class AboutPageController extends Controller
 
             return redirect($locale . '/contact-us/thank');
         } catch (Exception $e) {
-            Log::error('Send mentor email failed : ' . $e->getMessage());
+            Log::error('Send contact email failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
     }

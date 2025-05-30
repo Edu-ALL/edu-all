@@ -200,7 +200,7 @@
                                         <div class="h-24 w-28 bg-white flex flex-col items-center justify-center py-4 mb-4"
                                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                                             <div class="h-12 relative">
-                                                <img  data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
                                                     alt="EduALL - ilustration"
                                                     class="w-full h-full object-center object-cover lazyload">
                                                 <div class="absolute -top-4 -right-4 ">
@@ -468,6 +468,7 @@
                 'interest_prog': "AAUP",
                 'destination_country': [],
                 'lead_id': "LS079",
+                'utm_content': "{{ request()->get('utm_content') ?? null }}"
             }
 
             const inputs = document.querySelectorAll('#myForm' + area + ' input, #myForm' + area + ' select');
@@ -494,7 +495,7 @@
 
                 // if (captcha) {
                 $.ajax({
-                    url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
+                    url: '{{ env('CRM_DOMAIN') }}register/public', // Replace with the API endpoint
                     type: 'POST', // Specify the request type (POST)
                     contentType: 'application/json', // Set content type to JSON
                     data: JSON.stringify(formData), // Convert formData to a JSON string
