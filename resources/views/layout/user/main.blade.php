@@ -21,14 +21,19 @@
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
     @endif
 
-    <link rel="canonical" href="{{ preg_replace('/^www\./i', '', url()->current()) }}" />
 
     {{-- Canonical  --}}
     @if (app()->getLocale() == 'sg-en' && !request()->is(app()->getLocale() . '/about'))
         <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
 
-    <link rel="canonical" href="{{ rtrim(url()->current(), '/') }}" />
+    @php
+        $canonicalUrl = url()->current();
+        $canonicalUrl = preg_replace('/^https?:\/\/www\./i', 'https://', $canonicalUrl);
+        $canonicalUrl = rtrim($canonicalUrl, '/');
+    @endphp
+
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
