@@ -53,7 +53,7 @@
                 "email":"info@edu-all.com",
                 "url":"https://edu-all.com/id-en/sign-me/admission-mentoring"
             },
-            "sameAs":["https://www.instagram.com/eduall.official","https://www.youtube.com/@eduall.official"],
+            "sameAs":["https://www.instagram.com/eduall.official","https://www.youtube.com/@eduall.official"]
         }
     </script>
 
