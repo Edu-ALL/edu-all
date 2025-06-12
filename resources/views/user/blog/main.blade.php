@@ -1,17 +1,15 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'EduJournal', 'url' => route('blogs', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/blog.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/blog.meta_title') }}" />
     <meta name="description" content="{{ __('pages/blog.meta_description') }}" />
-@endsection
-
-@section('head')
-    @foreach ($blogs as $blog)
-        <meta name="title" content="{{ $blog->seo_title }}">
-        <meta name="description" content="{{ $blog->seo_desc }}">
-        <meta name="keyword" content="{{ $blog->seo_keyword }}">
-    @endforeach
 @endsection
 
 @section('content')
@@ -156,8 +154,9 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9] rounded-lg">
                         <div class="flex flex-col gap-2 h-full justify-between">
-                            <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center rounded-lg lazyload">
+                            <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                alt="EduALL {{ $blog->blog_thumbnail_alt }}"
+                                class="h-72 object-cover object-center rounded-lg lazyload">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
                                     {{ $blog->blog_category->category_name }}

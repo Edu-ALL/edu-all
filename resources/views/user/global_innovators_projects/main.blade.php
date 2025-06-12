@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Global Innovators Project', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/programs/global_innovators_projects.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/global_innovators_projects.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/global_innovators_projects.meta_description') }}" />

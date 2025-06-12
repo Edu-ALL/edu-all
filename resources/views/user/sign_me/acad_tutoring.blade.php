@@ -1,6 +1,12 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Sign Up Academic Tutoring', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/sign_me/acad_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/sign_me/acad_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/sign_me/acad_tutoring.meta_description') }}" />
@@ -62,7 +68,7 @@
                             </li>
                             <li class="flex">
                                 <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
-                                
+
                                 <span>
                                     Recommendation and timeline on the next action to take for your application
                                 </span>

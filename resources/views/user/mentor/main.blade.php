@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Our Mentor', 'url' => route('mentor', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/mentor.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/mentor.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/mentor.meta_description') }}" />
@@ -47,10 +54,12 @@
                     <div class="md:px-8">
                         <div class="splide splides mentor-1" role="group">
                             <div class="splide__arrows text-white">
-                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                <button class="splide__arrow splide__arrow--prev"
+                                    style="background: transparent; left: -42px">
                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                 </button>
-                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                <button class="splide__arrow splide__arrow--next"
+                                    style="background: transparent; right: -42px">
                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                 </button>
                             </div>
@@ -86,10 +95,12 @@
                     <div class="md:px-8">
                         <div class="splide splides mentor-2" role="group">
                             <div class="splide__arrows text-black">
-                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                <button class="splide__arrow splide__arrow--prev"
+                                    style="background: transparent; left: -42px">
                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                 </button>
-                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                <button class="splide__arrow splide__arrow--next"
+                                    style="background: transparent; right: -42px">
                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                 </button>
                             </div>

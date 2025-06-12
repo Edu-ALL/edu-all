@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Careers', 'url' => route('partnership_careers', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/careers.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/careers.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/careers.meta_description') }}" />
@@ -35,7 +42,7 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img  data-src="{{ asset('assets/img/about/partnership-career/benefit/' . $item['image']) }}"
+                                <img data-src="{{ asset('assets/img/about/partnership-career/benefit/' . $item['image']) }}"
                                     alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
@@ -176,7 +183,7 @@
                             @for ($i = 1; $i < 7; $i++)
                                 <li class="splide__slide">
                                     <div class="px-4">
-                                        <img  data-src="{{ asset('assets/img/about/partnership-career/gallery/gallery_' . $i . '.webp') }}"
+                                        <img data-src="{{ asset('assets/img/about/partnership-career/gallery/gallery_' . $i . '.webp') }}"
                                             alt="EduALL Career Activity" class="w-full rounded-lg lazyload">
                                     </div>
                                 </li>

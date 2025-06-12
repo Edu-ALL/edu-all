@@ -1,6 +1,10 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [['name' => 'Home', 'url' => url('/' . app()->getLocale())]];
+    @endphp
+
     <title>{{ __('pages/home.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/home.meta_title') }}" />
     <meta name="description" content="{{ __('pages/home.meta_description') }}" />
@@ -26,9 +30,9 @@
                 </video>
             @elseif ($banners->image)
                 <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                    <img
-                        data-src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
-                        alt="{{ $banners->alt }}" class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0 lazyload">
+                    <img data-src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
+                        alt="{{ $banners->alt }}"
+                        class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0 lazyload">
                 </div>
             @endif
             <div class="absolute bottom-72 md:bottom-52 left-0 right-0 w-full main-container">
@@ -205,7 +209,9 @@
         <div class="new-main-container">
             <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
                 <h2 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h2>
-                <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+                <div class="border border-newyellow rounded-md py-1 px-6"><a
+                        href="{{ route('mentor', app()->getLocale()) }}"
+                        class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
             </div>
         </div>
         <div class="flex flex-col items-center">
@@ -214,10 +220,12 @@
                     <div class="md:px-8">
                         <div class="splide splides" role="group">
                             <div class="splide__arrows text-white">
-                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                <button class="splide__arrow splide__arrow--prev"
+                                    style="background: transparent; left: -42px">
                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                 </button>
-                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                <button class="splide__arrow splide__arrow--next"
+                                    style="background: transparent; right: -42px">
                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                 </button>
                             </div>
@@ -237,11 +245,11 @@
                     </div>
                 </div>
                 <!-- <div class="hidden md:flex justify-center">
-                    <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
-                        bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
-                        hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                        transition="all duration-150" />
-                </div> -->
+                                <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                                    bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                                    hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                                    transition="all duration-150" />
+                            </div> -->
             </div>
         </div>
     </section>
@@ -252,7 +260,9 @@
             <div class=" w-full">
                 <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
                     <h2 class="font-bold text-section-title text-white text-left w-full">OUR MENTEES’ STORIES</h2>
-                    <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('success_stories', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+                    <div class="border border-newyellow rounded-md py-1 px-6"><a
+                            href="{{ route('success_stories', app()->getLocale()) }}"
+                            class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
                 </div>
             </div>
 
@@ -264,8 +274,7 @@
                                 <div class="splide__slide__container pb-8 h-full w-full">
                                     <div
                                         class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
-                                        <img
-                                            data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
+                                        <img data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
                                             alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain lazyload">
                                         <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
                                             <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
@@ -287,7 +296,8 @@
     @if (count($regular_talks) > 0 || count($events) > 0 || count($important_dates) > 0)
         <section class="md:py-16 py-10 bg-dark">
             <div class="new-main-container">
-                <h2 class="font-bold text-section-title text-white uppercase text-center">Upcoming Events & Important Dates</h2>
+                <h2 class="font-bold text-section-title text-white uppercase text-center">Upcoming Events & Important Dates
+                </h2>
                 <div class="grid grid-cols-1 gap-3 mt-12">
                     {{-- Upcomming Event --}}
                     <div class="flex flex-col max-w-4xl mx-auto w-full">
@@ -297,10 +307,12 @@
                                 <div class="splide splides w-full" role="group">
                                     @if (count($regular_talks) + count($events) > 2)
                                         <div class="splide__arrows text-white">
-                                            <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                            <button class="splide__arrow splide__arrow--prev"
+                                                style="background: transparent; left: -42px">
                                                 <i class="fa-solid fa-chevron-left text-4xl"></i>
                                             </button>
-                                            <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                            <button class="splide__arrow splide__arrow--next"
+                                                style="background: transparent; right: -42px">
                                                 <i class="fa-solid fa-chevron-right text-4xl"></i>
                                             </button>
                                         </div>
@@ -313,8 +325,7 @@
                                                         <div class="splide__slide__container">
                                                             <a href="{{ $regular_talk->event_rsvp_link }}"
                                                                 target="_blank">
-                                                                <img
-                                                                    data-src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
+                                                                <img data-src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
                                                                     alt="{{ $regular_talk->event_alt }}"
                                                                     class="object-contain w-full lazyload">
                                                             </a>
@@ -327,8 +338,7 @@
                                                 @foreach ($events as $event)
                                                     <li class="splide__slide px-1.5 md:px-4">
                                                         <div class="splide__slide__container">
-                                                            <img
-                                                                data-src="{{ Storage::url('upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
+                                                            <img data-src="{{ Storage::url('upcoming-event/' . $event->created_at->format('Y') . '/' . $event->created_at->format('m') . '/' . $event->event_thumbnail) }}"
                                                                 alt="{{ $event->event_alt }}"
                                                                 class="object-cover w-full h-full lazyload">
                                                         </div>
@@ -352,10 +362,12 @@
                                     <div class="splide splide-important-dates w-full" role="group">
                                         @if (count($important_dates) > 2)
                                             <div class="splide__arrows text-white">
-                                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                                <button class="splide__arrow splide__arrow--prev"
+                                                    style="background: transparent; left: -42px">
                                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                                 </button>
-                                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                                <button class="splide__arrow splide__arrow--next"
+                                                    style="background: transparent; right: -42px">
                                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                                 </button>
                                             </div>
@@ -365,61 +377,78 @@
                                                 @foreach ($important_dates as $important_date)
                                                     <li class="splide__slide px-1.5 md:px-4 py-4">
                                                         <div class="splide__slide__container">
-                                                                @if($important_date->link) <a href="{{ $important_date->link }}" target="_blank"> @else <div> @endif
-                                                                    <div class="relative py-2 md:py-3 {{ $important_date->link ? 'hover:scale-105 transform duration-300' : '' }}">
-                                                                        <div class="absolute left-0 bottom-0 top-0 flex flex-col px-2 w-20 md:w-24 gap-1">
-                                                                            <div class="bg-newprimary w-full rounded-t-lg rounded-b-sm text-center text-white md:text-xs text-xs font-semibold py-1">
-                                                                                {{ date('F', strtotime($important_date->date)) }}
-                                                                            </div>
-                                                                            <div class="bg-newprimary h-full w-full rounded-b-lg rounded-t-sm text-center text-white font-bold text-3xl md:text-4xl py-1 flex items-center justify-center">
-                                                                                {{ date('d', strtotime($important_date->date)) }}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="flex">
-                                                                            <div class="w-16"></div>
-                                                                            <div class="rounded-xl bg-white py-4 pl-14 pr-8 w-full">
-                                                                                <h3 class="{{ strlen($important_date->title) > 20 ? 'md:text-base' : 'md:text-lg' }} text-sm font-bold text-dark text-ellipsis whitespace-nowrap h-4 md:h-6">
-                                                                                    {{ $important_date->title }}
-                                                                                </h3>
-                                                                            </div>
-                                                                        </div>
+                                                            @if ($important_date->link)
+                                                                <a href="{{ $important_date->link }}" target="_blank">
+                                                                @else
+                                                                    <div>
+                                                            @endif
+                                                            <div
+                                                                class="relative py-2 md:py-3 {{ $important_date->link ? 'hover:scale-105 transform duration-300' : '' }}">
+                                                                <div
+                                                                    class="absolute left-0 bottom-0 top-0 flex flex-col px-2 w-20 md:w-24 gap-1">
+                                                                    <div
+                                                                        class="bg-newprimary w-full rounded-t-lg rounded-b-sm text-center text-white md:text-xs text-xs font-semibold py-1">
+                                                                        {{ date('F', strtotime($important_date->date)) }}
                                                                     </div>
-                                                                @if($important_date->link) </a> @else </div> @endif
+                                                                    <div
+                                                                        class="bg-newprimary h-full w-full rounded-b-lg rounded-t-sm text-center text-white font-bold text-3xl md:text-4xl py-1 flex items-center justify-center">
+                                                                        {{ date('d', strtotime($important_date->date)) }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex">
+                                                                    <div class="w-16"></div>
+                                                                    <div
+                                                                        class="rounded-xl bg-white py-4 pl-14 pr-8 w-full">
+                                                                        <h3
+                                                                            class="{{ strlen($important_date->title) > 20 ? 'md:text-base' : 'md:text-lg' }} text-sm font-bold text-dark text-ellipsis whitespace-nowrap h-4 md:h-6">
+                                                                            {{ $important_date->title }}
+                                                                        </h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @if ($important_date->link)
+                                                                </a>
+                                                            @else
                                                         </div>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
+                                                @endif
                                         </div>
-                                    </div>
-                                </div>
-                                <x-button href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                    title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark" padding-x="4" is-rounded />
-                                <!-- <div class="w-full">
-                                    <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                        target="_blank"
-                                        class="inline-block py-3 bg-red text-center text-white text-base px-6">
-                                        more important dates
-                                    </a>
-                                </div> -->
-                            </div>
-                        @endif
+                                        </li>
+                        @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+            <x-button href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark"
+                padding-x="4" is-rounded />
+            <!-- <div class="w-full">
+                                                <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                                    target="_blank"
+                                                    class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                                    more important dates
+                                                </a>
+                                            </div> -->
+            </div>
+    @endif
+    </div>
+    </div>
+    </div>
+    </section>
     @endif
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section
-        class="md:pt-8 md:pb-20 md:bg-dark">
+    <section class="md:pt-8 md:pb-20 md:bg-dark">
         <div class="lg:px-10 xl:px-20 max-w-screen-xl mx-auto">
-            <div class="flex md:flex-row flex-col items-center bg-dark md:bg-white md:rounded-3xl overflow-hidden md:mx-14">
-                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 bg-white py-6 px-6 -mt-6 md:mt-0 rounded-t-3xl md:rounded-none">
+            <div
+                class="flex md:flex-row flex-col items-center bg-dark md:bg-white md:rounded-3xl overflow-hidden md:mx-14">
+                <div
+                    class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 bg-white py-6 px-6 -mt-6 md:mt-0 rounded-t-3xl md:rounded-none">
                     <p class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
                         {{ __('pages/home.bottom') }}
                     </p>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" is-rounded />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4"
+                        is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1">
                     <img data-src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
@@ -441,8 +470,7 @@
                         <div
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                             @foreach ($as_seen_on as $item)
-                                <img
-                                    data-src="{{ Storage::url('as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                <img data-src="{{ Storage::url('as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                     alt="{{ $item->alt }}" class="md:w-2/12 w-1/3 h-full object-contain lazyload">
                             @endforeach
                         </div>

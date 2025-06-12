@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'EduJournal', 'url' => route('blogs', [app()->getLocale()])],
+            ['name' => $blog->blog_title, 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ $blog->blog_title }}</title>
     <meta property=og:url content="{{ url(app()->getLocale() . '/blog/' . $blog->slug) }}">
     <meta property=og:image
@@ -11,6 +18,28 @@
     <meta name="title" content="{{ $blog->seo_title }}">
     <meta name="description" content="{{ $blog->seo_desc }}">
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{{ $blog->blog_title }}",
+            "image": "{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}",  
+            "author": {
+                "@type": "Person",
+                "name": " {{ $blog->mentor->mentor_fullname ?? 'EduALL' }}"
+            },  
+            "publisher": {
+                "@type": "Organization",
+                "name": "EduALL",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ asset('favicon.png') }}"
+                }
+            },
+            "datePublished": "{{$blog->publish_date}}"
+        }
+    </script>
 @endsection
 
 @section('content')
@@ -22,7 +51,8 @@
         <div class="share_container hidden justify-between items-center gap-1 ">
             <div class="share share_button flex items-center bg-newyellow text-dark  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
-                <i class="fa fa-share-alt-square md:mr-2" aria-hidden="true"></i> <span class="hidden md:inline-block">Share</span>
+                <i class="fa fa-share-alt-square md:mr-2" aria-hidden="true"></i> <span
+                    class="hidden md:inline-block">Share</span>
             </div>
             <div class="mt-2 share share_icon hidden">
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
@@ -91,7 +121,7 @@
                     </div>
                 </div>
                 <div class="mt-6 w-full">
-                    <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                    <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                         alt="EduALL {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96 lazyload">
                 </div>
             </div>
@@ -171,8 +201,9 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
-                            <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center lazyload">
+                            <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                alt="EduALL {{ $blog->blog_thumbnail_alt }}"
+                                class="h-72 object-cover object-center lazyload">
                             <div class="flex justify-between">
                                 <span class="font-newprimary text-xs text-[#7C7C7C]">
                                     {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}

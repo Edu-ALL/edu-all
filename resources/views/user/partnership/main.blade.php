@@ -1,9 +1,16 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Partnership', 'url' => route('partnership', [app()->getLocale()])],
+        ];
+    @endphp
     <title>Partnership</title>
     <meta name="title" content="Partnership" />
-    <meta name="description" content="Partner with Us to Make an Impact, Explore different ways we can work together and create meaningful impact" />
+    <meta name="description"
+        content="Partner with Us to Make an Impact, Explore different ways we can work together and create meaningful impact" />
 @endsection
 
 @section('sub-navbar')
@@ -15,7 +22,8 @@
     <section class="py-16 h-screen bg-our-partnership-banner bg-cover bg-top" id="banner">
         {{-- <!-- <x-registration-form /> --> --}}
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container md:pb-[32vh] md:pt-[15%] gap-2">
+            <div
+                class="flex flex-col h-full items-center md:items-center justify-center md:justify-end main-container md:pb-[32vh] md:pt-[15%] gap-2">
                 <h1 class="font-bold text-banner-title text-white text-center uppercase md:w-1/2 xl:w-1/2">
                     {{ __('pages/about_us/partnership.title') }}
                 </h1>
@@ -36,7 +44,8 @@
                                 <p class="font-bold text-white text-3xl md:text-4xl text-center">
                                     {{ $item['title'] }}
                                 </p>
-                                <p class="font-light text-white text-banner-subdescription text-center h-10 flex items-center">
+                                <p
+                                    class="font-light text-white text-banner-subdescription text-center h-10 flex items-center">
                                     {!! $item['comment'] !!}
                                 </p>
                             </div>
@@ -73,20 +82,21 @@
                                     <div
                                         class="flex flex-col items-center rounded-md border border-[#DEDEDE] pb-8 bg-white overflow-hidden">
                                         <div class="h-40 w-full overflow-hidden">
-                                            <img  data-src="{{ asset('assets/img/about/partnership/' . $item['image']) }}"alt=""
-                                            class="h-full w-full object-cover lazyload">
+                                            <img data-src="{{ asset('assets/img/about/partnership/' . $item['image']) }}"alt=""
+                                                class="h-full w-full object-cover lazyload">
                                         </div>
                                         <h3 class="font-bold text-2xl text-center mt-8">
                                             {!! $item['title'] !!}
                                         </h3>
-                                        <div class="w-full lg:h-8 mt-4 lg:mt-4 lg:mb-4 flex items-start justify-center px-2">
+                                        <div
+                                            class="w-full lg:h-8 mt-4 lg:mt-4 lg:mb-4 flex items-start justify-center px-2">
                                             <p class="text-sm font-newprimary text-center">
                                                 {{ $item['body'] }}
                                             </p>
                                         </div>
                                         <x-button href="{{ url(app()->getLocale()) }}/{{ $item['link'] }}"
-                                            title="{!! $item['btn'] !!}"
-                                            bg-color="newprimary" padding-y="1.5" is-rounded />
+                                            title="{!! $item['btn'] !!}" bg-color="newprimary" padding-y="1.5"
+                                            is-rounded />
                                     </div>
                                 </div>
                             </li>
@@ -109,8 +119,7 @@
                         @for ($i = 0; $i < 3; $i++)
                             <div class="flex-none md:mx-8">
                                 <img src="{{ asset('assets/img/about/partnership/logo-partners-new.webp') }}"
-                                     alt="Partnership Image"
-                                     class="md:h-[450px] h-80 w-auto object-contain">
+                                    alt="Partnership Image" class="md:h-[450px] h-80 w-auto object-contain">
                             </div>
                         @endfor
                     </div>
@@ -118,8 +127,6 @@
             </div>
         </div>
     </section>
-
-
 @endsection
 
 @push('script')

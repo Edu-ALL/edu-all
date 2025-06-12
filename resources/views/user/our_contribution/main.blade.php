@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Our Contribution', 'url' => route('our_contribution', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/our_contribution.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/our_contribution.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/our_contribution.meta_description') }}" />
@@ -85,7 +92,7 @@
                                         class="bg-newprimary border-newprimary border rounded-lg p-4 hover:bg-white transition-all duration-700 group relative w-full">
                                         <div class="flex flex-col justify-between">
                                             <div class="rounded-lg overflow-hidden h-52">
-                                                <img  data-src="{{ asset('assets/img/about/our-contribution/our-contribution-' . $loop->iteration . '.png') }}"
+                                                <img data-src="{{ asset('assets/img/about/our-contribution/our-contribution-' . $loop->iteration . '.png') }}"
                                                     alt="EduALL Contribution aset"
                                                     class="object-cover w-full h-full aspect-[3/2] group-hover:hidden lazyload">
                                             </div>

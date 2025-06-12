@@ -1,6 +1,14 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Our Mentor', 'url' => route('mentor', [app()->getLocale()])],
+            ['name' => $mentor->mentor_fullname, 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ $mentor->mentor_fullname }}{{ __('pages/about_us/mentor.meta_title_detail') }}</title>
     <meta name="title"
         content="{{ $mentor->meta_title != '' ? $mentor->meta_title : $mentor->mentor_fullname . '' . __('pages/about_us/mentor.meta_title_detail') }}" />
@@ -13,10 +21,10 @@
     <section class="py-16 bg-cover bg-center">
         <div class="main-container">
             <div class="grid grid-cols-1 items-center gap-x-14 gap-y-8 md:grid-cols-5">
-                <div
-                    class="relative justify-self-end max-w-sm w-full mx-auto md:mx-0 md:col-span-2 xl:row-span-2">
+                <div class="relative justify-self-end max-w-sm w-full mx-auto md:mx-0 md:col-span-2 xl:row-span-2">
                     <div class="font-secondary">
-                        <div class="mentor-thumbnail w-full overflow-hidden rounded-2xl bg-[#D9D9D9] relative z-10 h-full front">
+                        <div
+                            class="mentor-thumbnail w-full overflow-hidden rounded-2xl bg-[#D9D9D9] relative z-10 h-full front">
                             <img loading="lazy"
                                 src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                 alt="{{ $mentor->thumbnail_alt ?? 'Default Alt Text' }}" class="h-full w-full object-cover">
@@ -36,21 +44,23 @@
                                 @foreach ($mentor->mentor_value as $item)
                                     <li class="flex items-start gap-4 mt-8">
                                         <div class="w-4 h-4">
-                                            <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i> 
+                                            <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                         </div>
-                                        <h4 class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis mt-1" >
+                                        <h4
+                                            class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis mt-1">
                                             {{ $item->value }}
                                         </h4>
                                     </li>
-                                @endforeach 
+                                @endforeach
                             @endif
-                            
+
                             @if ($mentor->value_1)
                                 <li class="flex items-start gap-4">
                                     <div class="w-4 h-4">
                                         <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                     </div>
-                                    <h4 class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis">
+                                    <h4
+                                        class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis">
                                         {{ $mentor->value_1 }}
                                     </h4>
                                 </li>
@@ -58,9 +68,10 @@
                             @if ($mentor->value_2)
                                 <li class="flex items-start gap-4">
                                     <div class="w-4 h-4">
-                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>     
+                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                     </div>
-                                    <h4 class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis" >
+                                    <h4
+                                        class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis">
                                         {{ $mentor->value_2 }}
                                     </h4>
                                 </li>
@@ -68,9 +79,10 @@
                             @if ($mentor->value_3)
                                 <li class="flex items-start gap-4">
                                     <div class="w-4 h-4">
-                                    <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>    
+                                        <i class="fa-solid fa-check-circle text-newprimary rounded-full bg-white"></i>
                                     </div>
-                                    <h4 class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis" >
+                                    <h4
+                                        class="text-card-small font-medium text-dark leading-5 overflow-hidden text-ellipsis">
                                         {{ $mentor->value_3 }}
                                     </h4>
                                 </li>
@@ -158,7 +170,7 @@
                                         <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                                             class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                                             <div class="flex flex-col gap-2">
-                                                <img  data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                                     alt="EduALL {{ $blog->blog_thumbnail_alt }}"
                                                     class="h-72 object-cover object-center lazyload">
                                                 <div class="flex justify-between">

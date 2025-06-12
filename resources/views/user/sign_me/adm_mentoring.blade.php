@@ -1,6 +1,12 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Sign Up Mentoring', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/sign_me/adm_mentoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/sign_me/adm_mentoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/sign_me/adm_mentoring.meta_description') }}" />

@@ -1,6 +1,14 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Tutoring Program', 'url' => route('academic_test_preparation', [app()->getLocale()])],
+            ['name' => 'Academic Tutoring', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/programs/academic_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/academic_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/academic_tutoring.meta_description') }}" />
@@ -74,7 +82,8 @@
                                     style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                                     <div class="h-8">
                                         <img data-src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/benefits/benefit-0' . $loop->iteration . '.png') }}"
-                                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
+                                            alt="EduALL - ilustration"
+                                            class="w-full h-full object-center object-cover lazyload">
                                     </div>
                                     <h4 class="font-newprimary text-sm font-bold text-center mt-4 leading-4">
                                         {{ $item['title'] }}
@@ -317,7 +326,7 @@
             <div class="mt-8 md:px-28">
                 <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_english.webp') : asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_bahasa.webp') }}"
                     alt="EduALL" class="w-full h-full object-contain hidden md:block">
-                <img src="{{  asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_mobile.webp') }}"
+                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_mobile.webp') }}"
                     alt="EduALL" class="w-full h-full object-contain md:hidden">
             </div>
         </div>

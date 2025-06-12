@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Resources', 'url' => '#'],
+            ['name' => 'Success Stories', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/success_stories/success_stories.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/success_stories/success_stories.meta_title') }}" />
     <meta name="description" content="{{ __('pages/success_stories/success_stories.meta_description') }}" />
@@ -30,7 +37,7 @@
 @section('content')
     <section class="py-24 mt-16">
         <div class="new-main-container">
-            @if(count($success_stories) == 0)
+            @if (count($success_stories) == 0)
                 <div class="text-center py-10">
                     <h2 class="text-2xl font-bold text-gray-800">No Success Stories Found</h2>
                     <p class="text-gray-600">No success stories available. More coming soon!</p>
@@ -43,7 +50,7 @@
                                 class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
                                 <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden"
                                     id="{{ explode(' ', trim($item->name))[0] }}">
-                                    <img  data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                    <img data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
                                         alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover lazyload">
                                 </div>
                                 <div class="w-full md:w-6/12 h-full">
@@ -54,16 +61,17 @@
                                             <div class="h-0.5 w-2/5 bg-[#393636]"></div>
 
                                             {{-- Bedge 1 --}}
-                                            <div class="font-newprimary text-newprimary text-base font-semibold leading-tight">
+                                            <div
+                                                class="font-newprimary text-newprimary text-base font-semibold leading-tight">
                                                 {!! $item->badge_1 !!}
                                             </div>
                                             <div class="mt-2 font-newprimary text-dark">
                                                 <ul class="flex flex-col gap-1.5">
                                                     @foreach (array_filter(
-                                                        array_map(function ($item) {
-                                                            return trim(strip_tags($item));
-                                                        }, explode('<li>', $item->badge_2)),
-                                                    ) as $badge)
+            array_map(function ($item) {
+                return trim(strip_tags($item));
+            }, explode('<li>', $item->badge_2)),
+        ) as $badge)
                                                         <li
                                                             class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
                                                             <span
@@ -77,7 +85,7 @@
                                             </div>
                                             {{-- Achievement --}}
                                             @if ($tab_section != 'passion_project')
-                                                <img  data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
+                                                <img data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
                                                     alt="{{ $item->achievement_alt }}" class="mt-2 lazyload">
                                             @endif
                                         </div>
@@ -91,7 +99,8 @@
                                                 class="font-newprimary text-white px-1.5 py-0.5 rounded-[4px] font-normal text-sm inline-flex items-center bg-newprimary">
                                                 Read More
                                                 <div class="w-4">
-                                                    <svg fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <svg fill="#fff" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
                                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
                                                             stroke-linejoin="round">

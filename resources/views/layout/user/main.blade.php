@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link href="{{ asset('favicon.png') }}" rel="icon">
+    <meta property=og:type content="website">
     <meta name="robots" content="index,follow" />
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
 
@@ -21,33 +21,7 @@
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
     @endif
 
-
-    <script type="application/ld+json">
-        {
-          "@context": "http://schema.org/",
-          "@type": "Product",
-          "name": "Best Jakarta Independent University Consultant",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue" : "5.0",
-            "ratingCount": "65",
-            "reviewCount": "65"
-          }
-        }
-    </script>
-    <script type="application/ld+json">
-        {"@context":"https://schema.org","@type":"EducationalOrganization","name":"EduALL","url":"https://edu-all.com","ContactPoint":{"@type":"ContactPoint","contactType":"Meet Our Mentors","telephone":"+62 878-8882-7686","email":"info@edu-all.com","url":"https://edu-all.com/id-en/sign-me/admission-mentoring"},"sameAs":["https://www.instagram.com/allineduspace/","https://www.youtube.com/@allineduspace"]}
-    </script>
-
-
-    <script type="application/ld+json">
-        {"@context":"https://schema.org","@graph":[
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About Us","description":"Personalized Independent University Consultant","url":"https://edu-all.com/id-en/about"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Our Programs","description":"Tailored Programs for Top Uni Application Success","url":"https://edu-all.com/id-en/programs"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Success Stories","description":"Discover Our Mentee's Inspiring Success Stories","url":"https://edu-all.com/id-en/resources/success-stories"},
-            {"@context":"https://schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upcoming Events","description":"Exciting Events Crafted for Your Needs","url":"https://edu-all.com/id-en/resources/upcoming-events"}]
-        }
-    </script>
+    <link rel="canonical" href="{{ preg_replace('/^www\./i', '', url()->current()) }}" />
 
     {{-- Canonical  --}}
     @if (app()->getLocale() == 'sg-en' && !request()->is(app()->getLocale() . '/about'))
@@ -66,6 +40,22 @@
 
     {{-- Blog SEO --}}
     @yield('head')
+    <x-breadcrumb-schema :breadcrumbs="$breadcrumbs ?? []" />
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"EducationalOrganization",
+            "name":"EduALL","url":"https://edu-all.com",
+            "ContactPoint":{
+                "@type":"ContactPoint",
+                "contactType":"Meet Our Mentors",
+                "telephone":"+62 819-9888-8138",
+                "email":"info@edu-all.com",
+                "url":"https://edu-all.com/id-en/sign-me/admission-mentoring"
+            },
+            "sameAs":["https://www.instagram.com/eduall.official","https://www.youtube.com/@eduall.official"],
+        }
+    </script>
 
     {{-- <link href="/css/app.css" rel="stylesheet"> --}}
     @vite('resources/css/app.css')

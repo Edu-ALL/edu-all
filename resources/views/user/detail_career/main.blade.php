@@ -1,6 +1,14 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Careers', 'url' => route('partnership_careers', [app()->getLocale()])],
+            ['name' => $career->job_position, 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/careers.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/careers.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/careers.meta_description') }}" />
@@ -76,7 +84,8 @@
                     class="flex items-center text-newprimary hover:text-newprimary-dark transition-colors duration-300 mb-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                     Back to Careers
                 </a>

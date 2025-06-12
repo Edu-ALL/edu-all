@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Resources', 'url' => '#'],
+            ['name' => 'Testimonial', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/resources/testimonial.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/resources/testimonial.meta_title') }}" />
     <meta name="description" content="{{ __('pages/resources/testimonial.meta_description') }}" />

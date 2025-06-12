@@ -1,6 +1,14 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Tutoring Program', 'url' => route('academic_test_preparation', [app()->getLocale()])],
+            ['name' => 'Standardized Test', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/programs/sat_program.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/sat_program.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/sat_program.meta_description') }}" />
@@ -53,8 +61,8 @@
                                         {{ $item['title'] }}
                                     </p>
                                     <!-- <p class="font-bold text-white text-banner-subdescription text-center">
-                                                        {{ $item['sub_title'] }}
-                                                    </p> -->
+                                                            {{ $item['sub_title'] }}
+                                                        </p> -->
                                     <p class="font-light text-white text-banner-subdescription text-center max-w-[240px]">
                                         {!! $item['sub_title'] !!}
                                     </p>
@@ -68,17 +76,17 @@
     </section>
 
     <!-- <section class="pt-16">
-                        <div class="new-main-container">
-                            <div class="flex flex-col justify-between gap-8 md:flex-row">
-                                @foreach (__('pages/programs/sat_program.summary') as $item)
+                            <div class="new-main-container">
+                                <div class="flex flex-col justify-between gap-8 md:flex-row">
+                                    @foreach (__('pages/programs/sat_program.summary') as $item)
     <div class="flex flex-col items-center max-w-xs mx-auto">
-                                        <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
-                                        <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
-                                    </div>
+                                            <h3 class="font-bold text-banner-title text-newprimary">{{ $item['title'] }}</h3>
+                                            <span class="text-sm uppercase text-center mt-2">{!! $item['sub_title'] !!}</span>
+                                        </div>
     @endforeach
+                                </div>
                             </div>
-                        </div>
-                    </section> -->
+                        </section> -->
 
     <section class="py-16">
         <div class="new-main-container">
@@ -88,7 +96,7 @@
                         <div class="h-full w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-12 mb-2">
-                                <img  data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
+                                <img data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/' . $item['image']) }}"
                                     alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                             </div>
                             <h4 class="font-newprimary text-base font-bold text-center mt-2 leading-4">{{ $item['title'] }}
@@ -148,7 +156,7 @@
                         class="sat-program-s3-item @if ($loop->index == 0) sat-program-s3-active @else sat-program-s3-inactive @endif  relative overflow-hidden">
                         <span>{{ $item['title'] }}</span>
                         <div class="desc mt-2 overflow-auto">
-                            <ul >
+                            <ul>
                                 @foreach ($item['description'] as $description)
                                     <li> {{ $description }} </li>
                                 @endforeach

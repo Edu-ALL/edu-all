@@ -1,6 +1,14 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Tutoring Program', 'url' => route('academic_test_preparation', [app()->getLocale()])],
+            ['name' => 'Skillset Tutoring', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/programs/skillset_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/skillset_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/skillset_tutoring.meta_description') }}" />

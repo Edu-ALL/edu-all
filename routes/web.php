@@ -465,8 +465,8 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
                 Route::get('/resources/guidebook', "guidebook")->name('guidebook');
                 Route::get('/resources/testimonial', "testimonial")->name('testimonial');
                 Route::get('/resources/mentee-project-showcase', function () {
-                    return redirect()->to('https://project-showcase.edu-all.com/');
-                })->name('testimonial');
+                    return redirect()->to('http://project-showcase.edu-all.com/');
+                })->name('showcase');
             });
 
             Route::controller(BlogPageController::class)->group(function () {
