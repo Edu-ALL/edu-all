@@ -27,7 +27,8 @@
             "image": "{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}",  
             "author": {
                 "@type": "Person",
-                "name": " {{ $blog->mentor->mentor_fullname ?? 'EduALL' }}"
+                "name": "{{ $blog->mentor->mentor_fullname ?? 'EduALL' }}",
+                "url" : "{{ route('detail_mentor', ['locale'=>app()->getLocale() , 'slug' => $blog->mentor->mentor_slug ?? '']) }}"
             },  
             "publisher": {
                 "@type": "Organization",
@@ -37,7 +38,9 @@
                     "url": "{{ asset('favicon.png') }}"
                 }
             },
-            "datePublished": "{{$blog->publish_date}}"
+            "dateCreated": "{{$blog->created_at}}",
+            "datePublished": "{{$blog->publish_date}}",
+            "dateModified": "{{$blog->updated_at}}"
         }
     </script>
 @endsection
