@@ -1,3 +1,10 @@
+@php
+    function isValidUrl($url)
+    {
+        return filter_var($url, FILTER_VALIDATE_URL) !== false;
+    }
+@endphp
+
 <header
     class="fixed left-1/2 -translate-x-1/2 bottom-10 z-50 transition-all hidden md:block duration-[600ms] ease-in-out"
     id="bottom-navbar">
@@ -25,7 +32,8 @@
                                         @foreach ($item['submenu'] as $submenu)
                                             <li
                                                 class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
-                                                <a href="{{ url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank"' : '' }}
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
                                                 </a>
