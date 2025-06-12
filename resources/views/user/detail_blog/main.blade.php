@@ -58,7 +58,7 @@
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
                     data-ss-content="false"></div>
             </div>
-            <div class="mt-2 share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden text-black"
+            <div class="mt-2 share share_close bg-red-600  p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden text-black"
                 onclick="share_sosmed('close')">
                 <i class="fa fa-x" aria-hidden="true"></i>
             </div>
@@ -114,7 +114,7 @@
                             <div class="ss-box ss-circle ss-shadow"
                                 data-ss-social="twitter, facebook, linkedin, share, whatsapp" data-ss-content="false"></div>
                         </div>
-                        <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden text-black"
+                        <div class="share share_close bg-red-600  p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden text-black"
                             onclick="share_sosmed('close')">
                             <i class="fa fa-x" aria-hidden="true"></i>
                         </div>
