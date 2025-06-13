@@ -28,7 +28,7 @@
             "author": {
                 "@type": "Person",
                 "name": "{{ $blog->mentor->mentor_fullname ?? 'EduALL' }}",
-                "url" : "{{ route('detail_mentor', ['locale'=>app()->getLocale() , 'slug' => $blog->mentor->mentor_slug ?? '']) }}"
+                "url" : "{{ route('detail_mentor', ['locale'=>app()->getLocale() , 'slug' => $blog->mentor ? $blog->mentor->mentor_slug : '']) }}"
             },  
             "publisher": {
                 "@type": "Organization",
