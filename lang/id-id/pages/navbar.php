@@ -80,7 +80,7 @@ return [
                 'title' => 'Testimonial',
             ],
             [
-                'link' => 'http://project-showcase.edu-all.com',
+                'link' => 'https://project-showcase.edu-all.com',
                 'title' => 'Mentee Project Showcase',
             ],
         ],
