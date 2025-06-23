@@ -25,6 +25,10 @@
             "@type": "Article",
             "headline": "{{ $blog->blog_title }}",
             "image": "{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}",  
+            "mainEntityOfPage" : {
+                "@type": "WebPage",
+                "@id": "{{ url()->current() }}"
+            },
             "author": {
                 "@type": "Person",
                 "name": "{{ $blog->mentor->mentor_fullname ?? 'EduALL' }}",
