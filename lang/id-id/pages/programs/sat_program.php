@@ -81,8 +81,8 @@ return [
                     'btn' => 'Lihat kurikulum lengkap di sini',
                 ],
                 [
-                    'title' => 'ACCESS ANYWHERE',
-                    'description' => 'Kami akan datang kepada kamu! Kelas daring yang menarik juga tersedia. ',
+                    'title' => 'ONLINE CLASSESS',
+                    'description' => 'Belajar darimana saja dengan kelas online kami. ',
                 ],
                 [
                     'title' => 'SUPPLEMENTAL VIDEOS',

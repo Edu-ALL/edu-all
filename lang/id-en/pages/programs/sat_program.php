@@ -121,8 +121,8 @@ return [
                     'btn' => 'Discover the Full Curriculum Here',
                 ],
                 [
-                    'title' => 'Learn From Anywhere',
-                    'description' => 'We will come to you. Engaging online classes are also available!',
+                    'title' => 'Online Classes',
+                    'description' => 'Learn from anywhere with our online class',
                 ],
                 [
                     'title' => 'Bonus Learning Material',
