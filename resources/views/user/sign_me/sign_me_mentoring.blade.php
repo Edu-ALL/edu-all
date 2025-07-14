@@ -80,7 +80,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="md:hidden block w-[60px] h-[12%] bg-gradient-to-l from-[#000099] to-white/20  absolute bottom-0 right-0">
+                                    class="md:hidden block w-[60px] h-[11%] bg-gradient-to-l from-[#000099] to-white/20  absolute bottom-[5px] right-0">
                                 </div>
                             </div>
                         </div>
