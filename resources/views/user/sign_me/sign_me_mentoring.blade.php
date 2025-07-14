@@ -72,7 +72,7 @@
                                     </a>
                                 </div>
 
-                                <div class="overflow-x-auto relative">
+                                <div id="scroll-container" class="overflow-x-auto relative">
                                     <div class="inline-block min-w-full">
                                         <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/univ.png') }}"
                                             alt="EduALL - illustration"
@@ -440,6 +440,28 @@
 @endsection
 
 @push('script')
+    <script>
+        const container = document.getElementById('scroll-container');
+
+        setInterval(() => {
+            // Scroll ke kanan 100px setiap 10 detik
+            container.scrollBy({
+                left: 100,
+                behavior: 'smooth'
+            });
+
+            // Jika sudah hampir di ujung kanan, kembali ke kiri
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 5) {
+                setTimeout(() => {
+                    container.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }, 1000); // delay sejenak sebelum kembali ke awal
+            }
+        }, 3000); // 3 detik
+    </script>
+
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
