@@ -33,31 +33,23 @@
 @endsection
 
 @section('content')
-    <section class="md:py-16 py-8 overflow-clip bg-[#000099]">
+    <section class="md:py-16 py-8 overflow-hidden md:h-[80vh] relative">
+        <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/mentoring.webp') }}" alt="EduALL - ilustration"
+            class="w-full object-cover absolute left-0 top-0 h-full">
         <div class="new-main-container relative z-10">
-            <div class="circular-gradient-1 absolute z-10 -top-40 -left-full md:-left-1/3 md:-top-1/3 h-[1000px] w-[1000px] md:h-[1000px] md:w-[1000px]"
-                style="border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 0, 255, 0.5) 0%, rgba(0, 0, 255, 0.3) 20%, rgba(0, 0, 255, 0.1) 50%, rgba(0, 0, 0, 0) 75%);
-            filter: blur(50px);">
-            </div>
-            <div class="circular-gradient-2 absolute z-10 -right-full top-96 md:-right-96 md:-top-1/3 h-[700px] w-[700px] md:h-[1000px] md:w-[1000px]"
-                style="border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 0, 255, 0.3) 0%, rgba(0, 0, 255, 0.3) 20%, rgba(0, 0, 255, 0.3) 30%, rgba(0, 0, 0, 0) 75%);
-            filter: blur(50px);">
-            </div>
-            <div class="flex flex-col max-w-4xl mx-auto h-full gap-8 z-20 relative">
+            <div class="flex flex-col max-w-6xl mx-auto h-full gap-8 z-20 relative">
                 <div class="flex flex-col md:flex-row items-stretch gap-8 md:gap-20">
                     <div class="w-full gap-4 flex flex-col">
                         {{-- EduALL Logo  --}}
                         <div class="md:h-16 h-auto flex justify-center">
                             <img loading="lazy" src="{{ asset('assets/img/home/EduALL-white-logo.webp') }}"
-                                alt="EduAll logo" class="max-w-[120px] md:max-w-[160px] w-full h-auto md:mx-0 mx-auto">
+                                alt="EduAll logo" class="max-w-[120px] md:max-w-[130px] w-full h-auto md:mx-0 mx-auto mb-5">
                         </div>
                         {{-- About EduALL --}}
                         <div class="rounded-2xl h-full mt-2">
                             <div class="flex flex-col">
                                 <h3
-                                    class="text-white text-2xl md:text-4xl uppercase font-bold mb-3 font-newprimary text-center md:leading-[3rem]">
+                                    class="text-white text-2xl md:text-5xl uppercase font-bold mb-3 font-newprimary text-center md:leading-[3rem]">
                                     @if ($lang == 'en')
                                         Your dream university won’t wait. <br>
                                         Start your uni app with EDUALL.
@@ -73,17 +65,22 @@
                                         Temukan strategi tepat untuk masuk universitas sesuai dengan potensi anak.
                                     @endif
                                 </p>
-                                <div class="flex justify-center mt-5">
+                                <div class="flex justify-center my-10">
                                     <a href="#form"
-                                        class="inline bg-newyellow text-dark text-center py-2 px-4 rounded-xl">
-                                        <span id="send_header">
-                                            <i class="fas fa-paper-plane mr-4"></i>
-                                        </span>
-                                        <span id="loading_header" class="hidden">
-                                            <i class="fas fa-spinner fa-spin mr-4"></i>
-                                        </span>
+                                        class="inline bg-newyellow text-dark text-center py-2 px-8 rounded-xl font-bold">
                                         PLAN YOUR FUTURE NOW!
                                     </a>
+                                </div>
+
+                                <div class="overflow-x-auto relative">
+                                    <div class="inline-block min-w-full">
+                                        <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/univ.png') }}"
+                                            alt="EduALL - illustration"
+                                            class="lazyload object-contain md:w-full w-[250%] max-w-none h-auto">
+                                    </div>
+                                </div>
+                                <div
+                                    class="md:hidden block w-[60px] h-[12%] bg-gradient-to-l from-[#000099] to-white/20  absolute bottom-0 right-0">
                                 </div>
                             </div>
                         </div>
@@ -132,7 +129,7 @@
                                 alt="EduALL - ilustration" class="w-full object-contain lazyload">
                         </div>
                         <div class="w-3/4 text-[13px] text-gray-600">
-                            <p class="italic">
+                            <p class="italic mb-10">
                                 @if ($lang == 'en')
                                     I've always dreamed of getting accepted into the Ivy League. Two years with EduALL, and
                                     here I am.
@@ -186,20 +183,21 @@
                         <div class="w-3/4 text-[13px] text-gray-600">
                             <p class="italic">
                                 @if ($lang == 'en')
-                                    As a mom, I just want the best for my child but I didn’t know where to start until we
-                                    found EduALL. Now my son is preparing university application process with his mentor.
+                                    Abiyan's mentor is very responsive, thoughtful, and always keeps me updated on his
+                                    progress. I'm glad he was in good hands. Trusting EduALL with Abiyan was the right
+                                    decision for me.
                                 @else
-                                    Sebagai orang tua, udah pasti saya mau yang terbaik untuk anak. Awalnya bingung, tapi
-                                    setelah bareng EduALL uni app process jadi jelas.
+                                    Mentornya Abiyan super responsif, perhatian, dan selalu ngabarin saya soal perkembangan
+                                    Abiyan. Memang pilih buat join EduALL udah keputusan yang paling tepat.
                                 @endif
                             </p>
                             <strong class="block mt-3">
                                 {{ $lang == 'en' ? '' : 'Ibu' }}
-                                Tiara
+                                Dina,
+                                {{ $lang == 'en' ? 'Parents of ' : 'Mama' }} Abiyan
                             </strong>
                             <strong>
-                                {{ $lang == 'en' ? 'Parents of ' : 'Mama' }}
-                                Zack
+                                Tohoku University
                             </strong>
                         </div>
                     </div>
@@ -374,41 +372,61 @@
                                 <h3 class="text-newprimary text-3xl md:text-3xl font-bold mb-3 font-newprimary">
                                     What is EduALL?
                                 </h3>
-                                <p class="text-dark text-sm leading-relaxed">
+                                <p class="text-dark text-base leading-relaxed">
                                     @if ($lang == 'en')
-                                        EduALL is a trusted university prep and mentoring platform that supports middle and
-                                        high school students in building academic skills, a growth mindset, and access to
-                                        top global universities. With personalized one-on-one mentoring and expert guidance,
-                                        and every year, 100% of our mentees have been accepted into top universities across
-                                        the US, UK, Canada, Asia, and Australia.
+                                        EduALL is a trusted university prep and mentoring platform established in 2016.
+                                        EduALL supports middle and high school students in building academic skills, a
+                                        growth mindset, and access to top global universities.
+                                        <strong>
+                                            With personalized one-on-one mentoring and expert guidance, and every year, 100%
+                                            of
+                                            our mentees have been accepted into top universities across the US, UK, Canada,
+                                            Asia, and Australia.</strong>
                                     @else
-                                        EduALL adalah platform persiapan kuliah dan mentoring yang mendukung siswa SMP dan
-                                        SMA
-                                        untuk mengembangkan keterampilan akademik, pola pikir, profil dan akses menuju
-                                        universitas terbaik di dunia.
-                                        Dengan bimbingan personal dan mentor berpengalaman, 100% siswa EduALL berhasil
-                                        diterima
-                                        di universitas top dunia setiap tahunnya, termasuk di Amerika Serikat, Inggris,
-                                        Kanada,
-                                        Asia, dan Australia.
+                                        EduALL adalah platform persiapan kuliah dan mentoring yang berdiri sejak tahun 2016.
+                                        EduALL mendukung siswa SMP dan SMA untuk mengembangkan keterampilan akademik, pola
+                                        pikir, profil dan akses menuju universitas terbaik di dunia.
+                                        <strong>
+                                            Dengan bimbingan personal dan mentor berpengalaman, 100% siswa EduALL berhasil
+                                            diterima di universitas top dunia setiap tahunnya, termasuk di Amerika Serikat,
+                                            Inggris, Kanada, Asia, dan Australia.
+                                        </strong>
                                     @endif
                                 </p>
-                                <strong class="my-5">
-                                    Our Mentees get accepted to 200+ universities in the US, UK, Canada, Asia & Australia
-                                </strong>
+
+                                <div class="flex flex-col sm:flex-row flex-wrap md:gap-0 gap-5 my-10">
+                                    <div class="md:w-1/3 w-full">
+                                        <p class="text-3xl text-newprimary font-bold">
+                                            100%
+                                        </p>
+                                        <small class="font-bold text-gray-600 uppercase">
+                                            mentee acceptance
+                                        </small>
+                                    </div>
+                                    <div class="md:w-1/3 w-full">
+                                        <p class="text-3xl text-newprimary font-bold">
+                                            $2.7 Million+
+                                        </p>
+                                        <small class="font-bold text-gray-600 uppercase">
+                                            in scholarship awards
+                                        </small>
+                                    </div>
+                                    <div class="md:w-1/3 w-full">
+                                        <p class="text-3xl text-newprimary font-bold">
+                                            1000+
+                                        </p>
+                                        <small class="font-bold text-gray-600 uppercase">
+                                            mentees
+                                        </small>
+                                    </div>
+                                </div>
 
                                 <img src="{{ asset('assets/img/sign-me/Univ.png') }}" alt="EduALL - ilustration"
                                     class="w-full object-contain" lazy="loading">
 
                                 <div class="flex justify-center mt-5">
                                     <a href="#form"
-                                        class="bg-newprimary text-white inline px-4 text-center py-2 rounded-xl">
-                                        <span id="send_footer">
-                                            <i class="fas fa-paper-plane mr-4"></i>
-                                        </span>
-                                        <span id="loading_footer" class="hidden">
-                                            <i class="fas fa-spinner fa-spin mr-4"></i>
-                                        </span>
+                                        class="bg-newprimary text-white inline px-8 text-center py-2 rounded-xl uppercase font-bold">
                                         Secure your dream now!
                                     </a>
                                 </div>
