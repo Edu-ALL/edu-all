@@ -422,7 +422,9 @@
                                 </div>
 
                                 <img src="{{ asset('assets/img/sign-me/Univ.png') }}" alt="EduALL - ilustration"
-                                    class="w-full object-contain" lazy="loading">
+                                    class="w-full object-contain md:block hidden" lazy="loading">
+                                <img src="{{ asset('assets/img/sign-me/Univ-mobile.png') }}" alt="EduALL - ilustration"
+                                    class="w-full object-contain md:hidden block" lazy="loading">
 
                                 <div class="flex justify-center mt-5">
                                     <a href="#form"
