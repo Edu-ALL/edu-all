@@ -37,6 +37,7 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('/id-en', [HomePageController::class, 'home']);
 
     Route::get('/sitemap', [SitemapController::class, 'index']);
+    Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
     // WebHook
     Route::get('callback/facebook', [CallbackController::class, 'verify']);
