@@ -12,6 +12,7 @@
     <title>{{ __('pages/programs/skillset_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/skillset_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/skillset_tutoring.meta_description') }}" />
+    <meta name="keywords" content="Sasmo , Hkimo, math, math competition, international math olympiad, olympiad, Singapore math challenge, american math olympiad, olimpiade, matematika" />
 @endsection
 
 @section('sub-navbar')

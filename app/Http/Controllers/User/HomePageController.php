@@ -148,9 +148,13 @@ class HomePageController extends Controller
         return view('user.sign_me.thank_mentor');
     }
 
-    public function sign_me_mentoring()
+    public function sign_me_mentoring($lang = null)
     {
-        return view('user.sign_me.sign_me_mentoring');
+        if ($lang && $lang != 'en') {
+            return redirect('/sign-me/mentoring/en', 301);
+        }
+
+        return view('user.sign_me.sign_me_mentoring', ['lang' => $lang]);
     }
 
     public function sign_me_sat()

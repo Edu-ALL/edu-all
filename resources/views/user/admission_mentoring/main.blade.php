@@ -10,6 +10,7 @@
     <title>{{ __('pages/programs/admission_mentoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/admission_mentoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/admission_mentoring.meta_description') }}" />
+    <meta name="keywords" content="Essay, personal statement university, konsultan pendidikan, extracurricular activities, motivational letter, uni shortlisting, study abroad, konsultant pendidikan, university application, university admission" />
 @endsection
 
 @section('sub-navbar')

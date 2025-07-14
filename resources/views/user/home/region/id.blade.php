@@ -8,6 +8,9 @@
     <title>{{ __('pages/home.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/home.meta_title') }}" />
     <meta name="description" content="{{ __('pages/home.meta_description') }}" />
+    <meta name="keywords"
+        content="qs world ranking, kuliah luar negeri, ivy league university, study abroad, konsultan pendidikan, mentoring program, education consultant, universitas luar negeri, Essay , uni preparation" />
+
     <style>
         body {
             overflow-x: hidden;
@@ -245,11 +248,11 @@
                     </div>
                 </div>
                 <!-- <div class="hidden md:flex justify-center">
-                                <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
-                                    bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
-                                    hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                                    transition="all duration-150" />
-                            </div> -->
+                                        <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                                            bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                                            hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                                            transition="all duration-150" />
+                                    </div> -->
             </div>
         </div>
     </section>
@@ -422,12 +425,12 @@
                 title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark"
                 padding-x="4" is-rounded />
             <!-- <div class="w-full">
-                                                <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                                    target="_blank"
-                                                    class="inline-block py-3 bg-red text-center text-white text-base px-6">
-                                                    more important dates
-                                                </a>
-                                            </div> -->
+                                                        <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                                            target="_blank"
+                                                            class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                                            more important dates
+                                                        </a>
+                                                    </div> -->
             </div>
     @endif
     </div>

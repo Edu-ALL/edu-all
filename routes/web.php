@@ -124,7 +124,7 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
         },
     );
 
-    Route::get('/sign-me/mentoring', [HomePageController::class, 'sign_me_mentoring'])->name('sign_me_mentoring');
+    Route::get('/sign-me/mentoring/{lang?}', [HomePageController::class, 'sign_me_mentoring'])->name('sign_me_mentoring');
     Route::get('/sign-me/sat', [HomePageController::class, 'sign_me_sat'])->name('sign_me_sat');
     Route::get('/sign-me/sat/price', [HomePageController::class, 'sign_me_sat'])->name('sign_me_sat_price');
     Route::get('/thanks/mentoring', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_mentoring');

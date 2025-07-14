@@ -12,6 +12,7 @@
     <title>{{ __('pages/programs/academic_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/academic_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/academic_tutoring.meta_description') }}" />
+    <meta name="keywords" content="ib, igsce, math , international curriculum, international baccalaureate, tutoring, private tutoring, subject selection, online tutoring, math tutor" />
 @endsection
 
 @section('sub-navbar')

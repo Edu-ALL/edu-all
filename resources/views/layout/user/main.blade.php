@@ -12,8 +12,8 @@
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
 
     @if (request()->is('/') || request()->is(app()->getLocale()))
-        <meta name="keywords"
-            content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
+        {{-- <meta name="keywords"
+            content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" /> --}}
 
         <meta property=og:url content="{{ url('/') }}">
         <meta property=og:image content="{{ asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp') }}">

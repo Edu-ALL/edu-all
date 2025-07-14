@@ -12,6 +12,7 @@
     <title>{{ __('pages/programs/sat_program.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/sat_program.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/sat_program.meta_description') }}" />
+    <meta name="keywords" content="sat, sat test, satdate, satbook, sat preparation, sat bahasa inggris, daftar sat, harga SAT, SAT EXAM, sat practice test" />
 @endsection
 
 @section('sub-navbar')
