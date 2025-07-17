@@ -96,8 +96,7 @@
     {{-- <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script> --}}
 
     <!-- Google tag (gtag.js) -->
-    {{-- <script src="{{ url('/js/gtag.js') }}"></script> --}}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HHPRQCSSE" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17251111065"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -106,7 +105,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-5HHPRQCSSE');
+        gtag('config', 'AW-17251111065');
     </script>
 </head>
 

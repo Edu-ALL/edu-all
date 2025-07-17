@@ -5,31 +5,6 @@
     <meta name="title" content="SIGN ME" />
     <meta name="description"
         content="EduALL offers integrative uni-prep and mentoring for middle & high school students to foster a growth mindset, develop academic & life skills, and facilitate access to high-quality education globally and real-world experiences, all while having fun in the process." />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXRKLPRKWF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-JXRKLPRKWF');
-        // gtag('config', 'AW-329409030')
-    </script>
-
-    <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-        function gtag_report_conversion(url) {
-            gtag('event', 'Conversion - SAT', {
-                'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
-                // 'event_callback': callback
-            });
-
-            return false;
-        }
-    </script>
 @endsection
 
 @section('content')
@@ -479,6 +454,7 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1067393485185284&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+    
     <script>
         const checkRole = (area = null) => {
             const role = document.querySelector('input[name="roles' + area + '"]:checked');
