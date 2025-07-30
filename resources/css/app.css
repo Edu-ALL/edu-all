@@ -752,3 +752,13 @@ progress::-ms-fill {
     );
     z-index: 1;
 }
+
+@layer utilities {
+  .clip-hex-right {
+    clip-path: polygon(0% 0%, 88% 0%, 100% 50%, 88% 100%, 0% 100%);
+  }
+
+  .clip-hex-bottom {
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 50% 100%, 0 85%);
+  }
+}
