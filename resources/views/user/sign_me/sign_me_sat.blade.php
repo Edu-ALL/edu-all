@@ -66,27 +66,27 @@
                     class="flex flex-nowrap h-full items-center md:justify-center justify-start md:px-10 px-5 py-5 md:gap-20 gap-[3rem]">
                     <div class="flex items-center gap-3">
                         <img src="{{ asset('assets/img/sign-me/sat/us.png') }}" alt="US" class="md:w-[45px] w-[30px]">
-                        <p class="font-bold md:text-xl text-base" style="text-wrap:nowrap;">
+                        <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             UNITED STATES
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
                         <img src="{{ asset('assets/img/sign-me/sat/uk.png') }}" alt="UK" class="md:w-[45px] w-[30px]">
-                        <p class="font-bold md:text-xl text-base" style="text-wrap:nowrap;">
+                        <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             UNITED KINGDOM
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
                         <img src="{{ asset('assets/img/sign-me/sat/au.png') }}" alt="AUSTRALIA"
                             class="md:w-[45px] w-[30px]">
-                        <p class="font-bold md:text-xl text-base" style="text-wrap:nowrap;">
+                        <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             AUSTRALIA
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
                         <img src="{{ asset('assets/img/sign-me/sat/china.png') }}" alt="CHINA"
                             class="md:w-[45px] w-[30px]">
-                        <p class="font-bold md:text-xl text-base" style="text-wrap:nowrap;">
+                        <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             CHINA &nbsp; &nbsp;
                         </p>
                     </div>
