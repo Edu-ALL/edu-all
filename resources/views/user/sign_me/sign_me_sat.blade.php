@@ -9,7 +9,7 @@
 
 @section('content')
     <section class="h-[80vh] relative overflow-hidden z-10">
-        <img src="{{ asset('assets/img/sign-me/sat/banner.png') }}" alt="SAT"
+        <img src="{{ asset('assets/img/sign-me/sat/banner.webp') }}" alt="SAT"
             class="absolute md:h-auto h-[85vh] object-cover">
         <div class="new-main-container relative md:py-16 py-8 z-10">
             <div class="flex flex-col max-w-5xl mx-auto h-full gap-8 z-20 relative">
@@ -44,13 +44,13 @@
                         </div>
                     </div>
                     <div class="md:w-6/12 w-full gap-4 flex flex-col">
-                        <img src="{{ asset('assets/img/sign-me/sat/kaylee.png') }}" alt="Kaylee Husni"
+                        <img src="{{ asset('assets/img/sign-me/sat/kaylee.webp') }}" alt="Kaylee Husni"
                             class="w-[52%] absolute bottom-0 right-0 md:block hidden">
                     </div>
                 </div>
             </div>
         </div>
-        <img src="{{ asset('assets/img/sign-me/sat/kaylee-mobile.png') }}" alt="Kaylee Husni"
+        <img src="{{ asset('assets/img/sign-me/sat/kaylee-mobile.webp') }}" alt="Kaylee Husni"
             class="w-[90%] absolute bottom-0 right-0 md:hidden block">
     </section>
 
@@ -61,30 +61,30 @@
                     NEGARA TUJUAN
                 </p>
             </div>
-            <div class="md:w-9/12 w-full overflow-auto">
+            <div class="md:w-9/12 w-full overflow-auto" id="scroll-container">
                 <div
                     class="flex flex-nowrap h-full items-center md:justify-center justify-start md:px-10 px-5 py-5 md:gap-20 gap-[3rem]">
                     <div class="flex items-center gap-3">
-                        <img src="{{ asset('assets/img/sign-me/sat/us.png') }}" alt="US" class="md:w-[45px] w-[30px]">
+                        <img src="{{ asset('assets/img/sign-me/sat/us.webp') }}" alt="US" class="md:w-[45px] w-[30px]">
                         <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             UNITED STATES
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="{{ asset('assets/img/sign-me/sat/uk.png') }}" alt="UK" class="md:w-[45px] w-[30px]">
+                        <img src="{{ asset('assets/img/sign-me/sat/uk.webp') }}" alt="UK" class="md:w-[45px] w-[30px]">
                         <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             UNITED KINGDOM
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="{{ asset('assets/img/sign-me/sat/au.png') }}" alt="AUSTRALIA"
+                        <img src="{{ asset('assets/img/sign-me/sat/au.webp') }}" alt="AUSTRALIA"
                             class="md:w-[45px] w-[30px]">
                         <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             AUSTRALIA
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <img src="{{ asset('assets/img/sign-me/sat/china.png') }}" alt="CHINA"
+                        <img src="{{ asset('assets/img/sign-me/sat/china.webp') }}" alt="CHINA"
                             class="md:w-[45px] w-[30px]">
                         <p class="font-bold md:text-xl text-base" style="white-space: nowrap;">
                             CHINA &nbsp; &nbsp;
@@ -97,7 +97,8 @@
 
     <section class="py-8 md:bg-[#EFEFEF]">
         <div class="new-main-container">
-            <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-5 leading-6 mb-12 text-newprimary md:px-0 px-10">
+            <h2
+                class="font-newprimary text-3xl md:text-5xl font-bold text-center mt-5 leading-8 mb-12 text-newprimary md:px-0 px-10">
                 Kenaikan Skor SAT Mentee EduALL
             </h2>
             <div class="flex flex-wrap items-center justify-center md:gap-8 gap-2 w-full">
@@ -110,7 +111,7 @@
                             <p class="text-white text-xl">
                                 1310
                             </p>
-                            <img src="{{ asset('assets/img/sign-me/sat/arrow.png') }}" alt="SAT" class="w-[50px]">
+                            <img src="{{ asset('assets/img/sign-me/sat/arrow.webp') }}" alt="SAT" class="w-[50px]">
                             <p class="text-white text-3xl font-bold">
                                 1400
                             </p>
@@ -133,7 +134,7 @@
                             <p class="text-white text-xl">
                                 1380
                             </p>
-                            <img src="{{ asset('assets/img/sign-me/sat/arrow.png') }}" alt="SAT" class="w-[50px]">
+                            <img src="{{ asset('assets/img/sign-me/sat/arrow.webp') }}" alt="SAT" class="w-[50px]">
                             <p class="text-white text-3xl font-bold">
                                 1500
                             </p>
@@ -156,7 +157,7 @@
                             <p class="text-white text-xl">
                                 1280
                             </p>
-                            <img src="{{ asset('assets/img/sign-me/sat/arrow.png') }}" alt="SAT" class="w-[50px]">
+                            <img src="{{ asset('assets/img/sign-me/sat/arrow.webp') }}" alt="SAT" class="w-[50px]">
                             <p class="text-white text-3xl font-bold">
                                 1470
                             </p>
@@ -179,7 +180,7 @@
                             <p class="text-white text-xl">
                                 1300
                             </p>
-                            <img src="{{ asset('assets/img/sign-me/sat/arrow.png') }}" alt="SAT" class="w-[50px]">
+                            <img src="{{ asset('assets/img/sign-me/sat/arrow.webp') }}" alt="SAT" class="w-[50px]">
                             <p class="text-white text-3xl font-bold">
                                 1460
                             </p>
@@ -201,7 +202,8 @@
 
     <section class="py-8 bg-[#fff]">
         <div class="new-main-container">
-            <h2 class="font-newprimary text-2xl md:text-3xl font-bold text-center mt-10 leading-6 mb-12 text-newprimary md:px-0 px-10">
+            <h2
+                class="font-newprimary text-3xl md:text-5xl font-bold text-center mt-10 leading-8 mb-12 text-newprimary md:px-0 px-10">
                 Tingkatkan Skor SAT-mu Hari Ini!
             </h2>
 
@@ -266,17 +268,18 @@
                         {{-- About EduALL --}}
                         <div class="rounded-2xl h-full mt-2">
                             <div class="flex flex-col">
-                                <p class="text-white text-2xl md:text-4xl mb-5 font-newprimary md:text-left text-center">
+                                <p class="text-white text-3xl md:text-4xl mb-5 font-newprimary md:text-left text-center">
                                     Daftar Kelas Persiapan SAT Test Hari Ini
                                 </p>
                                 <h2
-                                    class="text-[#FED017] text-2xl md:text-5xl font-bold mb-3 font-newprimary md:text-left text-center">
+                                    class="text-[#FED017] text-3xl md:text-5xl font-bold mb-3 font-newprimary md:text-left text-center">
                                     Harga Special Mulai Dari <span
-                                        class="text-[#FED017]/80 md:text-3xl text-xl font-normal line-through ">10 Juta</span> <br>
+                                        class="text-[#FED017]/80 md:text-3xl text-2xl font-normal line-through ">10
+                                        Juta</span> <br class="md:block hidden">
                                     6 Juta
                                 </h2>
 
-                                <div class="mt-[5rem] md:block hidden">
+                                <div class="md:mt-[5rem] mt-2">
                                     <img src="{{ asset('assets/img/sign-me/Arrow.png') }}" alt="EduALL - ilustration"
                                         class="w-full object-contain" lazy="loading">
                                 </div>
@@ -404,7 +407,8 @@
                 </table>
 
                 <div class="flex justify-center my-5">
-                    <a href="#form" class="bg-[#FED017] inline px-8 text-center py-2 rounded-xl uppercase font-bold md:text-base text-[14px]">
+                    <a href="#form"
+                        class="bg-[#FED017] inline px-8 text-center py-2 rounded-xl uppercase font-bold md:text-base text-[14px]">
                         TAKE YOUR FREE PLACEMENT TEST NOW!
                     </a>
                 </div>
@@ -414,6 +418,28 @@
 @endsection
 
 @push('script')
+    <script>
+        const container = document.getElementById('scroll-container');
+
+        setInterval(() => {
+            // Scroll ke kanan 100px setiap 10 detik
+            container.scrollBy({
+                left: 100,
+                behavior: 'smooth'
+            });
+
+            // Jika sudah hampir di ujung kanan, kembali ke kiri
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 5) {
+                setTimeout(() => {
+                    container.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }, 1000); // delay sejenak sebelum kembali ke awal
+            }
+        }, 3000); // 3 detik
+    </script>
+
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
