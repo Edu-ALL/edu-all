@@ -228,7 +228,7 @@
                             2
                         </h3>
                         <h4 class="text-xl font-bold leading-5">
-                            Assigined to <br> Recommended <br> Class
+                            Assigned to <br> Recommended <br> Class
                         </h4>
                     </div>
                 </div>
@@ -368,7 +368,7 @@
                         <th class="bg-[#393636] rounded-r-lg border-0 py-5" width="40%">TOTAL HOURS (PREP + MOCK)</th>
                     </tr>
                     <tr class="font-bold md:text-lg text-[14px]">
-                        <th class="rounded-l-lg border-0 py-5">SAT FUNDAMENTALS</th>
+                        <th class="rounded-l-lg border-0 py-5">SAT CORE</th>
                         <th class=" border-0 py-5">
                             < 1200</th>
                         <th class="rounded-r-lg border-0 py-5">20 Prep + 4 Mock Test</th>
