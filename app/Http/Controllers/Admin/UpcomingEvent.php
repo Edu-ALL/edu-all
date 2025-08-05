@@ -108,7 +108,7 @@ class UpcomingEvent extends Controller
                     $event->event_status = 'publish';
                     $event->updated_at = date('Y-m-d');
                     $event->save();
-                    Log::info('event id: ' . $event->id . ' already published');
+                    Log::notice('event id: ' . $event->id . ' already published');
                     DB::commit();
                 } catch (Exception $e) {
                     Log::error($e);
@@ -129,7 +129,7 @@ class UpcomingEvent extends Controller
                     $event->event_status = 'draft';
                     $event->updated_at = date('Y-m-d');
                     $event->save();
-                    Log::info('event id: ' . $event->id . ' already take off');
+                    Log::notice('event id: ' . $event->id . ' already take off');
                     DB::commit();
                 } catch (Exception $e) {
                     Log::error($e);

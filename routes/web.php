@@ -8,6 +8,7 @@ use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\RegularTalkPageController;
 use App\Http\Controllers\User\ResourcesPageController;
 use App\Http\Controllers\User\SitemapController;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
