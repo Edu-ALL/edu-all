@@ -24,7 +24,7 @@ class LogRouteChange
         $userId = Auth::check() ? Auth::guard('web-admin')->user()->email : null;
 
         // Catat ke log
-        Log::notice('Route accessed : '. $uri , [
+        Log::notice('Route accessed' , [
             'method' => $method,
             'uri' => $uri,
             'ip' => $ip,
