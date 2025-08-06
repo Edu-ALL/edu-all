@@ -30,7 +30,7 @@ class LogRouteChange
             'method' => $request->method(),
             'uri'    => $request->getRequestUri(),
             'ip'     => $request->ip(),
-            'email'  => Auth::guard('web-admin')->user()->email ?? null,
+            'email'  => Auth::guard('web-admin')->user()?->email ?? null,
         ];
 
         try {

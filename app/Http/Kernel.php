@@ -21,7 +21,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\LogRouteChange::class,
     ];
 
     /**
@@ -37,6 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \App\Http\Middleware\RedirectWwwToNonWww::class,
+            \App\Http\Middleware\LogRouteChange::class,
             // \App\Http\Middleware\SetCacheHeaders::class,
         ],
 
