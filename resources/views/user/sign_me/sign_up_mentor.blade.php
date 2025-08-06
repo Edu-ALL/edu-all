@@ -113,7 +113,7 @@
                                                 class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                 placeholder="Full Name *" id="primary_name" required>
                                             @error('fullname')
-                                                <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="flex gap-4 flex-col md:flex-row">
@@ -123,7 +123,7 @@
                                                     class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                     placeholder="Email *" id="email" required>
                                                 @error('email')
-                                                    <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                    <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="mb-3 md:w-1/2">
@@ -134,7 +134,7 @@
                                                     placeholder="Phone Number *" id="phone_number" name="phone_number"
                                                     required>
                                                 @error('phone_number')
-                                                    <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                    <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@
                                                 class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                 placeholder="Linkedin Link *" id="linkedin_link" required>
                                             @error('linkedin_link')
-                                                <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="flex justify-center mb-5">

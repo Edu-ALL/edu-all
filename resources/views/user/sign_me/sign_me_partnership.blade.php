@@ -100,7 +100,7 @@
                                                     class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                     placeholder="Full Name *" id="primary_name" required>
                                                 @error('fullname')
-                                                    <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                    <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="flex gap-4 flex-col md:flex-row">
@@ -113,7 +113,7 @@
                                                         placeholder="{{ ucfirst($slug) }} Name *" id="company_name"
                                                         required>
                                                     @error('company_name')
-                                                        <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
                                                 </div>
                                                 <div class="mb-3 w-full md:w-1/2">
@@ -122,7 +122,7 @@
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                         placeholder="Position *" id="position" required>
                                                     @error('position')
-                                                        <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -133,7 +133,7 @@
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                         placeholder="Email *" id="email" required>
                                                     @error('email')
-                                                        <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
                                                 </div>
                                                 <div class="mb-3 md:w-1/2">
@@ -143,7 +143,7 @@
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                         placeholder="Phone Number *" id="phone_number" required>
                                                     @error('phone_number')
-                                                        <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@
                                                 <textarea class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full" placeholder="Inquiry *"
                                                     id="inquiry" name="inquiry" rows="4" required></textarea>
                                                 @error('inquiry')
-                                                    <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                    <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="flex justify-center mb-3">
