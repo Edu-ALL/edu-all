@@ -79,7 +79,7 @@
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img  data-src="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
+                                <img data-src="{{ asset('assets/img/exclusive_program_school/' . $item['image']) }}"
                                     alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
@@ -161,7 +161,7 @@
                                                 {!! $program['title'] !!}
                                             </h3>
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img  data-src="{{ asset('assets/img/exclusive_program_school/' . $program['image']) }}"alt="EduALL"
+                                                <img data-src="{{ asset('assets/img/exclusive_program_school/' . $program['image']) }}"alt="EduALL"
                                                     class="h-full w-full object-cover lazyload">
                                             </div>
                                             <div class="w-full md:h-20">
@@ -240,13 +240,16 @@
                         <form action="{{ route('submit_partnership', ['locale' => 'id-en', 'slug' => 'school']) }}"
                             method="POST" id="myForm">
                             @csrf
-                            <div >
+                            <div>
                                 <div class="flex flex-col">
                                     <div class="mb-3">
                                         <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>
                                         <input type="text" name="fullname"
                                             class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                             placeholder="Full Name *" id="primary_name" required>
+                                        @error('fullname')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="flex gap-4 flex-col md:flex-row">
                                         <div class="md:mb-3 w-full md:w-1/2">
@@ -256,12 +259,18 @@
                                             <input type="text" name="company_name"
                                                 class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                 placeholder="School Name *" id="company_name" required>
+                                            @error('company_name')
+                                                <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3 w-full md:w-1/2">
                                             <label for="position" class="text-dark text-sm py-2">Position</label>
                                             <input type="text" name="position"
                                                 class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                 placeholder="Position *" id="position" required>
+                                            @error('position')
+                                                <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="flex gap-4 flex-col md:flex-row">
@@ -270,6 +279,9 @@
                                             <input type="email" name="email"
                                                 class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                 placeholder="Email *" id="email" required>
+                                            @error('email')
+                                                <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3 md:w-1/2">
                                             <label for="phone_number" class="text-dark text-sm py-2">Phone
@@ -277,12 +289,18 @@
                                             <input type="text"
                                                 class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                 placeholder="Phone Number *" id="phone_number" required>
+                                            @error('phone_number')
+                                                <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inquiry" class="text-dark text-sm py-2">Inquiry</label>
                                         <textarea class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full" placeholder="Inquiry *"
                                             id="inquiry" name="inquiry" rows="4" required></textarea>
+                                        @error('inquiry')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="flex justify-center mb-3">
                                         <div class="text-center">
