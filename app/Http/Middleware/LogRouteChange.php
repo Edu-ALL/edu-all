@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class LogRouteChange
@@ -26,17 +25,10 @@ class LogRouteChange
             return $next($request);
         }
 
-        $context = [
-            'method' => $request->method(),
-            'uri'    => $request->getRequestUri(),
-            'ip'     => $request->ip(),
-            'email'  => Auth::guard('web-admin')->user()?->email ?? null,
-        ];
-
         try {
-            Log::notice('Route accessed', $context);
+            Log::notice('Route accessed');
         } catch (Exception $e) {
-            Log::error('Error accessing route', $context + [
+            Log::error('Error accessing route', [
                 'exception' => $e->getMessage(),
                 'trace'     => $e->getTraceAsString(),
             ]);
