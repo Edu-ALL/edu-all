@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -18,18 +19,28 @@ class LogRouteChange
      */
     public function handle(Request $request, Closure $next)
     {
-        $method = $request->method();
-        $uri = $request->getRequestUri();
-        $ip = $request->ip();
-        $userId = Auth::check() ? Auth::guard('web-admin')->user()->email : null;
+        $uri = trim($request->getRequestUri(), '/');
 
-        // Catat ke log
-        Log::notice('Route accessed' , [
-            'method' => $method,
-            'uri' => $uri,
-            'ip' => $ip,
-            'email' => $userId
-        ]);
+        // Skip logging for log-viewer routes
+        if (str_starts_with($uri, 'log-viewer')) {
+            return $next($request);
+        }
+
+        $context = [
+            'method' => $request->method(),
+            'uri'    => $request->getRequestUri(),
+            'ip'     => $request->ip(),
+            'email'  => Auth::guard('web-admin')->user()->email ?? null,
+        ];
+
+        try {
+            Log::notice('Route accessed', $context);
+        } catch (Exception $e) {
+            Log::error('Error accessing route', $context + [
+                'exception' => $e->getMessage(),
+                'trace'     => $e->getTraceAsString(),
+            ]);
+        }
 
         return $next($request);
     }

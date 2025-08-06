@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HomePageController extends Controller
 {
@@ -115,6 +116,28 @@ class HomePageController extends Controller
     public function submit_partnership(Request $request, $locale, $slug)
     {
         try {
+            $validation = [
+                'fullname.not_regex' => 'This field must not contain the words "script" or "php".',
+                'company_name.not_regex' => 'This field must not contain the words "script" or "php".',
+                'position.not_regex' => 'This field must not contain the words "script" or "php".',
+                'phone_number.not_regex' => 'This field must not contain the words "script" or "php".',
+                'inquiry.not_regex' => 'This field must not contain the words "script" or "php".',
+                'email.email' => 'This field must contain a valid email.'
+            ];
+
+            $validator = Validator::make($request::all(), [
+                'fullname' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'company_name' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'position' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'email' => ['required', 'email'],
+                'phone_number' => ['required', 'string', 'max:16', 'not_regex:/(script|php)/i'],
+                'inquiry' => ['required', 'string', 'not_regex:/(script|php)/i'],
+            ], $validation);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
             $data = [
                 'data' => $request::all(),
                 'category' => $slug
@@ -167,6 +190,25 @@ class HomePageController extends Controller
     public function submit_mentor(Request $request, $locale)
     {
         try {
+            $validation = [
+                'fullname.not_regex' => 'This field must not contain the words "script" or "php".',
+                'linkedin_link.not_regex' => 'This field must not contain the words "script" or "php".',
+                'phone_number.not_regex' => 'This field must not contain the words "script" or "php".',
+                'email.email' => 'This field must contain a valid email.',
+                'linkedin_link.url' => 'This field must contain a valid url.'
+            ];
+
+            $validator = Validator::make($request::all(), [
+                'fullname' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'linkedin_link' => ['required', 'url', 'not_regex:/(script|php)/i'],
+                'email' => ['required', 'email'],
+                'phone_number' => ['required', 'string', 'max:15', 'not_regex:/(script|php)/i'],
+            ], $validation);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
             $data = [
                 'data' => $request::all(),
             ];

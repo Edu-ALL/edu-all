@@ -112,6 +112,9 @@
                                             <input type="text" name="fullname"
                                                 class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                 placeholder="Full Name *" id="primary_name" required>
+                                            @error('fullname')
+                                                <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="flex gap-4 flex-col md:flex-row">
                                             <div class="md:mb-3 md:w-1/2">
@@ -119,13 +122,20 @@
                                                 <input type="email" name="email"
                                                     class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                     placeholder="Email *" id="email" required>
+                                                @error('email')
+                                                    <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="mb-3 md:w-1/2">
                                                 <label for="phone_number" class="text-white text-sm py-2">Phone
                                                     Number</label>
                                                 <input type="text"
                                                     class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
-                                                    placeholder="Phone Number *" id="phone_number" name="phone_number" required>
+                                                    placeholder="Phone Number *" id="phone_number" name="phone_number"
+                                                    required>
+                                                @error('phone_number')
+                                                    <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -133,6 +143,9 @@
                                             <input type="text" name="linkedin_link"
                                                 class="md:py-2 text-dark border-none shadow-sm focus:ring-newyellow py-1 my-1 w-full"
                                                 placeholder="Linkedin Link *" id="linkedin_link" required>
+                                            @error('linkedin_link')
+                                                <div class="text-red text-sm mt-1">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="flex justify-center mb-5">
                                             <div class="text-center">

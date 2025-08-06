@@ -29,11 +29,8 @@ class LogstashHttpLogger
                             'channel' => $record['channel'],
                             'datetime' => $record['datetime']->format('Y-m-d H:i:s'),
                         ]);
-
-                    // Log::channel('daily')->debug($respose);
                 } catch (Exception $e) {
                     Log::error('error :' . $e->getMessage());
-                    // Jangan sampai logging error bikin aplikasi crash
                 }
             }
         });
