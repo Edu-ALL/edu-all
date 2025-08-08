@@ -289,45 +289,55 @@
                     <div class="md:w-6/12 w-full gap-4 flex flex-col">
                         {{-- Form --}}
                         <div class="py-4 md:px-6 px-4 bg-[#1E1E1E] rounded-xl w-full h-full border-newyellow border-2">
-                            <div id="myForm_footer" class="h-full">
+                            <div id="myForm" class="h-full">
                                 <div class="mt-5 h-full">
                                     <div class="flex flex-col justify-between h-full">
                                         <div class="flex flex-col">
                                             <div class="mb-5">
                                                 <div class="flex gap-10">
                                                     <div class="flex items-center">
-                                                        <input type="radio" name="roles_footer" value="student"
-                                                            id="student_footer" checked required
-                                                            onchange="checkRole('_footer')">
+                                                        <input type="radio" name="roles" value="student"
+                                                            id="student" checked required onchange="checkRole()">
                                                         <label for="student" class="text-newyellow ml-2">Student</label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input type="radio" name="roles_footer" value="parent"
-                                                            id="parent_footer" required onchange="checkRole('_footer')">
+                                                        <input type="radio" name="roles" value="parent"
+                                                            id="parent" required onchange="checkRole()">
                                                         <label for="parent" class="text-newyellow ml-2">Parent</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mb-5">
-
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                    placeholder="Full Name *" id="primary_name_footer" required>
+                                                    placeholder="Full Name *" id="primary_name" required
+                                                    oninput="checkValidation('primary_name')">
+                                                <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden">
+                                                </div>
                                             </div>
                                             <div>
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full hidden mb-5"
-                                                    placeholder="Child Name *" id="secondary_name_footer" required>
+                                                    placeholder="Child Name *" id="secondary_name" required
+                                                    oninput="checkValidation('secondary_name')">
+                                                <div id="secondary_name_error" class="text-red text-[10px] mt-1 hidden">
+                                                </div>
                                             </div>
                                             <div class="mb-5">
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                    placeholder="Phone Number *" id="phone_number_footer" required>
+                                                    placeholder="Phone Number *" id="phone_number" required
+                                                    oninput="checkValidation('phone_number')">
+                                                <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden">
+                                                </div>
                                             </div>
                                             <div class="mb-5">
                                                 <input type="text" class="py-2 text-dark rounded-xl w-full"
-                                                    placeholder="School Name *" id="school_name_footer" required>
+                                                    placeholder="School Name *" id="school_name" required
+                                                    oninput="checkValidation('school_name')">
+                                                <div id="school_name_error" class="text-red text-[10px] mt-1 hidden">
+                                                </div>
                                             </div>
                                             <div class="mb-5">
-                                                <select class="py-2 text-dark rounded-xl w-full"
-                                                    id="graduation_year_footer" required>
+                                                <select class="py-2 text-dark rounded-xl w-full" id="graduation_year"
+                                                    required>
                                                     <option class="text-gray-300" value="">Select Graduation Year
                                                     </option>
                                                     @for ($i = date('Y'); $i < date('Y') + 5; $i++)
@@ -339,11 +349,11 @@
                                         <div class="mb-3">
                                             <button type="button"
                                                 class="w-full bg-newyellow text-dark text-center py-2 rounded-xl"
-                                                onclick="submit('_footer')">
-                                                <span id="send_footer">
+                                                onclick="submit()">
+                                                <span id="send">
                                                     <i class="fas fa-paper-plane mr-4"></i>
                                                 </span>
-                                                <span id="loading_footer" class="hidden">
+                                                <span id="loading" class="hidden">
                                                     <i class="fas fa-spinner fa-spin mr-4"></i>
                                                 </span>
                                                 Submit </button>
@@ -468,9 +478,9 @@
     <!-- End Meta Pixel Code -->
 
     <script>
-        const checkRole = (area = null) => {
-            const role = document.querySelector('input[name="roles' + area + '"]:checked');
-            const secondaryName = document.getElementById('secondary_name' + area);
+        const checkRole = () => {
+            const role = document.querySelector('input[name="roles"]:checked');
+            const secondaryName = document.getElementById('secondary_name');
 
             if (role.value === 'parent') {
                 secondaryName.classList.remove('hidden')
@@ -480,17 +490,37 @@
             }
         }
 
-        const submit = (area = null) => {
+        let validation = []
+
+        const checkValidation = (id) => {
+            const element = document.getElementById(id);
+            const errorMsg = document.getElementById(id + '_error');
+            const forbiddenSymbols = /[<>'"();{}$%&#!?+=\/\\|\[\]*^`~]/;
+            let msg = ''
+
+            if (forbiddenSymbols.test(element.value)) msg = 'This field must not contain symbols.';
+
+            errorMsg.textContent = msg;
+            errorMsg.classList.toggle('hidden', !msg);
+            element.classList.toggle('border-none', !msg);
+            element.classList.toggle('border-red', !!msg);
+
+            validation[id] = msg ? false : true
+        }
+
+        const submit = () => {
+            const checkValidation = Object.values(validation).includes(false)
+
             // Get value
-            const role = document.querySelector('input[name="roles' + area + '"]:checked');
-            const primaryName = document.getElementById('primary_name' + area);
-            const secondaryName = document.getElementById('secondary_name' + area);
-            const phoneNumber = document.getElementById('phone_number' + area);
-            const schoolName = document.getElementById('school_name' + area);
-            const graduationYear = document.getElementById('graduation_year' + area);
-            const loadingIcon = document.getElementById('loading' + area)
-            const sendIcon = document.getElementById('send' + area)
-            const formPage = document.getElementById('myForm' + area)
+            const role = document.querySelector('input[name="roles"]:checked');
+            const primaryName = document.getElementById('primary_name');
+            const secondaryName = document.getElementById('secondary_name');
+            const phoneNumber = document.getElementById('phone_number');
+            const schoolName = document.getElementById('school_name');
+            const graduationYear = document.getElementById('graduation_year');
+            const loadingIcon = document.getElementById('loading')
+            const sendIcon = document.getElementById('send')
+            const formPage = document.getElementById('myForm')
 
 
             loadingIcon.classList.remove('hidden')
@@ -513,7 +543,7 @@
                 'utm_content': "{{ request()->get('utm_content') ?? null }}"
             }
 
-            const inputs = document.querySelectorAll('#myForm' + area + ' input, #myForm' + area + ' select');
+            const inputs = document.querySelectorAll('#myForm input, #myForm select');
             let isValid = true;
 
             // Loop through inputs and check for validation
@@ -532,7 +562,7 @@
             });
 
             // If the form is valid, proceed with submission
-            if (isValid) {
+            if (isValid  && !checkValidation) {
                 $.ajax({
                     url: '{{ env('CRM_DOMAIN') }}register/public',
                     type: 'POST', // Specify the request type (POST)

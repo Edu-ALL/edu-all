@@ -25,22 +25,34 @@
                     <div class="mb-3">
                         <input type="text"
                             class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="Full Name *" id="primary_name" required>
+                            placeholder="Full Name *" id="primary_name" required
+                            oninput="checkValidation('primary_name')">
+                        <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden">
+                        </div>
                     </div>
                     <div>
                         <input type="text"
                             class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full hidden mb-3"
-                            placeholder="Child Name *" id="secondary_name" required>
+                            placeholder="Child Name *" id="secondary_name" required
+                            oninput="checkValidation('secondary_name')">
+                        <div id="secondary_name_error" class="text-red text-[10px] mt-1 hidden">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <input type="text"
                             class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="Phone Number *" id="phone_number" required>
+                            placeholder="Phone Number *" id="phone_number" required
+                            oninput="checkValidation('phone_number')">
+                        <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <input type="text"
                             class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="School Name *" id="school_name" required>
+                            placeholder="School Name *" id="school_name" required
+                            oninput="checkValidation('school_name')">
+                        <div id="school_name_error" class="text-red text-[10px] mt-1 hidden">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <select
@@ -148,8 +160,28 @@
             }
         }
 
+        let validation = []
+
+        const checkValidation = (id) => {
+            const element = document.getElementById(id);
+            const errorMsg = document.getElementById(id + '_error');
+            const forbiddenSymbols = /[<>'"();{}$%&#!?+=\/\\|\[\]*^`~]/;
+            let msg = ''
+
+            if (forbiddenSymbols.test(element.value)) msg = 'This field must not contain symbols.';
+
+            errorMsg.textContent = msg;
+            errorMsg.classList.toggle('hidden', !msg);
+            element.classList.toggle('border-none', !msg);
+            element.classList.toggle('border-red', !!msg);
+
+            validation[id] = msg ? false : true
+        }
+
 
         const submit = () => {
+            const checkValidation = Object.values(validation).includes(false)
+
             // Get value
             const role = document.querySelector('input[name="roles"]:checked');
             const primaryName = document.getElementById('primary_name');
@@ -202,12 +234,12 @@
             });
 
             // If the form is valid, proceed with submission
-            if (isValid) {
+            if (isValid && !checkValidation) {
                 const captcha = checkCaptcha();
                 if (captcha) {
 
                     $.ajax({
-                        url: 'https://crm.edu-all.com/api/v1/register/public', // Replace with the API endpoint
+                        url: '{{ env('CRM_DOMAIN') }}register/public', // Replace with the API endpoint
                         type: 'POST', // Specify the request type (POST)
                         contentType: 'application/json', // Set content type to JSON
                         data: JSON.stringify(formData), // Convert formData to a JSON string

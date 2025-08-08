@@ -1,9 +1,17 @@
 @extends('layout.user.main')
 
 @section('head')
-    <title>{{ __('pages/sign_me/sat_prep.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/sign_me/sat_prep.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/sign_me/sat_prep.meta_description') }}" />
+    <title>
+        @if ($slug == 'company')
+            Event & Program Collaboration
+        @else
+            Volunteer & Project Collaboration
+        @endif
+    </title>
+    <meta name="title"
+        content="{{ $slug == 'company' ? 'Event & Program Collaboration' : 'Volunteer & Project Collaboration' }}" />
+    <meta name="description"
+        content="{{ $slug == 'company' ? 'Event & Program Collaboration' : 'Volunteer & Project Collaboration' }}" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXRKLPRKWF"></script>
@@ -98,7 +106,9 @@
                                                 <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>
                                                 <input type="text" name="fullname"
                                                     class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                                                    placeholder="Full Name *" id="primary_name" required>
+                                                    placeholder="Full Name *" id="primary_name"
+                                                    oninput="checkValidation('primary_name')" required>
+                                                <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
                                                 @error('fullname')
                                                     <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                 @enderror
@@ -111,7 +121,9 @@
                                                     <input type="text" name="company_name"
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
                                                         placeholder="{{ ucfirst($slug) }} Name *" id="company_name"
-                                                        required>
+                                                        oninput="checkValidation('company_name')" required>
+                                                    <div id="company_name_error" class="text-red text-[10px] mt-1 hidden">
+                                                    </div>
                                                     @error('company_name')
                                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
@@ -120,7 +132,9 @@
                                                     <label for="position" class="text-dark text-sm py-2">Position</label>
                                                     <input type="text" name="position"
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                                                        placeholder="Position *" id="position" required>
+                                                        placeholder="Position *" id="position" required
+                                                        oninput="checkValidation('position')">
+                                                    <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
                                                     @error('position')
                                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
@@ -131,7 +145,9 @@
                                                     <label for="email" class="text-dark text-sm py-2">Email</label>
                                                     <input type="email" name="email"
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                                                        placeholder="Email *" id="email" required>
+                                                        placeholder="Email *" id="email" required
+                                                        oninput="checkValidation('email')">
+                                                    <div id="email_error" class="text-red text-[10px] mt-1 hidden"></div>
                                                     @error('email')
                                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
@@ -141,7 +157,10 @@
                                                         Number</label>
                                                     <input type="text" name="phone_number"
                                                         class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full"
-                                                        placeholder="Phone Number *" id="phone_number" required>
+                                                        placeholder="Phone Number *" id="phone_number" required
+                                                        oninput="checkValidation('phone_number')">
+                                                    <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden">
+                                                    </div>
                                                     @error('phone_number')
                                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                     @enderror
@@ -150,7 +169,9 @@
                                             <div class="mb-3">
                                                 <label for="inquiry" class="text-dark text-sm py-2">Inquiry</label>
                                                 <textarea class="md:py-2 text-dark rounded-sm border-none shadow-sm py-4 my-1 w-full" placeholder="Inquiry *"
-                                                    id="inquiry" name="inquiry" rows="4" required></textarea>
+                                                    id="inquiry" name="inquiry" rows="4" required oninput="checkValidation('inquiry')"></textarea>
+                                                <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden">
+                                                </div>
                                                 @error('inquiry')
                                                     <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                                 @enderror
@@ -220,7 +241,26 @@
             }
         }
 
+        let validation = []
+
+        const checkValidation = (id) => {
+            const element = document.getElementById(id);
+            const errorMsg = document.getElementById(id + '_error');
+            const forbiddenSymbols = /[<>'"();{}$%&#!?+=\/\\|\[\]*^`~]/;
+            let msg = ''
+
+            if (forbiddenSymbols.test(element.value)) msg = 'This field must not contain symbols.';
+
+            errorMsg.textContent = msg;
+            errorMsg.classList.toggle('hidden', !msg);
+            element.classList.toggle('border-none', !msg);
+            element.classList.toggle('border-red', !!msg);
+
+            validation[id] = msg ? false : true
+        }
+
         const submitData = () => {
+            const checkValidation = Object.values(validation).includes(false)
             const inputs = document.querySelectorAll('#myForm input, #myForm textarea');
             let isValid = true;
 
@@ -239,8 +279,9 @@
                     input.classList.add('border-none');
                 }
             });
+            
 
-            if (isValid) {
+            if (isValid && !checkValidation) {
                 const captcha = checkCaptcha();
                 if (captcha) {
                     document.getElementById('myForm').submit();
