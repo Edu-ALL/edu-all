@@ -48,4 +48,4 @@ Route::get('/banner/list/{region}-{lang}', function ($region, $lang) {
     return Banners::where('region', $region)->where('lang', $lang)->orderBy('banner_order', 'asc')->get();
 })->name('select-mentor');
 
-Route::post('/blogs', [Blog::class, 'store'])->name('create-blogs');
+Route::post('/blogs', [Blog::class, 'storeApi'])->name('create-blogs');

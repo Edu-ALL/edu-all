@@ -173,8 +173,6 @@ class Blog extends Controller
             'required'  => 'The :attribute field is required.',
         ];
 
-        $is_api = $request->api ?? false;
-
         $rules = [
             'blog_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'blog_alt' => 'required',
@@ -238,12 +236,6 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
-
-            // Response blog via API 
-            if ($is_api) {
-                return response()->json($blog);
-            }
-
             Log::notice('Blog : "' . $blogs->blog_title . '" has been successfully Created by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
@@ -252,6 +244,85 @@ class Blog extends Controller
         }
 
         return redirect('/admin/blogs/' . $blogs->id . '/view')->withSuccess('Blogs Was Successfully Created');
+    }
+
+    public function storeApi(Request $request)
+    {
+        $messages = [
+            'required'  => 'The :attribute field is required.',
+        ];
+
+        $rules = [
+            'blog_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
+            'blog_alt' => 'required',
+            'lang' => 'required',
+            'category' => 'required',
+            'mentor' => 'nullable',
+            'blog_title' => 'required',
+            'blog_slug' => 'required',
+            'blog_description' => 'required',
+            'seo_title' => 'required',
+            'seo_keyword' => 'required',
+            'seo_desc' => 'required',
+            'duration_read' => 'required',
+            'publish_date' => 'nullable',
+            'blog_status' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->fails()) {
+            return response()->json($validator->messages());
+        }
+
+        DB::beginTransaction();
+        try {
+            $blogs = new Blogs();
+            if ($request->hasFile('blog_thumbnail')) {
+                $file = $request->file('blog_thumbnail');
+                $file_format = $request->file('blog_thumbnail')->getClientOriginalExtension();
+                $destinationPath = 'project/eduall-website/blogs/' . date('Y') . '/' . date('m') . '/';
+                $time = date('YmdHis');
+                $fileName = 'Blogs-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
+                $blogs->blog_thumbnail = $fileName;
+            }
+            $blogs->blog_thumbnail_alt = $request->blog_alt;
+            $blogs->cat_id = $request->category;
+            $blogs->mt_id = $request->mentor;
+            $blogs->blog_title = $request->blog_title;
+            $blogs->slug = $request->blog_slug;
+            $blogs->old_slug = $request->blog_slug;
+            // $blogs->blog_description = str_replace('<p>&nbsp;</p>', '<br>', $request->blog_description);
+            $blogs->blog_description = $request->blog_description;
+            $blogs->seo_title = $request->seo_title;
+            $blogs->seo_keyword = $request->seo_keyword;
+            $blogs->seo_desc = $request->seo_desc;
+            $blogs->blog_status = $request->blog_status;
+            $blogs->lang = $request->lang;
+            $blogs->click_count = 0;
+            $blogs->duration_read = $request->duration_read;
+            $blogs->is_highlight = 'false';
+            if ($request->blog_status == 'publish' && $request->publish_date == null) {
+                $blogs->publish_date = date('Y-m-d H:i:s');
+            } else if ($request->blog_status == 'publish' && $request->publish_date != null) {
+                $blogs->publish_date = $request->publish_date;
+            } else if ($request->blog_status == 'draft' && $request->publish_date != null) {
+                $blogs->publish_date = $request->publish_date;
+            } else if ($request->blog_status == 'draft' && $request->publish_date == null) {
+                $blogs->publish_date = null;
+            }
+            $blogs->created_at = date('Y-m-d H:i:s');
+            $blogs->updated_at = date('Y-m-d H:i:s');
+            $blogs->save();
+            DB::commit();
+            Log::notice('Blog : "' . $blogs->blog_title . '" has been successfully Created by N8N Automation');
+        } catch (Exception $e) {
+            DB::rollBack();
+            Log::error('Create Blog failed : ' . $e->getMessage());
+            return response()->json($e->getMessage());
+        }
+
+        return response()->json($blogs);
     }
 
     public function getBlogWidget(Request $request, $blog_id)
