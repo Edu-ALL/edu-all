@@ -173,6 +173,8 @@ class Blog extends Controller
             'required'  => 'The :attribute field is required.',
         ];
 
+        $is_api = $request->api ?? false;
+
         $rules = [
             'blog_thumbnail' => 'required|mimes:jpeg,jpg,png,bmp,webp|max:2048',
             'blog_alt' => 'required',
@@ -236,6 +238,12 @@ class Blog extends Controller
             $blogs->updated_at = date('Y-m-d H:i:s');
             $blogs->save();
             DB::commit();
+
+            // Response blog via API 
+            if ($is_api) {
+                return response()->json($blog);
+            }
+
             Log::notice('Blog : "' . $blogs->blog_title . '" has been successfully Created by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();

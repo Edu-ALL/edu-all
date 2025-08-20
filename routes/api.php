@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Blog;
 use App\Models\Banners;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +47,5 @@ Route::get('/project-showcase/{category}', function ($category) {
 Route::get('/banner/list/{region}-{lang}', function ($region, $lang) {
     return Banners::where('region', $region)->where('lang', $lang)->orderBy('banner_order', 'asc')->get();
 })->name('select-mentor');
+
+Route::post('/blogs', [Blog::class, 'store'])->name('create-blogs');
