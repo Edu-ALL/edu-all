@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Resources', 'url' => '#'],
+            ['name' => 'Testimonial', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/resources/testimonial.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/resources/testimonial.meta_title') }}" />
     <meta name="description" content="{{ __('pages/resources/testimonial.meta_description') }}" />
@@ -10,9 +17,9 @@
     {{-- ================================== Top Section  ================================== --}}
     <section class="py-16">
         <div class="main-container">
-            <h2 class="font-newprimary font-bold text-4xl text-[#6696E2] text-center">
+            <h1 class="font-newprimary font-bold text-4xl text-[#6696E2] text-center">
                 {{ __('pages/resources/testimonial.title') }}
-            </h2>
+            </h1>
         </div>
     </section>
 
@@ -144,7 +151,7 @@
                 {{ __('pages/resources/testimonial.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', ['locale' => app()->getLocale()]) }}"
-                title="{{ __('pages/resources/testimonial.bottom_btn') }}" type='secondary' bg-color="red" />
+                title="{{ __('pages/resources/testimonial.bottom_btn') }}" type='secondary' bg-color="red" is-rounded />
         </div>
 
     </section>

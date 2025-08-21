@@ -80,7 +80,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_en" src="{{ asset('uploaded_files/'.'guidebook/'.$guidebook[0]->created_at->format('Y').'/'.$guidebook[0]->created_at->format('m').'/'.$guidebook[0]->guidebook_image) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_en" src="{{ Storage::url('guidebook/'.$guidebook[0]->created_at->format('Y').'/'.$guidebook[0]->created_at->format('m').'/'.$guidebook[0]->guidebook_image) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">
@@ -123,7 +123,7 @@
                                                     <div class="col-md-2 col">
                                                         <label for="" class="form-label">Image Preview</label>
                                                         <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ asset('uploaded_files/'.'guidebook/'.$guidebook[1]->created_at->format('Y').'/'.$guidebook[1]->created_at->format('m').'/'.$guidebook[1]->guidebook_image) }}">
+                                                            <img class="img-preview img-fluid" id="img_preview_id" src="{{ Storage::url('guidebook/'.$guidebook[1]->created_at->format('Y').'/'.$guidebook[1]->created_at->format('m').'/'.$guidebook[1]->guidebook_image) }}">
                                                         </div>
                                                     </div>
                                                     <div class="col d-flex flex-column gap-2">

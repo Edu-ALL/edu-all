@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Graduate Admissions Mentoring - EduALL Programs",
-    'meta_description' => 'We offer a personalized 1-on-1 admission mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best-fit universities',
+    'meta_title' => "Graduate Preparation Program for Study Abroad - EduAll",
+    'meta_description' => 'Enroll in our graduate preparation program for study abroad, featuring a comprehensive curriculum and expert mentors to support your university admission journey.',
 
     'navbar_title' => "GRADUATE",
     'title' => "GRADUATE",

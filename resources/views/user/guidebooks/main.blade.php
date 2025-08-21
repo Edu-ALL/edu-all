@@ -47,9 +47,9 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img  data-src="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
-                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto lazyload">
                                         </a>
                                     </div>
                                 </li>
@@ -80,9 +80,9 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img  data-src="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
-                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto lazyload">
                                         </a>
                                     </div>
                                 </li>
@@ -112,9 +112,9 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img  data-src="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
-                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto lazyload">
                                         </a>
                                     </div>
                                 </li>
@@ -144,9 +144,9 @@
                                 <li class="splide__slide">
                                     <div class="splide__slide__container">
                                         <a href="{{ $guidebook->guidebook_link }}">
-                                            <img data-original="{{ asset('uploaded_files/guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
+                                            <img  data-src="{{ Storage::url('guidebook/' . $guidebook->created_at->format('Y') . '/' . $guidebook->created_at->format('m') . '/' . $guidebook->guidebook_image) }}"
                                                 alt="EduALL {{ $guidebook->guidebook_alt }}"
-                                                class="w-full max-w-[18rem] min-w-0 mx-auto">
+                                                class="w-full max-w-[18rem] min-w-0 mx-auto lazyload">
                                         </a>
                                     </div>
                                 </li>
@@ -208,8 +208,8 @@
                             @foreach ($univ_list as $univ_logo)
                                 <li class="splide__slide">
                                     <div class="splide__slide__container mx-3">
-                                        <img data-original="{{ asset('assets/img/guidebooks/univ-list/' . $univ_logo) }}"
-                                            alt="EduALL University Logo" class="w-full">
+                                        <img  data-src="{{ asset('assets/img/guidebooks/univ-list/' . $univ_logo) }}"
+                                            alt="EduALL University Logo" class="w-full lazyload">
                                     </div>
                                 </li>
                             @endforeach

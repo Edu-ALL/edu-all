@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -57,8 +58,8 @@ class RegularTalk extends Controller
                 ->editColumn('speaker_image', function ($d) {
                     $count_image = count(json_decode($d->speaker_image));
                     if ($count_image > 1) {
-                        $path0 = asset('uploaded_files/' . 'regular-talk/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m')) . '/' . json_decode($d->speaker_image)[0];
-                        $path1 = asset('uploaded_files/' . 'regular-talk/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m')) . '/' . json_decode($d->speaker_image)[1];
+                        $path0 = Storage::url('regular-talk/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m')) . '/' . json_decode($d->speaker_image)[0];
+                        $path1 = Storage::url('regular-talk/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m')) . '/' . json_decode($d->speaker_image)[1];
                         $output = '
                         <div class="cointainer-fluid p-0">
                             <img class="position-absolute first-img" data-original="' . $path0 . '" src="' . $path0 . '" alt="" width="100">
@@ -70,7 +71,7 @@ class RegularTalk extends Controller
                     ';
                     } elseif ($count_image <= 1) {
                         $output = 'only 1';
-                        $path0 = asset('uploaded_files/' . 'regular-talk/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m')) . '/' . json_decode($d->speaker_image)[0];
+                        $path0 = Storage::url('regular-talk/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m')) . '/' . json_decode($d->speaker_image)[0];
                         $output = '
                         <div class="cointainer-fluid p-0">
                             <img data-original="' . $path0 . '" src="' . $path0 . '" alt="" width="100">
@@ -181,11 +182,11 @@ class RegularTalk extends Controller
                 $i = 1;
                 foreach ($request->file('speaker') as $imagefile) {
                     $file_format = $imagefile->getClientOriginalExtension();
-                    $destinationPath = public_path() . '/uploaded_files/' . 'regular-talk/' . date('Y') . '/' . date('m') . '/';
+                    $destinationPath = 'project/eduall-website/regular-talk/' . date('Y') . '/' . date('m') . '/';
                     $time = date('YmdHis');
                     $fileName = 'Speaker-image-' . $time . '-' . $i++ . '.' . $file_format;
                     $fileName = str_replace(' ', '-', $fileName);
-                    $imagefile->move($destinationPath, $fileName);
+                    Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($imagefile));
                     $images[] = $fileName;
                 }
                 $regular_talk->speaker_image = json_encode($images);
@@ -193,7 +194,7 @@ class RegularTalk extends Controller
 
             $regular_talk->save();
             DB::commit();
-            Log::notice('New Regular Talk : '. $regular_talk->topic .', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('New Regular Talk : ' . $regular_talk->topic . ', Was Successfully Created By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Was Failed To Create: ' . $e);
@@ -277,9 +278,9 @@ class RegularTalk extends Controller
             if ($request->hasFile('speaker')) {
                 foreach (json_decode($regular_talk->speaker_image) as $image) {
                     if ($old_image_path = $image) {
-                        $file_path = public_path('uploaded_files/'.'project-showcase/'.$regular_talk->created_at->format('Y').'/'.$regular_talk->created_at->format('m').'/'.$old_image_path);
-                        if (File::exists($file_path)) {
-                            File::delete($file_path);
+                        $file_path = 'project/eduall-website/regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $old_image_path;
+                        if (Storage::disk('s3')->exists($file_path)) {
+                            Storage::disk('s3')->delete($file_path);
                         }
                     }
                 }
@@ -287,11 +288,11 @@ class RegularTalk extends Controller
                 $i = 1;
                 foreach ($request->file('speaker') as $imagefile) {
                     $file_format = $imagefile->getClientOriginalExtension();
-                    $destinationPath = public_path() . '/uploaded_files/' . 'regular-talk/' . date('Y') . '/' . date('m') . '/';
+                    $destinationPath = 'project/eduall-website/regular-talk/' . date('Y') . '/' . date('m') . '/';
                     $time = date('YmdHis');
                     $fileName = 'Speaker-image-' . $time . '-' . $i++ . '.' . $file_format;
                     $fileName = str_replace(' ', '-', $fileName);
-                    $imagefile->move($destinationPath, $fileName);
+                    Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($imagefile));
                     $images[] = $fileName;
                 }
                 $regular_talk->speaker_image = json_encode($images);
@@ -299,7 +300,7 @@ class RegularTalk extends Controller
 
             $regular_talk->save();
             DB::commit();
-            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Updated By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Regular Talk : ' . $regular_talk->topic . ', Was Successfully Updated By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Was Failed To Update: ' . $e);
@@ -322,15 +323,15 @@ class RegularTalk extends Controller
             $regular_talk = RegularTalks::find($id);
             foreach (json_decode($regular_talk->speaker_image) as $image) {
                 if ($old_image_path = $image) {
-                    $file_path = public_path('uploaded_files/' . 'regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
             }
             $regular_talk->delete();
             DB::commit();
-            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Regular Talk : ' . $regular_talk->topic . ', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Talk Was Failed To Delete: ' . $e);
@@ -348,7 +349,7 @@ class RegularTalk extends Controller
             $regular_talk->status = 'inactive';
             $regular_talk->save();
             DB::commit();
-            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Regular Talk : ' . $regular_talk->topic . ', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Talk Was Failed To Deactivate: ' . $e);
@@ -366,7 +367,7 @@ class RegularTalk extends Controller
             $regular_talk->status = 'active';
             $regular_talk->save();
             DB::commit();
-            Log::notice('Regular Talk : '. $regular_talk->topic .', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Regular Talk : ' . $regular_talk->topic . ', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Regular Talk Was Failed To Activate: ' . $e);

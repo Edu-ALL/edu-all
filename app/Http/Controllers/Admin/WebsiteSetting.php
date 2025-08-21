@@ -10,10 +10,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class WebsiteSetting extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $data = WebsiteSettings::first();
         return view('admin.website-setting.index', [
             'data' => $data,
@@ -21,7 +23,8 @@ class WebsiteSetting extends Controller
         ]);
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -54,32 +57,32 @@ class WebsiteSetting extends Controller
             $data->website_name = $request->website_name;
             if ($request->hasFile('primary_logo')) {
                 if ($old_image_path = $data->website_primary_logo) {
-                    $file_path = public_path('uploaded_files/'.'website-settings/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/website-settings/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('primary_logo');
                 $file_format = $request->file('primary_logo')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'website-settings/';
+                $destinationPath = public_path() . '/uploaded_files/' . 'website-settings/';
                 $time = date('YmdHis');
-                $fileName = 'Logo-Primary-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Logo-Primary-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $data->website_primary_logo = $fileName;
             }
             if ($request->hasFile('secondary_logo')) {
                 if ($old_image_path = $data->website_secondary_logo) {
-                    $file_path = public_path('uploaded_files/'.'website-settings/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/website-settings/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('secondary_logo');
                 $file_format = $request->file('secondary_logo')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'website-settings/';
+                $destinationPath = public_path() . '/uploaded_files/' . 'website-settings/';
                 $time = date('YmdHis');
-                $fileName = 'Logo-Secondary-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Logo-Secondary-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $data->website_secondary_logo = $fileName;
             }
             $data->alt_primary_logo = $request->alt_primary_logo;

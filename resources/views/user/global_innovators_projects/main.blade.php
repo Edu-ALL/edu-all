@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Global Innovators Project', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/programs/global_innovators_projects.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/global_innovators_projects.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/global_innovators_projects.meta_description') }}" />
@@ -34,9 +41,9 @@
         <x-registration-form />
         <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
             <div class="flex flex-col gap-2">
-                <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:pb-[2%]">
+                <h1 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:pb-[2%]">
                     Global Innovators Project
-                </h2>
+                </h1>
                 <!-- <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
                     {{ __('pages/programs/global_innovators_projects.description') }}
                 </p> -->

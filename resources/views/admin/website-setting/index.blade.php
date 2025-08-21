@@ -56,7 +56,7 @@
                                             <div class="col-md-4 col">
                                                 <label for="" class="form-label fw-semibold">Preview</label>
                                                 <div class="img-preview col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
-                                                    <img class="img-fluid" id="preview_logo_primary" src="{{ asset('uploaded_files/'.'website-settings/'.$data->website_primary_logo) }}">
+                                                    <img class="img-fluid" id="preview_logo_primary" src="{{ Storage::url('website-settings/'.$data->website_primary_logo) }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column gap-2">
@@ -84,7 +84,7 @@
                                             <div class="col-md-4 col">
                                                 <label for="" class="form-label fw-semibold">Preview</label>
                                                 <div class="img-preview col d-flex align-items-center justify-content-center border rounded p-1" style="min-height: 110px">
-                                                    <img class="img-fluid" id="preview_logo_secondary" src="{{ asset('uploaded_files/'.'website-settings/'.$data->website_secondary_logo) }}">
+                                                    <img class="img-fluid" id="preview_logo_secondary" src="{{ Storage::url('website-settings/'.$data->website_secondary_logo) }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column gap-2">

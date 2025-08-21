@@ -162,7 +162,7 @@
                                                 style="min-height: 110px" id="output">
                                                 @foreach (json_decode($regular_talk->speaker_image) as $image)
                                                 <div class="image col-2" id="preview-image">
-                                                    <img class="img-fluid" src="{{ asset('uploaded_files/'.'regular-talk/'.$regular_talk->created_at->format('Y').'/'.$regular_talk->created_at->format('m').'/'.$image) }}">
+                                                    <img class="img-fluid" src="{{ Storage::url('regular-talk/'.$regular_talk->created_at->format('Y').'/'.$regular_talk->created_at->format('m').'/'.$image) }}">
                                                 </div>
                                             @endforeach
                                             </div>

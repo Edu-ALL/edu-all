@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "SAT Program - EduALL Programs",
-    'meta_description' => 'SAT Program: Prepare for your SAT tests with our test experts with a proven strategy for years',
+    'meta_title' => "Kelas Persiapan SAT Test Indonesia - EduAll",
+    'meta_description' => 'Program persiapan SAT Test dari EduAll terdiri dari reading, writing, mathematics dan science yang bisa diikuti grade 10-12',
 
     'title' => "Standardized Test",
     'body' => 'Raih potensi penuh untuk masuk ke universitas top dunia! Tingkatkan skor tes dengan mentor ahli yang dilengkapi dengan strategi yang telah terbukti.',
@@ -81,8 +81,8 @@ return [
                     'btn' => 'Lihat kurikulum lengkap di sini',
                 ],
                 [
-                    'title' => 'ACCESS ANYWHERE',
-                    'description' => 'Kami akan datang kepada kamu! Kelas daring yang menarik juga tersedia. ',
+                    'title' => 'ONLINE CLASSESS',
+                    'description' => 'Belajar darimana saja dengan kelas online kami. ',
                 ],
                 [
                     'title' => 'SUPPLEMENTAL VIDEOS',

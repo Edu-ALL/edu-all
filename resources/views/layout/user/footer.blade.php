@@ -49,8 +49,8 @@
                             class="block p-2 bg-[#f4f3f3] hover:bg-[#dfdfdf] rounded transition-all duration-300">
                             <div class="flex flex-col gap-1">
                                 <img width="100%" height="95px"
-                                    data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                    alt="Allineduspace {{ $blog->blog_thumbnail_alt }}"
+                                    data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                    alt="EduALL | {{ $blog->blog_thumbnail_alt }}"
                                     class="h-[95px] object-cover object-center">
                                 <h2
                                     class="font-newprimary font-extrabold text-sm text-newprimary lg:text-sm lg:tracking-normal lg:leading-6">
@@ -67,9 +67,10 @@
                     @endforeach
                 </div>
                 <div class="text-center mt-4">
-                    <button class="bg-red py-1 px-4 text-white shadow hover:bg-red/75">
+                    <a href="{{ url(app()->getLocale()) }}/blog"
+                        class="bg-red py-1 px-4 text-white shadow hover:bg-red/75 rounded-lg">
                         {{ __('pages/footer.article_button') }}
-                    </button>
+                    </a>
                 </div>
 
             </div>
@@ -201,7 +202,7 @@
                                                     class="font-medium hover:text-[#819CCB]">English</a>
                                             </div>
                                         </div>
-                                    @elseif (Route::currentRouteName())
+                                    @elseif (Route::currentRouteName() == 'detail_mentor')
                                         <div class="flex items-center gap-3 px-4">
                                             <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
                                                 class="flex items-center hover:text-[#819CCB]">
@@ -325,7 +326,7 @@
         </div>
         <div
             class="mt-14 border-t-2 border-light pt-10 gap-8 flex flex-wrap justify-center md:justify-between items-center">
-            <img src={{ asset('uploaded_files/' . 'website-settings/' . $website_settings->website_secondary_logo) }}
+            <img src={{ Storage::url('website-settings/' . $website_settings->website_secondary_logo) }}
                 width="160" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
 
             <div class="flex gap-4 items-center justify-between">

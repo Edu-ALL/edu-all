@@ -51,7 +51,7 @@
                 </nav>
                 <div class="relative">
                     <img class="sticker absolute" loading="lazy"
-                        src="{{ asset('assets/img/regular_talk/'.$regular_talk->recommended_for).'.webp' }}" alt="">
+                        src="{{ asset('assets/img/regular_talk/'.$regular_talk->recommended_for).'.webp' }}" alt="EduALL">
 
                     <h3 class="w-[95%]">{{ $regular_talk->topic }}</h3>
                 </div>
@@ -75,7 +75,7 @@
                     @foreach (json_decode($regular_talk->speaker_image) as $image)
                         <div class="col p-0">
                             <img loading="lazy" class="w-full"
-                                src="{{ asset('uploaded_files/' . 'regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $image) }}"
+                                src="{{ Storage::url('regular-talk/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $image) }}"
                                 alt="Speaker">
                         </div>
                     @endforeach

@@ -18,17 +18,17 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-experiental-learning-programs-header bg-cover bg-top" id="banner">
-        <x-registration-form />
+        <x-registration-form :is-partner="true" />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2">
-                    <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:pb-[2%]">
+                    <h1 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:pb-[2%]">
                         {{ __('pages/programs/teacher_focused.title') }}
-                    </h2>
+                    </h1>
                     <p class="ml-0.5 text-white text-center md:text-left max-w-2xl leading-6 text-banner-description font-light md:w-1/2 xl:w-2/3">
                         {{ __('pages/programs/teacher_focused.description') }}
                     </p>
-                    <x-registration-form :is-button="true" />
+                    <x-registration-form :is-button="true" :is-partner="true" />
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                     </p>
                 </div>
                 <div class="md:w-2/5 w-full order-1 md:order-2">
-                    <img src="{{ asset('assets/img/teacher_focused/CREST AWARDS.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/teacher_focused/CREST AWARDS.webp') }}" alt="EduALL"
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
                 </div>
             </div>
@@ -112,7 +112,7 @@
         <div class="new-main-container flex justify-center">
             <div class="flex flex-wrap w-full items-center">
                 <div class="md:w-2/5 w-full">
-                    <img src="{{ asset('assets/img/teacher_focused/letter.webp') }}" alt=""
+                    <img src="{{ asset('assets/img/teacher_focused/letter.webp') }}" alt="EduALL"
                         class="object-contain object-bottom md:px-4 mx-auto w-1/2 md:w-full">
                 </div>
                 <div class="md:w-3/5 w-full px-8 flex flex-col gap-8 md:my-0 my-8 pb-12">

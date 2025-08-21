@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "EduALL: Your Gateway to Top Universities and Dream Careers",
-    'meta_description' => 'We offer tailored guidance, practical education, and interactive learning experiences to fulfill the prerequisites for applying to universities',
+    'meta_title' => "Study Abroad with EduALL | Global Education Mentorship",
+    'meta_description' => 'Achieve your dream to study abroad with EduALL. Get expert guidance for top university admissions, test preparation, and the best strategies.',
     'benefit_list' => [
         [
             'title' => 'Aspire',

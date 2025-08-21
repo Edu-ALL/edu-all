@@ -12,13 +12,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class SuccessStory extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $success_stories = SuccessStories::orderBy('updated_at', 'desc')->get();
         return view('admin.success-stories.index', [
             'success_stories' => $success_stories,
@@ -26,79 +28,82 @@ class SuccessStory extends Controller
         ]);
     }
 
-    public function getSuccessStories(Request $request){
+    public function getSuccessStories(Request $request)
+    {
         if ($request->ajax()) {
             $data = SuccessStories::orderBy('updated_at', 'desc')->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->editColumn('description', function($d){
-                $result = '
-                    '.Str::limit($d->description, 120, '...').'
+                ->addIndexColumn()
+                ->editColumn('description', function ($d) {
+                    $result = '
+                    ' . Str::limit($d->description, 120, '...') . '
                 ';
-                return $result;
-            })
-            ->editColumn('image', function($d){
-                $path = asset('uploaded_files/'.'success-stories/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->thumbnail);
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="80">
+                    return $result;
+                })
+                ->editColumn('image', function ($d) {
+                    $path = Storage::url('success-stories/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->thumbnail);
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="80">
                 ';
-                return $result;
-            })
-            ->editColumn('language', function($d){
-                $path = asset('assets/img/flag/flag-'.$d->lang.'.png');
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="30">
+                    return $result;
+                })
+                ->editColumn('language', function ($d) {
+                    $path = asset('assets/img/flag/flag-' . $d->lang . '.png');
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="30">
                     <p class="pt-1" style="font-size: 13px !important">
-                        '.$d->languages->language.'
+                        ' . $d->languages->language . '
                     </p>
                 ';
-                return $result;
-            })
-            ->editColumn('status', function($d){
-                if ($d->status == 'active') {
-                    $result = '
-                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#deactivate" style="text-transform: capitalize;" onclick="formDeactivate('.$d->group.')">
+                    return $result;
+                })
+                ->editColumn('status', function ($d) {
+                    if ($d->status == 'active') {
+                        $result = '
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#deactivate" style="text-transform: capitalize;" onclick="formDeactivate(' . $d->group . ')">
                             <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Deactivate this success stories">
-                                '.$d->status.'
+                                ' . $d->status . '
                             </span>
                         </button>
                     ';
-                } else {
-                    $result = '
-                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#activate" style="text-transform: capitalize;" onclick="formActivate('.$d->group.')">
+                    } else {
+                        $result = '
+                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#activate" style="text-transform: capitalize;" onclick="formActivate(' . $d->group . ')">
                             <span class="p-0" data-bs-toggle="tooltip" data-bs-title="Activate this success stories">
-                                '.$d->status.'
+                                ' . $d->status . '
                             </span>
                         </button>
                     ';
-                }
-                return $result;
-            })
-            ->editColumn('action', function($d){
-                $result = '
+                    }
+                    return $result;
+                })
+                ->editColumn('action', function ($d) {
+                    $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-warning" href="/admin/success-stories/'.$d->group.'/edit">
+                    <a type="button" class="btn btn-warning" href="/admin/success-stories/' . $d->group . '/edit">
                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this success stories"></i>
                     </a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->group.')">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->group . ')">
                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this success stories"></i>
                     </button>
                 </div>
                 ';
-                return $result;
-            })
-            ->rawColumns(['description', 'image', 'language', 'status', 'action'])
-            ->make(true);
+                    return $result;
+                })
+                ->rawColumns(['description', 'image', 'language', 'status', 'action'])
+                ->make(true);
         }
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.success-stories.create', [
             'website_data' => WebsiteSettings::first(),
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -151,10 +156,10 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_achievement_img_en')) {
                 $file_en = $request->file('story_achievement_img_en');
                 $file_format_en = $request->file('story_achievement_img_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
+                $destinationPath_en = 'project/eduall-website/success-stories/' . date('Y') . '/' . date('m') . '/';
                 $time = $success_stories_en->group;
-                $fileName_en = 'Success-Stories-achievement-en-'.$time.'.'.$file_format_en;
-                $file_en->move($destinationPath_en, $fileName_en);
+                $fileName_en = 'Success-Stories-achievement-en-' . $time . '.' . $file_format_en;
+                Storage::disk('s3')->put($destinationPath_en . $fileName_en, file_get_contents($file_en));
                 $success_stories_en->achievement_image = $fileName_en;
             }
             $success_stories_en->achievement_alt = $request->story_achievement_alt_en;
@@ -177,10 +182,10 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_achievement_img_id')) {
                 $file_id = $request->file('story_achievement_img_id');
                 $file_format_id = $request->file('story_achievement_img_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
+                $destinationPath_id = 'project/eduall-website/success-stories/' . date('Y') . '/' . date('m') . '/';
                 $time = $success_stories_id->group;
-                $fileName_id = 'Success-Stories-achievement-id-'.$time.'.'.$file_format_id;
-                $file_id->move($destinationPath_id, $fileName_id);
+                $fileName_id = 'Success-Stories-achievement-id-' . $time . '.' . $file_format_id;
+                Storage::disk('s3')->put($destinationPath_id . $fileName_id, file_get_contents($file_id));
                 $success_stories_id->achievement_image = $fileName_id;
             }
             $success_stories_id->achievement_alt = $request->story_achievement_alt_id;
@@ -191,10 +196,10 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_thumbnail')) {
                 $file = $request->file('story_thumbnail');
                 $file_format = $request->file('story_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
+                $destinationPath = 'project/eduall-website/success-stories/' . date('Y') . '/' . date('m') . '/';
                 $time = $success_stories_en->group;
-                $fileName = 'Success-Stories-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Success-Stories-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $success_stories_en->thumbnail = $fileName;
                 $success_stories_id->thumbnail = $fileName;
             }
@@ -203,10 +208,10 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_home_thumbnail')) {
                 $file = $request->file('story_home_thumbnail');
                 $file_format = $request->file('story_home_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.date('Y').'/'.date('m').'/';
+                $destinationPath = 'project/eduall-website/success-stories/' . date('Y') . '/' . date('m') . '/';
                 $time = $success_stories_en->group;
-                $fileName = 'Success-Stories-home-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Success-Stories-home-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $success_stories_en->home_thumbnail = $fileName;
                 $success_stories_id->home_thumbnail = $fileName;
             }
@@ -215,7 +220,7 @@ class SuccessStory extends Controller
             $success_stories_id->save();
 
             DB::commit();
-            Log::notice('New Success Story : '. $success_stories_en->name .', Was Successfully Created');
+            Log::notice('New Success Story : ' . $success_stories_en->name . ', Was Successfully Created');
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Success Story Failed To Create: ' . $e);
@@ -225,7 +230,8 @@ class SuccessStory extends Controller
         return redirect('/admin/success-stories')->withSuccess('Success Stories Was Successfully Created');
     }
 
-    public function edit($group){
+    public function edit($group)
+    {
         $success_stories = SuccessStories::where('group', $group)->get();
         return view('admin.success-stories.update', [
             'success_stories' => $success_stories,
@@ -233,7 +239,8 @@ class SuccessStory extends Controller
         ]);
     }
 
-    public function update($group, Request $request){
+    public function update($group, Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -286,17 +293,17 @@ class SuccessStory extends Controller
             $success_stories_en->description = $request->story_description_en;
             if ($request->hasFile('story_achievement_img_en')) {
                 if ($old_image_path_en = $success_stories_en->achievement_image) {
-                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/'.$old_image_path_en);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/success-stories/' . $success_stories_en->created_at->format('Y') . '/' . $success_stories_en->created_at->format('m') . '/' . $old_image_path_en;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file_en = $request->file('story_achievement_img_en');
                 $file_format_en = $request->file('story_achievement_img_en')->getClientOriginalExtension();
-                $destinationPath_en = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/';
+                $destinationPath_en = 'project/eduall-website/success-stories/' . $success_stories_en->created_at->format('Y') . '/' . $success_stories_en->created_at->format('m') . '/';
                 $time = $success_stories_en->group;
-                $fileName_en = 'Success-Stories-achievement-en-'.$time.'.'.$file_format_en;
-                $file_en->move($destinationPath_en, $fileName_en);
+                $fileName_en = 'Success-Stories-achievement-en-' . $time . '.' . $file_format_en;
+                Storage::disk('s3')->put($destinationPath_en . $fileName_en, file_get_contents($file_en));
                 $success_stories_en->achievement_image = $fileName_en;
             }
             $success_stories_en->achievement_alt = $request->story_achievement_alt_en;
@@ -316,17 +323,17 @@ class SuccessStory extends Controller
             $success_stories_id->description = $request->story_description_id;
             if ($request->hasFile('story_achievement_img_id')) {
                 if ($old_image_path_id = $success_stories_id->achievement_image) {
-                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_id->created_at->format('Y').'/'.$success_stories_id->created_at->format('m').'/'.$old_image_path_id);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/success-stories/' . $success_stories_id->created_at->format('Y') . '/' . $success_stories_id->created_at->format('m') . '/' . $old_image_path_id;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file_id = $request->file('story_achievement_img_id');
                 $file_format_id = $request->file('story_achievement_img_id')->getClientOriginalExtension();
-                $destinationPath_id = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_id->created_at->format('Y').'/'.$success_stories_id->created_at->format('m').'/';
+                $destinationPath_id = 'project/eduall-website/success-stories/' . $success_stories_id->created_at->format('Y') . '/' . $success_stories_id->created_at->format('m') . '/';
                 $time = $success_stories_id->group;
-                $fileName_id = 'Success-Stories-achievement-id-'.$time.'.'.$file_format_id;
-                $file_id->move($destinationPath_id, $fileName_id);
+                $fileName_id = 'Success-Stories-achievement-id-' . $time . '.' . $file_format_id;
+                Storage::disk('s3')->put($destinationPath_id . $fileName_id, file_get_contents($file_id));
                 $success_stories_id->achievement_image = $fileName_id;
             }
             $success_stories_id->achievement_alt = $request->story_achievement_alt_id;
@@ -336,17 +343,17 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_thumbnail')) {
                 if ($success_stories_en->thumbnail == $success_stories_id->thumbnail) {
                     $old_image_path = $success_stories_en->thumbnail;
-                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/success-stories/' . $success_stories_en->created_at->format('Y') . '/' . $success_stories_en->created_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('story_thumbnail');
                 $file_format = $request->file('story_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/';
+                $destinationPath = 'project/eduall-website/success-stories/' . $success_stories_en->created_at->format('Y') . '/' . $success_stories_en->created_at->format('m') . '/';
                 $time = $success_stories_en->group;
-                $fileName = 'Success-Stories-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Success-Stories-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $success_stories_en->thumbnail = $fileName;
                 $success_stories_id->thumbnail = $fileName;
             }
@@ -355,17 +362,17 @@ class SuccessStory extends Controller
             if ($request->hasFile('story_home_thumbnail')) {
                 if ($success_stories_en->home_thumbnail == $success_stories_id->home_thumbnail) {
                     $old_image_path = $success_stories_en->home_thumbnail;
-                    $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/success-stories/' . $success_stories_en->created_at->format('Y') . '/' . $success_stories_en->created_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('story_home_thumbnail');
                 $file_format = $request->file('story_home_thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'success-stories/'.$success_stories_en->created_at->format('Y').'/'.$success_stories_en->created_at->format('m').'/';
+                $destinationPath = 'project/eduall-website/success-stories/' . $success_stories_en->created_at->format('Y') . '/' . $success_stories_en->created_at->format('m') . '/';
                 $time = $success_stories_en->group;
-                $fileName = 'Success-Stories-home-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'Success-Stories-home-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $success_stories_en->home_thumbnail = $fileName;
                 $success_stories_id->home_thumbnail = $fileName;
             }
@@ -373,50 +380,51 @@ class SuccessStory extends Controller
             $success_stories_en->save();
             $success_stories_id->save();
             DB::commit();
-            Log::notice('Success Story : '. $success_stories_en->name .', Was Successfully Updated  By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Success Story : ' . $success_stories_en->name . ', Was Successfully Updated  By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Success Story Failed To Update: ' .  $e);
             return Redirect::back()->withErrors($e->getMessage());
         }
 
-        return redirect('/admin/success-stories/'.$group.'/edit')->withSuccess('Success Stories Was Successfully Updated');
+        return redirect('/admin/success-stories/' . $group . '/edit')->withSuccess('Success Stories Was Successfully Updated');
     }
 
-    public function delete($group){
+    public function delete($group)
+    {
         DB::beginTransaction();
         try {
             $success_stories = SuccessStories::where('group', $group)->get();
             if ($success_stories[0]->thumbnail == $success_stories[1]->thumbnail) {
                 $old_image_path = $success_stories[0]->thumbnail;
-                $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path);
-                if (File::exists($file_path)) {
-                    File::delete($file_path);
+                $file_path = 'project/eduall-website/success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $old_image_path;
+                if (Storage::disk('s3')->exists($file_path)) {
+                    Storage::disk('s3')->delete($file_path);
                 }
             }
             if ($success_stories[0]->home_thumbnail == $success_stories[1]->home_thumbnail) {
                 $old_image_path = $success_stories[0]->home_thumbnail;
-                $file_path = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path);
-                if (File::exists($file_path)) {
-                    File::delete($file_path);
+                $file_path = 'project/eduall-website/success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $old_image_path;
+                if (Storage::disk('s3')->exists($file_path)) {
+                    Storage::disk('s3')->delete($file_path);
                 }
             }
             if ($old_image_path_en = $success_stories[0]->achievement_image) {
-                $file_path_en = public_path('uploaded_files/'.'success-stories/'.$success_stories[0]->created_at->format('Y').'/'.$success_stories[0]->created_at->format('m').'/'.$old_image_path_en);
-                if (File::exists($file_path_en)) {
-                    File::delete($file_path_en);
+                $file_path_en = 'project/eduall-website/success-stories/' . $success_stories[0]->created_at->format('Y') . '/' . $success_stories[0]->created_at->format('m') . '/' . $old_image_path_en;
+                if (Storage::disk('s3')->exists($file_path_en)) {
+                    Storage::disk('s3')->delete($file_path_en);
                 }
             }
             if ($old_image_path_id = $success_stories[1]->achievement_image) {
-                $file_path_id = public_path('uploaded_files/'.'success-stories/'.$success_stories[1]->created_at->format('Y').'/'.$success_stories[1]->created_at->format('m').'/'.$old_image_path_id);
-                if (File::exists($file_path_id)) {
-                    File::delete($file_path_id);
+                $file_path_id = 'project/eduall-website/success-stories/' . $success_stories[1]->created_at->format('Y') . '/' . $success_stories[1]->created_at->format('m') . '/' . $old_image_path_id;
+                if (Storage::disk('s3')->exists($file_path_id)) {
+                    Storage::disk('s3')->delete($file_path_id);
                 }
             }
             $success_stories[0]->delete();
             $success_stories[1]->delete();
             DB::commit();
-            Log::notice('Success Story : '. $success_stories[0]->name .', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Success Story : ' . $success_stories[0]->name . ', Was Successfully Deleted By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Success Story Failed To Delete:: ' .  $e);
@@ -426,7 +434,8 @@ class SuccessStory extends Controller
         return redirect('/admin/success-stories')->withSuccess('Success Stories Was Successfully Deleted');
     }
 
-    public function deactivate($group){
+    public function deactivate($group)
+    {
         DB::beginTransaction();
         try {
             $success_stories = SuccessStories::where('group', $group)->get();
@@ -435,7 +444,7 @@ class SuccessStory extends Controller
             $success_stories[0]->save();
             $success_stories[1]->save();
             DB::commit();
-            Log::notice('Success Story : '. $success_stories[0]->name .', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Success Story : ' . $success_stories[0]->name . ', Was Successfully Deactivate By : ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('Success Story Failed To Deactivate: ' .  $e);
@@ -445,7 +454,8 @@ class SuccessStory extends Controller
         return redirect('/admin/success-stories');
     }
 
-    public function activate($group){
+    public function activate($group)
+    {
         DB::beginTransaction();
         try {
             $success_stories = SuccessStories::where('group', $group)->get();
@@ -454,7 +464,7 @@ class SuccessStory extends Controller
             $success_stories[0]->save();
             $success_stories[1]->save();
 
-            Log::notice('Success Story : '. $success_stories[0]->name .', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
+            Log::notice('Success Story : ' . $success_stories[0]->name . ', Was Successfully Activate By : ' . Auth::guard('web-admin')->user()->name);
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

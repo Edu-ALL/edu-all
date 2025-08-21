@@ -82,7 +82,7 @@
                                                     class="col-md-3 d-flex align-items-start justify-content-center pt-md-3 pt-3 px-md-3 px-5">
                                                     <div class="pic-profile p-1">
                                                         <img class="img-fluid"
-                                                            src="{{ asset('uploaded_files/' . 'mentor/' . $mentor[0]->created_at->format('Y') . '/' . $mentor[0]->created_at->format('m') . '/' . $mentor[0]->mentor_picture) }}"
+                                                            src="{{ Storage::url('mentor/' . $mentor[0]->created_at->format('Y') . '/' . $mentor[0]->created_at->format('m') . '/' . $mentor[0]->mentor_picture) }}"
                                                             alt="{{ $mentor[0]->mentor_alt }}">
                                                     </div>
                                                 </div>
@@ -232,7 +232,7 @@
                                                     class="col-md-3 d-flex align-items-start justify-content-center pt-md-3 pt-3 px-md-3 px-5">
                                                     <div class="pic-profile p-1">
                                                         <img class="img-fluid"
-                                                            src="{{ asset('uploaded_files/' . 'mentor/' . $mentor[0]->created_at->format('Y') . '/' . $mentor[0]->created_at->format('m') . '/' . $mentor[1]->mentor_picture) }}"
+                                                            src="{{ Storage::url('mentor/' . $mentor[0]->created_at->format('Y') . '/' . $mentor[0]->created_at->format('m') . '/' . $mentor[1]->mentor_picture) }}"
                                                             alt="{{ $mentor[1]->mentor_alt }}">
                                                     </div>
                                                 </div>

@@ -30,7 +30,7 @@
                 </nav>
                 <div class="relative">
                     <img class="sticker absolute" loading="lazy"
-                        src="{{ asset('assets/img/regular_talk/merge-icon.png') }}" alt="">
+                        src="{{ asset('assets/img/regular_talk/merge-icon.png') }}" alt="EduALL">
                     <h3>Breaking Down the <br> Journey to a Winning <br> TOP University Application</h3>
                 </div>
                 <h5 class="leading-tight md:pr-8 md:mt-5 mt-4">
@@ -51,19 +51,19 @@
                 </div>
                 <div class="speaker grid md:grid-cols-4 grid-cols-2 items-end justify-start md:mt-3 mt-5 md:mb-6 mb-8">
                     <div class="col p-0">
-                        <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-1.png') }}"
+                        <img loading="lazy"  src="{{ asset('assets/img/regular_talk/profile-1.png') }}"
                             alt="EduALL Mentor">
                     </div>
                     <div class="col p-0">
-                        <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-2.png') }}"
+                        <img loading="lazy"  src="{{ asset('assets/img/regular_talk/profile-2.png') }}"
                             alt="EduALL Mentor">
                     </div>
                     <div class="col p-0">
-                        <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-3.png') }}"
+                        <img loading="lazy"  src="{{ asset('assets/img/regular_talk/profile-3.png') }}"
                             alt="EduALL Mentor">
                     </div>
                     <div class="col p-0">
-                        <img loading="lazy" class="" src="{{ asset('assets/img/regular_talk/profile-4.png') }}"
+                        <img loading="lazy"  src="{{ asset('assets/img/regular_talk/profile-4.png') }}"
                             alt="EduALL Mentor">
                     </div>
                 </div>

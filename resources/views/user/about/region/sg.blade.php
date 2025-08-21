@@ -1,6 +1,12 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/about.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/about.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/about.meta_description') }}" />
@@ -112,9 +118,9 @@
                                                         {!! $mentor->mentor_graduation !!}
                                                     </div>
                                                 </div>
-                                                <img data-original="{{ asset('uploaded_files/mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
+                                                <img data-src="{{ Storage::url('mentor/' . $mentor->created_at->format('Y') . '/' . $mentor->created_at->format('m') . '/' . $mentor->mentor_picture) }}"
                                                     alt="EduALL mentor {{ $mentor->mentor_alt }}"
-                                                    class="bg-cover bg-center h-auto">
+                                                    class="bg-cover bg-center h-auto lazyload">
                                             </div>
                                             <div
                                                 class="back overflow-hidden flex justify-center items-center w-full p-2 rounded-xl bg-gradient-to-b from-primary to-[#070E36]">

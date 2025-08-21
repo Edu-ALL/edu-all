@@ -1,16 +1,52 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'EduJournal', 'url' => route('blogs', [app()->getLocale()])],
+            ['name' => $blog->blog_title, 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ $blog->blog_title }}</title>
     <meta property=og:url content="{{ url(app()->getLocale() . '/blog/' . $blog->slug) }}">
     <meta property=og:image
-        content="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
+        content="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
     <meta property=og:title content="{{ $blog->blog_title }}">
 
 
     <meta name="title" content="{{ $blog->seo_title }}">
     <meta name="description" content="{{ $blog->seo_desc }}">
     <meta name="keyword" content="{{ $blog->seo_keyword }}">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{{ $blog->blog_title }}",
+            "image": "{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}",  
+            "mainEntityOfPage" : {
+                "@type": "WebPage",
+                "@id": "{{ url()->current() }}"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "{{ $blog->mentor->mentor_fullname ?? 'EduALL' }}",
+                "url" : "{{ route('detail_mentor', ['locale'=>app()->getLocale() , 'slug' => $blog->mentor ? $blog->mentor->mentor_slug : '/']) }}"
+            },  
+            "publisher": {
+                "@type": "Organization",
+                "name": "EduALL",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ asset('favicon.png') }}"
+                }
+            },
+            "dateCreated": "{{$blog->created_at}}",
+            "datePublished": "{{$blog->publish_date}}",
+            "dateModified": "{{$blog->updated_at}}"
+        }
+    </script>
 @endsection
 
 @section('content')
@@ -22,13 +58,14 @@
         <div class="share_container hidden justify-between items-center gap-1 ">
             <div class="share share_button flex items-center bg-newyellow text-dark  mt-2 md:mt-0 p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg"
                 onclick="share_sosmed('open')">
-                <i class="fa fa-send md:mr-2" aria-hidden="true"></i> <span class="hidden md:inline-block">Share</span>
+                <i class="fa fa-share-alt-square md:mr-2" aria-hidden="true"></i> <span
+                    class="hidden md:inline-block">Share</span>
             </div>
             <div class="mt-2 share share_icon hidden">
                 <div class="ss-box ss-circle ss-shadow" data-ss-social="twitter, facebook, linkedin, share, whatsapp"
                     data-ss-content="false"></div>
             </div>
-            <div class="mt-2 share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden"
+            <div class="mt-2 share share_close bg-red-600  p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden text-black"
                 onclick="share_sosmed('close')">
                 <i class="fa fa-x" aria-hidden="true"></i>
             </div>
@@ -44,9 +81,10 @@
                         <div class="flex items-center gap-1">
                             @if ($blog->mentor)
                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
-                                    target="_blank" class="flex justify-center items-center">
-                                    <div class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">
-                                        <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                    class="flex justify-center items-center">
+                                    <div
+                                        class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">
+                                        <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
                                             class="w-full object-cover">
                                     </div>
                                     {{-- change author name with mentor name --}}
@@ -77,21 +115,21 @@
                     <div class="mt-4 share_container_bottom flex items-center gap-1">
                         <div class="share share_button bg-newyellow text-dark p-2 px-4 rounded-2xl text-[12px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg"
                             onclick="share_sosmed('open')">
-                            <i class="fa fa-send mr-2" aria-hidden="true"></i> Share
+                            <i class="fa fa-share-alt-square mr-2" aria-hidden="true"></i> Share
                         </div>
                         <div class="share share_icon hidden">
                             <div class="ss-box ss-circle ss-shadow"
                                 data-ss-social="twitter, facebook, linkedin, share, whatsapp" data-ss-content="false"></div>
                         </div>
-                        <div class="share share_close bg-red-600 text-white p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden"
+                        <div class="share share_close bg-red-600  p-2 px-3 rounded-full text-[10px] cursor-pointer hover:bg-newprimary/20 hover:text-gray-600 shadow-lg hidden text-black"
                             onclick="share_sosmed('close')">
                             <i class="fa fa-x" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
                 <div class="mt-6 w-full">
-                    <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                        alt="EduALL {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96">
+                    <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                        alt="EduALL {{ $blog->blog_thumnail_alt }}" class="w-full h-60 object-cover md:h-96 lazyload">
                 </div>
             </div>
         </div>
@@ -170,12 +208,12 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9]" class="w-1/3">
                         <div class="flex flex-col gap-2">
-                            <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                            <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                 alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                class="h-72 object-cover object-center">
+                                class="h-72 object-cover object-center lazyload">
                             <div class="flex justify-between">
                                 <span class="font-newprimary text-xs text-[#7C7C7C]">
-                                    {{ strftime('%B %d, %Y', strtotime($blog->created_at)) }}
+                                    {{ strftime('%B %d, %Y', strtotime($blog->publish_date)) }}
                                 </span>
                                 <span class="font-newprimary text-xs text-[#7C7C7C]">
                                     {{ $blog->click_count }}
@@ -203,11 +241,11 @@
             var share_container_bottom = document.querySelector(".share_container_bottom");
             var main_navbar = document.querySelector("header");
 
-            if (window.scrollY > 0) {
-                main_navbar.classList.add('-translate-y-[120px]');
-            } else {
-                main_navbar.classList.remove('-translate-y-[120px]');
-            }
+            // if (window.scrollY > 0) {
+            //     main_navbar.classList.add('-translate-y-[120px]');
+            // } else {
+            //     main_navbar.classList.remove('-translate-y-[120px]');
+            // }
 
             if (window.scrollY > 80) {
                 share_container.classList.remove('hidden');
@@ -258,11 +296,12 @@
         function blog_widget() {
             let paragraph = $('.blog_style p')
             let data = {!! $blog_widgets !!}
+
             for (let index = 1; index <= paragraph.length; index++) {
                 data.forEach(element => {
                     if (index == element.position) {
                         let button = element.button_name ? element.button_name : 'Read More'
-                        let image = element.image ? '{{ asset('') }}' + element.image : ''
+                        let image = element.image ? '{{ Storage::url('') }}' + element.image : ''
                         let image_class = element.image ? 'flex-auto md:w-[300px] w-full' : 'hidden'
                         paragraph.eq(element.position - 1).append(
                             '<div class="p-4 bg-gray-100 mt-5 items-center rounded-2xl drop-shadow-xl border border-2 border-gray-100" role="alert">' +

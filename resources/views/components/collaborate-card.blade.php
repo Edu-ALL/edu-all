@@ -3,7 +3,7 @@
         {!! $title !!}
     </h3>
     <div class="rounded-xl h-52 w-full overflow-hidden my-4">
-        <img src="{{ asset('assets/img/exclusive_program_school/Colaborate/' . $image) }}" alt="" class="h-full w-full object-cover">
+        <img src="{{ asset('assets/img/exclusive_program_school/Colaborate/' . $image) }}" alt="EduALL" class="h-full w-full object-cover">
     </div>
     <div class="w-full">
         <p class="text-base text-justify px-4 leading-5">

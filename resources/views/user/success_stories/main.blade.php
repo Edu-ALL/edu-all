@@ -1,134 +1,137 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Resources', 'url' => '#'],
+            ['name' => 'Success Stories', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/success_stories/success_stories.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/success_stories/success_stories.meta_title') }}" />
     <meta name="description" content="{{ __('pages/success_stories/success_stories.meta_description') }}" />
 @endsection
 
+@section('sub-navbar')
+    <x-sub-navbar :menu="[
+        [
+            'title' => 'Admission Mentoring',
+            'url' => '/resources/success-stories?category=admission-mentoring',
+        ],
+        [
+            'title' => 'Passion Project',
+            'url' => '/resources/success-stories?category=passion-project',
+        ],
+        [
+            'title' => 'Competition',
+            'url' => '/resources/success-stories/?category=competition',
+        ],
+        [
+            'title' => 'Skillset Tutoring',
+            'url' => '/resources/success-stories/?category=skillset-tutoring',
+        ],
+    ]" :active="Str::title(str_replace('-', ' ', request()->query('category', 'Admission Mentoring')))" title="{{ __('pages/programs/admission_mentoring.title') }}" />
+@endsection
+
 @section('content')
-    <!-- {{-- ================================== Banner Section  ================================== --}}
-            <section class="pb-4 -z-10">
-                <div
-                    class="relative flex w-full justify-center left-0 overflow-hidden bg-success-stories-header h-[100vh] pt-44 pb-36 main-container bg-left bg-cover md:bg-center">
-                    <div class="flex flex-col justify-center h-full w-3/5">
-                        <h1 class="font-bold font-newprimary capitalize text-6xl text-white text-center">
-                            {{ __('pages/success_stories/success_stories.title') }}
-                        </h1>
-                        <p class="mt-5 font-newprimary text-white w-full text-center">
-                            {!! __('pages/success_stories/success_stories.desc') !!}
-                        </p>
-                    </div>
-                </div>
-            </section> -->
-
-    {{-- ================================== Success Story Section  ================================== --}}
-    <section class="py-4">
-        <div class="main-container">
-            <div class="flex gap-6 items-center justify-center">
-                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'admission-mentoring']) }}"
-                    class="font-bold py-1 px-2 {{ $tab_section == 'passion_project'
-                        ? 'text-newprimary font-newprimary border-b-2 border-newprimary'
-                        : 'bg-newprimary  text-white font-newprimary' }}">Admission
-                    Mentoring</a>
-                <a href="{{ route('success_stories', ['locale' => app()->getLocale(), 'category' => 'passion-project']) }}"
-                    class="font-bold py-1 px-2 {{ $tab_section == 'passion_project'
-                        ? 'bg-newprimary  text-white font-newprimary'
-                        : 'text-newprimary font-newprimary border-b-2 border-newprimary' }}">Passion
-                    Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-4">
+    <section class="py-24 mt-16">
         <div class="new-main-container">
-            <div class="max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-7 gap-x-7">
-                    @foreach ($success_stories as $item)
-                        <div
-                            class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
-                            <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden"
-                                id="{{ explode(' ', trim($item->name))[0] }}">
-                                <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                    alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full md:w-6/12 h-full">
-                                <div class="flex flex-col gap-1 h-full justify-between">
-                                    <div class="flex flex-col gap-1 items-start">
-                                        {{-- Name --}}
-                                        <h2 class="font-bold text-4xl font-newprimary">{{ $item->name }}</h2>
-                                        <div class="h-0.5 w-2/5 bg-[#393636]"></div>
+            @if (count($success_stories) == 0)
+                <div class="text-center py-10">
+                    <h2 class="text-2xl font-bold text-gray-800">No Success Stories Found</h2>
+                    <p class="text-gray-600">No success stories available. More coming soon!</p>
+                </div>
+            @else
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-7 gap-x-7">
+                        @foreach ($success_stories as $item)
+                            <div
+                                class="flex flex-col gap-6 items-end md:flex-row w-full col-span-1 bg-[#F3F3F3] rounded-2xl p-4">
+                                <div class="w-3/4 mx-auto md:w-6/12 h-full rounded-xl overflow-hidden"
+                                    id="{{ explode(' ', trim($item->name))[0] }}">
+                                    <img data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
+                                        alt="{{ $item->thumbnail_alt }}" class="w-full h-full object-cover lazyload">
+                                </div>
+                                <div class="w-full md:w-6/12 h-full">
+                                    <div class="flex flex-col gap-1 h-full justify-between">
+                                        <div class="flex flex-col gap-1 items-start">
+                                            {{-- Name --}}
+                                            <h2 class="font-bold text-4xl font-newprimary">{{ $item->name }}</h2>
+                                            <div class="h-0.5 w-2/5 bg-[#393636]"></div>
 
-                                        {{-- Bedge 1 --}}
-                                        <div class="font-newprimary text-newprimary text-base font-semibold leading-tight">
-                                            {!! $item->badge_1 !!}
-                                        </div>
-                                        <div class="mt-2 font-newprimary text-dark">
-                                            <ul class="flex flex-col gap-1.5">
-                                                @foreach (array_filter(
+                                            {{-- Bedge 1 --}}
+                                            <div
+                                                class="font-newprimary text-newprimary text-base font-semibold leading-tight">
+                                                {!! $item->badge_1 !!}
+                                            </div>
+                                            <div class="mt-2 font-newprimary text-dark">
+                                                <ul class="flex flex-col gap-1.5">
+                                                    @foreach (array_filter(
             array_map(function ($item) {
                 return trim(strip_tags($item));
             }, explode('<li>', $item->badge_2)),
         ) as $badge)
-                                                    <li
-                                                        class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
-                                                        <span
-                                                            class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
-                                                            <i class="fa-solid fa-check fa-xs text-white"></i>
-                                                        </span>
-                                                        <p class="w-full leading-[14px]">{!! $badge !!}</p>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
+                                                        <li
+                                                            class="font-newprimary text-dark text-xs font-semibold flex items-center gap-1.5">
+                                                            <span
+                                                                class="h-3 w-3 p-1 bg-newprimary flex items-center justify-center rounded-full">
+                                                                <i class="fa-solid fa-check fa-xs text-white"></i>
+                                                            </span>
+                                                            <p class="w-full leading-[14px]">{!! $badge !!}</p>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            {{-- Achievement --}}
+                                            @if ($tab_section != 'passion_project')
+                                                <img data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
+                                                    alt="{{ $item->achievement_alt }}" class="mt-2 lazyload">
+                                            @endif
                                         </div>
-                                        {{-- Achievement --}}
-                                        @if ($tab_section != 'passion_project')
-                                            <img data-original="{{ asset('uploaded_files/success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->achievement_image) }}"
-                                                alt="{{ $item->achievement_alt }}" class="mt-2">
-                                        @endif
-                                    </div>
-                                    <div class="mt-4 flex flex-col gap-1 items-start border border-dark rounded-md p-2">
-                                        {{-- Short Description --}}
-                                        <div class="font-newprimary text-sm">
-                                            {!! Str::limit($item->summary_description, 60) !!}
-                                        </div>
-                                        {{-- Read More --}}
-                                        <button id="open-desc-modal"
-                                            class="font-newprimary text-white px-1.5 py-0.5 rounded-[4px] font-normal text-sm inline-flex items-center bg-newprimary">
-                                            Read More
-                                            <div class="w-4">
-                                                <svg fill="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                    </g>
-                                                    <g id="SVGRepo_iconCarrier">
-                                                        <g data-name="Layer 2">
-                                                            <g data-name="arrow-ios-forward">
-                                                                <rect width="24" height="24"
-                                                                    transform="rotate(-90 12 12)" opacity="0"></rect>
-                                                                <path
-                                                                    d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z">
-                                                                </path>
+                                        <div class="mt-4 flex flex-col gap-1 items-start border border-dark rounded-md p-2">
+                                            {{-- Short Description --}}
+                                            <div class="font-newprimary text-sm">
+                                                {!! Str::limit($item->summary_description, 60) !!}
+                                            </div>
+                                            {{-- Read More --}}
+                                            <button id="open-desc-modal"
+                                                class="font-newprimary text-white px-1.5 py-0.5 rounded-[4px] font-normal text-sm inline-flex items-center bg-newprimary">
+                                                Read More
+                                                <div class="w-4">
+                                                    <svg fill="#fff" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                        </g>
+                                                        <g id="SVGRepo_iconCarrier">
+                                                            <g data-name="Layer 2">
+                                                                <g data-name="arrow-ios-forward">
+                                                                    <rect width="24" height="24"
+                                                                        transform="rotate(-90 12 12)" opacity="0"></rect>
+                                                                    <path
+                                                                        d="M10 19a1 1 0 0 1-.64-.23 1 1 0 0 1-.13-1.41L13.71 12 9.39 6.63a1 1 0 0 1 .15-1.41 1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z">
+                                                                    </path>
+                                                                </g>
                                                             </g>
                                                         </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                        </button>
+                                                    </svg>
+                                                </div>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
 
-                <div class="mt-32">
-                    {{ $success_stories->links('layout.user.pagination') }}
+                    <div class="mt-32">
+                        {{ $success_stories->links('layout.user.pagination') }}
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
-
 
     </section>
 
@@ -140,7 +143,7 @@
                 {{ __('pages/success_stories/success_stories.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' />
+                title="{{ __('pages/success_stories/success_stories.register_btn') }}" type='secondary' is-rounded />
         </div>
     </section>
 

@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Our Mentor', 'url' => route('mentor', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/mentor.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/mentor.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/mentor.meta_description') }}" />
@@ -30,30 +37,14 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/about_us/mentor.banner_title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
         </div>
     </section>
-
-    <!-- <section class="py-20 flex items-center justify-center h-screen bg-mentor-header bg-cover bg-center">
-                <div class="main-container md:w-4/6 w-full">
-                    <div class="flex flex-col items-start">
-                        <h1 class="w-full mb-4 font-newprimary font-bold text-4xl text-white md:mb-8 md:text-6xl text-center">
-                            {{ __('pages/about_us/mentor.banner_title') }}</h1>
-                        <div class="mb-6 w-full font-newprimary font-medium text-white text-center md:mb-12">
-                            {!! __('pages/about_us/mentor.benner_body') !!}
-                        </div>
-                        <div class="w-full flex justify-center">
-                            <x-button href="#mentor" title="{{ __('pages/about_us/mentor.banner_btn') }}" type="secondary"
-                                bg-color="newprimary" />
-                        </div>
-                    </div>
-                </div>
-            </section> -->
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-16 pb-4 bg-dark" id="mentors">
@@ -63,10 +54,12 @@
                     <div class="md:px-8">
                         <div class="splide splides mentor-1" role="group">
                             <div class="splide__arrows text-white">
-                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                <button class="splide__arrow splide__arrow--prev"
+                                    style="background: transparent; left: -42px">
                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                 </button>
-                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                <button class="splide__arrow splide__arrow--next"
+                                    style="background: transparent; right: -42px">
                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                 </button>
                             </div>
@@ -102,10 +95,12 @@
                     <div class="md:px-8">
                         <div class="splide splides mentor-2" role="group">
                             <div class="splide__arrows text-black">
-                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                <button class="splide__arrow splide__arrow--prev"
+                                    style="background: transparent; left: -42px">
                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                 </button>
-                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                <button class="splide__arrow splide__arrow--next"
+                                    style="background: transparent; right: -42px">
                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                 </button>
                             </div>
@@ -135,7 +130,7 @@
                 {{ __('pages/about_us/mentor.bottom_title') }}
             </h2>
             <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                title="{{ __('pages/about_us/mentor.bottom_btn') }}" type="secondary" bg-color="red" />
+                title="{{ __('pages/about_us/mentor.bottom_btn') }}" type="secondary" bg-color="red" is-rounded />
         </div>
     </section>
 @endsection

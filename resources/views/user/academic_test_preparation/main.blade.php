@@ -1,9 +1,17 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Tutoring Program', 'url' => route('academic_test_preparation', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/programs/academic_test_preparation.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/academic_test_preparation.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/academic_test_preparation.meta_description') }}" />
+    <meta name="keywords" content="ib, igsce, math , international curriculum, international baccalaureate, tutoring, private tutoring, subject selection, online tutoring, math tutor" />
 @endsection
 
 @section('sub-navbar')
@@ -27,14 +35,14 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-general-acad-header bg-cover bg-top" id="banner">
-        <x-registration-form />
+        <x-registration-form program-id="ACADX"/>
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
                 <div class="flex flex-col gap-2 w-full">
-                    <h2 class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-2/3 md:ml-12">
-                        {{ __('pages/programs/academic_test_preparation.title') }}
-                    </h2>
-                    <x-registration-form :is-button="true" />
+                    <h1 class="font-bold text-banner-title md:text-7xl text-white md:text-left text-center leading-10 md:w-1/2 xl:w-2/3 md:ml-12">
+                        {!! __('pages/programs/academic_test_preparation.title') !!}
+                    </h1>
+                    <x-registration-form :is-button="true" program-id="ACADX" />
                 </div>
             </div>
         </div>
@@ -45,19 +53,19 @@
     <section class="py-16">
         <div class="new-main-container">
             <div class="flex flex-wrap w-full mx-auto">
-                <div class="flex flex-wrap items-center justify-evenly gap-8 mx-auto w-full">
+                <div class="flex flex-wrap items-center justify-center md:gap-12 gap-4 mx-auto w-full">
                     @foreach (__('pages/programs/academic_test_preparation.benefits') as $item)
                         <div class="relative">
                             <div class="shadow-clip flex flex-col items-center relative">
-                                <div class="h-40 md:h-48 w-40 md:w-48 bg-white flex flex-col items-center justify-center py-4 mb-4"
+                                <div class="h-40 md:h-36 w-40 md:w-44 bg-white flex flex-col items-center justify-center py-4 mb-4"
                                 style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
-                                <div class="h-12">
-                                    <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/benefits/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <div class="h-8">
+                                    <img data-src="{{ asset('assets/img/academic_test_preparation/revamp/benefits/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 </div>
-                                <h4 class="font-newprimary text-base font-bold text-center mt-4 leading-4">{{ $item['title'] }}
+                                <h4 class="font-newprimary text-sm font-bold text-center mt-4 leading-4">{{ $item['title'] }}
                                     </h4>
-                                    <span class="font-newprimary text-base font-normal text-center">{{ $item['tag'] }}</span>
+                                    <span class="font-newprimary text-sm font-normal text-center">{{ $item['tag'] }}</span>
                                 </div>
                             </div>
                             <div class="absolute -top-3 -right-3">
@@ -72,7 +80,7 @@
         </div>
     </section>
 
-    <section class="acad-program-our-programs relative">
+    {{-- <section class="acad-program-our-programs relative">
         <div class="flex main-container w-full flex-col h-[70vh] pt-24" id="our-programs-wrapper">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center mb-20 uppercase">
                 {{ __('pages/programs/academic_test_preparation.our_program_title') }}</h2>
@@ -155,11 +163,11 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="pb-12 scroll-mt-10" id="start-your-journey">
-        <div class="new-main-container relative">
-            <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-4xl mx-auto w-full bg-newprimary rounded-2xl">
+    <section class="pb-8 scroll-mt-10" id="start-your-journey">
+        <div class="lg:px-10 xl:px-20 max-w-screen-xl mx-auto relative">
+            <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-3xl mx-auto w-full bg-newprimary rounded-2xl">
                 <div class="flex items-center justify-center gap-4 md:gap-8">
                     <div class="h-2 w-2 bg-newyellow rounded-full"></div>
                     <h3 class="text-white text-2xl md:text-3xl font-bold text-center">
@@ -168,7 +176,7 @@
                     <div class="h-2 w-2 bg-newyellow rounded-full"></div>
                 </div>
             </div>
-            <div class="splide pt-24 max-w-5xl mx-auto" role="group">
+            <div class="splide pt-24 w-full" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev rounded-full bg-newprimary p-2 shadow-md"
                         style="background: #120FFD; left: -48px;">
@@ -182,29 +190,37 @@
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black px-8">
                         @foreach (__('pages/programs/academic_test_preparation.program_list') as $item)
-                            <li class="splide__slide w-full pb-8 px-2">
+                            <li class="splide__slide w-full pb-8">
                                 <div class="splide__slide__container py-8 h-full w-full">
-                                    <div class="flex flex-col w-full md:w-full my-4">
+                                    <div class="flex flex-col w-full md:w-full my-4 px-1.5">
                                         <div
-                                            class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-md py-8 px-6 bg-white">
-                                            <h3 class="font-bold uppercase text-2xl text-center">
+                                            class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-2xl py-8 px-5 bg-white">
+                                            <h3 class="font-bold uppercase text-xl text-center">
                                                 {!! $item['title'] !!}
                                             </h3>
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img data-original="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt=""
-                                                    class="h-full w-full object-cover">
+                                                <img data-src="{{ asset('assets/img/academic_test_preparation/revamp/' . $item['image']) }}"alt="EduALL"
+                                                    class="h-full w-full object-cover lazyload">
                                             </div>
-                                            <div class="w-full md:h-32 border-b border-b-[#DEDEDE]">
-                                                <p class="text-sm text-justify leading-5">
+                                            <div class="w-full h-32 flex flex-col justify-between">
+                                                <p class="text-xs text-justify leading-4">
                                                     {{ $item['desc'] }}
                                                 </p>
+
+                                                <x-button
+                                                    href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/{{ $item['link'] }}"
+                                                    title="{{ __('pages/programs/academic_test_preparation.get_to_know_more') }}"
+                                                    bg-color="newprimary" padding-x="8" padding-y="1.5" margin-top="0" :is-rounded="true" fontSize="base" />
                                             </div>
+
+                                            <div class="w-full border-b border-b-[#DEDEDE] mt-6"></div>
+
                                             @if (array_key_exists('points', $item) && $item['points'])
-                                                <div class="w-full lg:h-32 py-4">
+                                                <div class="w-full h-32 py-4">
                                                     <ul class="list-outside list-disc pl-4 flex flex-col gap-1">
                                                         @foreach ($item['points'] as $point)
                                                             <li
-                                                                class="text-sm font-newprimary font-semibold text-newprimary">
+                                                                class="text-[10px] font-newprimary">
                                                                 {{ $point }}
                                                             </li>
                                                         @endforeach
@@ -213,10 +229,6 @@
                                             @else
                                                 <div class="h-32"></div>
                                             @endif
-                                            <x-button
-                                                href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/{{ $item['link'] }}"
-                                                title="{{ __('pages/programs/academic_test_preparation.learn_more') }}"
-                                                bg-color="newprimary" padding-x="8" padding-y="2" />
                                         </div>
                                     </div>
                                 </div>
@@ -230,34 +242,27 @@
 
     {{-- ================================== Bottom Section  ================================== --}}
     <section
-        class="md:pt-8 md:pb-20">
-        <div class="new-main-container">
-            <div class="flex md:flex-row flex-col items-center bg-dark rounded-2xl overflow-hidden">
-                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
-                    <h2 class="font-newprimary font-bold text-2xl text-white text-center md:text-left md:text-2xl uppercase mb-4">
+        class="md:pt-4 md:pb-20">
+        <div class="lg:px-4 max-w-5xl mx-auto ">
+            <div class="flex md:flex-row flex-col items-center md:bg-dark md:rounded-2xl overflow-hidden">
+                <div class="bg-dark flex flex-col items-center md:items-start justify-center w-full md:w-5/12 md:mx-4 md:order-1 order-2 py-6 px-2 md:px-6 -mt-8 md:mt-0 rounded-t-3xl md:rounded-none">
+                    <h2 class="font-newprimary font-bold text-base text-white text-center md:text-left md:text-2xl uppercase mb-4">
                         {{ __('pages/programs/academic_tutoring.free_trial_title') }}
                     </h2>
-                    <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center md:text-left">
+                    <p class="mb-8 font-newprimary text-base md:text-lg text-white text-center md:text-left">
                         {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
                     </p>
                     <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                        title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}"/>
+                        title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}" :is-rounded="true" :padding-x="4"/>
                 </div>
-                <!-- <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
-                    <h2 class="mb-6 font-bold text-white text-center text-lg md:text-2xl md:max-w-xs md:text-start">
-                        {{ __('pages/home.bottom') }}
-                    </h2>
-                    <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
-                </div> -->
-                <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
-                    <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
+                <div class="w-full md:w-7/12 md:order-2 order-1 mt-4">
+                    <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/cta_image.webp') }}" alt="bottom banner"
                         class="w-full h-full object-cover rounded-b-lg">
                 </div>
             </div>
         </div>
     </section>
-    
+
     {{-- ================================== Testimony Section  ================================== --}}
     <section class="pt-14">
         <div class="flex new-main-container w-full flex-col">
@@ -297,98 +302,98 @@
         var isLargeDevice = window.matchMedia("(max-width: 1024px)").matches
         var isVeryLargeDevice = window.matchMedia("(max-width: 1280px)").matches
 
-        // OUR PROGRAMS
-        // const item_back = document.querySelector('.acad-program-our-programs .item-back');
-        // var item_left = document.querySelector('.acad-program-our-programs .item-left');
-        // const item_right = document.querySelector('.acad-program-our-programs .item-right');
-        // const item_front = document.querySelector('.acad-program-our-programs .item-front');
-        const image_items = document.querySelectorAll('.acad-program-our-programs .item');
-        const our_programs_button_left = document.querySelector('.acad-program-our-programs .button-left');
-        const our_programs_button_right = document.querySelector('.acad-program-our-programs .button-right');
-        const our_programs_wrapper = document.getElementById('our-programs-wrapper');
-        const image_items_text = document.querySelectorAll('.acad-program-our-programs .item-text');
+        // // OUR PROGRAMS
+        // // const item_back = document.querySelector('.acad-program-our-programs .item-back');
+        // // var item_left = document.querySelector('.acad-program-our-programs .item-left');
+        // // const item_right = document.querySelector('.acad-program-our-programs .item-right');
+        // // const item_front = document.querySelector('.acad-program-our-programs .item-front');
+        // const image_items = document.querySelectorAll('.acad-program-our-programs .item');
+        // const our_programs_button_left = document.querySelector('.acad-program-our-programs .button-left');
+        // const our_programs_button_right = document.querySelector('.acad-program-our-programs .button-right');
+        // const our_programs_wrapper = document.getElementById('our-programs-wrapper');
+        // const image_items_text = document.querySelectorAll('.acad-program-our-programs .item-text');
 
-        const items_position = [
-            ['item-back', 'item-left', 'item-right', 'item-front'],
-            ['item-right', 'item-back', 'item-front', 'item-left'],
-            ['item-front', 'item-right', 'item-left', 'item-back'],
-            ['item-left', 'item-front', 'item-back', 'item-right'],
-        ];
+        // const items_position = [
+        //     ['item-back', 'item-left', 'item-right', 'item-front'],
+        //     ['item-right', 'item-back', 'item-front', 'item-left'],
+        //     ['item-front', 'item-right', 'item-left', 'item-back'],
+        //     ['item-left', 'item-front', 'item-back', 'item-right'],
+        // ];
 
-        var track_item = 0;
-        var track_item_text = 3;
+        // var track_item = 0;
+        // var track_item_text = 3;
 
-        function moveRight() {
-            our_programs_wrapper.scrollIntoView()
-            items_position[track_item].forEach((cls, it) => {
-                image_items[it].classList.remove(cls);
-                image_items[it].classList.add(items_position[(track_item + 1) % 4][it]);
-            })
+        // function moveRight() {
+        //     our_programs_wrapper.scrollIntoView()
+        //     items_position[track_item].forEach((cls, it) => {
+        //         image_items[it].classList.remove(cls);
+        //         image_items[it].classList.add(items_position[(track_item + 1) % 4][it]);
+        //     })
 
-            track_item = (track_item + 1) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-100");
-            image_items_text[track_item_text].classList.add("opacity-0");
-            image_items_text[track_item_text].classList.remove("visible");
-            image_items_text[track_item_text].classList.add("invisible");
-            track_item_text = (track_item_text + 1) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-0");
-            image_items_text[track_item_text].classList.add("opacity-100");
-            image_items_text[track_item_text].classList.add("visible");
-            image_items_text[track_item_text].classList.remove("invisible");
-        }
+        //     track_item = (track_item + 1) % 4;
+        //     image_items_text[track_item_text].classList.remove("opacity-100");
+        //     image_items_text[track_item_text].classList.add("opacity-0");
+        //     image_items_text[track_item_text].classList.remove("visible");
+        //     image_items_text[track_item_text].classList.add("invisible");
+        //     track_item_text = (track_item_text + 1) % 4;
+        //     image_items_text[track_item_text].classList.remove("opacity-0");
+        //     image_items_text[track_item_text].classList.add("opacity-100");
+        //     image_items_text[track_item_text].classList.add("visible");
+        //     image_items_text[track_item_text].classList.remove("invisible");
+        // }
 
-        function moveLeft() {
-            our_programs_wrapper.scrollIntoView()
-            items_position[track_item].forEach((cls, it) => {
-                image_items[it].classList.remove(cls);
-                image_items[it].classList.add(items_position[Math.abs((track_item - 1 + 4) % 4)][it]);
-            })
-            track_item = (track_item - 1 + 4) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-100");
-            image_items_text[track_item_text].classList.add("opacity-0");
-            image_items_text[track_item_text].classList.remove("visible");
-            image_items_text[track_item_text].classList.add("invisible");
-            track_item_text = (track_item - 1 + 4) % 4;
-            image_items_text[track_item_text].classList.remove("opacity-0");
-            image_items_text[track_item_text].classList.add("opacity-100");
-            image_items_text[track_item_text].classList.add("visible");
-            image_items_text[track_item_text].classList.remove("invisible");
-        }
+        // function moveLeft() {
+        //     our_programs_wrapper.scrollIntoView()
+        //     items_position[track_item].forEach((cls, it) => {
+        //         image_items[it].classList.remove(cls);
+        //         image_items[it].classList.add(items_position[Math.abs((track_item - 1 + 4) % 4)][it]);
+        //     })
+        //     track_item = (track_item - 1 + 4) % 4;
+        //     image_items_text[track_item_text].classList.remove("opacity-100");
+        //     image_items_text[track_item_text].classList.add("opacity-0");
+        //     image_items_text[track_item_text].classList.remove("visible");
+        //     image_items_text[track_item_text].classList.add("invisible");
+        //     track_item_text = (track_item - 1 + 4) % 4;
+        //     image_items_text[track_item_text].classList.remove("opacity-0");
+        //     image_items_text[track_item_text].classList.add("opacity-100");
+        //     image_items_text[track_item_text].classList.add("visible");
+        //     image_items_text[track_item_text].classList.remove("invisible");
+        // }
 
-        our_programs_button_right.addEventListener("click", () => {
-            moveRight();
-        });
+        // our_programs_button_right.addEventListener("click", () => {
+        //     moveRight();
+        // });
 
-        our_programs_button_left.addEventListener("click", () => {
-            moveLeft();
-        });
+        // our_programs_button_left.addEventListener("click", () => {
+        //     moveLeft();
+        // });
 
-        const left_journey_btn = document.getElementById('left-journey-btn');
-        const right_journey_btn = document.getElementById('right-journey-btn');
+        // const left_journey_btn = document.getElementById('left-journey-btn');
+        // const right_journey_btn = document.getElementById('right-journey-btn');
 
-        left_journey_btn.addEventListener("click", () => {
-            moveLeft();
-        })
-        right_journey_btn.addEventListener("click", () => {
-            moveRight();
-        })
+        // left_journey_btn.addEventListener("click", () => {
+        //     moveLeft();
+        // })
+        // right_journey_btn.addEventListener("click", () => {
+        //     moveRight();
+        // })
 
-        const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
-        let s4ActiveIndex = 0;
+        // const acad_tutor_items = document.querySelectorAll('.acad-program-acad-tutor-item');
+        // let s4ActiveIndex = 0;
 
-        acad_tutor_items.forEach((item, it) => {
-            item.addEventListener('click', () => {
-                if (it != s4ActiveIndex) {
-                    acad_tutor_items[s4ActiveIndex].classList.add(
-                        'acad-program-acad-tutor-inactive');
-                    acad_tutor_items[s4ActiveIndex].classList.remove(
-                        'acad-program-acad-tutor-active');
-                    acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
-                    acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
-                    s4ActiveIndex = it;
-                }
-            })
-        });
+        // acad_tutor_items.forEach((item, it) => {
+        //     item.addEventListener('click', () => {
+        //         if (it != s4ActiveIndex) {
+        //             acad_tutor_items[s4ActiveIndex].classList.add(
+        //                 'acad-program-acad-tutor-inactive');
+        //             acad_tutor_items[s4ActiveIndex].classList.remove(
+        //                 'acad-program-acad-tutor-active');
+        //             acad_tutor_items[it].classList.remove('acad-program-acad-tutor-inactive');
+        //             acad_tutor_items[it].classList.add('acad-program-acad-tutor-active');
+        //             s4ActiveIndex = it;
+        //         }
+        //     })
+        // });
 
 
         // SLIDER
@@ -404,7 +409,7 @@
             lazyload: true,
             interval: 4000,
             pagination: false,
-            padding: 0,
+            padding: 36,
         }).on('pagination:mounted', function(data) {
             if (isSmallDevice || isMediumDevice) {
                 // You can add your class to the UL element

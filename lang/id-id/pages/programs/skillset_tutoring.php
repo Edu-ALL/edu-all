@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => 'Skillset Tutoring - EduALL Programs',
-    'meta_description' => 'Skillset Tutoring: Ubah passion menjadi pencapaian luar biasa dan jadilah profesional di bidang yang disukai',
+    'meta_title' => 'Program Skillset untuk Study Abroad - EduAll',
+    'meta_description' => 'Program kursus programming dan Subject Olympiad untuk dukung application siswa ke universitas dunia',
 
     'title' => 'Skillset Tutoring',
     'body' => 'Ubah passion menjadi pencapaian luar biasa dan jadilah profesional di bidang yang disukai',
@@ -14,16 +14,14 @@ return [
     'program_title' => 'Program Spesialisasi untuk Kesuksesan di Masa Depan',
     'program_list' => [
         [
-            'title' => 'Algoritma & Pemrograman',
-            'desc' => "Dalami dunia algoritma & pemrograman - keterampilan penting bagi inovator masa depan. Kuasai pemikiran logis dan pemecahan masalah, hal-hal penting untuk meningkatkan university application ke kampus top dunia. ",
+            'title' => 'Algorithm & Programming',
+            'desc' => "Dive into the world of coding and algorithms - a critical skill for tomorrow's innovators. Master logical thinking and problem-solving, essentials for top-tier university applications.",
+            'image' => 'program-1.webp'
         ],
         [
-            'title' => 'Persiapan Olimpiade Mata Pelajaran',
-            'desc' => "Unggul dalam Olimpiade internasional STEM (Matematika & Biologi) dengan bimbingan ahli kami. Tampil menonjol dalam lamaran universitas dengan menunjukkan penguasaan mata pelajaran terpilih. ",
-        ],
-        [
-            'title' => 'Pengusaan Menulis Bahasa Inggris',
-            'desc' => "Tingkatkan keterampilan menulis untuk menulis esai dan pengerjaan tugas kuliah yang menarik. Ini adalah keterampilan yang harus dimiliki untuk berhasil mendaftar ke universitas dan berhasil dalam pendidikan tinggi.",
+            'title' => 'Subject Olympiad Preparation',
+            'desc' => "Excel in international STEM (Math & Biology) Olympiads with our expert guidance. Stand out in your university application by showcasing exceptional subject mastery.",
+            'image' => 'program-2.webp'
         ],
     ],
 

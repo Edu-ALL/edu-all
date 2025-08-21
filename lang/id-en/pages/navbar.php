@@ -17,7 +17,7 @@ return [
             ],
             [
                 'link' => 'programs/academic-test-preparation',
-                'title' => 'Academic & Test Preparation',
+                'title' => 'Tutoring Program',
             ],
             [
                 'link' => 'programs/global-innovators-project',
@@ -44,10 +44,16 @@ return [
                 'title' => 'Our Contribution',
             ],
             [
-                'link' => 'about/partnership-careers',
-                'title' => 'Partnership & Careers',
+                'link' => 'about/careers',
+                'title' => 'Careers',
             ],
         ],
+    ],
+
+    // partnership 
+    'partnership' => [
+        'link' => 'partnership',
+        'title' => 'Partnership',
     ],
 
     // blog
@@ -74,15 +80,15 @@ return [
                 'title' => 'Testimonial',
             ],
             [
-                'link' => 'resources/mentee-project-showcase',
+                'link' => 'https://project-showcase.edu-all.com',
                 'title' => 'Mentee Project Showcase',
             ],
         ],
     ],
 
     // contact us
-    'contact_us' => [
-        'link' => 'contact-us',
-        'title' => 'Contact Us',
-    ],
+    // 'contact_us' => [
+    //     'link' => 'contact-us',
+    //     'title' => 'Contact Us',
+    // ],
 ];

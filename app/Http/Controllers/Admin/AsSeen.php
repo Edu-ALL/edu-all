@@ -13,54 +13,59 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
 class AsSeen extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.as-seen.index', [
             'website_data' => WebsiteSettings::first(),
         ]);
     }
 
-    public function getAsSeens(Request $request){
+    public function getAsSeens(Request $request)
+    {
         if ($request->ajax()) {
             $data = AsSeens::orderBy('updated_at', 'asc')->get();
             return Datatables::of($data)
-            ->addIndexColumn()
-            ->editColumn('thumbnail', function($d){
-                $path = asset('uploaded_files/'.'as-seen/'.$d->created_at->format('Y').'/'.$d->created_at->format('m').'/'.$d->thumbnail);
-                $result = '
-                    <img data-original="'.$path.'" src="'.$path.'" alt="" width="100">
+                ->addIndexColumn()
+                ->editColumn('thumbnail', function ($d) {
+                    $path = Storage::url('as-seen/' . $d->created_at->format('Y') . '/' . $d->created_at->format('m') . '/' . $d->thumbnail);
+                    $result = '
+                    <img data-original="' . $path . '" src="' . $path . '" alt="" width="100">
                 ';
-                return $result;
-            })
-            ->editColumn('action', function($d){
-                $result = '
+                    return $result;
+                })
+                ->editColumn('action', function ($d) {
+                    $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
-                    <a type="button" class="btn btn-warning" href="/admin/as-seen/'.$d->id.'/edit">
+                    <a type="button" class="btn btn-warning" href="/admin/as-seen/' . $d->id . '/edit">
                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this blog category"></i>
                     </a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete('.$d->id.')">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')">
                         <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this blog category"></i>
                     </button>
                 </div>
                 ';
-                return $result;
-            })
-            ->rawColumns(['thumbnail', 'action'])
-            ->make(true);
+                    return $result;
+                })
+                ->rawColumns(['thumbnail', 'action'])
+                ->make(true);
         }
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.as-seen.create', [
             'website_data' => WebsiteSettings::first(),
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -81,25 +86,26 @@ class AsSeen extends Controller
             if ($request->hasFile('thumbnail')) {
                 $file = $request->file('thumbnail');
                 $file_format = $request->file('thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'as-seen/'.date('Y').'/'.date('m').'/';
+                $destinationPath = 'project/eduall-website/as-seen/' . now()->format('Y') . '/' . now()->format('m') . '/';
                 $time = date('YmdHis');
-                $fileName = 'As-Seen-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'As-Seen-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $as_seen->thumbnail = $fileName;
             }
             $as_seen->alt = $request->alt;
             $as_seen->save();
             DB::commit();
-            Log::notice('As Seen has been successfully Created by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('As Seen has been successfully Created by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Create As Seen failed : '.$e->getMessage());
+            Log::error('Create As Seen failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/as-seen')->withSuccess('As Seen Was Successfully Created');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $as_seen = AsSeens::find($id);
         return view('admin.as-seen.update', [
             'website_data' => WebsiteSettings::first(),
@@ -107,7 +113,8 @@ class AsSeen extends Controller
         ]);
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $messages = [
             'required'  => 'The :attribute field is required.',
         ];
@@ -127,47 +134,48 @@ class AsSeen extends Controller
             $as_seen = AsSeens::find($id);
             if ($request->hasFile('thumbnail')) {
                 if ($old_image_path = $as_seen->thumbnail) {
-                    $file_path = public_path('uploaded_files/'.'as-seen/'.$as_seen->created_at->format('Y').'/'.$as_seen->created_at->format('m').'/'.$old_image_path);
-                    if (File::exists($file_path)) {
-                        File::delete($file_path);
+                    $file_path = 'project/eduall-website/as-seen/' . $as_seen->updated_at->format('Y') . '/' . $as_seen->updated_at->format('m') . '/' . $old_image_path;
+                    if (Storage::disk('s3')->exists($file_path)) {
+                        Storage::disk('s3')->delete($file_path);
                     }
                 }
                 $file = $request->file('thumbnail');
                 $file_format = $request->file('thumbnail')->getClientOriginalExtension();
-                $destinationPath = public_path().'/uploaded_files/'.'as-seen/'.$as_seen->created_at->format('Y').'/'.$as_seen->created_at->format('m').'/';
+                $destinationPath = 'project/eduall-website/as-seen/' . $as_seen->updated_at->format('Y') . '/' . $as_seen->updated_at->format('m') . '/';
                 $time = date('YmdHis');
-                $fileName = 'As-Seen-thumbnail-'.$time.'.'.$file_format;
-                $file->move($destinationPath, $fileName);
+                $fileName = 'As-Seen-thumbnail-' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
                 $as_seen->thumbnail = $fileName;
             }
             $as_seen->alt = $request->alt;
             $as_seen->save();
             DB::commit();
-            Log::notice('As Seen has been successfully Created by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('As Seen has been successfully Created by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Update As Seen failed : '.$e->getMessage());
+            Log::error('Update As Seen failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/as-seen')->withSuccess('As Seen Was Successfully Updated');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         DB::beginTransaction();
         try {
             $as_seen = AsSeens::find($id);
             if ($old_image_path = $as_seen->thumbnail) {
-                $file_path = public_path('uploaded_files/'.'as-seen/'.$as_seen->created_at->format('Y').'/'.$as_seen->created_at->format('m').'/'.$old_image_path);
-                if (File::exists($file_path)) {
-                    File::delete($file_path);
+                $file_path = 'project/eduall-website/as-seen/' . $as_seen->updated_at->format('Y') . '/' . $as_seen->updated_at->format('m') . '/' . $old_image_path;
+                if (Storage::disk('s3')->exists($file_path)) {
+                    Storage::disk('s3')->delete($file_path);
                 }
             }
             $as_seen->delete();
             DB::commit();
-            Log::notice('As Seen has been successfully Deleted by '.Auth::guard('web-admin')->user()->name);
+            Log::notice('As Seen has been successfully Deleted by ' . Auth::guard('web-admin')->user()->name);
         } catch (Exception $e) {
             DB::rollBack();
-            Log::error('Delete As Seen failed : '.$e->getMessage());
+            Log::error('Delete As Seen failed : ' . $e->getMessage());
             return Redirect::back()->withErrors($e->getMessage());
         }
         return redirect('/admin/as-seen')->withSuccess('As Seen Was Successfully Deleted');

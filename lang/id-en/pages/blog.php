@@ -1,7 +1,7 @@
 <?php
 return [
-    'meta_title' => "You can find articles about study abroad, university in USA, UK and Asia",
-    'meta_description' => 'Read our updates and stories here in our blog page. You can find articles about study abroad, university in USA, UK and Asia.',
+    'meta_title' => "EduALL Blog | Latest News & Study Abroad Guides",
+    'meta_description' => 'Explore the latest insights on studying abroad and latest news in EduALL Blog.',
 
     // General
     'top_title' => 'EduALL Journal',

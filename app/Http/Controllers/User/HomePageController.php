@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\MentorMail;
+use App\Mail\PartnershipMail;
 use App\Models\Banners;
 use App\Models\ImportantDates;
 use App\Models\Mentors;
@@ -11,9 +13,17 @@ use App\Models\Testimonials;
 use App\Models\UpcomingEvents;
 use App\Models\AsSeens;
 use Carbon\Carbon;
+use Exception;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HomePageController extends Controller
 {
+    private $VERIFY_TOKEN = 'EDUALL04';
+
     public function home()
     {
         $lang = substr(app()->getLocale(), 3, 2);
@@ -47,7 +57,7 @@ class HomePageController extends Controller
         // As Seen On
         $as_seen_on = AsSeens::orderBy('created_at', 'DESC')->get();
 
-        // $region 
+        // $region
         return view('user.home.region.id', [
             'banners' => $banners,
             'all_mentor' => $all_mentor,
@@ -93,5 +103,127 @@ class HomePageController extends Controller
     public function privacy_policy()
     {
         return view('user.privacy_policy.main');
+    }
+
+    public function sign_me_partnership($locale, $slug)
+    {
+        return view('user.sign_me.sign_me_partnership', [
+            'slug' => $slug,
+            'locale' => $locale
+        ]);
+    }
+
+    public function submit_partnership(Request $request, $locale, $slug)
+    {
+        try {
+            $validation = [
+                'fullname.not_regex' => 'This field must not contain the words "script" or "php".',
+                'company_name.not_regex' => 'This field must not contain the words "script" or "php".',
+                'position.not_regex' => 'This field must not contain the words "script" or "php".',
+                'phone_number.not_regex' => 'This field must not contain the words "script" or "php".',
+                'inquiry.not_regex' => 'This field must not contain the words "script" or "php".',
+                'email.email' => 'This field must contain a valid email.'
+            ];
+
+            $validator = Validator::make($request::all(), [
+                'fullname' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'company_name' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'position' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'email' => ['required', 'email'],
+                'phone_number' => ['required', 'string', 'max:16', 'not_regex:/(script|php)/i'],
+                'inquiry' => ['required', 'string', 'not_regex:/(script|php)/i'],
+            ], $validation);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $data = [
+                'data' => $request::all(),
+                'category' => $slug
+            ];
+
+            if ($request::get('g-recaptcha-response')) {
+                Mail::to('theresya.afila@edu-all.com')->send(new PartnershipMail($data));
+                Log::notice('Email partnership successfully sent.', $data['data']);
+                return redirect($locale . '/sign-me/thank-partnership');
+            } else {
+                return Redirect::back();
+            }
+        } catch (Exception $e) {
+            Log::error('Send partnership email failed : ' . $e->getMessage());
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+    }
+
+    public function thanks_partnership()
+    {
+        return view('user.sign_me.thank_partnership');
+    }
+
+    public function sign_up_mentor()
+    {
+        return view('user.sign_me.sign_up_mentor');
+    }
+
+    public function thank_mentor()
+    {
+        return view('user.sign_me.thank_mentor');
+    }
+
+    public function sign_me_mentoring($lang = null)
+    {
+        if ($lang && $lang != 'en') {
+            return redirect('/sign-me/mentoring/en', 301);
+        }
+
+        return view('user.sign_me.sign_me_mentoring', ['lang' => $lang]);
+    }
+
+    public function sign_me_sat()
+    {
+        $path = request()->segments();
+        $path = end($path);
+        return view('user.sign_me.sign_me_sat', ['price_page' => $path == 'price',]);
+    }
+
+    public function submit_mentor(Request $request, $locale)
+    {
+        try {
+            $validation = [
+                'fullname.not_regex' => 'This field must not contain the words "script" or "php".',
+                'linkedin_link.not_regex' => 'This field must not contain the words "script" or "php".',
+                'phone_number.not_regex' => 'This field must not contain the words "script" or "php".',
+                'email.email' => 'This field must contain a valid email.',
+                'linkedin_link.url' => 'This field must contain a valid url.'
+            ];
+
+            $validator = Validator::make($request::all(), [
+                'fullname' => ['required', 'string', 'max:255', 'not_regex:/(script|php)/i'],
+                'linkedin_link' => ['required', 'url', 'not_regex:/(script|php)/i'],
+                'email' => ['required', 'email'],
+                'phone_number' => ['required', 'string', 'max:15', 'not_regex:/(script|php)/i'],
+            ], $validation);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $data = [
+                'data' => $request::all(),
+            ];
+
+            Mail::to('willie.romansyah@edu-all.com')->cc(['lawrence.benning@edu-all.com', 'irene@edu-all.com'])->send(new MentorMail($data));
+
+            return redirect($locale . '/sign-up/mentor/thank');
+        } catch (Exception $e) {
+            Log::error('Send mentor email failed : ' . $e->getMessage());
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+    }
+
+    public function thank_form_ads()
+    {
+        return view('user.sign_me.thank_ads');
     }
 }

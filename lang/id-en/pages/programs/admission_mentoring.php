@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "We offer personalized 1-on-1 admissions mentoring service",
-    'meta_description' => 'Personalized 1-on-1 admissions mentoring service that will serve as an academic walk-through for students to get accepted at their dream schools and find best fit universities',
+    'meta_title' => "College Admission Counseling & Mentoring Program - EduAll",
+    'meta_description' => "Comprehensive admission mentoring and counseling program for undergraduate, graduate, and university transfer admissions to international campus.",
 
     // banner sections
     "title" => "Admission Mentoring",

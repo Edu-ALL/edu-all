@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "EduALL Programs: Mentoring Individu, Kursus, dan Program Terapan untuk Pendaftaran Universitas dan Personal Branding",
-    'meta_description' => 'Cari panduan terbail untuk diterima di universitas TOP impianmu di program Admission Mentoring. Temukan solusi terbaik untuk masa depan akademismu sekarang!',
+    'meta_title' => "Program Bimbingan Kuliah ke Luar Negeri - EduAll",
+    'meta_description' => 'Program mentoring dan konseling pendidikan ke luar negeri untuk kuliah S1, S2 dan Transfer uni ke kampus impianmu.',
 
     // banner section
     "title" => "Admission Mentoring",

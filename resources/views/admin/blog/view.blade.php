@@ -90,8 +90,8 @@
                                     <div class="col d-flex flex-column gap-4">
                                         <div class="pic-profile">
                                             <img class="img-blog"
-                                                src="{{ asset('uploaded_files/' . 'blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                                alt="">
+                                                src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                alt="EduALL">
                                         </div>
                                         <div class="col d-flex flex-column justify-content-center gap-2 px-1">
                                             <div class="field-detail d-flex flex-row align-items-start">
@@ -595,9 +595,8 @@
             const blog = $('#select_article').find(':selected').data('blog')
             const localization = blog.lang == "id" ? "id-id" : "id-en"
 
-            $('#image').val('uploaded_files/blogs/' + moment(blog.created_at).format('YYYY') + '/' + moment(blog.created_at)
-                .format('MM') + '/' + blog
-                .blog_thumbnail);
+            $('#image').val('blogs/' + moment(blog.created_at).format('YYYY') + '/' + moment(blog.created_at)
+                .format('MM') + '/' + blog.blog_thumbnail);
             $('#title').val(blog.blog_title);
             $('#description').html(blog.seo_desc);
             $('#link').val('{{ url('') }}' + '/' + localization + '/blog/' + blog.slug);

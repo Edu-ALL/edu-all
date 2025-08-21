@@ -1,6 +1,13 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'About', 'url' => route('about', [app()->getLocale()])],
+            ['name' => 'Our Contribution', 'url' => route('our_contribution', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/about_us/our_contribution.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/about_us/our_contribution.meta_title') }}" />
     <meta name="description" content="{{ __('pages/about_us/our_contribution.meta_description') }}" />
@@ -25,23 +32,15 @@
 
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
-    <!-- <section class="py-16 h-[100vh] bg-our-contribution-banner bg-cover bg-top" id="banner">
-                <div class="flex flex-col h-full items-center new-main-container justify-center gap-2">
-                    <h2 class="font-bold text-banner-title text-white text-center uppercase max-w-3xl">
-                        {{ __('pages/about_us/our_contribution.title') }}
-                    </h2>
-                </div>
-            </section> -->
-
     <section class="py-16 h-screen bg-our-contribution-banner bg-cover bg-top" id="banner">
         <x-registration-form />
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/2 md:pb-[2%]">
                     {{ __('pages/about_us/our_contribution.title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
         </div>
@@ -93,9 +92,9 @@
                                         class="bg-newprimary border-newprimary border rounded-lg p-4 hover:bg-white transition-all duration-700 group relative w-full">
                                         <div class="flex flex-col justify-between">
                                             <div class="rounded-lg overflow-hidden h-52">
-                                                <img data-original="{{ asset('assets/img/about/our-contribution/our-contribution-' . $loop->iteration . '.png') }}"
+                                                <img data-src="{{ asset('assets/img/about/our-contribution/our-contribution-' . $loop->iteration . '.png') }}"
                                                     alt="EduALL Contribution aset"
-                                                    class="object-cover w-full h-full aspect-[3/2] group-hover:hidden">
+                                                    class="object-cover w-full h-full aspect-[3/2] group-hover:hidden lazyload">
                                             </div>
                                             <div
                                                 class="flex items-end h-36 absolute bottom-12 group-hover:bottom-[76%] transition-all duration-700 pr-4">

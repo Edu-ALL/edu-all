@@ -1,8 +1,17 @@
 @extends('layout.user.main')
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Program', 'url' => '#'],
+            ['name' => 'Admission Mentoring', 'url' => route('admissions_mentoring', [app()->getLocale()])],
+            ['name' => 'Undergraduate', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/programs/undergraduate_program.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/undergraduate_program.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/undergraduate_program.meta_description') }}" />
+    <meta name="keywords" content="Essay, personal statement university, konsultan pendidikan, extracurricular activities, motivational letter, uni shortlisting, study abroad, konsultant pendidikan, university application, university admission" />
 @endsection
 
 @section('sub-navbar')
@@ -30,20 +39,20 @@
         <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
             <div
                 class="flex flex-col h-full items-center md:items-start justify-center md:justify-end main-container py-[20%] md:pt-[15%] gap-2">
-                <h2
+                <h1
                     class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/3 xl:w-1/3 md:pb-[2%]">
                     {{ __('pages/programs/undergraduate_program.title') }}
-                </h2>
+                </h1>
                 <x-registration-form :is-button="true" />
             </div>
 
-            <div class="absolute md:bottom-0 left-0 right-0">
+            <div class="absolute left-0 right-0 md:bottom-10">
                 <div class="relative h-full">
                     <div
-                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute md:bottom-0 bottom-0 left-0 right-0">
+                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[36vh] absolute  bottom-0 left-0 right-0 md:bottom-[8vh]">
                     </div>
                     <div
-                        class="w-full main-container mx-auto absolute md:bottom-0 bottom-24 left-0 right-0 h-24 flex items-center">
+                        class="w-full main-container mx-auto absolute md:bottom-[8vh] bottom-24 left-0 right-0 h-24 flex items-center">
                         <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
                             @foreach (__('pages/programs/admission_mentoring.stats') as $item)
                                 <div class="flex flex-col md:w-auto justify-center items-center">
@@ -69,25 +78,25 @@
     <section class="py-16">
         <div class="new-main-container">
             <!-- <div class="flex flex-col md:flex-row items-center justify-evenly pt-4 pb-10 border-b border-b-[#DADADA] gap-8">
-                @foreach (__('pages/programs/admission_mentoring.stats') as $item)
-                    <div class="flex flex-1 flex-col items-center">
-                        <h2 class="text-newprimary font-bold text-banner-title leading-10">{{ $item['title'] }}</h2>
-                        <h4 class="text-newprimary font-semibold text-lg leading-6">{{ $item['sub_title'] }}</h4>
-                        <span class="text-xs font-semibold uppercase leading-3">{{ $item['comment'] }}</span>
+                        @foreach (__('pages/programs/admission_mentoring.stats') as $item)
+    <div class="flex flex-1 flex-col items-center">
+                                <h2 class="text-newprimary font-bold text-banner-title leading-10">{{ $item['title'] }}</h2>
+                                <h4 class="text-newprimary font-semibold text-lg leading-6">{{ $item['sub_title'] }}</h4>
+                                <span class="text-xs font-semibold uppercase leading-3">{{ $item['comment'] }}</span>
+                            </div>
+    @endforeach
                     </div>
-                @endforeach
-            </div>
-            <div class="text-center text-lg max-w-4xl mx-auto font-semibold py-8">
-                {{ __('pages/programs/admission_mentoring.body') }}
-            </div> -->
+                    <div class="text-center text-lg max-w-4xl mx-auto font-semibold py-8">
+                        {{ __('pages/programs/admission_mentoring.body') }}
+                    </div> -->
             <div class="flex flex-wrap items-center justify-evenly gap-8 pt-4">
                 @foreach (__('pages/programs/admission_mentoring.benefits') as $item)
                     <div class="shadow-clip flex flex-col items-center">
                         <div class="h-36 w-40 bg-white flex flex-col items-center justify-center py-4 mb-4"
                             style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                             <div class="h-16 relative">
-                                <img data-original="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
-                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover">
+                                <img data-src="{{ asset('assets/img/admission mentoring/revamp/' . $item['image']) }}"
+                                    alt="EduALL - ilustration" class="w-full h-full object-center object-cover lazyload">
                                 <div class="absolute top-0 -right-4">
                                     <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
                                         <i class="fa-solid fa-check fa-sm text-white"></i>
@@ -114,8 +123,9 @@
                 </div>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
                     <div class="w-full md:w-1/2 overflow-hidden rounded-lg">
-                        <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
-                            alt="EduALL - ilustration" class="w-full h-full object-center object-cover aspect-[7/6]">
+                        <img data-src="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/undergraduate.webp') }}"
+                            alt="EduALL - ilustration"
+                            class="w-full h-full object-center object-cover aspect-[7/6] lazyload">
                     </div>
                     <div class="w-full md:w-1/2">
                         <ul class="flex flex-col items-start justify-center gap-3">
@@ -143,7 +153,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Why Us Section -->
     <section class="pt-16 pb-20">
         <div class="new-main-container">
@@ -154,16 +164,17 @@
                 <div class="flex flex-col md:flex-row gap-8 mt-6">
                     @foreach (__('pages/programs/undergraduate_program.learning_scope_points') as $item)
                         <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
-                            <img data-original="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/' . $item['image']) }}"
-                                alt="" class="w-full max-w-2xl object-contain">
+                            <img data-src="{{ asset('assets/img/admission mentoring/Undergraduate/revamp/' . $item['image']) }}"
+                                alt="EduALL" class="w-full max-w-2xl object-contain lazyload">
                             <div class="w-full -mt-4">
                                 <a href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
-                                    target="_blank" class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
+                                    target="_blank"
+                                    class="w-full block bg-red  py-2 px-4 text-center text-white font-semibold">
                                     {{ $item['button'] }}
                                 </a>
                             </div>
                             <!-- <x-button href="{{ asset('assets/files/programs/undergraduate/' . $item['link']) }}"
-                                target="_blank" title="{{ $item['button'] }}" margin-top="6" /> -->
+                                        target="_blank" title="{{ $item['button'] }}" margin-top="6" /> -->
                             <p class="px-2 mt-6 leading-5 text-justify">{{ $item['body'] }}</p>
                         </div>
                     @endforeach
@@ -173,16 +184,17 @@
     </section>
 
     {{-- ================================== Bottom Section  ================================== --}}
-    <section
-        class="md:pt-8 md:pb-20">
+    <section class="md:pt-8 md:pb-20">
         <div class="new-main-container">
             <div class="flex md:flex-row flex-col items-center bg-[#F5F5F5] rounded-2xl overflow-hidden">
-                <div class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
+                <div
+                    class="flex flex-col items-center md:items-start justify-center w-full md:w-1/2 md:mx-16 md:order-1 order-2 py-6 px-6 mt-2 md:mt-0 rounded-t-3xl md:rounded-none">
                     <h2 class="mb-6 font-bold text-dark text-center text-lg md:text-2xl md:max-w-xs md:text-start">
                         {{ __('pages/home.bottom') }}
                     </h2>
                     <x-button href="{{ route('sign_me_adm_mentoring', app()->getLocale()) }}"
-                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4" />
+                        title="{{ __('pages/home.bottom_btn') }}" type='secondary' bg-color="newprimary" padding-x="4"
+                        is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1 mt-4">
                     <img loading="lazy" src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
@@ -194,14 +206,12 @@
 
     {{-- ========================================== Mentors ========================================== --}}
     <section class="pt-16 pb-4 bg-dark" id="mentors">
-        <!-- <div class="new-main-container py-8 hidden md:block">
-            <h1 class="font-bold text-section-title text-white text-center">Let’s meet Our Mentors</h1>
-        </div> -->
-
         <div class="new-main-container">
             <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                <h1 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h1>
-                <div class="border border-newyellow rounded-md py-1 px-6"><a href="{{ route('mentor', app()->getLocale()) }}" class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+                <h2 class="font-bold text-section-title text-white text-left w-full">Let’s meet Our Mentors</h2>
+                <div class="border border-newyellow rounded-md py-1 px-6"><a
+                        href="{{ route('mentor', app()->getLocale()) }}"
+                        class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
             </div>
         </div>
         <div class="flex flex-col items-center">
@@ -210,10 +220,12 @@
                     <div class="md:px-8">
                         <div class="splide splides undergraduate-splide" role="group">
                             <div class="splide__arrows text-white">
-                                <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -42px">
+                                <button class="splide__arrow splide__arrow--prev"
+                                    style="background: transparent; left: -42px">
                                     <i class="fa-solid fa-chevron-left text-4xl"></i>
                                 </button>
-                                <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -42px">
+                                <button class="splide__arrow splide__arrow--next"
+                                    style="background: transparent; right: -42px">
                                     <i class="fa-solid fa-chevron-right text-4xl"></i>
                                 </button>
                             </div>
@@ -233,11 +245,11 @@
                     </div>
                 </div>
                 <!-- <div class="hidden md:flex justify-center">
-                    <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
-                        bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
-                        hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                        transition="all duration-150" />
-                </div> -->
+                            <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                                bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                                hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                                transition="all duration-150" />
+                        </div> -->
             </div>
         </div>
     </section>

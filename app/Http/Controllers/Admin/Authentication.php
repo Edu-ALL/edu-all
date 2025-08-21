@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class Authentication extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('auth.login');
     }
 
-    public function loginAdmin(Request $request){
+    public function loginAdmin(Request $request)
+    {
         $credentials = $request->only('email', 'password');
 
         $rules = [
@@ -29,18 +31,18 @@ class Authentication extends Controller
 
         $validator = Validator::make($credentials, $rules, $messages);
         if ($validator->fails()) {
-            Log::error('Login failed : '.$request->email.' has not been registered');
+            Log::error('Login failed : ' . $request->email . ' has not been registered');
             return Redirect::back()->withInput()->withErrors($validator->messages());
         }
 
         if (!Auth::guard('web-admin')->attempt($credentials)) {
-            Log::error('Login failed : '.$request->email.', your password is wrong');
+            Log::error('Login failed : ' . $request->email . ', your password is wrong');
             return Redirect::back()->withInput()->withErrors([
                 'password' => 'Your password is wrong',
             ]);
         }
 
-        Log::notice('Email : '.Auth::guard('web-admin')->user()->email.' has been successfully logged in');
+        Log::notice('Email : ' . Auth::guard('web-admin')->user()->email . ' has been successfully logged in');
         return redirect('/admin/dashboard')->withSuccess('Signed in successfully');
     }
 
@@ -52,7 +54,7 @@ class Authentication extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
 
-        Log::notice('Email : '. $user->email.' has been successfully logged out');
+        Log::notice('Email : ' . $user->email . ' has been successfully logged out');
         return redirect('/admin/login');
     }
 }

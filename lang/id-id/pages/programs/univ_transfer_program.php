@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'meta_title' => "Program Mentoring Pemindahan Universitas - EduALL Programs",
-    'meta_description' => 'Pindah ke universitas impianmu dengan mudah bersama program mentoring penerimaan EduALL untuk mahasiswa transfer. Dapatkan panduan profesional dan dukungan penuh. Daftar sekarang',
+    'meta_title' => "Program Persiapan Transfer Kuliah ke Luar Negeri - EduAll",
+    'meta_description' => 'Ikuti program bimbingan untuk kamu yang ingin transfer kuliah ke berbagai universitas dunia bersama EduAll. Didampingi mentor berpengalaman dan kurikulum terbaik.',
 
     'title' => "UNIVERSITY TRANSFER",
     'body' => "UNIVERSITY ADMISSION MENTORING",

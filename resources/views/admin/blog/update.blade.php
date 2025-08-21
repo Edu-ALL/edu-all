@@ -61,7 +61,7 @@
                                                     <div class="col d-flex align-items-center justify-content-center border rounded"
                                                         style="min-height: 110px">
                                                         <img class="img-preview img-fluid" id="img_preview"
-                                                            src="{{ asset('uploaded_files/' . 'blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
+                                                            src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}">
                                                     </div>
                                                 </div>
                                                 <div class="col d-flex flex-column gap-2">
@@ -327,6 +327,32 @@
 
         ClassicEditor
             .create(document.querySelector('.description'), {
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        }
+                    ]
+                },
                 ckfinder: {
                     uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }

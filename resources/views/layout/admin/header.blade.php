@@ -1,8 +1,8 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center">
         <a href="/admin/dashboard" class="logo d-flex align-items-center">
-            <img data-original="{{ asset('uploaded_files/'.'website-settings/'.$website_data->website_primary_logo) }}" alt="">
-            {{-- <img data-original="{{ asset('assets/img/logo/logo-allin.png') }}" alt=""> --}}
+            <img data-original="{{ Storage::url('website-settings/'.$website_data->website_primary_logo) }}" alt="EduALL">
+            {{-- <img data-original="{{ asset('assets/img/logo/logo-allin.png') }}" alt="EduALL"> --}}
         </a>
         <i class="fa-solid fa-bars toggle-sidebar-btn ms-2"></i>
     </div>

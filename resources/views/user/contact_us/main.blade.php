@@ -16,9 +16,11 @@
                         {{ __('pages/contact_us/contact_us.title') }}
                     </h2>
 
-                    <form action="">
+                    <form id="contactForm" action="/id-en/contact-us" method="POST">
+                        @csrf
                         <div class="flex flex-col">
-                            <h4 class="font-newprimary text-base">Fields marked with an <span class="text-red-500">*</span> are
+                            <h4 class="font-newprimary text-base">Fields marked with an <span class="text-red-500">*</span>
+                                are
                                 required</h4>
                             <div class="flex flex-col mb-4">
                                 <label for="name">Name <span class="text-red-500">*</span></label>
@@ -34,7 +36,11 @@
                                 <label for="message">Message <span class="text-red-500">*</span></label>
                                 <textarea name="message" id="message" cols="20" rows="3" class="border-[#e3e3e3] rounded-[4px]"></textarea>
                             </div>
-                            <button type="submit" class="w-full text-left"><span
+                            <div class="mb-3">
+                                <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
+                                <span id="captcha" class="text-red" />
+                            </div>
+                            <button type="button" class="w-full text-left" onclick="submitForm()"><span
                                     class="inline-block px-6 py-1.5 font-newprimary font-semibold text-base text-white rounded-sm bg-black">SEND</span></button>
                         </div>
                     </form>
@@ -45,18 +51,21 @@
                         <p class="font-newprimary text-lg text-[#7a7a7a]">{!! $website_settings->address !!}</p>
                     </div>
 
-                    <div class="flex flex-col gap-y-3 mb-6">
+                    {{-- <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">Telephone</h5>
                         <div class="flex flex-col">
-                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}"
+                                class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
                             @if ($website_settings->phone_number_2 != null)
-                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
+                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}"
+                                    class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
                             @endif
                             @if ($website_settings->phone_number_3 != null)
-                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
+                                <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}"
+                                    class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="flex flex-col gap-y-3 mb-6">
                         <h5 class="font-newprimary font-semibold text-xl text-[#7A7A7A] ">E-mail</h5>
                         <a target="_blank" href="mailto:{{ $website_settings->email }}"
@@ -84,3 +93,57 @@
             tabindex="0" data-rocket-lazyload="fitvidscompatible" class="lazyloaded" data-ll-status="loaded"></iframe>
     </div>
 @endsection
+@push('style')
+    <script script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('rcaptcha', {
+                'sitekey': '6LeKwI8qAAAAAGA8ypgp-u0gDloCz27jeVQmniif',
+                'callback': checkCaptcha
+            });
+        };
+    </script>
+@endpush
+@push('script')
+    <script>
+        const checkCaptcha = () => {
+            var v = grecaptcha.getResponse();
+
+            if (v.length == 0) {
+                document.getElementById('captcha').innerHTML = "Please verify you are not a robot.";
+                return false;
+            } else {
+                return true;
+                // Here you can perform an actual form submission if needed, e.g., using an AJAX request or form.submit().
+            }
+        }
+
+        const submitForm = () => {
+            const inputs = document.querySelectorAll('#contactForm input');
+            let isValid = true;
+
+            // Loop through inputs and check for validation
+            inputs.forEach(function(input) {
+                if (input.required && !input.value && input.value != ' ' && !input.classList.contains(
+                        'hidden')) {
+                    isValid = false;
+                    input.setCustomValidity('Please fill in required fields');
+                    input.classList.add('border-red'); // Add red border to invalid inputs (optional)
+                    input.classList.remove('border-green-500'); // Remove green border if any
+                    input.classList.remove('border-[#e3e3e3]');
+                } else {
+                    input.setCustomValidity('');
+                    input.classList.remove('border-red');
+                    input.classList.remove('border-[#e3e3e3]');
+                    input.classList.add('border-green-500');
+                }
+            });
+
+            const captchaValid = checkCaptcha()
+
+            if (isValid && captchaValid) {
+                document.getElementById('contactForm').submit()
+            }
+        }
+    </script>
+@endpush

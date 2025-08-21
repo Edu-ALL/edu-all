@@ -10,17 +10,22 @@ class RegistrationForm extends Component
     public $programId;
     public $leadId;
     public $isHome;
+    public $isPartner;
+
+    public $isAbsoluteStyle;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($isButton = false, $programId = 'AAUP', $leadId = 'LS001', $isHome = false)
+    public function __construct($isButton = false, $programId = 'AAUP', $leadId = 'LS001', $isHome = false, $isPartner=false, $isAbsoluteStyle = true)
     {
         $this->isButton = $isButton;
         $this->programId = $programId;
         $this->leadId = $leadId;
         $this->isHome = $isHome;
+        $this->isPartner = $isPartner;
+        $this->isAbsoluteStyle = $isAbsoluteStyle;
     }
 
     /**

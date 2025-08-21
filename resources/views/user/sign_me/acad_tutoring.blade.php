@@ -1,6 +1,12 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'Sign Up Academic Tutoring', 'url' => url()->current()],
+        ];
+    @endphp
     <title>{{ __('pages/sign_me/acad_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/sign_me/acad_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/sign_me/acad_tutoring.meta_description') }}" />
@@ -62,18 +68,19 @@
                             </li>
                             <li class="flex">
                                 <i class="fa-solid fa-check text-newprimary mt-1 mr-2"></i>
+
                                 <span>
                                     Recommendation and timeline on the next action to take for your application
                                 </span>
                             </li>
                         </ul>
                     </div>
-                    <div class="flex flex-col gap-x-10">
+                    {{-- <div class="flex flex-col gap-x-10">
                         <h4 class="mb-6 font-newprimary font-bold text-2xl text-newprimary">
                             Your current profile will be assessed based on:
                         </h4>
-                        <img data-original="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
-                    </div>
+                        <img class="lazyload" data-src="{{ asset('assets/img/sign-me/four-pillars.webp') }}" alt="four pillars">
+                    </div> --}}
                 </div>
                 <div class="md:col-span-3 order-1 md:order-2">
                     {{-- Emmbed Form --}}

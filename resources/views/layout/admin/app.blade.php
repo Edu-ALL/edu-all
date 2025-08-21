@@ -45,7 +45,6 @@
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
-    @vite('public/css/admin/app.css')
     @yield('css')
     <style>
         .swal-footer {

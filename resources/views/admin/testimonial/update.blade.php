@@ -108,7 +108,7 @@
                                                 <div class="col d-flex align-items-center justify-content-center border rounded"
                                                     style="min-height: 110px">
                                                     <img class="img-preview img-fluid" id="img_preview"
-                                                        src="{{ $testimonial[0]->testi_thumbnail != null ? asset('uploaded_files/' . 'testimonial/' . $testimonial[0]->created_at->format('Y') . '/' . $testimonial[0]->created_at->format('m') . '/' . $testimonial[0]->testi_thumbnail) : '' }}">
+                                                        src="{{ $testimonial[0]->testi_thumbnail != null ? Storage::url('testimonial/' . $testimonial[0]->created_at->format('Y') . '/' . $testimonial[0]->created_at->format('m') . '/' . $testimonial[0]->testi_thumbnail) : '' }}">
                                                 </div>
                                             </div>
                                             <div class="col d-flex flex-column gap-2">

@@ -1,6 +1,10 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [['name' => 'Home', 'url' => url('/' . app()->getLocale())]];
+    @endphp
+    
     <title>{{ __('pages/home.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/home.meta_title') }}" />
     <meta name="description" content="{{ __('pages/home.meta_description') }}" />
@@ -15,10 +19,10 @@
                     @foreach ($banners as $banner)
                         <li class="splide__slide relative">
                             <img loading="lazy" class="object-top object-cover w-full h-screen md:block hidden"
-                                src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
+                                src="{{ Storage::url('banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <img loading="lazy" class="object-top object-contain w-full h-screen md:hidden block"
-                                src="{{ asset('uploaded_files/banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
+                                src="{{ Storage::url('banner/' . $banner->created_at->format('Y') . '/' . $banner->created_at->format('m') . '/' . $banner->banner_img_mobile) }}"
                                 alt="{{ $banner->banner_alt }}">
                             <div
                                 class="absolute left-0 top-0 flex items-center w-full h-full pt-16 md:items-start {{ !$banner->banner_img_mobile ? 'bg-gradient-to-r from-primary/90' : '' }}">
@@ -55,8 +59,8 @@
                 @foreach (__('pages/home.benefit_list') as $item)
                     <div
                         class="flex flex-col justify-start items-center py-10 px-4 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] ">
-                        <img loading="lazy" data-original="{{ asset('assets/img/home/' . $item['image']) }}"
-                            alt="ilustration 1" class="w-[120px] h-auto">
+                        <img loading="lazy" data-src="{{ asset('assets/img/home/' . $item['image']) }}" alt="ilustration 1"
+                            class="w-[120px] h-auto lazyload">
                         <h4 class="mt-4 font-newprimary font-semibold text-lg text-[#7895C7] text-center">
                             {{ $item['title'] }}
                         </h4>

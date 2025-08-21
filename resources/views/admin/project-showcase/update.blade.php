@@ -101,7 +101,7 @@
                                         <div class="col-md-2 col">
                                             <label for="" class="form-label">Thumbnail Preview</label>
                                             <div class="col d-flex align-items-center justify-content-center border rounded" style="min-height: 110px">
-                                                <img class="img-preview img-fluid" id="img_preview" src="{{ asset('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$project_showcase->thumbnail) }}">
+                                                <img class="img-preview img-fluid" id="img_preview" src="{{ Storage::url('project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$project_showcase->thumbnail) }}">
                                             </div>
                                         </div>
                                         <div class="col d-flex flex-column gap-2">
@@ -141,7 +141,7 @@
                                         <div class="col d-flex flex-row flex-wrap align-items-start justify-content-start border rounded p-2 gap-1" style="min-height: 110px" id="output">
                                             @foreach (json_decode($project_showcase->gallery) as $image)
                                                 <div class="image col-2" id="preview-image">
-                                                    <img class="img-fluid" src="{{ asset('uploaded_files/'.'project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$image) }}">
+                                                    <img class="img-fluid" src="{{ Storage::url('project-showcase/'.$project_showcase->created_at->format('Y').'/'.$project_showcase->created_at->format('m').'/'.$image) }}">
                                                 </div>
                                             @endforeach
                                         </div>

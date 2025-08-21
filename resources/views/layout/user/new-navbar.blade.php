@@ -1,3 +1,10 @@
+@php
+    function isValidUrl($url)
+    {
+        return filter_var($url, FILTER_VALIDATE_URL) !== false;
+    }
+@endphp
+
 <header
     class="fixed left-1/2 -translate-x-1/2 bottom-10 z-50 transition-all hidden md:block duration-[600ms] ease-in-out"
     id="bottom-navbar">
@@ -25,7 +32,8 @@
                                         @foreach ($item['submenu'] as $submenu)
                                             <li
                                                 class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
-                                                <a href="{{ url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank"' : '' }}
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
                                                 </a>
@@ -108,15 +116,19 @@
 
 
 {{-- whatsapp  --}}
-<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[9999] transition-all duration-1000" id="wa_button">
+<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[45] transition-all duration-1000" id="wa_button">
     <div class="relative group">
         {{-- Dont Display the button on this pages: "partnership-careers" --}}
-        @if (!str_contains(request()->url(), 'partnership-careers'))
-            <div
-                class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-[#008069] cursor-pointer shadow">
-                <i class="fa-brands fa-whatsapp text-[25px]"></i>
-            </div>
-        @endif
+        {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
+        @endif --}}
+        <div
+            class="absolute md:right-[35px] right-[15px] md:bottom-[7px] bottom-[3px] bg-[#008069] py-2 pl-2 pr-5 md:flex justify-center items-center text-white w-[120px] text-[12px] cursor-pointer shadow rounded-lg">
+            Chat With Us!
+        </div>
+        <div
+            class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-white cursor-pointer shadow">
+            <i class="fa-brands fa-whatsapp text-[25px]"></i>
+        </div>
     </div>
 </div>
 
@@ -128,22 +140,23 @@
             <h2 class="text-white text-lg leading-5">
                 {{ __('pages/home.wa.title') }}
             </h2>
-            <p class="text-white text-base mt-2">
+            <h3 class="text-white text-base mt-2">
                 {{ __('pages/home.wa.sub_title') }}
-            </p>
+            </h3>
         </div>
     </div>
     <div class="bg-white rounded-b-2xl p-4">
-        <a href="https://api.whatsapp.com/send?phone=62{{ $website_settings->phone_number_wa }}&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
-            target="_blank"
-            class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
-            <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
+        @if (str_contains(request()->url(), 'careers') || str_contains(request()->url(), 'partnership'))
+        <a href="https://bit.ly/partnerwithus-website" @else <a href="https://bit.ly/eduall-contactus" @endif
+                target="_blank"
+                class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
+                <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
 
-            <i class="fas fa-paper-plane text-2xl"></i>
-        </a>
-        <p class="text-[10px] text-gray-500 mt-2 text-end">
-            {{ date('Y/m/d') }}
-        </p>
+                <i class="fas fa-paper-plane text-2xl"></i>
+            </a>
+            <p class="text-[10px] text-gray-500 mt-2 text-end">
+                {{ date('Y/m/d') }}
+            </p>
     </div>
 </div>
 
@@ -211,6 +224,8 @@
         $('#mobile-menu-toggle').click(function() {
             $('#mobile-navbar').stop(true, true).fadeIn(300);
             $('body').css('overflow', 'hidden');
+
+            $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24')
         });
 
         $('#mobile-navbar-overlay').click(function() {
@@ -221,6 +236,9 @@
         // WA Form 
 
         $('#wa_button').click(function() {
+            $('#mobile-navbar').stop(true, true).fadeOut(300);
+            $('body').css('overflow', 'auto');
+
             if ($('#whatsappForm.bottom-24').length == 0) {
                 $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24')
             } else {

@@ -1,17 +1,15 @@
 @extends('layout.user.main')
 
 @section('head')
+    @php
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
+            ['name' => 'EduJournal', 'url' => route('blogs', [app()->getLocale()])],
+        ];
+    @endphp
     <title>{{ __('pages/blog.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/blog.meta_title') }}" />
     <meta name="description" content="{{ __('pages/blog.meta_description') }}" />
-@endsection
-
-@section('head')
-    @foreach ($blogs as $blog)
-        <meta name="title" content="{{ $blog->seo_title }}">
-        <meta name="description" content="{{ $blog->seo_desc }}">
-        <meta name="keyword" content="{{ $blog->seo_keyword }}">
-    @endforeach
 @endsection
 
 @section('content')
@@ -23,7 +21,7 @@
             <div class="flex flex-col items-center lg:items-start">
                 <div class="mb-8 w-full flex flex-col items-center justify-between gap-4 md:flex-row">
                     <span
-                        class="px-4 py-2 font-newprimary font-bold text-sm text-dark text-center bg-newyellow lg:text-base">
+                        class="px-4 py-2 font-newprimary font-bold text-sm text-dark text-center bg-newyellow lg:text-base rounded-lg">
                         @if ($is_top_update)
                             {{ __('pages/blog.top_update') }}
                         @else
@@ -33,7 +31,7 @@
                     <form action="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}" method="GET"
                         class="inline-flex justify-end w-full max-w-md">
                         <input type="search" name="search" placeholder="Search..." id="search"
-                            class=" border-primary font-newprimary font-medium normal-case text-newprimary focus:border-primary focus:ring-primary placeholder-transparent absolute w-[55px] transition-all duration-500">
+                            class=" border-primary font-newprimary font-medium normal-case text-newprimary focus:border-primary focus:ring-primary placeholder-transparent absolute w-[55px] transition-all duration-500 rounded-lg">
                         <button type="button" class="px-4 py-2 relative z-10 mt-[1px] transition-all duration-500"
                             onclick="getSearch()" id="search_button">
                             <i class="fa-solid fa-magnifying-glass fa-xl text-newprimary"></i>
@@ -56,15 +54,15 @@
                                     <div class="splide__slide__container">
                                         <div class="flex flex-col gap-6 md:flex-row">
                                             <div class="w-full md:w-2/3">
-                                                <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                                     alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                                    class="object-cover w-full h-full max-h-[60vh]">
+                                                    class="object-cover w-full h-full max-h-[60vh] lazyload">
                                             </div>
                                             <div
                                                 class="flex flex-col justify-between w-full md:w-1/3 md:gap-y-6 lg:gap-y-12">
                                                 <div class="mt-3 mb-5 flex flex-col gap-4">
                                                     <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog->blog_category->slug, '#blog-category']) }}"
-                                                        class="inline-flex self-start px-3 py-1 font-newprimary font-semibold text-sm text-newprimary border border-newprimary hover:bg-newprimary/10">
+                                                        class="inline-flex self-start px-3 py-1 font-newprimary font-semibold text-sm text-newprimary border border-newprimary hover:bg-newprimary/10 rounded-lg">
                                                         {{ $blog->blog_category->category_name }}
                                                     </a>
                                                     <div class="flex items-center gap-2">
@@ -72,8 +70,8 @@
                                                             <div class="flex items-center gap-1">
                                                                 <div
                                                                     class="w-8 h-8 text-center text-white rounded-full overflow-hidden">
-                                                                    <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                                                        alt="" class="w-full object-cover">
+                                                                    <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                                                        alt="EduALL" class="w-full object-cover">
                                                                 </div>
                                                                 {{-- change author name with mentor name --}}
                                                                 <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
@@ -112,7 +110,7 @@
                                                 <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                                                     class="block my-5">
                                                     <span
-                                                        class="px-4 py-2 font-newprimary font-bold text-sm text-white bg-newprimary">
+                                                        class="px-4 py-2 font-newprimary font-bold text-sm text-white bg-newprimary rounded-lg">
                                                         {{ __('pages/blog.top_button') }}
                                                     </span>
                                                 </a>
@@ -134,14 +132,14 @@
                 <ul class="horizontal_list flex items-center gap-x-1 py-6 overflow-x-auto">
                     <li class="flex-[0_0_auto]">
                         <a href="{{ route('blogs', ['locale' => app()->getLocale(), '#blog-category']) }}"
-                            class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') ? 'text-newprimary' : 'bg-newprimary text-white' }} ">
+                            class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary rounded-lg  {{ request('category') ? 'text-newprimary' : 'bg-newprimary text-white' }} ">
                             {{ __('pages/blog.category_all') }}
                         </a>
                     </li>
                     @foreach ($blog_categories as $blog_category)
                         <li class="flex-[0_0_auto]">
                             <a href="{{ route('blogs', ['locale' => app()->getLocale(), 'category' => $blog_category->slug, '#blog-category']) }}"
-                                class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary  {{ request('category') == $blog_category->slug ? 'bg-newprimary text-white' : 'text-newprimary' }}">
+                                class="px-5 py-1.5 font-newprimary font-bold text-sm border-[1px] border-newprimary rounded-lg  {{ request('category') == $blog_category->slug ? 'bg-newprimary text-white' : 'text-newprimary' }}">
                                 {{ $blog_category->category_name }}
                             </a>
                         </li>
@@ -154,10 +152,11 @@
             <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($blogs as $blog)
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
-                        class="block p-3 hover:bg-[#D9D9D9]">
+                        class="block p-3 hover:bg-[#D9D9D9] rounded-lg">
                         <div class="flex flex-col gap-2 h-full justify-between">
-                            <img data-original="{{ asset('uploaded_files/blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
-                                alt="EduALL {{ $blog->blog_thumbnail_alt }}" class="h-72 object-cover object-center">
+                            <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                alt="EduALL {{ $blog->blog_thumbnail_alt }}"
+                                class="h-72 object-cover object-center rounded-lg lazyload">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
                                     {{ $blog->blog_category->category_name }}
@@ -187,8 +186,8 @@
                                     <div class="flex items-center gap-2">
                                         <div
                                             class="w-8 h-8 text-center text-white rounded-full overflow-hidden bg-newprimary">
-                                            <img src="{{ asset('uploaded_files/mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
-                                                alt="" class="w-full object-cover">
+                                            <img src="{{ Storage::url('mentor/' . $blog->mentor->created_at->format('Y') . '/' . $blog->mentor->created_at->format('m') . '/' . $blog->mentor->mentor_picture) }}"
+                                                alt="EduALL" class="w-full object-cover">
                                         </div>
                                         <div class="text-newprimary">
                                             {{ $blog->mentor->mentor_fullname }}
