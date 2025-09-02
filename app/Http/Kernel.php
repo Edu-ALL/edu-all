@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \App\Http\Middleware\RedirectWwwToNonWww::class,
-            \App\Http\Middleware\LogRouteChange::class,
+            // \App\Http\Middleware\LogRouteChange::class,
             // \App\Http\Middleware\SetCacheHeaders::class,
         ],
 
