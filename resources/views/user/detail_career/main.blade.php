@@ -106,9 +106,9 @@
                         <h2 class="text-2xl font-semibold text-white pb-5">Job Application Form</h2>
 
                         <!-- Job ID -->
-                        <input type="number" name="job_id" id="job_id" value="{{ $career->id }}"
-                            class="w-full border-gray-300 rounded-xl shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-                            hidden>
+                        <input type="number" name="job_id" id="job_id" value="{{ $career->id }}" hidden>
+
+                        <input type="text" name="utm_code" value="{{ old('utm_code', Request::get('utm_code')) }}" hidden>
 
                         <!-- Full Name -->
                         <div>

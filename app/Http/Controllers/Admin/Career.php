@@ -316,6 +316,9 @@ class Career extends Controller
                 ->editColumn('screen_3', function ($d) {
                     return $d->screen_question_3 ? $d->screen_question_3 . ' ' . $d->screen_answer_3 : '-';
                 })
+                ->editColumn('utm_code', function ($d) {
+                    return $d->utm_code ?? '-';
+                })
                 ->editColumn('submitted_at', function ($d) {
                     return $d->created_at;
                 })
@@ -329,7 +332,7 @@ class Career extends Controller
                 ';
                     return $result;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['screen_1', 'screen_2', 'screen_3', 'utm_code', 'action'])
                 ->make(true);
         }
     }

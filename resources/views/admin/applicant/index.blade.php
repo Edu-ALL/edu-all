@@ -45,9 +45,10 @@
                                             <th scope="col">Phone Number</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Question 1</th>
-                                            <th scope="col">Question 2</th> 
+                                            <th scope="col">Question 2</th>
                                             <th scope="col">Question 3</th>
                                             <th scope="col">CV</th>
+                                            <th scope="col">UTM Code</th>
                                             <th scope="col">Submitted At</th>
                                             <th scope="col">Action</th>
                                         </tr>
@@ -135,8 +136,18 @@
                             }
 
                             return `<a href="${data}" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fa fa-download"></i> Download CV
+                                <i class="fa fa-download"></i>
                             </a>`;
+                        },
+                    },
+                    {
+                        data: 'utm_code',
+                        name: 'utm_code',
+                        render: function(data, type, row) {
+                            if (!data) {
+                                return '<span class="text-muted">-</span>';
+                            }
+                            return data;
                         },
                     },
                     {

@@ -89,6 +89,7 @@ class AboutPageController extends Controller
             'screen_answer_1' => ['nullable', 'string'],
             'screen_answer_2' => ['nullable', 'string'],
             'screen_answer_3' => ['nullable', 'string'],
+            'utm_code' => ['nullable', 'string', 'max:255'],
             'g-recaptcha-response' => [new ReCaptcha()],
         ]);
 
@@ -119,6 +120,7 @@ class AboutPageController extends Controller
                 'screen_answer_2' => $validated['screen_answer_2'] ?? null,
                 'screen_question_3' => $career->screen_question_3,
                 'screen_answer_3' => $validated['screen_answer_3'] ?? null,
+                'utm_code' => $validated['utm_code'] ?? null,
             ]);
 
             $data = [

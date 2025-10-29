@@ -23,6 +23,7 @@ class Applicants extends Model
         'screen_answer_2',
         'screen_question_3',
         'screen_answer_3',
+        'utm_code',
     ];
 
     public function career()
