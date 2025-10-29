@@ -98,6 +98,8 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
                 Route::get('/partnership', 'partnership')->name('partnership');
                 Route::get('/about/careers', 'partnership_careers')->name('partnership_careers');
                 Route::get('/about/careers/{slug}', 'detail_careers')->name('detail_careers');
+                Route::post('/about/careers/{slug}', 'submit_job_applicant')->name('submit_job_applicant');
+                Route::get('/thanks/career', 'thanks_career')->name('thanks_career');
                 // Route::get('/contact-us', 'contact_us')->name('contact_us');
                 // Route::post('/contact-us', 'submit_contact_us')->name('submit_contact_us');
                 // Route::get('/contact-us/thank', 'thank_contact_us')->name('thank_contact_us');

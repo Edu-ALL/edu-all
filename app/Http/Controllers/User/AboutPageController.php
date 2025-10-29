@@ -3,15 +3,20 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ApplicantMail;
 use App\Mail\ContactMail;
+use App\Models\Applicants;
 use App\Models\Careers;
 use App\Models\Mentors;
 use App\Models\MentorVideos;
+use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class AboutPageController extends Controller
 {
@@ -68,6 +73,84 @@ class AboutPageController extends Controller
         return view('user.detail_career.main', [
             'career' => $career,
         ]);
+    }
+
+    public function submit_job_applicant(Request $request, $locale, $slug)
+    {
+        // Find the related career/job by slug
+        $career = Careers::where('slug', $slug)->firstOrFail();
+
+        // ✅ Validate incoming form data
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'phone' => ['required', 'string', 'max:30'],
+            'cv_path' => ['required', 'file', 'mimes:pdf,doc,docx', 'max:2048'], // max 2MB
+            'screen_answer_1' => ['nullable', 'string'],
+            'screen_answer_2' => ['nullable', 'string'],
+            'screen_answer_3' => ['nullable', 'string'],
+            'g-recaptcha-response' => [new ReCaptcha()],
+        ]);
+
+        DB::beginTransaction(); // start transaction
+
+        try {
+            // ✅ Handle CV file upload
+            $fileName = null;
+            if ($request->hasFile('cv_path')) {
+                $file = $request->file('cv_path');
+                $file_format = $request->file('cv_path')->getClientOriginalExtension();
+                $destinationPath = 'project/eduall-website/applicants/';
+                $time = date('YmdHis');
+                $fileName = 'cv - ' . $validated['name'] . ' - ' . $time . '.' . $file_format;
+                Storage::disk('s3')->put($destinationPath . $fileName, file_get_contents($file));
+            }
+
+            // ✅ Save applicant data
+            Applicants::create([
+                'job_id' => $career->id,
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'phone' => $validated['phone'] ?? null,
+                'cv_path' => $fileName,
+                'screen_question_1' => $career->screen_question_1,
+                'screen_answer_1' => $validated['screen_answer_1'] ?? null,
+                'screen_question_2' => $career->screen_question_2,
+                'screen_answer_2' => $validated['screen_answer_2'] ?? null,
+                'screen_question_3' => $career->screen_question_3,
+                'screen_answer_3' => $validated['screen_answer_3'] ?? null,
+            ]);
+
+            $data = [
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'phone' => $validated['phone'],
+                'cv_path' => env('AWS_URL') . 'applicants/' . $fileName,
+                'position' => $career->job_position,
+            ];
+
+            Mail::to(['willie.romansyah@edu-all.com', 'lawrence.benning@edu-all.com'])
+                ->send(new ApplicantMail($data));
+
+            DB::commit(); // commit transaction
+
+            Log::notice("successfully submitted job application for {$validated['name']} to position {$career->job_position}");
+
+            return redirect($locale . '/thanks/career');
+        } catch (\Exception $e) {
+            DB::rollBack(); // rollback if anything fails
+
+            Log::error('Job application submission failed: ' . $e->getMessage());
+
+            return redirect()->back()
+                ->withInput()
+                ->withErrors(['error' => 'Failed to submit application. Please try again.']);
+        }
+    }
+
+    public function thanks_career()
+    {
+        return view('user.sign_me.thank_applicant');
     }
 
     public function contact_us()

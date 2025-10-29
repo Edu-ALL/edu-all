@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Applicants;
 use App\Models\Careers;
 use Exception;
 use App\Models\WebsiteSettings;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class Career extends Controller
 {
@@ -67,6 +69,10 @@ class Career extends Controller
                 ->editColumn('action', function ($d) {
                     $result = '
                 <div class="d-flex flex-row justify-content-center gap-1">
+                <a type="button" class="btn btn-info" href="/admin/careers/' . $d->id . '/applicants">
+                        ' . $d->total_applicants . '
+                        <i class="fa-solid fa-person ms-2" data-bs-toggle="tooltip" data-bs-title="View applicants"></i>
+                    </a>
                     <a type="button" class="btn btn-warning" href="/admin/careers/' . $d->id . '/edit">
                         <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-title="Edit this career"></i>
                     </a>
@@ -125,6 +131,9 @@ class Career extends Controller
             $career->about_the_role = $request->about_the_role;
             $career->job_description = $request->job_description;
             $career->requirements = $request->requirements;
+            $career->screen_question_1 = $request->screen_question_1;
+            $career->screen_question_2 = $request->screen_question_2;
+            $career->screen_question_3 = $request->screen_question_3;
             $career->status = $request->status;
             $career->created_at = date('Y-m-d H:i:s');
             $career->updated_at = date('Y-m-d H:i:s');
@@ -173,6 +182,7 @@ class Career extends Controller
             'about_the_role' => 'required',
             'job_description' => 'required',
             'requirements' => 'required',
+            'screen_question_1' => 'required',
             'status' => 'required|in:active,inactive',
         ];
 
@@ -193,6 +203,9 @@ class Career extends Controller
             $career->about_the_role = $request->about_the_role;
             $career->job_description = $request->job_description;
             $career->requirements = $request->requirements;
+            $career->screen_question_1 = $request->screen_question_1;
+            $career->screen_question_2 = $request->screen_question_2;
+            $career->screen_question_3 = $request->screen_question_3;
             $career->status = $request->status;
             $career->updated_at = date('Y-m-d H:i:s');
             $career->save();
@@ -263,5 +276,86 @@ class Career extends Controller
         }
 
         return redirect('/admin/careers');
+    }
+
+    public function applicants($job_id)
+    {
+        $career = Careers::find($job_id);
+
+        return view('admin.applicant.index', [
+            'job_id' => $job_id,
+            'career' => $career,
+            'website_data' => WebsiteSettings::first(),
+        ]);
+    }
+
+    public function getApplicants(Request $request, $job_id)
+    {
+        if ($request->ajax()) {
+            $data = Applicants::where('job_id', $job_id)->orderBy('updated_at', 'desc')->get();
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->editColumn('name', function ($d) {
+                    return $d->name;
+                })
+                ->editColumn('phone', function ($d) {
+                    return $d->phone;
+                })
+                ->editColumn('email', function ($d) {
+                    return $d->email;
+                })
+                ->editColumn('cv_path', function ($d) {
+                    return $d->cv_path ? env('AWS_URL') . 'applicants/' . $d->cv_path : null;
+                })
+                ->editColumn('screen_1', function ($d) {
+                    return $d->screen_question_1 ? $d->screen_question_1 . ' ' . $d->screen_answer_1 : '-';
+                })
+                ->editColumn('screen_2', function ($d) {
+                    return $d->screen_question_2 ? $d->screen_question_2 . ' ' . $d->screen_answer_2 : '-';
+                })
+                ->editColumn('screen_3', function ($d) {
+                    return $d->screen_question_3 ? $d->screen_question_3 . ' ' . $d->screen_answer_3 : '-';
+                })
+                ->editColumn('submitted_at', function ($d) {
+                    return $d->created_at;
+                })
+                ->editColumn('action', function ($d) {
+                    $result = '
+                <div class="d-flex flex-row justify-content-center gap-1">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="formDelete(' . $d->id . ')">
+                        <i class="fa-regular fa-trash-can" data-bs-toggle="tooltip" data-bs-title="Delete this career"></i>
+                    </button>
+                </div>
+                ';
+                    return $result;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+    }
+
+    public function deleteApplicant($id)
+    {
+        DB::beginTransaction();
+        try {
+            $applicant = Applicants::find($id);
+
+            if ($old_image_path = $applicant->cv_path) {
+                $file_path = 'project/eduall-website/applicants/' . $old_image_path;
+                if (Storage::disk('s3')->exists($file_path)) {
+                    Storage::disk('s3')->delete($file_path);
+                }
+            }
+
+            $applicant->delete();
+            DB::commit();
+            Log::notice('Applicant: ' . $applicant->name . ' has been successfully Deleted by ' . Auth::guard('web-admin')->user()->name);
+        } catch (Exception $e) {
+            DB::rollBack();
+            Log::error('Delete Applicant failed : ' . $e->getMessage());
+            return Redirect::back()->withErrors($e->getMessage());
+        }
+
+        return redirect()->back()->withSuccess('Applicant Was Successfully Deleted');
     }
 }

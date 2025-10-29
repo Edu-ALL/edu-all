@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Applicant;
 use App\Http\Controllers\Admin\AsSeen;
 use App\Http\Controllers\Admin\Authentication;
 use App\Http\Controllers\Admin\Banner;
@@ -103,6 +104,11 @@ Route::middleware('auth.expires')->group(function () {
         Route::post('/careers/deactivate/{id}', [Career::class, 'deactivate']);
         Route::post('/careers/activate/{id}', [Career::class, 'activate']);
         Route::post('/careers/delete/{id}', [Career::class, 'delete']);
+
+        // Applicant
+        Route::get('/careers/{job_id}/applicants', [Career::class, 'applicants']);
+        Route::get('/careers/{job_id}/applicants/data', [Career::class, 'getApplicants'])->name('data-applicants');
+        Route::post('/applicant/delete/{id}', [Career::class, 'deleteApplicant']);
 
         // Testimonial
         Route::get('/testimonial', [Testimonial::class, 'index']);

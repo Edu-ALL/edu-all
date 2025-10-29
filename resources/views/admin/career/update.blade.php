@@ -23,7 +23,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/admin/career">Careers</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/careers">Careers</a></li>
                     <li class="breadcrumb-item active">Update</li>
                 </ol>
             </nav>
@@ -36,7 +36,7 @@
                             <div class="card-body">
                                 <div class="d-flex flex-row align-items-center justify-content-between">
                                     <h5 class="card-title">Update Career <span>| {{ now()->year }}</span></h5>
-                                    <a class="btn btn-primary" href="{{ url('/admin/career') }}">
+                                    <a class="btn btn-primary" href="{{ url('/admin/careers') }}">
                                         <i class="fa-solid fa-arrow-left me-md-1 me-0"></i><span
                                             class="d-md-inline d-none">Back to List</span>
                                     </a>
@@ -169,6 +169,50 @@
                                                     @enderror
                                                 </div>
                                             @endforeach
+
+                                            <div class="col-12">
+                                                <label for="screen_question_1" class="form-label">Screen Question
+                                                    1
+                                                </label>
+                                                <span style="font-style: italic; color: red; font-size:12px"> | Answer must
+                                                    be Yes or
+                                                    No *</span>
+                                                <input type="text" class="form-control" id="screen_question_1"
+                                                    name="screen_question_1"
+                                                    value="{{ old('screen_question_1', $career->screen_question_1 ?? '') }}"
+                                                    required>
+                                                @error('screen_question_1')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label for="screen_question_2" class="form-label">Screen Question
+                                                    2</label>
+                                                <span style="font-style: italic; color: red; font-size:12px"> | Answer must
+                                                    be Yes or
+                                                    No</span>
+                                                <input type="text" class="form-control" id="screen_question_2"
+                                                    name="screen_question_2"
+                                                    value="{{ old('screen_question_2', $career->screen_question_2 ?? '') }}">
+                                                @error('screen_question_2')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label for="screen_question_3" class="form-label">Screen Question
+                                                    3</label>
+                                                <span style="font-style: italic; color: red; font-size:12px"> | Answer must
+                                                    be Yes or
+                                                    No</span>
+                                                <input type="text" class="form-control" id="screen_question_3"
+                                                    name="screen_question_3"
+                                                    value="{{ old('screen_question_3', $career->screen_question_3 ?? '') }}">
+                                                @error('screen_question_3')
+                                                    <small class="alert text-danger ps-0 fs-12">{{ $message }}</small>
+                                                @enderror
+                                            </div>
                                         </div>
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-primary" id="submit">

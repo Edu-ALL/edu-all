@@ -27,4 +27,16 @@ class Careers extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function applicants()
+    {
+        return $this->hasMany(Applicants::class, 'job_id');
+    }
+
+    protected $appends = ['total_applicants'];
+
+    public function getTotalApplicantsAttribute()
+    {
+        return $this->applicants()->count();
+    }
 }
