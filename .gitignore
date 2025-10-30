@@ -6,7 +6,7 @@ node_modules/
 /public/hot
 /public/storage
 /storage/*.key
-/storage/credentials/
+/storage/credentials/*.json
 /vendor
 vendor
 vendor/
