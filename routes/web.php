@@ -140,28 +140,4 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('/regular-talk', function () {
         return view('user.regular_talk.main');
     });
-
-    Route::get('/test-sheet', function () {
-        // LIST VALUES
-        // $values = Sheets::spreadsheet(env('GOOGLE_SHEET_ID'))
-        //     ->sheet('Sheet1')
-        //     ->all();
-
-        // CREATE VALUE
-        $values = Sheets::spreadsheet(env('GOOGLE_SHEET_ID'))->sheet('Sheet1')->append([[
-            '1',
-            'Hafidz',
-            'Email',
-            'Phone',
-            'Question 1',
-            'Answer 1',
-            'Question 2',
-            'Answer 2',
-            'Question 3',
-            'Answer 3',
-            'CV',
-            'Submission Date'
-        ]]);
-        dd($values);
-    });
 });
