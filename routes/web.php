@@ -8,6 +8,7 @@ use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\RegularTalkPageController;
 use App\Http\Controllers\User\ResourcesPageController;
 use App\Http\Controllers\User\SitemapController;
+use Revolution\Google\Sheets\Facades\Sheets;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -138,5 +139,29 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
     // New Page Regular Talk
     Route::get('/regular-talk', function () {
         return view('user.regular_talk.main');
+    });
+
+    Route::get('/test-sheet', function () {
+        // LIST VALUES
+        // $values = Sheets::spreadsheet(env('GOOGLE_SHEET_ID'))
+        //     ->sheet('Sheet1')
+        //     ->all();
+
+        // CREATE VALUE
+        $values = Sheets::spreadsheet(env('GOOGLE_SHEET_ID'))->sheet('Sheet1')->append([[
+            '1',
+            'Hafidz',
+            'Email',
+            'Phone',
+            'Question 1',
+            'Answer 1',
+            'Question 2',
+            'Answer 2',
+            'Question 3',
+            'Answer 3',
+            'CV',
+            'Submission Date'
+        ]]);
+        dd($values);
     });
 });

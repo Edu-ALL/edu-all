@@ -15,6 +15,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "league/flysystem-aws-s3-v3": "^3.29",
+        "revolution/laravel-google-sheets": "^6.2",
         "sentry/sentry-laravel": "^4.15",
         "yajra/laravel-datatables-oracle": "~9.0"
     },

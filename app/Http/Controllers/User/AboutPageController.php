@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Revolution\Google\Sheets\Facades\Sheets;
 
 class AboutPageController extends Controller
 {
@@ -108,7 +109,7 @@ class AboutPageController extends Controller
             }
 
             // ✅ Save applicant data
-            Applicants::create([
+            $applicant = Applicants::create([
                 'job_id' => $career->id,
                 'name' => $validated['name'],
                 'email' => $validated['email'],
@@ -121,6 +122,26 @@ class AboutPageController extends Controller
                 'screen_question_3' => $career->screen_question_3,
                 'screen_answer_3' => $validated['screen_answer_3'] ?? null,
                 'utm_code' => $validated['utm_code'] ?? null,
+            ]);
+
+            // ✅ Save applicant data in Google Sheet
+            Sheets::spreadsheet(env('GOOGLE_SHEET_ID'))->sheet('Sheet1')->append([
+                array_values([
+                    $applicant->id,
+                    $career->job_position ?? '-',
+                    $applicant->name,
+                    $applicant->email,
+                    $applicant->phone ?? '-',
+                    $career->screen_question_1 ?? '-',
+                    $applicant->screen_answer_1 ?? '-',
+                    $career->screen_question_2 ?? '-',
+                    $applicant->screen_answer_2 ?? '-',
+                    $career->screen_question_3 ?? '-',
+                    $applicant->screen_answer_3 ?? '-',
+                    env('AWS_URL') . 'applicants/' . $applicant->cv_path,
+                    $applicant->utm_code ?? '-',
+                    $applicant->created_at->format('Y-m-d H:i:s'),
+                ])
             ]);
 
             $data = [
