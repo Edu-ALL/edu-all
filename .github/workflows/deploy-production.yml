@@ -53,6 +53,7 @@ jobs:
               php artisan optimize:clear
 
               echo 'NPM Build...'
+              npm install
               npm run build
             
               echo '✅ Optimization complete!'
