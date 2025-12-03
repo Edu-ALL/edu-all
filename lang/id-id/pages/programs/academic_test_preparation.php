@@ -74,16 +74,16 @@ return [
     "program_list" => [
         [
             "title" => "Subject Tutoring",
-            "desc" => "Online | Kelas Privat <br> Kelas 7–11",
+            "desc" => "Online | Kelas Privat <br> Kelas 7–12",
             'image' => "Buku.png",
             "points" => [
-                "Kurikulum: IB, Cambridge, AP, Nasional Plus, Nasional"
+                "Kurikulum: IB, Cambridge, AP, Nasional Plus"
             ],
             'link' => 'subject',
         ],
         [
             "title" => "SAT Prep Class",
-            "desc" => "Online | Kelas Privat & Semi Privat <br> Kelas 7–11",
+            "desc" => "Online | Kelas Privat & Semi Privat <br> Kelas 10–12",
             'image' => "Menulis.png",
             "points" => [
                 "SAT Math, SAT English (Reading & Writing)"
@@ -92,10 +92,10 @@ return [
         ],
         [
             "title" => "Olympiad Prep Class",
-            "desc" => "Online | Kelas Semi Privat <br> Kelas 7–11",
+            "desc" => "Online | Kelas Semi Privat <br> Kelas 7–12",
             'image' => "Piala.png",
             "points" => [
-                "Matematika, Fisika, Sains, Coding (SASMO, AMO, SEAMO, SIMOC, VANDA, dll.)"
+                "Matematika, Fisika, Sains, Coding (SMC, AMO, SASMO, SMGF, SIMOC, dll.)"
             ],
             'link' => 'olympiad',
         ],

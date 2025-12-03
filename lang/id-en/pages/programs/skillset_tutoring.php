@@ -32,7 +32,7 @@ return [
         ],
         [
             'image' => 'Competition icon 3.png',
-            'text'  => 'Stay on track with <strong class="text-newprimary">personalized study plans</strong>',
+            'text'  => 'Stay on track',
         ],
         [
             'image' => 'Competition icon 4.png',

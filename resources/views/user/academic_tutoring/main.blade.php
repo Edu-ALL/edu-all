@@ -270,7 +270,7 @@
                                                     </div>
                                                 </div>
                                                 <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                                                    title="Book FREE trial now" bg-color="newprimary" padding-x="8"
+                                                    title="Book DEPOSIT TRIAL now" bg-color="newprimary" padding-x="8"
                                                     padding-y="1.5" rounded="rounded-full" font-size="base" />
                                             </div>
                                         </div>

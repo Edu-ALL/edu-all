@@ -31,7 +31,7 @@ return [
         ],
         [
             'image' => 'Competition icon 3.png',
-            'text'  => 'Tetap di jalur dengan <strong class="text-newprimary">rencana belajar yang dipersonalisasi</strong>',
+            'text'  => 'Tetap di jalur',
         ],
         [
             'image' => 'Competition icon 4.png',

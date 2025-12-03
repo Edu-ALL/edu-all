@@ -87,15 +87,16 @@ return [
             "curriculum" => "IBDP",
             "curriculum_logo" => "Curriculum IBDP.png",
             "subject" => [
+                "Mathematics AA",
+                "Mathematics AI",
                 "Physics",
                 "Chemistry",
                 "Biology",
+                "ESS",
                 "English",
-                "Mathematics",
-                "Environmental System & Societies",
-                "Business Management",
                 "Economics",
-                "Extended Essay (EE) / Internal Assessment (IA) Guidance"
+                "Business Management",
+                "EE/IA Guidance"
             ]
         ],
         [
@@ -128,7 +129,8 @@ return [
                 "Physics",
                 "Chemistry",
                 "Biology",
-                "Computer Science"
+                "English",
+                "Economics"
             ]
         ],
         [
@@ -156,26 +158,26 @@ return [
         [
             'title' => 'BASIC',
             'type' => 'Online',
-            'class' => 'Private & Semi-private',
+            'class' => 'Private',
             'duration' => '1 Months',
             'duration_text' => 'Intensive Tutoring',
             'sessions' => '5 Hours Tutoring',
             'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
         [
+            'is_popular' => true,
             'title' => 'PRO',
             'type' => 'Online',
-            'class' => 'Private & Semi-private',
+            'class' => 'Private',
             'duration' => '3 Months',
             'duration_text' => 'Intensive Tutoring',
             'sessions' => '10 Hours Tutoring',
             'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
         [
-            'is_popular' => true,
             'title' => 'ELITE',
             'type' => 'Online',
-            'class' => 'Private & Semi-private',
+            'class' => 'Private',
             'duration' => '5 Months',
             'duration_text' => 'Intensive Tutoring',
             'sessions' => '15 Hours Tutoring',

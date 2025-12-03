@@ -86,15 +86,16 @@ return [
             "curriculum" => "IBDP",
             "curriculum_logo" => "Curriculum IBDP.png",
             "subject" => [
+                "Mathematics AA",
+                "Mathematics AI",
                 "Physics",
                 "Chemistry",
                 "Biology",
+                "ESS",
                 "English",
-                "Mathematics",
-                "Environmental System & Societies",
-                "Business Management",
                 "Economics",
-                "Extended Essay (EE) / Internal Assessment (IA) Guidance"
+                "Business Management",
+                "EE/IA Guidance"
             ]
         ],
         [
@@ -127,7 +128,8 @@ return [
                 "Physics",
                 "Chemistry",
                 "Biology",
-                "Computer Science"
+                "English",
+                "Economics"
             ]
         ],
         [
@@ -155,7 +157,7 @@ return [
         [
             'title' => 'BASIC', // tetap English
             'type' => 'Online',
-            'class' => 'Private & Semi-private',
+            'class' => 'Private',
             'duration' => '1 Bulan',
             'duration_text' => 'Tutoring Intensif',
             'sessions' => '5 Jam Tutoring',
@@ -164,7 +166,7 @@ return [
         [
             'title' => 'PRO', // tetap English
             'type' => 'Online',
-            'class' => 'Private & Semi-private',
+            'class' => 'Private',
             'duration' => '3 Bulan',
             'duration_text' => 'Tutoring Intensif',
             'sessions' => '10 Jam Tutoring',
@@ -174,7 +176,7 @@ return [
             'is_popular' => true,
             'title' => 'ELITE', // tetap English
             'type' => 'Online',
-            'class' => 'Private & Semi-private',
+            'class' => 'Private',
             'duration' => '5 Bulan',
             'duration_text' => 'Tutoring Intensif',
             'sessions' => '15 Jam Tutoring',

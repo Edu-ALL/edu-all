@@ -6,7 +6,7 @@ return [
 
     'navbar_title' => "SAT Prep",
     'title' => "Kelas <br>SAT Prep",
-    'body' => "Kelas 7 - 12",
+    'body' => "Kelas 10 - 12",
     'header_button' => 'Daftar di Sini',
 
     'summary' => [
@@ -36,6 +36,7 @@ return [
             ],
 
             'sat_intermediate' => [
+                'is_popular' => true,
                 'title' => 'SAT <br> Intermediate', // tetap English
                 'price' => '7.5',
                 'features' => [
@@ -46,7 +47,6 @@ return [
             ],
 
             'sat_pro' => [
-                'is_popular' => true,
                 'title' => 'SAT <br> Pro', // tetap English
                 'label_popular' => 'Paling Populer',
                 'price' => '6.5',

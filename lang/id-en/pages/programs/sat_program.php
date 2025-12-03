@@ -6,7 +6,7 @@ return [
 
     'navbar_title' => "SAT Prep",
     'title' => "SAT Prep <br>Class",
-    'body' => "Grade 7 - 12",
+    'body' => "Grade 10 - 12",
     'header_button' => 'Register Here',
 
     'summary' => [
@@ -36,6 +36,7 @@ return [
             ],
 
             'sat_intermediate' => [
+                'is_popular' => true,
                 'title' => 'SAT <br> Intermediate',
                 'price' => '7.5',
                 'features' => [
@@ -46,7 +47,6 @@ return [
             ],
 
             'sat_pro' => [
-                'is_popular' => true,
                 'title' => 'SAT <br> Pro',
                 'label_popular' => 'Most Popular',
                 'price' => '6.5',

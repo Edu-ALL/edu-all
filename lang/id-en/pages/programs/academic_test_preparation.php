@@ -74,16 +74,16 @@ return [
     "program_list" => [
         [
             "title" => "Subject Tutoring",
-            "desc" => "Online | Private Class <br> Grade 7-11",
+            "desc" => "Online | Private Class <br> Grade 7-12",
             'image' => "Buku.png",
             "points" => [
-                "Curriculum: IB, Cambridge, AP, National Plus, National"
+                "Curriculum: IB, Cambridge, AP, National Plus"
             ],
             'link' => 'subject',
         ],
         [
             "title" => "SAT Prep Class",
-            "desc" => "Online | Private & Semi Private Class <br> Grade 7-11",
+            "desc" => "Online | Private & Semi Private Class <br> Grade 10-12",
             'image' => "Menulis.png",
             "points" => [
                 "SAT Math, SAT English (Reading & Writing)"
@@ -92,10 +92,10 @@ return [
         ],
         [
             "title" => "Olympiad Prep Class",
-            "desc" => "Online | Semi Private Class <br> Grade 7-11",
+            "desc" => "Online | Semi Private Class <br> Grade 7-12",
             'image' => "Piala.png",
             "points" => [
-                "Math, Physics, Science, Coding (SASMO, AMO, SEAMO, SIMOC, VANDA, etc)"
+                "Math, Physics, Science, Coding (SMC, AMO, SASMO, SMGF, SIMOC etc)"
             ],
             'link' => 'olympiad',
         ],
