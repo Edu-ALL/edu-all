@@ -122,11 +122,11 @@
         {{-- @if (!str_contains(request()->url(), 'partnership-careers'))
         @endif --}}
         <div
-            class="absolute md:right-[35px] right-[15px] md:bottom-[7px] bottom-[3px] bg-[#008069] py-2 pl-2 pr-5 md:flex justify-center items-center text-white w-[120px] text-[12px] cursor-pointer shadow rounded-lg">
-            Chat With Us!
+            class="absolute md:right-[35px] right-[15px] md:bottom-[7px] bottom-[3px] bg-[#009900] py-2 pl-2 pr-5 md:flex justify-center items-center text-white w-[150px] text-[14px] cursor-pointer shadow rounded-lg font-bold">
+            CHAT WITH US!
         </div>
         <div
-            class="absolute right-0 bottom-0 bg-[#008069] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#008069] border-[1px] border-white cursor-pointer shadow">
+            class="absolute right-0 bottom-0 bg-[#009900] hover:bg-white rounded-full md:w-[50px] md:h-[50px] w-[40px] h-[40px] flex justify-center items-center text-white hover:text-[#009900] border-[1px] border-white cursor-pointer shadow">
             <i class="fa-brands fa-whatsapp text-[25px]"></i>
         </div>
     </div>

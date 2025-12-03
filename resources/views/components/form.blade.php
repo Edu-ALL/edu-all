@@ -1,9 +1,12 @@
-<div class="mx-auto md:max-w-md max-w-[22rem] ease-in-out duration-500 z-[999999]" id="formRegist">
-    <div class="bg-black p-4 rounded-xl shadow-2xl">
+<div class="mx-auto w-[22rem] ease-in-out duration-500 z-[999999]" id="formRegist">
+    <div class="{{ !empty($isTransparent) && $isTransparent == true ? '' : 'bg-black shadow-2xl rounded-xl ' }}  p-4 ">
         <div id="myForm">
-            <h2 class="text-white {{ !empty($fontSize) ? 'text-xl' : 'text-base' }}">Let us know you better by filling
+            <h2
+                class="text-white {{ !empty($fontSize) ? 'text-xl' : 'text-base' }} {{ !empty($hideTitle) ? 'hidden' : '' }}">
+                Let us know you better by filling
                 out this
-                form</h2>
+                form
+            </h2>
             <div class="mt-5">
                 <div class="flex flex-col">
                     <div class="mb-3">
@@ -69,7 +72,8 @@
                         <span id="captcha" class="text-red" />
                     </div>
                     <div class="mb-3">
-                        <button type="button" class="w-full bg-newprimary text-white text-center py-2 rounded-xl"
+                        <button type="button" class="w-full text-white text-center py-2 rounded-xl"
+                            style="background-color: {{ !empty($submitColor) ? $submitColor : '#0000FF' }}"
                             onclick="submit()">
                             <span id="send">
                                 <i class="fas fa-paper-plane mr-4"></i>
@@ -77,7 +81,8 @@
                             <span id="loading" class="hidden">
                                 <i class="fas fa-spinner fa-spin mr-4"></i>
                             </span>
-                            Submit </button>
+                            {{ !empty($submitTitle) ? $submitTitle : 'Submit' }}
+                        </button>
                     </div>
                 </div>
             </div>

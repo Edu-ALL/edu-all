@@ -80,11 +80,35 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
                 Route::get('/programs/admissions-mentoring/graduate-program', 'graduate_program')->name('graduate_program');
                 Route::get('/programs/admissions-mentoring/university-transfer-program', 'university_transfer_program')->name('university_transfer_program');
                 Route::get('/programs/passion-project-mentoring', 'passion_project_mentoring')->name('passion_project_mentoring');
-                Route::get('/programs/academic-test-preparation', 'academic_test_preparation')->name('academic_test_preparation');
-                Route::get('/programs/academic-test-preparation/academic-tutoring', 'academic_tutoring')->name('academic_tutoring');
-                Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', 'ib_ee_coaching_program')->name('ib_ee_coaching_program');
-                Route::get('/programs/academic-test-preparation/sat-program', 'sat_program')->name('sat_program');
-                Route::get('/programs/academic-test-preparation/skillset-tutoring-program', 'skillset_tutoring_program')->name('skillset_tutoring_program');
+
+                // OLD TUTORING 
+                Route::get('/programs/academic-test-preparation', function () {
+                    return redirect()->route('tutoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+                });
+
+                Route::get('/programs/academic-test-preparation/academic-tutoring', function () {
+                    return redirect()->route('subject_tutoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+                })->name('academic_tutoring');
+
+                Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', function () {
+                    return redirect()->route('tutoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+                })->name('ib_ee_coaching_program');
+
+                Route::get('/programs/academic-test-preparation/sat-program', function () {
+                    return redirect()->route('sat', ['locale' => app()->getLocale()])->setStatusCode(301);
+                })->name('sat_program');
+
+                Route::get('/programs/academic-test-preparation/skillset-tutoring-program', function () {
+                    return redirect()->route('olympiad', ['locale' => app()->getLocale()])->setStatusCode(301);
+                })->name('skillset_tutoring_program');
+
+
+                // ROUTE TUTORING 
+                Route::get('/programs/tutoring', 'academic_test_preparation')->name('tutoring');
+                Route::get('/programs/tutoring/subject', 'academic_tutoring')->name('subject_tutoring');
+                Route::get('/programs/tutoring/sat', 'sat_program')->name('sat');
+                Route::get('/programs/tutoring/olympiad', 'skillset_tutoring_program')->name('olympiad');
+
                 Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
                 Route::get('/programs/exclusive-program-school', 'exclusive_program_school')->name('exclusive_program_school');
                 Route::get('/programs/exclusive-program-school/admission-accelerator', 'admission_accelerator')->name('admission_accelerator');

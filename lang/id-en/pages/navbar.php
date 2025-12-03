@@ -16,7 +16,7 @@ return [
                 'title' => 'Admission Mentoring',
             ],
             [
-                'link' => 'programs/academic-test-preparation',
+                'link' => 'programs/tutoring',
                 'title' => 'Tutoring Program',
             ],
             [

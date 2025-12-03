@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'meta_title' => "SAT Test Preparation Course & Classes - EduAll",
+    'meta_title' => "SAT Prep Class - EduAll",
     'meta_description' => "Take EduAll's SAT Test preparation class with the best curriculum and can be taken by grades 10-12. Take a FREE Trial now!",
 
-    'navbar_title' => "Standardized Test",
-    'title' => "Standardized Test",
-    'body' => "Unleash your full potential for admission to the world's leading universities!Improve your test scores with our expert mentors and effective strategies.",
+    'navbar_title' => "SAT Prep",
+    'title' => "SAT Prep <br>Class",
+    'body' => "Grade 7 - 12",
     'header_button' => 'Register Here',
 
     'summary' => [
@@ -24,199 +24,68 @@ return [
         ]
     ],
 
-    "benefits" => [
-        [
-            'title' => "Tailored Learning",
-            'tag' => "Materials",
-            'image' => "benefit-0.png",
-        ],
-        [
-            'title' => "Weakness-Targeting",
-            'tag' => "Strategy",
-            'image' => "benefit-1.png",
-        ],
-        [
-            'title' => "Official Mock Test",
-            'image' => "benefit-2.png",
-        ],
-        [
-            'title' => "SAT Expert-Made",
-            'tag' => "Curriculum",
-            'image' => "benefit-3.png",
-        ]
-    ],
+    'pricing' => [
+        'private' => [
+            'sat_core' => [
+                'title' => 'SAT <br> Core',
+                'price' => '10.5',
+                'features' => [
+                    'prep_hours' => '20 hours prep',
+                    'mock_test_hours' => '4 hours mock test',
+                ],
+            ],
 
-    'subjects_title' => "SUBJECTS",
-    "subjects_tag" => [
-        [
-            "title" =>
-            "GRADE 10-12",
-            "image" => "start.png",
-        ],
-        [
-            "title" => "PRIVATE & SEMI-PRIVATE CLASS",
-            "image" => "people.png",
-        ]
-    ],
+            'sat_intermediate' => [
+                'title' => 'SAT <br> Intermediate',
+                'price' => '7.5',
+                'features' => [
+                    'prep_hours' => '14 hours prep',
+                    'mock_test_hours' => '2 hours mock test',
+                    'placement_score' => '1200 - 1340 <p class="text-sm text-dark">Placement test score</p>',
+                ],
+            ],
 
-    'journey_title' => 'YOUR JOURNEY TO SUCCESS',
-    'journey_list' => [
-        [
-            'title' => ' Diagnostic Test',
-            'description' => [
-                'Figure out your current level',
-                'Give you a feel of the actual SAT format',
-            ],
-        ],
-        [
-            'title' => ' In-Depth Analysis',
-            'description' => [
-                'Listing specific details on your SAT strengths and weaknesses',
-            ],
-        ],
-        [
-            'title' => 'Customized Prep Calendar',
-            'description' => [
-                'Develop a plan to tackle your weaknesses while retaining your strengths',
-            ],
-        ],
-        [
-            'title' => 'Learn From Expert Tutors',
-            'description' => [
-                ' Concept lectures on reading, writing and language, and math',
-                ' Numerous weakness-targeting practice problems and personal feedback',
-                ' Regular full SAT Practice test and its analysis to track your progress',
-            ],
-        ],
-    ],
-
-    'class_list' => [
-        [
-            'title' => 'Private',
-            'recomendation' => 'IDEAL FOR GRADE 12',
-            'description' => '26 or 36 hours of one-on-one personalized sessions with our expert tutors.',
-            'list' => [
-                [
-                    'title' => 'Tailor-Made Curriculum',
-                    'description' => 'Individualized learning schedule designed to maximize your abilities.',
-                ],
-                [
-                    'title' => 'Flexible Scheduling',
-                    'description' => 'Start your journey instantly with adaptable class timings.',
-                ],
-                [
-                    'title' => 'Track Your Progress',
-                    'description' => 'Monitor improvements through practice test results and receive on-demand parent updates.',
-                ],
-            ],
-        ],
-        [
-            'title' => 'Semi-Private',
-            'recomendation' => 'IDEAL FOR GRADES 10-11',
-            'description' => '40 or 56-hour sessions in small groups, a maximum of 4 students with our SAT expert tutors.',
-            'list' => [
-                [
-                    'title' => 'Curated & Tested Curriculum',
-                    'description' => 'Carefully designed study plan that covers diagnostics, in-depth subject exploration, and official SAT practice tests.',
-                    'btn' => 'Discover the Full Curriculum Here',
-                ],
-                [
-                    'title' => 'Online Classes',
-                    'description' => 'Learn from anywhere with our online class',
-                ],
-                [
-                    'title' => 'Bonus Learning Material',
-                    'description' => 'Access supplementary videos at your convenience for a deeper understanding. Watch anywhere, anytime.',
+            'sat_pro' => [
+                'is_popular' => true,
+                'title' => 'SAT <br> Pro',
+                'label_popular' => 'Most Popular',
+                'price' => '6.5',
+                'features' => [
+                    'prep_hours' => '12 hours prep',
+                    'mock_test_hours' => '2 hours mock test',
+                    'placement_score' => '1350 - 1450 <p class="text-sm text-dark">Placement test score</p>',
                 ],
             ]
         ],
+        'semi_private' => [
+            'title' => 'Semi Private',
+            'price' => '6',
+            'features' => [
+                'prep_hours' => '24 hours prep',
+                'mock_test_hours' => '2 hours mock test',
+            ],
+        ]
     ],
+    'start_from' => 'Start from IDR',
+    'pricing_button' => 'Book Free Trial Now',
 
-    'private_semi_private_button' => "Take Your FREE SAT Diagnostic Test",
-
-    'why_us_title' => "WHY US?",
-
-    'info_list' => [
-        [
-            'quantity' => "1500+",
-            'body' => 'PRACTICE QUESTIONS',
-            'span' => 'to take',
-        ],
-        [
-            'quantity' => "95%",
-            'body' => 'STUDENTS',
-            'span' => 'hit above average score',
-        ],
-        [
-            'quantity' => "90%",
-            'body' => 'GOT ACCEPTED',
-            'span' => 'to their dream universities',
-        ],
-    ],
-
-    'testimoni_title' => 'WHAT OUR STUDENT SAY',
-
-    'free_trial_title' => '175+ students have already navigated to their dream universities with stellar test scores. Now, it\'s your turn!',
-    'free_trial_button' => "Claim your FREE Diagnostic Test",
-
-    'banner2_title' => 'ENGLISH PROFICIENCY TEST PREP',
-    'banner2_body' => "Excel in English, excel in life! Unlock top university doors with our TOEFL/IELTS Prep!",
-    'banner2_button' => 'Register Here',
-
-    'benefit2_list' => [
-        [
-            'title' => 'Precision <br> Teaching',
-            'description' => "Tailored, 1-on-1 tutoring that cuts through the clutter, focusing on what you need to succeed.",
-            'polygon' => 'polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%)',
-        ],
-        [
-            'title' => 'Mentorship from <br> the Best',
-            'description' => "With more than 7 years, our tutors are more than teachers; they are here to guide you to the best result.",
-            'polygon' => 'polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)',
-        ],
-        [
-            'title' => 'Smart Learning, Real Results',
-            'description' => "From concept-based learning to strategic prep, our methods are designed for real understanding, not just memorization.",
-            'polygon' => 'polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%)',
-        ],
-    ],
-    "supports_tag" => [
-        [
-            'title' => 'Access to practice test',
-            'image' => 'notes.png',
-        ],
-        [
-            'title' => 'Parental progress to stay on track',
-            'image' => 'pointer.png',
-        ],
-        [
-            'title' => 'Flexible on-demand schedule',
-            'image' => 'calendar.png',
+    "benefit" => [
+        "session_title" => "Session Includes",
+        "sessions" => [
+            "Personalized lesson prep",
+            "Question banks & past papers",
+            "Additional learning materials",
+            "Progress report for parents",
+            "7+ years of experienced tutors"
         ]
     ],
 
-    'support_title' => 'HOW WE WILL SUPPORT YOU?',
-    'support_list' => [
-        "TOP UNIVERSITIES",
-        "WORLDWIDE REQUIRE",
-        "HIGH TOEFL/IELTS SCORES"
+    'testi' => [
+        'SAT Testi 1.png',
+        'SAT Testi 2.png',
+        'SAT Testi 3.png',
     ],
-    'support_desc' => '
-<h5 class="text-black text-base md:text-lg md:leading-[2.5rem]">Did you know the average accepted score at
-    elite
-    institutions is <br>
-    <span class="text-3xl font-bold text-newprimary"> 7.5 </span>
-    for
-    <span class="text-newprimary text-3xl font-bold uppercase">
-        IELTS
-    </span>
-    and
-    <span class="text-3xl font-bold text-newprimary"> 90 to 100 </span>
-    for
-    <span class="text-newprimary font-bold uppercase text-3xl">TOEFL?</span>
-</h5>',
 
-    'free_trial2_title' => 'Seize this chance to stand out in university applications!',
-    'free_trial2_description' => 'Transform your English skills into an opportunity for global education.',
-    'free_trial2_button' => "Book Your FREE Consultation Now",
+    'cta_title' => 'Ready to tranform your academic journey?',
+    'cta_subtitle' => 'Discover the path to achieving your educational aspirations!',
 ];

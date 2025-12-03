@@ -1,171 +1,200 @@
 <?php
 
 return [
-    'meta_title' => "Persiapan Ujian Cambridge IGSCE, A-Level dan IB - EduAll",
-    'meta_description' => 'Ikuti kelas kursus ujian cambridge, A-level, dan IB untuk siswa grade 9-12 dengan kurikulum terbaik dan terefisien di EduAll',
+    'meta_title' => "Cambridge IGCSE, A-Level dan IB Tutoring - EduAll",
+    'meta_description' => 'Kelas persiapan ujian Cambridge, A-Level, dan IB untuk siswa kelas 9–12 dengan kurikulum terbaik dan paling efektif di EduAll.',
 
-    'title' => 'ACADEMIC TUTORING',
-    'description' => 'Tingkatkan skor Anda dan buka pintu ke universitas bergengsi dengan bimbingan akademis kami.',
-    'header_button' => 'Daftar Segera!',
+    'title' => 'SUBJECT TUTORING',
+    'description' => 'Kelas 7 - 12',
+    'header_button' => 'Daftar di Sini',
 
     'summary' => [
         [
             'title' => '97%',
-            'sub_title' => 'of our A-Level Students <br/> earned A and A*'
+            'sub_title' => 'siswa A-Level kami <br/> meraih nilai A dan A*'
         ],
         [
             'title' => '98%',
-            'sub_title' => 'of our IB Students boosted their scores by 2 - 3 points and greater'
+            'sub_title' => 'siswa IB kami meningkat 2 - 3 poin atau lebih'
         ],
         [
             'title' => '100%',
-            'sub_title' => 'Exam Success Rate'
+            'sub_title' => 'Tingkat Kelulusan Ujian'
         ]
     ],
 
-    'benefit_title' => "MORE THAN JUST TUTORING",
+    'benefit_title' => "LEBIH DARI SEKEDAR TUTORING",
     'benefit_section' => [
         [
             'title' => "Discover",
             'description' => "Your Path",
-            's4_item_text_inactive' => "Discover Your Path",
-
+            's4_item_text_inactive' => "Temukan Jalur Anda",
         ],
         [
             'title' => "Insightful",
             'description' => "Academic Analysis",
-            's4_item_text_inactive' => "Insightful",
+            's4_item_text_inactive' => "Analisis Mendalam",
         ],
         [
             'title' => "Customize",
             'description' => "Learning Approach",
-            's4_item_text_inactive' => "Customized",
+            's4_item_text_inactive' => "Pendekatan yang Disesuaikan",
         ],
         [
             'title' => "Dynamic",
             'description' => "Goal Achievement",
-            's4_item_text_inactive' => "Dynamic",
+            's4_item_text_inactive' => "Pencapaian Tujuan",
         ],
     ],
 
     's4_item_text_active' => [
-        "Temukan Jalan",
+        "Temukan Jalur Anda",
         "Analisis Akademik Mendalam",
         "Pendekatan Pembelajaran yang Disesuaikan",
-        "Pencapaian Goals",
+        "Pencapaian Tujuan yang Dinamis",
     ],
     's4_item_text_inactive' => [
-        "Discover",
-        "Insightful",
-        "Customized",
-        "Dynamic",
+        "Temukan",
+        "Analitis",
+        "Disesuaikan",
+        "Dinamis",
     ],
 
     "subjects_title" =>  "SUBJECTS",
-    "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
+    "subjects_desc" => "Tutor ahli kami membantu siswa membangun dasar konsep yang kuat serta meningkatkan kemampuan pemecahan masalah dan berpikir kritis.",
     "subjects_tag" => [
         [
-            'title' => 'Grade 9-12',
-            'image' => 'start.web',
+            'title' => 'Kelas 9–12',
+            'image' => 'start.webp',
             'order' => '1',
         ],
         [
-            'title' => 'Private Class',
-            'image' => 'users.web',
+            'title' => 'Kelas Privat',
+            'image' => 'users.webp',
             'order' => '3',
         ],
         [
-            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
-            'image' => 'people.web',
+            'title' => 'Untuk siswa IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE dan AP',
+            'image' => 'people.webp',
             'order' => '2',
         ],
     ],
 
+    // SUBJECT LIST
+    "subjects" => [
+        [
+            "curriculum" => "IBDP",
+            "curriculum_logo" => "Curriculum IBDP.png",
+            "subject" => [
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "English",
+                "Mathematics",
+                "Environmental System & Societies",
+                "Business Management",
+                "Economics",
+                "Extended Essay (EE) / Internal Assessment (IA) Guidance"
+            ]
+        ],
+        [
+            "curriculum" => "IB MYP",
+            "curriculum_logo" => "Curriculum IBMYP.png",
+            "subject" => [
+                "Mathematics",
+                "Chemistry",
+                "Physics",
+                "Biology",
+                "English"
+            ]
+        ],
+        [
+            "curriculum" => "Cambridge A-Level",
+            "curriculum_logo" => "Curriculum A level.png",
+            "subject" => [
+                "Mathematics",
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "Economics"
+            ]
+        ],
+        [
+            "curriculum" => "Cambridge IGCSE",
+            "curriculum_logo" => "Curriculum Cambridge.png",
+            "subject" => [
+                "Mathematics",
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "Computer Science"
+            ]
+        ],
+        [
+            "curriculum" => "Advanced Placement (AP)",
+            "curriculum_logo" => "Curriculum AP.png",
+            "subject" => [
+                "Pre-Calculus",
+                "Calculus AB",
+                "Calculus BC",
+                "Physics",
+                "Chemistry",
+                "Biology"
+            ]
+        ]
+    ],
+
+    // PRICING SECTION
+    "pricing_title" => "Mulai Dari",
+    "pricing_desc" => "Jam",
+
     // PRIVATE CLASS
-    'private_class_title' => 'KELAS PRIVAT ',
-    'private_class_description' => 'Kelas privat dengan 3 paket berbeda yang bisa dipilih ',
+    'private_class_title' => 'Pilih Kelas Privat Anda',
+    'private_class_description' => 'Kelas privat dengan 3 paket berbeda yang dapat Anda pilih',
     'private_class_list' => [
         [
-            'title' => 'BASIC',
+            'title' => 'BASIC', // tetap English
+            'type' => 'Online',
+            'class' => 'Private & Semi-private',
             'duration' => '1 Bulan',
             'duration_text' => 'Tutoring Intensif',
             'sessions' => '5 Jam Tutoring',
-            'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
+            'sessions_text' => '*60 menit per sesi,<br> dapat disesuaikan hingga 90 menit',
         ],
         [
-            'title' => 'PRO',
+            'title' => 'PRO', // tetap English
+            'type' => 'Online',
+            'class' => 'Private & Semi-private',
             'duration' => '3 Bulan',
             'duration_text' => 'Tutoring Intensif',
             'sessions' => '10 Jam Tutoring',
-            'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
+            'sessions_text' => '*60 menit per sesi,<br> dapat disesuaikan hingga 90 menit',
         ],
         [
             'is_popular' => true,
-            'title' => 'ELITE',
+            'title' => 'ELITE', // tetap English
+            'type' => 'Online',
+            'class' => 'Private & Semi-private',
             'duration' => '5 Bulan',
             'duration_text' => 'Tutoring Intensif',
             'sessions' => '15 Jam Tutoring',
-            'sessions_text' => '*60 menit per sesi, dapat disesuaikan sampai berdurasi 90 menit',
+            'sessions_text' => '*60 menit per sesi,<br> dapat disesuaikan hingga 90 menit',
         ],
     ],
-    'private_class_button' => "Learn More",
+    'popular_choice' => 'Paling Populer',
+    'private_class_button' => "Pelajari Lebih Lanjut",
 
-    'why_us_title' => 'KENAPA EDUALL?',
-    'why_us_list' => [
-        [
-            'title' => 'Fleksibilitas Pembelajaran',
-            'desc' => 'Jadwal pembelajaran individual dirancang untuk memaksimalkan kemampuanmu.',
-        ],
-        [
-            'title' => 'Jadwal Sesuai Permintaan',
-            'desc' => 'Waktu fleksibel, masa tunggu rendah diperlukan. Mulailah kelas berdasarkan jadwal kamu.',
-        ],
-        [
-            'title' => 'Pelacakan Kemajuan',
-            'desc' => 'Lacak kemajuan melalui hasil tes latihan dan terima laporan ke orang tua sesuai permintaan.',
-        ],
-        [
-            'title' => 'Akses Dimana Saja',
-            'desc' => 'Kami menghadirkan kelas ini untuk kamu! Belajar dengan tutor ahli kami secara online, langsung.',
-        ],
-    ],
-
-    'tetimony_title' => "Apa Yang Dikatakan Siswa Kami",
-
-    'free_trial_title' => "Nilai akademik yang baik dapat memaksimalkan kesempatanmu masuk universitas top dunia!?",
-    'free_trial_desc' => "Ambil kesempatanmu!",
-    'free_trial_button' => "Dapatkan Trial untuk Academic Tutoring Sekarang!",
-
-    'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
-    'ib_extended_description' => "Latih proses penulisan Extended Essay dalam 3 bulan dengan pendekatan holistik kami!",
-    "ib_extended_tag" => [
-        [
-            'title' => 'Grade 12',
-            'image' => 'start.png',
-        ],
-        [
-            'title' => 'Online Class',
-            'image' => 'network.png',
-        ],
-        [
-            'title' => 'Private Class',
-            'image' => 'people.png',
-        ],
-        [
-            'title' => 'Flexible Starting Time',
-            'image' => 'calendar.png',
-        ],
-        [
-            'title' => 'Unlimited On-Demand Support',
-            'image' => 'hand-ball.png',
+    'tetimony_title' => "Peningkatan nilai rata-rata 2–3 tingkat!",
+    "benefit" => [
+        "session_title" => "Sesi Termasuk",
+        "sessions" => [
+            "Persiapan materi pelajaran yang dipersonalisasi",
+            "Bank soal & soal ujian tahun sebelumnya",
+            "Materi pembelajaran tambahan",
+            "Laporan perkembangan untuk orang tua",
+            "Guru bersertifikat kurikulum internasional"
         ]
     ],
-    'ib_extended_topic_title' => "Topics Covered",
-    'ib_extended_topic' => [
-        'Bagaimana Memulai dan Menemukan Topik EE yang Tepat',
-        'Buatlah Pertanyaan Penelitian Yang Baik',
-        'Navigasikan Cara Mengutip',
-        'Taklukkan Procrastination dengan Agile Project Management',
-        'Cara Menulis Draf Pertama dalam 3 Bulan',
-    ]
+    'cta_title' => 'Siap mengubah perjalanan akademik Anda?',
+    'cta_subtitle' => 'Temukan jalur untuk mencapai tujuan pendidikan Anda!',
 ];

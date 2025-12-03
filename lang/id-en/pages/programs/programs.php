@@ -25,13 +25,13 @@ return [
             'title' => 'ACADEMIC & TEST <br/> PREPARATION',
             'body' => 'Build the academic foundation for your top university application success with our tried-and-tested method to boost your transcript and standardized test scores.',
             'points' => [
-                'Academic Tutoring',
-                'Standardized Test Program',
-                'Skillset Enrichment Program',
+                'Subject Tutoring',
+                'SAT Prep',
+                'Olympiad Prep',
             ],
-            'route' => 'academic_test_preparation',
+            'route' => 'tutoring',
             'img' => 'Academic &-Test Preparation.webp',
-            'link' => 'programs/academic-test-preparation',
+            'link' => 'programs/tutoring',
             'sign_me' => 'sign_me_acad_tutoring',
             'sign_me_text' => "book your FREE  TRIAL now"
         ],

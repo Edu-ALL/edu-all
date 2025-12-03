@@ -4,8 +4,8 @@ return [
     'meta_title' => "Cambridge IGCSE, A-Level and IB Tutoring - EduAll",
     'meta_description' => 'Cambridge, A-level and IB exam course classes for grade 9-12 students with the best and most efficient curriculum at EduAll.',
 
-    'title' => 'ACADEMIC TUTORING',
-    'description' => 'Elevate your scores to unlock top university offers with our comprehensive academic tutoring.',
+    'title' => 'SUBJECT TUTORING',
+    'description' => 'Grade 7 - 12',
     'header_button' => 'Register Here',
 
     'summary' => [
@@ -20,66 +20,134 @@ return [
         [
             'title' => '100%',
             'sub_title' => 'Exam Success Rate'
+        ]
+    ],
+
+    'benefit_title' => "MORE THAN JUST TUTORING",
+    'benefit_section' => [
+        [
+            'title' => "Discover",
+            'description' => "Your Path",
+            's4_item_text_inactive' => "Discover Your Path",
+
+        ],
+        [
+            'title' => "Insightful",
+            'description' => "Academic Analysis",
+            's4_item_text_inactive' => "Insightful",
+        ],
+        [
+            'title' => "Customize",
+            'description' => "Learning Approach",
+            's4_item_text_inactive' => "Customized",
+        ],
+        [
+            'title' => "Dynamic",
+            'description' => "Goal Achievement",
+            's4_item_text_inactive' => "Dynamic",
+        ],
+    ],
+
+    's4_item_text_active' => [
+        "Discover Your Path",
+        "Insightful Academic Analysis",
+        "Customized Learning Approach",
+        "Dynamic Goal Achievement",
+    ],
+    's4_item_text_inactive' => [
+        "Discover",
+        "Insightful",
+        "Customized",
+        "Dynamic",
+    ],
+
+    "subjects_title" =>  "SUBJECTS",
+    "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
+    "subjects_tag" => [
+        [
+            'title' => 'Grade 9-12',
+            'image' => 'start.webp',
+            'order' => '1',
+        ],
+        [
+            'title' => 'Private Class',
+            'image' => 'users.webp',
+            'order' => '3',
+        ],
+        [
+            'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
+            'image' => 'people.webp',
+            'order' => '2',
+        ],
+    ],
+
+    // SUBJECT LIST
+    "subjects" => [
+        [
+            "curriculum" => "IBDP",
+            "curriculum_logo" => "Curriculum IBDP.png",
+            "subject" => [
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "English",
+                "Mathematics",
+                "Environmental System & Societies",
+                "Business Management",
+                "Economics",
+                "Extended Essay (EE) / Internal Assessment (IA) Guidance"
             ]
         ],
-
-        'benefit_title' => "MORE THAN JUST TUTORING",
-        'benefit_section' => [
-            [
-                'title' => "Discover",
-                'description' => "Your Path",
-                's4_item_text_inactive' => "Discover Your Path",
-
-            ],
-            [
-                'title' => "Insightful",
-                'description' => "Academic Analysis",
-                's4_item_text_inactive' => "Insightful",
-            ],
-            [
-                'title' => "Customize",
-                'description' => "Learning Approach",
-                's4_item_text_inactive' => "Customized",
-            ],
-            [
-                'title' => "Dynamic",
-                'description' => "Goal Achievement",
-                's4_item_text_inactive' => "Dynamic",
-            ],
+        [
+            "curriculum" => "IB MYP",
+            "curriculum_logo" => "Curriculum IBMYP.png",
+            "subject" => [
+                "Mathematics",
+                "Chemistry",
+                "Physics",
+                "Biology",
+                "English"
+            ]
         ],
-
-        's4_item_text_active' => [
-            "Discover Your Path",
-            "Insightful Academic Analysis",
-            "Customized Learning Approach",
-            "Dynamic Goal Achievement",
+        [
+            "curriculum" => "Cambridge A-Level",
+            "curriculum_logo" => "Curriculum A level.png",
+            "subject" => [
+                "Mathematics",
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "Economics"
+            ]
         ],
-        's4_item_text_inactive' => [
-            "Discover",
-            "Insightful",
-            "Customized",
-            "Dynamic",
+        [
+            "curriculum" => "Cambridge IGCSE",
+            "curriculum_logo" => "Curriculum Cambridge.png",
+            "subject" => [
+                "Mathematics",
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "Computer Science"
+            ]
         ],
-
-        "subjects_title" =>  "SUBJECTS",
-        "subjects_desc" => "Our expert tutors helps students build a solid foundation in core concepts and sharpen their problem-solving and critical thinking skills.",
-        "subjects_tag" => [
-            [
-                'title' => 'Grade 9-12',
-                'image' => 'start.webp',
-                'order' => '1',
-            ],
-            [
-                'title' => 'Private Class',
-                'image' => 'users.webp',
-                'order' => '3',
-            ],
-            [
-                'title' => 'FOR IBDP, IBMYP, Cambridge A-Level, Cambridge IGCSE and AP Students',
-                'image' => 'people.webp',
-                'order' => '2',
-            ],
+        [
+            "curriculum" => "Advanced Placement (AP)",
+            "curriculum_logo" => "Curriculum AP.png",
+            "subject" => [
+                "Pre-Calculus",
+                "Calculus AB",
+                "Calculus BC",
+                "Physics",
+                "Chemistry",
+                "Biology"
+            ]
+        ]
     ],
+
+    // PRICING SECTION
+    "pricing_title" => "Start From",
+    "pricing_desc" => "Hour",
 
     // PRIVATE CLASS
     'private_class_title' => 'Choose Your Private Class',
@@ -87,6 +155,8 @@ return [
     'private_class_list' => [
         [
             'title' => 'BASIC',
+            'type' => 'Online',
+            'class' => 'Private & Semi-private',
             'duration' => '1 Months',
             'duration_text' => 'Intensive Tutoring',
             'sessions' => '5 Hours Tutoring',
@@ -94,6 +164,8 @@ return [
         ],
         [
             'title' => 'PRO',
+            'type' => 'Online',
+            'class' => 'Private & Semi-private',
             'duration' => '3 Months',
             'duration_text' => 'Intensive Tutoring',
             'sessions' => '10 Hours Tutoring',
@@ -102,70 +174,28 @@ return [
         [
             'is_popular' => true,
             'title' => 'ELITE',
+            'type' => 'Online',
+            'class' => 'Private & Semi-private',
             'duration' => '5 Months',
             'duration_text' => 'Intensive Tutoring',
             'sessions' => '15 Hours Tutoring',
             'sessions_text' => '*60 minutes per session,<br> can adjusted up to 90 minutes',
         ],
     ],
+    'popular_choice' => 'Most Popular',
     'private_class_button' => "Learn More",
 
-    'why_us_title' => 'WHY US?',
-    'why_us_list' => [
-        [
-            'title' => 'Flexibility Learning',
-            'desc' => 'Individualized learning schedule designed to maximize your abilities.',
-        ],
-        [
-            'title' => 'On-Demand Schedule',
-            'desc' => 'Flexible time, low waiting period needed. Start your class based on your schedule.',
-        ],
-        [
-            'title' => 'Progress Tracking',
-            'desc' => 'Track the progress through practice test results and receive on-demand parent updates.',
-        ],
-        [
-            'title' => 'Access Anywhere',
-            'desc' => 'We bring the class to you! Learn with our expert tutors online, live.',
-        ],
-    ],
-
-    'tetimony_title' => "What Our Students Say",
-
-    'free_trial_title' => "Ready to transform your academic journey?",
-    'free_trial_desc' => "Discover the path to achieving your educational aspirations!",
-    'free_trial_button' => "Claim My FREE Academic Tutoring Trial",
-
-    'ib_extended_title' => "IB EXTENDED ESSAY COACHING PROGRAM",
-    'ib_extended_description' => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
-    "ib_extended_tag" => [
-        [
-            'title' => 'Grade 12',
-            'image' => 'start.png',
-        ],
-        [
-            'title' => 'Online Class',
-            'image' => 'network.png',
-        ],
-        [
-            'title' => 'Private Class',
-            'image' => 'people.png',
-        ],
-        [
-            'title' => 'Flexible Starting Time',
-            'image' => 'calendar.png',
-        ],
-        [
-            'title' => 'Unlimited On-Demand Support',
-            'image' => 'hand-ball.png',
+    'tetimony_title' => "2-3 Grades increase in average!",
+    "benefit" => [
+        "session_title" => "Session Includes",
+        "sessions" => [
+            "Personalized lesson prep",
+            "Question banks & past papers",
+            "Additional learning materials",
+            "Progress report for parents",
+            "Certified international curriculum teachers"
         ]
     ],
-    'ib_extended_topic_title' => "Topics Covered",
-    'ib_extended_topic' => [
-        'How to Start and Find the Right EE Topic ',
-        'Construct a Bulletproof Research Question ',
-        'Navigate the Citation Style Jungle',
-        'Conquer Procrastination by Agile Project Management ',
-        'How to Write Your First Draft in 3 Months',
-    ]
+    'cta_title' => 'Ready to tranform your academic journey?',
+    'cta_subtitle' => 'Discover the path to achieving your educational aspirations!',
 ];

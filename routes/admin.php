@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AcademicScoreController;
+use App\Http\Controllers\Admin\SATScoreController;
 use App\Http\Controllers\Admin\Applicant;
 use App\Http\Controllers\Admin\AsSeen;
 use App\Http\Controllers\Admin\Authentication;
@@ -21,6 +23,9 @@ use App\Http\Controllers\Admin\Tutor;
 use App\Http\Controllers\Admin\UpcomingEvent;
 use App\Http\Controllers\Admin\WebsiteSetting;
 use App\Http\Controllers\Admin\Career;
+use App\Http\Controllers\Admin\CompetitionResultController;
+use App\Http\Controllers\Admin\UniversityController;
+use App\Models\AcademicScore;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +48,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [Authentication::class, 'index'])->middleware('guest:web-admin');
 Route::post('/login', [Authentication::class, 'loginAdmin'])->name('admin-login');
 Route::get('logout', [Authentication::class, 'logout'])->name('logout');
+
+Route::post('/academic-score/change-order', [AcademicScoreController::class, 'changeOrder'])->name('change-order-academic-score');
+Route::post('/university/change-order', [UniversityController::class, 'changeOrder'])->name('change-order-university');
 
 /*--------------------------------------------------------------
 # Admin
@@ -228,6 +236,40 @@ Route::middleware('auth.expires')->group(function () {
         Route::post('/as-seen/{id}', [AsSeen::class, 'update'])->name('update-as-seen');
         Route::post('/as-seen/delete/{id}', [AsSeen::class, 'delete']);
 
+        // Academic Scores
+        Route::get('/academic-score', [AcademicScoreController::class, 'index']);
+        Route::get('/academic-score/data', [AcademicScoreController::class, 'getData'])->name('data-academic-score');
+        Route::get('/academic-score/create', [AcademicScoreController::class, 'create']);
+        Route::post('/academic-score', [AcademicScoreController::class, 'store'])->name('create-academic-score');
+        Route::get('/academic-score/{id}/edit', [AcademicScoreController::class, 'edit']);
+        Route::post('/academic-score/{id}', [AcademicScoreController::class, 'update'])->name('update-academic-score');
+        Route::post('/academic-score/delete/{id}', [AcademicScoreController::class, 'delete']);
+
+        // SAT Scores
+        Route::get('/sat-score', [SATScoreController::class, 'index']);
+        Route::get('/sat-score/data', [SATScoreController::class, 'getData'])->name('data-sat-score');
+        Route::get('/sat-score/create', [SATScoreController::class, 'create']);
+        Route::post('/sat-score', [SATScoreController::class, 'store'])->name('create-sat-score');
+        Route::get('/sat-score/{id}/edit', [SATScoreController::class, 'edit']);
+        Route::post('/sat-score/{id}', [SATScoreController::class, 'update'])->name('update-sat-score');
+        Route::post('/sat-score/delete/{id}', [SATScoreController::class, 'delete']);
+
+        // Competition Result
+        Route::get('/competition-result', [CompetitionResultController::class, 'index']);
+        Route::get('/competition-result/data', [CompetitionResultController::class, 'getData'])->name('data-competition-result');
+        Route::get('/competition-result/create', [CompetitionResultController::class, 'create']);
+        Route::post('/competition-result', [CompetitionResultController::class, 'store'])->name('create-competition-result');
+        Route::get('/competition-result/{id}/edit', [CompetitionResultController::class, 'edit']);
+        Route::post('/competition-result/{id}', [CompetitionResultController::class, 'update'])->name('update-competition-result');
+        Route::post('/competition-result/delete/{id}', [CompetitionResultController::class, 'delete']);
+
+        // University
+        Route::get('/university', [UniversityController::class, 'index']);
+        Route::get('/university/data', [UniversityController::class, 'getData'])->name('data-university');
+        Route::get('/university/create', [UniversityController::class, 'create']);
+        Route::post('/university', [UniversityController::class, 'store'])->name('create-university');
+        Route::post('/university/delete/{id}', [UniversityController::class, 'delete']);
+
         // Website Settings
         Route::get('/settings', [WebsiteSetting::class, 'index']);
         Route::post('/settings/update', [WebsiteSetting::class, 'update'])->name('update-website-settings');
@@ -243,12 +285,3 @@ Route::middleware('auth.expires')->group(function () {
         });
     });
 });
-
-
-
-
-
-// Route::get('/', function ($locale) {
-//     // return $locale;
-//     return view('welcome');
-// });

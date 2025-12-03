@@ -5,68 +5,110 @@
         $breadcrumbs = [
             ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
             ['name' => 'Program', 'url' => '#'],
-            ['name' => 'Tutoring Program', 'url' => route('academic_test_preparation', [app()->getLocale()])],
+            ['name' => 'Tutoring Program', 'url' => route('tutoring', [app()->getLocale()])],
             ['name' => 'Skillset Tutoring', 'url' => url()->current()],
         ];
     @endphp
     <title>{{ __('pages/programs/skillset_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/skillset_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/skillset_tutoring.meta_description') }}" />
-    <meta name="keywords" content="Sasmo , Hkimo, math, math competition, international math olympiad, olympiad, Singapore math challenge, american math olympiad, olimpiade, matematika" />
+    <meta name="keywords"
+        content="Sasmo , Hkimo, math, math competition, international math olympiad, olympiad, Singapore math challenge, american math olympiad, olimpiade, matematika" />
 @endsection
 
 @section('sub-navbar')
     <x-sub-navbar :menu="[
-        ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
+        ['title' => 'general', 'url' => '/programs/tutoring'],
         [
             'title' => __('pages/programs/academic_tutoring.title'),
-            'url' => '/programs/academic-test-preparation/academic-tutoring',
+            'url' => '/programs/tutoring/subject',
         ],
         [
             'title' => __('pages/programs/sat_program.navbar_title'),
-            'url' => '/programs/academic-test-preparation/sat-program',
+            'url' => '/programs/tutoring/sat',
         ],
         [
             'title' => __('pages/programs/skillset_tutoring.title'),
-            'url' => '/programs/academic-test-preparation/skillset-tutoring-program',
+            'url' => '/programs/tutoring/olympiad',
         ],
     ]" :active="__('pages/programs/skillset_tutoring.title')" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
 @endsection
 
+@push('style')
+    <style>
+        .custom-shape-divider-top-1763519181 {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-top-1763519181 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 67px;
+        }
+
+        .custom-shape-divider-top-1763519181 .shape-fill {
+            fill: #000076;
+        }
+    </style>
+@endpush
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-skillset-tutoring-header bg-cover bg-top" id="banner">
-        <x-registration-form program-id="SATPRIV" />
-        <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
+        <x-registration-form program-id="COMAMO" button-title="Consult Now" />
+        <div class="h-screen -mt-16">
+            <div class="flex flex-col h-full items-center justify-center gap-2 main-container">
                 <div class="flex flex-col gap-2 w-full">
                     <h1
-                        class="font-bold text-banner-title md:text-7xl text-white md:text-left text-center md:w-1/2 xl:w-1/3 md:ml-12">
-                        {{ __('pages/programs/skillset_tutoring.title') }}
+                        class="font-bold text-banner-title text-newprimary md:text-left text-center uppercase md:w-1/2 xl:w-1/3">
+                        {!! __('pages/programs/skillset_tutoring.title') !!}
                     </h1>
-                    <x-registration-form :is-button="true" program-id="SATPRIV" />
+                    <h3
+                        class="font-light text-banner-subtitle md:text-xl text-newprimary md:text-left text-center leading-10 md:w-1/2 xl:w-2/3">
+                        {!! __('pages/programs/skillset_tutoring.body') !!}
+                    </h3>
+                    <div class="flex items-center mb-10 -ml-8 mt-3">
+                        @foreach (__('pages/programs/skillset_tutoring.competition') as $item)
+                            <div class="md:h-[60px] h-[40px]">
+                                <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/') . '/' . $item }}"
+                                    alt="EduALL" class="h-full">
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="absolute top-32 md:left-[45%] left-[35%]">
+                        <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/Sticker 80 medal won.png') }}"
+                            alt="EduALL" class="md:w-[100%] w-[60%]">
+                    </div>
+
+                    <x-registration-form :is-button="true" program-id="COMAMO" button-title="Consult Now" />
                 </div>
+            </div>
+
+            {{-- Wave Shape --}}
+            <div class="h-[1rem] w-full bg-[#000076] block"></div>
+            <div class="custom-shape-divider-top-1763519181 absolute md:-bottom-[5.2rem] w-full md:block hidden">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+                </svg>
             </div>
         </div>
     </section>
 
+    {{-- ================================== Features  ================================== --}}
     <section class="py-24 scroll-mt-10" id="start-your-journey">
-        <div class="new-main-container">
-            <h3 class="text-2xl md:text-4xl font-bold text-center mb-12">
+        <div class="new-main-container mt-10 md:px-[10%]">
+            <h3 class="text-2xl md:text-4xl font-bold text-center mb-5 uppercase">
                 {{ __('pages/programs/skillset_tutoring.program_title') }}
             </h3>
-        </div>
-        <div class="lg:px-10 xl:px-20 max-w-5xl mx-auto relative">
-            <div class="absolute top-0 left-0 right-0 px-8 py-8 h-1/2 max-w-lg mx-auto w-full bg-newprimary rounded-2xl">
-                <div class="flex items-center justify-center gap-4 md:gap-8">
-                    <div class="h-2 w-2 bg-newyellow rounded-full"></div>
-                    <h3 class="text-white text-2xl md:text-3xl font-bold text-center">
-                        {{ __('pages/programs/academic_test_preparation.program_title') }}
-                    </h3>
-                    <div class="h-2 w-2 bg-newyellow rounded-full"></div>
-                </div>
-            </div>
-            <div class="splide pt-24 w-full" role="group">
+            <div class="splide pt-5 w-full" role="group">
                 <div class="splide__arrows">
                     <button class="splide__arrow splide__arrow--prev rounded-full bg-newprimary p-2 shadow-md"
                         style="background: #120FFD; left: -48px;">
@@ -79,28 +121,23 @@
                 </div>
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black px-8">
-                        @foreach (__('pages/programs/skillset_tutoring.program_list') as $item)
+                        @foreach (__('pages/programs/skillset_tutoring.features') as $index => $item)
                             <li class="splide__slide w-full pb-8">
                                 <div class="splide__slide__container py-8 h-full w-full">
-                                    <div class="flex flex-col w-full md:w-full my-4 px-1.5">
+                                    <div class="flex flex-col w-full md:w-full my-4 px-1.5 items-stretch h-full">
                                         <div
-                                            class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-2xl py-8 px-5 bg-white">
-                                            <h3 class="font-bold uppercase text-lg text-center">
-                                                {!! $item['title'] !!}
-                                            </h3>
+                                            class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-xl py-8 px-5 bg-white h-full relative overflow-hidden">
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img  data-src="{{ asset('assets/img/academic_test_preparation/skillset_tutoring/revamp/' . $item['image']) }}"alt="EduALL"
-                                                    class="h-full w-full object-cover lazyload">
+                                                <img data-src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/' . $item['image']) }}"alt="EduALL"
+                                                    class="h-full w-full object-contain lazyload">
                                             </div>
-                                            <div class="w-full h-28 flex flex-col justify-between">
-                                                <p class="text-xs text-justify leading-4">
-                                                    {{ $item['desc'] }}
-                                                </p>
 
-                                                <x-button
-                                                    href="{{ route('sign_me_skillset_tutoring', app()->getLocale()) }}"
-                                                    title="I Want to Register Now" bg-color="newprimary" padding-x="8"
-                                                    padding-y="1.5" margin-top="0" :is-rounded="true" fontSize="base" is-rounded />
+                                            <p class="text-[14px] text-center leading-4 mb-5">
+                                                {!! $item['text'] !!}
+                                            </p>
+
+                                            <div class="absolute left-0 bottom-5 w-full text-center text-newprimary">
+                                                {{ $index + 1 }}
                                             </div>
                                         </div>
                                     </div>
@@ -113,168 +150,149 @@
         </div>
     </section>
 
-    {{-- ========================================== Success Stories ========================================== --}}
-    @if (count($success_stories) > 0)
-        <section class="pt-4 pb-16 bg-dark">
-            <div class="new-main-container flex flex-col items-center">
-                <div class=" w-full">
-                    <div class="pt-8 pb-2 flex justify-start items-center gap-4 w-full md:px-16">
-                        <h2 class="font-bold text-section-title text-white text-left w-full">Our Mentees’ Success stories
-                        </h2>
-                        <div class="border border-newyellow rounded-md py-1 px-6"><a
-                                href="{{ route('success_stories', app()->getLocale()) . '?category=skillset-tutoring' }}"
-                                class="text-newyellow text-sm md:text-md whitespace-nowrap">See All</a></div>
+    {{-- ================================== Benefit Section  ================================== --}}
+    <section class="relative bg-general-benefit py-16">
+        <div class="new-main-container w-full">
+            <div class="flex md:flex-row flex-col flex-wrap justify-between items-center w-full">
+                <div class="col mb-5">
+                    <div class="flex justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/Piala putih.png') }}"
+                            alt="EduALL" class="md:w-[75%] w-24 mb-5">
                     </div>
+                    <h3 class="text-white text-2xl mb-3">
+                        {{ __('pages/programs/skillset_tutoring.benefit.session_title') }}:
+                    </h3>
+                    @foreach (__('pages/programs/skillset_tutoring.benefit.sessions') as $item)
+                        <div class="flex gap-2 text-xl space-y-2">
+                            <i class="fa-solid fa-circle-check text-green-500 mt-3"></i>
+                            <span class="text-white">{{ $item }}</span>
+                        </div>
+                    @endforeach
                 </div>
-
-                <div class="splide splides pt-4 max-w-screen-2xl mx-auto md:px-16" role="group">
-                    <div class="splide__track">
-                        <ul class="splide__list font-newprimary text-black px-8">
-                            @foreach ($success_stories as $item)
-                                <li class="splide__slide w-full pb-8 px-1.5 md:px-2">
-                                    <div class="splide__slide__container pb-8 h-full w-full">
-                                        <div
-                                            class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
-                                            <img loading="lazy"
-                                                 data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                                                alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain lazyload">
-                                            <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
-                                                <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
-                                                    class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
-                                                    Get to Know {{ explode(' ', trim($item->name))[0] }}
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    @endif
-
-
-
-    {{-- SECTION 1 --}}
-    {{-- <section class="md:bg-newprimary">
-        <div class="w-full flex justify-center">
-            <div class="flex flex-col w-[1024px] bg-white py-12 px-12 group-hover:w-[1280px] transition-all duration-500"
-                style="clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);">
-                <div class="flex flex-col gap-4  group-hover:scale-105 transition-all duration-700">
-                    <h2 class="font-newprimary font-semibold text-2xl text-dark text-center md:text-4xl">
-                        {{ __('pages/programs/skillset_tutoring.elevate_unique_passion') }}
-                    </h2>
-                    <p class="mb-8 font-newprimary text-sm md:text-base text-dark text-center max-w-2xl mx-auto">
-                        {{ __('pages/programs/skillset_tutoring.elevate_unique_passion_desc') }}
-                    </p>
-
+                <div class="col md:w-[50%] w-full text-white text-center">
+                    <img data-src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/Flyer AMO General.png') }}"
+                        alt="EduALL" class="rounded-xl lazyload">
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
-
-    {{-- WHY US 5 --}}
-    {{-- <section class="py-12 md:py-24">
+    {{-- ================================== Student Achievements Section  ================================== --}}
+    <section class="pt-14 bg-[#F9F9F9] pb-14">
         <div class="flex new-main-container w-full flex-col">
             <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
-                {{ __('pages/programs/skillset_tutoring.program_title') }}</h2>
-            <div class="flex flex-col gap-8 py-12">
-                @foreach (__('pages/programs/skillset_tutoring.program_list') as $item)
-                    <div class="relative" style="clip-path: polygon(0 0, 100% 0%, 100% 60%, 92% 100%, 0 100%)">
-                        <div class="absolute inset-0">
-                            <img src="{{ asset('assets/img/academic_test_preparation/skillset_tutoring/program/program-' . $loop->iteration . '.webp') }}"
-                                alt="EduALL Skillset Tutoring Program"
-                                class="object-center h-full w-full object-cover rounded-md group-hover:scale-105 transition-all duration-700">
-                        </div>
-                        <div
-                            class="flex flex-col justify-center items-center gap-4 p-4 py-12 group-hover:scale-95 transition-all duration-700 relative">
-                            <h4 class="font-newprimary font-bold text-white text-3xl uppercase text-center">
-                                {{ $item['title'] }}
-                            </h4>
-                            <p class="font-newprimary text-base text-white max-w-2xl mx-auto leading-6 text-center">
-                                {{ $item['desc'] }}
-                            </p>
-                        </div>
+                {{ __('pages/programs/academic_test_preparation.achievement_title') }}</h2>
+        </div>
+        <div class="new-main-container mb-12 md:my-12">
+            <!-- Competition Result Table -->
+            <div class="">
+                <h2 class="text-center text-2xl font-bold text-[#00008F] py-3">Competition Results</h2>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full" border="0">
+                        <thead class="bg-black text-white sticky top-0 z-10">
+                            <tr>
+                                <th class="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider border-0 rounded-l-2xl"
+                                    width="5%">No</th>
+                                <th class="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider border-0"
+                                    width="15%">
+                                    Competition</th>
+                                <th class="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider border-0"
+                                    width="25%">
+                                    Name</th>
+                                <th class="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider border-0"
+                                    width="15%">
+                                    Medal</th>
+                                <th class="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider border-0 rounded-r-2xl"
+                                    width="40%">
+                                    Grade & School</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <!-- Scrollable Body -->
+                    <div class="max-h-[350px] overflow-y-auto">
+                        <table class="min-w-full" border="0">
+                            <tbody>
+                                @foreach ($competition as $index => $item)
+                                    <tr class="text-center border-b-2 border-gray-200 hover:bg-gray-100">
+                                        <td class="px-4 py-3 border-0 text-sm" width="5%">
+                                            {{ $index + 1 }}
+                                        </td>
+                                        <td class="px-4 py-3 border-0 text-sm font-medium text-center" width="15%">
+                                            <div class="flex w-full justify-center">
+                                                <img src="{{ Storage::url('competition' . '/' . $item->image) }}"
+                                                    alt="EduALL" class="w-full">
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-3 border-0 text-sm font-medium text-center uppercase"
+                                            width="25%">
+                                            {{ $item->name }}
+                                        </td>
+                                        <td class="px-4 py-3 border-0 text-sm uppercase" width="15%">
+                                            <div class="flex gap-3 items-center w-full justify-center">
+                                                @if ($item->medal == 'Gold')
+                                                    <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/gold.png') }}"
+                                                        alt="EduALL" class="w-[40px]"
+                                                        title="{{ $item->medal }} Medal">
+                                                @elseif($item->medal == 'Silver')
+                                                    <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/silver.png') }}"
+                                                        alt="EduALL" class="w-[40px]"
+                                                        title="{{ $item->medal }} Medal">
+                                                @else
+                                                    <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/bronze.png') }}"
+                                                        alt="EduALL" class="w-[40px]"
+                                                        title="{{ $item->medal }} Medal">
+                                                @endif
+
+                                                {{ $item->medal }} Medal
+                                            </div>
+
+
+
+                                        </td>
+                                        <td class="px-4 py-3 border-0 text-sm uppercase" width="40%">
+                                            Grade {{ $item->grade }} | {{ $item->school }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
-    {{-- <section class="py-12">
-        <div class="flex w-full flex-col">
-            <h2 class="font-newprimary font-bold text-2xl md:text-4xl text-black text-center">
-                {{ __('pages/programs/skillset_tutoring.why_us_title') }}</h2>
-            <div class="flex flex-col gap-6 py-12">
-                @foreach (__('pages/programs/skillset_tutoring.why_us_list') as $item)
-                    @if ($loop->iteration % 2 == 1)
-                        <div class="flex h-80 md:h-48">
-                            <div class="bg-dark h-full w-full -mr-[3%]"
-                                style="clip-path: polygon(0 0, 100% 0%, 100% 0%, 85% 100%, 0 100%)">
-                                <div class="flex flex-col gap-4 md:px-20 justify-center h-full w-full">
-                                    <h4
-                                        class="font-newprimary font-bold text-white text-start text-xl md:text-2xl uppercase">
-                                        {{ $item['title'] }}
-                                    </h4>
-                                    <p
-                                        class="font-newprimary text-xs md:text-sm text-white text-start max-w-md leading-4 pr-6 md:pr-4 2xl-max-w-xl">
-                                        {{ $item['desc'] }}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="bg-newprimary h-full w-full md:w-full -ml-[3%]"
-                                style="clip-path: polygon(15% 0, 100% 0%, 100% 0%, 100% 100%, 0 100%)">
-                                <img src="{{ asset('assets/img/academic_test_preparation/skillset_tutoring/why-us/why-us-' . $loop->iteration . '.webp') }}"
-                                    alt="EduALL why us" class="w-full h-full object-center object-cover">
-                            </div>
-                        </div>
-                    @else
-                        <div class="flex relative h-80 md:h-48">
-                            <div class="bg-dark h-full w-full -mr-[3%]"
-                                style="clip-path: polygon(0 0, 100% 0%, 100% 0%, 85% 100%, 0 100%)">
-                                <img src="{{ asset('assets/img/academic_test_preparation/skillset_tutoring/why-us/why-us-' . $loop->iteration . '.webp') }}"
-                                    alt="EduALL why us" class="w-full h-full object-center object-cover">
-                            </div>
-                            <div class="bg-newprimary h-full w-full -ml-[3%]"
-                                style="clip-path: polygon(15% 0, 100% 0%, 100% 0%, 100% 100%, 0 100%)">
-                                <div class="flex flex-col gap-4 md:pl-20 max-w-lg mr-auto justify-center h-full ml-[15%]">
-                                    <h4
-                                        class="font-newprimary font-bold text-white text-start text-xl md:text-2xl uppercase">
-                                        {{ $item['title'] }}
-                                    </h4>
-                                    <p
-                                        class="font-newprimary text-xs md:text-sm text-white text-start max-w-md leading-4 pr-4">
-                                        {{ $item['desc'] }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="bg-white pt-14">
+        <div class="flex new-main-container w-full flex-col relative z-0">
+            <div class="relative bg-general-olympiad-cta bg-cover bg-center rounded-lg py-14 w-full shadow-lg">
+                <div class="flex w-full md:flex-row flex-col justify-end md:items-center items-start">
+                    <div class="flex flex-col md:w-2/5 w-full md:ml-14 md:px-0 px-5">
+                        <h3 class="text-white md:text-5xl text-2xl mb-3 md:text-start text-center">
+                            {{ __('pages/programs/skillset_tutoring.cta_title') }}
+                        </h3>
+                    </div>
+                    <div class="flex md:w-3/5 w-full">
+                        <x-form title="Program" program-id="COMAMO" lead-id="LS001" is-transparent="true"
+                            submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
+                    </div>
+                </div>
+
+                {{-- <div class="absolute md:-bottom-[10%] -bottom-[7%] md:right-[46%] right-14">
+                    <img src="{{ asset('assets/img/academic_test_preparation/3.SAT/FREE SAT Placement Test.png') }}"
+                        alt="EduALL" class="md:w-[120%] w-[60%]">
+                </div> --}}
+            </div>
+            <div class="new-main-containter w-full -mt-[17%] relative md:ml-[10%] ml-0 z-10">
+                <div class="flex justify-end">
+                    <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Katyana subject.png') }}"
+                        alt="EduALL" class="w-[40%]">
+                </div>
             </div>
         </div>
-    </section> --}}
-
-    {{-- SECTION 12 --}}
-    {{-- <section class="py-8 bg-dark bg-bottom-sign-up-banner-2 bg-center bg-cover">
-        <div class="main-container flex flex-col items-center">
-            <h2 class="font-newprimary font-semibold text-2xl text-white text-center md:text-4xl">
-                {{ __('pages/programs/skillset_tutoring.free_trial2_title') }}
-            </h2>
-            <p class="mb-8 font-newprimary text-sm md:text-lg text-white text-center">
-                {{ __('pages/programs/skillset_tutoring.free_trial2_description') }}
-            </p>
-            <a href="{{ route('sign_me_skillset_tutoring', app()->getLocale()) }}"
-                class="px-8 md:px-12 py-3 font-bold
-                font-newprimary text-xs md:text-base text-white text-center bg-newprimary hover:scale-110 transition-all
-                duration-150">
-                {{ __('pages/programs/skillset_tutoring.free_trial2_button') }}
-            </a>
-        </div>
-    </section> --}}
+    </section>
 @endsection
 
 @push('script')
@@ -288,7 +306,7 @@
         var splides = document.getElementsByClassName('splide');
         new Splide(splides[0], {
             type: 'slide',
-            perPage: isMediumDevice ? 1 : 2,
+            perPage: isMediumDevice ? 2 : 5,
             perMove: 1,
             arrows: false,
             focus: 'center',
@@ -314,7 +332,7 @@
 
         new Splide(splides[1], {
             type: 'slide',
-            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 4 : 4,
+            perPage: isSmallDevice ? 2 : isMediumDevice ? 2 : isLargeDevice ? 3 : isVeryLargeDevice ? 5 : 5,
             padding: isSmallDevice ? '6%' : '0',
             perMove: 1,
             arrows: false,

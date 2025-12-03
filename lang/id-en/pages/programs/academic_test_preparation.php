@@ -39,115 +39,77 @@ return [
     'meta_title' => "Study Abroad Test Preparation Program - EduAll",
     'meta_description' => 'Intensive program to help students take university entrance exams abroad. Pick your class and book your Free Trial now!',
 
-    "navbar_title" => "Academic & Test Prep",
+    "navbar_title" => "EduALL Academy",
 
     "benefits" => [
         [
             'title' => "Personalized",
             'tag' => "Learning Path",
-            'image'=> "benefit-01.png",
+            'image' => "benefit-01.png",
         ],
         [
             'title' => "Expert Tutor",
             'tag' => "Qualifications",
-            'image'=> "benefit-02.png",
+            'image' => "benefit-02.png",
         ],
         [
             'title' => "Diverse Subject",
             'tag' => "Expertise",
-            'image'=> "benefit-03.png",
+            'image' => "benefit-03.png",
         ],
         [
             'title' => "On-Demand",
             'tag' => "Schedule",
-            'image'=> "benefit-04.png",
+            'image' => "benefit-04.png",
         ]
     ],
 
     // banner section
-    "title" => "Tutoring <br> Program",
-    "body" => "Discover our proven approach to enhance your academic transcript and maximize test scores for elite university admissions.",
+    "title" => "YOUR PATH TO <br> TOP SCORES",
+    "body" => "Subject Tutoring, SAT & <br> Olympiad Prep Class",
     "our_program_title" => "YOUR JOURNEY TO SUCCESS",
     "our_program_data" => $our_programs,
 
     "program_title" => "Choose Your Preparation",
     "program_list" => [
         [
-            "title" => "Academic <br/> Tutoring",
-            "desc" => "With core concept mastery and internationally qualified tutors, we prepare students with robust academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.",
-            'image' => "Academic tutoring.webp",
+            "title" => "Subject Tutoring",
+            "desc" => "Online | Private Class <br> Grade 7-11",
+            'image' => "Buku.png",
             "points" => [
-                "IBDP (International Baccalaureate Diploma Programme)",
-                "IB MYP (International Baccalaureate Middle Years Programme)",
-                "Cambridge A-Level",
-                "Cambridge IGCSE (International General Certificate of Secondary Education)",
-                "Advanced Placement",
+                "Curriculum: IB, Cambridge, AP, National Plus, National"
             ],
-            'link' => 'academic-tutoring',
+            'link' => 'subject',
         ],
         [
-            "title" => "Standardized Test Preparation",
-            "desc" => "Excel in SAT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
-            'image' => "standardized test.webp",
+            "title" => "SAT Prep Class",
+            "desc" => "Online | Private & Semi Private Class <br> Grade 7-11",
+            'image' => "Menulis.png",
             "points" => [
-                "SAT (Scholastic Assessment Test)",
-                "TOEFL (Test of English as a Foreign Language)",
-                "IELTS (International English Language Testing System)",
+                "SAT Math, SAT English (Reading & Writing)"
             ],
-            'link' => 'sat-program',
+            'link' => 'sat',
         ],
         [
-            "title" => "Skillset <br/> Tutoring",
-            "desc" => "Elevate your unique passions through personalized skillset tutoring that focuses on the needs of every student. This is designed to elevate students’ academic profile, making their university application stand out.",
-            'image' => "skillset tutoring.webp",
+            "title" => "Olympiad Prep Class",
+            "desc" => "Online | Semi Private Class <br> Grade 7-11",
+            'image' => "Piala.png",
             "points" => [
-                "Algorithm & Programming",
-                "Olympiad Preparation Class",
+                "Math, Physics, Science, Coding (SASMO, AMO, SEAMO, SIMOC, VANDA, etc)"
             ],
-            'link' => 'skillset-tutoring-program',
+            'link' => 'olympiad',
         ],
-        // [
-        //     "title" => "IB Extended Essay Coaching",
-        //     "desc" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
-        //     'image' => "IB essay.webp",
-        //     'link' => 'skillset-tutoring-program',
-        // ],
     ],
 
     'get_to_know_more' => "Get to Know More",
     'learn_more' => "Learn More",
     "lets_start" => "Let’s Start",
 
-    // academic tutoring section
-    "academic_tutoring_title" => "Academic Tutoring",
-    "academic_tutoring_description" => "With <span class='text-newprimary'>core concept mastery </span> and <span class='text-newprimary'>internationally qualified tutors,</span> we prepare students with robust academic knowledge, enhanced problem-solving skills, and sharpened critical thinking abilities.",
-    "academic_tutoring_special_formula_title" => "Our Special Formula",
-    "academic_tutoring_special_formula" => [
-        'Personalized tutoring, based on the student’s ability',
-        '2-way student-tutor interaction with fun and relaxing vibes',
-        'Kickstarting major exploration',
-        'Entrance exam preparation with a wide variety of textbooks, question banks, and complete past papers.',
-        'Student-tutor and parent report to monitor and develop the student\'s progress',
-    ],
-    "academic_tutoring_special_formula_button" => "Learn More",
 
-
-    // IB EXTENDED ESSAY COACHING PROGRAM Section
-    "ib_extended_title" => "IB EXTENDED ESSAY COACHING PROGRAM",
-    "ib_extended_description" => "Drill your Extended Essay writing process in 3 months with our holistic approach!",
-    "ib_extended_topic_title" => "TOPICS COVERED",
-    "ib_extended_button" => "Learn More",
-
-    // Standardized Test Preparation
-    "standardized_test_preparation_title" => "STANDARDIZED TEST PREPARATION",
-    "standardized_test_preparation_description" => "Excel in SAT, IELTS, and TOEFL with our expert personalized tutoring, unlocking global academic opportunities through comprehensive preparation strategies.",
-    "standardized_test_preparation_button" => "Learn More",
-
-    // Skillset Tutoring
-    "skillset_tutoring_title" => "SKILLSET TUTORING",
-    "skillset_tutoring_description" => "Elevate your unique passions through personalized skillset tutoring that focuses on the needs of every student. This is designed to elevate students’ academic profile, making their university application stand out.",
-    "skillset_tutoring_button" => "Learn More",
-
-    // Testimoial
-    "testimony_title" => "WHAT OUR STUDENT SAY",
+    "testimony_title" => "Why EduALL Academy",
+    "achievement_title" => "Our Students Achievement",
+    "result_title" => "Our Students' Results",
+    "result_description" => "Top Universities Demand More: Academic Excellence, Olympiad Wins & Superior Test Scores",
+    "result_more" => "..... and many more",
+    "tutor_title" => "Meet Our Tutors",
 ];

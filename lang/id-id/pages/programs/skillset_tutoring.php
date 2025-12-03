@@ -1,51 +1,58 @@
 <?php
 
 return [
-    'meta_title' => 'Program Skillset untuk Study Abroad - EduAll',
-    'meta_description' => 'Program kursus programming dan Subject Olympiad untuk dukung application siswa ke universitas dunia',
+    'meta_title' => 'Olympiad Prep Class - EduAll',
+    'meta_description' => "Kuasi Olimpiade. Maksimalkan Potensi Akademik Anda",
 
-    'title' => 'Skillset Tutoring',
-    'body' => 'Ubah passion menjadi pencapaian luar biasa dan jadilah profesional di bidang yang disukai',
-    'header_button' => 'Daftar Sekarang',
+    'title' => 'Olympiad Prep Class',
+    'body' => 'Kuasi Olimpiade. Maksimalkan Potensi Akademik Anda',
+    'header_button' => 'Daftar di Sini',
 
-    'elevate_unique_passion' => 'Tingkatkan Passion Unikmu ',
-    'elevate_unique_passion_desc' => 'Kami percaya akan keunikan setiap siswa, dan jalan menuju keunggulan akademis juga harus demikian. Program bimbingan Skillset Tutoring dirancang dengan sungguh untuk meningkatkan profil akademis dan menjadikan applicant universitas yang menonjol.',
+    'elevate_unique_passion' => 'Tingkatkan Minat Unik Anda',
+    'elevate_unique_passion_desc' => 'Kami percaya setiap siswa itu unik, begitu juga jalannya menuju keunggulan akademik. Skillset Tutoring kami dirancang secara cermat untuk meningkatkan profil akademik Anda, sehingga aplikasi universitas Anda menonjol.',
 
-    'program_title' => 'Program Spesialisasi untuk Kesuksesan di Masa Depan',
-    'program_list' => [
+    'competition' => [
+        'Logo SMC.png',
+        'Logo Sasmo.png',
+        'Logo AMO.png',
+        'Logo SIMOC.png',
+        'Logo HKIMO.png'
+    ],
+
+    'program_title' => 'Olympiad Prep Class',
+    'features' => [
         [
-            'title' => 'Algorithm & Programming',
-            'desc' => "Dive into the world of coding and algorithms - a critical skill for tomorrow's innovators. Master logical thinking and problem-solving, essentials for top-tier university applications.",
-            'image' => 'program-1.webp'
+            'image' => 'Competition icon 1.png',
+            'text'  => 'Bangun <strong class="text-newprimary">fondasi yang kuat</strong> dalam mata pelajaran inti',
         ],
         [
-            'title' => 'Subject Olympiad Preparation',
-            'desc' => "Excel in international STEM (Math & Biology) Olympiads with our expert guidance. Stand out in your university application by showcasing exceptional subject mastery.",
-            'image' => 'program-2.webp'
+            'image' => 'Competition icon 2.png',
+            'text'  => 'Panduan langkah demi langkah dari <strong class="text-newprimary">tutor Olympiad berpengalaman</strong>',
+        ],
+        [
+            'image' => 'Competition icon 3.png',
+            'text'  => 'Tetap di jalur dengan <strong class="text-newprimary">rencana belajar yang dipersonalisasi</strong>',
+        ],
+        [
+            'image' => 'Competition icon 4.png',
+            'text'  => 'Belajar untuk <strong class="text-newprimary">berpikir sebagai pemecah masalah</strong>',
+        ],
+        [
+            'image' => 'Competition icon 5.png',
+            'text'  => '<strong class="text-newprimary">Latihan dengan soal tahun sebelumnya</strong> & mock test',
         ],
     ],
 
-    'why_us_title' => 'KENAPA KAMI?',
-    'why_us_list' => [
-        [
-            'title' => 'Temui Tutor Ahli',
-            'desc' => "Tutor kami bukan sekadar guru; mereka adalah mentor dan ahli strategi akademis. Dengan keahlian mereka, pengalaman dalam kurikulum internasional, dan metode pengajaran yang dipersonalisasi, mereka diperlengkapi untuk memandu menuju tujuan akademik.",
-        ],
-        [
-            'title' => 'Jalur Pembelajaran yang Dipersonalisasi',
-            'desc' => "Mulailah perjalanan dengan penilaian diagnostik komprehensif kami. Pahami kekuatan dan area yang perlu ditingkatkan, dan kami akan merancang jalur pembelajaran khusus untuk hasil terbaik.",
-        ],
-        [
-            'title' => 'Keuntungan Aplikasi Universitas',
-            'desc' => "Tutoring kami lebih dari sekedar penguasaan mata pelajaran. Program ini adalah batu loncatan menuju universitas impian. Dengan kurikulum khusus kami, tingkatkan application, tunjukkan kepada universitas bahwa kamu bukan hanya seorang pelajar – kamu adalah siswa yang paling tepat untuk jurusan impianmu.",
-        ],
-        [
-            'title' => 'Lacak Kemajuan Menuju Keberhasilan',
-            'desc' => "Dengan laporan kemajuan rutin dan sesi umpan balik, saksikan diri dalam proses perkembangan. Sistem progress tracking kami memastikan bahwa kamu selalu berada di jalur yang tepat untuk mencapai impian akademik.",
-        ],
+    "benefit" => [
+        "session_title" => "Sesi Termasuk",
+        "sessions" => [
+            'Tes diagnostik',
+            'Bank soal & soal tahun sebelumnya',
+            'Materi pembelajaran tambahan',
+            'Latihan soal adaptif',
+            'Tutor berpengalaman lebih dari 7 tahun'
+        ]
     ],
 
-    'free_trial2_title' => 'Mulailah Perjalanan Menuju Kesuksesan',
-    'free_trial2_description' => 'Kami dapat membantu kamu  mencapai tujuan akademis dan mendapatkan tempat di universitas impian.',
-    'free_trial2_button' => 'Dapatkan Konsultasi GRATIS Sekarang!',
+    'cta_title' => 'BERITAHU SAYA UNTUK OLYMPIAD PREP BERIKUTNYA!',
 ];

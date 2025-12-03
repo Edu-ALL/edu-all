@@ -62,14 +62,23 @@ module.exports = {
                     "url('../../public/assets/img/admission mentoring/Undergraduate/undergraduate photos.webp')",
 
                 // Academic and test preparation
+                
                 "general-acad-header":
-                    "url('../../public/assets/img/academic_test_preparation/revamp/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/1.GENERAL/Home banner general.png')",
                 "academic-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/academic_tutoring/revamp/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/2.SUBJECT/Home banner subject.png')",
                 "sat-prep-header":
-                    "url('../../public/assets/img/academic_test_preparation/sat_program/revamp/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/3.SAT/Home banner SAT.png')",
                 "skillset-tutoring-header":
-                    "url('../../public/assets/img/academic_test_preparation/skillset_tutoring/revamp/banner.webp')",
+                    "url('../../public/assets/img/academic_test_preparation/4.COMPETITION/Home banner competition.png')",
+                "general-benefit":
+                    "url('../../public/assets/img/academic_test_preparation/Banner sessions.png')",
+
+                // CTA Tutoring
+                "general-acad-cta": "url('../../public/assets/img/academic_test_preparation/1.GENERAL/CTA General.png')",
+                "general-tutoring-cta": "url('../../public/assets/img/academic_test_preparation/2.SUBJECT/CTA Subject.png')",
+                "general-sat-cta": "url('../../public/assets/img/academic_test_preparation/3.SAT/CTA SAT.png')",
+                "general-olympiad-cta": "url('../../public/assets/img/academic_test_preparation/4.COMPETITION/CTA Competition.png')",
 
                 // Transfer
                 "transfer-header":
@@ -150,7 +159,7 @@ module.exports = {
             },
             colors: {
                 primary: "#233469",
-                newprimary: "#120FFD",
+                newprimary: "#00008F",
                 yellow: "#f78614",
                 newyellow: "#FED017",
                 dark: "#000000",

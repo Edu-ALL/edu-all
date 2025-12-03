@@ -5,247 +5,186 @@
         $breadcrumbs = [
             ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
             ['name' => 'Program', 'url' => '#'],
-            ['name' => 'Tutoring Program', 'url' => route('academic_test_preparation', [app()->getLocale()])],
+            ['name' => 'Tutoring Program', 'url' => route('tutoring', [app()->getLocale()])],
             ['name' => 'Academic Tutoring', 'url' => url()->current()],
         ];
     @endphp
     <title>{{ __('pages/programs/academic_tutoring.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/programs/academic_tutoring.meta_title') }}" />
     <meta name="description" content="{{ __('pages/programs/academic_tutoring.meta_description') }}" />
-    <meta name="keywords" content="ib, igsce, math , international curriculum, international baccalaureate, tutoring, private tutoring, subject selection, online tutoring, math tutor" />
+    <meta name="keywords"
+        content="ib, igsce, math , international curriculum, international baccalaureate, tutoring, private tutoring, subject selection, online tutoring, math tutor" />
 @endsection
 
 @section('sub-navbar')
     <x-sub-navbar :menu="[
-        ['title' => 'general', 'url' => '/programs/academic-test-preparation'],
+        ['title' => 'general', 'url' => '/programs/tutoring'],
         [
             'title' => __('pages/programs/academic_tutoring.title'),
-            'url' => '/programs/academic-test-preparation/academic-tutoring',
+            'url' => '/programs/tutoring/subject',
         ],
         [
             'title' => __('pages/programs/sat_program.navbar_title'),
-            'url' => '/programs/academic-test-preparation/sat-program',
+            'url' => '/programs/tutoring/sat',
         ],
         [
             'title' => __('pages/programs/skillset_tutoring.title'),
-            'url' => '/programs/academic-test-preparation/skillset-tutoring-program',
+            'url' => '/programs/tutoring/olympiad',
         ],
     ]" :active="__('pages/programs/academic_tutoring.title')" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
 @endsection
 
+@push('style')
+    <style>
+        .custom-shape-divider-top-1763519181 {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-top-1763519181 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 67px;
+        }
+
+        .custom-shape-divider-top-1763519181 .shape-fill {
+            fill: #000076;
+        }
+    </style>
+@endpush
+
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-academic-tutoring-header bg-cover bg-top" id="banner">
-        <x-registration-form program-id="ACADX" />
-        <div class="bg-gradient-to-r from-black/50 via-transparent to-transparent h-screen -mt-16">
-            <div class="flex flex-col h-full items-center justify-center gap-2 new-main-container">
+        <x-registration-form program-id="ACADX" button-title="Book Your Trial Session" />
+        <div class="h-screen -mt-16">
+            <div class="flex flex-col h-full items-center justify-center gap-2 main-container">
                 <div class="flex flex-col gap-2 w-full">
                     <h1
-                        class="font-bold text-banner-title text-white md:text-left text-center uppercase md:w-1/2 xl:w-1/3 md:ml-12">
+                        class="font-bold text-banner-title text-newprimary md:text-left text-center uppercase md:w-1/2 xl:w-1/3">
                         {{ __('pages/programs/academic_tutoring.title') }}
                     </h1>
-                    <x-registration-form :is-button="true" program-id="ACADX" />
-                </div>
-            </div>
-            <div class="absolute md:bottom-0 left-0 right-0">
-                <div class="relative h-full">
-                    <div
-                        class="bg-newprimary mix-blend-multiply visible md:h-24 h-[28vh] absolute md:bottom-[0] bottom-0 left-0 right-0">
-                    </div>
-                    <div
-                        class="w-full main-container mx-auto absolute md:bottom-[0] bottom-20 left-0 right-0 h-24 flex items-center">
-                        <div class="flex md:flex-row flex-wrap gap-6 justify-evenly items-center w-full">
-                            @foreach (__('pages/programs/academic_tutoring.summary') as $item)
-                                <div class="flex flex-col md:w-auto justify-center items-center">
-                                    <p class="font-bold text-white text-xl md:text-2xl text-center">
-                                        {{ $item['title'] }}
-                                    </p>
-                                    <p class="font-light text-white text-banner-subdescription text-center max-w-[240px]">
-                                        {!! $item['sub_title'] !!}
-                                    </p>
-                                </div>
-                            @endforeach
+                    <h3
+                        class="font-light text-banner-subtitle md:text-xl text-newprimary md:text-left text-center leading-10 md:w-1/2 xl:w-2/3">
+                        {!! __('pages/programs/academic_tutoring.description') !!}
+                    </h3>
+                    <div class="flex items-center flex-wrap md:gap-5 gap-1 md:justify-start justify-center">
+                        <div class="md:w-[120px] w-1/3">
+                            <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum IBDP.png') }}"
+                                alt="IBDP" class="w-full">
+                        </div>
+                        <div class="md:w-[120px] w-1/3">
+                            <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum IBMYP.png') }}"
+                                alt="IBMYP" class="w-full">
+                        </div>
+                        <div class="md:w-[120px] w-1/3">
+                            <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum A level.png') }}"
+                                alt="A Level" class="w-full">
+                        </div>
+                        <div class="md:w-[120px] w-1/3">
+                            <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum Cambridge.png') }}"
+                                alt="Cambridge" class="w-full">
+                        </div>
+                        <div class="md:w-[120px] w-1/3">
+                            <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum AP.png') }}"
+                                alt="AP" class="w-full">
                         </div>
                     </div>
+                    <x-registration-form :is-button="true" program-id="ACADX" button-title="Book Your Trial Session" />
                 </div>
+            </div>
+        </div>
+        <div class="-mt-24">
+            <div class="h-auto md:h-24 w-full bg-[#000076] relative">
+                <div
+                    class="main-container w-full h-full flex flex-col md:flex-row items-center md:items-center md:justify-center py-6 md:py-0">
+                    {{-- Achievements Numbers --}}
+                    <div
+                        class="flex w-full flex-row md:flex-nowrap flex-wrap justify-center items-center md:items-start gap-0 md:gap-6">
+                        @foreach (__('pages/programs/academic_tutoring.summary') as $item)
+                            <div class="flex flex-col items-center md:w-1/4 w-2/4">
+                                <p class="font-bold text-[#B2DCFA] text-3xl"> {{ $item['title'] }}</p>
+                                <span class="text-white text-banner-subdescription text-center">
+                                    {!! $item['sub_title'] !!}
+                                </span>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            {{-- Wave Shape --}}
+            <div class="custom-shape-divider-top-1763519181 absolute md:-bottom-[4rem] w-full md:block hidden">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+                </svg>
             </div>
         </div>
     </section>
 
-    <section class="py-16">
-        <div class="new-main-container">
-            <div class="flex flex-col">
-                <div class="flex flex-wrap items-center justify-center md:gap-12 gap-4 mx-auto w-full">
-                    @foreach (__('pages/programs/academic_tutoring.benefit_section') as $item)
-                        <div class="relative w-min">
-                            <div class="shadow-clip flex flex-col items-center relative">
-                                <div class="h-40 md:h-36 w-40 md:w-44 bg-white flex flex-col items-center justify-center py-4 mb-4"
-                                    style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
-                                    <div class="h-8">
-                                        <img data-src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/benefits/benefit-0' . $loop->iteration . '.png') }}"
-                                            alt="EduALL - ilustration"
-                                            class="w-full h-full object-center object-cover lazyload">
-                                    </div>
-                                    <h4 class="font-newprimary text-sm font-bold text-center mt-4 leading-4">
-                                        {{ $item['title'] }}
-                                    </h4>
-                                    <span
-                                        class="font-newprimary text-sm font-normal text-center">{{ $item['description'] }}</span>
-                                </div>
-                            </div>
-                            <div class="absolute -top-3 -right-3">
-                                <div class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
-                                    <i class="fa-solid fa-check fa-sm text-white"></i>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-16">
-        <div class="new-main-container">
-            <div class="flex flex-col items-center">
-                <h2 class="font-bold text-4xl uppercase text-center">
+    {{-- ================================== Subject Section  ================================== --}}
+    <section class="py-16 bg-[#EFEEEE]">
+        <div class="main-container mt-24 mb-10">
+            <div class="flex flex-col items-center w-full">
+                <h2 class="font-bold md:text-4xl text-2xl uppercase text-center">
                     {{ __('pages/programs/academic_tutoring.subjects_title') }}
                 </h2>
                 <p class="mt-4 leading-5 text-base text-center max-w-2xl mx-auto">
                     {{ __('pages/programs/academic_tutoring.subjects_desc') }}</p>
-                <div class="flex flex-wrap gap-4 mt-4 justify-center">
-                    @foreach (__('pages/programs/academic_tutoring.subjects_tag') as $item)
-                        <div
-                            class="pl-2 pr-3 py-1 rounded-md bg-newyellow flex items-center justify-center gap-2 order-{{ $loop->iteration }} lg:order-{{ $item['order'] }}">
-                            <div class="w-6 h-5">
-                                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/icons/' . $item['image']) }}"
-                                    alt="icons" class="w-full h-full object-contain">
+
+                <div class="flex md:flex-row flex-col md:gap-5 gap:2 md:items-stretch w-full justify-center">
+                    @foreach (__('pages/programs/academic_tutoring.subjects') as $item)
+                        <div class="flex md:w-1/6 w-full">
+                            <div class="shadow-lg rounded-lg overflow-hidden mt-8 h-full w-full bg-white">
+                                <div class="px-4 flex justify-center items-center">
+                                    <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/') . '/' . $item['curriculum_logo'] }}"
+                                        alt="{{ $item['curriculum'] }}" class="w-[200px]">
+                                </div>
+                                <div class="bg-newprimary text-white text-center text-sm font-bold py-2">
+                                    {{ $item['curriculum'] }}
+                                </div>
+                                <div class="p-4">
+                                    @foreach ($item['subject'] as $s)
+                                        <div class="flex gap-2">
+                                            <i class="fa-solid fa-circle text-[5px] mt-2"></i>
+                                            <span class="text-[12px]">
+                                                {{ $s }}
+                                            </span>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                            <span class="text-semibold flex-1 text-sm md:text-base">{{ $item['title'] }}</span>
                         </div>
                     @endforeach
-                </div>
-                <div class="mt-8 flex flex-wrap justify-center items-center">
-                    <div class="flex flex-col md:flex-row w-full h-[180vh] md:h-[60vh]">
-                        <div class="acad-program-acad-tutor-item acad-program-acad-tutor-active relative overflow-hidden">
-                            <span class="bg-newprimary">IBDP</span>
-                            <div class="desc">
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li class="leading-6">Physics</li>
-                                    <li class="leading-6">Chemistry</li>
-                                    <li class="leading-6">Biology</li>
-                                    <li class="leading-6">English</li>
-                                    <li class="leading-6">Mathematics</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/2">
-                                    <li>Environmental System & Societies</li>
-                                    <li>Business Management</li>
-                                    <li>Economics</li>
-                                    <li>Extended Essay (EE) / <br /> Internal Assessment (IA) Guidance</li>
-                                </ul>
-                            </div>
-                            <div class="polygon bg-newprimary"></div>
-                            <div class="w-full h-full bg-black">
-                                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-1.png') }}"
-                                    alt="EduALL figure">
-                            </div>
-                        </div>
-                        <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                            <span>IB MYP</span>
-                            <div class="desc">
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Mathematics</li>
-                                    <li>Chemistry</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li> Physics</li>
-                                    <li> Biology</li>
-
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>English</li>
-                                </ul>
-                            </div>
-                            <div class="polygon bg-black"></div>
-                            <div class="w-full h-full bg-black">
-                                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-2.png') }}"
-                                    alt="EduALL figure">
-                            </div>
-                        </div>
-                        <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                            <span>Cambridge
-                                A-Levels</span>
-                            <div class="desc">
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Mathematics</li>
-                                    <li>Physics</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Chemistry</li>
-                                    <li>Biology</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Economics</li>
-                                </ul>
-                            </div>
-                            <div class="polygon bg-newprimary"></div>
-                            <div class="w-full h-full bg-black">
-                                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-3.png') }}"
-                                    alt="EduALL figure">
-                            </div>
-                        </div>
-                        <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                            <span>Cambridge
-                                IGCSE</span>
-                            <div class="desc">
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Mathematics</li>
-                                    <li>Physics</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Chemistry</li>
-                                    <li>Biology</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Computer <br /> Science</li>
-                                </ul>
-                            </div>
-                            <div class="polygon bg-black"></div>
-                            <div class="w-full h-full bg-black">
-                                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-4.png') }}"
-                                    alt="EduALL figure">
-                            </div>
-                        </div>
-                        <div class="acad-program-acad-tutor-item acad-program-acad-tutor-inactive relative overflow-hidden">
-                            <span>Advanced
-                                Placement</span>
-                            <div class="desc">
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Pre-Calculus</li>
-                                    <li>Calculus AB</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Calculus BC</li>
-                                    <li>Physics</li>
-                                </ul>
-                                <ul class="whitespace-nowrap w-1/3">
-                                    <li>Chemistry</li>
-                                    <li>Biology</li>
-                                </ul>
-                            </div>
-                            <div class="polygon bg-newprimary"></div>
-                            <div class="w-full h-full bg-black">
-                                <img src="{{ asset('assets/img/academic_test_preparation/new-asset/acad-tutor/figure-5.png') }}"
-                                    alt="EduALL figure">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
     </section>
 
-    <section class="py-4">
-        <div class="flex new-main-container w-full flex-col items-center relative">
+    {{-- ================================== Pricing Section  ================================== --}}
+    <section class="relative">
+        <div class="flex w-full flex-col items-center bg-newprimary relative">
+            <div class="new-main-container pt-12 pb-36 w-full">
+                <div class="flex flex-col justify-start w-full md:ml-10 md:px-0 px-10">
+                    <p class="text-white text-2xl font-bold">
+                        {{ __('pages/programs/academic_tutoring.pricing_title') }}
+                    </p>
+                    <div class="flex gap-2">
+                        <p class="text-white md:text-4xl text-2xl font-bold">IDR</p>
+                        <h2 class="text-white md:text-7xl text-4xl font-bold">500.000</h2>
+                        <p class="text-white md:text-2xl text-xl font-bold md:mt-8 mt-4"> /
+                            {{ __('pages/programs/academic_tutoring.pricing_desc') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex new-main-container w-full flex-col items-center relative -mt-40">
             <div class="splide w-full" role="group">
                 <div class="splide__track">
                     <ul class="splide__list font-newprimary text-black">
@@ -257,12 +196,10 @@
                                             class="w-full flex flex-col items-center @if (isset($item['is_popular']) && $item['is_popular'] == true) -mt-[72px] @endif">
                                             @if (isset($item['is_popular']) && $item['is_popular'] == true)
                                                 <div
-                                                    class="px-8 pt-5 pb-12 -mb-6 -z-10 w-full bg-red rounded-2xl flex items-center justify-center gap-2">
-                                                    <div class="h-2 w-2 bg-newyellow rounded-full"></div>
+                                                    class="px-8 mt-8 pt-2 pb-6 -mb-5 -z-10 w-full bg-[#BF0000] rounded-2xl flex items-center justify-center gap-2">
                                                     <h3 class="text-white text-lg font-bold text-center">
-                                                        {{ __('pages/programs/admission_mentoring.popular_choice') }}
+                                                        {{ __('pages/programs/academic_tutoring.popular_choice') }}
                                                     </h3>
-                                                    <div class="h-2 w-2 bg-newyellow rounded-full"></div>
                                                 </div>
                                             @endif
                                             <div class="rounded-xl bg-white flex flex-col w-full shadow-xl py-4 px-4">
@@ -270,11 +207,39 @@
                                                     class="font-newprimary font-bold text-black text-center text-4xl uppercase py-2">
                                                     {{ $item['title'] }}
                                                 </h4>
-                                                <div class="flex justify-between py-4 w-full">
+                                                <div class="flex justify-between py-1 w-full">
                                                     <div class="flex flex-col">
                                                         <div class="flex items-center gap-4">
                                                             <div
-                                                                class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                                                class="h-6 w-6 bg-[#74C774] flex items-center justify-center rounded-full">
+                                                                <i class="fa-solid fa-check fa-base text-white"></i>
+                                                            </div>
+                                                            <h4
+                                                                class="font-newprimary font-semibold text-newprimary text-xl">
+                                                                {{ $item['type'] }}
+                                                            </h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-between py-1 w-full">
+                                                    <div class="flex flex-col">
+                                                        <div class="flex items-center gap-4">
+                                                            <div
+                                                                class="h-6 w-6 bg-[#74C774] flex items-center justify-center rounded-full">
+                                                                <i class="fa-solid fa-check fa-base text-white"></i>
+                                                            </div>
+                                                            <h4
+                                                                class="font-newprimary font-semibold text-newprimary text-xl">
+                                                                {{ $item['class'] }}
+                                                            </h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-between py-1 w-full">
+                                                    <div class="flex flex-col">
+                                                        <div class="flex items-center gap-4">
+                                                            <div
+                                                                class="h-6 w-6 bg-[#74C774] flex items-center justify-center rounded-full">
                                                                 <i class="fa-solid fa-check fa-base text-white"></i>
                                                             </div>
                                                             <h4
@@ -291,7 +256,7 @@
                                                     <div class="flex flex-col">
                                                         <div class="flex items-center gap-4">
                                                             <div
-                                                                class="h-6 w-6 bg-newprimary flex items-center justify-center rounded-full">
+                                                                class="h-6 w-6 bg-[#74C774] flex items-center justify-center rounded-full">
                                                                 <i class="fa-solid fa-check fa-base text-white"></i>
                                                             </div>
                                                             <h4
@@ -305,7 +270,7 @@
                                                     </div>
                                                 </div>
                                                 <x-button href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                                                    title="Book your FREE trial now" bg-color="newprimary" padding-x="8"
+                                                    title="Book FREE trial now" bg-color="newprimary" padding-x="8"
                                                     padding-y="1.5" rounded="rounded-full" font-size="base" />
                                             </div>
                                         </div>
@@ -318,71 +283,82 @@
             </div>
         </div>
     </section>
-    </div>
-    </div>
-    </div>
 
-    <div class="pt-8 pb-20">
-        <div class="flex new-main-container w-full flex-col items-center">
-            <div class="mt-8 md:px-28">
-                <img src="{{ app()->getLocale() == 'id-en' ? asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_english.webp') : asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_bahasa.webp') }}"
-                    alt="EduALL" class="w-full h-full object-contain hidden md:block">
-                <img src="{{ asset('assets/img/academic_test_preparation/academic_tutoring/revamp/why_us_mobile.webp') }}"
-                    alt="EduALL" class="w-full h-full object-contain md:hidden">
-            </div>
-        </div>
-    </div>
-
-    {{-- ================================== Bottom Section  ================================== --}}
-    <section class="md:pt-4 md:pb-20">
-        <div class="lg:px-4 max-w-5xl mx-auto ">
-            <div class="flex md:flex-row flex-col items-center md:bg-dark md:rounded-2xl overflow-hidden">
-                <div
-                    class="bg-dark flex flex-col items-center md:items-start justify-center w-full md:w-5/12 md:mx-4 md:order-1 order-2 py-6 px-2 md:px-6 -mt-8 md:mt-0 rounded-t-3xl md:rounded-none">
-                    <h2
-                        class="font-newprimary font-bold text-base text-white text-center md:text-left md:text-2xl uppercase mb-4">
-                        {{ __('pages/programs/academic_tutoring.free_trial_title') }}
-                    </h2>
-                    <p class="mb-8 font-newprimary text-base md:text-lg text-white text-center md:text-left">
-                        {{ __('pages/programs/academic_tutoring.free_trial_desc') }}
-                    </p>
-                    <x-button type="secondary" href="{{ route('sign_me_acad_tutoring', app()->getLocale()) }}"
-                        title="{{ __('pages/programs/academic_tutoring.free_trial_button') }}" :is-rounded="true"
-                        :padding-x="4" />
+    {{-- ================================== Benefit Section  ================================== --}}
+    <section class="relative bg-general-benefit py-16">
+        <div class="new-main-container w-full">
+            <div class="flex md:flex-row flex-col flex-wrap justify-between items-center w-full">
+                <div class="col mb-5">
+                    <div class="flex justify-center">
+                        <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Buku putih.png') }}"
+                            alt="EduALL" class="md:w-[75%] w-24 mb-5">
+                    </div>
+                    <h3 class="text-white text-2xl mb-3">
+                        {{ __('pages/programs/academic_tutoring.benefit.session_title') }}:
+                    </h3>
+                    @foreach (__('pages/programs/academic_tutoring.benefit.sessions') as $item)
+                        <div class="flex gap-2 text-xl space-y-2">
+                            <i class="fa-solid fa-circle-check text-green-500 mt-3"></i>
+                            <span class="text-white">{{ $item }}</span>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="w-full md:w-7/12 md:order-2 order-1 mt-4">
-                    <img loading="lazy" src="{{ asset('assets/img/academic_test_preparation/cta_image.webp') }}"
-                        alt="bottom banner" class="w-full h-full object-cover rounded-b-lg">
+                <div class="col md:w-[50%] w-full">
+                    <h3 class="text-[#FEF100] text-3xl mb-4 md:text-center text-start">
+                        {{ __('pages/programs/academic_tutoring.tetimony_title') }}</h3>
+                    <div class="h-[400px] overflow-auto md:px-4 p-0">
+                        @foreach ($testimonies as $testi)
+                            <div class="bg-white py-5 px-4 rounded-lg shadow-lg mb-2 w-full">
+                                <div class="italic font-bold mb-3 text-sm">
+                                    {!! $testi->testi_desc !!}
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div class="">
+                                        <div class="uppercase text-md leading-3 font-bold">
+                                            {{ $testi->testi_name }}
+                                        </div>
+                                        <div class="text-sm mb-0">
+                                            {!! $testi->testi_subtitle !!}
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-thumbs-up text-2xl text-[#74C774]"></i>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16">
-        <div class="flex new-main-container w-full flex-col items-center">
-            <h2 class="font-newprimary font-bold text-3xl md:text-4xl text-black text-center uppercase">
-                {{ __('pages/programs/academic_tutoring.tetimony_title') }}</h2>
-        </div>
-        <div class="new-main-container mt-12">
-            <div class="splide" role="group" aria-label="Splide Basic HTML Example">
-                <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" style="background: transparent; left: -48px;">
-                        <i class="fa-solid fa-chevron-left text-3xl text-primary"></i>
-                    </button>
-                    <button class="splide__arrow splide__arrow--next" style="background: transparent; right: -48px;">
-                        <i class="fa-solid fa-chevron-right text-3xl text-primary"></i>
-                    </button>
+    {{-- ================================== Bottom Section  ================================== --}}
+    <section class="bg-white pt-14">
+        <div class="flex new-main-container w-full flex-col relative z-0">
+            <div class="relative bg-general-tutoring-cta bg-cover bg-center rounded-lg py-14 w-full shadow-lg">
+                <div class="flex w-full md:flex-row flex-col justify-end md:items-center items-start">
+                    <div class="flex flex-col md:w-2/5 w-full md:ml-14 md:px-0 px-5 -mt-[7%]">
+                        <h3 class="text-white md:text-5xl text-2xl mb-3 md:text-start text-center">
+                            {{ __('pages/programs/academic_tutoring.cta_title') }}
+                        </h3>
+                        <h5 class="text-white md:text-2xl text-xl mb-3 leading-6 md:text-start text-center">
+                            {{ __('pages/programs/academic_tutoring.cta_subtitle') }}
+                        </h5>
+                    </div>
+                    <div class="flex md:w-3/5 w-full">
+                        <x-form title="Program" program-id="ACADX" lead-id="LS001" is-transparent="true"
+                            submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
+                    </div>
                 </div>
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @foreach ($testimonies as $testi)
-                            <li class="splide__slide w-full pb-8">
-                                <div class="splide__slide__container py-8 px-4 h-full w-full ">
-                                    <x-testimonial-card :testimonial=$testi />
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+
+                <div class="absolute md:-bottom-[10%] -bottom-[7%] md:right-[46%] right-14">
+                    <img src="{{ asset('/assets/img/academic_test_preparation/2.SUBJECT/Free academic tutoring trial.png') }}"
+                        alt="EduALL" class="md:w-[120%] w-[60%]">
+                </div>
+            </div>
+            <div class="new-main-containter w-full -mt-[17%] relative md:ml-[10%] ml-0 z-10">
+                <div class="flex justify-end">
+                    <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Katyana subject.png') }}"
+                        alt="EduALL" class="w-[40%]">
                 </div>
             </div>
         </div>
@@ -476,32 +452,6 @@
                     item.button.style.backgroundColor = '#0367BF';
                 });
             }
-        }).mount();
-
-        new Splide(splides[1], {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : isMediumDevice ? 2 : isLargeDevice ? 2 : isVeryLargeDevice ?
-                3 : 4,
-            perMove: 1,
-            focus: 0,
-            width: "100%",
-            arrows: isSmallDevice ? false : true,
-            pagination: isSmallDevice ? true : false,
-            autoplay: true,
-            lazyload: true,
-            interval: 5000,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[100%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
         }).mount();
     </script>
 @endpush

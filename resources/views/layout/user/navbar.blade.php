@@ -77,7 +77,7 @@
 
                                 </li> --}}
                                 <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation"
+                                    <a href="{{ url(app()->getLocale()) }}/programs/tutoring"
                                         class="child_child_nav_link">
                                         <i class="fa-solid fa-pencil mr-2 text-base"></i>
                                         {{ __('pages/navbar.programs_academic') }}
@@ -85,25 +85,25 @@
                                     <ul
                                         class="text-[#1d1d1d] bg-white transition-all duration-300 lg:absolute lg:left-full lg:top-0 lg:invisible lg:w-full lg:text-[#aaaaaa] lg:opacity-0 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-[#333333]">
                                         <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/academic-tutoring"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/subject"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_academic_tutoring') }}
                                             </a>
                                         </li>
                                         <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/sat-program"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/sat"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_standardized_test') }}
                                             </a>
                                         </li>
                                         <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/skillset-tutoring-program"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/olympiad"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_skillset_tutoring') }}
                                             </a>
                                         </li>
                                         {{-- <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/academic-test-preparation/ib-ee-coaching-program"
+                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/ib-ee-coaching-program"
                                                 class="child_child_link">
                                                 {{ __('pages/navbar.programs_academic_ib') }}
                                             </a>

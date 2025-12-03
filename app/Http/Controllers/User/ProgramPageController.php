@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\AcademicScore;
 use App\Models\Guidebooks;
 use App\Models\Mentors;
 use App\Models\SuccessStories;
 use App\Models\Testimonials;
 use App\Models\Tutors;
+use App\Models\University;
 use Illuminate\Http\Request;
 
 class ProgramPageController extends Controller
@@ -95,10 +97,21 @@ class ProgramPageController extends Controller
     public function academic_test_preparation($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);
-        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation');
+        $testimonies = Testimonials::where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->limit(6)->get();
+        $academic = AcademicScore::where('type', 'academic')->orderBy('order', 'ASC')->get();
+        $sat = AcademicScore::where('type', 'sat')->orderBy('order', 'ASC')->get();
+        $competition = AcademicScore::where('type', 'competition')->orderBy('order', 'ASC')->get();
+        $univ = University::orderBy('order', 'ASC')->get();
+        $tutor = Tutors::where('status', 'active')->limit(6)->orderBy('updated_at', 'DESC')->get();
+
 
         return view('user.academic_test_preparation.main', [
-            'testimonies' => $testimonies
+            'testimonies' => $testimonies,
+            'academic' => $academic,
+            'sat' => $sat,
+            'competition' => $competition,
+            'univ' => $univ,
+            'tutor' => $tutor
         ]);
     }
 
@@ -140,11 +153,13 @@ class ProgramPageController extends Controller
             ->where('lang', $lang)
             ->orderBy('created_at', 'ASC')
             ->get();
+        $competition = AcademicScore::where('type', 'competition')->orderBy('order', 'ASC')->get();
 
         return view('user.skillset_tutoring.main', [
             'testimonies' => $testimonies,
             'locale' => $locale,
-            'success_stories' => $success_stories
+            'success_stories' => $success_stories,
+            'competition' => $competition
         ]);
     }
 
