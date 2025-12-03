@@ -474,7 +474,7 @@
             <div class="flex flex-wrap justify-center gap-4 mb-8 w-full">
                 @foreach ($univ as $item)
                     <div class="md:w-[calc(100%/6-1rem)] w-[calc(100%/2-1rem)]">
-                        <div class="p-2 md:w-[200px] w-full h-[100px] border-2  border-gray-200">
+                        <div class="p-2 md:w-[200px] w-full h-[100px] hover:w-[110%] transition-all ease-in-out" >
                             <img src="{{ storage::url('university' . '/' . $item->logo) }}" alt="{{ $item->name }}"
                                 class="object-contain w-full h-full">
                         </div>

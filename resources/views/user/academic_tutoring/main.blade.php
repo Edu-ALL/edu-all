@@ -204,7 +204,7 @@
                                             @endif
                                             <div class="rounded-xl bg-white flex flex-col w-full shadow-xl py-4 px-4">
                                                 <h4
-                                                    class="font-newprimary font-bold text-black text-center text-4xl uppercase py-2">
+                                                    class="font-newprimary font-bold text-black text-center text-3xl uppercase py-2">
                                                     {{ $item['title'] }}
                                                 </h4>
                                                 <div class="flex justify-between py-1 w-full">

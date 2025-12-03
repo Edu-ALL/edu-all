@@ -170,7 +170,7 @@
                                             <div
                                                 class="rounded-xl bg-white flex flex-col w-full shadow-xl py-4 px-6 h-[420px] relative overflow-hidden">
                                                 <h4
-                                                    class="font-newprimary font-bold text-black text-start md:text-4xl text-2xl uppercase py-2">
+                                                    class="font-newprimary font-bold text-black text-start md:text-3xl text-2xl uppercase py-2">
                                                     {!! $item['title'] !!}
                                                 </h4>
                                                 <div class="flex flex-nowrap w-fullgap-0">
