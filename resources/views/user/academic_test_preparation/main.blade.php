@@ -98,7 +98,7 @@
                         class="flex md:w-4/6 w-full flex-row md:flex-nowrap flex-wrap justify-center items-center md:items-start gap-0 md:gap-4">
 
                         <div class="flex flex-col items-center md:w-1/4 w-2/4">
-                            <p class="font-bold text-[#B2DCFA] text-3xl">XX</p>
+                            <p class="font-bold text-[#B2DCFA] text-3xl">2-3</p>
                             <span class="text-white text-banner-subdescription text-center">
                                 IB Score <br> Improvements
                             </span>
@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="flex flex-col items-center md:w-1/4 w-2/4">
-                            <p class="font-bold text-[#B2DCFA] text-3xl">XX</p>
+                            <p class="font-bold text-[#B2DCFA] text-3xl">190+</p>
                             <span class="text-white text-banner-subdescription text-center">
                                 SAT Score <br> Improvements
                             </span>

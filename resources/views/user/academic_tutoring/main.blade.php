@@ -73,24 +73,24 @@
                         class="font-light text-banner-subtitle md:text-xl text-newprimary md:text-left text-center leading-10 md:w-1/2 xl:w-2/3">
                         {!! __('pages/programs/academic_tutoring.description') !!}
                     </h3>
-                    <div class="flex items-center flex-wrap md:gap-5 gap-1 md:justify-start justify-center">
-                        <div class="md:w-[120px] w-1/3">
+                    <div class="flex items-center flex-wrap md:gap-5 gap-1 md:justify-start justify-center md:w-[50%] w-full">
+                        <div class="md:w-[150px] w-1/3">
                             <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum IBDP.png') }}"
                                 alt="IBDP" class="w-full">
                         </div>
-                        <div class="md:w-[120px] w-1/3">
+                        <div class="md:w-[150px] w-1/3">
                             <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum IBMYP.png') }}"
                                 alt="IBMYP" class="w-full">
                         </div>
-                        <div class="md:w-[120px] w-1/3">
+                        <div class="md:w-[150px] w-1/3">
                             <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum A level.png') }}"
                                 alt="A Level" class="w-full">
                         </div>
-                        <div class="md:w-[120px] w-1/3">
+                        <div class="md:w-[150px] w-1/3">
                             <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum Cambridge.png') }}"
                                 alt="Cambridge" class="w-full">
                         </div>
-                        <div class="md:w-[120px] w-1/3">
+                        <div class="md:w-[150px] w-1/3">
                             <img src="{{ asset('assets/img/academic_test_preparation/2.SUBJECT/Curriculum AP.png') }}"
                                 alt="AP" class="w-full">
                         </div>
@@ -313,15 +313,15 @@
                                     {!! $testi->testi_desc !!}
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <div class="">
-                                        <div class="uppercase text-md leading-3 font-bold">
+                                    <div class="mt-3">
+                                        <div class="uppercase text-[#00008F] text-md leading-3 font-bold">
                                             {{ $testi->testi_name }}
                                         </div>
-                                        <div class="text-sm mb-0">
+                                        <div class="text-sm mb-0 font-light">
                                             {!! $testi->testi_subtitle !!}
                                         </div>
                                     </div>
-                                    <i class="fa-solid fa-thumbs-up text-2xl text-[#74C774]"></i>
+                                    {{-- <i class="fa-solid fa-thumbs-up text-2xl text-[#74C774]"></i> --}}
                                 </div>
                             </div>
                         @endforeach
