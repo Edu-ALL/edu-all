@@ -73,9 +73,9 @@
                                                         <option value="Experiential Learning"
                                                             {{ $testimonial[0]->testi_category == 'Experiential Learning' ? 'selected' : '' }}>
                                                             Experiential Learning</option>
-                                                        <option value="Academic Preparation"
-                                                            {{ $testimonial[0]->testi_category == 'Academic Preparation' ? 'selected' : '' }}>
-                                                            Academic Preparation</option>
+                                                        <option value="Tutoring"
+                                                            {{ $testimonial[0]->testi_category == 'Tutoring' ? 'selected' : '' }}>
+                                                            Tutoring</option>
                                                         <option value="Exclusive Program School"
                                                             {{ $testimonial[0]->testi_category == 'Exclusive Program School' ? 'selected' : '' }}>
                                                             Exclusive Program School</option>
@@ -245,7 +245,7 @@
         }
 
         let sub_admission = ['Undergraduate Program', 'Graduate Program', 'University Transfer Program'];
-        let sub_academic = ['Academic Tutoring', 'SAT/ACT Preparation'];
+        let sub_academic = ['Subject Tutoring', 'SAT Preparation'];
         let sub_school = ['Admission Accelerator', 'Experiential Learning', 'Teacher Focused'];
 
         function selectCategory() {
@@ -261,7 +261,7 @@
 
                 // for update 
                 $('#subcategory').val('{{ $testimonial[0]->testi_subcategory }}').trigger('change')
-            } else if (category == 'Academic Preparation') {
+            } else if (category == 'Tutoring') {
                 $('#sub_category_col').removeClass('d-none')
                 sub_academic.forEach(element => {
                     $('#subcategory').append(

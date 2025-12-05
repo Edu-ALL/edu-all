@@ -318,7 +318,7 @@
                                             {{ $testi->testi_name }}
                                         </div>
                                         <div class="text-sm mb-0 font-light">
-                                            {!! $testi->testi_subtitle !!}
+                                            {!! $testi->testi_subcategory !!}
                                         </div>
                                     </div>
                                     {{-- <i class="fa-solid fa-thumbs-up text-2xl text-[#74C774]"></i> --}}

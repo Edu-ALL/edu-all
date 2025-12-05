@@ -238,7 +238,7 @@
                                 <div class="font-semibold">
                                     {{ $testi->testi_name }}
                                     <div class="leading-3">
-                                        {!! $testi->testi_subtitle !!}
+                                        {!! $testi->testi_subcategory !!}
                                     </div>
                                 </div>
                             </div>

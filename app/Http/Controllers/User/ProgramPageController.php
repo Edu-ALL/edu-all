@@ -97,7 +97,7 @@ class ProgramPageController extends Controller
     public function academic_test_preparation($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);
-        $testimonies = Testimonials::where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->limit(6)->get();
+        $testimonies = Testimonials::where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Tutoring')->limit(6)->get();
         $academic = AcademicScore::where('type', 'academic')->orderBy('order', 'ASC')->get();
         $sat = AcademicScore::where('type', 'sat')->orderBy('order', 'ASC')->get();
         $competition = AcademicScore::where('type', 'competition')->orderBy('order', 'ASC')->get();
@@ -118,7 +118,7 @@ class ProgramPageController extends Controller
     public function academic_tutoring($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);
-        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "Academic Tutoring");
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Tutoring')->where('testi_subcategory', "Subject Tutoring");
 
         $tutors = Tutors::all()->where('status', 'active');
 
@@ -136,7 +136,7 @@ class ProgramPageController extends Controller
     public function sat_program($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);
-        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Tutoring')->where('testi_subcategory', "SAT Preparation");
 
         return view('user.sat_program.main', [
             'testimonies' => $testimonies,
@@ -147,7 +147,7 @@ class ProgramPageController extends Controller
     public function skillset_tutoring_program($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);
-        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Academic Preparation')->where('testi_subcategory', "SAT/ACT Preparation");
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Tutoring')->where('testi_subcategory', "SAT Preparation");
         $success_stories = SuccessStories::where('category', 'Skillset Tutoring')
             ->where('status', 'active')
             ->where('lang', $lang)
