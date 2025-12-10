@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="flex flex-col items-center md:w-1/4 w-2/4">
-                            <p class="font-bold text-[#B2DCFA] text-3xl">XX</p>
+                            <p class="font-bold text-[#B2DCFA] text-3xl">3-5</p>
                             <span class="text-white text-banner-subdescription text-center">
                                 Grade <br> Improvements
                             </span>
