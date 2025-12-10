@@ -419,7 +419,7 @@
                                         <td class="px-4 py-3 border-0 text-sm font-medium text-center" width="15%">
                                             <div class="flex w-full justify-center">
                                                 <img src="{{ Storage::url('competition' . '/' . $item->image) }}"
-                                                    alt="EduALL" class="w-full">
+                                                    alt="EduALL" class="w-auto h-[50px]">
                                             </div>
                                         </td>
                                         <td class="px-4 py-3 border-0 text-sm font-medium text-center uppercase"
