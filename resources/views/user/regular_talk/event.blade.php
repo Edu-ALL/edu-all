@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/d11faf3e43.js" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link href="{{ asset('css/user/regular-talk.css') }}" rel="stylesheet">
-    @vite('public/css/user/regular-talk.css')
+    {{-- @vite('public/css/user/regular-talk.css') --}}
     @vite('resources/css/app.css')
 </head>
 
