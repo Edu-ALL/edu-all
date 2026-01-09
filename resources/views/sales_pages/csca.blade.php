@@ -49,7 +49,7 @@
                                 class="w-full rounded-xl shadow-lg">
                             <div class="text-center">
                                 <h3 class="mt-3 font-bold text-xl">Kaylee Fayola H.</h3>
-                                <div class="flex w-[70%] justify-center items-start mx-auto mt-5">
+                                <div class="flex w-[50%] justify-center items-start mx-auto mt-5">
                                     <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/14.png') }}" alt="EduALL Student"
                                         class="w-full">
                                 </div>
@@ -71,7 +71,7 @@
                                 class="w-full rounded-xl shadow-lg">
                             <div class="text-center">
                                 <h3 class="mt-3 font-bold text-xl">Gisela Natalie K.</h3>
-                                <div class="flex w-[70%] justify-center items-start mx-auto mt-5">
+                                <div class="flex w-[60%] justify-center items-start mx-auto mt-5">
                                     <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/19.png') }}" alt="EduALL Student"
                                         class="w-full">
                                 </div>
@@ -189,8 +189,8 @@
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/people icon@4x.png') }}" alt="EduALL" class="w-14">
                     </div>
-                    <h5 class="md:text-2xl text-xl font-bold text-white mb-5 uppercase">Small group learning</h5>
-                    <p class="text-white md:text-xl text-lg font-bold">
+                    <h5 class="md:text-2xl text-xl font-bold text-white mb-2 uppercase">Small group learning</h5>
+                    <p class="text-white md:text-xl text-lg">
                         Interaktif, terpantau, dan lebih efektif
                         dibanding kelas besar
                     </p>
@@ -202,8 +202,8 @@
                         <img src="{{ asset('assets/img/csca/ICON/pen on paper icon@4x.png') }}" alt="EduALL"
                             class="w-14">
                     </div>
-                    <h5 class="md:text-2xl text-xl font-bold text-white mb-5 uppercase">Syllabus & latihan terarah</h5>
-                    <p class="text-white md:text-xl text-lg font-bold">
+                    <h5 class="md:text-2xl text-xl font-bold text-white mb-2 uppercase">Syllabus & latihan terarah</h5>
+                    <p class="text-white md:text-xl text-lg">
                         Disusun berdasarkan pola soal CSCA dan standar akademik internasional
                     </p>
                 </div>
@@ -213,9 +213,9 @@
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/compas icon@4x.png') }}" alt="EduALL" class="w-14">
                     </div>
-                    <h5 class="md:text-2xl text-xl font-bold text-white mb-5 uppercase">Pendekatan test-prep,
+                    <h5 class="md:text-2xl text-xl font-bold text-white mb-2 uppercase">Pendekatan test-prep,
                         bukan sekadar les</h5>
-                    <p class="text-white md:text-xl text-lg font-bold">
+                    <p class="text-white md:text-xl text-lg">
                         Fokus pada cara mengerjakan soal CSCA dengan cepat, tepat, dan efisien.
                     </p>
                 </div>
@@ -225,8 +225,8 @@
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/check icon@4x.png') }}" alt="EduALL" class="w-14">
                     </div>
-                    <h5 class="md:text-2xl text-xl font-bold text-white mb-5 uppercase">Mock test & evaluasi</h5>
-                    <p class="text-white md:text-xl text-lg font-bold">
+                    <h5 class="md:text-2xl text-xl font-bold text-white mb-2 uppercase">Mock test & evaluasi</h5>
+                    <p class="text-white md:text-xl text-lg">
                         Untuk tahu posisi kemampuanmu sebelum ujian sebenarnya.
                     </p>
                 </div>
