@@ -159,6 +159,11 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('/thanks/mentoring', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_mentoring');
     Route::get('/thanks/sat', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_sat');
 
+    // Sales Page 
+    Route::get('/page/csca', function () {
+        return view('sales_pages.csca');
+    });
+
 
     // New Page Regular Talk
     Route::get('/regular-talk', function () {
