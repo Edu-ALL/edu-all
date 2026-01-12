@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 overflow-hidden relative -mt-20 rounded-t-3xl bg-white md:block hidden">
+    <section class="md:py-16 py-8 overflow-hidden relative -mt-20 rounded-t-3xl bg-white ">
         <div class="new-main-container relative z-10 h-full">
             <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative justify-center">
                 <div class="w-full gap-4">
@@ -130,7 +130,7 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 px-10 overflow-hidden relative  md:block hidden">
+    <section class="md:py-16 py-8 px-10 overflow-hidden relative  ">
         <img src="{{ asset('assets/img/csca/8.png') }}" alt="EduALL - ilustration"
             class="md:w-[95%] w-[90%] object-cover object-top absolute md:left-10 left-5 top-0 h-full rounded-3xl">
         <div class="new-main-container relative z-10 h-full py-10">
@@ -172,7 +172,7 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 overflow-hidden relative bg-white  md:block hidden">
+    <section class="md:py-16 py-8 overflow-hidden relative bg-white  ">
         <div class="new-main-container">
             <div class="flex w-[90%] justify-center mx-auto">
                 <h2 class="md:text-5xl text-2xl font-bold text-newprimary  text-center">
@@ -184,7 +184,7 @@
         </div>
     </section>
 
-    <section class="overflow-hidden relative md:block hidden">
+    <section class="overflow-hidden relative ">
         <div class="grid md:grid-cols-2 grid-cols-1 w-full items-stretch">
             <div class="col h-full bg-newprimary">
                 <div class="flex flex-col md:w-[60%] w-full mx-auto text-center p-10">
@@ -239,7 +239,7 @@
     <section class="md:py-16 py-8 overflow-hidden md:h-[100vh] h-[100dvh] relative">
         <img src="{{ asset('assets/img/csca/footer.png') }}" alt="EduALL - ilustration"
             class="w-full object-cover absolute left-0 top-0 h-full md:block hidden">
-            <img src="{{ asset('assets/img/csca/mobile-2.png') }}" alt="EduALL - ilustration"
+        <img src="{{ asset('assets/img/csca/mobile-2.png') }}" alt="EduALL - ilustration"
             class="w-full object-cover absolute left-0 top-0 h-full md:hidden block">
         <div class="new-main-container relative z-10 h-full">
             <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative md:items-center items-start md:pt-0 pt-20">
