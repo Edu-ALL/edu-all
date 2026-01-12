@@ -106,19 +106,19 @@
                         <div class="md:w-[11%] w-[30%] flex justify-center items-center">
                             <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/18.png') }}" alt="EduALL" class="w-full">
                         </div>
-                        <div class="md:w-[11%] w-[30%] flex justify-center items-center">
+                        <div class="md:w-[18%] w-[30%] flex justify-center items-center">
                             <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/USTC.png') }}" alt="EduALL"
                                 class="w-full">
                         </div>
-                        <div class="md:w-[11%] w-[30%] flex justify-center items-center">
+                        <div class="md:w-[10%] w-[30%] flex justify-center items-center">
                             <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/nanjing.png') }}" alt="EduALL"
                                 class="w-full">
                         </div>
-                        <div class="md:w-[11%] w-[30%] flex justify-center items-center">
+                        <div class="md:w-[13%] w-[30%] flex justify-center items-center">
                             <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/xian jiaotong.png') }}" alt="EduALL"
                                 class="w-full">
                         </div>
-                        <div class="md:w-[11%] w-[30%] flex justify-center items-center">
+                        <div class="md:w-[18%] w-[30%] flex justify-center items-center">
                             <img src="{{ asset('assets/img/csca/CHINA UNIV LOGO/harbin.png') }}" alt="EduALL"
                                 class="w-full">
                         </div>
