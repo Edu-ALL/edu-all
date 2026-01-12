@@ -14,7 +14,7 @@
         <img src="{{ asset('assets/img/csca/mobile-1.png') }}" alt="EduALL - ilustration"
             class="w-full object-cover md:hidden absolute left-0 top-0 h-full">
         <div class="new-main-container relative z-10 h-full">
-            <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative md:items-center items-start md:pt-0 pt-20">
+            <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative md:items-center items-start md:pt-0 pt-5">
                 <div class="md:w-[55%] gap-4">
                     <h2 class="md:text-6xl text-3xl text-white mb-5 md:text-start text-center">
                         Mulai 2026 <br>
