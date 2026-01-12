@@ -8,11 +8,13 @@
 @endsection
 
 @section('content')
-    <section class="md:py-16 py-8 overflow-hidden md:h-[100vh] h-[95vh] relative">
+    <section class="md:py-16 py-8 overflow-hidden md:h-[100vh] h-[100dvh] relative">
         <img src="{{ asset('assets/img/csca/banner.png') }}" alt="EduALL - ilustration"
-            class="w-full object-cover absolute left-0 top-0 h-full">
+            class="w-full object-cover md:absolute hidden left-0 top-0 h-full">
+        <img src="{{ asset('assets/img/csca/mobile-1.png') }}" alt="EduALL - ilustration"
+            class="w-full object-cover md:hidden absolute left-0 top-0 h-full">
         <div class="new-main-container relative z-10 h-full">
-            <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative items-center">
+            <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative md:items-center items-start md:pt-0 pt-20">
                 <div class="md:w-[55%] gap-4">
                     <h2 class="md:text-6xl text-3xl text-white mb-5 md:text-start text-center">
                         Mulai 2026 <br>
@@ -25,9 +27,9 @@
                             strategi penyelesaian soal. 大家一起努力，我们一定能行!
                         </p>
                     </div>
-                    <div class="mt-10">
+                    <div class="md:mt-10 mt-5">
                         <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank"
-                            class="bg-gradient-to-l from-[#06087F] via-[#7273C4] to-[#06087F] px-10 py-3 text-xl text-white rounded-full shadow-lg font-bold md:inline block md:text-start text-center">
+                            class="bg-gradient-to-l from-[#06087F] via-[#7273C4] to-[#06087F] md:px-10 px-5 py-3 md:text-xl text-[13px] text-white rounded-full shadow-lg font-bold md:inline block md:text-start text-center">
                             Chase your dream Chinese university, today!
                         </a>
                     </div>
@@ -36,7 +38,7 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 overflow-hidden relative -mt-20 rounded-t-3xl bg-white">
+    <section class="md:py-16 py-8 overflow-hidden relative -mt-20 rounded-t-3xl bg-white md:block hidden">
         <div class="new-main-container relative z-10 h-full">
             <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative justify-center">
                 <div class="w-full gap-4">
@@ -128,7 +130,7 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 px-10 overflow-hidden relative">
+    <section class="md:py-16 py-8 px-10 overflow-hidden relative  md:block hidden">
         <img src="{{ asset('assets/img/csca/8.png') }}" alt="EduALL - ilustration"
             class="md:w-[95%] w-[90%] object-cover object-top absolute md:left-10 left-5 top-0 h-full rounded-3xl">
         <div class="new-main-container relative z-10 h-full py-10">
@@ -170,7 +172,7 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 overflow-hidden relative bg-white">
+    <section class="md:py-16 py-8 overflow-hidden relative bg-white  md:block hidden">
         <div class="new-main-container">
             <div class="flex w-[90%] justify-center mx-auto">
                 <h2 class="md:text-5xl text-2xl font-bold text-newprimary  text-center">
@@ -182,7 +184,7 @@
         </div>
     </section>
 
-    <section class="overflow-hidden relative ">
+    <section class="overflow-hidden relative md:block hidden">
         <div class="grid md:grid-cols-2 grid-cols-1 w-full items-stretch">
             <div class="col h-full bg-newprimary">
                 <div class="flex flex-col md:w-[60%] w-full mx-auto text-center p-10">
@@ -234,11 +236,13 @@
         </div>
     </section>
 
-    <section class="md:py-16 py-8 overflow-hidden md:h-[100vh] h-[75vh] relative">
+    <section class="md:py-16 py-8 overflow-hidden md:h-[100vh] h-[100dvh] relative">
         <img src="{{ asset('assets/img/csca/footer.png') }}" alt="EduALL - ilustration"
-            class="w-full object-cover absolute left-0 top-0 h-full">
+            class="w-full object-cover absolute left-0 top-0 h-full md:block hidden">
+            <img src="{{ asset('assets/img/csca/mobile-2.png') }}" alt="EduALL - ilustration"
+            class="w-full object-cover absolute left-0 top-0 h-full md:hidden block">
         <div class="new-main-container relative z-10 h-full">
-            <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative items-center">
+            <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative md:items-center items-start md:pt-0 pt-20">
                 <div class="md:w-[60%] w-full gap-4 text-center">
                     <h2 class="md:text-5xl text-2xl text-white mb-5">
                         HANYA 4 JUTA <br>
