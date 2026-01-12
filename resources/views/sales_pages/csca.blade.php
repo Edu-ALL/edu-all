@@ -244,7 +244,7 @@
         <div class="new-main-container relative z-10 h-full">
             <div class="flex max-w-6xl mx-auto h-full gap-8 z-20 relative md:items-center items-start md:pt-0 pt-20">
                 <div class="md:w-[60%] w-full gap-4 text-center">
-                    <h2 class="md:text-5xl text-2xl text-white mb-5">
+                    <h2 class="md:text-5xl text-4xl text-white mb-5 md:font-semibold font-bold">
                         HANYA 4 JUTA <br>
                         SIAP KULIAH DI CHINA!
                     </h2>
