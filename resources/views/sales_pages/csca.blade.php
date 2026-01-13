@@ -193,11 +193,11 @@
     <section class="overflow-hidden relative ">
         <div class="grid md:grid-cols-2 grid-cols-2 w-full items-stretch">
             <div class="col h-full bg-newprimary">
-                <div class="flex flex-col md:w-[60%] w-full mx-auto text-center md:p-10 p-5">
+                <div class="flex flex-col md:w-[60%] w-full mx-auto text-center md:px-10 px-5 py-10">
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/people icon@4x.png') }}" alt="EduALL" class="w-14">
                     </div>
-                    <h5 class="md:text-2xl text-sm font-bold text-white mb-2 uppercase">Small group learning</h5>
+                    <h5 class="md:text-2xl text-[12px] font-bold text-white mb-2 uppercase">Small group learning</h5>
                     <p class="text-white md:text-xl text-sm">
                         Interaktif, terpantau, dan lebih efektif
                         dibanding kelas besar
@@ -205,12 +205,12 @@
                 </div>
             </div>
             <div class="col h-full bg-dark">
-                <div class="flex flex-col md:w-[60%] w-full mx-auto text-center md:p-10 p-5">
+                <div class="flex flex-col md:w-[60%] w-full mx-auto text-center md:px-10 px-5 py-10">
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/pen on paper icon@4x.png') }}" alt="EduALL"
                             class="md:w-14 w-8">
                     </div>
-                    <h5 class="md:text-2xl text-sm font-bold text-white mb-2 uppercase">Syllabus & latihan terarah</h5>
+                    <h5 class="md:text-2xl text-[12px] font-bold text-white mb-2 uppercase">Syllabus & latihan terarah</h5>
                     <p class="text-white md:text-xl text-sm">
                         Disusun berdasarkan pola soal CSCA dan standar akademik internasional
                     </p>
@@ -221,7 +221,7 @@
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/compas icon@4x.png') }}" alt="EduALL" class="md:w-14 w-8">
                     </div>
-                    <h5 class="md:text-2xl text-sm font-bold text-white mb-2 uppercase">Pendekatan test-prep,
+                    <h5 class="md:text-2xl text-[12px] font-bold text-white mb-2 uppercase">Pendekatan test-prep,
                         bukan sekadar les</h5>
                     <p class="text-white md:text-xl text-sm">
                         Fokus pada cara mengerjakan soal CSCA dengan cepat, tepat, dan efisien.
@@ -229,11 +229,11 @@
                 </div>
             </div>
             <div class="col h-full bg-newprimary">
-                <div class="flex flex-col md:w-[60%] w-full mx-auto text-center md:p-10 p-5">
+                <div class="flex flex-col md:w-[60%] w-full mx-auto text-center md:px-10 px-5 py-10">
                     <div class="flex justify-center mb-5">
                         <img src="{{ asset('assets/img/csca/ICON/check icon@4x.png') }}" alt="EduALL" class="md:w-14 w-8">
                     </div>
-                    <h5 class="md:text-2xl text-sm font-bold text-white mb-2 uppercase">Mock test & evaluasi</h5>
+                    <h5 class="md:text-2xl text-[12px] font-bold text-white mb-2 uppercase">Mock test & evaluasi</h5>
                     <p class="text-white md:text-xl text-sm">
                         Untuk tahu posisi kemampuanmu sebelum ujian sebenarnya.
                     </p>
