@@ -47,7 +47,7 @@
                         </p>
                     </div>
                     <div class="md:mt-10 mt-5 flex md:justify-start justify-center">
-                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank"
+                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank" onclick="fbq('track','Lead');"
                             class="bg-gradient-to-l from-[#06087F] via-[#7273C4] to-[#06087F] md:px-10 px-5 py-3 md:text-xl text-base text-white rounded-full shadow-lg font-bold inline-block md:text-start text-center">
                             <p class="md:block hidden">
                                 Chase your dream Chinese university, today!
@@ -273,7 +273,7 @@
                         SIAP KULIAH DI CHINA!
                     </h2>
                     <div class="mt-10">
-                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank"
+                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank" onclick="fbq('track','Lead');"
                             class="bg-gradient-to-l from-[#C31616] via-[#c47273] to-[#C31616] px-10 py-3 text-2xl text-white rounded-full shadow-lg font-bold">
                             DAFTAR SEKARANG
                         </a>
