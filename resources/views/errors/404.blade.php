@@ -1,6 +1,7 @@
 @extends('layout.user.main')
 
 @section('content')
+    @php($is404 = true)
     <section class="main-container">
         <div class="flex md:flex-row flex-col items-center justify-between max-w-5xl w-full  md:h-[70vh] h-auto mx-auto">
             <div class="md:text-start text-center md:mt-0 mt-[40px]  w-50">
@@ -13,12 +14,12 @@
                 <a href="{{ route('home', app()->getLocale()) }}" class="flex md:justify-start justify-center w-full pt-8">
                     <span
                         class="block px-4 py-2 rounded-md bg-yellow font-primary font-semibold text-base text-white text-center">
-                      <i class="fa fa-arrow-left fa-fw"></i>  Back Home
+                        <i class="fa fa-arrow-left fa-fw"></i> Back Home
                     </span>
                 </a>
             </div>
             <div class="w-50">
-                <img src="{{asset('assets/img/404.png')}}" alt="404" class="w-[100%]" loading="lazy">
+                <img src="{{ asset('assets/img/404.png') }}" alt="404" class="w-[100%]" loading="lazy">
             </div>
         </div>
     </section>
