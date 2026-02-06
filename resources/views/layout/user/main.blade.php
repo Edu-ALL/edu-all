@@ -27,13 +27,17 @@
         <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
     @endif
 
-    @php
-        $canonicalUrl = url()->current();
-        $canonicalUrl = preg_replace('/^https?:\/\/www\./i', 'https://', $canonicalUrl);
-        $canonicalUrl = rtrim($canonicalUrl, '/');
-    @endphp
+    @if (!request()->isMethod('get') || !Route::current())
+        {{-- skip canonical --}}
+    @elseif (response()->status() !== 404)
+        @php
+            $canonicalUrl = url()->current();
+            $canonicalUrl = preg_replace('/^https?:\/\/www\./i', 'https://', $canonicalUrl);
+            $canonicalUrl = rtrim($canonicalUrl, '/');
+        @endphp
 
-    <link rel="canonical" href="{{ $canonicalUrl }}" />
+        <link rel="canonical" href="{{ $canonicalUrl }}" />
+    @endif
 
     {{-- Hreflang  --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
