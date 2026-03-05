@@ -100,6 +100,15 @@
                                                 </a>
                                             </li>
                                         @endforeach
+
+                                        @if($item['title'] == 'Resources')
+                                            <li class="text-white w-full">
+                                                <a href="https://project-showcase.edu-all.com" target="_blank"
+                                                    class="text-white text-sm py-2 px-6 block rounded-full">
+                                                    <i class="fa fa-arrow-right mr-2"></i> Mentee Project Showcase
+                                                </a>
+                                            </li>
+                                        @endif
                                     </div>
                                 </ul>
                             @endif

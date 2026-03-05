@@ -38,10 +38,21 @@
     @endif
 
     {{-- Hreflang  --}}
-    <link rel="alternate" hreflang="x-default" href="{{ url('/') }}" />
+    {{-- 
+    <link rel="alternate" hreflang="x-default" href="{{ url('/id-en') }}" />
     <link rel="alternate" hreflang="en-id" href="{{ url('/id-en') }}" />
     <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
-    <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" />
+    <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" /> 
+    --}}
+
+    @php
+        // Get the current locale
+        $locale = app()->getLocale();
+        // Current URL
+        $currentUrl = url()->current();
+    @endphp
+   <link rel="alternate" hreflang="{{ $locale == 'id-en' ? 'en-id' : 'id-id' }}" href="{{ $currentUrl }}" />
+
 
     @stack('style')
 

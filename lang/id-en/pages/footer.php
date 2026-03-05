@@ -22,8 +22,8 @@ return [
             'link' => "/blog"
         ],
         [
-            'title' => "Partnership & Careers",
-            'link' => "/about/partnership-careers"
+            'title' => "Partnership",
+            'link' => "/partnership"
         ],
         [
             'title' => "Contact Us",

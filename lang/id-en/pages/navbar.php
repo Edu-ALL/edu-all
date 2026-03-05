@@ -79,10 +79,10 @@ return [
                 'link' => 'resources/testimonial',
                 'title' => 'Testimonial',
             ],
-            [
-                'link' => 'https://project-showcase.edu-all.com',
-                'title' => 'Mentee Project Showcase',
-            ],
+            // [
+            //     'link' => 'https://project-showcase.edu-all.com',
+            //     'title' => 'Mentee Project Showcase',
+            // ],
         ],
     ],
 
