@@ -25,13 +25,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/id-en', 301);
-Route::redirect('/array/pkv-games', '/id-en', 301);
-Route::redirect('/array/dominoqq', '/id-en', 301);
-Route::redirect('/array/bandarqq', '/id-en', 301);
-
-// SEO Optimization 
-Route::redirect('/id-en/contact-us/', '/id-en', 301);
-Route::redirect('/id-id/contact-us/', '/id-id', 301);
 
 
 Route::middleware(['remove_public', 'cache_header'])->group(function () {
