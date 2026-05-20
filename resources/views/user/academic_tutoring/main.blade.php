@@ -171,7 +171,7 @@
     <section class="relative">
         <div class="flex w-full flex-col items-center bg-newprimary relative">
             <div class="new-main-container pt-12 pb-36 w-full">
-                <div class="flex flex-col justify-start w-full md:ml-10 md:px-0 px-10">
+                <div class="hidden flex-col justify-start w-full md:ml-10 md:px-0 px-10">
                     <p class="text-white text-2xl font-bold">
                         {{ __('pages/programs/academic_tutoring.pricing_title') }}
                     </p>

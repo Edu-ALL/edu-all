@@ -173,7 +173,7 @@
                                                     class="font-newprimary font-bold text-black text-start md:text-3xl text-2xl uppercase py-2">
                                                     {!! $item['title'] !!}
                                                 </h4>
-                                                <div class="flex flex-nowrap w-fullgap-0">
+                                                <div class="hidden flex-nowrap w-fullgap-0">
                                                     <p class="w-[90px] text-base leading-0">
                                                         {{ __('pages/programs/sat_program.start_from') }}
                                                     </p>
@@ -226,7 +226,7 @@
             <div class="w-full px-7">
                 <div class="rounded-xl bg-white flex flex-col w-full shadow-xl py-4 px-5">
                     <div class="flex md:flex-row flex-col md:gap-20 items-center md:justify-between justify-start w-full">
-                        <div class="flex flex-nowrap gap-1 md:w-auto w-full">
+                        <div class="hidden flex-nowrap gap-1 md:w-auto w-full">
                             <p class="md:text-lg leading-0 md:w-auto w-[40%] md:ml-0 ml-4">
                                 {{ __('pages/programs/sat_program.start_from') }}
                             </p>
