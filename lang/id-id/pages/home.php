@@ -2,7 +2,7 @@
 
 return [
     'meta_title' => "Kuliah di Luar Negeri dengan EduALL | Konsultan Pendidikan Global",
-    'meta_description' => 'Raih impian kuliah di luar negeri bersama EduALL. Dapatkan bimbingan masuk universitas top dunia, persiapan tes, dan strategi terbaik dari mentor berpengalaman. Mulai perjalanan mentoring universitas Anda.',
+    'meta_description' => 'Raih impian kuliah di luar negeri bersama EduALL. Dapatkan bimbingan masuk universitas top dunia, persiapan tes, dan strategi terbaik dari mentor berpengalaman. Apply sekarang!',
     'benefit_list' => [
         [
             'title' => 'Aspire',
