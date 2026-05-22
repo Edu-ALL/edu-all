@@ -26,10 +26,6 @@ return [
             'link' => "/partnership"
         ],
         [
-            'title' => "Contact Us",
-            'link' => "/contact-us"
-        ],
-        [
             'title' => "Privacy Policy",
             'link' => "/privacy-policy"
         ],

@@ -26,10 +26,6 @@ return [
             'link' => "/about/partnership-careers"
         ],
         [
-            'title' => "Kontak Kami",
-            'link' => "/contact-us"
-        ],
-        [
             'title' => "Kebijakan Pribadi",
             'link' => "/privacy-policy"
         ],
