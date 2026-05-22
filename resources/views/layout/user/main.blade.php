@@ -11,47 +11,43 @@
     <meta name="robots" content="index,follow" />
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />
 
-    @if (request()->is('/') || request()->is(app()->getLocale()))
-        {{-- <meta name="keywords"
-            content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" /> --}}
-
-        <meta property=og:url content="{{ url('/') }}">
-        <meta property=og:image content="{{ asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp') }}">
-        <meta property=og:title content="{{ __('pages/home.meta_title') }}">
-        <meta property=og:description content="{{ __('pages/home.meta_description') }}">
-    @endif
-
-
-    {{-- Canonical  --}}
-    @if (app()->getLocale() == 'sg-en' && !request()->is(app()->getLocale() . '/about'))
-        <link rel="canonical" href="{{ url('/id-en') . substr(Request::path(), 5) }}" />
-    @endif
-
     @if (empty($is404))
         @php
             $canonicalUrl = url()->current();
             $canonicalUrl = preg_replace('/^https?:\/\/www\./i', 'https://', $canonicalUrl);
             $canonicalUrl = rtrim($canonicalUrl, '/');
         @endphp
-
-        <link rel="canonical" href="{{ $canonicalUrl }}">
+        <link rel="canonical" href="{{ $canonicalUrl }}" />
     @endif
 
-    {{-- Hreflang  --}}
-    {{-- 
-    <link rel="alternate" hreflang="x-default" href="{{ url('/id-en') }}" />
-    <link rel="alternate" hreflang="en-id" href="{{ url('/id-en') }}" />
-    <link rel="alternate" hreflang="id-id" href="{{ url('/id-id') }}" />
-    <link rel="alternate" hreflang="en-sg" href="{{ url('/sg-en') }}" /> 
-    --}}
-
+    {{-- Hreflang Tags --}}
     @php
-        // Get the current locale
-        $locale = app()->getLocale();
-        // Current URL
-        $currentUrl = url()->current();
+        $locales = [
+            'id-en' => 'en',
+            'id-id' => 'id',
+            'sg-en' => 'en',
+        ];
+
+        $currentLocale = app()->getLocale(); // e.g., 'id-en'
+        $path = request()->path(); // e.g., 'id-en', 'id-en/about', 'id-en/blog/post'
+
+        // Strip locale prefix dari path
+        $cleanPath = preg_replace('/^(id-en|id-id|sg-en)(\/|$)/', '', $path);
+
+        // Jika cleanPath kosong atau sama dengan locale lain, berarti ini homepage
+        if (empty($cleanPath) || array_key_exists($cleanPath, $locales)) {
+            $cleanPath = '';
+        }
     @endphp
-   <link rel="alternate" hreflang="{{ $locale == 'id-en' ? 'en-id' : 'id-id' }}" href="{{ $currentUrl }}" />
+
+    @foreach ($locales as $code => $lang)
+        @if ($cleanPath)
+            <link rel="alternate" hreflang="{{ $lang }}" href="{{ url($code . '/' . $cleanPath) }}" />
+        @else
+            <link rel="alternate" hreflang="{{ $lang }}" href="{{ url($code) }}" />
+        @endif
+    @endforeach
+    <link rel="alternate" hreflang="x-default" href="{{ url('id-en' . ($cleanPath ? '/' . $cleanPath : '')) }}" />
 
 
     @stack('style')

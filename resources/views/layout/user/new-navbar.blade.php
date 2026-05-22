@@ -33,7 +33,7 @@
                                             <li
                                                 class="hover:bg-newprimary text-white rounded-full w-full {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
                                                 <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
-                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank"' : '' }}
+                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank" rel="noopener noreferrer"' : '' }}
                                                     class="text-white text-base py-2 px-6 block text-center rounded-full">
                                                     {{ $submenu['title'] }}
                                                 </a>
@@ -53,12 +53,12 @@
 <header class="transition-all md:hidden">
     <!-- Mobile Menu Button -->
     <div class="fixed  bottom-5 transform -translate-x-1/2 left-8 bg-black rounded-xl z-50">
-        <span id="mobile-menu-toggle"
+        <button id="mobile-menu-toggle"
             class="md:hidden flex items-center justify-start text-white text-2xl focus:outline-none p-1.5">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg> </span>
+            </svg> </button>
     </div>
 
     <nav id="mobile-navbar" class="hidden z-50 fixed inset-0 h-screen md:rounded-full shadow-lg pb-12 md:py-1 w-full">
@@ -101,7 +101,7 @@
                                             </li>
                                         @endforeach
 
-                                        @if($item['title'] == 'Resources')
+                                        @if ($item['title'] == 'Resources')
                                             <li class="text-white w-full">
                                                 <a href="https://project-showcase.edu-all.com" target="_blank"
                                                     class="text-white text-sm py-2 px-6 block rounded-full">
@@ -231,16 +231,17 @@
 
         // Mobile Menu Toggle
         $('#mobile-menu-toggle').click(function() {
+            const isOpen = $('#mobile-navbar').is(':visible');
             $('#mobile-navbar').stop(true, true).fadeIn(300);
+            $(this).attr('aria-expanded', !isOpen);
             $('body').css('overflow', 'hidden');
-
             $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24')
         });
-
         $('#mobile-navbar-overlay').click(function() {
             $('#mobile-navbar').stop(true, true).fadeOut(300);
+            $('#mobile-menu-toggle').attr('aria-expanded', 'false');
             $('body').css('overflow', 'auto');
-        })
+        });
 
         // WA Form 
 

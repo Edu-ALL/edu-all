@@ -22,12 +22,12 @@
                         {{ __('pages/footer.consultation_desc') }}
                     </p>
                     <div class="flex flex-col">
-                        {{-- <a target="_blank" href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
+                        {{-- <a href="tel:+62{{ $website_settings->phone_number_1 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_1 }}</a>
                         @if ($website_settings->phone_number_2 != null)
-                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
+                            <a href="tel:+62{{ $website_settings->phone_number_2 }}" class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_2 }}</a>
                         @endif --}}
                         @if ($website_settings->phone_number_3 != null)
-                            <a target="_blank" href="tel:+62{{ $website_settings->phone_number_3 }}"
+                            <a href="tel:+62{{ $website_settings->phone_number_3 }}"
                                 class="font-newprimary text-lg">+62 {{ $website_settings->phone_number_3 }}</a>
                         @endif
                     </div>
@@ -330,25 +330,29 @@
                 width="160" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
 
             <div class="flex gap-4 items-center justify-between">
-                <a href="mailto:{{ $website_settings->email }}" target="_blank"
-                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/email.png') }}" alt="instagram logo"
+                <a href="mailto:{{ $website_settings->email }}"
+                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
+                    aria-label="Email EduALL">
+                    <img src="{{ asset('assets/logo/email.png') }}" alt="Email" class="w-5 h-5 object-contain"
+                        loading="lazy">
+                </a>
+                <a href="{{ $website_settings->instagram }}" rel="noopener noreferrer"
+                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
+                    aria-label="Instagram EduALL">
+                    <img src="{{ asset('assets/logo/instagram.png') }}" alt="Instagram"
                         class="w-5 h-5 object-contain" loading="lazy">
                 </a>
-                <a href={{ $website_settings->instagram }} target="_blank"
-                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/instagram.png') }}" alt="instagram logo"
-                        class="w-5 h-5 object-contain" loading="lazy">
+                <a href="{{ $website_settings->linkedin }}" rel="noopener noreferrer"
+                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
+                    aria-label="LinkedIn EduALL">
+                    <img src="{{ asset('assets/logo/linkedin.png') }}" alt="LinkedIn" class="w-5 h-5 object-contain"
+                        loading="lazy">
                 </a>
-                <a href={{ $website_settings->linkedin }} target="_blank"
-                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/linkedin.png') }}" alt="linkedin logo"
-                        class="w-5 h-5 object-contain" loading="lazy">
-                </a>
-                <a href={{ $website_settings->youtube_channel }} target="_blank"
-                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40">
-                    <img src="{{ asset('assets/logo/youtube.png') }}" alt="youtube logo"
-                        class="w-5 h-5 object-contain" loading="lazy">
+                <a href="{{ $website_settings->youtube_channel }}" rel="noopener noreferrer"
+                    class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
+                    aria-label="YouTube EduALL">
+                    <img src="{{ asset('assets/logo/youtube.png') }}" alt="YouTube" class="w-5 h-5 object-contain"
+                        loading="lazy">
                 </a>
             </div>
             <p class="text-sm text-white">Copyright © {{ date('Y') }}. PT. Jawara Edukasih Indonesia</p>

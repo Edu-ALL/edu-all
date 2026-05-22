@@ -3,19 +3,65 @@
 @section('head')
     @php
         $breadcrumbs = [['name' => 'Home', 'url' => url('/' . app()->getLocale())]];
+        $currentUrl = url()->current();
+        $metaTitle = __('pages/home.meta_title');
+        $metaDesc = __('pages/home.meta_description');
+        $ogImage = asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp');
     @endphp
 
-    <title>{{ __('pages/home.meta_title') }}</title>
-    <meta name="title" content="{{ __('pages/home.meta_title') }}" />
-    <meta name="description" content="{{ __('pages/home.meta_description') }}" />
-    <meta name="keywords"
-        content="qs world ranking, kuliah luar negeri, ivy league university, study abroad, konsultan pendidikan, mentoring program, education consultant, universitas luar negeri, Essay , uni preparation" />
+    <title>{{ $metaTitle }} | EduALL</title>
+    <meta name="description" content="{{ $metaDesc }}" />
 
-    <style>
-        body {
-            overflow-x: hidden;
+    {{-- Open Graph / Facebook / WhatsApp --}}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ $currentUrl }}" />
+    <meta property="og:title" content="{{ $metaTitle }}" />
+    <meta property="og:description" content="{{ $metaDesc }}" />
+    <meta property="og:image" content="{{ $ogImage }}" />
+    <meta property="og:locale" content="{{ str_replace('-', '_', app()->getLocale()) }}" />
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ $metaTitle }}" />
+    <meta name="twitter:description" content="{{ $metaDesc }}" />
+    <meta name="twitter:image" content="{{ $ogImage }}" />
+
+    {{-- JSON-LD: Organization + WebPage --}}
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+            "@type": "Organization",
+            "name": "EduALL",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('assets/img/home/EduALL-white-logo.png') }}",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+62{{ $website_settings->phone_number_3 ?? '' }}",
+                "contactType": "customer service"
+            },
+            "sameAs": [
+                "{{ $website_settings->instagram ?? '' }}",
+                "{{ $website_settings->linkedin ?? '' }}",
+                "{{ $website_settings->youtube_channel ?? '' }}"
+            ]
+            },
+            {
+            "@type": "WebPage",
+            "url": "{{ $currentUrl }}",
+            "name": "{{ $metaTitle }}",
+            "description": "{{ $metaDesc }}",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/' . app()->getLocale()) }}" }
+                ]
+            }
+            }
+        ]
         }
-    </style>
+    </script>
 @endsection
 
 @section('content')
@@ -25,16 +71,16 @@
 
         <div class="relative">
             @if ($banners->video_link)
-                <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted>
+                <video class="w-full md:h-[100vh] h-[100dvh] object-cover" autoplay loop muted playsinline
+                    preload="metadata" poster="{{ asset('assets/img/home/video-poster.jpg') }}">
                     <source
                         src="{{ Storage::url('banner-video/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->video_link) }}"
                         type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             @elseif ($banners->image)
                 <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
                     <img data-src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
-                        alt="{{ $banners->alt }}"
+                        alt="{{ $banners->alt ?? 'EduALL Study Abroad Banner' }}" loading="lazy" decoding="async"
                         class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0 lazyload">
                 </div>
             @endif
@@ -248,11 +294,11 @@
                     </div>
                 </div>
                 <!-- <div class="hidden md:flex justify-center">
-                                        <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
-                                            bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
-                                            hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                                            transition="all duration-150" />
-                                    </div> -->
+                                                        <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                                                            bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                                                            hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                                                            transition="all duration-150" />
+                                                    </div> -->
             </div>
         </div>
     </section>
@@ -425,12 +471,12 @@
                 title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark"
                 padding-x="4" is-rounded />
             <!-- <div class="w-full">
-                                                        <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                                            target="_blank"
-                                                            class="inline-block py-3 bg-red text-center text-white text-base px-6">
-                                                            more important dates
-                                                        </a>
-                                                    </div> -->
+                                                                        <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                                                            target="_blank"
+                                                                            class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                                                            more important dates
+                                                                        </a>
+                                                                    </div> -->
             </div>
     @endif
     </div>
