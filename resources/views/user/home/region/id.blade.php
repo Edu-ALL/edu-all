@@ -308,11 +308,11 @@
                     </div>
                 </div>
                 <!-- <div class="hidden md:flex justify-center">
-                                                                                <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
-                                                                                    bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
-                                                                                    hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                                                                                    transition="all duration-150" />
-                                                                            </div> -->
+                                                                                        <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                                                                                            bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                                                                                            hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                                                                                            transition="all duration-150" />
+                                                                                    </div> -->
             </div>
         </div>
     </section>
@@ -442,7 +442,8 @@
                                                     <li class="splide__slide px-1.5 md:px-4 py-4">
                                                         <div class="splide__slide__container">
                                                             @if ($important_date->link)
-                                                                <a href="{{ $important_date->link }}" target="_blank" rel="noopener noreferrer">
+                                                                <a href="{{ $important_date->link }}" target="_blank"
+                                                                    rel="noopener noreferrer">
                                                                 @else
                                                                     <div>
                                                             @endif
@@ -486,12 +487,12 @@
                 title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark"
                 padding-x="4" is-rounded />
             <!-- <div class="w-full">
-                                                                                                <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                                                                                    target="_blank" rel="noopener noreferrer"
-                                                                                                    class="inline-block py-3 bg-red text-center text-white text-base px-6">
-                                                                                                    more important dates
-                                                                                                </a>
-                                                                                            </div> -->
+                                                                                                        <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                                                                                            target="_blank" rel="noopener noreferrer"
+                                                                                                            class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                                                                                            more important dates
+                                                                                                        </a>
+                                                                                                    </div> -->
             </div>
     @endif
     </div>
@@ -717,27 +718,31 @@
             });
         }).mount();
 
-        new Splide(document.querySelector('.splide-important-dates'), {
-            type: 'slide',
-            perPage: isSmallDevice ? 1 : 2,
-            perMove: 1,
-            arrows: (!isSmallDevice && important_date > 2) ? true : false,
-            lazyload: false,
-            autoplay: true,
-            interval: 5000,
-            pagination: false,
-        }).on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[90%]');
+        const el = document.querySelector('.splide-important-dates');
 
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#D9D9D9';
-            });
-        }).mount();
+        if (el && el.offsetParent !== null && !el.classList.contains('hidden')) {
+            new Splide(document.querySelector('.splide-important-dates'), {
+                type: 'slide',
+                perPage: isSmallDevice ? 1 : 2,
+                perMove: 1,
+                arrows: (!isSmallDevice && important_date > 2) ? true : false,
+                lazyload: false,
+                autoplay: true,
+                interval: 5000,
+                pagination: false,
+            }).on('pagination:mounted', function(data) {
+                // You can add your class to the UL element
+                data.list.classList.add('splide__pagination--custom');
+                data.list.classList.add('top-[90%]');
+
+                // `items` contains all dot items
+                data.items.forEach(function(item) {
+                    item.button.style.width = '7px';
+                    item.button.style.height = '7px';
+                    item.button.style.margin = '0 6px'
+                    item.button.style.backgroundColor = '#D9D9D9';
+                });
+            }).mount();
+        }
     </script>
 @endpush
