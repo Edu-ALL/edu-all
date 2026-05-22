@@ -2,7 +2,7 @@
 
 return [
     'meta_title' => "Study Abroad with EduALL | Global Education Mentorship",
-    'meta_description' => 'Achieve your dream to study abroad with EduALL. Get expert guidance for top university admissions, test preparation, and the best strategies.',
+    'meta_description' => 'Achieve your dream to study abroad with EduALL. Get expert guidance for top university admissions, test preparation, and the best strategies. Start your university mentoring journey.',
     'benefit_list' => [
         [
             'title' => 'Aspire',

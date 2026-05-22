@@ -327,31 +327,31 @@
         <div
             class="mt-14 border-t-2 border-light pt-10 gap-8 flex flex-wrap justify-center md:justify-between items-center">
             <img src={{ Storage::url('website-settings/' . $website_settings->website_secondary_logo) }}
-                width="160" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
+                width="160" height="auto" alt="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
 
             <div class="flex gap-4 items-center justify-between">
                 <a href="mailto:{{ $website_settings->email }}"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
                     aria-label="Email EduALL">
-                    <img src="{{ asset('assets/logo/email.png') }}" alt="Email" class="w-5 h-5 object-contain"
+                    <img src="{{ asset('assets/logo/email.png') }}" alt="Email Logo" width="20" height="20" class="w-5 h-5 object-contain"
                         loading="lazy">
                 </a>
                 <a href="{{ $website_settings->instagram }}" rel="noopener noreferrer"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
                     aria-label="Instagram EduALL">
-                    <img src="{{ asset('assets/logo/instagram.png') }}" alt="Instagram"
-                        class="w-5 h-5 object-contain" loading="lazy">
+                    <img src="{{ asset('assets/logo/instagram.png') }}" alt="Instagram Logo"
+                        width="20" height="20" class="w-5 h-5 object-contain" loading="lazy">
                 </a>
                 <a href="{{ $website_settings->linkedin }}" rel="noopener noreferrer"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
                     aria-label="LinkedIn EduALL">
-                    <img src="{{ asset('assets/logo/linkedin.png') }}" alt="LinkedIn" class="w-5 h-5 object-contain"
+                    <img src="{{ asset('assets/logo/linkedin.png') }}" alt="LinkedIn Logo" width="20" height="20" class="w-5 h-5 object-contain"
                         loading="lazy">
                 </a>
                 <a href="{{ $website_settings->youtube_channel }}" rel="noopener noreferrer"
                     class="flex items-center justify-center p-2.5 text-2xl text-white rounded-full border border-white bg-[#7e7e7e]/0 transition-all hover:bg-[#7e7e7e]/40"
                     aria-label="YouTube EduALL">
-                    <img src="{{ asset('assets/logo/youtube.png') }}" alt="YouTube" class="w-5 h-5 object-contain"
+                    <img src="{{ asset('assets/logo/youtube.png') }}" alt="YouTube Logo" width="20" height="20" class="w-5 h-5 object-contain"
                         loading="lazy">
                 </a>
             </div>

@@ -6,10 +6,17 @@
         $currentUrl = url()->current();
         $metaTitle = __('pages/home.meta_title');
         $metaDesc = __('pages/home.meta_description');
-        $ogImage = Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image);
+        $ogImage = Storage::url(
+            'banner/' .
+                $banners->updated_at->format('Y') .
+                '/' .
+                $banners->updated_at->format('m') .
+                '/' .
+                $banners->image,
+        );
     @endphp
 
-    <title>{{ $metaTitle }} | EduALL</title>
+    <title>{{ $metaTitle }}</title>
     <meta name="description" content="{{ $metaDesc }}" />
 
     {{-- Open Graph / Facebook / WhatsApp --}}
@@ -25,6 +32,9 @@
     <meta name="twitter:title" content="{{ $metaTitle }}" />
     <meta name="twitter:description" content="{{ $metaDesc }}" />
     <meta name="twitter:image" content="{{ $ogImage }}" />
+
+    <meta name="keywords"
+        content="study abroad, university mentoring, education consultant, kuliah luar negeri, student development, teaching excellence, university application, mentoring program, global education, ivy league preparation, student experience, higher education consulting, konsultan pendidikan, persiapan kuliah luar negeri, mentoring mahasiswa, teaching experience, profile building, career exploration, essay writing, personal statement, scholarship, SAT score, acceptance rate, mentee success stories" />
 
     {{-- JSON-LD: Organization + WebPage --}}
     <script type="application/ld+json">
@@ -81,6 +91,7 @@
                 <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
                     <img data-src="{{ Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image) }}"
                         alt="{{ $banners->alt ?? 'EduALL Study Abroad Banner' }}" loading="lazy" decoding="async"
+                        width="100%" height="auto"
                         class="w-full md:h-[100vh] h-[100dvh] object-cover absolute top-0 left-0 lazyload">
                 </div>
             @endif
@@ -170,8 +181,10 @@
                                             {!! $item['title'] !!}
                                         </h3>
                                         <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                            <img data-src="{{ asset('assets/img/home/our-programs/' . $item['img']) }}"alt="EduALL"
-                                                class="h-full w-full object-cover lazyload">
+                                            <img data-src="{{ asset('assets/img/home/our-programs/' . $item['img']) }}"
+                                                width="100%" height="100%"
+                                                alt="{{ $item['title'] ?? 'EduALL Program' }}"
+                                                class="h-full w-full object-cover lazyload" loading="lazy">
                                         </div>
                                         <div class="w-full lg:h-20 border-t border-t-[#DEDEDE]">
                                             <ul class="mt-4 w-full flex flex-col gap-2">
@@ -213,8 +226,9 @@
         <div class="new-main-container md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="col-span-6 md:col-span-4 flex flex-col justify-end order-1">
-                    <img data-src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduAll logo"
-                        class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto lazyload">
+                    <img data-src="{{ asset('assets/img/home/EduALL-white-logo.png') }}" alt="EduALL Official Logo"
+                        width="160" height="auto"
+                        class="max-w-[120px] md:max-w-[160px] w-full md:mx-0 mx-auto lazyload" loading="lazy">
                     <h2 class="mt-4 font-bold text-3xl md:text-5xl text-white">Pathway to Excellence</h2>
                 </div>
                 <div
@@ -294,11 +308,11 @@
                     </div>
                 </div>
                 <!-- <div class="hidden md:flex justify-center">
-                                                        <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
-                                                            bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
-                                                            hover-padding-x="20" text-color="white" font="medium" text-size="lg"
-                                                            transition="all duration-150" />
-                                                    </div> -->
+                                                                                <x-button href="{{ route('mentor', app()->getLocale()) }}" title="Click for more details"
+                                                                                    bg-color="newprimary" class="mb-8" padding-x="4" padding-y="2" hover-bg-color="newprimary"
+                                                                                    hover-padding-x="20" text-color="white" font="medium" text-size="lg"
+                                                                                    transition="all duration-150" />
+                                                                            </div> -->
             </div>
         </div>
     </section>
@@ -324,7 +338,8 @@
                                     <div
                                         class="flex gap-4 justify-start relative rounded-3xl overflow-hidden max-w-[250px]">
                                         <img data-src="{{ Storage::url('success-stories/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->home_thumbnail) }}"
-                                            alt="{{ $item->home_thumbnail_alt }}" class="h-full object-contain lazyload">
+                                            width="100%" height="auto" alt="{{ $item->home_thumbnail_alt }}"
+                                            class="h-full object-contain lazyload">
                                         <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
                                             <a href="{{ route('success_stories', app()->getLocale()) . '?category=' . strtolower(str_replace(' ', '-', $item->category)) . '#' . strtolower(explode(' ', trim($item->name))[0]) }}"
                                                 class="mb-3 md:mb-6 text-newyellow bg-black font-medium text-[10px] md:text-sm py-1 mx-4 rounded-full text-center px-1">
@@ -373,10 +388,10 @@
                                                     <li class="splide__slide px-1.5 md:px-4">
                                                         <div class="splide__slide__container">
                                                             <a href="{{ $regular_talk->event_rsvp_link }}"
-                                                                target="_blank">
+                                                                target="_blank" rel="noopener noreferrer">
                                                                 <img data-src="{{ Storage::url('upcoming-event/' . $regular_talk->created_at->format('Y') . '/' . $regular_talk->created_at->format('m') . '/' . $regular_talk->event_thumbnail) }}"
-                                                                    alt="{{ $regular_talk->event_alt }}"
-                                                                    class="object-contain w-full lazyload">
+                                                                    alt="{{ $regular_talk->event_alt }}" width="100%"
+                                                                    height="auto" class="object-contain w-full lazyload">
                                                             </a>
                                                         </div>
                                                     </li>
@@ -427,7 +442,7 @@
                                                     <li class="splide__slide px-1.5 md:px-4 py-4">
                                                         <div class="splide__slide__container">
                                                             @if ($important_date->link)
-                                                                <a href="{{ $important_date->link }}" target="_blank">
+                                                                <a href="{{ $important_date->link }}" target="_blank" rel="noopener noreferrer">
                                                                 @else
                                                                     <div>
                                                             @endif
@@ -471,12 +486,12 @@
                 title="Download For More Important Dates" type='secondary' bg-color="newyellow" color="dark"
                 padding-x="4" is-rounded />
             <!-- <div class="w-full">
-                                                                        <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
-                                                                            target="_blank"
-                                                                            class="inline-block py-3 bg-red text-center text-white text-base px-6">
-                                                                            more important dates
-                                                                        </a>
-                                                                    </div> -->
+                                                                                                <a href="{{ url('/assets/files/upcoming-event/2024_merchandise_calendar_pdf.pdf') }}"
+                                                                                                    target="_blank" rel="noopener noreferrer"
+                                                                                                    class="inline-block py-3 bg-red text-center text-white text-base px-6">
+                                                                                                    more important dates
+                                                                                                </a>
+                                                                                            </div> -->
             </div>
     @endif
     </div>
@@ -500,8 +515,9 @@
                         is-rounded />
                 </div>
                 <div class="w-full md:w-1/2 md:order-2 order-1">
-                    <img data-src="{{ asset('assets/img/home/cta_image.webp') }}" alt="bottom banner"
-                        class="w-full h-full object-cover lazyload">
+                    <img data-src="{{ asset('assets/img/home/cta_image.webp') }}"
+                        alt="EduALL Study Abroad Consultation CTA" width="100%" height="auto"
+                        class="w-full h-full object-cover lazyload" loading="lazy">
                 </div>
             </div>
         </div>
@@ -520,7 +536,8 @@
                             class="flex items-center flex-nowrap justify-center gap-12 md:animate-marquee animate-marquee_mobile whitespace-nowrap">
                             @foreach ($as_seen_on as $item)
                                 <img data-src="{{ Storage::url('as-seen/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->thumbnail) }}"
-                                    alt="{{ $item->alt }}" class="md:w-2/12 w-1/3 h-full object-contain lazyload">
+                                    width="100%" height="auto" alt="{{ $item->alt }}"
+                                    class="md:w-2/12 w-1/3 h-full object-contain lazyload">
                             @endforeach
                         </div>
                     </div>
