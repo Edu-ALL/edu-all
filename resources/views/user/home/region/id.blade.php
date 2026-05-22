@@ -6,7 +6,7 @@
         $currentUrl = url()->current();
         $metaTitle = __('pages/home.meta_title');
         $metaDesc = __('pages/home.meta_description');
-        $ogImage = asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp');
+        $ogImage = Storage::url('banner/' . $banners->updated_at->format('Y') . '/' . $banners->updated_at->format('m') . '/' . $banners->image);
     @endphp
 
     <title>{{ $metaTitle }} | EduALL</title>
