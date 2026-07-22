@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Blogs;
+use App\Models\BlogCategorys;
 
 class HomePageController extends Controller
 {
@@ -29,44 +31,29 @@ class HomePageController extends Controller
         $lang = substr(app()->getLocale(), 3, 2);
         $region = substr(app()->getLocale(), 0, 2);
 
-        // Mentor
-        $all_mentor = Mentors::where('mentor_category', 'ALL-In Mentor')
-            ->where('mentor_status', 'active')
-            ->where('lang', $lang)
-            ->orderBy('mentor_order', 'ASC')
-            ->get();
-
-        // Testimoni
-        $testimonies = Testimonials::where('testi_status', 'active')->where('lang', $lang)->inRandomOrder()->limit(5)->get();
-
-        // Upcomming Event
-        $events = UpcomingEvents::where('event_status', 'publish')->where('category', 'Event')->where('lang', $lang)->orderBy('event_date', 'ASC')->get();
-
-        // Regular Talks
-        $regular_talks = UpcomingEvents::where('event_status', 'publish')->where('category', 'Regular Talk')->where('lang', $lang)->orderBy('event_date', 'ASC')->get();
-
-        // Success Stories
-        $success_stories = SuccessStories::where('status', 'active')->where('lang', $lang)->limit(6)->orderBy('story_order', 'ASC')->get();
-
-        // Important Dates
-        $important_dates = ImportantDates::where('date', '>', Carbon::now())->orderBy('date', 'ASC')->get();
-
         // Banners
         $banners = Banners::first();
 
-        // As Seen On
-        $as_seen_on = AsSeens::orderBy('created_at', 'DESC')->get();
+        // Blog 
+        $blog_category = BlogCategorys::inRandomOrder()->where('lang', $lang)->take(3)->get();
+
+        $blogs = collect();
+
+        foreach ($blog_category as $category) {
+            $blogs = $blogs->merge(
+                Blogs::where('cat_id', $category->id)
+                    ->inRandomOrder()
+                    ->take(3)
+                    ->orderBy('updated_at', 'DESC')
+                    ->get()
+            );
+        }
 
         // $region
-        return view('user.home.region.id', [
+        return view('user.home.region.new-id', [
             'banners' => $banners,
-            'all_mentor' => $all_mentor,
-            'events' => $events,
-            'regular_talks' => $regular_talks,
-            'important_dates' => $important_dates,
-            'success_stories' => $success_stories,
-            'testimonies' => $testimonies,
-            'as_seen_on' => $as_seen_on,
+            'category' => $blog_category,
+            'blogs' => $blogs,
         ]);
     }
 

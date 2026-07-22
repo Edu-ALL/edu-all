@@ -159,7 +159,7 @@ module.exports = {
             },
             colors: {
                 primary: "#233469",
-                newprimary: "#00008F",
+                newprimary: "#191265",
                 yellow: "#f78614",
                 newyellow: "#FED017",
                 dark: "#000000",

@@ -73,7 +73,8 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
             });
 
             Route::controller(ProgramPageController::class)->group(function () {
-                // Route::get('/programs', 'index')->name('programs');
+                Route::get('/programs/admissions-mentoring/ultimate-mentoring', 'ultimate_mentoring')->name('ultimate_mentoring');
+                Route::get('/programs/admissions-mentoring/epb', 'epb')->name('epb');
                 Route::get('/programs/admissions-mentoring', 'admissions_mentoring')->name('admissions_mentoring');
                 Route::get('/programs/admissions-mentoring/undergraduate-program', 'undergraduate_program')->name('undergraduate_program');
                 Route::get('/programs/admissions-mentoring/graduate-program', 'graduate_program')->name('graduate_program');

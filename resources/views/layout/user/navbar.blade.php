@@ -1,753 +1,405 @@
-<header class="fixed w-full -top-1 left-0 z-50 bg-white shadow-sm transition-all lg:top-0">
-    <div class="main-container">
-        <div class="py-4 lg:gap-2 w-full">
-            <nav class="flex justify-between items-center text-center z-10 lg:relative lg:gap-x-2">
-                <a href="{{ url(app()->getLocale()) }}"
-                    class="flex justify-center items-center lg:min-w-fit lg:text-left">
-                    <img src={{ asset('uploaded_files/'.'website-settings/'. $website_settings->website_primary_logo) }} alt="{{ $website_settings->alt_primary_logo }}"
-                        class="object-center md:w-[130px] w-[90px]">
+@php
+    function isValidUrl($url)
+    {
+        return filter_var($url, FILTER_VALIDATE_URL) !== false;
+    }
+@endphp
+
+{{-- ==================== DESKTOP NAVBAR ==================== --}}
+<header class="fixed w-full top-0 z-50 transition-all hidden md:block duration-[600ms] ease-in-out" id="top-navbar">
+    <div class="transition-all duration-500 ease-in-out" id="navbar-top-bar">
+        <div class="new-main-container flex justify-between items-center py-2 transition-all duration-500">
+            {{-- Logo --}}
+            <div class="">
+                <img src="{{ asset('assets/logo/eduall-white-2026.png') }}" width="140" height="auto" class="-ml-2"
+                    alt="{{ $website_settings->alt_secondary_logo }}"
+                    title="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
+            </div>
+
+            {{-- CTA Button --}}
+            <div class="py-3 ">
+                <a href="https://bit.ly/eduall-contactus" id="navbar-cta"
+                    class="py-1 px-5 bg-white text-sm flex items-center justify-between rounded-lg shadow-lg gap-5 text-black font-semibold text-[14px] transition-all duration-500">
+                    Consult Now
                 </a>
+            </div>
+        </div>
 
-                <button title="menus" id='open-nav' type="button" class="mx-4 text-3xl lg:hidden">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
 
-                <div id="nav-content"
-                    class="absolute top-0 right-0 w-full text-primary bg-white transition-all duration-200 z-50 translate-x-full lg:sticky lg:flex lg:justify-between lg:items-center lg:w-full lg:min-h-fit lg:text-primary lg:bg-transparent lg:translate-x-0">
-
-                    <button title="close menu" id='close-nav' type="button"
-                        class="flex justify-end w-full border-b-2 border-primary lg:hidden">
-                        <i class="fa-solid fa-xmark py-3 px-4 text-2xl text-primary border-l-2 border-primary"></i>
-                    </button>
-
-                    <ul
-                        class="justify-center w-full h-screen pb-40 font-newprimary border-l border-primary overflow-auto lg:flex lg:h-fit lg:pb-0 lg:border-0 lg:overflow-hidden xl:gap-3 2xl:gap-x-6">
-                        <li
-                            class="flex-[0_0_auto] pl-4 text-left border-t border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <a href="{{ url(app()->getLocale()) }}"
-                                class="block my-1.5 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center">{{ __('pages/navbar.home') }}</a>
-                        </li>
-
-                        <li
-                            class="nav_item flex-[0_0_auto] text-left border-t-[1px] border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <div class="flex justify-between items-center">
-                                <a href="{{ url(app()->getLocale(), 'programs') }}"
-                                    class="block w-full my-1.5 pl-4 font-semibold text-xl text-left lg:text-center lg:text-base lg:font-bold">{{ __('pages/navbar.programs') }}
-                                </a>
-                                <button title="submenu" type="button"
-                                    class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent ">
-                                    <i id='open-nav-child-btn'
-                                        class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary"></i>
-                                </button>
-                            </div>
-                            <ul id="content-nav-child"
-                                class="nav_item_child  hidden font-semibold text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:invisible lg:block lg:top-full lg:opacity-0">
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring"
-                                        class="child_child_nav_link">
-                                        <i class="fa-solid fa-graduation-cap mr-2 text-base"></i>
-                                        {{ __('pages/navbar.programs_admission') }}</a>
-                                    <ul
-                                        class="text-[#1d1d1d] bg-white transition-all duration-300 lg:absolute lg:left-full lg:top-0 lg:invisible lg:w-full lg:text-[#aaaaaa] lg:opacity-0 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-[#333333]">
-                                        <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/undergraduate-program"
-                                                class="child_child_link">
-                                                {{ __('pages/navbar.programs_admission_undergraduate') }}
-                                            </a>
-                                        </li>
-                                        <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/graduate-program"
-                                                class="child_child_link">{{ __('pages/navbar.programs_admission_graduate') }}
-                                            </a>
-                                        </li>
-                                        <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/admissions-mentoring/university-transfer-program"
-                                                class="child_child_link">{{ __('pages/navbar.programs_admission_university') }}
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                {{-- <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/programs/passion-project-mentoring"
-                                        class="child_child_nav_link">
-                                        <i class="fa-solid fa-desktop mr-2 text-base"></i>
-                                        {{ __('pages/navbar.programs_passion') }}
-                                    </a>
-
-                                </li> --}}
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/programs/tutoring"
-                                        class="child_child_nav_link">
-                                        <i class="fa-solid fa-pencil mr-2 text-base"></i>
-                                        {{ __('pages/navbar.programs_academic') }}
-                                    </a>
-                                    <ul
-                                        class="text-[#1d1d1d] bg-white transition-all duration-300 lg:absolute lg:left-full lg:top-0 lg:invisible lg:w-full lg:text-[#aaaaaa] lg:opacity-0 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-[#333333]">
-                                        <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/subject"
-                                                class="child_child_link">
-                                                {{ __('pages/navbar.programs_academic_tutoring') }}
-                                            </a>
-                                        </li>
-                                        <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/sat"
-                                                class="child_child_link">
-                                                {{ __('pages/navbar.programs_standardized_test') }}
-                                            </a>
-                                        </li>
-                                        <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/olympiad"
-                                                class="child_child_link">
-                                                {{ __('pages/navbar.programs_skillset_tutoring') }}
-                                            </a>
-                                        </li>
-                                        {{-- <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/tutoring/ib-ee-coaching-program"
-                                                class="child_child_link">
-                                                {{ __('pages/navbar.programs_academic_ib') }}
-                                            </a>
-                                        </li> --}}
-                                    </ul>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/programs/global-innovators-project"
-                                        class="child_child_nav_link">
-                                        <i class="fa-solid fa-earth-americas mr-2 text-base"></i>
-                                        {{ __('pages/navbar.programs_global_innovators') }}
-                                    </a>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school"
-                                        class="child_child_nav_link">
-                                        <i class="fa-solid fa-handshake mr-2 text-base"></i>
-                                        Exclusive Programs for School</a>
-                                    <ul
-                                        class="text-[#1d1d1d] bg-white transition-all duration-300 lg:absolute lg:left-full lg:top-0 lg:invisible lg:w-full lg:text-[#aaaaaa] lg:opacity-0 group-hover:lg:opacity-100 group-hover:lg:visible group-hover:lg:block lg:bg-[#333333]">
-                                        <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/admission-accelerator"
-                                                class="child_child_link">
-                                                Admission Accelerator
-                                            </a>
-                                        </li>
-                                        <li class="child_child_nav">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/experiential-learning"
-                                                class="child_child_link">
-                                                Experiential Learning
-                                            </a>
-                                        </li>
-                                        <li class="child_child_nav lg:border-b-0">
-                                            <a href="{{ url(app()->getLocale()) }}/programs/exclusive-program-school/teacher-focused"
-                                                class="child_child_link">
-                                                Teacher-Focused Programs
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li
-                            class="nav_item flex-[0_0_auto] text-left border-t border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <div class="flex justify-between items-center">
-                                <a href="{{ url(app()->getLocale(), 'about') }}"
-                                    class="inline w-full my-1.5 pl-4 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center">
-                                    {{ __('pages/navbar.about_us') }}
-                                </a>
-                                <button title="submenu" type="button"
-                                    class="open-nav-child flex justify-end bg-primary transition-all duration-300 lg:bg-transparent">
-                                    <i id='open-nav-child-btn'
-                                        class="fa-solid fa-caret-down text-base py-3 px-4 text-white  transition-all duration-300  lg:p-0 lg:pl-1 lg:text-primary"></i>
-                                </button>
-                            </div>
-                            <ul id="content-nav-child"
-                                class="nav_item_child  hidden font-semibold text-lg text-white bg-primary transition-all duration-300 lg:absolute lg:top-full lg:invisible lg:block lg:opacity-0 ">
-                                <li class="child_nav group">
-                                    <a href="{{ route('mentor', app()->getLocale()) }}"
-                                        class="child_child_nav_link">{{ __('pages/navbar.mentor') }}</a>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/about/our-contribution"
-                                        class="child_child_nav_link">{{ __('pages/navbar.our_contribution') }}</a>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/about/partnership-careers"
-                                        class="child_child_nav_link">{{ __('pages/navbar.partnership') }}</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li
-                            class="flex-[0_0_auto] pl-4 text-left border-t border-primary lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <a href="{{ url(app()->getLocale()) }}/blog"
-                                class="block my-1.5 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center lg:pl-4">{{ __('pages/navbar.blog') }}</a>
-                        </li>
-
-                        <li
-                            class="nav_item flex-[0_0_auto] text-left border-t border-primary md:border-y lg:flex lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <div class="flex justify-between items-center">
-                                <div
-                                    class="block my-1.5 pl-4  font-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
-                                    {{ __('pages/navbar.resources') }}
-                                </div>
-                                <button title="submenu" type="button"
-                                    class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
-                                    <i id='open-nav-child-btn'
-                                        class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
-                                </button>
-                            </div>
-                            <ul id="content-nav-child"
-                                class="nav_item_child  hidden font-semibold  text-lg text-white  bg-primary transition-all duration-300 lg:absolute lg:top-full lg:min-w-max lg:invisible lg:block lg:opacity-0">
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/resources/success-stories"
-                                        class="child_child_nav_link">{{ __('pages/navbar.success_stories') }}</a>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/resources/upcoming-events"
-                                        class="child_child_nav_link">{{ __('pages/navbar.upcoming_events') }}</a>
-                                </li>
-                                {{-- <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/resources/guidebook"
-                                        class="child_child_nav_link">{{ __('pages/navbar.guidebooks') }}</a>
-                                </li> --}}
-                                <li class="child_nav group">
-                                    <a href="{{ url(app()->getLocale()) }}/resources/testimonial"
-                                        class="child_child_nav_link">{{ __('pages/navbar.testimonial') }}</a>
-                                </li>
-                                <li class="child_nav group">
-                                    <a href="https://project-showcase.all-inedu.com/" target="_blank"
-                                        class="child_child_nav_link">{{ __('pages/navbar.showcase') }}</a>
-                                </li>
-                                {{-- <li class="child_nav group">
-                                    <a href="{{url(app()->getLocale())}}/webinar-workshop" target="_blank"
-                                        class="child_child_nav_link">{{ __('pages/navbar.webinar') }}
-                                    </a>
-                                </li> --}}
-                            </ul>
-                        </li>
-
-                        <li
-                            class="flex-[0_0_auto] pl-4 text-left border-t border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <a href="{{ route('contact_us', app()->getLocale()) }}"
-                                class="block my-1.5 font-semibold text-xl text-left lg:font-bold lg:text-base lg:text-center lg:pl-4">{{ __('pages/navbar.contact_us') }}</a>
-                        </li>
-
-                        <li
-                            class="nav_item flex-[0_0_auto] text-left border-y border-primary sm:hidden lg:items-center lg:pl-0 lg:text-center lg:border-0">
-                            <div class="relative flex items-center group">
-                                <div
-                                    class="blockfont-semibold w-full text-xl text-left cursor-pointer lg:font-bold lg:text-base lg:text-center">
-                                    <div class="flex justify-between items-center">
-                                        <div class="flex items-center cursor-pointer">
-                                            <div class="pl-4 flex items-center">
-                                                @if (substr(strtoupper(app()->getLocale()), 0, 2) == 'ID')
-                                                    <div>
-                                                        <svg class="w-6 h-4 shadow-md"
-                                                            xmlns="http://www.w3.org/2000/svg" id="flag-icons-id"
-                                                            viewBox="0 0 640 480">
-                                                            <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                            <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                        </svg>
-                                                    </div>
-                                                    <span
-                                                        class="ml-2 font-semibold whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
-                                                    </span>
-                                                @elseif (substr(strtoupper(app()->getLocale()), 0, 2) == 'SG')
-                                                    <div>
-                                                        <svg class="w-6 h-4 shadow-md"
-                                                            xmlns="http://www.w3.org/2000/svg" id="flag-icons-sg"
-                                                            viewBox="0 0 640 480">
-                                                            <defs>
-                                                                <clipPath id="a">
-                                                                    <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                                </clipPath>
-                                                            </defs>
-                                                            <g fill-rule="evenodd" clip-path="url(#a)">
-                                                                <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                                <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                                <path fill="#fff"
-                                                                    d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                                <path fill="#fff"
-                                                                    d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                    <span
-                                                        class="ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
-                                                    </span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <button title="submenu" type="button"
-                                            class="open-nav-child flex justify-end transition-all duration-300 bg-primary lg:bg-transparent">
-                                            <i id='open-nav-child-btn'
-                                                class="fa-solid fa-caret-down py-3 px-4 text-base text-white transition-all duration-300 lg:p-0 lg:pl-1 lg:text-primary "></i>
-                                        </button>
-                                    </div>
-
-                                    <div
-                                        class="text-primary absolute left-0 right-0 invisible translate-x-[1px] translate-y-8 transition-all duration-100 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                                        <div
-                                            class="mt-0.5 flex flex-col py-4  items-start font-bold bg-white shadow-xl">
-                                            @if (Route::currentRouteName() == 'detail_blog')
-                                                <div class="flex items-center gap-3 px-4">
-                                                    <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
-                                                        class="flex items-center hover:text-[#819CCB]">
-                                                        <div>
-                                                            <svg class="w-6 h-4 shadow-md"
-                                                                xmlns="http://www.w3.org/2000/svg" id="flag-icons-id"
-                                                                viewBox="0 0 640 480">
-                                                                <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                                <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                            </svg>
-                                                        </div>
-                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID)
-                                                            <span class="hidden sm:block">Indonesia</span></span>
-                                                        <span class="w-5 h-px ml-3 bg-primary"></span>
-
-                                                    </a>
-                                                    <div class="flex items-center gap-2">
-                                                        <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
-                                                            class="font-medium hover:text-[#819CCB]">English</a>
-                                                        <span>/</span>
-                                                        <a href="{{ route('blogs', ['locale' => 'id-id']) }}"
-                                                            class="font-medium hover:text-[#819CCB]">Bahasa</a>
-                                                    </div>
-                                                </div>
-
-                                                <span class="block w-full h-px my-4 bg-primary"></span>
-
-                                                <div class="flex items-center gap-3 px-4 ">
-                                                    <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
-                                                        class="flex items-center hover:text-[#819CCB]">
-                                                        <div>
-                                                            <svg class="w-6 h-4 shadow-md"
-                                                                xmlns="http://www.w3.org/2000/svg" id="flag-icons-sg"
-                                                                viewBox="0 0 640 480">
-                                                                <defs>
-                                                                    <clipPath id="a">
-                                                                        <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                                <g fill-rule="evenodd" clip-path="url(#a)">
-                                                                    <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                                    <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                                    <path fill="#fff"
-                                                                        d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                                    <path fill="#fff"
-                                                                        d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG)
-                                                            <span class="hidden sm:block">Singapore</span></span>
-                                                        <span class="w-5 h-px ml-3 bg-primary"></span>
-                                                    </a>
-                                                    <div class="flex items-center gap-2">
-                                                        <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
-                                                            class="font-medium hover:text-[#819CCB]">English</a>
-                                                    </div>
-                                                </div>
-                                            @elseif (Route::currentRouteName())
-                                                <div class="flex items-center gap-3 px-4">
-                                                    <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
-                                                        class="flex items-center hover:text-[#819CCB]">
-                                                        <div>
-                                                            <svg class="w-6 h-4 shadow-md"
-                                                                xmlns="http://www.w3.org/2000/svg" id="flag-icons-id"
-                                                                viewBox="0 0 640 480">
-                                                                <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                                <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                            </svg>
-                                                        </div>
-                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID)
-                                                            <span class="hidden sm:block">Indonesia</span></span>
-                                                        <span class="w-5 h-px ml-3 bg-primary"></span>
-
-                                                    </a>
-                                                    <div class="flex items-center gap-2">
-                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
-                                                            class="font-medium hover:text-[#819CCB]">English</a>
-                                                        <span>/</span>
-                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-id', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-id') }} @endif"
-                                                            class="font-medium hover:text-[#819CCB]">Bahasa</a>
-                                                    </div>
-                                                </div>
-
-                                                <span class="block w-full h-px my-4 bg-primary"></span>
-
-                                                <div class="flex items-center gap-3 px-4 ">
-                                                    <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
-                                                        class="flex items-center hover:text-[#819CCB]">
-                                                        <div>
-                                                            <svg class="w-6 h-4 shadow-md"
-                                                                xmlns="http://www.w3.org/2000/svg" id="flag-icons-sg"
-                                                                viewBox="0 0 640 480">
-                                                                <defs>
-                                                                    <clipPath id="a">
-                                                                        <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                                <g fill-rule="evenodd" clip-path="url(#a)">
-                                                                    <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                                    <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                                    <path fill="#fff"
-                                                                        d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                                    <path fill="#fff"
-                                                                        d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG)
-                                                            <span class="hidden sm:block">Singapore</span></span>
-                                                        <span class="w-5 h-px ml-3 bg-primary"></span>
-                                                    </a>
-                                                    <div class="flex items-center gap-2">
-                                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
-                                                            class="font-medium hover:text-[#819CCB]">English</a>
-                                                    </div>
-                                                </div>
-                                            @else
-                                                <div class="flex items-center gap-3 px-4">
-                                                    <a href="{{ route('home', ['locale' => 'id-en']) }}"
-                                                        class="flex items-center hover:text-[#819CCB]">
-                                                        <div>
-                                                            <svg class="w-6 h-4 shadow-md"
-                                                                xmlns="http://www.w3.org/2000/svg" id="flag-icons-id"
-                                                                viewBox="0 0 640 480">
-                                                                <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                                <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                            </svg>
-                                                        </div>
-                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID)
-                                                            <span class="hidden sm:block">Indonesia</span></span>
-                                                        <span class="w-5 h-px ml-3 bg-primary"></span>
-
-                                                    </a>
-                                                    <div class="flex items-center gap-2">
-                                                        <a href="{{ route('home', ['locale' => 'id-en']) }}"
-                                                            class="font-medium hover:text-[#819CCB]">English</a>
-                                                        <span>/</span>
-                                                        <a href="{{ route('home', ['locale' => 'id-id']) }}"
-                                                            class="font-medium hover:text-[#819CCB]">Bahasa</a>
-                                                    </div>
-                                                </div>
-
-                                                <span class="block w-full h-px my-4 bg-primary"></span>
-
-                                                <div class="flex items-center gap-3 px-4 ">
-                                                    <a href="{{ route('home', ['locale' => 'sg-en']) }}"
-                                                        class="flex items-center hover:text-[#819CCB]">
-                                                        <div>
-                                                            <svg class="w-6 h-4 shadow-md"
-                                                                xmlns="http://www.w3.org/2000/svg" id="flag-icons-sg"
-                                                                viewBox="0 0 640 480">
-                                                                <defs>
-                                                                    <clipPath id="a">
-                                                                        <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                                <g fill-rule="evenodd" clip-path="url(#a)">
-                                                                    <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                                    <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                                    <path fill="#fff"
-                                                                        d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                                    <path fill="#fff"
-                                                                        d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG)
-                                                            <span class="hidden sm:block">Singapore</span></span>
-                                                        <span class="w-5 h-px ml-3 bg-primary"></span>
-                                                    </a>
-                                                    <div class="flex items-center gap-2">
-                                                        <a href="{{ route('home', ['locale' => 'sg-en']) }}"
-                                                            class="font-medium hover:text-[#819CCB]">English</a>
-                                                    </div>
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div
-                    class="hidden sm:flex justify-between items-center min-w-fit mt-1 gap-4 font-newprimary font-medium text-base sm:mt-0 lg:text-base">
-                    <div class="relative flex items-center group">
-                        <a href="{{ route('contact_us', app()->getLocale()) }}"
-                            class="flex items-center font-newprimary font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base mr-2">
-                            {{ __('pages/navbar.contact_us') }}</i>
-                        </a>
-                    </div>
-                    <div class="relative flex items-center group">
-                        <div
-                            class="flex items-center font-newprimary font-bold text-sm text-[#819CCB] cursor-pointer  sm:text-base">
-                            <div class="flex items-center">
-                                @if (substr(strtoupper(app()->getLocale()), 0, 2) == 'ID')
-                                    <div>
-                                        <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                            id="flag-icons-id" viewBox="0 0 640 480">
-                                            <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                            <path fill="#fff" d="M0 240h640v240H0Z" />
-                                        </svg>
-                                    </div>
-                                    <span
-                                        class="inline-flex ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
-                                    </span>
-                                @elseif (substr(strtoupper(app()->getLocale()), 0, 2) == 'SG')
-                                    <div>
-                                        <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                            id="flag-icons-sg" viewBox="0 0 640 480">
-                                            <defs>
-                                                <clipPath id="a">
-                                                    <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                </clipPath>
-                                            </defs>
-                                            <g fill-rule="evenodd" clip-path="url(#a)">
-                                                <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                <path fill="#fff"
-                                                    d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                <path fill="#fff"
-                                                    d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <span
-                                        class="inline-flex ml-2 whitespace-nowrap">{{ strtoupper(app()->getLocale()) }}
-                                    </span>
-                                @endif
-
-                            </div>
-                            <i class="fa-solid fa-caret-down ml-1"></i>
-                        </div>
-                        <div
-                            class="text-primary absolute top-full right-0 invisible translate-x-[1px] translate-y-8 transition-all duration-100 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                            <div class="mt-6 flex flex-col py-4  items-start font-bold bg-white shadow-xl">
-
-                                @if (Route::currentRouteName() == 'detail_blog')
-                                    <div class="flex items-center gap-3 px-4">
-                                        <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
-                                            class="flex items-center hover:text-[#819CCB]">
-                                            <div>
-                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                                    id="flag-icons-id" viewBox="0 0 640 480">
-                                                    <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                    <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                </svg>
-                                            </div>
-                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID) <span
-                                                    class="hidden sm:block">Indonesia</span></span>
-                                            <span class="w-5 h-px ml-3 bg-primary"></span>
-
-                                        </a>
-                                        <div class="flex items-center gap-2">
-                                            <a href="{{ route('blogs', ['locale' => 'id-en']) }}"
-                                                class="font-medium hover:text-[#819CCB]">English</a>
-                                            <span>/</span>
-                                            <a href="{{ route('blogs', ['locale' => 'id-id']) }}"
-                                                class="font-medium hover:text-[#819CCB]">Bahasa</a>
-                                        </div>
-                                    </div>
-
-                                    <span class="block w-full h-px my-4 bg-primary"></span>
-
-                                    <div class="flex items-center gap-3 px-4 ">
-                                        <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
-                                            class="flex items-center hover:text-[#819CCB]">
-                                            <div>
-                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                                    id="flag-icons-sg" viewBox="0 0 640 480">
-                                                    <defs>
-                                                        <clipPath id="a">
-                                                            <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                        </clipPath>
-                                                    </defs>
-                                                    <g fill-rule="evenodd" clip-path="url(#a)">
-                                                        <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                        <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                        <path fill="#fff"
-                                                            d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                        <path fill="#fff"
-                                                            d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG) <span
-                                                    class="hidden sm:block">Singapore</span></span>
-                                            <span class="w-5 h-px ml-3 bg-primary"></span>
-                                        </a>
-                                        <div class="flex items-center gap-2">
-                                            <a href="{{ route('blogs', ['locale' => 'sg-en']) }}"
-                                                class="font-medium hover:text-[#819CCB]">English</a>
-                                        </div>
-                                    </div>
-                                @elseif (Route::currentRouteName())
-                                    <div class="flex items-center gap-3 px-4">
-                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
-                                            class="flex items-center hover:text-[#819CCB]">
-                                            <div>
-                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                                    id="flag-icons-id" viewBox="0 0 640 480">
-                                                    <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                    <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                </svg>
-                                            </div>
-                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID) <span
-                                                    class="hidden sm:block">Indonesia</span></span>
-                                            <span class="w-5 h-px ml-3 bg-primary"></span>
-
-                                        </a>
-                                        <div class="flex items-center gap-2">
-                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-en') }} @endif"
-                                                class="font-medium hover:text-[#819CCB]">English</a>
-                                            <span>/</span>
-                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'id-id', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'id-id') }} @endif"
-                                                class="font-medium hover:text-[#819CCB]">Bahasa</a>
-                                        </div>
-                                    </div>
-
-                                    <span class="block w-full h-px my-4 bg-primary"></span>
-
-                                    <div class="flex items-center gap-3 px-4 ">
-                                        <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
-                                            class="flex items-center hover:text-[#819CCB]">
-                                            <div>
-                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                                    id="flag-icons-sg" viewBox="0 0 640 480">
-                                                    <defs>
-                                                        <clipPath id="a">
-                                                            <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                        </clipPath>
-                                                    </defs>
-                                                    <g fill-rule="evenodd" clip-path="url(#a)">
-                                                        <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                        <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                        <path fill="#fff"
-                                                            d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                        <path fill="#fff"
-                                                            d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG) <span
-                                                    class="hidden sm:block">Singapore</span></span>
-                                            <span class="w-5 h-px ml-3 bg-primary"></span>
-                                        </a>
-                                        <div class="flex items-center gap-2">
-                                            <a href="@if (Route::currentRouteName() == 'detail_mentor') {{ route(Route::currentRouteName(), ['locale' => 'sg-en', 'slug' => $mentor_slug]) }} @else {{ route(Route::currentRouteName(), 'sg-en') }} @endif"
-                                                class="font-medium hover:text-[#819CCB]">English</a>
-                                        </div>
-                                    </div>
-                                @else
-                                    <div class="flex items-center gap-3 px-4">
-                                        <a href="{{ route('home', ['locale' => 'id-en']) }}"
-                                            class="flex items-center hover:text-[#819CCB]">
-                                            <div>
-                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                                    id="flag-icons-id" viewBox="0 0 640 480">
-                                                    <path fill="#e70011" d="M0 0h640v240H0Z" />
-                                                    <path fill="#fff" d="M0 240h640v240H0Z" />
-                                                </svg>
-                                            </div>
-                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(ID) <span
-                                                    class="hidden sm:block">Indonesia</span></span>
-                                            <span class="w-5 h-px ml-3 bg-primary"></span>
-
-                                        </a>
-                                        <div class="flex items-center gap-2">
-                                            <a href="{{ route('home', ['locale' => 'id-en']) }}"
-                                                class="font-medium hover:text-[#819CCB]">English</a>
-                                            <span>/</span>
-                                            <a href="{{ route('home', ['locale' => 'id-id']) }}"
-                                                class="font-medium hover:text-[#819CCB]">Bahasa</a>
-                                        </div>
-                                    </div>
-
-                                    <span class="block w-full h-px my-4 bg-primary"></span>
-
-                                    <div class="flex items-center gap-3 px-4 ">
-                                        <a href="{{ route('home', ['locale' => 'sg-en']) }}"
-                                            class="flex items-center hover:text-[#819CCB]">
-                                            <div>
-                                                <svg class="w-6 h-4 shadow-md" xmlns="http://www.w3.org/2000/svg"
-                                                    id="flag-icons-sg" viewBox="0 0 640 480">
-                                                    <defs>
-                                                        <clipPath id="a">
-                                                            <path fill-opacity=".7" d="M0 0h640v480H0z" />
-                                                        </clipPath>
-                                                    </defs>
-                                                    <g fill-rule="evenodd" clip-path="url(#a)">
-                                                        <path fill="#fff" d="M-20 0h720v480H-20z" />
-                                                        <path fill="#df0000" d="M-20 0h720v240H-20z" />
-                                                        <path fill="#fff"
-                                                            d="M146 40.2a84.4 84.4 0 0 0 .8 165.2 86 86 0 0 1-106.6-59 86 86 0 0 1 59-106c16-4.6 30.8-4.7 46.9-.2z" />
-                                                        <path fill="#fff"
-                                                            d="m133 110 4.9 15-13-9.2-12.8 9.4 4.7-15.2-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.5 52 5 15.1-13-9.2-12.9 9.3 4.8-15.1-12.8-9.4 15.9-.1 4.9-15.1 5 15h16zm58.5-.4 4.9 15.2-13-9.3-12.8 9.3 4.7-15.1-12.8-9.3 15.9-.2 5-15 5 15h15.8zm17.4-51.6 4.9 15.1-13-9.2-12.8 9.3 4.8-15.1-12.9-9.4 16-.1 4.8-15.1 5 15h16zm-46.3-34.3 5 15.2-13-9.3-12.9 9.4 4.8-15.2-12.8-9.4 15.8-.1 5-15.1 5 15h16z" />
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <span class="inline-flex ml-2 whitespace-nowrap gap-1">(SG) <span
-                                                    class="hidden sm:block">Singapore</span></span>
-                                            <span class="w-5 h-px ml-3 bg-primary"></span>
-                                        </a>
-                                        <div class="flex items-center gap-2">
-                                            <a href="{{ route('home', ['locale' => 'sg-en']) }}"
-                                                class="font-medium hover:text-[#819CCB]">English</a>
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+        {{-- Divider --}}
+        <div class="new-main-container">
+            <div class="border-b-2 border-white transition-all duration-500" id="navbar-divider"></div>
         </div>
     </div>
+
+    {{-- Navigation --}}
+    <nav class="md:py-1 transition-all duration-500 ease-in-out" id="navbar-nav">
+        <div class="new-main-container mx-auto px-1">
+            <div class="flex justify-between items-center w-full">
+                {{-- Navbar Links --}}
+                <ul id="navbar-items"
+                    class="flex-col md:flex-row whitespace-nowrap justify-start gap-1 hidden md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
+                    @foreach (__('pages/navbar') as $itemKey => $item)
+                        <li
+                            class="navbar-item relative group rounded-full font-light programs-menu transition-all duration-100 ease-in-out hover:underline pr-5">
+                            <div class="flex items-center gap-2">
+                                <a href={{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}
+                                    class="text-white text-base py-2 block text-[14px] transition-colors duration-500 navbar-link">
+                                    {{ $item['title'] }}
+                                </a>
+                                @if (isset($item['submenu']))
+                                    <i
+                                        class="fa-solid fa-chevron-down text-white text-[14px] transition-colors duration-500 navbar-icon"></i>
+                                @endif
+                            </div>
+
+                            {{-- Submenu Dropdown (Desktop) --}}
+                            @if (isset($item['submenu']))
+                                <ul
+                                    class="dropdown-menu programs-menu absolute left-1/2 transform -translate-x-1/2 md:top-full hidden md:flex-col z-10">
+                                    <div
+                                        class="flex-col items-center justify-center mb-2 bg-newprimary rounded-lg shadow-lg text-white gap-1">
+                                        @foreach ($item['submenu'] as $submenu)
+                                            <li
+                                                class="hover:bg-white/80 text-white hover:text-newprimary rounded-lg w-full text-[14px] {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
+                                                <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank" rel="noopener noreferrer"' : '' }}
+                                                    class="text-[14px] py-2 px-2 text-center rounded-lg flex w-full justify-between items-center gap-10">
+                                                    {{ $submenu['title'] }}
+
+                                                    <i class="fa-solid fa-arrow-circle-right"></i>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </div>
+                                </ul>
+                            @endif
+                        </li>
+                    @endforeach
+                </ul>
+
+                {{-- Social Icons --}}
+                <div class="flex items-center gap-3 text-white text-2xl transition-colors duration-500"
+                    id="navbar-socials">
+                    <a href="{{ $website_settings->instagram }}" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="{{ $website_settings->linkedin }}" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
 
+
+{{-- ==================== MOBILE NAVBAR ==================== --}}
+<header class="transition-all md:hidden">
+    {{-- Fixed Top Bar with Logo & Hamburger --}}
+    <div class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <img src="{{ asset('assets/logo/eduall-white-2026.png') }}" width="110" height="auto" class="-ml-2"
+                alt="{{ $website_settings->alt_secondary_logo }}" title="{{ $website_settings->alt_secondary_logo }}"
+                loading="lazy">
+
+            <button id="mobile-menu-toggle"
+                class="flex items-center justify-center text-white focus:outline-none p-2 rounded-lg bg-white/10"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    {{-- Mobile Menu Overlay & Bottom Sheet --}}
+    <nav id="mobile-navbar" class="hidden z-50 fixed inset-0 h-dvh overflow-y-auto">
+        {{-- Bottom Sheet Panel --}}
+        <div id="mobile-top-navbar"
+            class="fixed bottom-0 left-0 right-0 z-50 max-h-[85vh] overflow-y-auto rounded-t-3xl border-t border-newprimary bg-black/95 backdrop-blur-lg">
+            <div class="flex flex-col w-full gap-2 py-5 px-4">
+                {{-- Drag Handle --}}
+                <div class="flex justify-center mb-2">
+                    <div class="w-10 h-1 rounded-full bg-white/30"></div>
+                </div>
+
+                {{-- Logo inside Menu --}}
+                <div class="flex justify-center mb-3">
+                    <img src="{{ asset('assets/logo/eduall-white-2026.png') }}" width="120" height="auto"
+                        alt="{{ $website_settings->alt_secondary_logo }}"
+                        title="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
+                </div>
+
+                {{-- Navigation Items --}}
+                <ul class="w-full flex flex-col gap-1">
+                    @foreach (__('pages/navbar') as $itemKey => $item)
+                        <li class="navbar-item-mobile relative rounded-xl programs-menu w-full">
+                            <div
+                                class="flex items-center justify-between px-3 py-2 hover:bg-white/5 rounded-xl transition-colors">
+                                <a href="{{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}"
+                                    class="text-white/90 text-base font-normal block w-full">
+                                    {{ $item['title'] }}
+                                </a>
+
+                                {{-- Chevron for items with submenu --}}
+                                @if (isset($item['submenu']))
+                                    <div class="mobile-dropdown-menu cursor-pointer p-1">
+                                        <i
+                                            class="fa-solid fa-chevron-down text-white/60 text-xs transition-all duration-300"></i>
+                                    </div>
+                                @endif
+                            </div>
+
+                            {{-- Submenu (Mobile) --}}
+                            @if (isset($item['submenu']))
+                                <ul
+                                    class="mobile-dropdown-menu-content hidden programs-menu ml-4 pl-3 border-l border-white/10">
+                                    <div class="flex flex-col gap-1 py-1">
+                                        @foreach ($item['submenu'] as $submenu)
+                                            <li class="w-full">
+                                                <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank" rel="noopener noreferrer"' : '' }}
+                                                    class="text-white/70 text-sm py-2 px-4 block rounded-lg hover:bg-white/5 hover:text-white transition-colors">
+                                                    <i class="fa fa-arrow-right mr-2 text-newprimary"></i>
+                                                    {{ $submenu['title'] }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+
+                                        {{-- Extra "Mentee Project Showcase" link under Resources --}}
+                                        @if ($item['title'] == 'Resources')
+                                            <li class="w-full">
+                                                <a href="https://project-showcase.edu-all.com" target="_blank"
+                                                    class="text-white/70 text-sm py-2 px-4 block rounded-lg hover:bg-white/5 hover:text-white transition-colors">
+                                                    <i class="fa fa-arrow-right mr-2 text-newprimary"></i> Mentee
+                                                    Project Showcase
+                                                </a>
+                                            </li>
+                                        @endif
+                                    </div>
+                                </ul>
+                            @endif
+                        </li>
+                    @endforeach
+                </ul>
+
+                {{-- Social Icons --}}
+                <div class="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-white/10">
+                    <a href="#" class="text-white/60 hover:text-white transition-colors text-xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white transition-colors text-xl">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{-- Overlay --}}
+        <div id="mobile-navbar-overlay"
+            class="w-full h-full fixed inset-0 bg-black/60 z-40 transition-all duration-300"></div>
+    </nav>
+</header>
+
+
+{{-- ==================== WHATSAPP BUTTON ==================== --}}
+<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[45] transition-all duration-1000" id="wa_button">
+    <div class="relative group cursor-pointer">
+
+        <div
+            class="absolute md:right-[35px] right-[15px] md:bottom-[7px] bottom-[3px] bg-gradient-to-b from-[#25CF43] to-[#0F8224] group-hover:from-white group-hover:to-gray-100 group-hover:text-[#25CF43]
+            py-2 pl-2 pr-5 md:flex justify-center items-center
+            text-white w-[150px] text-[14px] shadow rounded-xl font-bold border border-[#25CF43]
+            ">
+            Consult now
+        </div>
+
+        <div
+            class="absolute right-5 bottom-[1em] text-white
+            bg-[#25CF43] group-hover:bg-white group-hover:text-[#25CF43]
+            rounded-xl md:w-[50px] md:h-[50px] w-[40px] h-[40px]
+            flex justify-center items-center shadow border border-[#25CF43] 
+            ">
+            <i class="fa-brands fa-whatsapp text-[25px]"></i>
+        </div>
+
+    </div>
+</div>
+
+{{-- WhatsApp Form Popup --}}
+<div id="whatsappForm"
+    class="fixed -bottom-[50rem] right-5 md:w-[400px] w-[350px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
+    <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
+        <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
+        <div>
+            <h2 class="text-white text-lg leading-5">
+                {{ __('pages/home.wa.title') }}
+            </h2>
+            <h3 class="text-white text-base mt-2">
+                {{ __('pages/home.wa.sub_title') }}
+            </h3>
+        </div>
+    </div>
+    <div class="bg-white rounded-b-2xl p-4">
+        @if (str_contains(request()->url(), 'careers') || str_contains(request()->url(), 'partnership'))
+        <a href="https://bit.ly/partnerwithus-website" @else <a href="https://bit.ly/eduall-contactus"
+                @endif
+                target="_blank"
+                class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
+                <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
+
+                <i class="fas fa-paper-plane text-2xl"></i>
+            </a>
+            <p class="text-[10px] text-gray-500 mt-2 text-end">
+                {{ date('Y/m/d') }}
+            </p>
+    </div>
+</div>
+
 <script>
-    window.addEventListener("scroll", function() {
-        var navbar = document.querySelector("header");
-        if (window.scrollY > 0) {
-            navbar.classList.remove("shadow-sm");
-            navbar.classList.add("shadow-lg");
+    // =====================================================
+    // Scroll: adjust navbar & WA button position
+    // =====================================================
+    $(window).scroll(function() {
+        const scrollTop = $(window).scrollTop();
+        const threshold = $(window).height() * 0.2;
+
+        if (scrollTop > threshold) {
+            $('#top-navbar').addClass('shadow-xl');
+            $('#navbar-top-bar').addClass('bg-newprimary/90 shadow-xl');
+            $('#navbar-cta').removeClass('bg-white text-black').addClass('bg-white/10 text-white');
+            $('#navbar-divider').removeClass('border-white').addClass('border-white/30');
+            $('#navbar-nav').addClass('bg-newprimary/90');
+            $('#navbar-socials').removeClass('text-white').addClass('text-white');
+            $('.navbar-link').removeClass('text-white').addClass('text-white');
+            $('.navbar-icon').removeClass('text-white').addClass('text-white');
         } else {
-            navbar.classList.remove("shadow-lg");
-            navbar.classList.add("shadow-sm");
+            $('#top-navbar').removeClass('shadow-xl');
+            $('#navbar-top-bar').removeClass('bg-newprimary/90 shadow-xl');
+            $('#navbar-cta').removeClass('bg-white/10 text-white').addClass('bg-white text-black');
+            $('#navbar-divider').removeClass('border-white/30').addClass('border-white');
+            $('#navbar-nav').removeClass('bg-newprimary/90');
+            $('#navbar-socials').removeClass('text-white').addClass('text-white');
+            $('.navbar-link').removeClass('text-white').addClass('text-white');
+            $('.navbar-icon').removeClass('text-white').addClass('text-white');
+        }
+
+        if (scrollTop > $(window).height() / 10) {
+            $('#wa_button').removeClass('lg:bottom-9').addClass('lg:bottom-5');
+        } else {
+            $('#wa_button').addClass('lg:bottom-9').removeClass('lg:bottom-5');
         }
     });
 
-    const openBtn = document.querySelector("#open-nav"),
-        closeBtn = document.querySelector("#close-nav"),
-        navContent = document.querySelector("#nav-content");
+    $(document).ready(function() {
+        // =====================================================
+        // Highlight active navbar item based on current URL
+        // =====================================================
+        var currentUrl = window.location.href;
+        const parsedUrl = new URL(currentUrl);
 
-    openBtn.addEventListener('click', () => {
-        navContent.classList.remove('translate-x-full');
-        navContent.classList.add('translate-x-0');
-    })
+        const segments = parsedUrl.pathname.split('/').filter(segment => segment);
+        const segmentsUrl = parsedUrl.origin + '/' + segments[0] + '/' + segments[1]
 
-    closeBtn.addEventListener('click', () => {
-        navContent.classList.remove('translate-x-0');
-        navContent.classList.add('translate-x-full');
-    })
+        var activeLink = $('.navbar-item').first();
 
-    const openChildBtns = document.querySelectorAll(".open-nav-child"),
-        navChildContents = document.querySelectorAll("#content-nav-child"),
-        childBtnIcons = document.querySelectorAll("#open-nav-child-btn");
-
-    var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-        openChildBtns.forEach((element, it) => {
-            openChildBtns[it].addEventListener('click', () => {
-                navChildContents[it].classList.toggle('hidden');
-            })
+        $('.navbar-item').each(function() {
+            if (currentUrl == $(this).find('a').attr('href') || segmentsUrl == $(this).find('a').attr(
+                    'href')) {
+                activeLink = $(this);
+                activeLink.addClass('active-navbar').find('a').addClass('font-semibold underline');
+                activeLink.children('a').addClass('font-semibold');
+            }
         });
-    })
+
+        // =====================================================
+        // Desktop: dropdown on hover
+        // =====================================================
+        $('.programs-menu').hover(
+            function() {
+                $(this).children('a').addClass('active-navbar');
+                $(this).find('.dropdown-menu').stop(true, true).slideDown(200).fadeIn(200);
+            },
+            function() {
+                $(this).children('a').removeClass('active-navbar');
+                $(this).find('.dropdown-menu').stop(true, true).slideUp(200).fadeOut(200);
+            }
+        );
+
+        // =====================================================
+        // Mobile: toggle submenu on chevron click
+        // =====================================================
+        $(document).ready(function() {
+            $('.mobile-dropdown-menu').click(function() {
+                var $submenu = $(this).parent().next('.mobile-dropdown-menu-content');
+                $('.mobile-dropdown-menu-content').not($submenu).slideUp(300);
+                $submenu.slideToggle(300);
+                $(this).find('i').toggleClass('rotate-180');
+            });
+        });
+
+        // =====================================================
+        // Mobile: open/close menu
+        // =====================================================
+        $('#mobile-menu-toggle').click(function() {
+            const isOpen = $('#mobile-navbar').is(':visible');
+            if (!isOpen) {
+                $('#mobile-navbar').stop(true, true).fadeIn(300);
+                $('body').css('overflow', 'hidden');
+                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24');
+            } else {
+                $('#mobile-navbar').stop(true, true).fadeOut(300);
+                $('body').css('overflow', 'auto');
+            }
+            $(this).attr('aria-expanded', !isOpen);
+        });
+
+        // Close mobile menu when clicking overlay
+        $('#mobile-navbar-overlay').click(function() {
+            $('#mobile-navbar').stop(true, true).fadeOut(300);
+            $('#mobile-menu-toggle').attr('aria-expanded', 'false');
+            $('body').css('overflow', 'auto');
+        });
+
+        // Prevent clicks inside menu panel from closing it
+        $('#mobile-top-navbar').click(function(e) {
+            e.stopPropagation();
+        });
+
+        // =====================================================
+        // WhatsApp: toggle form popup
+        // =====================================================
+        $('#wa_button').click(function() {
+            $('#mobile-navbar').stop(true, true).fadeOut(300);
+            $('body').css('overflow', 'auto');
+
+            if ($('#whatsappForm.bottom-24').length == 0) {
+                $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24');
+            } else {
+                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24');
+            }
+        });
+    });
+
+    // =====================================================
+    // Helper: toggle newsletter popup form
+    // =====================================================
+    function popupForm(params) {
+        var newsForm = document.querySelector("#newsForm");
+        var newsButton = document.querySelector("#newsButton");
+
+        if (params == "open") {
+            newsButton.classList.remove('lg:bottom-8', 'bottom-[15px]');
+            newsForm.classList.remove('-bottom-[500%]');
+            newsButton.classList.add('-bottom-[500%]');
+            newsForm.classList.add('lg:bottom-8', 'bottom-[15px]');
+        } else {
+            newsForm.classList.remove('lg:bottom-8', 'bottom-[15px]');
+            newsButton.classList.remove('-bottom-[500%]');
+            newsForm.classList.add('-bottom-[500%]');
+            newsButton.classList.add('lg:bottom-8', 'bottom-[15px]');
+        }
+    }
 </script>

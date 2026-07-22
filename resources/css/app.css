@@ -105,7 +105,7 @@ body {
 }
 
 .new-main-container {
-    @apply px-4 lg:px-10 xl:px-20 max-w-screen-xl mx-auto;
+    @apply px-4 lg:px-10 xl:px-10 max-w-screen-xl mx-auto;
 }
 
 .absolute-center {
@@ -134,7 +134,7 @@ body {
 }
 
 .text-section-title {
-    @apply md:text-4xl text-xl uppercase font-newprimary;
+    @apply md:text-4xl text-xl font-newprimary;
 }
 
 .text-section-subtitle,
@@ -762,3 +762,4 @@ progress::-ms-fill {
     clip-path: polygon(0 0, 100% 0%, 100% 85%, 50% 100%, 0 85%);
   }
 }
+

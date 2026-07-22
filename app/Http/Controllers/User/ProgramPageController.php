@@ -20,6 +20,16 @@ class ProgramPageController extends Controller
         return view('user.programs.main');
     }
 
+    public function ultimate_mentoring($locale)
+    {
+        return view('user.mentoring.ultimate.main');
+    }
+
+    public function epb($locale)
+    {
+        return view('user.mentoring.epb.main');
+    }
+
     public function admissions_mentoring($locale)
     {
         $lang = substr(app()->getLocale(), 3, 2);

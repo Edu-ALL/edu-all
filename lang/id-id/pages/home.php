@@ -1,57 +1,161 @@
 <?php
 
 return [
-    'meta_title' => "Kuliah di Luar Negeri dengan EduALL | Konsultan Pendidikan Global",
-    'meta_description' => 'Raih impian kuliah di luar negeri bersama EduALL. Dapatkan bimbingan masuk universitas top dunia, persiapan tes, dan strategi terbaik dari mentor berpengalaman. Apply sekarang!',
-    'benefit_list' => [
-        [
-            'title' => 'Aspire',
-            'body' => 'Mengeksplor minat dan passion siswa melalui bimbingan terpersonalisasi',
-            'image' => 'home_Illustration_1.png',
-        ],
-        [
-            'title' => 'Learn',
-            'body' => 'Memandu siswa untuk memperbaiki prestasi akademis dan memperkaya portfolio mereka dengan pembelajaran terapan',
-            'image' => 'home_Illustration_2.png'
-        ],
-        [
-            'title' => 'Lead',
-            'body' => 'Menempatkan siswa ke universitas impian dan tercocok untuk mempertajam potensi mereka sebagai calon pemimpin',
-            'image' => 'home_Illustration_3.webp',
-        ]
-    ],
-    'about' => 'Tentang Kami',
-    'about_body' => "Kami membimbing siswa yang ingin melanjutkan pendidikan tinggi di luar negeri dan menempatkan mereka di universitas-universitas yang paling cocok. Kami menyediakan bimbingan mentoring yang sesuai dengan kebutuhan anda, dimanapun anda berada.",
-    'about_btn' => "Info lebih lanjut",
-    'about_list' => [
-        '100% Siswa ditempatkan di universitas pilihannya',
-        'Lebih dari 40 sekolah telah mengikuti program kami',
-        'Lebih dari 1000 esai telah kami review',
-        'Lebih dari 50 mitra perusahaan',
-        'Nilai SAT naik sebanyak 150+ poin',
-        'Lebih dari 1500 peserta event'
+    'meta_title' => "Konsultan Penerimaan Universitas Global & Mentorship",
+    'meta_description' => 'Konsultan penerimaan universitas independen berbasis di Jakarta. Membantu siswa di seluruh dunia membangun profil unggulan dan mendapatkan tempat di universitas terbaik dunia.',
+
+    'hero' => [
+        'title' => 'Mentorship Pendidikan Global & Konsultan Studi Luar Negeri Independen',
+        'subtitle' => 'Melampaui Sekadar Penerimaan Universitas',
     ],
 
-    'program' => 'Program Kami',
-    'program_body' => 'Kami menawarkan program persiapan universitas secara holistik: perencanaan akademik dan kegiatan ekskul, penulisan esai/resume, persiapan wawancara, persiapan ujian, pendampingan personal project, dan syarat-syarat pendaftaran universitas lainnya.',
+    'achievment' => [
+        [
+            'value' => '1200+',
+            'label' => 'Siswa yang Dibimbing',
+        ],
+        [
+            'value' => '3500+',
+            'label' => 'Surat Penerimaan dari Universitas Terbaik',
+        ],
+        [
+            'value' => '$2.5 Juta+',
+            'label' => 'Total Penghargaan Beasiswa',
+        ],
+        [
+            'value' => '200',
+            'label' => 'Proyek Berdampak yang Diluncurkan oleh Mentee EduALL',
+        ],
+        [
+            'value' => '100%',
+            'label' => 'Tingkat Penerimaan ke Universitas di Seluruh Dunia',
+        ],
+    ],
 
-    'mentor' => 'Tentang Mentor-Mentor Kami',
-    'mentor_body' => 'Semua mentor kami merupakan lulusan universitas-universitas ternama dunia dengan latar belakang akademis dan pengalaman kerja yang beragam. Kami memanfaatkan keanekaragaman untuk mencapai visi kami, yaitu membekali siswa dengan keterampilan dan jaringan agar siswa dapat meraih impiannya di jenjang kuliah dan bahkan mencapai kesuksesan di dunia profesional.',
-    'mentor_btn' => "Lebih Banyak Mentor",
+    'about_us' => [
+        'title' => 'Konsultasi Studi Luar Negeri & Mentorship Independen',
+        'subtitle' => 'Berbeda dari banyak agen pendidikan lainnya, EduALL menerapkan pendekatan yang sangat personal dalam proses penerimaan universitas. Setiap rekomendasi disesuaikan dengan tujuan, kekuatan, dan pilihan universitas global yang paling sesuai untuk Anda.',
 
-    'stories' => 'Success Stories',
-    'stories_body' => 'Our students’ journeys; from finding the right path and bring out the dauntless in character, to excelling in their passion-specific endeavours.',
-    'stories_subbody' => 'They have been accepted to some of the top universities.',
+        'items' => [
+            [
+                'img' => 'personal.png',
+                'title' => 'Bimbingan Personal',
+                'description' => 'Bimbingan penerimaan universitas yang dirancang secara khusus berdasarkan tujuan dan aspirasi Anda.',
+            ],
+            [
+                'img' => 'professional.png',
+                'title' => 'Jaringan Profesional',
+                'description' => 'Belajar dari mentor yang memiliki pengalaman langsung dalam proses penerimaan universitas ternama dunia.',
+            ],
+            [
+                'img' => 'student.png',
+                'title' => 'Komunitas Siswa',
+                'description' => 'Berkembang melalui proyek bermakna, klub siswa, dan acara eksklusif yang memperkuat profil universitas Anda.',
+            ]
+        ],
+    ],
 
-    'testi' => "Testimoni Siswa EduALL",
-    'testi_btn' => 'Selanjutnya',
+    'program' => [
+        'title' => 'Pilih Jalur Anda Menuju Kesuksesan',
+        'description' => 'Baik Anda sedang mempersiapkan pendaftaran universitas maupun memperkuat profil akademik, program utama EduALL dirancang untuk membantu Anda mencapai tujuan.',
 
-    'bottom' => "Daftar sekarang untuk mendapatkan konsultasi awal gratis!",
-    'bottom_btn' => "Daftar Sekarang",
+        'mentoring' => [
+            'name' => 'Admissions Mentoring',
+            'title' => 'Bangun Profil Aplikasi yang Unggul',
+            'description' => 'Mentorship strategis menyeluruh untuk siswa yang mendaftar ke universitas terbaik dunia. Mulai dari membangun profil, bimbingan personal statement, pemilihan universitas, hingga strategi aplikasi, kami mendampingi setiap langkah Anda.',
+            'features' => [
+                'Eksplorasi Minat & Karier',
+                'Pengembangan Passion Project',
+                'Persiapan Esai & Wawancara',
+                'Strategi Aplikasi Lengkap',
+            ],
+        ],
+
+        'academy' => [
+            'name' => 'EduALL Academy',
+            'title' => 'Bangun Fondasi Akademik yang Kuat',
+            'description' => 'Untuk siswa kelas 7–12, tutor bersertifikasi internasional kami memberikan dukungan akademik personal untuk kurikulum IB, Cambridge, dan AP, termasuk persiapan SAT.',
+            'features' => [
+                'Les Privat Mata Pelajaran <br> (IB, Cambridge, AP)',
+                'Persiapan SAT Berbasis Target <br> (Kelas Privat & Grup)',
+                'Pelatihan Olimpiade Internasional <br> (Matematika & Sains)',
+            ],
+        ],
+    ],
+
+    'why_eduall' => [
+        'title' => 'Mengapa EduALL?',
+        'subtitle' => 'Inilah yang membedakan kami dari agen pendidikan tradisional.',
+
+        'items' => [
+            [
+                'title' => 'Mentor dari Universitas Global Terbaik',
+                'description' => 'Belajar dari mentor yang telah berhasil melewati proses penerimaan di universitas ternama seperti University of Pennsylvania, University College London, King\'s College London, University of Edinburgh, dan University of Sydney. Pengalaman langsung mereka membantu siswa membuat keputusan yang tepat dan membangun aplikasi yang lebih kuat.',
+            ],
+            [
+                'title' => 'Dukungan Esai dari Awal hingga Akhir',
+                'description' => 'Mulai dari brainstorming hingga revisi akhir, mentor kami memberikan bimbingan menyeluruh selama proses penulisan esai untuk membantu siswa menyampaikan cerita mereka dengan jelas dan percaya diri.',
+            ],
+            [
+                'title' => 'Mentorship yang Dipersonalisasi',
+                'description' => 'Setiap rencana mentorship disesuaikan dengan tujuan dan area pengembangan setiap siswa, memastikan dukungan yang tepat sepanjang perjalanan penerimaan universitas.
+
+                Dengan bimbingan ahli dan kerangka penerimaan yang terbukti, kami membantu siswa memaksimalkan potensi dan mencapai tujuan universitas mereka.',
+            ],
+        ],
+    ],
+
+    'eduall_framework' => [
+        'title' => 'EduALL Framework',
+
+        'description' => 'Berikut adalah cara kami mempersiapkan Anda untuk tampil unggul, mulai dari menemukan jati diri hingga mendapatkan tempat di universitas yang tepat melalui empat pilar utama.',
+
+        'items' => [
+            [
+                'no' => '01',
+                'icon' => 'fa-regular fa-compass',
+                'img' => '',
+                'title' => 'Eksplorasi Minat & Karier',
+                'description' => 'Temukan passion Anda melalui pengalaman belajar langsung dan paparan terhadap berbagai bidang profesional.',
+            ],
+            [
+                'no' => '02',
+                'icon' => 'fa-solid fa-trophy',
+                'img' => '',
+                'title' => 'Membangun <br> Profil',
+                'description' => 'Ubah kekuatan Anda menjadi inisiatif berdampak dan pencapaian nyata untuk menciptakan profil autentik yang sesuai dengan standar penerimaan universitas terbaik.',
+            ],
+            [
+                'no' => '03',
+                'icon' => 'fa-solid fa-file-pen',
+                'img' => '',
+                'title' => 'Personal Statement & Esai',
+                'description' => 'Susun personal statement dan esai yang kuat untuk menampilkan keunikan, suara autentik, dan kontribusi masa depan Anda.',
+            ],
+            [
+                'no' => '04',
+                'icon' => 'fa-solid fa-graduation-cap',
+                'img' => '',
+                'title' => 'Strategi Aplikasi Universitas',
+                'description' => 'Jalankan strategi penerimaan personal yang menghubungkan kekuatan Anda dengan standar universitas paling kompetitif di dunia.',
+            ],
+        ],
+    ],
+
+    'quiz' => [
+        'title' => 'Temukan Program Studi Luar Negeri yang Tepat untuk Anda',
+        'description' => 'Belum yakin harus mulai dari mana? Ikuti kuis 5 menit kami dan dapatkan rekomendasi universitas yang dipersonalisasi berdasarkan latar belakang akademik, tujuan universitas, dan aspirasi studi luar negeri Anda.',
+        'cta' => 'Ikuti Kuis',
+    ],
+
+    'testimoni' => [
+        'title' => 'Kenali EduALLumni Kami',
+        'description' => 'Dengarkan pengalaman siswa kami yang berhasil mendapatkan penerimaan di universitas terbaik di seluruh dunia.',
+    ],
 
     'wa' => [
         'title' => 'Punya pertanyaan tentang program kami?',
-        'sub_title' => 'Kami siap membantu.',
-        'message' => 'Mulai konsultasi GRATIS sekarang!'
+        'sub_title' => 'Tim ahli kami siap membantu Anda.',
+        'message' => 'Mulai konsultasi GRATIS sekarang!'
     ],
 ];

@@ -81,8 +81,11 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.css"> --}}
 
     {{-- Splide JS - CSS --}}
-    <link rel="stylesheet" href="/css/splide.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/splide.min.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" /> --}}
     {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
     {{-- Font Awesome --}}
@@ -91,8 +94,11 @@
 
     {{-- JQuery --}}
     <script src="{{ url('/js/jquery.js') }}"></script>
+
     {{-- Splide JS - JS --}}
     <script src="{{ url('/js/splide.min.js') }}"></script>
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
     {{-- Lazy Image Jquery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
@@ -123,7 +129,7 @@
     {{-- @include('layout.user.navbar') --}}
     @yield('sub-navbar')
 
-    @include('layout.user.new-navbar')
+    @include('layout.user.navbar')
 
     <div class="mt-0">
         @yield('content')
