@@ -50,7 +50,7 @@ class HomePageController extends Controller
         }
 
         // $region
-        return view('user.home.region.new-id', [
+        return view('user.home.region.id', [
             'banners' => $banners,
             'category' => $blog_category,
             'blogs' => $blogs,
@@ -100,7 +100,7 @@ class HomePageController extends Controller
         ]);
     }
 
-    public function submit_partnership(Request $request, $locale, $slug)
+    public function submit_partnership(Request $request, $locale)
     {
         try {
             $validation = [
@@ -109,7 +109,8 @@ class HomePageController extends Controller
                 'position.not_regex' => 'This field must not contain the words "script" or "php".',
                 'phone_number.not_regex' => 'This field must not contain the words "script" or "php".',
                 'inquiry.not_regex' => 'This field must not contain the words "script" or "php".',
-                'email.email' => 'This field must contain a valid email.'
+                'email.email' => 'This field must contain a valid email.',
+                'partnership_type.not_regex' => 'This field must not contain the words "script" or "php".',
             ];
 
             $validator = Validator::make($request::all(), [
@@ -119,6 +120,7 @@ class HomePageController extends Controller
                 'email' => ['required', 'email'],
                 'phone_number' => ['required', 'string', 'max:16', 'not_regex:/(script|php)/i'],
                 'inquiry' => ['required', 'string', 'not_regex:/(script|php)/i'],
+                'partnership_type' => ['required', 'string', 'not_regex:/(script|php)/i'],
             ], $validation);
 
             if ($validator->fails()) {
@@ -127,7 +129,7 @@ class HomePageController extends Controller
 
             $data = [
                 'data' => $request::all(),
-                'category' => $slug
+                'category' => $request::input('partnership_type'),
             ];
 
             if ($request::get('g-recaptcha-response')) {

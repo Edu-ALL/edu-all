@@ -3,10 +3,16 @@
     {
         return filter_var($url, FILTER_VALIDATE_URL) !== false;
     }
+
+    $dark_navbar = [
+        'partnership_careers', 'detail_careers',
+    ];
+
+
 @endphp
 
 {{-- ==================== DESKTOP NAVBAR ==================== --}}
-<header class="fixed w-full top-0 z-50 transition-all hidden md:block duration-[600ms] ease-in-out" id="top-navbar">
+<header class="fixed w-full top-0 z-50 transition-all hidden md:block duration-[600ms] ease-in-out {{request()->routeIs($dark_navbar) ? 'bg-newprimary/70' : ''}}" id="top-navbar">
     <div class="transition-all duration-500 ease-in-out" id="navbar-top-bar">
         <div class="new-main-container flex justify-between items-center py-2 transition-all duration-500">
             {{-- Logo --}}

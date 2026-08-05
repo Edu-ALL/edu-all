@@ -22,7 +22,7 @@ return [
     ],
 
     'academy' => [
-        'link' => 'programs/tutoring',
+        'link' => '#',
         'title' => 'EduALL Academy',
         'submenu' => [
             [
@@ -45,8 +45,26 @@ return [
     ],
 
     'about' => [
-        'link' => 'about',
+        'link' => '#',
         'title' => 'About Us',
+        'submenu' => [
+            [
+                'link' => 'about',
+                'title' => 'Our Story',
+            ],
+            [
+                'link' => 'about/our-team',
+                'title' => 'Our Team',
+            ],
+            [
+                'link' => 'about/partnership',
+                'title' => 'Partnership',
+            ],
+            [
+                'link' => 'about/careers',
+                'title' => 'Career',
+            ],
+        ]
     ],
 
     'event' => [

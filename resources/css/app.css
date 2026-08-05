@@ -4,60 +4,56 @@
 
 html,
 body {
-    font-family: "Ambit" !important;
-    font-weight: 400;
+    font-family: "JakartSans" !important;
+    font-weight: 200;
 }
+
+
 
 /* Font */
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 900;
-    src: url("/public/font/ambit/Ambit-Black.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-Black.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-ExtraBold.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 700;
-    src: url("/public/font/ambit/Ambit-Bold.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-Bold.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-Bold.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 600;
-    src: url("/public/font/ambit/Ambit-SemiBold.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-SemiBold.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-SemiBold.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 400;
-    src: url("/public/font/ambit/Ambit-Regular.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-Regular.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-Medium.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 300;
-    src: url("/public/font/ambit/Ambit-Light.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-Light.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-Regular.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 200;
-    src: url("/public/font/ambit/Ambit-ExtraLight.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-ExtraLight.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-Light.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Ambit";
+    font-family: "JakartSans";
     font-display: swap;
     font-weight: 100;
-    src: url("/public/font/ambit/Ambit-Thin.woff2") format("woff2"),
-         url("/public/font/ambit/Ambit-Thin.woff") format("woff");
+    src: url("/public/font/Plus Jakarta Sans/PlusJakartaSans-ExtraLight.ttf") format("truetype");
 }
+
 @font-face {
     font-family: "SF Pro Display";
     font-weight: 400;
@@ -67,6 +63,11 @@ body {
     font-family: "SF Pro Display";
     font-weight: 700;
     src: url("/public/font/sf-pro-display/SF-Pro-Display-Heavy.otf");
+}
+
+@font-face {
+    font-family: "playfair";
+    src: url("/public/font/Playfair_Display/static/PlayfairDisplay-Italic.ttf") format("truetype");
 }
 
 /* Hide scrollbar */

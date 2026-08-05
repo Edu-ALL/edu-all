@@ -3,7 +3,7 @@
         class="pointer-events-none absolute bottom-full left-1/2 z-50 mb-1 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
 
         <div class="whitespace-nowrap rounded-lg bg-newprimary px-4 py-2 text-sm text-white shadow-lg">
-            {{ $mentees }} Mentees
+            {{ $mentees }} {{ __('pages/home.students.mentees_label') }}
         </div>
     </div>
 

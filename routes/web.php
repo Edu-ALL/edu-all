@@ -64,7 +64,7 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
                 Route::get('/sign-me/skillset-tutoring', 'sign_me_skillset_tutoring')->name('sign_me_skillset_tutoring');
                 Route::get('/sign-me/passion-project', 'sign_me_passion_project')->name('sign_me_passion_project');
                 Route::get('/sign-me/partnership/{slug}', 'sign_me_partnership')->name('sign_me_partnership');
-                Route::post('/sign-me/partnership/{slug}', 'submit_partnership')->name('submit_partnership');
+                Route::post('/sign-me/partnership', 'submit_partnership')->name('submit_partnership');
                 Route::get('/sign-me/thank-partnership', 'thanks_partnership')->name('thank_partnership');
                 Route::get('/sign-up/mentor', 'sign_up_mentor')->name('sign_up_mentor');
                 Route::post('/sign-up/mentor', 'submit_mentor')->name('submit_mentor');
@@ -119,8 +119,10 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
 
             Route::controller(AboutPageController::class)->group(function () {
                 Route::get('/about', 'about')->name('about');
+                Route::get('/about/our-team', 'our_team')->name('our_team');
                 Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
                 Route::get('/partnership', 'partnership')->name('partnership');
+                Route::get('/about/partnership', 'partnership')->name('partnership');
                 Route::get('/about/careers', 'partnership_careers')->name('partnership_careers');
                 Route::get('/about/careers/{slug}', 'detail_careers')->name('detail_careers');
                 Route::post('/about/careers/{slug}', 'submit_job_applicant')->name('submit_job_applicant');

@@ -9,6 +9,7 @@ use App\Models\Applicants;
 use App\Models\Careers;
 use App\Models\Mentors;
 use App\Models\MentorVideos;
+use App\Models\Testimonials;
 use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
@@ -38,9 +39,15 @@ class AboutPageController extends Controller
         return view('user.our_contribution.main');
     }
 
-    public function partnership()
+    public function partnership($locale)
     {
-        return view('user.partnership.main');
+        $lang = substr(app()->getLocale(), 3, 2);
+        $testimonies = Testimonials::all()->where('lang', $lang)->where('testi_status', 'active')->where('testi_category', 'Exclusive Program School');
+
+        return view(
+            'user.partnership.main',
+            ['testimonies' => $testimonies]
+        );
     }
 
     public function partnership_careers(Request $request)
@@ -63,7 +70,7 @@ class AboutPageController extends Controller
             ->orderBy('job_position', 'asc')
             ->paginate(3);
 
-        return view('user.partnership_carrier.main', [
+        return view('user.partnership_career.main', [
             'careers' => $careers
         ]);
     }
@@ -228,5 +235,9 @@ class AboutPageController extends Controller
             'mentor' => $mentor,
             'mentor_slug' => $slug
         ]);
+    }
+
+    public function our_team($locale) {
+        return view('user.our-team.main');
     }
 }

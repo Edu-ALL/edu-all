@@ -4,6 +4,11 @@ return [
     'meta_title' => "Global University Admissions Consultant & Mentorship",
     'meta_description' => 'Independent university admissions consultant based in Jakarta. Helping students around the world to build standout profiles and secure places at top universities worldwide.',
 
+    'banner' => [
+        'consult_now' => 'CONSULT NOW',
+        'our_programs' => 'OUR PROGRAMS',
+    ],
+
     'hero' => [
         'title' => 'Global Education Mentorship & Independent Study Abroad Consultant',
         'subtitle' => 'Beyond University Acceptances',
@@ -35,6 +40,13 @@ return [
     'about_us' => [
         'title' => 'Independent Study Abroad Consulting & Mentorship',
         'subtitle' => 'Unlike many agencies, EduALL takes a deeply personalized approach to university admissions. Every recommendation is tailored to your goals, strengths, and best-fit global university options.',
+        'cta' => 'About Us',
+        'inquiry_title' => 'What brings you to <br> EduALL today?',
+        'inquiry_items' => [
+            'Apply to University',
+            'Looking For a Tutor',
+            'Speak to a Consultant',
+        ],
 
         'items' => [
             [
@@ -58,6 +70,8 @@ return [
     'program' => [
         'title' => 'Choose Your Pathway to Excellence',
         'description' => "Whether you're preparing for university applications or strengthening your academic profile, EduALL's core programs are designed to help you reach your goals.",
+
+        'cta' => 'Learn More',
 
         'mentoring' => [
             'name' => 'Admissions Mentoring',
@@ -84,7 +98,7 @@ return [
     ],
 
     'why_eduall' => [
-        'title' => 'Why EduALL?',
+        'title' => 'Why <br> EduALL?',
         'subtitle' => "Here's what sets us apart from traditional education agencies.",
 
         'items' => [
@@ -98,8 +112,8 @@ return [
             ],
             [
                 'title' => 'Personalized Mentorship',
-                'description' => 'Every mentoring plan is tailored to each student\'s goals and areas for growth, ensuring focused support throughout the admissions journey. 
-                
+                'description' => 'Every mentoring plan is tailored to each student\'s goals and areas for growth, ensuring focused support throughout the admissions journey.
+
                 With expert guidance and a proven admissions framework, we help students maximize their potential and achieve their university goals.
                 ',
             ],
@@ -109,7 +123,7 @@ return [
     'eduall_framework' => [
         'title' => 'The EduALL Framework',
 
-        'description' => 'Here is how we prepare you to stand out, from discovering who you are to securing your place at the right university through four fundamental pillars.',
+        'description' => 'From discovering your interests to securing university offers, our proven mentorship approach helps students build the experiences and skills. See how we transform your unique potential into a standout, world-class application.',
 
         'items' => [
             [
@@ -154,26 +168,60 @@ return [
         'description' => 'Hear from our students who have successfully earned admission to leading universities around the world.',
     ],
 
+    'cta' => [
+        'title' => 'Ready to Take the First Step?',
+        'description' => 'Book a free consultation to discuss your goals, evaluate your profile, and explore the most effective path toward your best-fit universities.',
+    ],
+
+    'students' => [
+        'title' => 'Our Students Has Been Accepted to...',
+        'mentees_label' => 'Mentees',
+        'countries' => [
+            'ca' => 'Canada',
+            'uk' => 'UK',
+            'cn' => 'China',
+            'jp' => 'Japan',
+            'sg' => 'Singapore',
+            'au' => 'Australia',
+            'us' => 'US',
+        ],
+    ],
+
+    'universities' => [
+        'more_text' => '... and 200+ other universities.',
+    ],
+
+    'articles' => [
+        'title' => 'EduALL Articles',
+        'all' => 'All',
+        'minutes' => 'Minutes',
+    ],
+
     'faq' => [
-        [
-            'question' => 'What makes EduALL different from other education consultants in Indonesia?',
-            'answer' => 'EduALL takes a deeply personalized approach to university admissions. As an independent consultant, every recommendation is based on your goals, strengths, and best-fit university options. Our mentors are graduates of leading global universities and bring firsthand admissions experience to every student they support.',
-        ],
-        [
-            'question' => 'When should my child start working with EduALL?',
-            'answer' => 'We recommend starting as early as Grade 8. University admissions are not built in a few months—they are shaped through years of exploration, growth, and meaningful experiences. Starting early gives students the opportunity to discover their interests, explore different careers and academic fields, develop impactful projects, and build a strong profile with intention. For students in Grade 11 or 12, we also provide focused support to strengthen applications and navigate the admissions process effectively.',
-        ],
-        [
-            'question' => 'Which universities have EduALL students been accepted to?',
-            'answer' => 'EduALL mentees have received over 3,500 offers from 200+ universities worldwide. Our EduALLumni have earned admission to some of the world\'s leading institutions, including Harvard University, the University of Pennsylvania (UPenn), UCL, King\'s College London, HKUST, UC Berkeley, UCLA, the University of Toronto, the University of Melbourne, NUS, NTU, and many more. From the US and UK to Canada, Australia, Europe, and Asia, we help students find and gain admission to universities that align with their goals, ambitions, and aspirations.',
-        ],
-        [
-            'question' => 'Is the mentoring process fully online?',
-            'answer' => 'Yes. All mentoring sessions are conducted online, allowing students across Indonesia to have personalized guidance regardless of location.',
-        ],
-        [
-            'question' => 'What is the difference between EduALL University Admission Mentoring and EduALL Academy?',
-            'answer' => 'EduALL University Admission Mentoring is designed for students preparing to apply to universities abroad, covering profile building, personal statements, and admissions strategy. EduALL Academy focuses on academic preparation through subject tutoring, SAT preparation, and Olympiad coaching for students in Grades 7–12. Many students choose to participate in both programs.',
+        'title' => "FAQ's",
+        'subtitle' => 'Find Your Answers Here',
+        'description' => "Couldn't not find what you were looking for?",
+        'items' => [
+            [
+                'question' => 'What makes EduALL different from other education consultants in Indonesia?',
+                'answer' => 'EduALL takes a deeply personalized approach to university admissions. As an independent consultant, every recommendation is based on your goals, strengths, and best-fit university options. Our mentors are graduates of leading global universities and bring firsthand admissions experience to every student they support.',
+            ],
+            [
+                'question' => 'When should my child start working with EduALL?',
+                'answer' => 'We recommend starting as early as Grade 8. University admissions are not built in a few months—they are shaped through years of exploration, growth, and meaningful experiences. Starting early gives students the opportunity to discover their interests, explore different careers and academic fields, develop impactful projects, and build a strong profile with intention. For students in Grade 11 or 12, we also provide focused support to strengthen applications and navigate the admissions process effectively.',
+            ],
+            [
+                'question' => 'Which universities have EduALL students been accepted to?',
+                'answer' => 'EduALL mentees have received over 3,500 offers from 200+ universities worldwide. Our EduALLumni have earned admission to some of the world\'s leading institutions, including Harvard University, the University of Pennsylvania (UPenn), UCL, King\'s College London, HKUST, UC Berkeley, UCLA, the University of Toronto, the University of Melbourne, NUS, NTU, and many more. From the US and UK to Canada, Australia, Europe, and Asia, we help students find and gain admission to universities that align with their goals, ambitions, and aspirations.',
+            ],
+            [
+                'question' => 'Is the mentoring process fully online?',
+                'answer' => 'Yes. All mentoring sessions are conducted online, allowing students across Indonesia to have personalized guidance regardless of location.',
+            ],
+            [
+                'question' => 'What is the difference between EduALL University Admission Mentoring and EduALL Academy?',
+                'answer' => 'EduALL University Admission Mentoring is designed for students preparing to apply to universities abroad, covering profile building, personal statements, and admissions strategy. EduALL Academy focuses on academic preparation through subject tutoring, SAT preparation, and Olympiad coaching for students in Grades 7–12. Many students choose to participate in both programs.',
+            ],
         ],
     ],
 
