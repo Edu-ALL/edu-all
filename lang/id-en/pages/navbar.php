@@ -22,24 +22,20 @@ return [
     ],
 
     'academy' => [
-        'link' => '#',
+        'link' => 'programs/tutoring',
         'title' => 'EduALL Academy',
         'submenu' => [
             [
-                'link' => "programs/admissions-mentoring/undergraduate-program",
+                'link' => "programs/tutoring/subject",
+                'title' => 'Subject Tutoring',
+            ],
+            [
+                'link' => 'programs/tutoring/sat',
                 'title' => 'SAT Prep',
             ],
             [
-                'link' => 'programs/admissions-mentoring/graduate-program',
-                'title' => 'Subject Tutor',
-            ],
-            [
-                'link' => 'programs/admissions-mentoring/university-transfer-program',
+                'link' => 'programs/tutoring/olympiad',
                 'title' => 'Olympiad Prep',
-            ],
-            [
-                'link' => 'programs/admissions-mentoring/university-transfer-program',
-                'title' => 'Rising',
             ],
         ],
     ],
@@ -72,56 +68,6 @@ return [
         'title' => 'Event',
     ],
 
-    // programs
-    // 'programs' => [
-    //     'link' => '#',
-    //     'title' => 'Programs',
-    //     'submenu' => [
-    //         [
-    //             'link' => "programs/admissions-mentoring",
-    //             'title' => 'Admission Mentoring',
-    //         ],
-    //         [
-    //             'link' => 'programs/tutoring',
-    //             'title' => 'Tutoring Program',
-    //         ],
-    //         [
-    //             'link' => 'programs/global-innovators-project',
-    //             'title' => 'Global Innovators Project',
-    //         ],
-    //         [
-    //             'link' => 'programs/exclusive-program-school',
-    //             'title' => 'Exclusive Programs for School',
-    //         ],
-    //     ],
-    // ],
-
-    // about us
-    // 'about_us' => [
-    //     'link' => 'about',
-    //     'title' => 'About Us',
-    //     'submenu' => [
-    //         [
-    //             'link' => 'about/mentor',
-    //             'title' => 'Our Mentor',
-    //         ],
-    //         [
-    //             'link' => 'about/our-contribution',
-    //             'title' => 'Our Contribution',
-    //         ],
-    //         [
-    //             'link' => 'about/careers',
-    //             'title' => 'Careers',
-    //         ],
-    //     ],
-    // ],
-
-    // partnership 
-    // 'partnership' => [
-    //     'link' => 'partnership',
-    //     'title' => 'Partnership',
-    // ],
-
     // blog
     'blog' => [
         'link' => 'blog',
@@ -132,34 +78,4 @@ return [
         'link' => 'impact-project',
         'title' => 'Impact Project',
     ],
-
-    // resources
-    // 'resources' => [
-    //     'link' => '#',
-    //     'title' => 'Resources',
-    //     'submenu' => [
-    //         [
-    //             'link' => 'resources/success-stories',
-    //             'title' => 'Success Stories',
-    //         ],
-    //         // [
-    //         //     'link' => 'resources/upcoming-events',
-    //         //     'title' => 'Upcoming Events',
-    //         // ],
-    //         [
-    //             'link' => 'resources/testimonial',
-    //             'title' => 'Testimonial',
-    //         ],
-    //         // [
-    //         //     'link' => 'https://project-showcase.edu-all.com',
-    //         //     'title' => 'Mentee Project Showcase',
-    //         // ],
-    //     ],
-    // ],
-
-    // contact us
-    // 'contact_us' => [
-    //     'link' => 'contact-us',
-    //     'title' => 'Contact Us',
-    // ],
 ];

@@ -248,6 +248,7 @@ return [
     ],
 
     // Academy Section
+    'academy_label' => 'Academy Teaching Team',
     'academy_title' => 'The Educators Behind EduALL Academy',
     'academy_description' => 'EduALL Academy is taught by a carefully curated network of educators, selected and supervised by our Academy Director. Our tutors bring years of teaching experience, hold relevant academic and professional certifications, and many are practicing teachers at leading international schools.',
     'academy_image' => 'assets/img/about/Our Team/8. Foto Behind ACADEMY.png',
@@ -324,14 +325,17 @@ return [
     'cta_description' => 'Every great journey starts with a conversation. Whether you\'re a student, parent, educator, or organization, there\'s a place for you in the EduALL community.',
     'cta_items' => [
         [
+            'link' => 'ultimate_mentoring',
             'title' => 'For Students & Parents',
             'description' => 'Start planning your academic journey with EduALL.'
         ],
         [
+            'link' => 'partnership',
             'title' => 'For Partnership & Collaboration',
             'description' => 'Join forces with EduALL to help more young people become game changers.'
         ],
         [
+            'link' => 'partnership_careers',
             'title' => 'For Future Team Member',
             'description' => 'Help shape the future by building the next generation of game changers.'
         ],

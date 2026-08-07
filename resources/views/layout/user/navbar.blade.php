@@ -5,14 +5,26 @@
     }
 
     $dark_navbar = [
-        'partnership_careers', 'detail_careers', 'blogs', 'detail_blog', 'impact-project'
+        'partnership_careers',
+        'detail_careers',
+        'blogs',
+        'detail_blog',
+        'impact-project',
+        'tutoring',
+        'subject_tutoring',
+        'sat',
+        'olympiad',
+        'privacy_policy'
     ];
 
-
+    // Check if current page is an error page
+    $is_error_page = $is_error_page ?? false;
 @endphp
 
 {{-- ==================== DESKTOP NAVBAR ==================== --}}
-<header class="fixed w-full top-0 z-50 transition-all hidden md:block duration-[600ms] ease-in-out {{request()->routeIs($dark_navbar) ? 'bg-newprimary/70' : ''}}" id="top-navbar">
+<header
+    class="fixed w-full top-0 z-50 transition-all hidden md:block duration-[600ms] ease-in-out {{ request()->routeIs($dark_navbar) || $is_error_page ? 'bg-newprimary' : '' }}"
+    id="top-navbar">
     <div class="transition-all duration-500 ease-in-out" id="navbar-top-bar">
         <div class="new-main-container flex justify-between items-center py-2 transition-all duration-500">
             {{-- Logo --}}

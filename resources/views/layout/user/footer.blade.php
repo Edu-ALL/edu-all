@@ -68,19 +68,28 @@
                 <h4 class="text-lg text-white mb-8">
                     Informations
                 </h4>
-                @foreach (__('pages/footer.page_list') as $item)
+                @foreach (__('pages/footer.informations') as $item)
                     <a href="{{ url(app()->getLocale() . $item['link']) }}"
                         class="flex justify-between items-center text-gray-400 mb-2 hover:text-white/90">
                         <p class="">{{ $item['title'] }}</p>
                     </a>
                 @endforeach
+
+
+                 <h4 class="text-lg text-white mt-8 mb-5">
+                     Language
+                 </h4>
+                 <select id="language-selector" class="bg-[#00003F] text-gray-400 border border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-white cursor-pointer hover:text-white/90">
+                     <option value="id-en" {{ app()->getLocale() == 'id-en' ? 'selected' : '' }}>English</option>
+                     <option value="id-id" {{ app()->getLocale() == 'id-id' ? 'selected' : '' }}>Indonesia</option>
+                 </select>
             </div>
             <div class="flex flex-col">
                 <h4 class="text-lg text-white mb-8">
                     Categories
                 </h4>
 
-                @foreach (__('pages/footer.page_list') as $item)
+                @foreach (__('pages/footer.categories') as $item)
                     <a href="{{ url(app()->getLocale() . $item['link']) }}"
                         class="flex justify-between items-center text-gray-400 mb-2 hover:text-white/90">
                         <p class="">{{ $item['title'] }}</p>
@@ -101,3 +110,24 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.getElementById('language-selector').addEventListener('change', function() {
+        const selectedLocale = this.value;
+        const currentUrl = window.location.href;
+        const url = new URL(currentUrl);
+        
+        // Replace the locale in the URL path
+        // Pattern: /{locale}/... or /{locale}
+        const pathParts = url.pathname.split('/');
+        
+        // Check if first part is a locale (id-en or id-id)
+        if (pathParts[1] === 'id-en' || pathParts[1] === 'id-id') {
+            pathParts[1] = selectedLocale;
+            url.pathname = pathParts.join('/');
+        }
+        
+        // Redirect to the new URL
+        window.location.href = url.toString();
+    });
+</script>

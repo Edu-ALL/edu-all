@@ -68,7 +68,7 @@
                     {{ __('pages/event.banner.subtitle') }}
                 </p>
 
-                <div class="flex gap-5">
+                <div class="flex md:justify-start justify-center gap-5">
                     <a href="#event" class="rounded-full py-2 px-5 text-lg bg-newprimary text-white">
                         {{ __('pages/event.banner.cta') }}
                         <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -101,10 +101,10 @@
 
     <section class="new-main-container py-20">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl text-center uppercase font-normal text-newprimary mb-5">
+            <h2 class="text-3xl md:text-4xl text-center uppercase font-normal text-newprimary mb-5">
                 {{ __('pages/event.section_title') }}
             </h2>
-            <p class="text-xl text-center font-light text-newprimary/80">
+            <p class="text-md md:text-xl text-center font-light text-newprimary/80">
                 {{ __('pages/event.section_subtitle') }}
             </p>
         </div>
@@ -135,7 +135,6 @@
                 </div>
             @endforeach
         </div>
-
     </section>
 
     <section class="bg-gradient-to-b from-newprimary to-newprimary/10 relative overflow-hidden">

@@ -16,24 +16,6 @@
         content="Sasmo , Hkimo, math, math competition, international math olympiad, olympiad, Singapore math challenge, american math olympiad, olimpiade, matematika" />
 @endsection
 
-@section('sub-navbar')
-    <x-sub-navbar :menu="[
-        ['title' => 'general', 'url' => '/programs/tutoring'],
-        [
-            'title' => __('pages/programs/academic_tutoring.title'),
-            'url' => '/programs/tutoring/subject',
-        ],
-        [
-            'title' => __('pages/programs/sat_program.navbar_title'),
-            'url' => '/programs/tutoring/sat',
-        ],
-        [
-            'title' => __('pages/programs/skillset_tutoring.title'),
-            'url' => '/programs/tutoring/olympiad',
-        ],
-    ]" :active="__('pages/programs/skillset_tutoring.title')" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
-@endsection
-
 @push('style')
     <style>
         .custom-shape-divider-top-1763519181 {

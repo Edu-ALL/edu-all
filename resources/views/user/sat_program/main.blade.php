@@ -16,24 +16,6 @@
         content="sat, sat test, satdate, satbook, sat preparation, sat bahasa inggris, daftar sat, harga SAT, SAT EXAM, sat practice test" />
 @endsection
 
-@section('sub-navbar')
-    <x-sub-navbar :menu="[
-        ['title' => 'general', 'url' => '/programs/tutoring'],
-        [
-            'title' => __('pages/programs/academic_tutoring.title'),
-            'url' => '/programs/tutoring/subject',
-        ],
-        [
-            'title' => __('pages/programs/sat_program.navbar_title'),
-            'url' => '/programs/tutoring/sat',
-        ],
-        [
-            'title' => __('pages/programs/skillset_tutoring.title'),
-            'url' => '/programs/tutoring/olympiad',
-        ],
-    ]" :active="__('pages/programs/sat_program.navbar_title')" title="{!! __('pages/programs/academic_test_preparation.navbar_title') !!}" />
-@endsection
-
 @push('style')
     <style>
         .custom-shape-divider-top-1763519181 {

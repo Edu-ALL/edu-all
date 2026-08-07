@@ -15,6 +15,7 @@
 
 @section('content')
     {{-- ==================== Banner Section ==================== --}}
+    {{-- Hero banner with team statistics --}}
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
@@ -22,11 +23,11 @@
                     alt="EduALL Our Team - Meet our experienced mentors and educators"
                     title="EduALL Our Team"
                     loading="lazy" decoding="async" width="1920" height="1080"
-                    class="md:h-[100vh] h-[100dvh] w-full object-cover object-center">
+                    class="md:h-[100vh] h-[100dvh] w-full object-cover md:object-center object-left">
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
-                    <p class="uppercase text-white mb-5 max-w-xl">
+                    <p class="uppercase text-white mb-5 max-w-xl text-sm md:text-base text-center md:text-left">
                         {{ __('pages/about_us/our_team.banner_team_label') }}
                     </p>
 
@@ -42,7 +43,7 @@
 
                     <hr class="max-w-xl border-white my-10">
 
-                    <div class="flex justify-start gap-0 md:gap-5 max-w-xl">
+                    <div class="flex flex-nowrap justify-start gap-1 md:gap-5 max-w-xl">
                         <div class="w-1/3 text-start score-item mb-5">
                             <p class="text-lg md:text-[30px] font-bold text-white">
                                 {{ __('pages/about_us/our_team.stat_1_number') }}
@@ -75,12 +76,14 @@
         </div>
     </section>
 
-    <section class="new-main-container py-20 mt-20">
+    {{-- ==================== Leadership Section ==================== --}}
+    {{-- Leadership team cards with modals --}}
+    <section class="new-main-container py-10 md:py-20 mt-10 md:mt-20">
         <div class="max-w-5xl mx-auto text-center mb-5">
-            <h2 class="uppercase text-5xl mb-5 font-normal text-newprimary">
+            <h2 class="uppercase text-2xl md:text-5xl mb-5 font-normal text-newprimary">
                 {!! __('pages/about_us/our_team.leadership_title') !!}
             </h2>
-            <p class="text-xl text-dark/50">
+            <p class="text-md md:text-xl text-dark/50">
                 {{ __('pages/about_us/our_team.leadership_description') }}
             </p>
 
@@ -169,13 +172,15 @@
 
     </section>
 
+    {{-- ==================== Why Mentors Stand Out Section ==================== --}}
+    {{-- Features highlighting mentor quality --}}
     <section class="bg-gradient-to-b from-white to-[#E6F0FF]">
         <div class="new-main-container py-20">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-5xl text-center uppercase font-normal text-newprimary mb-5">
+                <h2 class="text-2xl md:text-5xl text-center uppercase font-normal text-newprimary mb-5">
                     {!! __('pages/about_us/our_team.why_stand_out_title') !!}
                 </h2>
-                <p class="text-xl text-center text-dark/50">
+                <p class="text-md md:text-xl text-center text-dark/50">
                     {{ __('pages/about_us/our_team.why_stand_out_description') }}
                 </p>
             </div>
@@ -206,13 +211,15 @@
         </div>
     </section>
 
+    {{-- ==================== Mentors Section ==================== --}}
+    {{-- Mentor cards with filter functionality --}}
     <section class="bg-gradient-to-b to-white from-[#E6F0FF]">
         <div class="new-main-container py-20">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-5xl text-center uppercase font-normal text-newprimary mb-5">
+                <h2 class="text-2xl md:text-5xl text-center uppercase font-normal text-newprimary mb-5">
                     {{ __('pages/about_us/our_team.mentor_section_title') }}
                 </h2>
-                <p class="text-xl text-center text-dark/50">
+                <p class="text-md md:text-xl text-center text-dark/50">
                     {{ __('pages/about_us/our_team.mentor_section_description') }}
                 </p>
 
@@ -335,7 +342,7 @@
                 </p>
 
                 <div class="flex justify-center">
-                    <a href="#" class="py-2 px-5 uppercase bg-newprimary text-white rounded-2xl text-xl">
+                    <a href="https://bit.ly/eduall-contactus" class="py-2 px-5 uppercase bg-newprimary text-white rounded-2xl text-xl">
                         {{ __('pages/about_us/our_team.consultation_button') }}
                         <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
@@ -344,6 +351,8 @@
         </div>
     </section>
 
+    {{-- ==================== Academy Section ==================== --}}
+    {{-- Educators behind EduALL Academy --}}
     <section class="new-main-container py-20">
         <div class="bg-newprimary rounded-2xl p-5">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10">
@@ -351,7 +360,7 @@
                     <p class="uppercase text-sm text-white mb-3">
                         {{ __('pages/about_us/our_team.academy_label') }}
                     </p>
-                    <h2 class="text-4xl uppercase font-light mb-5 text-white">
+                    <h2 class="text-2xl md:text-4xl uppercase font-light mb-5 text-white">
                         {{ __('pages/about_us/our_team.academy_title') }}
                     </h2>
                     <p class="text-white/60">
@@ -368,31 +377,33 @@
         </div>
     </section>
 
-    <section class="bbg-white ">
-        <div class="new-main-container py-20">
+    {{-- ==================== Selection Standard Section ==================== --}}
+    {{-- Why parents trust our tutors --}}
+    <section class="bg-white ">
+        <div class="new-main-container py-10 md:py-20">
             <div class="max-w-5xl mx-auto mb-10">
                 <p class="text-base text-center text-dark/50 uppercase font-semibold mb-3">
                     Selection Standard
                 </p>
-                <h2 class="text-5xl text-center uppercase font-normal text-newprimary mb-5">
+                <h2 class="text-2xl md:text-5xl text-center uppercase font-normal text-newprimary mb-5">
                     {{ __('pages/about_us/our_team.selection_title') }}
                 </h2>
             </div>
 
             <div class="w-full mx-auto">
-                <div class="flex flex-wrap gap-5">
+                <div class="flex md:flex-nowrap flex-wrap md:gap-5 md:justify-start justify-center">
                     @foreach(__('pages/about_us/our_team.selection_items') as $item)
-                    <div class="w-full sm:w-1/2 md:w-1/5">
+                    <div class="w-1/2 md:w-1/5 md:p-0 p-2">
                         <img src="{{ asset($item['image']) }}" 
                             alt="{{ strip_tags($item['title']) }}"
                             loading="lazy" decoding="async" width="120" height="80"
-                            class="h-[80px] mb-3 mx-auto">
+                            class="h-[55px] md:h-[80px] w-auto mb-3 mx-auto md:mx-0">
 
-                        <h3 class="text-2xl font-normal mb-5 leading-6 text-newprimary">
+                        <h3 class="text-lg md:text-2xl font-normal mb-5 leading-6 text-newprimary text-center md:text-start">
                             {!! $item['title'] !!}
                         </h3>
 
-                        <p class="text-dark/60">
+                        <p class="text-dark/60 text-center md:text-start">
                             {{ $item['description'] }}
                         </p>
                     </div>
@@ -403,6 +414,8 @@
         </div>
     </section>
 
+    {{-- ==================== Stats & Featured Educator Section ==================== --}}
+    {{-- Statistics cards with featured educator --}}
     <section class="my-10 relative overflow-hidden">
         <img src="{{ asset(__('pages/about_us/our_team.bg_academy')) }}" 
             alt="EduALL Academy Background"
@@ -410,7 +423,7 @@
             class="absolute top-0 left-0 w-full h-full object-cover z-0">
 
         <div class="relative z-10 new-main-container py-20">
-            <div class="flex flex-col md:flex-row gap-5 items-end">
+            <div class="flex flex-col md:flex-row gap-5 items-center md:items-end">
                 <div class="w-full md:w-[70%]">
                     <div class="flex flex-col md:flex-row mb-5 gap-5">
                         <div class="w-full md:w-[40%]">
@@ -497,6 +510,8 @@
         </div>
     </section>
 
+    {{-- ==================== Values Section ==================== --}}
+    {{-- Core values of EduALL --}}
     <section class="new-main-container my-12 md:my-20 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-center md:items-center gap-6 md:gap-10 about-grid">
             <div class="w-full md:w-1/2 md:text-start text-center">
@@ -530,9 +545,11 @@
         </div>
     </section>
 
+    {{-- ==================== CTA Section ==================== --}}
+    {{-- Call to action with partnership options --}}
     <section class="relative overflow-hidden mt-5">
         <img src="{{ asset('assets/img/about/Our Team/18. Background Foto.png') }}" alt="EduALL"
-            class="w-full absolute top-0 left-0 z-0" />
+            class="w-full h-full object-cover absolute top-0 left-0 z-0" />
 
         <div class="new-main-container py-20 relative z-10">
             <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-md text-center py-20">
@@ -540,14 +557,14 @@
                     {!! __('pages/about_us/our_team.cta_title') !!}
                 </h3>
 
-                <p class="text-lg text-dark/60 font-light max-w-2xl mx-auto mb-5">
+                <p class="text-md md:text-lg text-dark/60 font-light max-w-2xl mx-auto mb-5 px-5">
                     {{ __('pages/about_us/our_team.cta_description') }}
                 </p>
 
                 <div class="flex flex-col md:flex-row gap-5 max-w-5xl mx-auto mt-10">
                     @foreach(__('pages/about_us/our_team.cta_items') as $cta)
-                    <div class="w-full md:w-1/3">
-                        <a href="#"
+                    <div class="w-full md:w-1/3 md:px-0 px-5 mb-3">
+                        <a href="{{ route($cta['link'], ['locale' => app()->getLocale()]) }}"
                             class="px-5 py-2 rounded-lg border-2 border-newprimary hover:bg-newprimary hover:text-white transition-all duration-300 block">
                             {{ $cta['title'] }}
                             <i class="fa-solid fa-arrow-right ml-2"></i>

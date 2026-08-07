@@ -25,10 +25,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/id-en', 301);
-Route::get('/array/pkv-games', fn() => abort(410));
-Route::get('/array/dominoqq', fn() => abort(410));
-Route::get('/array/bandarqq', fn() => abort(410));
-
 
 Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('robots.txt', function () {
@@ -73,47 +69,16 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
             });
 
             Route::controller(ProgramPageController::class)->group(function () {
+                // MENTORING 
                 Route::get('/programs/admissions-mentoring/ultimate-mentoring', 'ultimate_mentoring')->name('ultimate_mentoring');
                 Route::get('/programs/admissions-mentoring/epb', 'epb')->name('epb');
-                Route::get('/programs/admissions-mentoring', 'admissions_mentoring')->name('admissions_mentoring');
-                Route::get('/programs/admissions-mentoring/undergraduate-program', 'undergraduate_program')->name('undergraduate_program');
-                Route::get('/programs/admissions-mentoring/graduate-program', 'graduate_program')->name('graduate_program');
-                Route::get('/programs/admissions-mentoring/university-transfer-program', 'university_transfer_program')->name('university_transfer_program');
-                Route::get('/programs/passion-project-mentoring', 'passion_project_mentoring')->name('passion_project_mentoring');
 
-                // OLD TUTORING 
-                Route::get('/programs/academic-test-preparation', function () {
-                    return redirect()->route('tutoring', ['locale' => app()->getLocale()])->setStatusCode(301);
-                });
-
-                Route::get('/programs/academic-test-preparation/academic-tutoring', function () {
-                    return redirect()->route('subject_tutoring', ['locale' => app()->getLocale()])->setStatusCode(301);
-                })->name('academic_tutoring');
-
-                Route::get('/programs/academic-test-preparation/ib-ee-coaching-program', function () {
-                    return redirect()->route('tutoring', ['locale' => app()->getLocale()])->setStatusCode(301);
-                })->name('ib_ee_coaching_program');
-
-                Route::get('/programs/academic-test-preparation/sat-program', function () {
-                    return redirect()->route('sat', ['locale' => app()->getLocale()])->setStatusCode(301);
-                })->name('sat_program');
-
-                Route::get('/programs/academic-test-preparation/skillset-tutoring-program', function () {
-                    return redirect()->route('olympiad', ['locale' => app()->getLocale()])->setStatusCode(301);
-                })->name('skillset_tutoring_program');
-
-
-                // ROUTE TUTORING 
+                // TUTORING 
                 Route::get('/programs/tutoring', 'academic_test_preparation')->name('tutoring');
                 Route::get('/programs/tutoring/subject', 'academic_tutoring')->name('subject_tutoring');
                 Route::get('/programs/tutoring/sat', 'sat_program')->name('sat');
                 Route::get('/programs/tutoring/olympiad', 'skillset_tutoring_program')->name('olympiad');
 
-                Route::get('/programs/global-innovators-project', 'global_innovators_project')->name('global_innovators_project');
-                Route::get('/programs/exclusive-program-school', 'exclusive_program_school')->name('exclusive_program_school');
-                Route::get('/programs/exclusive-program-school/admission-accelerator', 'admission_accelerator')->name('admission_accelerator');
-                Route::get('/programs/exclusive-program-school/experiential-learning', 'experiential_learning')->name('experiential_learning');
-                Route::get('/programs/exclusive-program-school/teacher-focused', 'teacher_focused')->name('teacher_focused');
                 Route::get('/programs/thank-you-for-your-interest-in-our-programs', 'thank_page')->name('thank_page');
             });
 
@@ -121,37 +86,17 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
                 Route::get('/about', 'about')->name('about');
                 Route::get('/about/our-team', 'our_team')->name('our_team');
                 Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
-                Route::get('/partnership', 'partnership')->name('partnership');
                 Route::get('/about/partnership', 'partnership')->name('partnership');
                 Route::get('/about/careers', 'partnership_careers')->name('partnership_careers');
                 Route::get('/about/careers/{slug}', 'detail_careers')->name('detail_careers');
                 Route::post('/about/careers/{slug}', 'submit_job_applicant')->name('submit_job_applicant');
                 Route::get('/thanks/career', 'thanks_career')->name('thanks_career');
-                // Route::get('/contact-us', 'contact_us')->name('contact_us');
-                // Route::post('/contact-us', 'submit_contact_us')->name('submit_contact_us');
-                // Route::get('/contact-us/thank', 'thank_contact_us')->name('thank_contact_us');
-                Route::get('/about/mentor', "mentor")->name('mentor');
-                Route::get('/about/mentor/{slug}', "detail_mentor")->name('detail_mentor');
-            });
-
-            Route::controller(ResourcesPageController::class)->group(function () {
-                Route::get('/resources/success-stories', "success_stories")->name('success_stories');
-                // Route::get('/resources/upcoming-events', "upcoming_events")->name('upcoming_events');
-                Route::get('/resources/guidebook', "guidebook")->name('guidebook');
-                Route::get('/resources/testimonial', "testimonial")->name('testimonial');
-                Route::get('/resources/mentee-project-showcase', function () {
-                    return redirect()->to('http://project-showcase.edu-all.com/');
-                })->name('showcase');
             });
 
             Route::controller(BlogPageController::class)->group(function () {
                 Route::get('blog', "index")->name('blogs');
                 Route::get('/blog/{slug}', 'show')->name('detail_blog');
             });
-
-
-            Route::get('/webinar-workshop', [RegularTalkPageController::class, 'index']);
-            Route::get('/webinar-workshop/{slug}', [RegularTalkPageController::class, 'show']);
 
             Route::get(
                 '/event',

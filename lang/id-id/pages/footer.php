@@ -8,26 +8,36 @@ return [
     'company' => 'Perusahaan',
     'article' => 'Artikel Terbaru',
     'article_button' => 'Artikel Lainnya',
-    'page_list' => [
+    'informations' => [
         [
-            'title' => 'Beranda',
-            'link' => "/"
+            'title' => 'Privacy Policy',
+            'link' => "/privacy-policy"
+        ],
+    ],
+    'categories' => [
+        [
+            'title' => 'Admissions Mentoring',
+            'link' => "/programs/admissions-mentoring/ultimate-mentoring"
         ],
         [
-            'title' => 'Tentang Kami',
+            'title' => 'EduALL Academy',
+            'link' => "/programs/tutoring"
+        ],
+        [
+            'title' => 'About Us',
             'link' => "/about"
         ],
         [
-            'title' => 'EduJournal',
+            'title' => 'Events',
+            'link' => "/event"
+        ],
+        [
+            'title' => 'Blogs',
             'link' => "/blog"
         ],
         [
-            'title' => "Kemitraan & Karir",
-            'link' => "/about/partnership-careers"
-        ],
-        [
-            'title' => "Kebijakan Pribadi",
-            'link' => "/privacy-policy"
+            'title' => "Career",
+            'link' => "/about/careers"
         ],
     ],
 ];

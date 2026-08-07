@@ -24,31 +24,20 @@ class SitemapController extends Controller
         $lang = $locale;
         $pages = [
             '',
-            'programs',
-            'programs/admissions-mentoring',
-            'programs/admissions-mentoring/undergraduate-program',
-            'programs/admissions-mentoring/graduate-program',
-            'programs/admissions-mentoring/university-transfer-program',
-            'programs/global-innovators-project',
+            'programs/admissions-mentoring/ultimate-mentoring',
+            'programs/admissions-mentoring/epb',
             'programs/tutoring',
             'programs/tutoring/subject',
             'programs/tutoring/sat',
             'programs/tutoring/olympiad',
-            'programs/exclusive-program-school',
-            'programs/exclusive-program-school/admission-accelerator',
-            'programs/exclusive-program-school/experiential-learning',
-            'programs/exclusive-program-school/teacher-focused',
-            'about',
-            'about/mentor',
-            'about/our-contribution',
+            'about/our-story',
+            'about/our-team',
             'about/partnership',
             'about/careers',
             'blog',
             'sitemap-blogs.xml',
-            'resources/success-stories',
-            'resources/upcoming-events',
-            'resources/guidebook',
-            'resources/testimonial'
+            'event',
+            'impact-project',
         ];
 
         return response()->view('sitemap.page', compact('pages','lang'))->header('Content-Type', 'text/xml');

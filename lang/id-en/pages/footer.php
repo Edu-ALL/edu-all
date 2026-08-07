@@ -8,26 +8,36 @@ return [
     'company' => 'Company',
     'article' => 'Latest Article',
     'article_button' => 'More EduJournal',
-    'page_list' => [
+    'informations' => [
         [
-            'title' => 'Home',
-            'link' => "/"
+            'title' => 'Privacy Policy',
+            'link' => "/privacy-policy"
+        ],
+    ],
+    'categories' => [
+        [
+            'title' => 'Admissions Mentoring',
+            'link' => "/programs/admissions-mentoring/ultimate-mentoring"
+        ],
+        [
+            'title' => 'EduALL Academy',
+            'link' => "/programs/tutoring"
         ],
         [
             'title' => 'About Us',
             'link' => "/about"
         ],
         [
-            'title' => 'EduJournal',
+            'title' => 'Events',
+            'link' => "/event"
+        ],
+        [
+            'title' => 'Blogs',
             'link' => "/blog"
         ],
         [
-            'title' => "Partnership",
-            'link' => "/partnership"
-        ],
-        [
-            'title' => "Privacy Policy",
-            'link' => "/privacy-policy"
+            'title' => "Career",
+            'link' => "/about/careers"
         ],
     ],
 ];

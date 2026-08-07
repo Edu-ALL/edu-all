@@ -87,26 +87,24 @@
                         </div>
                     </div>
                     <div class="w-full md:w-[50%] mt-6 md:mt-0">
-                        <img src="{{ asset('assets/img/impact-project/bg-banner.png') }}" 
-                            alt="EduALL Impact Projects - Student Innovation and Research"
-                            loading="lazy"
-                            decoding="async"
-                            width="600" 
-                            height="400"
-                            class="w-full object-cover">
+                        <img src="{{ asset('assets/img/impact-project/bg-banner.png') }}"
+                            alt="EduALL Impact Projects - Student Innovation and Research" loading="lazy" decoding="async"
+                            width="600" height="400" class="w-full object-cover">
                     </div>
                 </div>
             </div>
             <div class="bg-[#EEF2FB] py-5">
                 <div class="new-main-container">
                     <div class="flex gap-5 justify-start">
-                        <button class="tab-btn active bg-newprimary border border-newprimary text-white rounded-full py-2 px-4 md:px-5 text-sm md:text-base"
-                                data-tab="passion_projects">
+                        <button
+                            class="tab-btn active bg-newprimary border border-newprimary text-white rounded-full py-2 px-4 md:px-5 text-sm md:text-base"
+                            data-tab="passion_projects">
                             {{ __('pages/impact_project.banner.buttons.passion_projects', [], app()->getLocale()) }}
                         </button>
 
-                        <button class="tab-btn bg-white border border-newprimary text-newprimary rounded-full py-2 px-4 md:px-5 text-sm md:text-base"
-                                data-tab="student_research">
+                        <button
+                            class="tab-btn bg-white border border-newprimary text-newprimary rounded-full py-2 px-4 md:px-5 text-sm md:text-base"
+                            data-tab="student_research">
                             {{ __('pages/impact_project.banner.buttons.student_research', [], app()->getLocale()) }}
                         </button>
                     </div>
@@ -146,12 +144,9 @@
                     @foreach ($projects as $project)
                         <div class="w-full md:w-[calc(25%-15px)] flex-shrink-0 group">
                             <div class="overflow-hidden rounded-xl aspect-[4/2.2] bg-gray-200">
-                                <img src="{{ $project['image'] }}" 
+                                <img src="{{ $project['image'] ? asset('assets/img/impact-project/') . '/' . $project['image'] : 'https://placehold.net/default.svg' }}"
                                     alt="{{ $project['title'] }} - {{ $project['category'] }} by {{ $project['author'] }}"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="800" 
-                                    height="440"
+                                    loading="lazy" decoding="async" width="800" height="440"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
 
@@ -198,12 +193,8 @@
                     {{-- CARD --}}
                     @foreach ($projects as $project)
                         <div class="cursor-pointer modal-trigger" data-target="modal-{{ $project['id'] }}">
-                            <img src="{{ $project['image'] }}" 
-                                alt="{{ $project['title'] }} - {{ $project['category'] }}"
-                                loading="lazy"
-                                decoding="async"
-                                width="800" 
-                                height="300"
+                            <img src="{{ $project['image'] ? asset('assets/img/impact-project/') . '/' . $project['image'] : 'https://placehold.net/default.svg' }}" alt="{{ $project['title'] }} - {{ $project['category'] }}"
+                                loading="lazy" decoding="async" width="800" height="300"
                                 class="w-full h-[300px] object-cover rounded-xl mb-2">
                             <div class="flex items-center justify-between mb-5">
 
@@ -256,13 +247,9 @@
 
                             <hr>
 
-                            <img src="{{ $project['image'] }}" 
-                                alt="{{ $project['title'] }} - {{ $project['category'] }} - Detailed view"
-                                loading="lazy"
-                                decoding="async"
-                                width="800" 
-                                height="450"
-                                class="w-full rounded-xl my-3">
+                            <img src="{{ $project['image'] ? asset('assets/img/impact-project/') . '/' . $project['image'] : 'https://placehold.net/default.svg' }}"
+                                alt="{{ $project['title'] }} - {{ $project['category'] }} - Detailed view" loading="lazy"
+                                decoding="async" width="800" height="450" class="w-full rounded-xl my-3">
 
                             <p class="text-gray-600 font-light mb-3">
                                 {{ $project['desc1'] }}
@@ -333,7 +320,8 @@
 
                                 {{-- LINK --}}
                                 <div class="w-full md:w-auto md:text-right">
-                                    <a href="{{ $item['link'] }}" class="font-bold whitespace-nowrap text-sm md:text-base">
+                                    <a href="{{ $item['link'] }}"
+                                        class="font-bold whitespace-nowrap text-sm md:text-base">
                                         {{ __('pages/impact_project.student_research.read_paper', [], app()->getLocale()) }}
 
                                         <i class="fa-solid fa-arrow-right ms-2"></i>
@@ -373,41 +361,26 @@
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/12. Event CTA foto 1.png') }}"
                                     alt="EduALL students participating in hands-on workshops and activities"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="800" 
-                                    height="600"
+                                    loading="lazy" decoding="async" width="800" height="600"
                                     class="rounded-lg shadow-sm w-full">
                             </li>
 
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/13. Event CTA foto 2.png') }}"
-                                    alt="EduALL community outreach and student engagement programs"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="800" 
-                                    height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL community outreach and student engagement programs" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/14. Event CTA foto 3.png') }}"
-                                    alt="EduALL mentorship programs providing quality learning experiences"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="800" 
-                                    height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL mentorship programs providing quality learning experiences" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/15. Event CTA foto 4.png') }}"
-                                    alt="EduALL educational events connecting students and educators"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="800" 
-                                    height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL educational events connecting students and educators" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                         </ul>
@@ -422,6 +395,7 @@
 @push('script')
     <script>
         {{-- Project slider scroll function --}}
+
         function scrollProjects(direction) {
             const slider = document.querySelector('#projectSlider');
 
@@ -502,7 +476,8 @@
                     document.querySelectorAll('[data-tab-content]').forEach(content => {
                         content.classList.add('hidden');
                     });
-                    document.querySelector(`[data-tab-content="${tabName}"]`).classList.remove('hidden');
+                    document.querySelector(`[data-tab-content="${tabName}"]`).classList.remove(
+                        'hidden');
 
                     // Scroll to the section smoothly
                     const section = document.getElementById(tabName);

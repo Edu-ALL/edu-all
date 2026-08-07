@@ -1,4 +1,5 @@
 @extends('layout.user.main')
+
 @section('head')
     @php
         $breadcrumbs = [
@@ -28,6 +29,7 @@
 
 @section('content')
     {{-- ==================== Banner Section ==================== --}}
+    {{-- Full-screen hero banner with title and description --}}
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
@@ -36,7 +38,7 @@
                     title="EduALL" loading="lazy" decoding="async"
                     width="100%" height="auto" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
             </div>
-            <div class="absolute left-0 w-full top-[27vh] md:top-[20vh] overflow-hidden">
+            <div class="absolute left-0 w-full top-[15vh] md:top-[20vh] overflow-hidden">
                 <div class="new-main-container">
                     <div class="bg-dark/60 rounded-2xl max-w-xl p-5 relative overflow-hidden py-10">
                         <img src="{{ asset('assets/img/about/Our Story/2. Hero Background Rectangle.png') }}" 
@@ -44,10 +46,12 @@
                             loading="lazy" decoding="async" width="800" height="600"
                             class="w-full h-full absolute top-0 left-0 z-0">
                         <div class="relative z-10">
-                            <p class=" bg-white rounded-full px-5 inline-block text-sm py-1 mb-5">
-                                <i class="fa-solid fa-circle text-[10px] mr-2"></i>
-                                {{ __('pages/about_us/our_story.banner.label') }}
-                            </p>
+                            <div class="flex items-center md:justify-start justify-center">
+                                <p class=" bg-white rounded-full px-5 inline-block text-sm py-1 mb-5">
+                                    <i class="fa-solid fa-circle text-[10px] mr-2"></i>
+                                    {{ __('pages/about_us/our_story.banner.label') }}
+                                </p>
+                            </div>
                             <h1 class="font-light text-[2rem] md:text-[3rem] text-white text-center lg:text-left md:leading-[3.5rem] mb-6 md:mb-5 leading-8 uppercase"
                                 itemprop="headline">
                                 {!! __('pages/about_us/our_story.banner.title') !!}
@@ -64,6 +68,7 @@
     </section>
 
     {{-- ==================== Our Score Section ==================== --}}
+    {{-- Statistics and achievements counter --}}
     <section class="bg-newprimary">
         <div class="pt-6 md:pt-10 new-main-container md:px-0 pb-5 relative z-10">
             <div class="flex flex-wrap justify-center gap-0 md:gap-5">
@@ -81,6 +86,8 @@
         </div>
     </section>
 
+    {{-- ==================== Our Story Section ==================== --}}
+    {{-- Founder story with modal trigger --}}
     <section class="new-main-container my-10">
         <div class="flex flex-col md:flex-row gap-10 items-center">
             <div class="w-full md:w-[30%]">
@@ -98,7 +105,7 @@
                     loading="lazy" decoding="async" width="400" height="500"
                     class="w-full rounded-xl shadow-md">
             </div>
-            <div class="w-[70%]">
+            <div class="w-full md:w-[70%]">
                 @foreach (__('pages/about_us/our_story.our_story.content') as $index => $text)
                     @if($index == 1)
                         <blockquote id="openModal"
@@ -115,6 +122,8 @@
         </div>
     </section>
 
+    {{-- ==================== Vision & Mission Section ==================== --}}
+    {{-- Company vision and mission cards --}}
     <section class="bg-gradient-to-b from-white to-blue-300 py-20 my-20">
         <div class="new-main-container">
             <p class="mb-6">
@@ -161,11 +170,13 @@
             <img src="{{ asset('assets/img/about/Our Story/5. Vission Mission Foto_2.png') }}" 
                 alt="EduALL Vision and Mission illustration"
                 loading="lazy" decoding="async" width="1200" height="400"
-                class="w-full rounded-2xl shadow-md mt-10">
+                class="w-full md:h-auto h-[200px] object-cover rounded-2xl shadow-md mt-10">
         </div>
     </section>
 
-    <section class="new-main-container py-20">
+    {{-- ==================== Journey Timeline Section ==================== --}}
+    {{-- Horizontal scrolling timeline with navigation arrows --}}
+    <section class="new-main-container py-10 md:py-20">
         <div class="max-w-5xl mx-auto">
             <div class="text-center">
                 <p class="text-xl font-normal text-newprimary mb-2 uppercase">
@@ -180,22 +191,20 @@
             </div>
         </div>
 
-        <div class="py-16 bg-white">
+        <div class="py-5 md:py-16 bg-white">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="relative">
-                    <!-- Left Arrow -->
+                    {{-- Left Arrow Button --}}
                     <button id="scrollLeftBtn"
                         class="absolute -left-4 md:-left-20 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
                         aria-label="Scroll timeline left">
                         &#10094;
                     </button>
 
-                    <!-- Horizontal Scroll -->
+                    {{-- Horizontal Scrollable Timeline --}}
                     <div id="journeyTimeline" class="overflow-x-auto no-scrollbar pb-6 focus:outline-none" tabindex="0">
-
                         <div class="relative min-w-[3200px]">
-
-                            <!-- Timeline Line -->
+                            {{-- Timeline Line --}}
                             <div class="absolute top-[6.5rem] left-0 right-0 h-[3px] bg-[#1A2EA6]"></div>
 
                             <div class="grid grid-cols-9 gap-10 relative">
@@ -229,29 +238,24 @@
                                         </div>
                                     </div>
                                 @endforeach
-
                             </div>
-
                         </div>
                     </div>
 
-
-                    <!-- Right Arrow -->
+                    {{-- Right Arrow Button --}}
                     <button id="scrollRightBtn"
                         class="absolute -right-4 md:-right-20 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
                         aria-label="Scroll timeline right">
                         &#10095;
                     </button>
-
                 </div>
-
-
-
             </div>
         </div>
     </section>
 
-    <section class="new-main-container py-20">
+    {{-- ==================== Testimonials Section ==================== --}}
+    {{-- Student and alumni testimonials grid --}}
+    <section class="new-main-container py-10 md:py-20">
         <div class="max-w-5xl mx-auto">
             <div class="text-center">
                 <p class="text-xl font-normal text-newprimary mb-2 uppercase">
@@ -264,15 +268,14 @@
                     {{ __('pages/about_us/our_story.testimonials.subtitle') }}
                 </p>
             </div>
-
         </div>
-        <div class="py-16 bg-white">
-            <div class="w-full mx-auto px-6">
-                <div class="flex flex-wrap">
+        <div class="py-5 md:py-16 bg-white">
+            <div class="w-full mx-auto md:px-6">
+                <div class="flex flex-wrap md:gap-0 gap-5">
                     @foreach (__('pages/about_us/our_story.testimonials.list') as $testimonial)
-                        <div class="w-full md:w-1/3 p-5">
-                            <div class="bg-gradient-to-r from-blue-200 to-blue-100 rounded-xl p-10">
-                                <div class="h-[360px]">
+                        <div class="w-full md:w-1/3 md:p-5">
+                            <div class="bg-gradient-to-r from-blue-200 to-blue-100 rounded-xl p-5 md:p-10">
+                                <div class="md:h-[380px] h-[350px]">
                                     <p class="text-dark/60 text-sm">
                                         {{ $testimonial['quote'] }}
                                     </p>
@@ -283,7 +286,7 @@
                                         loading="lazy" decoding="async" width="50" height="50"
                                         class="w-[50px] h-[50px] object-cover rounded-full">
                                     <div>
-                                        <p class="font-semibold">{{ $testimonial['name'] }}</p>
+                                        <p class="font-normal">{{ $testimonial['name'] }}</p>
                                         <p class="text-gray-500 text-sm">{{ $testimonial['role'] }}</p>
                                     </div>
                                 </div>
@@ -295,7 +298,9 @@
         </div>
     </section>
 
-    <section class="bpy-20 my-20">
+    {{-- ==================== Team Section ==================== --}}
+    {{-- Team introduction with CTA button --}}
+    <section class="my-20">
         <div class="new-main-container">
             <div class="flex flex-col md:flex-row gap-10 items-center">
                 <div class="w-full md:w-[50%]">
@@ -308,7 +313,7 @@
                     <p class="text-gray-500 text-lg mb-5">
                         {{ __('pages/about_us/our_story.team.description') }}
                     </p>
-                    <a href="#" class="bg-newprimary text-white rounded-lg px-5 py-2">
+                    <a href="{{ route('our_team', ['locale' => app()->getLocale()]) }}" class="bg-newprimary text-white rounded-lg px-5 py-2">
                         {{ __('pages/about_us/our_story.team.cta') }}
                     </a>
                 </div>
@@ -322,7 +327,8 @@
         </div>
     </section>
 
-    {{-- Modal  --}}
+    {{-- ==================== Modal Section ==================== --}}
+    {{-- Founder's letter modal with detailed content --}}
     <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[999]">
         <div class="bg-[#EFF0F0] rounded-xl shadow-lg w-11/12 max-w-5xl p-6 h-[90vh] overflow-auto">
             <div class="flex justify-end items-center">
@@ -393,7 +399,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const timeline = document.getElementById("journeyTimeline");
+            const modal = document.getElementById("modal");
+            const openModalBtn = document.getElementById("openModal");
+            const closeModalBtn = document.getElementById("closeModal");
 
+            // Timeline scroll functionality
             document.getElementById("scrollLeftBtn").addEventListener("click", () => {
                 timeline.scrollBy({
                     left: -500,
@@ -406,6 +416,43 @@
                     left: 500,
                     behavior: "smooth"
                 });
+            });
+
+            // Modal functionality
+            if (openModalBtn && modal) {
+                openModalBtn.addEventListener("click", () => {
+                    modal.classList.remove("hidden");
+                    modal.classList.add("flex");
+                    document.body.style.overflow = "hidden";
+                });
+            }
+
+            if (closeModalBtn && modal) {
+                closeModalBtn.addEventListener("click", () => {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                    document.body.style.overflow = "auto";
+                });
+            }
+
+            // Close modal when clicking outside the modal content
+            if (modal) {
+                modal.addEventListener("click", (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add("hidden");
+                        modal.classList.remove("flex");
+                        document.body.style.overflow = "auto";
+                    }
+                });
+            }
+
+            // Close modal with Escape key
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+                    modal.classList.add("hidden");
+                    modal.classList.remove("flex");
+                    document.body.style.overflow = "auto";
+                }
             });
         });
     </script>

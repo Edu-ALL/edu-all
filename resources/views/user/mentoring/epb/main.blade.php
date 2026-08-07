@@ -1,20 +1,22 @@
+{{-- ============================================================= --}}
+{{-- EPB (Exploration & Profile Building) Mentoring Page --}}
+{{-- ============================================================= --}}
 @extends('layout.user.main')
+
 @section('head')
     @php
         $breadcrumbs = [
-            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
-            ['name' => 'Mentoring', 'url' => '#'],
-            ['name' => 'Exploration & Profile Building', 'url' => url()->current()],
+            ['name' => __('pages/mentoring/epb.breadcrumbs.home'), 'url' => url('/' . app()->getLocale())],
+            ['name' => __('pages/mentoring/epb.breadcrumbs.program'), 'url' => '#'],
+            ['name' => __('pages/mentoring/epb.breadcrumbs.mentoring'), 'url' => url()->current()],
         ];
     @endphp
 
     {{-- Page Title and Meta Tags --}}
-    <title>Exploration & Profile Building | EduALL</title>
-    <meta name="title" content="Exploration & Profile Building | EduALL" />
-    <meta name="description"
-        content="EduALL's profile building program for high school students in Indonesia. Build extracurricular achievements and a standout university application portfolio." />
-    <meta name="keywords"
-        content="university admissions consultant, admissions consulting, profile building, university application preparation, university application profile, extracurricular development, university application portfolio, leadership development, academic research, summer program, pre-college program, scholarship guidance, Ivy League, US universities, UK universities, top universities, extracurricular activities, extracurricular achievements, research paper, EduALL, Ultimate Mentoring, konsultan pendidikan, kuliah di luar negeri, beasiswa luar negeri" />
+    <title>{{ __('pages/mentoring/epb.meta_title') }}</title>
+    <meta name="title" content="{{ __('pages/mentoring/epb.meta_title') }}" />
+    <meta name="description" content="{{ __('pages/mentoring/epb.meta_description') }}" />
+    <meta name="keywords" content="{{ __('pages/mentoring/epb.meta_keywords') }}" />
 @endsection
 
 @push('style')
@@ -73,11 +75,49 @@
         td {
             border: 0 !important;
         }
+
+        /* ==================== Student Club Cards Active State ==================== */
+        .pathway-card.active {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+            padding: 1rem;
+            height: 400px;
+            background: linear-gradient(to bottom, #1E3A8A, #000000);
+        }
+
+        .pathway-card.active .text-5xl {
+            display: none;
+        }
+
+        .pathway-card.active .group-hover\:block {
+            display: block;
+        }
+
+        .pathway-card.active .absolute.bottom-10 {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .pathway-card.active .text-\[\#0B1B7A\] {
+            color: white;
+        }
+
+        .pathway-card.active .text-gray-800 {
+            color: white;
+        }
+
+        .pathway-card.active .opacity-0 {
+            opacity: 100;
+            transform: translateY(0);
+        }
     </style>
 @endpush
 
 @section('content')
     {{-- ==================== Banner Section ==================== --}}
+    {{-- Full-screen hero banner with title and description --}}
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
@@ -90,16 +130,12 @@
                 <div class="new-main-container">
                     <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-20 leading-8"
                         itemprop="headline">
-                        Exploration & <br> Profile Building Program
+                        {!! __('pages/mentoring/epb.banner.title') !!}
                     </h1>
 
                     <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
                         itemprop="description">
-                        Designed specifically for students in grades 7 to 11, this program helps them build a strong
-                        foundation
-                        before university applications. Through personalized mentorship, hands-on experiences, and
-                        extracurricular achievements through student clubs, research, competitions, internships, and passion
-                        projects, EduALL helps students discover their passions and strengths.
+                        {{ __('pages/mentoring/epb.banner.description') }}
                     </p>
                 </div>
             </div>
@@ -107,289 +143,163 @@
     </section>
 
     {{-- ==================== Our Score Section ==================== --}}
+    {{-- Statistics and achievements counter --}}
     <section class="relative z-10 bg-[#00003F]">
         <div class="pt-6 md:pt-10 new-main-container md:px-0">
             <div class="flex flex-wrap justify-center gap-0 md:gap-5">
-                <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[25px] font-bold text-white">
-                        1200+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Students Mentored
-                    </p>
-                </div>
-
-                <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[25px] font-bold text-white">
-                        100%
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Acceptance Rate
-                    </p>
-                </div>
-
-                <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[25px] font-bold text-white">
-                        $2.7 Million+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        in Merit Based Scholarships Secured
-                    </p>
-                </div>
-
-                <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[25px] font-bold text-white">
-                        3500+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Letter of Acceptances from Top Universities
-                    </p>
-                </div>
-
-                <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[25px] font-bold text-white">
-                        200+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Top Global Universities Reached Worldwide
-                    </p>
-                </div>
+                @foreach (__('pages/mentoring/epb.scores') as $score)
+                    <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
+                        <p class="text-lg md:text-[25px] font-bold text-white">
+                            {{ $score['value'] }}
+                        </p>
+                        <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
+                            {{ $score['label'] }}
+                        </p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
+    {{-- ==================== Program Features Section ==================== --}}
+    {{-- Four key features: 1-on-1 Mentoring, Strategic Roadmap, Well-Rounded Support, 100+ Certificates --}}
     <section class="new-main-container my-20" aria-label="Program Features">
         <div class=" text-newprimary p-5">
-            <div class="flex items-start justify-center gap-5">
-                <article class="w-1/4 h-full">
-                    <div class="w-full flex items-center justify-center text-center border-r border-dark/30 px-10">
-                        <h3 class="text-3xl font-light">
-                            1-on-1 <br> Mentoring
-                        </h3>
-                    </div>
-
-                    <div class="px-5 flex justify-center mt-20">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-1.png') }}"
-                            alt="1-on-1 Personalized Mentoring Session at EduALL" class="w-full rounded-2xl shadow-xl"
-                            loading="lazy">
-                    </div>
-                </article>
-                <article class="w-1/4 h-full">
-                    <div class="w-full flex items-center justify-center text-center border-r border-dark/30 px-10">
-                        <h3 class="text-3xl font-light">
-                            Strategic <br>
-                            Roadmap
-                        </h3>
-                    </div>
-
-                    <div class="px-5 flex justify-center mt-10">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-2.png') }}"
-                            alt="Strategic Roadmap Planning for University Applications"
-                            class="w-full rounded-2xl shadow-xl" loading="lazy">
-                    </div>
-                </article>
-                <article class="w-1/4 h-full">
-                    <div class="w-full flex items-center justify-center text-center border-r border-dark/30 px-10">
-                        <h3 class="text-3xl font-light">
-                            Well-Rounded <br>
-                            Support
-                        </h3>
-                    </div>
-
-                    <div class="px-5 flex justify-center mt-20">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-3.png') }}"
-                            alt="Well-Rounded Support for Student Development" class="w-full rounded-2xl shadow-xl"
-                            loading="lazy">
-                    </div>
+            <div class="flex flex-col md:flex-row items-start justify-center gap-5">
+                @foreach (__('pages/mentoring/epb.features') as $index => $feature)
+                    <article class="w-full md:w-1/4 h-full">
+                        @if ($index === 0)
+                            <div
+                                class="w-full flex items-center justify-center text-center md:border-r md:border-dark/30 px-10">
+                                <h3 class="text-3xl font-light">
+                                    {!! str_replace('1-on-1', '1-on-1', $feature) !!}
+                                </h3>
+                            </div>
+                            <div class="px-5 flex justify-center mt-5 md:mt-20">
+                                <img src="{{ asset('assets/img/mentoring/epb/epb-1.png') }}"
+                                    alt="{{ __('pages/mentoring/epb.features.0') }} at EduALL"
+                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
+                            </div>
+                        @elseif($index === 1)
+                            <div
+                                class="w-full flex items-center justify-center text-center md:border-r md:border-dark/30 px-10">
+                                <h3 class="text-3xl font-light">
+                                    {!! str_replace('Strategic', 'Strategic', $feature) !!}
+                                </h3>
+                            </div>
+                            <div class="px-5 flex justify-center mt-5 md:mt-10">
+                                <img src="{{ asset('assets/img/mentoring/epb/epb-2.png') }}"
+                                    alt="{{ __('pages/mentoring/epb.features.1') }} for University Applications"
+                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
+                            </div>
+                        @elseif($index === 2)
+                            <div
+                                class="w-full flex items-center justify-center text-center md:border-r md:border-dark/30 px-10">
+                                <h3 class="text-3xl font-light">
+                                    {!! str_replace('Well-Rounded', 'Well-Rounded', $feature) !!}
+                                </h3>
+                            </div>
+                            <div class="px-5 flex justify-center mt-5 md:mt-20">
+                                <img src="{{ asset('assets/img/mentoring/epb/epb-3.png') }}"
+                                    alt="{{ __('pages/mentoring/epb.features.2') }} for Student Development"
+                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
+                            </div>
+                        @elseif($index === 3)
+                            <div
+                                class="w-full flex flex-col items-center justify-center text-center md:border-r md:border-dark/30 px-10">
+                                <h3 class="text-4xl font-light">
+                                    100 +
+                                </h3>
+                                <p class="text-dark/70">
+                                    {{ __('pages/mentoring/epb.features.3') }}
+                                </p>
+                            </div>
+                            <div class="px-5 flex justify-center mt-5 md:mt-10">
+                                <img src="{{ asset('assets/img/mentoring/epb/epb-4.png') }}"
+                                    alt="{{ __('pages/mentoring/epb.features.3') }} Achieved by EduALL Students"
+                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
+                            </div>
+                        @endif
+                    </article>
+                @endforeach
             </div>
-            <article class="w-1/4 h-full">
-                <div class="w-full flex flex-col items-center justify-center text-center border-r border-dark/30 px-10">
-                    <h3 class="text-4xl font-light">
-                        100 +
-                    </h3>
-                    <p class="text-dark/70">
-                        Certificates & Awards
-                    </p>
-                </div>
-
-                <div class="px-5 flex justify-center mt-10">
-                    <img src="{{ asset('assets/img/mentoring/epb/epb-4.png') }}"
-                        alt="100 Plus Certificates and Awards Achieved by EduALL Students"
-                        class="w-full rounded-2xl shadow-xl" loading="lazy">
-                </div>
-            </article>
-        </div>
         </div>
     </section>
 
+    {{-- ==================== Program Overview Section ==================== --}}
+    {{-- Program description with accordion for key features --}}
     <section class="new-main-container py-10" aria-label="Program Overview">
-        <div class="flex items-center gap-10">
-            <div class="w-1/2">
-                <h2 class="text-5xl font-normal mb-5 text-newprimary uppercase">
-                    <span class="text-xl">
-                        Designed for Grades 7–11 <br>
-                    </span>
-                    Your Pathway, <br> Your Pace
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-normal mb-5 text-newprimary uppercase">
+                    {!! __('pages/mentoring/epb.overview.title') !!}
                 </h2>
                 <p class="text-dark/50 text-lg mb-5">
-                    Every student starts from a different place. Whether you're exploring future majors, building
-                    extracurricular achievements, or launching a passion project, Exploration & Profile Building gives you
-                    the
-                    structure and guidance to make every step count. As an independent education consultant, we build your
-                    path
-                    around your goals. When you are ready for end-to-end support, our Ultimate Mentoring program takes you
-                    through to acceptance.
+                    {{ __('pages/mentoring/epb.overview.description') }}
                 </p>
 
-                <a href="#" class="bg-dark text-white py-2 px-5 rounded-xl">
-                    Get Consultation
+                <a href="https://bit.ly/eduall-contactus" class="bg-dark text-white py-2 px-5 rounded-xl">
+                    {{ __('pages/mentoring/epb.overview.cta') }}
                     <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
             </div>
-            <div class="w-1/2">
+            <div class="w-full md:w-1/2">
                 <div class="accordion-group">
-                    <div class="border rounded-2xl overflow-hidden mb-3">
-                        <button
-                            class="accordion-btn bg-gradient-to-r from-newprimary to-blue-700 text-white w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5 text-xl">
-                            <span>Flexible Exploration</span>
-                            <span class="text-2xl transition-all duration-200">+</span>
-                        </button>
+                    @foreach (__('pages/mentoring/epb.accordion') as $index => $item)
+                        <div class="border rounded-2xl overflow-hidden mb-3">
+                            <button
+                                class="accordion-btn bg-gradient-to-r from-newprimary to-blue-700 text-white w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5 text-xl">
+                                <span>{{ $item['title'] }}</span>
+                                <span class="text-xl md:text-2xl transition-all duration-200">+</span>
+                            </button>
 
-                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                Choose the extracurricular activities that fit your interests (student clubs,
-                                research, competitions, or professional exposure), all customized to your goals
-                                and university application targets.
+                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="px-5 py-5 text-gray-600 md:text-start text-center">
+                                    {{ $item['content'] }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="border rounded-2xl overflow-hidden mb-3">
-                        <button
-                            class="accordion-btn bg-gradient-to-r from-newprimary to-blue-700 text-white w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5 text-xl">
-                            <span>Student-Driven Development</span>
-                            <span class="text-2xl transition-all duration-200">+</span>
-                        </button>
-
-                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                You take the steering wheel, and we provide the expert structure. Define the
-                                specific project, research topic, or global competition you want to tackle, and
-                                your dedicated mentor will co-create the roadmap with you.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border rounded-2xl overflow-hidden mb-3">
-                        <button
-                            class="accordion-btn bg-gradient-to-r from-newprimary to-blue-700 text-white w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5 text-xl">
-                            <span>Focused Profile Building</span>
-                            <span class="text-2xl transition-all duration-200">+</span>
-                        </button>
-
-                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                Focus purely on tangible results. We design, launch, and polish portfolios,
-                                research papers, and passion projects that go directly onto your university
-                                application as documented extracurricular achievements.
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-gradient-to-r from-[#F6F6F6] to-[#f0f0f0] my-20 py-20" aria-label="Program Comparison">
-        <div class="new-main-container py-20">
-            <h2 class="text-6xl font-light uppercase text-center">
-                Impact project mentoring
+    {{-- ==================== Program Comparison Section ==================== --}}
+    {{-- Comparison table showing program differences between Grades 7-8 and Grades 9-11 --}}
+    <section class="bg-gradient-to-r from-[#F6F6F6] to-[#f0f0f0] my-5 md:my-20 py-5 md:py-20"
+        aria-label="Program Comparison">
+        <div class="new-main-container py-5 md:py-20">
+            <h2 class="text-3xl md:text-6xl font-light uppercase text-center">
+                {{ __('pages/mentoring/epb.comparison.title') }}
             </h2>
 
-            <div class="overflow-x-auto rounded-2xl mt-20 bg-white">
+            <div class="overflow-x-auto rounded-2xl mt-5 md:mt-20 bg-white">
                 <table class="min-w-full border-collapse">
                     <thead class="bg-white text-dark">
                         <tr>
-                            <th class="px-6 py-4 text-center font-normal rounded-xl shadow-md">Program</th>
-                            <th class="px-6 py-4 text-center font-normal rounded-xl shadow-md">Grades 7–8</th>
-                            <th class="px-6 py-4 text-center font-normal rounded-xl shadow-md">Grades 9–11</th>
+                            <th class="px-6 py-4 text-center font-normal rounded-xl shadow-md">
+                                {{ __('pages/mentoring/epb.comparison.table.program') }}</th>
+                            <th class="px-6 py-4 text-center font-normal rounded-xl shadow-md">
+                                {{ __('pages/mentoring/epb.comparison.table.grades_7_8') }}</th>
+                            <th class="px-6 py-4 text-center font-normal rounded-xl shadow-md">
+                                {{ __('pages/mentoring/epb.comparison.table.grades_9_11') }}</th>
                         </tr>
                     </thead>
 
                     <tbody class="text-gray-700 ">
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>Major
-                                Exploration</td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Explore different majors and career pathways through guided exposure
-                                and hands-on activities.
-                            </td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Refine your academic interests and identify majors that align with
-                                your strengths and long-term goals.
-                            </td>
-                        </tr>
-
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>Future
-                                Skills</td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Learn practical skills such as public speaking, content creation,
-                                AI, and presentation.
-                            </td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Apply these skills through research, leadership, competitions,
-                                and real-world projects.
-                            </td>
-                        </tr>
-
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>
-                                Passion Project</td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Design and launch your first guided passion project.
-                            </td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Lead a larger-scale passion project that creates measurable impact.
-                            </td>
-                        </tr>
-
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>
-                                Research & Competitions</td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Participate in introductory research and selected competitions
-                                based on your interests.
-                            </td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Pursue advanced research, publish papers, and compete in national
-                                or international competitions.
-                            </td>
-                        </tr>
-
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>
-                                Portfolio Development</td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Build your first digital portfolio to document your learning journey.
-                            </td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Curate a university-ready portfolio showcasing your achievements
-                                and growth.
-                            </td>
-                        </tr>
-
-                        <tr class="odd:bg-white even:bg-gray-50">
-                            <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>
-                                Showcase</td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Present your work to parents and the EduALL community event.
-                            </td>
-                            <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
-                                Present impactful projects and accomplishments through showcases
-                                and university applications.
-                            </td>
-                        </tr>
+                        @foreach (__('pages/mentoring/epb.comparison.rows') as $row)
+                            <tr class="odd:bg-white even:bg-gray-50">
+                                <td class="px-6 py-5 font-normal rounded-xl bg-newprimary text-white shadow-md" nowrap>
+                                    {{ $row['program'] }}</td>
+                                <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
+                                    {{ $row['grades_7_8'] }}
+                                </td>
+                                <td class="px-6 py-5 bg-blue-200 rounded-xl shadow-md">
+                                    {{ $row['grades_9_11'] }}
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -397,140 +307,90 @@
     </section>
 
 
+    {{-- ==================== Why Choose Us Section ==================== --}}
+    {{-- Tabbed section showing different program benefits --}}
     <section class="new-main-container my-10" aria-label="Why Choose Us">
-        <div class="bg-[#F6F6F6] rounded-xl shadow-md p-10">
+        <div class="bg-[#F6F6F6] rounded-xl shadow-md p-5 md:p-10">
             <p class="text-newprimary">
-                Why Choose Us
+                {{ __('pages/mentoring/epb.why_choose_us.label') }}
             </p>
-            <h2 class="text-4xl font-normal uppercase mb-4">
-                Discover the World Beyond the Classroom
+            <h2 class="text-2xl md:text-4xl font-normal uppercase mb-4">
+                {{ __('pages/mentoring/epb.why_choose_us.title') }}
             </h2>
             <p class="text-dark/60">
-                Move beyond academics and discover how your interests come to life in the real world. Whether you're
-                building a passion project, conducting research, working with industry professionals, or joining global
-                competitions, every experience helps you develop the skills, achievements, and direction that strengthen
-                both your university applications and your future career.
+                {{ __('pages/mentoring/epb.why_choose_us.description') }}
             </p>
 
             <div class="border-b border-gray-400 my-10"></div>
 
-            <div class="flex gap-10">
+            <div class="flex flex-col md:flex-row gap-10">
 
                 <!-- Menu -->
-                <div class="w-[35%]">
+                <div class="w-full md:w-[35%]">
                     <div id="tabMenu" class="space-y-5">
-
-                        <button class="tab-btn w-full border rounded-2xl overflow-hidden" data-tab="1">
-                            <div
-                                class="tab-header flex items-center px-5 py-4 bg-white text-gray-800 transition-all duration-300">
-                                <div class="flex items-center gap-4">
-                                    <span class="icon text-2xl font-light">+</span>
-                                    <span class="font-normal text-xl text-start">High-Impact Passion Projects</span>
+                        @foreach (__('pages/mentoring/epb.why_choose_us.tabs') as $index => $tab)
+                            <button class="tab-btn w-full border rounded-2xl overflow-hidden"
+                                data-tab="{{ $index + 1 }}">
+                                <div
+                                    class="tab-header flex items-center px-5 py-4 bg-white text-gray-800 transition-all duration-300">
+                                    <div class="flex items-center gap-4">
+                                        <span class="icon text-2xl font-light">+</span>
+                                        <span class="font-normal text-xl text-start">{{ $tab['title'] }}</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </button>
-
-                        <button class="tab-btn w-full border rounded-2xl overflow-hidden" data-tab="2">
-                            <div
-                                class="tab-header flex items-center px-5 py-4 bg-white text-gray-800 transition-all duration-300">
-                                <div class="flex items-center gap-4">
-                                    <span class="icon text-2xl font-light">+</span>
-                                    <span class="font-normal text-xl text-start">In-Depth Academic Research</span>
-                                </div>
-                            </div>
-                        </button>
-
-                        <button class="tab-btn w-full border rounded-2xl overflow-hidden" data-tab="3">
-                            <div
-                                class="tab-header flex items-center px-5 py-4 bg-white text-gray-800 transition-all duration-300">
-                                <div class="flex items-center gap-4">
-                                    <span class="icon text-2xl font-light">+</span>
-                                    <span class="font-normal text-xl text-start">Professional Industry Exposure</span>
-                                </div>
-                            </div>
-                        </button>
-
-                        <button class="tab-btn w-full border rounded-2xl overflow-hidden" data-tab="4">
-                            <div
-                                class="tab-header flex items-center px-5 py-4 bg-white text-gray-800 transition-all duration-300">
-                                <div class="flex items-center gap-4">
-                                    <span class="icon text-2xl font-light">+</span>
-                                    <span class="font-normal text-xl text-start">International Project
-                                        Competitions</span>
-                                </div>
-                            </div>
-                        </button>
-
+                            </button>
+                        @endforeach
                     </div>
                 </div>
 
                 <!-- Content -->
-                <div class="w-[65%]">
-
-                    <div class="tab-pane" data-tab="1">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-1.png') }}"
-                            alt="High-Impact Passion Projects - Community Campaigns and Digital Apps"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
-                            height="280">
-                        <p class="text-gray-500 pt-4">
-                            From community campaigns to digital apps, we guide you from initial concept to public launch,
-                            creating a tangible extracurricular achievement for your university application portfolio.
-                        </p>
-                    </div>
-
-                    <div class="tab-pane hidden" data-tab="2">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}"
-                            alt="In-Depth Academic Research and Publication for University Applications"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
-                            height="280">
-                        <p class="text-gray-500 pt-4">
-                            Research, write, and publish papers that demonstrate intellectual depth.
-                            It is the kind of achievement that stands out to admissions committees at top universities.
-                        </p>
-                    </div>
-
-                    <div class="tab-pane hidden" data-tab="3">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}"
-                            alt="Professional Industry Exposure and Career Direction for Students"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
-                            height="280">
-                        <p class="text-gray-500 pt-4">
-                            Connect with industry professionals early and bring authentic career direction
-                            to your university application narrative.
-                        </p>
-                    </div>
-
-                    <div class="tab-pane hidden" data-tab="4">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-4.png') }}"
-                            alt="International Project Competitions and Global Recognition"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
-                            height="280">
-                        <p class="text-gray-500 pt-4">
-                            Coaching you through rigorous preparation to confidently present your skills,
-                            test your ideas, and win recognition on a highly competitive international stage.
-                        </p>
-                    </div>
-
+                <div class="w-full md:w-[65%]">
+                    @foreach (__('pages/mentoring/epb.why_choose_us.tabs') as $index => $tab)
+                        <div class="tab-pane {{ $index === 0 ? '' : 'hidden' }}" data-tab="{{ $index + 1 }}">
+                            @if ($index === 0)
+                                <img src="{{ asset('assets/img/mentoring/epb/why-us-1.png') }}"
+                                    alt="{{ $tab['title'] }} - Community Campaigns and Digital Apps"
+                                    class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy"
+                                    width="800" height="280">
+                            @elseif($index === 1)
+                                <img src="{{ asset('assets/img/mentoring/epb/why-us-2.png') }}"
+                                    alt="{{ $tab['title'] }} for University Applications"
+                                    class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy"
+                                    width="800" height="280">
+                            @elseif($index === 2)
+                                <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}"
+                                    alt="{{ $tab['title'] }} for Students"
+                                    class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy"
+                                    width="800" height="280">
+                            @elseif($index === 3)
+                                <img src="{{ asset('assets/img/mentoring/epb/why-us-4.png') }}"
+                                    alt="{{ $tab['title'] }}" class="w-full h-[280px] object-cover rounded-3xl shadow-md"
+                                    loading="lazy" width="800" height="280">
+                            @endif
+                            <p class="text-gray-500 pt-4">
+                                {{ $tab['description'] }}
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="new-main-container py-20 relative" aria-label="Program Benefits">
+    {{-- ==================== Program Benefits Section ==================== --}}
+    {{-- Five phases: Student Clubs, Personal Projects, Competitions, Internships, Portfolio --}}
+    <section class="new-main-container py-10 md:py-20 relative" aria-label="Program Benefits">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-normal uppercase text-center text-newprimary mb-10">
-                The Missing Piece of Your <br> <strong>University Profile</strong>
+            <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-10">
+                {!! __('pages/mentoring/epb.benefits_section.title') !!}
             </h2>
-            <p class="text-gray-500 text-xl font-light text-center">
-                The strongest university profiles aren't built on grades alone. They're built through meaningful experiences
-                that demonstrate initiative, curiosity, and impact. You choose where you want to grow. We'll help you
-                develop the skills, experiences, and achievements that make your university application stronger and
-                unmistakably yours.
+            <p class="text-gray-500 text-lg md:text-xl font-light text-center">
+                {{ __('pages/mentoring/epb.benefits_section.description') }}
             </p>
         </div>
-        <div class="w-full mx-auto mt-10">
-            <div class="flex gap-8">
+        <div class="w-full mx-auto mt-5 md:mt-10">
+            <div class="flex flex-col md:flex-row gap-8">
                 <!-- Content -->
                 <div class="flex-1">
                     <!-- Top Phase List -->
@@ -560,13 +420,13 @@
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-between gap-10">
-                                                <div class="w-[30%]">
-                                                    <p class="text-white mb-10 text-2xl">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
+                                                <div class="w-full md:w-[30%]">
+                                                    <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Build Extracurricular Leadership in Your Field
                                                     </p>
                                                 </div>
-                                                <div class="w-[70%]">
+                                                <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
                                                         Students begin by exploring their interests, strengths, and future
                                                         aspirations.
@@ -778,6 +638,7 @@
                             </div>
                         </div>
 
+                        {{-- ==================== Phase 2: Personal Project & Academic Research ==================== --}}
                         {{-- Phase 2  --}}
                         <div class="flex gap-5 items-stretch relative mb-2">
                             <div
@@ -803,13 +664,13 @@
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-between gap-10">
-                                                <div class="w-[30%]">
-                                                    <p class="text-white mb-10 text-2xl">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
+                                                <div class="w-full md:w-[30%]">
+                                                    <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Launch Initiatives That Strengthen Your University Profile
                                                     </p>
                                                 </div>
-                                                <div class="w-[70%]">
+                                                <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
                                                         A well-executed personal project shows top universities your
                                                         independent initiative, creativity, and passion. Your dedicated
@@ -970,6 +831,7 @@
                             </div>
                         </div>
 
+                        {{-- ==================== Phase 3: International Competitions ==================== --}}
                         {{-- Phase 3  --}}
                         <div class="flex gap-5 items-stretch relative mb-2">
                             <div
@@ -995,13 +857,13 @@
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-between gap-10">
-                                                <div class="w-[30%]">
-                                                    <p class="text-white mb-10 text-2xl">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
+                                                <div class="w-full md:w-[30%]">
+                                                    <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Win Global Recognition for Your University Application
                                                     </p>
                                                 </div>
-                                                <div class="w-[70%]">
+                                                <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
                                                         Prestigious competitions are among the most impactful
                                                         extracurricular achievements on a university application,
@@ -1166,6 +1028,7 @@
                             </div>
                         </div>
 
+                        {{-- ==================== Phase 4: Internship & Job Shadowing ==================== --}}
                         {{-- Phase 4  --}}
                         <div class="flex gap-5 items-stretch relative mb-2">
                             <div
@@ -1191,13 +1054,13 @@
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-between gap-10">
-                                                <div class="w-[30%]">
-                                                    <p class="text-white mb-10 text-2xl">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
+                                                <div class="w-full md:w-[30%]">
+                                                    <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Experience Your Future Career
                                                     </p>
                                                 </div>
-                                                <div class="w-[70%]">
+                                                <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
                                                         Early professional exposure gives high school students across
                                                         Indonesia a genuine advantage in university applications. We
@@ -1216,6 +1079,7 @@
                             </div>
                         </div>
 
+                        {{-- ==================== Phase 5: Digital Portfolio Enhancement ==================== --}}
                         {{-- Phase 5  --}}
                         <div class="flex gap-5 items-stretch relative mb-2">
                             <div
@@ -1241,13 +1105,13 @@
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-between gap-10">
-                                                <div class="w-[30%]">
-                                                    <p class="text-white mb-10 text-2xl">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
+                                                <div class="w-full md:w-[30%]">
+                                                    <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Showcase Your Best Self
                                                     </p>
                                                 </div>
-                                                <div class="w-[70%]">
+                                                <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
                                                         Building achievements is only half the journey. We help you compile
                                                         your projects, research papers, competition wins, and internship
@@ -1271,19 +1135,18 @@
         </div>
     </section>
 
-    <section class="new-main-container py-20 relative" aria-label="Additional Opportunities">
-        <div class="flex gap-10">
-            <div class="w-[35%]">
+    {{-- ==================== Additional Opportunities Section ==================== --}}
+    {{-- Extra opportunities: forums, exhibitions, internships, volunteering --}}
+    <section class="new-main-container py-5 md:py-20 relative" aria-label="Additional Opportunities">
+        <div class="flex flex-col md:flex-row gap-10">
+            <div class="w-full md:w-[35%]">
                 <h3 class="text-4xl font-normal">
-                    The opportunities above are only part of the journey.
+                    {{ __('pages/mentoring/epb.additional_opportunities.title') }}
                 </h3>
             </div>
-            <div class="w-[65%]">
+            <div class="w-full md:w-[65%]">
                 <p class="text-lg text-gray-500 ">
-                    As an EduALL mentee, you'll also receive priority access to exclusive opportunities as they become
-                    available, from national stage forum, project exhibition, internship, NGO volunteering, and more. We
-                    connect students with opportunities that match their needs and interests because the right experience at
-                    the right time can make all the difference.
+                    {{ __('pages/mentoring/epb.additional_opportunities.description') }}
                 </p>
             </div>
         </div>
@@ -1292,7 +1155,8 @@
 
 
     {{-- ==================== Call to Action Section ==================== --}}
-    <section class="relative z-10 h-auto overflow-hidden mt-12 md:mt-10" aria-label="Call to Action">
+    {{-- Consultation booking form with CTA image --}}
+    <section class="relative z-10 h-auto overflow-hidden mt-5 md:mt-10" aria-label="Call to Action">
         <img src="{{ asset('assets/img/mentoring/epb/cta.png') }}" alt="EduALL Free Consultation Booking"
             class="absolute top-0 left-0 w-full z-0" loading="lazy">
         <div class="new-main-container relative z-10 flex justify-center">
@@ -1300,15 +1164,14 @@
                 <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 items-center cta-grid">
                     <div class="w-full md:w-1/2 text-dark md:order-1 order-2">
                         <p class="text-xl md:text-3xl mb-3 md:mb-5">
-                            Ready to take the next step?
+                            {{ __('pages/mentoring/epb.cta.title') }}
                         </p>
                         <p class="text-xs md:text-sm text-gray-500">
-                            Our Ultimate Mentoring Program provides personalized guidance through every stage university
-                            preparation.
+                            {{ __('pages/mentoring/epb.cta.description') }}
                         </p>
 
-                        <x-new-form title="Program" program-id="AAUP" lead-id="LS045" color="dark"
-                            submit-title="Book Your Free Consultation" />
+                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="AAUP" lead-id="LS045"
+                            color="dark" submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
                         <img src="{{ asset('assets/img/mentoring/epb/EPB CTA.png') }}" alt="EduALL"
@@ -1321,32 +1184,21 @@
 
 
     {{-- ==================== Universities Section ==================== --}}
-    <section class="relative z-10 mt-20 pb-10" aria-label="University Acceptances">
+    {{-- University acceptances showcase component --}}
+    <section class="relative z-10 mt-20 md:pb-10" aria-label="University Acceptances">
         <div class="new-main-container px-10">
             <div class="max-w-4xl mx-auto">
-                <p class="text-4xl font-semibold text-center text-newprimary mb-10">
-                    From Meaningful Achievements to Top Universities
+                <p class="text-2xl md:text-4xl font-semibold text-center text-newprimary mb-10">
+                    {{ __('pages/mentoring/epb.universities.title') }}
                 </p>
 
                 <p class="text-lg text-gray-500 text-center">
-                    Every project, competition, research, volunteering experience and work internship becomes part of a
-                    bigger story and the start of their future.
+                    {{ __('pages/mentoring/epb.universities.description') }}
                 </p>
             </div>
-            <div class="overflow-hidden py-20 max-w-5xl mx-auto">
-                <div class="marquee-track marquee-left">
-                    @for ($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/home/2026/univ/harvard.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/stanford.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/upenn.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/ucl.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/cambridge.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                    @endfor
+            <div class="overflow-hidden py-10 md:py-20 max-w-6xl mx-auto">
+                <div class="pt-20">
+                    <x-universities moreText="{{ __('pages/mentoring/epb.universities.more_text') }}" />
                 </div>
             </div>
         </div>
@@ -1354,6 +1206,7 @@
 
 
     {{-- ==================== Testimonial Section ==================== --}}
+    {{-- Student testimonials slider --}}
     <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-12 md:py-20" aria-label="Student Testimonials">
         <div class="new-main-container relative z-10">
             <div class="text-center mb-6 md:mb-10">
@@ -1392,155 +1245,81 @@
     </section>
 
 
-    <section class="new-main-container py-20" aria-label="Faculty Message">
-        <div class="flex items-center gap-10">
-            <div class="w-[35%]">
-                <div class="w-full h-[500px] overflow-hidden rounded-3xl shadow-sm">
+    {{-- ==================== Faculty Message Section ==================== --}}
+    {{-- Message from Head of Faculty --}}
+    <section class="new-main-container py-10 md:py-20">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div class="w-full md:w-[35%]">
+                <div class="w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
                     <img src="{{ asset('assets/img/mentoring/ultimate/34. Kak anne.png') }}"
-                        alt="Debora Wibianne, Head of Faculty at EduALL" class="w-full h-full object-cover object-bottom"
-                        loading="lazy" width="500" height="500">
+                        alt="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}"
+                        title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy"
+                        decoding="async" width="400" height="500"
+                        class="w-full h-full rounded-2xl shadow-sm object-cover md:object-bottom object-center">
                 </div>
             </div>
-            <div class="w-[65%]">
-                <h2 class="text-5xl text-newprimary font-light mb-20">
-                    A Word from <br>
-                    Our Head of Faculty
+            <div class="w-full md:w-[65%] text-center md:text-left">
+                <h2 class="text-2xl md:text-5xl text-newprimary font-light mb-4 md:mb-20">
+                    {!! __('pages/mentoring/ultimate.head_of_faculty.title') !!}
                 </h2>
                 <span>
-                    <h3 class="text-3xl text-newprimary font-normal mb-3">
-                        "At EduALL, we <span>believe</span>
+                    <h3 class="text-xl md:text-3xl text-newprimary font-normal mb-2 md:mb-3">
+                        {!! __('pages/mentoring/ultimate.head_of_faculty.quote_start') !!}
                     </h3>
-                    <p class="text-xl">
-                        the world needs more game changers. Through mentorship, exploration, and meaningful
-                        experiences, we help students discover their potential and build a future they are excited to
-                        pursue."
+                    <p class="text-sm md:text-xl">
+                        {{ __('pages/mentoring/ultimate.head_of_faculty.quote_body') }}
                     </p>
                 </span>
 
-                <h4 class="text-xl text-newprimary mt-10 font-normal">
-                    Debora Wibianne, M.A.
+                <h4 class="text-base md:text-xl text-newprimary mt-4 md:mt-10 font-normal">
+                    {{ __('pages/mentoring/ultimate.head_of_faculty.name') }}
                 </h4>
-                <p class="text-lg text-newprimary">
-                    University College London (UCL)
+                <p class="text-sm md:text-lg text-newprimary">
+                    {{ __('pages/mentoring/ultimate.head_of_faculty.university') }}
                 </p>
             </div>
         </div>
-
     </section>
 
     {{-- ==================== FAQ Section ==================== --}}
+    {{-- Frequently asked questions with accordion --}}
     <section class="relative z-10 my-12 md:my-20" aria-label="Frequently Asked Questions">
         <div class="new-main-container px-4 md:px-5 lg:px-20 text-center">
-            <h3 class="text-2xl md:text-4xl font-normal leading-5 mb-3 md:mb-5" itemprop="headline">Frequently Asked
-                Questions</h3>
+            <h3 class="text-2xl md:text-4xl font-normal leading-5 mb-3 md:mb-5" itemprop="headline">
+                {{ __('pages/mentoring/epb.faq.title') }}
+            </h3>
 
-            <div class="flex items-center mt-10 w-full gap-10">
+            <div class="flex md:flex-nowrap flex-wrap items-center mt-10 w-full gap-5 md:gap-10">
                 <div class="w-full md:w-[65%]">
                     <div class="accordion-group">
-                        <!-- Q1 -->
-                        <div class="border rounded-lg overflow-hidden">
-                            <button
-                                class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
-                                <span>What extracurricular activities does the EPB program support?</span>
+                        @foreach (__('pages/mentoring/epb.faq.items') as $index => $faq)
+                            <div class="border rounded-lg overflow-hidden">
+                                <button
+                                    class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
+                                    <span>{{ $faq['question'] }}</span>
 
-                                <span class="text-2xl transition-all duration-200">+</span>
-                            </button>
+                                    <span class="text-2xl transition-all duration-200">+</span>
+                                </button>
 
-                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                    EPB covers student clubs (Business, Computer Science, Engineering, Life Science),
-                                    personal passion projects, academic research and publication, international
-                                    competitions, internship and job shadowing, and digital portfolio development. You
-                                    select the activities that match your interests and university application goals.
+                                <div
+                                    class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                    <div class="px-5 py-5 text-gray-600 md:text-start text-center">
+                                        {{ $faq['answer'] }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Q2 -->
-                        <div class="border rounded-lg overflow-hidden">
-                            <button
-                                class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
-                                <span>When is the best time to start?</span>
-
-                                <span class="text-2xl transition-all duration-200">+</span>
-                            </button>
-
-                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                    EduALL recommends Grade 7 or 8 for students building a broad university application
-                                    profile. EPB is equally valuable for Grade 10–11 students who need to strengthen a
-                                    specific area (a passion project, research paper, or internship) before university
-                                    admissions season.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q3 -->
-                        <div class="border rounded-lg overflow-hidden">
-                            <button
-                                class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
-                                <span>Is this only for students targeting the US or UK?</span>
-
-                                <span class="text-2xl transition-all duration-200">+</span>
-                            </button>
-
-                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                    Not at all. We have helped students across Indonesia build profiles for universities in
-                                    the US, UK, Europe, Australia, Asia, and beyond. The extracurricular achievements we
-                                    build strengthen any application, regardless of destination.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q4 -->
-                        <div class="border rounded-lg overflow-hidden">
-                            <button
-                                class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
-                                <span>What is the difference between EPB and Ultimate Mentoring?</span>
-
-                                <span class="text-2xl transition-all duration-200">+</span>
-                            </button>
-
-                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                    EPB is for students who want to build their extracurricular profile and explore career
-                                    directions before applications begin. Ultimate Mentoring is EduALL's end-to-end
-                                    university admissions program—covering strategy, personal statement, essays, and
-                                    university selection through to acceptance. Many students complete EPB first and
-                                    transition into Ultimate Mentoring when ready.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q5 -->
-                        <div class="border rounded-lg overflow-hidden">
-                            <button
-                                class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
-                                <span>How do I know which program is right for me?</span>
-
-                                <span class="text-2xl transition-all duration-200">+</span>
-                            </button>
-
-                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                <div class="px-5 py-5 text-gray-600 md:text-start text-center">
-                                    Grade 7–10 and focused on building extracurricular achievements? Start with EPB. Grade
-                                    11–12 and actively preparing to submit university applications? Ultimate Mentoring is
-                                    built for you. Our free initial consultation will confirm the right fit.
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="w-full md:w-[35%]">
                     <p class="text-xl mb-3 font-normal">
-                        You have different questions?
+                        {{ __('pages/mentoring/epb.faq.contact_title') }}
                     </p>
                     <p class="mb-5 text-black/60">
-                        Our team will answer all your questions. We ensure a quick response.
+                        {{ __('pages/mentoring/epb.faq.contact_description') }}
                     </p>
-                    <a href="#" class="bg-black px-10 py-2 text-white rounded-full">
-                        Contact Support team
+                    <a href="https://bit.ly/eduall-contactus" class="bg-black px-10 py-2 text-white rounded-full">
+                        {{ __('pages/mentoring/epb.faq.contact_cta') }}
                     </a>
                 </div>
             </div>
@@ -1803,6 +1582,31 @@
             // Default tab pertama aktif
             activateTab(1);
 
+        });
+    </script>
+
+    <script>
+        {{-- Student Club Cards Hover Behavior --}}
+        document.addEventListener("DOMContentLoaded", function() {
+            const pathwayCards = document.querySelectorAll(".pathway-card");
+            let lastActiveCard = pathwayCards[0]; // Track the last active card, default to card 1
+
+            // Add hover behavior to all cards
+            pathwayCards.forEach(card => {
+                card.addEventListener("mouseenter", function() {
+                    // Remove active class from ALL cards
+                    pathwayCards.forEach(c => c.classList.remove("active"));
+
+                    // Add active class to hovered card only
+                    this.classList.add("active");
+
+                    // Update last active card
+                    lastActiveCard = this;
+                });
+            });
+
+            // When mouse leaves the entire grid, keep the last hovered card active
+            // No need to revert to card 1 - the last hovered card stays active
         });
     </script>
 @endpush
