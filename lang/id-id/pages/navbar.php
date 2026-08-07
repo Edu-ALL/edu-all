@@ -3,92 +3,163 @@
 return [
     'home' => [
         'link' => '',
-        'title' => 'Beranda',
+        'title' => 'Home',
     ],
 
-    // programs
-    'programs' => [
+    'mentoring' => [
         'link' => '#',
-        'title' => 'Program Kami',
+        'title' => 'Admission Mentoring',
         'submenu' => [
             [
-                'link' => 'programs/admissions-mentoring',
-                'title' => 'Admission Mentoring',
+                'link' => "programs/admissions-mentoring/ultimate-mentoring",
+                'title' => 'Ultimate Mentoring Package',
             ],
             [
-                'link' => 'programs/tutoring',
-                'title' => 'Tutoring Program',
-            ],
-            [
-                'link' => 'programs/global-innovators-project',
-                'title' => 'Global Innovators Project',
-            ],
-            [
-                'link' => 'programs/exclusive-program-school',
-                'title' => 'Exclusive Programs for School',
+                'link' => 'programs/admissions-mentoring/epb',
+                'title' => 'Exploration & Profile Building',
             ],
         ],
     ],
 
-    // about us
-    'about_us' => [
-        'link' => 'about',
-        'title' => 'Tentang Kami',
+    'academy' => [
+        'link' => '#',
+        'title' => 'EduALL Academy',
         'submenu' => [
             [
-                'link' => 'about/mentor',
-                'title' => 'Mentor Kami',
+                'link' => "programs/admissions-mentoring/undergraduate-program",
+                'title' => 'SAT Prep',
             ],
             [
-                'link' => 'about/our-contribution',
-                'title' => 'Kontribusi Kami',
+                'link' => 'programs/admissions-mentoring/graduate-program',
+                'title' => 'Subject Tutor',
+            ],
+            [
+                'link' => 'programs/admissions-mentoring/university-transfer-program',
+                'title' => 'Olympiad Prep',
+            ],
+            [
+                'link' => 'programs/admissions-mentoring/university-transfer-program',
+                'title' => 'Rising',
+            ],
+        ],
+    ],
+
+    'about' => [
+        'link' => '#',
+        'title' => 'About Us',
+        'submenu' => [
+            [
+                'link' => 'about',
+                'title' => 'Our Story',
+            ],
+            [
+                'link' => 'about/our-team',
+                'title' => 'Our Team',
+            ],
+            [
+                'link' => 'about/partnership',
+                'title' => 'Partnership',
             ],
             [
                 'link' => 'about/careers',
-                'title' => 'Kemitraan dan Karir',
+                'title' => 'Career',
             ],
-        ],
+        ]
     ],
 
-    // partnership 
-    'partnership' => [
-        'link' => 'partnership',
-        'title' => 'Partnership',
+    'event' => [
+        'link' => 'event',
+        'title' => 'Event',
     ],
+
+    // programs
+    // 'programs' => [
+    //     'link' => '#',
+    //     'title' => 'Programs',
+    //     'submenu' => [
+    //         [
+    //             'link' => "programs/admissions-mentoring",
+    //             'title' => 'Admission Mentoring',
+    //         ],
+    //         [
+    //             'link' => 'programs/tutoring',
+    //             'title' => 'Tutoring Program',
+    //         ],
+    //         [
+    //             'link' => 'programs/global-innovators-project',
+    //             'title' => 'Global Innovators Project',
+    //         ],
+    //         [
+    //             'link' => 'programs/exclusive-program-school',
+    //             'title' => 'Exclusive Programs for School',
+    //         ],
+    //     ],
+    // ],
+
+    // about us
+    // 'about_us' => [
+    //     'link' => 'about',
+    //     'title' => 'About Us',
+    //     'submenu' => [
+    //         [
+    //             'link' => 'about/mentor',
+    //             'title' => 'Our Mentor',
+    //         ],
+    //         [
+    //             'link' => 'about/our-contribution',
+    //             'title' => 'Our Contribution',
+    //         ],
+    //         [
+    //             'link' => 'about/careers',
+    //             'title' => 'Careers',
+    //         ],
+    //     ],
+    // ],
+
+    // partnership 
+    // 'partnership' => [
+    //     'link' => 'partnership',
+    //     'title' => 'Partnership',
+    // ],
 
     // blog
     'blog' => [
         'link' => 'blog',
-        'title' => 'EduJournal',
+        'title' => 'Blog',
+    ],
+
+    'impact-project' => [
+        'link' => 'impact-project',
+        'title' => 'Impact Project',
     ],
 
     // resources
-    'resources' => [
-        'link' => '#',
-        'title' => 'Sumber Daya',
-        'submenu' => [
-            [
-                'link' => 'resources/success-stories',
-                'title' => 'Cerita Sukses',
-            ],
-            // [
-            //     'link' => 'resources/upcoming-events',
-            //     'title' => 'Event Kami',
-            // ],
-            [
-                'link' => 'resources/testimonial',
-                'title' => 'Testimonial',
-            ],
-            [
-                'link' => 'https://project-showcase.edu-all.com',
-                'title' => 'Mentee Project Showcase',
-            ],
-        ],
-    ],
+    // 'resources' => [
+    //     'link' => '#',
+    //     'title' => 'Resources',
+    //     'submenu' => [
+    //         [
+    //             'link' => 'resources/success-stories',
+    //             'title' => 'Success Stories',
+    //         ],
+    //         // [
+    //         //     'link' => 'resources/upcoming-events',
+    //         //     'title' => 'Upcoming Events',
+    //         // ],
+    //         [
+    //             'link' => 'resources/testimonial',
+    //             'title' => 'Testimonial',
+    //         ],
+    //         // [
+    //         //     'link' => 'https://project-showcase.edu-all.com',
+    //         //     'title' => 'Mentee Project Showcase',
+    //         // ],
+    //     ],
+    // ],
 
     // contact us
     // 'contact_us' => [
     //     'link' => 'contact-us',
-    //     'title' => 'Kontak Kami',
+    //     'title' => 'Contact Us',
     // ],
 ];

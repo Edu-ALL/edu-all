@@ -109,43 +109,6 @@
         #mentee-slider .splide__slide.is-active img {
             transform: scale(1);
         }
-
-        /* ==================== Marquee Animation Styles ==================== */
-        .marquee-track {
-            display: flex;
-            gap: 40px;
-            width: max-content;
-        }
-
-        /* Top row animation - moves left */
-        .marquee-left {
-            animation: marquee-left 15s linear infinite;
-        }
-
-        /* Bottom row animation - moves right */
-        .marquee-right {
-            animation: marquee-right 15s linear infinite;
-        }
-
-        @keyframes marquee-left {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        @keyframes marquee-right {
-            from {
-                transform: translateX(-50%);
-            }
-
-            to {
-                transform: translateX(0);
-            }
-        }
     </style>
 @endpush
 
@@ -249,17 +212,17 @@
                             {!! __('pages/home.about_us.inquiry_title') !!}
                         </p>
                         <div class="flex flex-col sm:flex-row items-center gap-2 md:gap-5">
-                            <a href="#"
+                            <a href="{{ route('ultimate_mentoring', ['locale' => app()->getLocale()]) }}"
                                 class="py-2 px-4 md:py-3 md:px-6 bg-white text-newprimary rounded-full hover:bg-newprimary hover:text-white transition-all duration-300 text-xs md:text-base">
                                 {{ __('pages/home.about_us.inquiry_items.0') }} <i
                                     class="fas fa-arrow-right ml-1 md:ml-3"></i>
                             </a>
-                            <a href="#"
+                            <a href="{{ route('tutoring', ['locale' => app()->getLocale()]) }}"
                                 class="py-2 px-4 md:py-3 md:px-6 bg-white text-newprimary rounded-full hover:bg-newprimary hover:text-white transition-all duration-300 text-xs md:text-base">
                                 {{ __('pages/home.about_us.inquiry_items.1') }} <i
                                     class="fas fa-arrow-right ml-1 md:ml-3"></i>
                             </a>
-                            <a href="#"
+                            <a href="https://bit.ly/eduall-contactus"
                                 class="py-2 px-4 md:py-3 md:px-6 bg-white text-newprimary rounded-full hover:bg-newprimary hover:text-white transition-all duration-300 text-xs md:text-base">
                                 {{ __('pages/home.about_us.inquiry_items.2') }} <i
                                     class="fas fa-arrow-right ml-1 md:ml-3"></i>
@@ -322,7 +285,7 @@
                                     @endforeach
 
                                     <div class="mt-10">
-                                        <a href="#"
+                                        <a href="{{ route('ultimate_mentoring', ['locale' => app()->getLocale()]) }}"
                                             class="py-2 px-4 bg-black text-white rounded-lg text-sm md:text-lg shadow-md">
                                             {{ __('pages/home.program.cta') }}
                                         </a>
@@ -363,7 +326,7 @@
                                     @endforeach
 
                                     <div class="mt-10">
-                                        <a href="#"
+                                        <a href="{{ route('tutoring', ['locale' => app()->getLocale()]) }}"
                                             class="py-2 px-4 bg-black text-white rounded-lg text-sm md:text-lg shadow-md">
                                             {{ __('pages/home.program.cta') }}
                                         </a>
@@ -497,7 +460,7 @@
     </div>
 
     {{-- ==================== Quiz Section ==================== --}}
-    <section class="relative z-10 bg-black h-auto md:h-[400px] overflow-hidden">
+    <section class="relative z-10 bg-black h-auto md:h-[400px] overflow-hidden hidden">
         <img src="{{ asset('assets/img/home/2026/Quiz.webp') }}"
             class="absolute -top-20 left-0 w-full h-auto object-cover object-bottom z-0" alt="Quiz Background"
             loading="lazy">
@@ -629,47 +592,7 @@
     </section>
 
     {{-- ==================== Universities Section ==================== --}}
-    <section class="relative z-10 -mt-20 pb-10">
-        <div class="new-main-container px-10">
-            <div class="overflow-hidden">
-                <div class="marquee-track marquee-left">
-                    @for ($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/home/2026/univ/harvard.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/stanford.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/upenn.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/ucl.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/cambridge.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                    @endfor
-                </div>
-            </div>
-
-            <div class="overflow-hidden md:mt-20 mt-6">
-                <div class="marquee-track marquee-right">
-                    @for ($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/home/2026/univ/icl.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/berkeley.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/nus.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/ntu.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/tsinghua.png') }}"
-                            class="md:w-[150px] w-[150px] object-contain">
-                    @endfor
-                </div>
-            </div>
-
-            <div class="text-center">
-                <p class="text-xl md:text-3xl text-gray-500 my-20">{{ __('pages/home.universities.more_text') }}</p>
-            </div>
-        </div>
-    </section>
+    <x-universities moreText="{{ __('pages/home.universities.more_text') }}" />
 
     {{-- ==================== Article Section ==================== --}}
     <section class="relative z-10 my-12 md:my-20 bg-gradient-to-br from-newprimary to-[#3056B0]">
@@ -680,7 +603,7 @@
                 </h2>
 
                 <div class="flex gap-3 items-center justify-center md:justify-end flex-wrap">
-                    <a href="#"
+                    <a href="{{ route('blogs', ['locale' => app()->getLocale()]) }}"
                         class="bg-white text-blue-500 hover:bg-[#00003F] hover:text-white px-5 py-1 rounded-full">{{ __('pages/home.articles.all') }}</a>
                     @foreach ($category as $index => $item)
                         <button data-item="{{ $item->id }}"

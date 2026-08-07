@@ -8,9 +8,8 @@ return [
     // Breadcrumbs
     'breadcrumbs' => [
         'home' => 'Home',
-        'program' => 'Program',
-        'admission_mentoring' => 'Admission Mentoring',
-        'graduate' => 'Graduate',
+        'program' => 'Mentoring',
+        'mentoring' => 'Ultimate Package',
     ],
 
     // Banner Section
@@ -273,6 +272,6 @@ return [
         ],
         'contact_title' => 'You have different questions?',
         'contact_description' => 'Our team will answer all your questions. We ensure a quick response.',
-        'contact_cta' => 'Contact Support team',
+        'contact_cta' => 'Contact Support Team',
     ],
 ];

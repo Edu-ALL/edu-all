@@ -1,13 +1,15 @@
+{{-- ========================================== HEAD SECTION ========================================== --}}
 @extends('layout.user.main')
 @section('head')
     @php
+        // Breadcrumb navigation setup
         $breadcrumbs = [
             ['name' => __('pages/mentoring/ultimate.breadcrumbs.home'), 'url' => url('/' . app()->getLocale())],
             ['name' => __('pages/mentoring/ultimate.breadcrumbs.program'), 'url' => '#'],
-            ['name' => __('pages/mentoring/ultimate.breadcrumbs.admission_mentoring'), 'url' => route('admissions_mentoring', [app()->getLocale()])],
-            ['name' => __('pages/mentoring/ultimate.breadcrumbs.graduate'), 'url' => url()->current()],
+            ['name' => __('pages/mentoring/ultimate.breadcrumbs.mentoring'), 'url' => url()->current()],
         ];
     @endphp
+    {{-- Page Title and Meta Tags --}}
     <title>{{ __('pages/mentoring/ultimate.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/mentoring/ultimate.meta_title') }}" />
     <meta name="description"
@@ -16,45 +18,9 @@
         content="{{ __('pages/mentoring/ultimate.meta_keywords') }}" />
 @endsection
 
+{{-- ========================================== STYLES ========================================== --}}
 @push('style')
     <style>
-        /* ==================== Marquee Animation Styles ==================== */
-        .marquee-track {
-            display: flex;
-            gap: 40px;
-            width: max-content;
-        }
-
-        /* Top row animation - moves left */
-        .marquee-left {
-            animation: marquee-left 15s linear infinite;
-        }
-
-        /* Bottom row animation - moves right */
-        .marquee-right {
-            animation: marquee-right 15s linear infinite;
-        }
-
-        @keyframes marquee-left {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        @keyframes marquee-right {
-            from {
-                transform: translateX(-50%);
-            }
-
-            to {
-                transform: translateX(0);
-            }
-        }
-
         /* ==================== Mentee Slider Styles ==================== */
         #mentee-slider {
             padding: 40px 0;
@@ -82,6 +48,7 @@
     </style>
 @endpush
 
+{{-- ========================================== MAIN CONTENT ========================================== --}}
 @section('content')
     {{-- ==================== Banner Section ==================== --}}
     <section class="h-[100%]">
@@ -90,7 +57,7 @@
                 <img src="{{ asset('assets/img/mentoring/ultimate/1. Hero Section.webp') }}"
                     alt="{{ __('pages/mentoring/ultimate.banner.title') }}"
                     title="{{ __('pages/mentoring/ultimate.banner.title') }}" fetchpriority="high" decoding="async"
-                    width="1920" height="1080" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
+                    width="1920" height="1080" class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-bottom object-left">
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
@@ -111,13 +78,14 @@
         </div>
     </section>
 
-    <div class="relative overflow-hidden">
+    {{-- ==================== Score and Benefits Section ==================== --}}
+    <section class="relative overflow-hidden">
         <img src="{{ asset('assets/img/mentoring/ultimate/1. Achieve Ultimate Gedung (1).webp') }}" alt="EduALL Ultimate Mentoring Building"
             title="EduALL Ultimate Mentoring Building" loading="lazy" decoding="async" width="1920" height="1080"
             class="absolute top-0 left-0 w-full h-auto">
 
         {{-- ==================== Our Score Section ==================== --}}
-        <section class="pt-6 md:pt-10 new-main-container md:px-0 pb-[2rem] md:pb-[3rem] relative z-10">
+        <section class="pt-6 md:pt-10 new-main-container md:px-0 pb-[1rem] md:pb-[3rem] relative z-10">
             <div class="flex flex-wrap justify-center gap-0 md:gap-5">
                 @foreach (__('pages/mentoring/ultimate.scores') as $score)
                     <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
@@ -134,9 +102,9 @@
 
         <section class="new-main-container my-10">
             <div class="bg-gradient-to-br from-newprimary to-dark text-white p-5 rounded-2xl shadow-xl">
-                <div class="flex items-center justify-center h-36 gap-5">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5">
                     @foreach (__('pages/mentoring/ultimate.benefits') as $benefit)
-                        <div class="flex items-center w-1/4 text-xl h-full px-10 text-center {{ !$loop->last ? 'border-r border-white/30' : '' }}">
+                        <div class="md:flex md:items-center w-full md:w-1/4 text-base md:text-xl h-full px-4 md:px-10 text-center {{ !$loop->last ? 'border-b md:border-r border-white/30 md:pb-0 pb-4' : '' }}">
                             {!! $benefit !!}
                         </div>
                     @endforeach
@@ -144,35 +112,36 @@
             </div>
         </section>
 
-
+        {{-- ==================== About Section ==================== --}}
         <section class="new-main-container my-20">
-            <div class="max-w-2xl mx-auto text-center py-20">
-                <h2 class="text-2xl font-normal mb-3">
+            <div class="max-w-2xl mx-auto text-center py-10 md:py-20">
+                <h2 class="text-xl md:text-2xl font-normal mb-2 md:mb-3">
                     {{ __('pages/mentoring/ultimate.about.title') }}
                 </h2>
-                <h3 class="text-5xl font-normal text-newprimary">
+                <h3 class="text-3xl md:text-5xl font-normal text-newprimary">
                     {{ __('pages/mentoring/ultimate.about.subtitle') }}
                 </h3>
 
-                <div class="relative h-[80vh] w-full mx-auto">
+                <div class="relative md:h-[80vh] h-[50vh] w-full mx-auto">
                     <img src="{{ asset('assets/img/mentoring/ultimate/2. Achieve Ultimate Katyana.png') }}" alt="Ultimate Mentoring Student Success"
                         title="Ultimate Mentoring Student Success" loading="lazy" decoding="async" width="800" height="600"
                         class="w-full absolute top-0 -left-0">
                 </div>
             </div>
-            <div class="max-w-3xl mx-auto -mt-20">
-                <p class="text-gray-500 text-xl text-center">
+            <div class="max-w-3xl mx-auto -mt-10 md:-mt-20 px-4">
+                <p class="text-gray-500 text-base md:text-xl text-center">
                     {{ __('pages/mentoring/ultimate.about.description') }}
                 </p>
             </div>
         </section>
-    </div>
+    </section>
 
+    {{-- ==================== What You Will Get Section ==================== --}}
     <section class="new-main-container my-20">
         <div class="bg-[#E9F0F9] rounded-2xl shadow-xl">
-            <div class="flex items-center">
-                <div class="w-[30%] p-10">
-                    <h2 class="text-[3.5rem] font-normal text-newprimary uppercase">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-[30%] p-6 md:p-10">
+                    <h2 class="text-xl md:text-[3.5rem] font-normal text-newprimary uppercase text-center md:text-left">
                         {{ __('pages/mentoring/ultimate.what_you_will_get.title') }}
                     </h2>
 
@@ -180,15 +149,15 @@
                         title="What You Will Get from Ultimate Mentoring" loading="lazy" decoding="async" width="600" height="800"
                         class="w-full mt-5 rounded-xl">
                 </div>
-                <div class="w-[70%] p-10 space-y-5">
+                <div class="w-full md:w-[70%] p-6 md:p-10 space-y-5">
                     @foreach (__('pages/mentoring/ultimate.what_you_will_get.items') as $index => $item)
-                        <div class="flex items-start gap-5">
-                            <div class="text-6xl font-light text-newprimary">{{ $index + 1 }}</div>
+                        <div class="flex items-start gap-3 md:gap-5">
+                            <div class="text-4xl md:text-6xl font-light text-newprimary">{{ $index + 1 }}</div>
                             <div>
-                                <h3 class="mb-1 text-2xl font-normal text-newprimary">
+                                <h3 class="mb-1 text-lg md:text-2xl font-normal text-newprimary">
                                     {{ $item['title'] }}
                                 </h3>
-                                <p class="text-lg font-light">
+                                <p class="text-sm md:text-lg font-light">
                                     {{ $item['description'] }}
                                 </p>
                             </div>
@@ -199,20 +168,20 @@
         </div>
     </section>
 
-    <section class="new-main-container py-20 relative">
+    {{-- ==================== Admissions Process Section ==================== --}}
+    <section class="new-main-container py-10 md:py-20 relative">
         <img src="{{ asset('assets/img/mentoring/ultimate/5. Background The Admission Process.png') }}" alt="University Admissions Process Background"
             title="University Admissions Process Background" loading="lazy" decoding="async" width="1920" height="1080"
             class="absolute top-0 left-0 w-full h-auto">
-        <div class="w-full mx-auto">
-            <h2 class="text-5xl font-normal uppercase text-center text-newprimary">
+        <div class="w-full mx-auto px-4">
+            <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-6 md:mb-10">
                 {{ __('pages/mentoring/ultimate.admissions_process.title') }}
             </h2>
 
             <div class="max-w-5xl mx-auto">
-                <div class="flex items-center h-[80vh]">
-                    <div class="flex gap-6">
-                        @foreach (__('pages/mentoring/ultimate.admissions_process.cards') as $index => $card)
-                            <div class="w-1/3 flex items-center">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-6">
+                    @foreach (__('pages/mentoring/ultimate.admissions_process.cards') as $index => $card)
+                        <div class="w-full md:w-1/3 flex items-center">
                                 <div
                                     class="card group relative w-full rounded-2xl bg-white hover:bg-newprimary shadow-xl transition-all duration-300 hover:shadow-2xl overflow-hidden">
 
@@ -248,82 +217,83 @@
         </div>
     </section>
 
-    <section class="new-main-container py-20 relative">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-5xl font-normal uppercase text-center text-newprimary mb-10">
+    {{-- ==================== How It Works Section ==================== --}}
+    <section class="new-main-container py-10 md:py-20 relative">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-4 md:mb-10">
                 {{ __('pages/mentoring/ultimate.how_it_works.title') }}
             </h2>
-            <p class="text-gray-500 text-xl font-light text-center">
+            <p class="text-gray-500 text-sm md:text-xl font-light text-center">
                 {{ __('pages/mentoring/ultimate.how_it_works.description') }}
             </p>
         </div>
-        <div class="w-full mx-auto mt-10">
-            <div class="flex gap-8">
+        <div class="w-full mx-auto mt-6 md:mt-10">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8">
                 <!-- Content -->
-                <div class="flex-1">
+                <div class="flex-1 w-full">
                     <!-- Top Phase List -->
                     <div class="">
                         @php $phases = __('pages/mentoring/ultimate.how_it_works.phases'); @endphp
                         {{-- Phase 1  --}}
-                        <div class="flex gap-5 items-stretch relative">
-                            <div class="w-[5%]">
-                                <div class="absolute top-0 left-[25px] border border-l border-gray-500 h-full z-0"></div>
+                        <div class="flex gap-3 md:gap-5 items-stretch relative">
+                            <div class="w-[10%] md:w-[5%]">
+                                <div class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0"></div>
                                 <button
-                                    class="bg-dark text-white w-[50px] h-[50px] flex items-center justify-center rounded-full relative z-10">
-                                    <i class="fa-regular fa-compass text-white"></i>
+                                    class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
+                                    <i class="fa-regular fa-compass text-white text-sm md:text-base"></i>
                                 </button>
                             </div>
 
                             <div
-                                class="phase-item w-[95%] bg-[#E2E8F2] text-newprimary rounded-t-2xl shadow-sm relative z-10">
-                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5">
-                                        <div class="w-40 font-bold text-newprimary text-xl">
+                                class="phase-item w-[90%] md:w-[95%] bg-[#E2E8F2] text-newprimary rounded-t-2xl shadow-sm relative z-10">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-6 md:pb-10">
+                                    <div class="flex p-3 md:p-5">
+                                        <div class="w-24 md:w-40 font-bold text-newprimary text-base md:text-xl">
                                             {{ $phases[0]['phase'] }}
                                         </div>
-                                        <div class="text-gray-500 text-xl">
+                                        <div class="text-gray-500 text-sm md:text-xl">
                                             {{ $phases[0]['title'] }}
                                         </div>
                                     </div>
                                     <img src="{{ asset('assets/img/mentoring/ultimate/10. Phase 4_How Ultimate Work.png') }}" alt="{{ $phases[0]['title'] }}"
                                         title="{{ $phases[0]['title'] }}" loading="lazy" decoding="async" width="300" height="80"
-                                        class="w-[30%] object-cover opacity-10 h-[80px] object-center">
+                                        class="w-[30%] object-cover opacity-10 h-[60px] md:h-[80px] object-center hidden md:block">
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-t-2xl relative z-0">
-                                    <div class="flex">
-                                        <div class="w-[70%] p-5">
-                                            <div class="flex gap-10 mb-5">
-                                                <div class="w-40 font-bold text-white text-xl border-r-2 border-gray-300">
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="w-full md:w-[70%] p-4 md:p-5">
+                                            <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
+                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[0]['phase'] }}
                                                 </div>
-                                                <div class="text-gray-300 text-xl">
+                                                <div class="text-gray-300 text-base md:text-xl">
                                                     {{ $phases[0]['title'] }}
                                                 </div>
                                             </div>
 
-                                            <p class="text-white mb-5">
+                                            <p class="text-white mb-3 md:mb-5 text-sm md:text-base">
                                                 {{ $phases[0]['description'] }}
                                             </p>
 
-                                            <p class="text-white mb-10">
+                                            <p class="text-white mb-6 md:mb-10 text-sm md:text-base">
                                                 {{ $phases[0]['note'] }}
                                             </p>
 
-                                            <a href="#" class="bg-white rounded-full py-2 px-5 shadow-md">
+                                            <a href="#" class="bg-white rounded-full py-2 px-4 md:px-5 shadow-md text-sm md:text-base">
                                                 {{ $phases[0]['cta'] }}
                                             </a>
 
-                                            <ul class="space-y-5 mt-10 pb-10">
+                                            <ul class="space-y-3 md:space-y-5 mt-6 md:mt-10 pb-6 md:pb-10">
                                                 @foreach ($phases[0]['items'] as $item)
-                                                    <li class="flex items-start gap-4">
+                                                    <li class="flex items-start gap-3 md:gap-4">
                                                         <div class="mt-1 text-white">
-                                                            <i class="fa-regular fa-circle-check text-lg"></i>
+                                                            <i class="fa-regular fa-circle-check text-base md:text-lg"></i>
                                                         </div>
                                                         <div>
-                                                            <h4 class="text-lg font-normal text-white">{{ $item['title'] }}</h4>
-                                                            <p class="text-gray-300 font-light">
+                                                            <h4 class="text-base md:text-lg font-normal text-white">{{ $item['title'] }}</h4>
+                                                            <p class="text-gray-300 font-light text-sm md:text-base">
                                                                 {{ $item['description'] }}
                                                             </p>
                                                         </div>
@@ -333,63 +303,63 @@
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/10. Phase 4_How Ultimate Work.png') }}"
                                             alt="{{ $phases[0]['title'] }}" title="{{ $phases[0]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
-                                            class="w-[30%] object-cover opacity-70">
+                                            class="w-full md:w-[30%] h-[200px] md:h-auto object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {{-- Phase 2  --}}
-                        <div class="flex gap-5 items-stretch relative">
-                            <div class="w-[5%] ">
-                                <div class="absolute top-0 left-[25px] border border-l border-gray-500 h-full z-0"></div>
+                        <div class="flex gap-3 md:gap-5 items-stretch relative">
+                            <div class="w-[10%] md:w-[5%]">
+                                <div class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0"></div>
                                 <button
-                                    class="bg-dark text-white w-[50px] h-[50px] flex items-center justify-center rounded-full relative z-10">
-                                    <i class="fa-solid fa-puzzle-piece text-white"></i>
+                                    class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
+                                    <i class="fa-solid fa-puzzle-piece text-white text-sm md:text-base"></i>
                                 </button>
                             </div>
                             <div
-                                class="phase-item w-[95%] bg-[#d1def3] text-newprimary rounded-t-2xl shadow-sm -mt-5 relative z-10">
-                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-14">
-                                    <div class="flex p-5">
-                                        <div class="w-40 font-bold text-newprimary text-xl">
+                                class="phase-item w-[90%] md:w-[95%] bg-[#d1def3] text-newprimary rounded-t-2xl shadow-sm -mt-5 relative z-10">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10 md:pb-14">
+                                    <div class="flex p-3 md:p-5">
+                                        <div class="w-24 md:w-40 font-bold text-newprimary text-base md:text-xl">
                                             {{ $phases[1]['phase'] }}
                                         </div>
-                                        <div class="text-gray-500 text-xl">
+                                        <div class="text-gray-500 text-sm md:text-xl">
                                             {{ $phases[1]['title'] }}
                                         </div>
                                     </div>
                                     <img src="{{ asset('assets/img/mentoring/ultimate/12. Phase 3_foto.png') }}" alt="{{ $phases[1]['title'] }}"
                                         title="{{ $phases[1]['title'] }}" loading="lazy" decoding="async" width="300" height="70"
-                                        class="w-[30%] object-cover opacity-10 h-[70px] object-center">
+                                        class="w-[30%] object-cover opacity-10 h-[60px] md:h-[70px] object-center hidden md:block">
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-t-2xl relative z-0">
-                                    <div class="flex">
-                                        <div class="w-[70%] p-5">
-                                            <div class="flex gap-10 mb-5">
-                                                <div class="w-40 font-bold text-white text-xl border-r-2 border-gray-300">
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="w-full md:w-[70%] p-4 md:p-5">
+                                            <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
+                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[1]['phase'] }}
                                                 </div>
-                                                <div class="text-gray-300 text-xl">
+                                                <div class="text-gray-300 text-base md:text-xl">
                                                     {{ $phases[1]['title'] }}
                                                 </div>
                                             </div>
 
-                                            <p class="text-white mb-5">
+                                            <p class="text-white mb-3 md:mb-5 text-sm md:text-base">
                                                 {{ $phases[1]['description'] }}
                                             </p>
 
-                                            <ul class="space-y-5 mt-10 pb-10">
+                                            <ul class="space-y-3 md:space-y-5 mt-6 md:mt-10 pb-6 md:pb-10">
                                                 @foreach ($phases[1]['items'] as $item)
-                                                    <li class="flex items-start gap-4">
+                                                    <li class="flex items-start gap-3 md:gap-4">
                                                         <div class="mt-1 text-white">
-                                                            <i class="fa-regular fa-circle-check text-lg"></i>
+                                                            <i class="fa-regular fa-circle-check text-base md:text-lg"></i>
                                                         </div>
                                                         <div>
-                                                            <h4 class="text-lg font-normal text-white">{{ $item['title'] }}</h4>
-                                                            <p class="text-gray-300 font-light">
+                                                            <h4 class="text-base md:text-lg font-normal text-white">{{ $item['title'] }}</h4>
+                                                            <p class="text-gray-300 font-light text-sm md:text-base">
                                                                 {{ $item['description'] }}
                                                             </p>
                                                         </div>
@@ -399,63 +369,63 @@
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/12. Phase 3_foto.png') }}"
                                             alt="{{ $phases[1]['title'] }}" title="{{ $phases[1]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
-                                            class="w-[30%] object-cover opacity-70">
+                                            class="w-full md:w-[30%] h-[200px] md:h-auto object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {{-- Phase 3  --}}
-                        <div class="flex gap-5 items-stretch relative">
-                            <div class="w-[5%] ">
-                                <div class="absolute top-0 left-[25px] border border-l border-gray-500 h-full z-0"></div>
+                        <div class="flex gap-3 md:gap-5 items-stretch relative">
+                            <div class="w-[10%] md:w-[5%]">
+                                <div class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0"></div>
                                 <button
-                                    class="bg-dark text-white w-[50px] h-[50px] flex items-center justify-center rounded-full relative z-10">
-                                    <i class="fa-solid fa-file-pen text-white"></i>
+                                    class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
+                                    <i class="fa-solid fa-file-pen text-white text-sm md:text-base"></i>
                                 </button>
                             </div>
                             <div
-                                class="phase-item w-[95%] bg-[#b6d0f9] text-newprimary rounded-t-2xl shadow-sm -mt-5 relative z-10">
-                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-14">
-                                    <div class="flex p-5">
-                                        <div class="w-40 font-bold text-newprimary text-xl">
+                                class="phase-item w-[90%] md:w-[95%] bg-[#b6d0f9] text-newprimary rounded-t-2xl shadow-sm -mt-5 relative z-10">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10 md:pb-14">
+                                    <div class="flex p-3 md:p-5">
+                                        <div class="w-24 md:w-40 font-bold text-newprimary text-base md:text-xl">
                                             {{ $phases[2]['phase'] }}
                                         </div>
-                                        <div class="text-gray-500 text-xl">
+                                        <div class="text-gray-500 text-sm md:text-xl">
                                             {{ $phases[2]['title'] }}
                                         </div>
                                     </div>
                                     <img src="{{ asset('assets/img/mentoring/ultimate/14. Phase 2_foto.png') }}" alt="{{ $phases[2]['title'] }}"
                                         title="{{ $phases[2]['title'] }}" loading="lazy" decoding="async" width="300" height="70"
-                                        class="w-[30%] object-cover opacity-10 h-[70px] object-center">
+                                        class="w-[30%] object-cover opacity-10 h-[60px] md:h-[70px] object-center hidden md:block">
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-t-2xl relative z-0">
-                                    <div class="flex">
-                                        <div class="w-[70%]  p-5">
-                                            <div class="flex gap-10 mb-5">
-                                                <div class="w-40 font-bold text-white text-xl border-r-2 border-gray-300">
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="w-full md:w-[70%] p-4 md:p-5">
+                                            <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
+                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[2]['phase'] }}
                                                 </div>
-                                                <div class="text-gray-300 text-xl">
+                                                <div class="text-gray-300 text-base md:text-xl">
                                                     {{ $phases[2]['title'] }}
                                                 </div>
                                             </div>
 
-                                            <p class="text-white mb-5">
+                                            <p class="text-white mb-3 md:mb-5 text-sm md:text-base">
                                                 {{ $phases[2]['description'] }}
                                             </p>
 
-                                            <ul class="space-y-5 mt-10 pb-10">
+                                            <ul class="space-y-3 md:space-y-5 mt-6 md:mt-10 pb-6 md:pb-10">
                                                 @foreach ($phases[2]['items'] as $item)
-                                                    <li class="flex items-start gap-4">
+                                                    <li class="flex items-start gap-3 md:gap-4">
                                                         <div class="mt-1 text-white">
-                                                            <i class="fa-regular fa-circle-check text-lg"></i>
+                                                            <i class="fa-regular fa-circle-check text-base md:text-lg"></i>
                                                         </div>
                                                         <div>
-                                                            <h4 class="text-lg font-normal text-white">{{ $item['title'] }}</h4>
-                                                            <p class="text-gray-300 font-light">
+                                                            <h4 class="text-base md:text-lg font-normal text-white">{{ $item['title'] }}</h4>
+                                                            <p class="text-gray-300 font-light text-sm md:text-base">
                                                                 {{ $item['description'] }}
                                                             </p>
                                                         </div>
@@ -465,56 +435,56 @@
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/14. Phase 2_foto.png') }}"
                                             alt="{{ $phases[2]['title'] }}" title="{{ $phases[2]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
-                                            class="w-[30%] object-cover opacity-70">
+                                            class="w-full md:w-[30%] h-[200px] md:h-auto object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {{-- Phase 4  --}}
-                        <div class="flex gap-5 items-stretch relative">
-                            <div class="w-[5%] ">
+                        <div class="flex gap-3 md:gap-5 items-stretch relative">
+                            <div class="w-[10%] md:w-[5%]">
                                 <button
-                                    class="bg-dark text-white w-[50px] h-[50px] flex items-center justify-center rounded-full relative z-10">
-                                    <i class="fa-solid fa-graduation-cap text-white"></i>
+                                    class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
+                                    <i class="fa-solid fa-graduation-cap text-white text-sm md:text-base"></i>
                                 </button>
                             </div>
                             <div
-                                class="phase-item w-[95%] bg-[#a3c2f4] text-newprimary rounded-2xl shadow-sm -mt-5 relative z-10">
-                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5">
-                                        <div class="w-40 font-bold text-newprimary text-xl">
+                                class="phase-item w-[90%] md:w-[95%] bg-[#a3c2f4] text-newprimary rounded-2xl shadow-sm -mt-5 relative z-10">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-6 md:pb-10">
+                                    <div class="flex p-3 md:p-5">
+                                        <div class="w-24 md:w-40 font-bold text-newprimary text-base md:text-xl">
                                             {{ $phases[3]['phase'] }}
                                         </div>
-                                        <div class="text-gray-500 text-xl">
+                                        <div class="text-gray-500 text-sm md:text-xl">
                                             {{ $phases[3]['title'] }}
                                         </div>
                                     </div>
                                     <img src="{{ asset('assets/img/mentoring/ultimate/16. Phase 1_foto.png') }}" alt="{{ $phases[3]['title'] }}"
                                         title="{{ $phases[3]['title'] }}" loading="lazy" decoding="async" width="300" height="70"
-                                        class="w-[30%] object-cover opacity-10 h-[70px] object-center">
+                                        class="w-[30%] object-cover opacity-10 h-[60px] md:h-[70px] object-center hidden md:block">
                                 </div>
 
                                 <div
-                                    class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-2xl relative z-0">
-                                    <div class="flex">
-                                        <div class="w-[70%] p-5">
-                                            <div class="flex gap-10 mb-5">
-                                                <div class="w-40 font-bold text-white text-xl border-r-2 border-gray-300">
+                                    class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-t-2xl relative z-0">
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="w-full md:w-[70%] p-4 md:p-5">
+                                            <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
+                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[3]['phase'] }}
                                                 </div>
-                                                <div class="text-gray-300 text-xl">
+                                                <div class="text-gray-300 text-base md:text-xl">
                                                     {{ $phases[3]['title'] }}
                                                 </div>
                                             </div>
 
-                                            <p class="text-white mb-5">
+                                            <p class="text-white mb-3 md:mb-5 text-sm md:text-base">
                                                 {{ $phases[3]['description'] }}
                                             </p>
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/16. Phase 1_foto.png') }}"
                                             alt="{{ $phases[3]['title'] }}" title="{{ $phases[3]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
-                                            class="w-[30%] object-cover opacity-70">
+                                            class="w-full md:w-[30%] h-[200px] md:h-auto object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
                             </div>
@@ -542,7 +512,7 @@
                             {{ __('pages/mentoring/ultimate.cta.description') }}
                         </p>
 
-                        <x-new-form title="Program" program-id="AAUP" lead-id="LS045" color="dark"
+                        <x-new-form title="Program" program-id="AAUP" lead-id="LS045"
                             submit-title="{{ __('pages/mentoring/ultimate.cta.submit_title') }}" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
@@ -555,21 +525,22 @@
         </div>
     </section>
 
-    <section class="py-20 relative bg-dark">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-normal uppercase text-center text-white mb-10">
+    {{-- ==================== Framework Section ==================== --}}
+    <section class="py-10 md:py-20 relative bg-dark">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-white mb-4 md:mb-10">
                 {{ __('pages/mentoring/ultimate.framework.title') }}
             </h2>
-            <p class="text-gray-400 text-xl font-light text-center">
+            <p class="text-gray-400 text-sm md:text-xl font-light text-center">
                 {{ __('pages/mentoring/ultimate.framework.description') }}
             </p>
         </div>
-        <div class="new-main-container mx-auto mt-10">
+        <div class="new-main-container mx-auto mt-6 md:mt-10">
             @php $frameworkItems = __('pages/mentoring/ultimate.framework.items'); @endphp
-            <div class="flex pb-10">
+            <div class="flex flex-col md:flex-row md:pb-10 pb-5">
                 @foreach ([0, 1] as $i)
-                    <div class="w-1/2 px-5">
-                        <div class="group relative h-[10rem] rounded-xl overflow-hidden">
+                    <div class="w-full md:w-1/2 px-4 md:px-5 mb-4 md:mb-0">
+                        <div class="group relative h-[15rem] md:h-[10rem] rounded-xl overflow-hidden">
                             <!-- Front Card -->
                             <div
                                 class="absolute inset-0 bg-gradient-to-r {{ $i === 0 ? 'from-[#6391CC]' : 'from-[#898989]' }} to-[#fff]
@@ -579,14 +550,14 @@
 
                                 <div class="flex justify-between items-center h-full relative overflow-hidden">
                                     <div class="p-5 w-[60%]">
-                                        <h3 class="text-white text-4xl font-light">
+                                        <h3 class="text-white md:text-4xl text-2xl font-light">
                                             {{ $frameworkItems[$i]['title'] }}
                                         </h3>
                                     </div>
 
                                     <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}" alt="{{ $frameworkItems[$i]['title'] }}"
                                         title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async" width="200" height="200"
-                                        class="absolute w-[40%] -top-[25%] left-[70%] opacity-50 rotate-[15deg]">
+                                        class="absolute w-[40%] top-10 md:-top-[25%] left-[70%] opacity-50 rotate-[15deg]">
                                 </div>
                             </div>
 
@@ -617,10 +588,10 @@
                     </div>
                 @endforeach
             </div>
-            <div class="flex">
+            <div class="flex flex-col md:flex-row">
                 @foreach ([2, 3] as $i)
-                    <div class="w-1/2 px-5">
-                        <div class="group relative h-[10rem] rounded-xl overflow-hidden">
+                    <div class="w-full md:w-1/2 px-4 md:px-5 mb-4 md:mb-0">
+                        <div class="group relative h-[15rem] md:h-[10rem] rounded-xl overflow-hidden">
                             <!-- Front Card -->
                             <div
                                 class="absolute inset-0 bg-gradient-to-r {{ $i === 2 ? 'from-[#898989]' : 'from-[#6391CC]' }} to-[#fff]
@@ -630,14 +601,14 @@
 
                                 <div class="flex justify-between items-center h-full relative overflow-hidden">
                                     <div class="p-5 w-[60%]">
-                                        <h3 class="text-white text-4xl font-light">
+                                        <h3 class="text-white md:text-4xl text-2xl font-light">
                                             {{ $frameworkItems[$i]['title'] }}
                                         </h3>
                                     </div>
 
                                     <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}" alt="{{ $frameworkItems[$i]['title'] }}"
                                         title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async" width="200" height="200"
-                                        class="absolute w-[40%] -top-[10%] left-[70%] opacity-50 rotate-[15deg]">
+                                        class="absolute w-[40%] top-10 md:-top-[10%] left-[70%] opacity-50 rotate-[15deg]">
                                 </div>
                             </div>
 
@@ -674,57 +645,38 @@
     {{-- ==================== Universities Section ==================== --}}
     <section class="relative z-10 mt-20 pb-10">
         <div class="new-main-container px-10">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-5xl font-normal uppercase text-center text-newprimary mb-10">
+            <div class="max-w-4xl mx-auto mb-[20vh] px-4">
+                <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-6 md:mb-10">
                     {{ __('pages/mentoring/ultimate.universities.title') }}
                 </h2>
             </div>
-            <div class="overflow-hidden py-20 max-w-4xl mx-auto">
-                <div class="marquee-track marquee-left">
-                    @for ($i = 0; $i < 2; $i++)
-                        <img src="{{ asset('assets/img/home/2026/univ/harvard.png') }}" alt="Harvard University"
-                            title="Harvard University" loading="lazy" decoding="async" width="150" height="150"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/stanford.png') }}" alt="Stanford University"
-                            title="Stanford University" loading="lazy" decoding="async" width="150" height="150"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/upenn.png') }}" alt="University of Pennsylvania"
-                            title="University of Pennsylvania" loading="lazy" decoding="async" width="150" height="150"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/ucl.png') }}" alt="University College London"
-                            title="University College London" loading="lazy" decoding="async" width="150" height="150"
-                            class="md:w-[150px] w-[150px] object-contain">
-                        <img src="{{ asset('assets/img/home/2026/univ/cambridge.png') }}" alt="University of Cambridge"
-                            title="University of Cambridge" loading="lazy" decoding="async" width="150" height="150"
-                            class="md:w-[150px] w-[150px] object-contain">
-                    @endfor
-                </div>
-            </div>
+            <x-universities moreText="{{ __('pages/home.universities.more_text') }}" />
 
             <div class="max-w-4xl mx-auto text-center">
-                <p class="text-base text-gray-500">
+                <p class="text-xl text-gray-500">
                     {{ __('pages/mentoring/ultimate.universities.description') }}
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="new-main-container py-20 relative">
+    {{-- ==================== Exploration and Profile Building Section ==================== --}}
+    <section class="new-main-container py-10 md:py-20 relative">
         <div class="w-full mx-auto relative overflow-hidden rounded-2xl shadow-sm">
             <img src="{{ asset('assets/img/mentoring/ultimate/32. Background Exploration.png') }}" alt="Exploration and Profile Building Background"
                 title="Exploration and Profile Building Background" loading="lazy" decoding="async" width="1920" height="1080"
-                class="absolute w-full left-0 top-0 z-0 rounded-2xl">
-            <div class="relative z-10 max-w-4xl mx-auto px-5 py-20">
-                <h3 class="text-3xl font-normal uppercase text-center text-white mb-5">
+                class="absolute w-full h-full object-cover left-0 top-0 z-0 rounded-2xl">
+            <div class="relative z-10 max-w-4xl mx-auto px-5 py-10 md:py-20">
+                <h3 class="text-xl md:text-3xl font-normal uppercase text-center text-white mb-3 md:mb-5">
                     {{ __('pages/mentoring/ultimate.epb.title') }}
                 </h3>
-                <p class="text-white/70 text-xl font-light text-center">
+                <p class="text-white/70 text-base md:text-xl font-light text-center">
                     {{ __('pages/mentoring/ultimate.epb.description') }}
                 </p>
 
                 <div class="flex justify-center">
-                    <a href="#"
-                        class="uppercase px-10 py-2 rounded-full bg-white text-newprimary mt-10 hover:bg-newprimary hover:text-white transition-all ease-in-out duration-300">
+                    <a href="{{ route('epb', ['locale' => app()->getLocale()]) }}"
+                        class="uppercase text-center px-10 py-2 rounded-full bg-white text-newprimary mt-10 hover:bg-newprimary hover:text-white transition-all ease-in-out duration-300">
                         {{ __('pages/mentoring/ultimate.epb.cta') }}
                     </a>
                 </div>
@@ -774,34 +726,34 @@
         </div>
     </section>
 
-
-    <section class="new-main-container py-20">
-        <div class="flex items-center gap-10">
-            <div class="w-[35%]">
-                <div class="w-full h-[500px] overflow-hidden rounded-3xl shadow-sm">
+    {{-- ==================== Head of Faculty Section ==================== --}}
+    <section class="new-main-container py-10 md:py-20">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div class="w-full md:w-[35%]">
+                <div class="w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
                     <img src="{{ asset('assets/img/mentoring/ultimate/34. Kak anne.png') }}"
                         alt="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}"
                         title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy" decoding="async" width="400" height="500"
-                        class="w-full h-full rounded-2xl shadow-sm object-cover object-bottom">
+                        class="w-full h-full rounded-2xl shadow-sm object-cover md:object-bottom object-center">
                 </div>
             </div>
-            <div class="w-[65%]">
-                <h2 class="text-5xl text-newprimary font-light mb-20">
+            <div class="w-full md:w-[65%] text-center md:text-left">
+                <h2 class="text-2xl md:text-5xl text-newprimary font-light mb-4 md:mb-20">
                     {!! __('pages/mentoring/ultimate.head_of_faculty.title') !!}
                 </h2>
                 <span>
-                    <h3 class="text-3xl text-newprimary font-normal mb-3">
+                    <h3 class="text-xl md:text-3xl text-newprimary font-normal mb-2 md:mb-3">
                         {!! __('pages/mentoring/ultimate.head_of_faculty.quote_start') !!}
                     </h3>
-                    <p class="text-xl">
+                    <p class="text-sm md:text-xl">
                         {{ __('pages/mentoring/ultimate.head_of_faculty.quote_body') }}
                     </p>
                 </span>
 
-                <h4 class="text-xl text-newprimary mt-10 font-normal">
+                <h4 class="text-base md:text-xl text-newprimary mt-4 md:mt-10 font-normal">
                     {{ __('pages/mentoring/ultimate.head_of_faculty.name') }}
                 </h4>
-                <p class="text-lg text-newprimary">
+                <p class="text-sm md:text-lg text-newprimary">
                     {{ __('pages/mentoring/ultimate.head_of_faculty.university') }}
                 </p>
             </div>
@@ -810,26 +762,26 @@
     </section>
 
     {{-- ==================== FAQ Section ==================== --}}
-    <section class="relative z-10 my-12 md:my-20">
+    <section class="relative z-10 my-10 md:my-20">
         <div class="new-main-container px-4 md:px-5 lg:px-20 text-center">
-            <h3 class="text-2xl md:text-4xl font-normal leading-5 mb-3 md:mb-5" itemprop="headline">
+            <h3 class="text-xl md:text-4xl font-normal leading-5 mb-6 md:mb-5" itemprop="headline">
                 {{ __('pages/mentoring/ultimate.faq.title') }}
             </h3>
 
-            <div class="flex items-center mt-10 w-full gap-10">
+            <div class="flex flex-col md:flex-row items-start w-full gap-6 md:gap-10">
                 <div class="w-full md:w-[65%]">
                     <div class="accordion-group">
                         @foreach (__('pages/mentoring/ultimate.faq.items') as $faqItem)
-                            <div class="border rounded-lg overflow-hidden">
+                            <div class="border rounded-lg overflow-hidden mb-3 md:mb-0">
                                 <button
-                                    class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
-                                    <span>{{ $faqItem['question'] }}</span>
+                                    class="accordion-btn w-full flex justify-between items-center px-4 md:px-5 py-3 md:py-4 text-left font-normal gap-3 md:gap-5">
+                                    <span class="text-sm md:text-base">{{ $faqItem['question'] }}</span>
 
-                                    <span class="text-2xl transition-all duration-200">+</span>
+                                    <span class="text-xl md:text-2xl transition-all duration-200">+</span>
                                 </button>
 
                                 <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                    <div class="px-5 pb-5 text-gray-600 md:text-start text-center">
+                                    <div class="px-4 md:px-5 pb-4 md:pb-5 text-gray-600 text-start">
                                         {{ $faqItem['answer'] }}
                                     </div>
                                 </div>
@@ -837,14 +789,14 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="w-full md:w-[35%]">
-                    <p class="text-xl mb-3 font-normal">
+                <div class="w-full md:w-[35%] text-center md:text-left">
+                    <p class="text-base md:text-xl mb-3 font-normal">
                         {{ __('pages/mentoring/ultimate.faq.contact_title') }}
                     </p>
-                    <p class="mb-5 text-black/60">
+                    <p class="text-sm md:text-base mb-5 text-black/60">
                         {{ __('pages/mentoring/ultimate.faq.contact_description') }}
                     </p>
-                    <a href="#" class="bg-black px-10 py-2 text-white rounded-full">
+                    <a href="https://bit.ly/eduall-contactus" class="bg-black px-8 md:px-10 py-2 text-white rounded-full inline-block text-sm md:text-base">
                         {{ __('pages/mentoring/ultimate.faq.contact_cta') }}
                     </a>
                 </div>
@@ -853,8 +805,10 @@
     </section>
 @endsection
 
+{{-- ========================================== SCRIPTS ========================================== --}}
 @push('script')
     <script>
+        {{-- Admissions Process Card Hover --}}
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.card');
 
@@ -904,6 +858,7 @@
     </script>
 
     <script>
+        {{-- How It Works Phase Accordion --}}
         document.addEventListener("DOMContentLoaded", () => {
 
             const items = document.querySelectorAll(".phase-item");
@@ -946,6 +901,7 @@
     </script>
 
     <script>
+        {{-- Testimonial Slider (Splide) --}}
         // ==================== Mentee Slider (Splide) ====================
         // Initialize testimonial slider with autoplay
         document.addEventListener('DOMContentLoaded', function() {
@@ -972,6 +928,7 @@
     </script>
 
     <script>
+        {{-- FAQ Accordion --}}
         // ==================== Accordion Functionality ====================
         document.querySelectorAll(".accordion-group").forEach(group => {
             const buttons = group.querySelectorAll(".accordion-btn");

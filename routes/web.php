@@ -25,9 +25,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/id-en', 301);
-Route::get('/array/pkv-games', fn () => abort(410));
-Route::get('/array/dominoqq', fn () => abort(410));
-Route::get('/array/bandarqq', fn () => abort(410));
+Route::get('/array/pkv-games', fn() => abort(410));
+Route::get('/array/dominoqq', fn() => abort(410));
+Route::get('/array/bandarqq', fn() => abort(410));
 
 
 Route::middleware(['remove_public', 'cache_header'])->group(function () {
@@ -152,6 +152,20 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
 
             Route::get('/webinar-workshop', [RegularTalkPageController::class, 'index']);
             Route::get('/webinar-workshop/{slug}', [RegularTalkPageController::class, 'show']);
+
+            Route::get(
+                '/event',
+                function () {
+                    return view('user.event.main');
+                }
+            )->name('event');
+
+            Route::get(
+                '/impact-project',
+                function () {
+                    return view('user.impact_project.main');
+                }
+            )->name('impact-project');
         },
     );
 

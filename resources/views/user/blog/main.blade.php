@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <section class="pt-10 lg:py-20">
+    <section class=" lg:pt-[20vh]">
         <div class="flex flex-col main-container">
             <h1 class="mb-8 font-newprimary font-bold text-3xl text-newprimary text-center md:text-5xl">
                 {{ __('pages/blog.top_title') }}

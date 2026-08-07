@@ -5,7 +5,7 @@
     }
 
     $dark_navbar = [
-        'partnership_careers', 'detail_careers',
+        'partnership_careers', 'detail_careers', 'blogs', 'detail_blog', 'impact-project'
     ];
 
 

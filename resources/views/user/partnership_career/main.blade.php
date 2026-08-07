@@ -24,27 +24,29 @@
                     title="{{ $banners->alt ?? 'EduALL Study Abroad Banner' }}" loading="lazy" decoding="async"
                     width="100%" height="auto" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
             </div>
-            <div class="absolute left-0 w-full main-container top-[27vh] md:top-[30vh]">
-                <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-newprimary text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 leading-8 uppercase"
-                    itemprop="headline">
-                    Grow with EduALL
-                </h1>
-                <p class="text-2xl font-normal text-center lg:text-left max-w-3xl mx-auto lg:mx-0 mb-5 text-newprimary">
-                    Education changes lives, and behind every impact is a team of passionate people making it happen.
-                </p>
-
-                <p class="text-newprimary text-lg md:text-xl mb-4 md:mb-10 md:text-start text-center max-w-3xl"
-                    itemprop="description">
-                    Every game changer starts with people who believe in them. At EduALL, every learner we support, every
-                    program we build, and every milestone we celebrate contributes to something bigger: helping the next
-                    generation discover their strengths and shape their future. If you're looking for meaningful work, real
-                    ownership, and continuous growth, you'll find it here.
-                </p>
-
-                <a href="#" class="rounded-full py-2 px-5 text-lg bg-newprimary text-white">
-                    See Open Roles
-                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
+            <div class="absolute left-0 w-full top-[27vh] md:top-[30vh]">
+                <div class="new-main-container">
+                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-newprimary text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 leading-8 uppercase"
+                        itemprop="headline">
+                        Grow with EduALL
+                    </h1>
+                    <p class="text-2xl font-normal text-center lg:text-left max-w-3xl mx-auto lg:mx-0 mb-5 text-newprimary">
+                        Education changes lives, and behind every impact is a team of passionate people making it happen.
+                    </p>
+    
+                    <p class="text-newprimary text-lg md:text-xl mb-4 md:mb-10 md:text-start text-center max-w-3xl"
+                        itemprop="description">
+                        Every game changer starts with people who believe in them. At EduALL, every learner we support, every
+                        program we build, and every milestone we celebrate contributes to something bigger: helping the next
+                        generation discover their strengths and shape their future. If you're looking for meaningful work, real
+                        ownership, and continuous growth, you'll find it here.
+                    </p>
+    
+                    <a href="#" class="rounded-full py-2 px-5 text-lg bg-newprimary text-white">
+                        See Open Roles
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="absolute w-[50%] main-container top-[27vh] md:top-[30vh] right-0">

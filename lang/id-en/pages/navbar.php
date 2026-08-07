@@ -128,9 +128,9 @@ return [
         'title' => 'Blog',
     ],
 
-    'portofolio' => [
-        'link' => 'portofolio',
-        'title' => 'Portofolio',
+    'impact-project' => [
+        'link' => 'impact-project',
+        'title' => 'Impact Project',
     ],
 
     // resources

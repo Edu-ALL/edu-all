@@ -3,253 +3,22 @@
     @php
         $breadcrumbs = [
             ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
-            ['name' => 'Program', 'url' => '#'],
-            ['name' => 'Admission Mentoring', 'url' => route('admissions_mentoring', [app()->getLocale()])],
-            ['name' => 'Graduate', 'url' => url()->current()],
+            ['name' => 'Mentoring', 'url' => '#'],
+            ['name' => 'Exploration & Profile Building', 'url' => url()->current()],
         ];
-        $currentUrl = url()->current();
-        $siteName = 'EduALL';
-        $programName = 'Exploration & Profile Building (EPB)';
     @endphp
-    <title>{{ $programName }} Program for Grades 7-11 | Build University Profile | EduALL</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="{{ $programName }} Program for Grades 7-11 | Build University Profile | {{ $siteName }}" />
-    <meta name="description" content="EduALL's Exploration & Profile Building program helps students in grades 7-11 build extracurricular achievements, passion projects, research, and a standout university application portfolio. 1200+ students mentored with 100% acceptance rate." />
-    <meta name="keywords" content="exploration profile building, EPB program, extracurricular activities high school, university application portfolio, passion projects students, academic research high school, international competitions, internship high school, digital portfolio, student clubs, konsultan pendidikan Indonesia, university preparation grades 7-11, study abroad preparation, university admission mentoring, konsultant pendidikan, profile building program, leadership development students" />
-    <meta name="author" content="{{ $siteName }}" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="language" content="Indonesian" />
-    <meta name="revisit-after" content="7 days" />
-    <link rel="canonical" href="{{ $currentUrl }}" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $currentUrl }}" />
-    <meta property="og:title" content="{{ $programName }} Program for Grades 7-11 | {{ $siteName }}" />
-    <meta property="og:description" content="Build extracurricular achievements and a standout university application portfolio. 1200+ students mentored, $2.7M+ in scholarships secured, 3500+ acceptances from top universities." />
-    <meta property="og:image" content="{{ asset('assets/img/mentoring/epb/1. EPB Background Hero.png') }}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="EduALL Exploration & Profile Building Program" />
-    <meta property="og:locale" content="id_ID" />
-    <meta property="og:site_name" content="{{ $siteName }}" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="{{ $currentUrl }}" />
-    <meta property="twitter:title" content="{{ $programName }} Program | Build Your University Profile | {{ $siteName }}" />
-    <meta property="twitter:description" content="Help your child build extracurricular achievements, passion projects, and a standout university application. Grades 7-11. 100% acceptance rate." />
-    <meta property="twitter:image" content="{{ asset('assets/img/mentoring/epb/1. EPB Background Hero.png') }}" />
-    <meta property="twitter:image:alt" content="EduALL Exploration & Profile Building Program" />
-    
-    <!-- Geo Tags -->
-    <meta name="geo.region" content="ID" />
-    <meta name="geo.placename" content="Indonesia" />
-    
-    <!-- Structured Data - Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "{{ $siteName }}",
-        "url": "{{ url('/') }}",
-        "logo": "{{ asset('assets/img/logo.png') }}",
-        "description": "Leading education consultant in Indonesia specializing in university admission mentoring and profile building programs for students.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "ID",
-            "addressLocality": "Indonesia"
-        },
-        "sameAs": [
-            "https://www.instagram.com/eduall",
-            "https://www.linkedin.com/company/eduall"
-        ]
-    }
-    </script>
-    
-    <!-- Structured Data - BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "{{ url('/' . app()->getLocale()) }}"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Program",
-                "item": "{{ url('/' . app()->getLocale() . '/program') }}"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Admission Mentoring",
-                "item": "{{ route('admissions_mentoring', [app()->getLocale()]) }}"
-            },
-            {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Exploration & Profile Building",
-                "item": "{{ $currentUrl }}"
-            }
-        ]
-    }
-    </script>
-    
-    <!-- Structured Data - Course -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "{{ $programName }}",
-        "description": "A comprehensive program for students in grades 7-11 to build extracurricular achievements, passion projects, research, and a standout university application portfolio.",
-        "provider": {
-            "@type": "Organization",
-            "name": "{{ $siteName }}",
-            "url": "{{ url('/') }}"
-        },
-        "educationalLevel": "Middle School to High School",
-        "targetAudience": [
-            {
-                "@type": "Audience",
-                "audienceType": "Students in Grades 7-11"
-            }
-        ],
-        "offers": {
-            "@type": "Offer",
-            "description": "Free consultation available",
-            "price": "0",
-            "priceCurrency": "IDR"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150",
-            "bestRating": "5"
-        }
-    }
-    </script>
-    
-    <!-- Structured Data - FAQPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What extracurricular activities does the EPB program support?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "EPB covers student clubs (Business, Computer Science, Engineering, Life Science), personal passion projects, academic research and publication, international competitions, internship and job shadowing, and digital portfolio development. You select the activities that match your interests and university application goals."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "When is the best time to start?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "EduALL recommends Grade 7 or 8 for students building a broad university application profile. EPB is equally valuable for Grade 10-11 students who need to strengthen a specific area (a passion project, research paper, or internship) before university admissions season."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is this only for students targeting the US or UK?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Not at all. We have helped students across Indonesia build profiles for universities in the US, UK, Europe, Australia, Asia, and beyond. The extracurricular achievements we build strengthen any application, regardless of destination."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is the difference between EPB and Ultimate Mentoring?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "EPB is for students who want to build their extracurricular profile and explore career directions before applications begin. Ultimate Mentoring is EduALL's end-to-end university admissions program—covering strategy, personal statement, essays, and university selection through to acceptance. Many students complete EPB first and transition into Ultimate Mentoring when ready."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I know which program is right for me?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Grade 7-10 and focused on building extracurricular achievements? Start with EPB. Grade 11-12 and actively preparing to submit university applications? Ultimate Mentoring is built for you. Our free initial consultation will confirm the right fit."
-                }
-            }
-        ]
-    }
-    </script>
-    
-    <!-- Structured Data - WebPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "{{ $programName }} | {{ $siteName }}",
-        "description": "Build extracurricular achievements and a standout university application portfolio through personalized mentorship, hands-on experiences, and student clubs.",
-        "url": "{{ $currentUrl }}",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ $currentUrl }}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "{{ $siteName }}",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "{{ asset('assets/img/logo.png') }}"
-            }
-        },
-        "inLanguage": "id-ID"
-    }
-    </script>
+
+    {{-- Page Title and Meta Tags --}}
+    <title>Exploration & Profile Building | EduALL</title>
+    <meta name="title" content="Exploration & Profile Building | EduALL" />
+    <meta name="description"
+        content="EduALL's profile building program for high school students in Indonesia. Build extracurricular achievements and a standout university application portfolio." />
+    <meta name="keywords"
+        content="university admissions consultant, admissions consulting, profile building, university application preparation, university application profile, extracurricular development, university application portfolio, leadership development, academic research, summer program, pre-college program, scholarship guidance, Ivy League, US universities, UK universities, top universities, extracurricular activities, extracurricular achievements, research paper, EduALL, Ultimate Mentoring, konsultan pendidikan, kuliah di luar negeri, beasiswa luar negeri" />
 @endsection
 
 @push('style')
     <style>
-        /* ==================== Marquee Animation Styles ==================== */
-        .marquee-track {
-            display: flex;
-            gap: 40px;
-            width: max-content;
-        }
-
-        /* Top row animation - moves left */
-        .marquee-left {
-            animation: marquee-left 15s linear infinite;
-        }
-
-        /* Bottom row animation - moves right */
-        .marquee-right {
-            animation: marquee-right 15s linear infinite;
-        }
-
-        @keyframes marquee-left {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        @keyframes marquee-right {
-            from {
-                transform: translateX(-50%);
-            }
-
-            to {
-                transform: translateX(0);
-            }
-        }
-
         /* ==================== Project Slider Styles ==================== */
         #project-showcase {
             padding: 20px 0;
@@ -317,19 +86,22 @@
                     title="{{ $banners->alt ?? 'EduALL Study Abroad Banner' }}" loading="lazy" decoding="async"
                     width="100%" height="auto" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
             </div>
-            <div class="absolute left-0 w-full main-container top-[27vh] md:top-[25vh]">
-                <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-20 leading-8"
-                    itemprop="headline">
-                    Exploration & <br> Profile Building Program
-                </h1>
+            <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
+                <div class="new-main-container">
+                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-20 leading-8"
+                        itemprop="headline">
+                        Exploration & <br> Profile Building Program
+                    </h1>
 
-                <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
-                    itemprop="description">
-                    Designed specifically for students in grades 7 to 11, this program helps them build a strong foundation
-                    before university applications. Through personalized mentorship, hands-on experiences, and
-                    extracurricular achievements through student clubs, research, competitions, internships, and passion
-                    projects, EduALL helps students discover their passions and strengths.
-                </p>
+                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
+                        itemprop="description">
+                        Designed specifically for students in grades 7 to 11, this program helps them build a strong
+                        foundation
+                        before university applications. Through personalized mentorship, hands-on experiences, and
+                        extracurricular achievements through student clubs, research, competitions, internships, and passion
+                        projects, EduALL helps students discover their passions and strengths.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -397,8 +169,9 @@
                     </div>
 
                     <div class="px-5 flex justify-center mt-20">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-1.png') }}" alt="1-on-1 Personalized Mentoring Session at EduALL"
-                            class="w-full rounded-2xl shadow-xl" loading="lazy">
+                        <img src="{{ asset('assets/img/mentoring/epb/epb-1.png') }}"
+                            alt="1-on-1 Personalized Mentoring Session at EduALL" class="w-full rounded-2xl shadow-xl"
+                            loading="lazy">
                     </div>
                 </article>
                 <article class="w-1/4 h-full">
@@ -410,7 +183,8 @@
                     </div>
 
                     <div class="px-5 flex justify-center mt-10">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-2.png') }}" alt="Strategic Roadmap Planning for University Applications"
+                        <img src="{{ asset('assets/img/mentoring/epb/epb-2.png') }}"
+                            alt="Strategic Roadmap Planning for University Applications"
                             class="w-full rounded-2xl shadow-xl" loading="lazy">
                     </div>
                 </article>
@@ -423,26 +197,28 @@
                     </div>
 
                     <div class="px-5 flex justify-center mt-20">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-3.png') }}" alt="Well-Rounded Support for Student Development"
-                            class="w-full rounded-2xl shadow-xl" loading="lazy">
+                        <img src="{{ asset('assets/img/mentoring/epb/epb-3.png') }}"
+                            alt="Well-Rounded Support for Student Development" class="w-full rounded-2xl shadow-xl"
+                            loading="lazy">
                     </div>
-                </div>
-                <article class="w-1/4 h-full">
-                    <div class="w-full flex flex-col items-center justify-center text-center border-r border-dark/30 px-10">
-                        <h3 class="text-4xl font-light">
-                            100 +
-                        </h3>
-                        <p class="text-dark/70">
-                            Certificates & Awards
-                        </p>
-                    </div>
-
-                    <div class="px-5 flex justify-center mt-10">
-                        <img src="{{ asset('assets/img/mentoring/epb/epb-4.png') }}" alt="100 Plus Certificates and Awards Achieved by EduALL Students"
-                            class="w-full rounded-2xl shadow-xl" loading="lazy">
-                    </div>
-                </article>
             </div>
+            <article class="w-1/4 h-full">
+                <div class="w-full flex flex-col items-center justify-center text-center border-r border-dark/30 px-10">
+                    <h3 class="text-4xl font-light">
+                        100 +
+                    </h3>
+                    <p class="text-dark/70">
+                        Certificates & Awards
+                    </p>
+                </div>
+
+                <div class="px-5 flex justify-center mt-10">
+                    <img src="{{ asset('assets/img/mentoring/epb/epb-4.png') }}"
+                        alt="100 Plus Certificates and Awards Achieved by EduALL Students"
+                        class="w-full rounded-2xl shadow-xl" loading="lazy">
+                </div>
+            </article>
+        </div>
         </div>
     </section>
 
@@ -692,8 +468,10 @@
                 <div class="w-[65%]">
 
                     <div class="tab-pane" data-tab="1">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-1.png') }}" alt="High-Impact Passion Projects - Community Campaigns and Digital Apps"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800" height="280">
+                        <img src="{{ asset('assets/img/mentoring/epb/why-us-1.png') }}"
+                            alt="High-Impact Passion Projects - Community Campaigns and Digital Apps"
+                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
+                            height="280">
                         <p class="text-gray-500 pt-4">
                             From community campaigns to digital apps, we guide you from initial concept to public launch,
                             creating a tangible extracurricular achievement for your university application portfolio.
@@ -701,8 +479,10 @@
                     </div>
 
                     <div class="tab-pane hidden" data-tab="2">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}" alt="In-Depth Academic Research and Publication for University Applications"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800" height="280">
+                        <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}"
+                            alt="In-Depth Academic Research and Publication for University Applications"
+                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
+                            height="280">
                         <p class="text-gray-500 pt-4">
                             Research, write, and publish papers that demonstrate intellectual depth.
                             It is the kind of achievement that stands out to admissions committees at top universities.
@@ -710,8 +490,10 @@
                     </div>
 
                     <div class="tab-pane hidden" data-tab="3">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}" alt="Professional Industry Exposure and Career Direction for Students"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800" height="280">
+                        <img src="{{ asset('assets/img/mentoring/epb/why-us-3.png') }}"
+                            alt="Professional Industry Exposure and Career Direction for Students"
+                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
+                            height="280">
                         <p class="text-gray-500 pt-4">
                             Connect with industry professionals early and bring authentic career direction
                             to your university application narrative.
@@ -719,8 +501,10 @@
                     </div>
 
                     <div class="tab-pane hidden" data-tab="4">
-                        <img src="{{ asset('assets/img/mentoring/epb/why-us-4.png') }}" alt="International Project Competitions and Global Recognition"
-                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800" height="280">
+                        <img src="{{ asset('assets/img/mentoring/epb/why-us-4.png') }}"
+                            alt="International Project Competitions and Global Recognition"
+                            class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy" width="800"
+                            height="280">
                         <p class="text-gray-500 pt-4">
                             Coaching you through rigorous preparation to confidently present your skills,
                             test your ideas, and win recognition on a highly competitive international stage.
@@ -822,10 +606,10 @@
                                                     <!-- Image -->
                                                     <div
                                                         class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block active:block">
-                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club.png') }}"
-                            class="w-full h-full object-cover object-center"
-                            alt="EduALL Business Club - Student Leadership and Entrepreneurship"
-                            loading="lazy" width="300" height="200">
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club.png') }}"
+                                                            class="w-full h-full object-cover object-center"
+                                                            alt="EduALL Business Club - Student Leadership and Entrepreneurship"
+                                                            loading="lazy" width="300" height="200">
                                                     </div>
 
                                                     <!-- Content -->
@@ -871,10 +655,10 @@
 
                                                     <div
                                                         class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
-                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB computer science club.png') }}"
-                            class="w-full h-full object-cover object-center"
-                            alt="EduALL Computer Science Club - Coding and Software Development"
-                            loading="lazy" width="300" height="200">
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB computer science club.png') }}"
+                                                            class="w-full h-full object-cover object-center"
+                                                            alt="EduALL Computer Science Club - Coding and Software Development"
+                                                            loading="lazy" width="300" height="200">
                                                     </div>
 
                                                     <div
@@ -914,10 +698,10 @@
 
                                                     <div
                                                         class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
-                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Engineering club.png') }}"
-                            class="w-full h-full object-cover object-center"
-                            alt="EduALL Engineering Club - Robotics and Structural Design"
-                            loading="lazy" width="300" height="200">
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Engineering club.png') }}"
+                                                            class="w-full h-full object-cover object-center"
+                                                            alt="EduALL Engineering Club - Robotics and Structural Design"
+                                                            loading="lazy" width="300" height="200">
                                                     </div>
 
                                                     <div
@@ -957,10 +741,10 @@
 
                                                     <div
                                                         class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
-                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB life science club.png') }}"
-                            class="w-full h-full object-cover object-center"
-                            alt="EduALL Life Science Club - Biology and Medical Research"
-                            loading="lazy" width="300" height="200">
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB life science club.png') }}"
+                                                            class="w-full h-full object-cover object-center"
+                                                            alt="EduALL Life Science Club - Biology and Medical Research"
+                                                            loading="lazy" width="300" height="200">
                                                     </div>
 
                                                     <div
@@ -1613,8 +1397,8 @@
             <div class="w-[35%]">
                 <div class="w-full h-[500px] overflow-hidden rounded-3xl shadow-sm">
                     <img src="{{ asset('assets/img/mentoring/ultimate/34. Kak anne.png') }}"
-                        alt="Debora Wibianne, Head of Faculty at EduALL"
-                        class="w-full h-full object-cover object-bottom" loading="lazy" width="500" height="500">
+                        alt="Debora Wibianne, Head of Faculty at EduALL" class="w-full h-full object-cover object-bottom"
+                        loading="lazy" width="500" height="500">
                 </div>
             </div>
             <div class="w-[65%]">

@@ -7,10 +7,9 @@ return [
 
     // Breadcrumbs
     'breadcrumbs' => [
-        'home' => 'Beranda',
-        'program' => 'Program',
-        'admission_mentoring' => 'Admission Mentoring',
-        'graduate' => 'Graduate',
+        'home' => 'Home',
+        'program' => 'Mentoring',
+        'mentoring' => 'Ultimate Package',
     ],
 
     // Banner Section

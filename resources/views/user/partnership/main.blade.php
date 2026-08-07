@@ -3,730 +3,293 @@
 @section('head')
     @php
         $breadcrumbs = [
-            ['name' => 'Home', 'url' => url('/' . app()->getLocale())],
-            ['name' => 'About', 'url' => '#'],
-            ['name' => 'Partnership', 'url' => route('partnership', [app()->getLocale()])],
+            ['name' => __('Home', [], app()->getLocale()), 'url' => url('/' . app()->getLocale())],
+            ['name' => __('pages.home.about_us.title', [], app()->getLocale()), 'url' => '#'],
+            ['name' => __('pages/partnership.banner.label', [], app()->getLocale()), 'url' => route('partnership', [app()->getLocale()])],
         ];
     @endphp
-    <title>Partner with EduALL: Schools, Companies & Communities</title>
-    <meta name="title" content="Partner with EduALL: Schools, Companies & Communities" />
-    <meta name="description"
-        content="Partner with EduALL to create educational impact. We work with schools, companies, and communities to open more opportunities for students across Indonesia." />
+
+
+    {{-- SEO Meta Tags --}}
+    <title>{{ __('pages/partnership.meta_title', [], app()->getLocale()) }}</title>
+    <meta name="title" content="{{ __('pages/partnership.meta_title', [], app()->getLocale()) }}" />
+    <meta name="description" content="{{ __('pages/partnership.meta_description', [], app()->getLocale()) }}" />
+    <meta name="keywords" content="partnership, school partnership, company partnership, community partnership, education collaboration" />
+    <meta name="author" content="EduALL" />
 @endsection
 
 @section('content')
     {{-- ==================== Banner Section ==================== --}}
+    {{-- Hero section with main heading and partnership introduction --}}
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                <img src="{{ asset('assets/img/home/2026/banner-dark.webp') }}"
-                    alt="{{ $banners->alt ?? 'EduALL Study Abroad Banner' }}"
-                    title="{{ $banners->alt ?? 'EduALL Study Abroad Banner' }}" loading="lazy" decoding="async"
-                    width="100%" height="auto" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
+                <img src="{{ asset('assets/img/about/partnership/banner.png') }}" 
+                     alt="EduALL Partnership Program - Building Educational Collaborations" 
+                     title="EduALL Partnership Program"
+                     loading="lazy" 
+                     decoding="async" 
+                     width="1920" 
+                     height="1080"
+                     class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
             </div>
-            <div class="absolute left-0 w-full main-container top-[27vh] md:top-[25vh]">
-                <p class="uppercase text-orange-400 mb-5">
-                    Partnership
-                </p>
+            <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
+                <div class="new-main-container">
+                    <p class="uppercase text-orange-400 mb-5">
+                        {{ __('pages/partnership.banner.label', [], app()->getLocale()) }}
+                    </p>
 
-                <h1 class="font-semibold text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
-                    itemprop="headline">
-                    Partner with Us to Make a Greater Impact
-                </h1>
+                    <h1 class="font-semibold text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
+                        itemprop="headline">
+                        {{ __('pages/partnership.banner.title', [], app()->getLocale()) }}
+                    </h1>
 
-                <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
-                    itemprop="description">
-                    For over a decade, EduALL has believed that building game changers takes more than one organization. It
-                    takes parents, schools, universities, companies, communities, and partners working toward the same goal.
-                    Join us in building game changers by giving meaningful opportunities that help students grow, lead, and
-                    make a real impact.
-                </p>
+                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
+                        itemprop="description">
+                        {{ __('pages/partnership.banner.subtitle', [], app()->getLocale()) }}
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
+    {{-- ==================== Statistics Section ==================== --}}
+    {{-- Key metrics and achievements in partnership programs --}}
     <section class="bg-newprimary">
         <div class="pt-6 md:pt-10 new-main-container md:px-0 pb-5 relative z-10">
             <div class="flex flex-wrap justify-center gap-0 md:gap-5">
-                <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[30px] font-bold text-white">
-                        45+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Organizations Partnered
-                    </p>
-                </div>
-
-                <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[30px] font-bold text-white">
-                        40+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        School Clients
-                    </p>
-                </div>
-
-                <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[30px] font-bold text-white">
-                        50+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Corporate Partners
-                    </p>
-                </div>
-
-                <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                    <p class="text-lg md:text-[30px] font-bold text-white">
-                        1,500+
-                    </p>
-                    <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
-                        Event Participants
-                    </p>
-                </div>
+                @foreach (__('pages/partnership.stats', [], app()->getLocale()) as $stat)
+                    <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
+                        <p class="text-lg md:text-[30px] font-bold text-white">
+                            {{ $stat['value'] }}
+                        </p>
+                        <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
+                            {{ $stat['label'] }}
+                        </p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
+
+    {{-- ==================== Partnership Types Overview ==================== --}}
+    {{-- Three main partnership categories: School, Company, and Community --}}
     <section class="new-main-container py-20 mt-20">
         <div class="max-w-5xl mx-auto text-center mb-5">
             <h2 class="uppercase text-5xl mb-5 font-semibold">
-                Find the Right Way to Partner with Us
+                {{ __('pages/partnership.partnership_types.title', [], app()->getLocale()) }}
             </h2>
             <p class="text-xl text-dark/50">
-                Whether you're a school, a company, or a community organization, there's a meaningful way to work together.
-                Choose the partnership that best fits your goals
+                {{ __('pages/partnership.partnership_types.subtitle', [], app()->getLocale()) }}
             </p>
 
             <div class="flex flex-col md:flex-row gap-5 mt-10">
-                <!-- Card 1 -->
+                {{-- School Partnership Card --}}
                 <div class="w-full md:w-1/3">
                     <div class="bg-[#EBF8FF] p-6 rounded-2xl shadow-md h-full flex flex-col">
                         <div class="flex justify-center">
-                            <img src="https://picsum.photos/300/300?random=1" alt="School Partnership" class="w-[100px]">
+                            <img src="{{ asset('assets/img/about/partnership/icon-1.png') }}" 
+                                 alt="School Partnership Icon - Education Collaboration" 
+                                 loading="lazy"
+                                 class="h-[100px]">
                         </div>
 
                         <div class="text-center flex-grow">
                             <h3 class="text-2xl font-semibold text-newprimary my-5">
-                                School Partnership
+                                {{ __('pages/partnership.partnership_types.school.title', [], app()->getLocale()) }}
                             </h3>
 
                             <p class="text-dark/50 leading-relaxed">
-                                Bring university readiness, career exploration, and real-world learning directly to your
-                                students. Give them access to mentors from top universities and curate programs tailored to
-                                their needs.
+                                {{ __('pages/partnership.partnership_types.school.description', [], app()->getLocale()) }}
                             </p>
                         </div>
 
                         <div class="mt-8 text-center">
-                            <a href="#"
+                            <button data-target="school-partnership"
                                 class="inline-flex items-center bg-dark text-white px-8 py-3 rounded-2xl hover:bg-newprimary transition">
-                                Explore Programs
+                                {{ __('pages/partnership.partnership_types.school.button', [], app()->getLocale()) }}
                                 <i class="fa-solid fa-arrow-right ml-2"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                {{-- Company Partnership Card --}}
                 <div class="w-full md:w-1/3">
                     <div class="bg-[#EBF8FF] p-6 rounded-2xl shadow-md h-full flex flex-col">
                         <div class="flex justify-center">
-                            <img src="https://picsum.photos/300/300?random=2" alt="Company Partnership" class="w-[100px]">
+                            <img src="{{ asset('assets/img/about/partnership/icon-2.png') }}" 
+                                 alt="Company Partnership Icon - Business Collaboration" 
+                                 loading="lazy"
+                                 class="h-[100px]">
                         </div>
 
                         <div class="text-center flex-grow">
                             <h3 class="text-2xl font-semibold text-newprimary my-5">
-                                Company Partnership
+                                {{ __('pages/partnership.partnership_types.company.title', [], app()->getLocale()) }}
                             </h3>
 
                             <p class="text-dark/50 leading-relaxed">
-                                Create meaningful impact through mentorship, sponsorship, internships, and employee
-                                engagement. Connect your brand with the next generation of future leaders.
+                                {{ __('pages/partnership.partnership_types.company.description', [], app()->getLocale()) }}
                             </p>
                         </div>
 
                         <div class="mt-8 text-center">
-                            <a href="#"
+                            <button data-target="company-partnership"
                                 class="inline-flex items-center bg-dark text-white px-8 py-3 rounded-2xl hover:bg-newprimary transition">
-                                Let's Collaborate
+                                {{ __('pages/partnership.partnership_types.company.button', [], app()->getLocale()) }}
                                 <i class="fa-solid fa-arrow-right ml-2"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                {{-- Community Partnership Card --}}
                 <div class="w-full md:w-1/3">
                     <div class="bg-[#EBF8FF] p-6 rounded-2xl shadow-md h-full flex flex-col">
                         <div class="flex justify-center">
-                            <img src="https://picsum.photos/300/300?random=3" alt="Community Partnership" class="w-[100px]">
+                            <img src="{{ asset('assets/img/about/partnership/icon-3.png') }}" 
+                                 alt="Community Partnership Icon - Social Impact" 
+                                 loading="lazy"
+                                 class="h-[100px]">
                         </div>
 
                         <div class="text-center flex-grow">
                             <h3 class="text-2xl font-semibold text-newprimary my-5">
-                                Community Partnership
+                                {{ __('pages/partnership.partnership_types.community.title', [], app()->getLocale()) }}
                             </h3>
 
                             <p class="text-dark/50 leading-relaxed">
-                                Partner with EduALL to design and deliver education programs, outreach initiatives, and
-                                mentoring experiences that create lasting impact for the communities you serve.
+                                {{ __('pages/partnership.partnership_types.community.description', [], app()->getLocale()) }}
                             </p>
                         </div>
 
                         <div class="mt-8 text-center">
-                            <a href="#"
+                            <button data-target="community-partnership"
                                 class="inline-flex items-center bg-dark text-white px-8 py-3 rounded-2xl hover:bg-newprimary transition">
-                                Join Our Mission
+                                {{ __('pages/partnership.partnership_types.community.button', [], app()->getLocale()) }}
                                 <i class="fa-solid fa-arrow-right ml-2"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </section>
 
-
-    <section class="bg-[#EDEDED] py-20" id="#school-partnership">
+    {{-- ==================== School Partnership Section ==================== --}}
+    {{-- Detailed information about school partnership programs and collaboration --}}
+    <section class="bg-[#EDEDED] py-20 partnership-section" id="school-partnership">
         <div class="new-main-container mx-auto pb-20">
             <p class="uppercase text-blue-500 mb-3 font-semibold">
-                School Partnership
+                {{ __('pages/partnership.school_partnership.label', [], app()->getLocale()) }}
             </p>
 
-            <img src="https://picsum.photos/500/200" alt="EduALL" class="w-[100%] rounded-2xl">
-
+            <img src="{{ asset('assets/img/about/partnership/Partnership school banner.png') }}" 
+                 alt="EduALL School Partnership Program - Educational Collaboration with Schools" 
+                 loading="lazy"
+                 class="w-[100%] rounded-2xl">
 
             <div class="flex justify-between mt-10">
                 <div class="w-[37%]">
-                    <h3 class="text-4xl font-bold text-newprimary uppercase mb-5">
-                        Bring Exclusive EduALL Programs To Your School
-                    </h3>
+                    <h2 class="text-4xl font-bold text-newprimary uppercase mb-5">
+                        {{ __('pages/partnership.school_partnership.title', [], app()->getLocale()) }}
+                    </h2>
                 </div>
                 <div class="w-[53%]">
                     <p class="text-dark/50 leading-relaxed mb-5 text-lg">
-                        Schools partner with EduALL to complement what great schools already do. Through university
-                        readiness programs, career exploration, student leadership initiatives, and volunteering activities,
-                        we help schools prepare students for success beyond the classroom. Every program is tailored to your
-                        students' needs and your academic calendar.
+                        {{ __('pages/partnership.school_partnership.description', [], app()->getLocale()) }}
                     </p>
                 </div>
             </div>
         </div>
 
+        {{-- School Partnership Features --}}
         <div class="new-main-container">
             <div class="mt-10">
                 <h3 class="uppercase text-blue-500 mb-5">
-                    Why Schools Choose EduALL
+                    {{ __('pages/partnership.school_partnership.why_choose_us', [], app()->getLocale()) }}
                 </h3>
 
                 <div class="flex flex-wrap gap-5">
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Tailored to Your School
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Every program is designed around your students, learning objectives, and academic calendar,
-                                ensuring a natural fit with your school's priorities.
-                            </p>
+                    @foreach (__('pages/partnership.school_partnership.features', [], app()->getLocale()) as $feature)
+                        <div class="w-full md:w-[48%]">
+                            <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
+                                <p class="text-xl text-white font-semibold mb-3">
+                                    {{ $feature['title'] }}
+                                </p>
+                                <p class="text-white/70 leading-relaxed">
+                                    {{ $feature['description'] }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Mentors with Real Experience
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Students learn from mentors who have studied at the world's leading universities and built
-                                professional careers, bringing firsthand insights that go beyond the classroom.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Flexible Program Delivery
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Whether on campus, online, or in a hybrid format, our programs are designed to fit your
-                                schedule without disrupting the school experience.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                A Long-Term Partner
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Our partnerships don't end after a single workshop. We provide ongoing support, resources,
-                                and collaboration throughout the academic year to help schools create lasting impact.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
 
+        {{-- School Collaboration Categories --}}
         <div class="new-main-container mt-20 py-10">
             <div class="text-center mb-10">
-                <h3 class="text-5xl font-bold mb-4">
-                    Types of Collaboration
-                </h3>
+                <h2 class="text-5xl font-bold mb-4">
+                    {{ __('pages/partnership.school_partnership.collaboration_title', [], app()->getLocale()) }}
+                </h2>
             </div>
 
             <div class="flex items-stretch gap-5 mb-20">
-                <div class="w-1/3">
-                    <div class="bg-gray-100/70 rounded-2xl border-l-2 border-r-2 border-gray-300 pt-5 pb-10 px-5">
-                        <p class="text-xl text-dark mb-3 font-semibold text-center">
-                            Admission Accelerator Programs
-                        </p>
-                    </div>
-                    <div class="bg-white p-5 rounded-2xl shadow-md -mt-7 h-full">
-                        <p>
-                            Give students a competitive edge in university applications.
-                        </p>
-                        <hr class="my-3" />
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-application"
-                                data-modal-toggle="modal-application">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>University Application Workshops (US, UK, & Asia)</span>
-                            </li>
-
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-essay"
-                                data-modal-toggle="modal-essay">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>Essay Writing Bootcamp</span>
-                            </li>
-
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-sat"
-                                data-modal-toggle="modal-sat">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>SAT Prep Class as an Extracurricular</span>
-                            </li>
-                        </ul>
-
-                        {{-- Modal 1  --}}
-                        <div id="modal-application" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            University Application Workshops (US, UK, & Asia)
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-application">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            Prepares students for the university application process across the US, UK, and
-                                            Asia.
-                                        </p>
-                                        <ul class="list-disc pl-5 space-y-2 text-dark/60">
-                                            <li>
-                                                A hands-on bootcamp covering university admissions, scholarship
-                                                applications, essay and personal statement writing, and academic CV
-                                                preparation.
-                                            </li>
-                                            <li>
-                                                Direct feedback and personalized guidance to strengthen every application
-                                                and help students stand out.
-                                            </li>
-                                            <li>
-                                                Best-fit major exploration, university research, and strategic shortlisting
-                                                based on each student's goals and profile.
-                                            </li>
-                                            <li>
-                                                Support in securing strong recommendation letters for applications to top
-                                                universities worldwide.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                @foreach (__('pages/partnership.school_partnership.collaboration_categories', [], app()->getLocale()) as $category)
+                    <div class="w-1/3">
+                        <div class="bg-gray-100/70 rounded-2xl border-l-2 border-r-2 border-gray-300 pt-5 pb-10 px-5">
+                            <p class="text-xl text-dark mb-3 font-semibold text-center">
+                                {{ $category['title'] }}
+                            </p>
                         </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-md -mt-7 h-full">
+                            <p>
+                                {{ $category['description'] }}
+                            </p>
+                            <hr class="my-3" />
+                            <ul class="space-y-2">
+                                @foreach ($category['programs'] as $program)
+                                    <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-cat{{ $loop->parent->index }}-prog{{ $loop->index }}"
+                                        data-modal-toggle="modal-cat{{ $loop->parent->index }}-prog{{ $loop->index }}">
+                                        <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
+                                        <span>{{ $program['title'] }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
 
-                        {{-- Modal 2  --}}
-                        <div id="modal-essay" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            Essay Writing Bootcamp
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-essay">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            An intensive bootcamp focused on university application essays for US, UK, and
-                                            Asian institutions.
-                                        </p>
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Repeated essay-writing drills combined with continuous feedback and expert
-                                                guidance.
-                                            </li>
-                                            <li>
-                                                Support to craft compelling personal statements that highlight each
-                                                student's unique story and strengths.
-                                            </li>
-                                            <li>
-                                                Covers US, UK, and Asian essay formats, drafting techniques, expert reviews,
-                                                and practical tools to create standout applications.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Modal 3  --}}
-                        <div id="modal-sat" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            SAT Prep Class as an Extracurricular
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-sat">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            An SAT preparation program designed to fit seamlessly into your school's
-                                            extracurricular schedule.
-                                        </p>
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Expert-led instruction covering key concepts in SAT Math, Reading, and
-                                                Writing.
-                                            </li>
-                                            <li>
-                                                Structured lessons, practice tests, and targeted exercises to build
-                                                confidence and improve performance.
-                                            </li>
-                                            <li>
-                                                Proven test-taking strategies that help students maximize their SAT scores
-                                                without disrupting the school day.
-                                            </li>
-                                        </ul>
+                            @foreach ($category['programs'] as $program)
+                                <div id="modal-cat{{ $loop->parent->index }}-prog{{ $loop->index }}" tabindex="-1" aria-hidden="true"
+                                    class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
+                                    <div class="relative p-4 w-full max-w-2xl">
+                                        <div class="bg-newprimary rounded-xl shadow">
+                                            <div class="flex justify-between items-center p-5 border-b">
+                                                <h3 class="text-lg text-white font-semibold">
+                                                    {{ $program['title'] }}
+                                                </h3>
+                                                <button type="button" data-modal-hide="modal-cat{{ $loop->parent->index }}-prog{{ $loop->index }}">
+                                                    <i class="fa-solid fa-xmark text-xl text-white"></i>
+                                                </button>
+                                            </div>
+                                            <div class="bg-white p-5">
+                                                <p class="text-dark/60 mb-3">
+                                                    {{ $program['description'] }}
+                                                </p>
+                                                <ul class="list-disc pl-6 space-y-2 text-dark/60">
+                                                    @foreach ($program['details'] as $detail)
+                                                        <li>{{ $detail }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
-
-                <div class="w-1/3">
-                    <div
-                        class="bg-gradient-to-br from-newprimary to-black rounded-2xl border-l-2 border-r-2 border-gray-300 pt-5 pb-10 px-5">
-                        <p class="text-xl text-white mb-3 font-semibold text-center">
-                            Experiential Learning Programs
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-2xl shadow-md -mt-7 h-full">
-                        <p>
-                            Help students explore who they are through practice, not theory.
-                        </p>
-
-                        <hr class="my-3" />
-
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-uniconnect"
-                                data-modal-toggle="modal-uniconnect">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>Uni Connect & Interest Exploration</span>
-                            </li>
-
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-community"
-                                data-modal-toggle="modal-community">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>Community Service & Immersion</span>
-                            </li>
-                        </ul>
-
-                        {{-- Modal 1 --}}
-                        <div id="modal-uniconnect" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            Uni Connect & Interest Exploration
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-uniconnect">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            Gives students a broad view of academic and career paths through firsthand
-                                            exposure.
-                                        </p>
-
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Explore a range of universities and connect with professors, industry
-                                                experts,
-                                                and current students across different majors.
-                                            </li>
-                                            <li>
-                                                Visits and tours to Singapore's top universities.
-                                            </li>
-                                            <li>
-                                                Experience world-class education and research environments.
-                                            </li>
-                                            <li>
-                                                Make informed decisions about future academic and career pathways.
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Modal 2 --}}
-                        <div id="modal-community" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            Community Service & Immersion
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-community">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            Students immerse themselves in communities in Salatiga, Bali, or other rural
-                                            areas of Indonesia,
-                                            working alongside local residents on real community issues through projects
-                                            rooted in sustainability
-                                            and empathy.
-                                        </p>
-
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Design and implement meaningful community projects.
-                                            </li>
-                                            <li>
-                                                Build personal development skills through real-world challenges.
-                                            </li>
-                                            <li>
-                                                Develop a global-minded leadership perspective.
-                                            </li>
-                                            <li>
-                                                Grow a network of peers, mentors, and professionals.
-                                            </li>
-                                            <li>
-                                                Gain valuable experience suitable for CAS, community service hours,
-                                                and university applications.
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-1/3">
-                    <div class="bg-gray-100/70 rounded-2xl border-l-2 border-r-2 border-gray-300 pt-5 pb-10 px-5">
-                        <p class="text-xl text-dark mb-3 font-semibold text-center">
-                            Teacher-Focused Programs
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-2xl shadow-md -mt-7 h-full">
-                        <p>
-                            Support the educators who guide students every day through professional development,
-                            admissions training, and internationally recognized certifications.
-                        </p>
-
-                        <hr class="my-3" />
-
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-empowered"
-                                data-modal-toggle="modal-empowered">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>ALL EmpowerED</span>
-                            </li>
-
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-crest"
-                                data-modal-toggle="modal-crest">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>CREST Awards Teacher Training</span>
-                            </li>
-
-                            <li class="flex items-start gap-3 cursor-pointer" data-modal-target="modal-recommendation"
-                                data-modal-toggle="modal-recommendation">
-                                <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
-                                <span>Recommendation Letter Workshops</span>
-                            </li>
-                        </ul>
-
-                        {{-- Modal 1 --}}
-                        <div id="modal-empowered" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            ALL EmpowerED
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-empowered">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            A platform where principals, counselors, and teachers come together to
-                                            collaborate and share insights.
-                                        </p>
-
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Connect educators across schools through meaningful networking
-                                                opportunities.
-                                            </li>
-                                            <li>
-                                                Navigate the rapidly changing education landscape with shared knowledge and
-                                                best practices.
-                                            </li>
-                                            <li>
-                                                Foster professional growth through collaboration and peer learning.
-                                            </li>
-                                            <li>
-                                                Exchange strategies that empower educators to lead their schools and
-                                                students into the future.
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Modal 2 --}}
-                        <div id="modal-crest" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            CREST Awards Teacher Training
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-crest">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            Equips educators to deliver internationally recognized STEAM certifications.
-                                        </p>
-
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Aligned with the UK's CREST standards and designed for Indonesian educators.
-                                            </li>
-                                            <li>
-                                                Hands-on training that equips teachers to deliver high-quality STEAM
-                                                education.
-                                            </li>
-                                            <li>
-                                                Prepare students for global academic opportunities and challenges through
-                                                internationally recognized certification.
-                                            </li>
-                                            <li>
-                                                CREST Awards, pioneered by the British Science Association, is the UK's
-                                                principal STEM initiative.
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Modal 3 --}}
-                        <div id="modal-recommendation" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-gray-700/80">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="bg-newprimary rounded-xl shadow">
-
-                                    <div class="flex justify-between items-center p-5 border-b">
-                                        <h3 class="text-lg text-white font-semibold">
-                                            Recommendation Letter Workshops
-                                        </h3>
-
-                                        <button type="button" data-modal-hide="modal-recommendation">
-                                            <i class="fa-solid fa-xmark text-xl text-white"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="bg-white p-5">
-                                        <p class="text-dark/60 mb-3">
-                                            Equips teachers to write personalized, persuasive recommendation letters that
-                                            strengthen students'
-                                            university and scholarship applications.
-                                        </p>
-
-                                        <ul class="list-disc pl-6 space-y-2 text-dark/60">
-                                            <li>
-                                                Learn practical strategies for writing impactful recommendation letters.
-                                            </li>
-                                            <li>
-                                                Highlight each student's unique strengths, achievements, and potential.
-                                            </li>
-                                            <li>
-                                                Craft compelling recommendations that help students stand out in competitive
-                                                admissions and scholarship applications.
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -734,41 +297,16 @@
             <section class="bg-newprimary rounded-2xl">
                 <div class="pt-6 md:pt-10 new-main-container md:px-0 pb-5 relative z-10">
                     <div class="flex flex-wrap justify-center gap-0 md:gap-5">
-                        <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                            <p class="text-lg md:text-[30px] font-bold text-[#C7A322]">
-                                1,000+
-                            </p>
-                            <p class="text-[12px] md:text-base text-[#C7A322] mt-2 md:leading-5 leading-4">
-                                Students Reached
-                            </p>
-                        </div>
-
-                        <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                            <p class="text-lg md:text-[30px] font-bold text-[#C7A322]">
-                                100+
-                            </p>
-                            <p class="text-[12px] md:text-base text-[#C7A322] mt-2 md:leading-5 leading-4">
-                                Teachers Trained
-                            </p>
-                        </div>
-
-                        <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                            <p class="text-lg md:text-[30px] font-bold text-[#C7A322]">
-                                200+
-                            </p>
-                            <p class="text-[12px] md:text-base text-[#C7A322] mt-2 md:leading-5 leading-4">
-                                Workshops Conducted
-                            </p>
-                        </div>
-
-                        <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
-                            <p class="text-lg md:text-[30px] font-bold text-[#C7A322]">
-                                40+
-                            </p>
-                            <p class="text-[12px] md:text-base text-[#C7A322] mt-2 md:leading-5 leading-4">
-                                School Clients
-                            </p>
-                        </div>
+                        @foreach (__('pages/partnership.school_partnership.stats', [], app()->getLocale()) as $stat)
+                            <div class="w-1/2 md:w-1/6 text-center score-item mb-5">
+                                <p class="text-lg md:text-[30px] font-bold text-[#C7A322]">
+                                    {{ $stat['value'] }}
+                                </p>
+                                <p class="text-[12px] md:text-base text-[#C7A322] mt-2 md:leading-5 leading-4">
+                                    {{ $stat['label'] }}
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -777,114 +315,80 @@
         <div class="text-center mt-10">
             <a href="#"
                 class="inline-flex items-center bg-dark text-white px-8 py-3 rounded-2xl hover:bg-newprimary transition">
-                Bring These Programs to Your School
+                {{ __('pages/partnership.school_partnership.cta', [], app()->getLocale()) }}
                 <i class="fa-solid fa-arrow-right ml-2"></i>
             </a>
         </div>
     </section>
 
-
-    <section class="bg-white py-20" id="#school-partnership">
+    {{-- ==================== Company Partnership Section ==================== --}}
+    {{-- Detailed information about company partnership and business collaboration --}}
+    <section class="bg-white py-20 partnership-section hidden" id="company-partnership">
         <div class="new-main-container mx-auto pb-20">
             <p class="uppercase text-blue-500 mb-3 font-semibold">
-                Company Partnership
+                {{ __('pages/partnership.company_partnership.label', [], app()->getLocale()) }}
             </p>
 
-            <img src="https://picsum.photos/500/200" alt="EduALL" class="w-[100%] rounded-2xl">
-
+            <img src="{{ asset('assets/img/about/partnership/Partnership company banner.webp') }}" 
+                 alt="EduALL Company Partnership - Corporate Training and Business Education" 
+                 loading="lazy"
+                 class="w-[100%] rounded-2xl">
 
             <div class="flex justify-between mt-10">
                 <div class="w-[37%]">
-                    <h3 class="text-4xl font-bold text-newprimary uppercase mb-5">
-                        Why Companies Partner with EduALL
-                    </h3>
+                    <h2 class="text-4xl font-bold text-newprimary uppercase mb-5">
+                        {{ __('pages/partnership.company_partnership.title', [], app()->getLocale()) }}
+                    </h2>
                 </div>
                 <div class="w-[53%]">
                     <p class="text-dark/50 leading-relaxed mb-5 text-lg">
-                        Companies partner with EduALL to invest in the next generation while creating real, visible impact.
-                        More than 50 corporate partners have worked with us to shape programs, events, and experiences that
-                        connect their people and their brand to driven, future-ready students. Partnering is not a
-                        transaction. It is a way to contribute expertise and resources where they matter most, and to be
-                        recognized for it.
+                        {{ __('pages/partnership.company_partnership.description', [], app()->getLocale()) }}
                     </p>
                 </div>
             </div>
         </div>
 
+        {{-- Company Partnership Involvement Types --}}
         <div class="new-main-container">
             <div class="mt-10">
                 <h3 class="uppercase text-blue-500 mb-5">
-                    Ways to Get Involved
+                    {{ __('pages/partnership.company_partnership.ways_to_get_involved', [], app()->getLocale()) }}
                 </h3>
 
                 <div class="flex flex-wrap gap-5">
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Expertise and Mentorship
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Share your team's knowledge through talks, mentoring, and workshops that expose students to
-                                real
-                                professional fields and industry insights.
-                            </p>
+                    @foreach (__('pages/partnership.company_partnership.involvement_types', [], app()->getLocale()) as $type)
+                        <div class="w-full md:w-[48%]">
+                            <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
+                                <p class="text-xl text-white font-semibold mb-3">
+                                    {{ $type['title'] }}
+                                </p>
+                                <p class="text-white/70 leading-relaxed">
+                                    {{ $type['description'] }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Sponsorship
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Support impactful programs and events that reach hundreds of students while positioning your
-                                brand as
-                                part of meaningful educational initiatives.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Career Exposure and Internships
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Open doors for students through internships, site visits, and industry exposure that help
-                                shape their
-                                aspirations and future careers.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full md:w-[48%]">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Collaborative Programs
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Co-create workshops and initiatives that bring your industry expertise directly into
-                                students'
-                                learning experiences.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
 
+        {{-- Company Partnership Benefits --}}
         <div class="new-main-container mx-auto py-20">
             <div class="flex justify-between mt-10">
                 <div class="w-[40%]">
-                    <h3 class="text-4xl font-bold text-newprimary uppercase mb-5">
-                        Why It Is Worth It
-                    </h3>
+                    <h2 class="text-4xl font-bold text-newprimary uppercase mb-5">
+                        {{ __('pages/partnership.company_partnership.why_worth_it_title', [], app()->getLocale()) }}
+                    </h2>
 
                     <p class="text-dark/50 leading-relaxed mb-5 text-lg">
-                        A partnership with EduALL creates value beyond CSR. It delivers measurable social impact, meaningful
-                        employee engagement, early connections with future talent, and brand visibility through trusted
-                        education programs and events.
+                        {{ __('pages/partnership.company_partnership.why_worth_it_description', [], app()->getLocale()) }}
                     </p>
+                </div>
+                <div class="w-[40%]">
+                    <img src="{{ asset('assets/img/about/partnership/Partnership company foto.png') }}" 
+                         alt="EduALL Company Partnership Benefits - Corporate Education Success" 
+                         loading="lazy"
+                         class="w-full">
                 </div>
             </div>
         </div>
@@ -892,9 +396,7 @@
         <div class="new-main-container mb-10">
             <section class="bg-newprimary rounded-2xl px-5 py-10">
                 <p class="text-white text-lg">
-                    Our partners have collaborated with EduALL through flagship initiatives such as The Cornerstone, our
-                    national conversation on the future of Indonesian youth, and STEM+ Wonderlab, where students showcase
-                    real-world innovation. Explore our Events page to see these partnerships in action.
+                    {{ __('pages/partnership.company_partnership.initiatives', [], app()->getLocale()) }}
                 </p>
             </section>
         </div>
@@ -902,113 +404,98 @@
         <div class="text-center mt-10">
             <a href="#"
                 class="inline-flex items-center bg-dark text-white px-8 py-3 rounded-2xl hover:bg-newprimary transition">
-                Partner with Us
+                {{ __('pages/partnership.company_partnership.cta', [], app()->getLocale()) }}
                 <i class="fa-solid fa-arrow-right ml-2"></i>
             </a>
         </div>
     </section>
 
-    <section class="bg-[#EDEDED] py-20" id="#school-partnership">
+    {{-- ==================== Community Partnership Section ==================== --}}
+    {{-- Community engagement and social impact partnership programs --}}
+    <section class="bg-[#EDEDED] py-20 partnership-section hidden" id="community-partnership">
         <div class="new-main-container mx-auto pb-20">
             <p class="uppercase text-blue-500 mb-3 font-semibold">
-               Community Partnership
+                {{ __('pages/partnership.community_partnership.label', [], app()->getLocale()) }}
             </p>
 
-            <img src="https://picsum.photos/500/200" alt="EduALL" class="w-[100%] rounded-2xl">
-
+            <img src="{{ asset('assets/img/about/partnership/Partnership community banner.png') }}" 
+                 alt="EduALL Community Partnership - Social Impact and Community Development" 
+                 loading="lazy"
+                 class="w-[100%] rounded-2xl">
 
             <div class="flex justify-between mt-10">
                 <div class="w-[37%]">
-                    <h3 class="text-4xl font-bold text-newprimary uppercase mb-5">
-                        Partnering for Broader Educational Impact
-                    </h3>
+                    <h2 class="text-4xl font-bold text-newprimary uppercase mb-5">
+                        {{ __('pages/partnership.community_partnership.title', [], app()->getLocale()) }}
+                    </h2>
                 </div>
                 <div class="w-[53%]">
                     <p class="text-dark/50 leading-relaxed mb-5 text-lg">
-                        Some of the most meaningful work happens beyond the classroom. EduALL regularly collaborates with
-                        mission-driven organizations to expand access to quality education and create impact in the
-                        communities that need it most. When we partner, students do not just learn, they contribute to
-                        something larger than themselves.
+                        {{ __('pages/partnership.community_partnership.description', [], app()->getLocale()) }}
                     </p>
                 </div>
             </div>
         </div>
 
+        {{-- Community Partnership Impact Types --}}
         <div class="new-main-container">
             <div class="mt-10">
                 <h3 class="uppercase text-blue-500 mb-5">
-                    Ways We Create Impact
+                    {{ __('pages/partnership.community_partnership.impact_ways', [], app()->getLocale()) }}
                 </h3>
 
                 <div class="flex gap-5">
-                    <div class="w-full md:w-1/3">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Joint Programs and Events
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                We create collaborative programs and events that raise awareness, inspire engagement, and
-                                generate resources to support educational initiatives.
-                            </p>
+                    @foreach (__('pages/partnership.community_partnership.impact_types', [], app()->getLocale()) as $type)
+                        <div class="w-full md:w-1/3">
+                            <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
+                                <p class="text-xl text-white font-semibold mb-3">
+                                    {{ $type['title'] }}
+                                </p>
+                                <p class="text-white/70 leading-relaxed">
+                                    {{ $type['description'] }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="w-full md:w-1/3">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Student-Led Community Projects
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                Our students design and lead meaningful projects that create real impact for communities,
-                                fostering leadership, innovation, and social responsibility.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full md:w-1/3">
-                        <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-10 h-full">
-                            <p class="text-xl text-white font-semibold mb-3">
-                                Fundraising and Donations
-                            </p>
-                            <p class="text-white/70 leading-relaxed">
-                                We organize fundraising initiatives and welcome donations that directly support students,
-                                educational programs, and communities in need.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
 
+        {{-- Community Impact in Action --}}
         <div class="new-main-container mx-auto py-20">
             <div class="flex justify-between mt-10">
                 <div class="w-[40%]">
-                    <h3 class="text-4xl font-bold text-newprimary uppercase mb-5">
-                        Impact in Action
-                    </h3>
+                    <h2 class="text-4xl font-bold text-newprimary uppercase mb-5">
+                        {{ __('pages/partnership.community_partnership.impact_in_action_title', [], app()->getLocale()) }}
+                    </h2>
 
                     <p class="text-dark/50 leading-relaxed mb-5 text-lg">
-                        Our longest-running collaboration is with Indonesia Mengajar, supporting education in underserved
-                        regions across Indonesia. At STEM+ Wonderlab, our students' innovations were donated to aid learning
-                        in these communities, and event proceeds were given in full to Indonesia Mengajar. At The
-                        Cornerstone, we brought students, educators, and policymakers together to shape the future of
-                        Indonesian education. Explore these collaborations on our Events page.
+                        {{ __('pages/partnership.community_partnership.impact_in_action_description', [], app()->getLocale()) }}
                     </p>
 
                     <a href="#"
                         class="inline-flex items-center bg-dark text-white px-8 py-3 rounded-2xl hover:bg-newprimary transition">
-                        Partner for Impact
+                        {{ __('pages/partnership.community_partnership.cta', [], app()->getLocale()) }}
                         <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
                 <div class="w-[40%]">
-                    <img src="https://picsum.photos/400/150" alt="EduALL" class="w-full rounded-2xl shadow-sm mb-5">
+                    <img src="{{ asset('assets/img/about/partnership/Partnership community foto.png') }}" 
+                         alt="EduALL Community Partnership Impact - Real World Social Impact" 
+                         loading="lazy"
+                         class="w-full rounded-2xl shadow-sm mb-5">
                     <div class="flex gap-5">
                         <div class="w-1/2">
-                            <img src="https://picsum.photos/200/150" alt="EduALL" class="w-full rounded-2xl shadow-sm">
+                            <img src="{{ asset('assets/img/about/partnership/Partnership community foto 2.png') }}"
+                                alt="EduALL Community Development Program - Education for All" 
+                                loading="lazy"
+                                class="w-full rounded-2xl shadow-sm">
                         </div>
                         <div class="w-1/2">
-                            <img src="https://picsum.photos/200/150" alt="EduALL" class="w-full rounded-2xl shadow-sm">
+                            <img src="{{ asset('assets/img/about/partnership/Partnership community foto 3.png') }}"
+                                alt="EduALL Community Engagement - Building Better Communities" 
+                                loading="lazy"
+                                class="w-full rounded-2xl shadow-sm">
                         </div>
                     </div>
                 </div>
@@ -1016,15 +503,17 @@
         </div>
     </section>
 
+    {{-- ==================== Testimonials Section ==================== --}}
+    {{-- Partner testimonials and success stories --}}
     @if ($testimonies)
         <section class="pt-16 pb-20">
             <div class="main-container">
                 <div class="max-w-5xl mx-auto mb-5">
                     <h2 class="text-5xl font-semibold uppercase mb-5 text-center">
-                        Heard from Our Partners
+                        {{ __('pages/partnership.testimonials.title', [], app()->getLocale()) }}
                     </h2>
                     <p class="text-xl font-light text-dark/60 text-center">
-                        Hear from the schools and organizations that have partnered with EduALL.
+                        {{ __('pages/partnership.testimonials.subtitle', [], app()->getLocale()) }}
                     </p>
                 </div>
                 <div class="splide" role="group">
@@ -1052,29 +541,127 @@
         </section>
     @endif
 
+    {{-- ==================== Gallery Section ==================== --}}
+    {{-- Visual showcase of partnership programs and activities --}}
     <section class="py-20">
         <div class="new-main-container">
             <div class="max-w-5xl mx-auto text-center">
                 <h2 class="text-5xl font-semibold uppercase mb-5">
-                    Highlights from Our Partnerships
+                    {{ __('pages/partnership.gallery.title', [], app()->getLocale()) }}
                 </h2>
                 <p class="text-xl text-dark/60">
-                    Explore the programs, events, and community initiatives we've brought to life with our partners.
+                    {{ __('pages/partnership.gallery.subtitle', [], app()->getLocale()) }}
                 </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto mt-10" id="gallery">
+                {{-- Filter Buttons --}}
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button class="filter-btn active bg-dark text-white px-6 py-2 rounded-full transition" data-filter="all">
+                        {{ __('pages/partnership.gallery.filters.all', [], app()->getLocale()) }}
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-dark px-6 py-2 rounded-full hover:bg-dark hover:text-white transition" data-filter="school">
+                        {{ __('pages/partnership.gallery.filters.school', [], app()->getLocale()) }}
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-dark px-6 py-2 rounded-full hover:bg-dark hover:text-white transition" data-filter="company">
+                        {{ __('pages/partnership.gallery.filters.company', [], app()->getLocale()) }}
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-dark px-6 py-2 rounded-full hover:bg-dark hover:text-white transition" data-filter="community">
+                        {{ __('pages/partnership.gallery.filters.community', [], app()->getLocale()) }}
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {{-- School Partnership Images --}}
+                    <img src="{{ asset('assets/img/about/partnership/school/image_1.webp') }}" 
+                         data-item='school'
+                         alt="EduALL School Partnership - Students Learning Together" 
+                         loading="lazy"
+                         class="w-full h-auto object-cover row-span-2">
+                    <img src="{{ asset('assets/img/about/partnership/school/image_2.webp') }}" 
+                         data-item='school'
+                         alt="EduALL School Collaboration - Educational Workshop" 
+                         loading="lazy"
+                         class="w-full h-auto object-cover">
+                    <img src="{{ asset('assets/img/about/partnership/school/image_3.webp') }}" 
+                         data-item='school'
+                         alt="EduALL School Program - Interactive Learning Session" 
+                         loading="lazy"
+                         class="w-full h-auto object-cover">
+                    <img src="{{ asset('assets/img/about/partnership/school/image_4.webp') }}" 
+                         data-item='school'
+                         alt="EduALL School Partnership - Teacher Training Program" 
+                         loading="lazy"
+                         class="w-full h-auto object-cover">
+                    <img src="{{ asset('assets/img/about/partnership/school/image_5.webp') }}" 
+                         data-item='school'
+                         alt="EduALL School Initiative - Student Development Activity" 
+                         loading="lazy"
+                         class="w-full h-auto object-cover">
+
+                    {{-- Company Partnership Images --}}
+                    <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_1.webp') }}"
+                        data-item="company" 
+                        alt="EduALL Corporate Partnership - Professional Training Session" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover row-span-2">
+                    <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_3.webp') }}"
+                        data-item="company" 
+                        alt="EduALL Business Collaboration - Corporate Education Program" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover">
+                    <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_4.webp') }}"
+                        data-item="company" 
+                        alt="EduALL Company Partnership - Team Building Workshop" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover">
+                    <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_2.webp') }}"
+                        data-item="company" 
+                        alt="EduALL Corporate Training - Employee Development" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover">
+                    <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_5.webp') }}"
+                        data-item="company" 
+                        alt="EduALL Business Partnership - Professional Development" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover">
+
+                    {{-- Community Partnership Images --}}
+                    <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_1.webp') }}"
+                        data-item="community" 
+                        alt="EduALL Community Partnership - Social Impact Initiative" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover col-span-2 row-span-1">
+                    <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_3.webp') }}"
+                        data-item="community" 
+                        alt="EduALL Community Development - Education Outreach Program" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover col-span-1 row-span-1">
+                    <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_4.webp') }}"
+                        data-item="community" 
+                        alt="EduALL Community Engagement - Social Responsibility Project" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover col-span-1 row-span-2">
+                    <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_2.webp') }}"
+                        data-item="community" 
+                        alt="EduALL Community Support - Educational Assistance Program" 
+                        loading="lazy"
+                        class="w-full h-full rounded-xl object-cover col-span-1 row-span-1">
+                </div>
             </div>
         </div>
     </section>
 
-
+    {{-- ==================== Partner Organizations Section ==================== --}}
+    {{-- Logo showcase of partner organizations and institutions --}}
     <section class="py-20">
         <div class="new-main-container pt-20">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-5xl font-semibold uppercase mb-5">
-                    Organizations We Have Worked With
+                    {{ __('pages/partnership.organizations.title', [], app()->getLocale()) }}
                 </h2>
                 <p class="text-xl text-dark/60 font-light">
-                    From schools and universities to companies and community organizations, here are some of the partners we
-                    have collaborated with.
+                    {{ __('pages/partnership.organizations.subtitle', [], app()->getLocale()) }}
                 </p>
             </div>
         </div>
@@ -1088,7 +675,9 @@
                         @for ($i = 0; $i < 3; $i++)
                             <div class="flex-none md:mx-8">
                                 <img src="{{ asset('assets/img/about/partnership/logo-partners-new.webp') }}"
-                                    alt="Partnership Image" class="md:h-[450px] h-80 w-auto object-contain">
+                                    alt="EduALL Partner Organizations - Trusted Educational Partners" 
+                                    loading="lazy"
+                                    class="md:h-[450px] h-80 w-auto object-contain">
                             </div>
                         @endfor
                     </div>
@@ -1097,38 +686,39 @@
         </div>
     </section>
 
+    {{-- ==================== Contact Form Section ==================== --}}
+    {{-- Partnership inquiry and contact form for potential partners --}}
     <section class="bg-newprimary py-20">
         <div class="new-main-container flex gap-10 py-20 items-center">
             <div class="w-1/2">
                 <h2 class="text-white text-5xl font-semibold mb-5 uppercase">
-                    Let's Create Impact Together
+                    {{ __('pages/partnership.contact_form.title', [], app()->getLocale()) }}
                 </h2>
                 <p class="text-xl text-white/60 font-light">
-                    Tell us about your organization and how you'd like to collaborate. Whatever your goals, we'll be in
-                    touch to explore how we can create more opportunities for students together.
+                    {{ __('pages/partnership.contact_form.subtitle', [], app()->getLocale()) }}
                 </p>
             </div>
 
             <div class="w-1/2">
                 <div class="bg-[#EAEAEA] py-8 px-10 rounded-xl shadow-2xl w-full">
-                    <form action="{{ route('submit_partnership', ['locale' => 'id-en']) }}"
-                        method="POST" id="myForm">
+                    <form action="{{ route('submit_partnership', ['locale' => 'id-en']) }}" method="POST"
+                        id="myForm">
                         @csrf
                         <div>
                             <h3 class="mb-2">
-                                Start the Conversation
+                                {{ __('pages/partnership.contact_form.form_title', [], app()->getLocale()) }}
                             </h3>
 
                             <p class="text-sm italic text-gray-500 mb-5">
-                                Partnership Type pre-fills from the card you selected. You can change it below.
+                                {{ __('pages/partnership.contact_form.form_subtitle', [], app()->getLocale()) }}
                             </p>
 
                             <div class="flex gap-4 flex-col md:flex-row">
                                 <div class="md:mb-3 w-full md:w-1/2">
-                                    <label for="primary_name" class="text-dark text-sm py-2">Full Name</label>
+                                    <label for="primary_name" class="text-dark text-sm py-2">{{ __('pages/partnership.contact_form.fields.fullname', [], app()->getLocale()) }}</label>
                                     <input type="text" name="fullname"
                                         class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                        placeholder="Your full name" id="primary_name" required
+                                        placeholder="{{ __('pages/partnership.contact_form.fields.fullname', [], app()->getLocale()) }}" id="primary_name" required
                                         oninput="checkValidation('primary_name')">
                                     <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('fullname')
@@ -1137,11 +727,11 @@
                                 </div>
                                 <div class="md:mb-3 w-full md:w-1/2">
                                     <label for="company_name" class="text-dark text-sm py-2">
-                                        Organization Name
+                                        {{ __('pages/partnership.contact_form.fields.company_name', [], app()->getLocale()) }}
                                     </label>
                                     <input type="text" name="company_name"
                                         class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                        placeholder="School, company or org Name *" id="company_name" required
+                                        placeholder="{{ __('pages/partnership.contact_form.fields.company_name', [], app()->getLocale()) }} *" id="company_name" required
                                         oninput="checkValidation('company_name')">
                                     <div id="company_name_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('company_name')
@@ -1151,10 +741,10 @@
                             </div>
                             <div class="flex gap-4 flex-col md:flex-row">
                                 <div class="mb-3 w-full md:w-1/2">
-                                    <label for="position" class="text-dark text-sm py-2">Role</label>
+                                    <label for="position" class="text-dark text-sm py-2">{{ __('pages/partnership.contact_form.fields.position', [], app()->getLocale()) }}</label>
                                     <input type="text" name="position"
                                         class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                        placeholder="Your role or position" id="position" required
+                                        placeholder="{{ __('pages/partnership.contact_form.fields.position', [], app()->getLocale()) }}" id="position" required
                                         oninput="checkValidation('position')">
                                     <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('position')
@@ -1162,10 +752,11 @@
                                     @enderror
                                 </div>
                                 <div class="md:mb-3 md:w-1/2">
-                                    <label for="email" class="text-dark text-sm py-2">Email</label>
+                                    <label for="email" class="text-dark text-sm py-2">{{ __('pages/partnership.contact_form.fields.email', [], app()->getLocale()) }}</label>
                                     <input type="email" name="email"
                                         class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                        placeholder="you@gmail.com" id="email" required oninput="checkValidation('email')">
+                                        placeholder="you@gmail.com" id="email" required
+                                        oninput="checkValidation('email')">
                                     <div id="email_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('email')
                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
@@ -1174,8 +765,7 @@
                             </div>
                             <div class="flex gap-4 flex-col md:flex-row">
                                 <div class="mb-3 md:w-1/2">
-                                    <label for="phone_number" class="text-dark text-sm py-2">Phone
-                                        Number</label>
+                                    <label for="phone_number" class="text-dark text-sm py-2">{{ __('pages/partnership.contact_form.fields.phone_number', [], app()->getLocale()) }}</label>
                                     <input type="text" name="phone_number"
                                         class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
                                         placeholder="+62 ..." id="phone_number" required
@@ -1187,15 +777,13 @@
                                 </div>
 
                                 <div class="mb-3 md:w-1/2">
-                                    <label for="partnership_type" class="text-dark text-sm py-2">Partnership
-                                        Type</label>
+                                    <label for="partnership_type" class="text-dark text-sm py-2">{{ __('pages/partnership.contact_form.fields.partnership_type', [], app()->getLocale()) }}</label>
                                     <select name="partnership_type"
                                         class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
                                         id="partnership_type" required oninput="checkValidation('partnership_type')">
-                                        <option value="">Select Partnership Type</option>
-                                        <option value="School">School</option>
-                                        <option value="Company">Company</option>
-                                        <option value="Community">Community</option>
+                                        @foreach (__('pages/partnership.contact_form.partnership_types', [], app()->getLocale()) as $value => $label)
+                                            <option value="{{ $value }}">{{ $label }}</option>
+                                        @endforeach
                                     </select>
                                     <div id="partnership_type_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('partnership_type')
@@ -1204,8 +792,8 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="inquiry" class="text-dark text-sm py-2">Inquiry</label>
-                                <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full" placeholder="Inquiry *"
+                                <label for="inquiry" class="text-dark text-sm py-2">{{ __('pages/partnership.contact_form.fields.inquiry', [], app()->getLocale()) }}</label>
+                                <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full" placeholder="{{ __('pages/partnership.contact_form.fields.inquiry', [], app()->getLocale()) }} *"
                                     id="inquiry" name="inquiry" rows="4" required oninput="checkValidation('inquiry')"></textarea>
                                 <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden"></div>
                                 @error('inquiry')
@@ -1219,53 +807,132 @@
                                 </div>
                             </div>
                             <div class="mb-3 flex items-center justify-center">
-                                <button type="button" class="w-full bg-black rounded-xl text-white text-center py-2 px-20"
+                                <button type="button"
+                                    class="w-full bg-black rounded-xl text-white text-center py-2 px-20"
                                     onclick="submitData()">
                                     <span id="loading" class="hidden">
                                         <i class="fas fa-spinner fa-spin mr-4"></i>
                                     </span>
-                                    Start the Conversation
+                                    {{ __('pages/partnership.contact_form.submit_button', [], app()->getLocale()) }}
                                 </button>
                             </div>
-                        </div>
+                    </form>
                 </div>
-                </form>
+            </div>
 
-                <div id="thanksForm" class="hidden">
-                    <div class="flex flex-col justify-center">
-                        <h4 class="mb-4 mt-4 text-newprimary font-bold text-center text-lg leading-6">
-                            Thank you for letting us know a little bit about you! Our partnership team will contact
-                            you in 24 hours for further collaboration
-                        </h4>
-                        <a href="{{ route('home', app()->getLocale()) }}" class="flex justify-center w-full pt-4">
-                            <span
-                                class="block px-4 py-2 rounded-lg bg-red font-newprimary font-semibold text-base text-white text-center">
-                                Back to Home
-                            </span>
-                        </a>
-                    </div>
+            <div id="thanksForm" class="hidden">
+                <div class="flex flex-col justify-center">
+                    <h4 class="mb-4 mt-4 text-newprimary font-bold text-center text-lg leading-6">
+                        {{ __('pages/partnership.contact_form.success_message', [], app()->getLocale()) }}
+                    </h4>
+                    <a href="{{ route('home', app()->getLocale()) }}" class="flex justify-center w-full pt-4">
+                        <span
+                            class="block px-4 py-2 rounded-lg bg-red font-newprimary font-semibold text-base text-white text-center">
+                            {{ __('pages/partnership.contact_form.back_to_home', [], app()->getLocale()) }}
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
         </div>
+        </div>
     </section>
-
 @endsection
 
 @push('script')
     <script>
+        // Modal functionality
         document.querySelectorAll('[data-modal-target]').forEach(item => {
             item.addEventListener('click', () => {
-                document.getElementById(item.dataset.modalTarget).classList.remove('hidden');
-                document.getElementById(item.dataset.modalTarget).classList.add('flex');
+                const modal = document.getElementById(item.dataset.modalTarget);
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
             });
         });
 
         document.querySelectorAll('[data-modal-hide]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const modal = document.getElementById(btn.dataset.modalHide);
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        });
+
+        // Partnership section toggle functionality
+        function showPartnershipSection(sectionId) {
+            // Hide all partnership sections
+            document.querySelectorAll('.partnership-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+        }
+
+        // Add click handlers to partnership buttons
+        document.querySelectorAll('[data-target]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                showPartnershipSection(targetId);
+
+                // Scroll to the section smoothly
+                const section = document.getElementById(targetId);
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Show school partnership by default on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showPartnershipSection('school-partnership');
+        });
+
+        // Gallery filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('#gallery .grid img');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-dark', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-dark');
+                });
+
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-dark', 'text-white');
+                this.classList.remove('bg-gray-200', 'text-dark');
+
+                const filterValue = this.getAttribute('data-filter');
+
+                // Show/hide gallery items based on filter
+                galleryItems.forEach(item => {
+                    const itemType = item.getAttribute('data-item');
+                    
+                    if (filterValue === 'all' || itemType === filterValue) {
+                        item.style.display = 'block';
+                        // Add fade-in animation
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.transition = 'opacity 0.3s ease-in';
+                            item.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
             });
         });
     </script>
@@ -1306,7 +973,7 @@
 @endpush
 
 @push('style')
-    <script script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
     <script type="text/javascript">
         var onloadCallback = function() {
             grecaptcha.render('rcaptcha', {
