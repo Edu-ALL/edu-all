@@ -360,30 +360,6 @@
         var isSmallDevice = window.matchMedia("(max-width: 640px)").matches
         var isMediumDevice = window.matchMedia("(max-width: 768px)").matches
 
-        var gallery = new Splide('.gallery', {
-            perPage: isMediumDevice ? 1 : 2,
-            perMove: 1,
-            autoplay: true,
-            lazyload: true,
-            interval: 3000,
-            arrows: isMediumDevice ? false : true,
-            pagination: isMediumDevice ? true : false,
-        });
-
-        gallery.on('pagination:mounted', function(data) {
-            // You can add your class to the UL element
-            data.list.classList.add('splide__pagination--custom');
-            data.list.classList.add('top-[110%]');
-
-            // `items` contains all dot items
-            data.items.forEach(function(item) {
-                item.button.style.width = '7px';
-                item.button.style.height = '7px';
-                item.button.style.margin = '0 6px'
-                item.button.style.backgroundColor = '#0367BF';
-            });
-        }).mount();
-
         function applyFilters() {
             var department = document.querySelector('select[placeholder="Department"]').value;
             var status = document.querySelector('select[placeholder="Status"]').value;

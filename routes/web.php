@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/id-en', 301);
-
 Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('robots.txt', function () {
         return response()->file(public_path('robots.txt'));
@@ -50,6 +49,73 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
         function () {
             Route::get('sitemap-blogs', [SitemapController::class, 'sitemap_blog']);
             Route::get('sitemap-pages', [SitemapController::class, 'sitemap_pages']);
+
+
+            // START 301 PAGE 
+            // Mentoring 
+            Route::get('/programs/admissions-mentoring', function () {
+                return redirect()->route('ultimate_mentoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/admissions-mentoring/undergraduate-program', function () {
+                return redirect()->route('ultimate_mentoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/admissions-mentoring/graduate-program', function () {
+                return redirect()->route('ultimate_mentoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/admissions-mentoring/university-transfer-program', function () {
+                return redirect()->route('ultimate_mentoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/admissions-mentoring/passion_project_mentoring', function () {
+                return redirect()->route('ultimate_mentoring', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+
+            // Resources
+            Route::get('/resources/success-stories', function () {
+                return redirect()->route('impact-project', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/resources/upcoming-events', function () {
+                return redirect()->route('event', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/resources/guidebook', function () {
+                return redirect()->route('impact-project', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/resources/testimonial', function () {
+                return redirect()->route('impact-project', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/resources/mentee-project-showcase', function () {
+                return redirect()->route('impact-project', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+
+            // About 
+            Route::get('/about/our-contribution', function () {
+                return redirect()->route('about', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/about/mentor', function () {
+                return redirect()->route('our_team', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/about/mentor/{slug}', function () {
+                return redirect()->route('our_team', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+
+            // Partnership 
+            Route::get('/programs/global-innovators-project', function () {
+                return redirect()->route('partnership', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/exclusive-program-school', function () {
+                return redirect()->route('partnership', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/exclusive-program-school/admission-accelerator', function () {
+                return redirect()->route('partnership', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/exclusive-program-school/experiential-learning', function () {
+                return redirect()->route('partnership', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+            Route::get('/programs/exclusive-program-school/teacher-focused', function () {
+                return redirect()->route('partnership', ['locale' => app()->getLocale()])->setStatusCode(301);
+            });
+
+            // END 301 PAGE
+
 
             Route::controller(HomePageController::class)->group(function () {
                 Route::get('/', 'home')->name('home');
@@ -85,7 +151,6 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
             Route::controller(AboutPageController::class)->group(function () {
                 Route::get('/about', 'about')->name('about');
                 Route::get('/about/our-team', 'our_team')->name('our_team');
-                Route::get('/about/our-contribution', 'our_contribution')->name('our_contribution');
                 Route::get('/about/partnership', 'partnership')->name('partnership');
                 Route::get('/about/careers', 'partnership_careers')->name('partnership_careers');
                 Route::get('/about/careers/{slug}', 'detail_careers')->name('detail_careers');

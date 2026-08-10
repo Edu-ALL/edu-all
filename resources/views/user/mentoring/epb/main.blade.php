@@ -1329,55 +1329,6 @@
 
 @push('script')
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card');
-
-            function openCard(card) {
-                // Tutup semua card
-                cards.forEach(c => {
-                    c.style.backgroundColor = "#fff";
-
-                    c.querySelector(".title").style.color = "";
-                    c.querySelector(".title").style.fontSize = "";
-
-                    const number = c.querySelector(".number");
-                    number.style.backgroundColor = "";
-                    number.style.color = "";
-
-                    const content = c.querySelector(".content");
-                    content.style.maxHeight = "0";
-                    content.style.opacity = "0";
-                });
-
-                // Buka card aktif
-                card.style.backgroundColor = "#1E3A8A"; // ganti dengan warna newprimary
-
-                const title = card.querySelector(".title");
-                title.style.color = "#fff";
-                title.style.fontSize = "1.875rem"; // text-3xl
-
-                const number = card.querySelector(".number");
-                number.style.backgroundColor = "#fff";
-                number.style.color = "#1E3A8A";
-
-                const content = card.querySelector(".content");
-                content.style.maxHeight = "500px";
-                content.style.opacity = "1";
-            }
-
-            // Default buka card pertama
-            openCard(cards[0]);
-
-            // Hover membuka card
-            cards.forEach(card => {
-                card.addEventListener("mouseenter", () => {
-                    openCard(card);
-                });
-            });
-        });
-    </script>
-
-    <script>
         document.addEventListener("DOMContentLoaded", () => {
 
             const items = document.querySelectorAll(".phase-item");
