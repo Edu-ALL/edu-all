@@ -32,7 +32,6 @@
             "author": {
                 "@type": "Person",
                 "name": "{{ $blog->mentor->mentor_fullname ?? 'EduALL' }}",
-                "url" : "{{ route('detail_mentor', ['locale'=>app()->getLocale() , 'slug' => $blog->mentor ? $blog->mentor->mentor_slug : '/']) }}"
             },  
             "publisher": {
                 "@type": "Organization",
@@ -80,7 +79,7 @@
                     <div class="flex flex-wrap items-center justify-center md:justify-around gap-3">
                         <div class="flex items-center gap-1">
                             @if ($blog->mentor)
-                                <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
+                                <a href="#"
                                     class="flex justify-center items-center">
                                     <div
                                         class="w-8 h-8 text-center bg-newprimary text-white rounded-full overflow-hidden  mr-2">

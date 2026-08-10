@@ -180,7 +180,7 @@
                         {{ __('pages/home.about_us.subtitle') }}
                     </p>
 
-                    <a href="#" class="py-2 px-4 bg-dark text-white rounded-lg text-sm md:text-lg shadow-md">
+                    <a href="{{ route('about', ['locale' => app()->getLocale()]) }}" class="py-2 px-4 bg-dark text-white rounded-lg text-sm md:text-lg shadow-md">
                         {{ __('pages/home.about_us.cta') }}
                     </a>
                 </div>

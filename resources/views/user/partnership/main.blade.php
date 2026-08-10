@@ -28,10 +28,10 @@
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                <img src="{{ asset('assets/img/about/partnership/banner.png') }}"
+                <img src="{{ asset('assets/img/about/partnership/Partnership banner.png') }}"
                     alt="EduALL Partnership Program - Building Educational Collaborations"
                     title="EduALL Partnership Program" loading="lazy" decoding="async" width="1920" height="1080"
-                    class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-bottom object-left">
+                    class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-top object-left">
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">

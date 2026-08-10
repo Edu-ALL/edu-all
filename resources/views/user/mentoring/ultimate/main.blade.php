@@ -281,7 +281,7 @@
                                                 {{ $phases[0]['note'] }}
                                             </p>
 
-                                            <a href="#" class="bg-white rounded-full py-2 px-4 md:px-5 shadow-md text-sm md:text-base">
+                                            <a href="{{ route('epb', ['locale' => app()->getLocale()]) }}" class="bg-white rounded-full py-2 px-4 md:px-5 shadow-md text-sm md:text-base">
                                                 {{ $phases[0]['cta'] }}
                                             </a>
 

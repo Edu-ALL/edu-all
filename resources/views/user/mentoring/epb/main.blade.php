@@ -170,7 +170,7 @@
                     <article class="w-full md:w-1/4 h-full">
                         @if ($index === 0)
                             <div
-                                class="w-full flex items-center justify-center text-center md:border-r md:border-dark/30 px-10">
+                                class="w-full flex items-center justify-center text-center md:border-r md:border-l md:border-dark/30 px-10">
                                 <h3 class="text-3xl font-light">
                                     {!! str_replace('1-on-1', '1-on-1', $feature) !!}
                                 </h3>
@@ -1170,7 +1170,7 @@
                             {{ __('pages/mentoring/epb.cta.description') }}
                         </p>
 
-                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="AAUP" lead-id="LS045"
+                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="MODEXPPB" lead-id="LS045"
                             color="dark" submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">

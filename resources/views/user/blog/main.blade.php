@@ -74,7 +74,7 @@
                                                                         alt="EduALL" class="w-full object-cover">
                                                                 </div>
                                                                 {{-- change author name with mentor name --}}
-                                                                <a href="{{ route('detail_mentor', ['locale' => $locale, 'slug' => $blog->mentor->mentor_slug]) }}"
+                                                                <a href="#"
                                                                     target="_blank">
                                                                     <span
                                                                         class="font-newprimary text-base text-[#7C7C7C] md:text-[15px] text-[11px] leading-3 hover:text-yellow">

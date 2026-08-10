@@ -14,7 +14,8 @@
         'subject_tutoring',
         'sat',
         'olympiad',
-        'privacy_policy'
+        'privacy_policy',
+        'thank_page'
     ];
 
     // Check if current page is an error page
