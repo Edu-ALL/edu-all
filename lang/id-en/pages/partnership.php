@@ -12,20 +12,16 @@ return [
 
     'stats' => [
         [
-            'value' => '45+',
-            'label' => 'Organizations Partnered',
-        ],
-        [
-            'value' => '40+',
+            'value' => '50+',
             'label' => 'School Clients',
         ],
         [
-            'value' => '50+',
+            'value' => '75+',
             'label' => 'Corporate Partners',
         ],
         [
-            'value' => '1,500+',
-            'label' => 'Event Participants',
+            'value' => '100+',
+            'label' => 'Institutional Partners',
         ],
     ],
 

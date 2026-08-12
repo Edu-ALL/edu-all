@@ -92,7 +92,7 @@
                 @for ($i = 0; $i < 2; $i++)
                     @foreach ($topRow as $university)
                         <img src="{{ asset('assets/img/Logo UNI/' . $university['image']) }}"
-                            class="md:w-[150px] w-[150px] object-contain"
+                            class="md:w-[150px] w-[80px] object-contain"
                             alt="{{ $university['name'] }}"
                             loading="lazy">
                     @endforeach
@@ -101,12 +101,12 @@
         </div>
 
         {{-- Second Marquee Row (Right Animation) --}}
-        <div class="overflow-hidden md:mt-20 mt-6">
+        <div class="overflow-hidden md:mt-10 mt-6">
             <div class="marquee-track marquee-right">
                 @for ($i = 0; $i < 2; $i++)
                     @foreach ($bottomRow as $university)
                         <img src="{{ asset('assets/img/Logo UNI/' . $university['image']) }}"
-                            class="md:w-[150px] w-[150px] object-contain"
+                            class="md:w-[150px] w-[80px] object-contain"
                             alt="{{ $university['name'] }}"
                             loading="lazy">
                     @endforeach

@@ -33,7 +33,7 @@
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                <img src="{{ asset('assets/img/about/Our Story/1. Background Hero.webp') }}"
+                <img src="{{ asset('assets/img/about/Our Story/1. Background Hero.png') }}"
                     alt="EduALL"
                     title="EduALL" loading="lazy" decoding="async"
                     width="100%" height="auto" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
@@ -126,13 +126,13 @@
     {{-- Company vision and mission cards --}}
     <section class="bg-gradient-to-b from-white to-blue-300 py-20 my-20">
         <div class="new-main-container">
-            <p class="mb-6">
+            <p class="mb-2">
                 {{ __('pages/about_us/our_story.vision_mission.label') }}
             </p>
             <h2 class="text-3xl mb-4">
                 {{ __('pages/about_us/our_story.vision_mission.title') }}
             </h2>
-            <div class="flex flex-col md:flex-row gap-10 items-stretch">
+            <div class="flex flex-col md:flex-row gap-5 items-stretch">
                 <div class="w-full md:w-[50%]">
                     <div class="bg-newprimary rounded-2xl shadow-md p-5 text-white h-full">
                         <p class="mb-3">
@@ -141,10 +141,10 @@
                         <p class="mb-5 text-2xl">
                             {{ __('pages/about_us/our_story.vision_mission.vision.title') }}
                         </p>
-                        <img src="{{ asset('assets/img/about/Our Story/4. Vission Mission Foto.png') }}" 
+                        <img src="{{ asset('assets/img/about/Our Story/2. Vision Mission.png') }}" 
                             alt="EduALL Vision and Mission"
-                            loading="lazy" decoding="async" width="600" height="400"
-                            class="w-full rounded-2xl">
+                            loading="lazy" decoding="async" width="600" height="300"
+                            class="w-full rounded-2xl h-[150px] object-cover object-top">
                     </div>
                 </div>
                 <div class="w-full md:w-[50%]">
@@ -170,13 +170,13 @@
             <img src="{{ asset('assets/img/about/Our Story/5. Vission Mission Foto_2.png') }}" 
                 alt="EduALL Vision and Mission illustration"
                 loading="lazy" decoding="async" width="1200" height="400"
-                class="w-full md:h-auto h-[200px] object-cover rounded-2xl shadow-md mt-10">
+                class="w-full md:h-auto h-[200px] object-cover rounded-2xl shadow-md mt-5">
         </div>
     </section>
 
     {{-- ==================== Journey Timeline Section ==================== --}}
     {{-- Horizontal scrolling timeline with navigation arrows --}}
-    <section class="new-main-container py-10 md:py-20">
+    <section class="new-main-container py-10 md:py-10">
         <div class="max-w-5xl mx-auto">
             <div class="text-center">
                 <p class="text-xl font-normal text-newprimary mb-2 uppercase">
@@ -254,8 +254,8 @@
     </section>
 
     {{-- ==================== Testimonials Section ==================== --}}
-    {{-- Student and alumni testimonials grid --}}
-    <section class="new-main-container py-10 md:py-20">
+    {{-- our team testimonials slider with arrows --}}
+    <section class="new-main-container py-10 md:py-10">
         <div class="max-w-5xl mx-auto">
             <div class="text-center">
                 <p class="text-xl font-normal text-newprimary mb-2 uppercase">
@@ -269,31 +269,48 @@
                 </p>
             </div>
         </div>
-        <div class="py-5 md:py-16 bg-white">
-            <div class="w-full mx-auto md:px-6">
-                <div class="flex flex-wrap md:gap-0 gap-5">
-                    @foreach (__('pages/about_us/our_story.testimonials.list') as $testimonial)
-                        <div class="w-full md:w-1/3 md:p-5">
-                            <div class="bg-gradient-to-r from-blue-200 to-blue-100 rounded-xl p-5 md:p-10">
-                                <div class="md:h-[380px] h-[350px]">
-                                    <p class="text-dark/60 text-sm">
-                                        {{ $testimonial['quote'] }}
-                                    </p>
-                                </div>
-                                <div class="flex gap-5 items-center">
-                                    <img src="{{asset('assets/img/about/Our Story/' . $testimonial['image'])}}" 
-                                        alt="{{ $testimonial['name'] }} - {{ $testimonial['role'] }}"
-                                        loading="lazy" decoding="async" width="50" height="50"
-                                        class="w-[50px] h-[50px] object-cover rounded-full">
-                                    <div>
-                                        <p class="font-normal">{{ $testimonial['name'] }}</p>
-                                        <p class="text-gray-500 text-sm">{{ $testimonial['role'] }}</p>
+        <div class="py-5 md:py-10 bg-white max-w-6xl mx-auto">
+            <div class="w-full mx-auto md:px-6 relative">
+                {{-- Left Arrow Button --}}
+                <button id="testimonialPrevBtn"
+                    class="absolute -left-4 md:-left-20 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
+                    aria-label="Previous testimonial">
+                    &#10094;
+                </button>
+
+                {{-- Testimonials Slider --}}
+                <div id="testimonialSlider" class="overflow-hidden">
+                    <div class="flex transition-transform duration-500" id="testimonialTrack">
+                        @foreach (__('pages/about_us/our_story.testimonials.list') as $testimonial)
+                            <div class="w-full md:w-1/3 flex-shrink-0 px-3">
+                                <div class="bg-gradient-to-r from-blue-200 to-blue-100 rounded-xl p-5 md:p-10">
+                                    <div class="md:h-[350px] h-[350px]">
+                                        <p class="text-dark/60 text-sm">
+                                            {{ $testimonial['quote'] }}
+                                        </p>
+                                    </div>
+                                    <div class="flex gap-5 items-center">
+                                        <img src="{{asset('assets/img/about/Our Story/' . $testimonial['image'])}}" 
+                                            alt="{{ $testimonial['name'] }} - {{ $testimonial['role'] }}"
+                                            loading="lazy" decoding="async" width="50" height="50"
+                                            class="w-[50px] h-[50px] object-cover rounded-full">
+                                        <div>
+                                            <p class="font-normal">{{ $testimonial['name'] }}</p>
+                                            <p class="text-gray-500 text-sm">{{ $testimonial['role'] }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
+
+                {{-- Right Arrow Button --}}
+                <button id="testimonialNextBtn"
+                    class="absolute -right-4 md:-right-20 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
+                    aria-label="Next testimonial">
+                    &#10095;
+                </button>
             </div>
         </div>
     </section>
@@ -342,7 +359,7 @@
                     {{ __('pages/about_us/our_story.modal.label') }}
                 </p>
 
-                <h3 class="text-6xl text-center text-newprimary mb-10 font-normal">
+                <h3 class="text-5xl text-center text-newprimary mb-10 font-normal">
                     {!! __('pages/about_us/our_story.modal.title') !!}
                 </h3>
 
@@ -353,7 +370,7 @@
                             loading="lazy" decoding="async" width="600" height="800"
                             class="w-full mb-5">
 
-                        <p class="text-2xl italic text-newprimary mb-5">
+                        <p class="text-xl italic text-newprimary mb-5">
                             {!! __('pages/about_us/our_story.modal.content.quote_1') !!}
                         </p>
 
@@ -370,7 +387,7 @@
                         </p>
                     </div>
                     <div class="w-full md:w-1/2">
-                        <p class="text-2xl italic text-newprimary mb-5">
+                        <p class="text-xl italic text-newprimary mb-5 mt-8">
                             <strong>{{ __('pages/about_us/our_story.modal.content.text_4') }}</strong>
                         </p>
                         <p class="text-newprimary italic mb-3 font-light">
@@ -385,7 +402,7 @@
                         <p class="text-newprimary italic mb-3 font-light">
                             {{ __('pages/about_us/our_story.modal.content.text_8') }}
                         </p>
-                        <p class="text-2xl italic text-newprimary">
+                        <p class="text-xl italic text-newprimary">
                             {!! __('pages/about_us/our_story.modal.content.closing') !!}
                         </p>
                     </div>
@@ -417,6 +434,45 @@
                     behavior: "smooth"
                 });
             });
+
+            // Testimonials slider functionality
+            const testimonialTrack = document.getElementById("testimonialTrack");
+            const prevBtn = document.getElementById("testimonialPrevBtn");
+            const nextBtn = document.getElementById("testimonialNextBtn");
+            let currentIndex = 0;
+            const slidesPerView = window.innerWidth >= 768 ? 3 : 1;
+            const totalSlides = testimonialTrack.children.length;
+            const maxIndex = totalSlides - slidesPerView;
+
+            function updateSlider() {
+                const slideWidth = 100 / slidesPerView;
+                testimonialTrack.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+                
+                // Update button states
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+                nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+                nextBtn.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'auto';
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener("click", () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateSlider();
+                    }
+                });
+
+                nextBtn.addEventListener("click", () => {
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateSlider();
+                    }
+                });
+            }
+
+            // Initialize slider
+            updateSlider();
 
             // Modal functionality
             if (openModalBtn && modal) {

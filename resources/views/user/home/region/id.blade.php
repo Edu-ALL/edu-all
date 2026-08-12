@@ -82,36 +82,6 @@
     </script>
 @endsection
 
-{{-- ========================================== STYLES ========================================== --}}
-@push('style')
-    <style>
-        /* ==================== Mentee Slider Styles ==================== */
-        #mentee-slider {
-            padding: 40px 0;
-        }
-
-        #mentee-slider .splide__slide {
-            opacity: .4;
-        }
-
-        #mentee-slider .splide__slide img {
-            width: 100%;
-            display: block;
-            transition: transform .35s ease, opacity .35s ease;
-            transform: scale(.6);
-            transform-origin: center center;
-        }
-
-        #mentee-slider .splide__slide.is-active {
-            opacity: 1;
-        }
-
-        #mentee-slider .splide__slide.is-active img {
-            transform: scale(1);
-        }
-    </style>
-@endpush
-
 {{-- ========================================== MAIN CONTENT ========================================== --}}
 @section('content')
     {{-- ==================== Banner Section ==================== --}}
@@ -180,7 +150,8 @@
                         {{ __('pages/home.about_us.subtitle') }}
                     </p>
 
-                    <a href="{{ route('about', ['locale' => app()->getLocale()]) }}" class="py-2 px-4 bg-dark text-white rounded-lg text-sm md:text-lg shadow-md">
+                    <a href="{{ route('about', ['locale' => app()->getLocale()]) }}"
+                        class="py-2 px-4 bg-dark text-white rounded-lg text-sm md:text-lg shadow-md">
                         {{ __('pages/home.about_us.cta') }}
                     </a>
                 </div>
@@ -237,7 +208,7 @@
         <section class="new-main-container px-4 md:px-10 mb-10 scroll-mt-28" id="program">
             <div class="bg-white shadow-md rounded-xl p-4 md:p-5 relative z-10">
                 <div class="text-center max-w-4xl mx-auto">
-                    <h2 class="text-2xl md:text-4xl text-black mb-3 md:mb-4 font-normal" itemprop="headline">
+                    <h2 class="text-2xl md:text-3xl text-black mb-3 md:mb-4 font-normal" itemprop="headline">
                         {{ __('pages/home.program.title') }}
                     </h2>
                     <p class="text-gray-500 text-base md:text-lg" itemprop="description">
@@ -261,12 +232,12 @@
                     </div>
 
                     {{-- Tab Content --}}
-                    <div class="relative mt-4 md:mt-6 h-[87vh] md:h-[500px]">
+                    <div class="relative mt-2 md:mt-3 h-[87vh] md:h-[450px]">
 
                         {{-- Tab 1: Admission Mentoring --}}
                         <div data-content="1"
                             class="tab-content absolute top-0 left-0 w-full transition-all duration-500 ease-out opacity-100 translate-x-0">
-                            <div class="text-center py-5">
+                            <div class="text-center py-2">
                                 <h2 class="text-xl md:text-2xl text-black mb-3 md:mb-4 font-normal">
                                     {{ __('pages/home.program.mentoring.title') }}
                                 </h2>
@@ -274,7 +245,7 @@
                                     {{ __('pages/home.program.mentoring.description') }}
                                 </p>
                             </div>
-                            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10">
+                            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10 mt-2">
                                 <div class="w-full md:w-1/2">
                                     @foreach (__('pages/home.program.mentoring.features') as $item)
                                         <div
@@ -303,7 +274,7 @@
                         {{-- Tab 2: EduALL Academy --}}
                         <div data-content="2"
                             class="tab-content absolute top-0 left-0 w-full transition-all duration-500 ease-out opacity-0 translate-x-8 pointer-events-none">
-                            <div class="text-center py-5">
+                            <div class="text-center py-2">
                                 <h2 class="text-xl md:text-2xl text-black mb-3 md:mb-4 font-normal">
                                     {{ __('pages/home.program.academy.title') }}
                                 </h2>
@@ -316,7 +287,7 @@
                                     <img src="{{ asset('assets/img/home/2026/academy.png') }}"
                                         class="w-full h-[200px] md:h-[300px] object-cover rounded-xl" loading="lazy">
                                 </div>
-                                <div class="w-full md:w-1/2">
+                                <div class="w-full md:w-1/2 mt-2">
                                     @foreach (__('pages/home.program.academy.features') as $item)
                                         <div
                                             class="bg-[#E3F0FF] px-3 py-3 md:py-2 rounded-xl shadow-md flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
@@ -369,7 +340,7 @@
 
                                     <div
                                         class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                        <div class="px-5 pb-5 text-gray-400">
+                                        <div class="px-5 pb-5 pl-8 text-gray-400">
                                             {{ $item['description'] }}
                                         </div>
                                     </div>
@@ -398,20 +369,24 @@
                 @foreach (__('pages/home.eduall_framework.items') as $item)
                     <div
                         class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
-            px-6 py-4 h-[320px]
-            hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[400px] hover:bg-gradient-to-b hover:from-newprimary hover:to-black
-            {{ $loop->first ? 'active' : '' }}">
+                        px-6 py-4 h-[320px]
+                        hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[400px] hover:bg-gradient-to-b hover:from-newprimary hover:to-black
+                        {{ $loop->first ? 'active' : '' }}">
+
+                        <img src="{{ asset('assets/img/home/2026/' . $item['bg_image']) }}"
+                            class="bg_image w-full h-full object-cover object-center absolute left-0 top-0 group-hover:hidden active:hidden scale-[1.2]">
 
                         {{-- NUMBER --}}
-                        <div class="text-5xl text-gray-300 transition
-                group-hover:hidden active:hidden">
+                        <div
+                            class="text-5xl text-gray-300 transition
+                            group-hover:hidden active:hidden">
                             {{ $item['no'] }}
                         </div>
 
                         {{-- IMAGE --}}
                         <div
                             class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition
-                group-hover:block active:block">
+                            group-hover:block active:block">
                             <img src="{{ asset('assets/img/home/2026/' . $item['img']) }}"
                                 class="w-full h-full object-cover object-center">
                         </div>
@@ -420,19 +395,12 @@
                         {{-- CONTENT --}}
                         <div
                             class="absolute bottom-10 left-5 w-[85%] transition-all duration-300 group-hover:relative
-                group-hover:bottom-0 group-hover:left-0 group-hover:w-full active:relative active:bottom-0 active:left-0 active:w-full">
-
-                            <div
-                                class="text-[#0B1B7A] transition mb-2
-                    group-hover:text-white
-                    active:text-white">
-                                <i class="{{ $item['icon'] }}"></i>
-                            </div>
+                            group-hover:bottom-0 group-hover:left-0 group-hover:w-full active:relative active:bottom-0 active:left-0 active:w-full">
 
                             <h3
-                                class="font-normal text-gray-800 text-lg leading-5 mb-5 transition
-                    group-hover:text-white
-                    active:text-white">
+                                class="text-newprimary text-lg md:text-xl font-semibold leading-5 mb-5 transition
+                                group-hover:text-white
+                                active:text-white">
                                 {!! $item['title'] !!}
                             </h3>
 
@@ -442,13 +410,13 @@
                         {{-- DESCRIPTION --}}
                         <p
                             class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
-                group-hover:opacity-100
-                group-hover:translate-y-0
-                group-hover:text-gray-400
+                            group-hover:opacity-100
+                            group-hover:translate-y-0
+                            group-hover:text-gray-400
 
-                active:opacity-100
-                active:translate-y-0
-                active:text-gray-400">
+                            active:opacity-100
+                            active:translate-y-0
+                            active:text-gray-400">
                             {{ $item['description'] }}
                         </p>
 
@@ -497,31 +465,7 @@
             </p>
         </div>
 
-        <div class="px-0 md:px-10">
-            <div id="mentee-slider" class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-
-                        <li class="splide__slide">
-                            <img src="{{ asset('assets/img/home/2026/Testimoni/Alumni - Cherish.webp') }}"
-                                class="rounded-lg shadow-sm w-full">
-                        </li>
-
-                        <li class="splide__slide">
-                            <img src="{{ asset('assets/img/home/2026/Testimoni/Alumni - Rachinta.webp') }}"
-                                class="rounded-lg shadow-sm w-full">
-                        </li>
-
-                        <li class="splide__slide">
-                            <img src="{{ asset('assets/img/home/2026/Testimoni/Alumni - tobias.webp') }}"
-                                class="rounded-lg shadow-sm w-full">
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+        <x-eduall-alumni />
     </section>
 
     {{-- ==================== Call to Action Section ==================== --}}
@@ -663,7 +607,7 @@
                 <div class="w-full md:w-3/5">
                     <div class="accordion-group">
                         @foreach (__('pages/home.faq.items') as $item)
-                            <div class="border rounded-lg overflow-hidden">
+                            <div class="border-b rounded-lg overflow-hidden">
                                 <button
                                     class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
                                     <span>{{ $item['question'] }}</span>
@@ -823,32 +767,6 @@
     </script>
 
     <script>
-        // ==================== Mentee Slider (Splide) ====================
-        // Initialize testimonial slider with autoplay
-        document.addEventListener('DOMContentLoaded', function() {
-            new Splide('#mentee-slider', {
-                type: 'loop',
-                perPage: 3,
-                focus: 'center',
-                autoplay: true,
-                interval: 4000,
-                speed: 600,
-                drag: false,
-                arrows: true,
-                pagination: true,
-                breakpoints: {
-                    1024: {
-                        perPage: 2,
-                    },
-                    768: {
-                        perPage: 1,
-                    },
-                },
-            }).mount();
-        });
-    </script>
-
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
 
             const cards = document.querySelectorAll('.pathway-card');
@@ -868,6 +786,9 @@
 
                     const number = item.querySelector('.text-5xl');
                     if (number) number.style.display = '';
+
+                    const bg_image = item.querySelector('.bg_image');
+                    if (bg_image) bg_image.style.display = '';
 
                     const image = item.querySelector('.relative.h-36');
                     if (image) image.style.display = '';
@@ -906,6 +827,9 @@
                 // Hide card number
                 const number = card.querySelector('.text-5xl');
                 if (number) number.style.display = 'none';
+
+                const bg_image = card.querySelector('.bg_image');
+                if (bg_image) bg_image.style.display = 'none';
 
 
                 // Show card image

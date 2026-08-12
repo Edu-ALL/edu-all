@@ -57,42 +57,45 @@
                     decoding="async" width="100%" height="auto"
                     class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
             </div>
-            <div class="absolute left-0 w-full main-container top-[27vh] md:top-[30vh]">
-                <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-2xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 leading-8 uppercase"
-                    itemprop="headline">
-                    {!! __('pages/event.banner.title') !!}
-                </h1>
+            <div class="absolute left-0 w-full top-[27vh] md:top-[30vh]">
+                <div class="new-main-container h-[100vh] relative overflow-hidden">
+                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-2xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 leading-8 uppercase"
+                        itemprop="headline">
+                        {!! __('pages/event.banner.title') !!}
+                    </h1>
 
-                <p class="text-white text-lg md:text-xl mb-4 md:mb-10 md:text-start text-center max-w-2xl"
-                    itemprop="description">
-                    {{ __('pages/event.banner.subtitle') }}
-                </p>
+                    <p class="text-white text-lg md:text-xl mb-4 md:mb-10 md:text-start text-center max-w-2xl"
+                        itemprop="description">
+                        {{ __('pages/event.banner.subtitle') }}
+                    </p>
 
-                <div class="flex md:justify-start justify-center gap-5">
-                    <a href="#event" class="rounded-full py-2 px-5 text-lg bg-newprimary text-white">
-                        {{ __('pages/event.banner.cta') }}
-                        <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="absolute w-[50%] main-container top-[27vh] md:top-[30vh] right-0 hidden md:block -scroll-mt-[50vh]" id="event">
-                <div class="flex gap-5">
-                    <div class="w-1/2">
-                        <img src="{{ asset('assets/img/Events/2. Event hero foto 1.png') }}" alt="Students participating in EduALL events and conferences"
-                            loading="lazy" decoding="async" width="400" height="500"
-                            class="rounded-md w-full mb-5">
-                        <img src="{{ asset('assets/img/Events/3. Event hero foto 2.png') }}" alt="EduALL event showcase and student presentations"
-                            loading="lazy" decoding="async" width="400" height="500"
-                            class="rounded-md w-full">
+                    <div class="flex md:justify-start justify-center gap-5">
+                        <a href="#event" class="rounded-full py-2 px-5 text-lg bg-newprimary text-white">
+                            {{ __('pages/event.banner.cta') }}
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
-                    <div class="w-1/2">
-                        <img src="{{ asset('assets/img/Events/4. Event hero foto 3.png') }}" alt="Students collaborating at EduALL community initiatives"
-                            loading="lazy" decoding="async" width="400" height="500"
-                            class="rounded-md w-full mb-5">
-                        <img src="{{ asset('assets/img/Events/5. Event hero foto 4.png') }}" alt="EduALL mentorship and learning activities"
-                            loading="lazy" decoding="async" width="400" height="500"
-                            class="rounded-md w-full">
+
+                    <div class="absolute w-[60%] main-container top-0 -right-[10%] hidden md:block -scroll-mt-[50vh]"
+                        id="event">
+                        <div class="flex gap-5">
+                            <div class="w-1/2">
+                                <img src="{{ asset('assets/img/Events/2. Event hero foto 1.png') }}"
+                                    alt="Students participating in EduALL events and conferences" loading="lazy"
+                                    decoding="async" width="400" height="500" class="rounded-md w-full mb-5">
+                                <img src="{{ asset('assets/img/Events/3. Event hero foto 2.png') }}"
+                                    alt="EduALL event showcase and student presentations" loading="lazy" decoding="async"
+                                    width="400" height="500" class="rounded-md w-full">
+                            </div>
+                            <div class="w-1/2">
+                                <img src="{{ asset('assets/img/Events/4. Event hero foto 3.png') }}"
+                                    alt="Students collaborating at EduALL community initiatives" loading="lazy"
+                                    decoding="async" width="400" height="500" class="rounded-md w-full mb-5">
+                                <img src="{{ asset('assets/img/Events/5. Event hero foto 4.png') }}"
+                                    alt="EduALL mentorship and learning activities" loading="lazy" decoding="async"
+                                    width="400" height="500" class="rounded-md w-full">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,10 +116,9 @@
             @foreach (__('pages/event.events') as $event)
                 <div class="">
                     <div class="h-[400px]">
-                        <img src="{{ asset('assets/img/Events/' . $event['image']) }}" 
-                            alt="{{ $event['title'] }} - {{ $event['category'] }}"
-                            loading="lazy" decoding="async" width="600" height="400"
-                            class="rounded-xl w-full mb-5 shadow-sm">
+                        <img src="{{ asset('assets/img/Events/' . $event['image']) }}"
+                            alt="{{ $event['title'] }} - {{ $event['category'] }}" loading="lazy" decoding="async"
+                            width="600" height="400" class="rounded-xl w-full mb-5 shadow-sm">
                         <p class="uppercase text-sm font-bold text-dark/60">
                             {{ $event['category'] }}
                         </p>
@@ -128,18 +130,21 @@
                         </p>
                     </div>
                     <hr class="my-2">
-                    <a href="#" class="text-newprimary font-semibold text-sm">
-                        {{ $event['cta'] }}
-                        <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
+                    @if ($event['link'] != '')
+                        <a href="{{ $event['link'] == '' ? '#' : $event['link'] }}" target="_blank"
+                            class="text-newprimary font-semibold text-sm">
+                            {{ $event['cta'] }}
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    @endif
                 </div>
             @endforeach
         </div>
     </section>
 
     <section class="bg-gradient-to-b from-newprimary to-newprimary/10 relative overflow-hidden">
-        <img src="{{ asset('assets/img/Events/bg.png') }}" alt="EduALL" loading="lazy" decoding="async"
-            width="100%" height="auto" class="w-full object-cover object-bottom absolute left-0 top-0 z-0">
+        <img src="{{ asset('assets/img/Events/bg.png') }}" alt="EduALL" loading="lazy" decoding="async" width="100%"
+            height="auto" class="w-full object-cover object-bottom absolute left-0 top-0 z-0">
         <div class="new-main-container py-20 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 mb-10">
                 <div class="w-full md:w-[30%]">
@@ -160,32 +165,28 @@
                     <div class="splide__track">
                         <ul class="splide__list">
 
-                             <li class="splide__slide rounded-2xl">
+                            <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/12. Event CTA foto 1.png') }}"
-                                    alt="EduALL event photo gallery - students activities and workshops"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL event photo gallery - students activities and workshops" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/13. Event CTA foto 2.png') }}"
-                                    alt="EduALL community initiative and student engagement"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL community initiative and student engagement" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/14. Event CTA foto 3.png') }}"
-                                    alt="EduALL mentorship programs and learning experiences"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL mentorship programs and learning experiences" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                             <li class="splide__slide rounded-2xl">
                                 <img src="{{ asset('assets/img/Events/15. Event CTA foto 4.png') }}"
-                                    alt="EduALL events bringing students and educators together"
-                                    loading="lazy" decoding="async" width="800" height="600"
-                                    class="rounded-lg shadow-sm w-full">
+                                    alt="EduALL events bringing students and educators together" loading="lazy"
+                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
                             </li>
 
                         </ul>
@@ -194,26 +195,28 @@
             </div>
 
             <div class="max-w-6xl mx-auto text-center relative z-10">
-                <h2 class="text-5xl font-normal text-newprimary mb-4">
+                <h2 class="text-5xl font-normal text-white mb-4">
                     {!! __('pages/event.cta_section.title') !!}
                 </h2>
-                <p class="max-w-3xl mx-auto text-dark.70 text-lg mb-10">
+                <p class="max-w-3xl mx-auto text-white/70 text-lg mb-10">
                     {{ __('pages/event.cta_section.description') }}
                 </p>
 
                 <div class="max-w-3xl mx-auto relative z-10">
-                <div class="bg-gradient-to-b from-[#3C74B5] to-white py-6 md:py-8 px-6 md:px-10 rounded-xl shadow-2xl w-full">
+                    <div
+                        class="bg-gradient-to-b from-[#3C74B5] to-white py-6 md:py-8 px-6 md:px-10 rounded-xl shadow-2xl w-full">
                         <form action="{{ route('submit_partnership', ['locale' => 'id-en']) }}" method="POST"
                             id="myForm">
                             @csrf
                             <div class="text-start">
                                 <div class="flex gap-4 flex-col md:flex-row">
                                     <div class="md:mb-3 w-full md:w-1/2">
-                                        <label for="primary_name" class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.fullname') }}</label>
+                                        <label for="primary_name"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.fullname') }}</label>
                                         <input type="text" name="fullname"
                                             class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                            placeholder="{{ __('pages/event.cta_section.form_fields.fullname') }}" id="primary_name" required
-                                            oninput="checkValidation('primary_name')">
+                                            placeholder="{{ __('pages/event.cta_section.form_fields.fullname') }}"
+                                            id="primary_name" required oninput="checkValidation('primary_name')">
                                         <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
                                         @error('fullname')
                                             <div class="text-red text-[10px] mt-1">{{ $message }}</div>
@@ -225,8 +228,8 @@
                                         </label>
                                         <input type="text" name="company_name"
                                             class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                            placeholder="{{ __('pages/event.cta_section.form_fields.company_name') }} *" id="company_name" required
-                                            oninput="checkValidation('company_name')">
+                                            placeholder="{{ __('pages/event.cta_section.form_fields.company_name') }} *"
+                                            id="company_name" required oninput="checkValidation('company_name')">
                                         <div id="company_name_error" class="text-red text-[10px] mt-1 hidden"></div>
                                         @error('company_name')
                                             <div class="text-red text-[10px] mt-1">{{ $message }}</div>
@@ -235,18 +238,20 @@
                                 </div>
                                 <div class="flex gap-4 flex-col md:flex-row">
                                     <div class="mb-3 w-full md:w-1/2">
-                                        <label for="position" class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.position') }}</label>
+                                        <label for="position"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.position') }}</label>
                                         <input type="text" name="position"
                                             class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
-                                            placeholder="{{ __('pages/event.cta_section.form_fields.position') }}" id="position" required
-                                            oninput="checkValidation('position')">
+                                            placeholder="{{ __('pages/event.cta_section.form_fields.position') }}"
+                                            id="position" required oninput="checkValidation('position')">
                                         <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
                                         @error('position')
                                             <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="md:mb-3 md:w-1/2">
-                                        <label for="email" class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.email') }}</label>
+                                        <label for="email"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.email') }}</label>
                                         <input type="email" name="email"
                                             class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
                                             placeholder="you@example.com" id="email" required
@@ -259,7 +264,8 @@
                                 </div>
                                 <div class="flex gap-4 flex-col md:flex-row">
                                     <div class="mb-3 md:w-1/2">
-                                        <label for="phone_number" class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.phone_number') }}</label>
+                                        <label for="phone_number"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.phone_number') }}</label>
                                         <input type="text" name="phone_number"
                                             class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
                                             placeholder="+62 ..." id="phone_number" required
@@ -271,14 +277,19 @@
                                     </div>
 
                                     <div class="mb-3 md:w-1/2">
-                                        <label for="partnership_type" class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.partnership_type') }}</label>
+                                        <label for="partnership_type"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.partnership_type') }}</label>
                                         <select name="partnership_type"
                                             class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
                                             id="partnership_type" required oninput="checkValidation('partnership_type')">
-                                            <option value="">{{ __('pages/event.cta_section.form_fields.partnership_type') }}</option>
-                                            <option value="School">{{ __('pages/event.cta_section.partnership_types.school') }}</option>
-                                            <option value="Company">{{ __('pages/event.cta_section.partnership_types.company') }}</option>
-                                            <option value="Community">{{ __('pages/event.cta_section.partnership_types.community') }}</option>
+                                            <option value="">
+                                                {{ __('pages/event.cta_section.form_fields.partnership_type') }}</option>
+                                            <option value="School">
+                                                {{ __('pages/event.cta_section.partnership_types.school') }}</option>
+                                            <option value="Company">
+                                                {{ __('pages/event.cta_section.partnership_types.company') }}</option>
+                                            <option value="Community">
+                                                {{ __('pages/event.cta_section.partnership_types.community') }}</option>
                                         </select>
                                         <div id="partnership_type_error" class="text-red text-[10px] mt-1 hidden"></div>
                                         @error('partnership_type')
@@ -287,9 +298,11 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="inquiry" class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.inquiry') }}</label>
-                                    <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full" placeholder="{{ __('pages/event.cta_section.form_fields.inquiry') }} *"
-                                        id="inquiry" name="inquiry" rows="4" required oninput="checkValidation('inquiry')"></textarea>
+                                    <label for="inquiry"
+                                        class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.inquiry') }}</label>
+                                    <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                        placeholder="{{ __('pages/event.cta_section.form_fields.inquiry') }} *" id="inquiry" name="inquiry"
+                                        rows="4" required oninput="checkValidation('inquiry')"></textarea>
                                     <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('inquiry')
                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
@@ -302,14 +315,14 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 flex items-center justify-center">
-                                        <button type="button"
-                                            class="w-full bg-black rounded-xl text-white text-center py-2 px-20"
-                                            onclick="submitData()">
-                                            <span id="loading" class="hidden">
-                                                <i class="fas fa-spinner fa-spin mr-4"></i>
-                                            </span>
-                                            {{ __('pages/event.cta_section.submit_button') }}
-                                        </button>
+                                    <button type="button"
+                                        class="w-full bg-black rounded-xl text-white text-center py-2 px-20"
+                                        onclick="submitData()">
+                                        <span id="loading" class="hidden">
+                                            <i class="fas fa-spinner fa-spin mr-4"></i>
+                                        </span>
+                                        {{ __('pages/event.cta_section.submit_button') }}
+                                    </button>
                                 </div>
                         </form>
                     </div>
@@ -325,7 +338,7 @@
         // Initialize testimonial slider with autoplay
         document.addEventListener('DOMContentLoaded', function() {
             const isMobile = window.innerWidth < 768;
-            
+
             new Splide('#slider', {
                 type: 'loop',
                 perPage: isMobile ? 1 : 3,

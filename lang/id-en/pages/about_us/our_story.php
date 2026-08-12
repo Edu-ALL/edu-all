@@ -38,8 +38,8 @@ return [
             'In 2015, our founder, Devi Kasih, was working at Goldman Sachs in Hong Kong after graduating from the University of Pennsylvania. Surrounded by some of the world\'s brightest young professionals, she kept asking herself one question.',
             '"Where are all the other Indonesians?"',
             'It was never a talent problem. Indonesia is home to countless brilliant, capable youth. Yet too many never get the opportunity to compete on the global stage because no one helps them discover what truly sets them apart.',
-            'Schools provide excellent academic foundations. Parents provide unwavering support. But many students never experience the personalized mentorship that helps connect their strengths, interests, and ambitions into a meaningful direction. EduALL was created to disrupt the conventional approach to education by putting every student\'s individuality at the center of the journey.',
-            'What began as a small mentoring initiative has grown into one of Indonesia\'s leading university admissions mentorship platforms, helping more than 1,200 students receive 3,500+ offers from 200+ universities worldwide.',
+            'Schools provide excellent academic foundations. Parents provide unwavering support. But few students receive the personalized mentorship that connects their strengths, interests, and ambitions into a clear direction. EduALL was created to put every student\'s individuality at the center of that journey.',
+            'What began as a small mentoring initiative has grown into a trusted university admissions mentorship platform in Indonesia, helping more than 1,200 students receive 3,500+ offers from 200+ universities worldwide.',
         ],
     ],
 

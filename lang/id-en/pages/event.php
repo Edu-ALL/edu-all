@@ -5,7 +5,7 @@ return [
     'meta_description' => "Explore EduALL's events: conferences, competitions, and community initiatives that bring students, educators, and partners together to create impact beyond the classroom.",
 
     'banner' => [
-        'title' => 'EduALL <br> Events',
+        'title' => 'EduALL Events',
         'subtitle' => 'EduALL events are designed to give students opportunities they won\'t find in a typical classroom. Through conferences, competitions, showcases, and community initiatives, students explore new interests, connect with mentors and peers, and grow through real experiences.',
         'cta' => 'Explore Our Events',
     ],
@@ -20,6 +20,7 @@ return [
             'title' => 'The Cornerstone',
             'description' => 'A student-centered conference on the future of education in the age of AI, bringing students, educators, policymakers, and leaders into one conversation. Held in collaboration with Indonesia Mengajar to support education in underserved regions.',
             'cta' => 'Explore Event',
+            'link' => 'https://thecornerstone.edu-all.com'
         ],
         [
             'image' => '7. Event Stem wonderlab.png',
@@ -27,6 +28,7 @@ return [
             'title' => 'STEM+ Wonderlab',
             'description' => 'A makerspace expo where EduALL students present real passion projects across science, technology, engineering, math, and the arts. Selected projects and proceeds support learning in underserved communities, with Indonesia Mengajar.',
             'cta' => 'Explore Event',
+            'link' => 'https://stemwonderlab.edu-all.com'
         ],
         [
             'image' => '8. Event Global Innovator Project.png',
@@ -34,6 +36,7 @@ return [
             'title' => 'Global Innovators Project',
             'description' => 'An immersive summer program where students design their own projects and grow through hands-on, self-development experiences.',
             'cta' => 'Explore Event',
+            'link' => 'https://immersion.edu-all.com/2024/'
         ],
         [
             'image' => '9. Event Global Immersion Project.png',
@@ -41,6 +44,7 @@ return [
             'title' => 'Global Immersion Program',
             'description' => 'An immersion program that takes students beyond the classroom to destinations around the world, including China and other countries, for hands-on global learning and cultural exchange.',
             'cta' => 'Explore Event',
+            'link' => 'https://immersion.edu-all.com/2023/'
         ],
         [
             'image' => '10. Event A Wishful Market.png',
@@ -48,6 +52,7 @@ return [
             'title' => 'A Wishful Market',
             'description' => 'A charity bazaar where EduALL students turn their passion projects into real pop-up stalls, in collaboration with Make-A-Wish Indonesia. Alongside the market, students join a masterclass, a talent show, and live performances, with proceeds supporting Make-A-Wish Indonesia.',
             'cta' => 'Explore Event',
+            'link' => ''
         ],
         [
             'image' => '11. Event Webinar Series.png',
@@ -55,6 +60,7 @@ return [
             'title' => 'Webinar Series',
             'description' => 'EduALL\'s online educational sessions for students and parents. More details coming soon.',
             'cta' => 'Explore Event',
+            'link' => ''
         ],
     ],
 

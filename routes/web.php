@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/id-en', 301);
-Route::middleware(['remove_public', 'cache_header'])->group(function () {
+// Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('robots.txt', function () {
         return response()->file(public_path('robots.txt'));
     });
@@ -195,4 +195,4 @@ Route::middleware(['remove_public', 'cache_header'])->group(function () {
     Route::get('/regular-talk', function () {
         return view('user.regular_talk.main');
     });
-});
+// });

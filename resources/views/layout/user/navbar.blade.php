@@ -15,7 +15,7 @@
         'sat',
         'olympiad',
         'privacy_policy',
-        'thank_page'
+        'thank_page',
     ];
 
     // Check if current page is an error page
@@ -55,47 +55,61 @@
     <nav class="md:py-1 transition-all duration-500 ease-in-out" id="navbar-nav">
         <div class="new-main-container mx-auto px-1">
             <div class="flex justify-between items-center w-full">
-                {{-- Navbar Links --}}
-                <ul id="navbar-items"
-                    class="flex-col md:flex-row whitespace-nowrap justify-start gap-1 hidden md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
-                    @foreach (__('pages/navbar') as $itemKey => $item)
-                        <li
-                            class="navbar-item relative group rounded-full font-light programs-menu transition-all duration-100 ease-in-out hover:underline pr-5">
-                            <div class="flex items-center gap-2">
-                                <a href={{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}
-                                    class="text-white text-base py-2 block text-[14px] transition-colors duration-500 navbar-link">
-                                    {{ $item['title'] }}
-                                </a>
+                <div class="flex items-center gap-10">
+                    <div id="second-navbar-logo" class="hidden">
+                        <img src="{{ asset('assets/logo/eduall-white-2026.png') }}" width="90" height="auto"
+                            class="-ml-2" alt="{{ $website_settings->alt_secondary_logo }}"
+                            title="{{ $website_settings->alt_secondary_logo }}" loading="lazy">
+                    </div>
+
+                    {{-- Navbar Links --}}
+                    <ul id="navbar-items"
+                        class="flex-col md:flex-row whitespace-nowrap justify-start gap-1 hidden md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
+                        @foreach (__('pages/navbar') as $itemKey => $item)
+                            <li
+                                class="navbar-item relative group rounded-full font-light programs-menu transition-all duration-100 ease-in-out hover:underline pr-5">
+                                <div class="flex items-center gap-2">
+                                    <a href={{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}
+                                        class="text-white text-base py-2 block text-[14px] transition-colors duration-500 navbar-link">
+                                        {{ $item['title'] }}
+                                    </a>
+                                    @if (isset($item['submenu']))
+                                        <i
+                                            class="fa-solid fa-chevron-down text-white text-[14px] transition-colors duration-500 navbar-icon"></i>
+                                    @endif
+                                </div>
+
+                                {{-- Submenu Dropdown (Desktop) --}}
                                 @if (isset($item['submenu']))
-                                    <i
-                                        class="fa-solid fa-chevron-down text-white text-[14px] transition-colors duration-500 navbar-icon"></i>
+                                    <ul
+                                        class="dropdown-menu programs-menu absolute left-1/2 transform -translate-x-1/2 md:top-full hidden md:flex-col z-10">
+                                        <div
+                                            class="flex-col items-center justify-center mb-2 bg-newprimary rounded-lg shadow-lg text-white gap-1">
+                                            @foreach ($item['submenu'] as $submenu)
+                                                <li
+                                                    class="hover:bg-white/80 text-white hover:text-newprimary w-full text-[14px] {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
+                                                    <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
+                                                        {{ isValidUrl($submenu['link']) ? 'target="_blank" rel="noopener noreferrer"' : '' }}
+                                                        class="text-[14px] py-2 px-2 text-center rounded-lg flex w-full justify-between items-center gap-10">
+                                                        {{ $submenu['title'] }}
+
+                                                        <i class="fa-solid fa-arrow-circle-right"></i>
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </div>
+                                    </ul>
                                 @endif
-                            </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
 
-                            {{-- Submenu Dropdown (Desktop) --}}
-                            @if (isset($item['submenu']))
-                                <ul
-                                    class="dropdown-menu programs-menu absolute left-1/2 transform -translate-x-1/2 md:top-full hidden md:flex-col z-10">
-                                    <div
-                                        class="flex-col items-center justify-center mb-2 bg-newprimary rounded-lg shadow-lg text-white gap-1">
-                                        @foreach ($item['submenu'] as $submenu)
-                                            <li
-                                                class="hover:bg-white/80 text-white hover:text-newprimary rounded-lg w-full text-[14px] {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
-                                                <a href="{{ isValidUrl($submenu['link']) ? $submenu['link'] : url(app()->getLocale() . '/' . $submenu['link']) }}"
-                                                    {{ isValidUrl($submenu['link']) ? 'target="_blank" rel="noopener noreferrer"' : '' }}
-                                                    class="text-[14px] py-2 px-2 text-center rounded-lg flex w-full justify-between items-center gap-10">
-                                                    {{ $submenu['title'] }}
-
-                                                    <i class="fa-solid fa-arrow-circle-right"></i>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </div>
-                                </ul>
-                            @endif
-                        </li>
-                    @endforeach
-                </ul>
+                {{-- Consult Now  --}}
+                <a href="https://bit.ly/eduall-contactus" id="second-navbar-cta"
+                    class="py-1 px-5 bg-white text-sm items-center justify-between rounded-lg shadow-lg gap-5 text-black font-semibold text-[14px] transition-all duration-500 hidden">
+                    Consult Now
+                </a>
 
                 {{-- Social Icons --}}
                 <div class="flex items-center gap-3 text-white text-2xl transition-colors duration-500"
@@ -186,17 +200,6 @@
                                                 </a>
                                             </li>
                                         @endforeach
-
-                                        {{-- Extra "Mentee Project Showcase" link under Resources --}}
-                                        @if ($item['title'] == 'Resources')
-                                            <li class="w-full">
-                                                <a href="https://project-showcase.edu-all.com" target="_blank"
-                                                    class="text-white/70 text-sm py-2 px-4 block rounded-lg hover:bg-white/5 hover:text-white transition-colors">
-                                                    <i class="fa fa-arrow-right mr-2 text-newprimary"></i> Mentee
-                                                    Project Showcase
-                                                </a>
-                                            </li>
-                                        @endif
                                     </div>
                                 </ul>
                             @endif
@@ -223,33 +226,37 @@
 </header>
 
 
+
+{{-- ==================== TOP BUTTON ==================== --}}
+<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[45] transition-all duration-1000" id="top_button">
+    <div
+        class="text-white cursor-pointer
+            bg-newprimary hover:bg-white/70 hover:text-newprimary
+            rounded-xl md:w-[50px] md:h-[50px] w-[40px] h-[40px]
+            flex justify-center items-center shadow-lg border border-newprimary/80 
+            transition-all duration-300">
+        <i class="fa-solid fa-angle-up text-[25px]"></i>
+    </div>
+</div>
+
 {{-- ==================== WHATSAPP BUTTON ==================== --}}
-<div class="fixed lg:bottom-9 bottom-[15px] lg:right-5 right-5 z-[45] transition-all duration-1000" id="wa_button">
-    <div class="relative group cursor-pointer">
-
+<div class="fixed lg:bottom-24 bottom-20 lg:right-5 right-5 z-[45] transition-all duration-1000 group cursor-pointer" id="wa_button">
+    <div class="relative">
+        {{-- Button --}}
         <div
-            class="absolute md:right-[35px] right-[15px] md:bottom-[7px] bottom-[3px] bg-gradient-to-b from-[#25CF43] to-[#0F8224] group-hover:from-white group-hover:to-gray-100 group-hover:text-[#25CF43]
-            py-2 pl-2 pr-5 md:flex justify-center items-center
-            text-white w-[150px] text-[14px] shadow rounded-xl font-bold border border-[#25CF43]
-            ">
-            Consult now
-        </div>
-
-        <div
-            class="absolute right-5 bottom-[1em] text-white
+            class="text-white
             bg-[#25CF43] group-hover:bg-white group-hover:text-[#25CF43]
             rounded-xl md:w-[50px] md:h-[50px] w-[40px] h-[40px]
-            flex justify-center items-center shadow border border-[#25CF43] 
-            ">
+            flex justify-center items-center shadow-lg border border-[#25CF43] 
+            transition-all duration-300">
             <i class="fa-brands fa-whatsapp text-[25px]"></i>
         </div>
-
     </div>
 </div>
 
 {{-- WhatsApp Form Popup --}}
 <div id="whatsappForm"
-    class="fixed -bottom-[50rem] right-5 md:w-[400px] w-[350px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
+    class="fixed -bottom-96 right-5 md:w-[400px] w-[350px] z-[999999] rounded-2xl shadow-xl transition-all ease-in-out duration-1000">
     <div class="bg-[#008069] text-white flex rounded-t-2xl p-4 gap-5 items-center">
         <i class="fas fa-user text-xl p-2 bg-white text-black rounded-full"></i>
         <div>
@@ -287,28 +294,38 @@
 
         if (scrollTop > threshold) {
             $('#top-navbar').addClass('shadow-xl');
-            $('#navbar-top-bar').addClass('bg-newprimary/90 shadow-xl');
+            $('#navbar-top-bar').addClass('bg-newprimary/90 shadow-xl').addClass('hidden');
             $('#navbar-cta').removeClass('bg-white text-black').addClass('bg-white/10 text-white');
             $('#navbar-divider').removeClass('border-white').addClass('border-white/30');
             $('#navbar-nav').addClass('bg-newprimary/90');
-            $('#navbar-socials').removeClass('text-white').addClass('text-white');
+            $('#navbar-socials').removeClass('text-white').addClass('text-white').addClass('hidden');
             $('.navbar-link').removeClass('text-white').addClass('text-white');
             $('.navbar-icon').removeClass('text-white').addClass('text-white');
+
+            // Show second navbar elements
+            $('#second-navbar-logo').removeClass('hidden');
+            $('#second-navbar-cta').removeClass('hidden');
         } else {
             $('#top-navbar').removeClass('shadow-xl');
-            $('#navbar-top-bar').removeClass('bg-newprimary/90 shadow-xl');
+            $('#navbar-top-bar').removeClass('bg-newprimary/90 shadow-xl').removeClass('hidden');
             $('#navbar-cta').removeClass('bg-white/10 text-white').addClass('bg-white text-black');
             $('#navbar-divider').removeClass('border-white/30').addClass('border-white');
             $('#navbar-nav').removeClass('bg-newprimary/90');
-            $('#navbar-socials').removeClass('text-white').addClass('text-white');
+            $('#navbar-socials').removeClass('text-white').addClass('text-white').removeClass('hidden');
             $('.navbar-link').removeClass('text-white').addClass('text-white');
             $('.navbar-icon').removeClass('text-white').addClass('text-white');
+
+            // Hide second navbar elements
+            $('#second-navbar-logo').addClass('hidden');
+            $('#second-navbar-cta').addClass('hidden');
         }
 
         if (scrollTop > $(window).height() / 10) {
-            $('#wa_button').removeClass('lg:bottom-9').addClass('lg:bottom-5');
+            $('#wa_button').removeClass('lg:bottom-24').addClass('lg:bottom-20');
+            $('#top_button').removeClass('lg:bottom-9').addClass('lg:bottom-5');
         } else {
-            $('#wa_button').addClass('lg:bottom-9').removeClass('lg:bottom-5');
+            $('#wa_button').addClass('lg:bottom-24').removeClass('lg:bottom-20');
+            $('#top_button').addClass('lg:bottom-9').removeClass('lg:bottom-5');
         }
     });
 
@@ -367,7 +384,7 @@
             if (!isOpen) {
                 $('#mobile-navbar').stop(true, true).fadeIn(300);
                 $('body').css('overflow', 'hidden');
-                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24');
+                $('#whatsappForm').addClass('-bottom-96').removeClass('bottom-24');
             } else {
                 $('#mobile-navbar').stop(true, true).fadeOut(300);
                 $('body').css('overflow', 'auto');
@@ -388,17 +405,40 @@
         });
 
         // =====================================================
+        // Top button: scroll to top
+        // =====================================================
+        $('#top_button').click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 100);
+        });
+
+        // =====================================================
         // WhatsApp: toggle form popup
         // =====================================================
-        $('#wa_button').click(function() {
+        $('#wa_button').click(function(e) {
+            e.stopPropagation();
             $('#mobile-navbar').stop(true, true).fadeOut(300);
             $('body').css('overflow', 'auto');
 
-            if ($('#whatsappForm.bottom-24').length == 0) {
-                $('#whatsappForm').removeClass('-bottom-[50rem]').addClass('bottom-24');
+            const $form = $('#whatsappForm');
+            if ($form.hasClass('-bottom-96')) {
+                $form.removeClass('-bottom-96').addClass('bottom-32');
             } else {
-                $('#whatsappForm').addClass('-bottom-[50rem]').removeClass('bottom-24');
+                $form.addClass('-bottom-96').removeClass('bottom-32');
             }
+        });
+
+        // Close WhatsApp form when clicking outside
+        $(document).click(function(e) {
+            if (!$(e.target).closest('#whatsappForm, #wa_button').length) {
+                $('#whatsappForm').addClass('-bottom-96').removeClass('bottom-32');
+            }
+        });
+
+        // Prevent clicks inside form from closing it
+        $('#whatsappForm').click(function(e) {
+            e.stopPropagation();
         });
     });
 

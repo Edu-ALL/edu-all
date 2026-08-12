@@ -1,5 +1,5 @@
 <footer class="bg-[#00003F] font-secondary">
-    <div class="main-container py-24">
+    <div class="new-main-container py-24">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 md:gap-4 lg:gap-x-10 gap-y-12">
             <div class="flex flex-col sm:col-span-2">
                 <img src="{{ asset('assets/logo/eduall-white-2026.png') }}" width="140" height="auto" class="-ml-2"

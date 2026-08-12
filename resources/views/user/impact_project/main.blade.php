@@ -73,8 +73,8 @@
         <div class="relative h-full">
             <div class="pt-10">
                 <div class="flex pt-20 gap-5 items-center flex-col md:flex-row">
-                    <div class="w-full md:w-[50%]">
-                        <div class="md:pl-[15%] md:pr-[5%]">
+                    <div class="w-full md:w-[60%]">
+                        <div class="md:pl-[18%] md:pr-[5%] min-[1600px]:pl-[32%]">
                             <h1 class="font-semibold text-[2rem] md:text-[3.5rem] text-newprimary text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8 uppercase"
                                 itemprop="headline">
                                 {{ __('pages/impact_project.banner.title', [], app()->getLocale()) }}
@@ -86,7 +86,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-full md:w-[50%] mt-6 md:mt-0">
+                    <div class="w-full md:w-[40%] mt-6 md:mt-0">
                         <img src="{{ asset('assets/img/impact-project/bg-banner.png') }}"
                             alt="EduALL Impact Projects - Student Innovation and Research" loading="lazy" decoding="async"
                             width="600" height="400" class="w-full object-cover">
@@ -193,9 +193,9 @@
                     {{-- CARD --}}
                     @foreach ($projects as $project)
                         <div class="cursor-pointer modal-trigger" data-target="modal-{{ $project['id'] }}">
-                            <img src="{{ $project['image'] ? asset('assets/img/impact-project/') . '/' . $project['image'] : 'https://placehold.net/default.svg' }}" alt="{{ $project['title'] }} - {{ $project['category'] }}"
-                                loading="lazy" decoding="async" width="800" height="300"
-                                class="w-full h-[300px] object-cover rounded-xl mb-2">
+                            <img src="{{ $project['image'] ? asset('assets/img/impact-project/') . '/' . $project['image'] : 'https://placehold.net/default.svg' }}"
+                                alt="{{ $project['title'] }} - {{ $project['category'] }}" loading="lazy" decoding="async"
+                                width="800" height="300" class="w-full h-[300px] object-cover rounded-xl mb-2">
                             <div class="flex items-center justify-between mb-5">
 
                                 <h3 class="text-newprimary text-xl">
@@ -347,7 +347,7 @@
                     {{ __('pages/impact_project.cta.description', [], app()->getLocale()) }}
                 </p>
 
-                <a href="#" class="bg-dark text-white rounded-xl px-5 py-2 text-sm md:text-base">
+                <a href="https://bit.ly/eduall-contactus" class="bg-dark text-white rounded-xl px-5 py-2 text-sm md:text-base">
                     {{ __('pages/impact_project.cta.button', [], app()->getLocale()) }}
                     <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>

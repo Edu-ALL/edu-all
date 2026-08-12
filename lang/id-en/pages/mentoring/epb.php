@@ -42,17 +42,9 @@ return [
         ],
     ],
 
-    // Program Features Section
-    'features' => [
-        '1-on-1 Mentoring',
-        'Strategic Roadmap',
-        'Well-Rounded Support',
-        '100 + Certificates & Awards',
-    ],
-
     // Program Overview Section
     'overview' => [
-        'title' => 'Designed for Grades 7–11 Your Pathway, Your Pace',
+        'title' => '<span class="text-base text-blue-500">Designed for Grades 7–11</span> <br> Your Pathway, <br> Your Pace',
         'description' => "Every student starts from a different place. Whether you're exploring future majors, building extracurricular achievements, or launching a passion project, Exploration & Profile Building gives you the structure and guidance to make every step count. As an independent education consultant, we build your path around your goals. When you are ready for end-to-end support, our Ultimate Mentoring program takes you through to acceptance.",
         'cta' => 'Get Consultation',
     ],
@@ -122,20 +114,20 @@ return [
         'description' => "Move beyond academics and discover how your interests come to life in the real world. Whether you're building a passion project, conducting research, working with industry professionals, or joining global competitions, every experience helps you develop the skills, achievements, and direction that strengthen both your university applications and your future career.",
         'tabs' => [
             [
-                'title' => 'High-Impact Passion Projects',
-                'description' => 'From community campaigns to digital apps, we guide you from initial concept to public launch, creating a tangible extracurricular achievement for your university application portfolio.',
+                'title' => 'Impactful Passion Projects',
+                'description' => 'From community initiatives to digital products, your mentor guides you from concept to completion while building a stronger university application profile.',
             ],
             [
-                'title' => 'In-Depth Academic Research',
-                'description' => 'Research, write, and publish papers that demonstrate intellectual depth. It is the kind of achievement that stands out to admissions committees at top universities.',
+                'title' => 'Academic Research',
+                'description' => 'Develop research skills through guided academic projects. Learn how to conduct research, write papers, and showcase your intellectual curiosity through meaningful academic work.',
             ],
             [
-                'title' => 'Professional Industry Exposure',
-                'description' => 'Connect with industry professionals early and bring authentic career direction to your university application narrative.',
+                'title' => 'Industry Exposure',
+                'description' => 'Gain early exposure to your field of interest through industry experiences and professional mentoring. Build real-world insights that strengthen both your profile and career direction.',
             ],
             [
-                'title' => 'International Project Competitions',
-                'description' => 'Coaching you through rigorous preparation to confidently present your skills, test your ideas, and win recognition on a highly competitive international stage.',
+                'title' => 'Global Competitions',
+                'description' => 'Challenge yourself through international competitions with guidance from experienced mentors. Develop your skills, present your ideas with confidence, and earn recognition on a global stage.',
             ],
         ],
     ],
@@ -151,7 +143,7 @@ return [
         [
             'title' => 'Exclusive Student Club',
             'subtitle' => 'Build Extracurricular Leadership in Your Field',
-            'description' => 'Students begin by exploring their interests, strengths, and future aspirations. With guidance from EduALL mentors, they transform these interests into meaningful projects, leadership experiences, competitions, and achievements that strengthen their university profile. Every journey is personalized to reflect each student\'s unique goals and potential.',
+            'description' => 'A subject-focused student club is one of the most effective extracurricular activities for developing leadership, collaboration experience, and academic identity, all of which strengthen your university application profile. We facilitate access to specialized peer networks where you collaborate on real projects, take on leadership roles, and gain industry exposure. Your mentor ensures every club involvement meaningfully strengthens your overall profile.',
             'club_label' => 'The 4 specialized club streams available for selection',
             'clubs' => [
                 [

@@ -123,12 +123,13 @@ return [
     'eduall_framework' => [
         'title' => 'The EduALL Framework',
 
-        'description' => 'From discovering your interests to securing university offers, our proven mentorship approach helps students build the experiences and skills. See how we transform your unique potential into a standout, world-class application.',
+        'description' => 'Here is how we prepare you to stand out, from discovering who you are to securing your place at the right university through four fundamental pillars.',
 
         'items' => [
             [
                 'no' => '01',
                 'icon' => 'fa-regular fa-compass',
+                'bg_image' => 'Exploration cover.webp',
                 'img' => 'Exploration.webp',
                 'title' => 'Interest & Career Exploration',
                 'description' => 'Discover your true passions through hands-on learning experiences and direct exposure to diverse professional fields.',
@@ -136,6 +137,7 @@ return [
             [
                 'no' => '02',
                 'icon' => 'fa-solid fa-trophy',
+                'bg_image' => 'Profile building cover.webp',
                 'img' => 'Profile Building.webp',
                 'title' => 'Profile <br> Building',
                 'description' => 'Turn your strengths into impactful initiatives and real-world achievements, creating an authentic profile suitable for top university admissions.',
@@ -143,6 +145,7 @@ return [
             [
                 'no' => '03',
                 'icon' => 'fa-solid fa-file-pen',
+                'bg_image' => 'Essay cover.webp',
                 'img' => 'Essay.webp',
                 'title' => 'Personal Statement & Essays',
                 'description' => 'Craft compelling personal statements and essays that highlight your unique qualities, authentic voice, and future contributions.',
@@ -150,6 +153,7 @@ return [
             [
                 'no' => '04',
                 'icon' => 'fa-solid fa-graduation-cap',
+                'bg_image' => 'Uni app strategy cover.webp',
                 'img' => 'Uni app strategy.webp',
                 'title' => 'University Application Strategy',
                 'description' => 'Execute a personalized admissions strategy that aligns your strengths with the standards of the world\'s most competitive universities.',
@@ -207,7 +211,7 @@ return [
                 'answer' => 'EduALL takes a deeply personalized approach to university admissions. As an independent consultant, every recommendation is based on your goals, strengths, and best-fit university options. Our mentors are graduates of leading global universities and bring firsthand admissions experience to every student they support.',
             ],
             [
-                'question' => 'When should my child start working with EduALL?',
+                'question' => 'When should my child start mentoring with EduALL?',
                 'answer' => 'We recommend starting as early as Grade 8. University admissions are not built in a few months—they are shaped through years of exploration, growth, and meaningful experiences. Starting early gives students the opportunity to discover their interests, explore different careers and academic fields, develop impactful projects, and build a strong profile with intention. For students in Grade 11 or 12, we also provide focused support to strengthen applications and navigate the admissions process effectively.',
             ],
             [

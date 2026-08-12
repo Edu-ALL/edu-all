@@ -1,6 +1,6 @@
 @php
     $uniqueId = uniqid();
-    $color = 'light';
+    $color = $color ?? 'light';
 @endphp
 
 <div class="w-full ease-in-out duration-500 z-[999999]" id="formRegist_{{ $uniqueId }}">
@@ -14,21 +14,21 @@
                                 id="student_{{ $uniqueId }}" checked required
                                 onchange="window.FormHandler_{{ $uniqueId }}.checkRole()">
                             <label for="student_{{ $uniqueId }}"
-                                class="{{ $color && $color == 'dark' ? 'text-dark' : 'text-white' }} {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} ml-2">Student</label>
+                                class="{{ $color && $color == 'dark' ? 'text-dark' : 'text-white' }} {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} ml-2">Student</label>
                         </div>
                         <div class="flex items-center">
                             <input type="radio" name="roles_{{ $uniqueId }}" value="parent"
                                 id="parent_{{ $uniqueId }}" required
                                 onchange="window.FormHandler_{{ $uniqueId }}.checkRole()">
                             <label for="parent_{{ $uniqueId }}"
-                                class="{{ $color && $color == 'dark' ? 'text-dark' : 'text-white' }} {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} ml-2">Parent</label>
+                                class="{{ $color && $color == 'dark' ? 'text-dark' : 'text-white' }} {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} ml-2">Parent</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <input type="text"
-                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full"
                         placeholder="Full Name *" id="primary_name_{{ $uniqueId }}" required
                         oninput="window.FormHandler_{{ $uniqueId }}.checkValidation('primary_name')">
                     <div id="primary_name_error_{{ $uniqueId }}" class="text-red text-[10px] mt-1 hidden">
@@ -37,7 +37,7 @@
 
                 <div>
                     <input type="text"
-                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full hidden mb-3"
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full hidden mb-3"
                         placeholder="Child Name *" id="secondary_name_{{ $uniqueId }}" required
                         oninput="window.FormHandler_{{ $uniqueId }}.checkValidation('secondary_name')">
                     <div id="secondary_name_error_{{ $uniqueId }}" class="text-red text-[10px] mt-1 hidden">
@@ -46,7 +46,7 @@
 
                 <div class="mb-3">
                     <input type="text"
-                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full"
                         placeholder="Phone Number *" id="phone_number_{{ $uniqueId }}" required
                         oninput="window.FormHandler_{{ $uniqueId }}.checkValidation('phone_number')">
                     <div id="phone_number_error_{{ $uniqueId }}" class="text-red text-[10px] mt-1 hidden">
@@ -55,7 +55,7 @@
 
                 <div class="mb-3">
                     <input type="text"
-                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full"
                         placeholder="School Name *" id="school_name_{{ $uniqueId }}" required
                         oninput="window.FormHandler_{{ $uniqueId }}.checkValidation('school_name')">
                     <div id="school_name_error_{{ $uniqueId }}" class="text-red text-[10px] mt-1 hidden"></div>
@@ -63,7 +63,7 @@
 
                 <div class="mb-3">
                     <select
-                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full"
                         id="graduation_year_{{ $uniqueId }}" required>
                         <option class="text-gray-300" value="">Select Graduation Year</option>
                         @for ($i = date('Y'); $i < date('Y') + 5; $i++)

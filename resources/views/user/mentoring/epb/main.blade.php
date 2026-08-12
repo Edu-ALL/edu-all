@@ -46,31 +46,6 @@
             transform: scale(1);
         }
 
-        /* ==================== Mentee Slider Styles ==================== */
-        #mentee-slider {
-            padding: 40px 0;
-        }
-
-        #mentee-slider .splide__slide {
-            opacity: .4;
-        }
-
-        #mentee-slider .splide__slide img {
-            width: 100%;
-            display: block;
-            transition: transform .35s ease, opacity .35s ease;
-            transform: scale(.6);
-            transform-origin: center center;
-        }
-
-        #mentee-slider .splide__slide.is-active {
-            opacity: 1;
-        }
-
-        #mentee-slider .splide__slide.is-active img {
-            transform: scale(1);
-        }
-
         th,
         td {
             border: 0 !important;
@@ -81,7 +56,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             transform: translateY(-4px);
             padding: 1rem;
-            height: 400px;
+            height: 380px;
             background: linear-gradient(to bottom, #1E3A8A, #000000);
         }
 
@@ -166,62 +141,29 @@
     <section class="new-main-container my-20" aria-label="Program Features">
         <div class=" text-newprimary p-5">
             <div class="flex flex-col md:flex-row items-start justify-center gap-5">
-                @foreach (__('pages/mentoring/epb.features') as $index => $feature)
-                    <article class="w-full md:w-1/4 h-full">
-                        @if ($index === 0)
-                            <div
-                                class="w-full flex items-center justify-center text-center md:border-r md:border-l md:border-dark/30 px-10">
-                                <h3 class="text-3xl font-light">
-                                    {!! str_replace('1-on-1', '1-on-1', $feature) !!}
-                                </h3>
-                            </div>
-                            <div class="px-5 flex justify-center mt-5 md:mt-20">
-                                <img src="{{ asset('assets/img/mentoring/epb/epb-1.png') }}"
-                                    alt="{{ __('pages/mentoring/epb.features.0') }} at EduALL"
-                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
-                            </div>
-                        @elseif($index === 1)
-                            <div
-                                class="w-full flex items-center justify-center text-center md:border-r md:border-dark/30 px-10">
-                                <h3 class="text-3xl font-light">
-                                    {!! str_replace('Strategic', 'Strategic', $feature) !!}
-                                </h3>
-                            </div>
-                            <div class="px-5 flex justify-center mt-5 md:mt-10">
-                                <img src="{{ asset('assets/img/mentoring/epb/epb-2.png') }}"
-                                    alt="{{ __('pages/mentoring/epb.features.1') }} for University Applications"
-                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
-                            </div>
-                        @elseif($index === 2)
-                            <div
-                                class="w-full flex items-center justify-center text-center md:border-r md:border-dark/30 px-10">
-                                <h3 class="text-3xl font-light">
-                                    {!! str_replace('Well-Rounded', 'Well-Rounded', $feature) !!}
-                                </h3>
-                            </div>
-                            <div class="px-5 flex justify-center mt-5 md:mt-20">
-                                <img src="{{ asset('assets/img/mentoring/epb/epb-3.png') }}"
-                                    alt="{{ __('pages/mentoring/epb.features.2') }} for Student Development"
-                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
-                            </div>
-                        @elseif($index === 3)
-                            <div
-                                class="w-full flex flex-col items-center justify-center text-center md:border-r md:border-dark/30 px-10">
-                                <h3 class="text-4xl font-light">
-                                    100 +
-                                </h3>
-                                <p class="text-dark/70">
-                                    {{ __('pages/mentoring/epb.features.3') }}
-                                </p>
-                            </div>
-                            <div class="px-5 flex justify-center mt-5 md:mt-10">
-                                <img src="{{ asset('assets/img/mentoring/epb/epb-4.png') }}"
-                                    alt="{{ __('pages/mentoring/epb.features.3') }} Achieved by EduALL Students"
-                                    class="w-full rounded-2xl shadow-xl" loading="lazy">
-                            </div>
-                        @endif
-                    </article>
-                @endforeach
+                <div class="px-5 flex justify-center">
+                    <img src="{{ asset('assets/img/mentoring/epb/epb-1.png') }}"
+                        alt="{{ __('pages/mentoring/epb.features.0') }} at EduALL" class="w-full rounded-2xl shadow-xl"
+                        loading="lazy">
+                </div>
+
+                <div class="px-5 flex justify-center">
+                    <img src="{{ asset('assets/img/mentoring/epb/epb-2.png') }}"
+                        alt="{{ __('pages/mentoring/epb.features.1') }} for University Applications"
+                        class="w-full rounded-2xl shadow-xl" loading="lazy">
+                </div>
+
+                <div class="px-5 flex justify-center">
+                    <img src="{{ asset('assets/img/mentoring/epb/epb-3.png') }}"
+                        alt="{{ __('pages/mentoring/epb.features.2') }} for Student Development"
+                        class="w-full rounded-2xl shadow-xl" loading="lazy">
+                </div>
+
+                <div class="px-5 flex justify-center">
+                    <img src="{{ asset('assets/img/mentoring/epb/epb-4.png') }}"
+                        alt="{{ __('pages/mentoring/epb.features.3') }} Achieved by EduALL Students"
+                        class="w-full rounded-2xl shadow-xl" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -229,12 +171,12 @@
     {{-- ==================== Program Overview Section ==================== --}}
     {{-- Program description with accordion for key features --}}
     <section class="new-main-container py-10" aria-label="Program Overview">
-        <div class="flex flex-col md:flex-row items-center gap-10">
+        <div class="flex flex-col md:flex-row items-start gap-10">
             <div class="w-full md:w-1/2">
-                <h2 class="text-3xl md:text-5xl font-normal mb-5 text-newprimary uppercase">
+                <h2 class="text-3xl md:text-5xl font-normal mb-5 uppercase">
                     {!! __('pages/mentoring/epb.overview.title') !!}
                 </h2>
-                <p class="text-dark/50 text-lg mb-5">
+                <p class="text-dark/50 text-lg mb-10">
                     {{ __('pages/mentoring/epb.overview.description') }}
                 </p>
 
@@ -260,6 +202,12 @@
                             </div>
                         </div>
                     @endforeach
+
+                    <a href="#impact-project"
+                        class="accordion-btn bg-gradient-to-r from-newprimary to-blue-700 text-white w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5 text-xl rounded-2xl">
+                        <span>Impact Project</span>
+                        <span class="text-xl md:text-2xl transition-all duration-200">+</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -267,14 +215,14 @@
 
     {{-- ==================== Program Comparison Section ==================== --}}
     {{-- Comparison table showing program differences between Grades 7-8 and Grades 9-11 --}}
-    <section class="bg-gradient-to-r from-[#F6F6F6] to-[#f0f0f0] my-5 md:my-20 py-5 md:py-20"
-        aria-label="Program Comparison">
+    <section class="bg-gradient-to-r from-[#F6F6F6] to-[#f0f0f0] my-5 md:my-10 py-5 md:py-20"
+        aria-label="Program Comparison" id="impact-project">
         <div class="new-main-container py-5 md:py-20">
-            <h2 class="text-3xl md:text-6xl font-light uppercase text-center">
+            <h2 class="text-3xl md:text-5xl font-light uppercase text-center">
                 {{ __('pages/mentoring/epb.comparison.title') }}
             </h2>
 
-            <div class="overflow-x-auto rounded-2xl mt-5 md:mt-20 bg-white">
+            <div class="overflow-x-auto rounded-2xl mt-5 md:mt-10 bg-white">
                 <table class="min-w-full border-collapse">
                     <thead class="bg-white text-dark">
                         <tr>
@@ -400,21 +348,21 @@
                             <div
                                 class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
                                 <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5 justify-between">
-                                        <h3 class="text-dark/50 text-xl">
+                                    <div class="flex p-5 px-10 justify-between w-full items-center">
+                                        <h3 class="text-dark/50 text-xl font-normal">
                                             Exclusive Student Club
                                         </h3>
-                                        <i class="fa-solid fa-plus-square-o"></i>
+                                        <i class="fa-solid fa-plus"></i>
                                     </div>
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-gradient-to-br from-newprimary to-blue-600 rounded-2xl relative z-0">
                                     <div class="flex">
-                                        <div class="w-full p-5">
+                                        <div class="w-full p-5 px-10">
                                             <div class="flex gap-10 mb-10 justify-between items-center">
                                                 <div class="text-white text-lg font-normal">
-                                                    Students Club
+                                                    Exclusive Student Club
                                                 </div>
                                                 <div class="">
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
@@ -428,206 +376,210 @@
                                                 </div>
                                                 <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
-                                                        Students begin by exploring their interests, strengths, and future
-                                                        aspirations.
-                                                        With guidance from EduALL mentors, they transform these interests
-                                                        into
-                                                        meaningful projects, leadership experiences, competitions, and
-                                                        achievements
-                                                        that
-                                                        strengthen their university profile. Every journey is personalized
-                                                        to
-                                                        reflect
-                                                        each student's unique goals and potential.
+                                                        A subject-focused student club is one of the most effective
+                                                        extracurricular activities for developing leadership, collaboration
+                                                        experience, and academic identity, all of which strengthen your
+                                                        university application profile. We facilitate access to specialized
+                                                        peer networks where you collaborate on real projects, take on
+                                                        leadership roles, and gain industry exposure. Your mentor ensures
+                                                        every club involvement meaningfully strengthens your overall
+                                                        profile.
                                                     </p>
                                                 </div>
 
                                             </div>
-                                            <div class="text-xl text-center font-normal text-white my-10">
+                                            <div class="text-3xl text-center font-normal text-white mt-5">
                                                 The 4 specialized club streams available for selection
                                             </div>
-
-                                            <div
-                                                class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto p-4 md:p-6 items-center h-auto md:h-[480px] pathway-grid">
-
-                                                <!-- Card 1 -->
+                                            <div class="max-w-5xl mx-auto">
                                                 <div
-                                                    class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
-                                                    px-6 py-4 h-[320px]
-                                                    hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[400px]
-                                                    hover:bg-gradient-to-b hover:from-newprimary hover:to-black active">
+                                                    class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto p-4 md:p-6 items-center h-auto md:h-[450px] pathway-grid">
 
-                                                    <!-- Number -->
+                                                    <!-- Card 1 -->
                                                     <div
-                                                        class="text-5xl text-gray-300 transition group-hover:hidden active:hidden">
-                                                        01
+                                                        class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
+                                                        px-6 py-4 h-[320px]
+                                                        hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
+                                                        hover:bg-gradient-to-b hover:from-newprimary hover:to-black active">
+
+                                                        <!-- Number -->
+                                                        <div
+                                                            class="text-5xl text-gray-300 transition group-hover:hidden active:hidden">
+                                                            01
+                                                        </div>
+
+                                                        <!-- Image -->
+                                                        <div
+                                                            class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block active:block">
+                                                            <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club.png') }}"
+                                                                class="w-full h-full object-cover object-center"
+                                                                alt="EduALL Business Club - Student Leadership and Entrepreneurship"
+                                                                loading="lazy" width="300" height="200">
+                                                        </div>
+
+                                                        <!-- Content -->
+                                                        <div
+                                                            class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
+                                                            group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full
+                                                            active:relative active:bottom-0 active:left-0 active:w-full">
+
+                                                            <div
+                                                                class="text-[#0B1B7A] transition mb-2 group-hover:text-white active:text-white">
+                                                                <i class="fa-solid fa-briefcase"></i>
+                                                            </div>
+
+                                                            <h3
+                                                                class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition
+                                                                group-hover:text-white active:text-white">
+                                                                Business Club
+                                                            </h3>
+
+                                                        </div>
+
+                                                        <!-- Description -->
+                                                        <p
+                                                            class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
+                                                            group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300
+                                                            active:opacity-100 active:translate-y-0 active:text-gray-300">
+                                                            Manage mock enterprises, pitch start-up ideas, and solve real
+                                                            case
+                                                            studies alongside like-minded peers.
+                                                        </p>
+
                                                     </div>
 
-                                                    <!-- Image -->
+                                                    <!-- Card 2 -->
                                                     <div
-                                                        class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block active:block">
-                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club.png') }}"
-                                                            class="w-full h-full object-cover object-center"
-                                                            alt="EduALL Business Club - Student Leadership and Entrepreneurship"
-                                                            loading="lazy" width="300" height="200">
-                                                    </div>
+                                                        class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
+                                                        px-6 py-4 h-[320px]
+                                                        hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
+                                                        hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
 
-                                                    <!-- Content -->
-                                                    <div
-                                                        class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
-                                                        group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full
-                                                        active:relative active:bottom-0 active:left-0 active:w-full">
+                                                        <div class="text-5xl text-gray-300 transition group-hover:hidden">
+                                                            02
+                                                        </div>
 
                                                         <div
-                                                            class="text-[#0B1B7A] transition mb-2 group-hover:text-white active:text-white">
-                                                            <i class="fa-solid fa-briefcase"></i>
+                                                            class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
+                                                            <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB computer science club.png') }}"
+                                                                class="w-full h-full object-cover object-center"
+                                                                alt="EduALL Computer Science Club - Coding and Software Development"
+                                                                loading="lazy" width="300" height="200">
                                                         </div>
 
-                                                        <h3
-                                                            class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition
-                                                            group-hover:text-white active:text-white">
-                                                            Business Club
-                                                        </h3>
+                                                        <div
+                                                            class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
+                                                            group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full">
 
-                                                    </div>
+                                                            <div
+                                                                class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
+                                                                <i class="fa-solid fa-laptop-code"></i>
+                                                            </div>
 
-                                                    <!-- Description -->
-                                                    <p
-                                                        class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
-                                                        group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300
-                                                        active:opacity-100 active:translate-y-0 active:text-gray-300">
-                                                        Manage mock enterprises, pitch start-up ideas, and solve real case
-                                                        studies alongside like-minded peers.
-                                                    </p>
+                                                            <h3
+                                                                class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
+                                                                Computer Science Club
+                                                            </h3>
 
-                                                </div>
-
-                                                <!-- Card 2 -->
-                                                <div
-                                                    class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
-                                                    px-6 py-4 h-[320px]
-                                                    hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[400px]
-                                                    hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
-
-                                                    <div class="text-5xl text-gray-300 transition group-hover:hidden">
-                                                        02
-                                                    </div>
-
-                                                    <div
-                                                        class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
-                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB computer science club.png') }}"
-                                                            class="w-full h-full object-cover object-center"
-                                                            alt="EduALL Computer Science Club - Coding and Software Development"
-                                                            loading="lazy" width="300" height="200">
-                                                    </div>
-
-                                                    <div
-                                                        class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
-                                                        group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full">
-
-                                                        <div class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
-                                                            <i class="fa-solid fa-laptop-code"></i>
                                                         </div>
 
-                                                        <h3
-                                                            class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
-                                                            Computer Science Club
-                                                        </h3>
+                                                        <p
+                                                            class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
+                                                            group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
+                                                            Hands-on coding sessions, collaborative hackathons, and software
+                                                            development projects that solve real-world problems.
+                                                        </p>
 
                                                     </div>
 
-                                                    <p
-                                                        class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
-                                                        group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
-                                                        Hands-on coding sessions, collaborative hackathons, and software
-                                                        development projects that solve real-world problems.
-                                                    </p>
-
-                                                </div>
-
-                                                <!-- Card 3 -->
-                                                <div
-                                                    class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
-                                                    px-6 py-4 h-[320px]
-                                                    hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[400px]
-                                                    hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
-
-                                                    <div class="text-5xl text-gray-300 transition group-hover:hidden">
-                                                        03
-                                                    </div>
-
+                                                    <!-- Card 3 -->
                                                     <div
-                                                        class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
-                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Engineering club.png') }}"
-                                                            class="w-full h-full object-cover object-center"
-                                                            alt="EduALL Engineering Club - Robotics and Structural Design"
-                                                            loading="lazy" width="300" height="200">
-                                                    </div>
+                                                        class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
+                                                        px-6 py-4 h-[320px]
+                                                        hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
+                                                        hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
 
-                                                    <div
-                                                        class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
-                                                        group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full">
-
-                                                        <div class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
-                                                            <i class="fa-solid fa-gears"></i>
+                                                        <div class="text-5xl text-gray-300 transition group-hover:hidden">
+                                                            03
                                                         </div>
 
-                                                        <h3
-                                                            class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
-                                                            Engineering Club
-                                                        </h3>
-
-                                                    </div>
-
-                                                    <p
-                                                        class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
-                                                        group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
-                                                        Structural design challenges, robotics building, and prototyping
-                                                        that turn theory into physical solutions.
-                                                    </p>
-
-                                                </div>
-
-                                                <!-- Card 4 -->
-                                                <div
-                                                    class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
-                                                    px-6 py-4 h-[320px]
-                                                    hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[400px]
-                                                    hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
-
-                                                    <div class="text-5xl text-gray-300 transition group-hover:hidden">
-                                                        04
-                                                    </div>
-
-                                                    <div
-                                                        class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
-                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB life science club.png') }}"
-                                                            class="w-full h-full object-cover object-center"
-                                                            alt="EduALL Life Science Club - Biology and Medical Research"
-                                                            loading="lazy" width="300" height="200">
-                                                    </div>
-
-                                                    <div
-                                                        class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
-                                                        group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full">
-
-                                                        <div class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
-                                                            <i class="fa-solid fa-dna"></i>
+                                                        <div
+                                                            class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
+                                                            <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Engineering club.png') }}"
+                                                                class="w-full h-full object-cover object-center"
+                                                                alt="EduALL Engineering Club - Robotics and Structural Design"
+                                                                loading="lazy" width="300" height="200">
                                                         </div>
 
-                                                        <h3
-                                                            class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
-                                                            Life Science Club
-                                                        </h3>
+                                                        <div
+                                                            class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
+                                                            group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full">
+
+                                                            <div
+                                                                class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
+                                                                <i class="fa-solid fa-gears"></i>
+                                                            </div>
+
+                                                            <h3
+                                                                class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
+                                                                Engineering Club
+                                                            </h3>
+
+                                                        </div>
+
+                                                        <p
+                                                            class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
+                                                            group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
+                                                            Structural design challenges, robotics building, and prototyping
+                                                            that turn theory into physical solutions.
+                                                        </p>
 
                                                     </div>
 
-                                                    <p
-                                                        class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
-                                                        group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
-                                                        Bio-science discussions, simulated lab case studies, and research
-                                                        reviews at the cutting edge of medicine and nature.
-                                                    </p>
+                                                    <!-- Card 4 -->
+                                                    <div
+                                                        class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
+                                                        px-6 py-4 h-[320px]
+                                                        hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
+                                                        hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
+
+                                                        <div class="text-5xl text-gray-300 transition group-hover:hidden">
+                                                            04
+                                                        </div>
+
+                                                        <div
+                                                            class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block">
+                                                            <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB life science club.png') }}"
+                                                                class="w-full h-full object-cover object-center"
+                                                                alt="EduALL Life Science Club - Biology and Medical Research"
+                                                                loading="lazy" width="300" height="200">
+                                                        </div>
+
+                                                        <div
+                                                            class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
+                                                            group-hover:relative group-hover:bottom-0 group-hover:left-0 group-hover:w-full">
+
+                                                            <div
+                                                                class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
+                                                                <i class="fa-solid fa-dna"></i>
+                                                            </div>
+
+                                                            <h3
+                                                                class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
+                                                                Life Science Club
+                                                            </h3>
+
+                                                        </div>
+
+                                                        <p
+                                                            class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
+                                                            group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
+                                                            Bio-science discussions, simulated lab case studies, and
+                                                            research
+                                                            reviews at the cutting edge of medicine and nature.
+                                                        </p>
+
+                                                    </div>
 
                                                 </div>
 
@@ -644,18 +596,18 @@
                             <div
                                 class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
                                 <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5 justify-between">
-                                        <h3 class="text-dark/50 text-xl">
+                                    <div class="flex p-5 px-10 justify-between w-full items-center">
+                                        <h3 class="text-dark/50 text-xl font-normal">
                                             Personal Project & Academic Research
                                         </h3>
-                                        <i class="fa-solid fa-plus-square-o"></i>
+                                        <i class="fa-solid fa-plus"></i>
                                     </div>
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-gradient-to-br from-newprimary to-blue-600 rounded-2xl relative z-0">
                                     <div class="flex">
-                                        <div class="w-full p-5">
+                                        <div class="w-full p-5 px-10">
                                             <div class="flex gap-10 mb-10 justify-between items-center">
                                                 <div class="text-white text-lg font-normal">
                                                     Personal Project & Academic Research
@@ -681,7 +633,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="text-xl text-center font-normal text-white my-10">
+                                            <div class="text-3xl text-center font-normal text-white mt-5">
                                                 Real Projects. Real Impact
                                             </div>
 
@@ -837,18 +789,18 @@
                             <div
                                 class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
                                 <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5 justify-between">
-                                        <h3 class="text-dark/50 text-xl">
+                                    <div class="flex p-5 px-10 justify-between w-full items-center">
+                                        <h3 class="text-dark/50 text-xl font-normal">
                                             International Competitions
                                         </h3>
-                                        <i class="fa-solid fa-plus-square-o"></i>
+                                        <i class="fa-solid fa-plus"></i>
                                     </div>
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-gradient-to-br from-newprimary to-blue-600 rounded-2xl relative z-0">
                                     <div class="flex">
-                                        <div class="w-full p-5">
+                                        <div class="w-full p-5 px-10">
                                             <div class="flex gap-10 mb-10 justify-between items-center">
                                                 <div class="text-white text-lg font-normal">
                                                     International Competitions
@@ -876,7 +828,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="text-xl text-center font-normal text-white mt-10">
+                                            <div class="text-3xl text-center font-normal text-white mt-10">
                                                 Our 5-Step Competition Mentoring Framework
                                             </div>
 
@@ -1018,11 +970,6 @@
                                             The Journey: Competing against thousands of students worldwide requires more
                                             than financial knowledge.
                                         </div>
-                                        <div class="bg-newprimary text-white px-10 py-2 rounded-full mb-3">
-                                            Our Mentorship: We guided the student team through asset allocation strategies,
-                                            real-world case studies, and presentation coaching using our five-step
-                                            framework, resulting in a portfolio pitched with confidence on a global stage
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1034,18 +981,18 @@
                             <div
                                 class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
                                 <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5 justify-between">
-                                        <h3 class="text-dark/50 text-xl">
+                                    <div class="flex p-5 px-10 justify-between w-full items-center">
+                                        <h3 class="text-dark/50 text-xl font-normal">
                                             Internship & Job Shadowing
                                         </h3>
-                                        <i class="fa-solid fa-plus-square-o"></i>
+                                        <i class="fa-solid fa-plus"></i>
                                     </div>
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-gradient-to-br from-newprimary to-blue-600 rounded-2xl relative z-0">
                                     <div class="flex">
-                                        <div class="w-full p-5">
+                                        <div class="w-full p-5 px-10">
                                             <div class="flex gap-10 mb-10 justify-between items-center">
                                                 <div class="text-white text-lg font-normal">
                                                     Internship & Job Shadowing
@@ -1085,18 +1032,18 @@
                             <div
                                 class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
                                 <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
-                                    <div class="flex p-5 justify-between">
-                                        <h3 class="text-dark/50 text-xl">
+                                    <div class="flex p-5 px-10 justify-between w-full items-center">
+                                        <h3 class="text-dark/50 text-xl font-normal">
                                             Digital Portfolio Enhancement
                                         </h3>
-                                        <i class="fa-solid fa-plus-square-o"></i>
+                                        <i class="fa-solid fa-plus"></i>
                                     </div>
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-gradient-to-br from-newprimary to-blue-600 rounded-2xl relative z-0">
                                     <div class="flex">
-                                        <div class="w-full p-5">
+                                        <div class="w-full p-5 px-10">
                                             <div class="flex gap-10 mb-10 justify-between items-center">
                                                 <div class="text-white text-lg font-normal">
                                                     Digital Portfolio Enhancement
@@ -1113,11 +1060,11 @@
                                                 </div>
                                                 <div class="w-full md:w-[70%]">
                                                     <p class="text-white mb-5">
-                                                        Building achievements is only half the journey. We help you compile
-                                                        your projects, research papers, competition wins, and internship
-                                                        experiences into a polished digital portfolio for university
-                                                        applications, structured to capture the attention of top university
-                                                        admission officers worldwide.
+                                                        Building achievements is only half the journey. EduALL helps you
+                                                        curate your projects, research, competition achievements, and
+                                                        internship experiences into a polished digital portfolio that tells
+                                                        your story and strengthens your application to top universities
+                                                        worldwide.
                                                     </p>
                                                 </div>
                                             </div>
@@ -1160,18 +1107,19 @@
         <img src="{{ asset('assets/img/mentoring/epb/cta.png') }}" alt="EduALL Free Consultation Booking"
             class="absolute top-0 left-0 w-full z-0" loading="lazy">
         <div class="new-main-container relative z-10 flex justify-center">
-            <div class="max-w-4xl p-6 md:p-10 rounded-xl">
+            <div class="max-w-6xl p-6 md:p-10 rounded-xl">
                 <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 items-center cta-grid">
                     <div class="w-full md:w-1/2 text-dark md:order-1 order-2">
-                        <p class="text-xl md:text-3xl mb-3 md:mb-5">
+                        <p class="text-xl md:text-4xl mb-3 md:mb-5">
                             {{ __('pages/mentoring/epb.cta.title') }}
                         </p>
-                        <p class="text-xs md:text-sm text-gray-500">
+                        <p class="text-xs md:text-lg text-gray-500">
                             {{ __('pages/mentoring/epb.cta.description') }}
                         </p>
 
-                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="MODEXPPB" lead-id="LS045"
-                            color="dark" submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" />
+                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="MODEXPPB"
+                            lead-id="LS045" color="dark"
+                            submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
                         <img src="{{ asset('assets/img/mentoring/epb/EPB CTA.png') }}" alt="EduALL"
@@ -1207,7 +1155,7 @@
 
     {{-- ==================== Testimonial Section ==================== --}}
     {{-- Student testimonials slider --}}
-    <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-12 md:py-20" aria-label="Student Testimonials">
+    <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-12 md:py-10" aria-label="Student Testimonials">
         <div class="new-main-container relative z-10">
             <div class="text-center mb-6 md:mb-10">
                 <h2 class="text-2xl md:text-5xl font-normal text-gray-800 uppercase mb-3 md:mb-4" itemprop="headline">
@@ -1218,29 +1166,7 @@
                 </p>
             </div>
 
-            <div class="px-0 md:px-10">
-                <div id="mentee-slider" class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <img src="{{ asset('assets/img/home/2026/Testimoni/Alumni - Rachinta.webp') }}"
-                                    class="rounded-lg shadow-sm w-full">
-                            </li>
-
-                            <li class="splide__slide">
-                                <img src="{{ asset('assets/img/home/2026/Testimoni/Alumni - Rachinta.webp') }}"
-                                    class="rounded-lg shadow-sm w-full">
-                            </li>
-
-                            <li class="splide__slide">
-                                <img src="{{ asset('assets/img/home/2026/Testimoni/Alumni - tobias.webp') }}"
-                                    class="rounded-lg shadow-sm w-full">
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <x-eduall-alumni />
         </div>
     </section>
 
@@ -1293,7 +1219,7 @@
                 <div class="w-full md:w-[65%]">
                     <div class="accordion-group">
                         @foreach (__('pages/mentoring/epb.faq.items') as $index => $faq)
-                            <div class="border rounded-lg overflow-hidden">
+                            <div class="border-b rounded-lg overflow-hidden">
                                 <button
                                     class="accordion-btn w-full flex justify-between items-center px-5 py-4 text-left font-normal gap-5">
                                     <span>{{ $faq['question'] }}</span>
@@ -1375,32 +1301,6 @@
         // Initialize project slider with autoplay
         document.addEventListener('DOMContentLoaded', function() {
             new Splide('#project-showcase', {
-                type: 'loop',
-                perPage: 3,
-                focus: 'center',
-                autoplay: true,
-                interval: 4000,
-                speed: 600,
-                drag: false,
-                arrows: true,
-                pagination: false,
-                breakpoints: {
-                    1024: {
-                        perPage: 2,
-                    },
-                    768: {
-                        perPage: 1,
-                    },
-                },
-            }).mount();
-        });
-    </script>
-
-    <script>
-        // ==================== Mentee Slider (Splide) ====================
-        // Initialize mentee slider with autoplay
-        document.addEventListener('DOMContentLoaded', function() {
-            new Splide('#mentee-slider', {
                 type: 'loop',
                 perPage: 3,
                 focus: 'center',

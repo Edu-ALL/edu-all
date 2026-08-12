@@ -291,6 +291,9 @@ return [
     'stat_logo_1' => 'assets/img/about/Our Team/15. Logo Sasmo.png',
     'stat_logo_2' => 'assets/img/about/Our Team/16. Logo IJMO.png',
     'stat_logo_3' => 'assets/img/about/Our Team/17. Logo SIMOC.png',
+    'stat_logo_4' => 'assets/img/about/Our Team/11. Logo SMC.png',
+    'stat_logo_5' => 'assets/img/about/Our Team/12. Logo AMO.png',
+    
 
     'featured_educator_label' => 'Featured Educator',
     'featured_educator_name' => 'Ester Putrynila L.',

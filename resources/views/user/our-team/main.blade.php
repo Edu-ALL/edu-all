@@ -19,10 +19,9 @@
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                <img src="{{ asset('assets/img/about/Our Team/1. Background Hero.webp') }}" 
-                    alt="EduALL Our Team - Meet our experienced mentors and educators"
-                    title="EduALL Our Team"
-                    loading="lazy" decoding="async" width="1920" height="1080"
+                <img src="{{ asset('assets/img/about/Our Team/1. Background Hero.webp') }}"
+                    alt="EduALL Our Team - Meet our experienced mentors and educators" title="EduALL Our Team" loading="lazy"
+                    decoding="async" width="1920" height="1080"
                     class="md:h-[100vh] h-[100dvh] w-full object-cover md:object-center object-left">
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
@@ -36,7 +35,7 @@
                         {{ __('pages/about_us/our_team.banner_title') }}
                     </h1>
 
-                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-xl"
+                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-xl pr-10"
                         itemprop="description">
                         {{ __('pages/about_us/our_team.banner_description') }}
                     </p>
@@ -88,84 +87,85 @@
             </p>
 
             <div class="flex flex-col md:flex-row gap-5 mt-10">
-                @foreach(__('pages/about_us/our_team.leadership') as $leader)
-                <div class="w-full md:w-1/3">
-                    <div class="bg-[#EBF8FF] rounded-2xl shadow-md h-full flex flex-col">
-                        <div class="flex justify-center">
-                            <img src="{{ asset($leader['image_1']) }}" 
-                                alt="{{ $leader['name'] }} - {{ $leader['role'] }}"
-                                loading="lazy" decoding="async" width="400" height="500"
-                                class="w-full rounded-t-2xl">
+                @foreach (__('pages/about_us/our_team.leadership') as $leader)
+                    <div class="w-full md:w-1/3">
+                        <div class="bg-[#EBF8FF] rounded-2xl shadow-md h-full flex flex-col">
+                            <div class="flex justify-center">
+                                <img src="{{ asset($leader['image_1']) }}"
+                                    alt="{{ $leader['name'] }} - {{ $leader['role'] }}" loading="lazy" decoding="async"
+                                    width="400" height="500" class="w-full rounded-t-2xl">
+                            </div>
+
+                            <div class="p-6 text-start">
+                                <p class="uppercase font-semibold text-[11px]">
+                                    {{ $leader['role'] }}
+                                </p>
+                                <h3 class="text-xl text-newprimary font-normal">
+                                    {{ $leader['name'] }}
+                                </h3>
+                                <p class="text-base">
+                                    {{ $leader['university'] }}
+                                </p>
+
+                                <hr class="my-2">
+
+                                <ul class="text-[13px]">
+                                    @foreach ($leader['highlights'] as $highlight)
+                                        <li>{{ $highlight }}</li>
+                                    @endforeach
+                                </ul>
+
+                                <hr class="my-2">
+
+                                <button type="button" data-modal-target="modal-{{ $leader['id'] }}"
+                                    data-modal-toggle="modal-{{ $leader['id'] }}" class="text-[13px]">
+                                    {{ __('pages/about_us/our_team.see_more') }}
+                                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="p-6 text-start">
-                            <p class="uppercase font-semibold text-[11px]">
-                                {{ $leader['role'] }}
-                            </p>
-                            <h3 class="text-xl text-newprimary font-normal">
-                                {{ $leader['name'] }}
-                            </h3>
-                            <p class="text-base">
-                                {{ $leader['university'] }}
-                            </p>
-
-                            <hr class="my-2">
-
-                            <ul class="text-[13px]">
-                                @foreach($leader['highlights'] as $highlight)
-                                <li>{{ $highlight }}</li>
-                                @endforeach
-                            </ul>
-
-                            <hr class="my-2">
-
-                            <button type="button" data-modal-target="modal-{{ $leader['id'] }}" data-modal-toggle="modal-{{ $leader['id'] }}"
-                                class="text-[13px]">
-                                {{ __('pages/about_us/our_team.see_more') }}
-                                <i class="fa-solid fa-arrow-right ml-2"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="modal-{{ $leader['id'] }}" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50">
-                        <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full relative">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="w-full md:w-[30%]">
-                                    <img src="{{ asset($leader['image_2']) }}" 
-                                        alt="{{ $leader['name'] }} - {{ $leader['role'] }}"
-                                        loading="lazy" decoding="async" width="400" height="500"
-                                        class="w-full rounded-l-2xl h-full object-cover">
-                                </div>
-                                <div class="w-full md:w-[70%] p-6">
-                                    <div class="flex justify-between">
-                                        <div class="text-start">
-                                            <p class="text-[11px] uppercase">
-                                                {{ $leader['role'] }}
-                                            </p>
-                                            <h3 class="text-xl text-newprimary">
-                                                {{ $leader['name'] }}
-                                            </h3>
+                        <div id="modal-{{ $leader['id'] }}"
+                            class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50">
+                            <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full relative">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-[30%]">
+                                        <img src="{{ asset($leader['image_2']) }}"
+                                            alt="{{ $leader['name'] }} - {{ $leader['role'] }}" loading="lazy"
+                                            decoding="async" width="400" height="500"
+                                            class="w-full rounded-l-2xl h-full object-cover">
+                                    </div>
+                                    <div class="w-full md:w-[70%] p-6">
+                                        <div class="flex justify-between">
+                                            <div class="text-start">
+                                                <p class="text-[11px] uppercase">
+                                                    {{ $leader['role'] }}
+                                                </p>
+                                                <h3 class="text-xl text-newprimary">
+                                                    {{ $leader['name'] }}
+                                                </h3>
+                                            </div>
+                                            <button type="button" data-modal-hide="modal-{{ $leader['id'] }}"
+                                                class="absolute top-4 right-4">
+                                                <i class="fa-solid fa-xmark text-xl"></i>
+                                            </button>
                                         </div>
-                                        <button type="button" data-modal-hide="modal-{{ $leader['id'] }}" class="absolute top-4 right-4">
-                                            <i class="fa-solid fa-xmark text-xl"></i>
-                                        </button>
-                                    </div>
-                                    <hr class="border-b-2 my-2" />
-                                    <div class="text-start">
-                                        <p class="text-[13px]">
-                                            {{ $leader['modal_university'] }}
-                                        </p>
-                                    </div>
-                                    <div class="text-start mt-10">
-                                        <p class="text-base text-dark/60">
-                                            {{ $leader['modal_description'] }}
-                                        </p>
+                                        <hr class="border-b-2 my-2" />
+                                        <div class="text-start">
+                                            <p class="text-[13px]">
+                                                {{ $leader['modal_university'] }}
+                                            </p>
+                                        </div>
+                                        <div class="text-start mt-10">
+                                            <p class="text-base text-dark/60">
+                                                {{ $leader['modal_description'] }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -187,23 +187,23 @@
 
             <div class="max-w-4xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-                    @foreach(__('pages/about_us/our_team.features') as $feature)
-                    <div class="bg-gradient-to-br from-newprimary to-newprimary/80 rounded-2xl relative overflow-hidden">
-                        <img src="{{ asset($feature['image']) }}" 
-                            alt="{{ strip_tags($feature['title']) }} - EduALL"
-                            loading="lazy" decoding="async" width="400" height="400"
-                            class="absolute -bottom-32 -right-32 w-full z-0 opacity-30">
+                    @foreach (__('pages/about_us/our_team.features') as $feature)
+                        <div
+                            class="bg-gradient-to-br from-newprimary to-newprimary/80 rounded-2xl relative overflow-hidden">
+                            <img src="{{ asset($feature['image']) }}" alt="{{ strip_tags($feature['title']) }} - EduALL"
+                                loading="lazy" decoding="async" width="400" height="400"
+                                class="absolute -bottom-32 -right-32 w-full z-0 opacity-30">
 
-                        <div class="p-5 relative z-10 py-10">
-                            <h3 class="text-white text-xl font-normal mb-3">
-                                {!! $feature['title'] !!}
-                            </h3>
+                            <div class="p-5 relative z-10 py-10">
+                                <h3 class="text-white text-2xl font-normal mb-3">
+                                    {!! $feature['title'] !!}
+                                </h3>
 
-                            <p class="text-white/80 leading-6">
-                                {{ $feature['description'] }}
-                            </p>
+                                <p class="text-white/80 text-sm leading-6">
+                                    {{ $feature['description'] }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -230,16 +230,20 @@
 
             {{-- Filter Buttons --}}
             <div class="flex flex-wrap justify-center gap-3 mt-10 mb-8">
-                <button type="button" data-filter="all" class="filter-btn active px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
+                <button type="button" data-filter="all"
+                    class="filter-btn active px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
                     {{ __('pages/about_us/our_team.filter_all') }}
                 </button>
-                <button type="button" data-filter="stem" class="filter-btn px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
+                <button type="button" data-filter="stem"
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
                     {{ __('pages/about_us/our_team.filter_stem') }}
                 </button>
-                <button type="button" data-filter="business" class="filter-btn px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
+                <button type="button" data-filter="business"
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
                     {{ __('pages/about_us/our_team.filter_business') }}
                 </button>
-                <button type="button" data-filter="social" class="filter-btn px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
+                <button type="button" data-filter="social"
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-newprimary text-newprimary hover:bg-newprimary hover:text-white transition-all duration-300">
                     {{ __('pages/about_us/our_team.filter_social_sciences') }}
                 </button>
             </div>
@@ -247,91 +251,85 @@
             {{-- Our Mentor  --}}
             <div class="w-full mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10" id="mentor-grid">
-                    @foreach(__('pages/about_us/our_team.mentors') as $mentor)
-                    <div class="w-full mentor-card" data-category="{{ $mentor['category'] }}">
-                        <div
-                            class="bg-gradient-to-b from-[#D0E5FF] to-[#EBF4FF] rounded-2xl shadow-md h-full flex flex-col">
-                            <div class="flex justify-center">
-                                <img src="{{ asset($mentor['image_1']) }}"
-                                    alt="{{ $mentor['name'] }} - {{ $mentor['university'] }}"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="400"
-                                    height="500"
-                                    class="w-full rounded-t-2xl">
-                            </div>
-
-                            <div class="p-4 text-start">
-                                <h3 class="text-lg text-newprimary font-normal">
-                                    {{ $mentor['name'] }}
-                                </h3>
-                                <p class="text-[13px] mb-3">
-                                    {{ $mentor['university'] }}
-                                </p>
-
-                                <div
-                                    class="bg-[#95A5C8] border-2 border-dark/60 px-2 py-1 rounded-xl inline text-[10px] text-white uppercase">
-                                    {{ $mentor['category_label'] }}
+                    @foreach (__('pages/about_us/our_team.mentors') as $mentor)
+                        <div class="w-full mentor-card" data-category="{{ $mentor['category'] }}">
+                            <div
+                                class="bg-gradient-to-b from-[#D0E5FF] to-[#EBF4FF] rounded-2xl shadow-md h-full flex flex-col">
+                                <div class="flex justify-center">
+                                    <img src="{{ asset($mentor['image_1']) }}"
+                                        alt="{{ $mentor['name'] }} - {{ $mentor['university'] }}" loading="lazy"
+                                        decoding="async" width="400" height="500" class="w-full rounded-t-2xl">
                                 </div>
 
-                                <p class="text-[13px] mt-3">
-                                    {{ $mentor['expertise'] }}
-                                </p>
+                                <div class="p-4 text-start">
+                                    <h3 class="text-lg text-newprimary font-normal">
+                                        {{ $mentor['name'] }}
+                                    </h3>
+                                    <p class="text-[13px] mb-3">
+                                        {{ $mentor['university'] }}
+                                    </p>
 
-                                <hr class="my-2">
-
-                                <button type="button" data-modal-target="modal-{{ $mentor['id'] }}" data-modal-toggle="modal-{{ $mentor['id'] }}"
-                                    class="text-[13px]">
-                                    {{ __('pages/about_us/our_team.see_more') }}
-                                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div id="modal-{{ $mentor['id'] }}" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50">
-                            <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full relative">
-                                <div class="flex flex-col md:flex-row">
-                                    <div class="w-full md:w-[30%]">
-                                        <img src="{{ asset($mentor['image_2']) }}"
-                                            alt="{{ $mentor['name'] }} - {{ $mentor['university'] }}"
-                                            loading="lazy"
-                                            decoding="async"
-                                            width="400"
-                                            height="500"
-                                            class="w-full rounded-l-2xl h-full object-cover">
+                                    <div
+                                        class="bg-[#95A5C8] border-2 border-dark/60 px-2 py-1 rounded-xl inline text-[10px] text-white uppercase">
+                                        {{ $mentor['category_label'] }}
                                     </div>
-                                    <div class="w-full md:w-[70%] p-6">
-                                        <div class="flex justify-between">
-                                            <div class="text-start">
-                                                <div
-                                                    class="bg-[#95A5C8] border-2 border-dark/60 px-2 py-1 rounded-xl inline text-[10px] text-white uppercase">
-                                                    {{ $mentor['category_label'] }}
+
+                                    <p class="text-[13px] mt-3">
+                                        {{ $mentor['expertise'] }}
+                                    </p>
+
+                                    <hr class="my-2">
+
+                                    <button type="button" data-modal-target="modal-{{ $mentor['id'] }}"
+                                        data-modal-toggle="modal-{{ $mentor['id'] }}" class="text-[13px]">
+                                        {{ __('pages/about_us/our_team.see_more') }}
+                                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="modal-{{ $mentor['id'] }}"
+                                class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50">
+                                <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full relative">
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="w-full md:w-[30%]">
+                                            <img src="{{ asset($mentor['image_2']) }}"
+                                                alt="{{ $mentor['name'] }} - {{ $mentor['university'] }}" loading="lazy"
+                                                decoding="async" width="400" height="500"
+                                                class="w-full rounded-l-2xl h-full object-cover">
+                                        </div>
+                                        <div class="w-full md:w-[70%] p-6">
+                                            <div class="flex justify-between">
+                                                <div class="text-start">
+                                                    <div
+                                                        class="bg-[#95A5C8] border-2 border-dark/60 px-2 py-1 rounded-xl inline text-[10px] text-white uppercase">
+                                                        {{ $mentor['category_label'] }}
+                                                    </div>
+                                                    <h3 class="text-lg text-newprimary mt-2">
+                                                        {{ $mentor['name'] }}
+                                                    </h3>
                                                 </div>
-                                                <h3 class="text-lg text-newprimary mt-2">
-                                                    {{ $mentor['name'] }}
-                                                </h3>
+                                                <button type="button" data-modal-hide="modal-{{ $mentor['id'] }}"
+                                                    class="absolute top-4 right-4">
+                                                    <i class="fa-solid fa-xmark text-xl"></i>
+                                                </button>
                                             </div>
-                                            <button type="button" data-modal-hide="modal-{{ $mentor['id'] }}"
-                                                class="absolute top-4 right-4">
-                                                <i class="fa-solid fa-xmark text-xl"></i>
-                                            </button>
-                                        </div>
-                                        <div class="text-start">
-                                            <p class="text-[13px]">
-                                                {{ $mentor['university'] }}
-                                            </p>
-                                        </div>
-                                        <hr class="border-b-2 my-2" />
-                                        <div class="text-start mt-10">
-                                            <p class="text-base text-dark/60">
-                                                {{ $mentor['description'] }}
-                                            </p>
+                                            <div class="text-start">
+                                                <p class="text-[13px]">
+                                                    {{ $mentor['university'] }}
+                                                </p>
+                                            </div>
+                                            <hr class="border-b-2 my-2" />
+                                            <div class="text-start mt-10">
+                                                <p class="text-base text-dark/60">
+                                                    {{ $mentor['description'] }}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -342,7 +340,8 @@
                 </p>
 
                 <div class="flex justify-center">
-                    <a href="https://bit.ly/eduall-contactus" class="py-2 px-5 uppercase bg-newprimary text-white rounded-2xl text-xl">
+                    <a href="https://bit.ly/eduall-contactus"
+                        class="py-2 px-5 uppercase bg-newprimary text-white rounded-2xl text-xl">
                         {{ __('pages/about_us/our_team.consultation_button') }}
                         <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
@@ -354,8 +353,10 @@
     {{-- ==================== Academy Section ==================== --}}
     {{-- Educators behind EduALL Academy --}}
     <section class="new-main-container py-20">
-        <div class="bg-newprimary rounded-2xl p-5">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="bg-newprimary rounded-2xl p-5 px-10 relative overflow-hidden">
+            <img src="{{ asset('assets/img/about/Our Team/7. Background Behind ACADEMY.png') }}" alt="EduALL"
+                class="w-full h-full absolute left-0 top-0 z-0">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
                 <div class="w-full md:w-[50%]">
                     <p class="uppercase text-sm text-white mb-3">
                         {{ __('pages/about_us/our_team.academy_label') }}
@@ -368,10 +369,9 @@
                     </p>
                 </div>
                 <div class="w-full md:w-[40%]">
-                    <img src="{{ asset(__('pages/about_us/our_team.academy_image')) }}" 
-                        alt="EduALL Academy Teaching Team"
-                        loading="lazy" decoding="async" width="600" height="400"
-                        class="w-full rounded-xl">
+                    <img src="{{ asset(__('pages/about_us/our_team.academy_image')) }}"
+                        alt="EduALL Academy Teaching Team" loading="lazy" decoding="async" width="600"
+                        height="400" class="w-full rounded-xl">
                 </div>
             </div>
         </div>
@@ -392,21 +392,21 @@
 
             <div class="w-full mx-auto">
                 <div class="flex md:flex-nowrap flex-wrap md:gap-5 md:justify-start justify-center">
-                    @foreach(__('pages/about_us/our_team.selection_items') as $item)
-                    <div class="w-1/2 md:w-1/5 md:p-0 p-2">
-                        <img src="{{ asset($item['image']) }}" 
-                            alt="{{ strip_tags($item['title']) }}"
-                            loading="lazy" decoding="async" width="120" height="80"
-                            class="h-[55px] md:h-[80px] w-auto mb-3 mx-auto md:mx-0">
+                    @foreach (__('pages/about_us/our_team.selection_items') as $item)
+                        <div class="w-1/2 md:w-1/5 md:p-0 p-2">
+                            <img src="{{ asset($item['image']) }}" alt="{{ strip_tags($item['title']) }}"
+                                loading="lazy" decoding="async" width="120" height="80"
+                                class="h-[55px] md:h-[80px] w-auto mb-3 mx-auto md:mx-0">
 
-                        <h3 class="text-lg md:text-2xl font-normal mb-5 leading-6 text-newprimary text-center md:text-start">
-                            {!! $item['title'] !!}
-                        </h3>
+                            <h3
+                                class="text-lg md:text-2xl font-normal mb-5 leading-6 text-newprimary text-center md:text-start">
+                                {!! $item['title'] !!}
+                            </h3>
 
-                        <p class="text-dark/60 text-center md:text-start">
-                            {{ $item['description'] }}
-                        </p>
-                    </div>
+                            <p class="text-dark/60 text-center md:text-start">
+                                {{ $item['description'] }}
+                            </p>
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -417,10 +417,8 @@
     {{-- ==================== Stats & Featured Educator Section ==================== --}}
     {{-- Statistics cards with featured educator --}}
     <section class="my-10 relative overflow-hidden">
-        <img src="{{ asset(__('pages/about_us/our_team.bg_academy')) }}" 
-            alt="EduALL Academy Background"
-            loading="lazy" decoding="async" width="1920" height="1080"
-            class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <img src="{{ asset(__('pages/about_us/our_team.bg_academy')) }}" alt="EduALL Academy Background" loading="lazy"
+            decoding="async" width="1920" height="1080" class="absolute top-0 left-0 w-full h-full object-cover z-0">
 
         <div class="relative z-10 new-main-container py-20">
             <div class="flex flex-col md:flex-row gap-5 items-center md:items-end">
@@ -438,22 +436,29 @@
                         <div class="w-full md:w-[60%]">
                             <div
                                 class="bg-gradient-to-r from-[#D2E5FF] to-white rounded-2xl shadow-sm py-10 px-5 h-[200px]">
-                                <div class="flex h-full items-center gap-5 flex-wrap">
-                                    <p class="text-2xl font-semibold uppercase text-newprimary leading-6">
-                                        {{ __('pages/about_us/our_team.stat_2_title') }}
-                                    </p>
-                                    <img src="{{ asset(__('pages/about_us/our_team.stat_logo_1')) }}" 
-                                        alt="Partner Logo 1"
-                                        loading="lazy" decoding="async" width="40" height="40"
-                                        class="h-[40px] ml-2">
-                                    <img src="{{ asset(__('pages/about_us/our_team.stat_logo_2')) }}" 
-                                        alt="Partner Logo 2"
-                                        loading="lazy" decoding="async" width="40" height="40"
-                                        class="h-[40px] ml-2">
-                                    <img src="{{ asset(__('pages/about_us/our_team.stat_logo_3')) }}" 
-                                        alt="Partner Logo 3"
-                                        loading="lazy" decoding="async" width="40" height="40"
-                                        class="h-[40px] ml-2">
+                                <div class="flex h-full gap-5 items-center">
+                                    <div class="w-full">
+                                        <p class="text-2xl font-semibold uppercase text-newprimary leading-6 mb-3">
+                                            {{ __('pages/about_us/our_team.stat_2_title') }}
+                                        </p>
+                                        <div class="flex gap-5 flex-wrap">
+                                            <img src="{{ asset(__('pages/about_us/our_team.stat_logo_1')) }}"
+                                                alt="Partner Logo 1" loading="lazy" decoding="async" width="40"
+                                                height="40" class="h-[30px] w-auto ml-2">
+                                            <img src="{{ asset(__('pages/about_us/our_team.stat_logo_2')) }}"
+                                                alt="Partner Logo 2" loading="lazy" decoding="async" width="40"
+                                                height="40" class="h-[30px] w-auto ml-2">
+                                            <img src="{{ asset(__('pages/about_us/our_team.stat_logo_3')) }}"
+                                                alt="Partner Logo 3" loading="lazy" decoding="async" width="40"
+                                                height="40" class="h-[30px] w-auto ml-2">
+                                            <img src="{{ asset(__('pages/about_us/our_team.stat_logo_4')) }}"
+                                                alt="Partner Logo 3" loading="lazy" decoding="async" width="40"
+                                                height="40" class="h-[30px] w-auto ml-2">
+                                            <img src="{{ asset(__('pages/about_us/our_team.stat_logo_5')) }}"
+                                                alt="Partner Logo 3" loading="lazy" decoding="async" width="40"
+                                                height="40" class="h-[30px] w-auto ml-2">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -481,29 +486,28 @@
                     </div>
                 </div>
                 <div class="w-full md:w-[30%] relative overflow-hidden">
-                    <img src="{{ asset(__('pages/about_us/our_team.featured_educator_image')) }}" 
-                        alt="Featured Educator - EduALL"
-                        loading="lazy" decoding="async" width="600" height="800"
-                        class="w-full rounded-xl z-0">
+                    <img src="{{ asset(__('pages/about_us/our_team.featured_educator_image')) }}"
+                        alt="Featured Educator - EduALL" loading="lazy" decoding="async" width="600" height="800"
+                        class="w-full rounded-xl z-0 relative overflow-hidden">
 
-                    <div class="absolute left-0 top-0 bg-gradient-to-b from-white/0  to-white/90 w-full  h-full z-5">
-
-                    </div>
-
-                    <div class="absolute bottom-5 left-5 z-10">
-                        <p class='text-[#B79C57] uppercase mb-1'>
-                            {{ __('pages/about_us/our_team.featured_educator_label') }}
-                        </p>
-                        <p class="font-bold text-lg text-newprimary mb-1">
-                            {{ __('pages/about_us/our_team.featured_educator_name') }}
-                        </p>
-                        <ul class="text-sm text-dark/80">
-                            @foreach(__('pages/about_us/our_team.featured_educator_details') as $detail)
-                            <li>
-                                {{ $detail }}
-                            </li>
-                            @endforeach
-                        </ul>
+                    <div class="absolute left-0 bottom-0 bg-white w-full  h-[40%] z-5 rounded-b-xl">
+                        <div class="flex h-full items-center p-5">
+                            <div class="w-full">
+                                <p class='text-newprimary uppercase mb-1 text-sm font-semibold'>
+                                    {{ __('pages/about_us/our_team.featured_educator_label') }}
+                                </p>
+                                <p class="font-bold text-xl text-newprimary mb-1">
+                                    {{ __('pages/about_us/our_team.featured_educator_name') }}
+                                </p>
+                                <ul class="text-sm text-dark/80 font-semibold">
+                                    @foreach (__('pages/about_us/our_team.featured_educator_details') as $detail)
+                                        <li>
+                                            {{ $detail }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -512,9 +516,9 @@
 
     {{-- ==================== Values Section ==================== --}}
     {{-- Core values of EduALL --}}
-    <section class="new-main-container my-12 md:my-20 relative z-10">
+    <section class="new-main-container my-5 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-center md:items-center gap-6 md:gap-10 about-grid">
-            <div class="w-full md:w-1/2 md:text-start text-center">
+            <div class="w-full text-center">
                 <p class="text-newprimary uppercase text-sm md:text-xl mb-3 md:mb-5" itemprop="description">
                     {{ __('pages/about_us/our_team.values_title') }}
                 </p>
@@ -526,21 +530,6 @@
                 <p class="text-gray-500 text-sm md:text-xl mb-3 md:mb-5" itemprop="description">
                     {{ __('pages/about_us/our_team.values_description') }}
                 </p>
-            </div>
-            <div class="w-full md:w-1/2 about-cards">
-                @foreach(__('pages/about_us/our_team.values') as $value)
-                <div
-                    class="flex items-center gap-3 md:gap-4 bg-gradient-to-b from-newprimary to-[#10153a] rounded-xl p-3 md:p-4 shadow-md mb-2">
-                    <div class="w-[85%]">
-                        <p class="text-sm md:text-base font-bold text-white mb-3">
-                            {{ $value['title'] }}
-                        </p>
-                        <p class="text-white/70 text-xs md:text-sm">
-                            {{ $value['description'] }}
-                        </p>
-                    </div>
-                </div>
-                @endforeach
             </div>
         </div>
     </section>
@@ -562,18 +551,18 @@
                 </p>
 
                 <div class="flex flex-col md:flex-row gap-5 max-w-5xl mx-auto mt-10">
-                    @foreach(__('pages/about_us/our_team.cta_items') as $cta)
-                    <div class="w-full md:w-1/3 md:px-0 px-5 mb-3">
-                        <a href="{{ route($cta['link'], ['locale' => app()->getLocale()]) }}"
-                            class="px-5 py-2 rounded-lg border-2 border-newprimary hover:bg-newprimary hover:text-white transition-all duration-300 block">
-                            {{ $cta['title'] }}
-                            <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </a>
+                    @foreach (__('pages/about_us/our_team.cta_items') as $cta)
+                        <div class="w-full md:w-1/3 md:px-0 px-5 mb-3">
+                            <a href="{{ route($cta['link'], ['locale' => app()->getLocale()]) }}"
+                                class="px-5 py-2 rounded-lg border-2 border-newprimary hover:bg-newprimary hover:text-white transition-all duration-300 block">
+                                {{ $cta['title'] }}
+                                <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
 
-                        <p class="text-dark/60 mt-5 text-center">
-                            {{ $cta['description'] }}
-                        </p>
-                    </div>
+                            <p class="text-dark/60 mt-5 text-center">
+                                {{ $cta['description'] }}
+                            </p>
+                        </div>
                     @endforeach
                 </div>
             </div>

@@ -36,7 +36,7 @@
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
                     <div class="flex md:justify-start justify-center">
-                        <p class="uppercase text-orange-400 mb-3 md:mb-5 text-sm md:text-base">
+                        <p class="uppercase text-blue-400 mb-3 md:mb-5 text-sm md:text-base">
                             {{ __('pages/partnership.banner.label', [], app()->getLocale()) }}
                         </p>
                     </div>
@@ -210,7 +210,8 @@
                 <div class="flex flex-wrap gap-4 md:gap-5">
                     @foreach (__('pages/partnership.school_partnership.features', [], app()->getLocale()) as $feature)
                         <div class="w-full md:w-[48%]">
-                            <div class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-8 md:py-10 h-full">
+                            <div
+                                class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-10 py-8 md:py-10 h-full">
                                 <p class="text-lg md:text-xl text-white font-semibold mb-3">
                                     {{ $feature['title'] }}
                                 </p>
@@ -234,9 +235,11 @@
 
             <div class="flex flex-col md:flex-row items-stretch gap-5 mb-20">
                 @foreach (__('pages/partnership.school_partnership.collaboration_categories', [], app()->getLocale()) as $category)
-                    <div class="w-full md:w-1/3">
-                        <div class="bg-gray-100/70 rounded-2xl border-l-2 border-r-2 border-gray-300 pt-5 pb-10 px-5">
-                            <p class="text-xl text-dark mb-3 font-semibold text-center">
+                    <div class="w-full md:w-1/3 group">
+                        <div
+                            class="bg-gray-100/70 group-hover:bg-newprimary rounded-2xl border-l-2 border-r-2 border-gray-300 pt-5 pb-10 px-5 transition-all ease-in-out duration-300">
+                            <p
+                                class="text-xl text-dark mb-3 font-semibold text-center group-hover:text-white transition-all ease-in-out duration-300">
                                 {{ $category['title'] }}
                             </p>
                         </div>
@@ -247,7 +250,7 @@
                             <hr class="my-3" />
                             <ul class="space-y-2">
                                 @foreach ($category['programs'] as $program)
-                                    <li class="flex items-start gap-3 cursor-pointer"
+                                    <li class="flex items-start gap-3 cursor-pointer hover:text-blue-500"
                                         data-modal-target="modal-cat{{ $loop->parent->index }}-prog{{ $loop->index }}"
                                         data-modal-toggle="modal-cat{{ $loop->parent->index }}-prog{{ $loop->index }}">
                                         <i class="fa-solid fa-circle-info text-newprimary mt-1"></i>
@@ -356,7 +359,7 @@
                     @foreach (__('pages/partnership.company_partnership.involvement_types', [], app()->getLocale()) as $type)
                         <div class="w-full md:w-[48%]">
                             <div
-                                class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-8 md:py-10 h-full">
+                                class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-10 py-8 md:py-10 h-full">
                                 <p class="text-lg md:text-xl text-white font-semibold mb-3">
                                     {{ $type['title'] }}
                                 </p>
@@ -391,7 +394,7 @@
         </div>
 
         <div class="new-main-container mb-10">
-            <section class="bg-newprimary rounded-2xl px-5 py-8 md:py-10">
+            <section class="bg-newprimary rounded-2xl px-10 py-8 md:py-10">
                 <p class="text-white text-base md:text-lg">
                     {{ __('pages/partnership.company_partnership.initiatives', [], app()->getLocale()) }}
                 </p>
@@ -444,7 +447,7 @@
                     @foreach (__('pages/partnership.community_partnership.impact_types', [], app()->getLocale()) as $type)
                         <div class="w-full md:w-1/3">
                             <div
-                                class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-5 py-8 md:py-10 h-full">
+                                class="bg-gradient-to-br from-newprimary to-black rounded-2xl shadow-md px-10 py-8 md:py-10 h-full">
                                 <p class="text-lg md:text-xl text-white font-semibold mb-3">
                                     {{ $type['title'] }}
                                 </p>
@@ -551,7 +554,8 @@
             <div class="max-w-5xl mx-auto mt-8 md:mt-10" id="gallery">
                 {{-- Filter Buttons --}}
                 <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8">
-                    <button class="filter-btn active bg-dark text-white px-4 md:px-6 py-1 md:py-2 rounded-full transition text-sm md:text-base"
+                    <button
+                        class="filter-btn active bg-dark text-white px-4 md:px-6 py-1 md:py-2 rounded-full transition text-sm md:text-base"
                         data-filter="all">
                         {{ __('pages/partnership.gallery.filters.all', [], app()->getLocale()) }}
                     </button>
@@ -610,13 +614,13 @@
                     </div>
                     <div data-item="company" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_1.webp') }}"
-                            alt="EduALL Corporate Partnership - Professional Training Session"
-                            loading="lazy" class="w-full h-40 md:h-64 object-cover rounded-xl">
+                            alt="EduALL Corporate Partnership - Professional Training Session" loading="lazy"
+                            class="w-full h-40 md:h-64 object-cover rounded-xl">
                     </div>
                     <div data-item="company" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_3.webp') }}"
-                            alt="EduALL Business Collaboration - Corporate Education Program"
-                            loading="lazy" class="w-full h-40 md:h-64 object-cover rounded-xl">
+                            alt="EduALL Business Collaboration - Corporate Education Program" loading="lazy"
+                            class="w-full h-40 md:h-64 object-cover rounded-xl">
                     </div>
                     <div data-item="company" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/company_partnership_image/company_image_4.webp') }}"
@@ -644,23 +648,23 @@
                     </div>
                     <div data-item="community" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_1.webp') }}"
-                            alt="EduALL Community Partnership - Social Impact Initiative"
-                            loading="lazy" class="w-full h-40 md:h-64 object-cover rounded-xl">
+                            alt="EduALL Community Partnership - Social Impact Initiative" loading="lazy"
+                            class="w-full h-40 md:h-64 object-cover rounded-xl">
                     </div>
                     <div data-item="community" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_3.webp') }}"
-                            alt="EduALL Community Development - Education Outreach Program"
-                            loading="lazy" class="w-full h-40 md:h-64 object-cover rounded-xl">
+                            alt="EduALL Community Development - Education Outreach Program" loading="lazy"
+                            class="w-full h-40 md:h-64 object-cover rounded-xl">
                     </div>
                     <div data-item="community" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_4.webp') }}"
-                            alt="EduALL Community Engagement - Social Responsibility Project"
-                            loading="lazy" class="w-full h-40 md:h-64 object-cover rounded-xl">
+                            alt="EduALL Community Engagement - Social Responsibility Project" loading="lazy"
+                            class="w-full h-40 md:h-64 object-cover rounded-xl">
                     </div>
                     <div data-item="community" class="gallery-item">
                         <img src="{{ asset('assets/img/about/partnership/ngo_partnership_image/ngo_image_2.webp') }}"
-                            alt="EduALL Community Support - Educational Assistance Program"
-                            loading="lazy" class="w-full h-40 md:h-64 object-cover rounded-xl">
+                            alt="EduALL Community Support - Educational Assistance Program" loading="lazy"
+                            class="w-full h-40 md:h-64 object-cover rounded-xl">
                     </div>
                 </div>
             </div>
@@ -703,7 +707,7 @@
     {{-- ==================== Contact Form Section ==================== --}}
     {{-- Partnership inquiry and contact form for potential partners --}}
     <section class="bg-newprimary py-10 md:py-20" id="cta">
-        <div class="new-main-container flex flex-col md:flex-row gap-8 md:gap-10 py-10 md:py-20 items-center">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-10 py-10 md:py-20 items-center">
             <div class="w-full md:w-1/2">
                 <h2 class="text-white text-3xl md:text-5xl font-semibold mb-5 uppercase">
                     {{ __('pages/partnership.contact_form.title', [], app()->getLocale()) }}
@@ -732,7 +736,7 @@
                                     <label for="primary_name"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.fullname', [], app()->getLocale()) }}</label>
                                     <input type="text" name="fullname"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                         placeholder="{{ __('pages/partnership.contact_form.fields.fullname', [], app()->getLocale()) }}"
                                         id="primary_name" required oninput="checkValidation('primary_name')">
                                     <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -745,7 +749,7 @@
                                         {{ __('pages/partnership.contact_form.fields.company_name', [], app()->getLocale()) }}
                                     </label>
                                     <input type="text" name="company_name"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                         placeholder="{{ __('pages/partnership.contact_form.fields.company_name', [], app()->getLocale()) }} *"
                                         id="company_name" required oninput="checkValidation('company_name')">
                                     <div id="company_name_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -759,7 +763,7 @@
                                     <label for="position"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.position', [], app()->getLocale()) }}</label>
                                     <input type="text" name="position"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                         placeholder="{{ __('pages/partnership.contact_form.fields.position', [], app()->getLocale()) }}"
                                         id="position" required oninput="checkValidation('position')">
                                     <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -771,7 +775,7 @@
                                     <label for="email"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.email', [], app()->getLocale()) }}</label>
                                     <input type="email" name="email"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                         placeholder="you@gmail.com" id="email" required
                                         oninput="checkValidation('email')">
                                     <div id="email_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -785,7 +789,7 @@
                                     <label for="phone_number"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.phone_number', [], app()->getLocale()) }}</label>
                                     <input type="text" name="phone_number"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                         placeholder="+62 ..." id="phone_number" required
                                         oninput="checkValidation('phone_number')">
                                     <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -798,7 +802,7 @@
                                     <label for="partnership_type"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.partnership_type', [], app()->getLocale()) }}</label>
                                     <select name="partnership_type"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                         id="partnership_type" required oninput="checkValidation('partnership_type')">
                                         @foreach (__('pages/partnership.contact_form.partnership_types', [], app()->getLocale()) as $value => $label)
                                             <option value="{{ $value }}">{{ $label }}</option>
@@ -813,9 +817,9 @@
                             <div class="mb-3">
                                 <label for="inquiry"
                                     class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.inquiry', [], app()->getLocale()) }}</label>
-                                <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 md:py-4 my-1 w-full text-sm md:text-base"
+                                <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
                                     placeholder="{{ __('pages/partnership.contact_form.fields.inquiry', [], app()->getLocale()) }} *" id="inquiry"
-                                    name="inquiry" rows="4" required oninput="checkValidation('inquiry')"></textarea>
+                                    name="inquiry" rows="2" required oninput="checkValidation('inquiry')"></textarea>
                                 <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden"></div>
                                 @error('inquiry')
                                     <div class="text-red text-[10px] mt-1">{{ $message }}</div>

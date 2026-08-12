@@ -107,7 +107,7 @@ return [
     // How It Works Section
     'how_it_works' => [
         'title' => 'How the Ultimate Mentoring Program Works',
-        'description' => "University admissions are built over time. Here's how we help students discover their strengths, build meaningful experiences, and prepare competitive uni applications",
+        'description' => "From discovering your strengths to submitting your applications, here's how we guide students through every stage of the university admissions process.",
         'phases' => [
             [
                 'phase' => 'PHASE 1',
@@ -145,7 +145,7 @@ return [
             [
                 'phase' => 'PHASE 2',
                 'title' => 'University Strategy & Planning',
-                'description' => 'With a strong foundation of experiences and achievements in place, students translate their profile into a focused university admissions strategy. We identify the best academic pathways, target universities, and application plans aligned with each student\'s goals and strengths.',
+                'description' => 'Once students have built a strong profile, we help them develop a personalized university admissions strategy by identifying the right academic pathways, target universities, and application plan.',
                 'items' => [
                     [
                         'title' => 'Personalized Roadmap',
@@ -168,7 +168,7 @@ return [
             [
                 'phase' => 'PHASE 3',
                 'title' => 'University Application',
-                'description' => 'Navigating the complex application process and executing a targeted strategy to secure university acceptances and merit-based scholarships.',
+                'description' => 'With every strategy in place, students complete their university applications with expert guidance, maximizing their opportunities for admission and merit-based scholarships.',
                 'items' => [
                     [
                         'title' => 'University Application Strategy',
@@ -206,23 +206,23 @@ return [
     // EduALL Framework Section
     'framework' => [
         'title' => 'The EduALL Framework',
-        'description' => 'From discovering your interests to securing university offers, our proven mentorship approach helps students build the experiences and skills. See how we transform your unique potential into a standout, world-class application.',
+        'description' => 'From discovering students\' interests to securing university offers, the EduALL Framework guides every stage of the admissions journey, helping students build a strong profile and submit competitive university applications.',
         'items' => [
             [
                 'title' => 'Interest & Career Exploration',
-                'description' => 'Discover your true passions through hands-on learning experiences and direct exposure to diverse professional fields.',
+                'description' => 'Discover your true passions through hands-on learning experiences and direct exposure to diverse professional fields, backed by over 8 years of mentorship expertise.',
             ],
             [
                 'title' => 'Profile Building',
-                'description' => 'Turn your strengths into impactful initiatives and real-world achievements, creating an authentic profile suitable for top universities admissions.',
+                'description' => 'Turn your strengths into impactful initiatives and achievements through EduALL exclusive opportunities, including student clubs, global project showcases, professional networks, and media exposure.',
             ],
             [
                 'title' => 'Personal Statement & Essays',
-                'description' => 'Craft compelling personal statements and essays that highlight unique qualities, authentic voice, and future contributions.',
+                'description' => 'Craft compelling personal statements and essays with guidance from former admissions officers and experienced essay editors.',
             ],
             [
                 'title' => 'University Application Strategy',
-                'description' => "Execute a personalized admissions strategy that aligns your strengths with the standards of the world's most competitive universities.",
+                'description' => "Execute a personalized admissions strategy with dedicated guidance from EduALL's student management team throughout every stage of the application journey.",
             ],
         ],
     ],
@@ -255,19 +255,19 @@ return [
         'items' => [
             [
                 'question' => 'When is the best time to start the mentoring program?',
-                'answer' => 'While we recommend starting as early as Grade 9 or 10 for comprehensive profile building, we tailor our programs to fit students at any stage, including Grade 11 and 12 intensive preparation.',
+                'answer' => 'We recommend starting as early as Grade 9 or 10 to give students more time to prepare and build a strong profile. However, our programs are designed to support students at every stage, including those starting in Grade 11 or 12.',
             ],
             [
-                'question' => 'Is this program only for students applying to the US or UK?',
-                'answer' => 'Not at all! Our mentors have expertise in guiding applications to top universities across the globe, including Europe, Asia, Australia, and Canada.',
+                'question' => 'Is this program only for students applying to universities in the US or UK?',
+                'answer' => 'Not at all. EduALL supports students applying to top universities around the world, including the US, UK, Europe, Australia, Canada, and Asia.',
             ],
             [
                 'question' => 'How often will I meet with my mentor?',
-                'answer' => 'Meeting frequencies are highly personalized based on your current program phase and upcoming application deadlines to ensure you always stay on track.',
+                'answer' => 'Your mentoring schedule depends on your program, application timeline, and individual needs. This ensures you receive the right level of guidance at every stage of your university admissions journey.',
             ],
             [
-                'question' => 'Do you guarantee university acceptance?',
-                'answer' => 'While no ethical university admissions consultant can guarantee admission, our rigorous preparation, strategic profile building, and personalized personal statement guidance significantly maximize your competitive edge at top universities worldwide.',
+                'question' => 'Does EduALL guarantee university acceptance?',
+                'answer' => 'No. University admissions decisions are made solely by each institution. However, EduALL helps students prepare and put forward their strongest applications, giving them the best opportunity to gain admission to universities that are the right fit for them.',
             ],
         ],
         'contact_title' => 'You have different questions?',
