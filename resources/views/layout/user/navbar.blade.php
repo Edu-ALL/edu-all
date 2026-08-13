@@ -67,10 +67,10 @@
                         class="flex-col md:flex-row whitespace-nowrap justify-start gap-1 hidden md:w-auto md:flex md:visible md:relative md:gap-1 transition-all">
                         @foreach (__('pages/navbar') as $itemKey => $item)
                             <li
-                                class="navbar-item relative group rounded-full font-light programs-menu transition-all duration-100 ease-in-out hover:underline pr-5">
+                                class="navbar-item relative group rounded-full font-light programs-menu transition-all duration-100 ease-in-out pr-5">
                                 <div class="flex items-center gap-2">
                                     <a href={{ $item['link'] == '#' ? '#' : url(app()->getLocale() . '/' . $item['link']) }}
-                                        class="text-white text-base py-2 block text-[14px] transition-colors duration-500 navbar-link">
+                                        class="text-white text-base py-2 block text-[14px] transition-colors duration-500 navbar-link hover:underline">
                                         {{ $item['title'] }}
                                     </a>
                                     @if (isset($item['submenu']))
@@ -84,7 +84,7 @@
                                     <ul
                                         class="dropdown-menu programs-menu absolute left-1/2 transform -translate-x-1/2 md:top-full hidden md:flex-col z-10">
                                         <div
-                                            class="flex-col items-center justify-center mb-2 bg-newprimary rounded-lg shadow-lg text-white gap-1">
+                                            class="flex-col items-center justify-center mb-2 bg-newprimary relative overflow-hidden rounded-lg shadow-lg text-white gap-1">
                                             @foreach ($item['submenu'] as $submenu)
                                                 <li
                                                     class="hover:bg-white/80 text-white hover:text-newprimary w-full text-[14px] {{ url(app()->getLocale() . '/' . $submenu['link']) == URL::current() ? 'bg-newprimary active-sub-navbar border-[#727272] border' : '' }}">
@@ -294,10 +294,10 @@
 
         if (scrollTop > threshold) {
             $('#top-navbar').addClass('shadow-xl');
-            $('#navbar-top-bar').addClass('bg-newprimary/90 shadow-xl').addClass('hidden');
+            $('#navbar-top-bar').addClass('bg-newprimary shadow-xl').addClass('hidden');
             $('#navbar-cta').removeClass('bg-white text-black').addClass('bg-white/10 text-white');
             $('#navbar-divider').removeClass('border-white').addClass('border-white/30');
-            $('#navbar-nav').addClass('bg-newprimary/90');
+            $('#navbar-nav').addClass('bg-newprimary');
             $('#navbar-socials').removeClass('text-white').addClass('text-white').addClass('hidden');
             $('.navbar-link').removeClass('text-white').addClass('text-white');
             $('.navbar-icon').removeClass('text-white').addClass('text-white');
@@ -307,10 +307,10 @@
             $('#second-navbar-cta').removeClass('hidden');
         } else {
             $('#top-navbar').removeClass('shadow-xl');
-            $('#navbar-top-bar').removeClass('bg-newprimary/90 shadow-xl').removeClass('hidden');
+            $('#navbar-top-bar').removeClass('bg-newprimary shadow-xl').removeClass('hidden');
             $('#navbar-cta').removeClass('bg-white/10 text-white').addClass('bg-white text-black');
             $('#navbar-divider').removeClass('border-white/30').addClass('border-white');
-            $('#navbar-nav').removeClass('bg-newprimary/90');
+            $('#navbar-nav').removeClass('bg-newprimary');
             $('#navbar-socials').removeClass('text-white').addClass('text-white').removeClass('hidden');
             $('.navbar-link').removeClass('text-white').addClass('text-white');
             $('.navbar-icon').removeClass('text-white').addClass('text-white');

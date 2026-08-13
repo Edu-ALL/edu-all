@@ -151,41 +151,79 @@
             <div class="max-w-5xl mx-auto">
                 <div class="flex flex-col md:flex-row items-center gap-6 md:gap-6">
                     @foreach (__('pages/mentoring/ultimate.admissions_process.cards') as $index => $card)
-                        <div class="w-full md:w-1/3 flex items-center">
-                                <div
-                                    class="card group relative w-full rounded-2xl bg-white hover:bg-newprimary shadow-xl transition-all duration-300 hover:shadow-2xl overflow-hidden">
+                        <div class="w-full md:w-1/3 flex items-center admission-card {{ $index === 0 ? 'active' : '' }}">
+                            <div
+                                class="card relative w-full rounded-2xl bg-white shadow-xl transition-all duration-300 overflow-hidden">
 
-                                    <div class="relative pt-5 px-5">
-                                        <h3
-                                            class="title text-4xl font-light transition-all duration-300 ease-in-out group-hover:text-3xl group-hover:text-white">
-                                            {!! $card['title'] !!}
-                                        </h3>
-
-                                        <div
-                                            class="number absolute top-5 right-5 rounded-md bg-newprimary p-2 text-2xl text-white transition-all duration-300 ease-in-out group-hover:bg-white group-hover:text-newprimary group-hover:text-xl">
-                                            {{ $index + 1 }}
-                                        </div>
-                                    </div>
+                                <div class="relative pt-5 px-5">
+                                    <h3
+                                        class="title text-4xl font-light transition-all duration-300 ease-in-out">
+                                        {!! $card['title'] !!}
+                                    </h3>
 
                                     <div
-                                        class="content mt-5 max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-[500px] group-hover:opacity-100 text-white">
-                                        <p class="mb-4 px-5 pb-5 font-light text-gray-300">
-                                            {{ $card['description'] }}
-                                        </p>
-
-                                        <img src="{{ asset('assets/img/mentoring/ultimate/' . ['6. IC_The Admission Process.png', '7. Readiness Assetment.png', '8. Aptitude Test_The Admission Process.png'][$index]) }}"
-                                            alt="{{ $card['title'] }}"
-                                            title="{{ $card['title'] }}" loading="lazy" decoding="async" width="400" height="200"
-                                            class="h-[200px] w-full object-cover object-center opacity-60">
+                                        class="number absolute top-5 right-5 rounded-md bg-newprimary p-2 text-2xl text-white transition-all duration-300 ease-in-out">
+                                        {{ $index + 1 }}
                                     </div>
                                 </div>
+
+                                <div
+                                    class="content mt-5 max-h-0 overflow-hidden opacity-0 transition-all duration-500 text-white">
+                                    <p class="mb-4 px-5 pb-5 font-light text-gray-300">
+                                        {{ $card['description'] }}
+                                    </p>
+
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/' . ['6. IC_The Admission Process.png', '7. Readiness Assetment.png', '8. Aptitude Test_The Admission Process.png'][$index]) }}"
+                                        alt="{{ $card['title'] }}"
+                                        title="{{ $card['title'] }}" loading="lazy" decoding="async" width="400" height="200"
+                                        class="h-[200px] w-full object-cover object-center opacity-60">
+                                </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+
+    {{-- ==================== Admissions Process Styles ==================== --}}
+    <style>
+        .admission-card .card {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+        .admission-card .title {
+            color: #191265;
+            font-size: 2.25rem;
+        }
+        .admission-card .number {
+            background-color: #191265;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+        .admission-card .content {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .admission-card.active .card {
+            background-color: #191265;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+        .admission-card.active .title {
+            color: #ffffff;
+            font-size: 1.875rem;
+        }
+        .admission-card.active .number {
+            background-color: #ffffff;
+            color: #191265;
+            font-size: 1.25rem;
+        }
+        .admission-card.active .content {
+            max-height: 500px;
+            opacity: 1;
+        }
+    </style>
 
     {{-- ==================== How It Works Section ==================== --}}
     <section class="new-main-container py-10 md:py-20 relative">
@@ -743,57 +781,20 @@
 {{-- ========================================== SCRIPTS ========================================== --}}
 @push('script')
     <script>
-        {{-- Admissions Process Card Hover --}}
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card');
+        {{-- Admissions Process Cards Hover --}}
+        document.addEventListener("DOMContentLoaded", () => {
+            const admissionCards = document.querySelectorAll(".admission-card");
 
-            function openCard(card) {
-                // Tutup semua card
-                cards.forEach(c => {
-                    c.style.backgroundColor = "#fff";
-
-                    c.querySelector(".title").style.color = "";
-                    c.querySelector(".title").style.fontSize = "";
-
-                    const number = c.querySelector(".number");
-                    number.style.backgroundColor = "";
-                    number.style.color = "";
-
-                    const content = c.querySelector(".content");
-                    content.style.maxHeight = "0";
-                    content.style.opacity = "0";
-                });
-
-                // Buka card aktif
-                card.style.backgroundColor = "#1E3A8A"; // ganti dengan warna newprimary
-
-                const title = card.querySelector(".title");
-                title.style.color = "#fff";
-                title.style.fontSize = "1.875rem"; // text-3xl
-
-                const number = card.querySelector(".number");
-                number.style.backgroundColor = "#fff";
-                number.style.color = "#1E3A8A";
-
-                const content = card.querySelector(".content");
-                content.style.maxHeight = "500px";
-                content.style.opacity = "1";
-            }
-
-            // Default buka card pertama
-            openCard(cards[0]);
-
-            // Hover membuka card
-            cards.forEach(card => {
+            admissionCards.forEach(card => {
                 card.addEventListener("mouseenter", () => {
-                    openCard(card);
+                    admissionCards.forEach(c => c.classList.remove("active"));
+                    card.classList.add("active");
                 });
             });
         });
     </script>
 
     <script>
-        {{-- How It Works Phase Accordion --}}
         document.addEventListener("DOMContentLoaded", () => {
 
             const items = document.querySelectorAll(".phase-item");
@@ -836,7 +837,6 @@
     </script>
 
     <script>
-        {{-- FAQ Accordion --}}
         // ==================== Accordion Functionality ====================
         document.querySelectorAll(".accordion-group").forEach(group => {
             const buttons = group.querySelectorAll(".accordion-btn");
