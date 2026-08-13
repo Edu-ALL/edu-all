@@ -781,7 +781,6 @@
 {{-- ========================================== SCRIPTS ========================================== --}}
 @push('script')
     <script>
-        {{-- Admissions Process Cards Hover --}}
         document.addEventListener("DOMContentLoaded", () => {
             const admissionCards = document.querySelectorAll(".admission-card");
 
