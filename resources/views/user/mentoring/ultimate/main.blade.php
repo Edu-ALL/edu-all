@@ -12,11 +12,55 @@
     {{-- Page Title and Meta Tags --}}
     <title>{{ __('pages/mentoring/ultimate.meta_title') }}</title>
     <meta name="title" content="{{ __('pages/mentoring/ultimate.meta_title') }}" />
-    <meta name="description"
-        content="{{ __('pages/mentoring/ultimate.meta_description') }}" />
-    <meta name="keywords"
-        content="{{ __('pages/mentoring/ultimate.meta_keywords') }}" />
+    <meta name="description" content="{{ __('pages/mentoring/ultimate.meta_description') }}" />
+    <meta name="keywords" content="{{ __('pages/mentoring/ultimate.meta_keywords') }}" />
 @endsection
+
+@push('style')
+    <style>
+        .admission-card .card {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .admission-card .title {
+            color: #191265;
+            font-size: 2.25rem;
+        }
+
+        .admission-card .number {
+            background-color: #191265;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        .admission-card .content {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .admission-card.active .card {
+            background-color: #191265;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+
+        .admission-card.active .title {
+            color: #ffffff;
+            font-size: 1.875rem;
+        }
+
+        .admission-card.active .number {
+            background-color: #ffffff;
+            color: #191265;
+            font-size: 1.25rem;
+        }
+
+        .admission-card.active .content {
+            max-height: 500px;
+            opacity: 1;
+        }
+    </style>
+@endpush
 
 {{-- ========================================== MAIN CONTENT ========================================== --}}
 @section('content')
@@ -27,7 +71,8 @@
                 <img src="{{ asset('assets/img/mentoring/ultimate/1. Hero Section.webp') }}"
                     alt="{{ __('pages/mentoring/ultimate.banner.title') }}"
                     title="{{ __('pages/mentoring/ultimate.banner.title') }}" fetchpriority="high" decoding="async"
-                    width="1920" height="1080" class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-bottom object-left">
+                    width="1920" height="1080"
+                    class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-bottom object-left">
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
@@ -50,9 +95,9 @@
 
     {{-- ==================== Score and Benefits Section ==================== --}}
     <section class="relative overflow-hidden">
-        <img src="{{ asset('assets/img/mentoring/ultimate/1. Achieve Ultimate Gedung (1).webp') }}" alt="EduALL Ultimate Mentoring Building"
-            title="EduALL Ultimate Mentoring Building" loading="lazy" decoding="async" width="1920" height="1080"
-            class="absolute top-0 left-0 w-full h-auto">
+        <img src="{{ asset('assets/img/mentoring/ultimate/1. Achieve Ultimate Gedung (1).webp') }}"
+            alt="EduALL Ultimate Mentoring Building" title="EduALL Ultimate Mentoring Building" loading="lazy"
+            decoding="async" width="1920" height="1080" class="absolute top-0 left-0 w-full h-auto">
 
         {{-- ==================== Our Score Section ==================== --}}
         <section class="pt-6 md:pt-10 new-main-container md:px-0 pb-[1rem] md:pb-[3rem] relative z-10">
@@ -74,7 +119,8 @@
             <div class="bg-gradient-to-br from-newprimary to-dark text-white p-5 rounded-2xl shadow-xl">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5">
                     @foreach (__('pages/mentoring/ultimate.benefits') as $benefit)
-                        <div class="md:flex md:items-center w-full md:w-1/4 text-base md:text-xl h-full px-4 md:px-10 text-center {{ !$loop->last ? 'md:border-r border-white/30 md:pb-0 pb-4' : '' }}">
+                        <div
+                            class="md:flex md:items-center w-full md:w-1/4 text-base md:text-xl h-full px-4 md:px-10 text-center {{ !$loop->last ? 'md:border-r border-white/30 md:pb-0 pb-4' : '' }}">
                             {!! $benefit !!}
                         </div>
                     @endforeach
@@ -93,13 +139,13 @@
                 </h3>
 
                 <div class="relative w-full flex justify-center">
-                    <img src="{{ asset('assets/img/mentoring/ultimate/2. Achieve Ultimate Katyana.png') }}" alt="Ultimate Mentoring Student Success"
-                        title="Ultimate Mentoring Student Success" loading="lazy" decoding="async"
-                        class="w-[450px]">
+                    <img src="{{ asset('assets/img/mentoring/ultimate/2. Achieve Ultimate Katyana.png') }}"
+                        alt="Ultimate Mentoring Student Success" title="Ultimate Mentoring Student Success" loading="lazy"
+                        decoding="async" class="w-[450px]">
                 </div>
             </div>
-            <div class="max-w-6xl mx-auto -mt-10 md:-mt-[150px] px-4">
-                <p class="text-gray-500 text-base md:text-xl text-center">
+            <div class="max-w-6xl mx-auto -mt-10 md:-mt-[170px] px-4">
+                <p class="text-gray-500 text-base md:text-lg text-center">
                     {{ __('pages/mentoring/ultimate.about.description') }}
                 </p>
             </div>
@@ -111,23 +157,24 @@
         <div class="bg-[#E9F0F9] rounded-2xl shadow-xl">
             <div class="flex flex-col md:flex-row items-start">
                 <div class="w-full md:w-[30%] p-6 md:p-10">
-                    <h2 class="text-xl md:text-6xl leading-[3rem] font-normal text-newprimary uppercase text-center md:text-left md:mb-20">
+                    <h2
+                        class="text-xl md:text-6xl leading-[3rem] font-normal text-newprimary uppercase text-center md:text-left md:mb-10">
                         {{ __('pages/mentoring/ultimate.what_you_will_get.title') }}
                     </h2>
 
-                    <img src="{{ asset('assets/img/mentoring/ultimate/3. Isna_What You Will Get.png') }}" alt="What You Will Get from Ultimate Mentoring"
-                        title="What You Will Get from Ultimate Mentoring" loading="lazy" decoding="async" width="600" height="800"
-                        class="w-full mt-5 rounded-xl">
+                    <img src="{{ asset('assets/img/mentoring/ultimate/3. Isna_What You Will Get.png') }}"
+                        alt="What You Will Get from Ultimate Mentoring" title="What You Will Get from Ultimate Mentoring"
+                        loading="lazy" decoding="async" width="600" height="800" class="w-full mt-5 rounded-xl">
                 </div>
                 <div class="w-full md:w-[70%] p-6 md:p-10 space-y-5">
                     @foreach (__('pages/mentoring/ultimate.what_you_will_get.items') as $index => $item)
                         <div class="flex items-start gap-3 md:gap-5">
-                            <div class="text-4xl md:text-6xl font-light text-newprimary w-[5%]">{{ $index + 1 }}</div>
+                            <div class="text-4xl md:text-5xl font-light text-newprimary w-[5%] -mt-[5px]">{{ $index + 1 }}</div>
                             <div class="w-[95%]">
-                                <h3 class="mb-1 text-lg md:text-2xl font-normal text-newprimary">
+                                <h3 class="mb-1 text-lg md:text-xl font-normal text-newprimary">
                                     {{ $item['title'] }}
                                 </h3>
-                                <p class="text-sm md:text-base font-light">
+                                <p class="text-sm md:text-[1rem] font-light">
                                     {{ $item['description'] }}
                                 </p>
                             </div>
@@ -140,9 +187,9 @@
 
     {{-- ==================== Admissions Process Section ==================== --}}
     <section class="new-main-container py-10 md:py-20 relative">
-        <img src="{{ asset('assets/img/mentoring/ultimate/5. Background The Admission Process.png') }}" alt="University Admissions Process Background"
-            title="University Admissions Process Background" loading="lazy" decoding="async" width="1920" height="1080"
-            class="absolute top-0 left-0 w-full h-auto">
+        <img src="{{ asset('assets/img/mentoring/ultimate/5. Background The Admission Process.png') }}"
+            alt="University Admissions Process Background" title="University Admissions Process Background" loading="lazy"
+            decoding="async" width="1920" height="1080" class="absolute top-0 left-0 w-full h-auto">
         <div class="w-full mx-auto px-4">
             <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-6 md:mb-10">
                 {{ __('pages/mentoring/ultimate.admissions_process.title') }}
@@ -156,8 +203,7 @@
                                 class="card relative w-full rounded-2xl bg-white shadow-xl transition-all duration-300 overflow-hidden">
 
                                 <div class="relative pt-5 px-5">
-                                    <h3
-                                        class="title text-4xl font-light transition-all duration-300 ease-in-out">
+                                    <h3 class="title text-4xl font-light transition-all duration-300 ease-in-out">
                                         {!! $card['title'] !!}
                                     </h3>
 
@@ -174,8 +220,8 @@
                                     </p>
 
                                     <img src="{{ asset('assets/img/mentoring/ultimate/' . ['6. IC_The Admission Process.png', '7. Readiness Assetment.png', '8. Aptitude Test_The Admission Process.png'][$index]) }}"
-                                        alt="{{ $card['title'] }}"
-                                        title="{{ $card['title'] }}" loading="lazy" decoding="async" width="400" height="200"
+                                        alt="{{ $card['title'] }}" title="{{ $card['title'] }}" loading="lazy"
+                                        decoding="async" width="400" height="200"
                                         class="h-[200px] w-full object-cover object-center opacity-60">
                                 </div>
                             </div>
@@ -185,45 +231,6 @@
             </div>
         </div>
     </section>
-
-    {{-- ==================== Admissions Process Styles ==================== --}}
-    <style>
-        .admission-card .card {
-            background-color: #ffffff;
-            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-        }
-        .admission-card .title {
-            color: #191265;
-            font-size: 2.25rem;
-        }
-        .admission-card .number {
-            background-color: #191265;
-            color: #ffffff;
-            font-size: 1.5rem;
-        }
-        .admission-card .content {
-            max-height: 0;
-            opacity: 0;
-        }
-
-        .admission-card.active .card {
-            background-color: #191265;
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        }
-        .admission-card.active .title {
-            color: #ffffff;
-            font-size: 1.875rem;
-        }
-        .admission-card.active .number {
-            background-color: #ffffff;
-            color: #191265;
-            font-size: 1.25rem;
-        }
-        .admission-card.active .content {
-            max-height: 500px;
-            opacity: 1;
-        }
-    </style>
 
     {{-- ==================== How It Works Section ==================== --}}
     <section class="new-main-container py-10 md:py-20 relative">
@@ -245,7 +252,9 @@
                         {{-- Phase 1  --}}
                         <div class="flex gap-3 md:gap-5 items-stretch relative">
                             <div class="w-[10%] md:w-[5%]">
-                                <div class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0"></div>
+                                <div
+                                    class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0">
+                                </div>
                                 <button
                                     class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
                                     <i class="fa-regular fa-compass text-white text-sm md:text-base"></i>
@@ -263,8 +272,9 @@
                                             {{ $phases[0]['title'] }}
                                         </div>
                                     </div>
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/17. Phase 1_Closed.png') }}" alt="{{ $phases[0]['title'] }}"
-                                        title="{{ $phases[0]['title'] }}" loading="lazy" decoding="async" width="300" height="80"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/17. Phase 1_Closed.png') }}"
+                                        alt="{{ $phases[0]['title'] }}" title="{{ $phases[0]['title'] }}"
+                                        loading="lazy" decoding="async" width="300" height="80"
                                         class="w-[30%] object-cover h-[60px] md:h-[80px] object-center hidden md:block">
                                 </div>
 
@@ -273,7 +283,8 @@
                                     <div class="flex flex-col md:flex-row">
                                         <div class="w-full md:w-[70%] p-4 md:p-5">
                                             <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
-                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
+                                                <div
+                                                    class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[0]['phase'] }}
                                                 </div>
                                                 <div class="text-gray-300 text-base md:text-xl">
@@ -289,7 +300,8 @@
                                                 {{ $phases[0]['note'] }}
                                             </p>
 
-                                            <a href="{{ route('epb', ['locale' => app()->getLocale()]) }}" class="bg-white rounded-full py-2 px-4 md:px-5 shadow-md text-sm md:text-base">
+                                            <a href="{{ route('epb', ['locale' => app()->getLocale()]) }}"
+                                                class="bg-white rounded-full py-2 px-4 md:px-5 shadow-md text-sm md:text-base">
                                                 {{ $phases[0]['cta'] }}
                                             </a>
 
@@ -300,14 +312,16 @@
                                                             <i class="fa-regular fa-circle-check text-base md:text-lg"></i>
                                                         </div>
                                                         <div>
-                                                            <h4 class="text-base md:text-lg font-normal text-white">{{ $item['title'] }}</h4>
+                                                            <h4 class="text-base md:text-lg font-normal text-white">
+                                                                {{ $item['title'] }}</h4>
                                                         </div>
                                                     </li>
                                                 @endforeach
                                             </ul>
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/16. Phase 1_foto.png') }}"
-                                            alt="{{ $phases[0]['title'] }}" title="{{ $phases[0]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
+                                            alt="{{ $phases[0]['title'] }}" title="{{ $phases[0]['title'] }}"
+                                            loading="lazy" decoding="async" width="300" height="400"
                                             class="w-full md:w-[30%] h-[200px] md:h-auto object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
@@ -317,7 +331,9 @@
                         {{-- Phase 2  --}}
                         <div class="flex gap-3 md:gap-5 items-stretch relative">
                             <div class="w-[10%] md:w-[5%]">
-                                <div class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0"></div>
+                                <div
+                                    class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0">
+                                </div>
                                 <button
                                     class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
                                     <i class="fa-solid fa-puzzle-piece text-white text-sm md:text-base"></i>
@@ -334,17 +350,19 @@
                                             {{ $phases[1]['title'] }}
                                         </div>
                                     </div>
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/18. Phase 2_closed.png') }}" alt="{{ $phases[1]['title'] }}"
-                                        title="{{ $phases[1]['title'] }}" loading="lazy" decoding="async" width="300" height="70"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/18. Phase 2_closed.png') }}"
+                                        alt="{{ $phases[1]['title'] }}" title="{{ $phases[1]['title'] }}"
+                                        loading="lazy" decoding="async" width="300" height="70"
                                         class="w-[30%] object-cover h-[60px] md:h-[70px] object-center hidden md:block">
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-t-2xl relative z-0">
-                                    <div class="flex flex-col md:flex-row md:h-[50vh]">
+                                    <div class="flex flex-col md:flex-row md:h-[55dvh]">
                                         <div class="w-full md:w-[70%] p-4 md:p-5">
                                             <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
-                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
+                                                <div
+                                                    class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[1]['phase'] }}
                                                 </div>
                                                 <div class="text-gray-300 text-base md:text-xl">
@@ -363,14 +381,16 @@
                                                             <i class="fa-regular fa-circle-check text-base md:text-lg"></i>
                                                         </div>
                                                         <div>
-                                                            <h4 class="text-base md:text-lg font-normal text-white">{{ $item['title'] }}</h4>
+                                                            <h4 class="text-base md:text-lg font-normal text-white">
+                                                                {{ $item['title'] }}</h4>
                                                         </div>
                                                     </li>
                                                 @endforeach
                                             </ul>
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/14. Phase 2_foto.png') }}"
-                                            alt="{{ $phases[1]['title'] }}" title="{{ $phases[1]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
+                                            alt="{{ $phases[1]['title'] }}" title="{{ $phases[1]['title'] }}"
+                                            loading="lazy" decoding="async" width="300" height="400"
                                             class="w-full md:w-[30%] h-full object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
@@ -380,7 +400,9 @@
                         {{-- Phase 3  --}}
                         <div class="flex gap-3 md:gap-5 items-stretch relative">
                             <div class="w-[10%] md:w-[5%]">
-                                <div class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0"></div>
+                                <div
+                                    class="absolute top-0 left-[20px] md:left-[25px] border border-l border-gray-500 h-full z-0">
+                                </div>
                                 <button
                                     class="bg-dark text-white w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center rounded-full relative z-10">
                                     <i class="fa-solid fa-file-pen text-white text-sm md:text-base"></i>
@@ -397,17 +419,19 @@
                                             {{ $phases[2]['title'] }}
                                         </div>
                                     </div>
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/19. Phase 3_Closed.png') }}" alt="{{ $phases[2]['title'] }}"
-                                        title="{{ $phases[2]['title'] }}" loading="lazy" decoding="async" width="300" height="70"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/19. Phase 3_Closed.png') }}"
+                                        alt="{{ $phases[2]['title'] }}" title="{{ $phases[2]['title'] }}"
+                                        loading="lazy" decoding="async" width="300" height="70"
                                         class="w-[30%] object-cover h-[60px] md:h-[70px] object-center hidden md:block">
                                 </div>
 
                                 <div
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-newprimary rounded-t-2xl relative z-0">
-                                    <div class="flex flex-col md:flex-row md:h-[50vh]">
+                                    <div class="flex flex-col md:flex-row md:h-[55dvh]">
                                         <div class="w-full md:w-[70%] p-4 md:p-5">
                                             <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
-                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
+                                                <div
+                                                    class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[2]['phase'] }}
                                                 </div>
                                                 <div class="text-gray-300 text-base md:text-xl">
@@ -426,14 +450,16 @@
                                                             <i class="fa-regular fa-circle-check text-base md:text-lg"></i>
                                                         </div>
                                                         <div>
-                                                            <h4 class="text-base md:text-lg font-normal text-white">{{ $item['title'] }}</h4>
+                                                            <h4 class="text-base md:text-lg font-normal text-white">
+                                                                {{ $item['title'] }}</h4>
                                                         </div>
                                                     </li>
                                                 @endforeach
                                             </ul>
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/12. Phase 3_foto.png') }}"
-                                            alt="{{ $phases[2]['title'] }}" title="{{ $phases[2]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
+                                            alt="{{ $phases[2]['title'] }}" title="{{ $phases[2]['title'] }}"
+                                            loading="lazy" decoding="async" width="300" height="400"
                                             class="w-full md:w-[30%] h-[200px] md:h-auto object-cover opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
@@ -459,8 +485,9 @@
                                             {{ $phases[3]['title'] }}
                                         </div>
                                     </div>
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/20. Phase 4_Closed.png') }}" alt="{{ $phases[3]['title'] }}"
-                                        title="{{ $phases[3]['title'] }}" loading="lazy" decoding="async" width="300" height="70"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/20. Phase 4_Closed.png') }}"
+                                        alt="{{ $phases[3]['title'] }}" title="{{ $phases[3]['title'] }}"
+                                        loading="lazy" decoding="async" width="300" height="70"
                                         class="w-[30%] object-cover h-[60px] md:h-[70px] object-center hidden md:block">
                                 </div>
 
@@ -469,7 +496,8 @@
                                     <div class="flex flex-col md:flex-row md:h-[20vh]">
                                         <div class="w-full md:w-[70%] p-4 md:p-5">
                                             <div class="flex flex-col md:flex-row gap-4 md:gap-10 mb-5">
-                                                <div class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
+                                                <div
+                                                    class="w-full md:w-40 font-bold text-white text-base md:text-xl border-r-0 md:border-r-2 border-gray-300">
                                                     {{ $phases[3]['phase'] }}
                                                 </div>
                                                 <div class="text-gray-300 text-base md:text-xl">
@@ -482,7 +510,8 @@
                                             </p>
                                         </div>
                                         <img src="{{ asset('assets/img/mentoring/ultimate/10. Phase 4_How Ultimate Work.png') }}"
-                                            alt="{{ $phases[3]['title'] }}" title="{{ $phases[3]['title'] }}" loading="lazy" decoding="async" width="300" height="400"
+                                            alt="{{ $phases[3]['title'] }}" title="{{ $phases[3]['title'] }}"
+                                            loading="lazy" decoding="async" width="300" height="400"
                                             class="w-full md:w-[30%] h-[200px] md:h-auto object-cover object-top opacity-70 mt-4 md:mt-0">
                                     </div>
                                 </div>
@@ -497,17 +526,17 @@
 
     {{-- ==================== Call to Action Section ==================== --}}
     <section class="relative z-10 h-auto overflow-hidden mt-12 md:mt-10">
-        <img src="{{ asset('assets/img/mentoring/ultimate/5. Background The Admission Process.png') }}" alt="Call to Action Background"
-            title="Call to Action Background" loading="lazy" decoding="async" width="1920" height="1080"
-            class="absolute top-0 left-0 w-full z-0">
+        <img src="{{ asset('assets/img/mentoring/ultimate/5. Background The Admission Process.png') }}"
+            alt="Call to Action Background" title="Call to Action Background" loading="lazy" decoding="async"
+            width="1920" height="1080" class="absolute top-0 left-0 w-full z-0">
         <div class="new-main-container relative z-10 flex justify-center">
             <div class="max-w-5xl p-6 md:p-10 rounded-xl">
                 <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 items-center cta-grid">
                     <div class="w-full md:w-1/2 text-dark md:order-1 order-2">
-                        <p class="text-2xl md:text-4xl mb-3 md:mb-5">
+                        <p class="text-2xl md:text-3xl mb-3 md:mb-5">
                             {{ __('pages/mentoring/ultimate.cta.title') }}
                         </p>
-                        <p class="text-xs md:text-base text-gray-500">
+                        <p class="text-xs md:text-[1rem] text-gray-500">
                             {{ __('pages/mentoring/ultimate.cta.description') }}
                         </p>
 
@@ -515,8 +544,9 @@
                             submit-title="{{ __('pages/mentoring/ultimate.cta.submit_title') }}" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
-                        <img src="{{ asset('assets/img/mentoring/ultimate/25. Foto Form.png') }}" alt="Book Your Free Consultation Form"
-                            title="Book Your Free Consultation Form" loading="lazy" decoding="async" width="600" height="400"
+                        <img src="{{ asset('assets/img/mentoring/ultimate/25. Foto Form.png') }}"
+                            alt="Book Your Free Consultation Form" title="Book Your Free Consultation Form"
+                            loading="lazy" decoding="async" width="600" height="400"
                             class="w-full md:w-[90%] h-[250px] md:h-[80%] object-cover rounded-lg">
                     </div>
                 </div>
@@ -554,8 +584,10 @@
                                         </h3>
                                     </div>
 
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}" alt="{{ $frameworkItems[$i]['title'] }}"
-                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async" width="200" height="200"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}"
+                                        alt="{{ $frameworkItems[$i]['title'] }}"
+                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async"
+                                        width="200" height="200"
                                         class="absolute w-[40%] top-10 md:-top-[0%] left-[70%] opacity-50 rotate-[15deg]">
                                 </div>
                             </div>
@@ -578,9 +610,10 @@
                                         </p>
                                     </div>
 
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}" alt="{{ $frameworkItems[$i]['title'] }}"
-                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async" width="100" height="100"
-                                        class="w-[20%] opacity-75">
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}"
+                                        alt="{{ $frameworkItems[$i]['title'] }}"
+                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async"
+                                        width="100" height="100" class="w-[20%] opacity-75">
                                 </div>
                             </div>
                         </div>
@@ -605,8 +638,10 @@
                                         </h3>
                                     </div>
 
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}" alt="{{ $frameworkItems[$i]['title'] }}"
-                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async" width="200" height="200"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}"
+                                        alt="{{ $frameworkItems[$i]['title'] }}"
+                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async"
+                                        width="200" height="200"
                                         class="absolute w-[40%] top-10 md:-top-[0%] left-[70%] opacity-50 rotate-[15deg]">
                                 </div>
                             </div>
@@ -629,9 +664,10 @@
                                         </p>
                                     </div>
 
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}" alt="{{ $frameworkItems[$i]['title'] }}"
-                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async" width="100" height="100"
-                                        class="w-[20%] opacity-75">
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/icon-' . ($i + 1) . '.png') }}"
+                                        alt="{{ $frameworkItems[$i]['title'] }}"
+                                        title="{{ $frameworkItems[$i]['title'] }}" loading="lazy" decoding="async"
+                                        width="100" height="100" class="w-[20%] opacity-75">
                                 </div>
                             </div>
                         </div>
@@ -662,8 +698,9 @@
     {{-- ==================== Exploration and Profile Building Section ==================== --}}
     <section class="new-main-container py-10 md:py-20 relative">
         <div class="w-full mx-auto relative overflow-hidden rounded-2xl shadow-sm">
-            <img src="{{ asset('assets/img/mentoring/ultimate/32. Background Exploration.png') }}" alt="Exploration and Profile Building Background"
-                title="Exploration and Profile Building Background" loading="lazy" decoding="async" width="1920" height="1080"
+            <img src="{{ asset('assets/img/mentoring/ultimate/32. Background Exploration.png') }}"
+                alt="Exploration and Profile Building Background" title="Exploration and Profile Building Background"
+                loading="lazy" decoding="async" width="1920" height="1080"
                 class="absolute w-full h-full object-cover left-0 top-0 z-0 rounded-2xl">
             <div class="relative z-10 max-w-4xl mx-auto px-5 py-10 md:py-20">
                 <h3 class="text-xl md:text-3xl font-normal uppercase text-center text-white mb-3 md:mb-5">
@@ -706,7 +743,8 @@
                 <div class="w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
                     <img src="{{ asset('assets/img/mentoring/ultimate/8. Foto Kak anne.png') }}"
                         alt="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}"
-                        title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy" decoding="async" width="400" height="500"
+                        title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy"
+                        decoding="async" width="400" height="500"
                         class="w-full h-full rounded-2xl shadow-sm object-cover md:object-top object-center">
                 </div>
             </div>
@@ -753,7 +791,8 @@
                                     <span class="text-xl md:text-2xl transition-all duration-200">+</span>
                                 </button>
 
-                                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div
+                                    class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                                     <div class="px-4 md:px-5 pb-4 md:pb-5 text-gray-600 text-start">
                                         {{ $faqItem['answer'] }}
                                     </div>
@@ -769,7 +808,8 @@
                     <p class="text-sm md:text-base mb-5 text-black/60">
                         {{ __('pages/mentoring/ultimate.faq.contact_description') }}
                     </p>
-                    <a href="https://bit.ly/eduall-contactus" class="bg-black px-8 md:px-10 py-2 text-white rounded-full inline-block text-sm md:text-base">
+                    <a href="https://bit.ly/eduall-contactus"
+                        class="bg-black px-8 md:px-10 py-2 text-white rounded-full inline-block text-sm md:text-base">
                         {{ __('pages/mentoring/ultimate.faq.contact_cta') }}
                     </a>
                 </div>

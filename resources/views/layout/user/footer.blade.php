@@ -7,8 +7,7 @@
                     loading="lazy">
 
                 <p class="text-gray-400 my-5">
-                    Welcome to our online store, your one-stop destination for the latest in fashion, accessories, and
-                    lifestyle essentials
+                    Independent university admissions consultant based in Jakarta. Helping students around the world to build standout profiles and secure places at top universities worldwide.
                 </p>
 
                 <a href="#" class="text-gray-400 mb-2">

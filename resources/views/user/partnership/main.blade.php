@@ -723,11 +723,11 @@
                         id="myForm">
                         @csrf
                         <div>
-                            <h3 class="mb-2 text-base md:text-lg">
+                            <h3 class="mb-2 text-base md:text-lg text-center">
                                 {{ __('pages/partnership.contact_form.form_title', [], app()->getLocale()) }}
                             </h3>
 
-                            <p class="text-xs md:text-sm italic text-gray-500 mb-5">
+                            <p class="text-xs md:text-[12px] text-center italic text-gray-500 mb-3">
                                 {{ __('pages/partnership.contact_form.form_subtitle', [], app()->getLocale()) }}
                             </p>
 
@@ -771,7 +771,7 @@
                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="md:mb-3 md:w-1/2">
+                                <div class="md:mb-1 md:w-1/2">
                                     <label for="email"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.email', [], app()->getLocale()) }}</label>
                                     <input type="email" name="email"
@@ -785,7 +785,7 @@
                                 </div>
                             </div>
                             <div class="flex gap-4 flex-col md:flex-row">
-                                <div class="mb-3 md:w-1/2">
+                                <div class="mb-1 md:w-1/2">
                                     <label for="phone_number"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.phone_number', [], app()->getLocale()) }}</label>
                                     <input type="text" name="phone_number"
@@ -798,7 +798,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3 md:w-1/2">
+                                <div class="mb-1 md:w-1/2">
                                     <label for="partnership_type"
                                         class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.partnership_type', [], app()->getLocale()) }}</label>
                                     <select name="partnership_type"

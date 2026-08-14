@@ -476,7 +476,7 @@
             <div class="max-w-4xl bg-black p-6 md:p-10 rounded-xl">
                 <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 items-center cta-grid">
                     <div class="w-full md:w-1/2 text-white md:order-1 order-2">
-                        <p class="text-xl md:text-3xl mb-3 md:mb-5">
+                        <p class="text-xl md:text-2xl mb-3 md:mb-5">
                             {{ __('pages/home.cta.title') }}
                         </p>
                         <p class="text-xs md:text-sm text-gray-500">

@@ -33,18 +33,16 @@
     <section class="h-[100%]">
         <div class="relative h-full">
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
-                <img src="{{ asset('assets/img/about/Our Story/1. Background Hero.png') }}"
-                    alt="EduALL"
-                    title="EduALL" loading="lazy" decoding="async"
-                    width="100%" height="auto" class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
+                <img src="{{ asset('assets/img/about/Our Story/1. Background Hero.png') }}" alt="EduALL" title="EduALL"
+                    loading="lazy" decoding="async" width="100%" height="auto"
+                    class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
             </div>
             <div class="absolute left-0 w-full top-[15vh] md:top-[20vh] overflow-hidden">
                 <div class="new-main-container">
                     <div class="bg-dark/60 rounded-2xl max-w-xl p-5 relative overflow-hidden py-10">
-                        <img src="{{ asset('assets/img/about/Our Story/2. Hero Background Rectangle.png') }}" 
-                            alt="EduALL About Us background decoration"
-                            loading="lazy" decoding="async" width="800" height="600"
-                            class="w-full h-full absolute top-0 left-0 z-0">
+                        <img src="{{ asset('assets/img/about/Our Story/2. Hero Background Rectangle.png') }}"
+                            alt="EduALL About Us background decoration" loading="lazy" decoding="async" width="800"
+                            height="600" class="w-full h-full absolute top-0 left-0 z-0">
                         <div class="relative z-10">
                             <div class="flex items-center md:justify-start justify-center">
                                 <p class=" bg-white rounded-full px-5 inline-block text-sm py-1 mb-5">
@@ -100,16 +98,14 @@
                 <p class="mb-5 text-2xl border-l-2 pl-3">
                     {{ __('pages/about_us/our_story.our_story.quote') }}
                 </p>
-                <img src="{{ asset('assets/img/about/Our Story/3. kak dev.png') }}" 
-                    alt="Devi Kasih, Founder of EduALL"
-                    loading="lazy" decoding="async" width="400" height="500"
-                    class="w-full rounded-xl shadow-md">
+                <img src="{{ asset('assets/img/about/Our Story/3. kak dev.png') }}" alt="Devi Kasih, Founder of EduALL"
+                    loading="lazy" decoding="async" width="400" height="500" class="w-full rounded-xl shadow-md">
             </div>
             <div class="w-full md:w-[70%]">
                 @foreach (__('pages/about_us/our_story.our_story.content') as $index => $text)
-                    @if($index == 1)
+                    @if ($index == 1)
                         <blockquote id="openModal"
-                            class="cursor-pointer text-lg border-l-2 border-newprimary ps-3 mb-4 bg-blue-200 py-3 rounded-2xl px-10">
+                            class="cursor-pointer text-lg border-l-2 border-newprimary hover:bg-newprimary hover:text-white transition-all ease-in-out duration-300 ps-3 mb-4 bg-blue-200 py-3 rounded-2xl px-10">
                             {{ $text }}
                         </blockquote>
                     @else
@@ -141,9 +137,8 @@
                         <p class="mb-5 text-2xl">
                             {{ __('pages/about_us/our_story.vision_mission.vision.title') }}
                         </p>
-                        <img src="{{ asset('assets/img/about/Our Story/2. Vision Mission.png') }}" 
-                            alt="EduALL Vision and Mission"
-                            loading="lazy" decoding="async" width="600" height="300"
+                        <img src="{{ asset('assets/img/about/Our Story/2. Vision Mission.png') }}"
+                            alt="EduALL Vision and Mission" loading="lazy" decoding="async" width="600" height="300"
                             class="w-full rounded-2xl h-[150px] object-cover object-top">
                     </div>
                 </div>
@@ -167,9 +162,8 @@
                 </div>
             </div>
 
-            <img src="{{ asset('assets/img/about/Our Story/5. Vission Mission Foto_2.png') }}" 
-                alt="EduALL Vision and Mission illustration"
-                loading="lazy" decoding="async" width="1200" height="400"
+            <img src="{{ asset('assets/img/about/Our Story/5. Vission Mission Foto_2.png') }}"
+                alt="EduALL Vision and Mission illustration" loading="lazy" decoding="async" width="1200" height="400"
                 class="w-full md:h-auto h-[200px] object-cover rounded-2xl shadow-md mt-5">
         </div>
     </section>
@@ -196,7 +190,7 @@
                 <div class="relative">
                     {{-- Left Arrow Button --}}
                     <button id="scrollLeftBtn"
-                        class="absolute -left-4 md:-left-20 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
+                        class="absolute -left-4 md:-left-20 top-20 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
                         aria-label="Scroll timeline left">
                         &#10094;
                     </button>
@@ -214,8 +208,8 @@
                                             <div
                                                 class="w-20 h-20 rounded-full overflow-hidden mx-auto border-4 border-[#1A2EA6] bg-white">
                                                 <img src="{{ asset('assets/img/about/Our Story/' . $item['image']) }}"
-                                                    alt="{{ $item['year'] }} - EduALL Journey"
-                                                    loading="lazy" decoding="async" width="80" height="80"
+                                                    alt="{{ $item['year'] }} - EduALL Journey" loading="lazy"
+                                                    decoding="async" width="80" height="80"
                                                     class="w-full h-full object-cover">
                                             </div>
 
@@ -225,7 +219,8 @@
                                         </div>
 
                                         <div class="mt-12 text-left">
-                                            <h3 class="font-normal text-xl text-[#1A2EA6] mb-4 text-center">{{ $item['year'] }}</h3>
+                                            <h3 class="font-normal text-xl text-[#1A2EA6] mb-4 text-center">
+                                                {{ $item['year'] }}</h3>
 
                                             <ul class="space-y-2 text-sm text-gray-500">
                                                 @foreach ($item['points'] as $point)
@@ -244,7 +239,7 @@
 
                     {{-- Right Arrow Button --}}
                     <button id="scrollRightBtn"
-                        class="absolute -right-4 md:-right-20 top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
+                        class="absolute -right-4 md:-right-20 top-20 z-20 bg-white shadow-lg rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-gray-100"
                         aria-label="Scroll timeline right">
                         &#10095;
                     </button>
@@ -290,9 +285,9 @@
                                         </p>
                                     </div>
                                     <div class="flex gap-5 items-center">
-                                        <img src="{{asset('assets/img/about/Our Story/' . $testimonial['image'])}}" 
-                                            alt="{{ $testimonial['name'] }} - {{ $testimonial['role'] }}"
-                                            loading="lazy" decoding="async" width="50" height="50"
+                                        <img src="{{ asset('assets/img/about/Our Story/' . $testimonial['image']) }}"
+                                            alt="{{ $testimonial['name'] }} - {{ $testimonial['role'] }}" loading="lazy"
+                                            decoding="async" width="50" height="50"
                                             class="w-[50px] h-[50px] object-cover rounded-full">
                                         <div>
                                             <p class="font-normal">{{ $testimonial['name'] }}</p>
@@ -330,14 +325,14 @@
                     <p class="text-gray-500 text-lg mb-5">
                         {{ __('pages/about_us/our_story.team.description') }}
                     </p>
-                    <a href="{{ route('our_team', ['locale' => app()->getLocale()]) }}" class="bg-newprimary text-white rounded-lg px-5 py-2">
+                    <a href="{{ route('our_team', ['locale' => app()->getLocale()]) }}"
+                        class="bg-newprimary text-white rounded-lg px-5 py-2">
                         {{ __('pages/about_us/our_story.team.cta') }}
                     </a>
                 </div>
                 <div class="w-full md:w-[50%]">
-                    <img src="{{asset('assets/img/about/Our Story/' . __('pages/about_us/our_story.team.image'))}}" 
-                        alt="EduALL Team"
-                        loading="lazy" decoding="async" width="600" height="400"
+                    <img src="{{ asset('assets/img/about/Our Story/' . __('pages/about_us/our_story.team.image')) }}"
+                        alt="EduALL Team" loading="lazy" decoding="async" width="600" height="400"
                         class="w-full rounded-2xl shadow-md">
                 </div>
             </div>
@@ -365,10 +360,9 @@
 
                 <div class="flex flex-col md:flex-row gap-10">
                     <div class="w-full md:w-1/2">
-                        <img src="{{asset('assets/img/about/Our Story/9. Foto Letter From our Founder.png')}}" 
-                            alt="Devi Kasih, Founder of EduALL"
-                            loading="lazy" decoding="async" width="600" height="800"
-                            class="w-full mb-5">
+                        <img src="{{ asset('assets/img/about/Our Story/9. Foto Letter From our Founder.png') }}"
+                            alt="Devi Kasih, Founder of EduALL" loading="lazy" decoding="async" width="600"
+                            height="800" class="w-full mb-5">
 
                         <p class="text-xl italic text-newprimary mb-5">
                             {!! __('pages/about_us/our_story.modal.content.quote_1') !!}
@@ -415,25 +409,46 @@
 @push('script')
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const timeline = document.getElementById("journeyTimeline");
             const modal = document.getElementById("modal");
             const openModalBtn = document.getElementById("openModal");
             const closeModalBtn = document.getElementById("closeModal");
 
-            // Timeline scroll functionality
-            document.getElementById("scrollLeftBtn").addEventListener("click", () => {
-                timeline.scrollBy({
-                    left: -500,
+            const timeline = document.getElementById("journeyTimeline");
+            const timelineItems = timeline.querySelectorAll(".grid > div");
+
+            let timelineIndex = 0;
+
+            function scrollTimelineToCenter(index) {
+                if (index < 0 || index >= timelineItems.length) return;
+
+                timelineIndex = index;
+
+                const item = timelineItems[index];
+
+                const timelineRect = timeline.getBoundingClientRect();
+                const itemRect = item.getBoundingClientRect();
+
+                const scrollLeft =
+                    timeline.scrollLeft +
+                    (itemRect.left - timelineRect.left) -
+                    (timelineRect.width / 2) +
+                    (itemRect.width / 2);
+
+                timeline.scrollTo({
+                    left: scrollLeft,
                     behavior: "smooth"
                 });
+            }
+
+            document.getElementById("scrollLeftBtn").addEventListener("click", () => {
+                scrollTimelineToCenter(timelineIndex - 1);
             });
 
             document.getElementById("scrollRightBtn").addEventListener("click", () => {
-                timeline.scrollBy({
-                    left: 500,
-                    behavior: "smooth"
-                });
+                scrollTimelineToCenter(timelineIndex + 1);
             });
+
+
 
             // Testimonials slider functionality
             const testimonialTrack = document.getElementById("testimonialTrack");
@@ -447,7 +462,7 @@
             function updateSlider() {
                 const slideWidth = 100 / slidesPerView;
                 testimonialTrack.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-                
+
                 // Update button states
                 prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
                 prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';

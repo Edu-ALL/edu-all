@@ -260,7 +260,7 @@ return [
     'universities' => [
         'title' => 'From Meaningful Achievements to Top Universities',
         'description' => 'Every project, competition, research, volunteering experience and work internship becomes part of a bigger story and the start of their future.',
-        'more_text' => 'And many more',
+        'more_text' => '... and many more.',
     ],
 
     // Testimonial Section

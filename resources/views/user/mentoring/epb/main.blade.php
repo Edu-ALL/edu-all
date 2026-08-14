@@ -22,28 +22,18 @@
 @push('style')
     <style>
         /* ==================== Project Slider Styles ==================== */
-        #project-showcase {
-            padding: 20px 0;
-        }
-
         #project-showcase .splide__slide {
             opacity: .4;
         }
 
         #project-showcase .splide__slide .card {
-            width: auto;
-            display: block;
-            transition: transform .35s ease, opacity .35s ease;
-            transform: scale(.8);
+            transform: scale(.6);
             transform-origin: center center;
+            will-change: transform, opacity;
         }
 
-        #project-showcase .splide__slide.is-active {
-            opacity: 1;
-        }
-
-        #project-showcase .splide__slide.is-active .card {
-            transform: scale(1);
+        #project-showcase {
+            padding: 20px 0;
         }
 
         th,
@@ -61,6 +51,10 @@
         }
 
         .pathway-card.active .text-5xl {
+            display: none;
+        }
+
+        .pathway-card.active .bg_image {
             display: none;
         }
 
@@ -402,6 +396,9 @@
                                                         hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
                                                         hover:bg-gradient-to-b hover:from-newprimary hover:to-black active">
 
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club cover.png') }}"
+                                                            class="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
+
                                                         <!-- Number -->
                                                         <div
                                                             class="text-5xl text-gray-300 transition group-hover:hidden active:hidden">
@@ -454,6 +451,8 @@
                                                         px-6 py-4 h-[320px]
                                                         hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
                                                         hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB computer science club cover.png') }}"
+                                                            class="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
 
                                                         <div class="text-5xl text-gray-300 transition group-hover:hidden">
                                                             02
@@ -498,6 +497,8 @@
                                                         px-6 py-4 h-[320px]
                                                         hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
                                                         hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Engineering club cover.png') }}"
+                                                            class="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
 
                                                         <div class="text-5xl text-gray-300 transition group-hover:hidden">
                                                             03
@@ -542,6 +543,9 @@
                                                         px-6 py-4 h-[320px]
                                                         hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
                                                         hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
+
+                                                        <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB life science club cover.png') }}"
+                                                            class="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
 
                                                         <div class="text-5xl text-gray-300 transition group-hover:hidden">
                                                             04
@@ -643,11 +647,11 @@
                                                         <ul class="splide__list">
                                                             <li class="splide__slide">
                                                                 <div class="card bg-white rounded-xl overflow-hidden">
-                                                                    <div class="flex">
+                                                                    <div class="flex gap-5">
                                                                         <div class="w-[30%]">
                                                                             <img src="{{ asset('assets/img/mentoring/epb/Personal project & academic research/epb-1.png') }}"
                                                                                 alt="Project 1"
-                                                                                class="w-full h-full object-cover">
+                                                                                class="w-full h-full object-cover scale-[1.2]">
                                                                         </div>
                                                                         <div class="w-[70%] p-5">
                                                                             <p class="text-[12px] font-bold mb-3">Project 1
@@ -677,11 +681,11 @@
 
                                                             <li class="splide__slide">
                                                                 <div class="card bg-white rounded-xl overflow-hidden">
-                                                                    <div class="flex">
+                                                                    <div class="flex gap-5">
                                                                         <div class="w-[30%]">
                                                                             <img src="{{ asset('assets/img/mentoring/epb/Personal project & academic research/epb-2.png') }}"
                                                                                 alt="Project 2"
-                                                                                class="w-full h-full object-cover">
+                                                                                class="w-full h-full object-cover scale-[1.2]">
                                                                         </div>
                                                                         <div class="w-[70%] p-5">
                                                                             <p class="text-[12px] font-bold mb-3">Project 2
@@ -710,11 +714,11 @@
 
                                                             <li class="splide__slide">
                                                                 <div class="card bg-white rounded-xl overflow-hidden">
-                                                                    <div class="flex">
+                                                                    <div class="flex gap-5">
                                                                         <div class="w-[30%]">
                                                                             <img src="{{ asset('assets/img/mentoring/epb/Personal project & academic research/epb-3.png') }}"
                                                                                 alt="Project 3"
-                                                                                class="w-full h-full object-cover">
+                                                                                class="w-full h-full object-cover scale-[1.2]">
                                                                         </div>
                                                                         <div class="w-[70%] p-5">
                                                                             <p class="text-[12px] font-bold mb-3">Project 3
@@ -743,11 +747,11 @@
 
                                                             <li class="splide__slide">
                                                                 <div class="card bg-white rounded-xl overflow-hidden">
-                                                                    <div class="flex">
+                                                                    <div class="flex gap-5">
                                                                         <div class="w-[30%]">
                                                                             <img src="{{ asset('assets/img/mentoring/epb/Personal project & academic research/epb-4.png') }}"
                                                                                 alt="Project 4"
-                                                                                class="w-full h-full object-cover">
+                                                                                class="w-full h-full object-cover scale-[1.2]">
                                                                         </div>
                                                                         <div class="w-[70%] p-5">
                                                                             <p class="text-[12px] font-bold mb-3">Project 4
@@ -1110,10 +1114,10 @@
             <div class="max-w-6xl p-6 md:p-10 rounded-xl">
                 <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 items-center cta-grid">
                     <div class="w-full md:w-1/2 text-dark md:order-1 order-2">
-                        <p class="text-xl md:text-4xl mb-3 md:mb-5">
+                        <p class="text-xl md:text-3xl mb-3 md:mb-5">
                             {{ __('pages/mentoring/epb.cta.title') }}
                         </p>
-                        <p class="text-xs md:text-lg text-gray-500">
+                        <p class="text-xs md:text-[1rem] text-gray-500">
                             {{ __('pages/mentoring/epb.cta.description') }}
                         </p>
 
@@ -1297,10 +1301,9 @@
     </script>
 
     <script>
-        // ==================== Project Slider (Splide) ====================
-        // Initialize project slider with autoplay
         document.addEventListener('DOMContentLoaded', function() {
-            new Splide('#project-showcase', {
+
+            const slider = new Splide('#project-showcase', {
                 type: 'loop',
                 perPage: 3,
                 focus: 'center',
@@ -1310,15 +1313,93 @@
                 drag: false,
                 arrows: true,
                 pagination: false,
+                fixedWidth: '450px',
+                fixedHeight: 'auto',
+                gap: '-3rem',
+                padding: '5%',
+
                 breakpoints: {
                     1024: {
                         perPage: 2,
+                        fixedWidth: '300px',
+                        gap: '1rem',
+                        padding: '3%',
                     },
+
                     768: {
                         perPage: 1,
+                        fixedWidth: '280px',
+                        gap: '1rem',
+                        padding: '2%',
                     },
                 },
-            }).mount();
+            });
+
+            slider.mount();
+
+
+            /*
+             * Scale mengikuti posisi card secara realtime.
+             */
+            function updateScale() {
+
+                const root = document.querySelector('#project-showcase');
+                const slides = root.querySelectorAll('.splide__slide');
+
+                const rootRect = root.getBoundingClientRect();
+                const centerX = rootRect.left + rootRect.width / 2;
+
+                slides.forEach(slide => {
+
+                    const card = slide.querySelector('.card');
+
+                    if (!card) return;
+
+                    const rect = slide.getBoundingClientRect();
+
+                    const slideCenter = rect.left + rect.width / 2;
+
+                    const distance = Math.abs(centerX - slideCenter);
+
+                    const maxDistance = rect.width;
+
+                    const progress = Math.min(
+                        distance / maxDistance,
+                        1
+                    );
+
+                    /*
+                     * =========================
+                     * SCALE
+                     * =========================
+                     *
+                     * Center  = 1
+                     * Samping = 0.6
+                     */
+                    const scale = 1 - (progress * 0.4);
+
+
+                    /*
+                     * =========================
+                     * OPACITY
+                     * =========================
+                     *
+                     * Center  = 1
+                     * Samping = 0.4
+                     */
+                    const opacity = 1 - (progress * 0.6);
+
+
+                    card.style.transform = `scale(${scale})`;
+                    slide.style.opacity = opacity;
+
+                });
+
+                requestAnimationFrame(updateScale);
+            }
+
+            requestAnimationFrame(updateScale);
+
         });
     </script>
 
@@ -1437,7 +1518,7 @@
     </script>
 
     <script>
-        {{-- Student Club Cards Hover Behavior --}}
+        // Student Club Cards Hover Behavior
         document.addEventListener("DOMContentLoaded", function() {
             const pathwayCards = document.querySelectorAll(".pathway-card");
             let lastActiveCard = pathwayCards[0]; // Track the last active card, default to card 1

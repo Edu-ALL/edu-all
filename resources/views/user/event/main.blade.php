@@ -19,31 +19,18 @@
             padding: 60px 0;
         }
 
-        #slider .splide__track {
-            overflow: visible;
-        }
-
-        #slider .splide__list {
-            align-items: center;
-        }
-
         #slider .splide__slide {
-            transition: all .4s ease;
-            transform: scale(.75);
-            opacity: .2;
-            z-index: 1;
+            opacity: .4;
         }
 
-        #slider .splide__slide img {
-            width: 100%;
-            border-radius: 24px;
-            transition: all .4s ease;
+        #slider .splide__slide .card {
+            transform: scale(.6);
+            transform-origin: center center;
+            will-change: transform;
         }
 
         #slider .splide__slide.is-active {
-            transform: scale(1.2);
             opacity: 1;
-            z-index: 10;
         }
     </style>
 @endpush
@@ -166,27 +153,35 @@
                         <ul class="splide__list">
 
                             <li class="splide__slide rounded-2xl">
-                                <img src="{{ asset('assets/img/Events/12. Event CTA foto 1.png') }}"
-                                    alt="EduALL event photo gallery - students activities and workshops" loading="lazy"
-                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/12. Event CTA foto 1.png') }}"
+                                        alt="EduALL event photo gallery - students activities and workshops" loading="lazy"
+                                        decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                </div>
                             </li>
 
                             <li class="splide__slide rounded-2xl">
-                                <img src="{{ asset('assets/img/Events/13. Event CTA foto 2.png') }}"
-                                    alt="EduALL community initiative and student engagement" loading="lazy"
-                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/13. Event CTA foto 2.png') }}"
+                                        alt="EduALL community initiative and student engagement" loading="lazy"
+                                        decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                </div>
                             </li>
 
                             <li class="splide__slide rounded-2xl">
-                                <img src="{{ asset('assets/img/Events/14. Event CTA foto 3.png') }}"
-                                    alt="EduALL mentorship programs and learning experiences" loading="lazy"
-                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/14. Event CTA foto 3.png') }}"
+                                        alt="EduALL mentorship programs and learning experiences" loading="lazy"
+                                        decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                </div>
                             </li>
 
                             <li class="splide__slide rounded-2xl">
-                                <img src="{{ asset('assets/img/Events/15. Event CTA foto 4.png') }}"
-                                    alt="EduALL events bringing students and educators together" loading="lazy"
-                                    decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/15. Event CTA foto 4.png') }}"
+                                        alt="EduALL events bringing students and educators together" loading="lazy"
+                                        decoding="async" width="800" height="600" class="rounded-lg shadow-sm w-full">
+                                </div>
                             </li>
 
                         </ul>
@@ -195,26 +190,26 @@
             </div>
 
             <div class="max-w-6xl mx-auto text-center relative z-10">
-                <h2 class="text-5xl font-normal text-white mb-4">
+                <h2 class="text-2x md:text-4xl font-normal text-white mb-4">
                     {!! __('pages/event.cta_section.title') !!}
                 </h2>
-                <p class="max-w-3xl mx-auto text-white/70 text-lg mb-10">
+                <p class="max-w-6xl mx-auto text-white/70 mb-5">
                     {{ __('pages/event.cta_section.description') }}
                 </p>
 
                 <div class="max-w-3xl mx-auto relative z-10">
                     <div
-                        class="bg-gradient-to-b from-[#3C74B5] to-white py-6 md:py-8 px-6 md:px-10 rounded-xl shadow-2xl w-full">
+                        class="bg-gradient-to-b from-[#3C74B5] to-white py-6 md:py-5 px-6 md:px-10 rounded-xl shadow-2xl w-full">
                         <form action="{{ route('submit_partnership', ['locale' => 'id-en']) }}" method="POST"
                             id="myForm">
                             @csrf
                             <div class="text-start">
                                 <div class="flex gap-4 flex-col md:flex-row">
-                                    <div class="md:mb-3 w-full md:w-1/2">
+                                    <div class="md:mb-1 w-full md:w-1/2">
                                         <label for="primary_name"
                                             class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.fullname') }}</label>
                                         <input type="text" name="fullname"
-                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                             placeholder="{{ __('pages/event.cta_section.form_fields.fullname') }}"
                                             id="primary_name" required oninput="checkValidation('primary_name')">
                                         <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -222,12 +217,12 @@
                                             <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <div class="md:mb-3 w-full md:w-1/2">
+                                    <div class="md:mb-1 w-full md:w-1/2">
                                         <label for="company_name" class="text-white text-sm py-2">
                                             {{ __('pages/event.cta_section.form_fields.company_name') }}
                                         </label>
                                         <input type="text" name="company_name"
-                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                             placeholder="{{ __('pages/event.cta_section.form_fields.company_name') }} *"
                                             id="company_name" required oninput="checkValidation('company_name')">
                                         <div id="company_name_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -241,7 +236,7 @@
                                         <label for="position"
                                             class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.position') }}</label>
                                         <input type="text" name="position"
-                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                             placeholder="{{ __('pages/event.cta_section.form_fields.position') }}"
                                             id="position" required oninput="checkValidation('position')">
                                         <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -249,11 +244,11 @@
                                             <div class="text-red text-[10px] mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <div class="md:mb-3 md:w-1/2">
+                                    <div class="md:mb-1 md:w-1/2">
                                         <label for="email"
                                             class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.email') }}</label>
                                         <input type="email" name="email"
-                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                             placeholder="you@example.com" id="email" required
                                             oninput="checkValidation('email')">
                                         <div id="email_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -267,7 +262,7 @@
                                         <label for="phone_number"
                                             class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.phone_number') }}</label>
                                         <input type="text" name="phone_number"
-                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                             placeholder="+62 ..." id="phone_number" required
                                             oninput="checkValidation('phone_number')">
                                         <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden"></div>
@@ -280,7 +275,7 @@
                                         <label for="partnership_type"
                                             class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.partnership_type') }}</label>
                                         <select name="partnership_type"
-                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                             id="partnership_type" required oninput="checkValidation('partnership_type')">
                                             <option value="">
                                                 {{ __('pages/event.cta_section.form_fields.partnership_type') }}</option>
@@ -300,9 +295,9 @@
                                 <div class="mb-3">
                                     <label for="inquiry"
                                         class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.inquiry') }}</label>
-                                    <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-4 my-1 w-full"
+                                    <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
                                         placeholder="{{ __('pages/event.cta_section.form_fields.inquiry') }} *" id="inquiry" name="inquiry"
-                                        rows="4" required oninput="checkValidation('inquiry')"></textarea>
+                                        rows="2" required oninput="checkValidation('inquiry')"></textarea>
                                     <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden"></div>
                                     @error('inquiry')
                                         <div class="text-red text-[10px] mt-1">{{ $message }}</div>
@@ -339,20 +334,102 @@
         document.addEventListener('DOMContentLoaded', function() {
             const isMobile = window.innerWidth < 768;
 
-            new Splide('#slider', {
+            const slider = new Splide('#slider', {
                 type: 'loop',
-                perPage: isMobile ? 1 : 3,
-                perMove: isMobile ? 1 : 1,
-                focus: isMobile ? 0 : 'center',
-                gap: isMobile ? '1rem' : '-90px',
-                padding: isMobile ? '0' : '50px',
+                perPage: 3,
+                focus: 'center',
                 autoplay: true,
                 interval: 4000,
-                arrows: isMobile ? false : true,
-                pagination: isMobile ? true : false,
-                easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
                 speed: 600,
-            }).mount();
+                drag: false,
+                arrows: true,
+                pagination: false,
+                fixedWidth: '450px',
+                fixedHeight: 'auto',
+                gap: '-3rem',
+                padding: '5%',
+
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                        fixedWidth: '300px',
+                        gap: '1rem',
+                        padding: '3%',
+                    },
+
+                    768: {
+                        perPage: 1,
+                        fixedWidth: '280px',
+                        gap: '1rem',
+                        padding: '2%',
+                    },
+                },
+            });
+
+            slider.mount();
+
+
+            /*
+             * Scale mengikuti posisi card secara realtime.
+             */
+            function updateScale() {
+
+                const root = document.querySelector('#slider');
+                const slides = root.querySelectorAll('.splide__slide');
+
+                const rootRect = root.getBoundingClientRect();
+                const centerX = rootRect.left + rootRect.width / 2;
+
+                slides.forEach(slide => {
+
+                    const card = slide.querySelector('.card');
+
+                    if (!card) return;
+
+                    const rect = slide.getBoundingClientRect();
+
+                    const slideCenter = rect.left + rect.width / 2;
+
+                    const distance = Math.abs(centerX - slideCenter);
+
+                    const maxDistance = rect.width;
+
+                    const progress = Math.min(
+                        distance / maxDistance,
+                        1
+                    );
+
+                    /*
+                     * =========================
+                     * SCALE
+                     * =========================
+                     *
+                     * Center  = 1
+                     * Samping = 0.6
+                     */
+                    const scale = 1 - (progress * 0.4);
+
+
+                    /*
+                     * =========================
+                     * OPACITY
+                     * =========================
+                     *
+                     * Center  = 1
+                     * Samping = 0.4
+                     */
+                    const opacity = 1 - (progress * 0.6);
+
+
+                    card.style.transform = `scale(${scale})`;
+                    slide.style.opacity = opacity;
+
+                });
+
+                requestAnimationFrame(updateScale);
+            }
+
+            requestAnimationFrame(updateScale);
         });
     </script>
 @endpush
