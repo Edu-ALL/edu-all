@@ -197,7 +197,7 @@ return [
             'category' => 'stem',
             'category_label' => 'Engineering / STEM',
             'expertise' => 'Nuclear Engineering | Reliability engineering',
-            'image_1' => 'assets/img/about/Our Team/6. Mentors/19. Stefanie-1.png',
+            'image_1' => 'assets/img/about/Our Team/6. Mentors/19. stefanie-1.png',
             'image_2' => 'assets/img/about/Our Team/6. Mentors/20. Stefanie-2.png',
             'description' => 'A Nuclear Engineering graduate from UC Berkeley and incoming Georgia Tech master\'s student, Stefanie works in reliability engineering, including risk assessment at Kairos Power. She has taught IoT electronics as a UC Berkeley instructor, with expertise across engineering and applied STEM.'
         ],
