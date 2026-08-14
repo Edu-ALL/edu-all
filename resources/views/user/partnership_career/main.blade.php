@@ -205,7 +205,7 @@
                             <img src="{{ asset('assets\img\about\partnership-career\2026\18. CTA.png') }}" alt="EduALL"
                                 class="absolute top-0 left-0 w-full h-full object-cover z-0">
                             <div class="flex h-full items-center justify-center p-5 relative z-10">
-                                <p class="font-normal text-lg md:text-xl mb-2 text-white text-center">
+                                <p class="font-normal text-lg md:text-xl text-white text-center">
                                     {!! $item['title'] !!}
                                 </p>
                             </div>
