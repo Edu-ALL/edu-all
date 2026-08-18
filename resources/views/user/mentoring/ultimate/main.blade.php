@@ -219,7 +219,7 @@
                                         {{ $card['description'] }}
                                     </p>
 
-                                    <img src="{{ asset('assets/img/mentoring/ultimate/' . ['6. IC_The Admission Process.png', '7. Readiness Assetment.png', '8. Aptitude Test_The Admission Process.png'][$index]) }}"
+                                    <img src="{{ asset('assets/img/mentoring/ultimate/' . ['6. Process 1.png', '7. Process 2.png', '8. Process 3.png'][$index]) }}"
                                         alt="{{ $card['title'] }}" title="{{ $card['title'] }}" loading="lazy"
                                         decoding="async" width="400" height="200"
                                         class="h-[200px] w-full object-cover object-center opacity-60">
