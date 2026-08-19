@@ -204,7 +204,7 @@ return [
     'faq' => [
         'title' => "FAQ's",
         'subtitle' => 'Find Your Answers Here',
-        'description' => "Couldn't not find what you were looking for?",
+        'description' => "Still have questions?",
         'items' => [
             [
                 'question' => 'What makes EduALL different from other education consultants in Indonesia?',

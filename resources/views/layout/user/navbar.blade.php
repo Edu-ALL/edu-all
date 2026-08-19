@@ -37,7 +37,8 @@
 
             {{-- CTA Button --}}
             <div class="py-3 ">
-                <a href="https://bit.ly/eduall-contactus" id="navbar-cta"
+                <a href="https://api.whatsapp.com/send?phone=6281998888138&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                    id="navbar-cta" target="_blank" rel="noopener noreferrer"
                     class="py-1 px-5 bg-white text-sm flex items-center justify-between rounded-lg shadow-lg gap-5 text-black font-semibold text-[14px] transition-all duration-500">
                     Consult Now
                 </a>
@@ -106,7 +107,8 @@
                 </div>
 
                 {{-- Consult Now  --}}
-                <a href="https://bit.ly/eduall-contactus" id="second-navbar-cta"
+                <a href="https://api.whatsapp.com/send?phone=6281998888138&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
+                    id="second-navbar-cta" target="_blank" rel="noopener noreferrer"
                     class="py-1 px-5 bg-white text-sm items-center justify-between rounded-lg shadow-lg gap-5 text-black font-semibold text-[14px] transition-all duration-500 hidden">
                     Consult Now
                 </a>
@@ -240,7 +242,8 @@
 </div>
 
 {{-- ==================== WHATSAPP BUTTON ==================== --}}
-<div class="fixed lg:bottom-24 bottom-20 lg:right-5 right-5 z-[45] transition-all duration-1000 group cursor-pointer" id="wa_button">
+<div class="fixed lg:bottom-24 bottom-20 lg:right-5 right-5 z-[45] transition-all duration-1000 group cursor-pointer"
+    id="wa_button">
     <div class="relative">
         {{-- Button --}}
         <div
@@ -270,9 +273,10 @@
     </div>
     <div class="bg-white rounded-b-2xl p-4">
         @if (str_contains(request()->url(), 'careers') || str_contains(request()->url(), 'partnership'))
-        <a href="https://bit.ly/partnerwithus-website" @else <a href="https://bit.ly/eduall-contactus"
+        <a href="https://bit.ly/partnerwithus-website" @else <a
+                href="https://api.whatsapp.com/send?phone=6281998888138&text=Hello%20EduALL,%20I%20am%0AName%20:%0AGrade%20:%0ASchool%20:%0ADestination%20Country%20:%0AMajor%20:%0A%0A*I*%20*want*%20*to*%20*ask*%20*about...*"
                 @endif
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="bg-[#25D366]/50 shadow-lg rounded-xl p-3 flex items-center justify-between hover:bg-[#25D366] transition-all ease-in-out duration-300">
                 <h4 class="text-base">{{ __('pages/home.wa.message') }}</h4 class="text-xl">
 

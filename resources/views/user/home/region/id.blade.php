@@ -124,29 +124,31 @@
             class="w-full h-full absolute left-0 top-0 z-0" loading="lazy">
 
         {{-- ==================== Our Score Section ==================== --}}
-        <section class="pt-6 md:pt-10 new-main-container md:px-0 pb-[2rem] md:pb-[3rem] relative z-10">
-            <div class="flex flex-wrap justify-center gap-0 md:gap-5">
-                @foreach (__('pages/home.achievment') as $item)
-                    <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
-                        <p class="text-lg md:text-[30px] font-bold text-newprimary">
-                            {{ $item['value'] }}
-                        </p>
-                        <p class="text-[12px] md:text-base text-gray-700 mt-2 md:leading-5 leading-4">
-                            {!! $item['label'] !!}
-                        </p>
-                    </div>
-                @endforeach
+        <section class="bg-[#EEF2FB] relative z-10 mb-20">
+            <div class="pt-3 md:pt-5 new-main-container md:px-0">
+                <div class="flex flex-wrap justify-center gap-0 md:gap-5">
+                    @foreach (__('pages/home.achievment') as $item)
+                        <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
+                            <p class="text-lg md:text-[30px] font-bold text-newprimary">
+                                {{ $item['value'] }}
+                            </p>
+                            <p class="text-[12px] md:text-base text-gray-700 mt-2 md:leading-5 leading-4">
+                                {!! $item['label'] !!}
+                            </p>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </section>
 
         {{-- ==================== About Us Section ==================== --}}
-        <section class="new-main-container my-12 md:my-20 relative z-10">
+        <section class="new-main-container my-12 md:my-10 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-10 about-grid">
                 <div class="w-full md:w-1/2 md:text-start text-center">
-                    <h2 class="text-newprimary text-2xl md:text-6xl font-thin mb-3 md:mb-5" itemprop="headline">
+                    <h2 class="text-newprimary text-2xl md:text-6xl font-thin mb-3 md:mb-10" itemprop="headline">
                         {{ __('pages/home.about_us.title') }}
                     </h2>
-                    <p class="text-gray-500 text-sm md:text-xl mb-3 md:mb-5" itemprop="description">
+                    <p class="text-newprimary text-sm md:text-xl mb-3 md:mb-10" itemprop="description">
                         {{ __('pages/home.about_us.subtitle') }}
                     </p>
 
@@ -159,15 +161,15 @@
                     @foreach (__('pages/home.about_us.items') as $item)
                         <div
                             class="flex items-center gap-3 md:gap-4 bg-gradient-to-b from-newprimary to-[#10153a] rounded-xl p-3 md:p-4 shadow-md mb-2">
-                            <div class="rounded-lg w-[15%]">
+                            <div class="rounded-lg w-[18%]">
                                 <img src="{{ asset('assets/img/home/2026/' . $item['img']) }}" alt="{{ $item['title'] }}"
                                     class="object-cover">
                             </div>
-                            <div class="w-[85%]">
-                                <p class="text-sm md:text-base font-bold text-white mb-3">
+                            <div class="w-[82%]">
+                                <p class="text-sm md:text-xl font-bold text-white mb-3">
                                     {{ $item['title'] }}
                                 </p>
-                                <p class="text-white/70 text-xs md:text-sm">
+                                <p class="text-white/70 text-sm md:text-base">
                                     {{ $item['description'] }}
                                 </p>
                             </div>
@@ -176,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="mt-12 md:mt-20">
+            <div class="mt-12 md:mt-5">
                 <div class="bg-[#F0F0F0] rounded-xl py-4 px-4 md:px-6 shadow-sm">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-center justify-between">
                         <p class="text-base md:text-xl font-normal text-center md:text-left">
@@ -241,11 +243,11 @@
                                 <h2 class="text-xl md:text-2xl text-black mb-3 md:mb-4 font-normal">
                                     {{ __('pages/home.program.mentoring.title') }}
                                 </h2>
-                                <p class="text-gray-500 text-xs md:text-base">
+                                <p class="text-gray-500 text-xs md:text-base mb-5">
                                     {{ __('pages/home.program.mentoring.description') }}
                                 </p>
                             </div>
-                            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10 mt-2">
+                            <div class="flex flex-col md:flex-row items-start gap-4 md:gap-10 mt-2">
                                 <div class="w-full md:w-1/2">
                                     @foreach (__('pages/home.program.mentoring.features') as $item)
                                         <div
@@ -278,11 +280,11 @@
                                 <h2 class="text-xl md:text-2xl text-black mb-3 md:mb-4 font-normal">
                                     {{ __('pages/home.program.academy.title') }}
                                 </h2>
-                                <p class="text-gray-500 text-xs md:text-base">
+                                <p class="text-gray-500 text-xs md:text-base mb-5">
                                     {{ __('pages/home.program.academy.description') }}
                                 </p>
                             </div>
-                            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-10">
+                            <div class="flex flex-col md:flex-row items-start gap-4 md:gap-10">
                                 <div class="w-full md:w-1/2">
                                     <img src="{{ asset('assets/img/home/2026/academy.png') }}"
                                         class="w-full h-[200px] md:h-[300px] object-cover rounded-xl" loading="lazy">
@@ -319,7 +321,7 @@
                             itemprop="headline">
                             {!! __('pages/home.why_eduall.title') !!}
                         </h2>
-                        <p class="text-lg text-gray-400 mt-5" itemprop="description">
+                        <p class="text-lg text-gray-200 mt-5" itemprop="description">
                             {{ __('pages/home.why_eduall.subtitle') }}
                         </p>
                     </div>
@@ -332,7 +334,7 @@
                                         class="accordion-btn w-full flex justify-between items-center py-4 text-left font-normal">
                                         <div class="flex gap-2 items-center">
                                             <i class="fa-regular fa-circle-check text-green-400 text-2xl"></i>
-                                            <p>{{ $item['title'] }}</p>
+                                            <p class="">{{ $item['title'] }}</p>
                                         </div>
 
                                         <span class="text-2xl transition-all duration-200">+</span>
@@ -340,9 +342,9 @@
 
                                     <div
                                         class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                        <div class="px-5 pb-5 pl-8 text-gray-400">
+                                        <p class="px-5 pb-5 pl-8 text-gray-200 !leading-6">
                                             {{ $item['description'] }}
-                                        </div>
+                                        </p>
                                     </div>
                                 </div>
                             @endforeach
@@ -455,7 +457,7 @@
 
 
     {{-- ==================== Testimonial Section ==================== --}}
-    <section class="new-main-container relative z-10 my-12 md:my-20">
+    <section class="new-main-container relative z-10 my-12 md:my-10">
         <div class="text-center mb-6 md:mb-10">
             <h2 class="text-2xl md:text-4xl font-normal text-gray-800 uppercase mb-3 md:mb-4" itemprop="headline">
                 {{ __('pages/home.testimoni.title') }}
@@ -469,7 +471,7 @@
     </section>
 
     {{-- ==================== Call to Action Section ==================== --}}
-    <section class="relative z-10 h-auto overflow-hidden my-12 md:my-20 py-12 md:py-20">
+    <section class="relative z-10 h-auto overflow-hidden my-12 md:my-10 py-12 md:py-20">
         <img src="{{ asset('assets/img/home/2026/banner cta.webp') }}" alt="EduALL"
             class="absolute top-0 left-0 w-full z-0">
         <div class="new-main-container relative z-10 flex justify-center">
@@ -495,7 +497,7 @@
     </section>
 
     {{-- ==================== Our Students Section ==================== --}}
-    <section class="relative z-10 my-12 md:my-20">
+    <section class="relative z-10 my-12 md:my-10">
         <div class="new-main-container p-5 md:p-10">
             <h2 class="text-2xl md:text-4xl font-normal text-center mb-6 md:mb-10" itemprop="headline">
                 {{ __('pages/home.students.title') }}
@@ -539,7 +541,7 @@
     <x-universities moreText="{{ __('pages/home.universities.more_text') }}" />
 
     {{-- ==================== Article Section ==================== --}}
-    <section class="relative z-10 my-12 md:my-20 bg-gradient-to-br from-newprimary to-[#3056B0]">
+    <section class="relative z-10 my-12 md:my-10 bg-gradient-to-br from-newprimary to-[#3056B0]">
         <div class="new-main-container py-6 md:py-10">
             <div class="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-10 gap-4">
                 <h2 class="text-white text-2xl md:text-4xl font-thin" itemprop="headline">
@@ -547,8 +549,7 @@
                 </h2>
 
                 <div class="flex gap-3 items-center justify-center md:justify-end flex-wrap">
-                    <a href="{{ route('blogs', ['locale' => app()->getLocale()]) }}"
-                        class="bg-white text-blue-500 hover:bg-[#00003F] hover:text-white px-5 py-1 rounded-full">{{ __('pages/home.articles.all') }}</a>
+
                     @foreach ($category as $index => $item)
                         <button data-item="{{ $item->id }}"
                             class="category-btn py-1 px-4 rounded-full hover:bg-[#00003F] hover:text-white
@@ -588,15 +589,21 @@
                     </div>
                 @endforeach
             </div>
+
+            <div class="flex justify-center mt-5">
+                <a href="{{ route('blogs', ['locale' => app()->getLocale()]) }}"
+                    class="bg-white text-blue-500 hover:bg-[#00003F] hover:text-white px-5 py-1 rounded-full transition-all ease-in-out duration-300">See all
+                    articles</a>
+            </div>
         </div>
     </section>
 
     {{-- ==================== FAQ Section ==================== --}}
-    <section class="relative z-10 my-12 md:my-20">
-        <div class="new-main-container px-4 md:px-5 lg:px-20 pt-12 md:pt-20">
+    <section class="relative z-10 my-12 md:my-10">
+        <div class="new-main-container px-4 md:px-5 lg:px-20 pt-5">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-2/5 text-center md:text-start mb-5">
-                    <h2 class="text-blue-500 text-base md:text-lg mb-3 md:mb-5" itemprop="headline">
+                    <h2 class="text-blue-500 font-light text-base md:text-lg mb-3 md:mb-5" itemprop="headline">
                         {{ __('pages/home.faq.title') }}</h2>
                     <h3 class="text-2xl md:text-4xl font-normal leading-5 mb-3 md:mb-5" itemprop="headline">
                         {{ __('pages/home.faq.subtitle') }}</h3>

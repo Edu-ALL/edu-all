@@ -114,7 +114,7 @@
     {{-- ==================== Our Score Section ==================== --}}
     {{-- Statistics and achievements counter --}}
     <section class="relative z-10 bg-[#00003F]">
-        <div class="pt-6 md:pt-10 new-main-container md:px-0">
+        <div class="pt-3 md:pt-5 new-main-container md:px-0">
             <div class="flex flex-wrap justify-center gap-0 md:gap-5">
                 @foreach (__('pages/mentoring/epb.scores') as $score)
                     <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
@@ -132,7 +132,7 @@
 
     {{-- ==================== Program Features Section ==================== --}}
     {{-- Four key features: 1-on-1 Mentoring, Strategic Roadmap, Well-Rounded Support, 100+ Certificates --}}
-    <section class="new-main-container my-20" aria-label="Program Features">
+    <section class="new-main-container my-10" aria-label="Program Features">
         <div class=" text-newprimary p-5">
             <div class="flex flex-col md:flex-row items-start justify-center gap-5">
                 <div class="px-5 flex justify-center">
@@ -209,9 +209,9 @@
 
     {{-- ==================== Program Comparison Section ==================== --}}
     {{-- Comparison table showing program differences between Grades 7-8 and Grades 9-11 --}}
-    <section class="bg-gradient-to-r from-[#F6F6F6] to-[#f0f0f0] my-5 md:my-10 py-5 md:py-20"
+    <section class="bg-gradient-to-r from-[#F6F6F6] to-[#f0f0f0] my-5 md:my-10 py-5 md:py-10"
         aria-label="Program Comparison" id="impact-project">
-        <div class="new-main-container py-5 md:py-20">
+        <div class="new-main-container py-5 md:py-5">
             <h2 class="text-3xl md:text-5xl font-light uppercase text-center">
                 {{ __('pages/mentoring/epb.comparison.title') }}
             </h2>
@@ -322,7 +322,7 @@
 
     {{-- ==================== Program Benefits Section ==================== --}}
     {{-- Five phases: Student Clubs, Personal Projects, Competitions, Internships, Portfolio --}}
-    <section class="new-main-container py-10 md:py-20 relative" aria-label="Program Benefits">
+    <section class="new-main-container py-10 md:py-10 relative" aria-label="Program Benefits">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-10">
                 {!! __('pages/mentoring/epb.benefits_section.title') !!}
@@ -1088,7 +1088,7 @@
 
     {{-- ==================== Additional Opportunities Section ==================== --}}
     {{-- Extra opportunities: forums, exhibitions, internships, volunteering --}}
-    <section class="new-main-container py-5 md:py-20 relative" aria-label="Additional Opportunities">
+    <section class="new-main-container py-5 md:py-10 relative" aria-label="Additional Opportunities">
         <div class="flex flex-col md:flex-row gap-10">
             <div class="w-full md:w-[35%]">
                 <h3 class="text-4xl font-normal">
@@ -1137,7 +1137,7 @@
 
     {{-- ==================== Universities Section ==================== --}}
     {{-- University acceptances showcase component --}}
-    <section class="relative z-10 mt-20 md:pb-10" aria-label="University Acceptances">
+    <section class="relative z-10 mt-20" aria-label="University Acceptances">
         <div class="new-main-container px-10">
             <div class="max-w-4xl mx-auto">
                 <p class="text-2xl md:text-4xl font-semibold text-center text-newprimary mb-10">
@@ -1148,7 +1148,7 @@
                     {{ __('pages/mentoring/epb.universities.description') }}
                 </p>
             </div>
-            <div class="overflow-hidden py-10 md:py-20 max-w-6xl mx-auto">
+            <div class="overflow-hidden pt-10 max-w-6xl mx-auto">
                 <div class="pt-20">
                     <x-universities moreText="{{ __('pages/mentoring/epb.universities.more_text') }}" />
                 </div>
@@ -1159,9 +1159,9 @@
 
     {{-- ==================== Testimonial Section ==================== --}}
     {{-- Student testimonials slider --}}
-    <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-12 md:py-10" aria-label="Student Testimonials">
+    <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-5 md:py-10" aria-label="Student Testimonials">
         <div class="new-main-container relative z-10">
-            <div class="text-center mb-6 md:mb-10">
+            <div class="text-center mb-3 md:mb-5">
                 <h2 class="text-2xl md:text-5xl font-normal text-gray-800 uppercase mb-3 md:mb-4" itemprop="headline">
                     {{ __('pages/home.testimoni.title') }}
                 </h2>
@@ -1177,19 +1177,19 @@
 
     {{-- ==================== Faculty Message Section ==================== --}}
     {{-- Message from Head of Faculty --}}
-    <section class="new-main-container py-10 md:py-20">
+    <section class="new-main-container py-10 md:py-10">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div class="w-full md:w-[35%]">
-                <div class="w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
+                <div class="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
                     <img src="{{ asset('assets/img/mentoring/ultimate/34. Kak anne.png') }}"
                         alt="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}"
                         title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy"
                         decoding="async" width="400" height="500"
-                        class="w-full h-full rounded-2xl shadow-sm object-cover md:object-bottom object-center">
+                        class="w-full h-full rounded-2xl shadow-sm object-cover md:object-center object-center">
                 </div>
             </div>
             <div class="w-full md:w-[65%] text-center md:text-left">
-                <h2 class="text-2xl md:text-5xl text-newprimary font-light mb-4 md:mb-20">
+                <h2 class="text-2xl md:text-5xl text-newprimary font-light mb-4 md:mb-10">
                     {!! __('pages/mentoring/ultimate.head_of_faculty.title') !!}
                 </h2>
                 <span>
@@ -1213,7 +1213,7 @@
 
     {{-- ==================== FAQ Section ==================== --}}
     {{-- Frequently asked questions with accordion --}}
-    <section class="relative z-10 my-12 md:my-20" aria-label="Frequently Asked Questions">
+    <section class="relative z-10 my-12 md:my-10" aria-label="Frequently Asked Questions">
         <div class="new-main-container px-4 md:px-5 lg:px-20 text-center">
             <h3 class="text-2xl md:text-4xl font-normal leading-5 mb-3 md:mb-5" itemprop="headline">
                 {{ __('pages/mentoring/epb.faq.title') }}

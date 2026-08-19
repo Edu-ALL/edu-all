@@ -84,7 +84,7 @@
 @endphp
 
 {{-- ==================== Universities Section ==================== --}}
-<section class="relative z-10 -mt-20 pb-10">
+<section class="relative z-10 -mt-20">
     <div class="new-main-container px-10">
         {{-- First Marquee Row (Left Animation) --}}
         <div class="overflow-hidden">

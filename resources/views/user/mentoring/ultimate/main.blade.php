@@ -76,15 +76,15 @@
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
-                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
+                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-2xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
                         itemprop="headline">
                         {{ __('pages/mentoring/ultimate.banner.title') }}
                     </h1>
-                    <p class="text-white text-xl md:text-2xl mb-4 md:mb-5 md:text-start text-center max-w-3xl"
+                    <p class="text-white text-xl md:text-2xl mb-4 md:mb-5 md:text-start text-center max-w-2xl"
                         itemprop="description">
                         {{ __('pages/mentoring/ultimate.banner.subtitle') }}
                     </p>
-                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
+                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-2xl"
                         itemprop="description">
                         {{ __('pages/mentoring/ultimate.banner.description') }}
                     </p>
@@ -100,7 +100,7 @@
             decoding="async" width="1920" height="1080" class="absolute top-0 left-0 w-full h-auto">
 
         {{-- ==================== Our Score Section ==================== --}}
-        <section class="pt-6 md:pt-10 new-main-container md:px-0 pb-[1rem] md:pb-[3rem] relative z-10">
+        <section class="pt-3 md:pt-5 new-main-container md:px-0 pb-5 md:pb-10 relative z-10">
             <div class="flex flex-wrap justify-center gap-0 md:gap-5">
                 @foreach (__('pages/mentoring/ultimate.scores') as $score)
                     <div class="w-1/3 md:w-1/6 text-center score-item mb-5">
@@ -129,8 +129,8 @@
         </section>
 
         {{-- ==================== About Section ==================== --}}
-        <section class="new-main-container my-20">
-            <div class="max-w-2xl mx-auto text-center py-10 md:py-20">
+        <section class="new-main-container my-10">
+            <div class="max-w-2xl mx-auto text-center py-5 md:py-10">
                 <h2 class="text-xl md:text-2xl font-normal mb-2 md:mb-3">
                     {{ __('pages/mentoring/ultimate.about.title') }}
                 </h2>
@@ -153,7 +153,7 @@
     </section>
 
     {{-- ==================== What You Will Get Section ==================== --}}
-    <section class="new-main-container my-20">
+    <section class="new-main-container my-10">
         <div class="bg-[#E9F0F9] rounded-2xl shadow-xl">
             <div class="flex flex-col md:flex-row items-start">
                 <div class="w-full md:w-[30%] p-6 md:p-10">
@@ -186,7 +186,7 @@
     </section>
 
     {{-- ==================== Admissions Process Section ==================== --}}
-    <section class="new-main-container py-10 md:py-20 relative">
+    <section class="new-main-container py-5 md:py-10 relative">
         <img src="{{ asset('assets/img/mentoring/ultimate/5. Background The Admission Process.png') }}"
             alt="University Admissions Process Background" title="University Admissions Process Background" loading="lazy"
             decoding="async" width="1920" height="1080" class="absolute top-0 left-0 w-full h-auto">
@@ -233,7 +233,7 @@
     </section>
 
     {{-- ==================== How It Works Section ==================== --}}
-    <section class="new-main-container py-10 md:py-20 relative">
+    <section class="new-main-container py-5 md:py-10 relative">
         <div class="max-w-3xl mx-auto px-4">
             <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-newprimary mb-4 md:mb-10">
                 {{ __('pages/mentoring/ultimate.how_it_works.title') }}
@@ -555,7 +555,7 @@
     </section>
 
     {{-- ==================== Framework Section ==================== --}}
-    <section class="py-10 md:py-20 relative bg-dark">
+    <section class="py-5 md:py-10 relative bg-dark">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-2xl md:text-5xl font-normal uppercase text-center text-white mb-4 md:mb-10">
                 {{ __('pages/mentoring/ultimate.framework.title') }}
@@ -696,13 +696,13 @@
     </section>
 
     {{-- ==================== Exploration and Profile Building Section ==================== --}}
-    <section class="new-main-container py-10 md:py-20 relative">
+    <section class="new-main-container py-5 md:py-10 relative">
         <div class="w-full mx-auto relative overflow-hidden rounded-2xl shadow-sm">
             <img src="{{ asset('assets/img/mentoring/ultimate/32. Background Exploration.png') }}"
                 alt="Exploration and Profile Building Background" title="Exploration and Profile Building Background"
                 loading="lazy" decoding="async" width="1920" height="1080"
                 class="absolute w-full h-full object-cover left-0 top-0 z-0 rounded-2xl">
-            <div class="relative z-10 max-w-4xl mx-auto px-5 py-10 md:py-20">
+            <div class="relative z-10 max-w-4xl mx-auto px-5 py-5 md:py-10">
                 <h3 class="text-xl md:text-3xl font-normal uppercase text-center text-white mb-3 md:mb-5">
                     {{ __('pages/mentoring/ultimate.epb.title') }}
                 </h3>
@@ -721,7 +721,7 @@
     </section>
 
     {{-- ==================== Testimonial Section ==================== --}}
-    <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-12 md:py-20">
+    <section class="bg-gradient-to-b from-white to-[#D8E8FF]  py-5 md:py-10">
         <div class="new-main-container relative z-10">
             <div class="text-center mb-6 md:mb-10">
                 <h2 class="text-2xl md:text-5xl font-normal text-gray-800 uppercase mb-3 md:mb-4" itemprop="headline">
@@ -737,10 +737,10 @@
     </section>
 
     {{-- ==================== Head of Faculty Section ==================== --}}
-    <section class="new-main-container py-10 md:py-20">
+    <section class="new-main-container py-5 md:py-10">
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div class="w-full md:w-[35%]">
-                <div class="w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
+                <div class="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl md:rounded-3xl shadow-sm">
                     <img src="{{ asset('assets/img/mentoring/ultimate/8. Foto Kak anne.png') }}"
                         alt="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}"
                         title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy"
@@ -749,7 +749,7 @@
                 </div>
             </div>
             <div class="w-full md:w-[65%] text-center md:text-left">
-                <h2 class="text-2xl md:text-5xl text-newprimary font-light mb-4 md:mb-20">
+                <h2 class="text-2xl md:text-5xl text-newprimary font-light mb-4 md:mb-10">
                     {!! __('pages/mentoring/ultimate.head_of_faculty.title') !!}
                 </h2>
                 <span>
@@ -773,7 +773,7 @@
     </section>
 
     {{-- ==================== FAQ Section ==================== --}}
-    <section class="relative z-10 my-10 md:my-20">
+    <section class="relative z-10 my-10 md:my-10">
         <div class="new-main-container px-4 md:px-5 lg:px-20 text-center">
             <h3 class="text-xl md:text-4xl font-normal leading-5 mb-6 md:mb-5" itemprop="headline">
                 {{ __('pages/mentoring/ultimate.faq.title') }}
