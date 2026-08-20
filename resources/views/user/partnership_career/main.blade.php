@@ -41,7 +41,7 @@
                     </p>
 
                     <div class="flex md:justify-start justify-center">
-                        <a href="#"
+                        <a href="#career"
                             class="rounded-full py-2 px-5 text-base md:text-lg bg-newprimary text-white inline-block">
                             {{ __('pages/partnership_career.banner_cta') }}
                             <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -173,7 +173,7 @@
 
     {{-- ==================== The EduALL Experience Section ==================== --}}
     {{-- Career growth and benefits --}}
-    <section class="bg-gradient-to-b from-blue-100 to-white py-10 md:py-20">
+    <section class="bg-gradient-to-b from-blue-100 to-white py-10 md:py-10">
         <div class="new-main-container mt-10 md:mt-20">
             <div class="w-full mx-auto mb-10">
                 <p class="uppercase text-center font-light mb-3 text-sm md:text-base">
@@ -218,8 +218,8 @@
 
     {{-- ==================== Join Us / Roles Open Section ==================== --}}
     {{-- Career listings with filters --}}
-    <section class="bg-gradient-to-tr from-[#00020E] to-newprimary py-10 md:py-20">
-        <div class="new-main-container mt-10 md:mt-20">
+    <section class="bg-gradient-to-tr from-[#00020E] to-newprimary py-10 md:py-10"  id="career">
+        <div class="new-main-container mt-10 md:mt-10">
             <div class="max-w-4xl mx-auto mb-10">
                 <p class="uppercase text-center font-light mb-3 text-white text-sm md:text-base">
                     {{ __('pages/partnership_career.join_us_label') }}
@@ -232,7 +232,7 @@
                 </p>
             </div>
 
-            <section class="py-10" id="career">
+            <section class="py-10">
                 <div class="new-main-container">
                     <div
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 items-center justify-between border-b border-b-[#393636] pb-4">
