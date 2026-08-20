@@ -80,11 +80,11 @@
                         itemprop="headline">
                         {{ __('pages/mentoring/ultimate.banner.title') }}
                     </h1>
-                    <p class="text-white text-xl md:text-2xl mb-4 md:mb-5 md:text-start text-center max-w-2xl"
+                    <p class="text-white text-xl md:text-[1.3rem] mb-4 md:mb-5 md:text-start font-normal text-center max-w-2xl"
                         itemprop="description">
                         {{ __('pages/mentoring/ultimate.banner.subtitle') }}
                     </p>
-                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-2xl"
+                    <p class="text-gray-300 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-2xl"
                         itemprop="description">
                         {{ __('pages/mentoring/ultimate.banner.description') }}
                     </p>

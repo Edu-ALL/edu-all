@@ -97,12 +97,12 @@
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
-                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-20 leading-8"
+                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-3xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
                         itemprop="headline">
                         {!! __('pages/mentoring/epb.banner.title') !!}
                     </h1>
 
-                    <p class="text-gray-400 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-3xl"
+                    <p class="text-gray-300 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-2xl"
                         itemprop="description">
                         {{ __('pages/mentoring/epb.banner.description') }}
                     </p>
