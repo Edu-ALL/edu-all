@@ -601,11 +601,11 @@
 
                                 <div class="flex justify-between items-center h-full p-5">
                                     <div class="w-[75%]">
-                                        <h3 class="text-white text-lg md:text-2xl font-normal mb-2">
+                                        <h3 class="text-white text-lg md:text-3xl font-normal mb-2">
                                             {{ $frameworkItems[$i]['title'] }}
                                         </h3>
 
-                                        <p class="text-white/70 text-sm leading-relaxed">
+                                        <p class="text-white text-sm leading-relaxed">
                                             {{ $frameworkItems[$i]['description'] }}
                                         </p>
                                     </div>
@@ -655,11 +655,11 @@
 
                                 <div class="flex justify-between items-center h-full p-5">
                                     <div class="w-[75%]">
-                                        <h3 class="text-white text-lg md:text-2xl font-normal mb-2">
+                                        <h3 class="text-white text-lg md:text-3xl font-normal mb-2">
                                             {{ $frameworkItems[$i]['title'] }}
                                         </h3>
 
-                                        <p class="text-white/70 text-sm leading-relaxed">
+                                        <p class="text-white text-sm leading-relaxed">
                                             {{ $frameworkItems[$i]['description'] }}
                                         </p>
                                     </div>
