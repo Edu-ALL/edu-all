@@ -72,19 +72,19 @@
                     alt="{{ __('pages/mentoring/ultimate.banner.title') }}"
                     title="{{ __('pages/mentoring/ultimate.banner.title') }}" fetchpriority="high" decoding="async"
                     width="1920" height="1080"
-                    class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-bottom object-left">
+                    class="w-full md:h-[100vh] h-[100dvh] object-cover md:object-top object-left">
             </div>
             <div class="absolute left-0 w-full top-[27vh] md:top-[25vh]">
                 <div class="new-main-container">
-                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-2xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
+                    <h1 class="font-normal text-[2rem] md:text-[3.5rem] text-white text-center lg:text-left max-w-xl mx-auto lg:mx-0 md:leading-[3.5rem] mb-6 md:mb-10 leading-8"
                         itemprop="headline">
                         {{ __('pages/mentoring/ultimate.banner.title') }}
                     </h1>
-                    <p class="text-white text-xl md:text-[1.3rem] mb-4 md:mb-5 md:text-start font-normal text-center max-w-2xl"
+                    <p class="text-white text-xl md:text-[1.3rem] mb-4 md:mb-5 md:text-start font-normal text-center max-w-xl"
                         itemprop="description">
-                        {{ __('pages/mentoring/ultimate.banner.subtitle') }}
+                        {!! __('pages/mentoring/ultimate.banner.subtitle') !!}
                     </p>
-                    <p class="text-gray-300 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-2xl"
+                    <p class="text-gray-300 text-lg md:text-xl mb-4 md:mb-0 md:text-start text-center max-w-xl"
                         itemprop="description">
                         {{ __('pages/mentoring/ultimate.banner.description') }}
                     </p>

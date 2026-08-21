@@ -15,7 +15,7 @@ return [
     // Banner Section
     'banner' => [
         'title' => 'Ultimate University Admissions Mentoring Program',
-        'subtitle' => "EduALL's all-inclusive university admissions mentoring program.",
+        'subtitle' => "EduALL's all-inclusive university admissions <br> mentoring program.",
         'description' => 'This personalized 1-on-1 journey combines passion exploration, profile building, and expert admissions guidance to help students gain admission to their best-fit universities around the world.',
     ],
 

@@ -115,7 +115,7 @@
 
     {{-- ==================== Notable Projects Slider ==================== --}}
     {{-- Horizontal scrolling showcase of featured projects --}}
-    <section class="bg-newprimary py-12 md:py-20">
+    <section class="bg-newprimary py-12 md:py-10">
         <div class="new-main-container">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-5">
                 <h2 class="text-white text-3xl md:text-5xl mb-4 md:mb-0 font-normal text-center md:text-left">
@@ -166,7 +166,7 @@
 
     {{-- ==================== Passion Projects Section ==================== --}}
     {{-- Tab content: Student passion projects with category filters --}}
-    <section class="py-12 md:py-20" id="passion_projects" data-tab-content="passion_projects">
+    <section class="py-12 md:py-10" id="passion_projects" data-tab-content="passion_projects">
         <div class="new-main-container py-6 md:py-10">
             <div class="max-w-4xl mx-auto text-center px-4">
                 <h2 class="text-newprimary uppercase text-4xl md:text-6xl font-normal mb-2">
@@ -267,7 +267,7 @@
 
     {{-- ==================== Student Research Section ==================== --}}
     {{-- Tab content: Academic research papers with field filters --}}
-    <section class="py-12 md:py-20 hidden" id="student_research" data-tab-content="student_research">
+    <section class="py-12 md:py-10 hidden" id="student_research" data-tab-content="student_research">
         <div class="new-main-container py-6 md:py-10">
             <div class="max-w-4xl mx-auto mb-10 text-center px-4">
                 <h2 class="text-newprimary uppercase text-4xl md:text-6xl font-normal mb-2">
@@ -337,8 +337,8 @@
 
     {{-- ==================== Call to Action Section ==================== --}}
     {{-- CTA with image slider for engagement --}}
-    <section class="bg-gradient-to-b from-white to-[#305692] py-12 md:py-20">
-        <div class="new-main-container py-10 md:py-20">
+    <section class="bg-gradient-to-b from-white to-[#305692] py-12 md:py-10">
+        <div class="new-main-container py-10 md:py-10">
             <div class="text-center px-4">
                 <h2 class="font-light text-3xl md:text-6xl mb-3">
                     {!! __('pages/impact_project.cta.title', [], app()->getLocale()) !!}

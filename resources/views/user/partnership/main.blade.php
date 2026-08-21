@@ -77,7 +77,7 @@
 
     {{-- ==================== Partnership Types Overview ==================== --}}
     {{-- Three main partnership categories: School, Company, and Community --}}
-    <section class="new-main-container py-10 md:py-20 mt-10 md:mt-20">
+    <section class="new-main-container py-10 md:py-10 mt-10 md:mt-20">
         <div class="max-w-5xl mx-auto text-center mb-5">
             <h2 class="uppercase text-3xl md:text-5xl mb-5 font-semibold">
                 {{ __('pages/partnership.partnership_types.title', [], app()->getLocale()) }}
@@ -176,7 +176,7 @@
 
     {{-- ==================== School Partnership Section ==================== --}}
     {{-- Detailed information about school partnership programs and collaboration --}}
-    <section class="bg-[#EDEDED] py-10 md:py-20 partnership-section" id="school-partnership">
+    <section class="bg-[#EDEDED] py-10 md:py-10 partnership-section" id="school-partnership">
         <div class="new-main-container mx-auto pb-10 md:pb-20">
             <p class="uppercase text-blue-500 mb-3 font-semibold text-sm md:text-base">
                 {{ __('pages/partnership.school_partnership.label', [], app()->getLocale()) }}
@@ -324,7 +324,7 @@
 
     {{-- ==================== Company Partnership Section ==================== --}}
     {{-- Detailed information about company partnership and business collaboration --}}
-    <section class="bg-white py-10 md:py-20 partnership-section hidden" id="company-partnership">
+    <section class="bg-white py-10 md:py-10 partnership-section hidden" id="company-partnership">
         <div class="new-main-container mx-auto pb-10 md:pb-20">
             <p class="uppercase text-blue-500 mb-3 font-semibold text-sm md:text-base">
                 {{ __('pages/partnership.company_partnership.label', [], app()->getLocale()) }}
@@ -374,7 +374,7 @@
         </div>
 
         {{-- Company Partnership Benefits --}}
-        <div class="new-main-container mx-auto py-10 md:py-20">
+        <div class="new-main-container mx-auto py-10 md:py-10">
             <div class="flex flex-col md:flex-row justify-between mt-8 md:mt-10 gap-8 md:gap-0">
                 <div class="w-full md:w-[40%]">
                     <h2 class="text-2xl md:text-4xl font-bold text-newprimary uppercase mb-3 md:mb-5">
@@ -412,7 +412,7 @@
 
     {{-- ==================== Community Partnership Section ==================== --}}
     {{-- Community engagement and social impact partnership programs --}}
-    <section class="bg-[#EDEDED] py-10 md:py-20 partnership-section hidden" id="community-partnership">
+    <section class="bg-[#EDEDED] py-10 md:py-10 partnership-section hidden" id="community-partnership">
         <div class="new-main-container mx-auto pb-10 md:pb-20">
             <p class="uppercase text-blue-500 mb-3 font-semibold text-sm md:text-base">
                 {{ __('pages/partnership.community_partnership.label', [], app()->getLocale()) }}
@@ -462,7 +462,7 @@
         </div>
 
         {{-- Community Impact in Action --}}
-        <div class="new-main-container mx-auto py-10 md:py-20">
+        <div class="new-main-container mx-auto py-10 md:py-10">
             <div class="flex flex-col md:flex-row justify-between mt-8 md:mt-10 gap-8 md:gap-0">
                 <div class="w-full md:w-[40%]">
                     <h2 class="text-2xl md:text-4xl font-bold text-newprimary uppercase mb-3 md:mb-5">
@@ -540,7 +540,7 @@
 
     {{-- ==================== Gallery Section ==================== --}}
     {{-- Visual showcase of partnership programs and activities --}}
-    <section class="py-10 md:py-20">
+    <section class="py-10 md:py-10">
         <div class="new-main-container">
             <div class="max-w-5xl mx-auto text-center">
                 <h2 class="text-3xl md:text-5xl font-semibold uppercase mb-5">
@@ -673,7 +673,7 @@
 
     {{-- ==================== Partner Organizations Section ==================== --}}
     {{-- Logo showcase of partner organizations and institutions --}}
-    <section class="py-10 md:py-20">
+    <section class="py-10 md:py-10">
         <div class="new-main-container pt-10 md:pt-20">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl md:text-5xl font-semibold uppercase mb-5">
@@ -706,159 +706,222 @@
 
     {{-- ==================== Contact Form Section ==================== --}}
     {{-- Partnership inquiry and contact form for potential partners --}}
-    <section class="bg-newprimary py-10 md:py-20" id="cta">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-10 py-10 md:py-20 items-center">
-            <div class="w-full md:w-1/2">
-                <h2 class="text-white text-3xl md:text-5xl font-semibold mb-5 uppercase">
-                    {{ __('pages/partnership.contact_form.title', [], app()->getLocale()) }}
-                </h2>
-                <p class="text-base md:text-xl text-white/60 font-light">
-                    {{ __('pages/partnership.contact_form.subtitle', [], app()->getLocale()) }}
-                </p>
-            </div>
-
-            <div class="w-full md:w-1/2">
-                <div class="bg-[#EAEAEA] py-6 md:py-8 px-6 md:px-10 rounded-xl shadow-2xl w-full">
-                    <form action="{{ route('submit_partnership', ['locale' => 'id-en']) }}" method="POST"
-                        id="myForm">
-                        @csrf
-                        <div>
-                            <h3 class="mb-2 text-base md:text-lg text-center">
-                                {{ __('pages/partnership.contact_form.form_title', [], app()->getLocale()) }}
-                            </h3>
-
-                            <p class="text-xs md:text-[12px] text-center italic text-gray-500 mb-3">
-                                {{ __('pages/partnership.contact_form.form_subtitle', [], app()->getLocale()) }}
-                            </p>
-
-                            <div class="flex gap-4 flex-col md:flex-row">
-                                <div class="md:mb-3 w-full md:w-1/2">
-                                    <label for="primary_name"
-                                        class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.fullname', [], app()->getLocale()) }}</label>
-                                    <input type="text" name="fullname"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                        placeholder="{{ __('pages/partnership.contact_form.fields.fullname', [], app()->getLocale()) }}"
-                                        id="primary_name" required oninput="checkValidation('primary_name')">
-                                    <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                    @error('fullname')
-                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="md:mb-3 w-full md:w-1/2">
-                                    <label for="company_name" class="text-dark text-xs md:text-sm py-2">
-                                        {{ __('pages/partnership.contact_form.fields.company_name', [], app()->getLocale()) }}
-                                    </label>
-                                    <input type="text" name="company_name"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                        placeholder="{{ __('pages/partnership.contact_form.fields.company_name', [], app()->getLocale()) }} *"
-                                        id="company_name" required oninput="checkValidation('company_name')">
-                                    <div id="company_name_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                    @error('company_name')
-                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="flex gap-4 flex-col md:flex-row">
-                                <div class="mb-3 w-full md:w-1/2">
-                                    <label for="position"
-                                        class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.position', [], app()->getLocale()) }}</label>
-                                    <input type="text" name="position"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                        placeholder="{{ __('pages/partnership.contact_form.fields.position', [], app()->getLocale()) }}"
-                                        id="position" required oninput="checkValidation('position')">
-                                    <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                    @error('position')
-                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="md:mb-1 md:w-1/2">
-                                    <label for="email"
-                                        class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.email', [], app()->getLocale()) }}</label>
-                                    <input type="email" name="email"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                        placeholder="you@gmail.com" id="email" required
-                                        oninput="checkValidation('email')">
-                                    <div id="email_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                    @error('email')
-                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="flex gap-4 flex-col md:flex-row">
-                                <div class="mb-1 md:w-1/2">
-                                    <label for="phone_number"
-                                        class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.phone_number', [], app()->getLocale()) }}</label>
-                                    <input type="text" name="phone_number"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                        placeholder="+62 ..." id="phone_number" required
-                                        oninput="checkValidation('phone_number')">
-                                    <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                    @error('phone_number')
-                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-1 md:w-1/2">
-                                    <label for="partnership_type"
-                                        class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.partnership_type', [], app()->getLocale()) }}</label>
-                                    <select name="partnership_type"
-                                        class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                        id="partnership_type" required oninput="checkValidation('partnership_type')">
-                                        @foreach (__('pages/partnership.contact_form.partnership_types', [], app()->getLocale()) as $value => $label)
-                                            <option value="{{ $value }}">{{ $label }}</option>
-                                        @endforeach
-                                    </select>
-                                    <div id="partnership_type_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                    @error('partnership_type')
-                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="inquiry"
-                                    class="text-dark text-xs md:text-sm py-2">{{ __('pages/partnership.contact_form.fields.inquiry', [], app()->getLocale()) }}</label>
-                                <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-3 my-1 w-full text-sm md:text-base"
-                                    placeholder="{{ __('pages/partnership.contact_form.fields.inquiry', [], app()->getLocale()) }} *" id="inquiry"
-                                    name="inquiry" rows="2" required oninput="checkValidation('inquiry')"></textarea>
-                                <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden"></div>
-                                @error('inquiry')
-                                    <div class="text-red text-[10px] mt-1">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="flex justify-center mb-3">
-                                <div class="text-center">
-                                    <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
-                                    <span id="captcha" class="text-red" />
-                                </div>
-                            </div>
-                            <div class="mb-3 flex items-center justify-center">
-                                <button type="button"
-                                    class="w-full bg-black rounded-xl text-white text-center py-2 px-6 md:px-20 text-sm md:text-base">
-                                    <span id="loading" class="hidden">
-                                        <i class="fas fa-spinner fa-spin mr-4"></i>
-                                    </span>
-                                    {{ __('pages/partnership.contact_form.submit_button', [], app()->getLocale()) }}
-                                </button>
-                            </div>
-                    </form>
+    <section class="bg-gradient-to-b from-newprimary to-newprimary/10 relative overflow-hidden">
+        <img src="{{ asset('assets/img/Events/bg.png') }}" alt="EduALL" loading="lazy" decoding="async"
+            width="100%" height="auto" class="w-full object-cover object-bottom absolute left-0 top-0 z-0">
+        <div class="new-main-container py-10 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10 mb-5">
+                <div class="w-full md:w-[30%]">
+                    <h2 class="text-3xl md:text-5xl text-start font-normal text-white mb-5">
+                        {{ __('pages/partnership.contact_form.title', [], app()->getLocale()) }}
+                    </h2>
+                </div>
+                <div class="w-full md:w-[50%]">
+                    <p class="text-base md:text-lg text-start font-light text-white/80">
+                        {{ __('pages/partnership.contact_form.subtitle', [], app()->getLocale()) }}
+                    </p>
                 </div>
             </div>
 
-            <div id="thanksForm" class="hidden">
-                <div class="flex flex-col justify-center">
-                    <h4 class="mb-4 mt-4 text-newprimary font-bold text-center text-lg leading-6">
-                        {{ __('pages/partnership.contact_form.success_message', [], app()->getLocale()) }}
-                    </h4>
-                    <a href="{{ route('home', app()->getLocale()) }}" class="flex justify-center w-full pt-4">
-                        <span
-                            class="block px-4 py-2 rounded-lg bg-red font-newprimary font-semibold text-base text-white text-center">
-                            {{ __('pages/partnership.contact_form.back_to_home', [], app()->getLocale()) }}
-                        </span>
-                    </a>
+            <div class="flex md:flex-nowrap flex-wrap gap-10 mb-10">
+                <div class="w-1/4">
+                    <p class="text-sm md:text-base text-white/80">
+                        45+ organizations have already partnered with EduALL across schools,
+                        companies, and communities.
+                    </p>
+                </div>
+                <div class="w-1/4">
+                    <p class="text-sm md:text-base text-white/80">
+                        We follow up within 2 business days to explore the collaboration that fits you best.
+                    </p>
+                </div>
+                <div class="w-1/4">
+                    <p class="text-sm md:text-base text-white/80">
+                        No commitment required. The first conversation is exploratory, shaped around your goals.
+                    </p>
+                </div>
+                <div class="w-1/4">
+                    <p class="text-sm md:text-base text-white/80">
+                        Every partnership type uses this same form. The Partnership Type field pre-fills from the card you
+                        selected above.
+                    </p>
                 </div>
             </div>
-        </div>
-        </div>
+
+
+            <div class="max-w-6xl mx-auto mb-10 overflow-hidden">
+                <div id="slider" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+
+                            <li class="splide__slide rounded-2xl">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/12. Event CTA foto 1.png') }}"
+                                        alt="EduALL event photo gallery - students activities and workshops"
+                                        loading="lazy" decoding="async" width="800" height="600"
+                                        class="rounded-lg shadow-sm w-full">
+                                </div>
+                            </li>
+
+                            <li class="splide__slide rounded-2xl">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/13. Event CTA foto 2.png') }}"
+                                        alt="EduALL community initiative and student engagement" loading="lazy"
+                                        decoding="async" width="800" height="600"
+                                        class="rounded-lg shadow-sm w-full">
+                                </div>
+                            </li>
+
+                            <li class="splide__slide rounded-2xl">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/14. Event CTA foto 3.png') }}"
+                                        alt="EduALL mentorship programs and learning experiences" loading="lazy"
+                                        decoding="async" width="800" height="600"
+                                        class="rounded-lg shadow-sm w-full">
+                                </div>
+                            </li>
+
+                            <li class="splide__slide rounded-2xl">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/Events/15. Event CTA foto 4.png') }}"
+                                        alt="EduALL events bringing students and educators together" loading="lazy"
+                                        decoding="async" width="800" height="600"
+                                        class="rounded-lg shadow-sm w-full">
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto text-center relative z-10">
+                <div class="max-w-3xl mx-auto relative z-10">
+                    <div
+                        class="bg-gradient-to-b from-[#3C74B5] to-white py-6 md:py-5 px-6 md:px-10 rounded-xl shadow-2xl w-full">
+                        <form action="{{ route('submit_partnership', ['locale' => 'id-en']) }}" method="POST"
+                            id="myForm">
+                            @csrf
+                            <div class="text-start">
+                                <div class="flex gap-4 flex-col md:flex-row">
+                                    <div class="md:mb-1 w-full md:w-1/2">
+                                        <label for="primary_name"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.fullname') }}</label>
+                                        <input type="text" name="fullname"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                            placeholder="{{ __('pages/event.cta_section.form_fields.fullname') }}"
+                                            id="primary_name" required oninput="checkValidation('primary_name')">
+                                        <div id="primary_name_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                        @error('fullname')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="md:mb-1 w-full md:w-1/2">
+                                        <label for="company_name" class="text-white text-sm py-2">
+                                            {{ __('pages/event.cta_section.form_fields.company_name') }}
+                                        </label>
+                                        <input type="text" name="company_name"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                            placeholder="{{ __('pages/event.cta_section.form_fields.company_name') }} *"
+                                            id="company_name" required oninput="checkValidation('company_name')">
+                                        <div id="company_name_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                        @error('company_name')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 flex-col md:flex-row">
+                                    <div class="mb-3 w-full md:w-1/2">
+                                        <label for="position"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.position') }}</label>
+                                        <input type="text" name="position"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                            placeholder="{{ __('pages/event.cta_section.form_fields.position') }}"
+                                            id="position" required oninput="checkValidation('position')">
+                                        <div id="position_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                        @error('position')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="md:mb-1 md:w-1/2">
+                                        <label for="email"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.email') }}</label>
+                                        <input type="email" name="email"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                            placeholder="you@example.com" id="email" required
+                                            oninput="checkValidation('email')">
+                                        <div id="email_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                        @error('email')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 flex-col md:flex-row">
+                                    <div class="mb-3 md:w-1/2">
+                                        <label for="phone_number"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.phone_number') }}</label>
+                                        <input type="text" name="phone_number"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                            placeholder="+62 ..." id="phone_number" required
+                                            oninput="checkValidation('phone_number')">
+                                        <div id="phone_number_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                        @error('phone_number')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="mb-3 md:w-1/2">
+                                        <label for="partnership_type"
+                                            class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.partnership_type') }}</label>
+                                        <select name="partnership_type"
+                                            class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                            id="partnership_type" required oninput="checkValidation('partnership_type')">
+                                            <option value="">
+                                                {{ __('pages/event.cta_section.form_fields.partnership_type') }}</option>
+                                            <option value="School">
+                                                {{ __('pages/event.cta_section.partnership_types.school') }}</option>
+                                            <option value="Company">
+                                                {{ __('pages/event.cta_section.partnership_types.company') }}</option>
+                                            <option value="Community">
+                                                {{ __('pages/event.cta_section.partnership_types.community') }}</option>
+                                        </select>
+                                        <div id="partnership_type_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                        @error('partnership_type')
+                                            <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inquiry"
+                                        class="text-white text-sm py-2">{{ __('pages/event.cta_section.form_fields.inquiry') }}</label>
+                                    <textarea class="md:py-2 text-dark rounded-lg border-none shadow-sm py-2 text-sm my-1 w-full"
+                                        placeholder="{{ __('pages/event.cta_section.form_fields.inquiry') }} *" id="inquiry" name="inquiry"
+                                        rows="2" required oninput="checkValidation('inquiry')"></textarea>
+                                    <div id="inquiry_error" class="text-red text-[10px] mt-1 hidden"></div>
+                                    @error('inquiry')
+                                        <div class="text-red text-[10px] mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="flex justify-center mb-3">
+                                    <div class="text-center">
+                                        <div class="g-recaptcha" id="rcaptcha" class="w-full"></div>
+                                        <span id="captcha" class="text-red" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 flex items-center justify-center">
+                                    <button type="button"
+                                        class="w-full bg-black rounded-xl text-white text-center py-2 px-20"
+                                        onclick="submitData()">
+                                        <span id="loading" class="hidden">
+                                            <i class="fas fa-spinner fa-spin mr-4"></i>
+                                        </span>
+                                        {{ __('pages/event.cta_section.submit_button') }}
+                                    </button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
@@ -1064,5 +1127,110 @@
                 }
             }
         }
+    </script>
+
+    <script>
+        // ==================== Mentee Slider (Splide) ====================
+        // Initialize testimonial slider with autoplay
+        document.addEventListener('DOMContentLoaded', function() {
+            const isMobile = window.innerWidth < 768;
+
+            const slider = new Splide('#slider', {
+                type: 'loop',
+                perPage: 3,
+                focus: 'center',
+                autoplay: true,
+                interval: 4000,
+                speed: 600,
+                drag: false,
+                arrows: true,
+                pagination: false,
+                fixedWidth: '450px',
+                fixedHeight: 'auto',
+                gap: '-3rem',
+                padding: '5%',
+
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                        fixedWidth: '300px',
+                        gap: '1rem',
+                        padding: '3%',
+                    },
+
+                    768: {
+                        perPage: 1,
+                        fixedWidth: '280px',
+                        gap: '1rem',
+                        padding: '2%',
+                    },
+                },
+            });
+
+            slider.mount();
+
+
+            /*
+             * Scale mengikuti posisi card secara realtime.
+             */
+            function updateScale() {
+
+                const root = document.querySelector('#slider');
+                const slides = root.querySelectorAll('.splide__slide');
+
+                const rootRect = root.getBoundingClientRect();
+                const centerX = rootRect.left + rootRect.width / 2;
+
+                slides.forEach(slide => {
+
+                    const card = slide.querySelector('.card');
+
+                    if (!card) return;
+
+                    const rect = slide.getBoundingClientRect();
+
+                    const slideCenter = rect.left + rect.width / 2;
+
+                    const distance = Math.abs(centerX - slideCenter);
+
+                    const maxDistance = rect.width;
+
+                    const progress = Math.min(
+                        distance / maxDistance,
+                        1
+                    );
+
+                    /*
+                     * =========================
+                     * SCALE
+                     * =========================
+                     *
+                     * Center  = 1
+                     * Samping = 0.6
+                     */
+                    const scale = 1 - (progress * 0.4);
+
+
+                    /*
+                     * =========================
+                     * OPACITY
+                     * =========================
+                     *
+                     * Center  = 1
+                     * Samping = 0.4
+                     */
+                    const opacity = 1 - (progress * 0.6);
+
+
+                    card.style.transform = `scale(${scale})`;
+                    slide.style.opacity = opacity;
+
+                });
+
+                requestAnimationFrame(updateScale);
+            }
+
+            requestAnimationFrame(updateScale);
+        });
     </script>
 @endpush

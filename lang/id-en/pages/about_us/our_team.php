@@ -40,7 +40,7 @@ return [
             'university' => 'University of Pennsylvania',
             'highlights' => ['10+ years in education', 'Former Goldman Sachs banker'],
             'image_1' => 'assets/img/about/Our Team/2. The Leadership/1. Kak Dev-1.png',
-            'image_2' => 'assets/img/about/Our Team/2. The Leadership/2. Kak Dev-2.png',
+            'image_2' => 'assets/img/about/Our Team/2. The Leadership/2. Kak Dev-2.webp',
             'modal_university' => 'University of Pennsylvania',
             'modal_description' => 'Devi Kasih is the Founder and CEO of EduALL. A University of Pennsylvania graduate with both a BS and an M.S.Ed, and an LPDP Awardee (2022), she spent more than seven years in investment banking at Goldman Sachs in Hong Kong before returning to education. Drawing on over a decade in the field, she founded EduALL to help Indonesian students find their place on the global stage, growing it into one of Indonesia\'s leading admissions mentorships, supporting 1,200+ students to more than 3,500 university offers.'
         ],
@@ -51,7 +51,7 @@ return [
             'university' => 'Purdue University',
             'highlights' => ['Ph.D, Purdue', 'Patents & international publications'],
             'image_1' => 'assets/img/about/Our Team/2. The Leadership/3. Kak Nic-1.png',
-            'image_2' => 'assets/img/about/Our Team/2. The Leadership/4. Kak Nic-2.png',
+            'image_2' => 'assets/img/about/Our Team/2. The Leadership/4. Kak Nic-2.webp',
             'modal_university' => 'Purdue University',
             'modal_description' => 'Nicholas Soepriatna is the Co-Founder and Head of Faculty at EduALL. He holds a Ph.D from Purdue University and a BS from the University of Texas at Austin, and brings over a decade of R&D research, with multiple patents and publications in international journals. For the past 8+ years he has led EduALL\'s academic and product development, shaping the curriculum and standards behind EduALL Academy, with deep expertise in academic program design and STEM.'
         ],
@@ -62,7 +62,7 @@ return [
             'university' => 'University College London',
             'highlights' => ['LPDP Awardee 2018', '12+ years in curriculum & teacher training'],
             'image_1' => 'assets/img/about/Our Team/2. The Leadership/5. Kak Anne-1.png',
-            'image_2' => 'assets/img/about/Our Team/2. The Leadership/6. Kak Anne-2.png',
+            'image_2' => 'assets/img/about/Our Team/2. The Leadership/6. Kak Anne-2.webp',
             'modal_university' => 'University College London',
             'modal_description' => 'Debora Wibianne leads mentoring at EduALL. A University College London graduate (MA) and LPDP Awardee (2018), with additional degrees from Universitas Pelita Harapan and Coban University, she brings more than 12 years in curriculum development and teacher training across Indonesia and the UK, and 7+ years in school leadership and strategic development. She specializes in designing mentoring programs and building the standards that guide how EduALL students are supported.'
         ],

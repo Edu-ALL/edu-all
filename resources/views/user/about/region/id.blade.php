@@ -35,7 +35,7 @@
             <div class="w-full md:h-[100vh] h-[100dvh] bg-black">
                 <img src="{{ asset('assets/img/about/Our Story/1. Background Hero.png') }}" alt="EduALL" title="EduALL"
                     loading="lazy" decoding="async" width="100%" height="auto"
-                    class="w-full md:h-[100vh] h-[100dvh] object-cover object-bottom">
+                    class="w-full md:h-[100vh] h-[100dvh] object-cover object-top">
             </div>
             <div class="absolute left-0 w-full top-[15vh] md:top-[20vh] overflow-hidden">
                 <div class="new-main-container">
@@ -50,7 +50,7 @@
                                     {{ __('pages/about_us/our_story.banner.label') }}
                                 </p>
                             </div>
-                            <h1 class="font-light text-[2rem] md:text-[3rem] text-white text-center lg:text-left md:leading-[3.5rem] mb-6 md:mb-5 leading-8 uppercase"
+                            <h1 class="font-normal text-[2rem] md:text-[3rem] text-white text-center lg:text-left md:leading-[3.5rem] mb-6 md:mb-5 leading-8 uppercase"
                                 itemprop="headline">
                                 {!! __('pages/about_us/our_story.banner.title') !!}
                             </h1>
@@ -120,7 +120,7 @@
 
     {{-- ==================== Vision & Mission Section ==================== --}}
     {{-- Company vision and mission cards --}}
-    <section class="bg-gradient-to-b from-white to-blue-300 py-20 my-20">
+    <section class="bg-gradient-to-b from-white to-blue-300 py-10 my-10">
         <div class="new-main-container">
             <p class="mb-2">
                 {{ __('pages/about_us/our_story.vision_mission.label') }}

@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <section class="new-main-container py-20">
+    <section class="new-main-container py-10">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl md:text-4xl text-center uppercase font-normal text-newprimary mb-5">
                 {{ __('pages/event.section_title') }}
@@ -132,7 +132,7 @@
     <section class="bg-gradient-to-b from-newprimary to-newprimary/10 relative overflow-hidden">
         <img src="{{ asset('assets/img/Events/bg.png') }}" alt="EduALL" loading="lazy" decoding="async" width="100%"
             height="auto" class="w-full object-cover object-bottom absolute left-0 top-0 z-0">
-        <div class="new-main-container py-20 relative z-10">
+        <div class="new-main-container py-10 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 mb-10">
                 <div class="w-full md:w-[30%]">
                     <h2 class="text-3xl md:text-5xl text-start font-normal text-white mb-5">

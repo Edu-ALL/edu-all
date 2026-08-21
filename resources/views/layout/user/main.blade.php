@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('favicon.png') }}" rel="icon">
+    <link href="{{ asset('favicon.webp') }}" rel="icon">
     <meta property=og:type content="website">
     <meta name="robots" content="index,follow" />
     <meta name="google-site-verification" content="CG6UZM2bl9cgm8N-Q5eeH8Toy84tmDg8t_tKYEMDOpc" />

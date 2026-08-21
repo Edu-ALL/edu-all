@@ -471,7 +471,7 @@
     </section>
 
     {{-- ==================== Call to Action Section ==================== --}}
-    <section class="relative z-10 h-auto overflow-hidden my-12 md:my-10 py-12 md:py-20">
+    <section class="relative z-10 h-auto overflow-hidden my-12 md:my-10 py-12 md:py-10">
         <img src="{{ asset('assets/img/home/2026/banner cta.webp') }}" alt="EduALL"
             class="absolute top-0 left-0 w-full z-0">
         <div class="new-main-container relative z-10 flex justify-center">
@@ -507,31 +507,31 @@
                 <img src="{{ asset('assets/img/home/2026/maps.svg') }}" alt="" class="w-full relative z-0">
 
                 <div class="absolute top-[12%] left-[12%] group z-10">
-                    <x-tooltip flag="fi fi-ca" :flag-name="__('pages/home.students.countries.ca')" mentees="20" />
+                    <x-tooltip flag="fi fi-ca" :flag-name="__('pages/home.students.countries.ca')" mentees="78" />
                 </div>
 
                 <div class="absolute top-[8%] left-[32%] group z-10">
-                    <x-tooltip flag="fi fi-gb" :flag-name="__('pages/home.students.countries.uk')" mentees="20" />
+                    <x-tooltip flag="fi fi-gb" :flag-name="__('pages/home.students.countries.uk')" mentees="251" />
                 </div>
 
                 <div class="absolute top-[25%] right-[25%] group z-10">
-                    <x-tooltip flag="fi fi-cn" :flag-name="__('pages/home.students.countries.cn')" mentees="20" />
+                    <x-tooltip flag="fi fi-cn" :flag-name="__('pages/home.students.countries.cn')" mentees="18" />
                 </div>
 
                 <div class="absolute top-[25%] right-[13%] group z-10">
-                    <x-tooltip flag="fi fi-jp" :flag-name="__('pages/home.students.countries.jp')" mentees="20" />
+                    <x-tooltip flag="fi fi-jp" :flag-name="__('pages/home.students.countries.jp')" mentees="4" />
                 </div>
 
                 <div class="absolute top-[42%] right-[16%] group z-10">
-                    <x-tooltip flag="fi fi-sg" :flag-name="__('pages/home.students.countries.sg')" mentees="20" />
+                    <x-tooltip flag="fi fi-sg" :flag-name="__('pages/home.students.countries.sg')" mentees="14" />
                 </div>
 
                 <div class="absolute bottom-[42%] right-[8%] group z-10">
-                    <x-tooltip flag="fi fi-au" :flag-name="__('pages/home.students.countries.au')" mentees="20" />
+                    <x-tooltip flag="fi fi-au" :flag-name="__('pages/home.students.countries.au')" mentees="90" />
                 </div>
 
                 <div class="absolute top-[25%] left-[20%] group z-10">
-                    <x-tooltip flag="fi fi-us" :flag-name="__('pages/home.students.countries.us')" mentees="50" />
+                    <x-tooltip flag="fi fi-us" :flag-name="__('pages/home.students.countries.us')" mentees="631" />
                 </div>
             </div>
         </div>
