@@ -382,7 +382,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="text-3xl text-center font-normal text-white mt-5">
+                                            <div class="text-xl md:text-3xl text-center font-normal text-white mt-5">
                                                 The 4 specialized club streams available for selection
                                             </div>
                                             <div class="max-w-5xl mx-auto">
@@ -637,7 +637,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="text-3xl text-center font-normal text-white mt-5">
+                                            <div class="text-xl md:text-3xl text-center font-normal text-white mt-5">
                                                 Real Projects. Real Impact
                                             </div>
 
@@ -832,7 +832,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="text-3xl text-center font-normal text-white mt-10">
+                                            <div class="text-xl md:text-3xl text-center font-normal text-white mt-10">
                                                 Our 5-Step Competition Mentoring Framework
                                             </div>
 
@@ -963,14 +963,14 @@
 
                                     </div>
                                     <div class="px-10 pb-10">
-                                        <div class="bg-newprimary text-white px-10 py-2 rounded-full mb-3">
+                                        <div class="bg-newprimary text-white px-10 py-2 rounded-lg md:rounded-full mb-3">
                                             Showcase: Turning Ambition into International Recognition
                                         </div>
-                                        <div class="bg-newprimary text-white px-10 py-2 rounded-full mb-3">
+                                        <div class="bg-newprimary text-white px-10 py-2 rounded-lg md:rounded-full mb-3">
                                             The Achievement: Global Finalist, Wharton Global High School Investment
                                             Competition
                                         </div>
-                                        <div class="bg-newprimary text-white px-10 py-2 rounded-full mb-3">
+                                        <div class="bg-newprimary text-white px-10 py-2 rounded-lg md:rounded-full mb-3">
                                             The Journey: Competing against thousands of students worldwide requires more
                                             than financial knowledge.
                                         </div>

@@ -723,26 +723,38 @@
                 </div>
             </div>
 
-            <div class="flex md:flex-nowrap flex-wrap gap-10 mb-10">
-                <div class="w-1/4">
+            <div class="flex md:flex-nowrap flex-wrap md:gap-10 gap-0 mb-10">
+                <div class="md:w-1/4 w-full md:mb-0 mb-5">
                     <p class="text-sm md:text-base text-white/80">
-                        45+ organizations have already partnered with EduALL across schools,
+                        <strong class="text-[#A3CEFF]">
+                            45+ organizations
+                        </strong>
+                        have already partnered with EduALL across schools,
                         companies, and communities.
                     </p>
                 </div>
-                <div class="w-1/4">
+                <div class="md:w-1/4 w-full md:mb-0 mb-5">
                     <p class="text-sm md:text-base text-white/80">
-                        We follow up within 2 business days to explore the collaboration that fits you best.
+                        <strong class="text-[#A3CEFF]">
+                            We follow up within 2 business days
+                        </strong>
+                        to explore the collaboration that fits you best.
                     </p>
                 </div>
-                <div class="w-1/4">
+                <div class="md:w-1/4 w-full md:mb-0 mb-5">
                     <p class="text-sm md:text-base text-white/80">
-                        No commitment required. The first conversation is exploratory, shaped around your goals.
+                        <strong class="text-[#A3CEFF]">
+                            No commitment required.
+                        </strong>
+                        The first conversation is exploratory, shaped around your goals.
                     </p>
                 </div>
-                <div class="w-1/4">
+                <div class="md:w-1/4 w-full md:mb-0 mb-5">
                     <p class="text-sm md:text-base text-white/80">
-                        Every partnership type uses this same form. The Partnership Type field pre-fills from the card you
+                        <strong class="text-[#A3CEFF]">
+                            Every partnership type
+                        </strong>
+                        uses this same form. The Partnership Type field pre-fills from the card you
                         selected above.
                     </p>
                 </div>

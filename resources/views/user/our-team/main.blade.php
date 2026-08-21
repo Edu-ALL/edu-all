@@ -127,16 +127,22 @@
 
                         <div id="modal-{{ $leader['id'] }}"
                             class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50">
-                            <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full relative">
+                            <div
+                                class="bg-white rounded-2xl shadow-xl max-w-3xl w-[90%] relative p-6 overflow-auto md:h-auto h-[90%]">
                                 <div class="flex flex-col md:flex-row">
-                                    <div class="w-full md:w-[30%]">
+                                    <div class="w-full md:w-[30%] relative">
+                                        <button type="button" data-modal-hide="modal-{{ $leader['id'] }}"
+                                            class="md:hidden absolute top-4 right-4">
+                                            <i class="fa-solid fa-xmark text-xl"></i>
+                                        </button>
+
                                         <img src="{{ asset($leader['image_2']) }}"
                                             alt="{{ $leader['name'] }} - {{ $leader['role'] }}" loading="lazy"
-                                            decoding="async" width="400" height="500"
-                                            class="w-full rounded-l-2xl h-full object-cover">
+                                            decoding="async"
+                                            class="w-full md:rounded-l-2xl rounded-t-2xl object-cover md:h-auto h-[300px]">
                                     </div>
-                                    <div class="w-full md:w-[70%] p-6">
-                                        <div class="flex justify-between">
+                                    <div class="w-full md:w-[70%] md:p-6 pt-6 relative">
+                                        <div class="flex justify-between items-center">
                                             <div class="text-start">
                                                 <p class="text-[11px] uppercase">
                                                     {{ $leader['role'] }}
@@ -146,7 +152,7 @@
                                                 </h3>
                                             </div>
                                             <button type="button" data-modal-hide="modal-{{ $leader['id'] }}"
-                                                class="absolute top-4 right-4">
+                                                class="md:block hidden absolute top-4 right-4">
                                                 <i class="fa-solid fa-xmark text-xl"></i>
                                             </button>
                                         </div>
@@ -156,7 +162,7 @@
                                                 {{ $leader['modal_university'] }}
                                             </p>
                                         </div>
-                                        <div class="text-start mt-10">
+                                        <div class="text-start md:mt-10 mt-5">
                                             <p class="text-base text-dark/60">
                                                 {{ $leader['modal_description'] }}
                                             </p>
@@ -290,16 +296,21 @@
 
                             <div id="modal-{{ $mentor['id'] }}"
                                 class="hidden fixed inset-0 z-50 items-center justify-center bg-black/50">
-                                <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full relative">
+                                <div
+                                    class="bg-white rounded-2xl shadow-xl max-w-3xl w-[90%] relative md:h-auto h-[90%] overflow-auto">
                                     <div class="flex flex-col md:flex-row">
-                                        <div class="w-full md:w-[30%]">
+                                        <div class="w-full md:w-[30%] relative">
+                                            <button type="button" data-modal-hide="modal-{{ $mentor['id'] }}"
+                                                    class="md:hidden block absolute top-4 right-4">
+                                                    <i class="fa-solid fa-xmark text-xl"></i>
+                                                </button>
                                             <img src="{{ asset($mentor['image_2']) }}"
                                                 alt="{{ $mentor['name'] }} - {{ $mentor['university'] }}" loading="lazy"
-                                                decoding="async" width="400" height="500"
-                                                class="w-full rounded-l-2xl h-full object-cover">
+                                                decoding="async"
+                                                class="w-full md:rounded-l-2xl rounded-t-2xl md:h-full h-[350px] object-cover object-center">
                                         </div>
                                         <div class="w-full md:w-[70%] p-6">
-                                            <div class="flex justify-between">
+                                            <div class="flex justify-between items-center">
                                                 <div class="text-start">
                                                     <div
                                                         class="bg-[#95A5C8] border-2 border-dark/60 px-2 py-1 rounded-xl inline text-[10px] text-white uppercase">
@@ -310,7 +321,7 @@
                                                     </h3>
                                                 </div>
                                                 <button type="button" data-modal-hide="modal-{{ $mentor['id'] }}"
-                                                    class="absolute top-4 right-4">
+                                                    class="md:block hidden absolute top-4 right-4">
                                                     <i class="fa-solid fa-xmark text-xl"></i>
                                                 </button>
                                             </div>
@@ -320,7 +331,7 @@
                                                 </p>
                                             </div>
                                             <hr class="border-b-2 my-2" />
-                                            <div class="text-start mt-10">
+                                            <div class="text-start md:mt-10 mt-5">
                                                 <p class="text-base text-dark/60">
                                                     {{ $mentor['description'] }}
                                                 </p>

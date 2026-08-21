@@ -503,8 +503,8 @@
                 {{ __('pages/home.students.title') }}
             </h2>
 
-            <div class="relative max-w-4xl h-auto mx-auto">
-                <img src="{{ asset('assets/img/home/2026/maps.svg') }}" alt="" class="w-full relative z-0">
+            <div class="relative max-w-4xl h-auto mx-auto md:block hidden">
+                <img src="{{ asset('assets/img/home/2026/maps.svg') }}" alt="EduALL Maps" class="w-full relative z-0">
 
                 <div class="absolute top-[12%] left-[12%] group z-10">
                     <x-tooltip flag="fi fi-ca" :flag-name="__('pages/home.students.countries.ca')" mentees="78" />
@@ -515,7 +515,7 @@
                 </div>
 
                 <div class="absolute top-[25%] right-[25%] group z-10">
-                    <x-tooltip flag="fi fi-cn" :flag-name="__('pages/home.students.countries.cn')" mentees="18" />
+                    <x-tooltip flag="fi fi-cn" :flag-name="__('pages/home.students.countries.cn')" mentees="54" />
                 </div>
 
                 <div class="absolute top-[25%] right-[13%] group z-10">
@@ -523,7 +523,7 @@
                 </div>
 
                 <div class="absolute top-[42%] right-[16%] group z-10">
-                    <x-tooltip flag="fi fi-sg" :flag-name="__('pages/home.students.countries.sg')" mentees="14" />
+                    <x-tooltip flag="fi fi-sg" :flag-name="__('pages/home.students.countries.sg')" mentees="21" />
                 </div>
 
                 <div class="absolute bottom-[42%] right-[8%] group z-10">
@@ -533,6 +533,10 @@
                 <div class="absolute top-[25%] left-[20%] group z-10">
                     <x-tooltip flag="fi fi-us" :flag-name="__('pages/home.students.countries.us')" mentees="631" />
                 </div>
+            </div>
+
+            <div class="md:hidden block">
+                <img src="{{ asset('assets/img/home/2026/Maps mobile.png') }}" alt="EduALL Maps" class="w-full relative z-0 scale-[1.3]">
             </div>
         </div>
     </section>

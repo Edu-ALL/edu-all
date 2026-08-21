@@ -349,12 +349,12 @@
                 </button>
             </div>
 
-            <div class="py-4 px-20">
+            <div class="py-4 md:px-20 px-0">
                 <p class="text-newprimary text-center mb-2 font-light uppercase">
                     {{ __('pages/about_us/our_story.modal.label') }}
                 </p>
 
-                <h3 class="text-5xl text-center text-newprimary mb-10 font-normal">
+                <h3 class="text-2xl md:text-5xl text-center text-newprimary mb-10 font-normal">
                     {!! __('pages/about_us/our_story.modal.title') !!}
                 </h3>
 
@@ -364,7 +364,7 @@
                             alt="Devi Kasih, Founder of EduALL" loading="lazy" decoding="async" width="600"
                             height="800" class="w-full mb-5">
 
-                        <p class="text-xl italic text-newprimary mb-5">
+                        <p class="text-lg md:text-xl italic text-newprimary mb-5">
                             {!! __('pages/about_us/our_story.modal.content.quote_1') !!}
                         </p>
 
@@ -381,7 +381,7 @@
                         </p>
                     </div>
                     <div class="w-full md:w-1/2">
-                        <p class="text-xl italic text-newprimary mb-5 mt-8">
+                        <p class="text-lg md:text-xl italic text-newprimary mb-5 mt-8">
                             <strong>{{ __('pages/about_us/our_story.modal.content.text_4') }}</strong>
                         </p>
                         <p class="text-newprimary italic mb-3 font-light">

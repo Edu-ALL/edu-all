@@ -263,7 +263,7 @@
 
                             <div
                                 class="phase-item w-[90%] md:w-[95%] bg-[#E2E8F2] text-newprimary rounded-t-2xl shadow-sm relative z-10">
-                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-6 md:pb-10">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-14 md:pb-10">
                                     <div class="flex p-3 md:p-5">
                                         <div class="w-24 md:w-40 font-bold text-newprimary text-base md:text-xl">
                                             {{ $phases[0]['phase'] }}
@@ -341,7 +341,7 @@
                             </div>
                             <div
                                 class="phase-item w-[90%] md:w-[95%] bg-[#d1def3] text-newprimary rounded-t-2xl shadow-sm -mt-5 relative z-10">
-                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10 md:pb-14">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-14 md:pb-14">
                                     <div class="flex p-3 md:p-5">
                                         <div class="w-24 md:w-40 font-bold text-newprimary text-base md:text-xl">
                                             {{ $phases[1]['phase'] }}
@@ -601,7 +601,7 @@
 
                                 <div class="flex justify-between items-center h-full p-5">
                                     <div class="w-[75%]">
-                                        <h3 class="text-white text-lg md:text-3xl font-normal mb-2">
+                                        <h3 class="text-white text-xl md:text-3xl font-normal mb-2">
                                             {{ $frameworkItems[$i]['title'] }}
                                         </h3>
 
@@ -655,7 +655,7 @@
 
                                 <div class="flex justify-between items-center h-full p-5">
                                     <div class="w-[75%]">
-                                        <h3 class="text-white text-lg md:text-3xl font-normal mb-2">
+                                        <h3 class="text-white text-xl md:text-3xl font-normal mb-2">
                                             {{ $frameworkItems[$i]['title'] }}
                                         </h3>
 
@@ -688,7 +688,7 @@
             <x-universities moreText="{{ __('pages/home.universities.more_text') }}" />
 
             <div class="max-w-4xl mx-auto text-center">
-                <p class="text-xl text-gray-500">
+                <p class="text-md md:text-xl text-gray-500">
                     {{ __('pages/mentoring/ultimate.universities.description') }}
                 </p>
             </div>
@@ -745,7 +745,7 @@
                         alt="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}"
                         title="{{ __('pages/mentoring/ultimate.head_of_faculty.name') }}" loading="lazy"
                         decoding="async" width="400" height="500"
-                        class="w-full h-full rounded-2xl shadow-sm object-cover md:object-top object-center">
+                        class="w-full h-full rounded-2xl shadow-sm object-cover md:object-top object-top">
                 </div>
             </div>
             <div class="w-full md:w-[65%] text-center md:text-left">
