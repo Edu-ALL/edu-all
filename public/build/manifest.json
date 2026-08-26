@@ -7,21 +7,25 @@
     "file": "assets/CTA General.715d22f5.png",
     "src": "public/assets/img/academic_test_preparation/1.GENERAL/CTA General.png"
   },
-  "public/assets/img/academic_test_preparation/3.SAT/CTA SAT.png": {
-    "file": "assets/CTA SAT.e069b1c3.png",
-    "src": "public/assets/img/academic_test_preparation/3.SAT/CTA SAT.png"
-  },
   "public/assets/img/academic_test_preparation/2.SUBJECT/CTA Subject.png": {
     "file": "assets/CTA Subject.9ef1a3b0.png",
     "src": "public/assets/img/academic_test_preparation/2.SUBJECT/CTA Subject.png"
   },
-  "public/assets/img/academic_test_preparation/4.COMPETITION/CTA Competition.png": {
-    "file": "assets/CTA Competition.f3bed9c5.png",
-    "src": "public/assets/img/academic_test_preparation/4.COMPETITION/CTA Competition.png"
+  "public/assets/img/academic_test_preparation/3.SAT/CTA SAT.png": {
+    "file": "assets/CTA SAT.e069b1c3.png",
+    "src": "public/assets/img/academic_test_preparation/3.SAT/CTA SAT.png"
+  },
+  "public/assets/img/sign-me/banner/form-banner.webp": {
+    "file": "assets/form-banner.e5a2160d.webp",
+    "src": "public/assets/img/sign-me/banner/form-banner.webp"
   },
   "public/font/Plus Jakarta Sans/PlusJakartaSans-ExtraBold.ttf": {
     "file": "assets/PlusJakartaSans-ExtraBold.f95af252.ttf",
     "src": "public/font/Plus Jakarta Sans/PlusJakartaSans-ExtraBold.ttf"
+  },
+  "public/assets/img/academic_test_preparation/4.COMPETITION/CTA Competition.png": {
+    "file": "assets/CTA Competition.f3bed9c5.png",
+    "src": "public/assets/img/academic_test_preparation/4.COMPETITION/CTA Competition.png"
   },
   "public/font/Plus Jakarta Sans/PlusJakartaSans-Bold.ttf": {
     "file": "assets/PlusJakartaSans-Bold.71af7a0a.ttf",
@@ -35,37 +39,33 @@
     "file": "assets/PlusJakartaSans-Medium.00ec3471.ttf",
     "src": "public/font/Plus Jakarta Sans/PlusJakartaSans-Medium.ttf"
   },
-  "public/font/Plus Jakarta Sans/PlusJakartaSans-Light.ttf": {
-    "file": "assets/PlusJakartaSans-Light.e505e56b.ttf",
-    "src": "public/font/Plus Jakarta Sans/PlusJakartaSans-Light.ttf"
-  },
   "public/font/Plus Jakarta Sans/PlusJakartaSans-Regular.ttf": {
     "file": "assets/PlusJakartaSans-Regular.ca6ef907.ttf",
     "src": "public/font/Plus Jakarta Sans/PlusJakartaSans-Regular.ttf"
+  },
+  "public/font/Plus Jakarta Sans/PlusJakartaSans-Light.ttf": {
+    "file": "assets/PlusJakartaSans-Light.e505e56b.ttf",
+    "src": "public/font/Plus Jakarta Sans/PlusJakartaSans-Light.ttf"
   },
   "public/font/Plus Jakarta Sans/PlusJakartaSans-ExtraLight.ttf": {
     "file": "assets/PlusJakartaSans-ExtraLight.08caac02.ttf",
     "src": "public/font/Plus Jakarta Sans/PlusJakartaSans-ExtraLight.ttf"
   },
-  "public/assets/img/sign-me/banner/form-banner.webp": {
-    "file": "assets/form-banner.e5a2160d.webp",
-    "src": "public/assets/img/sign-me/banner/form-banner.webp"
+  "public/font/sf-pro-display/SF-Pro-Display-Heavy.otf": {
+    "file": "assets/SF-Pro-Display-Heavy.1a346f2a.otf",
+    "src": "public/font/sf-pro-display/SF-Pro-Display-Heavy.otf"
+  },
+  "public/font/Playfair_Display/static/PlayfairDisplay-Italic.ttf": {
+    "file": "assets/PlayfairDisplay-Italic.40a6afa9.ttf",
+    "src": "public/font/Playfair_Display/static/PlayfairDisplay-Italic.ttf"
   },
   "public/font/sf-pro-display/SF-Pro-Display-Regular.otf": {
     "file": "assets/SF-Pro-Display-Regular.71a2162c.otf",
     "src": "public/font/sf-pro-display/SF-Pro-Display-Regular.otf"
   },
-  "public/font/sf-pro-display/SF-Pro-Display-Heavy.otf": {
-    "file": "assets/SF-Pro-Display-Heavy.1a346f2a.otf",
-    "src": "public/font/sf-pro-display/SF-Pro-Display-Heavy.otf"
-  },
   "public/assets/img/home/sg/header.png": {
     "file": "assets/header.ce350fdb.png",
     "src": "public/assets/img/home/sg/header.png"
-  },
-  "public/font/Playfair_Display/static/PlayfairDisplay-Italic.ttf": {
-    "file": "assets/PlayfairDisplay-Italic.40a6afa9.ttf",
-    "src": "public/font/Playfair_Display/static/PlayfairDisplay-Italic.ttf"
   },
   "public/assets/img/academic_test_preparation/Banner sessions.png": {
     "file": "assets/Banner sessions.255774ad.png",

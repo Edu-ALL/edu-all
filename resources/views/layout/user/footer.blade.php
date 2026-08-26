@@ -24,8 +24,10 @@
                 </a>
 
                 <div class="font-normal text-base text-gray-400 flex">
-                    <i class="fa-solid fa-location-dot mr-2"></i>
-                    {!! $website_settings->address !!}
+                    <i class="fa-solid fa-location-dot mr-3"></i>
+                    <div class="text-[13px]">
+                        {!! $website_settings->address !!}
+                    </div>
                 </div>
             </div>
             <div class="flex flex-col sm:col-span-2">
