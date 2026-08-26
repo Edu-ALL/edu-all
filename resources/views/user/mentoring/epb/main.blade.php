@@ -123,7 +123,7 @@
                         </p>
                         <p class="text-[12px] md:text-base text-gray-400 mt-2 md:leading-5 leading-4">
                             {{ $score['label'] }}
-                        </p>og
+                        </p>
                     </div>
                 @endforeach
             </div>
@@ -254,7 +254,7 @@
     <section class="new-main-container my-10" aria-label="Why Choose Us">
         <div class="bg-[#F6F6F6] rounded-xl shadow-md p-5 md:p-10">
             <p class="text-newprimary">
-                {{ __('pages/mentoring/epb.why_ogchoose_us.label') }}
+                {{ __('pages/mentoring/epb.why_choose_us.label') }}
             </p>
             <h2 class="text-2xl md:text-4xl font-normal uppercase mb-4">
                 {{ __('pages/mentoring/epb.why_choose_us.title') }}
@@ -279,7 +279,7 @@
                                         <span class="icon text-2xl font-light">+</span>
                                         <span class="font-normal text-xl text-start">{{ $tab['title'] }}</span>
                                     </div>
-                                </div>og
+                                </div>
                             </button>
                         @endforeach
                     </div>
@@ -295,7 +295,7 @@
                                     class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy"
                                     width="800" height="280">
                             @elseif($index === 1)
-                                <img src="{{ asset('assets/img/mentoring/epb/why-us-2.png') }}"og
+                                <img src="{{ asset('assets/img/mentoring/epb/why-us-2.png') }}"
                                     alt="{{ $tab['title'] }} for University Applications"
                                     class="w-full h-[280px] object-cover rounded-3xl shadow-md" loading="lazy"
                                     width="800" height="280">
@@ -311,7 +311,7 @@
                             @endif
                             <p class="text-gray-500 pt-4">
                                 {{ $tab['description'] }}
-                            </p>og
+                            </p>
                         </div>
                     @endforeach
                 </div>
@@ -339,15 +339,15 @@
                     <div class="">
                         {{-- Phase 1  --}}
                         <div class="flex gap-5 items-stretch relative mb-2">
-                            <divog
-                                class="phase-item w-[100%] bg-[#E2E8F2] ogtext-newprimary rounded-2xl shadow-sm relative z-10">
-                                <div class="phase-btn flex justify-betweogen cursor-pointer relative z-10 pb-10">
+                            <div
+                                class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
+                                <div class="phase-btn flex justify-between cursor-pointer relative z-10 pb-10">
                                     <div class="flex p-5 px-10 justify-between w-full items-center">
                                         <h3 class="text-dark/50 text-xl font-normal">
                                             Exclusive Student Club
                                         </h3>
                                         <i class="fa-solid fa-plus"></i>
-                                    </div>og
+                                    </div>
                                 </div>
 
                                 <div
@@ -360,7 +360,7 @@
                                                 </div>
                                                 <div class="">
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
-                                                </div>og
+                                                </div>
                                             </div>
                                             <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
                                                 <div class="w-full md:w-[30%]">
@@ -373,7 +373,7 @@
                                                         A subject-focused student club is one of the most effective
                                                         extracurricular activities for developing leadership, collaboration
                                                         experience, and academic identity, all of which strengthen your
-                                                        univogersity application profile. We facilitate access to specialized
+                                                        university application profile. We facilitate access to specialized
                                                         peer networks where you collaborate on real projects, take on
                                                         leadership roles, and gain industry exposure. Your mentor ensures
                                                         every club involvement meaningfully strengthens your overall
@@ -384,7 +384,7 @@
                                             </div>
                                             <div class="text-xl md:text-3xl text-center font-normal text-white mt-5">
                                                 The 4 specialized club streams available for selection
-                                            </div>og
+                                            </div>
                                             <div class="max-w-5xl mx-auto">
                                                 <div
                                                     class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto p-4 md:p-6 items-center h-auto md:h-[450px] pathway-grid">
@@ -397,7 +397,7 @@
                                                         hover:bg-gradient-to-b hover:from-newprimary hover:to-black active">
 
                                                         <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club cover.png') }}"
-                                                            ogclass="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
+                                                            class="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
 
                                                         <!-- Number -->
                                                         <div
@@ -409,7 +409,7 @@
                                                         <div
                                                             class="relative h-36 rounded-xl overflow-hidden mb-4 hidden transition group-hover:block active:block">
                                                             <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB Business club.png') }}"
-                                                            og    class="w-full h-full object-cover object-center"
+                                                                class="w-full h-full object-cover object-center"
                                                                 alt="EduALL Business Club - Student Leadership and Entrepreneurship"
                                                                 loading="lazy" width="300" height="200">
                                                         </div>
@@ -454,7 +454,7 @@
                                                         <img src="{{ asset('assets/img/mentoring/epb/Student club/EPB computer science club cover.png') }}"
                                                             class="bg_image absolute left-0 top-0 scale-[1.2] object-cover object-center group-hover:hidden active:hidden">
 
-                                                        <divog class="text-5xl text-gray-300 transition group-hover:hidden">
+                                                        <div class="text-5xl text-gray-300 transition group-hover:hidden">
                                                             02
                                                         </div>
 
@@ -464,7 +464,7 @@
                                                                 class="w-full h-full object-cover object-center"
                                                                 alt="EduALL Computer Science Club - Coding and Software Development"
                                                                 loading="lazy" width="300" height="200">
-                                                        </diogv>
+                                                        </div>
 
                                                         <div
                                                             class="absolute bottom-10 left-5 w-[85%] transition-all duration-300
@@ -474,7 +474,7 @@
                                                                 class="text-[#0B1B7A] transition mb-2 group-hover:text-white">
                                                                 <i class="fa-solid fa-laptop-code"></i>
                                                             </div>
-og
+
                                                             <h3
                                                                 class="font-semibold text-gray-800 text-lg leading-5 mb-5 transition group-hover:text-white">
                                                                 Computer Science Club
@@ -484,7 +484,7 @@ og
 
                                                         <p
                                                             class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
-                                                            oggroup-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
+                                                            group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
                                                             Hands-on coding sessions, collaborative hackathons, and software
                                                             development projects that solve real-world problems.
                                                         </p>
@@ -540,7 +540,7 @@ og
                                                     <!-- Card 4 -->
                                                     <div
                                                         class="group relative bg-white rounded-2xl shadow-md transition-all duration-300 cursor-pointer overflow-hidden pathway-card
-                                           og             px-6 py-4 h-[320px]
+                                                        px-6 py-4 h-[320px]
                                                         hover:shadow-xl hover:-translate-y-1 hover:px-4 hover:h-[380px]
                                                         hover:bg-gradient-to-b hover:from-newprimary hover:to-black">
 
@@ -574,7 +574,7 @@ og
                                                             </h3>
 
                                                         </div>
-og
+
                                                         <p
                                                             class="text-sm text-gray-500 opacity-0 translate-y-4 transition-all duration-300
                                                             group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-gray-300">
@@ -604,7 +604,7 @@ og
                                         <h3 class="text-dark/50 text-xl font-normal">
                                             Personal Project & Academic Research
                                         </h3>
-                                        <i class="fa-solid fa-plus"></i>og
+                                        <i class="fa-solid fa-plus"></i>
                                     </div>
                                 </div>
 
@@ -644,7 +644,7 @@ og
                                             <div class="max-w-6xl mx-auto">
                                                 <div id="project-showcase" class="splide">
                                                     <div class="splide__track">
-                                                        <ul class="splide__lisogt">
+                                                        <ul class="splide__list">
                                                             <li class="splide__slide">
                                                                 <div class="card bg-white rounded-xl overflow-hidden">
                                                                     <div class="flex gap-5">
@@ -689,7 +689,7 @@ og
                                                                         </div>
                                                                         <div class="w-[70%] p-5">
                                                                             <p class="text-[12px] font-bold mb-3">Project 2
-                                                                            </ogp>
+                                                                            </p>
                                                                             <p class="text-[13px] font-normal mb-3">
                                                                                 RASA Mindfulness Toolkit
                                                                             </p>
@@ -731,7 +731,7 @@ og
                                                                             <p class="text-[12px] text-gray-500 mb-2">
                                                                                 An illustrated educational platform designed
                                                                                 to inspire
-                                                                              og  young audiences through visual storytelling.
+                                                                                young audiences through visual storytelling.
                                                                             </p>
 
                                                                             <p class="text-[12px] mb-1">The Mentorship:</p>
@@ -773,7 +773,7 @@ og
                                                                                 UX mapping
                                                                                 to a polished tech prototype.
                                                                             </p>
-                                                                        </div>og
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </li>
@@ -813,7 +813,7 @@ og
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex flex-col md:flex-row justify-ogbetween gap-5 md:gap-10">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
                                                 <div class="w-full md:w-[30%]">
                                                     <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Win Global Recognition for Your University Application
@@ -837,7 +837,7 @@ og
                                             </div>
 
                                             <div
-                                                class="grid grid-cols-1 md:grid-cols-5 oggap-4 max-w-6xl mx-auto p-4 items-center h-auto md:h-[400px]">
+                                                class="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-6xl mx-auto p-4 items-center h-auto md:h-[400px]">
 
                                                 <!-- Card 1 -->
                                                 <div
@@ -856,7 +856,7 @@ og
                                                     <div class="absolute w-[80%] left-5 top-[60%]">
                                                         <p class="text-sm text-gray-500 leading-6">
                                                             Selecting the right global competition platform and connecting
-                                                            youog
+                                                            you
                                                             with peers to form a competitive team.
                                                         </p>
                                                     </div>
@@ -890,7 +890,7 @@ og
                                                 <!-- Card 3 -->
                                                 <div
                                                     class="relative bg-white rounded-2xl shadow-md overflow-hidden px-6 py-4 h-[320px]">
-og
+
                                                     <!-- Number -->
                                                     <div class="text-5xl text-gray-300 mb-5">
                                                         03
@@ -923,7 +923,7 @@ og
                                                     <h3 class="font-normal text-gray-800 text-xl leading-7 mb-5">
                                                         Guided Execution
                                                     </h3>
-og
+
                                                     <div class="absolute w-[80%] left-5 top-[60%]">
                                                         <p class="text-sm text-gray-500 leading-6">
                                                             Coaching you as you build your project, conduct research, and
@@ -956,7 +956,7 @@ og
 
                                                 </div>
 
-                                            </div>og
+                                            </div>
                                         </div>
 
 
@@ -1005,7 +1005,7 @@ og
                                                     <i class="fa-solid fa-minus text-white text-xl"></i>
                                                 </div>
                                             </div>
-                                            <div class="flex flex-col md:flex-row justify-ogbetween gap-5 md:gap-10">
+                                            <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10">
                                                 <div class="w-full md:w-[30%]">
                                                     <p class="text-white mb-5 md:mb-10 text-xl md:text-2xl">
                                                         Experience Your Future Career
@@ -1031,7 +1031,7 @@ og
                         </div>
 
                         {{-- ==================== Phase 5: Digital Portfolio Enhancement ==================== --}}
-                        {{-- Phase 5  --}}og
+                        {{-- Phase 5  --}}
                         <div class="flex gap-5 items-stretch relative mb-2">
                             <div
                                 class="phase-item w-[100%] bg-[#E2E8F2] text-newprimary rounded-2xl shadow-sm relative z-10">
@@ -1048,7 +1048,7 @@ og
                                     class="phase-content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out bg-gradient-to-br from-newprimary to-blue-600 rounded-2xl relative z-0">
                                     <div class="flex">
                                         <div class="w-full p-5 px-10">
-                                            <div class="flex gap-10 mb-10 ogjustify-between items-center">
+                                            <div class="flex gap-10 mb-10 justify-between items-center">
                                                 <div class="text-white text-lg font-normal">
                                                     Digital Portfolio Enhancement
                                                 </div>
@@ -1072,7 +1072,7 @@ og
                                                     </p>
                                                 </div>
                                             </div>
-og
+
                                         </div>
                                     </div>
                                 </div>
@@ -1096,7 +1096,7 @@ og
                 </h3>
             </div>
             <div class="w-full md:w-[65%]">
-                <p class="text-lg text-gray-500 ">og
+                <p class="text-lg text-gray-500 ">
                     {{ __('pages/mentoring/epb.additional_opportunities.description') }}
                 </p>
             </div>
@@ -1119,7 +1119,7 @@ og
                         </p>
                         <p class="text-xs md:text-[1rem] text-gray-500">
                             {{ __('pages/mentoring/epb.cta.description') }}
-                        </p>og
+                        </p>
 
                         <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="MODEXPPB"
                             lead-id="LS045" color="dark"
@@ -1142,7 +1142,7 @@ og
             <div class="max-w-4xl mx-auto">
                 <p class="text-2xl md:text-4xl font-semibold text-center text-newprimary mb-10">
                     {{ __('pages/mentoring/epb.universities.title') }}
-                </p>og
+                </p>
 
                 <p class="text-lg text-gray-500 text-center">
                     {{ __('pages/mentoring/epb.universities.description') }}
@@ -1201,7 +1201,7 @@ og
                     </p>
                 </span>
 
-                <h4 class="text-base md:text-xl text-newprimary mt-4 md:mt-10 font-normal"og>
+                <h4 class="text-base md:text-xl text-newprimary mt-4 md:mt-10 font-normal">
                     {{ __('pages/mentoring/ultimate.head_of_faculty.name') }}
                 </h4>
                 <p class="text-sm md:text-lg text-newprimary">
@@ -1251,7 +1251,7 @@ og
                     <a href="https://bit.ly/eduall-contactus" class="bg-black px-10 py-2 text-white rounded-full">
                         {{ __('pages/mentoring/epb.faq.contact_cta') }}
                     </a>
-                </div>og
+                </div>
             </div>
         </div>
     </section>
@@ -1291,7 +1291,7 @@ og
 
             items.forEach(item => {
 
-                item.querySelector(".phase-btn"og).addEventListener("click", () => {
+                item.querySelector(".phase-btn").addEventListener("click", () => {
                     openItem(item);
                 });
 
@@ -1341,7 +1341,7 @@ og
             /*
              * Scale mengikuti posisi card secara realtime.
              */
-            function updateScale() {og
+            function updateScale() {
 
                 const root = document.querySelector('#project-showcase');
                 const slides = root.querySelectorAll('.splide__slide');
@@ -1374,7 +1374,7 @@ og
                      * =========================
                      *
                      * Center  = 1
-                     * Samping = 0.6og
+                     * Samping = 0.6
                      */
                     const scale = 1 - (progress * 0.4);
 
@@ -1423,7 +1423,7 @@ og
                     // Reset all icons
                     group.querySelectorAll(".accordion-btn span:last-child").forEach(item => {
                         item.textContent = "+";
-                    });og
+                    });
 
                     // Open the clicked accordion item if it was previously closed
                     if (!isOpen) {
@@ -1433,7 +1433,7 @@ og
                 });
             });
 
-            // Open the first accordion item by defaultog
+            // Open the first accordion item by default
             if (buttons.length > 0) {
                 const firstButton = buttons[0];
                 const firstContent = firstButton.nextElementSibling;
@@ -1447,7 +1447,7 @@ og
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-og
+
             const buttons = document.querySelectorAll(".tab-btn");
             const panes = document.querySelectorAll(".tab-pane");
 
@@ -1456,7 +1456,7 @@ og
                 // Reset semua button
                 buttons.forEach((btn) => {
 
-                    const header = btn.querySelector(".tab-header");og
+                    const header = btn.querySelector(".tab-header");
                     const icon = btn.querySelector(".icon");
 
                     header.classList.remove(
@@ -1475,7 +1475,7 @@ og
                 });
 
                 // Hide semua content
-                panes.forEach((pane) => {og
+                panes.forEach((pane) => {
                     pane.classList.add("hidden");
                 });
 
@@ -1494,7 +1494,7 @@ og
                     "from-newprimary",
                     "to-blue-700",
                     "text-white"
-                );og
+                );
 
                 activeIcon.textContent = "−";
 
@@ -1512,7 +1512,7 @@ og
             });
 
             // Default tab pertama aktif
-            activateTab(1);og
+            activateTab(1);
 
         });
     </script>
@@ -1532,7 +1532,7 @@ og
                     // Add active class to hovered card only
                     this.classList.add("active");
 
-                    // Update last active cardog
+                    // Update last active card
                     lastActiveCard = this;
                 });
             });
@@ -1542,4 +1542,3 @@ og
         });
     </script>
 @endpush
-og
