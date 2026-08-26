@@ -6,8 +6,9 @@
                     alt="{{ $website_settings->alt_secondary_logo }}" title="{{ $website_settings->alt_secondary_logo }}"
                     loading="lazy">
 
-                <p class="text-gray-400 my-5">
-                    Independent university admissions consultant based in Jakarta. Helping students around the world to build standout profiles and secure places at top universities worldwide.
+                <p class="text-gray-400 my-5 text-[12px]">
+                    There is no fixed blueprint for building a strong student profile.
+                    EduALL helps students build distinctive profiles based on their interests, strengths, and activities through personalized mentorship, strategic guidance, and pathway exploration that turn their potential into meaningful achievements.
                 </p>
 
                 <a href="#" class="text-gray-400 mb-2">
