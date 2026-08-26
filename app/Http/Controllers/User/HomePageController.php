@@ -42,6 +42,7 @@ class HomePageController extends Controller
         foreach ($blog_category as $category) {
             $blogs = $blogs->merge(
                 Blogs::where('cat_id', $category->id)
+                    ->whereYear('updated_at', '>', 2023)
                     ->inRandomOrder()
                     ->take(3)
                     ->orderBy('updated_at', 'DESC')
