@@ -1,71 +1,77 @@
 <?php
 
 return [
-    'meta_title' => "Acara & Inisiatif | EduALL",
-    'meta_description' => "Jelajahi acara EduALL: konferensi, kompetisi, dan inisiatif komunitas yang menyatukan siswa, pendidik, dan mitra untuk menciptakan dampak di luar kelas.",
+    'meta_title' => "Event & Inisiatif | EduALL",
+    'meta_description' => "Jelajahi event EduALL: konferensi, kompetisi, dan inisiatif komunitas yang mempertemukan siswa, pendidik, dan mitra untuk menciptakan dampak di luar ruang kelas.",
 
     'banner' => [
-        'title' => 'Acara <br> EduALL',
-        'subtitle' => 'Acara EduALL dirancang untuk memberikan kesempatan kepada siswa yang tidak akan mereka temukan di kelas biasa. Melalui konferensi, kompetisi, pameran, dan inisiatif komunitas, siswa mengeksplorasi minat baru, terhubung dengan mentor dan rekan seperjuangan, dan berkembang melalui pengalaman nyata.',
-        'cta' => 'Jelajahi Acara Kami',
+        'title' => 'Event EduALL',
+        'subtitle' => 'Event EduALL dirancang untuk memberikan kesempatan yang mungkin tidak ditemukan siswa di ruang kelas pada umumnya. Melalui konferensi, kompetisi, showcase, dan inisiatif komunitas, siswa mengeksplorasi minat baru, terhubung dengan mentor dan teman sebaya, serta berkembang melalui pengalaman nyata.',
+        'cta' => 'Jelajahi Event Kami',
     ],
 
-    'section_title' => 'Acara dan Inisiatif',
-    'section_subtitle' => 'Setiap inisiatif menyatukan siswa dengan pendidik, universitas, pemimpin industri, dan mitra komunitas melalui pengalaman yang dirancang untuk menginspirasi, menantang, dan mempersiapkan mereka untuk langkah selanjutnya.',
+    'section_title' => 'Event dan Inisiatif',
+    'section_subtitle' => 'Setiap inisiatif mempertemukan siswa dengan pendidik, universitas, pemimpin industri, dan mitra komunitas melalui pengalaman yang dirancang untuk menginspirasi, menantang, dan mempersiapkan mereka menghadapi langkah berikutnya.',
 
     'events' => [
         [
             'image' => '6. Event Cornerstone.png',
             'category' => 'Konferensi',
             'title' => 'The Cornerstone',
-            'description' => 'Konferensi yang berfokus pada siswa tentang masa depan pendidikan di era AI, menyatukan siswa, pendidik, pembuat kebijakan, dan pemimpin dalam satu percakapan. Diselenggarakan dalam kolaborasi dengan Indonesia Mengajar untuk mendukung pendidikan di daerah yang kurang terlayani.',
-            'cta' => 'Jelajahi Acara',
+            'description' => 'Konferensi yang berpusat pada siswa dan membahas masa depan pendidikan di era AI, mempertemukan siswa, pendidik, pembuat kebijakan, dan para pemimpin dalam satu ruang diskusi. Diselenggarakan bekerja sama dengan Indonesia Mengajar untuk mendukung pendidikan di wilayah yang masih kurang terlayani.',
+            'cta' => 'Jelajahi Event',
+            'link' => 'https://thecornerstone.edu-all.com'
         ],
         [
             'image' => '7. Event Stem wonderlab.png',
-            'category' => 'Pameran Inovasi',
+            'category' => 'Showcase Inovasi',
             'title' => 'STEM+ Wonderlab',
-            'description' => 'Pameran makerspace di mana siswa EduALL mempresentasikan proyek passion nyata di bidang sains, teknologi, teknik, matematika, dan seni. Proyek terpilih dan hasilnya mendukung pembelajaran di komunitas yang kurang terlayani, bersama Indonesia Mengajar.',
-            'cta' => 'Jelajahi Acara',
+            'description' => 'Pameran makerspace tempat siswa EduALL mempresentasikan passion project nyata di bidang sains, teknologi, teknik, matematika, dan seni. Proyek-proyek terpilih dan hasil penjualan turut mendukung pembelajaran di komunitas yang kurang terlayani bersama Indonesia Mengajar.',
+            'cta' => 'Jelajahi Event',
+            'link' => 'https://stemwonderlab.edu-all.com'
         ],
         [
             'image' => '8. Event Global Innovator Project.png',
             'category' => 'Program Imersif',
             'title' => 'Global Innovators Project',
-            'description' => 'Program musim panas imersif di mana siswa merancang proyek mereka sendiri dan berkembang melalui pengalaman praktis dan pengembangan diri.',
-            'cta' => 'Jelajahi Acara',
+            'description' => 'Program musim panas imersif tempat siswa merancang proyek mereka sendiri dan berkembang melalui pengalaman pengembangan diri yang praktis dan langsung.',
+            'cta' => 'Jelajahi Event',
+            'link' => 'https://immersion.edu-all.com/2024/'
         ],
         [
             'image' => '9. Event Global Immersion Project.png',
             'category' => 'Program Imersi',
             'title' => 'Global Immersion Program',
-            'description' => 'Program imersi yang membawa siswa di luar kelas ke destinasi di seluruh dunia, termasuk China dan negara lain, untuk pembelajaran global praktis dan pertukaran budaya.',
-            'cta' => 'Jelajahi Acara',
+            'description' => 'Program imersi yang membawa siswa melampaui ruang kelas ke berbagai destinasi di seluruh dunia, termasuk Tiongkok dan negara-negara lainnya, untuk mendapatkan pengalaman belajar global secara langsung dan pertukaran budaya.',
+            'cta' => 'Jelajahi Event',
+            'link' => 'https://immersion.edu-all.com/2023/'
         ],
         [
             'image' => '10. Event A Wishful Market.png',
-            'category' => 'Bazar Amal',
+            'category' => 'Bazaar Amal',
             'title' => 'A Wishful Market',
-            'description' => 'Bazar amal di mana siswa EduALL mengubah proyek passion mereka menjadi stan pop-up nyata, dalam kolaborasi dengan Make-A-Wish Indonesia. Seiring dengan pasar, siswa mengikuti masterclass, pertunjukan bakat, dan pertunjukan live, dengan hasilnya mendukung Make-A-Wish Indonesia.',
-            'cta' => 'Jelajahi Acara',
+            'description' => 'Bazaar amal tempat siswa EduALL mengubah passion project mereka menjadi booth pop-up nyata, bekerja sama dengan Make-A-Wish Indonesia. Selain bazaar, siswa juga mengikuti masterclass, talent show, dan pertunjukan langsung, dengan hasil yang disalurkan untuk mendukung Make-A-Wish Indonesia.',
+            'cta' => 'Jelajahi Event',
+            'link' => ''
         ],
         [
             'image' => '11. Event Webinar Series.png',
             'category' => 'Seri Online',
             'title' => 'Webinar Series',
-            'description' => 'Sesi pendidikan online EduALL untuk siswa dan orang tua. Detail lebih lanjut akan segera hadir.',
-            'cta' => 'Jelajahi Acara',
+            'description' => 'Sesi edukasi online EduALL untuk siswa dan orang tua. Detail lebih lanjut akan segera hadir.',
+            'cta' => 'Jelajahi Event',
+            'link' => ''
         ],
     ],
 
     'story_section' => [
-        'title' => 'Kisah di Balik Acara Kami',
-        'description' => 'Setiap acara dimulai dengan keyakinan yang sama: siswa menjadi agen perubahan melalui pengalaman nyata. Setiap konferensi, pameran, dan inisiatif komunitas memberi mereka kesempatan untuk bertemu orang baru, menguji ide mereka, dan mengambil tantangan di luar kelas.',
+        'title' => 'Cerita di Balik Event Kami',
+        'description' => 'Setiap event berawal dari keyakinan yang sama: siswa menjadi game changer melalui pengalaman nyata. Setiap konferensi, showcase, dan inisiatif komunitas memberikan kesempatan bagi mereka untuk bertemu orang-orang baru, menguji ide, dan menghadapi tantangan di luar ruang kelas.',
     ],
 
     'cta_section' => [
-        'title' => 'Inisiatif Anda Selanjutnya <br> <span class="font-[playfair]">Dimulai Di Sini</span>',
-        'description' => 'Baik Anda memiliki ide baru atau ingin membawa inisiatif EduALL yang ada ke sekolah, perusahaan, atau komunitas Anda, kami akan senang mendengar dari Anda. Bagikan tujuan Anda, dan mari kita eksplorasi bagaimana kita bisa mewujudkannya bersama.',
+        'title' => 'Inisiatif Berikutnya <br> <span class="font-[playfair]">Dimulai di Sini</span>',
+        'description' => 'Baik Anda memiliki ide baru maupun ingin menghadirkan inisiatif EduALL yang sudah ada ke sekolah, perusahaan, atau komunitas Anda, kami ingin mendengarnya. Sampaikan tujuan Anda, dan mari kita eksplorasi bersama bagaimana mewujudkannya.',
         'form_title' => 'Mulai Percakapan',
         'form_fields' => [
             'fullname' => 'Nama Lengkap',
