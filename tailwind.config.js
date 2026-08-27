@@ -153,9 +153,9 @@ module.exports = {
                     "url('../../public/assets/img/banner/signup-banner.png')",
             },
             fontFamily: {
-                primary: "Ambit, sans-serif",
-                newprimary: "Ambit, SF Pro Display, sans-serif",
-                secondary: "SF Pro Display, sans-serif",
+                primary: "JakartSans, sans-serif",
+                newprimary: "JakartSans, sans-serif",
+                secondary: "JakartSans, sans-serif",
             },
             colors: {
                 primary: "#233469",

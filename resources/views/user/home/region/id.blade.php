@@ -535,7 +535,7 @@
                 </div>
             </div>
 
-            <div class="md:hidden block">
+            <div class="md:hidden block relative overflow-hidden">
                 <img src="{{ asset('assets/img/home/2026/Maps mobile.png') }}" alt="EduALL Maps" class="w-full relative z-0 scale-[1.3]">
             </div>
         </div>
