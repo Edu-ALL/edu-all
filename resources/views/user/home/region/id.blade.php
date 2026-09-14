@@ -12,14 +12,16 @@
         $metaDesc = __('pages/home.meta_description');
 
         // Open Graph image path
-        $ogImage = Storage::url(
-            'banner/' .
-                $banners->updated_at->format('Y') .
-                '/' .
-                $banners->updated_at->format('m') .
-                '/' .
-                $banners->image,
-        );
+        // $ogImage = Storage::url(
+        //     'banner/' .
+        //         $banners->updated_at->format('Y') .
+        //         '/' .
+        //         $banners->updated_at->format('m') .
+        //         '/' .
+        //         $banners->image,
+        // );
+
+        $ogImage = asset('assets/img/home/2026/banner-dark.webp')
     @endphp
 
     {{-- Page Title --}}
