@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
     <title>EduALL</title>
-    <link href="{{ asset('favicon.png') }}" rel="icon">
+    <link href="{{ asset('eduall.png') }}" rel="icon">
 
     {{-- Google Font --}}
     <link

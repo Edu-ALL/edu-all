@@ -38,7 +38,7 @@
                 "name": "EduALL",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "{{ asset('favicon.png') }}"
+                    "url": "{{ asset('eduall.png') }}"
                 }
             },
             "dateCreated": "{{$blog->created_at}}",
