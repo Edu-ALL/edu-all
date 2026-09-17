@@ -12,7 +12,7 @@
         $metaDesc = __('pages/home.meta_description');
 
         // Open Graph image path
-        $ogImage = asset('assets/img/home/2026/banner-dark.webp')
+        $ogImage = asset('thumbnail.jpg');
     @endphp
 
     {{-- Page Title --}}

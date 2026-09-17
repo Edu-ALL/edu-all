@@ -16,7 +16,7 @@
             content="education consultant, university prep programs, essay writing, study abroad, admission mentoring, SAT test" />
 
         <meta property=og:url content="{{ url('/') }}">
-        <meta property=og:image content="{{ asset('uploaded_files/banner/2023/02/Banner-20230216143208.webp') }}">
+        <meta property=og:image content="{{ asset('thumbnail.jpg') }}">
         <meta property=og:title content="{{ __('pages/home.meta_title') }}">
         <meta property=og:description content="{{ __('pages/home.meta_description') }}">
     @endif
