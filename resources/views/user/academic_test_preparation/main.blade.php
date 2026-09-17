@@ -161,8 +161,9 @@
                                                 </p>
 
                                                 <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                    <img data-src="{{ asset('assets/img/academic_test_preparation/1.GENERAL/' . $item['image']) }}"alt="EduALL"
-                                                        class="h-full w-full object-contain lazyload">
+                                                    <img src="{{ asset('assets/img/academic_test_preparation/1.GENERAL/' . $item['image']) }}" alt="EduALL"
+                                                        loading="lazy" decoding="async"
+                                                        class="h-full w-full object-contain">
                                                 </div>
                                                 <div class="w-full h-32 flex flex-col justify-center">
                                                     @if (array_key_exists('points', $item) && $item['points'])

@@ -110,8 +110,9 @@
                                         <div
                                             class="-mt-8 pt-8 flex flex-col items-center rounded-2xl shadow-xl py-8 px-5 bg-white h-full relative overflow-hidden">
                                             <div class="rounded-xl h-32 w-full overflow-hidden my-4">
-                                                <img data-src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/' . $item['image']) }}"alt="EduALL"
-                                                    class="h-full w-full object-contain lazyload">
+                                                <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/' . $item['image']) }}" alt="EduALL"
+                                                    loading="lazy" decoding="async"
+                                                    class="h-full w-full object-contain">
                                             </div>
 
                                             <p class="text-[14px] text-center leading-4 mb-5">
@@ -152,8 +153,8 @@
                     @endforeach
                 </div>
                 <div class="col md:w-[50%] w-full text-white text-center">
-                    <img data-src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/Flyer AMO General.png') }}"
-                        alt="EduALL" class="rounded-xl lazyload">
+                    <img src="{{ asset('assets/img/academic_test_preparation/4.COMPETITION/Flyer AMO General.png') }}"
+                        alt="EduALL" loading="lazy" decoding="async" class="rounded-xl">
                 </div>
             </div>
         </div>

@@ -578,9 +578,10 @@
                                     {{ $item->duration_read }} {{ __('pages/home.articles.minutes') }}
                                 </div>
 
-                                <img data-src="{{ Storage::url('blogs/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->blog_thumbnail) }}"
+                                <img src="{{ Storage::url('blogs/' . $item->created_at->format('Y') . '/' . $item->created_at->format('m') . '/' . $item->blog_thumbnail) }}"
                                     alt="EduALL {{ $item->blog_thumbnail_alt }}"
-                                    class="lazyload rounded-lg w-full md:h-60 h-40 object-cover mt-auto">
+                                    loading="lazy" decoding="async"
+                                    class="rounded-lg w-full md:h-60 h-40 object-cover mt-auto">
                             </div>
                         </a>
                     </div>

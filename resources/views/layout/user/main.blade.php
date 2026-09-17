@@ -83,14 +83,14 @@
     {{-- Splide JS - CSS --}}
     <link rel="stylesheet" href="/css/splide.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.5.0/css/flag-icons.min.css" />
 
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" /> --}}
     {{-- <link rel="stylesheet" href="/css/newsletter.css"> --}}
 
-    {{-- Font Awesome --}}
+    {{-- Font Awesome 6.7.2 (hosted lokal) --}}
     <link rel="stylesheet" href="/css/fontawesome/css/all.min.css" media="print" onload="this.media='all'">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css" rel="stylesheet"> --}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" rel="stylesheet"> --}}
 
     {{-- JQuery --}}
     <script src="{{ url('/js/jquery.js') }}"></script>
@@ -99,13 +99,9 @@
     <script src="{{ url('/js/splide.min.js') }}"></script>
 
     {{-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}
-    {{-- Lazy Image Jquery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
-    <script src="{{ url('/js/lazyload.js') }}"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script> --}}
-    {{-- Instafeed  --}}
-    <script src="{{ url('/js/instafeed.js') }}" defer></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script> --}}
+    {{-- Lazy image sekarang pakai native loading="lazy" + decoding="async"
+         (lazysizes & jquery-lazyload 1.9.7 sudah dihapus dari project) --}}
     {{-- Social Share  --}}
     <script src="{{ url('/js/socialshare.js') }}" defer></script>
     {{-- <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script> --}}
@@ -139,14 +135,5 @@
 
     @stack('script')
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        $("img").lazyload({
-            effect: "fadeIn",
-            placeholder: "{{ asset('assets/img/loader.gif') }}",
-        });
-    });
-</script>
 
 </html>

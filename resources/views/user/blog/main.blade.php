@@ -54,9 +54,10 @@
                                     <div class="splide__slide__container">
                                         <div class="flex flex-col gap-6 md:flex-row">
                                             <div class="w-full md:w-2/3">
-                                                <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                                <img src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                                     alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                                    class="object-cover w-full h-full max-h-[60vh] lazyload">
+                                                    loading="lazy" decoding="async"
+                                                    class="object-cover w-full h-full max-h-[60vh]">
                                             </div>
                                             <div
                                                 class="flex flex-col justify-between w-full md:w-1/3 md:gap-y-6 lg:gap-y-12">
@@ -154,9 +155,10 @@
                     <a href="{{ route('detail_blog', ['locale' => app()->getLocale(), 'slug' => $blog->slug]) }}"
                         class="block p-3 hover:bg-[#D9D9D9] rounded-lg">
                         <div class="flex flex-col gap-2 h-full justify-between">
-                            <img data-src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                            <img src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                 alt="EduALL {{ $blog->blog_thumbnail_alt }}"
-                                class="h-72 object-cover object-center rounded-lg lazyload">
+                                loading="lazy" decoding="async"
+                                class="h-72 object-cover object-center rounded-lg">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex font-newprimary font-semibold text-xs text-yellow ">
                                     {{ $blog->blog_category->category_name }}

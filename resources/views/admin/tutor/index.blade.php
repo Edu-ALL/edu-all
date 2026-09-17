@@ -58,7 +58,7 @@
                                             <td>{{ $tutor->full_name }}</td>
                                             <td>{{ $tutor->experience }}</td>
                                             <td>
-                                                <img data-original="{{ Storage::url('tutor/'.$tutor->created_at->format('Y').'/'.$tutor->created_at->format('m').'/'.$tutor->thumbnail) }}" alt="EduALL" width="80">
+                                                <img src="{{ Storage::url('tutor/'.$tutor->created_at->format('Y').'/'.$tutor->created_at->format('m').'/'.$tutor->thumbnail) }}" alt="EduALL" width="80" loading="lazy" decoding="async">
                                             </td>
                                             @if ($tutor->status == 'active')
                                                 <td class="text-center">

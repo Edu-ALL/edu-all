@@ -49,9 +49,10 @@
 
                                 <div id="scroll-container" class="overflow-x-auto relative">
                                     <div class="inline-block min-w-full">
-                                        <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/univ.png') }}"
+                                        <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/univ.png') }}"
                                             alt="EduALL - illustration"
-                                            class="lazyload object-contain md:w-full w-[250%] max-w-none h-auto">
+                                            loading="lazy" decoding="async"
+                                            class="object-contain md:w-full w-[250%] max-w-none h-auto">
                                     </div>
                                 </div>
                                 <div
@@ -74,8 +75,8 @@
                 <div class="md:w-1/2 w-full h-100 p-2">
                     <div class="flex border-2 rounded-xl p-2 items-center gap-5">
                         <div class="w-1/4">
-                            <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi1.png') }}"
-                                alt="EduALL - ilustration" class="w-full object-contain lazyload">
+                            <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi1.png') }}"
+                                alt="EduALL - ilustration" loading="lazy" decoding="async" class="w-full object-contain">
                         </div>
                         <div class="w-3/4 text-[13px] text-gray-600">
                             <p class="italic">
@@ -100,8 +101,8 @@
                 <div class="md:w-1/2 w-full h-100 p-2">
                     <div class="flex border-2 rounded-xl p-2 items-center gap-5">
                         <div class="w-1/4">
-                            <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi2.png') }}"
-                                alt="EduALL - ilustration" class="w-full object-contain lazyload">
+                            <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi2.png') }}"
+                                alt="EduALL - ilustration" loading="lazy" decoding="async" class="w-full object-contain">
                         </div>
                         <div class="w-3/4 text-[13px] text-gray-600">
                             <p class="italic mb-10">
@@ -125,8 +126,8 @@
                 <div class="md:w-1/2 w-full h-100 p-2">
                     <div class="flex border-2 rounded-xl p-2 items-center gap-5">
                         <div class="w-1/4">
-                            <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi3.png') }}"
-                                alt="EduALL - ilustration" class="w-full object-contain lazyload">
+                            <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi3.png') }}"
+                                alt="EduALL - ilustration" loading="lazy" decoding="async" class="w-full object-contain">
                         </div>
                         <div class="w-3/4 text-[13px] text-gray-600">
                             <p class="italic">
@@ -152,8 +153,8 @@
                 <div class="md:w-1/2 w-full h-100 p-2">
                     <div class="flex border-2 rounded-xl p-2 items-center gap-5 h-full">
                         <div class="w-1/4">
-                            <img data-src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi4.png') }}"
-                                alt="EduALL - ilustration" class="w-full object-contain lazyload">
+                            <img src="{{ asset('assets/img/sign-me/sign-me-mentoring/testi4.png') }}"
+                                alt="EduALL - ilustration" loading="lazy" decoding="async" class="w-full object-contain">
                         </div>
                         <div class="w-3/4 text-[13px] text-gray-600">
                             <p class="italic">
@@ -194,8 +195,8 @@
                     <div class="h-full w-36 md:w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                         style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                         <div class="h-12 mb-2">
-                            <img data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-0.png') }}"
-                                alt="EduALL" class="w-full h-full object-center object-contain lazyload">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-0.png') }}"
+                                alt="EduALL" loading="lazy" decoding="async" class="w-full h-full object-center object-contain">
                         </div>
                         <h4 class="font-newprimary text-xs md:text-base font-bold text-center mt-2 leading-4">
                             Interest Exploration
@@ -206,8 +207,8 @@
                     <div class="h-full w-36 md:w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                         style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                         <div class="h-12 mb-2">
-                            <img data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-1.png') }}"
-                                alt="EduALL" class="w-full h-full object-center object-contain lazyload">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-1.png') }}"
+                                alt="EduALL" loading="lazy" decoding="async" class="w-full h-full object-center object-contain">
                         </div>
                         <h4 class="font-newprimary text-xs md:text-base font-bold text-center mt-2 leading-4">
                             Profile Building
@@ -218,8 +219,8 @@
                     <div class="h-full w-36 md:w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                         style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                         <div class="h-12 mb-2">
-                            <img data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-2.png') }}"
-                                alt="EduALL" class="w-full h-full object-center object-contain lazyload">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-2.png') }}"
+                                alt="EduALL" loading="lazy" decoding="async" class="w-full h-full object-center object-contain">
                         </div>
                         <h4 class="font-newprimary text-xs md:text-base font-bold text-center mt-2 leading-4">
                             Essay Writing
@@ -230,8 +231,8 @@
                     <div class="h-full w-36 md:w-48 bg-white flex flex-col items-center justify-start py-8 mb-4"
                         style="clip-path: polygon(50% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);">
                         <div class="h-12 mb-2">
-                            <img data-src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-3.png') }}"
-                                alt="EduALL" class="w-full h-full object-center object-contain lazyload">
+                            <img src="{{ asset('assets/img/academic_test_preparation/sat_program/revamp/benefit-3.png') }}"
+                                alt="EduALL" loading="lazy" decoding="async" class="w-full h-full object-center object-contain">
                         </div>
                         <h4 class="font-newprimary text-xs md:text-[14px] font-bold text-center mt-2 leading-4">
                             University Application Strategy

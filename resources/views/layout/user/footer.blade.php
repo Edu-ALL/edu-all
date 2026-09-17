@@ -46,8 +46,8 @@
                             class="block mb-3">
                             <div class="flex gap-3">
                                 <div class="w-[23%]">
-                                    <img width="100%" height="95px"
-                                        data-original="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
+                                    <img width="100%" height="95px" loading="lazy" decoding="async"
+                                        src="{{ Storage::url('blogs/' . $blog->created_at->format('Y') . '/' . $blog->created_at->format('m') . '/' . $blog->blog_thumbnail) }}"
                                         alt="EduALL | {{ $blog->blog_thumbnail_alt }}"
                                         class="h-[70px] object-cover object-center rounded-md">
                                 </div>
