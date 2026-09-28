@@ -38,7 +38,7 @@
         <div class="md:col-span-3">
             {{-- Emmbed Form --}}
             <div class="w-full">
-                <x-form title="Program" program-id="SATPRIV" lead-id="LS001" font-size="15" />
+                <x-form title="Program" program-name="Skillset Tutoring" lead-name="Website" font-size="15" />
             </div>
         </div>
     </section>

@@ -1121,8 +1121,8 @@
                             {{ __('pages/mentoring/epb.cta.description') }}
                         </p>
 
-                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="MODEXPPB"
-                            lead-id="LS045" color="dark"
+                        <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-name="Admissions Mentoring : Modular Program - Exploration & Profile Building"
+                            lead-name="Facebook - Ads" color="dark"
                             submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">

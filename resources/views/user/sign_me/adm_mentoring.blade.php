@@ -83,7 +83,7 @@
                 <div class="md:col-span-3 order-1 md:order-2">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                        <x-form title="Program" program-id="AAUP" lead-id="LS001" font-size="15" />
+                        <x-form title="Program" program-name="Admission Mentoring" lead-name="Website" font-size="15" />
                     </div>
                 </div>
             </div>

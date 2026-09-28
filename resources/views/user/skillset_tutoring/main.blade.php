@@ -258,7 +258,7 @@
                         </h3>
                     </div>
                     <div class="flex md:w-3/5 w-full">
-                        <x-form title="Program" program-id="COMAMO" lead-id="LS001" is-transparent="true"
+                        <x-form title="Program" program-name="Competition AMO" lead-name="Website" is-transparent="true"
                             submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
                     </div>
                 </div>

@@ -327,7 +327,7 @@
                         </h5>
                     </div>
                     <div class="flex md:w-3/5 w-full">
-                        <x-form title="Program" program-id="ACADX" lead-id="LS001" is-transparent="true"
+                        <x-form title="Program" program-name="Subject Tutoring" lead-name="Website" is-transparent="true"
                             submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
                     </div>
                 </div>

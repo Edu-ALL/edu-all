@@ -223,25 +223,25 @@
                         'secondary_name': document.getElementById('secondary_name_' + uid).value,
                         'secondary_mail': null,
                         'secondary_phone': null,
-                        'school_id': 'new',
-                        'other_school': document.getElementById('school_name_' + uid).value,
+                        'school_name': document.getElementById('school_name_' + uid).value,
                         'graduation_year': document.getElementById('graduation_year_' + uid).value,
-                        'interest_prog': "{{ $programId }}",
-                        'destination_country': [],
-                        'lead_id': "{{ $leadId }}",
+                        'interest_program': "{{ $programName ?? 'Admission Mentoring' }}",
+                        'lead_source': "{{ $leadName ?? 'Website' }}",
                     };
 
-                    fetch('{{ env('CRM_DOMAIN') }}register/public', {
+                    fetch('{{ env('ODOO_ENDPOINT') }}', {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                                'Content-Type': 'application/json',
+                                'X-Api-Key': '{{ env('ODOO_API_KEY') }}',
+                                'X-Company-Id': '{{ env('ODOO_COMPANY_ID') }}'
                             },
                             body: JSON.stringify(formData)
                         })
                         .then(function(response) {
                             if (response.ok) {
                                 window.location.href =
-                                    "https://edu-all.com/id-en/programs/thank-you-for-your-interest-in-our-programs";
+                                    '{{ env('APP_URL') }}/id-en/programs/thank-you-for-your-interest-in-our-programs';
                             } else {
                                 throw new Error('Submission failed');
                             }

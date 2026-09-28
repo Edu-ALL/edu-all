@@ -538,7 +538,7 @@
             <div class="relative bg-general-acad-cta bg-cover bg-center rounded-lg py-14 w-full  shadow-lg">
                 <div class="flex w-full justify-end md:items-center items-end">
                     <div class="flex md:w-2/5 w-full">
-                        <x-form title="Program" program-id="ACADX" lead-id="LS001" is-transparent="true"
+                        <x-form title="Program" program-name="Subject Tutoring" lead-name="Website" is-transparent="true"
                             submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
                     </div>
                     <div class="w-1/5 md:flex hidden"></div>
