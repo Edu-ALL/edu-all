@@ -35,6 +35,15 @@
                     </div>
                 </div>
 
+                <div class="mb-3">
+                    <input type="email"
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
+                        placeholder="Email *" id="mail_{{ $uniqueId }}" required
+                        oninput="window.FormHandler_{{ $uniqueId }}.checkValidation('mail')">
+                    <div id="mail_error_{{ $uniqueId }}" class="text-red text-[10px] mt-1 hidden">
+                    </div>
+                </div>
+
                 <div>
                     <input type="text"
                         class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full hidden mb-3"
@@ -213,13 +222,14 @@
                     const formData = {
                         'role': role,
                         'fullname': document.getElementById('primary_name_' + uid).value,
-                        'mail': null,
+                        'mail': document.getElementById('mail_' + uid).value,
                         'phone': document.getElementById('phone_number_' + uid).value,
                         'secondary_name': document.getElementById('secondary_name_' + uid).value,
                         'secondary_mail': null,
                         'secondary_phone': null,
                         'school_name': document.getElementById('school_name_' + uid).value,
                         'graduation_year': document.getElementById('graduation_year_' + uid).value,
+                        'program_id': "{{ $programId ?? 'AAUP' }}",
                         'interest_program': "{{ $programName ?? 'Adimission Mentoring' }}",
                         'lead_source': "{{ $leadName ?? 'Website' }}",
                     };
