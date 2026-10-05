@@ -22,7 +22,7 @@
                     <x-form-partner title="Program" program-id="{{ $programId }}" lead-id="{{ $leadId }}"
                         is-partner="{{ $isPartner }}" />
                 @else
-                    <x-form title="Program" program-id="{{ $programId }}" lead-id="{{ $leadId }}"
+                    <x-form title="Program" program-id="{{ $programId }}" lead-id="{{ $leadId }}" program-name="{{ $programName }}"
                         is-partner="{{ $isPartner }}" submit-title="{{ $buttonTitle }}" />
                 @endif
             </div>

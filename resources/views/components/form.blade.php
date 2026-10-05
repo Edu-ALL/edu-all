@@ -235,7 +235,7 @@
                         'school_name': document.getElementById('school_name_' + uid).value,
                         'graduation_year': document.getElementById('graduation_year_' + uid).value,
                         'program_id': "{{ $programId ?? 'AAUP' }}",
-                        'interest_program': "{{ $programName ?? 'Admission Mentoring' }}",
+                        'interest_program': "{{ $programName ?? 'Admission Mentoring - Ultimate Package' }}",
                         'lead_source': "{{ $leadName ?? 'Website' }}",
                     };
 

@@ -42,7 +42,7 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-general-acad-header md:bg-contain bg-cover bg-top" id="banner">
-        <x-registration-form program-id="ACADX" button-title="CONSULT NOW" />
+        <x-registration-form program-id="ACADX" program-name="Subject Tutoring - General" button-title="CONSULT NOW" />
         <div class="h-screen -mt-16">
             <div class="absolute bottom-0 hidden md:block z-10">
                 <img src="{{ asset('assets/img/academic_test_preparation/1.GENERAL/Rocket.png') }}" alt="EduALL"
@@ -58,7 +58,7 @@
                         class="font-bold text-banner-subtitle md:text-xl text-white md:text-left text-center leading-10 md:w-1/2 xl:w-2/3">
                         {!! __('pages/programs/academic_test_preparation.body') !!}
                     </h3>
-                    <x-registration-form :is-button="true" program-id="ACADX" button-title="CONSULT NOW" />
+                    <x-registration-form :is-button="true" program-id="ACADX" program-name="Subject Tutoring - General" button-title="CONSULT NOW" />
                 </div>
             </div>
         </div>
