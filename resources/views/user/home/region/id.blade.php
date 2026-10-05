@@ -478,7 +478,7 @@
                             {{ __('pages/home.cta.description') }}
                         </p>
 
-                        <x-new-form title="Program" program-id="AAUP" program-name="Admission Mentoring" lead-name="Website" submit-title="Submit" />
+                        <x-new-form title="Program" program-id="AAUP" program-name="Admissions Mentoring - Ultimate Package" lead-name="Website" submit-title="Submit" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
                         <img src="{{ asset('assets/img/home/2026/CTA.png') }}" alt="EduALL"
