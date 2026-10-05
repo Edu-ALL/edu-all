@@ -8,6 +8,7 @@ class RegistrationForm extends Component
 {
     public $isButton;
     public $programId;
+    public $programName;
     public $leadId;
     public $isHome;
     public $isPartner;
@@ -19,10 +20,11 @@ class RegistrationForm extends Component
      *
      * @return void
      */
-    public function __construct($isButton = false, $programId = 'AAUP', $leadId = 'LS001', $isHome = false, $isPartner=false, $isAbsoluteStyle = true, $buttonTitle = 'Submit')
+    public function __construct($isButton = false, $programId = 'AAUP', $programName = 'Admission Mentoring - Ultimate Package', $leadId = 'LS001', $isHome = false, $isPartner=false, $isAbsoluteStyle = true, $buttonTitle = 'Submit')
     {
         $this->isButton = $isButton;
         $this->programId = $programId;
+        $this->programName = $programName;
         $this->leadId = $leadId;
         $this->isHome = $isHome;
         $this->isPartner = $isPartner;
