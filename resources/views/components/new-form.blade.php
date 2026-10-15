@@ -73,6 +73,18 @@
                 <div class="mb-3">
                     <select
                         class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full"
+                        id="grade_{{ $uniqueId }}" required>
+                        <option class="text-gray-300" value="">Select Grade</option>
+                        @for ($i = 7; $i <= 13; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                        <option value="Master">Master</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 hidden">
+                    <select
+                        class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-base' }} text-dark rounded-xl w-full"
                         id="graduation_year_{{ $uniqueId }}" required>
                         <option class="text-gray-300" value="">Select Graduation Year</option>
                         @for ($i = date('Y'); $i < date('Y') + 5; $i++)
@@ -229,6 +241,7 @@
                         'secondary_phone': null,
                         'school_name': document.getElementById('school_name_' + uid).value,
                         'graduation_year': document.getElementById('graduation_year_' + uid).value,
+                        'grade': document.getElementById('grade_' + uid).value,
                         'program_id': "{{ $programId ?? 'AAUP' }}",
                         'interest_program': "{{ $programName ?? 'Adimission Mentoring' }}",
                         'lead_source': "{{ $leadName ?? 'Website' }}",
