@@ -42,7 +42,7 @@
                     <div class="mb-3">
                         <input type="email"
                             class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            placeholder="Email *" id="mail_{{ $uniqueId }}" required
+                            placeholder="Email *" id="mail_{{ $uniqueId }}"
                             oninput="window.FormHandler_{{ $uniqueId }}.checkValidation('mail')">
                         <div id="mail_error_{{ $uniqueId }}" class="text-red text-[10px] mt-1 hidden">
                         </div>
@@ -89,7 +89,7 @@
                     <div class="mb-3 hidden">
                         <select
                             class="md:py-1 py-2 {{ !empty($fontSize) ? 'text-[' . $fontSize . 'px]' : 'text-sm' }} text-dark rounded-xl w-full"
-                            id="graduation_year_{{ $uniqueId }}" required>
+                            id="graduation_year_{{ $uniqueId }}">
                             <option class="text-gray-300" value="">Select Graduation Year</option>
                             @for ($i = date('Y'); $i < date('Y') + 5; $i++)
                                 <option value="{{ $i }}">{{ $i }}</option>
