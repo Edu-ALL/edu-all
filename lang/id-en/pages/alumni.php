@@ -123,7 +123,7 @@ return [
                 ],
             ],
         ],
-        'quote' => 'I came to EduALL with no idea where to apply, how to apply, or which universities suited me, and they really went out of their way to help me well beyond the university without EduALL.',
+        'quote' => 'I came to EduALL with no idea where to apply, how to apply, or which universities suited me, and they really went out of their way to help me well beyond the university with EduALL.',
     ],
 
     [
