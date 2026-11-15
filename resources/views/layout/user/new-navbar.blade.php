@@ -8,7 +8,7 @@
 <header
     class="fixed left-1/2 -translate-x-1/2 bottom-10 z-50 transition-all hidden md:block duration-[600ms] ease-in-out"
     id="bottom-navbar">
-    <nav class="bg-black/80 md:rounded-full rounded-3xl shadow-lg md:py-1 transition-all duration-500 ease-in-out">
+    <nav class="bg-newprimary md:rounded-full rounded-3xl shadow-lg md:py-1 transition-all duration-500 ease-in-out">
         <div class="container mx-auto px-1">
             <div class="flex justify-between items-center w-full">
                 <!-- Navbar Items -->
