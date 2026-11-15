@@ -16,14 +16,14 @@
             id="formOverlay" onclick="close_registration()"></div>
     @else
         <div class="absolute w-full h-full md:max-w-screen-xl mx-auto top-0 left-0 md:-right-[15%] right-0">
-            <div class="md:absolute fixed  {{ $isHome ? 'md:top-[45%] lg:right-[5rem] xl:right-[8rem]' : 'md:top-[55%] lg:right-[2.5rem] xl:right-[5rem]' }} md:-translate-y-[60%] md:right-20 -top-[100vh] right-4 md:z-[40] z-[99999] ease-in-out duration-700"
+            <div class="md:absolute fixed {{ $isHome ? 'md:top-[45%] lg:right-[5rem] xl:right-[8rem]' : 'md:top-[55%] lg:right-[2.5rem] xl:right-[5rem]' }} md:-translate-y-[60%] md:right-20 -top-[100vh] right-4 md:z-[40] z-[99999] ease-in-out duration-700"
                 id="registerForm">
                 @if (isset($isPartner) && $isPartner == true)
                     <x-form-partner title="Program" program-id="{{ $programId }}" lead-id="{{ $leadId }}"
                         is-partner="{{ $isPartner }}" />
                 @else
                     <x-form title="Program" program-id="{{ $programId }}" lead-id="{{ $leadId }}" program-name="{{ $programName }}"
-                        is-partner="{{ $isPartner }}" submit-title="{{ $buttonTitle }}" />
+                        is-partner="{{ $isPartner }}" submit-title="{{ $buttonTitle }}" :redirect-url="$redirectUrl" />
                 @endif
             </div>
         </div>

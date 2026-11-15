@@ -1,6 +1,7 @@
 @php
     $uniqueId = uniqid();
     $color = $color ?? 'light';
+    $thankYouUrl = $redirectUrl ?? route('thank_page', ['locale' => app()->getLocale()]);
 @endphp
 
 <div class="w-full ease-in-out duration-500 z-[999999]" id="formRegist_{{ $uniqueId }}">
@@ -258,8 +259,7 @@
                         })
                         .then(function(response) {
                             if (response.ok) {
-                                window.location.href =
-                                    '{{ env('APP_URL') }}/id-en/programs/thank-you-for-your-interest-in-our-programs';
+                                window.location.href = @json($thankYouUrl);
                             } else {
                                 throw new Error('Submission failed');
                             }

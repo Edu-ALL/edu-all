@@ -13,6 +13,7 @@ class RegistrationForm extends Component
     public $isHome;
     public $isPartner;
     public $buttonTitle;
+    public $redirectUrl;
 
     public $isAbsoluteStyle;
     /**
@@ -20,7 +21,7 @@ class RegistrationForm extends Component
      *
      * @return void
      */
-    public function __construct($isButton = false, $programId = 'AAUP', $programName = 'Admission Mentoring - Ultimate Package', $leadId = 'LS001', $isHome = false, $isPartner=false, $isAbsoluteStyle = true, $buttonTitle = 'Submit')
+    public function __construct($isButton = false, $programId = 'AAUP', $programName = 'Admission Mentoring - Ultimate Package', $leadId = 'LS001', $isHome = false, $isPartner=false, $isAbsoluteStyle = true, $buttonTitle = 'Submit', $redirectUrl = null)
     {
         $this->isButton = $isButton;
         $this->programId = $programId;
@@ -30,6 +31,7 @@ class RegistrationForm extends Component
         $this->isPartner = $isPartner;
         $this->isAbsoluteStyle = $isAbsoluteStyle;
         $this->buttonTitle = $buttonTitle;
+        $this->redirectUrl = $redirectUrl;
     }
 
     /**

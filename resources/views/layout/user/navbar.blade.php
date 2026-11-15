@@ -16,6 +16,11 @@
         'olympiad',
         'privacy_policy',
         'thank_page',
+        'thank_ultimate_mentoring',
+        'thank_epb',
+        'thank_academic_tutoring',
+        'thank_sat',
+        'thank_olympiad',
     ];
 
     // Check if current page is an error page
@@ -132,7 +137,7 @@
 {{-- ==================== MOBILE NAVBAR ==================== --}}
 <header class="transition-all md:hidden">
     {{-- Fixed Top Bar with Logo & Hamburger --}}
-    <div class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <div class="fixed top-0 left-0 right-0 z-50 bg-newprimary backdrop-blur-md border-b border-white/10">
         <div class="flex items-center justify-between px-4 py-3">
             <img src="{{ asset('assets/logo/eduall-white-2026.png') }}" width="110" height="auto" class="-ml-2"
                 alt="{{ $website_settings->alt_secondary_logo }}" title="{{ $website_settings->alt_secondary_logo }}"
