@@ -5,12 +5,7 @@ use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\CallbackController;
 use App\Http\Controllers\User\HomePageController;
 use App\Http\Controllers\User\ProgramPageController;
-use App\Http\Controllers\User\RegularTalkPageController;
-use App\Http\Controllers\User\ResourcesPageController;
 use App\Http\Controllers\User\SitemapController;
-use Revolution\Google\Sheets\Facades\Sheets;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*t
@@ -50,9 +45,8 @@ Route::redirect('/', '/id-en', 301);
             Route::get('sitemap-blogs', [SitemapController::class, 'sitemap_blog']);
             Route::get('sitemap-pages', [SitemapController::class, 'sitemap_pages']);
 
-
-            // START 301 PAGE 
-            // Mentoring 
+            // START 301 PAGE
+            // Mentoring
             Route::get('/programs/admissions-mentoring', function () {
                 return redirect()->route('ultimate_mentoring', ['locale' => app()->getLocale()])->setStatusCode(301);
             });
@@ -86,7 +80,7 @@ Route::redirect('/', '/id-en', 301);
                 return redirect()->route('impact-project', ['locale' => app()->getLocale()])->setStatusCode(301);
             });
 
-            // About 
+            // About
             Route::get('/about/our-contribution', function () {
                 return redirect()->route('about', ['locale' => app()->getLocale()])->setStatusCode(301);
             });
@@ -97,7 +91,7 @@ Route::redirect('/', '/id-en', 301);
                 return redirect()->route('our_team', ['locale' => app()->getLocale()])->setStatusCode(301);
             });
 
-            // Partnership 
+            // Partnership
             Route::get('/programs/global-innovators-project', function () {
                 return redirect()->route('partnership', ['locale' => app()->getLocale()])->setStatusCode(301);
             });
@@ -115,7 +109,6 @@ Route::redirect('/', '/id-en', 301);
             });
 
             // END 301 PAGE
-
 
             Route::controller(HomePageController::class)->group(function () {
                 Route::get('/', 'home')->name('home');
@@ -135,11 +128,11 @@ Route::redirect('/', '/id-en', 301);
             });
 
             Route::controller(ProgramPageController::class)->group(function () {
-                // MENTORING 
+                // MENTORING
                 Route::get('/programs/admissions-mentoring/ultimate-mentoring', 'ultimate_mentoring')->name('ultimate_mentoring');
                 Route::get('/programs/admissions-mentoring/epb', 'epb')->name('epb');
 
-                // TUTORING 
+                // TUTORING
                 Route::get('/programs/tutoring', 'academic_test_preparation')->name('tutoring');
                 Route::get('/programs/tutoring/subject', 'academic_tutoring')->name('subject_tutoring');
                 Route::get('/programs/tutoring/sat', 'sat_program')->name('sat');
@@ -165,7 +158,7 @@ Route::redirect('/', '/id-en', 301);
             });
 
             Route::controller(BlogPageController::class)->group(function () {
-                Route::get('blog', "index")->name('blogs');
+                Route::get('blog', 'index')->name('blogs');
                 Route::get('/blog/{slug}', 'show')->name('detail_blog');
             });
 
@@ -191,11 +184,10 @@ Route::redirect('/', '/id-en', 301);
     Route::get('/thanks/mentoring', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_mentoring');
     Route::get('/thanks/sat', [HomePageController::class, 'thank_form_ads'])->name('thank_form_ads_sat');
 
-    // Sales Page 
+    // Sales Page
     Route::get('/page/csca', function () {
         return view('sales_pages.csca');
     });
-
 
     // New Page Regular Talk
     Route::get('/regular-talk', function () {
