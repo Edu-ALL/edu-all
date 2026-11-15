@@ -145,6 +145,12 @@ Route::redirect('/', '/id-en', 301);
                 Route::get('/programs/tutoring/sat', 'sat_program')->name('sat');
                 Route::get('/programs/tutoring/olympiad', 'skillset_tutoring_program')->name('olympiad');
 
+                Route::get('/programs/thank-you/ultimate-mentoring', 'thank_ultimate_mentoring')->name('thank_ultimate_mentoring');
+                Route::get('/programs/thank-you/epb', 'thank_epb')->name('thank_epb');
+                Route::get('/programs/thank-you/subject', 'thank_academic_tutoring')->name('thank_academic_tutoring');
+                Route::get('/programs/thank-you/sat', 'thank_sat')->name('thank_sat');
+                Route::get('/programs/thank-you/olympiad', 'thank_olympiad')->name('thank_olympiad');
+
                 Route::get('/programs/thank-you-for-your-interest-in-our-programs', 'thank_page')->name('thank_page');
             });
 

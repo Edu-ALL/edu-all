@@ -208,4 +208,29 @@ class ProgramPageController extends Controller
     {
         return view('user.sign_me.thank');
     }
+
+    public function thank_ultimate_mentoring()
+    {
+        return view('user.sign_me.thank');
+    }
+    
+    public function thank_epb()
+    {
+        return view('user.sign_me.thank');
+    }
+
+    public function thank_academic_tutoring()
+    {
+        return view('user.sign_me.thank');
+    }
+
+    public function thank_sat()
+    {
+        return view('user.sign_me.thank');
+    }
+
+    public function thank_olympiad()
+    {
+        return view('user.sign_me.thank');
+    }
 }
