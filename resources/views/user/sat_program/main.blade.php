@@ -43,7 +43,8 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-sat-prep-header bg-cover bg-top" id="banner">
-        <x-registration-form program-id="SATPRIV" program-name="Test Preparation - SAT Private" button-title='Take FREE Placement Test now' />
+        <x-registration-form program-id="SATPRIV" program-name="Test Preparation - SAT Private" button-title='Take FREE Placement Test now'
+            :redirect-url="route('thank_sat', ['locale' => app()->getLocale()])" />
         <div class="h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 main-container">
                 <div class="flex flex-col gap-2 w-full">
@@ -288,7 +289,7 @@
                     </div>
                     <div class="flex md:w-3/5 w-full">
                         <x-form title="Program" program-id="SATPREP" program-name="Test Preparation - SAT" lead-name="Website" is-transparent="true"
-                            submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
+                            submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title :redirect-url="route('thank_sat', ['locale' => app()->getLocale()])" />
                     </div>
                 </div>
 

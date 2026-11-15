@@ -43,7 +43,7 @@
 @section('content')
     {{-- ================================== Banner Section  ================================== --}}
     <section class="py-16 h-screen bg-skillset-tutoring-header bg-cover bg-top" id="banner">
-        <x-registration-form program-id="COMAMO" program-name="Competition - AMO" button-title="Consult Now" />
+        <x-registration-form program-id="COMAMO" program-name="Competition - AMO" button-title="Consult Now" :redirect-url="route('thank_olympiad', ['locale' => app()->getLocale()])" />
         <div class="h-screen -mt-16">
             <div class="flex flex-col h-full items-center justify-center gap-2 main-container">
                 <div class="flex flex-col gap-2 w-full">
@@ -259,7 +259,7 @@
                     </div>
                     <div class="flex md:w-3/5 w-full">
                         <x-form title="Program" program-id="COMAMO" program-name="Competition AMO" lead-name="Website" is-transparent="true"
-                            submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title />
+                            submit-title="BOOK FREE CONSULTATION" submit-color="#FF3131" hide-title :redirect-url="route('thank_olympiad', ['locale' => app()->getLocale()])" />
                     </div>
                 </div>
 

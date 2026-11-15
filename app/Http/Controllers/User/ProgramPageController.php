@@ -208,4 +208,29 @@ class ProgramPageController extends Controller
     {
         return view('user.sign_me.thank');
     }
+
+    public function thank_ultimate_mentoring()
+    {
+        return view('user.sign_me.thank', ['metaKey' => 'mentoring/ultimate']);
+    }
+    
+    public function thank_epb()
+    {
+        return view('user.sign_me.thank', ['metaKey' => 'mentoring/epb']);
+    }
+
+    public function thank_academic_tutoring()
+    {
+        return view('user.sign_me.thank', ['metaKey' => 'programs/academic_tutoring']);
+    }
+
+    public function thank_sat()
+    {
+        return view('user.sign_me.thank', ['metaKey' => 'programs/sat_program']);
+    }
+
+    public function thank_olympiad()
+    {
+        return view('user.sign_me.thank', ['metaKey' => 'programs/skillset_tutoring']);
+    }
 }
