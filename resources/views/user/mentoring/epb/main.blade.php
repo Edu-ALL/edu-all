@@ -1123,7 +1123,7 @@
 
                         <x-new-form title="{{ __('pages/mentoring/epb.cta.title') }}" program-id="MODEXP" program-name="Admissions Mentoring - Modular Program - Exploration"
                             lead-name="Facebook - Ads" color="dark"
-                            submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" />
+                            submit-title="{{ __('pages/mentoring/epb.cta.submit_title') }}" :redirect-url="route('thank_epb', ['locale' => app()->getLocale()])" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
                         <img src="{{ asset('assets/img/mentoring/epb/EPB CTA.png') }}" alt="EduALL"

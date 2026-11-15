@@ -83,7 +83,7 @@
                 <div class="md:col-span-3 order-1 md:order-2">
                     {{-- Emmbed Form --}}
                     <div class="w-full">
-                        <x-form title="Program" program-id="AAUP" program-name="Admission Mentoring" lead-name="Website" font-size="15" />
+                        <x-form title="Program" program-id="AAUP" program-name="Admission Mentoring" lead-name="Website" font-size="15" :redirect-url="route('thank_page', ['locale' => app()->getLocale()])" />
                     </div>
                 </div>
             </div>

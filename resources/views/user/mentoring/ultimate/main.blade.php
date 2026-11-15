@@ -541,7 +541,7 @@
                         </p>
 
                         <x-new-form title="Program" program-id="AAUP" program-name="Admissions Mentoring - Ultimate Package" lead-name="Facebook - Ads" color="dark"
-                            submit-title="{{ __('pages/mentoring/ultimate.cta.submit_title') }}" />
+                            submit-title="{{ __('pages/mentoring/ultimate.cta.submit_title') }}" :redirect-url="route('thank_ultimate_mentoring', ['locale' => app()->getLocale()])" />
                     </div>
                     <div class="w-full md:w-1/2 flex justify-center md:justify-end md:order-2 order-1">
                         <img src="{{ asset('assets/img/mentoring/ultimate/25. Foto Form.png') }}"
