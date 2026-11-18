@@ -1261,7 +1261,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
 <script>
 function ml_webform_success_13185277() {
     try {
-        window.top.location.href = '{{ route('thank_page', app()->getLocale()) }}';
+        window.top.location.href = '{{ route('thank_academic_tutoring', app()->getLocale()) }}';
     } catch (e) {
         window.location.href = '{{ route('thank_page', app()->getLocale()) }}';
     }
