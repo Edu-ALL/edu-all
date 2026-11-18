@@ -1,5 +1,19 @@
 @extends('layout.user.main', ['is_error_page' => true])
 
+@section('head')
+    <title>404 - Page Not Found | EduALL</title>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'error_page',
+            error_code: '404',
+            error_path: location.pathname,
+            error_referrer: document.referrer
+        });
+    </script>
+@endsection
+
 @section('content')
     @php($is404 = true)
     <section class="new-main-container pt-20">
