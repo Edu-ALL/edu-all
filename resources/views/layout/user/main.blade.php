@@ -114,19 +114,6 @@
     {{-- Social Share  --}}
     <script src="{{ url('/js/socialshare.js') }}" defer></script>
     {{-- <script src="https://cdn.jsdelivr.net/gh/assisfery/SocialShareJS@1.4/social-share.min.js"></script> --}}
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17251111065"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-17251111065');
-    </script>
 </head>
 
 <body id="body">
