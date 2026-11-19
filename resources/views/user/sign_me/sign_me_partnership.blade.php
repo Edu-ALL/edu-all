@@ -12,31 +12,6 @@
         content="{{ $slug == 'company' ? 'Event & Program Collaboration' : 'Volunteer & Project Collaboration' }}" />
     <meta name="description"
         content="{{ $slug == 'company' ? 'Event & Program Collaboration' : 'Volunteer & Project Collaboration' }}" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXRKLPRKWF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-JXRKLPRKWF');
-        // gtag('config', 'AW-329409030')
-    </script>
-
-    <!-- Event snippet for Admission-id Leads conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-        function gtag_report_conversion(url) {
-            gtag('event', 'Conversion - SAT', {
-                'send_to': 'AW-329409030/llL7CPKF0pgYEIbEiZ0B',
-                // 'event_callback': callback
-            });
-
-            return false;
-        }
-    </script>
 @endsection
 
 @section('content')

@@ -5,24 +5,6 @@
     <meta name="title" content="CSCA - EduALL" />
     <meta name="description"
         content="Siapkan diri untuk masuk ke universitas di China dengan kelas persiapan CSCA yang fokus pada strategi penyelesaian soal.  大家一起努力，我们一定能行!" />
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1067393485185284');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1067393485185284&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 @endsection
 
 @section('content')
@@ -47,7 +29,7 @@
                         </p>
                     </div>
                     <div class="md:mt-10 mt-5 flex md:justify-start justify-center">
-                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank" onclick="fbq('track','Lead');"
+                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank"
                             class="bg-gradient-to-l from-[#06087F] via-[#7273C4] to-[#06087F] md:px-10 px-5 py-3 md:text-xl text-base text-white rounded-full shadow-lg font-bold inline-block md:text-start text-center">
                             <p class="md:block hidden">
                                 Chase your dream Chinese university, today!
@@ -273,7 +255,7 @@
                         SIAP KULIAH DI CHINA!
                     </h2>
                     <div class="mt-10">
-                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank" onclick="fbq('track','Lead');"
+                        <a href="https://lynk.id/eduall.academy/qmn86eend3km" target="_blank"
                             class="bg-gradient-to-l from-[#C31616] via-[#c47273] to-[#C31616] px-10 py-3 text-2xl text-white rounded-full shadow-lg font-bold">
                             DAFTAR SEKARANG
                         </a>
