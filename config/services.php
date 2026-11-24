@@ -31,4 +31,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'odoo' => [
+        'driver' => env('ODOO_DRIVER', 'http'),
+        'endpoint' => env('ODOO_ENDPOINT'),
+        'api_key' => env('ODOO_API_KEY'),
+        'company_id' => env('ODOO_COMPANY_ID'),
+    ],
+
+    'recaptcha' => [
+        'site_key' => env('RECAPTCHA_SITE_KEY'),
+        'secret' => env('RECAPTCHA_SECRET'),
+    ],
+
 ];
