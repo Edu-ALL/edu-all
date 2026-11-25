@@ -4,6 +4,7 @@ use App\Http\Controllers\User\AboutPageController;
 use App\Http\Controllers\User\BlogPageController;
 use App\Http\Controllers\User\CallbackController;
 use App\Http\Controllers\User\HomePageController;
+use App\Http\Controllers\User\LeadController;
 use App\Http\Controllers\User\ProgramPageController;
 use App\Http\Controllers\User\SitemapController;
 use Illuminate\Support\Facades\Route;
@@ -193,4 +194,8 @@ Route::redirect('/', '/id-en', 301);
     Route::get('/regular-talk', function () {
         return view('user.regular_talk.main');
     });
+
+    Route::post('/lead-submit', [LeadController::class, 'store'])
+        ->middleware('throttle:5,1')
+        ->name('lead.submit');
 // });

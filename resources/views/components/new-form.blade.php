@@ -222,12 +222,12 @@
                         'lead_source': "{{ $leadName ?? 'Website' }}",
                     };
 
-                    fetch('{{ env('ODOO_ENDPOINT') }}', {
+                    fetch('{{ route('lead.submit') }}', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
-                                'X-Api-Key': '{{ env('ODOO_API_KEY') }}',
-                                'X-Company-Id': '{{ env('ODOO_COMPANY_ID') }}'
+                                'Accept': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
                             },
                             body: JSON.stringify(formData)
                         })
